@@ -46,7 +46,7 @@ var chatgpt = {
         this.notify.hideTimer = setTimeout(function hideNotif() { // maintain notification visibility, then fade out
             notificationDiv.style.transition = `opacity ${ fadeDuration }s` // add fade effect
             notificationDiv.style.opacity = 0 // hide notification...
-            this.notify.isDisplaying = false
+            this.notify.isDisplaying.bind(this) = false
         }, hideDelay * 1000) // ...after pre-set duration
     }    
 
