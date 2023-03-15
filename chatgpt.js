@@ -53,4 +53,4 @@ var chatgpt = {
 }
 
 try { window.chatgpt = chatgpt } catch {} // for Greasemonkey
-try { module?.exports = chatgpt } catch {} // for CommonJS
+try { module.exports = chatgpt } catch {} // for CommonJS
