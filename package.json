@@ -1,0 +1,33 @@
+{
+  "name": "chatgpt",
+  "version": "1.0.0",
+  "description": "Client-side library for ChatGPT",
+  "main": "chatgpt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamlui/chatgpt.js.git"
+  },
+  "keywords": [
+    "chatgpt",
+    "\"artificial",
+    "intelligence\"",
+    "nlp",
+    "javascript",
+    "library",
+    "frontend",
+    "clientside",
+    "chatbot",
+    "openai",
+    "ai",
+    "chat"
+  ],
+  "author": "Adam Lui <adamlui@pm.me> (https://github.com/adamlui)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adamlui/chatgpt.js/issues"
+  },
+  "homepage": "https://github.com/adamlui/chatgpt.js#readme"
+}
