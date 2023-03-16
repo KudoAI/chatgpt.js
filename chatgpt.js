@@ -1,94 +1,121 @@
 var chatgpt = {
 
-    clearConversations: function() {
-        var labels = ['Clear conversations', 'Confirm clear conversations']
-        if (!this.clearConversations.cnt) this.clearConversations.cnt = 0
-        if (this.clearConversations.cnt >= labels.length) return // exit if already confirmed
-        for (var link of document.querySelectorAll('a')) {
-            if (link.textContent.includes(labels[this.clearConversations.cnt])) {
-                link.click() ; this.clearConversations.cnt++
-                setTimeout(this.clearConversations.bind(this), 500) ; return // repeat to confirm
-    }}},
+  isIdle: true,
+  isGenerating: false,
 
-    getNewChatButton: function() {
-        var aElements = document.getElementsByTagName('a');
-        var result = Array.from(aElements).find(a => a.textContent === 'New chat');
-        return result;
-    },
+  updateStatus: function () {
+    var stopGeneratingButton = this.getStopGeneratingButton();
 
-    getRegenerateButton: function() {
-        var form = document.querySelector('form');
-        var buttons = form.querySelectorAll('button');
-        var result = Array.from(buttons).find(button => button.textContent.trim().toLowerCase().includes('regenerate'));
-        return result;
-    },
+    if (stopGeneratingButton) {
+      this.isIdle = false;
+      this.isGenerating = true;
+    } else if (!stopGeneratingButton) {
+      this.isIdle = true;
+      this.isGenerating = false;
+    }
+  },
 
-    getSendButton: function() {
-        return document.querySelector('form button[class*="bottom"]') },
+  linkLabels: {
+    clearChats: 'Clear conversations', confirmClearChats: 'Confirm clear conversations',
+    newChat: 'New chat'
+  },
 
-    getStopGeneratingButton: function() {
-        var form = document.querySelector('form');
-        var buttons = form.querySelectorAll('button');
-        return Array.from(buttons).find(button => button.textContent.trim().toLowerCase().includes('stop generating'));
-    },
+  clearChats: function () {
+    if (!this.clearConversations.cnt) this.clearConversations.cnt = 0
+    if (this.clearConversations.cnt >= 2) return // exit if already confirmed
+    for (var link of document.querySelectorAll('a')) {
+      if (link.textContent.includes(this.linkLabels[`
+                  ${this.clearConversations.cnt > 0 ? 'confirmC' : 'c'}learChats`])) {
+        link.click(); this.clearConversations.cnt++
+        setTimeout(this.clearConversations.bind(this), 500); return // repeat to confirm
+      }
+    }
+  },
 
-    getTextarea: function() {
-        var form = document.querySelector('form');
-        var textareas = form.querySelectorAll('textarea');
-        var result = textareas[0];
-        return result;
-    },
+  getNewChatButton: function () {
+    for (var link of document.getElementsByTagName('a')) {
+      if (link.text.includes(this.linkLabels.newChat)) {
+        return link; break
+      }
+    }
+  },
 
-    notify: function(msg, position='') {
-        var vOffset = 13, hOffset = 27 // px offset from viewport border
-        var notificationDuration = 1.75 // sec duration to maintain notification visibility
-        var fadeDuration = 0.6 // sec duration of fade-out
+  getRegenerateButton: function () {
+    var form = document.querySelector('form');
+    var buttons = form.querySelectorAll('button');
+    var result = Array.from(buttons).find(button => button.textContent.trim().toLowerCase().includes('regenerate'));
+    return result;
+  },
 
-        // Find or make div
-        var notificationDiv = document.querySelector('#notification-alert')
-        if (!notificationDiv) { // if missing
-            notificationDiv = document.createElement('div') // make div
-            notificationDiv.id = 'notification-alert'
-            notificationDiv.style.cssText = ( // stylize it
-                '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
-              + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white' )
-            document.body.appendChild(notificationDiv) // insert into DOM
-        }
+  getSendButton: function () {
+    return document.querySelector('form button[class*="bottom"]')
+  },
 
-        // Position notification (defaults to top-right)
-        notificationDiv.style.top = !/low|bottom/i.test(position) ? `${ vOffset }px` : ''
-        notificationDiv.style.bottom = /low|bottom/i.test(position) ? `${ vOffset }px` : ''
-        notificationDiv.style.right = !/left/i.test(position) ? `${ hOffset }px` : ''
-        notificationDiv.style.left = /left/i.test(position) ? `${ hOffset }px` : ''
+  getStopGeneratingButton: function () {
+    var form = document.querySelector('form');
+    var buttons = form.querySelectorAll('button');
+    return Array.from(buttons).find(button => button.textContent.trim().toLowerCase().includes('stop generating'));
+  },
 
-        // Show notification
-        if (this.notify.isDisplaying) clearTimeout(this.notify.hideTimer) // clear previous hide
-        notificationDiv.innerHTML = msg // insert msg
-        notificationDiv.style.transition = 'none' // remove fade effect
-        notificationDiv.style.opacity = 1 // show msg
-        this.notify.isDisplaying = true
+  getTextarea: function () {
+    var form = document.querySelector('form');
+    var textareas = form.querySelectorAll('textarea');
+    var result = textareas[0];
+    return result;
+  },
 
-        // Hide notification
-        var hideDelay = ( // set delay before fading
-            fadeDuration > notificationDuration ? 0 // don't delay if fade exceeds notification duration
-                : notificationDuration - fadeDuration ) // otherwise delay for difference
-        this.notify.hideTimer = setTimeout(function hideNotif() { // maintain notification visibility, then fade out
-            notificationDiv.style.transition = `opacity ${ fadeDuration }s` // add fade effect
-            notificationDiv.style.opacity = 0 // hide notification...
-            this.notify.isDisplaying.bind(this) = false
-        }, hideDelay * 1000) // ...after pre-set duration
-    },    
-    
-    startNewChat: function () {
-        for (var link of document.getElementsByTagName('a')) {
-            if (link.text.includes('New chat')) {
-                link.click() ; break
-    }}}
+  notify: function (msg, position = '') {
+    var vOffset = 13, hOffset = 27 // px offset from viewport border
+    var notificationDuration = 1.75 // sec duration to maintain notification visibility
+    var fadeDuration = 0.6 // sec duration of fade-out
+
+    // Find or make div
+    var notificationDiv = document.querySelector('#notification-alert')
+    if (!notificationDiv) { // if missing
+      notificationDiv = document.createElement('div') // make div
+      notificationDiv.id = 'notification-alert'
+      notificationDiv.style.cssText = ( // stylize it
+        '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
+        + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white')
+      document.body.appendChild(notificationDiv) // insert into DOM
+    }
+
+    // Position notification (defaults to top-right)
+    notificationDiv.style.top = !/low|bottom/i.test(position) ? `${vOffset}px` : ''
+    notificationDiv.style.bottom = /low|bottom/i.test(position) ? `${vOffset}px` : ''
+    notificationDiv.style.right = !/left/i.test(position) ? `${hOffset}px` : ''
+    notificationDiv.style.left = /left/i.test(position) ? `${hOffset}px` : ''
+
+    // Show notification
+    if (this.notify.isDisplaying) clearTimeout(this.notify.hideTimer) // clear previous hide
+    notificationDiv.innerHTML = msg // insert msg
+    notificationDiv.style.transition = 'none' // remove fade effect
+    notificationDiv.style.opacity = 1 // show msg
+    this.notify.isDisplaying = true
+
+    // Hide notification
+    var hideDelay = ( // set delay before fading
+      fadeDuration > notificationDuration ? 0 // don't delay if fade exceeds notification duration
+        : notificationDuration - fadeDuration) // otherwise delay for difference
+    this.notify.hideTimer = setTimeout(function hideNotif() { // maintain notification visibility, then fade out
+      notificationDiv.style.transition = `opacity ${fadeDuration}s` // add fade effect
+      notificationDiv.style.opacity = 0 // hide notification...
+      this.notify.isDisplaying.bind(this) = false
+    }, hideDelay * 1000) // ...after pre-set duration
+  },
+
+  startNewChat: function () {
+    for (var link of document.getElementsByTagName('a')) {
+      if (link.text.includes('New chat')) {
+        link.click(); break
+      }
+    }
+  }
 
 }
 
-try { window.chatgpt = chatgpt } catch {} // for Greasemonkey
-try { module.exports = chatgpt } catch {} // for CommonJS
+try { window.chatgpt = chatgpt } catch { } // for Greasemonkey
+try { module.exports = chatgpt } catch { } // for CommonJS
 
 // Use the added functions to get the elements
 var submitButton = chatgpt.getSubmitButton();
@@ -103,3 +130,8 @@ textarea.id = 'chatgpt-textarea';
 regenerateButton.id = 'chatgpt-regenerate-button';
 stopGeneratingButton.id = 'chatgpt-stop-generating-button';
 newChatButton.id = 'chatgpt-new-chat-button';
+
+// Check the status of the chat every second
+setInterval(function () {
+  chatgpt.updateStatus();
+}, 1000);
