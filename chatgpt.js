@@ -48,7 +48,13 @@ var chatgpt = {
             notificationDiv.style.opacity = 0 // hide notification...
             this.notify.isDisplaying.bind(this) = false
         }, hideDelay * 1000) // ...after pre-set duration
-    }    
+    },
+    
+    startNewChat: function () {
+        for (var link of document.getElementsByTagName('a')) {
+            if (link.text.includes('New chat')) {
+                link.click() ; break
+    }}}
 
 }
 
