@@ -15,7 +15,7 @@ var chatgpt = {
 
     getNewChatButton: function() {
         for (var navLink of document.querySelectorAll('nav > a')) {
-            if (navLink.text.includes(this.linkLabels.newChat)) {
+            if (navLink.text.includes('New chat')) {
                 return navLink ; break
     }}},
 
