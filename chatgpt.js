@@ -8,7 +8,7 @@ var chatgpt = {
     clearChats: function() {
         if (!this.clearChats.cnt) this.clearChats.cnt = 0
         if (this.clearChats.cnt >= 2) return // exit if already confirmed
-        for (var link of document.querySelectorAll('a')) {
+        for (var link of document.querySelectorAll('nav > a')) {
             if (link.textContent.includes(this.linkLabels[(
                     this.clearChats.cnt > 0 ? 'confirmC' : 'c' ) + 'learChats'])) {
                 link.click() ; this.clearChats.cnt++
