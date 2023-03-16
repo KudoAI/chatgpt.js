@@ -88,7 +88,22 @@ var chatgpt = {
         for (var link of document.getElementsByTagName('a')) {
             if (link.text.includes('New chat')) {
                 link.click() ; break
-    }}}
+    }}},
+
+    isIdle: true,
+    isGenerating: false,
+
+    updateStatus: function() {
+        var stopGeneratingButton = this.getStopGeneratingButton();
+        
+        if (stopGeneratingButton) {
+            this.isIdle = false;
+            this.isGenerating = true;
+        } else if (!stopGeneratingButton) {
+            this.isIdle = true;
+            this.isGenerating = false;
+        }
+    },
 
 }
 
@@ -108,3 +123,8 @@ textarea.id = 'chatgpt-textarea';
 regenerateButton.id = 'chatgpt-regenerate-button';
 stopGeneratingButton.id = 'chatgpt-stop-generating-button';
 newChatButton.id = 'chatgpt-new-chat-button';
+
+// Check the status of the chat every second
+setInterval(function() {
+    chatgpt.updateStatus();
+}, 1000);
