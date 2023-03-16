@@ -27,12 +27,8 @@ var chatgpt = {
         return Array.from(buttons).find(button => button.textContent.trim().toLowerCase().includes('stop generating'));
     },
 
-    getSubmitButton: function() {
-        const form = document.querySelector('form');
-        const buttons = form.querySelectorAll('button');
-        const result = buttons[buttons.length - 1];
-        return result;
-    },
+    getSendButton: function() {
+        return document.querySelector('form button[class*="bottom"]') },
 
     getTextarea: function() {
         const form = document.querySelector('form');
