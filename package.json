@@ -4,7 +4,8 @@
   "description": "Client-side JavaScript library for ChatGPT",
   "main": "chatgpt.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "uglifyjs src/chatgpt.js -o dist/chatgpt.min.js"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,7 @@
   "keywords": [
     "chatgpt", "artificial intelligence", "nlp", "javascript", "library",
     "frontend", "clientside", "chatbot", "openai", "ai", "chat", "gpt", "gpt3", "gpt4",
-    "machine learning", "converrsational ai", "ml", "bot"
+    "machine learning", "conversational ai", "ml", "bot"
   ],
   "author": "Adam Lui <adamlui@pm.me> (https://github.com/adamlui)",
   "license": "MIT",
