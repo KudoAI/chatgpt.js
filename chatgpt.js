@@ -10,7 +10,7 @@ var chatgpt = {
         if (this.clearChats.cnt >= 2) return // exit if already confirmed
         for (var link of document.querySelectorAll('a')) {
             if (link.textContent.includes(this.linkLabels[`
-                    ${this.clearChats.cnt > 0 ? 'confirmC' : 'c'}learChats`])) {
+                    ${ this.clearChats.cnt > 0 ? 'confirmC' : 'c' }learChats`])) {
                 link.click() ; this.clearChats.cnt++
                 setTimeout(this.clearChats.bind(this), 500) ; return // repeat to confirm
     }}},
@@ -86,7 +86,7 @@ var chatgpt = {
     
     startNewChat: function () {
         for (var link of document.getElementsByTagName('a')) {
-            if (link.text.includes('New chat')) {
+            if (link.text.includes(this.linkLabels.newChat)) {
                 link.click() ; break
     }}},
 
