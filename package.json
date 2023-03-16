@@ -9,17 +9,27 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adamlui/chatgpt.js.git"
+    "url": "git+https://github.com/chatgptjs/chatgpt.js.git"
   },
   "keywords": [
     "chatgpt", "artificial intelligence", "nlp", "javascript", "library",
     "frontend", "clientside", "chatbot", "openai", "ai", "chat", "gpt", "gpt3", "gpt4",
     "machine learning", "conversational ai", "ml", "bot"
   ],
-  "author": "Adam Lui <adamlui@pm.me> (https://github.com/adamlui)",
+  "authors": [
+    {
+      "name": "Adam Lui",
+      "email": "adam@chatgptjs.com",
+      "website": "https://github.com/adamlui"
+    },
+    {
+      "name": "mefengl",
+      "website": "https://github.com/mefengl"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/adamlui/chatgpt.js/issues"
   },
-  "homepage": "https://github.com/adamlui/chatgpt.js"
+  "homepage": "https://chatgptjs.com"
 }
