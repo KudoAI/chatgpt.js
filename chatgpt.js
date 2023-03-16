@@ -16,9 +16,9 @@ var chatgpt = {
     }}},
 
     getNewChatButton: function() {
-        for (var link of document.getElementsByTagName('a')) {
-            if (link.text.includes(this.linkLabels.newChat)) {
-                return link ; break
+        for (var navLink of document.querySelectorAll('nav > a')) {
+            if (navLink.text.includes(this.linkLabels.newChat)) {
+                return navLink ; break
     }}},
 
     getRegenerateButton: function() {
