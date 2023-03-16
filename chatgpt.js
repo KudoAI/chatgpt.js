@@ -15,6 +15,9 @@ var chatgpt = {
                 setTimeout(this.clearChats.bind(this), 500) ; return // repeat to confirm
     }}},
 
+    getChatInput: function() {
+        return document.querySelector('form textarea').value },
+
     getNewChatButton: function() {
         for (var navLink of document.querySelectorAll('nav > a')) {
             if (navLink.text.includes(this.linkLabels.newChat)) {
@@ -42,10 +45,6 @@ var chatgpt = {
         var textareas = form.querySelectorAll('textarea');
         var result = textareas[0];
         return result;
-    },
-
-    getInputValue: function() {
-        return this.getTextarea().value;
     },
 
     notify: function(msg, position='') {
