@@ -111,7 +111,7 @@ try { window.chatgpt = chatgpt } catch {} // for Greasemonkey
 try { module.exports = chatgpt } catch {} // for CommonJS
 
 // Use the added functions to get the elements
-var submitButton = chatgpt.getSubmitButton();
+var submitButton = chatgpt.getSendButton();
 var textarea = chatgpt.getTextarea();
 var regenerateButton = chatgpt.getRegenerateButton();
 var stopGeneratingButton = chatgpt.getStopGeneratingButton();
