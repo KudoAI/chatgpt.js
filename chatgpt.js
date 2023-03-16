@@ -44,6 +44,10 @@ var chatgpt = {
         return result;
     },
 
+    getInputValue: function() {
+        return this.getTextarea().value;
+    },
+
     notify: function(msg, position='') {
         var vOffset = 13, hOffset = 27 // px offset from viewport border
         var notificationDuration = 1.75 // sec duration to maintain notification visibility
