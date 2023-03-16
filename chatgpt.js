@@ -1,5 +1,9 @@
 var chatgpt = {
 
+    linkLabels: {
+        newChat: 'New chat'
+    }
+
     clearConversations: function() {
         var labels = ['Clear conversations', 'Confirm clear conversations']
         if (!this.clearConversations.cnt) this.clearConversations.cnt = 0
@@ -11,10 +15,10 @@ var chatgpt = {
     }}},
 
     getNewChatButton: function() {
-        var aElements = document.getElementsByTagName('a');
-        var result = Array.from(aElements).find(a => a.textContent === 'New chat');
-        return result;
-    },
+        for (var link of document.getElementsByTagName('a')) {
+            if (link.text.includes(this.linkLabels.newChat)) {
+                return link ; break
+    }}},
 
     getRegenerateButton: function() {
         var form = document.querySelector('form');
