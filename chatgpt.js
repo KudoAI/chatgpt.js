@@ -8,32 +8,34 @@ var chatgpt = {
             if (link.textContent.includes(labels[this.clearConversations.cnt])) {
                 link.click() ; this.clearConversations.cnt++
                 setTimeout(this.clearConversations.bind(this), 500) ; return // repeat to confirm
-    }}},getNewChatButton: function() {
-        const aElements = document.getElementsByTagName('a');
-        const result = Array.from(aElements).find(a => a.textContent === 'New chat');
+    }}},
+
+    getNewChatButton: function() {
+        var aElements = document.getElementsByTagName('a');
+        var result = Array.from(aElements).find(a => a.textContent === 'New chat');
         return result;
     },
 
     getRegenerateButton: function() {
-        const form = document.querySelector('form');
-        const buttons = form.querySelectorAll('button');
-        const result = Array.from(buttons).find(button => button.textContent.trim().toLowerCase().includes('regenerate'));
+        var form = document.querySelector('form');
+        var buttons = form.querySelectorAll('button');
+        var result = Array.from(buttons).find(button => button.textContent.trim().toLowerCase().includes('regenerate'));
         return result;
-    },
-
-    getStopGeneratingButton: function() {
-        const form = document.querySelector('form');
-        const buttons = form.querySelectorAll('button');
-        return Array.from(buttons).find(button => button.textContent.trim().toLowerCase().includes('stop generating'));
     },
 
     getSendButton: function() {
         return document.querySelector('form button[class*="bottom"]') },
 
+    getStopGeneratingButton: function() {
+        var form = document.querySelector('form');
+        var buttons = form.querySelectorAll('button');
+        return Array.from(buttons).find(button => button.textContent.trim().toLowerCase().includes('stop generating'));
+    },
+
     getTextarea: function() {
-        const form = document.querySelector('form');
-        const textareas = form.querySelectorAll('textarea');
-        const result = textareas[0];
+        var form = document.querySelector('form');
+        var textareas = form.querySelectorAll('textarea');
+        var result = textareas[0];
         return result;
     },
 
