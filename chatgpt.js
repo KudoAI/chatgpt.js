@@ -49,6 +49,39 @@ var chatgpt = {
             this.notify.isDisplaying.bind(this) = false
         }, hideDelay * 1000) // ...after pre-set duration
     },
+
+    getNewChatButton: function() {
+        const aElements = document.getElementsByTagName('a');
+        const result = Array.from(aElements).find(a => a.textContent === 'New chat');
+        return result;
+    },
+
+    getRegenerateButton: function() {
+        const form = document.querySelector('form');
+        const buttons = form.querySelectorAll('button');
+        const result = Array.from(buttons).find(button => button.textContent.trim().toLowerCase().includes('regenerate'));
+        return result;
+    },
+
+    getStopGeneratingButton: function() {
+        const form = document.querySelector('form');
+        const buttons = form.querySelectorAll('button');
+        return Array.from(buttons).find(button => button.textContent.trim().toLowerCase().includes('stop generating'));
+    },
+
+    getSubmitButton: function() {
+        const form = document.querySelector('form');
+        const buttons = form.querySelectorAll('button');
+        const result = buttons[buttons.length - 1];
+        return result;
+    },
+
+    getTextarea: function() {
+        const form = document.querySelector('form');
+        const textareas = form.querySelectorAll('textarea');
+        const result = textareas[0];
+        return result;
+    },
     
     startNewChat: function () {
         for (var link of document.getElementsByTagName('a')) {
