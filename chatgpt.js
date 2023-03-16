@@ -1,15 +1,16 @@
 var chatgpt = {
 
     linkLabels: {
+        clearChats: 'Clear conversations', confirmClearChats: 'Confirm clear conversations',
         newChat: 'New chat'
-    }
+    },
 
-    clearConversations: function() {
-        var labels = ['Clear conversations', 'Confirm clear conversations']
+    clearChats: function() {
         if (!this.clearConversations.cnt) this.clearConversations.cnt = 0
-        if (this.clearConversations.cnt >= labels.length) return // exit if already confirmed
+        if (this.clearConversations.cnt >= 2) return // exit if already confirmed
         for (var link of document.querySelectorAll('a')) {
-            if (link.textContent.includes(labels[this.clearConversations.cnt])) {
+            if (link.textContent.includes(this.linkLabels[`
+                    ${this.clearConversations.cnt > 0 ? 'confirmC' : 'c'}learChats`])) {
                 link.click() ; this.clearConversations.cnt++
                 setTimeout(this.clearConversations.bind(this), 500) ; return // repeat to confirm
     }}},
