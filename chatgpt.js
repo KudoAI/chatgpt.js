@@ -12,7 +12,7 @@ var chatgpt = {
             if (link.textContent.includes(this.linkLabels[`
                     ${this.clearChats.cnt > 0 ? 'confirmC' : 'c'}learChats`])) {
                 link.click() ; this.clearChats.cnt++
-                setTimeout(this.clearConversations.bind(this), 500) ; return // repeat to confirm
+                setTimeout(this.clearChats.bind(this), 500) ; return // repeat to confirm
     }}},
 
     getNewChatButton: function() {
