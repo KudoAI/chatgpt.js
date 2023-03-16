@@ -91,3 +91,17 @@ var chatgpt = {
 
 try { window.chatgpt = chatgpt } catch {} // for Greasemonkey
 try { module.exports = chatgpt } catch {} // for CommonJS
+
+// Use the added functions to get the elements
+var submitButton = chatgpt.getSubmitButton();
+var textarea = chatgpt.getTextarea();
+var regenerateButton = chatgpt.getRegenerateButton();
+var stopGeneratingButton = chatgpt.getStopGeneratingButton();
+var newChatButton = chatgpt.getNewChatButton();
+
+// Assign reasonable IDs to the elements
+submitButton.id = 'chatgpt-submit-button';
+textarea.id = 'chatgpt-textarea';
+regenerateButton.id = 'chatgpt-regenerate-button';
+stopGeneratingButton.id = 'chatgpt-stop-generating-button';
+newChatButton.id = 'chatgpt-new-chat-button';
