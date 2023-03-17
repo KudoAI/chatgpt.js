@@ -82,7 +82,7 @@
             // Hide notification
             var hideDelay = ( // set delay before fading
                 fadeDuration > notificationDuration ? 0 // don't delay if fade exceeds notification duration
-                    : notificationDuration - fadeDuration); // otherwise delay for difference
+                : notificationDuration - fadeDuration); // otherwise delay for difference
             this.notify.hideTimer = setTimeout(function hideNotif() { // maintain notification visibility, then fade out
                 notificationDiv.style.transition = `opacity ${fadeDuration}s`; // add fade effect
                 notificationDiv.style.opacity = 0; // hide notification...
@@ -182,12 +182,12 @@
                     .map(arr => arr.filter(word => word !== originalWord))); // filter out match word
                 var matchCase = /^[A-Z][a-z]+$/.test(match[0]) ? 'title'
                     : /^[a-z]+$/.test(match[0]) ? 'lower'
-                        : /^[A-Z]+$/.test(match[0]) ? 'upper' : 'mixed';
+                    : /^[A-Z]+$/.test(match[0]) ? 'upper' : 'mixed';
                 for (var alias of aliasValues) { // make alias functions
                     alias = ( // preserve camel case for new name
                         matchCase === 'title' ? alias.charAt(0).toUpperCase() + alias.slice(1).toLowerCase()
-                            : matchCase === 'upper' ? alias.toUpperCase()
-                                : matchCase === 'lower' ? alias.toLowerCase() : alias);
+                        : matchCase === 'upper' ? alias.toUpperCase()
+                        : matchCase === 'lower' ? alias.toLowerCase() : alias);
                     var aliasProp = prop.replace(match[0], alias); // name new function
                     chatgpt[aliasProp] = chatgpt[prop]; // reference original function
                 }
