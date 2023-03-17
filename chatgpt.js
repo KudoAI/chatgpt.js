@@ -50,6 +50,47 @@
             return result;
         },
 
+        getLastResponseElement: function() {
+            var groups = document.querySelectorAll('.group');
+            return groups[groups.length - 1];
+        },
+
+        getLastResponse: function() {
+            var lastResponseElement = this.getLastResponseElement();
+            if (!lastResponseElement) return;
+            var lastResponse = lastResponseElement.textContent;
+            return lastResponse;
+        },
+
+        send: function(msg) {
+            var textarea = this.getTextarea();
+            textarea.value = msg;
+            var sendButton = this.getSendButton();
+            sendButton && sendButton.click();
+        },
+
+        stop: function() {
+            var stopGeneratingButton = this.getStopGeneratingButton();
+            stopGeneratingButton && stopGeneratingButton.click();
+        },
+
+        regenerate: function() {
+            var regenerateButton = this.getRegenerateButton();
+            regenerateButton && regenerateButton.click();
+        },
+
+        new: function() {
+            var newChatButton = this.getNewChatButton();
+            newChatButton && newChatButton.click();
+        },
+
+        sendInNewChat: function(msg) {
+            this.new();
+            setTimeout(() => {
+                this.send(msg);
+            }, 500);
+        },
+
         notify: function(msg, position = '') {
             var vOffset = 13, hOffset = 27; // px offset from viewport border
             var notificationDuration = 1.75; // sec duration to maintain notification visibility
