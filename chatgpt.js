@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     var chatgpt = {
 
@@ -166,7 +166,7 @@
             }
         },
     }
-    
+
     // Create alias functions
     var aliases = [ // synonyms within function names
         ['chat', 'conversation', 'convo'],
@@ -181,13 +181,13 @@
                     .filter(arr => arr.includes(originalWord)) // filter in relevant alias sub-arrays
                     .map(arr => arr.filter(word => word !== originalWord))) // filter out match word
                 var matchCase = /^[A-Z][a-z]+$/.test(match[0]) ? 'title'
-                              : /^[a-z]+$/.test(match[0]) ? 'lower'
-                              : /^[A-Z]+$/.test(match[0]) ? 'upper' : 'mixed'
+                    : /^[a-z]+$/.test(match[0]) ? 'lower'
+                        : /^[A-Z]+$/.test(match[0]) ? 'upper' : 'mixed'
                 for (var alias of aliasValues) { // make alias functions
                     alias = ( // preserve camel case for new name
                         matchCase === 'title' ? alias.charAt(0).toUpperCase() + alias.slice(1).toLowerCase()
-                      : matchCase === 'upper' ? alias.toUpperCase()
-                      : matchCase === 'lower' ? alias.toLowerCase() : alias )
+                            : matchCase === 'upper' ? alias.toUpperCase()
+                                : matchCase === 'lower' ? alias.toLowerCase() : alias)
                     var aliasProp = prop.replace(match[0], alias) // name new function
                     chatgpt[aliasProp] = chatgpt[prop] // reference original function
                 }

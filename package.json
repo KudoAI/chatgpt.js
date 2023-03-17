@@ -4,6 +4,7 @@
   "description": "Client-side JavaScript library for ChatGPT",
   "main": "chatgpt.js",
   "scripts": {
+    "lint": "eslint . --ext .js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "uglifyjs src/chatgpt.js -o dist/chatgpt.min.js"
   },
