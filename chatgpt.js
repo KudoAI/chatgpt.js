@@ -50,6 +50,18 @@
             return result;
         },
 
+        getLastResponseElement: function() {
+            var groups = document.querySelectorAll('.group');
+            return groups[groups.length - 1];
+        },
+
+        getLastResponse: function() {
+            var lastResponseElement = this.getLastResponseElement();
+            if (!lastResponseElement) return;
+            var lastResponse = lastResponseElement.textContent;
+            return lastResponse;
+        },
+
         notify: function(msg, position = '') {
             var vOffset = 13, hOffset = 27; // px offset from viewport border
             var notificationDuration = 1.75; // sec duration to maintain notification visibility
