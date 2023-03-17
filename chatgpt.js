@@ -21,7 +21,7 @@
         getNewChatButton: function() {
             for (var navLink of document.querySelectorAll('nav > a')) {
                 if (navLink.text.includes('New chat')) {
-                    return navLink; break;
+                    return navLink;
                 }
             }
         },
