@@ -3,7 +3,7 @@
   "rules": {
     "semi": ["error", "always"],
     "quotes": ["error", "single"],
-    "indent": ["error", 4],
+    "indent": ["error", 4, { "flatTernaryExpressions": true }],
     "space-before-function-paren": ["error", "never"],
     "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
     "object-curly-spacing": ["error", "always"],
