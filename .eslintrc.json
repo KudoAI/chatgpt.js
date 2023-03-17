@@ -16,6 +16,7 @@
     "sourceType": "script"
   },
   "env": {
-    "browser": true
+    "browser": true,
+    "node": true
   }
 }
