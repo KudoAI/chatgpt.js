@@ -12,9 +12,24 @@
     "url": "git+https://github.com/chatgptjs/chatgpt.js.git"
   },
   "keywords": [
-    "chatgpt", "artificial intelligence", "nlp", "javascript", "library",
-    "frontend", "clientside", "chatbot", "openai", "ai", "chat", "gpt", "gpt3", "gpt4",
-    "machine learning", "conversational ai", "ml", "bot"
+    "chatgpt",
+    "artificial intelligence",
+    "nlp",
+    "javascript",
+    "library",
+    "frontend",
+    "clientside",
+    "chatbot",
+    "openai",
+    "ai",
+    "chat",
+    "gpt",
+    "gpt3",
+    "gpt4",
+    "machine learning",
+    "conversational ai",
+    "ml",
+    "bot"
   ],
   "authors": [
     {
@@ -31,5 +46,10 @@
   "bugs": {
     "url": "https://github.com/adamlui/chatgpt.js/issues"
   },
-  "homepage": "https://chatgptjs.com"
+  "homepage": "https://chatgptjs.com",
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
+  }
 }
