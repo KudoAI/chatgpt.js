@@ -51,8 +51,8 @@
         },
 
         getLastResponseElement: function() {
-            var groups = document.querySelectorAll('.group');
-            return groups[groups.length - 1];
+            var responseElements = document.querySelectorAll('.group.w-full');
+            return responseElements[responseElements.length - 1];
         },
 
         getLastResponse: function() {
