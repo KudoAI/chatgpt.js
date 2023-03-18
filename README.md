@@ -18,7 +18,7 @@
 - Feature-rich
 - Object-oriented
 - Easy-to-use
-- Lightweight yet optimally performant
+- Lightweight (yet optimally performant)
 
 ## Importing the library
 
@@ -69,4 +69,4 @@ chatgpt.getStatus()
 
 ## Contributing
 
-Simply submit a [PR](https://github.com/chatgptjs/chatgpt.js/pulls), ezpz! 🤯
+Simply submit a [PR](https://github.com/chatgptjs/chatgpt.js/pulls), ezpz!
