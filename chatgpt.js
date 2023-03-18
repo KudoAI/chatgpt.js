@@ -78,8 +78,11 @@
         },
 
         stop: function() {
-            var stopGeneratingButton = this.getStopGeneratingButton();
-            stopGeneratingButton && stopGeneratingButton.click();
+            for (var formButton of document.querySelectorAll('form button')) {
+                if (formButton.textContent.includes(buttonLabels.stopGenerating)) {
+                    formButton.click(); return;
+                }
+            }
         },
 
         regenerate: function() {
