@@ -1,10 +1,15 @@
 (function() {
 
-    var linkLabels = {
-        clearChats: 'Clear conversations', confirmClearChats: 'Confirm clear conversations',
-        newChat: 'New chat',
-        regenerateButton: 'Regenerate response'
+    var navLinkLabels = {
+        clearChats: 'Clear conversations',
+        confirmClearChats: 'Confirm clear conversations',
+        newChat: 'New chat'
     };
+
+    var buttonLabels = {
+        regenerate: 'Regenerate response',
+        stopGenerating: 'Stop generating'
+    }
 
     var chatgpt = {
 
@@ -12,7 +17,7 @@
             if (!this.clearChats.cnt) this.clearChats.cnt = 0;
             if (this.clearChats.cnt >= 2) return; // exit if already confirmed
             for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.includes(linkLabels[(
+                if (navLink.text.includes(navLinkLabels[(
                         this.clearChats.cnt > 0 ? 'confirmC' : 'c') + 'learChats'])) {
                     navLink.click(); this.clearChats.cnt++;
                     setTimeout(this.clearChats.bind(this), 500); return; // repeat to confirm
@@ -24,9 +29,9 @@
             return document.querySelector('form textarea').value;
         },
 
-        getNewChatButton: function() {
+        getNewChatLink: function() {
             for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.includes(linkLabels.newChat)) {
+                if (navLink.text.includes(navLinkLabels.newChat)) {
                     return navLink;
                 }
             }
@@ -34,7 +39,7 @@
 
         getRegenerateButton: function() {
             for (var formButton of document.querySelectorAll('form button')) {
-                if (formButton.textContent.includes(linkLabels.regenerateButton)) {
+                if (formButton.textContent.includes(buttonLabels.regenerate)) {
                     return formButton;
                 }
             }
@@ -45,9 +50,11 @@
         },
 
         getStopGeneratingButton: function() {
-            var form = document.querySelector('form');
-            var buttons = form.querySelectorAll('button');
-            return Array.from(buttons).find(button => button.textContent.trim().toLowerCase().includes('stop generating'));
+            for (var formButton of document.querySelectorAll('form button')) {
+                if (formButton.textContent.includes(buttonLabels.stopGenerating)) {
+                    return formButton;
+                }
+            }
         },
 
         getTextarea: function() {
@@ -87,7 +94,7 @@
         },
 
         new: function() {
-            var newChatButton = this.getNewChatButton();
+            var newChatButton = this.getNewChatLink();
             newChatButton && newChatButton.click();
         },
 
@@ -251,7 +258,7 @@
     var textarea = chatgpt.getTextarea();
     var regenerateButton = chatgpt.getRegenerateButton();
     var stopGeneratingButton = chatgpt.getStopGeneratingButton();
-    var newChatButton = chatgpt.getNewChatButton();
+    var newChatButton = chatgpt.getNewChatLink();
 
     // Check the status
     setInterval(function() {
