@@ -38,7 +38,6 @@ import chatgpt from 'https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main
         if (xhr.status === 200) {
             var chatgptJS = document.createElement('script')
             chatgptJS.textContent = xhr.responseText
-            alert(chatgptJS.textContent)
             document.head.appendChild(chatgptJS)
         }
     }
