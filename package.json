@@ -51,5 +51,8 @@
   "homepage": "https://chatgptjs.com",
   "devDependencies": {
     "eslint": "^8.36.0"
+  },
+  "eslintConfig": {
+    "extends": "./.eslintrc.js"
   }
 }
