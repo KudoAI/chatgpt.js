@@ -1,15 +1,15 @@
 {
   "extends": ["eslint:recommended"],
   "rules": {
-    "semi": ["error", "always"], // enforces semicolons at end of statement
-    "quotes": ["error", "single"], // enforces single quotes for string literals
-    "indent": ["error", 4, { "flatTernaryExpressions": true }], // enforces 4 space indentation
-    "space-before-function-paren": ["error", "never"], // enforces no space before function parentheses
-    "brace-style": ["error", "1tbs", { "allowSingleLine": true }], // enforces opening brace on same line as control statement, closing brace on own line
-    "object-curly-spacing": ["error", "always"], // senforces pacing in object literals
-    "key-spacing": ["error", { "beforeColon": false, "afterColon": true }], // enforces spacing in object properties
-    "comma-dangle": ["error", "never"], // enforces no trailing commas in arrays or objects
-    "multiline-ternary": ["error", "always-multiline"] // enforces multiline ternarys
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "indent": ["error", 4, { "flatTernaryExpressions": true }],
+    "space-before-function-paren": ["error", "never"],
+    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+    "object-curly-spacing": ["error", "always"],
+    "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
+    "comma-dangle": ["error", "never"],
+    "no-multi-spaces": ["error", { "ignoreEOLComments": true }]
   },
   "parserOptions": {
     "ecmaVersion": 6,
