@@ -2,7 +2,8 @@
 
     var linkLabels = {
         clearChats: 'Clear conversations', confirmClearChats: 'Confirm clear conversations',
-        newChat: 'New chat'
+        newChat: 'New chat',
+        regenerateButton: 'Regenerate response'
     };
 
     var chatgpt = {
@@ -32,10 +33,11 @@
         },
 
         getRegenerateButton: function() {
-            var form = document.querySelector('form');
-            var buttons = form.querySelectorAll('button');
-            var result = Array.from(buttons).find(button => button.textContent.trim().toLowerCase().includes('regenerate'));
-            return result;
+            for (var formButton of document.querySelectorAll('form button')) {
+                if (formButton.textContent.includes(linkLabels.regenerateButton)) {
+                    return formButton;
+                }
+            }
         },
 
         getSendButton: function() {
