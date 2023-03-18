@@ -9,7 +9,7 @@
     var buttonLabels = {
         regenerate: 'Regenerate response',
         stopGenerating: 'Stop generating'
-    }
+    };
 
     var chatgpt = {
 
@@ -147,7 +147,7 @@
 
         startNewChat: function() {
             for (var link of document.getElementsByTagName('a')) {
-                if (link.text.includes(linkLabels.newChat)) {
+                if (link.text.includes(navLinkLabels.newChat)) {
                     link.click(); break;
                 }
             }
