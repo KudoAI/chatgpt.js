@@ -73,10 +73,8 @@
         },
 
         send: function(msg) {
-            var textarea = this.getTextarea();
-            textarea.value = msg;
-            var sendButton = this.getSendButton();
-            sendButton && sendButton.click();
+            document.querySelector('form textarea').value = msg;
+            document.querySelector('form button[class*="bottom"]').click();
         },
 
         stop: function() {
