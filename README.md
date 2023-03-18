@@ -18,7 +18,7 @@
 - Feature-rich
 - Object-oriented
 - Easy-to-use
-- Optimally performant
+- Lightweight yet optimally performant
 
 ## Importing the library
 
