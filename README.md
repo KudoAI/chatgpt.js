@@ -22,13 +22,13 @@
 
 ## Importing the library
 
-### ES6:
+#### ES6:
 
 ```js
 import chatgpt from 'https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js'
 ```
 
-### ES5:
+#### ES5:
 
 ```js
 (function() {
@@ -44,6 +44,12 @@ import chatgpt from 'https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main
     }
     xhr.send()
 })()
+```
+
+#### Greasemonkey:
+
+```js
+// @require https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js
 ```
 
 ## Usage
