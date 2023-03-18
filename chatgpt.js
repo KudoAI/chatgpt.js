@@ -11,7 +11,7 @@
             if (!this.clearChats.cnt) this.clearChats.cnt = 0;
             if (this.clearChats.cnt >= 2) return; // exit if already confirmed
             for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.includes(linkLabels[
+                if (navLink.text.includes(linkLabels[(
                         this.clearChats.cnt > 0 ? 'confirmC' : 'c') + 'learChats'])) {
                     navLink.click(); this.clearChats.cnt++;
                     setTimeout(this.clearChats.bind(this), 500); return; // repeat to confirm
