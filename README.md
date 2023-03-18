@@ -7,8 +7,55 @@
 </picture>
 
 
-#
-
 ### A client-side JavaScript library for ChatGPT 🤖
 
 </div>
+
+## About
+
+**chatgpt.js** is a powerful JavaScript library that allows for super easy interaction w/ the [ChatGPT DOM](https://chat.openai.com).
+
+- Feature-rich
+- Object-oriented
+- Easy-to-use
+- Optimally performant
+
+## Importing the library
+
+### ES6:
+
+```js
+import chatgpt from 'https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js'
+```
+
+### ES5:
+
+```js
+(function() {
+    var xhr = new XMLHttpRequest()
+    xhr.open('GET', 'https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js')
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            var chatgptJS = document.createElement('script')
+            chatgptJS.textContent = xhr.responseText
+            alert(chatgptJS.textContent)
+            document.head.appendChild(chatgptJS)
+        }
+    }
+    xhr.send()
+})()
+```
+
+## Usage
+
+Examples:
+
+```js
+chatgpt.startNewChat()
+chatgpt.notify(mode + ' ON')
+chatgpt.getStatus()
+```
+
+## Contributing
+
+Submit a [PR](https://github.com/chatgptjs/chatgpt.js/pulls)!
