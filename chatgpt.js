@@ -58,10 +58,7 @@
         },
 
         getTextarea: function() {
-            var form = document.querySelector('form');
-            var textareas = form.querySelectorAll('textarea');
-            var result = textareas[0];
-            return result;
+            return document.querySelector('form textarea');
         },
 
         getLastResponseElement: function() {
