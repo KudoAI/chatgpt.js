@@ -3,7 +3,7 @@
     var linkLabels = {
         clearChats: 'Clear conversations', confirmClearChats: 'Confirm clear conversations',
         newChat: 'New chat'
-    }
+    };
 
     var chatgpt = {
 
