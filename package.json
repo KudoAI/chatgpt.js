@@ -46,7 +46,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/adamlui/chatgpt.js/issues"
+    "url": "https://github.com/chatgptjs/chatgpt.js/issues"
   },
   "homepage": "https://chatgptjs.com",
   "devDependencies": {
