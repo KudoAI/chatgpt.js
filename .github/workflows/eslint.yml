@@ -35,4 +35,4 @@ jobs:
           .eslintrc.js
         # Modify cache keys for restoration
         key: ${{ runner.os }}-eslintrc-${{ hashFiles('.eslintrc.js') }}-node-modules-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: ${{ runner.os }}-eslintrc-,${{ runner.os }}-node-modules-
+        restore-keys: ${{ runner.os }}-eslintrc- ${{ runner.os }}-node-modules-
