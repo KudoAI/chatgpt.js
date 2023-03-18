@@ -1,18 +1,13 @@
 (function() {
 
-    linkLabels: {
-        clearChats: 'Clear conversations', confirmClearChats: 'Confirm clear conversations',
-        newChat: 'New chat'
-    },
-
     var chatgpt = {
 
         clearChats: function() {
+            var clearLabels = ['Clear conversations', 'Confirm clear conversations'];
             if (!this.clearChats.cnt) this.clearChats.cnt = 0;
-            if (this.clearChats.cnt >= 2) return; // exit if already confirmed
+            if (this.clearChats.cnt >= clearLabels.length) return; // exit if already confirmed
             for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.includes(this.linkLabels[(
-                        this.clearChats.cnt > 0 ? 'confirmC' : 'c') + 'learChats'])) {
+                if (navLink.text.includes(clearLabels[this.clearChats.cnt])) {
                     navLink.click(); this.clearChats.cnt++;
                     setTimeout(this.clearChats.bind(this), 500); return; // repeat to confirm
                 }
@@ -25,7 +20,7 @@
 
         getNewChatButton: function() {
             for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.includes(this.linkLabels.newChat)) {
+                if (navLink.text.includes('New chat')) {
                     return navLink;
                 }
             }
@@ -138,7 +133,7 @@
 
         startNewChat: function() {
             for (var link of document.getElementsByTagName('a')) {
-                if (link.text.includes(this.linkLabels.newChat)) {
+                if (link.text.includes('New chat')) {
                     link.click(); break;
                 }
             }
