@@ -29,6 +29,17 @@
             return document.querySelector('form textarea').value;
         },
 
+        getLastResponse: function() {
+            var responseDivs = document.querySelectorAll('main div[class*=group]');
+            if (responseDivs.length < 2) return ''; // if no responses, return empty string
+            return responseDivs[responseDivs.length - 1].textContent;
+        },
+
+        getLastResponseDiv: function() {
+            var responseDivs = document.querySelectorAll('main div[class*=group]');
+            return responseDivs[responseDivs.length - 1];
+        },
+
         getNewChatLink: function() {
             for (var navLink of document.querySelectorAll('nav > a')) {
                 if (navLink.text.includes(navLinkLabels.newChat)) {
@@ -61,45 +72,9 @@
             return document.querySelector('form textarea');
         },
 
-        getLastResponseDiv: function() {
-            var responseDivs = document.querySelectorAll('main div[class*=group]');
-            return responseDivs[responseDivs.length - 1];
-        },
-
-        getLastResponse: function() {
-            var responseDivs = document.querySelectorAll('main div[class*=group]');
-            if (responseDivs.length < 2) return ''; // if no responses, return empty string
-            return responseDivs[responseDivs.length - 1].textContent;
-        },
-
-        send: function(msg) {
-            document.querySelector('form textarea').value = msg;
-            document.querySelector('form button[class*="bottom"]').click();
-        },
-
-        stop: function() {
-            for (var formButton of document.querySelectorAll('form button')) {
-                if (formButton.textContent.includes(buttonLabels.stopGenerating)) {
-                    formButton.click(); return;
-                }
-            }
-        },
-
-        regenerate: function() {
-            var regenerateButton = this.getRegenerateButton();
-            regenerateButton && regenerateButton.click();
-        },
-
         new: function() {
             var newChatButton = this.getNewChatLink();
             newChatButton && newChatButton.click();
-        },
-
-        sendInNewChat: function(msg) {
-            this.new();
-            setTimeout(() => {
-                this.send(msg);
-            }, 500);
         },
 
         notify: function(msg, position = '') {
@@ -142,6 +117,23 @@
             }, hideDelay * 1000); // ...after pre-set duration
         },
 
+        regenerate: function() {
+            var regenerateButton = this.getRegenerateButton();
+            regenerateButton && regenerateButton.click();
+        },
+
+        send: function(msg) {
+            document.querySelector('form textarea').value = msg;
+            document.querySelector('form button[class*="bottom"]').click();
+        },
+
+        sendInNewChat: function(msg) {
+            this.new();
+            setTimeout(() => {
+                this.send(msg);
+            }, 500);
+        },
+
         startNewChat: function() {
             for (var link of document.getElementsByTagName('a')) {
                 if (link.text.includes(navLinkLabels.newChat)) {
@@ -150,10 +142,27 @@
             }
         },
 
+        stop: function() {
+            for (var formButton of document.querySelectorAll('form button')) {
+                if (formButton.textContent.includes(buttonLabels.stopGenerating)) {
+                    formButton.click(); return;
+                }
+            }
+        },
+
         isIdle: true,
         isGenerating: false,
         status: 'idle',
         prevStatus: 'idle',
+
+        toggleStatus: function() {
+            this.prevStatus = this.status;
+            if (this.status === 'idle') {
+                this.eventEmitter.emit('onIdle');
+            } else if (this.status === 'generating') {
+                this.eventEmitter.emit('onGenerating');
+            }
+        },
 
         updateStatus: function() {
             var stopGeneratingButton = this.getStopGeneratingButton();
@@ -169,15 +178,6 @@
             }
             if (this.status !== this.prevStatus) {
                 this.toggleStatus();
-            }
-        },
-
-        toggleStatus: function() {
-            this.prevStatus = this.status;
-            if (this.status === 'idle') {
-                this.eventEmitter.emit('onIdle');
-            } else if (this.status === 'generating') {
-                this.eventEmitter.emit('onGenerating');
             }
         },
 
