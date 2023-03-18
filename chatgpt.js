@@ -61,16 +61,15 @@
             return document.querySelector('form textarea');
         },
 
-        getLastResponseElement: function() {
+        getLastResponseDiv: function() {
             var responseDivs = document.querySelectorAll('main div[class*=group]');
             return responseDivs[responseDivs.length - 1];
         },
 
         getLastResponse: function() {
-            var lastResponseElement = this.getLastResponseElement();
-            if (!lastResponseElement) return;
-            var lastResponse = lastResponseElement.textContent;
-            return lastResponse;
+            var responseDivs = document.querySelectorAll('main div[class*=group]');
+            if (responseDivs.length < 2) return ''; // if no responses, return empty string
+            return responseDivs[responseDivs.length - 1].textContent;
         },
 
         send: function(msg) {
