@@ -64,4 +64,4 @@ chatgpt.getStatus()
 
 ## Contributing
 
-Simply submit a [PR](https://github.com/chatgptjs/chatgpt.js/pulls), ezpz!
+Simply submit a [PR](https://github.com/chatgptjs/chatgpt.js/pulls), ezpz! 🤯
