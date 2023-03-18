@@ -62,8 +62,8 @@
         },
 
         getLastResponseElement: function() {
-            var responseElements = document.querySelectorAll('.group.w-full');
-            return responseElements[responseElements.length - 1];
+            var responseDivs = document.querySelectorAll('main div[class*=group]');
+            return responseDivs[responseDivs.length - 1];
         },
 
         getLastResponse: function() {
