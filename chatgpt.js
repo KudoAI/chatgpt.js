@@ -57,7 +57,7 @@
 
         getStopGeneratingButton: function() {
             for (var formButton of document.querySelectorAll('form button')) {
-                if (formButton.textContent.toLowerCase()includes('stop')) {
+                if (formButton.textContent.toLowerCase().includes('stop')) {
                     return formButton;
                 }
             }
@@ -135,9 +135,9 @@
         },
 
         startNewChat: function() {
-            for (var link of document.getElementsByTagName('a')) {
-                if (link.text.includes(navLinkLabels.newChat)) {
-                    link.click(); break;
+            for (var navLink of document.getElementsByTagName('nav > a')) {
+                if (navLink.text.includes(navLinkLabels.newChat)) {
+                    navLink.click(); break;
                 }
             }
         },
