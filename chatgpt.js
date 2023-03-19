@@ -49,7 +49,8 @@
             // Validate targetType
             if (!targetTypes.includes(targetType.toLowerCase())) {
                 throw new Error('Invalid targetType: ' + targetType
-                    + '. Valid values are: ' + JSON.stringify(targetTypes));
+                    + '. Valid values are: ' + JSON.stringify(targetTypes)
+                );
             }
 
             // Validate targetName scoped to pre-validated targetType
@@ -61,8 +62,10 @@
                 }
             }
             if (!targetNames.includes(targetName.toLowerCase())) {
-                throw new Error('Invalid targetName: ' + targetName
-                    + '. Valid values are: ' + JSON.stringify(targetNames));
+                throw new Error('Invalid targetName: ' + targetName + '. '
+                    + (targetName.length > 0 ? 'Valid values are: ' + JSON.stringify(targetNames)
+                        : 'targetType ' + targetType.toLowerCase() + ' does not require additional options.')
+                );
             }
 
             // Call target function using pre-validated name components
