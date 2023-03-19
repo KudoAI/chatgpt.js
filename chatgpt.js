@@ -208,6 +208,10 @@
             }
         },
 
+        scrollToBottom: function() {
+            document.querySelector('button[class*="cursor"]');
+        },
+
         send: function(msg) {
             document.querySelector('form textarea').value = msg;
             document.querySelector('form button[class*="bottom"]').click();
