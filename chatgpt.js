@@ -4,7 +4,8 @@
         ['new', 'newChat', 'startNewChat'],
         ['regenerate', 'regenerateReply'],
         ['send', 'sendChat', 'sendMsg'],
-        ['sendInNewChat', 'sendNewChat']
+        ['sendInNewChat', 'sendNewChat'],
+        ['stop', 'stopGenerating']
     ];
 
     var synonyms = [ // constituent synonyms within function names
