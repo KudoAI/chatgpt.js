@@ -5,10 +5,12 @@
         ['regenerate', 'regenerateReply'],
         ['send', 'sendChat', 'sendMsg'],
         ['sendInNewChat', 'sendNewChat'],
-        ['stop', 'stopGenerating']
+        ['stop', 'stopGenerating'],
+        ['toggleScheme', 'toggleMode']
     ];
 
     var synonyms = [ // constituent synonyms within function names
+        ['activate', 'turnOn'],
         ['chat', 'conversation', 'convo'],
         ['generating', 'generation'],
         ['reply', 'response'],
@@ -26,6 +28,22 @@
     };
 
     var chatgpt = {
+
+        activateDarkMode: function() {
+            for (var navLink of document.querySelectorAll('nav > a')) {
+                if (navLink.text.toLowerCase().includes('dark mode')) {
+                    navLink.click(); return;
+                }
+            }
+        },
+
+        activateLightMode: function() {
+            for (var navLink of document.querySelectorAll('nav > a')) {
+                if (navLink.text.toLowerCase().includes('light mode')) {
+                    navLink.click(); return;
+                }
+            }
+        },
 
         clearChats: function() {
             if (!this.clearChats.cnt) this.clearChats.cnt = 0;
@@ -200,6 +218,14 @@
             for (var formButton of document.querySelectorAll('form button')) {
                 if (formButton.textContent.toLowerCase().includes('stop')) {
                     formButton.click(); return;
+                }
+            }
+        },
+
+        toggleScheme: function() {
+            for (var navLink of document.querySelectorAll('nav > a')) {
+                if (navLink.text.toLowerCase().includes('mode')) {
+                    navLink.click(); return;
                 }
             }
         },
