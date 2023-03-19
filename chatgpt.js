@@ -14,6 +14,10 @@
         ['reply', 'response'],
         ['send', 'submit']
     ];
+    
+    var targetTypes = [ // for abstracted methods like get, insert 
+        'button', 'link', 'div', 'response'
+    ];
 
     var navLinkLabels = {
         clearChats: 'Clear conversations',
@@ -43,7 +47,6 @@
             }
 
             // Validate targetType
-            var targetTypes = ['button', 'link', 'div', 'response'];
             if (!targetTypes.includes(targetType.toLowerCase())) {
                 throw new Error('Invalid targetType: ' + targetType
                     + '. Valid values are: ' + JSON.stringify(targetTypes));
