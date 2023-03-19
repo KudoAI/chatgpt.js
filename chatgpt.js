@@ -10,6 +10,7 @@
 
     var synonyms = [ // constituent synonyms within function names
         ['chat', 'conversation', 'convo'],
+        ['generating', 'generation'],
         ['reply', 'response'],
         ['send', 'submit']
     ];
