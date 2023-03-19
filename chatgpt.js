@@ -63,7 +63,7 @@
             }
             if (!targetNames.includes(targetName.toLowerCase())) {
                 throw new Error('Invalid targetName: ' + targetName + '. '
-                    + (targetName.length > 0 ? 'Valid values are: ' + JSON.stringify(targetNames)
+                    + (targetNames.length > 0 ? 'Valid values are: ' + JSON.stringify(targetNames)
                         : 'targetType ' + targetType.toLowerCase() + ' does not require additional options.')
                 );
             }
