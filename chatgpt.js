@@ -94,6 +94,25 @@
             return this[targetFuncName](); // call found function
         },
 
+        getButton: function(buttonIdentifier) {
+            if (buttonIdentifier.match(/^[.#]/)) { // get via class or id selecor
+                return document.querySelector(buttonIdentifier);                
+            } else if (buttonIdentifier.toLowerCase().includes('send')) {
+                return document.querySelector('form button[class*="bottom"]');
+            } else { // get via text content
+                for (var button of document.querySelectorAll('button')) {
+                    if (button.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
+                        return button;
+                    }
+                }
+                for (var navLink of document.querySelectorAll('nav > a')) { // try nav links if no button
+                    if (navLink.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
+                        return navLink;
+                    }
+                }
+            }
+        },
+
         getChatInput: function() {
             return document.querySelector('form textarea').value;
         },
