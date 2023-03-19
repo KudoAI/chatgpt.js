@@ -177,7 +177,7 @@
         },
 
         sendInNewChat: function(msg) {
-            for (var navLink of document.getElementsByTagName('nav > a')) {
+            for (var navLink of document.querySelectorAll('nav > a')) {
                 if (navLink.text.includes(navLinkLabels.newChat)) {
                     navLink.click(); break;
                 }
@@ -189,7 +189,7 @@
         },
 
         startNewChat: function() {
-            for (var navLink of document.getElementsByTagName('nav > a')) {
+            for (var navLink of document.querySelectorAll('nav > a')) {
                 if (navLink.text.includes(navLinkLabels.newChat)) {
                     navLink.click(); return;
                 }
