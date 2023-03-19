@@ -69,7 +69,7 @@ chatgpt.getLastReply()
 chatgpt.get('reply', 'last')
 ```
 
-Each of these calls successfully fetches the last response.
+Each of these calls successfully fetches the last response (thanks to ingenious abstraction, not bloat).
 
 In other words, if you think it works, it probabily will, so just type it (who has time for docs?)
 
