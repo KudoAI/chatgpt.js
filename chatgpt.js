@@ -6,11 +6,6 @@
         newChat: 'New chat'
     };
 
-    var buttonLabels = {
-        regenerate: 'Regenerate response',
-        stopGenerating: 'Stop generating'
-    };
-
     var chatgpt = {
 
         clearChats: function() {
@@ -50,7 +45,7 @@
 
         getRegenerateButton: function() {
             for (var formButton of document.querySelectorAll('form button')) {
-                if (formButton.textContent.includes(buttonLabels.regenerate)) {
+                if (formButton.textContent.toLowerCase().includes('regenerate')) {
                     return formButton;
                 }
             }
@@ -62,7 +57,7 @@
 
         getStopGeneratingButton: function() {
             for (var formButton of document.querySelectorAll('form button')) {
-                if (formButton.textContent.includes(buttonLabels.stopGenerating)) {
+                if (formButton.textContent.toLowerCase()includes('stop')) {
                     return formButton;
                 }
             }
@@ -144,7 +139,7 @@
 
         stop: function() {
             for (var formButton of document.querySelectorAll('form button')) {
-                if (formButton.textContent.includes(buttonLabels.stopGenerating)) {
+                if (formButton.textContent.toLowerCase().includes('stop')) {
                     formButton.click(); return;
                 }
             }
