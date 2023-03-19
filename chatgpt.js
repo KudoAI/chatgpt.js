@@ -291,12 +291,4 @@
         console.log('Chat is generating');
     });
 
-    // Pre-assign IDs to the elements
-
-    sendButton && (sendButton.id = 'chatgpt-submit-button');
-    textarea && (textarea.id = 'chatgpt-textarea');
-    regenerateButton && (regenerateButton.id = 'chatgpt-regenerate-button');
-    stopGeneratingButton && (stopGeneratingButton.id = 'chatgpt-stop-generating-button');
-    newChatButton && (newChatButton.id = 'chatgpt-new-chat-button');
-
 })();
