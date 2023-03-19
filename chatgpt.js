@@ -235,10 +235,10 @@
     for (var prop in chatgpt) {
         if (typeof chatgpt[prop] === 'function') {
 
-            // Create new functions for each alias
-            for (var aliasSubarray of aliases) {
-                if (aliasSubarray.includes(prop)) {
-                    for (var alias of aliasSubarray) {
+            // Create new function for each alias
+            for (var subAliases of aliases) {
+                if (subAliases.includes(prop)) {
+                    for (var alias of subAliases) {
                         if (alias !== prop) { // don't alias og function
                             chatgpt[alias] = chatgpt[prop]; // make new function, reference og one
                         }
