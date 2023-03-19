@@ -108,8 +108,11 @@
         },
 
         regenerate: function() {
-            var regenerateButton = this.getRegenerateButton();
-            regenerateButton && regenerateButton.click();
+            for (var formButton of document.querySelectorAll('form button')) {
+                if (formButton.textContent.toLowerCase().includes('regenerate')) {
+                    formButton.click; return;
+                }
+            }
         },
 
         send: function(msg) {
@@ -218,12 +221,14 @@
 
     var aliases = [ // whole function names to cross-alias
         ['new', 'newChat', 'startNewChat'],
+        ['regenerate', 'regenerateReply'],
         ['send', 'sendChat', 'sendMsg'],
         ['sendInNewChat', 'sendNewChat']
     ];
 
     var synonyms = [ // constituent synonyms within function names
         ['chat', 'conversation', 'convo'],
+        ['reply', 'response'],
         ['send', 'submit']
     ];
 
