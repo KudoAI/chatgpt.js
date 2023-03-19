@@ -67,11 +67,6 @@
             return document.querySelector('form textarea');
         },
 
-        new: function() {
-            var newChatButton = this.getNewChatLink();
-            newChatButton && newChatButton.click();
-        },
-
         notify: function(msg, position = '') {
             var vOffset = 13, hOffset = 27; // px offset from viewport border
             var notificationDuration = 1.75; // sec duration to maintain notification visibility
