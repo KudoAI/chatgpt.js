@@ -275,14 +275,9 @@
 
     // Check the status
 
-    setInterval(function() {
-        chatgpt.updateStatus();
-    }, 1000);
-    
+    setInterval(function() { chatgpt.updateStatus(); }, 1000);    
     var sendButton = document.querySelector('form button[class*="bottom"]');
-    sendButton.addEventListener('click', function() {
-        chatgpt.updateStatus();
-    });
+    sendButton.addEventListener('click', function() { chatgpt.updateStatus(); });
 
     // Listener examples
 
