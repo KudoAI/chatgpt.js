@@ -39,7 +39,7 @@
             }
         },
 
-        get: function(targetType, targetName) {
+        get: function(targetType, targetName = '') {
 
             // Validate argument types to be string only
             if (typeof targetType !== 'string' || typeof targetName !== 'string') {
