@@ -35,6 +35,41 @@
             }
         },
 
+        get: function(targetType, targetName) {
+
+            // Validate argument types to be string only
+            if (typeof targetType !== 'string' || typeof targetName !== 'string') {
+                throw new TypeError('Invalid arguments. Both arguments must be strings.');
+            }
+
+            // Validate targetType
+            var targetTypes = ['button', 'link', 'div', 'response'];
+            if (!targetTypes.includes(targetType.toLowerCase())) {
+                throw new Error('Invalid targetType: ' + targetType
+                    + '. Valid values are: ' + JSON.stringify(targetTypes));
+            }
+
+            // Validate targetName scoped to pre-validated targetType
+            var targetNames = [], reTargetName = new RegExp('^get(.*)' + targetType + '$', 'i');
+            for (var prop in this) {
+                if (typeof this[prop] === 'function' && prop.match(reTargetName)) {
+                    targetNames.push( // add found targetName to valid array
+                        prop.replace(reTargetName, '$1').toLowerCase());
+                }
+            }
+            if (!targetNames.includes(targetName.toLowerCase())) {
+                throw new Error('Invalid targetName: ' + targetName
+                    + '. Valid values are: ' + JSON.stringify(targetNames));
+            }
+
+            // Call target function using pre-validated name components
+            var targetFuncNameLower = ('get' + targetName + targetType).toLowerCase();
+            var targetFuncName = Object.keys(this).find( // find originally cased target function name
+                function(name) { return name.toLowerCase() === targetFuncNameLower; } // test for match
+            );
+            return this[targetFuncName](); // call found function
+        },
+
         getChatInput: function() {
             return document.querySelector('form textarea').value;
         },
@@ -247,7 +282,6 @@
                     }
                 }
             }
-
             
             do { // create new function per synonym per word per function
                 var newFunctionsCreated = false;
