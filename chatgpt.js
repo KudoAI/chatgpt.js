@@ -220,16 +220,15 @@
     };
 
     // Create alias functions
-    var aliases = [ // synonyms within function names
+    var synonyms = [ // synonyms within function names
         ['chat', 'conversation', 'convo'],
         ['send', 'submit']
     ];
-    var reAliases = new RegExp(aliases.flat().join('|'), 'gi');
     for (var prop in chatgpt) {
         if (typeof chatgpt[prop] === 'function') {
-            for (var match of prop.matchAll(reAliases)) {
+            for (var match of prop.matchAll(RegExp(synonyms.flat().join('|'), 'gi'))) {
                 var originalWord = match[0].toLowerCase();
-                var aliasValues = [].concat(...aliases // flatten into single array w/ match's aliases
+                var aliasValues = [].concat(...synonyms // flatten into single array w/ match's synonyms
                     .filter(arr => arr.includes(originalWord)) // filter in relevant alias sub-arrays
                     .map(arr => arr.filter(word => word !== originalWord))); // filter out match word
                 var matchCase = /^[A-Z][a-z]+$/.test(match[0]) ? 'title'
