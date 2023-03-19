@@ -228,18 +228,18 @@
         if (typeof chatgpt[prop] === 'function') {
             for (var match of prop.matchAll(RegExp(synonyms.flat().join('|'), 'gi'))) {
                 var originalWord = match[0].toLowerCase();
-                var aliasValues = [].concat(...synonyms // flatten into single array w/ match's synonyms
+                var synonymValues = [].concat(...synonyms // flatten into single array w/ match's synonyms
                     .filter(arr => arr.includes(originalWord)) // filter in relevant alias sub-arrays
                     .map(arr => arr.filter(word => word !== originalWord))); // filter out match word
                 var matchCase = /^[A-Z][a-z]+$/.test(match[0]) ? 'title'
                               : /^[a-z]+$/.test(match[0]) ? 'lower'
                               : /^[A-Z]+$/.test(match[0]) ? 'upper' : 'mixed';
-                for (var alias of aliasValues) { // make alias functions
-                    alias = ( // preserve camel case for new name
-                        matchCase === 'title' ? alias.charAt(0).toUpperCase() + alias.slice(1).toLowerCase()
-                      : matchCase === 'upper' ? alias.toUpperCase()
-                      : matchCase === 'lower' ? alias.toLowerCase() : alias);
-                    var aliasProp = prop.replace(match[0], alias); // name new function
+                for (var synonym of synonymValues) { // make alias functions
+                    synonym = ( // preserve camel case for new name
+                        matchCase === 'title' ? synonym.charAt(0).toUpperCase() + synonym.slice(1).toLowerCase()
+                      : matchCase === 'upper' ? synonym.toUpperCase()
+                      : matchCase === 'lower' ? synonym.toLowerCase() : synonym);
+                    var aliasProp = prop.replace(match[0], synonym); // name new function
                     chatgpt[aliasProp] = chatgpt[prop]; // reference original function
                 }
             }
