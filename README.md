@@ -59,14 +59,18 @@ var chatgpt = window.chatgpt // retrieve chatgpt.js from window object
 
 ## Usage
 
-Examples:
+chatgpt.js was written w/ ultra flexibility in mind.
+
+For example:
 
 ```js
-chatgpt.startNewChat()
-chatgpt.notify(mode + ' ON')
-chatgpt.getStatus()
+chatgpt.getLastResponse()
+chatgpt.getLastReply()
+chatgpt.get('reply', 'last')
 ```
 
-## Contributing
+Each of these calls successfully fetches the last response.
 
-Simply submit a [PR](https://github.com/chatgptjs/chatgpt.js/pulls), ezpz!
+In other words, if you think it works, it probabily will, so just type it (who has time for docs?)
+
+If it didn't, simply submit an [issue](https://github.com/chatgptjs/chatgpt.js/issues) or [PR](https://github.com/chatgptjs/chatgpt.js/pulls) and it will be built, ezpz!
