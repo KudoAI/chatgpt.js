@@ -69,8 +69,6 @@ chatgpt.getLastReply()
 chatgpt.get('reply', 'last')
 ```
 
-Each of these calls successfully fetches the last response.
-
-In other words, if you think it works, it probabily will... so just type it! (Who has time for docs?)
+Each call equally fetches the last response. If you think it works, it probabily will... so just type it! (Who has time for docs?)
 
 If it didn't, simply submit an [issue](https://github.com/chatgptjs/chatgpt.js/issues) or [PR](https://github.com/chatgptjs/chatgpt.js/pulls) and it will be integrated, ezpz!
