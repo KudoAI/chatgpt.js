@@ -1,5 +1,18 @@
 (function() {
 
+    var functionAliases = [ // whole function names to cross-alias
+        ['new', 'newChat', 'startNewChat'],
+        ['regenerate', 'regenerateReply'],
+        ['send', 'sendChat', 'sendMsg'],
+        ['sendInNewChat', 'sendNewChat']
+    ];
+
+    var synonyms = [ // constituent synonyms within function names
+        ['chat', 'conversation', 'convo'],
+        ['reply', 'response'],
+        ['send', 'submit']
+    ];
+
     var navLinkLabels = {
         clearChats: 'Clear conversations',
         confirmClearChats: 'Confirm clear conversations',
@@ -219,24 +232,11 @@
 
     // Create alias functions
 
-    var aliases = [ // whole function names to cross-alias
-        ['new', 'newChat', 'startNewChat'],
-        ['regenerate', 'regenerateReply'],
-        ['send', 'sendChat', 'sendMsg'],
-        ['sendInNewChat', 'sendNewChat']
-    ];
-
-    var synonyms = [ // constituent synonyms within function names
-        ['chat', 'conversation', 'convo'],
-        ['reply', 'response'],
-        ['send', 'submit']
-    ];
-
     for (var prop in chatgpt) {
         if (typeof chatgpt[prop] === 'function') {
 
             // Create new function for each alias
-            for (var subAliases of aliases) {
+            for (var subAliases of functionAliases) {
                 if (subAliases.includes(prop)) {
                     for (var alias of subAliases) {
                         if (alias !== prop) { // don't alias og function
