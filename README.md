@@ -59,7 +59,7 @@ var chatgpt = window.chatgpt // retrieve chatgpt.js from window object
 
 ## Usage
 
-chatgpt.js was written w/ ultra flexibility in mind.
+**chatgpt.js** was written w/ ultra flexibility in mind.
 
 For example:
 
@@ -69,8 +69,8 @@ chatgpt.getLastReply()
 chatgpt.get('reply', 'last')
 ```
 
-Each of these calls successfully fetches the last response (thanks to ingenious abstraction, not bloat).
+Each of these calls successfully fetches the last response.
 
-In other words, if you think it works, it probabily will, so just type it (who has time for docs?)
+In other words, if you think it works, it probabily will... so just type it! (Who has time for docs?)
 
 If it didn't, simply submit an [issue](https://github.com/chatgptjs/chatgpt.js/issues) or [PR](https://github.com/chatgptjs/chatgpt.js/pulls) and it will be integrated, ezpz!
