@@ -135,7 +135,7 @@
         startNewChat: function() {
             for (var navLink of document.getElementsByTagName('nav > a')) {
                 if (navLink.text.includes(navLinkLabels.newChat)) {
-                    navLink.click(); break;
+                    navLink.click(); return;
                 }
             }
         },
