@@ -96,9 +96,11 @@
 
         getButton: function(buttonIdentifier) {
             if (buttonIdentifier.match(/^[.#]/)) { // get via class or id selecor
-                return document.querySelector(buttonIdentifier);                
+                return document.querySelector(buttonIdentifier);
             } else if (buttonIdentifier.toLowerCase().includes('send')) {
                 return document.querySelector('form button[class*="bottom"]');
+            } else if (buttonIdentifier.toLowerCase().includes('scroll')) {
+                return document.querySelector('button[class*="cursor"]');
             } else { // get via text content
                 for (var button of document.querySelectorAll('button')) {
                     if (button.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
