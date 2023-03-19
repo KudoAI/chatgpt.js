@@ -220,36 +220,60 @@
     };
 
     // Create alias functions
-    var synonyms = [ // synonyms within function names
+
+    var aliases = [ // whole function names to cross-alias
+        ['new', 'newChat', 'startNewChat'],
+        ['send', 'sendChat', 'sendMsg']
+    ];
+
+    var synonyms = [ // constituent synonyms within function names
         ['chat', 'conversation', 'convo'],
         ['send', 'submit']
     ];
+
     for (var prop in chatgpt) {
         if (typeof chatgpt[prop] === 'function') {
-            for (var match of prop.matchAll(RegExp(synonyms.flat().join('|'), 'gi'))) {
-                var originalWord = match[0].toLowerCase();
-                var synonymValues = [].concat(...synonyms // flatten into single array w/ match's synonyms
-                    .filter(arr => arr.includes(originalWord)) // filter in relevant alias sub-arrays
-                    .map(arr => arr.filter(word => word !== originalWord))); // filter out match word
-                var matchCase = /^[A-Z][a-z]+$/.test(match[0]) ? 'title'
-                              : /^[a-z]+$/.test(match[0]) ? 'lower'
-                              : /^[A-Z]+$/.test(match[0]) ? 'upper' : 'mixed';
-                for (var synonym of synonymValues) { // make alias functions
-                    synonym = ( // preserve camel case for new name
-                        matchCase === 'title' ? synonym.charAt(0).toUpperCase() + synonym.slice(1).toLowerCase()
-                      : matchCase === 'upper' ? synonym.toUpperCase()
-                      : matchCase === 'lower' ? synonym.toLowerCase() : synonym);
-                    var aliasProp = prop.replace(match[0], synonym); // name new function
-                    chatgpt[aliasProp] = chatgpt[prop]; // reference original function
+
+            // Create new functions for each alias
+            for (var aliasSubarray of aliases) {
+                if (aliasSubarray.includes(prop)) {
+                    for (var alias of aliasSubarray) {
+                        if (alias !== prop) { // don't alias og function
+                            chatgpt[alias] = chatgpt[prop]; // make new function, reference og one
+                        }
+                    }
+                }
+            }
+
+            // Create new functions for each synonym
+            for (var funcName in chatgpt) {
+                var funcWords = funcName.split(/(?=[A-Z])/); // split function name into constituent words
+                for (var funcWord of funcWords) {
+                    var synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
+                        .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
+                        .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
+                    for (var synonym of synonymValues) { // create function per synonym
+                        var newWords = [...funcWords]; // shallow copy funcWords
+                        newWords[newWords.indexOf(funcWord)] = synonym; // replace funcWord w/ synonym
+                        var newFuncName = newWords.map((newWord, index) => // transform new words to create new name
+                            index === 0 ? newWord : newWord.charAt(0).toUpperCase() + newWord.slice(1) // case each word to form camel case
+                        ).join(''); // concatenate transformed words
+                        if (!chatgpt[newFuncName]) { // don't alias existing functions
+                            chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
+                        }
+                    }
                 }
             }
         }
     }
 
+    // Export chatgpt object
+
     try { window.chatgpt = chatgpt; } catch (error) { /* for Greasemonkey */ }
     try { module.exports = chatgpt; } catch (error) { /* for CommonJS */ }
 
     // Use the added functions to get the elements
+
     var sendButton = chatgpt.getSendButton();
     var textarea = chatgpt.getTextarea();
     var regenerateButton = chatgpt.getRegenerateButton();
@@ -257,6 +281,7 @@
     var newChatButton = chatgpt.getNewChatLink();
 
     // Check the status
+
     setInterval(function() {
         chatgpt.updateStatus();
     }, 1000);
@@ -266,6 +291,7 @@
     });
 
     // Listener examples
+
     chatgpt.eventEmitter.on('onIdle', function() {
         console.log('Chat is idle');
     });
@@ -274,6 +300,7 @@
     });
 
     // Pre-assign IDs to the elements
+
     sendButton && (sendButton.id = 'chatgpt-submit-button');
     textarea && (textarea.id = 'chatgpt-textarea');
     regenerateButton && (regenerateButton.id = 'chatgpt-regenerate-button');
