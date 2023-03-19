@@ -7,7 +7,7 @@
 </picture>
 
 
-### A client-side JavaScript library for ChatGPT 🤖
+### A powerful client-side JavaScript library for ChatGPT 🤖
 
 </div>
 
