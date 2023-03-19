@@ -123,9 +123,14 @@
         },
 
         sendInNewChat: function(msg) {
-            this.new();
-            setTimeout(() => {
-                this.send(msg);
+            for (var navLink of document.getElementsByTagName('nav > a')) {
+                if (navLink.text.includes(navLinkLabels.newChat)) {
+                    navLink.click(); break;
+                }
+            }
+            setTimeout(function() {
+                document.querySelector('form textarea').value = msg;
+                document.querySelector('form button[class*="bottom"]').click();
             }, 500);
         },
 
@@ -218,7 +223,8 @@
 
     var aliases = [ // whole function names to cross-alias
         ['new', 'newChat', 'startNewChat'],
-        ['send', 'sendChat', 'sendMsg']
+        ['send', 'sendChat', 'sendMsg'],
+        ['sendInNewChat', 'sendNewChat']
     ];
 
     var synonyms = [ // constituent synonyms within function names
