@@ -17,8 +17,8 @@
         ['reply', 'response'],
         ['send', 'submit']
     ];
-    
-    var targetTypes = [ // for abstracted methods like get, insert 
+
+    var targetTypes = [ // for abstracted methods like get, insert
         'button', 'link', 'div', 'response'
     ];
 
@@ -79,7 +79,7 @@
             // Call target function using pre-validated name components
             var targetFuncNameLower = ('get' + targetName + targetType).toLowerCase();
             var targetFuncName = Object.keys(this).find( // find originally cased target function name
-                function(name) { return name.toLowerCase() === targetFuncNameLower; }); // test for match            
+                function(name) { return name.toLowerCase() === targetFuncNameLower; }); // test for match
             return this[targetFuncName](); // call found function
         },
 
@@ -119,7 +119,7 @@
                 return responseDivs[responseDivs.length - 1].textContent;
             } else { // get nth response
                 var nthOfResponse = (
-                    
+
                     // Calculate base number
                     Number.isInteger(pos) ? pos : // do nothing for integers
                     strPos.match(/^\d+/) ? strPos.match(/^\d+/)[0] : // extract first digits for strings w/ them
@@ -138,7 +138,7 @@
                     // Transform base number if suffixed
                     * ( /ty|ieth$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
                     + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
-                
+
                 ) * 2; // factor for own msg's
 
                 var responseDiv = document.querySelector(`${responseDivSelector}:nth-of-type(${nthOfResponse})`);
@@ -357,25 +357,26 @@
                         if (alias !== prop) { // don't alias og function
                             chatgpt[alias] = chatgpt[prop]; // make new function, reference og one
             }}}}
-            
+
             do { // create new function per synonym per word per function
                 var newFunctionsCreated = false;
                 for (var funcName in chatgpt) {
-                    var funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
-                    for (var funcWord of funcWords) {
-                        var synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
-                            .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
-                            .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
-                        for (var synonym of synonymValues) { // create function per synonym
-                            var newWords = [...funcWords]; // shallow copy funcWords
-                            newWords[newWords.indexOf(funcWord)] = synonym; // replace funcWord w/ synonym
-                            var newFuncName = newWords.map((newWord, index) => // transform new words to create new name
-                                index === 0 || newWord === 's' ? newWord : newWord.charAt(0).toUpperCase() + newWord.slice(1) // case each word to form camel case
-                            ).join(''); // concatenate transformed words
-                            if (!chatgpt[newFuncName]) { // don't alias existing functions
-                                chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
-                                newFunctionsCreated = true;
-            }}}}} while (newFunctionsCreated); // loop over new functions to encompass all variations
+                    if (typeof chatgpt[funcName] === 'function') {
+                        var funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
+                        for (var funcWord of funcWords) {
+                            var synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
+                                                          .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
+                                                          .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
+                            for (var synonym of synonymValues) { // create function per synonym
+                                var newWords = [...funcWords]; // shallow copy funcWords
+                                newWords[newWords.indexOf(funcWord)] = synonym; // replace funcWord w/ synonym
+                                var newFuncName = newWords.map((newWord, index) => // transform new words to create new name
+                                                               index === 0 || newWord === 's' ? newWord : newWord.charAt(0).toUpperCase() + newWord.slice(1) // case each word to form camel case
+                                                              ).join(''); // concatenate transformed words
+                                if (!chatgpt[newFuncName]) { // don't alias existing functions
+                                    chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
+                                    newFunctionsCreated = true;
+            }}}}}} while (newFunctionsCreated); // loop over new functions to encompass all variations
         }
     }
 
@@ -384,7 +385,7 @@
     try { module.exports = chatgpt; } catch (error) { /* for CommonJS */ }
 
     // Check the status
-    setInterval(function() { chatgpt.updateStatus(); }, 1000);    
+    setInterval(function() { chatgpt.updateStatus(); }, 1000);
     var sendButton = document.querySelector('form button[class*="bottom"]');
     sendButton.addEventListener('click', function() { chatgpt.updateStatus(); });
 
