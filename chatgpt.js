@@ -141,7 +141,7 @@
                 
                 ) * 2; // factor for own msg's
 
-                var responseDiv = document.querySelector(`main div[class*=group]:nth-of-type(${nthOfResponse})`);
+                var responseDiv = document.querySelector(`${responseDivSelector}:nth-of-type(${nthOfResponse})`);
                 return responseDiv ? responseDiv.textContent : '';
             }
         },
