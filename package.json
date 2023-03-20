@@ -36,11 +36,12 @@
   "authors": [
     {
       "name": "Adam Lui",
-      "email": "adam@chatgptjs.com",
+      "email": "adam@chatgptjs.org",
       "website": "https://github.com/adamlui"
     },
     {
       "name": "mefengl",
+      "email": "adam@chatgptjs.org",
       "website": "https://github.com/mefengl"
     }
   ],
