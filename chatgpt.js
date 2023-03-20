@@ -343,7 +343,7 @@
             do { // create new function per synonym per word per function
                 var newFunctionsCreated = false;
                 for (var funcName in chatgpt) {
-                    var funcWords = funcName.split(/(?=[A-Z])/); // split function name into constituent words
+                    var funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
                     for (var funcWord of funcWords) {
                         var synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
                             .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
@@ -352,7 +352,7 @@
                             var newWords = [...funcWords]; // shallow copy funcWords
                             newWords[newWords.indexOf(funcWord)] = synonym; // replace funcWord w/ synonym
                             var newFuncName = newWords.map((newWord, index) => // transform new words to create new name
-                                index === 0 ? newWord : newWord.charAt(0).toUpperCase() + newWord.slice(1) // case each word to form camel case
+                                index === 0 || newWord === 's' ? newWord : newWord.charAt(0).toUpperCase() + newWord.slice(1) // case each word to form camel case
                             ).join(''); // concatenate transformed words
                             if (!chatgpt[newFuncName]) { // don't alias existing functions
                                 chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
