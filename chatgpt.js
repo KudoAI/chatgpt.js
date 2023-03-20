@@ -5,6 +5,7 @@
         ['regenerate', 'regenerateReply'],
         ['send', 'sendChat', 'sendMsg'],
         ['sendInNewChat', 'sendNewChat'],
+        ['showAllFunctions', 'printAllFunctions'],
         ['stop', 'stopGenerating'],
         ['toggleScheme', 'toggleMode']
     ];
@@ -161,6 +162,20 @@
                 notificationDiv.style.opacity = 0; // hide notification...
                 this.notify.isDisplaying = false;
             }, hideDelay * 1000); // ...after pre-set duration
+        },
+
+        printAllFunctions: function() {
+            var functionNames = [];
+            for (var prop in this) {
+                if (typeof this[prop] === 'function') {
+                    functionNames.push(prop);
+            }}
+            functionNames.sort(); // alphabetize functions
+            for (var functionName of functionNames) {
+                console.log(functionName + ': ['
+                    + ( functionName === this[functionName].name ? 'Function' : 'Alias of' )
+                    + ': ' + this[functionName].name + ']' );
+            }
         },
 
         regenerate: function() {
