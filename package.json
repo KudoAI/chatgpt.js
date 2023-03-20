@@ -1,13 +1,13 @@
 {
   "name": "chatgpt",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Client-side JavaScript library for ChatGPT",
   "main": "chatgpt.js",
   "scripts": {
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --ext .js --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "uglifyjs src/chatgpt.js -o dist/chatgpt.min.js"
+    "build": "uglifyjs chatgpt.js -o dist/chatgpt.min.js"
   },
   "repository": {
     "type": "git",
