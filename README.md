@@ -26,35 +26,40 @@
 
 ```js
 import chatgpt from 'https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js'
+
+// Your code starts here
 ```
 
 ### ES5:
 
 ```js
-(function() {
-    var xhr = new XMLHttpRequest()
-    xhr.open('GET', 'https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js')
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            var chatgptJS = document.createElement('script')
-            chatgptJS.textContent = xhr.responseText
-            document.head.appendChild(chatgptJS)
-        }
+var xhr = new XMLHttpRequest()
+xhr.open('GET', 'https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js')
+xhr.onload = function() {
+    if (xhr.status === 200) {
+        var chatgptJS = document.createElement('script')
+        chatgptJS.textContent = xhr.responseText
+        document.head.appendChild(chatgptJS)
+        yourCode() // run your code
     }
-    xhr.send()
-})()
+}
+xhr.send()
+
+function yourCode() {
+    // Your code starts here
+}
 ```
 
 ### Greasemonkey:
 
 ```js
 // @require https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js
-```
+// ==/UserScript==
 
-*Optional: To satisfy linting rules in editors like Tampermonkey's, add:*
+// Optional: Retrieve chatgpt.js from window object to satisfy linting rules in some editors
+var chatgpt = window.chatgpt
 
-```js
-var chatgpt = window.chatgpt // retrieve chatgpt.js from window object
+// Your code starts here
 ```
 
 ## Usage
