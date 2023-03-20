@@ -94,27 +94,6 @@
             return this[targetFuncName](); // call found function
         },
 
-        getButton: function(buttonIdentifier) {
-            if (buttonIdentifier.match(/^[.#]/)) { // get via class or id selecor
-                return document.querySelector(buttonIdentifier);
-            } else if (buttonIdentifier.toLowerCase().includes('send')) {
-                return document.querySelector('form button[class*="bottom"]');
-            } else if (buttonIdentifier.toLowerCase().includes('scroll')) {
-                return document.querySelector('button[class*="cursor"]');
-            } else { // get via text content
-                for (var button of document.querySelectorAll('button')) {
-                    if (button.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
-                        return button;
-                    }
-                }
-                for (var navLink of document.querySelectorAll('nav > a')) { // try nav links if no button
-                    if (navLink.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
-                        return navLink;
-                    }
-                }
-            }
-        },
-
         getChatInput: function() {
             return document.querySelector('form textarea').value;
         },
@@ -323,6 +302,26 @@
             }
         }
     };
+
+    // Create general button functions
+
+    var buttonActions = ['click', 'get']
+    for (var buttonAction of buttonActions) {
+        chatgpt[buttonAction + 'Button'] = function handleButton(buttonIdentifier) {
+            var button = buttonIdentifier.match(
+                /^[.#]/) ? document.querySelector(buttonIdentifier) // get via class or id selector
+                : /send/i.test(buttonIdentifier) ? document.querySelector('form button[class*="bottom"]')
+                : /scroll/i.test(buttonIdentifier) ? document.querySelector('button[class*="cursor"]')
+                : (function() { // get via text content
+                    for (var button of document.querySelectorAll('button')) { // try buttons
+                        if (button.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
+                            return button; }}
+                    for (var navLink of document.querySelectorAll('nav > a')) { // try nav links if no button
+                        if (navLink.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
+                            return navLink; }}})();
+            if (buttonAction === 'click') { button.click(); } else { return button; }
+        }
+    }
 
     // Create alias functions
 
