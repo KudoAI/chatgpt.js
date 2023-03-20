@@ -303,7 +303,7 @@
         }
     };
 
-    // Create general button functions
+    // Create chatgpt.[action]Button(identifier) functions
 
     var buttonActions = ['click', 'get'];
     for (var buttonAction of buttonActions) {
