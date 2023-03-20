@@ -305,7 +305,7 @@
 
     // Create general button functions
 
-    var buttonActions = ['click', 'get']
+    var buttonActions = ['click', 'get'];
     for (var buttonAction of buttonActions) {
         chatgpt[buttonAction + 'Button'] = function handleButton(buttonIdentifier) {
             var button = buttonIdentifier.match(
@@ -320,7 +320,7 @@
                         if (navLink.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
                             return navLink; }}})();
             if (buttonAction === 'click') { button.click(); } else { return button; }
-        }
+        };
     }
 
     // Create alias functions
