@@ -257,74 +257,7 @@
                 if (navLink.text.toLowerCase().includes('mode')) {
                     navLink.click(); return;
         }}},
-
-        isIdle: true,
-        isGenerating: false,
-        status: 'idle',
-        prevStatus: 'idle',
-
-        toggleStatus: function() {
-            this.prevStatus = this.status;
-            if (this.status === 'idle') {
-                this.eventEmitter.emit('onIdle');
-            } else if (this.status === 'generating') {
-                this.eventEmitter.emit('onGenerating');
-            }
-        },
-
-        updateStatus: function() {
-            var stopGeneratingButton = this.getStopGeneratingButton();
-
-            if (stopGeneratingButton) {
-                this.isIdle = false;
-                this.isGenerating = true;
-                this.status = 'generating';
-            } else if (!stopGeneratingButton) {
-                this.isIdle = true;
-                this.isGenerating = false;
-                this.status = 'idle';
-            }
-            if (this.status !== this.prevStatus) {
-                this.toggleStatus();
-            }
-        },
-
-        eventEmitter: {
-            events: {},
-
-            on: function(eventName, callback) {
-                if (!this.events[eventName]) {
-                    this.events[eventName] = [];
-                }
-                this.events[eventName].push(callback);
-            },
-
-            once: function(eventName, callback) {
-                var self = this;
-                function oneTimeCallback() {
-                    callback.apply(null, arguments);
-                    self.removeListener(eventName, oneTimeCallback);
-                }
-                this.on(eventName, oneTimeCallback);
-            },
-
-            removeListener: function(eventName, callback) {
-                if (this.events[eventName]) {
-                    this.events[eventName] = this.events[eventName].filter(function(cb) {
-                        return cb !== callback;
-                    });
-                }
-            },
-
-            emit: function(eventName) {
-                if (this.events[eventName]) {
-                    var args = Array.prototype.slice.call(arguments, 1);
-                    this.events[eventName].forEach(function(callback) {
-                        callback.apply(null, args);
-                    });
-                }
-            }
-        }
+        
     };
 
     // Create chatgpt.[actions]Button(identifier) functions
@@ -383,18 +316,5 @@
     // Export chatgpt object
     try { window.chatgpt = chatgpt; } catch (error) { /* for Greasemonkey */ }
     try { module.exports = chatgpt; } catch (error) { /* for CommonJS */ }
-
-    // Check the status
-    setInterval(function() { chatgpt.updateStatus(); }, 1000);
-    var sendButton = document.querySelector('form button[class*="bottom"]');
-    sendButton.addEventListener('click', function() { chatgpt.updateStatus(); });
-
-    // Listener examples
-    chatgpt.eventEmitter.on('onIdle', function() {
-        console.log('Chat is idle');
-    });
-    chatgpt.eventEmitter.on('onGenerating', function() {
-        console.log('Chat is generating');
-    });
 
 })();
