@@ -256,7 +256,7 @@
             for (var navLink of document.querySelectorAll('nav > a')) {
                 if (navLink.text.toLowerCase().includes('mode')) {
                     navLink.click(); return;
-        }}},
+        }}}
         
     };
 
