@@ -59,9 +59,6 @@ function yourCode() {
 // @require https://code.chatgptjs.org/chatgpt-latest.min.js
 // ==/UserScript==
 
-// Optional: Retrieve chatgpt.js from window object to satisfy linting rules in some editors
-var chatgpt = window.chatgpt
-
 // Your code starts here
 ```
 
