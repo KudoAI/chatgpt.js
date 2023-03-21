@@ -29,7 +29,7 @@ import('https://code.chatgptjs.org/chatgpt-latest.min.js')
     .then(module => { yourCode() })
 
 function yourCode() {
-    // Your starts here
+    // Your code starts here
 }
 ```
 
@@ -43,7 +43,7 @@ xhr.onload = function() {
         var chatgptJS = document.createElement('script')
         chatgptJS.textContent = xhr.responseText
         document.head.appendChild(chatgptJS)
-        yourCode() // run your code
+        yourCode() // runs your code
     }
 }
 xhr.send()
