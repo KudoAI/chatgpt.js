@@ -123,7 +123,7 @@
                     // Calculate base number
                     Number.isInteger(pos) ? pos : // do nothing for integers
                     strPos.match(/^\d+/) ? strPos.match(/^\d+/)[0] : // extract first digits for strings w/ them
-                    ( // convert wods to integers for digitless strings
+                    ( // convert words to integers for digitless strings
                         /^(1|one|fir)(st)?$/.test(strPos) ? 1
                         : /^(2|tw(o|en|el(ve|f))|seco)(nd|t[yi])?(e?th)?$/.test(strPos) ? 2
                         : /^(3|th(ree|ir?))(rd|teen|t[yi])?(e?th)?$/.test(strPos) ? 3
@@ -133,7 +133,7 @@
                         : /^(7|seven)(teen|t[yi])?(e?th)?$/.test(strPos) ? 7
                         : /^(8|eight?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 8
                         : /^(9|nine?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 9
-                        : /^(10|ten)(e?th)?$/.test(strPos) ? 10 : 1 )
+                        : /^(10|ten)(th)?$/.test(strPos) ? 10 : 1 )
 
                     // Transform base number if suffixed
                     * ( /ty|ieth$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
@@ -171,7 +171,7 @@
                 notificationDiv = document.createElement('div'); // make div
                 notificationDiv.id = 'notification-alert';
                 notificationDiv.style.cssText = ( // stylize it
-                    '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
+                      '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
                     + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white');
                 document.body.appendChild(notificationDiv); // insert into DOM
             }
@@ -221,7 +221,7 @@
         }}},
 
         scrollToBottom: function() {
-            document.querySelector('button[class*="cursor"]');
+            document.querySelector('button[class*="cursor"]').click();
         },
 
         send: function(msg) {
