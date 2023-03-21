@@ -25,16 +25,19 @@
 ### ES6:
 
 ```js
-import chatgpt from 'https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js'
+import('https://code.chatgptjs.org/chatgpt-latest.min.js')
+    .then(module => { yourCode() })
 
-// Your code starts here
+function yourCode() {
+    // Your starts here
+}
 ```
 
 ### ES5:
 
 ```js
 var xhr = new XMLHttpRequest()
-xhr.open('GET', 'https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js')
+xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js')
 xhr.onload = function() {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script')
@@ -53,7 +56,7 @@ function yourCode() {
 ### Greasemonkey:
 
 ```js
-// @require https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js
+// @require https://code.chatgptjs.org/chatgpt-latest.min.js
 // ==/UserScript==
 
 // Optional: Retrieve chatgpt.js from window object to satisfy linting rules in some editors
