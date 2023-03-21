@@ -56,7 +56,7 @@ function yourCode() {
 ### Greasemonkey:
 
 ```js
-// ==/UserScript==
+// ==UserScript==
 ...
 // @require https://code.chatgptjs.org/chatgpt-latest.min.js
 // ==/UserScript==
