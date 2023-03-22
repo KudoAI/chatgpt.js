@@ -1,11 +1,12 @@
 (function() {
 
     var functionAliases = [ // whole function names to cross-alias
+        ['activateRefresher', 'activateSessionRefresher', 'sessionRefresher'],
         ['new', 'newChat', 'startNewChat'],
+        ['printAllFunctions', 'showAllFunctions'],
         ['regenerate', 'regenerateReply'],
         ['send', 'sendChat', 'sendMsg'],
         ['sendInNewChat', 'sendNewChat'],
-        ['showAllFunctions', 'printAllFunctions'],
         ['stop', 'stopGenerating'],
         ['toggleScheme', 'toggleMode']
     ];
@@ -41,6 +42,16 @@
                 if (navLink.text.toLowerCase().includes('light mode')) {
                     navLink.click(); return;
         }}},
+
+        activateRefresher: function() {
+            if (!this.activateRefresher.intervalId) {
+                this.activateRefresher.intervalId = setInterval(function() {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', 'https://chat.openai.com/api/auth/session');
+                    xhr.send(); console.info("ChatGPT session refreshed");
+                }, 120000); // refresh every 2min
+            } else { console.warn('Refresher already active!'); }
+        },
 
         clearChats: function() {
             if (!this.clearChats.cnt) this.clearChats.cnt = 0;
@@ -210,7 +221,7 @@
             }}
             functionNames.sort(); // alphabetize functions
             for (var functionName of functionNames) {
-                console.log(functionName + ': ['
+                console.info(functionName + ': ['
                     + ( functionName === this[functionName].name ? 'Function' : 'Alias of' )
                     + ': ' + this[functionName].name + ']' );
             }
@@ -306,7 +317,7 @@
                                 var newWords = [...funcWords]; // shallow copy funcWords
                                 newWords[newWords.indexOf(funcWord)] = synonym; // replace funcWord w/ synonym
                                 var newFuncName = newWords.map((newWord, index) => // transform new words to create new name
-                                    index === 0 || newWord === 's' ? newWord : newWord.charAt(0).toUpperCase() + newWord.slice(1) // case each word to form camel case
+                                    index === 0 || newWord === 's' ? newWord : newWord.charAt(0).toUpperCase() + newWord.slice(1) // case each word to form camel
                                 ).join(''); // concatenate transformed words
                                 if (!chatgpt[newFuncName]) { // don't alias existing functions
                                     chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
