@@ -1,5 +1,7 @@
 (function() {
 
+    var chatGPTchatGPTauthURL = 'https://chat.openai.com/api/auth/session';
+
     var functionAliases = [ // whole function names to cross-alias
         ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
             'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
@@ -49,7 +51,7 @@
             if (!this.activateRefresher.intervalId) {
                 this.activateRefresher.intervalId = setInterval(function() {
                     var xhr = new XMLHttpRequest();
-                    xhr.open('GET', 'https://chat.openai.com/api/auth/session');
+                    xhr.open('GET', chatGPTauthURL);
                     xhr.send(); console.info('ChatGPT session refreshed');
                 }, 120000); // refresh every 2min
             } else { console.warn('Refresher already active!'); }
@@ -252,7 +254,7 @@
 
         refreshSession: function() {
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'https://chat.openai.com/api/auth/session');
+            xhr.open('GET', chatGPTauthURL);
             xhr.send(); console.info('ChatGPT session refreshed');
         },
 
