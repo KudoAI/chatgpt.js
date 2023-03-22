@@ -83,5 +83,6 @@ If it didn't, simply submit an [issue](https://github.com/chatgptjs/chatgpt.js/i
 
 #
 
+<a href="https://github.com/chatgptjs/chatgpt.js/tree/main/dist">**Releases**</a> / 
 <a href="https://github.com/chatgptjs/chatgpt.js/discussions">Discuss</a> / 
 <a href="#---------a-powerful-client-side-javascript-library-for-chatgpt">Back to top ↑</a>
