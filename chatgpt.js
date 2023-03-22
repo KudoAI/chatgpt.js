@@ -229,13 +229,13 @@
                 notificationDiv.style.transition = `opacity ${fadeDuration}s`; // add fade effect
                 notificationDiv.style.opacity = 0; // hide notification
                 clearTimeout(notificationDiv.hideTimer);
-            }.bind(this), hideDelay * 1000); // ...after pre-set duration
+            }, hideDelay * 1000); // ...after pre-set duration
 
             // Destroy notification
             notificationDiv.destroyTimer = setTimeout(function destroyNotif() {
                 notificationDiv.remove(); thisQuadrantDivs.shift(); // remove from DOM + memory
                 clearTimeout(notificationDiv.destroyTimer);
-            }.bind(this), Math.max(fadeDuration, notifDuration) * 1000); // ...after it hid
+            }, Math.max(fadeDuration, notifDuration) * 1000); // ...after it hid
         },
 
         printAllFunctions: function() {
