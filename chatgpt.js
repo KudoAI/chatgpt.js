@@ -173,44 +173,65 @@
             return document.querySelector('form textarea');
         },
 
-        notify: function(msg, position = '') {
-            var vOffset = 13, hOffset = 27; // px offset from viewport border
-            var notificationDuration = 1.75; // sec duration to maintain notification visibility
+        notify: function(msg, position = '', notifDuration = '') {
+            notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
             var fadeDuration = 0.6; // sec duration of fade-out
+            var vpYoffset = 13, vpXoffset = 27; // px offset from viewport border
 
-            // Find or make div
-            var notificationDiv = document.querySelector('#notification-alert');
-            if (!notificationDiv) { // if missing
-                notificationDiv = document.createElement('div'); // make div
-                notificationDiv.id = 'notification-alert';
-                notificationDiv.style.cssText = ( // stylize it
-                      '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
-                    + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white');
-                document.body.appendChild(notificationDiv); // insert into DOM
-            }
+            // Make/stylize/insert div
+            var notificationDiv = document.createElement('div'); // make div
+            notificationDiv.style.cssText = ( // stylize it
+                '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
+                + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white');
+            document.body.appendChild(notificationDiv); // insert into DOM
+
+            // Determine div position/quadrant
+            notificationDiv.isTop = !/low|bottom/i.test(position) ? true : false;
+            notificationDiv.isRight = !/left/i.test(position) ? true : false;
+            notificationDiv.quadrant = (notificationDiv.isTop ? 'top' : 'bottom')
+                                     + (notificationDiv.isRight ? 'Right' : 'Left');
+
+            // Store div in memory
+            for (var quadrant of ['topRight', 'bottomRight', 'bottomLeft', 'topLeft']) {
+                if (!this.notify[quadrant]) this.notify[quadrant] = []; } // initialize storage arrays
+            var thisQuadrantDivs = this.notify[notificationDiv.quadrant];
+            thisQuadrantDivs.push(notificationDiv); // store div
 
             // Position notification (defaults to top-right)
-            notificationDiv.style.top = !/low|bottom/i.test(position) ? `${vOffset}px` : '';
-            notificationDiv.style.bottom = /low|bottom/i.test(position) ? `${vOffset}px` : '';
-            notificationDiv.style.right = !/left/i.test(position) ? `${hOffset}px` : '';
-            notificationDiv.style.left = /left/i.test(position) ? `${hOffset}px` : '';
+            notificationDiv.style.top = notificationDiv.isTop ? `${vpYoffset}px` : '';
+            notificationDiv.style.bottom = !notificationDiv.isTop ? `${vpYoffset}px` : '';
+            notificationDiv.style.right = notificationDiv.isRight ? `${vpXoffset}px` : '';
+            notificationDiv.style.left = !notificationDiv.isRight ? `${vpXoffset}px` : '';
+
+            // Reposition old notifications
+            if (thisQuadrantDivs.length > 1) {
+                var divsToMove = thisQuadrantDivs.slice(0, -1); // exclude new div
+                for (var oldDiv of divsToMove) {
+                    var offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
+                    var vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
+                    oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
+            }}
 
             // Show notification
-            if (this.notify.isDisplaying) clearTimeout(this.notify.hideTimer); // clear previous hide
             notificationDiv.innerHTML = msg; // insert msg
             notificationDiv.style.transition = 'none'; // remove fade effect
             notificationDiv.style.opacity = 1; // show msg
-            this.notify.isDisplaying = true;
 
             // Hide notification
             var hideDelay = ( // set delay before fading
-                fadeDuration > notificationDuration ? 0 // don't delay if fade exceeds notification duration
-                : notificationDuration - fadeDuration); // otherwise delay for difference
-            this.notify.hideTimer = setTimeout(function hideNotif() { // maintain notification visibility, then fade out
+                fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
+                : notifDuration - fadeDuration); // otherwise delay for difference
+            notificationDiv.hideTimer = setTimeout(function hideNotif() { // maintain notification visibility, then fade out
                 notificationDiv.style.transition = `opacity ${fadeDuration}s`; // add fade effect
-                notificationDiv.style.opacity = 0; // hide notification...
-                this.notify.isDisplaying = false;
-            }, hideDelay * 1000); // ...after pre-set duration
+                notificationDiv.style.opacity = 0; // hide notification
+                clearTimeout(notificationDiv.hideTimer);
+            }.bind(this), hideDelay * 1000); // ...after pre-set duration
+
+            // Destroy notification
+            notificationDiv.destroyTimer = setTimeout(function destroyNotif() {
+                notificationDiv.remove(); thisQuadrantDivs.shift(); // remove from DOM + memory
+                clearTimeout(notificationDiv.destroyTimer);
+            }.bind(this), Math.max(fadeDuration, notifDuration) * 1000); // ...after it hid
         },
 
         printAllFunctions: function() {
