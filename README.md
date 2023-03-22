@@ -78,3 +78,8 @@ chatgpt.get('reply', 'last')
 Each call equally fetches the last response. If you think it works, it probabily will... so just type it! (Who has time for docs?)
 
 If it didn't, simply submit an [issue](https://github.com/chatgptjs/chatgpt.js/issues) or [PR](https://github.com/chatgptjs/chatgpt.js/pulls) and it will be integrated, ezpz!
+
+#
+
+<a href="https://github.com/chatgptjs/chatgpt.js/discussions">Discuss</a> / 
+<a href="#about">Back to top ↑</a>
