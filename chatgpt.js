@@ -44,12 +44,14 @@
 
         clearChats: function() {
             if (!this.clearChats.cnt) this.clearChats.cnt = 0;
-            if (this.clearChats.cnt >= 2) return; // exit if already confirmed
             for (var navLink of document.querySelectorAll('nav > a')) {
                 if (navLink.text.includes(navLinkLabels[(
                         this.clearChats.cnt > 0 ? 'confirmC' : 'c') + 'learChats'])) {
                     navLink.click(); this.clearChats.cnt++;
-                    setTimeout(this.clearChats.bind(this), 500); return; // repeat to confirm
+                    if (this.clearChats.cnt < 2) { // repeat to confirm
+                        setTimeout(this.clearChats.bind(this), 500);
+                    } else { this.clearChats.cnt = 0; }
+                    return; // break navLink loop
         }}},
 
         get: function(targetType, targetName = '') {
