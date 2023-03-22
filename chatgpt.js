@@ -1,6 +1,6 @@
 (function() {
 
-    var chatGPTchatGPTauthURL = 'https://chat.openai.com/api/auth/session';
+    var chatGPTauthURL = 'https://chat.openai.com/api/auth/session';
 
     var functionAliases = [ // whole function names to cross-alias
         ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
