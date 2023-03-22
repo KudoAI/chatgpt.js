@@ -61,12 +61,6 @@
                     navLink.click(); return;
         }}},
 
-        deactivateAutoRefresh: function() {
-            console.info(this.activateAutoRefresh.intervalId ?
-                'Auto refresh de-activated' : 'Refresher is not running!');
-            clearInterval(this.activateAutoRefresh.intervalId);
-        },
-
         clearChats: function() {
             if (!this.clearChats.cnt) this.clearChats.cnt = 0;
             for (var navLink of document.querySelectorAll('nav > a')) {
@@ -78,6 +72,13 @@
                     } else { this.clearChats.cnt = 0; }
                     return; // break navLink loop
         }}},
+
+        deactivateAutoRefresh: function() {
+            console.info(this.activateAutoRefresh.intervalId ?
+                'Auto refresh de-activated' : 'Refresher is not running!');
+            clearInterval(this.activateAutoRefresh.intervalId);
+            this.activateAutoRefresh.intervalId = null;
+        },
 
         get: function(targetType, targetName = '') {
 
@@ -238,14 +239,14 @@
             notificationDiv.hideTimer = setTimeout(function hideNotif() { // maintain notification visibility, then fade out
                 notificationDiv.style.transition = `opacity ${fadeDuration}s`; // add fade effect
                 notificationDiv.style.opacity = 0; // hide notification
-                clearTimeout(notificationDiv.hideTimer);
+                notificationDiv.hideTimer = null; // prevent memory leaks
             }, hideDelay * 1000); // ...after pre-set duration
 
             // Destroy notification
             notificationDiv.destroyTimer = setTimeout(function destroyNotif() {
                 notificationDiv.remove(); thisQuadrantDivs.shift(); // remove from DOM + memory
-                clearTimeout(notificationDiv.destroyTimer);
-            }, Math.max(fadeDuration, notifDuration) * 1000); // ...after it hid
+                notificationDiv.destroyTimer = null; // prevent memory leaks
+            }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
         },
 
         printAllFunctions: function() {
@@ -316,6 +317,7 @@
                 }, autoRefreshTimer); // refresh every pre-set interval
             } else {
                 clearInterval(this.activateAutoRefresh.intervalId);
+                this.activateAutoRefresh.intervalId = null;
                 console.info('Auto refresh deactivated');
             }
         },
@@ -325,7 +327,7 @@
                 if (navLink.text.toLowerCase().includes('mode')) {
                     navLink.click(); return;
         }}}
-        
+
     };
 
     // Create chatgpt.[actions]Button(identifier) functions
