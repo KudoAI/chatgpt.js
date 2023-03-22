@@ -7,7 +7,7 @@ module.exports  = {
             'ConditionalExpression', // ternarys
             'IfStatement > BlockStatement', // multi-line if's
             'BinaryExpression', // string concatenations, math, comparison, etc.,
-            'BlockStatement:exit', 'SwitchCase:exit' // closing braces
+            'BlockStatement', 'SwitchCase' // closing braces
         ]}],
         'semi': ['error', 'always'], // enforce semicolons at end of statement
         'quotes': ['error', 'single'], // enforce single quotes for string literals
