@@ -5,6 +5,7 @@
     var functionAliases = [ // whole function names to cross-alias
         ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
             'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
+        ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
         ['new', 'newChat', 'startNewChat'],
         ['printAllFunctions', 'showAllFunctions'],
         ['refreshSession', 'sessionRefresh'],
@@ -35,6 +36,17 @@
 
     var chatgpt = {
 
+        activateAutoRefresh: function() {
+            if (!this.activateAutoRefresh.intervalId) {
+                console.info('Auto refresh activated')
+                this.activateAutoRefresh.intervalId = setInterval(function() {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', chatGPTauthURL);
+                    xhr.send(); console.info('ChatGPT session refreshed');
+                }, 120000); // refresh every 2min
+            } else { console.info('Auto refresh already active!'); }
+        },
+
         activateDarkMode: function() {
             for (var navLink of document.querySelectorAll('nav > a')) {
                 if (navLink.text.toLowerCase().includes('dark mode')) {
@@ -47,14 +59,10 @@
                     navLink.click(); return;
         }}},
 
-        autoRefresher: function() {
-            if (!this.activateRefresher.intervalId) {
-                this.activateRefresher.intervalId = setInterval(function() {
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('GET', chatGPTauthURL);
-                    xhr.send(); console.info('ChatGPT session refreshed');
-                }, 120000); // refresh every 2min
-            } else { console.warn('Refresher already active!'); }
+        deactivateAutoRefresh: function() {
+            console.info(this.activateAutoRefresh.intervalId ?
+                'Auto refresh de-activated' : 'Refresher is not running!');
+            clearInterval(this.activateAutoRefresh.intervalId);
         },
 
         clearChats: function() {
