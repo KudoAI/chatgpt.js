@@ -2,7 +2,7 @@
 
     var functionAliases = [ // whole function names to cross-alias
         ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
-             'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
+            'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
         ['new', 'newChat', 'startNewChat'],
         ['printAllFunctions', 'showAllFunctions'],
         ['refreshSession', 'sessionRefresh'],
