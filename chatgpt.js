@@ -1,6 +1,7 @@
 (function() {
 
     var chatGPTauthURL = 'https://chat.openai.com/api/auth/session';
+    var autoRefreshTimer = 60000; // ms between session auto-refreshes
 
     var functionAliases = [ // whole function names to cross-alias
         ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
@@ -38,12 +39,12 @@
 
         activateAutoRefresh: function() {
             if (!this.activateAutoRefresh.intervalId) {
-                console.info('Auto refresh activated')
+                console.info('Auto refresh activated');
                 this.activateAutoRefresh.intervalId = setInterval(function() {
                     var xhr = new XMLHttpRequest();
                     xhr.open('GET', chatGPTauthURL);
                     xhr.send(); console.info('ChatGPT session refreshed');
-                }, 120000); // refresh every 2min
+                }, autoRefreshTimer); // refresh every 1min
             } else { console.info('Auto refresh already active!'); }
         },
 
