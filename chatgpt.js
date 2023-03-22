@@ -14,7 +14,8 @@
         ['send', 'sendChat', 'sendMsg'],
         ['sendInNewChat', 'sendNewChat'],
         ['stop', 'stopGenerating'],
-        ['toggleScheme', 'toggleMode']
+        ['toggleScheme', 'toggleMode'],
+        ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher']
     ];
 
     var synonyms = [ // constituent synonyms within function names
@@ -44,7 +45,7 @@
                     var xhr = new XMLHttpRequest();
                     xhr.open('GET', chatGPTauthURL);
                     xhr.send(); console.info('ChatGPT session refreshed');
-                }, autoRefreshTimer); // refresh every 1min
+                }, autoRefreshTimer); // refresh every pre-set interval
             } else { console.info('Auto refresh already active!'); }
         },
 
@@ -304,6 +305,20 @@
                 if (formButton.textContent.toLowerCase().includes('stop')) {
                     formButton.click(); return;
         }}},
+
+        toggleAutoRefresh: function() {
+            if (!this.activateAutoRefresh.intervalId) {
+                console.info('Auto refresh activated');
+                this.activateAutoRefresh.intervalId = setInterval(function() {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', chatGPTauthURL);
+                    xhr.send(); console.info('ChatGPT session refreshed');
+                }, autoRefreshTimer); // refresh every pre-set interval
+            } else {
+                clearInterval(this.activateAutoRefresh.intervalId);
+                console.info('Auto refresh deactivated');
+            }
+        },
 
         toggleScheme: function() {
             for (var navLink of document.querySelectorAll('nav > a')) {
