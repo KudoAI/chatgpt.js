@@ -1,3 +1,4 @@
+<h3>
 <div align="center">
 <br />
 
@@ -5,11 +6,12 @@
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x614.png">
     <img width=546 alt="chatgpt.js" src="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x614.png">
 </picture>
+<br /><br />
 
-
-### A powerful client-side JavaScript library for ChatGPT 🤖
+🤖 A powerful client-side JavaScript library for ChatGPT 
 
 </div>
+</h3>
 
 ## About
 
@@ -78,3 +80,9 @@ chatgpt.get('reply', 'last')
 Each call equally fetches the last response. If you think it works, it probabily will... so just type it! (Who has time for docs?)
 
 If it didn't, simply submit an [issue](https://github.com/chatgptjs/chatgpt.js/issues) or [PR](https://github.com/chatgptjs/chatgpt.js/pulls) and it will be integrated, ezpz!
+
+#
+
+<a href="https://github.com/chatgptjs/chatgpt.js/tree/main/dist">**Releases**</a> / 
+<a href="https://github.com/chatgptjs/chatgpt.js/discussions">Discuss</a> / 
+<a href="#---------a-powerful-client-side-javascript-library-for-chatgpt">Back to top ↑</a>

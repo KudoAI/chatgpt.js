@@ -1,5 +1,6 @@
 module.exports  = {
     'extends': ['eslint:recommended'],
+    'ignorePatterns': ['**/*.md', '**/*.min.js'],
     'rules': {
         'indent': ['error', 4, { 'ignoredNodes': [ // enforce 4-space indentation, except for...
             'TemplateLiteral > *', // template literal children
