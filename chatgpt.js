@@ -1,7 +1,8 @@
 (function() {
 
     var functionAliases = [ // whole function names to cross-alias
-        ['activateRefresher', 'activateSessionRefresher', 'autoRefreshSession', 'sessionRefresher'],
+        ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
+             'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
         ['new', 'newChat', 'startNewChat'],
         ['printAllFunctions', 'showAllFunctions'],
         ['refreshSession', 'sessionRefresh'],
@@ -44,7 +45,7 @@
                     navLink.click(); return;
         }}},
 
-        activateRefresher: function() {
+        autoRefresher: function() {
             if (!this.activateRefresher.intervalId) {
                 this.activateRefresher.intervalId = setInterval(function() {
                     var xhr = new XMLHttpRequest();
