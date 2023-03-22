@@ -6,7 +6,8 @@ module.exports  = {
             'TemplateLiteral > *', // template literal children
             'ConditionalExpression', // ternarys
             'IfStatement > BlockStatement', // multi-line if's
-            'BinaryExpression' // string concatenations, math, comparison, etc.
+            'BinaryExpression', // string concatenations, math, comparison, etc.,
+            'BlockStatement', 'SwitchCase' // closing braces
         ]}],
         'semi': ['error', 'always'], // enforce semicolons at end of statement
         'quotes': ['error', 'single'], // enforce single quotes for string literals
