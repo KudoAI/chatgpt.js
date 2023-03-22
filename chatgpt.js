@@ -48,7 +48,7 @@
                 this.activateRefresher.intervalId = setInterval(function() {
                     var xhr = new XMLHttpRequest();
                     xhr.open('GET', 'https://chat.openai.com/api/auth/session');
-                    xhr.send(); console.info("ChatGPT session refreshed");
+                    xhr.send(); console.info('ChatGPT session refreshed');
                 }, 120000); // refresh every 2min
             } else { console.warn('Refresher already active!'); }
         },
