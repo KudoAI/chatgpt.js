@@ -1,3 +1,4 @@
+<h3>
 <div align="center">
 <br />
 
@@ -5,11 +6,12 @@
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x614.png">
     <img width=546 alt="chatgpt.js" src="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x614.png">
 </picture>
+<br /><br />
 
-
-### A powerful client-side JavaScript library for ChatGPT 🤖
+🤖 A powerful client-side JavaScript library for ChatGPT 
 
 </div>
+</h3>
 
 ## About
 
@@ -82,4 +84,4 @@ If it didn't, simply submit an [issue](https://github.com/chatgptjs/chatgpt.js/i
 #
 
 <a href="https://github.com/chatgptjs/chatgpt.js/discussions">Discuss</a> / 
-<a href="#about">Back to top ↑</a>
+<a href="#---------a-powerful-client-side-javascript-library-for-chatgpt">Back to top ↑</a>
