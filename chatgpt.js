@@ -1,10 +1,11 @@
 (function() {
 
     var functionAliases = [ // whole function names to cross-alias
-        ['activateRefresher', 'activateSessionRefresher', 'sessionRefresher'],
+        ['activateRefresher', 'activateSessionRefresher', 'autoRefreshSession', 'sessionRefresher'],
         ['new', 'newChat', 'startNewChat'],
         ['printAllFunctions', 'showAllFunctions'],
-        ['regenerate', 'regenerateReply'],
+        ['refreshSession', 'sessionRefresh'],
+        ['refreshReply', 'regenerate', 'regenerateReply'],
         ['send', 'sendChat', 'sendMsg'],
         ['sendInNewChat', 'sendNewChat'],
         ['stop', 'stopGenerating'],
@@ -246,6 +247,12 @@
                     + ( functionName === this[functionName].name ? 'Function' : 'Alias of' )
                     + ': ' + this[functionName].name + ']' );
             }
+        },
+
+        refreshSession: function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://chat.openai.com/api/auth/session');
+            xhr.send(); console.info('ChatGPT session refreshed');
         },
 
         regenerate: function() {
