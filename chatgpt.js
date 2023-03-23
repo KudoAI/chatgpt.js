@@ -45,7 +45,7 @@
                     var xhr = new XMLHttpRequest();
                     xhr.open('GET', chatGPTauthURL);
                     xhr.send(); console.info('ChatGPT session refreshed');
-                }, (secInterval ? +secInterval : autoRefreshTimer * 1000)).bind(this);
+                }, (secInterval ? +secInterval : autoRefreshTimer) * 1000).bind(this);
             } else { console.info('Auto refresh already active!'); }
         },
 
@@ -314,7 +314,7 @@
                     var xhr = new XMLHttpRequest();
                     xhr.open('GET', chatGPTauthURL);
                     xhr.send(); console.info('ChatGPT session refreshed');
-                }, (secInterval ? +secInterval : autoRefreshTimer * 1000)).bind(this);
+                }, (secInterval ? +secInterval : autoRefreshTimer) * 1000).bind(this);
             } else {
                 clearInterval(this.activateAutoRefresh.intervalId);
                 this.activateAutoRefresh.intervalId = null;
