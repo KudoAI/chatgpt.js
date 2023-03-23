@@ -1,7 +1,7 @@
 (function() {
 
     var chatGPTauthURL = 'https://chat.openai.com/api/auth/session';
-    var autoRefreshTimer = 60000; // ms between session auto-refreshes
+    var autoRefreshTimer = 60; // secs between session auto-refreshes
 
     var functionAliases = [ // whole function names to cross-alias
         ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
@@ -38,14 +38,14 @@
 
     var chatgpt = {
 
-        activateAutoRefresh: function() {
+        activateAutoRefresh: function(secInterval='') {
             if (!this.activateAutoRefresh.intervalId) {
                 console.info('Auto refresh activated');
                 this.activateAutoRefresh.intervalId = setInterval(function() {
                     var xhr = new XMLHttpRequest();
                     xhr.open('GET', chatGPTauthURL);
                     xhr.send(); console.info('ChatGPT session refreshed');
-                }, autoRefreshTimer); // refresh every pre-set interval
+                }, (secInterval ? +secInterval : autoRefreshTimer * 1000)).bind(this);
             } else { console.info('Auto refresh already active!'); }
         },
 
@@ -307,14 +307,14 @@
                     formButton.click(); return;
         }}},
 
-        toggleAutoRefresh: function() {
+        toggleAutoRefresh: function(secInterval='') {
             if (!this.activateAutoRefresh.intervalId) {
                 console.info('Auto refresh activated');
                 this.activateAutoRefresh.intervalId = setInterval(function() {
                     var xhr = new XMLHttpRequest();
                     xhr.open('GET', chatGPTauthURL);
                     xhr.send(); console.info('ChatGPT session refreshed');
-                }, autoRefreshTimer); // refresh every pre-set interval
+                }, (secInterval ? +secInterval : autoRefreshTimer * 1000)).bind(this);
             } else {
                 clearInterval(this.activateAutoRefresh.intervalId);
                 this.activateAutoRefresh.intervalId = null;
