@@ -188,7 +188,7 @@
             return document.querySelector('form textarea');
         },
 
-        notify: function(msg, position = '', notifDuration = '') {
+        notify: function(msg, position, notifDuration) {
             notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
             var fadeDuration = 0.6; // sec duration of fade-out
             var vpYoffset = 13, vpXoffset = 27; // px offset from viewport border
@@ -201,27 +201,29 @@
             document.body.appendChild(notificationDiv); // insert into DOM
 
             // Determine div position/quadrant
-            notificationDiv.isTop = !/low|bottom/i.test(position) ? true : false;
-            notificationDiv.isRight = !/left/i.test(position) ? true : false;
+            notificationDiv.isTop = !position || !/low|bottom/i.test(position) ? true : false;
+            notificationDiv.isRight = !position || !/left/i.test(position) ? true : false;
             notificationDiv.quadrant = (notificationDiv.isTop ? 'top' : 'bottom')
                                      + (notificationDiv.isRight ? 'Right' : 'Left');
 
             // Store div in memory
-            for (var quadrant of ['topRight', 'bottomRight', 'bottomLeft', 'topLeft']) {
-                if (!this.notify[quadrant]) this.notify[quadrant] = []; } // initialize storage arrays
+            var quadrants = ['topRight', 'bottomRight', 'bottomLeft', 'topLeft'];
+            for (var i = 0 ; i < quadrants.length ; i++ ) { // initialize storage arrays
+                if (!this.notify[quadrants[i]]) this.notify[quadrants[i]] = []; }
             var thisQuadrantDivs = this.notify[notificationDiv.quadrant];
             thisQuadrantDivs.push(notificationDiv); // store div
 
             // Position notification (defaults to top-right)
-            notificationDiv.style.top = notificationDiv.isTop ? `${vpYoffset}px` : '';
-            notificationDiv.style.bottom = !notificationDiv.isTop ? `${vpYoffset}px` : '';
-            notificationDiv.style.right = notificationDiv.isRight ? `${vpXoffset}px` : '';
-            notificationDiv.style.left = !notificationDiv.isRight ? `${vpXoffset}px` : '';
+            notificationDiv.style.top = notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
+            notificationDiv.style.bottom = !notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
+            notificationDiv.style.right = notificationDiv.isRight ? vpYoffset.toString() + 'px' : '';
+            notificationDiv.style.left = !notificationDiv.isRight ? vpYoffset.toString() + 'px' : '';
 
             // Reposition old notifications
             if (thisQuadrantDivs.length > 1) {
                 var divsToMove = thisQuadrantDivs.slice(0, -1); // exclude new div
-                for (var oldDiv of divsToMove) {
+                for (var j = 0 ; j < divsToMove.length ; j++) {
+                    var oldDiv = divsToMove[j];
                     var offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
                     var vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
