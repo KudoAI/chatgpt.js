@@ -1,5 +1,6 @@
 (function() {
-
+    
+    window.chatgptNotifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
     var chatGPTauthURL = 'https://chat.openai.com/api/auth/session';
     var autoRefreshTimer = 60; // secs between session auto-refreshes
 
@@ -206,23 +207,20 @@
             notificationDiv.quadrant = (notificationDiv.isTop ? 'top' : 'bottom')
                                      + (notificationDiv.isRight ? 'Right' : 'Left');
 
-            // Store div in memory
-            var quadrants = ['topRight', 'bottomRight', 'bottomLeft', 'topLeft'];
-            for (var i = 0 ; i < quadrants.length ; i++ ) { // initialize storage arrays
-                if (!this.notify[quadrants[i]]) this.notify[quadrants[i]] = []; }
-            var thisQuadrantDivs = this.notify[notificationDiv.quadrant];
-            thisQuadrantDivs.push(notificationDiv); // store div
+            // Store div in global memory
+            window.chatgptNotifyProps.quadrants[notificationDiv.quadrant].push(notificationDiv); // store div in global object
 
             // Position notification (defaults to top-right)
             notificationDiv.style.top = notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
             notificationDiv.style.bottom = !notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
-            notificationDiv.style.right = notificationDiv.isRight ? vpYoffset.toString() + 'px' : '';
-            notificationDiv.style.left = !notificationDiv.isRight ? vpYoffset.toString() + 'px' : '';
+            notificationDiv.style.right = notificationDiv.isRight ? vpXoffset.toString() + 'px' : '';
+            notificationDiv.style.left = !notificationDiv.isRight ? vpXoffset.toString() + 'px' : '';
 
             // Reposition old notifications
+            var thisQuadrantDivs = window.chatgptNotifyProps.quadrants[notificationDiv.quadrant];
             if (thisQuadrantDivs.length > 1) {
                 var divsToMove = thisQuadrantDivs.slice(0, -1); // exclude new div
-                for (var j = 0 ; j < divsToMove.length ; j++) {
+                for (var j = 0; j < divsToMove.length; j++) {
                     var oldDiv = divsToMove[j];
                     var offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
                     var vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
