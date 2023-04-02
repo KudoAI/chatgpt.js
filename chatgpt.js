@@ -199,7 +199,7 @@
             notificationDiv.style.cssText = ( // stylize it
                   '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
                 + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; '
-                + ( shadow ? ( 'box-shadow: gray -8px 13px 25px 0' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ));
+                + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ));
             document.body.appendChild(notificationDiv); // insert into DOM
 
             // Determine div position/quadrant
