@@ -189,19 +189,8 @@
             return document.querySelector('form textarea');
         },
 
-        isDarkMode: function() {
-            for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.toLowerCase().includes('light mode')) {
-                    return true; }}
-            return false;
-        },
-
-        isLightMode: function() {
-            for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.toLowerCase().includes('dark mode')) {
-                    return true; }}
-            return false;
-        },
+        isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
+        isLightMode: function() { return document.documentElement.classList.contains('light'); },
 
         notify: function(msg, position, notifDuration, shadow) {
             notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
