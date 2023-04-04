@@ -189,6 +189,20 @@
             return document.querySelector('form textarea');
         },
 
+        isDarkMode: function() {
+            for (var navLink of document.querySelectorAll('nav > a')) {
+                if (navLink.text.toLowerCase().includes('light mode')) {
+                    return true; }}
+            return false;
+        },
+
+        isLightMode: function() {
+            for (var navLink of document.querySelectorAll('nav > a')) {
+                if (navLink.text.toLowerCase().includes('dark mode')) {
+                    return true; }}
+            return false;
+        },
+
         notify: function(msg, position, notifDuration, shadow) {
             notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
             var fadeDuration = 0.6; // sec duration of fade-out
