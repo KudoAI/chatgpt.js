@@ -264,7 +264,9 @@
             var functionNames = [];
             for (var prop in this) {
                 if (typeof this[prop] === 'function') {
-                    functionNames.push(['chatgpt', prop]);
+                    var chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name));
+                    var functionParent = chatgptIsParent ? 'chatgpt' : 'other';
+                    functionNames.push([functionParent, prop]);
                 } else if (typeof this[prop] === 'object') {
                     for (var nestedProp in this[prop]) {
                         if (typeof this[prop][nestedProp] === 'function') {
@@ -272,12 +274,14 @@
             }}}}
             functionNames.sort(function(a, b) { return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]); });
             for (var functionName of functionNames) {
-                console.info(( functionName[0] === 'chatgpt' ? '' : functionName[0] + '.' ) + functionName[1] + ': ['
-                    + ((( functionName[0] === 'chatgpt' && functionName[1] === this[functionName[1]].name ) ||
-                        ( functionName[0] !== 'chatgpt' && functionName[1] === this[functionName[0]][functionName[1]].name ))
+                console.info(( /chatgpt|other/.test(functionName[0]) ? '' : ( functionName[0] + '.' )) + functionName[1] + ': ['
+                    + ((( functionName[0] === 'chatgpt' && functionName[1] === this[functionName[1]].name ) || // parent is chatgpt + names match or
+                        ( !/chatgpt|other/.test(functionName[0]) )) // parent is chatgpt.obj
                             ? 'Function' : 'Alias of' ) + ': '
                     + ( functionName[0] === 'chatgpt' ? this[functionName[1]].name
-                        : functionName[0] + '.' + this[functionName[0]][functionName[1]].name ) + ']' );
+                        : functionName[0] !== 'other' ? functionName[0] + '.' + functionName[1]
+                        : ((( Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[functionName[1]].name)) + '.' ) ?? '' )
+                            + this[functionName[1]].name )) + ']' );
             }
         },
 
@@ -369,36 +373,41 @@
 
     // Create alias functions
     for (var prop in chatgpt) {
-        if (typeof chatgpt[prop] === 'function') {
 
-            // Create new function for each alias
-            for (var subAliases of functionAliases) {
-                if (subAliases.includes(prop)) {
-                    for (var alias of subAliases) {
-                        if (alias !== prop) { // don't alias og function
-                            chatgpt[alias] = chatgpt[prop]; // make new function, reference og one
-            }}}}
+        // Create new function for each alias
+        for (var subAliases of functionAliases) {
+            if (subAliases.some(subAlias => subAlias.includes(prop))) {
+                if (subAliases.some(element => element.includes('.'))) {
+                    var nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
+                    for (var nestAlias of subAliases) {
+                        if (nestAlias.match(/^(\w+)/)[1] !== prop) { // don't alias og function
+                            chatgpt[nestAlias] = chatgpt[prop][nestedFunction]; // make new function, reference og one
+                }}} else { // alias direct functions
+                    for (var dirAlias of subAliases) {
+                        if (dirAlias !== prop) { // don't alias og function
+                            chatgpt[dirAlias] = chatgpt[prop]; // make new function, reference og one
+                }}}
+        }}
 
-            do { // create new function per synonym per word per function
-                var newFunctionsCreated = false;
-                for (var funcName in chatgpt) {
-                    if (typeof chatgpt[funcName] === 'function') {
-                        var funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
-                        for (var funcWord of funcWords) {
-                            var synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
-                                .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
-                                .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
-                            for (var synonym of synonymValues) { // create function per synonym
-                                var newWords = [...funcWords]; // shallow copy funcWords
-                                newWords[newWords.indexOf(funcWord)] = synonym; // replace funcWord w/ synonym
-                                var newFuncName = newWords.map((newWord, index) => // transform new words to create new name
-                                    index === 0 || newWord === 's' ? newWord : newWord.charAt(0).toUpperCase() + newWord.slice(1) // case each word to form camel
-                                ).join(''); // concatenate transformed words
-                                if (!chatgpt[newFuncName]) { // don't alias existing functions
-                                    chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
-                                    newFunctionsCreated = true;
-            }}}}}} while (newFunctionsCreated); // loop over new functions to encompass all variations
-        }
+        do { // create new function per synonym per word per function
+            var newFunctionsCreated = false;
+            for (var funcName in chatgpt) {
+                if (typeof chatgpt[funcName] === 'function') {
+                    var funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
+                    for (var funcWord of funcWords) {
+                        var synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
+                            .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
+                            .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
+                        for (var synonym of synonymValues) { // create function per synonym
+                            var newWords = [...funcWords]; // shallow copy funcWords
+                            newWords[newWords.indexOf(funcWord)] = synonym; // replace funcWord w/ synonym
+                            var newFuncName = newWords.map((newWord, index) => // transform new words to create new name
+                                index === 0 || newWord === 's' ? newWord : newWord.charAt(0).toUpperCase() + newWord.slice(1) // case each word to form camel
+                            ).join(''); // concatenate transformed words
+                            if (!chatgpt[newFuncName]) { // don't alias existing functions
+                                chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
+                                newFunctionsCreated = true;
+        }}}}}} while (newFunctionsCreated); // loop over new functions to encompass all variations
     }
 
     // Export chatgpt object
