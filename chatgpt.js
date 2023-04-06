@@ -277,7 +277,7 @@
                         ( functionName[0] !== 'chatgpt' && functionName[1] === this[functionName[0]][functionName[1]].name ))
                             ? 'Function' : 'Alias of' ) + ': '
                     + ( functionName[0] === 'chatgpt' ? this[functionName[1]].name
-                        : functionName[0] + '.' + this[functionName[0]][functionName[1]].name ) + ']' )
+                        : functionName[0] + '.' + this[functionName[0]][functionName[1]].name ) + ']' );
             }
         },
 
