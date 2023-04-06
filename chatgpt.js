@@ -1,5 +1,3 @@
-/* eslint-env browser */
-
 (function() {
 
     var chatGPTsessURL = 'https://chat.openai.com/api/auth/session';
