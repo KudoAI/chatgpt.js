@@ -264,13 +264,20 @@
             var functionNames = [];
             for (var prop in this) {
                 if (typeof this[prop] === 'function') {
-                    functionNames.push(prop);
-            }}
-            functionNames.sort(); // alphabetize functions
+                    functionNames.push(['chatgpt', prop]);
+                } else if (typeof this[prop] === 'object') {
+                    for (var nestedProp in this[prop]) {
+                        if (typeof this[prop][nestedProp] === 'function') {
+                            functionNames.push([prop, nestedProp]);
+            }}}}
+            functionNames.sort(function(a, b) { return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]); });
             for (var functionName of functionNames) {
-                console.info(functionName + ': ['
-                    + ( functionName === this[functionName].name ? 'Function' : 'Alias of' )
-                    + ': ' + this[functionName].name + ']' );
+                console.info(( functionName[0] === 'chatgpt' ? '' : functionName[0] + '.' ) + functionName[1] + ': ['
+                    + ((( functionName[0] === 'chatgpt' && functionName[1] === this[functionName[1]].name ) ||
+                        ( functionName[0] !== 'chatgpt' && functionName[1] === this[functionName[0]][functionName[1]].name ))
+                            ? 'Function' : 'Alias of' ) + ': '
+                    + ( functionName[0] === 'chatgpt' ? this[functionName[1]].name
+                        : functionName[0] + '.' + this[functionName[0]][functionName[1]].name ) + ']' )
             }
         },
 
