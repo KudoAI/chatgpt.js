@@ -40,15 +40,62 @@
 
     var chatgpt = {
 
-        activateAutoRefresh: function(secInterval='') {
-            if (!this.activateAutoRefresh.intervalId) {
-                console.info('Auto refresh activated');
-                this.activateAutoRefresh.intervalId = setInterval(function() {
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('GET', chatGPTauthURL);
-                    xhr.send(); console.info('ChatGPT session refreshed');
-                }, (secInterval ? +secInterval : autoRefreshTimer) * 1000);
-            } else { console.info('Auto refresh already active!'); }
+        autoRefresh: {
+            activate: function() {
+                if (this.fetchID || this.beaconID) { // already running, do nothing
+                    console.info('↻ ChatGPT >> Auto refresh already active!'); return; }
+
+                var autoRefresh = this;
+
+                // Fetch immediately then schedule
+                fetch(chatGPTsessURL, { method: 'GET' }); scheduleRefresher('fetch');
+
+                console.info('↻ ChatGPT >> Auto refresh activated');
+                console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via GET-fetch)');
+
+                if (typeof document.hidden !== 'undefined') { // if Page Visibility API supported
+                    document.addEventListener('visibilitychange', function() { // add listener to switch methods
+                        if (document.hidden) scheduleRefresher('beacon');
+                        else { // the page became visible
+                            fetch(chatGPTsessURL, { method: 'GET' }); // send fetch asap
+                            console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via GET-fetch)')
+                            scheduleRefresher('fetch');
+                }})}
+
+                function nowTimeStamp() {
+                    var now = new Date();
+                    var hours = now.getHours() % 12 || 12; // Convert to 12-hour format
+                    var minutes = now.getMinutes();
+                    var seconds = now.getSeconds();
+                    var meridiem = now.getHours() < 12 ? 'AM' : 'PM';
+                    return hours + ':' + minutes + ':' + seconds + ' ' + meridiem;
+                }
+
+                function scheduleRefresher(refreshMethod) {
+                    var thisID = ( /fetch|get/i.test(refreshMethod) ? 'fetch' : 'beacon' ) + 'ID';
+                    var oppositeID = ( /fetch/.test(thisID) ? 'beacon' : 'fetch' ) + 'ID';
+                    clearInterval(autoRefresh[oppositeID]); autoRefresh[oppositeID] = null;
+                    autoRefresh[thisID] = setInterval(function() {
+                        if (thisID.includes('fetch')) {
+                            fetch(chatGPTsessURL, { method: 'GET' });
+                        } else { navigator.sendBeacon(chatGPTsessURL, new Uint8Array()); }
+                        console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via '
+                            + ( thisID.includes('fetch') ? 'GET-fetch)' : 'POST-beacon)' ));
+                    }, autoRefreshTimer * 1000);
+                }
+            },
+
+            deactivate: function() {
+                if (this.activate.fetchID) {
+                    clearInterval(this.activate.fetchID); this.activate.fetchID = null;
+                    console.info('↻ ChatGPT >> Auto refresh de-activated');
+                } else if (this.activate.beaconID) {
+                    clearInterval(this.activate.beaconID); this.activate.beaconID = null;
+                    console.info('↻ ChatGPT >> Auto refresh de-activated');
+                } else { console.info('↻ ChatGPT >> Auto refresh already inactive!'); }
+            },
+
+            toggle: function() { if (this.activate.fetchID || this.activate.beaconID) { this.deactivate(); } else { this.activate(); }}
         },
 
         activateDarkMode: function() {
@@ -74,13 +121,6 @@
                     } else { this.clearChats.cnt = 0; }
                     return; // break navLink loop
         }}},
-
-        deactivateAutoRefresh: function() {
-            console.info(this.activateAutoRefresh.intervalId ?
-                'Auto refresh de-activated' : 'Refresher is not running!');
-            clearInterval(this.activateAutoRefresh.intervalId);
-            this.activateAutoRefresh.intervalId = null;
-        },
 
         get: function(targetType, targetName = '') {
 
@@ -274,7 +314,7 @@
             }}}}
             functionNames.sort(function(a, b) { return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]); });
             for (var functionName of functionNames) {
-                console.info(( /chatgpt|other/.test(functionName[0]) ? '' : ( functionName[0] + '.' )) + functionName[1] + ': ['
+                console.info( 'chatgpt.js >> ' + ( /chatgpt|other/.test(functionName[0]) ? '' : ( functionName[0] + '.' )) + functionName[1] + ': ['
                     + ((( functionName[0] === 'chatgpt' && functionName[1] === this[functionName[1]].name ) || // parent is chatgpt + names match or
                         ( !/chatgpt|other/.test(functionName[0]) )) // parent is chatgpt.obj
                             ? 'Function' : 'Alias of' ) + ': '
@@ -283,12 +323,6 @@
                         : ((( Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[functionName[1]].name)) + '.' ) ?? '' )
                             + this[functionName[1]].name )) + ']' );
             }
-        },
-
-        refreshSession: function() {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', chatGPTauthURL);
-            xhr.send(); console.info('ChatGPT session refreshed');
         },
 
         regenerate: function() {
@@ -328,21 +362,6 @@
                 if (formButton.textContent.toLowerCase().includes('stop')) {
                     formButton.click(); return;
         }}},
-
-        toggleAutoRefresh: function(secInterval='') {
-            if (!this.activateAutoRefresh.intervalId) {
-                console.info('Auto refresh activated');
-                this.activateAutoRefresh.intervalId = setInterval(function() {
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('GET', chatGPTauthURL);
-                    xhr.send(); console.info('ChatGPT session refreshed');
-                }, (secInterval ? +secInterval : autoRefreshTimer) * 1000);
-            } else {
-                clearInterval(this.activateAutoRefresh.intervalId);
-                this.activateAutoRefresh.intervalId = null;
-                console.info('Auto refresh deactivated');
-            }
-        },
 
         toggleScheme: function() {
             for (var navLink of document.querySelectorAll('nav > a')) {
