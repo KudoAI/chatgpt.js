@@ -1,3 +1,5 @@
+/* eslint-env browser */
+
 (function() {
 
     var chatGPTsessURL = 'https://chat.openai.com/api/auth/session';
@@ -58,9 +60,9 @@
                         if (document.hidden) scheduleRefresher('beacon');
                         else { // the page became visible
                             fetch(chatGPTsessURL, { method: 'GET' }); // send fetch asap
-                            console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via GET-fetch)')
+                            console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via GET-fetch)');
                             scheduleRefresher('fetch');
-                }})}
+                }});}
 
                 function nowTimeStamp() {
                     var now = new Date();
