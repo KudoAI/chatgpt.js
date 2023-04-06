@@ -1,6 +1,6 @@
 (function() {
-    
-    var chatGPTauthURL = 'https://chat.openai.com/api/auth/session';
+
+    var chatGPTsessURL = 'https://chat.openai.com/api/auth/session';
     var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
     localStorage.notifyProps = JSON.stringify(notifyProps);
     var autoRefreshTimer = 60; // secs between session auto-refreshes
@@ -320,7 +320,7 @@
                             ? 'Function' : 'Alias of' ) + ': '
                     + ( functionName[0] === 'chatgpt' ? this[functionName[1]].name
                         : functionName[0] !== 'other' ? functionName[0] + '.' + functionName[1]
-                        : ((( Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[functionName[1]].name)) + '.' ) ?? '' )
+                        : (( Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[functionName[1]].name)) + '.' )
                             + this[functionName[1]].name )) + ']' );
             }
         },
