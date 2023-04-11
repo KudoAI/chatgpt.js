@@ -1,0 +1,59 @@
+/* COVER */
+
+.cover-main > img { margin-bottom: 16px } /* cover logo */
+.cover-main { color: white } /* all cover txt color */
+section.cover p { /* cover tagline size / position */
+    font-size: 2rem !important ;
+    margin-bottom: 48px ;
+    line-height: 2.3rem !important ;
+} 
+
+/* Buttons */
+.cover-main > p:last-child a { /* all buttons */
+    padding: 18px 52px !important ;
+    font-size: 1.4rem !important ;
+    border-radius: 0 !important ;
+    border-color: white !important ;
+    color: white !important ;
+    transition: 0.04s !important ;
+}
+.cover-main > p:last-child a:hover { /* 1st button hover */
+    background-color: blue ;
+    color: white !important ;
+    opacity: 1 !important ;
+}
+.cover-main > p:last-child a:last-child { /* 2nd button */
+    border-color: black !important ;
+    background-color: white !important ;
+    color: black !important
+}
+.cover-main > p:last-child a:last-child:hover { /* 2nd button hover */
+    background-color: blue !important ;
+    color: white !important ;
+}
+
+/* NAV */
+
+.app-nav { right: 35px ; top: 15px }
+.app-nav a { 
+    color: white !important ;
+    font-size: 1.5rem ;
+}
+
+/* GITHUB BADGE */
+
+.github-corner svg { fill: black ; height: 115px ; width: 115px }
+
+/* MAIN */
+
+main h2 { font-size: 3.5rem !important }
+main p { font-size: 2rem !important ; line-height: 2.5rem !important}
+main li { font-size: 1.8rem !important ; line-height: 2.1rem }
+main h3 { font-size: 2.5rem !important }
+main code {font-size: 1.5rem !important ; line-height: 2.2rem !important }
+
+/* SIDEBAR */
+
+.sidebar { background-color: #f4f4f4 }
+.sidebar h1 a {font-size: 2.5rem !important }
+.sidebar a {font-size: 1.5rem !important ; line-height: 3.5rem }
