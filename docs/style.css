@@ -10,10 +10,11 @@ section.cover p { /* cover tagline size / position */
 
 /* Buttons */
 .cover-main > p:last-child a { /* all buttons */
-    padding: 18px 52px !important ;
+    padding: 16px 68px !important;
     font-size: 1.4rem !important ;
     border-radius: 0 !important ;
     border-color: white !important ;
+    border-width: 3px !important ;
     color: white !important ;
     transition: 0.04s !important ;
 }
@@ -29,6 +30,7 @@ section.cover p { /* cover tagline size / position */
 }
 .cover-main > p:last-child a:last-child:hover { /* 2nd button hover */
     background-color: blue !important ;
+    border-color: blue !important ;
     color: white !important ;
 }
 
