@@ -24,6 +24,7 @@ section.cover p { /* cover tagline size / position */
     opacity: 1 !important ;
 }
 .cover-main > p:last-child a:last-child { /* 2nd button */
+    padding: 16px 60px !important;
     border-color: white !important ;
     background-color: white !important ;
     color: black !important
