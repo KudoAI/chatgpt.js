@@ -61,9 +61,9 @@ main code {font-size: 1.35rem !important ; line-height: 2.2rem !important }
 @media (prefers-color-scheme: light) { /* light mode logo */
     .app-name-link img {
         padding: 0 1px ;
-        content: url('https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-sidepadded-light-mode-650x61') ;
+        content: url('https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-sidepadded-light-mode-650x61.png') ;
 }}
 @media (prefers-color-scheme: dark) { /* dark mode logo */
     .app-name-link img {
-        content: url('https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-sidepadded-dark-mode-650x61') ;
+        content: url('https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-sidepadded-dark-mode-650x61.png') ;
 }}
