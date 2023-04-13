@@ -80,4 +80,5 @@ pre, code, .punctuation { background: black !important ; color: white !important
     padding: 13px 18px 13px 15px !important ;
     font-size: 1.1rem !important ;
     color: rgb(217, 217, 227) !important ;
+    right: 1px ; /* eliminate code block h-scroll */
 }
