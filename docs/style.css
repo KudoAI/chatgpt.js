@@ -55,9 +55,10 @@ main code {font-size: 1.35rem !important ; line-height: 2.2rem !important }
 /* SIDEBAR */
 
 .sidebar { background-color: #f4f4f4 }
-.sidebar h1 a {font-size: 2.5rem !important }
-.sidebar a {font-size: 1.5rem !important ; line-height: 3.5rem }
-.search { background-color: white ; font-size: 1.3rem } /* search bar */
+.sidebar h1 a { font-size: 2.5rem !important }
+.sidebar a { font-size: 1.5rem !important ; line-height: 3.5rem }
+.search { background-color: white ; font-size: 1.3rem }
+.matching-post { transform: scale(.75) }
 @media (prefers-color-scheme: light) { /* light mode logo */
     .app-name-link img {
         padding: 0 2px ;
