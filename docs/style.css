@@ -71,3 +71,13 @@ main code {font-size: 1.35rem !important ; line-height: 2.2rem !important }
         content: url('https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-sidepadded-dark-mode-650x61.png') ;
 }}
 .sidebar-toggle { background-color: inherit }
+
+/* CODE */
+
+pre, code, .punctuation { background: black !important ; color: white !important }
+.docsify-copy-code-button, .success, .error {
+    background: inherit !important ;
+    padding: 13px 18px 13px 15px !important ;
+    font-size: 1.1rem !important ;
+    color: rgb(217, 217, 227) !important ;
+}
