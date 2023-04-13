@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 !(function () {
     function s(o) {
         return (s =
