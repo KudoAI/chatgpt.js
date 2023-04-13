@@ -38,10 +38,7 @@ section.cover p { /* cover tagline size / position */
 /* NAV */
 
 .app-nav { right: 35px ; top: 15px }
-.app-nav a { 
-    color: white !important ;
-    font-size: 1.5rem ;
-}
+.app-nav a { color: white !important ; font-size: 1.5rem }
 
 /* GITHUB BADGE */
 
