@@ -49,11 +49,11 @@ section.cover p { /* cover tagline size / position */
 
 /* MAIN */
 
-main h2 { font-size: 3.5rem !important }
-main p { font-size: 2rem !important ; line-height: 2.5rem !important}
-main li { font-size: 1.8rem !important ; line-height: 2.1rem }
-main h3 { font-size: 2.5rem !important }
-main code {font-size: 1.5rem !important ; line-height: 2.2rem !important }
+main h2 { font-size: 3rem !important }
+main p { font-size: 1.65rem !important ; line-height: 2.5rem !important}
+main li { font-size: 1.6rem !important ; line-height: 2.1rem }
+main h3 { font-size: 2.3rem !important }
+main code {font-size: 1.35rem !important ; line-height: 2.2rem !important }
 
 /* SIDEBAR */
 
