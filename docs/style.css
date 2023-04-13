@@ -60,21 +60,16 @@ main code {font-size: 1.35rem !important ; line-height: 2.2rem !important }
 .search { background-color: white ; font-size: 1.3rem }
 .matching-post { transform: scale(.75) }
 .app-name { margin: 19px 18px 13px 18px !important }
-@media (prefers-color-scheme: light) { /* light mode logo */
-    .app-name-link img {
-        padding: 0 2px ;
-        content: url('https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-sidepadded-light-mode-650x61.png') ;
-}}
-@media (prefers-color-scheme: dark) { /* dark mode logo */
-    .app-name-link img {
-        padding: 0 2px ;
-        content: url('https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-sidepadded-dark-mode-650x61.png') ;
-}}
+.app-name-link img { padding: 0 2px }
 .sidebar-toggle { background-color: inherit }
 
 /* CODE */
 
-pre, code, .punctuation { background: black !important ; color: white !important }
+pre, code, .punctuation {
+    background: black !important ;
+    color: white !important ;
+}
+.lang-js { font-size: 1.3rem !important }
 .docsify-copy-code-button, .success, .error {
     background: inherit !important ;
     padding: 13px 18px 13px 15px !important ;
