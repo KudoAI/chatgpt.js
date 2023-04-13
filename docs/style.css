@@ -68,3 +68,4 @@ main code {font-size: 1.35rem !important ; line-height: 2.2rem !important }
         padding: 0 2px ;
         content: url('https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-sidepadded-dark-mode-650x61.png') ;
 }}
+.sidebar-toggle { background-color: inherit }
