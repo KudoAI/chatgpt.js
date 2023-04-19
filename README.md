@@ -57,13 +57,17 @@ function yourCode() {
 
 ### Greasemonkey:
 
+Userscript repositories like Greasy Fork maintain a whitelist of approved CDNs (such as commit-specific references from `cdn.jsdelivr.net`) so the import URL is substantially lengthier to preserve publishability to these sites:
+
 ```js
 ...
-// @require https://code.chatgptjs.org/chatgpt-latest.min.js
+// @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@25d3b75b45a09687caa47c741b2718187927fee0/dist/chatgpt-1.2.3.min.js
 // ==/UserScript==
 
 // Your code starts here
 ```
+
+If you don't plan on publishing to these repos, `https://code.chatgptjs.org/chatgpt-latest.min.js` can be used to serve the latest minified release instead.
 
 ## Usage
 
