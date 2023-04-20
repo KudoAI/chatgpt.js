@@ -62,6 +62,7 @@ main code {font-size: 1.35rem !important ; line-height: 2.2rem !important }
 .app-name { margin: 19px 18px 13px 18px !important }
 .app-name-link img { padding: 0 2px }
 .sidebar-toggle { background-color: inherit }
+.sidebar li img { display: none } /* hide showcase icons/badges */
 
 /* CODE */
 
@@ -77,3 +78,9 @@ pre, code, .punctuation {
     color: rgb(217, 217, 227) !important ;
     right: 1px ; /* eliminate code block h-scroll */
 }
+
+/* SHOWCASE */
+
+h3 img { height: 28px !important ; width: auto !important ; margin: 0 10px -2px 0 }
+h3 a { text-decoration: none ; color: #34495e !important }
+h3 a:hover { text-decoration: underline #42b983 }
