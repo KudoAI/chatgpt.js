@@ -42,7 +42,7 @@ function yourCode() {
 
 ### Greasemonkey:
 
-诸如 Greasy Fork 之类的用户脚本存储库维护已批准 CDN 的白名单（例如来自 `cdn.jsdelivr.net` 的特定于提交的引用），因此导入 URL 相当长以保持对这些站点的可发布性：
+诸如 Greasy Fork 之类的用户脚本存储库维护着预先批准的 CDN 的白名单（例如来自 `cdn.jsdelivr.net` 的特定于提交的引用），因此导入 URL 相当长以保持对这些站点的可发布性：
 
 ```js
 ...
@@ -52,7 +52,7 @@ function yourCode() {
 // 这里是您的代码
 ```
 
-如果您不打算发布到这些存储库，则可以使用 `https://code.chatgptjs.org/chatgpt-latest.min.js` 来提供最新的缩小版本。
+如果您不打算发布到这些存储库，则可以使用更简单的 `https://code.chatgptjs.org/chatgpt-latest.min.js` 来导入最新的缩小版本。
 
 ## 用法
 
