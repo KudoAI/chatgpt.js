@@ -111,7 +111,8 @@
         }}},
 
         clearChats: function() {
-            document.querySelector('nav button[id*="headless"]').click();
+            var headlessMenu = document.querySelector('nav button[id*="headless"]');
+            headlessMenu.click(); headlessMenu.blur();
             if (!this.clearChats.cnt) this.clearChats.cnt = 0;
             setTimeout(function clearThenConfirm() {
                 for (var navLink of document.querySelectorAll('nav > a')) {
