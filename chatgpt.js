@@ -117,13 +117,16 @@
             setTimeout(function clearThenConfirm() {
                 for (var navLink of document.querySelectorAll('nav > a')) {
                     if (navLink.text.includes(navLinkLabels[(
-                        this.clearChats.cnt > 0 ? 'confirmC' : 'c') + 'learChats'])) {
+                            this.clearChats.cnt > 0 ? 'confirmC' : 'c') + 'learChats'])) {
                         navLink.click(); this.clearChats.cnt++;
                         if (this.clearChats.cnt < 2) { // repeat to confirm
                             setTimeout(this.clearChats.bind(this), 500);
                         } else { this.clearChats.cnt = 0; }
                         return; // break navLink loop
-        }}}.bind(this), 50);},
+                    } else { headlessMenu.click(); headlessMenu.blur(); }
+                }
+            }.bind(this), 100);
+        },
 
         get: function(targetType, targetName = '') {
 
