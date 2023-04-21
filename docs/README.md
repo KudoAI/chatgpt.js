@@ -1,3 +1,18 @@
+<h3>
+<div align="center">
+<br />
+
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
+    <img width=546 alt="chatgpt.js" src="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
+</picture>
+<br /><br />
+
+🤖 A powerful client-side JavaScript library for ChatGPT 
+
+</div>
+</h3>
+
 ## About
 
 **chatgpt.js** is a powerful JavaScript library that allows for super easy interaction w/ the [ChatGPT DOM](https://chat.openai.com).
@@ -46,7 +61,7 @@ Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CD
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@25d3b75b45a09687caa47c741b2718187927fee0/dist/chatgpt-1.2.3.min.js
+// @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@d3e86892d75c0caeefa2e2ab8d26e5b053c28ad3/dist/chatgpt-1.3.3.min.js
 // ==/UserScript==
 
 // Your code starts here
@@ -117,4 +132,4 @@ Whether w/ translations or code, contributions of any kind are encouraged & acce
 
 <a href="https://github.com/chatgptjs/chatgpt.js/tree/main/dist">**Releases**</a> / 
 <a href="https://github.com/chatgptjs/chatgpt.js/discussions">Discuss</a> / 
-<a href="#">Back to top ↑</a>
+<a href="#---------a-powerful-client-side-javascript-library-for-chatgpt">Back to top ↑</a>
