@@ -111,7 +111,7 @@
         }}},
 
         clearChats: function() {
-            document.querySelector('nav button[id*="headless"]').click()
+            document.querySelector('nav button[id*="headless"]').click();
             if (!this.clearChats.cnt) this.clearChats.cnt = 0;
             setTimeout(function clearThenConfirm() {
                 for (var navLink of document.querySelectorAll('nav > a')) {
@@ -122,7 +122,7 @@
                             setTimeout(this.clearChats.bind(this), 500);
                         } else { this.clearChats.cnt = 0; }
                         return; // break navLink loop
-        }}}.bind(this), 50)},
+        }}}.bind(this), 50);},
 
         get: function(targetType, targetName = '') {
 
