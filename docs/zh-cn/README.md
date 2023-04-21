@@ -132,4 +132,4 @@ chatgpt.get('reply', 'last')
 
 <a href="https://github.com/chatgptjs/chatgpt.js/tree/main/dist">**版本发布**</a> / 
 <a href="https://github.com/chatgptjs/chatgpt.js/discussions">讨论</a> / 
-<a href="#">返回顶部 ↑</a>
+<a href="#关于">返回顶部 ↑</a>
