@@ -31,7 +31,7 @@
                     pathNamespaces: ['/zh-cn'],
                 },
                 routes: {
-                    '.*a-powerful-client-side-javascript-library-for-chatgpt': function() {
+                    '.*javascript.*': function() { // scroll-to-top link
                         history.pushState(null, null, '#') // prevent default nav away
                         setTimeout(function() { window.scrollTo({ top: 0, behavior: 'smooth' })}, 1)
                 }}
