@@ -111,16 +111,18 @@
         }}},
 
         clearChats: function() {
+            document.querySelector('nav button[id*="headless"]').click()
             if (!this.clearChats.cnt) this.clearChats.cnt = 0;
-            for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.includes(navLinkLabels[(
+            setTimeout(function clearThenConfirm() {
+                for (var navLink of document.querySelectorAll('nav > a')) {
+                    if (navLink.text.includes(navLinkLabels[(
                         this.clearChats.cnt > 0 ? 'confirmC' : 'c') + 'learChats'])) {
-                    navLink.click(); this.clearChats.cnt++;
-                    if (this.clearChats.cnt < 2) { // repeat to confirm
-                        setTimeout(this.clearChats.bind(this), 500);
-                    } else { this.clearChats.cnt = 0; }
-                    return; // break navLink loop
-        }}},
+                        navLink.click(); this.clearChats.cnt++;
+                        if (this.clearChats.cnt < 2) { // repeat to confirm
+                            setTimeout(this.clearChats.bind(this), 500);
+                        } else { this.clearChats.cnt = 0; }
+                        return; // break navLink loop
+        }}}.bind(this), 50)},
 
         get: function(targetType, targetName = '') {
 
