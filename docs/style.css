@@ -35,6 +35,10 @@ section.cover p { /* cover tagline size / position */
     color: white !important ;
 }
 
+/* Hide README cover */
+
+article div:first-of-type { display: none !important }
+
 /* NAV */
 
 .app-nav { right: 35px ; top: 15px }
