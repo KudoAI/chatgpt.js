@@ -112,8 +112,8 @@
 
         clearChats: function() {
             var headlessMenu = document.querySelector('nav button[id*="headless"]');
-            headlessMenu.click(); headlessMenu.blur();
             if (!this.clearChats.cnt) this.clearChats.cnt = 0;
+            if (this.clearChats.cnt = 0) { headlessMenu.click(); headlessMenu.blur(); }
             setTimeout(function clearThenConfirm() {
                 for (var navLink of document.querySelectorAll('nav > a')) {
                     if (navLink.text.includes(navLinkLabels[(
@@ -123,7 +123,7 @@
                             setTimeout(this.clearChats.bind(this), 500);
                         } else { this.clearChats.cnt = 0; }
                         return; // break navLink loop
-        }}}.bind(this), 50);},
+        }}}.bind(this), 50)},
 
         get: function(targetType, targetName = '') {
 
