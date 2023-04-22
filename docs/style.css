@@ -1,10 +1,5 @@
 /* FF scrollbar */
-:root { scrollbar-width: thin ; scrollbar-color: rgb(210,210,210) #1a1a1a }
-
-/* Chrome/Safari scrollbar */
-::-webkit-scrollbar {  width: 8px ; background-color: #1a1a1a }
-::-webkit-scrollbar-thumb { background-color: rgb(210,210,210) }
-::-webkit-scrollbar-thumb:hover { background-color: #999 }
+:root { scrollbar-color: rgb(210,210,210) #1a1a1a }
 
 /* COVER */
 
