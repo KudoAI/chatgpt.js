@@ -42,14 +42,14 @@
         autoRefresh: {
             activate: function(interval) {
                 if (this.ssgID) { // already running, do nothing
-                    console.info('↻ ChatGPT >> Auto refresh already active!'); return; }
+                    console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already active!'); return; }
 
                 var autoRefresh = this;
 
                 // Run main activate routine
                 this.toggle.refreshFrame();
                 scheduleRefreshes( interval ? interval : 30 );
-                console.info('↻ ChatGPT >> Auto refresh activated');
+                console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh activated');
 
                 // Add listener to send beacons in Chromium to thwart auto-discards if Page Visibility API supported
                 if (navigator.userAgent.includes('Chrome') && typeof document.hidden !== 'undefined') {
@@ -70,8 +70,8 @@
                     this.toggle.refreshFrame();
                     document.removeEventListener('visibilitychange', this.toggle.beacons);
                     clearInterval(this.ssgID); this.ssgID = null;
-                    console.info('↻ ChatGPT >> Auto refresh de-activated');
-                } else { console.info('↻ ChatGPT >> Auto refresh already inactive!'); }
+                    console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh de-activated');
+                } else { console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already inactive!'); }
             },
 
             nowTimeStamp: function() {
@@ -89,13 +89,13 @@
                 beacons: function() {
                     if (chatgpt.autoRefresh.beaconID) {
                         clearInterval(chatgpt.autoRefresh.beaconID); chatgpt.autoRefresh.beaconID = null;
-                        console.info('↻ ChatGPT >> Beacons de-activated');
+                        console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons de-activated');
                     } else {
                         chatgpt.autoRefresh.beaconID = setInterval(function() {
                             navigator.sendBeacon(chatGPTsessURL, new Uint8Array());
                             console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacon sent');
                         }, 90000);
-                        console.info('↻ ChatGPT >> Beacons activated');
+                        console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons activated');
                     }
                 },
 
