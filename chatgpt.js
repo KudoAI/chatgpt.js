@@ -3,7 +3,6 @@
     var chatGPTsessURL = 'https://chat.openai.com/api/auth/session';
     var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
     localStorage.notifyProps = JSON.stringify(notifyProps);
-    var autoRefreshTimer = 60; // secs between session auto-refreshes
 
     var functionAliases = [ // whole function names to cross-alias
         ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
@@ -41,61 +40,75 @@
     var chatgpt = {
 
         autoRefresh: {
-            activate: function() {
-                if (this.fetchID || this.beaconID) { // already running, do nothing
+            activate: function(interval) {
+                if (this.ssgID) { // already running, do nothing
                     console.info('↻ ChatGPT >> Auto refresh already active!'); return; }
 
                 var autoRefresh = this;
 
-                // Fetch immediately then schedule
-                fetch(chatGPTsessURL, { method: 'GET' }); scheduleRefresher('fetch');
-
+                // Run main activate routine
+                this.toggle.refreshFrame();
+                scheduleRefreshes( interval ? interval : 30 );
                 console.info('↻ ChatGPT >> Auto refresh activated');
-                console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via GET-fetch)');
 
-                if (typeof document.hidden !== 'undefined') { // if Page Visibility API supported
-                    document.addEventListener('visibilitychange', function() { // add listener to switch methods
-                        if (document.hidden) scheduleRefresher('beacon');
-                        else { // the page became visible
-                            fetch(chatGPTsessURL, { method: 'GET' }); // send fetch asap
-                            console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via GET-fetch)');
-                            scheduleRefresher('fetch');
-                }});}
+                // Add listener to send beacons to thwart auto-discards if Page Visibility API supported
+                if (typeof document.hidden !== 'undefined') {
+                    document.addEventListener('visibilitychange', this.toggle.beacons)};
 
-                function nowTimeStamp() {
-                    var now = new Date();
-                    var hours = now.getHours() % 12 || 12; // Convert to 12-hour format
-                    var minutes = now.getMinutes();
-                    var seconds = now.getSeconds();
-                    var meridiem = now.getHours() < 12 ? 'AM' : 'PM';
-                    return hours + ':' + minutes + ':' + seconds + ' ' + meridiem;
-                }
-
-                function scheduleRefresher(refreshMethod) {
-                    var thisID = ( /fetch|get/i.test(refreshMethod) ? 'fetch' : 'beacon' ) + 'ID';
-                    var oppositeID = ( /fetch/.test(thisID) ? 'beacon' : 'fetch' ) + 'ID';
-                    clearInterval(autoRefresh[oppositeID]); autoRefresh[oppositeID] = null;
-                    autoRefresh[thisID] = setInterval(function() {
-                        if (thisID.includes('fetch')) {
-                            fetch(chatGPTsessURL, { method: 'GET' });
-                        } else { navigator.sendBeacon(chatGPTsessURL, new Uint8Array()); }
-                        console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via '
-                            + ( thisID.includes('fetch') ? 'GET-fetch)' : 'POST-beacon)' ));
-                    }, autoRefreshTimer * 1000);
+                function scheduleRefreshes(interval) {
+                    autoRefresh.ssgID = setInterval(function() {
+                        var refreshFrame = document.querySelector('#refresh-frame');
+                        var manifestScript = document.querySelector('script[src*="_ssgManifest.js"]');
+                        refreshFrame.src = manifestScript.src + '?' + Date.now();
+                        console.info('↻ ChatGPT >> [' + autoRefresh.nowTimeStamp() + '] ChatGPT session refreshed');
+                    }, interval * 1000);
                 }
             },
 
             deactivate: function() {
-                if (this.activate.fetchID) {
-                    clearInterval(this.activate.fetchID); this.activate.fetchID = null;
-                    console.info('↻ ChatGPT >> Auto refresh de-activated');
-                } else if (this.activate.beaconID) {
-                    clearInterval(this.activate.beaconID); this.activate.beaconID = null;
+                if (this.ssgID) {
+                    this.toggle.refreshFrame();
+                    document.removeEventListener('visibilitychange', this.toggle.beacons);
+                    clearInterval(this.ssgID); this.ssgID = null;
                     console.info('↻ ChatGPT >> Auto refresh de-activated');
                 } else { console.info('↻ ChatGPT >> Auto refresh already inactive!'); }
             },
 
-            toggle: function() { if (this.activate.fetchID || this.activate.beaconID) { this.deactivate(); } else { this.activate(); }}
+            nowTimeStamp: function() {
+                var now = new Date();
+                var hours = now.getHours() % 12 || 12; // Convert to 12-hour format
+                var minutes = now.getMinutes();
+                var seconds = now.getSeconds();
+                if (seconds < 10) seconds = '0' + seconds;
+                var meridiem = now.getHours() < 12 ? 'AM' : 'PM';
+                return hours + ':' + minutes + ':' + seconds + ' ' + meridiem;
+            },
+
+            toggle: {
+
+                beacons: function() {
+                    if (chatgpt.autoRefresh.beaconID) {
+                        clearInterval(chatgpt.autoRefresh.beaconID); chatgpt.autoRefresh.beaconID = null;
+                        console.info('↻ ChatGPT >> Beacons de-activated');
+                    } else {
+                        chatgpt.autoRefresh.beaconID = setInterval(function() {
+                            navigator.sendBeacon(chatGPTsessURL, new Uint8Array());
+                            console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacon sent');
+                        }, 90000);
+                        console.info('↻ ChatGPT >> Beacons activated');
+                    }
+                },
+
+                refreshFrame: function() {
+                    var refreshFrame = document.querySelector('#refresh-frame');
+                    if (refreshFrame) refreshFrame.remove();
+                    else {
+                        refreshFrame = Object.assign(document.createElement('iframe'),
+                            { id: 'refresh-frame', style: 'display: none' });
+                        document.head.prepend(refreshFrame);
+                    }
+                }
+            }
         },
 
         activateDarkMode: function() {
