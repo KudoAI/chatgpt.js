@@ -53,7 +53,7 @@
 
                 // Add listener to send beacons to thwart auto-discards if Page Visibility API supported
                 if (typeof document.hidden !== 'undefined') {
-                    document.addEventListener('visibilitychange', this.toggle.beacons)};
+                    document.addEventListener('visibilitychange', this.toggle.beacons); }
 
                 function scheduleRefreshes(interval) {
                     autoRefresh.ssgID = setInterval(function() {
