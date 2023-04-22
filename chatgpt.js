@@ -51,8 +51,8 @@
                 scheduleRefreshes( interval ? interval : 30 );
                 console.info('↻ ChatGPT >> Auto refresh activated');
 
-                // Add listener to send beacons to thwart auto-discards if Page Visibility API supported
-                if (typeof document.hidden !== 'undefined') {
+                // Add listener to send beacons in Chromium to thwart auto-discards if Page Visibility API supported
+                if (navigator.userAgent.includes('Chrome') && typeof document.hidden !== 'undefined') {
                     document.addEventListener('visibilitychange', this.toggle.beacons); }
 
                 function scheduleRefreshes(interval) {
