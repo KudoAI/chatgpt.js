@@ -56,6 +56,7 @@
                     document.addEventListener('visibilitychange', this.toggle.beacons); }
 
                 function scheduleRefreshes(interval) {
+                    interval += Math.floor(Math.random() * 21) - 10; // add random delay between -10 to +10 secs
                     autoRefresh.ssgID = setInterval(function() {
                         var refreshFrame = document.querySelector('#refresh-frame');
                         var manifestScript = document.querySelector('script[src*="_ssgManifest.js"]');
@@ -94,7 +95,7 @@
                         chatgpt.autoRefresh.beaconID = setInterval(function() {
                             navigator.sendBeacon(chatGPTsessURL, new Uint8Array());
                             console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacon sent');
-                        }, 90000);
+                        }, (90 + Math.floor(Math.random() * 21) - 10) * 1000); // send beacon every 80-100 secs
                         console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons activated');
                     }
                 },
