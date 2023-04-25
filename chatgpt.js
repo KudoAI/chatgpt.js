@@ -1,6 +1,5 @@
 (function() {
 
-    var chatGPTsessURL = 'https://chat.openai.com/api/auth/session';
     var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
     localStorage.notifyProps = JSON.stringify(notifyProps);
 
@@ -48,7 +47,7 @@
 
                 // Run main activate routine
                 this.toggle.refreshFrame();
-                scheduleRefreshes( interval ? interval : 30 );
+                scheduleRefreshes( interval ? parseInt(interval) : 30 );
                 console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh activated');
 
                 // Add listener to send beacons in Chromium to thwart auto-discards if Page Visibility API supported
@@ -56,13 +55,14 @@
                     document.addEventListener('visibilitychange', this.toggle.beacons); }
 
                 function scheduleRefreshes(interval) {
-                    interval += Math.floor(Math.random() * 21) - 10; // add random delay between -10 to +10 secs
-                    autoRefresh.ssgID = setInterval(function() {
+                    var randomDelay = Math.max(2, Math.floor(Math.random() * 21 - 10)); // set random delay up to ±10 secs
+                    autoRefresh.ssgID = setTimeout(function() {
                         var refreshFrame = document.querySelector('#refresh-frame');
                         var manifestScript = document.querySelector('script[src*="_ssgManifest.js"]');
                         refreshFrame.src = manifestScript.src + '?' + Date.now();
                         console.info('↻ ChatGPT >> [' + autoRefresh.nowTimeStamp() + '] ChatGPT session refreshed');
-                    }, interval * 1000);
+                        scheduleRefreshes(interval);
+                    }, (interval + randomDelay) * 1000);
                 }
             },
 
@@ -70,7 +70,7 @@
                 if (this.ssgID) {
                     this.toggle.refreshFrame();
                     document.removeEventListener('visibilitychange', this.toggle.beacons);
-                    clearInterval(this.ssgID); this.ssgID = null;
+                    clearTimeout(this.ssgID); this.ssgID = null;
                     console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh de-activated');
                 } else { console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already inactive!'); }
             },
@@ -78,9 +78,8 @@
             nowTimeStamp: function() {
                 var now = new Date();
                 var hours = now.getHours() % 12 || 12; // Convert to 12-hour format
-                var minutes = now.getMinutes();
-                var seconds = now.getSeconds();
-                if (seconds < 10) seconds = '0' + seconds;
+                var minutes = now.getMinutes(); var seconds = now.getSeconds();
+                if (minutes < 10) minutes = '0' + minutes; if (seconds < 10) seconds = '0' + seconds;
                 var meridiem = now.getHours() < 12 ? 'AM' : 'PM';
                 return hours + ':' + minutes + ':' + seconds + ' ' + meridiem;
             },
@@ -93,9 +92,9 @@
                         console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons de-activated');
                     } else {
                         chatgpt.autoRefresh.beaconID = setInterval(function() {
-                            navigator.sendBeacon(chatGPTsessURL, new Uint8Array());
+                            navigator.sendBeacon('https://httpbin.org/post', new Uint8Array());
                             console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacon sent');
-                        }, (90 + Math.floor(Math.random() * 21) - 10) * 1000); // send beacon every 80-100 secs
+                        }, 90000);
                         console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons activated');
                     }
                 },
