@@ -49,7 +49,7 @@
   "bugs": {
     "url": "https://github.com/chatgptjs/chatgpt.js/issues"
   },
-  "homepage": "https://chatgptjs.org",
+  "homepage": "https://chatgpt.js.org",
   "devDependencies": {
     "eslint": "^8.36.0"
   }
