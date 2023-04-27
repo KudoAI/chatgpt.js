@@ -93,35 +93,35 @@ chatgpt.get('reply', 'last')
 
 自动清除您的 ChatGPT 查询历史记录以获得最大的隐私。
 <br>[安装](https://greasyfork.org/en/scripts/460805-auto-clear-chatgpt-history) / 
-[自述文件](https://github.com/adamlui/autoclear-chatgpt-history/README.md) / 
+[自述文件](https://github.com/adamlui/autoclear-chatgpt-history/blob/main/README.md) / 
 [讨论](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 在 Brave Search 侧边栏中显示 ChatGPT 答案。
 <br>[安装](https://greasyfork.org/en/scripts/462440-bravegpt) / 
-[自述文件](https://github.bravegpt.com/tree/main/README.md) / 
+[自述文件](https://github.bravegpt.com/blob/main/README.md) / 
 [讨论](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动刷新 ↻](https://chatgptevo.com/autorefresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 
 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
 <br>[安装](https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh) / 
-[自述文件](https://github.com/adamlui/chatgpt-auto-refresh/README.md) / 
+[自述文件](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/docs/zh-cn/README.md) / 
 [讨论](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 宽屏模式 🖥️](https://chatgptevo.com/widescreen) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" alt="ChatGPT&#0032;Widescreen&#0032;Mode - Add&#0032;widescreen&#0032;&#0043;&#0032;full&#0032;window&#0032;modes&#0032;to&#0032;ChatGPT | Product Hunt" style="width: auto; height: 24px; margin:0 0 -4px 3px;" width="auto" height="24" />
 
 向 ChatGPT 添加宽屏 + 全窗口模式以减少滚动。
 <br>[安装](https://github.com/adamlui/chatgpt-widescreen#installation) / 
-[自述文件](https://github.com/adamlui/chatgpt-widescreen/README.md) / 
+[自述文件](https://github.com/adamlui/chatgpt-widescreen/blob/main/README.md) / 
 [讨论](https://github.com/adamlui/chatgpt-widescreen/discussions)
 
 ### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" alt="DuckDuckGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;DuckDuckGo | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 在 DuckDuckGo 侧边栏中显示 ChatGPT 答案。
 <br>[安装](https://greasyfork.org/en/scripts/459849-duckduckgpt) / 
-[自述文件](https://github.duckduckgpt.com/tree/main/README.md) / 
+[自述文件](https://github.duckduckgpt.com/blob/main/README.md) / 
 [讨论](https://github.duckduckgpt.com/discussions)
 
 ## 贡献
