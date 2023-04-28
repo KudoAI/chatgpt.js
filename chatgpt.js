@@ -40,7 +40,7 @@
 
         autoRefresh: {
             activate: function(interval) {
-                if (this.ssgID) { // already running, do nothing
+                if (this.isActive) { // already running, do nothing
                     console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already active!'); return; }
 
                 var autoRefresh = this;
@@ -56,7 +56,7 @@
 
                 function scheduleRefreshes(interval) {
                     var randomDelay = Math.max(2, Math.floor(Math.random() * 21 - 10)); // set random delay up to ±10 secs
-                    autoRefresh.ssgID = setTimeout(function() {
+                    autoRefresh.isActive = setTimeout(function() {
                         var refreshFrame = document.querySelector('#refresh-frame');
                         var manifestScript = document.querySelector('script[src*="_ssgManifest.js"]');
                         refreshFrame.src = manifestScript.src + '?' + Date.now();
@@ -67,10 +67,10 @@
             },
 
             deactivate: function() {
-                if (this.ssgID) {
+                if (this.isActive) {
                     this.toggle.refreshFrame();
                     document.removeEventListener('visibilitychange', this.toggle.beacons);
-                    clearTimeout(this.ssgID); this.ssgID = null;
+                    clearTimeout(this.isActive); this.isActive = null;
                     console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh de-activated');
                 } else { console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already inactive!'); }
             },
@@ -250,6 +250,14 @@
         },
 
         isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
+
+        isIdle: function() {
+            return new Promise(resolve => {
+                var intervalId = setInterval(() => {
+                    if (chatgpt.getRegenerateButton()) {
+                        clearInterval(intervalId); resolve();
+        }}, 100);})},
+
         isLightMode: function() { return document.documentElement.classList.contains('light'); },
 
         notify: function(msg, position, notifDuration, shadow) {
@@ -355,19 +363,16 @@
         },
 
         send: function(msg) {
-            document.querySelector('form textarea').value = msg;
-            document.querySelector('form button[class*="bottom"]').click();
+            var textArea = document.querySelector('form textarea');
+            textArea.value = msg;
+            textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }));
         },
 
         sendInNewChat: function(msg) {
             for (var navLink of document.querySelectorAll('nav > a')) {
                 if (navLink.text.includes(navLinkLabels.newChat)) {
                     navLink.click(); break;
-            }}
-            setTimeout(function() {
-                document.querySelector('form textarea').value = msg;
-                document.querySelector('form button[class*="bottom"]').click();
-            }, 500);
+            }} setTimeout(function() { chatgpt.send(msg) }, 500);
         },
 
         startNewChat: function() {
