@@ -20,8 +20,5 @@ module.exports  = {
         'ecmaVersion': 6,
         'sourceType': 'script'
     },
-    'env': {
-        'browser': true,
-        'node': true
-    }
+    'env': { 'browser': true, 'node': true, 'es6': true }
 };
