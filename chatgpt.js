@@ -369,10 +369,8 @@
         },
 
         sendInNewChat: function(msg) {
-            for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.includes(navLinkLabels.newChat)) {
-                    navLink.click(); break;
-            }} setTimeout(function() { chatgpt.send(msg); }, 500);
+            document.querySelector('nav > a').click();
+            setTimeout(function() { chatgpt.send(msg); }, 500);
         },
 
         startNewChat: function() {
