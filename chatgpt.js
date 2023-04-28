@@ -256,7 +256,7 @@
                 var intervalId = setInterval(() => {
                     if (chatgpt.getRegenerateButton()) {
                         clearInterval(intervalId); resolve();
-        }}, 100);})},
+        }}, 100);});},
 
         isLightMode: function() { return document.documentElement.classList.contains('light'); },
 
@@ -372,7 +372,7 @@
             for (var navLink of document.querySelectorAll('nav > a')) {
                 if (navLink.text.includes(navLinkLabels.newChat)) {
                     navLink.click(); break;
-            }} setTimeout(function() { chatgpt.send(msg) }, 500);
+            }} setTimeout(function() { chatgpt.send(msg); }, 500);
         },
 
         startNewChat: function() {
