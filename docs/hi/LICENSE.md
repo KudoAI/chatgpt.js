@@ -1,21 +1,20 @@
-MIT License
 
-Copyright (c) 2023 Adam Lui (刘展鹏), 冯不游 & chatgpt.js.
+कॉपीराइट (सी) 2023 एडम लुई (刘展鹏), 冯不游 और chatgpt.js।
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+प्रति प्राप्त करने वाले किसी भी व्यक्ति को अनुमति नि:शुल्क प्रदान की जाती है
+इस सॉफ़्टवेयर और संबद्ध दस्तावेज़ीकरण फ़ाइलों ("सॉफ़्टवेयर") से निपटने के लिए
+सॉफ्टवेयर में बिना किसी प्रतिबंध के, जिसमें बिना किसी सीमा के अधिकार शामिल हैं
+उपयोग करने, कॉपी करने, संशोधित करने, मर्ज करने, प्रकाशित करने, वितरित करने, सबलाइसेंस करने और/या बेचने के लिए
+सॉफ़्टवेयर की प्रतियां, और उन व्यक्तियों को अनुमति देना जिनके पास सॉफ़्टवेयर है
+ऐसा करने के लिए सुसज्जित, निम्नलिखित शर्तों के अधीन:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+उपरोक्त कॉपीराइट सूचना और यह अनुमति सूचना सभी में शामिल की जाएगी
+सॉफ़्टवेयर की प्रतियां या पर्याप्त भाग।
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+सॉफ़्टवेयर "जैसा है" प्रदान किया जाता है, बिना किसी प्रकार की वारंटी के, व्यक्त या
+निहित, व्यापारिकता की वारंटियों सहित, लेकिन इन्हीं तक सीमित नहीं,
+किसी विशेष उद्देश्य और गैर-उल्लंघन के लिए उपयुक्तता। किसी भी स्थिति में नहीं होगा
+लेखक या कॉपीराइट धारक किसी भी दावे, क्षति या अन्य के लिए उत्तरदायी होंगे
+उत्तरदायित्व, चाहे अनुबंध की किसी कार्रवाई में, अपकृत्य या अन्यथा, से उत्पन्न,
+सॉफ़्टवेयर के संबंध में या उसके संबंध में या उपयोग या अन्य व्यवहार में
+सॉफ़्टवेयर।
