@@ -1,9 +1,9 @@
 (function() {
 
-    let notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
+    var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
     localStorage.notifyProps = JSON.stringify(notifyProps);
 
-    let functionAliases = [ // whole function names to cross-alias
+    var functionAliases = [ // whole function names to cross-alias
         ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
             'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
         ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
@@ -18,7 +18,7 @@
         ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher']
     ];
 
-    let synonyms = [ // constituent synonyms within function names
+    var synonyms = [ // constituent synonyms within function names
         ['activate', 'turnOn'],
         ['chat', 'conversation', 'convo'],
         ['generating', 'generation'],
@@ -26,41 +26,24 @@
         ['send', 'submit']
     ];
 
-    let targetTypes = [ // for abstracted methods like get, insert
+    var targetTypes = [ // for abstracted methods like get, insert
         'button', 'link', 'div', 'response'
     ];
 
-    let navLinkLabels = {
+    var navLinkLabels = {
         clearChats: 'Clear conversations',
         confirmClearChats: 'Confirm clear conversations',
         newChat: 'New chat'
     };
 
-    let chatgpt = {
+    var chatgpt = {
 
         autoRefresh: {
             activate: function(interval) {
                 if (this.isActive) { // already running, do nothing
-                    console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already active!'); 
-                    return; 
-                }
+                    console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already active!'); return; }
 
-                let autoRefresh = this;
-
-                function timerFunctionScheduleRefresh() {
-                    let refreshFrame = document.querySelector('#refresh-frame');
-                    let manifestScript = document.querySelector('script[src*="_ssgManifest.js"]');
-                    if(refreshFrame && manifestScript) {
-                        refreshFrame.src = manifestScript.src + '?' + Date.now();
-                        console.info('↻ ChatGPT >> [' + autoRefresh.nowTimeStamp() + '] ChatGPT session refreshed');
-                    }
-                    scheduleRefreshes(interval);
-                }
-
-                function scheduleRefreshes(interval) {
-                    let randomDelay = Math.max(2, Math.floor(Math.random() * 21 - 10)); // set random delay up to ±10 secs
-                    autoRefresh.isActive = setTimeout(timerFunctionScheduleRefresh, (interval + randomDelay) * 1000);
-                }
+                var autoRefresh = this;
 
                 // Run main activate routine
                 this.toggle.refreshFrame();
@@ -69,7 +52,17 @@
 
                 // Add listener to send beacons in Chromium to thwart auto-discards if Page Visibility API supported
                 if (navigator.userAgent.includes('Chrome') && typeof document.hidden !== 'undefined') {
-                    document.addEventListener('visibilitychange', this.toggle.beacons); 
+                    document.addEventListener('visibilitychange', this.toggle.beacons); }
+
+                function scheduleRefreshes(interval) {
+                    var randomDelay = Math.max(2, Math.floor(Math.random() * 21 - 10)); // set random delay up to ±10 secs
+                    autoRefresh.isActive = setTimeout(function() {
+                        var refreshFrame = document.querySelector('#refresh-frame');
+                        var manifestScript = document.querySelector('script[src*="_ssgManifest.js"]');
+                        refreshFrame.src = manifestScript.src + '?' + Date.now();
+                        console.info('↻ ChatGPT >> [' + autoRefresh.nowTimeStamp() + '] ChatGPT session refreshed');
+                        scheduleRefreshes(interval);
+                    }, (interval + randomDelay) * 1000);
                 }
             },
 
@@ -83,11 +76,11 @@
             },
 
             nowTimeStamp: function() {
-                let now = new Date();
-                let hours = now.getHours() % 12 || 12; // Convert to 12-hour format
-                let minutes = now.getMinutes(); let seconds = now.getSeconds();
+                var now = new Date();
+                var hours = now.getHours() % 12 || 12; // Convert to 12-hour format
+                var minutes = now.getMinutes(); var seconds = now.getSeconds();
                 if (minutes < 10) minutes = '0' + minutes; if (seconds < 10) seconds = '0' + seconds;
-                let meridiem = now.getHours() < 12 ? 'AM' : 'PM';
+                var meridiem = now.getHours() < 12 ? 'AM' : 'PM';
                 return hours + ':' + minutes + ':' + seconds + ' ' + meridiem;
             },
 
@@ -107,7 +100,7 @@
                 },
 
                 refreshFrame: function() {
-                    let refreshFrame = document.querySelector('#refresh-frame');
+                    var refreshFrame = document.querySelector('#refresh-frame');
                     if (refreshFrame) refreshFrame.remove();
                     else {
                         refreshFrame = Object.assign(document.createElement('iframe'),
@@ -119,38 +112,33 @@
         },
 
         activateDarkMode: function() {
-            for (let navLink of document.querySelectorAll('nav > a')) {
+            for (var navLink of document.querySelectorAll('nav > a')) {
                 if (navLink.text.toLowerCase().includes('dark mode')) {
                     navLink.click(); return;
         }}},
 
         activateLightMode: function() {
-            for (let navLink of document.querySelectorAll('nav > a')) {
+            for (var navLink of document.querySelectorAll('nav > a')) {
                 if (navLink.text.toLowerCase().includes('light mode')) {
                     navLink.click(); return;
         }}},
 
         clearChats: function() {
-            let headlessMenu;
-            const clearThenConfirm = ()=>{
-                for (let navLink of document.querySelectorAll('nav > a')) {
+            var headlessMenu = document.querySelector('nav button[id*="headless"]');
+            if (!this.clearChats.cnt) this.clearChats.cnt = 0;
+            if (this.clearChats.cnt == 0) { headlessMenu.click(); headlessMenu.blur(); }
+            setTimeout(function clearThenConfirm() {
+                for (var navLink of document.querySelectorAll('nav > a')) {
                     if (navLink.text.includes(navLinkLabels[(
                             this.clearChats.cnt > 0 ? 'confirmC' : 'c') + 'learChats'])) {
                         navLink.click(); this.clearChats.cnt++;
                         if (this.clearChats.cnt < 2) { // repeat to confirm
-                            setTimeout(timerFunctionClearChats, 500);
+                            setTimeout(this.clearChats.bind(this), 500);
                         } else { this.clearChats.cnt = 0; }
                         return; // break navLink loop
                     } else { headlessMenu.click(); headlessMenu.blur(); }
                 }
-            };
-            const timerFunctionClearChats = () => {
-                headlessMenu = document.querySelector('nav button[id*="headless"]');
-                if (!this.clearChats.cnt) this.clearChats.cnt = 0;
-                if (this.clearChats.cnt == 0) { headlessMenu.click(); headlessMenu.blur(); }
-                setTimeout(clearThenConfirm, 100);
-            };
-            timerFunctionClearChats();
+            }.bind(this), 100);
         },
 
         get: function(targetType, targetName = '') {
@@ -165,8 +153,8 @@
                     + '. Valid values are: ' + JSON.stringify(targetTypes)); }
 
             // Validate targetName scoped to pre-validated targetType
-            let targetNames = [], reTargetName = new RegExp('^get(.*)' + targetType + '$', 'i');
-            for (let prop in this) {
+            var targetNames = [], reTargetName = new RegExp('^get(.*)' + targetType + '$', 'i');
+            for (var prop in this) {
                 if (typeof this[prop] === 'function' && prop.match(reTargetName)) {
                     targetNames.push( // add found targetName to valid array
                         prop.replace(reTargetName, '$1').toLowerCase());
@@ -178,8 +166,8 @@
             }
 
             // Call target function using pre-validated name components
-            let targetFuncNameLower = ('get' + targetName + targetType).toLowerCase();
-            let targetFuncName = Object.keys(this).find( // find originally cased target function name
+            var targetFuncNameLower = ('get' + targetName + targetType).toLowerCase();
+            var targetFuncName = Object.keys(this).find( // find originally cased target function name
                 function(name) { return name.toLowerCase() === targetFuncNameLower; }); // test for match
             return this[targetFuncName](); // call found function
         },
@@ -189,42 +177,41 @@
         },
 
         getLastResponse: function() {
-            let responseDivs = document.querySelectorAll('main div[class*=group]');
+            var responseDivs = document.querySelectorAll('main div[class*=group]');
             if (responseDivs.length < 2) return ''; // if no responses, return empty string
             return responseDivs[responseDivs.length - 1].textContent;
         },
 
         getLastResponseDiv: function() {
-            let responseDivs = document.querySelectorAll('main div[class*=group]');
+            var responseDivs = document.querySelectorAll('main div[class*=group]');
             return responseDivs[responseDivs.length - 1];
         },
 
         getNewChatLink: function() {
-            for (let navLink of document.querySelectorAll('nav > a')) {
+            for (var navLink of document.querySelectorAll('nav > a')) {
                 if (navLink.text.includes(navLinkLabels.newChat)) {
                     return navLink;
         }}},
 
         getRegenerateButton: function() {
-            for (let formButton of document.querySelectorAll('form button')) {
+            for (var formButton of document.querySelectorAll('form button')) {
                 if (formButton.textContent.toLowerCase().includes('regenerate')) {
                     return formButton;
         }}},
 
         getResponse: function(pos) {
-            let responseDivSelector = 'main div[class*=group]';
-            let strPos = pos.toString().toLowerCase();
+            var responseDivSelector = 'main div[class*=group]';
+            var strPos = pos.toString().toLowerCase();
             if (/last|final/.test(strPos)) { // get last response
-                let responseDivs = document.querySelectorAll(responseDivSelector);
+                var responseDivs = document.querySelectorAll(responseDivSelector);
                 if (responseDivs.length < 2) return ''; // if no responses, return empty string
                 return responseDivs[responseDivs.length - 1].textContent;
             } else { // get nth response
-                let m = strPos.match(/^\d+/);
-                let nthOfResponse = (
+                var nthOfResponse = (
 
                     // Calculate base number
                     Number.isInteger(pos) ? pos : // do nothing for integers
-                    m ? m[0] : // extract first digits for strings w/ them
+                    strPos.match(/^\d+/) ? strPos.match(/^\d+/)[0] : // extract first digits for strings w/ them
                     ( // convert words to integers for digitless strings
                         /^(1|one|fir)(st)?$/.test(strPos) ? 1
                         : /^(2|tw(o|en|el(ve|f))|seco)(nd|t[yi])?(e?th)?$/.test(strPos) ? 2
@@ -243,7 +230,7 @@
 
                 ) * 2; // factor for own msg's
 
-                let responseDiv = document.querySelector(`${responseDivSelector}:nth-of-type(${nthOfResponse})`);
+                var responseDiv = document.querySelector(`${responseDivSelector}:nth-of-type(${nthOfResponse})`);
                 return responseDiv ? responseDiv.textContent : '';
             }
         },
@@ -253,7 +240,7 @@
         },
 
         getStopGeneratingButton: function() {
-            for (let formButton of document.querySelectorAll('form button')) {
+            for (var formButton of document.querySelectorAll('form button')) {
                 if (formButton.textContent.toLowerCase().includes('stop')) {
                     return formButton;
         }}},
@@ -266,7 +253,7 @@
 
         isIdle: function() {
             return new Promise(resolve => {
-                let intervalId = setInterval(() => {
+                var intervalId = setInterval(() => {
                     if (chatgpt.getRegenerateButton()) {
                         clearInterval(intervalId); resolve();
         }}, 100);});},
@@ -275,11 +262,11 @@
 
         notify: function(msg, position, notifDuration, shadow) {
             notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
-            let fadeDuration = 0.6; // sec duration of fade-out
-            let vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
+            var fadeDuration = 0.6; // sec duration of fade-out
+            var vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
 
             // Make/stylize/insert div
-            let notificationDiv = document.createElement('div'); // make div
+            var notificationDiv = document.createElement('div'); // make div
             notificationDiv.id = Math.floor(Math.random() * 1000000) + Date.now();
             notificationDiv.style.cssText = ( // stylize it
                 '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
@@ -305,13 +292,13 @@
             notificationDiv.style.left = !notificationDiv.isRight ? vpXoffset.toString() + 'px' : '';
 
             // Reposition old notifications
-            let thisQuadrantDivIDs = notifyProps.quadrants[notificationDiv.quadrant];
+            var thisQuadrantDivIDs = notifyProps.quadrants[notificationDiv.quadrant];
             if (thisQuadrantDivIDs.length > 1) {
-                let divsToMove = thisQuadrantDivIDs.slice(0, -1); // exclude new div
-                for (let j = 0; j < divsToMove.length; j++) {
-                    let oldDiv = document.getElementById(divsToMove[j]);
-                    let offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
-                    let vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
+                var divsToMove = thisQuadrantDivIDs.slice(0, -1); // exclude new div
+                for (var j = 0; j < divsToMove.length; j++) {
+                    var oldDiv = document.getElementById(divsToMove[j]);
+                    var offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
+                    var vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
             }}
 
@@ -321,7 +308,7 @@
             notificationDiv.style.opacity = 1; // show msg
 
             // Hide notification
-            let hideDelay = ( // set delay before fading
+            var hideDelay = ( // set delay before fading
                 fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
                 : notifDuration - fadeDuration); // otherwise delay for difference
             notificationDiv.hideTimer = setTimeout(function hideNotif() { // maintain notification visibility, then fade out
@@ -341,19 +328,19 @@
         },
 
         printAllFunctions: function() {
-            let functionNames = [];
-            for (let prop in this) {
+            var functionNames = [];
+            for (var prop in this) {
                 if (typeof this[prop] === 'function') {
-                    let chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name));
-                    let functionParent = chatgptIsParent ? 'chatgpt' : 'other';
+                    var chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name));
+                    var functionParent = chatgptIsParent ? 'chatgpt' : 'other';
                     functionNames.push([functionParent, prop]);
                 } else if (typeof this[prop] === 'object') {
-                    for (let nestedProp in this[prop]) {
+                    for (var nestedProp in this[prop]) {
                         if (typeof this[prop][nestedProp] === 'function') {
                             functionNames.push([prop, nestedProp]);
             }}}}
             functionNames.sort(function(a, b) { return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]); });
-            for (let functionName of functionNames) {
+            for (var functionName of functionNames) {
                 console.info( 'chatgpt.js >> ' + ( /chatgpt|other/.test(functionName[0]) ? '' : ( functionName[0] + '.' )) + functionName[1] + ': ['
                     + ((( functionName[0] === 'chatgpt' && functionName[1] === this[functionName[1]].name ) || // parent is chatgpt + names match or
                         ( !/chatgpt|other/.test(functionName[0]) )) // parent is chatgpt.obj
@@ -366,7 +353,7 @@
         },
 
         regenerate: function() {
-            for (let formButton of document.querySelectorAll('form button')) {
+            for (var formButton of document.querySelectorAll('form button')) {
                 if (formButton.textContent.toLowerCase().includes('regenerate')) {
                     formButton.click; return;
         }}},
@@ -376,7 +363,7 @@
         },
 
         send: function(msg) {
-            let textArea = document.querySelector('form textarea');
+            var textArea = document.querySelector('form textarea');
             textArea.value = msg;
             textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }));
         },
@@ -387,19 +374,19 @@
         },
 
         startNewChat: function() {
-            for (let navLink of document.querySelectorAll('nav > a')) {
+            for (var navLink of document.querySelectorAll('nav > a')) {
                 if (navLink.text.includes(navLinkLabels.newChat)) {
                     navLink.click(); return;
         }}},
 
         stop: function() {
-            for (let formButton of document.querySelectorAll('form button')) {
+            for (var formButton of document.querySelectorAll('form button')) {
                 if (formButton.textContent.toLowerCase().includes('stop')) {
                     formButton.click(); return;
         }}},
 
         toggleScheme: function() {
-            for (let navLink of document.querySelectorAll('nav > a')) {
+            for (var navLink of document.querySelectorAll('nav > a')) {
                 if (navLink.text.toLowerCase().includes('mode')) {
                     navLink.click(); return;
         }}}
@@ -407,70 +394,57 @@
     };
 
     // Create chatgpt.[actions]Button(identifier) functions
-    let buttonActions = ['click', 'get'];
-    function generateHandleButton(buttonAction) {
-        return function handleButton(buttonIdentifier) {
-            let button = buttonIdentifier.match(
+    var buttonActions = ['click', 'get'];
+    for (var buttonAction of buttonActions) {
+        chatgpt[buttonAction + 'Button'] = function handleButton(buttonIdentifier) {
+            var button = buttonIdentifier.match(
                 /^[.#]/) ? document.querySelector(buttonIdentifier) // get via class or id selector
                 : /send/i.test(buttonIdentifier) ? document.querySelector('form button[class*="bottom"]')
                 : /scroll/i.test(buttonIdentifier) ? document.querySelector('button[class*="cursor"]')
                 : (function() { // get via text content
-                    for (let button of document.querySelectorAll('button')) { // try buttons
+                    for (var button of document.querySelectorAll('button')) { // try buttons
                         if (button.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
                             return button; }}
-                    for (let navLink of document.querySelectorAll('nav > a')) { // try nav links if no button
+                    for (var navLink of document.querySelectorAll('nav > a')) { // try nav links if no button
                         if (navLink.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
                             return navLink; }}})();
             if (buttonAction === 'click') { button.click(); } else { return button; }
         };
     }
-    for (let buttonAction of buttonActions) {
-        chatgpt[buttonAction + 'Button'] = generateHandleButton(buttonAction);
-    }
-
-    const arrayFindIncludesDot = element => element.includes('.');
-
-    // transform new words to create new name
-    const nameTranslator = (newWord, index) => index === 0 || newWord === 's' ? newWord : newWord.charAt(0).toUpperCase() + newWord.slice(1); // case each word to form camel
 
     // Create alias functions
-    for (let prop in chatgpt) {
+    for (var prop in chatgpt) {
 
-        const arraySomeIncludesProp = subAlias => subAlias.includes(prop);
-        
         // Create new function for each alias
-        for (let subAliases of functionAliases) {
-            if (subAliases.some(arraySomeIncludesProp)) {
-                let subAliasWithDot = subAliases.find(arrayFindIncludesDot);
-                if (typeof subAliasWithDot === 'string') {
-                    let nestedFunction = subAliasWithDot.split('.')[1];
-                    for (let nestAlias of subAliases) {
+        for (var subAliases of functionAliases) {
+            if (subAliases.some(subAlias => subAlias.includes(prop))) {
+                if (subAliases.some(element => element.includes('.'))) {
+                    var nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
+                    for (var nestAlias of subAliases) {
                         if (nestAlias.match(/^(\w+)/)[1] !== prop) { // don't alias og function
                             chatgpt[nestAlias] = chatgpt[prop][nestedFunction]; // make new function, reference og one
                 }}} else { // alias direct functions
-                    for (let dirAlias of subAliases) {
+                    for (var dirAlias of subAliases) {
                         if (dirAlias !== prop) { // don't alias og function
                             chatgpt[dirAlias] = chatgpt[prop]; // make new function, reference og one
                 }}}
         }}
 
-        let newFunctionsCreated;
         do { // create new function per synonym per word per function
-            newFunctionsCreated = false;
-            for (let funcName in chatgpt) {
+            var newFunctionsCreated = false;
+            for (var funcName in chatgpt) {
                 if (typeof chatgpt[funcName] === 'function') {
-                    let funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
-                    for (let funcWord of funcWords) {
-                        let synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
+                    var funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
+                    for (var funcWord of funcWords) {
+                        var synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
                             .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
                             .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
-                        for (let synonym of synonymValues) { // create function per synonym
-                            // let newWords = [...funcWords]; // shallow copy funcWords
-                            // newWords[newWords.indexOf(funcWord)] = synonym; // replace funcWord w/ synonym
-                            // let newFuncName = newWords.map(nameTranslator).join(''); // concatenate transformed words
-
-                            let newFuncName = funcWords.map((word, idx) => nameTranslator((word === funcWord ? synonym : word), idx)).join(''); // combine subject to funcWord will appear only once
-
+                        for (var synonym of synonymValues) { // create function per synonym
+                            var newWords = [...funcWords]; // shallow copy funcWords
+                            newWords[newWords.indexOf(funcWord)] = synonym; // replace funcWord w/ synonym
+                            var newFuncName = newWords.map((newWord, index) => // transform new words to create new name
+                                index === 0 || newWord === 's' ? newWord : newWord.charAt(0).toUpperCase() + newWord.slice(1) // case each word to form camel
+                            ).join(''); // concatenate transformed words
                             if (!chatgpt[newFuncName]) { // don't alias existing functions
                                 chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
                                 newFunctionsCreated = true;
