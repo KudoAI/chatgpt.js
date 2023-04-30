@@ -143,13 +143,13 @@
                         return; // break navLink loop
                     } else { headlessMenu.click(); headlessMenu.blur(); }
                 }
-            }
+            };
             const timerFunctionClearChats = () => {
                 headlessMenu = document.querySelector('nav button[id*="headless"]');
                 if (!this.clearChats.cnt) this.clearChats.cnt = 0;
                 if (this.clearChats.cnt == 0) { headlessMenu.click(); headlessMenu.blur(); }
                 setTimeout(clearThenConfirm, 100);
-            }
+            };
             timerFunctionClearChats();
         },
 
@@ -219,12 +219,12 @@
                 if (responseDivs.length < 2) return ''; // if no responses, return empty string
                 return responseDivs[responseDivs.length - 1].textContent;
             } else { // get nth response
-                let m = null;
+                let m = strPos.match(/^\d+/);
                 let nthOfResponse = (
 
                     // Calculate base number
                     Number.isInteger(pos) ? pos : // do nothing for integers
-                    (m = strPos.match(/^\d+/)) ? m[0] : // extract first digits for strings w/ them
+                    m ? m[0] : // extract first digits for strings w/ them
                     ( // convert words to integers for digitless strings
                         /^(1|one|fir)(st)?$/.test(strPos) ? 1
                         : /^(2|tw(o|en|el(ve|f))|seco)(nd|t[yi])?(e?th)?$/.test(strPos) ? 2
@@ -469,7 +469,7 @@
                             // newWords[newWords.indexOf(funcWord)] = synonym; // replace funcWord w/ synonym
                             // let newFuncName = newWords.map(nameTranslator).join(''); // concatenate transformed words
 
-                            funcWords.map((word, idx) => nameTranslator((word === funcWord ? synonym : word), idx)).join(''); // combine subject to funcWord will appear only once
+                            let newFuncName = funcWords.map((word, idx) => nameTranslator((word === funcWord ? synonym : word), idx)).join(''); // combine subject to funcWord will appear only once
 
                             if (!chatgpt[newFuncName]) { // don't alias existing functions
                                 chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
