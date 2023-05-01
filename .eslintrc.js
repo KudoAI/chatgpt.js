@@ -17,7 +17,7 @@ module.exports  = {
     },
     'globals': { 'Uint8Array': true },
     'parserOptions': {
-        'ecmaVersion': 6,
+        'ecmaVersion': 2017,
         'sourceType': 'script'
     },
     'env': { 'browser': true, 'node': true, 'es6': true }
