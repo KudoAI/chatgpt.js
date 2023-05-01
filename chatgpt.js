@@ -30,12 +30,6 @@
         'button', 'link', 'div', 'response'
     ];
 
-    var navLinkLabels = {
-        clearChats: 'Clear conversations',
-        confirmClearChats: 'Confirm clear conversations',
-        newChat: 'New chat'
-    };
-
     var chatgpt = {
 
         autoRefresh: {
@@ -131,7 +125,7 @@
                 let menuItems = document.querySelectorAll('a[role="menuitem"]');
                 if (menuItems.length < 4) {
                     await new Promise(async (resolve) => {
-                        let timer = setInterval(function () {
+                        let timer = setInterval(function() {
                             if (menuItems.length < 4) return;
                             clearInterval(timer); resolve();
                         }, 10);
@@ -190,7 +184,7 @@
 
         getNewChatLink: function() {
             for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.includes(navLinkLabels.newChat)) {
+                if (navLink.text.includes('New chat')) {
                     return navLink;
         }}},
 
@@ -376,7 +370,7 @@
 
         startNewChat: function() {
             for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.includes(navLinkLabels.newChat)) {
+                if (navLink.text.includes('New chat')) {
                     navLink.click(); return;
         }}},
 
