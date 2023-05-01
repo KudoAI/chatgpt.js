@@ -123,13 +123,22 @@
             menuButton.click();
             setTimeout(async function() {
                 let menuItems = document.querySelectorAll('a[role="menuitem"]');
+                let discard = false;
                 if (menuItems.length < 4) {
                     await new Promise((resolve) => {
                         let timer = setInterval(function() {
                             if (menuItems.length < 4) return;
                             clearInterval(timer); resolve();
                         }, 10);
+                        setTimeout(() => {
+                            discard = true;
+                            clearInterval(timer);
+                        }, 10000);
                 });}
+                if(discard){
+                    setTimeout(function() { menuButton.click(); }, 10);
+                    return;
+                }
                 let clearConversations = menuItems[1];
                 clearConversations.click();
                 setTimeout(function() { clearConversations.click(); }, 10);
