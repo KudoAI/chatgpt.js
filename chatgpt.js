@@ -124,21 +124,22 @@
         }}},
 
         clearChats: function() {
-            var headlessMenu = document.querySelector('nav button[id*="headless"]');
-            if (!this.clearChats.cnt) this.clearChats.cnt = 0;
-            if (this.clearChats.cnt == 0) { headlessMenu.click(); headlessMenu.blur(); }
-            setTimeout(function clearThenConfirm() {
-                for (var navLink of document.querySelectorAll('nav > a')) {
-                    if (navLink.text.includes(navLinkLabels[(
-                            this.clearChats.cnt > 0 ? 'confirmC' : 'c') + 'learChats'])) {
-                        navLink.click(); this.clearChats.cnt++;
-                        if (this.clearChats.cnt < 2) { // repeat to confirm
-                            setTimeout(this.clearChats.bind(this), 500);
-                        } else { this.clearChats.cnt = 0; }
-                        return; // break navLink loop
-                    } else { headlessMenu.click(); headlessMenu.blur(); }
-                }
-            }.bind(this), 100);
+            let menuButton = document.querySelector('nav button[id*="headless"]');
+            if (menuButton == null) return;
+            menuButton.click();
+            setTimeout(async function() {
+                let menuItems = document.querySelectorAll('a[role="menuitem"]');
+                if (menuItems.length < 4) {
+                    await new Promise(async (resolve) => {
+                        let timer = setInterval(function () {
+                            if (menuItems.length < 4) return;
+                            clearInterval(timer); resolve();
+                        }, 10);
+                })}
+                let clearConversations = menuItems[1];
+                clearConversations.click();
+                setTimeout(function() { clearConversations.click(); }, 10);
+            }, 10);
         },
 
         get: function(targetType, targetName = '') {
