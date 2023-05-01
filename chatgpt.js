@@ -116,12 +116,13 @@
                 if (navLink.text.toLowerCase().includes('light mode')) {
                     navLink.click(); return;
         }}},
-
+        
         clearChats: function() {
             let menuButton = document.querySelector('nav button[id*="headless"]');
             if (menuButton == null) return;
             menuButton.click();
-            setTimeout(async function() {
+            setTimeout(clearAndConfirm, 10);
+            async function clearAndConfirm() {
                 let menuItems = document.querySelectorAll('a[role="menuitem"]');
                 if (menuItems.length < 4) {
                     await new Promise(async (resolve) => {
@@ -129,11 +130,11 @@
                             if (menuItems.length < 4) return;
                             clearInterval(timer); resolve();
                         }, 10);
-                })}
-                let clearConversations = menuItems[1];
-                clearConversations.click();
-                setTimeout(function() { clearConversations.click(); }, 10);
-            }, 10);
+                    });
+                }
+                menuItems[1].click();
+                setTimeout(function() { menuItems[1].click(); }, 10);
+            }
         },
 
         get: function(targetType, targetName = '') {
