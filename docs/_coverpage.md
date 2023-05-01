@@ -1,6 +1,6 @@
 <!-- _coverpage.md -->
 
-<img class="logo" width=1655 src="https://i.imgur.com/V9FysGI.gif">
+<img class="logo" width=1723 src="https://i.imgur.com/q2JKftP.gif">
 
 > 🤖 A powerful client-side JavaScript library for ChatGPT
 
