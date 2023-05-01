@@ -136,7 +136,7 @@
                         }, 10000);
                 });}
                 if(discard){
-                    setTimeout(function() { menuButton.click(); }, 10);
+                    menuButton.click();
                     return;
                 }
                 let clearConversations = menuItems[1];
