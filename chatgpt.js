@@ -106,16 +106,34 @@
         },
 
         activateDarkMode: function() {
-            for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.toLowerCase().includes('dark mode')) {
-                    navLink.click(); return;
-        }}},
+            var menuButton = document.querySelector('nav button[id*="headless"]');            
+            if (!menuButton) return; menuButton.click();
+            setTimeout(function() {
+                var menuItems = document.querySelectorAll('a[role="menuitem"]');
+                menuItems[menuItems.length - 2].click(); // open settings
+                setTimeout(function() {
+                    var themeSelector = document.querySelector('div[id*="panel"] select');
+                    themeSelector.value = 'dark';
+                    themeSelector.dispatchEvent(new Event('change', { bubbles: true }));
+                    document.querySelector('div[id*="panel"] button').click(); // close settings
+                }, 10);
+            }, 10);
+        },
 
         activateLightMode: function() {
-            for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.toLowerCase().includes('light mode')) {
-                    navLink.click(); return;
-        }}},
+            var menuButton = document.querySelector('nav button[id*="headless"]');
+            if (!menuButton) return; menuButton.click();
+            setTimeout(function() {
+                var menuItems = document.querySelectorAll('a[role="menuitem"]');
+                menuItems[menuItems.length - 2].click(); // open settings
+                setTimeout(function() {
+                    var themeSelector = document.querySelector('div[id*="panel"] select');
+                    themeSelector.value = 'light';
+                    themeSelector.dispatchEvent(new Event('change', { bubbles: true }));
+                    document.querySelector('div[id*="panel"] button').click(); // close settings
+                }, 10);
+            }, 10);
+        },
 
         clearChats: function() {
             let menuButton = document.querySelector('nav button[id*="headless"]');
@@ -389,11 +407,7 @@
                     formButton.click(); return;
         }}},
 
-        toggleScheme: function() {
-            for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.toLowerCase().includes('mode')) {
-                    navLink.click(); return;
-        }}}
+        toggleScheme: function() { chatgpt.isLightMode() ? chatgpt.activateDarkMode() : chatgpt.activateLightMode(); }
 
     };
 
