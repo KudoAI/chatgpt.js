@@ -199,14 +199,13 @@
         },
 
         getLastResponse: function() {
-            var responseDivs = document.querySelectorAll('main div[class*=group]');
-            if (responseDivs.length < 2) return ''; // if no responses, return empty string
-            return responseDivs[responseDivs.length - 1].textContent;
+            var lastResponseDiv = chatgpt.getLastResponseDiv();
+            return lastResponseDiv ? lastResponseDiv.textContent : '';
         },
 
         getLastResponseDiv: function() {
-            var responseDivs = document.querySelectorAll('main div[class*=group]');
-            return responseDivs[responseDivs.length - 1];
+            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
+            return responseDivs.length ? responseDivs[responseDivs.length - 1] : '';
         },
 
         getNewChatLink: function() {
@@ -222,12 +221,10 @@
         }}},
 
         getResponse: function(pos) {
-            var responseDivSelector = 'main > div > div > div > div > div[class*=group]';
+            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
             var strPos = pos.toString().toLowerCase();
             if (/last|final/.test(strPos)) { // get last response
-                var responseDivs = document.querySelectorAll(responseDivSelector);
-                if (responseDivs.length < 2) return ''; // if no responses, return empty string
-                return responseDivs[responseDivs.length - 1].textContent;
+                return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
             } else { // get nth response
                 var nthOfResponse = (
 
@@ -250,10 +247,8 @@
                     * ( /ty|ieth$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
                     + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
 
-                ) * 2; // factor for own msg's
-
-                var responseDiv = document.querySelector(`${responseDivSelector}:nth-of-type(${nthOfResponse}) p`);
-                return responseDiv ? responseDiv.textContent : '';
+                );
+                return responseDivs.length ? responseDivs[nthOfResponse - 1].textContent : '';
             }
         },
 
