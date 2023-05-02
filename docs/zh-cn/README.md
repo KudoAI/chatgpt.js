@@ -27,12 +27,10 @@ chatgpt.js 是一个功能强大的 JavaScript 库，可轻松与 [ChatGPT DOM](
 ### ES6:
 
 ```js
-import('https://code.chatgptjs.org/chatgpt-latest.min.js')
-    .then(module => { yourCode() })
-
-function yourCode() {
+(async () => {
+    const { chatgpt } = await import('https://code.chatgptjs.org/chatgpt-latest.min.js');    
     // 这里是您的代码
-}
+})();
 ```
 
 ### ES5:
