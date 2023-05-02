@@ -3,7 +3,7 @@
 
 /* COVER */
 
-.cover-main > img { margin-bottom: 16px } /* cover logo */
+.cover-main > img { margin-bottom: 16px ; width: 1723px } /* cover logo */
 .cover-main { color: white } /* all cover txt color */
 section.cover p { /* cover tagline size / position */
     font-size: 2rem !important ;
