@@ -222,7 +222,7 @@
         }}},
 
         getResponse: function(pos) {
-            var responseDivSelector = 'main div[class*=group]';
+            var responseDivSelector = 'main > div > div > div > div > div[class*=group]';
             var strPos = pos.toString().toLowerCase();
             if (/last|final/.test(strPos)) { // get last response
                 var responseDivs = document.querySelectorAll(responseDivSelector);
@@ -252,7 +252,7 @@
 
                 ) * 2; // factor for own msg's
 
-                var responseDiv = document.querySelector(`${responseDivSelector}:nth-of-type(${nthOfResponse})`);
+                var responseDiv = document.querySelector(`${responseDivSelector}:nth-of-type(${nthOfResponse}) p`);
                 return responseDiv ? responseDiv.textContent : '';
             }
         },
