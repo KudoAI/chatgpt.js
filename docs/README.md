@@ -27,12 +27,10 @@
 ### ES6:
 
 ```js
-import('https://code.chatgptjs.org/chatgpt-latest.min.js')
-    .then(module => { yourCode() })
-
-function yourCode() {
-    // Your code starts here
-}
+(async () => {
+    const { chatgpt } = await import('https://code.chatgptjs.org/chatgpt-latest.min.js');    
+    // Your code here...
+})();
 ```
 
 ### ES5:
@@ -51,7 +49,7 @@ xhr.onload = function() {
 xhr.send()
 
 function yourCode() {
-    // Your code starts here
+    // Your code here...
 }
 ```
 
@@ -64,7 +62,7 @@ Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CD
 // @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@abc1534f6d97601f944c171518bd249056a752ba/dist/chatgpt-1.6.3.min.js
 // ==/UserScript==
 
-// Your code starts here
+// Your code here...
 ```
 
 If you don't plan on publishing to these repos, the simpler `https://code.chatgptjs.org/chatgpt-latest.min.js` can be used instead to import the latest minified release.
