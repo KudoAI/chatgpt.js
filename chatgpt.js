@@ -1,4 +1,4 @@
-(function () {
+(() => {
 
     var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
     localStorage.notifyProps = JSON.stringify(notifyProps);
@@ -135,17 +135,19 @@
             }, 10);
         },
 
-        clearChats: async function () {
-            return new Promise(async (resolve) => {
-                let url = '/backend-api/conversations'
-                let method = 'PATCH'
+        clearChats: async function() {
+            return new Promise((resolve) => {
+                let url = '/backend-api/conversations';
+                let method = 'PATCH';
                 let headers = {
                     'Authorization': 'Bearer ' + globalVariable.get('accessToken'),
                     'Content-Type': 'application/json'
-                }
-                let body = { is_visible: false }
-                let response = await globalVariable.get('Fetch')(url, { method, headers, body: JSON.stringify(body) })
-                resolve(response)
+                };
+                let body = { is_visible: false };
+                (async() => {
+                    let response = await globalVariable.get('Fetch')(url, { method, headers, body: JSON.stringify(body) });
+                    resolve(response);
+                })();
            });
         },
 
@@ -392,63 +394,63 @@
     };
 
     var globalVariable = new Map();
-    var unsafeWindow = document.defaultView
+    var unsafeWindow = document.defaultView;
     var FetchMapList = new Map();
 
     function hookFetch() {
-        const originalFetch = unsafeWindow.fetch
-        globalVariable.set('Fetch', originalFetch)
-        unsafeWindow.fetch = function(...args) {
-            (async function() {
-                let U = args[0]
+        const originalFetch = unsafeWindow.fetch;
+        globalVariable.set('Fetch', originalFetch);
+        unsafeWindow.fetch = (...args) => {
+            (async() => {
+                let U = args[0];
                 if (U.indexOf('http') == -1) {
-                    if (U[0] !== '/') { 
-                        let pathname = new URL(location.href).pathname
-                        U = pathname + U
+                    if (U[0] !== '/') {
+                        let pathname = new URL(location.href).pathname;
+                        U = pathname + U;
                     }
-                    U = location.origin + U
+                    U = location.origin + U;
                 }
-                let url = new URL(U), pathname = url.pathname, callback = FetchMapList.get(pathname)
-                if (callback == null) return
-                if (callback.length == 0) return
-                let ret = await originalFetch.apply(this, args)
-                let text = await ret.text()
-                for (let cb of callback) cb(text)
-            })()
-            return originalFetch.apply(this, args)
-        }
+                let url = new URL(U), pathname = url.pathname, callback = FetchMapList.get(pathname);
+                if (callback == null) return;
+                if (callback.length == 0) return;
+                let ret = await originalFetch.apply(this, args);
+                let text = await ret.text();
+                for (let cb of callback) cb(text);
+            })();
+            return originalFetch.apply(this, args);
+        };
     }
     
-    hookFetch()
+    hookFetch();
 
     unsafeWindow['chatgpt.js.org'] = {
         FetchCallback: {
-            add: function (pathname, callback) {
-                let list = FetchMapList.get(pathname) || (FetchMapList.set(pathname, []), FetchMapList.get(pathname))
-                list.push(callback)
-                let index = list.length
-                return index
+            add: (pathname, callback) => {
+                let list = FetchMapList.get(pathname) || (FetchMapList.set(pathname, []), FetchMapList.get(pathname));
+                list.push(callback);
+                let index = list.length;
+                return index;
             },
-            del: function (pathname, index) {
-                let list = FetchMapList.get(pathname)
-                if (list == null) return false
-                list.splice(index - 1, 1)
-                return true
+            del: (pathname, index) => {
+                let list = FetchMapList.get(pathname);
+                if (list == null) return false;
+                list.splice(index - 1, 1);
+                return true;
             }
         },
         globalVariable: {
-            get: function (key) {
-                return globalVariable.get(key)
+            get: (key) => {
+                return globalVariable.get(key);
             }
         }
-    }
+    };
 
-    unsafeWindow['chatgpt.js.org'].FetchCallback.add('/api/auth/session', function (text) {
-        let json = JSON.parse(text)
-        let accessToken = json.accessToken
-        localStorage.setItem('chatgpt.js.org.accessToken', accessToken)
-        globalVariable.set('accessToken', accessToken)
-    })
+    unsafeWindow['chatgpt.js.org'].FetchCallback.add('/api/auth/session', (text) => {
+        let json = JSON.parse(text);
+        let accessToken = json.accessToken;
+        localStorage.setItem('chatgpt.js.org.accessToken', accessToken);
+        globalVariable.set('accessToken', accessToken);
+    });
 
     // Create chatgpt.[actions]Button(identifier) functions
     var buttonActions = ['click', 'get'];
