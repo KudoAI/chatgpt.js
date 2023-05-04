@@ -498,11 +498,11 @@
         }
     };
 
-    unsafeWindow['chatgpt.js.org'].FetchCallback.add('/api/auth/session', (text, period) => {
+    unsafeWindow['chatgpt.js.org'].FetchCallback.add('/api/auth/session', (_object, period) => {
         if (period !== 'done') { 
             return;
         }
-        let json = JSON.parse(text);
+        let json = JSON.parse(_object.text);
         let accessToken = json.accessToken;
         localStorage.setItem('chatgpt.js.org.accessToken', accessToken);
         globalVariable.set('accessToken', accessToken);
