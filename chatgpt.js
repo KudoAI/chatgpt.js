@@ -400,7 +400,7 @@
     function hookFetch() {
         const originalFetch = unsafeWindow.fetch;
         globalVariable.set('Fetch', originalFetch);
-        unsafeWindow.fetch = (...args) => {
+        unsafeWindow.fetch = (...args)=> {
             let apply = originalFetch.apply(this, args);
             let U = args[0];
             if (U.indexOf('http') == -1) {
@@ -410,22 +410,22 @@
                 }
                 U = location.origin + U;
             }
-            (() => {
+            (()=> {
                 let url = new URL(U), pathname = url.pathname, callback = FetchMapList.get(pathname);
                 if (callback == null) return;
                 if (callback.length == 0) return;
                 apply.then((response) => {
                     let text = response.text, json = response.json;
-                    response.text = () => {
-                        return text.apply(response).then((text) => {
+                    response.text = ()=> {
+                        return text.apply(response).then((text)=> {
                             for (let i = 0; i < callback.length; i++) {
                                 callback[i](text);
                             }
                             return text;
                         });
                     }
-                    response.json = () => {
-                        return json.apply(response).then((json) => {
+                    response.json = ()=> {
+                        return json.apply(response).then((json)=> {
                             let text = JSON.stringify(json);
                             for (let i = 0; i < callback.length; i++) {
                                 callback[i](text);
