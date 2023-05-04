@@ -397,11 +397,27 @@
     var unsafeWindow = window.unsafeWindow || document.defaultView || window;
     var FetchMapList = new Map();
 
+    function deliveryTask(callbackList, _object, period) {
+        let newObject = _object;
+        for (let i = 0; i < callbackList.length; i++) {
+            let tempObject = null;
+            try {
+                tempObject = callbackList[i](newObject, period);
+            } catch (e) {
+                new Error(e);
+            }
+            if (tempObject == null) {
+                continue;
+            }
+            newObject = tempObject;
+        }
+        return newObject;
+    }
+
     function hookFetch() {
         const originalFetch = unsafeWindow.fetch;
         globalVariable.set('Fetch', originalFetch);
         unsafeWindow.fetch = (...args) => {
-            let apply = originalFetch.apply(this, args);
             let U = args[0];
             if (U.indexOf('http') == -1) {
                 if (U[0] !== '/') {
@@ -410,44 +426,41 @@
                 }
                 U = location.origin + U;
             }
+            let apply = null;
             (() => {
                 let url = new URL(U),
                     pathname = url.pathname,
                     callback = FetchMapList.get(pathname);
                 if (callback == null) return;
                 if (callback.length == 0) return;
-                let deliveryTask = (callback, text) => {
-                    let newText = text;
-                    for (let i = 0; i < callback.length; i++) {
-                        let tempText = null;
-                        try {
-                            tempText = callback[i](newText,args);
-                        } catch (e) {
-                            new Error(e);
-                        }
-                        if (tempText == null) { 
-                            continue;
-                        }
-                        newText = tempText;
-                    }
-                    return newText;
-                };
+                let newObject = deliveryTask(callback, { args }, 'preRequest');
+                if (newObject && newObject.args) {
+                    args = newObject.args;
+                }
+                apply = originalFetch.apply(this, args);
                 apply.then((response) => {
                     let text = response.text,
                         json = response.json;
                     response.text = () => {
                         return text.apply(response).then((text) => {
-                            return deliveryTask(callback, text);
+                            let _object = deliveryTask(callback, { text, args }, 'done');
+                            if (_object && _object.text) {
+                                text = _object.text;
+                            }
+                            return text;
                         });
                     };
                     response.json = () => {
                         return json.apply(response).then((json) => {
                             let text = JSON.stringify(json);
-                            return JSON.parse(deliveryTask(callback, text));
+                            return JSON.parse(deliveryTask(callback, { text, args }, 'done'));
                         });
                     };
                 });
             })();
+            if (apply == null) {
+                apply = originalFetch.apply(this, args);
+            }
             return apply;
         };
     }
@@ -485,7 +498,10 @@
         }
     };
 
-    unsafeWindow['chatgpt.js.org'].FetchCallback.add('/api/auth/session', (text) => {
+    unsafeWindow['chatgpt.js.org'].FetchCallback.add('/api/auth/session', (text, period) => {
+        if (period !== 'done') { 
+            return;
+        }
         let json = JSON.parse(text);
         let accessToken = json.accessToken;
         localStorage.setItem('chatgpt.js.org.accessToken', accessToken);
