@@ -432,7 +432,7 @@
                     pathname = url.pathname,
                     callback = FetchMapList.get(pathname);
                 if (callback == null) return;
-                if (callback.length == 0) return;
+                if (callback.length === 0) return;
                 let newObject = deliveryTask(callback, { args }, 'preRequest');
                 if (newObject && newObject.args) {
                     args = newObject.args;
@@ -453,11 +453,7 @@
                     response.json = () => {
                         return json.apply(response).then((json) => {
                             let text = JSON.stringify(json);
-                            let _object = deliveryTask(callback, { text, args }, 'done');
-                            if (_object && _object.text) {
-                                text = _object.text;
-                            }
-                            return JSON.parse(text);
+                            return JSON.parse(deliveryTask(callback, { text, args }, 'done'));
                         });
                     };
                 });
