@@ -394,7 +394,7 @@
     };
 
     var globalVariable = new Map();
-    var unsafeWindow = document.defaultView;
+    var unsafeWindow = window.unsafeWindow || document.defaultView || window;
     var FetchMapList = new Map();
 
     function hookFetch() {
