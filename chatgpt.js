@@ -416,23 +416,23 @@
                 if (callback.length == 0) return;
                 apply.then((response) => {
                     let text = response.text, json = response.json;
-                    response.text = ()=> {
-                        return text.apply(response).then((text)=> {
+                    response.text = () => {
+                        return text.apply(response).then((text) => {
                             for (let i = 0; i < callback.length; i++) {
                                 callback[i](text);
                             }
                             return text;
                         });
-                    }
-                    response.json = ()=> {
-                        return json.apply(response).then((json)=> {
+                    };
+                    response.json = () => {
+                        return json.apply(response).then((json) => {
                             let text = JSON.stringify(json);
                             for (let i = 0; i < callback.length; i++) {
                                 callback[i](text);
                             }
                             return json;
                         });
-                    }
+                    };
                 });
             })();
             return apply;
