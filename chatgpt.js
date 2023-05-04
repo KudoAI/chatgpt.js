@@ -421,7 +421,7 @@
                     for (let i = 0; i < callback.length; i++) {
                         let tempText = null;
                         try {
-                            tempText = callback[i](newText);
+                            tempText = callback[i](newText,...args);
                         } catch (e) {
                             new Error(e);
                         }
