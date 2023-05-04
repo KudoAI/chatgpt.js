@@ -400,7 +400,7 @@
     function hookFetch() {
         const originalFetch = unsafeWindow.fetch;
         globalVariable.set('Fetch', originalFetch);
-        unsafeWindow.fetch = (...args)=> {
+        unsafeWindow.fetch = (...args) => {
             let apply = originalFetch.apply(this, args);
             let U = args[0];
             if (U.indexOf('http') == -1) {
@@ -410,26 +410,34 @@
                 }
                 U = location.origin + U;
             }
-            (()=> {
-                let url = new URL(U), pathname = url.pathname, callback = FetchMapList.get(pathname);
+            (() => {
+                let url = new URL(U),
+                    pathname = url.pathname,
+                    callback = FetchMapList.get(pathname);
                 if (callback == null) return;
                 if (callback.length == 0) return;
+                let deliveryTask = (callback, text) => {
+                    for (let i = 0; i < callback.length; i++) {
+                        try {
+                            callback[i](text);
+                        } catch (e) {
+                            new Error(e);
+                        }
+                    }
+                };
                 apply.then((response) => {
-                    let text = response.text, json = response.json;
+                    let text = response.text,
+                        json = response.json;
                     response.text = () => {
                         return text.apply(response).then((text) => {
-                            for (let i = 0; i < callback.length; i++) {
-                                callback[i](text);
-                            }
+                            deliveryTask(callback, text);
                             return text;
                         });
                     };
                     response.json = () => {
                         return json.apply(response).then((json) => {
                             let text = JSON.stringify(json);
-                            for (let i = 0; i < callback.length; i++) {
-                                callback[i](text);
-                            }
+                            deliveryTask(callback, text);
                             return json;
                         });
                     };
