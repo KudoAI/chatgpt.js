@@ -417,28 +417,33 @@
                 if (callback == null) return;
                 if (callback.length == 0) return;
                 let deliveryTask = (callback, text) => {
+                    let newText = text;
                     for (let i = 0; i < callback.length; i++) {
+                        let tempText = null;
                         try {
-                            callback[i](text);
+                            tempText = callback[i](newText);
                         } catch (e) {
                             new Error(e);
                         }
+                        if (tempText == null) { 
+                            continue;
+                        }
+                        newText = tempText;
                     }
+                    return newText;
                 };
                 apply.then((response) => {
                     let text = response.text,
                         json = response.json;
                     response.text = () => {
                         return text.apply(response).then((text) => {
-                            deliveryTask(callback, text);
-                            return text;
+                            return deliveryTask(callback, text);
                         });
                     };
                     response.json = () => {
                         return json.apply(response).then((json) => {
                             let text = JSON.stringify(json);
-                            deliveryTask(callback, text);
-                            return json;
+                            return JSON.parse(deliveryTask(callback, text));
                         });
                     };
                 });
