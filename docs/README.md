@@ -93,7 +93,7 @@ export { chatgpt }
 
 ```js
 (async () => {
-    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
+    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));    
     // Your code here...
 })();
 ```
