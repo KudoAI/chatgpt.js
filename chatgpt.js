@@ -275,6 +275,13 @@
                         clearInterval(intervalId); resolve();
         }}, 100);});},
 
+        isLoaded: function() {
+            return new Promise(resolve => {
+                var intervalId = setInterval(() => {
+                    if (document.querySelector('form button[class*="bottom"]')) {
+                        clearInterval(intervalId); resolve();
+        }}, 100);});},
+
         isLightMode: function() { return document.documentElement.classList.contains('light'); },
 
         notify: function(msg, position, notifDuration, shadow) {
