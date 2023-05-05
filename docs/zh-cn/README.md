@@ -28,7 +28,7 @@ chatgpt.js 是一个功能强大的 JavaScript 库，可轻松与 [ChatGPT DOM](
 
 ```js
 (async () => {
-    const { chatgpt } = await import('https://code.chatgptjs.org/chatgpt-latest.min.js');    
+    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');    
     // 这里是您的代码
 })();
 ```
@@ -66,6 +66,31 @@ function yourCode() {
 ```
 
 如果您不打算发布到这些存储库，则可以使用更简单的 `https://code.chatgptjs.org/chatgpt-latest.min.js` 来导入最新的缩小版本。
+
+### Chrome:
+
+Google 的 Chrome 网上应用店开发者计划政策不鼓励使用远程代码 ([需要触发额外审查的理由](https://developer.chrome.com/docs/webstore/cws-dashboard-privacy/#declare-any-remote-code)如果使用) 因此在本地包含 chatgpt.js 是理想的:
+
+1. 将 https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js 保存到子目录 (本例中为 `lib`)
+2. 将 ES6 导出语句添加到 `lib/chatgpt.js` 的末尾
+```js
+...
+export { chatgpt }
+```
+3. 在项目的 `manifest.json` 中，添加 `lib/chatgpt.js` 作为 Web 可访问资源
+```json
+    "web_accessible_resources": [{
+        "matches": ["<all_urls>"],
+        "resources": ["lib/chatgpt.js"]
+    }],
+```
+4. 在使用 chatgpt.js（前景或背景）的脚本中，结构如下:
+```js
+(async () => {
+    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
+    // 这里是您的代码
+})();
+```
 
 ## 用法
 
