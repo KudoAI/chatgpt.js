@@ -28,7 +28,7 @@
 
 ```js
 (async () => {
-    const { chatgpt } = await import('https://code.chatgptjs.org/chatgpt-latest.min.js');    
+    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');    
     // Your code here...
 })();
 ```
@@ -66,6 +66,31 @@ Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CD
 ```
 
 If you don't plan on publishing to these repos, the simpler `https://code.chatgptjs.org/chatgpt-latest.min.js` can be used instead to import the latest minified release.
+
+### Chrome:
+
+Google's Chrome Web Store Developer Program Policies discourage the use of remote code ([requiring justification which triggers extra scrutiny](https://developer.chrome.com/docs/webstore/cws-dashboard-privacy/#declare-any-remote-code) if used) thus including chatgpt.js locally is ideal:
+
+1. Save https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js to a subdirectory (`lib` in this example)
+2. Add ES6 export statement to end of `lib/chatgpt.js`
+```js
+...
+export { chatgpt }
+```
+3. In project's `manifest.json`, add `lib/chatgpt.js` as a web accessible resource
+```json
+    "web_accessible_resources": [{
+        "matches": ["<all_urls>"],
+        "resources": ["lib/chatgpt.js"]
+    }],
+```
+4. In scripts that use `chatgpt.js` (foreground or background), structure like so:
+```js
+(async () => {
+    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
+    // Your code here...
+})();
+```
 
 ## Usage
 
