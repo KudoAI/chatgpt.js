@@ -72,11 +72,13 @@ function yourCode() {
 Google 的 Chrome 网上应用店开发者计划政策不鼓励使用远程代码 ([需要触发额外审查的理由](https://developer.chrome.com/docs/webstore/cws-dashboard-privacy/#declare-any-remote-code)如果使用) 因此在本地包含 chatgpt.js 是理想的:
 
 1. 将 https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js 保存到子目录 (本例中为 `lib`)
+
 2. 将 ES6 导出语句添加到 `lib/chatgpt.js` 的末尾
 ```js
 ...
 export { chatgpt }
 ```
+
 3. 在项目的 `manifest.json` 中，添加 `lib/chatgpt.js` 作为 Web 可访问资源
 ```json
     "web_accessible_resources": [{
@@ -84,6 +86,7 @@ export { chatgpt }
         "resources": ["lib/chatgpt.js"]
     }],
 ```
+
 4. 在使用 chatgpt.js（前景或背景）的脚本中，结构如下:
 ```js
 (async () => {
