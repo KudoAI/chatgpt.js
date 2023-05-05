@@ -74,14 +74,12 @@ Google's Chrome Web Store Developer Program Policies discourage the use of remot
 1. Save https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js to a subdirectory (`lib` in this example)
 
 2. Add ES6 export statement to end of `lib/chatgpt.js`
-
 ```js
 ...
 export { chatgpt }
 ```
 
 3. In project's `manifest.json`, add `lib/chatgpt.js` as a web accessible resource
-
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
@@ -90,7 +88,6 @@ export { chatgpt }
 ```
 
 4. In scripts that use `chatgpt.js` (foreground or background), structure like so:
-
 ```js
 (async () => {
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));    
