@@ -69,7 +69,7 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
-由于谷歌很可能在下个月逐步淘汰 Manifest V2，远程代码将不再被允许，因此在本地导入 chatgpt.js 是理想的:
+由于谷歌很可能在[下个月](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/)逐步淘汰 Manifest V2，远程代码将不再被允许，因此在本地导入 chatgpt.js 是理想的:
 
 1. 将 https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js 保存到子目录 (本例中为 `lib`)
 
@@ -87,7 +87,7 @@ export { chatgpt }
     }],
 ```
 
-4. 在使用 chatgpt.js（前景或背景）的脚本中，结构如下:
+4. 在使用 chatgpt.js（前景/背景相似）的脚本中，结构如下:
 ```js
 (async () => {
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
