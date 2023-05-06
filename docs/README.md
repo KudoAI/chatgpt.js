@@ -79,7 +79,7 @@ Since Google is likely to phase out Manifest V2 by next month, remote code will 
 export { chatgpt }
 ```
 
-3. In project's `manifest.json`, add `lib/chatgpt.js` as a web accessible resource
+3. In project's (V3) `manifest.json`, add `lib/chatgpt.js` as a web accessible resource
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
