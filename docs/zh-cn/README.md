@@ -69,7 +69,7 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
-Google 的 Chrome 网上应用店开发者计划政策不鼓励使用远程代码 ([需要触发额外审查的理由](https://developer.chrome.com/docs/webstore/cws-dashboard-privacy/#declare-any-remote-code)如果使用) 因此在本地包含 chatgpt.js 是理想的:
+由于谷歌很可能在下个月逐步淘汰 Manifest V2，远程代码将不再被允许，因此在本地导入 chatgpt.js 是理想的:
 
 1. 将 https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js 保存到子目录 (本例中为 `lib`)
 
@@ -79,7 +79,7 @@ Google 的 Chrome 网上应用店开发者计划政策不鼓励使用远程代�
 export { chatgpt }
 ```
 
-3. 在项目的 `manifest.json` 中，添加 `lib/chatgpt.js` 作为 Web 可访问资源
+3. 在项目的 (V3) `manifest.json` 中，添加 `lib/chatgpt.js` 作为 Web 可访问资源
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
