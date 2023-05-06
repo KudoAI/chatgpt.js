@@ -69,7 +69,7 @@ If you don't plan on publishing to these repos, the simpler `https://code.chatgp
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
-Since Google is likely to phase out Manifest V2 by next month, remote code will no longer be allowed, so importing chatgpt.js locally is ideal:
+Since Google is likely to phase out Manifest V2 by [next month](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/), remote code will no longer be allowed, so importing chatgpt.js locally is ideal:
 
 1. Save https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js to a subdirectory (`lib` in this example)
 
