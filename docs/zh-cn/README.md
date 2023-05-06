@@ -53,7 +53,7 @@ function yourCode() {
 }
 ```
 
-### Greasemonkey:
+### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://i.imgur.com/SATGr8j.png"></picture><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://i.imgur.com/wcCg3al.png"> Greasemonkey:
 
 诸如 Greasy Fork 之类的用户脚本存储库维护着预先批准的 CDN 的白名单（例如来自 `cdn.jsdelivr.net` 的特定于提交的引用），因此导入 URL 相当长以保持对这些站点的可发布性：
 
@@ -67,7 +67,7 @@ function yourCode() {
 
 如果您不打算发布到这些存储库，则可以使用更简单的 `https://code.chatgptjs.org/chatgpt-latest.min.js` 来导入最新的缩小版本。
 
-### Chrome:
+### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
 Google 的 Chrome 网上应用店开发者计划政策不鼓励使用远程代码 ([需要触发额外审查的理由](https://developer.chrome.com/docs/webstore/cws-dashboard-privacy/#declare-any-remote-code)如果使用) 因此在本地包含 chatgpt.js 是理想的:
 
@@ -111,7 +111,7 @@ chatgpt.get('reply', 'last')
 
 如果它不起作用，只需提交 [issue](https://github.com/chatgptjs/chatgpt.js/issues) 或 [PR](https://github.com/chatgptjs/chatgpt.js/pulls)，它将被集成，简单易行！
 
-## 展柜
+## 用 chatgpt.js 制作
 
 以下应用依赖于来自 chatgpt.js 的代码：
 
