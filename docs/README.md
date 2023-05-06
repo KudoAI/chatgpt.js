@@ -87,7 +87,7 @@ export { chatgpt }
     }],
 ```
 
-4. In scripts that use `chatgpt.js` (foreground or background), structure like so:
+4. In scripts that use `chatgpt.js` (foreground/background alike), structure like so:
 ```js
 (async () => {
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));    
