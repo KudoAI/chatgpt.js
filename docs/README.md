@@ -53,7 +53,7 @@ function yourCode() {
 }
 ```
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/edMcUl5.png"><img style="margin: 0 2px -0.035rem 0" height=15 src="https://i.imgur.com/qgGTnwB.png"></picture><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://i.imgur.com/wcCg3al.png"> Greasemonkey:
+### <img style="margin: 0 2px -0.035rem 0" height=17 src="https://i.imgur.com/7W1Gm1u.png"></picture><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://i.imgur.com/wcCg3al.png"> Greasemonkey:
 
 Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CDNs (such as commit-specific references from `cdn.jsdelivr.net`) so the import URL is substantially lengthier to preserve publishability to these sites:
 
