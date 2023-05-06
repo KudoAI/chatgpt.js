@@ -53,7 +53,7 @@ function yourCode() {
 }
 ```
 
-### Greasemonkey:
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/edMcUl5.png"><img style="margin: 0 2px -0.035rem 0" height=15 src="https://i.imgur.com/qgGTnwB.png"></picture><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://i.imgur.com/wcCg3al.png"> Greasemonkey:
 
 Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CDNs (such as commit-specific references from `cdn.jsdelivr.net`) so the import URL is substantially lengthier to preserve publishability to these sites:
 
@@ -67,7 +67,7 @@ Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CD
 
 If you don't plan on publishing to these repos, the simpler `https://code.chatgptjs.org/chatgpt-latest.min.js` can be used instead to import the latest minified release.
 
-### Chrome:
+### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
 Google's Chrome Web Store Developer Program Policies discourage the use of remote code ([requiring justification which triggers extra scrutiny](https://developer.chrome.com/docs/webstore/cws-dashboard-privacy/#declare-any-remote-code) if used) thus including chatgpt.js locally is ideal:
 
@@ -111,7 +111,7 @@ Each call equally fetches the last response. If you think it works, it probabily
 
 If it didn't, simply submit an [issue](https://github.com/chatgptjs/chatgpt.js/issues) or [PR](https://github.com/chatgptjs/chatgpt.js/pulls) and it will be integrated, ezpz!
 
-## Showcase
+## Made with chatgpt.js
 
 The following apps rely on code from chatgpt.js:
 
