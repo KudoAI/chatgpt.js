@@ -87,7 +87,7 @@ export { chatgpt }
     }],
 ```
 
-4. 在使用 chatgpt.js（前景/背景相似）的脚本中，结构如下:
+4. 在需要 `chatgpt.js` (前景/背景相似) 的脚本中, 像这样导入它:
 ```js
 (async () => {
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
