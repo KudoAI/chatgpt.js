@@ -119,21 +119,21 @@ The following apps rely on code from chatgpt.js:
 
 Auto-clear your ChatGPT query history for maximum privacy.
 <br>[Install](https://greasyfork.org/en/scripts/460805-auto-clear-chatgpt-history) / 
-[Readme](https://github.com/adamlui/autoclear-chatgpt-history/blob/main/README.md) / 
+[Readme](https://github.com/adamlui/autoclear-chatgpt-history#readme) / 
 [Discuss](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 Display ChatGPT answers in Brave Search sidebar.
 <br>[Install](https://greasyfork.org/en/scripts/462440-bravegpt) / 
-[Readme](https://github.bravegpt.com/blob/main/README.md) / 
+[Readme](https://github.bravegpt.com/#readme) / 
 [Discuss](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://chatgptevo.com/autorefresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 
 Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks.
 <br>[Install](https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh) / 
-[Readme](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/docs/README.md) / 
+[Readme](https://github.com/adamlui/chatgpt-auto-refresh#readme) / 
 [Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Infinity ∞](https://chatgptevo.com/infinity) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 4px"></a>
@@ -147,14 +147,14 @@ Generate endless answers from all-knowing ChatGPT (in any language!)
 
 Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling.
 <br>[Install](https://github.com/adamlui/chatgpt-widescreen#installation) / 
-[Readme](https://github.com/adamlui/chatgpt-widescreen/blob/main/README.md) / 
+[Readme](https://github.com/adamlui/chatgpt-widescreen#readme) / 
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions)
 
 ### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" alt="DuckDuckGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;DuckDuckGo | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 Display ChatGPT answers in DuckDuckGo sidebar.
 <br>[Install](https://greasyfork.org/en/scripts/459849-duckduckgpt) / 
-[Readme](https://github.duckduckgpt.com/blob/main/README.md) / 
+[Readme](https://github.duckduckgpt.com/#readme) / 
 [Discuss](https://github.duckduckgpt.com/discussions)
 
 ## Contributing
