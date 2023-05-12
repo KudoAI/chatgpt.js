@@ -70,7 +70,7 @@ main code {font-size: 1.35rem !important ; line-height: 2.2rem !important }
 .app-name-link img { padding: 0 2px }
 .sidebar-toggle { background-color: inherit }
 .sidebar ul > ul:nth-of-type(2) { display: none } /* hide showcase apps */
-/* .sidebar li img { display: none }  hide showcase icons/badges */
+.sidebar li img { display: none } /* hide sidebar icons */
 
 /* CODE */
 
