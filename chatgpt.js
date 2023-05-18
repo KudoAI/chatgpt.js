@@ -1,4 +1,4 @@
-/* (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license */
+/* (c) 2023 KudoAI & contributors under the MIT license */
 /* Source: https://github.com/chatgptjs/chatgpt.js */
 
 var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
