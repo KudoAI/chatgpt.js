@@ -268,8 +268,17 @@ var chatgpt = {
     },
     
     history: {
-        isOn: function() { return !document.querySelector('nav[aria-label="Chat history"]').childNodes[2].innerHTML.includes('is off'); },
-        isOff: function() { return document.querySelector('nav[aria-label="Chat history"]').childNodes[2].innerHTML.includes('is off'); }
+        isOn: function() {
+            for (var node of document.querySelector('nav[aria-label="Chat history"]').childNodes) {
+                if (node.innerHTML.includes('is off')) return false;
+            } return true;
+        },        
+
+        isOff: function() {
+            for (var node of document.querySelector('nav[aria-label="Chat history"]').childNodes) {
+                if (node.innerHTML.includes('is off')) return true;
+            } return false;
+        }
     },
 
     isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
