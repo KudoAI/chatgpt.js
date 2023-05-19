@@ -210,8 +210,8 @@ var chatgpt = {
     },
 
     getNewChatLink: function() {
-        for (var navLink of document.querySelectorAll('nav > a')) {
-            if (navLink.text.includes('New chat')) {
+        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
+            if (navLink.text.match(/(new|clear) chat/i)) {
                 return navLink;
     }}},
 
@@ -408,13 +408,15 @@ var chatgpt = {
     },
 
     sendInNewChat: function(msg) {
-        document.querySelector('nav > a').click();
-        setTimeout(function() { chatgpt.send(msg); }, 500);
+        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
+            if (navLink.text.match(/(new|clear) chat/i)) {
+                navLink.click(); break;
+        }} setTimeout(function() { chatgpt.send(msg); }, 500);
     },
 
     startNewChat: function() {
-        for (var navLink of document.querySelectorAll('nav > a')) {
-            if (navLink.text.includes('New chat')) {
+        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
+            if (navLink.text.match(/(new|clear) chat/i)) {
                 navLink.click(); return;
     }}},
 
