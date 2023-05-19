@@ -59,7 +59,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@51dc48d5bff8e5539e8cee273032360d0691c6a6/dist/chatgpt-1.6.5.min.js
+// @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@6a1ad0616a83372c604c0394fef34e35a4189c1c/dist/chatgpt-1.6.6.min.js
 // ==/UserScript==
 
 // 这里是您的代码
