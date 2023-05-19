@@ -266,6 +266,11 @@ var chatgpt = {
     getTextarea: function() {
         return document.querySelector('form textarea');
     },
+    
+    history: {
+        isOn: function() { return !document.querySelector('nav[aria-label="Chat history"]').childNodes[2].innerHTML.includes('is off'); },
+        isOff: function() { return document.querySelector('nav[aria-label="Chat history"]').childNodes[2].innerHTML.includes('is off'); }
+    },
 
     isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
 
