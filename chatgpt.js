@@ -189,6 +189,8 @@ var chatgpt = {
                             if (mainButton) { mainButton.click(); event.preventDefault(); } // click if found
                         } return;
         }}}}
+
+        return modalContainer.id;
     },
 
     autoRefresh: {
