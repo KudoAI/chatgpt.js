@@ -35,7 +35,7 @@ var targetTypes = [ // for abstracted methods like get, insert
 
 var chatgpt = {
 
-    alert: function (title, msg, btns, checkbox, width) {
+    alert: function(title, msg, btns, checkbox, width) {
     // [ title/msg = strings, btns = [named functions], checkbox = named function, width (px) = int ] = optional
 
         // Create modal parent/children elements
@@ -155,7 +155,7 @@ var chatgpt = {
             if (event.target === modalContainer) destroyAlert(); });
 
         // Show alert if none active
-        modalContainer.style.display = (alertProps.queue.length === 1) ? '' : 'none'
+        modalContainer.style.display = (alertProps.queue.length === 1) ? '' : 'none';
 
         function destroyAlert() {
             modalContainer.remove(); // remove from DOM
