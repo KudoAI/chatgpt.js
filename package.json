@@ -33,16 +33,10 @@
     "ml",
     "bot"
   ],
-  "authors": [
+  "author": [
     {
-      "name": "Adam Lui",
-      "email": "adam@chatgptjs.org",
-      "website": "https://github.com/adamlui"
-    },
-    {
-      "name": "mefengl",
-      "email": "mefengl@chatgptjs.org",
-      "website": "https://github.com/mefengl"
+      "name": "KudoAI & contributors",
+      "url": "https://kudoai.com"
     }
   ],
   "license": "MIT",
