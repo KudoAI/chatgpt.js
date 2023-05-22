@@ -129,6 +129,13 @@ chatgpt.get('reply', 'last')
 [自述文件](https://github.bravegpt.com/#readme) / 
 [讨论](https://github.bravegpt.com/discussions)
 
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动继续 ⏩](https://chatgptevo.com/autocontinue/github)
+
+自动继续生成多个 ChatGPT 响应。<br>
+[安装](https://greasyfork.org/scripts/466789-chatgpt-auto-continue) / 
+[自述文件](https://github.com/adamlui/chatgpt-auto-continue#readme) / 
+[讨论](https://chatgptevo.com/autocontinue/discussions)
+
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动刷新 ↻](https://chatgptevo.com/autorefresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 
 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
