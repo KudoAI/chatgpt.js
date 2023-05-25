@@ -74,10 +74,8 @@ main code {font-size: 1.35rem !important ; line-height: 2.2rem !important }
 
 /* CODE */
 
-pre, code, .punctuation {
-    background: black !important ;
-    color: white !important ;
-}
+pre, code, .punctuation { color: white !important ; background: black !important }
+
 .lang-js { font-size: 1.3rem !important }
 .docsify-copy-code-button, .success, .error {
     background: inherit !important ;
