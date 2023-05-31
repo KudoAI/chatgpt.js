@@ -426,18 +426,18 @@ var chatgpt = {
     getTextarea: function() {
         return document.querySelector('form textarea');
     },
-    
+
     history: {
         isOn: function() {
-            for (var node of document.querySelector('nav[aria-label="Chat history"]').childNodes) {
-                if (node.innerHTML.includes('is off')) return false;
-            } return true;
-        },        
+            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
+                if (navLink.text.match(/new chat/i)) return true;
+            } return false;
+        },
 
         isOff: function() {
-            for (var node of document.querySelector('nav[aria-label="Chat history"]').childNodes) {
-                if (node.innerHTML.includes('is off')) return true;
-            } return false;
+            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
+                if (navLink.text.match(/new chat/i)) return false;
+            } return true;
         }
     },
 
