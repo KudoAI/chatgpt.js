@@ -1,6 +1,12 @@
-<h3>
 <div align="center">
-<br />
+
+<div align="right">
+
+###### 简体中文 | <a href="../..#readme">English</a>
+    
+</div>
+
+<h3>
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
