@@ -13,7 +13,9 @@ module.exports  = {
         'quotes': ['error', 'single'], // enforce single quotes for string literals
         'space-before-function-paren': ['error', 'never'], // enforce no space before function parentheses
         'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }], // enforce spacing in object properties
-        'comma-dangle': ['error', 'never'] // enforce no trailing commas in arrays or objects
+        'comma-dangle': ['error', 'never'], // enforce no trailing commas in arrays or objects
+        'no-empty': 'off', // allow empty blocks
+        'no-useless-escape': 'off' // allow all escape chars cause ESLint sucks at detecting truly useless ones
     },
     'globals': { 'Uint8Array': true },
     'parserOptions': {
