@@ -1,5 +1,12 @@
-<h3>
 <div align="center">
+
+<div align="right">
+
+###### English | <a href="zh-cn#readme">简体中文</a>
+    
+</div>
+
+<h3>
 <br>
 
 <picture>
