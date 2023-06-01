@@ -8,7 +8,13 @@
 </picture>
 <br /><br />
 
-🤖 ChatGPT 的强大客户端 JavaScript 库
+🤖 ChatGPT 的强大客户端 JavaScript 库 
+<br><br>
+
+[![执照](https://img.shields.io/badge/执照-MIT-green.svg)](../../LICENSE)
+[![提交](https://img.shields.io/github/commit-activity/m/chatgptjs/chatgpt.js?label=提交)](https://github.com/chatgptjs/chatgpt.js/commits/main)
+[![代码质量](https://img.shields.io/codefactor/grade/github/chatgptjs/chatgpt.js?label=代码质量)](https://www.codefactor.io/repository/github/chatgptjs/chatgpt.js)
+![jsdelivr](https://img.shields.io/jsdelivr/gh/hm/chatgptjs/chatgpt.js?color=ff6427&label=jsDelivr+要求)
 
 </div>
 </h3>
