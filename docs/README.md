@@ -1,15 +1,21 @@
 <h3>
 <div align="center">
-<br />
+<br>
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
     <img width=546 alt="chatgpt.js" src="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
 </picture>
-<br /><br />
+<br><br>
 
 🤖 A powerful client-side JavaScript library for ChatGPT 
+<br><br>
 
+[![license](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE)
+[![commits](https://img.shields.io/github/commit-activity/m/chatgptjs/chatgpt.js?label=Commits)](https://github.com/chatgptjs/chatgpt.js/commits/main)
+[![code quality](https://img.shields.io/codefactor/grade/github/chatgptjs/chatgpt.js?label=Code+Quality)](https://www.codefactor.io/repository/github/chatgptjs/chatgpt.js)
+![jsdelivr](https://img.shields.io/jsdelivr/gh/hm/chatgptjs/chatgpt.js?color=ff6427&label=jsDelivr+Requests)
+ 
 </div>
 </h3>
 
