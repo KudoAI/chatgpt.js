@@ -66,7 +66,7 @@ main code {font-size: 1.35rem !important ; line-height: 2.2rem !important }
 .sidebar a { font-size: 1.5rem !important ; line-height: 3.5rem }
 .search { background-color: white ; font-size: 1.3rem }
 .matching-post { transform: scale(.7) ; margin: -31px }
-.app-name { margin: 19px 18px 13px 18px !important }
+.app-name { margin: 19px 18px 13px !important }
 .app-name-link img { padding: 0 2px }
 .sidebar-toggle { background-color: inherit }
 .sidebar ul > ul:nth-of-type(2) { display: none } /* hide showcase apps */
