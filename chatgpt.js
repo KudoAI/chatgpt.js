@@ -309,15 +309,9 @@ var chatgpt = {
                         if (menuItems.length < 4) return;
                         clearInterval(timer); resolve();
                     }, 10);
-                    setTimeout(() => {
-                        discard = true;
-                        clearInterval(timer);
-                    }, 10000);
+                    setTimeout(() => { discard = true; clearInterval(timer); }, 10000);
             });}
-            if(discard){
-                menuButton.click();
-                return;
-            }
+            if (discard) { menuButton.click(); return; }
             let clearConversations = menuItems[1];
             clearConversations.click();
             setTimeout(function() { clearConversations.click(); }, 10);
