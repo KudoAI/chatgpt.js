@@ -134,6 +134,12 @@ Auto-clear your ChatGPT query history for maximum privacy.
 [Readme](https://github.com/adamlui/autoclear-chatgpt-history#readme) / 
 [Discuss](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://i.imgur.com/1yjmK3W.png"></picture> [Automatic ChatGPT DAN](https://github.com/madkarmaa/automatic-chatgpt-dan)
+
+Automatically send DAN prompts to ChatGPT.
+<br>[Install](https://bit.ly/auto-gpt-dan) / 
+[Readme](https://github.com/madkarmaa/automatic-chatgpt-dan#readme)
+
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 Display ChatGPT answers in Brave Search sidebar (powered by GPT-4!)
