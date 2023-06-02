@@ -370,7 +370,7 @@ var chatgpt = {
     },
 
     getNewChatLink: function() {
-        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
+        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (navLink.text.match(/(new|clear) chat/i)) {
                 return navLink;
     }}},
@@ -429,13 +429,13 @@ var chatgpt = {
 
     history: {
         isOn: function() {
-            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
+            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
                 if (navLink.text.match(/new chat/i)) return true;
             } return false;
         },
 
         isOff: function() {
-            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
+            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
                 if (navLink.text.match(/new chat/i)) return false;
             } return true;
         }
@@ -579,14 +579,14 @@ var chatgpt = {
     },
 
     sendInNewChat: function(msg) {
-        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
+        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (navLink.text.match(/(new|clear) chat/i)) {
                 navLink.click(); break;
         }} setTimeout(function() { chatgpt.send(msg); }, 500);
     },
 
     startNewChat: function() {
-        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
+        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (navLink.text.match(/(new|clear) chat/i)) {
                 navLink.click(); return;
     }}},
@@ -613,7 +613,7 @@ for (var buttonAction of buttonActions) {
                 for (var button of document.querySelectorAll('button')) { // try buttons
                     if (button.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
                         return button; }}
-                for (var navLink of document.querySelectorAll('nav > a')) { // try nav links if no button
+                for (var navLink of document.querySelectorAll('nav a')) { // try nav links if no button
                     if (navLink.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
                         return navLink; }}})();
         if (buttonAction === 'click') { button.click(); } else { return button; }
