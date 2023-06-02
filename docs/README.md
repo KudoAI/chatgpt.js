@@ -81,7 +81,7 @@ If you don't plan on publishing to these repos, the simpler `https://code.chatgp
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
-Since Google is likely to phase out Manifest V2 by [next month](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/), remote code will no longer be allowed, so importing chatgpt.js locally is ideal:
+Since Google is likely to phase out Manifest V2 this month](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/), remote code will no longer be allowed, so importing chatgpt.js locally is ideal:
 
 1. Save https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js to a subdirectory (`lib` in this example)
 
@@ -102,7 +102,7 @@ export { chatgpt }
 4.    In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
 ```js
 (async () => {
-    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));    
+    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
     // Your code here...
 })();
 ```
@@ -125,7 +125,7 @@ If it didn't, simply submit an [issue](https://github.com/chatgptjs/chatgpt.js/i
 
 ## Made with chatgpt.js
 
-The following apps rely on code from chatgpt.js:
+These are some of the projects that rely on code from chatgpt.js:
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Autoclear ChatGPT History](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 

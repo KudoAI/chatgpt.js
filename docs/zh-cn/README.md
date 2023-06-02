@@ -81,7 +81,7 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
-由于谷歌很可能在[下个月](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/)逐步淘汰 Manifest V2，远程代码将不再被允许，因此在本地导入 chatgpt.js 是理想的:
+由于谷歌很可能在[这个月](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/)逐步淘汰 Manifest V2，远程代码将不再被允许，因此在本地导入 chatgpt.js 是理想的:
 
 1. 将 https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js 保存到子目录 (本例中为 `lib`)
 
@@ -125,7 +125,7 @@ chatgpt.get('reply', 'last')
 
 ## 用 chatgpt.js 制作
 
-以下应用依赖于来自 chatgpt.js 的代码：
+这些是一些依赖于 chatgpt.js 代码的项目：
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [自动清除 ChatGPT 历史记录](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 
