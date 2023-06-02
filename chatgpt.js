@@ -564,15 +564,16 @@ var chatgpt = {
         document.querySelector('button[class*="cursor"]').click();
     },
 
-    send: function(msg) {
+    send: function(msg, method='') {
         var textArea = document.querySelector('form textarea');
         var sendButton = document.querySelector('form button[class*="bottom"]');
         textArea.value = msg;
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
         var delaySend = setInterval(function() {
-            if (!sendButton.hasAttribute('disabled')) {
+            if (!sendButton.hasAttribute('disabled')) { // send msg
+                method.toLowerCase() == 'click' ? sendButton.click()
+                    : textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }));
                 clearInterval(delaySend);
-                textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true })); // send msg
             }
         }, 25);
     },
