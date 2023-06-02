@@ -566,8 +566,15 @@ var chatgpt = {
 
     send: function(msg) {
         var textArea = document.querySelector('form textarea');
+        var sendButton = document.querySelector('form button[class*="bottom"]');
         textArea.value = msg;
-        textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }));
+        textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
+        var delaySend = setInterval(function() {
+            if (!sendButton.hasAttribute('disabled')) {
+                clearInterval(delaySend);
+                textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true })); // send msg
+            }
+        }, 25);
     },
 
     sendInNewChat: function(msg) {
