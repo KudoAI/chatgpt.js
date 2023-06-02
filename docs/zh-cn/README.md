@@ -185,7 +185,7 @@ chatgpt.get('reply', 'last')
 
 ## 贡献者
 
-该项目的存在归功于以下贡献者的代码、翻译、问题和想法:
+该代码库的存在归功于以下贡献者的代码、翻译、问题和想法:
 
 [![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.15&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
 [![@mefengl](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?first-contrib=2023.03.16-get-functions&h=50&w=50&mask=circle&maxage=7d "@mefengl")](https://github.com/mefengl)

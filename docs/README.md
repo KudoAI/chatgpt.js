@@ -185,7 +185,7 @@ Display ChatGPT answers in DuckDuckGo sidebar (powered by GPT-4!)
 
 ## Contributors
 
-This project exists thanks to code, translations, issues & ideas from the following contributors:
+This library exists thanks to code, translations, issues & ideas from the following contributors:
 
 [![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.15&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
 [![@mefengl](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?first-contrib=2023.03.16-get-functions&h=50&w=50&mask=circle&maxage=7d "@mefengl")](https://github.com/mefengl)
