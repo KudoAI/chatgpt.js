@@ -39,11 +39,11 @@ var chatgpt = {
         if (chatgpt.isLightMode()) {
             var menuBtn = document.querySelector('nav button[id*="headless"]') || {};
             try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
-            setTimeout(function() { // open settings
+            setTimeout(() => { // open settings
                 var menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
                 for (var menuItem of menuItems) {
                     if (menuItem.text.match(/settings/i)) { menuItem.click(); break; }
-                } setTimeout(function() { // activate dark mode
+                } setTimeout(() => { // activate dark mode
                     var themeSelector = document.querySelector('div[id*="radix"] select') || {};
                     try { themeSelector.value = 'dark'; themeSelector.dispatchEvent(new Event('change', { bubbles: true })); }
                     catch (error) { console.error('🤖 chatgpt.js >> Theme selector not found'); return; } 
@@ -57,11 +57,11 @@ var chatgpt = {
         if (chatgpt.isDarkMode()) {
             var menuBtn = document.querySelector('nav button[id*="headless"]') || {};
             try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
-            setTimeout(function() { // open settings
+            setTimeout(() => { // open settings
                 var menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
                 for (var menuItem of menuItems) {
                     if (menuItem.text.match(/settings/i)) { menuItem.click(); break; }
-                } setTimeout(function() { // activate light mode
+                } setTimeout(() => { // activate light mode
                     var themeSelector = document.querySelector('div[id*="radix"] select') || {};
                     try { themeSelector.value = 'light'; themeSelector.dispatchEvent(new Event('change', { bubbles: true })); }
                     catch (error) { console.error('🤖 chatgpt.js >> Theme selector not found'); return; } 
@@ -209,7 +209,7 @@ var chatgpt = {
             // Check for pending alerts in queue
             if (alertProps.queue.length > 0) {
                 var nextAlert = document.getElementById(alertProps.queue[0]);
-                setTimeout(function() { nextAlert.style.display = 'flex'; }, 500 );
+                setTimeout(() => { nextAlert.style.display = 'flex'; }, 500 );
             }
         }
 
@@ -247,7 +247,7 @@ var chatgpt = {
 
             function scheduleRefreshes(interval) {
                 var randomDelay = Math.max(2, Math.floor(Math.random() * 21 - 10)); // set random delay up to ±10 secs
-                autoRefresh.isActive = setTimeout(function() {
+                autoRefresh.isActive = setTimeout(() => {
                     var refreshFrame = document.querySelector('#refresh-frame');
                     var manifestScript = document.querySelector('script[src*="_ssgManifest.js"]');
                     refreshFrame.src = manifestScript.src + '?' + Date.now();
@@ -320,7 +320,7 @@ var chatgpt = {
             if (discard) { menuButton.click(); return; }
             let clearConversations = menuItems[1];
             clearConversations.click();
-            setTimeout(function() { clearConversations.click(); }, 10);
+            setTimeout(() => { clearConversations.click(); }, 10);
         }, 10);
     },
 
@@ -438,7 +438,16 @@ var chatgpt = {
             for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
                 if (navLink.text.match(/new chat/i)) return false;
             } return true;
-        }
+        },
+
+        activate: function() { this.isOff() ? this.toggle() : console.info('🤖 chatgpt.js >> Chat history is already enabled!'); },
+        deactivate: function() { this.isOn() ? this.toggle() : console.info('🤖 chatgpt.js >> Chat history is already disabled!'); },
+
+        toggle: function() {                
+            for (var navBtn of document.querySelectorAll('nav[aria-label="Chat history"] button')) {
+                if (navBtn.textContent.match(/chat history/i))
+                    navBtn.click(); return;
+        }}
     },
 
     isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
@@ -561,7 +570,7 @@ var chatgpt = {
     }}},
 
     scrollToBottom: function() {
-        document.querySelector('button[class*="cursor"]').click();
+        try { document.querySelector('button[class*="cursor"]').click(); } catch (error) {}
     },
 
     send: function(msg, method='') {
@@ -582,12 +591,12 @@ var chatgpt = {
         for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (navLink.text.match(/(new|clear) chat/i)) {
                 navLink.click(); break;
-        }} setTimeout(function() { chatgpt.send(msg); }, 500);
+        }} setTimeout(() => { chatgpt.send(msg); }, 500);
     },
 
     sidebar: {
-        isOn: function() { return document.querySelector('button[aria-label*="Show sidebar"]') ? false : true; },
-        isOff: function() { return document.querySelector('button[aria-label*="Show sidebar"]') ? true : false; },
+        isOn: function() { return !document.querySelector('button[aria-label*="Show sidebar"]'); },
+        isOff: function() { return document.querySelector('button[aria-label*="Show sidebar"]'); },
         hide: function() { this.isOn() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already hidden!'); },
         show: function() { this.isOff() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already shown!'); },
 
