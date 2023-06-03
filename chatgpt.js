@@ -579,6 +579,19 @@ var chatgpt = {
         }} setTimeout(function() { chatgpt.send(msg); }, 500);
     },
 
+    sidebar: {
+        isOn: function() { return document.querySelector('button[aria-label*="Show sidebar"]') ? false : true; },
+        isOff: function() { return document.querySelector('button[aria-label*="Show sidebar"]') ? true : false; },
+        hide: function() { this.isOn() ? this.toggle() : console.info( 'chatgpt.js >> Sidebar already hidden!'); },
+        show: function() { this.isOff() ? this.toggle() : console.info( 'chatgpt.js >> Sidebar already shown!'); },
+
+        toggle: function() {
+            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+                if (navLink.text.match(/hide sidebar/i)) {
+                    navLink.click(); return;                
+        }}}
+    },
+
     startNewChat: function() {
         for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (navLink.text.match(/(new|clear) chat/i)) {
