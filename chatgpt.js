@@ -37,15 +37,16 @@ var chatgpt = {
 
     activateDarkMode: function() {
         if (chatgpt.isLightMode()) {
-            var menuButton = document.querySelector('nav button[id*="headless"]');            
-            if (!menuButton) return; menuButton.click();
-            setTimeout(function() {
-                var menuItems = document.querySelectorAll('a[role="menuitem"]');
-                menuItems[menuItems.length - 2].click(); // open settings
-                setTimeout(function() {
-                    var themeSelector = document.querySelector('div[id*="radix"] select');
-                    themeSelector.value = 'dark';
-                    themeSelector.dispatchEvent(new Event('change', { bubbles: true }));
+            var menuBtn = document.querySelector('nav button[id*="headless"]') || {};
+            try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
+            setTimeout(function() { // open settings
+                var menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
+                for (var menuItem of menuItems) {
+                    if (menuItem.text.match(/settings/i)) { menuItem.click(); break; }
+                } setTimeout(function() { // activate dark mode
+                    var themeSelector = document.querySelector('div[id*="radix"] select') || {};
+                    try { themeSelector.value = 'dark'; themeSelector.dispatchEvent(new Event('change', { bubbles: true })); }
+                    catch (error) { console.error('🤖 chatgpt.js >> Theme selector not found'); return; } 
                     document.querySelector('div[id*="radix"] button').click(); // close settings
                 }, 10);
             }, 10);
@@ -54,15 +55,16 @@ var chatgpt = {
 
     activateLightMode: function() {
         if (chatgpt.isDarkMode()) {
-            var menuButton = document.querySelector('nav button[id*="headless"]');            
-            if (!menuButton) return; menuButton.click();
-            setTimeout(function() {
-                var menuItems = document.querySelectorAll('a[role="menuitem"]');
-                menuItems[menuItems.length - 2].click(); // open settings
-                setTimeout(function() {
-                    var themeSelector = document.querySelector('div[id*="radix"] select');
-                    themeSelector.value = 'light';
-                    themeSelector.dispatchEvent(new Event('change', { bubbles: true }));
+            var menuBtn = document.querySelector('nav button[id*="headless"]') || {};
+            try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
+            setTimeout(function() { // open settings
+                var menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
+                for (var menuItem of menuItems) {
+                    if (menuItem.text.match(/settings/i)) { menuItem.click(); break; }
+                } setTimeout(function() { // activate light mode
+                    var themeSelector = document.querySelector('div[id*="radix"] select') || {};
+                    try { themeSelector.value = 'light'; themeSelector.dispatchEvent(new Event('change', { bubbles: true })); }
+                    catch (error) { console.error('🤖 chatgpt.js >> Theme selector not found'); return; } 
                     document.querySelector('div[id*="radix"] button').click(); // close settings
                 }, 10);
             }, 10);
