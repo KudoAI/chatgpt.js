@@ -35,6 +35,40 @@ var targetTypes = [ // for abstracted methods like get, insert
 
 var chatgpt = {
 
+    activateDarkMode: function() {
+        if (chatgpt.isLightMode()) {
+            var menuButton = document.querySelector('nav button[id*="headless"]');            
+            if (!menuButton) return; menuButton.click();
+            setTimeout(function() {
+                var menuItems = document.querySelectorAll('a[role="menuitem"]');
+                menuItems[menuItems.length - 2].click(); // open settings
+                setTimeout(function() {
+                    var themeSelector = document.querySelector('div[id*="radix"] select');
+                    themeSelector.value = 'dark';
+                    themeSelector.dispatchEvent(new Event('change', { bubbles: true }));
+                    document.querySelector('div[id*="radix"] button').click(); // close settings
+                }, 10);
+            }, 10);
+        } else console.info('🤖 chatgpt.js >> ChatGPT is already in dark mode!');
+    },
+
+    activateLightMode: function() {
+        if (chatgpt.isDarkMode()) {
+            var menuButton = document.querySelector('nav button[id*="headless"]');            
+            if (!menuButton) return; menuButton.click();
+            setTimeout(function() {
+                var menuItems = document.querySelectorAll('a[role="menuitem"]');
+                menuItems[menuItems.length - 2].click(); // open settings
+                setTimeout(function() {
+                    var themeSelector = document.querySelector('div[id*="radix"] select');
+                    themeSelector.value = 'light';
+                    themeSelector.dispatchEvent(new Event('change', { bubbles: true }));
+                    document.querySelector('div[id*="radix"] button').click(); // close settings
+                }, 10);
+            }, 10);
+        } else console.info('🤖 chatgpt.js >> ChatGPT is already in light mode!');
+    },
+
     alert: function(title, msg, btns, checkbox, width) {
     // [ title/msg = strings, btns = [named functions], checkbox = named function, width (px) = int ] = optional
 
@@ -264,36 +298,6 @@ var chatgpt = {
                 }
             }
         }
-    },
-
-    activateDarkMode: function() {
-        var menuButton = document.querySelector('nav button[id*="headless"]');            
-        if (!menuButton) return; menuButton.click();
-        setTimeout(function() {
-            var menuItems = document.querySelectorAll('a[role="menuitem"]');
-            menuItems[menuItems.length - 2].click(); // open settings
-            setTimeout(function() {
-                var themeSelector = document.querySelector('div[id*="panel"] select');
-                themeSelector.value = 'dark';
-                themeSelector.dispatchEvent(new Event('change', { bubbles: true }));
-                document.querySelector('div[id*="panel"] button').click(); // close settings
-            }, 10);
-        }, 10);
-    },
-
-    activateLightMode: function() {
-        var menuButton = document.querySelector('nav button[id*="headless"]');
-        if (!menuButton) return; menuButton.click();
-        setTimeout(function() {
-            var menuItems = document.querySelectorAll('a[role="menuitem"]');
-            menuItems[menuItems.length - 2].click(); // open settings
-            setTimeout(function() {
-                var themeSelector = document.querySelector('div[id*="panel"] select');
-                themeSelector.value = 'light';
-                themeSelector.dispatchEvent(new Event('change', { bubbles: true }));
-                document.querySelector('div[id*="panel"] button').click(); // close settings
-            }, 10);
-        }, 10);
     },
 
     clearChats: function() {
@@ -537,7 +541,7 @@ var chatgpt = {
         }}}}
         functionNames.sort(function(a, b) { return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]); });
         for (var functionName of functionNames) {
-            console.info( 'chatgpt.js >> ' + ( /chatgpt|other/.test(functionName[0]) ? '' : ( functionName[0] + '.' )) + functionName[1] + ': ['
+            console.info( '🤖 chatgpt.js >> ' + ( /chatgpt|other/.test(functionName[0]) ? '' : ( functionName[0] + '.' )) + functionName[1] + ': ['
                 + ((( functionName[0] === 'chatgpt' && functionName[1] === this[functionName[1]].name ) || // parent is chatgpt + names match or
                     ( !/chatgpt|other/.test(functionName[0]) )) // parent is chatgpt.obj
                         ? 'Function' : 'Alias of' ) + ': '
@@ -582,8 +586,8 @@ var chatgpt = {
     sidebar: {
         isOn: function() { return document.querySelector('button[aria-label*="Show sidebar"]') ? false : true; },
         isOff: function() { return document.querySelector('button[aria-label*="Show sidebar"]') ? true : false; },
-        hide: function() { this.isOn() ? this.toggle() : console.info( 'chatgpt.js >> Sidebar already hidden!'); },
-        show: function() { this.isOff() ? this.toggle() : console.info( 'chatgpt.js >> Sidebar already shown!'); },
+        hide: function() { this.isOn() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already hidden!'); },
+        show: function() { this.isOff() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already shown!'); },
 
         toggle: function() {
             for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
