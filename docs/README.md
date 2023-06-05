@@ -28,7 +28,7 @@
 
 ## About
 
-**chatgpt.js** is a powerful JavaScript library that allows for super easy interaction w/ the [ChatGPT DOM](https://chat.openai.com).
+**chatgpt.js** is a powerful JavaScript library that allows for super easy interaction w/ the ChatGPT DOM.
 
 - Feature-rich
 - Object-oriented
