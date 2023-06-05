@@ -28,7 +28,7 @@
 
 ## 关于
 
-chatgpt.js 是一个功能强大的 JavaScript 库，可轻松与 [ChatGPT DOM](https://chat.openai.com) 进行交互。
+chatgpt.js 是一个功能强大的 JavaScript 库，可轻松与 ChatGPT DOM 进行交互。
 
 - 功能丰富
 - 面向对象
