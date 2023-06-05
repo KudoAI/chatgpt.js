@@ -53,7 +53,7 @@ article div:first-of-type { display: none !important }
 
 /* MAIN */
 
-article div:nth-child(2) { height: 2.5rem } /* zoom shields */
+article div:nth-child(2) img { height: 2.5rem } /* zoom shields */
 main h2 { font-size: 3rem !important }
 main p { font-size: 1.65rem !important ; line-height: 2.5rem !important}
 main li { font-size: 1.6rem !important ; line-height: 2.1rem }
