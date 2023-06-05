@@ -22,7 +22,7 @@
 
 <div align="center">
 
-[![license](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](../LICENSE)
+[![license](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://github.com/chatgptjs/chatgpt.js/blob/main/LICENSE.md)
 [![commits](https://img.shields.io/github/commit-activity/m/chatgptjs/chatgpt.js?label=Commits&style=for-the-badge)](https://github.com/chatgptjs/chatgpt.js/commits/main)
 [![code quality](https://img.shields.io/codefactor/grade/github/chatgptjs/chatgpt.js?label=Code+Quality&style=for-the-badge)](https://www.codefactor.io/repository/github/chatgptjs/chatgpt.js)
 ![jsdelivr](https://img.shields.io/jsdelivr/gh/hm/chatgptjs/chatgpt.js?color=ff6427&label=jsDelivr+Requests&style=for-the-badge)
