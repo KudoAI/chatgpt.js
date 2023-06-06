@@ -130,8 +130,6 @@ chatgpt.get('reply', 'last')
 
 ## 用 chatgpt.js 制作
 
-这些是一些依赖于 chatgpt.js 代码的项目：
-
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [自动清除 ChatGPT 历史记录](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 
 自动清除您的 ChatGPT 查询历史记录以获得最大的隐私。
