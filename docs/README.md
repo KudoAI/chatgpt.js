@@ -129,8 +129,6 @@ If it didn't, simply submit an [issue](https://github.com/chatgptjs/chatgpt.js/i
 
 ## Made with chatgpt.js
 
-These are some of the projects that rely on code from chatgpt.js:
-
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Autoclear ChatGPT History](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 
 Auto-clear your ChatGPT query history for maximum privacy.
