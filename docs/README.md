@@ -184,7 +184,7 @@ Display ChatGPT answers in DuckDuckGo sidebar (powered by GPT-4!)
 [Readme](https://github.duckduckgpt.com/#readme) / 
 [Discuss](https://github.duckduckgpt.com/discussions)
 
-###### If you've made something you want to share with us, email [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) or just open a [pull request](https://github.com/chatgptjs/chatgpt.js/pulls)!
+If you've made something you want to share with us, email [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) or just open a [pull request](https://github.com/chatgptjs/chatgpt.js/pulls)!
 
 ## Contributors
 
