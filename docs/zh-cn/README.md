@@ -185,7 +185,7 @@ chatgpt.get('reply', 'last')
 [自述文件](https://github.duckduckgpt.com/#readme) / 
 [讨论](https://github.duckduckgpt.com/discussions)
 
-如果您制作了想要与我们分享的内容，请发送电子邮件至 [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) 或直接打开一个 [pull request](https://github.com/chatgptjs/chatgpt.js/pulls）!
+如果您制作了想要与我们分享的内容，请发送电子邮件至 [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) 或直接打开一个 [pull request](https://github.com/chatgptjs/chatgpt.js/pulls)!
 
 ## 贡献者
 
