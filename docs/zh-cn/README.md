@@ -86,7 +86,7 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
-由于谷歌很可能在[这个月](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/)逐步淘汰 Manifest V2，远程代码将不再被允许，因此在本地导入 chatgpt.js 是理想的:
+由于 Google [最终将逐步淘汰](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/) Manifest V2，远程代码将不再被允许，因此在本地导入 chatgpt.js 是理想的:
 
 1. 将 https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js 保存到子目录 (本例中为 `lib`)
 
