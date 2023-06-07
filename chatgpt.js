@@ -455,8 +455,8 @@ var chatgpt = {
     isFullScreen: function() {
         var userAgentStr = navigator.userAgent;
         var browser = userAgentStr.includes('Chrome') ? 'chromium'
-                          : userAgentStr.includes('Firefox') ? 'firefox'
-                          : userAgentStr.match(/MSIE|rv:/) ? 'ie' : 'webkit';
+                    : userAgentStr.includes('Firefox') ? 'firefox'
+                    : userAgentStr.match(/MSIE|rv:/) ? 'ie' : 'webkit';
         return browser === 'chromium' ? window.matchMedia('(display-mode: fullscreen)').matches
              : browser === 'firefox' ? window.fullScreen
              : browser === 'ie' ? document.msFullscreenElement : document.webkitIsFullScreen;
