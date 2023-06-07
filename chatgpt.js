@@ -487,8 +487,9 @@ var chatgpt = {
         var notificationDiv = document.createElement('div'); // make div
         notificationDiv.id = Math.floor(Math.random() * 1000000) + Date.now();
         notificationDiv.style.cssText = ( // stylize it
-            '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
-            + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; '
+              ' background-color: black ; padding: 10px ; border-radius: 8px ; ' // box style
+            + ' opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; ' // visibility
+            + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; ' // disable selection
             + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ));
         document.body.appendChild(notificationDiv); // insert into DOM
 
