@@ -92,4 +92,4 @@ pre, code, .punctuation { color: white !important ; background: black !important
 h3 img { height: 28px !important ; width: auto !important ; margin: 0 10px -2px 0 }
 h3 a { text-decoration: none ; color: #34495e !important }
 h3 a:hover { text-decoration: underline #42b983 }
-#contributors ~ * img { width: 88px } /* zoom contributor avatars */
+#contributors ~ * img { width: 74px } /* zoom contributor avatars */
