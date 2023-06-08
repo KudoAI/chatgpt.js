@@ -10,6 +10,7 @@ var functionAliases = [ // whole function names to cross-alias
     ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
         'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
     ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
+    ['isFullScreen', 'isFullscreen'],
     ['new', 'newChat', 'startNewChat'],
     ['printAllFunctions', 'showAllFunctions'],
     ['refreshSession', 'sessionRefresh'],
@@ -454,12 +455,9 @@ var chatgpt = {
 
     isFullScreen: function() {
         var userAgentStr = navigator.userAgent;
-        var browser = userAgentStr.includes('Chrome') ? 'chromium'
-                    : userAgentStr.includes('Firefox') ? 'firefox'
-                    : userAgentStr.match(/MSIE|rv:/) ? 'ie' : 'webkit';
-        return browser === 'chromium' ? window.matchMedia('(display-mode: fullscreen)').matches
-             : browser === 'firefox' ? window.fullScreen
-             : browser === 'ie' ? document.msFullscreenElement : document.webkitIsFullScreen;
+        return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
+             : userAgentStr.includes('Firefox') ? window.fullScreen
+             : userAgentStr.match(/MSIE|rv:/) ? document.msFullscreenElement : document.webkitIsFullScreen;
     },
 
     isIdle: function() {
