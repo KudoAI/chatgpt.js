@@ -476,6 +476,16 @@ var chatgpt = {
 
     isLightMode: function() { return document.documentElement.classList.contains('light'); },
 
+    logout: function() {
+        var menuBtn = document.querySelector('nav button[id*="headless"]') || {};
+        try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
+        setTimeout(() => {
+            var menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
+            for (var menuItem of menuItems) {
+                if (menuItem.text.match(/log out/i)) { menuItem.click(); break; }}
+        }, 10);
+    },
+
     notify: function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
         var fadeDuration = 0.6; // sec duration of fade-out
