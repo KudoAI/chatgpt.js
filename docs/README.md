@@ -75,7 +75,7 @@ Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CD
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@65b028f36b34e830ae3a557c987e8757e7b025f1/dist/chatgpt-1.8.0.min.js
+// @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@7b8ac3c8cef0a9235363cbba29753d03a32f1204/dist/chatgpt-1.9.0.min.js
 // ==/UserScript==
 
 // Your code here...
