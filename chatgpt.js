@@ -579,7 +579,7 @@ var chatgpt = {
     }}},
 
     scrollToBottom: function() {
-        try { document.querySelector('button[class*="cursor"]').click(); } catch (error) {}
+        try { document.querySelector('button[class*="cursor"]').click(); } catch (error) { console.error('🤖 chatgpt.js >> ', error) }
     },
 
     send: function(msg, method='') {
