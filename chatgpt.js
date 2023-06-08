@@ -470,7 +470,7 @@ var chatgpt = {
     isLoaded: function() {
         return new Promise(resolve => {
             var intervalId = setInterval(() => {
-                if (document.querySelector('form button[class*="bottom"]')) {
+                if (document.querySelector('nav button[id*="menu"]')) {
                     clearInterval(intervalId); resolve();
     }}, 100);});},
 
