@@ -10,6 +10,7 @@ var functionAliases = [ // whole function names to cross-alias
     ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
         'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
     ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
+    ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
     ['isFullScreen', 'isFullscreen'],
     ['new', 'newChat', 'startNewChat'],
     ['printAllFunctions', 'showAllFunctions'],
@@ -356,9 +357,8 @@ var chatgpt = {
         return this[targetFuncName](); // call found function
     },
 
-    getChatInput: function() {
-        return document.querySelector('form textarea').value;
-    },
+    getChatBox: function() { return document.getElementById('prompt-textarea'); },
+    getChatInput: function() { return this.getChatBox().value; },
 
     getLastResponse: function() {
         var lastResponseDiv = chatgpt.getLastResponseDiv();
@@ -423,10 +423,6 @@ var chatgpt = {
             if (formButton.textContent.toLowerCase().includes('stop')) {
                 return formButton;
     }}},
-
-    getTextarea: function() {
-        return document.querySelector('form textarea');
-    },
 
     history: {
         isOn: function() {
