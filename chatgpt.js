@@ -309,7 +309,7 @@ var chatgpt = {
         try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
         setTimeout(() => {
             var menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
-            var hasChats = false
+            var hasChats = false;
             for (var menuItem of menuItems) {
                 if (menuItem.text.match(/clear conversations/i)) { menuItem.click(); hasChats = true; break; }
             } if (hasChats) {
