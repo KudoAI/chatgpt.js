@@ -305,24 +305,20 @@ var chatgpt = {
     },
 
     clearChats: function() {
-        let menuButton = document.querySelector('nav button[id*="headless"]');
-        if (menuButton == null) return;
-        menuButton.click();
-        setTimeout(async function() {
-            let menuItems = document.querySelectorAll('a[role="menuitem"]');
-            let discard = false;
-            if (menuItems.length < 4) {
-                await new Promise((resolve) => {
-                    let timer = setInterval(function() {
-                        if (menuItems.length < 4) return;
-                        clearInterval(timer); resolve();
-                    }, 10);
-                    setTimeout(() => { discard = true; clearInterval(timer); }, 10000);
-            });}
-            if (discard) { menuButton.click(); return; }
-            let clearConversations = menuItems[1];
-            clearConversations.click();
-            setTimeout(() => { clearConversations.click(); }, 10);
+        var menuBtn = document.querySelector('nav button[id*="headless"]') || {};
+        try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
+        setTimeout(() => {
+            var menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
+            var hasChats = false
+            for (var menuItem of menuItems) {
+                if (menuItem.text.match(/clear conversations/i)) { menuItem.click(); hasChats = true; break; }
+            } if (hasChats) {
+                setTimeout(() => { for (var menuItem of menuItems) {
+                    if (menuItem.text.match(/confirm/i)) { menuItem.click(); break; }}}, 10);
+            } else {
+                menuBtn.click(); setTimeout(() => { chatgpt.getChatBox().focus(); }, 150);
+                console.info('🤖 chatgpt.js >> No chat history to clear');
+            }
         }, 10);
     },
 
