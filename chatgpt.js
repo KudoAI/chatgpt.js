@@ -658,7 +658,7 @@ for (var prop in chatgpt) {
 
     // Create new function for each alias
     for (var subAliases of functionAliases) {
-        if (subAliases.some(subAlias => subAlias.includes(prop))) {
+        if (subAliases.includes(prop)) {
             if (subAliases.some(element => element.includes('.'))) {
                 var nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
                 for (var nestAlias of subAliases) {
