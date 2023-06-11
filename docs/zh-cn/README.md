@@ -27,6 +27,7 @@
 ![弱点](https://img.shields.io/snyk/vulnerabilities/github/chatgptjs/chatgpt.js?label=弱点&labelColor=464646&color=gold&style=for-the-badge)
 ![缩小尺寸](https://img.shields.io/github/size/chatgptjs/chatgpt.js/dist/chatgpt-1.9.1.min.js?label=缩小尺寸&labelColor=464646&color=ff69b4&style=for-the-badge)
 [![代码质量](https://img.shields.io/codefactor/grade/github/chatgptjs/chatgpt.js?label=代码质量&style=for-the-badge)](https://www.codefactor.io/repository/github/chatgptjs/chatgpt.js)
+![jsdelivr](https://img.shields.io/jsdelivr/gh/hm/chatgptjs/chatgpt.js?color=ff6427&label=jsDelivr+要求&style=for-the-badge)
 
 </div>
 
