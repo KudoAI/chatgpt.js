@@ -25,6 +25,7 @@
 [![执照](https://img.shields.io/badge/执照-MIT-green.svg?style=for-the-badge)](https://github.com/chatgptjs/chatgpt.js/blob/main/LICENSE.md)
 [![提交](https://img.shields.io/github/commit-activity/m/chatgptjs/chatgpt.js?label=提交&style=for-the-badge)](https://github.com/chatgptjs/chatgpt.js/commits/main)
 [![代码质量](https://img.shields.io/codefactor/grade/github/chatgptjs/chatgpt.js?label=代码质量&style=for-the-badge)](https://www.codefactor.io/repository/github/chatgptjs/chatgpt.js)
+![弱点](https://img.shields.io/snyk/vulnerabilities/github/chatgptjs/chatgpt.js?label=弱点&labelColor=464646&color=gold&style=for-the-badge)
 
 </div>
 
