@@ -23,8 +23,9 @@
 <div align="center">
 
 [![license](https://img.shields.io/badge/License-MIT-green.svg?labelColor=464646&style=for-the-badge)](https://github.com/chatgptjs/chatgpt.js/blob/main/LICENSE.md)
-[![commits](https://img.shields.io/github/commit-activity/m/chatgptjs/chatgpt.js?labelColor=464646&label=Commits&style=for-the-badge)](https://github.com/chatgptjs/chatgpt.js/commits/main)
+[![commits](https://img.shields.io/github/commit-activity/m/chatgptjs/chatgpt.js?label=Commits&labelColor=464646&style=for-the-badge)](https://github.com/chatgptjs/chatgpt.js/commits/main)
 [![code quality](https://img.shields.io/codefactor/grade/github/chatgptjs/chatgpt.js?labelColor=464646&label=Code+Quality&style=for-the-badge)](https://www.codefactor.io/repository/github/chatgptjs/chatgpt.js)
+![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/chatgptjs/chatgpt.js?label=Vulnerabilities&labelColor=464646&color=gold&style=for-the-badge)
     
 </div>
 
