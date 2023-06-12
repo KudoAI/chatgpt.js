@@ -40,6 +40,8 @@ chatgpt.js 是一个功能强大的 JavaScript 库，可轻松与 ChatGPT DOM �
 - 易于使用
 - 轻量级（但性能最优）
 
+![separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
+
 ## 导入库
 
 ### ES6:
@@ -113,6 +115,8 @@ export { chatgpt }
 })();
 ```
 
+![separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
+
 ## 用法
 
 **chatgpt.js** 的编写考虑到了超级灵活性。
@@ -128,6 +132,8 @@ chatgpt.get('reply', 'last')
 每个调用都会同样获取最后一个回应。如果您认为它有效，那么它可能就是有效的……所以只需输入它！（谁有时间看文档？）
 
 如果它不起作用，只需提交 [issue](https://github.com/chatgptjs/chatgpt.js/issues) 或 [PR](https://github.com/chatgptjs/chatgpt.js/pulls)，它将被集成，简单易行！
+
+![separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
 
 ## 用 chatgpt.js 制作
 
@@ -187,6 +193,8 @@ chatgpt.get('reply', 'last')
 [讨论](https://github.duckduckgpt.com/discussions)
 
 如果你做了一些你想分享的东西，请发送电子邮件至 [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) 或直接打开一个 [pull request](https://github.com/chatgptjs/chatgpt.js/pulls)!
+
+![separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
 
 ## 贡献者
 
