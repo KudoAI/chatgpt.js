@@ -40,6 +40,8 @@
 - Easy-to-use
 - Lightweight (yet optimally performant)
 
+![separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
+
 ## Importing the library
 
 ### ES6:
@@ -113,6 +115,8 @@ export { chatgpt }
 })();
 ```
 
+![separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
+
 ## Usage
 
 **chatgpt.js** was written w/ ultra flexibility in mind.
@@ -128,6 +132,8 @@ chatgpt.get('reply', 'last')
 Each call equally fetches the last response. If you think it works, it probabily will... so just type it! (Who has time for docs?)
 
 If it didn't, simply submit an [issue](https://github.com/chatgptjs/chatgpt.js/issues) or [PR](https://github.com/chatgptjs/chatgpt.js/pulls) and it will be integrated, ezpz!
+
+![separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
 
 ## Made with chatgpt.js
 
@@ -188,6 +194,8 @@ Display ChatGPT answers in DuckDuckGo sidebar (powered by GPT-4!)
 
 If you've made something you want to share, email [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) or just open a [pull request](https://github.com/chatgptjs/chatgpt.js/pulls)!
 
+![separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
+
 ## Contributors
 
 This library exists thanks to code, translations, issues & ideas from the following contributors:
@@ -200,8 +208,6 @@ This library exists thanks to code, translations, issues & ideas from the follow
 [![@AliAlSarre](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.24-css-readability&h=50&w=50&mask=circle&maxage=7d "@AliAlSarre")](https://github.com/AliAlSarre)
 [![@madkarmaa](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/100418457?first-contrib=2023.06.02-send-function-bug-report&h=50&w=50&mask=circle&maxage=7d "@madkarmaa")](https://github.com/madkarmaa)
 [![ChatGPT](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
-
-
 
 <br>
 
