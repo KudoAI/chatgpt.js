@@ -20,7 +20,7 @@
 </div>
 </h3>
 
-<div id="shields" align="center">
+<div align="center">
 
 [![license](https://img.shields.io/badge/License-MIT-green.svg?labelColor=464646&style=flat-square)](https://github.com/chatgptjs/chatgpt.js/blob/main/LICENSE.md)
 [![commits](https://img.shields.io/github/commit-activity/m/chatgptjs/chatgpt.js?label=Commits&labelColor=464646&style=flat-square)](https://github.com/chatgptjs/chatgpt.js/commits/main)
