@@ -22,12 +22,12 @@
 
 <div align="center">
 
-[![执照](https://img.shields.io/badge/执照-MIT-green.svg?style=for-the-badge)](https://github.com/chatgptjs/chatgpt.js/blob/main/LICENSE.md)
-[![提交](https://img.shields.io/github/commit-activity/m/chatgptjs/chatgpt.js?label=提交&style=for-the-badge)](https://github.com/chatgptjs/chatgpt.js/commits/main)
-![弱点](https://img.shields.io/snyk/vulnerabilities/github/chatgptjs/chatgpt.js?label=弱点&labelColor=464646&color=gold&style=for-the-badge)
-![缩小尺寸](https://img.shields.io/github/size/chatgptjs/chatgpt.js/dist/chatgpt-1.9.1.min.js?label=缩小尺寸&labelColor=464646&color=ff69b4&style=for-the-badge)
-[![代码质量](https://img.shields.io/codefactor/grade/github/chatgptjs/chatgpt.js?label=代码质量&style=for-the-badge)](https://www.codefactor.io/repository/github/chatgptjs/chatgpt.js)
-![jsdelivr](https://img.shields.io/jsdelivr/gh/hm/chatgptjs/chatgpt.js?color=ff6427&label=jsDelivr+要求&style=for-the-badge)
+[![执照](https://img.shields.io/badge/执照-MIT-green.svg?style=flat-square)](https://github.com/chatgptjs/chatgpt.js/blob/main/LICENSE.md)
+[![提交](https://img.shields.io/github/commit-activity/m/chatgptjs/chatgpt.js?label=提交&style=flat-square)](https://github.com/chatgptjs/chatgpt.js/commits/main)
+![弱点](https://img.shields.io/snyk/vulnerabilities/github/chatgptjs/chatgpt.js?label=弱点&labelColor=464646&color=gold&style=flat-square)
+![缩小尺寸](https://img.shields.io/github/size/chatgptjs/chatgpt.js/dist/chatgpt-1.9.1.min.js?label=缩小尺寸&labelColor=464646&color=ff69b4&style=flat-square)
+[![代码质量](https://img.shields.io/codefactor/grade/github/chatgptjs/chatgpt.js?label=代码质量&style=flat-square)](https://www.codefactor.io/repository/github/chatgptjs/chatgpt.js)
+![jsdelivr](https://img.shields.io/jsdelivr/gh/hm/chatgptjs/chatgpt.js?color=ff6427&label=jsDelivr+要求&style=flat-square)
 
 </div>
 
