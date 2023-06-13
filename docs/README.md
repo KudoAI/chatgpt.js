@@ -40,7 +40,7 @@
 - Easy-to-use
 - Lightweight (yet optimally performant)
 
-![separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
+<img height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
 ## Importing the library
 
@@ -115,7 +115,7 @@ export { chatgpt }
 })();
 ```
 
-![separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
+<img height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
 ## Usage
 
@@ -133,7 +133,7 @@ Each call equally fetches the last response. If you think it works, it probabily
 
 If it didn't, simply submit an [issue](https://github.com/chatgptjs/chatgpt.js/issues) or [PR](https://github.com/chatgptjs/chatgpt.js/pulls) and it will be integrated, ezpz!
 
-![separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
+<img height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
 ## Made with chatgpt.js
 
@@ -194,7 +194,7 @@ Display ChatGPT answers in DuckDuckGo sidebar (powered by GPT-4!)
 
 If you've made something you want to share, email [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) or just open a [pull request](https://github.com/chatgptjs/chatgpt.js/pulls)!
 
-![separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
+<img height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
 ## Contributors
 
