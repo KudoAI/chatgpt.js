@@ -25,7 +25,7 @@
 [![执照](https://img.shields.io/badge/执照-MIT-green.svg?style=flat-square)](https://github.com/chatgptjs/chatgpt.js/blob/main/LICENSE.md)
 [![提交](https://img.shields.io/github/commit-activity/m/chatgptjs/chatgpt.js?label=提交&style=flat-square)](https://github.com/chatgptjs/chatgpt.js/commits/main)
 ![弱点](https://img.shields.io/snyk/vulnerabilities/github/chatgptjs/chatgpt.js?label=弱点&labelColor=464646&color=gold&style=flat-square)
-![缩小尺寸](https://img.shields.io/github/size/chatgptjs/chatgpt.js/dist/chatgpt-1.9.1.min.js?label=缩小尺寸&labelColor=464646&color=ff69b4&style=flat-square)
+![缩小尺寸](https://img.shields.io/github/size/chatgptjs/chatgpt.js/dist/chatgpt-1.10.0.min.js?label=缩小尺寸&labelColor=464646&color=ff69b4&style=flat-square)
 [![代码质量](https://img.shields.io/codefactor/grade/github/chatgptjs/chatgpt.js?label=代码质量&style=flat-square)](https://www.codefactor.io/repository/github/chatgptjs/chatgpt.js)
 ![jsdelivr](https://img.shields.io/jsdelivr/gh/hm/chatgptjs/chatgpt.js?color=ff6427&label=jsDelivr+要求&style=flat-square)
 
@@ -79,7 +79,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@f855a11607839fbc55273db604d167b503434598/dist/chatgpt-1.9.1.min.js
+// @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@1ba68e507e57c154fca9fca20668b03f28a2899d/dist/chatgpt-1.10.0.min.js
 // ==/UserScript==
 
 // 这里是您的代码
