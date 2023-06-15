@@ -587,23 +587,34 @@ var chatgpt = {
             links.push({ linkTag, linkText });
         }
 
-        // Create/insert hyperlink elements
+        // Create/insert hyperlink elements up to last link
         while (node.firstChild) node.removeChild(node.firstChild); // remove old content
         let currentIndex = 0;
         links.forEach(({ linkTag, linkText }) => {
             const index = nodeText.indexOf(linkTag, currentIndex); // of current link tag
             if (index !== -1) { // if tag found
                 const beforeText = nodeText.substring(currentIndex, index); // extract text before link tag
-                const textNode = document.createTextNode(beforeText.replace(/ /g, '\u00A0')); // create text node w/ preceding text
+                const textNode = document.createTextNode(beforeText); // create text node w/ preceding text
                 const hyperlink = document.createElement('a'); // create hyperlink elem
+                const attributes = linkTag.match(/<a\b([^>]*)>/)[1]; // extract attributes from link tag
+                attributes.split(/\s+/).forEach((attr) => { // handle attributes...
+                    const [name, value] = attr.split('='); // ...by extracting them
+                    if (name && value) // then setting quote-stripped attr on hyperlink elem
+                        hyperlink.setAttribute(name, value.replace(/['"]/g, ''));
+                });
                 hyperlink.href = linkTag.match(/href="(.*?)"/)[1]; // extract href value from link tag
                 hyperlink.textContent = linkText; // set content of hyperlink
                 node.appendChild(textNode); node.appendChild(hyperlink); // append preceding text node + hyperlink elem
                 currentIndex = index + linkTag.length; // update current index to skip processed tag
         }});
+
+        // Append remaining text
         const remainingText = nodeText.substring(currentIndex); // get remaining text after all link tags
-        const remainingTextNode = document.createTextNode(remainingText.replace(/ /g, '\u00A0')); // create node w/ remaining text
+        const remainingTextNode = document.createTextNode(remainingText); // create node w/ remaining text
         node.appendChild(remainingTextNode); // append remaining text node
+        node.style.whiteSpace = 'pre-wrap'; // preserve consecutive spaces + line wrapping
+
+        return node; // if assignment used
     },
 
     scrollToBottom: function() {
