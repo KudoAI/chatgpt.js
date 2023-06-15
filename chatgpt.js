@@ -424,19 +424,13 @@ var chatgpt = {
     history: {
         isOn: function() {
             for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-                if (navLink.text.match(/new chat/i)) return true;
-            } return false;
-        },
-
-        isOff: function() {
-            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-                if (navLink.text.match(/new chat/i)) return false;
+                if (navLink.text.match(/clear chat/i)) return false;
             } return true;
         },
+        isOff: function() { return !this.isOn(); }
 
         activate: function() { this.isOff() ? this.toggle() : console.info('🤖 chatgpt.js >> Chat history is already enabled!'); },
         deactivate: function() { this.isOn() ? this.toggle() : console.info('🤖 chatgpt.js >> Chat history is already disabled!'); },
-
         toggle: function() {                
             for (var navBtn of document.querySelectorAll('nav[aria-label="Chat history"] button')) {
                 if (navBtn.textContent.match(/chat history/i))
