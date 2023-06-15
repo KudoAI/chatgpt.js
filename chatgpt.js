@@ -90,7 +90,7 @@ var chatgpt = {
             var scheme = chatgpt.isDarkMode() ? 'dark' : 'light';
             var modalStyle = document.createElement('style');
             modalStyle.id = 'chatgpt-alert-style';
-            modalStyle.innerHTML = (
+            modalStyle.innerText = (
 
                 // Background styles
                 '.chatgpt-modal {' 
@@ -133,7 +133,8 @@ var chatgpt = {
         }
 
         // Insert text into elements
-        modalTitle.innerHTML = title ? title : ''; modalMessage.innerHTML = msg ? msg : '';
+        modalTitle.innerText = title ? title : '';
+        modalMessage.innerText = msg ? msg : ''; this.renderLinks(modalMessage);
 
         // Create/append buttons (if provided) to buttons div
         var modalButtons = document.createElement('div');
