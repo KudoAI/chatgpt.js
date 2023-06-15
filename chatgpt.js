@@ -521,7 +521,7 @@ var chatgpt = {
         }
 
         // Show notification
-        notificationDiv.innerHTML = msg; // insert msg
+        notificationDiv.innerText = msg; // insert msg
         notificationDiv.style.transition = 'none'; // remove fade effect
         notificationDiv.style.opacity = 1; // show msg
 
