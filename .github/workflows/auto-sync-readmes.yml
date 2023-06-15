@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    if: github.event.commits[0].message =~ /built `?chatgpt-\d+\.\d+\.\d+\.min\.js`?/i
+    if: contains(github.event.commits[0].message, 'buil')
     runs-on: ubuntu-latest
     steps:
 
