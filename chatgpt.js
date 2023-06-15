@@ -104,7 +104,7 @@ var chatgpt = {
                     + `max-width: ${ width ? width : 454 }px ;`
                     + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) }'
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
-                + `.chatgpt-modal p > a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
+                + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
 
                 // Button styles
                 + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 }'
