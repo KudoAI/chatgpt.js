@@ -17,6 +17,7 @@ var functionAliases = [ // whole function names to cross-alias
     ['printAllFunctions', 'showAllFunctions'],
     ['refreshSession', 'sessionRefresh'],
     ['refreshReply', 'regenerate', 'regenerateReply'],
+    ['renderHTML', 'renderHtml', 'renderLinks', 'renderTags'],
     ['send', 'sendChat', 'sendMsg'],
     ['sendInNewChat', 'sendNewChat'],
     ['stop', 'stopGenerating'],
@@ -28,6 +29,7 @@ var synonyms = [ // constituent synonyms within function names
     ['activate', 'turnOn'],
     ['chat', 'conversation', 'convo'],
     ['generating', 'generation'],
+    ['render', 'parse'],
     ['reply', 'response'],
     ['send', 'submit']
 ];
@@ -134,7 +136,7 @@ var chatgpt = {
 
         // Insert text into elements
         modalTitle.innerText = title ? title : '';
-        modalMessage.innerText = msg ? msg : ''; this.renderLinks(modalMessage);
+        modalMessage.innerText = msg ? msg : ''; this.renderHTML(modalMessage);
 
         // Create/append buttons (if provided) to buttons div
         var modalButtons = document.createElement('div');
@@ -576,43 +578,54 @@ var chatgpt = {
                 formButton.click; return;
     }}},
 
-    renderLinks: function(node) {
-        const reLinks = /<a\b[^>]*>(.*?)<\/a>/g;
-        const links = [], nodeText = node.innerText;
+    renderHTML: function(node) {
+        const reTags = /<([a-z]+)\b([^>]*)>([\s\S]*?)<\/\1>/g;
+        const nodeContent = node.childNodes;
 
-        // Track link tags
-        let link;
-        while ((link = reLinks.exec(nodeText)) !== null) {
-            const linkTag = link[0], linkText = link[1];
-            links.push({ linkTag, linkText });
+        // Preserve consecutive spaces + line breaks
+        if (!this.renderHTML.preWrapSet) {
+            node.style.whiteSpace = 'pre-wrap'; this.renderHTML.preWrapSet = true;
+            setTimeout(() => { this.renderHTML.preWrapSet = false; }, 100);
         }
 
-        // Create/insert hyperlink elements up to last link
-        while (node.firstChild) node.removeChild(node.firstChild); // remove old content
-        let currentIndex = 0;
-        links.forEach(({ linkTag, linkText }) => {
-            const index = nodeText.indexOf(linkTag, currentIndex); // of current link tag
-            if (index !== -1) { // if tag found
-                const beforeText = nodeText.substring(currentIndex, index); // extract text before link tag
-                const textNode = document.createTextNode(beforeText); // create text node w/ preceding text
-                const hyperlink = document.createElement('a'); // create hyperlink elem
-                const attributes = linkTag.match(/<a\b([^>]*)>/)[1]; // extract attributes from link tag
-                attributes.split(/\s+/).forEach((attr) => { // handle attributes...
-                    const [name, value] = attr.split('='); // ...by extracting them
-                    if (name && value) // then setting quote-stripped attr on hyperlink elem
-                        hyperlink.setAttribute(name, value.replace(/['"]/g, ''));
-                });
-                hyperlink.href = linkTag.match(/href="(.*?)"/)[1]; // extract href value from link tag
-                hyperlink.textContent = linkText; // set content of hyperlink
-                node.appendChild(textNode); node.appendChild(hyperlink); // append preceding text node + hyperlink elem
-                currentIndex = index + linkTag.length; // update current index to skip processed tag
-        }});
+        // Process child nodes
+        for (let i = 0; i < nodeContent.length; i++) {
+            const childNode = nodeContent[i];
 
-        // Append remaining text
-        const remainingText = nodeText.substring(currentIndex); // get remaining text after all link tags
-        const remainingTextNode = document.createTextNode(remainingText); // create node w/ remaining text
-        node.appendChild(remainingTextNode); // append remaining text node
-        node.style.whiteSpace = 'pre-wrap'; // preserve consecutive spaces + line wrapping
+            // Process text node
+            if (childNode.nodeType === Node.TEXT_NODE) {
+                const text = childNode.nodeValue;
+                const elems = Array.from(text.matchAll(reTags));
+
+                // Process 1st element to render
+                if (elems.length > 0) {
+                    const elem = elems[0];
+                    const [tagContent, tagName, tagAttributes, tagText] = elem.slice(0, 4);
+                    const tagNode = document.createElement(tagName); tagNode.textContent = tagText;
+
+                    // Extract/set attributes
+                    const attributes = tagAttributes.split(/\s+/);
+                    attributes.forEach(attribute => { // handle attributes...
+                        const [name, value] = attribute.split('='); // ...by extracting them...
+                        if (name && value)  // ...then setting quote-stripped attr on rendered node
+                            tagNode.setAttribute(name, value.replace(/['"]/g, ''));
+                    });
+
+                    const renderedNode = this.renderHTML(tagNode); // render child elements of newly created node
+
+                    // Insert newly rendered node
+                    const beforeTextNode = document.createTextNode(text.substring(0, elem.index));
+                    const afterTextNode = document.createTextNode(text.substring(elem.index + tagContent.length));
+
+                    // Replace text node with processed nodes
+                    node.replaceChild(beforeTextNode, childNode);
+                    node.insertBefore(renderedNode, beforeTextNode.nextSibling);
+                    node.insertBefore(afterTextNode, renderedNode.nextSibling);
+                }
+
+            // Process element nodes recursively
+            } else if (childNode.nodeType === Node.ELEMENT_NODE) this.renderHTML(childNode);
+        }
 
         return node; // if assignment used
     },
