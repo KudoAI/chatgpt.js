@@ -575,6 +575,36 @@ var chatgpt = {
                 formButton.click; return;
     }}},
 
+    renderLinks: function(node) {
+        const reLinks = /<a\b[^>]*>(.*?)<\/a>/g;
+        const links = [], nodeText = node.innerText;
+
+        // Track link tags
+        let link;
+        while ((link = reLinks.exec(nodeText)) !== null) {
+            const linkTag = link[0], linkText = link[1];
+            links.push({ linkTag, linkText });
+        }
+
+        // Create/insert hyperlink elements
+        while (node.firstChild) node.removeChild(node.firstChild); // remove old content
+        let currentIndex = 0;
+        links.forEach(({ linkTag, linkText }) => {
+            const index = nodeText.indexOf(linkTag, currentIndex); // of current link tag
+            if (index !== -1) { // if tag found
+                const beforeText = nodeText.substring(currentIndex, index); // extract text before link tag
+                const textNode = document.createTextNode(beforeText.replace(/ /g, '\u00A0')); // create text node w/ preceding text
+                const hyperlink = document.createElement('a'); // create hyperlink elem
+                hyperlink.href = linkTag.match(/href="(.*?)"/)[1]; // extract href value from link tag
+                hyperlink.textContent = linkText; // set content of hyperlink
+                node.appendChild(textNode); node.appendChild(hyperlink); // append preceding text node + hyperlink elem
+                currentIndex = index + linkTag.length; // update current index to skip processed tag
+        }});
+        const remainingText = nodeText.substring(currentIndex); // get remaining text after all link tags
+        const remainingTextNode = document.createTextNode(remainingText.replace(/ /g, '\u00A0')); // create node w/ remaining text
+        node.appendChild(remainingTextNode); // append remaining text node
+    },
+
     scrollToBottom: function() {
         try { document.querySelector('button[class*="cursor"]').click(); } catch (error) { console.error('🤖 chatgpt.js >> ', error); }
     },
