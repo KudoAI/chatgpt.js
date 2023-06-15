@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    if: contains(github.event.commits[0].message, 'built chatgpt\.js')
+    if: github.event.commits[0].message =~ /built `?chatgpt-\d+\.\d+\.\d+\.min\.js`?/i
     runs-on: ubuntu-latest
     steps:
 
@@ -21,8 +21,9 @@ jobs:
 
       - name: Find/replace latest version in READMEs
         run: |
-          version=$(git log -1 --pretty=format:'%s' | grep -oE 'chatgpt-[0-9]+\.[0-9]+\.[0-9]+\.min\.js' | head -1)
-          sed -i "s/chatgpt-[0-9]\+\.[0-9]\+\.[0-9]\+\.min\.js/$version/g" $(find $GITHUB_WORKSPACE/chatgptjs/chatgpt.js/docs -name "README.md")
+          version=$(echo "${{ github.event.commits[0].message }}" | grep -oE 'chatgpt-\d+\.\d+\.\d+\.min\.js' | head -1)
+          version="${version//\`/}" # strip backticks
+          sed -i "s/chatgpt-\d\+\.\d\+\.\d\+\.min\.js/$version/g" $(find $GITHUB_WORKSPACE/chatgptjs/chatgpt.js/docs -name "README.md")
 
       - name: Find/replace latest commit hash in READMEs
         run: |
