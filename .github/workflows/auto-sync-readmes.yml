@@ -10,7 +10,6 @@ jobs:
     if: contains(github.event.commits[0].message, 'buil')
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout chatgptjs/chatgpt.js
         uses: actions/checkout@v2
         with:
@@ -27,8 +26,9 @@ jobs:
 
       - name: Find/replace latest commit hash in READMEs
         run: |
+          cd $GITHUB_WORKSPACE/chatgptjs/chatgpt.js  # Change directory to the Git repository
           commit_hash=$(git rev-parse HEAD)
-          sed -i "s/chatgpt.js@[a-f0-9]\+\//chatgpt.js@$commit_hash\//g" $(find $GITHUB_WORKSPACE/chatgptjs/chatgpt.js/docs -name "README.md")
+          sed -i "s/chatgpt.js@[a-f0-9]\+\//chatgpt.js@$commit_hash\//g" $(find docs -name "README.md")  # Use relative path for `find` command
 
       - name: Commit and push changes
         run: |
