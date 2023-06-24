@@ -27,7 +27,6 @@
 ![](https://img.shields.io/snyk/vulnerabilities/github/chatgptjs/chatgpt.js?label=Vulnerabilities&labelColor=464646&color=gold&style=flat-square)
 ![](https://img.shields.io/github/size/chatgptjs/chatgpt.js/dist/chatgpt-1.10.1.min.js?label=Minified%20Size&labelColor=464646&color=ff69b4&style=flat-square)
 [![](https://img.shields.io/codefactor/grade/github/chatgptjs/chatgpt.js?labelColor=464646&label=Code+Quality&style=flat-square)](https://www.codefactor.io/repository/github/chatgptjs/chatgpt.js)
-![](https://img.shields.io/jsdelivr/gh/hm/chatgptjs/chatgpt.js?labelColor=464646&color=ff6427&label=jsDelivr+Hits&style=flat-square)
 
 </div>
 
