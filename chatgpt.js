@@ -78,6 +78,7 @@ var chatgpt = {
 
     alert: function(title, msg, btns, checkbox, width) {
     // [ title/msg = strings, btns = [named functions], checkbox = named function, width (px) = int ] = optional
+    // * Spaces are inserted into button labels by parsing function names in camel/kebab/snake case
 
         // Create modal parent/children elements
         var modalContainer = document.createElement('div');
@@ -143,10 +144,12 @@ var chatgpt = {
         modalButtons.classList.add('modal-buttons');
         if (btns) { // are supplied
             if (!Array.isArray(btns)) btns = [btns]; // convert single button to array if necessary
-            btns.forEach(function(buttonFn) { // create title-cased labels + attach listeners
+            btns.forEach((buttonFn) => { // create title-cased labels + attach listeners
                 var button = document.createElement('button');
-                button.textContent = buttonFn.name.charAt(0).toUpperCase() // cap 1st char
-                                   + buttonFn.name.slice(1).replace(/([A-Z])/g, ' $1').trim(); // insert spaces
+                button.textContent = buttonFn.name
+                    .replace(/[_-]\w/g, match => match.slice(1).toUpperCase()) // convert snake/kebab to camel case
+                    .replace(/([A-Z])/g, ' $1') // insert spaces
+                    .replace(/^\w/, firstChar => firstChar.toUpperCase()); // capitalize first letter
                 button.addEventListener('click', function() { destroyAlert(); buttonFn(); });
                 modalButtons.insertBefore(button, modalButtons.firstChild); // insert button to left
             });
