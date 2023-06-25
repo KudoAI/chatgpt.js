@@ -1,9 +1,9 @@
 # Security Policy
 
-###### English | [简体中文](zh-cn/SECURITY.md) | [हिंदी ](hi/SECURITY.md)
+##### हिंदी | [English](https://github.com/chatgptjs/chatgpt.js/security/policy) | [简体中文](https://github.com/chatgptjs/chatgpt.js/blob/main/docs/zh-cn/SECURITY.md)
 
 <br>
 
-If you find a vulnerability, please open a [draft security advisory](https://github.com/chatgptjs/chatgpt.js/security/advisories/new).
+यदि आपको कोई भेद्यता मिलती है, तो कृपया एक [ड्राफ्ट सुरक्षा सलाहकार](https://github.com/chatgptjs/chatgpt.js/security/advisories/new) खोलें।
 
-Pull requests are also welcome, but for safety reasons, send an email to security@chatgptjs.org and wait for a response before making it public.
+पुल अनुरोधों का भी स्वागत है, लेकिन सुरक्षा कारणों से, security@chatgptjs.org पर एक ईमेल भेजें और इसे सार्वजनिक करने से पहले प्रतिक्रिया की प्रतीक्षा करें।
