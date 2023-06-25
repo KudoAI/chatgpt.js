@@ -1,6 +1,6 @@
 # Security Policy
 
-###### English | [简体中文](https://github.com/chatgptjs/chatgpt.js/blob/main/docs/zh-cn/SECURITY.md) | [हिंदी ](https://github.com/chatgptjs/chatgpt.js/blob/main/docs/hi/SECURITY.md)
+##### English | [简体中文](https://github.com/chatgptjs/chatgpt.js/blob/main/docs/zh-cn/SECURITY.md) | [हिंदी ](https://github.com/chatgptjs/chatgpt.js/blob/main/docs/hi/SECURITY.md)
 
 <br>
 
