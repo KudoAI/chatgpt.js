@@ -170,26 +170,20 @@ Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks.
 [Readme](https://github.com/adamlui/chatgpt-auto-refresh#readme) / 
 [Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Infinity ∞](https://chatgptevo.com/infinity) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 4px"></a>
-
-Generate endless answers from all-knowing ChatGPT (in any language!)
-<br>[Install](https://greasyfork.org/scripts/465051-chatgpt-infinity) / 
-[Readme](https://github.com/adamlui/chatgpt-infinity#readme) / 
-[Discuss](https://chatgptevo.com/infinity/discussions)
-
-### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://chatgptevo.com/widescreen) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
-
-Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling.
-<br>[Install](https://github.com/adamlui/chatgpt-widescreen#installation) / 
-[Readme](https://github.com/adamlui/chatgpt-widescreen#readme) / 
-[Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions)
-
 ### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 Display ChatGPT answers in DuckDuckGo sidebar (powered by GPT-4!)
 <br>[Install](https://greasyfork.org/scripts/459849-duckduckgpt) / 
 [Readme](https://github.duckduckgpt.com/#readme) / 
 [Discuss](https://github.duckduckgpt.com/discussions)
+
+<br>
+
+<a href="https://chatgptinfinity.com"><img width=555 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
+
+<br>
+
+<a href="https://chatgptwidescreen.com"><img width=555 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
 If you've made something you want to share, email [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) or just open a [pull request](https://github.com/chatgptjs/chatgpt.js/pulls)!
 
