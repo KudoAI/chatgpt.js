@@ -19,8 +19,10 @@ jobs:
           fetch-depth: 2
 
       - name: Find/replace latest version in READMEs
+        env: 
+          COMMIT_MSG: ${{ github.event.commits[0].message }}
         run: |
-          version=$(echo "${{ github.event.commits[0].message }}" | grep -oE 'chatgpt-\d+\.\d+\.\d+\.min\.js' | head -1)
+          version=$(echo "$COMMIT_MSG" | grep -oE 'chatgpt-\d+\.\d+\.\d+\.min\.js' | head -1)
           version="${version//\`/}" # strip backticks
           sed -i "s/chatgpt-\d\+\.\d\+\.\d\+\.min\.js/$version/g" $(find $GITHUB_WORKSPACE/chatgptjs/chatgpt.js/docs -name "README.md")
 
