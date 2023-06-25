@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 2
 
       - name: Find/replace latest version in READMEs
-        env: 
+        env:
           COMMIT_MSG: ${{ github.event.commits[0].message }}
         run: |
           version=$(echo "$COMMIT_MSG" | grep -oE 'chatgpt-\d+\.\d+\.\d+\.min\.js' | head -1)
