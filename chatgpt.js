@@ -582,7 +582,8 @@ var chatgpt = {
     }}},
 
     renderHTML: function(node) {
-        const reTags = /<([a-z]+)\b([^>]*)>([\s\S]*?)<\/\1>/g;
+        const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g;
+        const reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+(?:\S+)=|[>']))+.)['"]?/g;
         const nodeContent = node.childNodes;
 
         // Preserve consecutive spaces + line breaks
@@ -607,11 +608,10 @@ var chatgpt = {
                     const tagNode = document.createElement(tagName); tagNode.textContent = tagText;
 
                     // Extract/set attributes
-                    const attributes = tagAttributes.split(/\s+/);
-                    attributes.forEach(attribute => { // handle attributes...
-                        const [name, value] = attribute.split('='); // ...by extracting them...
-                        if (name && value)  // ...then setting quote-stripped attr on rendered node
-                            tagNode.setAttribute(name, value.replace(/['"]/g, ''));
+                    const attributes = Array.from(tagAttributes.matchAll(reAttributes));
+                    attributes.forEach(attribute => {
+                        const name = attribute[1], value = attribute[2].replace(/['"]/g, '');
+                        tagNode.setAttribute(name, value);
                     });
 
                     const renderedNode = this.renderHTML(tagNode); // render child elements of newly created node
