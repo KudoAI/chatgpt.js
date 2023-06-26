@@ -39,7 +39,7 @@
 - Easy-to-use
 - Lightweight (yet optimally performant)
 
-<p><img height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
 ## Importing the library
 
@@ -114,7 +114,7 @@ export { chatgpt }
 })();
 ```
 
-<p><img height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
 ## Usage
 
@@ -132,7 +132,7 @@ Each call equally fetches the last response. If you think it works, it probabily
 
 If it didn't, simply submit an [issue](https://github.com/chatgptjs/chatgpt.js/issues) or [PR](https://github.com/chatgptjs/chatgpt.js/pulls) and it will be integrated, ezpz!
 
-<p><img height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
 ## Made with chatgpt.js
 
@@ -189,7 +189,7 @@ Display ChatGPT answers in DuckDuckGo sidebar (powered by GPT-4!)
 
 If you've made something w/ chatgpt.js you want to share, email [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) or just open a [pull request](https://github.com/chatgptjs/chatgpt.js/pulls)!
 
-<p><img height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
 ## Contributors
 
