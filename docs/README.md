@@ -185,6 +185,8 @@ Display ChatGPT answers in DuckDuckGo sidebar (powered by GPT-4!)
 
 <a href="https://chatgptwidescreen.com"><img width=555 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
+<br>
+
 If you've made something you want to share, email [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) or just open a [pull request](https://github.com/chatgptjs/chatgpt.js/pulls)!
 
 <p><img height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
