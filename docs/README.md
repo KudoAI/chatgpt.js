@@ -25,7 +25,7 @@
 [![](https://img.shields.io/badge/License-MIT-green.svg?labelColor=464646&style=flat-square)](https://github.com/chatgptjs/chatgpt.js/blob/main/LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/chatgptjs/chatgpt.js?label=Commits&labelColor=464646&style=flat-square)](https://github.com/chatgptjs/chatgpt.js/commits/main)
 ![](https://img.shields.io/snyk/vulnerabilities/github/chatgptjs/chatgpt.js?label=Vulnerabilities&labelColor=464646&color=gold&style=flat-square)
-![](https://img.shields.io/github/size/chatgptjs/chatgpt.js/dist/chatgpt-1.10.2.min.js?label=Minified%20Size&labelColor=464646&color=ff69b4&style=flat-square)
+![](https://img.shields.io/github/size/chatgptjs/chatgpt.js/dist/chatgpt-1.10.3.min.js?label=Minified%20Size&labelColor=464646&color=ff69b4&style=flat-square)
 [![](https://img.shields.io/codefactor/grade/github/chatgptjs/chatgpt.js?labelColor=464646&label=Code+Quality&style=flat-square)](https://www.codefactor.io/repository/github/chatgptjs/chatgpt.js)
 
 </div>
@@ -78,7 +78,7 @@ Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CD
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@ffd846eb2c6211a7f1ee733a18e88433f05b5c8c/dist/chatgpt-1.10.2.min.js
+// @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@ffd846eb2c6211a7f1ee733a18e88433f05b5c8c/dist/chatgpt-1.10.3.min.js
 // ==/UserScript==
 
 // Your code here...
