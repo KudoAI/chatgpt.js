@@ -22,13 +22,14 @@ jobs:
         env:
           COMMIT_MSG: ${{ github.event.commits[0].message }}
         run: |
+          cd $GITHUB_WORKSPACE/chatgptjs/chatgpt.js/docs
           version=$(echo "$COMMIT_MSG" | grep -oE 'chatgpt-\d+\.\d+\.\d+\.min\.js' | head -1)
           version="${version//\`/}" # strip backticks
-          sed -i "s/chatgpt-\d\+\.\d\+\.\d\+\.min\.js/$version/g" $(find $GITHUB_WORKSPACE/chatgptjs/chatgpt.js/docs -name "README.md")
+          sed -i "s/chatgpt-\d\+\.\d\+\.\d\+\.min\.js/$version/g" $(find . -name "README.md")
 
       - name: Find/replace latest commit hash in READMEs
         run: |
-          cd $GITHUB_WORKSPACE/chatgptjs/chatgpt.js  # Change directory to the Git repository
+          cd $GITHUB_WORKSPACE/chatgptjs/chatgpt.js
           commit_hash=$(git rev-parse HEAD)
           sed -i "s/chatgpt.js@[a-f0-9]\+\//chatgpt.js@$commit_hash\//g" $(find docs -name "README.md")  # Use relative path for `find` command
 
