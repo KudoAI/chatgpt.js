@@ -187,7 +187,7 @@ chatgpt.get('reply', 'last')
 
 <br>
 
-如果你做了一些你想分享的东西，请发送电子邮件至 [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) 或直接打开一个 [pull request](https://github.com/chatgptjs/chatgpt.js/pulls)!
+如果您使用 chatgpt.js 制作了一些想要分享的内容，请发送电子邮件至 [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) 或打开一个 [pull request](https://github.com/chatgptjs/chatgpt.js/pulls)!
 
 <p><img height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
