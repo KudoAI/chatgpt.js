@@ -170,26 +170,22 @@ chatgpt.get('reply', 'last')
 [自述文件](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/docs/zh-cn#readme) / 
 [讨论](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT无限 ∞](https://chatgptevo.com/infinity) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 4px"></a>
-
-从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
-<br>[安装](https://greasyfork.org/scripts/465051-chatgpt-infinity) / 
-[自述文件](https://github.com/adamlui/chatgpt-infinity/blob/main/docs/zh-cn#readme) / 
-[讨论](https://chatgptevo.com/infinity/discussions)
-
-### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](https://chatgptevo.com/widescreen) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
-
-向 ChatGPT 添加宽屏 + 全窗口模式以增强查看效果 + 减少滚动。
-<br>[安装](https://github.com/adamlui/chatgpt-widescreen#installation) / 
-[自述文件](https://github.com/adamlui/chatgpt-widescreen#readme) / 
-[讨论](https://github.com/adamlui/chatgpt-widescreen/discussions)
-
 ### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 在 DuckDuckGo 侧边栏中显示 ChatGPT 答案 (由 GPT-4 驱动!)
 <br>[安装](https://greasyfork.org/scripts/459849-duckduckgpt) / 
 [自述文件](https://github.duckduckgpt.com/#readme) / 
 [讨论](https://github.duckduckgpt.com/discussions)
+
+<br>
+
+<a href="https://chatgptinfinity.com"><img width=555 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
+
+<br>
+
+<a href="https://chatgptwidescreen.com"><img width=555 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
+
+<br>
 
 如果你做了一些你想分享的东西，请发送电子邮件至 [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) 或直接打开一个 [pull request](https://github.com/chatgptjs/chatgpt.js/pulls)!
 
