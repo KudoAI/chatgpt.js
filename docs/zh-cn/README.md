@@ -78,7 +78,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@1e3e24998c2a338b4db8f28cc01c3e8e6bc9e872/dist/chatgpt-1.10.4.min.js
+// @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@e0d398d681ea5f3394a8b1809d3b29a7d53bc6e0/dist/chatgpt-1.10.4.min.js
 // ==/UserScript==
 
 // 这里是您的代码
