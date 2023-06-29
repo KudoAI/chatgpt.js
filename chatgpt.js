@@ -41,39 +41,13 @@ var targetTypes = [ // for abstracted methods like get, insert
 var chatgpt = {
 
     activateDarkMode: function() {
-        if (chatgpt.isLightMode()) {
-            var menuBtn = document.querySelector('nav button[id*="headless"]') || {};
-            try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
-            setTimeout(() => { // open settings
-                var menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
-                for (var menuItem of menuItems) {
-                    if (menuItem.text.match(/settings/i)) { menuItem.click(); break; }
-                } setTimeout(() => { // activate dark mode
-                    var themeSelector = document.querySelector('div[id*="radix"] select') || {};
-                    try { themeSelector.value = 'dark'; themeSelector.dispatchEvent(new Event('change', { bubbles: true })); }
-                    catch (error) { console.error('🤖 chatgpt.js >> Theme selector not found'); return; } 
-                    document.querySelector('div[id*="radix"] button').click(); // close settings
-                }, 10);
-            }, 10);
-        } else console.info('🤖 chatgpt.js >> ChatGPT is already in dark mode!');
+        document.documentElement.classList.replace('light', 'dark');
+        document.documentElement.style.colorScheme = 'dark';
     },
 
     activateLightMode: function() {
-        if (chatgpt.isDarkMode()) {
-            var menuBtn = document.querySelector('nav button[id*="headless"]') || {};
-            try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
-            setTimeout(() => { // open settings
-                var menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
-                for (var menuItem of menuItems) {
-                    if (menuItem.text.match(/settings/i)) { menuItem.click(); break; }
-                } setTimeout(() => { // activate light mode
-                    var themeSelector = document.querySelector('div[id*="radix"] select') || {};
-                    try { themeSelector.value = 'light'; themeSelector.dispatchEvent(new Event('change', { bubbles: true })); }
-                    catch (error) { console.error('🤖 chatgpt.js >> Theme selector not found'); return; } 
-                    document.querySelector('div[id*="radix"] button').click(); // close settings
-                }, 10);
-            }, 10);
-        } else console.info('🤖 chatgpt.js >> ChatGPT is already in light mode!');
+        document.documentElement.classList.replace('dark', 'light');
+        document.documentElement.style.colorScheme = 'light';
     },
 
     alert: function(title, msg, btns, checkbox, width) {
@@ -633,6 +607,16 @@ var chatgpt = {
         return node; // if assignment used
     },
 
+    scheme: {
+        isDark: function() { return document.documentElement.classList.contains('dark'); },
+        isLight: function() { return document.documentElement.classList.contains('light'); },
+        toggle: function() {
+            const [schemeToRemove, schemeToAdd] = this.isDark() ? ['dark', 'light'] : ['light', 'dark'];
+            document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
+            document.documentElement.style.colorScheme = schemeToAdd;
+        }
+    },
+
     scrollToBottom: function() {
         try { document.querySelector('button[class*="cursor"]').click(); } catch (error) { console.error('🤖 chatgpt.js >> ', error); }
     },
@@ -683,8 +667,11 @@ var chatgpt = {
                 formButton.click(); return;
     }}},
 
-    toggleScheme: function() { chatgpt.isLightMode() ? chatgpt.activateDarkMode() : chatgpt.activateLightMode(); }
-
+    toggleScheme: function() { 
+        const [schemeToRemove, schemeToAdd] = document.documentElement.classList.contains('dark') ? ['dark', 'light'] : ['light', 'dark'];
+        document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
+        document.documentElement.style.colorScheme = schemeToAdd;
+    }
 };
 
 // Create chatgpt.[actions]Button(identifier) functions
