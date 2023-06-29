@@ -552,7 +552,7 @@ var chatgpt = {
     regenerate: function() {
         for (var formButton of document.querySelectorAll('form button')) {
             if (formButton.textContent.toLowerCase().includes('regenerate')) {
-                formButton.click; return;
+                formButton.click(); return;
     }}},
 
     renderHTML: function(node) {
