@@ -26,8 +26,6 @@ jobs:
           echo "Commit message: $COMMIT_MSG"
           version=$(echo "$COMMIT_MSG" | grep -oE 'chatgpt-(\d+\.?){1,3}min\.js' | head -1)
           echo "Extracted version: $version"
-          version="${version//\`/}" # strip backticks
-          echo "Processed version: $version"
           find . -name "README.md" | xargs sed -i "s/chatgpt-[0-9]\+\(\.[0-9]\+\)\{0,2\}min\.js/$version/g"
 
       - name: Find/replace latest commit hash in READMEs
