@@ -26,7 +26,7 @@
 [![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=提交&style=flat-square)](https://github.com/kudoai/chatgpt.js/commits/main)
 ![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-1.10.5.min.js?label=缩小尺寸&labelColor=464646&color=ff69b4&style=flat-square)
 [![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=代码质量&style=flat-square)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
-![](https://img.shields.io/jsdelivr/gh/hm/kudoai/chatgpt.js?labelColor=464646&color=ff6427&label=jsDelivr+Hits&style=flat-square)
+![](https://img.shields.io/jsdelivr/gh/hm/chatgptjs/chatgpt.js?labelColor=464646&color=ff6427&label=jsDelivr+Hits&style=flat-square)
 
 </div>
 
