@@ -22,7 +22,7 @@ jobs:
         env:
           COMMIT_MSG: ${{ github.event.commits[0].message }}
         run: |
-          cd $GITHUB_WORKSPACE/kudoai/chatgpt.js/docs
+          cd $GITHUB_WORKSPACE/kudoai/chatgpt.js
           version=$(echo "$COMMIT_MSG" | sed -n -E 's/.*chatgpt-((\d+\.?){3})\.min\.js.*/\1/p')
           echo "Extracted version: $version"
           sed -i "s/chatgpt-(\d+\.?){3}\.min\.js/chatgpt-$version\.min\.js/g" $(find docs -name "README.md")
