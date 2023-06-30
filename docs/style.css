@@ -38,9 +38,7 @@ section.cover p { /* cover tagline size / position */
     color: white !important ;
 }
 
-/* Hide README cover */
-
-article > div:first-of-type { display: none !important }
+article > div:first-of-type { display: none !important } /* hide README cover */
 
 /* NAV */
 
@@ -50,18 +48,6 @@ article > div:first-of-type { display: none !important }
 /* GITHUB BADGE */
 
 .github-corner svg { fill: black ; height: 115px ; width: 115px }
-
-/* MAIN */
-
-article div:nth-child(2) img { height: 2.5rem } /* zoom shields */
-article div:nth-child(2) img[alt="chatgpt.js.org"] { display: none } /* hide URL shield */
-main h2 { font-size: 3rem !important }
-main p { font-size: 1.65rem !important ; line-height: 2.5rem !important}
-main li { font-size: 1.6rem !important ; line-height: 2.1rem }
-main h3 { font-size: 2.3rem !important }
-main code { font-size: 1.35rem !important ; line-height: 2.2rem !important }
-img[type="separator"], { display: none } /* hide section separators */
-img[src*="promo-tile"] { width: 1111px  } /* enlarge promo tiles */
 
 /* SIDEBAR */
 
@@ -76,10 +62,20 @@ img[src*="promo-tile"] { width: 1111px  } /* enlarge promo tiles */
 .sidebar ul > ul:nth-of-type(2) { display: none } /* hide showcase apps */
 .sidebar li img { display: none } /* hide sidebar icons */
 
-/* CODE */
+/* MAIN */
 
+article div:nth-child(2) img { height: 2.5rem } /* zoom shields */
+article div:nth-child(2) img[alt="chatgpt.js.org"] { display: none } /* hide URL shield */
+main h2 { font-size: 3rem !important }
+main p { font-size: 1.65rem !important ; line-height: 2.5rem !important}
+main li { font-size: 1.6rem !important ; line-height: 2.1rem }
+main h3 { font-size: 2.3rem !important }
+main code { font-size: 1.35rem !important ; line-height: 2.2rem !important }
+img[type="separator"], { display: none } /* hide section separators */
+#contributors ~ * img { width: 74px } /* zoom contributor avatars */
+
+/* Code */
 pre, code, .punctuation { color: white !important ; background: black !important }
-
 .lang-js { font-size: 1.3rem !important }
 .docsify-copy-code-button, .success, .error {
     background: inherit !important ;
@@ -89,9 +85,8 @@ pre, code, .punctuation { color: white !important ; background: black !important
     right: 1px ; /* eliminate code block h-scroll */
 }
 
-/* SHOWCASE */
-
+/* Showcase */
 h3 img { height: 28px !important ; width: auto !important ; margin: 0 10px -2px 0 }
 h3 a { text-decoration: none ; color: #34495e !important }
 h3 a:hover { text-decoration: underline #42b983 }
-#contributors ~ * img { width: 74px } /* zoom contributor avatars */
+img[src*="promo-tile"] { width: 1111px  } /* enlarge promo tiles */
