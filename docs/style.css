@@ -99,7 +99,7 @@ img[src*="promo-tile"] { width: 1111px  } /* enlarge promo tiles */
 .mc-field-group { margin: -4px 0 85px } /* input row v-margins */
 .mc-field-group input { height: 55px } /* input row height */
 input#mce-EMAIL { /* email field */
-    border-radius: 0 ; width: 32% ; min-width: 300px ; border: 1px solid #ccc ; outline: none }
+    border-radius: 0 ; width: 32% ; min-width: 250px ; border: 1px solid #ccc ; outline: none }
 input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent: 15px }
 #mc-embedded-subscribe { /* sub button */
     font-size: 1.45rem ; color: white ; background: black ; cursor: pointer ;
