@@ -114,6 +114,12 @@ export { chatgpt }
 })();
 ```
 
+### 最新开发版本:
+
+要使用最新 (未缩小) 的预发布版本 (基于最新更改 @ https://github.com/kudoai/chatgpt.js/blob/main/chatgpt.js), 请将导入 URL 替换为:
+
+```https://code.chatgptjs.org/chatgpt.js```
+
 <p><img height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
 ## 用法
