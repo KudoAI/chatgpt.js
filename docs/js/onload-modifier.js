@@ -12,13 +12,13 @@ const onLoadObserver = new MutationObserver(() => {
         img.setAttribute('src', src.replace(/style=[^&]*/g, 'style=for-the-badge'));
     });
 
-    // Append e-mail signup footer
-    const emailSignupFooter = document.createElement('div');
-    fetch('templates/email-signup-footer.html')
+    // Append footer
+    const footer = document.createElement('div');
+    fetch('sections/footer.html')
         .then(response => response.text()).then(html => {
-            emailSignupFooter.innerHTML = html;
+            footer.innerHTML = html;
             const article = document.querySelector('article');
-            article.insertBefore(emailSignupFooter, article.lastElementChild);
+            article.insertBefore(footer, article.lastElementChild);
         });
 
     // Disconnect observer
