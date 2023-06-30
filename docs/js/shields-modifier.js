@@ -11,6 +11,6 @@ const onLoadObserver = new MutationObserver(() => {
     });}
 
     // Disconnect observer
-    if (shields.length > 0 || promoTiles.length > 0) onLoadObserver.disconnect();
+    if (shields.length > 0 ) onLoadObserver.disconnect();
 
 }) ; onLoadObserver.observe(document.body, { childList: true, subtree: true });
