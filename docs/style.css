@@ -92,3 +92,16 @@ h3 img { height: 28px !important ; width: auto !important ; margin: 0 10px -2px 
 h3 a { text-decoration: none ; color: #34495e !important }
 h3 a:hover { text-decoration: underline #42b983 }
 img[src*="promo-tile"] { width: 1111px  } /* enlarge promo tiles */
+
+/* Email signup footer */
+#mc_embed_signup { text-align: center ; margin: 60px 0 13px } /* general alignment + v-margins */
+#mc_embed_signup h2 { font-size: 2.5rem !important ; margin-bottom: -16px } /* 1st CTA */
+.mc-field-group { margin: -4px 0 85px } /* input row v-margins */
+.mc-field-group input { height: 55px } /* input row height */
+input#mce-EMAIL { /* email field */
+    border-radius: 0 ; width: 32% ; min-width: 300px ; border: 1px solid #ccc ; outline: none }
+input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent: 15px }
+#mc-embedded-subscribe { /* sub button */
+    font-size: 1.45rem ; color: white ; background: black ; cursor: pointer ;
+    width: 200px ; margin-left: -3px ; border-radius: 0 ; border: 1px ;
+    position: relative ; bottom: 1px /* correct for font-size shifting */ }
