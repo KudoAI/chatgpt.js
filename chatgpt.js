@@ -612,10 +612,12 @@ var chatgpt = {
             var lastResponseDiv = chatgpt.response.getLastDiv();
             return lastResponseDiv ? lastResponseDiv.textContent : '';
         },
+
         getLastDiv: function() {
             var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
             return responseDivs.length ? responseDivs[responseDivs.length - 1] : '';
         },
+
         getWithIndex: function(pos) {
             var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
             var strPos = pos.toString().toLowerCase();
@@ -647,11 +649,13 @@ var chatgpt = {
                 return responseDivs.length ? responseDivs[nthOfResponse - 1].textContent : '';
             }
         },
+
         regenerate: function() {
             for (var formButton of document.querySelectorAll('form button')) {
                 if (formButton.textContent.toLowerCase().includes('regenerate')) {
                     formButton.click(); return;
         }}},
+
         stopGenerating: function() {
             for (var formButton of document.querySelectorAll('form button')) {
                 if (formButton.textContent.toLowerCase().includes('stop')) {
