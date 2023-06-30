@@ -730,14 +730,14 @@ var chatgpt = {
     },
 
     uuidv4: function() {
-        let d = new Date().getTime() // get current timestamp in ms (to ensure UUID uniqueness)
+        let d = new Date().getTime(); // get current timestamp in ms (to ensure UUID uniqueness)
         const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
             const r = ( // generate random nibble
-                ( d + (window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) - 1))*16)%16 | 0 )
-            d = Math.floor(d/16) // correspond each UUID digit to unique 4-bit chunks of timestamp
-            return ( c == 'x' ? r : (r&0x3|0x8) ).toString(16) // generate random hexadecimal digit
-        })
-        return uuid
+                ( d + (window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) - 1))*16)%16 | 0 );
+            d = Math.floor(d/16); // correspond each UUID digit to unique 4-bit chunks of timestamp
+            return ( c == 'x' ? r : (r&0x3|0x8) ).toString(16); // generate random hexadecimal digit
+        });
+        return uuid;
     }
 };
 
