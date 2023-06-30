@@ -64,8 +64,10 @@ article > div:first-of-type { display: none !important } /* hide README cover */
 
 /* MAIN */
 
-article div:nth-child(2) img { height: 2.5rem } /* zoom shields */
-article div:nth-child(2) img[alt="chatgpt.js.org"] { display: none } /* hide URL shield */
+article > div:nth-child(2) img { height: 2.5rem } /* zoom shields */
+article > div:nth-child(2) img[alt="chatgpt.js.org"] { display: none } /* hide URL shield */
+article > h2:first-of-type { display: none !important } /* hide ABOUT heading */
+article > p:first-of-type { margin-top: 51px } /* increase top-margin of description */
 main h2 { font-size: 3rem !important }
 main p { font-size: 1.65rem !important ; line-height: 2.5rem !important}
 main li { font-size: 1.6rem !important ; line-height: 2.1rem }
