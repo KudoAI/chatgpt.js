@@ -607,6 +607,62 @@ var chatgpt = {
         return node; // if assignment used
     },
 
+    response: {
+        getLast: function() {
+            var lastResponseDiv = chatgpt.response.getLastDiv();
+            return lastResponseDiv ? lastResponseDiv.textContent : '';
+        },
+
+        getLastDiv: function() {
+            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
+            return responseDivs.length ? responseDivs[responseDivs.length - 1] : '';
+        },
+
+        getWithIndex: function(pos) {
+            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
+            var strPos = pos.toString().toLowerCase();
+            if (/last|final/.test(strPos)) { // get last response
+                return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
+            } else { // get nth response
+                var nthOfResponse = (
+    
+                    // Calculate base number
+                    Number.isInteger(pos) ? pos : // do nothing for integers
+                    strPos.match(/^\d+/) ? strPos.match(/^\d+/)[0] : // extract first digits for strings w/ them
+                    ( // convert words to integers for digitless strings
+                        /^(1|one|fir)(st)?$/.test(strPos) ? 1
+                        : /^(2|tw(o|en|el(ve|f))|seco)(nd|t[yi])?(e?th)?$/.test(strPos) ? 2
+                        : /^(3|th(ree|ir?))(rd|teen|t[yi])?(e?th)?$/.test(strPos) ? 3
+                        : /^(4|fou?r)(teen|t[yi])?(e?th)?$/.test(strPos) ? 4
+                        : /^(5|fi(ve|f))(teen|t[yi])?(e?th)?$/.test(strPos) ? 5
+                        : /^(6|six)(teen|t[yi])?(e?th)?$/.test(strPos) ? 6
+                        : /^(7|seven)(teen|t[yi])?(e?th)?$/.test(strPos) ? 7
+                        : /^(8|eight?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 8
+                        : /^(9|nine?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 9
+                        : /^(10|ten)(th)?$/.test(strPos) ? 10 : 1 )
+    
+                    // Transform base number if suffixed
+                    * ( /ty|ieth$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
+                    + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
+    
+                );
+                return responseDivs.length ? responseDivs[nthOfResponse - 1].textContent : '';
+            }
+        },
+
+        regenerate: function() {
+            for (var formButton of document.querySelectorAll('form button')) {
+                if (formButton.textContent.toLowerCase().includes('regenerate')) {
+                    formButton.click(); return;
+        }}},
+
+        stopGenerating: function() {
+            for (var formButton of document.querySelectorAll('form button')) {
+                if (formButton.textContent.toLowerCase().includes('stop')) {
+                    formButton.click(); return;
+        }}}
+    },
+
     scheme: {
         isDark: function() { return document.documentElement.classList.contains('dark'); },
         isLight: function() { return document.documentElement.classList.contains('light'); },
