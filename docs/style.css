@@ -94,8 +94,8 @@ h3 a { text-decoration: none ; color: #34495e !important }
 h3 a:hover { text-decoration: underline #42b983 }
 img[src*="promo-tile"] { width: 1111px  } /* enlarge promo tiles */
 
-/* Email signup footer */
-#mc_embed_signup { text-align: center ; margin-top: -11px } /* general alignment */
+/* Footer */
+#footer { text-align: center ; margin-top: -11px } /* general alignment */
 #mc_embed_signup h2 { font-size: 2.5rem !important ; margin-bottom: -16px } /* 1st CTA */
 .mc-field-group { margin: -4px 0 95px } /* input row v-margins */
 .mc-field-group input { height: 55px } /* input row height */
