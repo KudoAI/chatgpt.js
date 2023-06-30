@@ -9,8 +9,8 @@
 <h3>
 
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
-    <img width=700 src="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
+    <img width=700 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
 </picture>
 <br><br>
 
@@ -22,11 +22,11 @@
 
 <div align="center">
 
-[![](https://img.shields.io/badge/License-MIT-green.svg?labelColor=464646&style=flat-square)](https://github.com/chatgptjs/chatgpt.js/blob/main/LICENSE.md)
-[![](https://img.shields.io/github/commit-activity/m/chatgptjs/chatgpt.js?label=Commits&labelColor=464646&style=flat-square)](https://github.com/chatgptjs/chatgpt.js/commits/main)
-![](https://img.shields.io/github/size/chatgptjs/chatgpt.js/dist/chatgpt-1.10.5.min.js?label=Minified%20Size&labelColor=464646&color=ff69b4&style=flat-square)
-[![](https://img.shields.io/codefactor/grade/github/chatgptjs/chatgpt.js?labelColor=464646&label=Code+Quality&style=flat-square)](https://www.codefactor.io/repository/github/chatgptjs/chatgpt.js)
-![](https://img.shields.io/jsdelivr/gh/hm/chatgptjs/chatgpt.js?labelColor=464646&color=ff6427&label=jsDelivr+Hits&style=flat-square)
+[![](https://img.shields.io/badge/License-MIT-green.svg?labelColor=464646&style=flat-square)](https://github.com/kudoai/chatgpt.js/blob/main/LICENSE.md)
+[![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=Commits&labelColor=464646&style=flat-square)](https://github.com/kudoai/chatgpt.js/commits/main)
+![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-1.10.5.min.js?label=Minified%20Size&labelColor=464646&color=ff69b4&style=flat-square)
+[![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?labelColor=464646&label=Code+Quality&style=flat-square)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
+![](https://img.shields.io/jsdelivr/gh/hm/kudoai/chatgpt.js?labelColor=464646&color=ff6427&label=jsDelivr+Hits&style=flat-square)
 
 </div>
 
@@ -78,7 +78,7 @@ Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CD
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@e0d398d681ea5f3394a8b1809d3b29a7d53bc6e0/dist/chatgpt-1.10.5.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@e0d398d681ea5f3394a8b1809d3b29a7d53bc6e0/dist/chatgpt-1.10.5.min.js
 // ==/UserScript==
 
 // Your code here...
@@ -90,7 +90,7 @@ If you don't plan on publishing to these repos, the simpler `https://code.chatgp
 
 Since Google will [eventually phase out](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/) Manifest V2, remote code will no longer be allowed, so importing chatgpt.js locally is ideal:
 
-1. Save https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js to a subdirectory (`lib` in this example)
+1. Save https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js to a subdirectory (`lib` in this example)
 
 2. Add ES6 export statement to end of `lib/chatgpt.js`
 ```js
@@ -130,7 +130,7 @@ chatgpt.get('reply', 'last')
 
 Each call equally fetches the last response. If you think it works, it probabily will... so just type it! (Who has time for docs?)
 
-If it didn't, simply submit an [issue](https://github.com/chatgptjs/chatgpt.js/issues) or [PR](https://github.com/chatgptjs/chatgpt.js/pulls) and it will be integrated, ezpz!
+If it didn't, simply submit an [issue](https://github.com/kudoai/chatgpt.js/issues) or [PR](https://github.com/kudoai/chatgpt.js/pulls) and it will be integrated, ezpz!
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
@@ -187,7 +187,7 @@ Display ChatGPT answers in DuckDuckGo sidebar (powered by GPT-4!)
 
 <br>
 
-If you've made something w/ chatgpt.js you want to share, email [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) or just open a [pull request](https://github.com/chatgptjs/chatgpt.js/pulls)!
+If you've made something w/ chatgpt.js you want to share, email [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) or just open a [pull request](https://github.com/kudoai/chatgpt.js/pulls)!
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
@@ -209,6 +209,6 @@ This library exists thanks to code, translations, issues & ideas from the follow
 
 <br>
 
-<a href="https://github.com/chatgptjs/chatgpt.js/tree/main/dist">**Releases**</a> / 
-<a href="https://github.com/chatgptjs/chatgpt.js/discussions">Discuss</a> / 
+<a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Releases**</a> / 
+<a href="https://github.com/kudoai/chatgpt.js/discussions">Discuss</a> / 
 <a href="#---------a-powerful-client-side-javascript-library-for-chatgpt">Back to top ↑</a>

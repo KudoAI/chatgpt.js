@@ -9,8 +9,8 @@
 <h3>
 
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
-    <img width=700 src="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
+    <img width=700 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
 </picture>
 <br /><br />
 
@@ -22,11 +22,11 @@
 
 <div align="center">
 
-[![](https://img.shields.io/badge/执照-MIT-green.svg?style=flat-square)](https://github.com/chatgptjs/chatgpt.js/blob/main/LICENSE.md)
-[![](https://img.shields.io/github/commit-activity/m/chatgptjs/chatgpt.js?label=提交&style=flat-square)](https://github.com/chatgptjs/chatgpt.js/commits/main)
-![](https://img.shields.io/github/size/chatgptjs/chatgpt.js/dist/chatgpt-1.10.5.min.js?label=缩小尺寸&labelColor=464646&color=ff69b4&style=flat-square)
-[![](https://img.shields.io/codefactor/grade/github/chatgptjs/chatgpt.js?label=代码质量&style=flat-square)](https://www.codefactor.io/repository/github/chatgptjs/chatgpt.js)
-![](https://img.shields.io/jsdelivr/gh/hm/chatgptjs/chatgpt.js?labelColor=464646&color=ff6427&label=jsDelivr+Hits&style=flat-square)
+[![](https://img.shields.io/badge/执照-MIT-green.svg?style=flat-square)](https://github.com/kudoai/chatgpt.js/blob/main/LICENSE.md)
+[![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=提交&style=flat-square)](https://github.com/kudoai/chatgpt.js/commits/main)
+![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-1.10.5.min.js?label=缩小尺寸&labelColor=464646&color=ff69b4&style=flat-square)
+[![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=代码质量&style=flat-square)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
+![](https://img.shields.io/jsdelivr/gh/hm/kudoai/chatgpt.js?labelColor=464646&color=ff6427&label=jsDelivr+Hits&style=flat-square)
 
 </div>
 
@@ -78,7 +78,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@e0d398d681ea5f3394a8b1809d3b29a7d53bc6e0/dist/chatgpt-1.10.5.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@e0d398d681ea5f3394a8b1809d3b29a7d53bc6e0/dist/chatgpt-1.10.5.min.js
 // ==/UserScript==
 
 // 这里是您的代码
@@ -90,7 +90,7 @@ function yourCode() {
 
 由于 Google [最终将逐步淘汰](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/) Manifest V2，远程代码将不再被允许，因此在本地导入 chatgpt.js 是理想的:
 
-1. 将 https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/chatgpt.js 保存到子目录 (本例中为 `lib`)
+1. 将 https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js 保存到子目录 (本例中为 `lib`)
 
 2. 将 ES6 导出语句添加到 `lib/chatgpt.js` 的末尾
 ```js
@@ -130,7 +130,7 @@ chatgpt.get('reply', 'last')
 
 每个调用都会同样获取最后一个回应。如果您认为它有效，那么它可能就是有效的……所以只需输入它！（谁有时间看文档？）
 
-如果它不起作用，只需提交 [issue](https://github.com/chatgptjs/chatgpt.js/issues) 或 [PR](https://github.com/chatgptjs/chatgpt.js/pulls)，它将被集成，简单易行！
+如果它不起作用，只需提交 [issue](https://github.com/kudoai/chatgpt.js/issues) 或 [PR](https://github.com/kudoai/chatgpt.js/pulls)，它将被集成，简单易行！
 
 <p><img height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
@@ -187,7 +187,7 @@ chatgpt.get('reply', 'last')
 
 <br>
 
-如果您使用 chatgpt.js 制作了一些想要分享的内容，请发送电子邮件至 [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) 或打开一个 [pull request](https://github.com/chatgptjs/chatgpt.js/pulls)!
+如果您使用 chatgpt.js 制作了一些想要分享的内容，请发送电子邮件至 [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) 或打开一个 [pull request](https://github.com/kudoai/chatgpt.js/pulls)!
 
 <p><img height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
@@ -209,6 +209,6 @@ chatgpt.get('reply', 'last')
 
 <br>
 
-<a href="https://github.com/chatgptjs/chatgpt.js/tree/main/dist">**版本发布**</a> / 
-<a href="https://github.com/chatgptjs/chatgpt.js/discussions">讨论</a> / 
+<a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**版本发布**</a> / 
+<a href="https://github.com/kudoai/chatgpt.js/discussions">讨论</a> / 
 <a href="#---------chatgpt-的强大客户端-javascript-库">返回顶部 ↑</a>
