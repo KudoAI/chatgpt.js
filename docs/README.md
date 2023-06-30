@@ -116,7 +116,7 @@ export { chatgpt }
 
 ### Latest development version:
 
-To use the latest (unminified) pre-release version (based on the most recent changes @ https://github.com/kudoai/chatgpt.js/blob/main/chatgpt.js), replace the import URL with:
+To use the latest (unminified) pre-release version (based on the most recent but possibly untested changes @ https://github.com/kudoai/chatgpt.js/blob/main/chatgpt.js), replace the import URL with:
 
 ```https://code.chatgptjs.org/chatgpt.js```
 
