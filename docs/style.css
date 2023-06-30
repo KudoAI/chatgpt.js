@@ -74,6 +74,7 @@ main li { font-size: 1.6rem !important ; line-height: 2.1rem }
 main h3 { font-size: 2.3rem !important }
 main code { font-size: 1.35rem !important ; line-height: 2.2rem !important }
 img[type="separator"] { display: none } /* hide section separators */
+h2#contributors, h2#contributors ~ p  { text-align: center } /* center contributors section */
 #contributors ~ * img { width: 74px } /* zoom contributor avatars */
 
 /* Code */
