@@ -114,12 +114,6 @@ export { chatgpt }
 })();
 ```
 
-### Latest development version:
-
-To use the latest (unminified) pre-release version (based on the most recent but possibly untested changes @ https://github.com/kudoai/chatgpt.js/blob/main/chatgpt.js), replace the import URL with:
-
-```https://code.chatgptjs.org/chatgpt.js```
-
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
 ## Usage
