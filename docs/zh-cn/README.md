@@ -208,15 +208,7 @@ chatgpt.get('reply', 'last')
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
-<p><img height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
-
-<div align="center">
-
-<a href="https://chatgptjs.org/signup"><img width=500 src="https://i.imgur.com/w5TSyVL.png"></a>
-
-</div>
-
-<p><img height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+<br>
 
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**版本发布**</a> / 
 <a href="https://github.com/kudoai/chatgpt.js/discussions">讨论</a> / 
