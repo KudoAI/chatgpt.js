@@ -309,7 +309,7 @@ var chatgpt = {
         var pagesPattern = /\d+\s\/\s\d+$/;
         var copyCodePattern = /(\S)Copy code(\S)/g;
 
-        if (chatDivs.length == 0) {
+        if (chatDivs.length === 0) {
             console.error('🤖 chatgpt.js >> Chat is empty!');
             return;
         }
