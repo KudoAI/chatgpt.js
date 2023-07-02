@@ -214,10 +214,10 @@ This library exists thanks to code, translations, issues & ideas from the follow
 
 <a href="https://chatgpt.js.org/#/?id=contributors"><img width=465 src="https://i.imgur.com/w5TSyVL.png"></a>
 
+</div>
+
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Releases**</a> / 
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Discuss</a> / 
 <a href="#---------a-powerful-client-side-javascript-library-for-chatgpt">Back to top ↑</a>
-
-</div>
