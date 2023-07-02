@@ -310,8 +310,8 @@ var chatgpt = {
         chatDivs.forEach((div) => {
             const sender = div.textContent.startsWith('ChatGPTChatGPT') ? 'CHATGPT' : 'USER';
             const msg = Array.from(div.childNodes).map(node => node.innerText)
-                             .join('\n\n') // insert double line breaks between paragraphs
-                             .replace('Copy code', '');
+                .join('\n\n') // insert double line breaks between paragraphs
+                .replace('Copy code', '');
             msgs.push(sender + ': ' + msg);
         });
 
@@ -323,9 +323,9 @@ var chatgpt = {
         const year = now.getFullYear();
         const hour = now.getHours().toString().padStart(2, '0');
         const minute = now.getMinutes().toString().padStart(2, '0');
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob); link.download = `ChatGPT_${ day }-${ month }-${ year }_${ hour }-${ minute }.txt`;
-        document.body.appendChild(link); link.click(); document.body.removeChild(link); URL.revokeObjectURL(url);
+        const url = URL.createObjectURL(blob), link = document.createElement('a');
+        link.href = url; link.download = filename; document.body.appendChild(link);
+        link.click(); document.body.removeChild(link); URL.revokeObjectURL(url);
     },
 
     get: function(targetType, targetName = '') {
