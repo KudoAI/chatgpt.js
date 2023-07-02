@@ -323,6 +323,7 @@ var chatgpt = {
         const year = now.getFullYear();
         const hour = now.getHours().toString().padStart(2, '0');
         const minute = now.getMinutes().toString().padStart(2, '0');
+        const filename = `ChatGPT_${day}-${month}-${year}_${hour}-${minute}.txt`;
         const url = URL.createObjectURL(blob), link = document.createElement('a');
         link.href = url; link.download = filename; document.body.appendChild(link);
         link.click(); document.body.removeChild(link); URL.revokeObjectURL(url);
