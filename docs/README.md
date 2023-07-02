@@ -125,6 +125,7 @@ For example:
 ```js
 chatgpt.getLastResponse()
 chatgpt.getLastReply()
+chatgpt.response.getLast()
 chatgpt.get('reply', 'last')
 ```
 
