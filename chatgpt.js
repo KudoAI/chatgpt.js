@@ -303,6 +303,55 @@ var chatgpt = {
         }, 10);
     },
 
+    exportChat: function(method = '') {
+        var chatDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
+        var chat = [];
+        var pagesPattern = /\d+\s\/\s\d+$/;
+        var copyCodePattern = /(\S)Copy code(\S)/g;
+
+        if (chatDivs.length == 0) {
+            console.error('🤖 chatgpt.js >> Chat is empty!');
+            return;
+        }
+
+        function exportToTextFile(list) {
+            const content = list.join('\n\n');
+            const blob = new Blob([content], { type: 'text/plain' });
+
+            const now = new Date();
+            const day = now.getDate().toString().padStart(2, '0');
+            const month = (now.getMonth() + 1).toString().padStart(2, '0');
+            const year = now.getFullYear();
+            const hour = now.getHours().toString().padStart(2, '0');
+            const minute = now.getMinutes().toString().padStart(2, '0');
+            const filename = `ChatGPT_${day}-${month}-${year}_${hour}-${minute}.txt`;
+
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
+        chatDivs.forEach((e) => {
+            var text;
+
+            if (e.textContent.startsWith('ChatGPTChatGPT')) {
+                text = e.textContent.substring('ChatGPTChatGPT'.length);
+                chat.push('ChatGPT: ' + text.replace(pagesPattern, '').replace(copyCodePattern, '$1 $2'));
+            } else {
+                chat.push('User: ' + e.textContent.replace(pagesPattern, '').replace(copyCodePattern, '$1 $2'));
+            }
+        });
+
+        if (['file', 'download', 'export', 'dl'].includes(method)) {
+            exportToTextFile(chat);
+        } else if (method == '') return chat;
+    },
+
     get: function(targetType, targetName = '') {
 
         // Validate argument types to be string only
