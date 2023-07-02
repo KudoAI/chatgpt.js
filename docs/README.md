@@ -208,8 +208,14 @@ This library exists thanks to code, translations, issues & ideas from the follow
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
-<br>
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+
+<div align="center">
+
+<a href="https://chatgpt.js.org/#/?id=contributors"><img width=465 src="https://i.imgur.com/Bl72Ufw.png"></a>
 
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Releases**</a> / 
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Discuss</a> / 
 <a href="#---------a-powerful-client-side-javascript-library-for-chatgpt">Back to top ↑</a>
+
+</div>
