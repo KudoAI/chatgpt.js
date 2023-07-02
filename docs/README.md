@@ -212,7 +212,7 @@ This library exists thanks to code, translations, issues & ideas from the follow
 
 <div align="center">
 
-<a href="https://chatgpt.js.org/#/?id=contributors"><img width=465 src="https://i.imgur.com/w5TSyVL.png"></a>
+<a href="https://chatgptjs.org/signup"><img width=465 src="https://i.imgur.com/w5TSyVL.png"></a>
 
 </div>
 
