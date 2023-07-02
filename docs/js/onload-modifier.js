@@ -1,10 +1,10 @@
-// Modify shield styles
+// Modify shield styles, insert footer
 
 const onLoadObserver = new MutationObserver(() => {
 
     // Exit if not loaded
     const shields = document.querySelectorAll('article#main > div:nth-child(2) img');
-    if (shields.length == 0) return;
+    if (shields.length === 0) return;
 
     // Change shield styles to for-the-badge
     shields.forEach((img) => {
