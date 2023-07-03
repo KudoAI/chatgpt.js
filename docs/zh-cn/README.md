@@ -22,6 +22,7 @@
 
 <div align="center">
 
+[![](https://img.shields.io/github/stars/kudoai/chatgpt.js?label=星星&color=gold&style=flat-square)](https://github.com/kudoai/chatgpt.js/stargazers)
 [![](https://img.shields.io/badge/执照-MIT-green.svg?style=flat-square)](https://github.com/kudoai/chatgpt.js/blob/main/LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=提交&style=flat-square)](https://github.com/kudoai/chatgpt.js/commits/main)
 ![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-1.11.0.min.js?label=缩小尺寸&labelColor=464646&color=ff69b4&style=flat-square)
