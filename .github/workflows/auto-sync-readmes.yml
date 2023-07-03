@@ -23,7 +23,7 @@ jobs:
           COMMIT_MSG: ${{ github.event.commits[0].message }}
         run: |
           cd $GITHUB_WORKSPACE/kudoai/chatgpt.js
-          version=$(echo "$COMMIT_MSG" | grep -oE 'chatgpt-(\d+\.){2}\d+\.min\.js' | cut -d '-' -f 2 | cut -d '.' -f 1-3)
+          version=$(echo "$COMMIT_MSG" | grep -oE 'chatgpt-(\d+\.){2}\d+\.min\.js' | awk -F '[-.]' '{print $2"."$3"."$4}')
           echo "Extracted version: $version"
           sed -i "s/chatgpt-(\d+\.?){3}\.min\.js/chatgpt-$version\.min\.js/g" $(find docs -name "README.md")
 
