@@ -10,6 +10,7 @@ var functionAliases = [ // whole function names to cross-alias
     ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
         'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
     ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
+    ['exportChat', 'chatExport']
     ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
     ['isFullScreen', 'isFullscreen'],
     ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
@@ -309,7 +310,7 @@ var chatgpt = {
         const msgs = [];
         chatDivs.forEach((div) => {
             const sender = div.textContent.startsWith('ChatGPTChatGPT') ? 'CHATGPT' : 'USER';
-            var msg = Array.from(div.childNodes).map(node => node.innerText)
+            let msg = Array.from(div.childNodes).map(node => node.innerText)
                 .join('\n\n') // insert double line breaks between paragraphs
                 .replace('Copy code', '');
             if (msg.startsWith('ChatGPT') && sender === 'CHATGPT') msg = msg.replace('ChatGPT', '');
