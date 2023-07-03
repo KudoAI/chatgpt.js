@@ -331,6 +331,12 @@ var chatgpt = {
         link.click(); document.body.removeChild(link); URL.revokeObjectURL(url);
     },
 
+    generateRandomIP: function() {
+        const ip = Array.from({length: 4}, () => Math.floor(Math.random() * 256)).join('.');
+        console.info('🤖 chatgpt.js >> IP generated: ' + ip);
+        return ip;
+    }
+
     get: function(targetType, targetName = '') {
 
         // Validate argument types to be string only
