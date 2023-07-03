@@ -10,7 +10,7 @@ var functionAliases = [ // whole function names to cross-alias
     ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
         'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
     ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
-    ['exportChat', 'chatExport']
+    ['exportChat', 'chatExport'],
     ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
     ['isFullScreen', 'isFullscreen'],
     ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
