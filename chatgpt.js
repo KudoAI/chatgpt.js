@@ -313,8 +313,8 @@ var chatgpt = {
             let msg = Array.from(div.childNodes).map(node => node.innerText)
                 .join('\n\n') // insert double line breaks between paragraphs
                 .replace('Copy code', '');
-            if (msg.startsWith('ChatGPT') && sender === 'CHATGPT') msg = msg.replace('ChatGPT', '');
-            msgs.push(sender + ': ' + msg.trim());
+            if (sender === 'CHATGPT') msg = msg.replace(/^ChatGPT\n\n/, '');
+            msgs.push(sender + ': ' + msg);
         });
 
         // Export as .txt
