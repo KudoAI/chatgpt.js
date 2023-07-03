@@ -309,10 +309,11 @@ var chatgpt = {
         const msgs = [];
         chatDivs.forEach((div) => {
             const sender = div.textContent.startsWith('ChatGPTChatGPT') ? 'CHATGPT' : 'USER';
-            const msg = Array.from(div.childNodes).map(node => node.innerText)
+            var msg = Array.from(div.childNodes).map(node => node.innerText)
                 .join('\n\n') // insert double line breaks between paragraphs
                 .replace('Copy code', '');
-            msgs.push(sender + ': ' + msg);
+            if (msg.startsWith('ChatGPT') && sender === 'CHATGPT') msg = msg.replace('ChatGPT', '');
+            msgs.push(sender + ': ' + msg.trim());
         });
 
         // Export as .txt
