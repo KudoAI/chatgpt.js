@@ -335,7 +335,7 @@ var chatgpt = {
         const ip = Array.from({length: 4}, () => Math.floor(Math.random() * 256)).join('.');
         console.info('🤖 chatgpt.js >> IP generated: ' + ip);
         return ip;
-    }
+    },
 
     get: function(targetType, targetName = '') {
 
