@@ -148,7 +148,8 @@ chatgpt.get('reply', 'last')
 
 自动将 DAN 提示发送到 ChatGPT。
 <br>[安装](https://github.com/madkarmaa/automatic-chatgpt-dan#%EF%B8%8F-installation) / 
-[自述文件](https://github.com/madkarmaa/automatic-chatgpt-dan#readme)
+[自述文件](https://github.com/madkarmaa/automatic-chatgpt-dan#readme) / 
+[讨论](https://github.com/madkarmaa/automatic-chatgpt-dan/issues)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 

@@ -148,7 +148,8 @@ Auto-clear your ChatGPT query history for maximum privacy.
 
 Automatically send DAN prompts to ChatGPT.
 <br>[Install](https://github.com/madkarmaa/automatic-chatgpt-dan#%EF%B8%8F-installation) / 
-[Readme](https://github.com/madkarmaa/automatic-chatgpt-dan#readme)
+[Readme](https://github.com/madkarmaa/automatic-chatgpt-dan#readme) / 
+[Discuss](https://github.com/madkarmaa/automatic-chatgpt-dan/issues)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
