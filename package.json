@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chatgptjs/chatgpt.js.git"
+    "url": "git+https://github.com/kudoai/chatgpt.js.git"
   },
   "keywords": [
     "chatgpt",
@@ -41,7 +41,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chatgptjs/chatgpt.js/issues"
+    "url": "https://github.com/kudoai/chatgpt.js/issues"
   },
   "homepage": "https://chatgpt.js.org",
   "devDependencies": {

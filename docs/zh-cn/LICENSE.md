@@ -1,6 +1,6 @@
 # 麻省理工执照
 
-##### 简体中文 | [English](https://github.com/chatgptjs/chatgpt.js/blob/main/LICENSE.md)
+##### 简体中文 | [English](https://github.com/kudoai/chatgpt.js/blob/main/LICENSE.md)
 
 <br>
 
