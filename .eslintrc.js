@@ -17,7 +17,7 @@ module.exports  = {
         'no-empty': 'off', // allow empty blocks
         'no-useless-escape': 'off' // allow all escape chars cause ESLint sucks at detecting truly useless ones
     },
-    'globals': { 'Uint8Array': true },
+    'globals': { 'chatgpt': 'readonly', 'chrome': 'readonly', 'Uint8Array': 'readonly' },
     'parserOptions': {
         'ecmaVersion': 2017,
         'sourceType': 'script'
