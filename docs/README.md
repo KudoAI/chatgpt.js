@@ -86,7 +86,7 @@ Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CD
 
 If you don't plan on publishing to these repos, the simpler `https://code.chatgptjs.org/chatgpt-latest.min.js` can be used instead to import the latest minified release.
 
-For a starter template, goto https://github.com/kudoai/chatgpt.js-greasemonkey-starter
+Starter template: https://github.com/kudoai/chatgpt.js-greasemonkey-starter
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
