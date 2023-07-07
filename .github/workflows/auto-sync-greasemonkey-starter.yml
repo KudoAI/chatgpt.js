@@ -17,17 +17,17 @@ jobs:
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: kudoai/chatgpt.js
-          path: kudoai/chatgptjs
+          path: kudoai/chatgpt.js
 
       - name: Checkout kudoai/chatgpt.js-greasemonkey-starter
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: kudoai/chatgpt.js-greasemonkey-starter
-          path: kudoai/chatgptjs-greasemonkey-starter
+          path: kudoai/chatgpt.js-greasemonkey-starter
 
       - name: Sync /starters/greasemonkey/ to kudoai/chatgpt.js-greasemonkey-starter/
-        run: rsync -avhr --delete "${{ github.workspace }}/kudoai/chatgptjs/starters/greasemonkey/" "${{ github.workspace }}/kudoai/chatgptjs-greasemonkey-starter/"
+        run: rsync -avhr "${{ github.workspace }}/kudoai/chatgptjs/starters/greasemonkey/" "${{ github.workspace }}/kudoai/chatgptjs-greasemonkey-starter/"
 
       - name: Push to kudoai/chatgpt.js-greasemonkey-starter
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -37,4 +37,4 @@ jobs:
           commit_user_email: auto-sync@kudoai.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `kudoai/chatgpt.js`]'
           file_pattern: '**'
-          repository: kudoai/chatgptjs-greasemonkey-starter
+          repository: kudoai/chatgpt.js-greasemonkey-starter
