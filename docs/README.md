@@ -223,7 +223,7 @@ This library exists thanks to code, translations, issues & ideas from the follow
   </picture>
 </a>
 
-Consider giving this repo a star if it helped you!
+Consider giving this repo a ⭐ if it helped you!
 
 #
 
