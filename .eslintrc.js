@@ -11,7 +11,6 @@ module.exports  = {
         ]}],
         'semi': ['error', 'always'], // enforce semicolons at end of statement
         'quotes': ['error', 'single'], // enforce single quotes for string literals
-        'space-before-function-paren': ['error', 'never'], // enforce no space before function parentheses
         'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }], // enforce spacing in object properties
         'comma-dangle': ['error', 'never'], // enforce no trailing commas in arrays or objects
         'no-empty': 'off', // allow empty blocks
