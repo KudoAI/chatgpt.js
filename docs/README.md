@@ -195,6 +195,17 @@ If you've made something w/ chatgpt.js you want to share, email [showcase@chatgp
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
+## Star History
+
+<a href="https://star-history.com/#kudoai/chatgpt.js&Timeline">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
+  </picture>
+</a>
+
+
 ## Contributors
 
 This library exists thanks to code, translations, issues & ideas from the following contributors:
