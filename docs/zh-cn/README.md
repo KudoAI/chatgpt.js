@@ -212,6 +212,19 @@ chatgpt.get('reply', 'last')
 
 <br>
 
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+
+<a href="https://star-history.com/#kudoai/chatgpt.js&Timeline">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline&theme=dark" />
+    <img src="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
+  </picture>
+</a>
+
+如果这个仓库对您有帮助，请考虑给它一个 ⭐！
+
+#
+
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**版本发布**</a> / 
 <a href="https://github.com/kudoai/chatgpt.js/discussions">讨论</a> / 
 <a href="#---------chatgpt-的强大客户端-javascript-库">返回顶部 ↑</a>
