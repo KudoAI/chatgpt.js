@@ -218,8 +218,7 @@ This library exists thanks to code, translations, issues & ideas from the follow
 <a href="https://star-history.com/#kudoai/chatgpt.js&Timeline">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
+    <img src="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
   </picture>
 </a>
 
