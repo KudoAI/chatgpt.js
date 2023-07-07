@@ -195,18 +195,6 @@ If you've made something w/ chatgpt.js you want to share, email [showcase@chatgp
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
-## Star History
-
-<a href="https://star-history.com/#kudoai/chatgpt.js&Timeline">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
-  </picture>
-</a>
-
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
-
 ## Contributors
 
 This library exists thanks to code, translations, issues & ideas from the following contributors:
@@ -224,6 +212,20 @@ This library exists thanks to code, translations, issues & ideas from the follow
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
 <br>
+
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+
+<a href="https://star-history.com/#kudoai/chatgpt.js&Timeline">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
+  </picture>
+</a>
+
+Consider giving this repo a star if it helped you!
+
+#
 
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Releases**</a> / 
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Discuss</a> / 
