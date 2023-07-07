@@ -27,7 +27,7 @@ jobs:
           path: kudoai/chatgpt.js-greasemonkey-starter
 
       - name: Sync /starters/greasemonkey/ to kudoai/chatgpt.js-greasemonkey-starter/
-        run: rsync -avhr --delete --exclude={'.*'} "${{ github.workspace }}/kudoai/chatgpt.js/starters/greasemonkey/" "${{ github.workspace }}/kudoai/chatgpt.js-greasemonkey-starter/"
+        run: rsync -avhr --delete --exclude={'.*', '.git/'} "${{ github.workspace }}/kudoai/chatgpt.js/starters/greasemonkey/" "${{ github.workspace }}/kudoai/chatgpt.js-greasemonkey-starter/"
 
       - name: Push to kudoai/chatgpt.js-greasemonkey-starter
         uses: stefanzweifel/git-auto-commit-action@v4
