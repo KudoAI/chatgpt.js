@@ -229,4 +229,4 @@ Consider giving this repo a star if it helped you!
 
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Releases**</a> / 
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Discuss</a> / 
-<a href="#---------a-powerful-client-side-javascript-library-for-chatgpt">Back to top ↑</a>
+<a href="#english--%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">Back to top ↑</a>
