@@ -95,8 +95,8 @@ h3 a:hover { text-decoration: underline #42b983 }
 img[src*="promo-tile"] { width: 1111px  } /* enlarge promo tiles */
 
 /* Footer */
-a[href*="star-history.com"], a[href*="star-history.com"] + p, p + a[href*="star-history.com"] {
-    display: none } /* hide Star History section */
+#contributors ~ br, #contributors ~ br ~ a, #contributors ~ br ~ a + p {
+    display: none } /* hide Contributors' trailing linebreak + Star History section */
 #footer { text-align: center ; margin-top: -11px } /* general alignment */
 #mc_embed_signup h2 { font-size: 2.5rem !important ; margin-bottom: -16px } /* 1st CTA */
 .mc-field-group { margin: -4px 0 95px } /* input row div v-margins */
