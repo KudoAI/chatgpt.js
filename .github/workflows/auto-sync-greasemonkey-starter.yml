@@ -37,4 +37,4 @@ jobs:
           commit_user_email: auto-sync@kudoai.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `kudoai/chatgpt.js`]'
           file_pattern: '**'
-          repository: kudoai/chatgpt.js-greasemonkey-starter
+          repository: kudoai/chatgptjs-greasemonkey-starter
