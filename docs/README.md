@@ -205,7 +205,6 @@ If you've made something w/ chatgpt.js you want to share, email [showcase@chatgp
   </picture>
 </a>
 
-
 ## Contributors
 
 This library exists thanks to code, translations, issues & ideas from the following contributors:
