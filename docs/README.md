@@ -205,6 +205,8 @@ If you've made something w/ chatgpt.js you want to share, email [showcase@chatgp
   </picture>
 </a>
 
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+
 ## Contributors
 
 This library exists thanks to code, translations, issues & ideas from the following contributors:
