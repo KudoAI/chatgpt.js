@@ -85,6 +85,8 @@ function yourCode() {
 
 如果您不打算发布到这些存储库，则可以使用更简单的 `https://code.chatgptjs.org/chatgpt-latest.min.js` 来导入最新的缩小版本。
 
+对于入门模板，请转到 https://github.com/kudoai/chatgpt.js-greasemonkey-starter
+
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
 由于 Google [最终将逐步淘汰](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/) Manifest V2，远程代码将不再被允许，因此在本地导入 chatgpt.js 是理想的:
