@@ -118,6 +118,8 @@ export { chatgpt }
 })();
 ```
 
+*स्टार्टर टेम्पलेट के लिए, पर जाएँ: https://github.com/kudoai/chatgpt.js-chrome-starter*
+
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
 ## प्रयोग

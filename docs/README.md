@@ -118,6 +118,8 @@ export { chatgpt }
 })();
 ```
 
+_For a starter template, visit: https://github.com/kudoai/chatgpt.js-chrome-starter_
+
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
 ## Usage

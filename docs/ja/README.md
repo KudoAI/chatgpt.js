@@ -118,6 +118,8 @@ export { chatgpt }
 })();
 ```
 
+*スターター テンプレートについては、以下にアクセスしてください: https://github.com/kudoai/chatgpt.js-chrome-starter*
+
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
 ## 使用法
