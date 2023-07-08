@@ -215,7 +215,7 @@ This library exists thanks to code, translations, issues & ideas from the follow
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
-<div align="center">
+<div id="star-history" align="center">
 
 <br>
 
