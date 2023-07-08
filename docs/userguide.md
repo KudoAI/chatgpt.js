@@ -315,7 +315,7 @@ chatgpt.toggleScheme();
 
 ### alert
 
-Creates a static alert box which displays a message. Only a user interaction can close it. Returns the HTML `id` property of the alert box.
+Creates a static alert box which displays a message. Only a user interaction can close it. Returns the HTML `id` property of the alert box as a string.
 
 **Parameters**:
 
@@ -353,7 +353,7 @@ Displays a temporary notification at a specified position in the website.
 
 `notifDuration`: A float specifying the duration of the notification before it fades out.
 
-`shadow`: A string specifying if the `box-shadow` property should be used.
+`shadow`: A string specifying if the `box-shadow` CSS property should be used.
 
 Example code:
 
