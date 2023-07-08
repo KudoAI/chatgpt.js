@@ -1,10 +1,10 @@
-# 麻省理工执照
+<div align="right">
+<h5>简体中文 | <a href="../../LICENSE.md">English</a> | <a href="../hi/LICENSE.md">हिंदी</a></h5>
+</div>
 
-##### 简体中文 | [English](https://github.com/kudoai/chatgpt.js/blob/main/LICENSE.md)
+# MIT 许可证
 
-<br>
-
-版权所有 (c) 2023 KudoAI 和贡献者
+版权所有 (c) 2023 [KudoAI](https://github.com/kudoai) & [贡献者](.#贡献者)
 
 特此免费授予获得本软件和相关文档文件（“软件”）副本的任何人不受限制地处理本软件的权限，包括但不限于使用、复制、修改、合并的权利 、发布、分发、再许可和/或出售软件的副本，并允许获得软件的人这样做，但须满足以下条件：
 
