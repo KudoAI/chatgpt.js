@@ -2,7 +2,7 @@
 
 <div align="right">
 
-###### 简体中文 | <a href="../..#readme">English</a>
+###### 简体中文 | <a href="../..#readme">English</a> | <a href="../hi#readme">हिंदी</a>
     
 </div>
 
@@ -144,7 +144,7 @@ chatgpt.get('reply', 'last')
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [自动清除 ChatGPT 历史记录](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 自动清除您的 ChatGPT 查询历史记录以获得最大的隐私。
-<br>[安装](https://greasyfork.org/scripts/460805-auto-clear-chatgpt-history) / 
+<br>[安装](https://github.com/adamlui/autoclear-chatgpt-history#installation) / 
 [自述文件](https://github.com/adamlui/autoclear-chatgpt-history#readme) / 
 [讨论](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
@@ -158,28 +158,28 @@ chatgpt.get('reply', 'last')
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 在 Brave Search 侧边栏中显示 ChatGPT 答案 (由 GPT-4 驱动!)
-<br>[安装](https://greasyfork.org/scripts/462440-bravegpt) / 
+<br>[安装](https://github.bravegpt.com/#installation) / 
 [自述文件](https://github.bravegpt.com/#readme) / 
 [讨论](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动继续 ⏩](https://chatgptevo.com/autocontinue/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
 自动继续生成多个 ChatGPT 响应。<br>
-[安装](https://greasyfork.org/scripts/466789-chatgpt-auto-continue) / 
-[自述文件](https://github.com/adamlui/chatgpt-auto-continue#readme) / 
+[安装](https://github.com/adamlui/chatgpt-auto-continue/tree/main/docs/zh-cn#%E5%AE%89%E8%A3%85) / 
+[自述文件](https://github.com/adamlui/chatgpt-auto-continue/tree/main/docs/zh-cn#readme) / 
 [讨论](https://chatgptevo.com/autocontinue/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动刷新 ↻](https://chatgptevo.com/autorefresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
-<br>[安装](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh) / 
+<br>[安装](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/docs/zh-cn#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85) / 
 [自述文件](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/docs/zh-cn#readme) / 
 [讨论](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
 ### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 在 DuckDuckGo 侧边栏中显示 ChatGPT 答案 (由 GPT-4 驱动!)
-<br>[安装](https://greasyfork.org/scripts/459849-duckduckgpt) / 
+<br>[安装](https://github.duckduckgpt.com/#installation) / 
 [自述文件](https://github.duckduckgpt.com/#readme) / 
 [讨论](https://github.duckduckgpt.com/discussions)
 
