@@ -1,11 +1,14 @@
-# chatgpt.js
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
+    <img width=700 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
+  </picture>
 
 **chatgpt.js** is a powerful JavaScript library that allows for super easy interaction w/ the ChatGPT DOM.
+</div>
 
 ## Table of contents
 
-- [chatgpt.js](#chatgptjs)
-  - [Table of contents](#table-of-contents)
 - [Importing the library](#importing-the-library)
   - [ES6](#es6)
   - [ES5](#es5)
@@ -53,9 +56,9 @@
     - [getStopGeneratingButton](#getstopgeneratingbutton)
 - [Library objects](#library-objects)
   - [autoRefresh `obj`](#autorefresh-obj)
-    - [activate](#activate)
-    - [deactivate](#deactivate)
-    - [nowTimeStamp](#nowtimestamp)
+      - [activate](#activate)
+      - [deactivate](#deactivate)
+      - [nowTimeStamp](#nowtimestamp)
     - [toggle `obj`](#toggle-obj)
       - [beacons](#beacons)
       - [refreshFrame](#refreshframe)
@@ -644,7 +647,7 @@ chatgpt.autoRefresh.toggle.refreshFrame();
 
 Object related to the chat history.
 
-#### isOn
+### isOn
 
 Returns a boolean value. `true` if the chat history is enabled, `false` otherwise.
 
@@ -656,7 +659,7 @@ if (chatgpt.history.isOn()) {
 }
 ```
 
-#### isOff
+### isOff
 
 Returns a boolean value. `true` if the chat history is disabled, `false` otherwise.
 
@@ -668,7 +671,7 @@ if (chatgpt.history.isOff()) {
 }
 ```
 
-#### activate
+### activate
 
 Activates the chat history.
 
@@ -678,7 +681,7 @@ Example code:
 chatgpt.history.activate();
 ```
 
-#### deactivate
+### deactivate
 
 Deactivates the chat history.
 
@@ -688,7 +691,7 @@ Example code:
 chatgpt.history.deactivate();
 ```
 
-#### toggle
+### toggle
 
 Toggles the chat history.
 
@@ -702,23 +705,23 @@ chatgpt.history.toggle();
 
 Object related to ChatGPT's responses.
 
-#### getLast
+### getLast
 
 Read [chatgpt.getLastResponse](#getlastresponse)
 
-#### getLastDiv
+### getLastDiv
 
 Read [chatgpt.getLastResponseDiv](#getlastresponsediv)
 
-#### getWithIndex
+### getWithIndex
 
 Read [chatgpt.getResponse](#getresponse)
 
-#### regenerate
+### regenerate
 
 Read [chatgpt.regenerate](#regenerate)
 
-#### stopGenerating
+### stopGenerating
 
 Read [chatgpt.stop](#stop)
 
@@ -726,15 +729,15 @@ Read [chatgpt.stop](#stop)
 
 Object related to the website's theme.
 
-#### isDark
+### isDark
 
 Read [chatgpt.isDarkMode](#isdarkmode)
 
-#### isLight
+### isLight
 
 Read [chatgpt.isLightMode](#islightmode)
 
-#### toggle
+### toggle
 
 Read [chatgpt.toggleScheme](#togglescheme)
 
@@ -742,7 +745,7 @@ Read [chatgpt.toggleScheme](#togglescheme)
 
 Object related to the sidebar's behavior.
 
-#### isOn
+### isOn
 
 Returns a boolean value. `true` if the sidebar is open, `false` otherwise.
 
@@ -754,7 +757,7 @@ if (chatgpt.sidebar.isOn()) {
 }
 ```
 
-#### isOff
+### isOff
 
 Returns a boolean value. `true` if the sidebar is closed, `false` otherwise.
 
@@ -766,7 +769,7 @@ if (chatgpt.sidebar.isOff()) {
 }
 ```
 
-#### hide
+### hide
 
 Hides the sidebar.
 
@@ -776,7 +779,7 @@ Example code:
 chatgpt.sidebar.hide();
 ```
 
-#### show
+### show
 
 Shows the sidebar.
 
@@ -786,7 +789,7 @@ Example code:
 chatgpt.sidebar.show();
 ```
 
-#### toggle
+### toggle
 
 Toggles the visibility of the sidebar.
 
