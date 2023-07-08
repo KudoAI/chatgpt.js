@@ -1,5 +1,5 @@
 <div align="right">
-<h5>English | <a href="zh-cn/SECURITY.md">简体中文</a> | <a href="hi/SECURITY.md">हिंदी</a></h5>
+<h5>English | <a href="zh-cn/SECURITY.md">简体中文</a> | <a href="ja/SECURITY.md">日本</a> | <a href="hi/SECURITY.md">हिंदी</a></h5>
 </div>
 
 # Security Policy

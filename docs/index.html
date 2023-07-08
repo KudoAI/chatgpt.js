@@ -8,12 +8,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
         <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/robot-emoji-48.png" />
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-        <link rel="stylesheet" href="assets/styles/styles.css" />
+        <link rel="stylesheet" href="assets/styles/css/global.css" />
     </head>
     <body>
         <nav>
             <a href="#/">English</a>
             <a href="#/zh-cn/">简体中文</a>
+            <a href="#/ja/">日本</a>
             <a href="#/hi/">हिंदी</a>
         </nav>
         <div id="app"></div>
@@ -23,13 +24,13 @@
                 repo: 'kudoai/chatgpt.js',
                 loadNavbar: true,
                 logo: 'https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-sidepadded-light-mode-650x61.png',
-                coverpage: ['/', '/zh-cn/', '/hi/'],
+                coverpage: ['/', '/zh-cn/', '/ja/', '/hi/'],
                 maxLevel: 3,
                 search: {
                     paths: 'auto',
-                    placeholder: { '/': 'Search', '/zh-cn/': '搜索', '/hi/': 'खोज' },
-                    noData: { '/': 'No results!', '/zh-cn/': '没有结果!', '/hi/': 'कोई परिणाम नहीं!' },
-                    pathNamespaces: ['/zh-cn', '/hi'],
+                    placeholder: { '/': 'Search', '/zh-cn/': '搜索', '/ja/': '検索', '/hi/': 'खोज' },
+                    noData: { '/': 'No results!', '/zh-cn/': '没有结果!', '/ja/': '結果がありません!', '/hi/': 'कोई परिणाम नहीं!' },
+                    pathNamespaces: ['/zh-cn', '/ja', '/hi'],
                 },
                 routes: {
                     '.*javascript.*': function() { // scroll-to-top link
