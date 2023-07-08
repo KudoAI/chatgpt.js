@@ -2,7 +2,7 @@
 
 <div align="right">
 
-###### हिंदी | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a>
+###### हिंदी | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a>
     
 </div>
 
