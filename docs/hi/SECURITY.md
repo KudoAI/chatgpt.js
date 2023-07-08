@@ -1,8 +1,8 @@
-# Security Policy
+<div align="right">
+<h5>हिंदी | <a href="../SECURITY.md">English</a> | <a href="../zh-cn/SECURITY.md">简体中文</a></h5>
+</div>
 
-##### हिंदी | [English](https://github.com/kudoai/chatgpt.js/security/policy) | [简体中文](https://github.com/kudoai/chatgpt.js/blob/main/docs/zh-cn/SECURITY.md)
-
-<br>
+# सुरक्षा नीति
 
 यदि आपको कोई भेद्यता मिलती है, तो कृपया एक [ड्राफ्ट सुरक्षा सलाहकार](https://github.com/kudoai/chatgpt.js/security/advisories/new) खोलें।
 

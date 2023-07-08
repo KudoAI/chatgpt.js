@@ -1,8 +1,8 @@
-# 安全策略
+<div align="right">
+<h5>简体中文 | <a href="../SECURITY.md">English</a> | <a href="../hi/SECURITY.md">हिंदी</a></h5>
+</div>
 
-##### 简体中文 | [English](https://github.com/kudoai/chatgpt.js/security/policy) | [हिंदी](https://github.com/kudoai/chatgpt.js/blob/main/docs/hi/SECURITY.md)
-
-<br>
+# 安全政策
 
 如果您发现漏洞，请打开[安全公告草案](https://github.com/kudoai/chatgpt.js/security/advisories/new)。
 
