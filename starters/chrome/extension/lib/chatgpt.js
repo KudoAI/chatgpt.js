@@ -836,4 +836,4 @@ for (var prop in chatgpt) {
 // Export chatgpt object
 try { window.chatgpt = chatgpt; } catch (error) {} // for Greasemonkey
 try { module.exports = chatgpt; } catch (error) {} // for CommonJS
-export { chatgpt }
+export { chatgpt };
