@@ -97,14 +97,12 @@ Since Google will [eventually phase out](https://developer.chrome.com/docs/exten
 1. Save https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js to a subdirectory (`lib` in this example)
 
 2. Add ES6 export statement to end of `lib/chatgpt.js`
-
 ```js
 ...
 export { chatgpt }
 ```
 
 3. In project's (V3) `manifest.json`, add `lib/chatgpt.js` as a web accessible resource
-
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
@@ -113,7 +111,6 @@ export { chatgpt }
 ```
 
 4. In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
-
 ```js
 (async () => {
   const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
