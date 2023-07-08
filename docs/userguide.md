@@ -86,6 +86,8 @@
 
 ## ES6
 
+Example code:
+
 ```js
 (async () => {
   await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
@@ -94,6 +96,8 @@
 ```
 
 ## ES5
+
+Example code:
 
 ```js
 var xhr = new XMLHttpRequest();
@@ -117,6 +121,8 @@ function yourCode() {
 
 Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CDNs (such as commit-specific references from `cdn.jsdelivr.net`) so the import URL is substantially lengthier to preserve publishability to these sites:
 
+Example code:
+
 ```js
 ...
 // @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@8483b553675c3444db5c6b40a8686531c11b2a35/dist/chatgpt-1.11.0.min.js
@@ -137,12 +143,16 @@ Since Google will [eventually phase out](https://developer.chrome.com/docs/exten
 
 2. Add ES6 export statement to end of `lib/chatgpt.js`
 
+Example code:
+
 ```js
 ...
 export { chatgpt }
 ```
 
 3. In project's (V3) `manifest.json`, add `lib/chatgpt.js` as a web accessible resource
+
+Example code:
 
 ```json
     "web_accessible_resources": [{
@@ -152,6 +162,8 @@ export { chatgpt }
 ```
 
 4.  In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
+
+Example code:
 
 ```js
 (async () => {
@@ -168,12 +180,16 @@ export { chatgpt }
 
 Returns a random IP address as a string.
 
+Example code:
+
 ```js
 const randomIP = chatgpt.generateRandomIP();
 console.log(randomIP); // Example output: '161.192.110.125'
 ```
 
 ### get
+
+Example code:
 
 ```js
 const response = chatgpt.get('reply', 'last');
@@ -185,6 +201,8 @@ const response = chatgpt.getLastResponse();
 
 Returns a boolean value. `true` if the website is fullscreen and `false` otherwise.
 
+Example code:
+
 ```js
 if (chatgpt.isFullScreen()) {
   // Do something
@@ -194,6 +212,8 @@ if (chatgpt.isFullScreen()) {
 ### isLoaded `async`
 
 Returns a boolean value. `true` if the website has finished loading, `false` otherwise.
+
+Example code:
 
 ```js
 async function doSomething() {
@@ -207,11 +227,15 @@ async function doSomething() {
 
 Prints all the library functions to the console.
 
+Example code:
+
 ```js
 chatgpt.printAllFunctions();
 ```
 
 ### renderHTML
+
+Example code:
 
 ```js
 document.body.appendChild(
@@ -220,6 +244,8 @@ document.body.appendChild(
 ```
 
 ### uuidv4
+
+Example code:
 
 ```js
 const randomID = chatgpt.uuidv4();
@@ -232,6 +258,8 @@ console.log(randomID); // Example output: '239067d1-bcb8-4fd7-91eb-9ab94619b7b3'
 
 Changes the website theme to dark mode.
 
+Example code:
+
 ```js
 chatgpt.activateDarkMode();
 ```
@@ -240,6 +268,8 @@ chatgpt.activateDarkMode();
 
 Changes the website theme to light mode.
 
+Example code:
+
 ```js
 chatgpt.activateLightMode();
 ```
@@ -247,6 +277,8 @@ chatgpt.activateLightMode();
 ### isDarkMode
 
 Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
+
+Example code:
 
 ```js
 if (chatgpt.isDarkMode()) {
@@ -258,6 +290,8 @@ if (chatgpt.isDarkMode()) {
 
 Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
 
+Example code:
+
 ```js
 if (chatgpt.isLightMode()) {
   // Do something
@@ -267,6 +301,8 @@ if (chatgpt.isLightMode()) {
 ### toggleScheme
 
 Toggles the theme between light and dark mode.
+
+Example code:
 
 ```js
 chatgpt.toggleScheme();
@@ -289,6 +325,8 @@ Creates a static alert box which displays a message. Only a user interaction can
 `checkbox`: A function which will be rendered as a checkbox.
 
 `width`: An integer representing the width of the alert box in `px`.
+
+Example code:
 
 ```js
 function doSomething() { ... }
@@ -314,6 +352,8 @@ Displays a temporary notification at a specified position in the website.
 
 `shadow`: A string specifying if the `box-shadow` property should be used.
 
+Example code:
+
 ```js
 chatgpt.notify('Hello, world!', 'top left', 3, 'on');
 ```
@@ -323,6 +363,8 @@ chatgpt.notify('Hello, world!', 'top left', 3, 'on');
 ### logout
 
 Logs out the user from the website.
+
+Example code:
 
 ```js
 chatgpt.logout();
@@ -334,6 +376,8 @@ chatgpt.logout();
 
 Clears the user's chat history.
 
+Example code:
+
 ```js
 chatgpt.clearChats();
 ```
@@ -341,6 +385,8 @@ chatgpt.clearChats();
 ### exportChat
 
 Exports the current chat as a text file.
+
+Example code:
 
 ```js
 chatgpt.exportChat(); // Downloads a file called 'ChatGPT_{day}-{month}-{year}_{hour}-{minute}.txt'
@@ -350,6 +396,8 @@ chatgpt.exportChat(); // Downloads a file called 'ChatGPT_{day}-{month}-{year}_{
 
 Returns the value of the chat input field as a string.
 
+Example code:
+
 ```js
 const chatInput = chatgpt.getChatInput();
 console.log(chatInput); // Example output: 'Hello from chatgpt.js!'
@@ -358,6 +406,8 @@ console.log(chatInput); // Example output: 'Hello from chatgpt.js!'
 ### getLastResponse
 
 Returns the last response ChatGPT has written as a string.
+
+Example code:
 
 ```js
 const response = chatgpt.getLastResponse();
@@ -372,6 +422,8 @@ Returns the Nth response ChatGPT has written as a string.
 
 `pos`: A string or integer representing the position of the wanted response.
 
+Example code:
+
 ```js
 var fifthResp;
 
@@ -383,6 +435,8 @@ fifthResp = chatgpt.getResponse('five'); // Returns the 5th response too
 ### isIdle `async`
 
 Returns a boolean value. `true` if ChatGPT has finished generating a response, `false` otherwise.
+
+Example code:
 
 ```js
 async function doSomething() {
@@ -396,6 +450,8 @@ async function doSomething() {
 
 Regenerates ChatGPT's response.
 
+Example code:
+
 ```js
 chagpt.regenerate();
 ```
@@ -403,6 +459,8 @@ chagpt.regenerate();
 ### scrollToBottom
 
 Scrolls to the bottom of the chat.
+
+Example code:
 
 ```js
 chatgpt.scrollToBottom();
@@ -418,6 +476,8 @@ Sends a message into the chat.
 
 `method`: A string representing the method to send the message with, can only be `click`. Usually needed for mobile devices compatibility.
 
+Example code:
+
 ```js
 // Clicks the send button instead of triggering the 'Enter' key press.
 chatgpt.send('Hello, world!', 'click');
@@ -431,6 +491,8 @@ Creates a new chat and sends a message.
 
 `msg`: A string representing the message to send.
 
+Example code:
+
 ```js
 chatgpt.sendInNewChat('Hello, world!');
 ```
@@ -439,6 +501,8 @@ chatgpt.sendInNewChat('Hello, world!');
 
 Creates a new chat.
 
+Example code:
+
 ```js
 chatgpt.startNewChat();
 ```
@@ -446,6 +510,8 @@ chatgpt.startNewChat();
 ### stop
 
 Stops the generation of ChatGPT's response.
+
+Example code:
 
 ```js
 chatgpt.stop();
@@ -457,6 +523,8 @@ chatgpt.stop();
 
 Returns the chat input as an HTML element.
 
+Example code:
+
 ```js
 const chatbox = chatgpt.getChatBox();
 console.log(chatbox.value); // Example output: 'Hello from chatgpt.js!'
@@ -465,6 +533,8 @@ console.log(chatbox.value); // Example output: 'Hello from chatgpt.js!'
 ### getLastResponseDiv
 
 Returns the last response's container HTML element.
+
+Example code:
 
 ```js
 const container = chatgpt.getLastResponseDiv();
@@ -475,6 +545,8 @@ container.style.display = 'none';
 
 Returns the button which creates a new chat as an HTML element.
 
+Example code:
+
 ```js
 const link = chatgpt.getNewChatLink();
 link.click();
@@ -483,6 +555,8 @@ link.click();
 ### getRegenerateButton
 
 Returns the button which regenerates ChatGPT's response as an HTML element.
+
+Example code:
 
 ```js
 const regenButton = chatgpt.getRegenerateButton();
@@ -493,6 +567,8 @@ regenButton.click();
 
 Returns the button which sends the message as an HTML element.
 
+Example code:
+
 ```js
 const sendButton = chatgpt.getSendButton();
 sendButton.click();
@@ -501,6 +577,8 @@ sendButton.click();
 ### getStopGeneratingButton
 
 Returns the button which stops the generation of ChatGPT's response as an HTML element.
+
+Example code:
 
 ```js
 const stopButton = chatgpt.getStopGeneratingButton();
@@ -517,6 +595,8 @@ Object related to keeping the user's session alive and fresh.
 
 Activates the auto-refresh functionality.
 
+Example code:
+
 ```js
 chatgpt.autoRefresh.activate();
 ```
@@ -525,6 +605,8 @@ chatgpt.autoRefresh.activate();
 
 Deactivates the auto-refresh functionality.
 
+Example code:
+
 ```js
 chatgpt.autoRefresh.deactivate();
 ```
@@ -532,6 +614,8 @@ chatgpt.autoRefresh.deactivate();
 #### nowTimeStamp
 
 Returns the current timestamp as a string (12-hour format).
+
+Example code:
 
 ```js
 const timeStamp = chatgpt.autoRefresh.nowTimeStamp();
@@ -542,11 +626,15 @@ console.log(timeStamp); // Example output: '1:56:25 PM'
 
 #### beacons
 
+Example code:
+
 ```js
 chatgpt.autoRefresh.toggle.beacons();
 ```
 
 #### refreshFrame
+
+Example code:
 
 ```js
 chatgpt.autoRefresh.toggle.refreshFrame();
@@ -554,9 +642,13 @@ chatgpt.autoRefresh.toggle.refreshFrame();
 
 ## history `obj`
 
+Object related to the chat history.
+
 #### isOn
 
 Returns a boolean value. `true` if the chat history is enabled, `false` otherwise.
+
+Example code:
 
 ```js
 if (chatgpt.history.isOn()) {
@@ -568,6 +660,8 @@ if (chatgpt.history.isOn()) {
 
 Returns a boolean value. `true` if the chat history is disabled, `false` otherwise.
 
+Example code:
+
 ```js
 if (chatgpt.history.isOff()) {
   // Do something
@@ -578,6 +672,8 @@ if (chatgpt.history.isOff()) {
 
 Activates the chat history.
 
+Example code:
+
 ```js
 chatgpt.history.activate();
 ```
@@ -585,6 +681,8 @@ chatgpt.history.activate();
 #### deactivate
 
 Deactivates the chat history.
+
+Example code:
 
 ```js
 chatgpt.history.deactivate();
@@ -594,11 +692,15 @@ chatgpt.history.deactivate();
 
 Toggles the chat history.
 
+Example code:
+
 ```js
 chatgpt.history.toggle();
 ```
 
 ## response `obj`
+
+Object related to ChatGPT's responses.
 
 #### getLast
 
@@ -622,6 +724,8 @@ Read [chatgpt.stop](#stop)
 
 ## scheme `obj`
 
+Object related to the website's theme.
+
 #### isDark
 
 Read [chatgpt.isDarkMode](#isdarkmode)
@@ -636,9 +740,13 @@ Read [chatgpt.toggleScheme](#togglescheme)
 
 ## sidebar `obj`
 
+Object related to the sidebar's behavior.
+
 #### isOn
 
 Returns a boolean value. `true` if the sidebar is open, `false` otherwise.
+
+Example code:
 
 ```js
 if (chatgpt.sidebar.isOn()) {
@@ -650,6 +758,8 @@ if (chatgpt.sidebar.isOn()) {
 
 Returns a boolean value. `true` if the sidebar is closed, `false` otherwise.
 
+Example code:
+
 ```js
 if (chatgpt.sidebar.isOff()) {
   // Do something
@@ -660,6 +770,8 @@ if (chatgpt.sidebar.isOff()) {
 
 Hides the sidebar.
 
+Example code:
+
 ```js
 chatgpt.sidebar.hide();
 ```
@@ -668,6 +780,8 @@ chatgpt.sidebar.hide();
 
 Shows the sidebar.
 
+Example code:
+
 ```js
 chatgpt.sidebar.show();
 ```
@@ -675,6 +789,8 @@ chatgpt.sidebar.show();
 #### toggle
 
 Toggles the visibility of the sidebar.
+
+Example code:
 
 ```js
 chatgpt.sidebar.toggle();
