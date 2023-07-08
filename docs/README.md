@@ -3,7 +3,7 @@
 <div align="right">
 
 ###### English | <a href="zh-cn#readme">简体中文</a> | <a href="ja#readme">日本</a> | <a href="hi#readme">हिंदी</a>
-    
+
 </div>
 
 <h3>
@@ -49,28 +49,28 @@
 
 ```js
 (async () => {
-    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');    
-    // Your code here...
+  await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
+  // Your code here...
 })();
 ```
 
 ### ES5:
 
 ```js
-var xhr = new XMLHttpRequest()
-xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js')
-xhr.onload = function() {
-    if (xhr.status === 200) {
-        var chatgptJS = document.createElement('script')
-        chatgptJS.textContent = xhr.responseText
-        document.head.appendChild(chatgptJS)
-        yourCode() // runs your code
-    }
-}
-xhr.send()
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js');
+xhr.onload = function () {
+  if (xhr.status === 200) {
+    var chatgptJS = document.createElement('script');
+    chatgptJS.textContent = xhr.responseText;
+    document.head.appendChild(chatgptJS);
+    yourCode(); // runs your code
+  }
+};
+xhr.send();
 
 function yourCode() {
-    // Your code here...
+  // Your code here...
 }
 ```
 
@@ -88,7 +88,7 @@ Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CD
 
 If you don't plan on publishing to these repos, the simpler `https://code.chatgptjs.org/chatgpt-latest.min.js` can be used instead to import the latest minified release.
 
-*For a starter template, visit: https://github.com/kudoai/chatgpt.js-greasemonkey-starter*
+_For a starter template, visit: https://github.com/kudoai/chatgpt.js-greasemonkey-starter_
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
@@ -113,8 +113,8 @@ export { chatgpt }
 4. In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
 ```js
 (async () => {
-    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
-    // Your code here...
+  const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
+  // Your code here...
 })();
 ```
 
@@ -127,10 +127,10 @@ export { chatgpt }
 For example:
 
 ```js
-chatgpt.getLastResponse()
-chatgpt.getLastReply()
-chatgpt.response.getLast()
-chatgpt.get('reply', 'last')
+chatgpt.getLastResponse();
+chatgpt.getLastReply();
+chatgpt.response.getLast();
+chatgpt.get('reply', 'last');
 ```
 
 Each call equally fetches the last response. If you think it works, it probabily will... so just type it! (Who has time for docs?)
@@ -144,43 +144,43 @@ If it didn't, simply submit an [issue](https://github.com/kudoai/chatgpt.js/issu
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Autoclear ChatGPT History](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 Auto-clear your ChatGPT query history for maximum privacy.
-<br>[Install](https://github.com/adamlui/autoclear-chatgpt-history#installation) / 
-[Readme](https://github.com/adamlui/autoclear-chatgpt-history#readme) / 
+<br>[Install](https://github.com/adamlui/autoclear-chatgpt-history#installation) /
+[Readme](https://github.com/adamlui/autoclear-chatgpt-history#readme) /
 [Discuss](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
 ### <img width=16 src="https://i.imgur.com/1yjmK3W.png"> [Automatic ChatGPT DAN](https://github.com/madkarmaa/automatic-chatgpt-dan)
 
 Automatically send DAN prompts to ChatGPT.
-<br>[Install](https://github.com/madkarmaa/automatic-chatgpt-dan#%EF%B8%8F-installation) / 
-[Readme](https://github.com/madkarmaa/automatic-chatgpt-dan#readme) / 
+<br>[Install](https://github.com/madkarmaa/automatic-chatgpt-dan#%EF%B8%8F-installation) /
+[Readme](https://github.com/madkarmaa/automatic-chatgpt-dan#readme) /
 [Discuss](https://github.com/madkarmaa/automatic-chatgpt-dan/issues)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 Display ChatGPT answers in Brave Search sidebar (powered by GPT-4!)
-<br>[Install](https://github.bravegpt.com/#installation) / 
-[Readme](https://github.bravegpt.com/#readme) / 
+<br>[Install](https://github.bravegpt.com/#installation) /
+[Readme](https://github.bravegpt.com/#readme) /
 [Discuss](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto-Continue ⏩](https://chatgptevo.com/autocontinue/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
 Automatically continue generating multiple ChatGPT responses.<br>
-[Install](https://github.com/adamlui/chatgpt-auto-continue#installation) / 
-[Readme](https://github.com/adamlui/chatgpt-auto-continue#readme) / 
+[Install](https://github.com/adamlui/chatgpt-auto-continue#installation) /
+[Readme](https://github.com/adamlui/chatgpt-auto-continue#readme) /
 [Discuss](https://chatgptevo.com/autocontinue/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://chatgptevo.com/autorefresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks.
-<br>[Install](https://github.com/adamlui/chatgpt-auto-refresh#installation) / 
-[Readme](https://github.com/adamlui/chatgpt-auto-refresh#readme) / 
+<br>[Install](https://github.com/adamlui/chatgpt-auto-refresh#installation) /
+[Readme](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
 ### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 Display ChatGPT answers in DuckDuckGo sidebar (powered by GPT-4!)
-<br>[Install](https://github.duckduckgpt.com/#installation) / 
-[Readme](https://github.duckduckgpt.com/#readme) / 
+<br>[Install](https://github.duckduckgpt.com/#installation) /
+[Readme](https://github.duckduckgpt.com/#readme) /
 [Discuss](https://github.duckduckgpt.com/discussions)
 
 <br>
@@ -201,17 +201,17 @@ If you've made something w/ chatgpt.js you want to share, email [showcase@chatgp
 
 This library exists thanks to code, translations, issues & ideas from the following contributors:
 
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.15&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?first-contrib=2023.03.16-get-functions&h=50&w=50&mask=circle&maxage=7d "@mefengl")](https://github.com/mefengl)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.30-doc-translations&h=50&w=50&mask=circle&maxage=7d "@Zin6969")](https://github.com/Zin6969)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/30551844?first-contrib=2023.05.02-getlastresponse-bug-report&h=50&w=50&mask=circle&maxage=7d "@madruga8")](https://github.com/madruga8)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54934866?first-contrib=2023.05.01-clearchats-discard-fix&h=50&w=50&mask=circle&maxage=7d "@XiaoYingYo")](https://github.com/XiaoYingYo)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.24-css-readability&h=50&w=50&mask=circle&maxage=7d "@AliAlSarre")](https://github.com/AliAlSarre)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/100418457?first-contrib=2023.06.02-send-function-bug-report&h=50&w=50&mask=circle&maxage=7d "@madkarmaa")](https://github.com/madkarmaa)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/1170326?first-contrib=2023.06.10-html-parser-idea&h=50&w=50&mask=circle&maxage=7d "@wamoyo")](https://github.com/wamoyo)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/33952?first-contrib=2023.06.10-html-parser-idea&h=50&w=50&mask=circle&maxage=7d "@meiraleal")](https://github.com/meiraleal)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
-[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.15&h=50&w=50&mask=circle&maxage=7d '@adamlui')](https://github.com/adamlui)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?first-contrib=2023.03.16-get-functions&h=50&w=50&mask=circle&maxage=7d '@mefengl')](https://github.com/mefengl)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.30-doc-translations&h=50&w=50&mask=circle&maxage=7d '@Zin6969')](https://github.com/Zin6969)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/30551844?first-contrib=2023.05.02-getlastresponse-bug-report&h=50&w=50&mask=circle&maxage=7d '@madruga8')](https://github.com/madruga8)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54934866?first-contrib=2023.05.01-clearchats-discard-fix&h=50&w=50&mask=circle&maxage=7d '@XiaoYingYo')](https://github.com/XiaoYingYo)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.24-css-readability&h=50&w=50&mask=circle&maxage=7d '@AliAlSarre')](https://github.com/AliAlSarre)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/100418457?first-contrib=2023.06.02-send-function-bug-report&h=50&w=50&mask=circle&maxage=7d '@madkarmaa')](https://github.com/madkarmaa)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/1170326?first-contrib=2023.06.10-html-parser-idea&h=50&w=50&mask=circle&maxage=7d '@wamoyo')](https://github.com/wamoyo)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/33952?first-contrib=2023.06.10-html-parser-idea&h=50&w=50&mask=circle&maxage=7d '@meiraleal')](https://github.com/meiraleal)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d 'Dependabot')](https://github.com/dependabot)
+[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d 'ChatGPT')](https://chat.openai.com)
 
 <br>
 
@@ -228,12 +228,12 @@ This library exists thanks to code, translations, issues & ideas from the follow
   </picture>
 </a>
 
-<br>*Consider giving this repo a ⭐ if it helped you!*
+<br>_Consider giving this repo a ⭐ if it helped you!_
 
 </div>
 
 #
 
-<a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Releases**</a> / 
-<a href="https://github.com/kudoai/chatgpt.js/discussions">Discuss</a> / 
+<a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Releases**</a> /
+<a href="https://github.com/kudoai/chatgpt.js/discussions">Discuss</a> /
 <a href="#">Back to top ↑</a>
