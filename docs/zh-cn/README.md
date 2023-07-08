@@ -26,7 +26,10 @@
 [![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=提交&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js/commits/main)
 ![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-1.11.0.min.js?label=缩小尺寸&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
 [![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=代码质量&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
-![](https://img.shields.io/jsdelivr/gh/hw/kudoai/chatgpt.js?label=jsDelivr+点击数&logo=jsdelivr&logoColor=white&labelColor=464646&color=ff6427&style=for-the-badge)
+![](https://img.shields.io/jsdelivr/gh/hw/kudoai/chatgpt.js?label=jsDelivr+点击数&logo=jsdelivr&logoColor=white&labelColor=464646&color=gold&style=for-the-badge)
+[![](https://img.shields.io/badge/中提到-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
+[![](https://img.shields.io/badge/精选于-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.producthunt.com/posts/chatgpt-js)
+[![](https://img.shields.io/badge/网站-https://chatgpt.js.org-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgpt.js.org)
 </div>
 
 ## 关于
@@ -85,7 +88,7 @@ function yourCode() {
 
 如果您不打算发布到这些存储库，则可以使用更简单的 `https://code.chatgptjs.org/chatgpt-latest.min.js` 来导入最新的缩小版本。
 
-如需入门模板，请访问: https://github.com/kudoai/chatgpt.js-greasemonkey-starter
+*如需入门模板，请访问: https://github.com/kudoai/chatgpt.js-greasemonkey-starter*
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
@@ -214,14 +217,20 @@ chatgpt.get('reply', 'last')
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
+<div id="star-history" align="center">
+
+<br>
+
 <a href="https://star-history.com/#kudoai/chatgpt.js&Timeline">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline&theme=dark" />
-    <img src="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
+    <img width=665 src="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
   </picture>
 </a>
 
 *如果这个仓库对您有帮助，请考虑给它一个 ⭐！*
+
+</div>
 
 #
 
