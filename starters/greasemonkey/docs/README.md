@@ -1,6 +1,6 @@
-# 🙈 chatgpt.js Greasemonkey Starter
+# 🙈 chatgpt.js-greasemonkey-starter
 
-A Greasemonkey userscript template to start using [chatgpt.js](https://github.com/kudoai/chatgpt.js) right away!
+A starting point for developing your own Greasemonkey userscript using [chatgpt.js](https://github.com/kudoai/chatgpt.js)
 
 <br>
 
