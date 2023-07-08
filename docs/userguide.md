@@ -195,9 +195,11 @@ console.log(randomIP); // Example output: '161.192.110.125'
 Example code:
 
 ```js
-const response = chatgpt.get('reply', 'last');
+var response;
+
+response = chatgpt.get('reply', 'last');
 // Equivalent of
-const response = chatgpt.getLastResponse();
+response = chatgpt.getLastResponse();
 ```
 
 ### isFullScreen
