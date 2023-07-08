@@ -14,7 +14,7 @@
 </picture>
 <br><br>
 
-🤖 A powerful client-side JavaScript library for ChatGPT 
+🤖 A powerful client-side JavaScript library for ChatGPT
 <br><br>
 
 </div>
@@ -110,7 +110,7 @@ export { chatgpt }
     }],
 ```
 
-4.    In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
+4. In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
 ```js
 (async () => {
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
@@ -141,7 +141,7 @@ If it didn't, simply submit an [issue](https://github.com/kudoai/chatgpt.js/issu
 
 ## Made with chatgpt.js
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Autoclear ChatGPT History](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Autoclear ChatGPT History](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 Auto-clear your ChatGPT query history for maximum privacy.
 <br>[Install](https://github.com/adamlui/autoclear-chatgpt-history#installation) / 
