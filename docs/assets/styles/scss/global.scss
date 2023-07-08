@@ -64,7 +64,7 @@ article > div:first-of-type { display: none !important } /* hide README cover */
 
 /* MAIN */
 
-article > div:nth-child(2) img { transform: scale(1.45) ; margin: 6px 0 ; padding: 0 18px } /* zoom shields */
+article > div:nth-child(2) img { height: 2.5rem } /* zoom shields */
 article > h2:first-of-type span { display: none !important } /* hide ABOUT heading */
 article > p:first-of-type { margin-top: -51px } /* increase top-margin of description */
 main h2 { font-size: 3rem !important }
@@ -92,7 +92,7 @@ h3 a:hover { text-decoration: underline #42b983 }
 img[src*="promo-tile"] { width: 1111px  } /* enlarge promo tiles */
 
 /* Contributors */
-$contributors: ("contributors", "贡献者", "योगदानकर्ता");
+$contributors: ('contributors', '贡献者', '貢献者', 'योगदानकर्ता');
 @each $translation in $contributors {
     $id: unquote('#') + $translation;
     h2#{$id}, h2#{$id} ~ p { text-align: center } /* center contributors section */
