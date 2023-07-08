@@ -3,7 +3,7 @@
 // @description   A Greasemonkey template to start using chatgpt.js like a boss
 // @author        chatgpt.js
 // @namespace     https://chatgpt.js.org
-// @version       2023.7.8.1
+// @version       2023.7.8.2
 // @license       MIT
 // @match         https://chat.openai.com/*
 // @icon          https://raw.githubusercontent.com/kudoai/chatgpt.js-greasemonkey-starter/main/media/images/icons/robot/icon48.png
@@ -20,7 +20,7 @@
     chatgpt.printAllFunctions(); // in console
     chatgpt.alert('≫ ChatGPT script loaded! 🚀', // title
         'Success! Press Ctrl+Shift+I to view all chatgpt.js functions.', // msg
-        function getHelp() { window.open(GM_info.scriptSupportURL || GM_info.script.supportURL || ''); }); // button
+        function getHelp() { window.open('https://github.kudoai.com/chatgpt.js-greasemonkey-starter/issues'); }); // button
 
     // Your code here...
 
