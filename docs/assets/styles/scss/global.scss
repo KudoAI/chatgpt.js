@@ -105,7 +105,7 @@ $contributors: ('contributors', '贡献者', '貢献者', 'योगदानक
 #footer { text-align: center ; margin-top: -11px } /* general alignment */
 #mc_embed_signup h2 { font-size: 2.5rem !important ; margin-bottom: -16px } /* 1st CTA */
 .mc-field-group { margin: -4px 0 95px } /* input row div v-margins */
-.mc-field-group input { height: 55px ; box-shadow: 14px 8px 28px lightgrey } /* input row height/shadow */
+.mc-field-group input { height: 55px } /* input row height */
 input#mce-EMAIL { /* email field */
     border-radius: 0 ; width: 32% ; min-width: 250px ;
     margin-bottom: 18px ; border: 1px solid #ccc ; outline: none }
