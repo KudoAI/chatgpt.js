@@ -8,7 +8,7 @@ const onLoadObserver = new MutationObserver(() => {
 
     // Append footer
     const footer = document.createElement('div');
-    fetch('assets/sections/footer.html')
+    fetch('assets/html/footer.html')
         .then(response => response.text()).then(html => {
             footer.innerHTML = html;
             const article = document.querySelector('article');
