@@ -11,7 +11,7 @@
     chatgpt.printAllFunctions(); // to console
     chatgpt.alert('≫ ChatGPT extension loaded! 🚀', // title
         'Success! Press Ctrl+Shift+I to view all chatgpt.js methods.', // msg
-        function getHelp() { window.open(GM_info.scriptSupportURL || GM_info.script.supportURL || ''); }); // button
+        function getHelp() { window.open('https://github.kudoai.com/chatgpt.js-chrome-starter/issues'); }); // button
 
     // Your code here...
 
