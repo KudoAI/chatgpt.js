@@ -14,6 +14,7 @@
         <nav>
             <a href="#/">English</a>
             <a href="#/zh-cn/">简体中文</a>
+            <a href="#/hi/">हिंदी</a>
         </nav>
         <div id="app"></div>
         <script>
@@ -22,13 +23,13 @@
                 repo: 'kudoai/chatgpt.js',
                 loadNavbar: true,
                 logo: 'https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-sidepadded-light-mode-650x61.png',
-                coverpage: ['/', '/zh-cn/'],
+                coverpage: ['/', '/zh-cn/', '/hi/'],
                 maxLevel: 3,
                 search: {
                     paths: 'auto',
-                    placeholder: { '/': 'Search', '/zh-cn/': '搜索' },
-                    noData: { '/': 'No results!', '/zh-cn/': '没有结果!' },
-                    pathNamespaces: ['/zh-cn'],
+                    placeholder: { '/': 'Search', '/zh-cn/': '搜索', '/hi/': 'खोज' },
+                    noData: { '/': 'No results!', '/zh-cn/': '没有结果!', '/hi/': 'कोई परिणाम नहीं!' },
+                    pathNamespaces: ['/zh-cn', '/hi'],
                 },
                 routes: {
                     '.*javascript.*': function() { // scroll-to-top link
