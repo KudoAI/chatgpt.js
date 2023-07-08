@@ -1,9 +1,9 @@
 <div align="right">
-<h5>English | <a href="zh-cn/SECURITY.md">简体中文</a> | <a href="hi/SECURITY.md">हिंदी</a></h5>
+<h5>日本 | <a href="../SECURITY.md">English</a> | <a href="../zh-cn/SECURITY.md">简体中文</a> | <a href="../hi/SECURITY.md">हिंदी</a></h5>
 </div>
 
-# Security Policy
+# セキュリティポリシー
 
-If you find a vulnerability, please open a [draft security advisory](https://github.com/kudoai/chatgpt.js/security/advisories/new).
+脆弱性を見つけた場合は、[セキュリティ勧告草案](https://github.com/kudoai/chatgpt.js/security/advisories/new) を開いてください。
 
-Pull requests are also welcome, but for safety reasons, send an email to security@chatgptjs.org and wait for a response before making it public.
+プル リクエストも歓迎しますが、安全上の理由から、公開する前に security@chatgptjs.org に電子メールを送信し、応答を待ってください。
