@@ -113,7 +113,8 @@ article > div:first-of-type {
 } /* hide sidebar icons */
 /* MAIN */
 article > div:nth-child(2) img {
-  height: 2.5rem;
+  transform: scale(1.45);
+  margin: 6px 0;
 } /* zoom shields */
 article > h2:first-of-type span {
   display: none !important;

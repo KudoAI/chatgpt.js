@@ -64,7 +64,7 @@ article > div:first-of-type { display: none !important } /* hide README cover */
 
 /* MAIN */
 
-article > div:nth-child(2) img { height: 2.5rem } /* zoom shields */
+article > div:nth-child(2) img { transform: scale(1.45) ; margin: 6px 0 } /* zoom shields */
 article > h2:first-of-type span { display: none !important } /* hide ABOUT heading */
 article > p:first-of-type { margin-top: -51px } /* increase top-margin of description */
 main h2 { font-size: 3rem !important }
