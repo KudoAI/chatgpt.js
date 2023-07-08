@@ -228,10 +228,10 @@ This library exists thanks to code, translations, issues & ideas from the follow
 
 <br>*Consider giving this repo a ⭐ if it helped you!*
 
+</div>
+
 #
 
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Releases**</a> / 
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Discuss</a> / 
 <a href="#">Back to top ↑</a>
-
-</div>
