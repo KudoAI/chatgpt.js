@@ -4,7 +4,7 @@
 
 (async () => {
 
-    // Import libs
+    // Import chatgpt.js
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
 
     await chatgpt.isLoaded();
