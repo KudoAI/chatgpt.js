@@ -1,0 +1,681 @@
+# chatgpt.js
+
+**chatgpt.js** is a powerful JavaScript library that allows for super easy interaction w/ the ChatGPT DOM.
+
+## Table of contents
+
+- [chatgpt.js](#chatgptjs)
+  - [Table of contents](#table-of-contents)
+- [Importing the library](#importing-the-library)
+  - [ES6](#es6)
+  - [ES5](#es5)
+  - [Greasemonkey](#greasemonkey)
+  - [Chrome](#chrome)
+- [Library methods](#library-methods)
+  - [General](#general)
+    - [generateRandomIP](#generaterandomip)
+    - [get](#get)
+    - [isFullScreen](#isfullscreen)
+    - [isLoaded `async`](#isloaded-async)
+    - [printAllFunctions](#printallfunctions)
+    - [renderHTML](#renderhtml)
+    - [uuidv4](#uuidv4)
+  - [Page theme](#page-theme)
+    - [activateDarkMode](#activatedarkmode)
+    - [activateLightMode](#activatelightmode)
+    - [isDarkMode](#isdarkmode)
+    - [isLightMode](#islightmode)
+    - [toggleScheme](#togglescheme)
+  - [In-site notifications](#in-site-notifications)
+    - [alert](#alert)
+    - [notify](#notify)
+  - [User session](#user-session)
+    - [logout](#logout)
+  - [Chats](#chats)
+    - [clearChats](#clearchats)
+    - [exportChat](#exportchat)
+    - [getChatInput](#getchatinput)
+    - [getLastResponse](#getlastresponse)
+    - [getResponse](#getresponse)
+    - [isIdle `async`](#isidle-async)
+    - [regenerate](#regenerate)
+    - [scrollToBottom](#scrolltobottom)
+    - [send](#send)
+    - [sendInNewChat](#sendinnewchat)
+    - [startNewChat](#startnewchat)
+    - [stop](#stop)
+  - [DOM related](#dom-related)
+    - [getChatBox](#getchatbox)
+    - [getLastResponseDiv](#getlastresponsediv)
+    - [getNewChatLink](#getnewchatlink)
+    - [getRegenerateButton](#getregeneratebutton)
+    - [getSendButton](#getsendbutton)
+    - [getStopGeneratingButton](#getstopgeneratingbutton)
+- [Library objects](#library-objects)
+  - [autoRefresh `obj`](#autorefresh-obj)
+    - [activate](#activate)
+    - [deactivate](#deactivate)
+    - [nowTimeStamp](#nowtimestamp)
+    - [toggle `obj`](#toggle-obj)
+      - [beacons](#beacons)
+      - [refreshFrame](#refreshframe)
+  - [history `obj`](#history-obj)
+    - [isOn](#ison)
+    - [isOff](#isoff)
+    - [activate](#activate-1)
+    - [deactivate](#deactivate-1)
+    - [toggle](#toggle)
+  - [response `obj`](#response-obj)
+    - [getLast](#getlast)
+    - [getLastDiv](#getlastdiv)
+    - [getWithIndex](#getwithindex)
+    - [regenerate](#regenerate-1)
+    - [stopGenerating](#stopgenerating)
+  - [scheme `obj`](#scheme-obj)
+    - [isDark](#isdark)
+    - [isLight](#islight)
+    - [toggle](#toggle-1)
+  - [sidebar `obj`](#sidebar-obj)
+    - [isOn](#ison-1)
+    - [isOff](#isoff-1)
+    - [hide](#hide)
+    - [show](#show)
+    - [toggle](#toggle-2)
+
+# Importing the library
+
+## ES6
+
+```js
+(async () => {
+  await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
+  // Your code here...
+})();
+```
+
+## ES5
+
+```js
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js');
+xhr.onload = function () {
+  if (xhr.status === 200) {
+    var chatgptJS = document.createElement('script');
+    chatgptJS.textContent = xhr.responseText;
+    document.head.appendChild(chatgptJS);
+    yourCode(); // runs your code
+  }
+};
+xhr.send();
+
+function yourCode() {
+  // Your code here...
+}
+```
+
+## Greasemonkey
+
+Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CDNs (such as commit-specific references from `cdn.jsdelivr.net`) so the import URL is substantially lengthier to preserve publishability to these sites:
+
+```js
+...
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@8483b553675c3444db5c6b40a8686531c11b2a35/dist/chatgpt-1.11.0.min.js
+// ==/UserScript==
+
+// Your code here...
+```
+
+If you don't plan on publishing to these repos, the simpler `https://code.chatgptjs.org/chatgpt-latest.min.js` can be used instead to import the latest minified release.
+
+_For a starter template, visit: https://github.com/kudoai/chatgpt.js-greasemonkey-starter_
+
+## Chrome
+
+Since Google will [eventually phase out](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/) Manifest V2, remote code will no longer be allowed, so importing chatgpt.js locally is ideal:
+
+1. Save https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js to a subdirectory (`lib` in this example)
+
+2. Add ES6 export statement to end of `lib/chatgpt.js`
+
+```js
+...
+export { chatgpt }
+```
+
+3. In project's (V3) `manifest.json`, add `lib/chatgpt.js` as a web accessible resource
+
+```json
+    "web_accessible_resources": [{
+        "matches": ["<all_urls>"],
+        "resources": ["lib/chatgpt.js"]
+    }],
+```
+
+4.  In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
+
+```js
+(async () => {
+  const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
+  // Your code here...
+})();
+```
+
+# Library methods
+
+## General
+
+### generateRandomIP
+
+Returns a random IP address as a string.
+
+```js
+const randomIP = chatgpt.generateRandomIP();
+console.log(randomIP); // Example output: '161.192.110.125'
+```
+
+### get
+
+```js
+const response = chatgpt.get('reply', 'last');
+// Equivalent of
+const response = chatgpt.getLastResponse();
+```
+
+### isFullScreen
+
+Returns a boolean value. `true` if the website is fullscreen and `false` otherwise.
+
+```js
+if (chatgpt.isFullScreen()) {
+  // Do something
+}
+```
+
+### isLoaded `async`
+
+Returns a boolean value. `true` if the website has finished loading, `false` otherwise.
+
+```js
+async function doSomething() {
+  if (await chatgpt.isLoaded()) {
+    // Do something
+  }
+}
+```
+
+### printAllFunctions
+
+Prints all the library functions to the console.
+
+```js
+chatgpt.printAllFunctions();
+```
+
+### renderHTML
+
+```js
+document.body.appendChild(
+    chatgpt.renderHTML('<div>Hello World!</div>');
+);
+```
+
+### uuidv4
+
+```js
+const randomID = chatgpt.uuidv4();
+console.log(randomID); // Example output: '239067d1-bcb8-4fd7-91eb-9ab94619b7b3'
+```
+
+## Page theme
+
+### activateDarkMode
+
+Changes the website theme to dark mode.
+
+```js
+chatgpt.activateDarkMode();
+```
+
+### activateLightMode
+
+Changes the website theme to light mode.
+
+```js
+chatgpt.activateLightMode();
+```
+
+### isDarkMode
+
+Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
+
+```js
+if (chatgpt.isDarkMode()) {
+  // Do something
+}
+```
+
+### isLightMode
+
+Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
+
+```js
+if (chatgpt.isLightMode()) {
+  // Do something
+}
+```
+
+### toggleScheme
+
+Toggles the theme between light and dark mode.
+
+```js
+chatgpt.toggleScheme();
+```
+
+## In-site notifications
+
+### alert
+
+Creates a static alert box which displays a message. Only a user interaction can close it. Returns the HTML `id` property of the alert box.
+
+**Parameters**:
+
+`title`: A string which is the title of the alert.
+
+`msg`: A string which is the message to be displayed.
+
+`btns`: An array of functions which will be rendered as clickable buttons.
+
+`checkbox`: A function which will be rendered as a checkbox.
+
+`width`: An integer representing the width of the alert box in `px`.
+
+```js
+function doSomething() { ... }
+
+function doSomethingElse() { ... }
+
+function sayHello() { console.log('Hello!'); }
+
+chatgpt.alert('Hello, world!', 'The sky is blue.', [doSomething, doSomethingElse], sayHello, 200);
+```
+
+### notify
+
+Displays a temporary notification at a specified position in the website.
+
+**Parameters**:
+
+`msg`: A string which is the message to be displayed.
+
+`position`: A string specifying the position of the notification.
+
+`notifDuration`: A float specifying the duration of the notification before it fades out.
+
+`shadow`: A string specifying if the `box-shadow` property should be used.
+
+```js
+chatgpt.notify('Hello, world!', 'top left', 3, 'on');
+```
+
+## User session
+
+### logout
+
+Logs out the user from the website.
+
+```js
+chatgpt.logout();
+```
+
+## Chats
+
+### clearChats
+
+Clears the user's chat history.
+
+```js
+chatgpt.clearChats();
+```
+
+### exportChat
+
+Exports the current chat as a text file.
+
+```js
+chatgpt.exportChat(); // Downloads a file called 'ChatGPT_{day}-{month}-{year}_{hour}-{minute}.txt'
+```
+
+### getChatInput
+
+Returns the value of the chat input field as a string.
+
+```js
+const chatInput = chatgpt.getChatInput();
+console.log(chatInput); // Example output: 'Hello from chatgpt.js!'
+```
+
+### getLastResponse
+
+Returns the last response ChatGPT has written as a string.
+
+```js
+const response = chatgpt.getLastResponse();
+console.log(response); // Example output: 'I am ChatGPT, how can I help you?'
+```
+
+### getResponse
+
+Returns the Nth response ChatGPT has written as a string.
+
+**Parameters**:
+
+`pos`: A string or integer representing the position of the wanted response.
+
+```js
+var fifthResp;
+
+fifthResp = chatgpt.getResponse(5); // Returns the 5th response
+fifthResp = chatgpt.getResponse('fifth'); // Also returns the 5th response
+fifthResp = chatgpt.getResponse('five'); // Returns the 5th response too
+```
+
+### isIdle `async`
+
+Returns a boolean value. `true` if ChatGPT has finished generating a response, `false` otherwise.
+
+```js
+async function doSomething() {
+  if (await chatgpt.isIdle()) {
+    // Do something
+  }
+}
+```
+
+### regenerate
+
+Regenerates ChatGPT's response.
+
+```js
+chagpt.regenerate();
+```
+
+### scrollToBottom
+
+Scrolls to the bottom of the chat.
+
+```js
+chatgpt.scrollToBottom();
+```
+
+### send
+
+Sends a message into the chat.
+
+**Parameters**:
+
+`msg`: A string representing the message to send.
+
+`method`: A string representing the method to send the message with, can only be `click`. Usually needed for mobile devices compatibility.
+
+```js
+// Clicks the send button instead of triggering the 'Enter' key press.
+chatgpt.send('Hello, world!', 'click');
+```
+
+### sendInNewChat
+
+Creates a new chat and sends a message.
+
+**Parameters**:
+
+`msg`: A string representing the message to send.
+
+```js
+chatgpt.sendInNewChat('Hello, world!');
+```
+
+### startNewChat
+
+Creates a new chat.
+
+```js
+chatgpt.startNewChat();
+```
+
+### stop
+
+Stops the generation of ChatGPT's response.
+
+```js
+chatgpt.stop();
+```
+
+## DOM related
+
+### getChatBox
+
+Returns the chat input as an HTML element.
+
+```js
+const chatbox = chatgpt.getChatBox();
+console.log(chatbox.value); // Example output: 'Hello from chatgpt.js!'
+```
+
+### getLastResponseDiv
+
+Returns the last response's container HTML element.
+
+```js
+const container = chatgpt.getLastResponseDiv();
+container.style.display = 'none';
+```
+
+### getNewChatLink
+
+Returns the button which creates a new chat as an HTML element.
+
+```js
+const link = chatgpt.getNewChatLink();
+link.click();
+```
+
+### getRegenerateButton
+
+Returns the button which regenerates ChatGPT's response as an HTML element.
+
+```js
+const regenButton = chatgpt.getRegenerateButton();
+regenButton.click();
+```
+
+### getSendButton
+
+Returns the button which sends the message as an HTML element.
+
+```js
+const sendButton = chatgpt.getSendButton();
+sendButton.click();
+```
+
+### getStopGeneratingButton
+
+Returns the button which stops the generation of ChatGPT's response as an HTML element.
+
+```js
+const stopButton = chatgpt.getStopGeneratingButton();
+stopButton.click();
+```
+
+# Library objects
+
+## autoRefresh `obj`
+
+Object related to keeping the user's session alive and fresh.
+
+#### activate
+
+Activates the auto-refresh functionality.
+
+```js
+chatgpt.autoRefresh.activate();
+```
+
+#### deactivate
+
+Deactivates the auto-refresh functionality.
+
+```js
+chatgpt.autoRefresh.deactivate();
+```
+
+#### nowTimeStamp
+
+Returns the current timestamp as a string (12-hour format).
+
+```js
+const timeStamp = chatgpt.autoRefresh.nowTimeStamp();
+console.log(timeStamp); // Example output: '1:56:25 PM'
+```
+
+### toggle `obj`
+
+#### beacons
+
+```js
+chatgpt.autoRefresh.toggle.beacons();
+```
+
+#### refreshFrame
+
+```js
+chatgpt.autoRefresh.toggle.refreshFrame();
+```
+
+## history `obj`
+
+#### isOn
+
+Returns a boolean value. `true` if the chat history is enabled, `false` otherwise.
+
+```js
+if (chatgpt.history.isOn()) {
+  // Do something
+}
+```
+
+#### isOff
+
+Returns a boolean value. `true` if the chat history is disabled, `false` otherwise.
+
+```js
+if (chatgpt.history.isOff()) {
+  // Do something
+}
+```
+
+#### activate
+
+Activates the chat history.
+
+```js
+chatgpt.history.activate();
+```
+
+#### deactivate
+
+Deactivates the chat history.
+
+```js
+chatgpt.history.deactivate();
+```
+
+#### toggle
+
+Toggles the chat history.
+
+```js
+chatgpt.history.toggle();
+```
+
+## response `obj`
+
+#### getLast
+
+Read [chatgpt.getLastResponse](#getlastresponse)
+
+#### getLastDiv
+
+Read [chatgpt.getLastResponseDiv](#getlastresponsediv)
+
+#### getWithIndex
+
+Read [chatgpt.getResponse](#getresponse)
+
+#### regenerate
+
+Read [chatgpt.regenerate](#regenerate)
+
+#### stopGenerating
+
+Read [chatgpt.stop](#stop)
+
+## scheme `obj`
+
+#### isDark
+
+Read [chatgpt.isDarkMode](#isdarkmode)
+
+#### isLight
+
+Read [chatgpt.isLightMode](#islightmode)
+
+#### toggle
+
+Read [chatgpt.toggleScheme](#togglescheme)
+
+## sidebar `obj`
+
+#### isOn
+
+Returns a boolean value. `true` if the sidebar is open, `false` otherwise.
+
+```js
+if (chatgpt.sidebar.isOn()) {
+  // Do something
+}
+```
+
+#### isOff
+
+Returns a boolean value. `true` if the sidebar is closed, `false` otherwise.
+
+```js
+if (chatgpt.sidebar.isOff()) {
+  // Do something
+}
+```
+
+#### hide
+
+Hides the sidebar.
+
+```js
+chatgpt.sidebar.hide();
+```
+
+#### show
+
+Shows the sidebar.
+
+```js
+chatgpt.sidebar.show();
+```
+
+#### toggle
+
+Toggles the visibility of the sidebar.
+
+```js
+chatgpt.sidebar.toggle();
+```
