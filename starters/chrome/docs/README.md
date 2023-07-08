@@ -1,4 +1,4 @@
-# 🙈 chatgpt.js-chrome-starter
+# chatgpt.js-chrome-starter
 
 A starting point for developing your own Chrome extension using [chatgpt.js](https://github.com/kudoai/chatgpt.js)
 
