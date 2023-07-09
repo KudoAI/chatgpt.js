@@ -76,6 +76,8 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://i.imgur.com/SATGr8j.png"></picture><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://i.imgur.com/wcCg3al.png"> Greasemonkey:
 
+> **Note** _To use a starter template, visit https://github.com/kudoai/chatgpt.js-greasemonkey-starter_
+
 Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CDNs (such as commit-specific references from `cdn.jsdelivr.net`) so the import URL is substantially lengthier to preserve publishability to these sites:
 
 ```js
@@ -88,9 +90,9 @@ Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CD
 
 If you don't plan on publishing to these repos, the simpler `https://code.chatgptjs.org/chatgpt-latest.min.js` can be used instead to import the latest minified release.
 
-_For a starter template, visit: https://github.com/kudoai/chatgpt.js-greasemonkey-starter_
-
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
+
+> **Note** _To use a starter template, visit https://github.com/kudoai/chatgpt.js-chrome-starter_
 
 Since Google will [eventually phase out](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/) Manifest V2, remote code will no longer be allowed, so importing chatgpt.js locally is ideal:
 
@@ -117,8 +119,6 @@ export { chatgpt }
   // Your code here...
 })();
 ```
-
-_For a starter template, visit: https://github.com/kudoai/chatgpt.js-chrome-starter_
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
