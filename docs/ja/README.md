@@ -76,6 +76,8 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://i.imgur.com/SATGr8j.png"></picture><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://i.imgur.com/wcCg3al.png"> Greasemonkey:
 
+> **Note** _スターター テンプレートを使用するには: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
+
 Greasy Fork のようなユーザースクリプト リポジトリは、事前承認された CDN (`cdn.jsdelivr.net` からのコミット固有の参照など) のホワイトリストを維持するため、これらのサイトへの公開可能性を維持するためにインポート URL は大幅に長くなります。
 
 ```js
@@ -88,11 +90,11 @@ Greasy Fork のようなユーザースクリプト リポジトリは、事前�
 
 これらのリポジトリに公開する予定がない場合は、より単純な `https://code.chatgptjs.org/chatgpt-latest.min.js` を代わりに使用して、最新の縮小リリースをインポートできます。
 
-*スターター テンプレートについては、以下にアクセスしてください: https://github.com/kudoai/chatgpt.js-greasemonkey-starter*
-
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
 Google は [最終的に段階的に廃止](https://developer.chrome.com/docs/extensions/migating/mv2-sunset/) Manifest V2 を行うため、リモート コードは許可されなくなります。そのため、chatgpt.js をローカルにインポートすることが理想的です:
+
+> **Note** _スターター テンプレートを使用するには: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
 1. https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js をサブディレクトリ (この例では `lib`) に保存します
 
@@ -117,8 +119,6 @@ export { chatgpt }
     // コードはここにあります...
 })();
 ```
-
-*スターター テンプレートについては、以下にアクセスしてください: https://github.com/kudoai/chatgpt.js-chrome-starter*
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
