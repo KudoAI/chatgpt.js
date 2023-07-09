@@ -16,6 +16,7 @@
             <a href="#/zh-cn/">简体中文</a>
             <a href="#/ja/">日本</a>
             <a href="#/hi/">हिंदी</a>
+            <a href="#/pt/">Português</a>
         </nav>
         <div id="app"></div>
         <script>
@@ -24,12 +25,14 @@
                 repo: 'kudoai/chatgpt.js',
                 loadNavbar: true,
                 logo: 'https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-sidepadded-light-mode-650x61.png',
-                coverpage: ['/', '/zh-cn/', '/ja/', '/hi/'],
+                coverpage: ['/', '/zh-cn/', '/ja/', '/hi/', '/pt/'],
                 maxLevel: 3,
                 search: {
                     paths: 'auto',
-                    placeholder: { '/': 'Search', '/zh-cn/': '搜索', '/ja/': '検索', '/hi/': 'खोज' },
-                    noData: { '/': 'No results!', '/zh-cn/': '没有结果!', '/ja/': '結果がありません!', '/hi/': 'कोई परिणाम नहीं!' },
+                    placeholder: { '/': 'Search', '/zh-cn/': '搜索', '/ja/': '検索', '/hi/': 'खोज', '/pt/': 'Procurar' },
+                    noData: { '/': 'No results!',
+                        '/zh-cn/': '没有结果!', '/ja/': '結果がありません!',
+                        '/hi/': 'कोई परिणाम नहीं!', '/pt/': 'Sem resultados!' },
                     pathNamespaces: ['/zh-cn', '/ja', '/hi'],
                 },
                 routes: {
