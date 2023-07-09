@@ -24,7 +24,7 @@
 6. In pop-up window, select the **extension** folder > click **Select Folder**<br><br><br>
 <img src="../media/images/screenshots/select-extension-folder.png"><br><br>
 
-...and you're done! **ChatGPT Extension** will appear in extension list:
+...and that's it! **ChatGPT Extension** will appear in extension list:
 
 <br>
 
@@ -34,7 +34,7 @@
 
 ## Made with chatgpt.js
 
-These are some extensions made with chatgpt.js...
+These are some extensions featured by Google that use chatgpt.js:
 
 <div align="center">
 
