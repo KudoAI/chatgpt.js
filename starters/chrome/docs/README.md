@@ -10,7 +10,7 @@
 
 1. Click **Fork** -or- **Use this template** > **Create a new repository** on https://github.com/kudoai/chatgpt.js-chrome-starter
 
-2. **Clone** the new repo locally
+2. **Clone** your newly created repo locally
 
 3. Visit `chrome://extensions` in Chrome (or any Chromium browser)
 
