@@ -137,7 +137,7 @@ chatgpt.get('reply', 'last')
 
 各呼び出しは同様に最後の応答を取得します。 うまくいくと思うなら、おそらくうまくいきます...だから、それを入力してください! (資料を読む時間が誰にありますか?)
 
-そうでない場合は、[問題](https://github.com/kudoai/chatgpt.js/issues) または [PR](https://github.com/kudoai/chatgpt.js/pulls) を送信してください。 そしてそれは統合されます、ezpz!
+そうでない場合は、[問題](https://github.com/kudoai/chatgpt.js/issues) または [PR](https://github.com/kudoai/chatgpt.js/pulls) を送信してください。 そしてそれは統合されます、簡単な!
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 

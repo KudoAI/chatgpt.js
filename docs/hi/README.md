@@ -137,7 +137,7 @@ chatgpt.get('reply', 'last')
 
 प्रत्येक कॉल समान रूप से अंतिम प्रतिक्रिया लाती है। यदि आपको लगता है कि यह काम करता है, तो संभवतः यह काम करेगा... तो बस इसे टाइप करें! (दस्तावेज़ों के लिए किसके पास समय है?)
 
-यदि ऐसा नहीं हुआ, तो बस एक [मुद्दा](https://github.com/kudoai/chatgpt.js/issues) या [PR](https://github.com/kudoai/chatgpt.js/pulls) सबमिट करें और इसे एकीकृत किया जाएगा, ezpz!
+यदि ऐसा नहीं हुआ, तो बस एक [मुद्दा](https://github.com/kudoai/chatgpt.js/issues) या [PR](https://github.com/kudoai/chatgpt.js/pulls) सबमिट करें और इसे एकीकृत किया जाएगा, बहुत आसान!
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
 
