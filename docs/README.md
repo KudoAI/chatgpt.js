@@ -2,7 +2,7 @@
 
 <div align="right">
 
-###### English | <a href="zh-cn#readme">简体中文</a> | <a href="ja#readme">日本</a> | <a href="hi#readme">हिंदी</a>
+###### English | <a href="zh-cn#readme">简体中文</a> | <a href="ja#readme">日本</a> | <a href="hi#readme">हिंदी</a> | <a href="pt#readme">Português</a>
 
 </div>
 
