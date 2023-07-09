@@ -24,13 +24,31 @@
 6. In pop-up window, select the **extension** folder > click **Select Folder**<br><br><br>
 <img src="../media/images/screenshots/select-extension-folder.png"><br><br>
 
-And you're done! **ChatGPT Extension** will appear in extension list:
+...and you're done! **ChatGPT Extension** will appear in extension list:
 
 <br>
 
 ![](../media/images/screenshots/chatgpt-extension-in-list.png)
 
 <br>
+
+## Made with chatgpt.js
+
+These are some extensions made with chatgpt.js...
+
+<div align="center">
+
+<br>
+
+<a href="https://chatgptinfinity.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
+
+<br>
+
+<a href="https://chatgptwidescreen.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
+
+<br>
+
+</div>
 
 #
 
