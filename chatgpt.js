@@ -408,7 +408,7 @@ var chatgpt = {
                     if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
 
                     const data = JSON.parse(xhr.responseText).items;
-                    var key;
+                    let key;
 
                     if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty');
                     if (Number.isInteger(i)) return resolve(data[i][detail]);
