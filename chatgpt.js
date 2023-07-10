@@ -405,11 +405,22 @@ var chatgpt = {
                 xhr.onload = () => {
                     if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
                     const data = JSON.parse(xhr.responseText).items;
-                    if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty');
+                    if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.');
                     if (Number.isInteger(chat) || /^\d+$/.test(chat) || (typeof chat === 'string' && !chat.trim()))
                         return resolve(data[chat ? parseInt(chat) : 0][detail]);
                     const chatIdentifier = /^\w{8}-(\w{4}-){3}\w{12}$/.test(chat) ? 'id' : 'title';
-                    data.forEach(item => { if (item[chatIdentifier] === chat) return resolve(item[detail]); });
+                    let found = false;
+                    let idx;
+
+                    for (idx = 0; idx < data.length; idx++) {
+                        if (data[idx][chatIdentifier] === chat) {
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    if (!found) return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chat + ' found.');
+                    return resolve(data[idx][detail]);
                 };
                 xhr.send();
         });}
