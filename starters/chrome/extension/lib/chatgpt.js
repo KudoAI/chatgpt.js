@@ -1,4 +1,4 @@
-// (c) 2023 KudoAI & contributors under the MIT license
+// (c) 2023 KudoAI & contributors under the MIT license.
 // Source: https://github.com/kudoai/chatgpt.js
 
 var alertProps = { queue: [] };
@@ -878,4 +878,4 @@ for (var prop in chatgpt) {
 // Export chatgpt object
 try { window.chatgpt = chatgpt; } catch (error) {} // for Greasemonkey
 try { module.exports = chatgpt; } catch (error) {} // for CommonJS
-export { chatgpt }
+export { chatgpt };
