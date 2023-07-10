@@ -1,4 +1,4 @@
-// (c) 2023 KudoAI & contributors under the MIT license
+// (c) 2023 KudoAI & contributors under the MIT license.
 // Source: https://github.com/kudoai/chatgpt.js
 
 var alertProps = { queue: [] };
