@@ -376,13 +376,13 @@ var chatgpt = {
     getChatBox: function() { return document.getElementById('prompt-textarea'); },
 
     getChatDetails: function(i = 0, detail) {
-        // [ i = index of chat (starting from most recent), detail = [ id|title|create_time|update_time ]] = optional
-    
+    // [ i = index of chat (starting from most recent), detail = [ id|title|create_time|update_time ]] = optional
+
         const details = [ 'id', 'title', 'create_time', 'update_time' ];
         return new Promise((resolve) => { getAccessToken().then(token => {
             getChatData(token).then(data => { resolve(data); });
         });});
-    
+
         function getAccessToken() {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
@@ -403,14 +403,9 @@ var chatgpt = {
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                 xhr.onload = () => {
-                    if (xhr.status !== 200) {
-                        reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
-                        return;
-                    }
-
-                    const data = JSON.parse(xhr.responseText).items;
-                    if (data.length > 0) resolve(data[i][details.includes(detail) ? detail : 'id' ]);
-                    else reject('🤖 chatgpt.js >> Chat list is empty');
+                    if (xhr.status === 200) resolve(JSON.parse(xhr.responseText)['items'][i][
+                        details.includes(detail) ? detail : 'id' ]);
+                    else console.error('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
                 };
                 xhr.send();
         });}

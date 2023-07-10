@@ -39,6 +39,11 @@ var targetTypes = [ // for abstracted methods like get, insert
     'button', 'link', 'div', 'response'
 ];
 
+const endpoints = {
+    session: 'https://chat.openai.com/api/auth/session',
+    chat: 'https://chat.openai.com/backend-api/conversations'
+};
+
 var chatgpt = {
 
     activateDarkMode: function() {
@@ -369,6 +374,43 @@ var chatgpt = {
     },
 
     getChatBox: function() { return document.getElementById('prompt-textarea'); },
+
+    getChatDetails: function(i = 0, detail) {
+    // [ i = index of chat (starting from most recent), detail = [ id|title|create_time|update_time ]] = optional
+
+        const details = [ 'id', 'title', 'create_time', 'update_time' ];
+        return new Promise((resolve) => { getAccessToken().then(token => {
+            getChatData(token).then(data => { resolve(data); });
+        });});
+
+        function getAccessToken() {
+            return new Promise((resolve) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', endpoints.session, true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.onload = () => {
+                    if (xhr.status === 200) resolve(JSON.parse(xhr.responseText).accessToken);
+                    else console.error('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
+                };
+                xhr.send();
+            });
+        }
+
+        function getChatData(token) {
+            return new Promise((resolve) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', endpoints.chat, true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                xhr.onload = () => {
+                    if (xhr.status === 200) resolve(JSON.parse(xhr.responseText)['items'][i][
+                        details.includes(detail) ? detail : 'id' ]);
+                    else console.error('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
+                };
+                xhr.send();
+        });}
+    },
+
     getChatInput: function() { return chatgpt.getChatBox().value; },
 
     getLastResponse: function() {
@@ -836,4 +878,4 @@ for (var prop in chatgpt) {
 // Export chatgpt object
 try { window.chatgpt = chatgpt; } catch (error) {} // for Greasemonkey
 try { module.exports = chatgpt; } catch (error) {} // for CommonJS
-export { chatgpt };
+export { chatgpt }
