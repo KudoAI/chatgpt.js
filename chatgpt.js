@@ -376,7 +376,7 @@ var chatgpt = {
     getChatBox: function() { return document.getElementById('prompt-textarea'); },
 
     getChatDetails: function(i = 0, detail) {
-    // [ i = index of chat (starting from most recent), detail = [ id|title|create_time|update_time ]] = optional
+        // [ i = index of chat (starting from most recent), detail = [ id|title|create_time|update_time ]] = optional
 
         const details = [ 'id', 'title', 'create_time', 'update_time' ];
         return new Promise((resolve) => { getAccessToken().then(token => {
@@ -384,28 +384,30 @@ var chatgpt = {
         });});
 
         function getAccessToken() {
-            return new Promise((resolve) => {
+            return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
                 xhr.open('GET', endpoints.session, true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.onload = () => {
                     if (xhr.status === 200) resolve(JSON.parse(xhr.responseText).accessToken);
-                    else console.error('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
+                    else reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
                 };
                 xhr.send();
             });
         }
 
         function getChatData(token) {
-            return new Promise((resolve) => {
+            return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
                 xhr.open('GET', endpoints.chat, true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                 xhr.onload = () => {
-                    if (xhr.status === 200) resolve(JSON.parse(xhr.responseText)['items'][i][
-                        details.includes(detail) ? detail : 'id' ]);
-                    else console.error('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
+                    if (xhr.status !== 200) reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
+
+                    const data = JSON.parse(xhr.responseText).items;
+                    if (data.length > 0) resolve(data[i][details.includes(detail) ? detail : 'id' ]);
+                    else reject('🤖 chatgpt.js >> Chat list is empty');
                 };
                 xhr.send();
         });}
