@@ -407,7 +407,8 @@ var chatgpt = {
                     const data = JSON.parse(xhr.responseText).items;
                     if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.');
                     if (Number.isInteger(chat) || /^\d+$/.test(chat) || (typeof chat === 'string' && !chat.trim()))
-                        return resolve(data[chat ? parseInt(chat) - 1 : 0][detail]);
+                        if (parseInt(chat) - 1 > data.length) return reject('🤖 chatgpt.js >> Chat with index ' + chat + ' is out of bounds. Max is ' + (data.length + 1) + '.');
+                        else return resolve(data[chat ? parseInt(chat) - 1 : 0][detail]);
                     const chatIdentifier = /^\w{8}-(\w{4}-){3}\w{12}$/.test(chat) ? 'id' : 'title';
                     let found = false;
                     let idx;
