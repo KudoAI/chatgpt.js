@@ -1,6 +1,6 @@
 <div align="right">
 
-###### 简体中文 | <a href="..#readme">English</a> | <a href="../ja#readme">日本</a> | <a href="../hi#readme">हिंदी</a> | <a href="../pt#README">Português</a>
+###### 简体中文 | <a href="../..#readme">English</a> | <a href="../ja#readme">日本</a> | <a href="../hi#readme">हिंदी</a> | <a href="../pt#README">Português</a>
     
 </div>
 
