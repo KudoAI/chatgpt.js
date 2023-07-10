@@ -2,7 +2,7 @@
 <h5>日本 | <a href="../../LICENSE.md">English</a> | <a href="../zh-cn/LICENSE.md">简体中文</a> | <a href="../hi/LICENSE.md">हिंदी</a> | <a href="../pt/LICENSE.md">Português</a></h5>
 </div>
 
-# MITライセンス
+# MIT ライセンス
 
 著作権 (c) 2023 [KudoAI](https://github.com/kudoai) と[貢献者](.#貢献者)
 
