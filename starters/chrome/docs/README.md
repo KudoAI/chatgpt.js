@@ -24,7 +24,7 @@
 6. In pop-up window, select the **extension** folder > click **Select Folder**<br><br><br>
 <img src="../media/images/screenshots/select-extension-folder.png"><br><br>
 
-...and that's it! **ChatGPT Extension** will appear in extension list:
+That's it! **ChatGPT Extension** will appear in extension list:
 
 <br>
 
