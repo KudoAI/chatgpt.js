@@ -1,4 +1,4 @@
-// (c) 2023 KudoAI & contributors under the MIT license.
+// (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 
 var alertProps = { queue: [] };
@@ -407,7 +407,7 @@ var chatgpt = {
                     const data = JSON.parse(xhr.responseText).items;
                     if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.');
                     if (Number.isInteger(chat) || /^\d+$/.test(chat) || (typeof chat === 'string' && !chat.trim()))
-                        return resolve(data[chat ? parseInt(chat) : 0][detail]);
+                        return resolve(data[chat ? parseInt(chat) - 1 : 0][detail]);
                     const chatIdentifier = /^\w{8}-(\w{4}-){3}\w{12}$/.test(chat) ? 'id' : 'title';
                     let found = false;
                     let idx;

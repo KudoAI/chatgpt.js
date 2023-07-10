@@ -26,9 +26,9 @@ jobs:
 
       - name: Sync chatgpt.js to /starters/chrome/extension/lib/chatgpt.js + update version in manifest.json
         run: |
+          cd $GITHUB_WORKSPACE/kudoai/chatgpt.js
           git config user.name "kudo-sync-bot"
           git config user.email "auto-sync@kudoai.com"
-          cd $GITHUB_WORKSPACE/kudoai/chatgpt.js
           cp -f "${{ github.workspace }}/kudoai/chatgpt.js/chatgpt.js" "${{ github.workspace }}/kudoai/chatgpt.js/starters/chrome/extension/lib/chatgpt.js"
           echo "export { chatgpt };" >> "${{ github.workspace }}/kudoai/chatgpt.js/starters/chrome/extension/lib/chatgpt.js"
           git add chatgpt.js
@@ -44,9 +44,9 @@ jobs:
 
       - name: Sync chatgpt.js to kudoai/chatgpt.js-chrome-starter/extension/lib/chatgpt.js + update version in manifest.json
         run: |
+          cd $GITHUB_WORKSPACE/kudoai/chatgpt.js-chrome-starter/extension
           git config user.name "kudo-sync-bot"
           git config user.email "auto-sync@kudoai.com"
-          cd $GITHUB_WORKSPACE/kudoai/chatgpt.js-chrome-starter/extension
           cp -f "${{ github.workspace }}/kudoai/chatgpt.js/chatgpt.js" "${{ github.workspace }}/kudoai/chatgpt.js-chrome-starter/extension/lib/chatgpt.js"
           echo "export { chatgpt };" >> "${{ github.workspace }}/kudoai/chatgpt.js-chrome-starter/extension/lib/chatgpt.js"
           git add chatgpt.js
