@@ -1,3 +1,7 @@
+<div align="right">
+<h5>English | <a href="zh-cn/LICENSE.md">简体中文</a> | <a href="ja/LICENSE.md">日本</a> | <a href="hi/LICENSE.md">हिंदी</a> | <a href="pt/LICENSE.md">Português</a></h5>
+</div>
+
 # MIT License
 
 Copyright (c) 2023 [KudoAI](https://github.com/kudoai) & contributors

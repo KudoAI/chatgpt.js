@@ -1,3 +1,9 @@
+<div align="right">
+
+###### English | <a href="zh-cn#readme">简体中文</a> | <a href="ja#readme">日本</a> | <a href="hi#readme">हिंदी</a> | <a href="pt#readme">Português</a>
+
+</div>
+
 # chatgpt.js-chrome-starter
 
 <h3><img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> A starting point for developing your own Chrome extension using <a href="https://github.com/kudoai/chatgpt.js">chatgpt.js</a></h3>
