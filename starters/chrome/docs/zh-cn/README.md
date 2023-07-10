@@ -30,7 +30,7 @@
 6. 在弹出窗口中，选择 **extension** 文件夹 > 点击 **Select Folder**<br><br><br>
 <img src="../../media/images/screenshots/select-extension-folder.png"><br><br>
 
-就是这样！ **ChatGPT Extension** 现在将出现在扩展列表中:
+就是这样! **ChatGPT Extension** 现在将出现在扩展列表中:
 
 <br>
 
