@@ -1,3 +1,9 @@
+<div align="right">
+
+###### English | <a href="zh-cn#readme">简体中文</a> | <a href="ja#readme">日本</a> | <a href="hi#readme">हिंदी</a> | <a href="pt#readme">Português</a>
+
+</div>
+
 # 🚀 chatgpt.js/starters
 
 ### Starter templates to develop for various platforms using <a href="https://github.com/kudoai/chatgpt.js">chatgpt.js</a>

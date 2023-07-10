@@ -1,3 +1,9 @@
+<div align="right">
+
+###### हिंदी | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../pt#readme">Português</a>
+    
+</div>
+
 # 🚀 chatgpt.js/starters
 
 ### chatgpt.js का उपयोग करके विभिन्न प्लेटफार्मों के लिए स्टार्टर टेम्पलेट विकसित किए जाएंगे <a href="https://github.com/kudoai/chatgpt.js">chatgpt.js</a>
