@@ -29,18 +29,26 @@ jobs:
           cp -f "${{ github.workspace }}/kudoai/chatgpt.js/chatgpt.js" "${{ github.workspace }}/kudoai/chatgpt.js/starters/chrome/extension/lib/chatgpt.js"
           echo "export { chatgpt };" >> "${{ github.workspace }}/kudoai/chatgpt.js/starters/chrome/extension/lib/chatgpt.js"
           cd "${{ github.workspace }}/kudoai/chatgpt.js/starters/chrome/extension"
-          sed -i -E 's/"version": "(\d+\.\d+\.\d+)\.*(\d*)"/"version": "$(date -u +\%Y.\%-m.\%-d.\$((\2 + 1)))"/' manifest.json
-          echo "Manifest.json updated in kudoai/chatgpt.js"
-          git diff --exit-code manifest.json || echo "Manifest.json not changed"
+          today=$(date -u +"%Y.%-m.%-d")
+          echo "today: $today"
+          if sed -i -E 's/"version": "\d+\.\d+\.\d+(\.\d+)?"/"version": "'"$today"'"/' manifest.json; then
+            echo "Manifest.json updated in kudoai/chatgpt.js"
+          else
+            echo "Manifest.json not found or version line not matched"
+          fi
 
       - name: Sync chatgpt.js to kudoai/chatgpt.js-chrome-starter/extension/lib/chatgpt.js + update version in manifest.json
         run: |
           cp -f "${{ github.workspace }}/kudoai/chatgpt.js/chatgpt.js" "${{ github.workspace }}/kudoai/chatgpt.js-chrome-starter/extension/lib/chatgpt.js"
           echo "export { chatgpt };" >> "${{ github.workspace }}/kudoai/chatgpt.js-chrome-starter/extension/lib/chatgpt.js"
           cd "${{ github.workspace }}/kudoai/chatgpt.js-chrome-starter/extension"
-          sed -i -E 's/"version": "(\d+\.\d+\.\d+)\.*(\d*)"/"version": "$(date -u +\%Y.\%-m.\%-d.\$((\2 + 1)))"/' manifest.json
-          echo "Manifest.json updated in kudoai/chatgpt.js-chrome-starter"
-          git diff --exit-code manifest.json || echo "Manifest.json not changed"
+          today=$(date -u +"%Y.%-m.%-d")
+          echo "today: $today"
+          if sed -i -E 's/"version": "\d+\.\d+\.\d+(\.\d+)?"/"version": "'"$today"'"/' manifest.json; then
+            echo "Manifest.json updated in kudoai/chatgpt.js-chrome-starter"
+          else
+            echo "Manifest.json not found or version line not matched"
+          fi
 
       - name: Push to kudoai/chatgpt.js
         uses: stefanzweifel/git-auto-commit-action@v4
