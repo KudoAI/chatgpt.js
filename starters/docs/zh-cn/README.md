@@ -14,7 +14,7 @@
 
 <h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"></a> <a href="../../chrome">Chrome 起动机</a></h3>
 
-使用 chatgpt.js 创建 Chrome 扩展程序的模板，包括弹出菜单 + 设置管理
+使用 chatgpt.js 创建 Chrome 扩展程序的模 (包括弹出菜单 + 设置管理)
 
 [存储库](https://github.com/kudoai/chatgpt.js-chrome-starter) / [自述文件](../../chrome/docs/zh-cn#readme) / [得到帮助](https://github.com/kudoai/chatgpt.js-chrome-starter/issues)
 

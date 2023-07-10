@@ -12,7 +12,7 @@
 
 <h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"></a> <a href="../../chrome">Chrome iniciante</a></h3>
 
-Modelo para criar uma extensão do Chrome usando chatgpt.js, incluindo menu pop-up + gerenciamento de configurações
+Modelo para criar uma extensão do Chrome usando chatgpt.js (incluindo menu pop-up + gerenciamento de configurações)
 
 [Repositório](https://github.com/kudoai/chatgpt.js-chrome-starter) / [Leia-me](../../chrome/docs/pt#readme) / [Obter ajuda](https://github.com/kudoai/chatgpt.js-chrome-starter/issues)
 

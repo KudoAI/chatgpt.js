@@ -14,7 +14,7 @@
 
 <h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"></a> <a href="../../chrome">Chrome स्टार्टर</a></h3>
 
-पॉप-अप मेनू + सेटिंग्स प्रबंधन सहित chatgpt.js का उपयोग करके Chrome एक्सटेंशन बनाने के लिए टेम्पलेट
+Chatgpt.js (पॉप-अप मेनू + सेटिंग्स प्रबंधन सहित) का उपयोग करके Chrome एक्सटेंशन बनाने के लिए टेम्पलेट
 
 [रेपो](https://github.com/kudoai/chatgpt.js-chrome-starter) / [रीडमी](../../chrome/docs/hi#readme) / [मदद लें](https://github.com/kudoai/chatgpt.js-chrome-starter/issues)
 
