@@ -16,7 +16,7 @@
 
 chatgpt.js का उपयोग करके Greasemonkey उपयोगकर्तास्क्रिप्ट बनाने के लिए टेम्पलेट
 
-[रेपो](https://github.com/kudoai/chatgpt.js-greasemonkey-starter) / [रीडमी](../../greasemonkey/docs/hi#readme) / [मदद लें](https://github.com/kudoai/chatgpt.js-greasemonkey-starter/issues)
+[रेपो](https://github.com/kudoai/chatgpt.js-greasemonkey-starter) / [रीडमी](../../greasemonkey#readme) / [मदद लें](https://github.com/kudoai/chatgpt.js-greasemonkey-starter/issues)
 
 #
 
