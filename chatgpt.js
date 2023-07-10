@@ -42,7 +42,7 @@ var targetTypes = [ // for abstracted methods like get, insert
 const endpoints = {
     session: 'https://chat.openai.com/api/auth/session',
     chat: 'https://chat.openai.com/backend-api/conversations'
-}
+};
 
 var chatgpt = {
 
@@ -378,7 +378,7 @@ var chatgpt = {
     getChatDetails: function(i = 0, detail) {
     // [ i = index of chat (starting from most recent), detail = [ id|title|create_time|update_time ]] = optional
 
-        const details = [ 'id', 'title', 'create_time', 'update_time' ]
+        const details = [ 'id', 'title', 'create_time', 'update_time' ];
         return new Promise((resolve) => { getAccessToken().then(token => {
             getChatData(token).then(data => { resolve(data); });
         });});
