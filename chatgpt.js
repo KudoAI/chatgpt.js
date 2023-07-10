@@ -377,12 +377,12 @@ var chatgpt = {
 
     getChatDetails: function(i = 0, detail) {
         // [ i = index of chat (starting from most recent), detail = [ id|title|create_time|update_time ]] = optional
-    
+
         const details = [ 'id', 'title', 'create_time', 'update_time' ];
         return new Promise((resolve) => { getAccessToken().then(token => {
             getChatData(token).then(data => { resolve(data); });
         });});
-    
+
         function getAccessToken() {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
@@ -395,7 +395,7 @@ var chatgpt = {
                 xhr.send();
             });
         }
-    
+
         function getChatData(token) {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
@@ -405,7 +405,6 @@ var chatgpt = {
                 xhr.onload = () => {
                     if (xhr.status !== 200) {
                         reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
-                        return;
                     }
 
                     const data = JSON.parse(xhr.responseText).items;
