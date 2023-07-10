@@ -379,6 +379,8 @@ var chatgpt = {
         // [ i = index of chat (starting from most recent), detail = [ id|title|create_time|update_time ]] = optional
 
         const details = [ 'id', 'title', 'create_time', 'update_time' ];
+        detail = details.includes(detail) ? detail : 'id';
+        const IdPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
         return new Promise((resolve) => { getAccessToken().then(token => {
             getChatData(token).then(data => { resolve(data); });
         });});
@@ -403,11 +405,19 @@ var chatgpt = {
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                 xhr.onload = () => {
-                    if (xhr.status !== 200) reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
+                    if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
 
                     const data = JSON.parse(xhr.responseText).items;
-                    if (data.length > 0) resolve(data[i][details.includes(detail) ? detail : 'id' ]);
-                    else reject('🤖 chatgpt.js >> Chat list is empty');
+                    let key;
+
+                    if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty');
+                    if (Number.isInteger(i)) return resolve(data[i][detail]);
+                    else if (typeof i === 'string') key = IdPattern.test(i) ? 'id' : 'title';
+                    else return reject('🤖 chatgpt.js >> Invalid parameter type: ' + typeof i);
+
+                    data.forEach(item => {
+                        if (item[key] === i) return resolve(item[detail]);
+                    });
                 };
                 xhr.send();
         });}
