@@ -16,7 +16,7 @@ chatgpt.js を使用して Chrome 拡張機能を作成するためのテンプ�
 
 chatgpt.js を使用して Greasemonkey ユーザースクリプトを作成するためのテンプレート
 
-[リポジトリ](https://github.com/kudoai/chatgpt.js-greasemonkey-starter) / [お読みください](../../greasemonkey/docs/ja#readme) / [助けを得ます](https://github.com/kudoai/chatgpt.js-greasemonkey-starter/issues)
+[リポジトリ](https://github.com/kudoai/chatgpt.js-greasemonkey-starter) / [お読みください](../../greasemonkey#readme) / [助けを得ます](https://github.com/kudoai/chatgpt.js-greasemonkey-starter/issues)
 
 #
 
