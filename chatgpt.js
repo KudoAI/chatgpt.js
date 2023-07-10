@@ -369,6 +369,45 @@ var chatgpt = {
     },
 
     getChatBox: function() { return document.getElementById('prompt-textarea'); },
+
+    getChatDetails: function(idx = 0, detail = 'id') {
+        const sessionUrl = 'https://chat.openai.com/api/auth/session';
+        const chatUrl = 'https://chat.openai.com/backend-api/conversations';
+        
+        function getAccessToken() {
+            return new Promise((resolve) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', sessionUrl, true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.onload = function() {
+                    if (xhr.status === 200) resolve(JSON.parse(xhr.responseText).accessToken);
+                    else console.error('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
+                };
+                xhr.send();
+            });
+        }
+
+        function getChatData(token) {
+            return new Promise((resolve) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', chatUrl, true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                xhr.onload = function() {
+                    if (xhr.status === 200) resolve(JSON.parse(xhr.responseText)['items'][idx][detail]);
+                    else console.error('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
+                };
+                xhr.send();
+            });
+        }
+
+        return new Promise((resolve) => {
+            getAccessToken().then(token => {
+                getChatData(token).then(data => { resolve(data); });
+            });
+        });
+    },
+
     getChatInput: function() { return chatgpt.getChatBox().value; },
 
     getLastResponse: function() {
