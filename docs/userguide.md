@@ -38,6 +38,7 @@
     - [clearChats](#clearchats)
     - [exportChat](#exportchat)
     - [getChatInput](#getchatinput)
+    - [getChatDetails `async`](#getchatdetails-async)
     - [getLastResponse](#getlastresponse)
     - [getResponse](#getresponse)
     - [isIdle `async`](#isidle-async)
@@ -406,6 +407,30 @@ Example code:
 ```js
 const chatInput = chatgpt.getChatInput();
 console.log(chatInput); // Example output: 'Hello from chatgpt.js!'
+```
+
+### getChatDetails `async`
+
+Returns a given chat detail as a string.
+
+**Parameters**:
+
+`chat`: A string or number representing the chat.
+
+If `chat` is a number, that number will represent the chat index in the list. Defaults to `0`, the latest chat.
+If `chat` is a string, that string can be either the chat ID or the chat title.
+
+The chat ID is located in the URL. Example: `https://chat.openai.com/c/[chat id]`
+
+`detail`: A string representing the chat detail that will be returned. Defaults to `id`.
+
+Can be one of the following: `id`, `title`, `create_time`, `update_time`
+
+```js
+async function doSomething() {
+  const chatTitle = await chatgpt.getChatDetails(5, 'title');
+  console.log(chatTitle); // Example output: '6th chat title!'
+}
 ```
 
 ### getLastResponse
