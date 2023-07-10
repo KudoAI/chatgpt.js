@@ -31,7 +31,7 @@ jobs:
           git config user.email "auto-sync@kudoai.com"
           cp -f "${{ github.workspace }}/kudoai/chatgpt.js/chatgpt.js" "${{ github.workspace }}/kudoai/chatgpt.js/starters/chrome/extension/lib/chatgpt.js"
           echo "export { chatgpt };" >> "${{ github.workspace }}/kudoai/chatgpt.js/starters/chrome/extension/lib/chatgpt.js"
-          git add chatgpt.js
+          git add -u
           cd "${{ github.workspace }}/kudoai/chatgpt.js/starters/chrome/extension"
           if sed -i -E 's/"version": "(\d+\.\d+\.\d+)\.*(\d*)"/"version": "$(date -u +\%Y.\%-m.\%-d.\$((\2 + 1)))"/' manifest.json; then
             echo "Manifest.json updated in kudoai/chatgpt.js"
@@ -49,7 +49,7 @@ jobs:
           git config user.email "auto-sync@kudoai.com"
           cp -f "${{ github.workspace }}/kudoai/chatgpt.js/chatgpt.js" "${{ github.workspace }}/kudoai/chatgpt.js-chrome-starter/extension/lib/chatgpt.js"
           echo "export { chatgpt };" >> "${{ github.workspace }}/kudoai/chatgpt.js-chrome-starter/extension/lib/chatgpt.js"
-          git add chatgpt.js
+          git add -u
           today=$(date -u +"%Y.%-m.%-d")
           if sed -i -E 's/"version": "(\d+\.\d+\.\d+)\.*(\d*)"/"version": "$(date -u +\%Y.\%-m.\%-d.\$((\2 + 1)))"/' manifest.json; then
             echo "Manifest.json updated in kudoai/chatgpt.js-chrome-starter"
