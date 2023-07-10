@@ -375,15 +375,13 @@ var chatgpt = {
 
     getChatBox: function() { return document.getElementById('prompt-textarea'); },
 
-    getChatDetails: function(i = 0, detail) {
-        // [ i = index of chat (starting from most recent), detail = [ id|title|create_time|update_time ]] = optional
+    getChatDetails: function(chat, detail) {
+    // [ chat = index/title/id of chat to get, detail = [ id|title|create_time|update_time ]] = optional
 
         const details = [ 'id', 'title', 'create_time', 'update_time' ];
         detail = details.includes(detail) ? detail : 'id';
-        const IdPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
         return new Promise((resolve) => { getAccessToken().then(token => {
-            getChatData(token).then(data => { resolve(data); });
-        });});
+            getChatData(token).then(data => { resolve(data); });});});
 
         function getAccessToken() {
             return new Promise((resolve, reject) => {
@@ -406,18 +404,12 @@ var chatgpt = {
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                 xhr.onload = () => {
                     if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
-
                     const data = JSON.parse(xhr.responseText).items;
-                    let key;
-
                     if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty');
-                    if (Number.isInteger(i)) return resolve(data[i][detail]);
-                    else if (typeof i === 'string') key = IdPattern.test(i) ? 'id' : 'title';
-                    else return reject('🤖 chatgpt.js >> Invalid parameter type: ' + typeof i);
-
-                    data.forEach(item => {
-                        if (item[key] === i) return resolve(item[detail]);
-                    });
+                    if (Number.isInteger(chat) || /^\d+$/.test(chat) || (typeof chat === 'string' && !chat.trim()))
+                        return resolve(data[chat ? parseInt(chat) : 0][detail]);
+                    const chatIdentifier = /^\w{8}-(\w{4}-){3}\w{12}$/.test(chat) ? 'id' : 'title';
+                    data.forEach(item => { if (item[chatIdentifier] === chat) return resolve(item[detail]); });
                 };
                 xhr.send();
         });}
