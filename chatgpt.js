@@ -39,6 +39,11 @@ var targetTypes = [ // for abstracted methods like get, insert
     'button', 'link', 'div', 'response'
 ];
 
+const endpoints = {
+    session: 'https://chat.openai.com/api/auth/session',
+    chat: 'https://chat.openai.com/backend-api/conversations'
+};
+
 var chatgpt = {
 
     activateDarkMode: function() {
@@ -370,42 +375,45 @@ var chatgpt = {
 
     getChatBox: function() { return document.getElementById('prompt-textarea'); },
 
-    getChatDetails: function(idx = 0, detail = 'id') {
-        const sessionUrl = 'https://chat.openai.com/api/auth/session';
-        const chatUrl = 'https://chat.openai.com/backend-api/conversations';
-        
+    getChatDetails: function(i = 0, detail) {
+        // [ i = index of chat (starting from most recent), detail = [ id|title|create_time|update_time ]] = optional
+    
+        const details = [ 'id', 'title', 'create_time', 'update_time' ];
+        return new Promise((resolve) => { getAccessToken().then(token => {
+            getChatData(token).then(data => { resolve(data); });
+        });});
+    
         function getAccessToken() {
-            return new Promise((resolve) => {
+            return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                xhr.open('GET', sessionUrl, true);
+                xhr.open('GET', endpoints.session, true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
-                xhr.onload = function() {
+                xhr.onload = () => {
                     if (xhr.status === 200) resolve(JSON.parse(xhr.responseText).accessToken);
-                    else console.error('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
+                    else reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
                 };
                 xhr.send();
             });
         }
-
+    
         function getChatData(token) {
-            return new Promise((resolve) => {
+            return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                xhr.open('GET', chatUrl, true);
+                xhr.open('GET', endpoints.chat, true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                xhr.onload = function() {
-                    if (xhr.status === 200) resolve(JSON.parse(xhr.responseText)['items'][idx][detail]);
-                    else console.error('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
+                xhr.onload = () => {
+                    if (xhr.status !== 200) {
+                        reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
+                        return;
+                    }
+
+                    const data = JSON.parse(xhr.responseText).items;
+                    if (data.length > 0) resolve(data[i][details.includes(detail) ? detail : 'id' ]);
+                    else reject('🤖 chatgpt.js >> Chat list is empty');
                 };
                 xhr.send();
-            });
-        }
-
-        return new Promise((resolve) => {
-            getAccessToken().then(token => {
-                getChatData(token).then(data => { resolve(data); });
-            });
-        });
+        });}
     },
 
     getChatInput: function() { return chatgpt.getChatBox().value; },
