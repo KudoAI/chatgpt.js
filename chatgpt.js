@@ -403,9 +403,7 @@ var chatgpt = {
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                 xhr.onload = () => {
-                    if (xhr.status !== 200) {
-                        reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
-                    }
+                    if (xhr.status !== 200) reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
 
                     const data = JSON.parse(xhr.responseText).items;
                     if (data.length > 0) resolve(data[i][details.includes(detail) ? detail : 'id' ]);
