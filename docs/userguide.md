@@ -375,7 +375,7 @@ Returns a given account detail as a string.
 
 `detail`: A string representing the account detail that will be returned. Defaults to `email`.
 
-Can be one of the following: `email`, `image`, `name`, `picture`. If it isn't, it will remain the default value.
+Can be one of the following: `email`, `id`, `image`, `name`, `picture`. If it isn't, it will remain the default value.
 
 ```js
 async function doSomething() {
