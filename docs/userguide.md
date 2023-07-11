@@ -377,6 +377,13 @@ Returns a given account detail as a string.
 
 Can be one of the following: `email`, `image`, `name`, `picture`. If it isn't, it will remain the default value.
 
+```js
+async function doSomething() {
+  const name = await chatgpt.getAccountDetails('name');
+  console.log(name); // Example output: 'chatgpt.js'
+}
+```
+
 ### logout
 
 Logs out the user from the website.
