@@ -50,6 +50,7 @@
     - [stop](#stop)
   - [DOM related](#dom-related)
     - [getChatBox](#getchatbox)
+    - [getContinueGeneratingButton](#getcontinuegeneratingbutton)
     - [getLastResponseDiv](#getlastresponsediv)
     - [getNewChatLink](#getnewchatlink)
     - [getRegenerateButton](#getregeneratebutton)
@@ -558,6 +559,17 @@ Example code:
 ```js
 const chatbox = chatgpt.getChatBox();
 console.log(chatbox.value); // Example output: 'Hello from chatgpt.js!'
+```
+
+### getContinueGeneratingButton
+
+Returns the 'Continue generating' button as an HTML element.
+
+Example code:
+
+```js
+const continueButton = chatgpt.getContinueGeneratingButton();
+continueButton.click();
 ```
 
 ### getLastResponseDiv
