@@ -386,7 +386,7 @@ const chatgpt = {
     },
 
     getAccountDetails: function(...detail) {
-    // detail = [ email|id|image|name|picture ] = optional
+    // detail = [ [email|id|image|name|picture] ] = optional
         const details = [ 'email', 'id', 'image', 'name', 'picture' ];
         for (const item of detail)  if (!details.includes(item)) return console.error(`🤖 chatgpt.js >> '${item}' is not a valid account detail.`);
         detail[0] = details.includes(detail[0]) ? detail[0] : 'email';
@@ -413,7 +413,7 @@ const chatgpt = {
     getChatBox: function() { return document.getElementById('prompt-textarea'); },
 
     getChatDetails: function(chat, ...detail) {
-    // [ chat = index/title/id of chat to get, detail = [ id|title|create_time|update_time ]] = optional
+    // [ chat = index/title/id of chat to get, detail = [ [id|title|create_time|update_time] ] = optional
 
         const details = [ 'id', 'title', 'create_time', 'update_time' ];
         for (const item of detail)  if (!details.includes(item)) return console.error(`🤖 chatgpt.js >> '${item}' is not a valid chat detail.`);
