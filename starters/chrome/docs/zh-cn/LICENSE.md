@@ -1,5 +1,5 @@
 <div align="right">
-<h5>简体中文 | <a href="../LICENSE.md">English</a> | <a href="../ja/LICENSE.md">日本</a> | <a href="../hi/LICENSE.md">हिंदी</a> | <a href="../pt/LICENSE.md">Português</a></h5>
+<h5>简体中文 | <a href="../LICENSE.md">English</a> | <a href="../ja/LICENSE.md">日本</a> | <a href="../hi/LICENSE.md">हिंदी</a> | <a href="../es/LICENSE.md">Español</a> | <a href="../pt/LICENSE.md">Português</a></h5>
 </div>
 
 # MIT 许可证
