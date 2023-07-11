@@ -34,6 +34,7 @@
     - [notify](#notify)
   - [User session](#user-session)
     - [getAccessToken `async`](#getaccesstoken-async)
+    - [getAccountDetails `async`](#getaccountdetails-async)
     - [logout](#logout)
   - [Chats](#chats)
     - [clearChats](#clearchats)
@@ -365,6 +366,16 @@ async function doSomething() {
   console.log(token); // Example output: 'abcdef[...]'
 }
 ```
+
+### getAccountDetails `async`
+
+Returns a given account detail as a string.
+
+**Parameters**:
+
+`detail`: A string representing the account detail that will be returned. Defaults to `email`.
+
+Can be one of the following: `email`, `image`, `name`, `picture`. If it isn't, it will remain the default value.
 
 ### logout
 
