@@ -423,10 +423,10 @@ const chatgpt = {
         if (validDetails.includes(arguments[0])) // if 1st arg is detail string
             details = Array.from(arguments); // convert to array
         else { // handle chat selector passed as 1st arg + details as array/arg(s)/unpassed
-            chat = arguments[0] ? arguments[0] : 0
+            chat = arguments[0] ? arguments[0] : 0;
             details = ( !arguments[1] ? validDetails // no details passed, populate w/ all valid ones
                     : Array.isArray(arguments[1]) ? arguments[1] // details array passed, do nothing
-                    : Array.from(arguments).slice(1) ) // details arg(s) passed, convert to array
+                    : Array.from(arguments).slice(1) ); // details arg(s) passed, convert to array
         }
 
         // Validate detail args
