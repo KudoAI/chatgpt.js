@@ -420,7 +420,7 @@ const chatgpt = {
         // Validate details
         const validDetails = [ 'id', 'title', 'create_time', 'update_time' ];
         details = ( // original array if array, else new array from multiple detail args
-            Array.isArray(details[0]) ? details[0] : Array.prototype.slice.call(details))
+            Array.isArray(details[0]) ? details[0] : Array.prototype.slice.call(details));
         for (const detail of details) { if (!validDetails.includes(detail)) {
                 return console.error(
                     '🤖 chatgpt.js >> Invalid detail arg ' + detail + ' supplied. Valid details are:\n'
@@ -460,12 +460,12 @@ const chatgpt = {
 
                     // Handle non-empty strings
                     const chatIdentifier = /^\w{8}-(\w{4}-){3}\w{12}$/.test(chat) ? 'id' : 'title';
-                    let idx, chatFound // index of potentially found chat, flag if found
+                    let idx, chatFound; // index of potentially found chat, flag if found
                     for (idx = 0; idx < data.length; idx++) { // search for id/title to set chatFound flag
-                        if (data[idx][chatIdentifier] === chat) { const chatFound = true; break; }}
+                        if (data[idx][chatIdentifier] === chat) { chatFound = true; break; }}
                     if (!chatFound) // exit
                         return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chat + ' found.');
-                    if (details.length === 1) return resolve(chatData[detail[0]]);
+                    if (details.length === 1) return resolve(chatIndex[details[0]]);
                     // if (!details) for (const detail of validDetails) detailsToReturn[detail] = data[idx][detail];
                     // else for (const detail of details) detailsToReturn[detail] = data[idx][detail];
                     for (const detail of details) detailsToReturn[detail] = data[idx][detail];
