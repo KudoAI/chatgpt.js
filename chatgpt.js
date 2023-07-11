@@ -385,17 +385,26 @@ const chatgpt = {
         });
     },
 
-    getAccountDetails: function(detail) {
+    getAccountDetails: function(...detail) {
     // detail = [ email|id|image|name|picture ] = optional
         const details = [ 'email', 'id', 'image', 'name', 'picture' ];
-        detail = details.includes(detail) ? detail : 'email';
+        for (const item of detail)  if (!details.includes(item)) return console.error(`🤖 chatgpt.js >> '${item}' is not a valid account detail.`);
+        detail[0] = details.includes(detail[0]) ? detail[0] : 'email';
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
             xhr.open('GET', endpoints.session, true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onload = () => {
-                if (xhr.status === 200) resolve(JSON.parse(xhr.responseText).user[detail]);
-                else reject('🤖 chatgpt.js >> Request failed. Cannot retrieve account details.');
+                if (xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText).user;
+                    if (detail.length === 1) return resolve(data[detail[0]]);
+                    else {
+                        const detailsObj = {};
+                        for (const item of detail) detailsObj[item] = data[item];
+                        return resolve(detailsObj);
+                    }
+                }
+                else return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve account details.');
             };
             xhr.send();
         });
@@ -403,11 +412,12 @@ const chatgpt = {
 
     getChatBox: function() { return document.getElementById('prompt-textarea'); },
 
-    getChatDetails: function(chat, detail) {
+    getChatDetails: function(chat, ...detail) {
     // [ chat = index/title/id of chat to get, detail = [ id|title|create_time|update_time ]] = optional
 
         const details = [ 'id', 'title', 'create_time', 'update_time' ];
-        detail = details.includes(detail) ? detail : 'id';
+        for (const item of detail)  if (!details.includes(item)) return console.error(`🤖 chatgpt.js >> '${item}' is not a valid chat detail.`);
+        detail[0] = details.includes(detail[0]) ? detail[0] : 'id';
         chat = chat ? chat : 0;
         return new Promise((resolve) => { this.getAccessToken().then(token => {
             getChatData(token).then(data => { resolve(data); });});});
@@ -421,10 +431,18 @@ const chatgpt = {
                 xhr.onload = () => {
                     if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
                     const data = JSON.parse(xhr.responseText).items;
+                    const detailsObj = {};
                     if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.');
                     if (Number.isInteger(chat) || /^\d+$/.test(chat) || (typeof chat === 'string' && !chat.trim()))
                         if (parseInt(chat) > data.length) return reject(`🤖 chatgpt.js >> Chat with index ${ chat - 1 } is out of bounds. Max is ${ data.length }.`);
-                        else return resolve(data[chat === 0 ? 0 : parseInt(chat) - 1][detail]);
+                        else {
+                            const chatData = data[chat === 0 ? 0 : parseInt(chat) - 1];
+                            if (detail.length === 1) return resolve(chatData[detail[0]]);
+                            else {
+                                for (const item of detail) detailsObj[item] = chatData[item];
+                                return resolve(detailsObj);
+                            }
+                        }
                     const chatIdentifier = /^\w{8}-(\w{4}-){3}\w{12}$/.test(chat) ? 'id' : 'title';
                     let found = false;
                     let idx;
@@ -437,7 +455,12 @@ const chatgpt = {
                     }
 
                     if (!found) return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chat + ' found.');
-                    return resolve(data[idx][detail]);
+                    const chatData = data[idx];
+                    if (detail.length === 1) return resolve(chatData[detail[0]]);
+                    else {
+                        for (const item of detail) detailsObj[item] = chatData[item];
+                        return resolve(detailsObj);
+                    }
                 };
                 xhr.send();
         });}
