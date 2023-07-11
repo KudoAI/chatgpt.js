@@ -34,7 +34,7 @@
 
 </div>
 
-＃＃ だいたい
+## アバウト
 
 **chatgpt.js** は、ChatGPT DOM との非常に簡単な対話を可能にする強力な JavaScript ライブラリです。
 
