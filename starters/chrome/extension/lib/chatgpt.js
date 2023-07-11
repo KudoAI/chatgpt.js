@@ -373,6 +373,19 @@ var chatgpt = {
         return this[targetFuncName](); // call found function
     },
 
+    getAccessToken: function() {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', endpoints.session, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = () => {
+                if (xhr.status === 200) resolve(JSON.parse(xhr.responseText).accessToken);
+                else reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
+            };
+            xhr.send();
+        });
+    },
+
     getChatBox: function() { return document.getElementById('prompt-textarea'); },
 
     getChatDetails: function(chat, detail) {
@@ -381,21 +394,8 @@ var chatgpt = {
         const details = [ 'id', 'title', 'create_time', 'update_time' ];
         detail = details.includes(detail) ? detail : 'id';
         chat = chat ? chat : 0;
-        return new Promise((resolve) => { getAccessToken().then(token => {
+        return new Promise((resolve) => { this.getAccessToken().then(token => {
             getChatData(token).then(data => { resolve(data); });});});
-
-        function getAccessToken() {
-            return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
-                xhr.open('GET', endpoints.session, true);
-                xhr.setRequestHeader('Content-Type', 'application/json');
-                xhr.onload = () => {
-                    if (xhr.status === 200) resolve(JSON.parse(xhr.responseText).accessToken);
-                    else reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
-                };
-                xhr.send();
-            });
-        }
 
         function getChatData(token) {
             return new Promise((resolve, reject) => {
