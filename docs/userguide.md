@@ -33,6 +33,7 @@
     - [alert](#alert)
     - [notify](#notify)
   - [User session](#user-session)
+    - [getAccessToken `async`](#getaccesstoken-async)
     - [logout](#logout)
   - [Chats](#chats)
     - [clearChats](#clearchats)
@@ -353,6 +354,17 @@ chatgpt.notify('Hello, world!', 'top left', 3, 'on');
 ```
 
 ## User session
+
+### getAccessToken `async`
+
+Returns an account access token as a string.
+
+```js
+async function doSomething() {
+  const token = await chatgpt.getAccessToken();
+  console.log(token); // Example output: 'abcdef[...]'
+}
+```
 
 ### logout
 
