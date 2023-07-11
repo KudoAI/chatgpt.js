@@ -412,7 +412,7 @@ The chat ID is located in the URL. Example: `https://chat.openai.com/c/[chat id]
 
 `detail`: A string representing the chat detail that will be returned. Defaults to `id`.
 
-Can be one of the following: `id`, `title`, `create_time`, `update_time`. If it doesn't, it will remain the default value.
+Can be one of the following: `id`, `title`, `create_time`, `update_time`. If it isn't, it will remain the default value.
 
 ```js
 async function doSomething() {
