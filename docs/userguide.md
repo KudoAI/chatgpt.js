@@ -91,8 +91,6 @@
 
 ## ES6
 
-Example code:
-
 ```js
 (async () => {
   await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
@@ -101,8 +99,6 @@ Example code:
 ```
 
 ## ES5
-
-Example code:
 
 ```js
 var xhr = new XMLHttpRequest();
@@ -124,9 +120,9 @@ function yourCode() {
 
 ## Greasemonkey
 
-Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CDNs (such as commit-specific references from `cdn.jsdelivr.net`) so the import URL is substantially lengthier to preserve publishability to these sites:
+> **Note** _To use a starter template: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
 
-Example code:
+Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CDNs (such as commit-specific references from `cdn.jsdelivr.net`) so the import URL is substantially lengthier to preserve publishability to these sites:
 
 ```js
 ...
@@ -138,27 +134,21 @@ Example code:
 
 If you don't plan on publishing to these repos, the simpler `https://code.chatgptjs.org/chatgpt-latest.min.js` can be used instead to import the latest minified release.
 
-_For a starter template, visit: https://github.com/kudoai/chatgpt.js-greasemonkey-starter_
-
 ## Chrome
+
+> **Note** _To use a starter template: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
 Since Google will [eventually phase out](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/) Manifest V2, remote code will no longer be allowed, so importing chatgpt.js locally is ideal:
 
 1. Save https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js to a subdirectory (`lib` in this example)
 
 2. Add ES6 export statement to end of `lib/chatgpt.js`
-
-Example code:
-
 ```js
 ...
 export { chatgpt }
 ```
 
 3. In project's (V3) `manifest.json`, add `lib/chatgpt.js` as a web accessible resource
-
-Example code:
-
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
@@ -166,10 +156,7 @@ Example code:
     }],
 ```
 
-4.  In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
-
-Example code:
-
+4. In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
 ```js
 (async () => {
   const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
