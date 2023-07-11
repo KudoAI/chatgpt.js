@@ -26,36 +26,50 @@ jobs:
 
       - name: Sync chatgpt.js to /starters/chrome/extension/lib/chatgpt.js + update version in manifest.json
         run: |
-          cd $GITHUB_WORKSPACE/kudoai/chatgpt.js
-          git config user.name "kudo-sync-bot"
-          git config user.email "auto-sync@kudoai.com"
           cp -f "${{ github.workspace }}/kudoai/chatgpt.js/chatgpt.js" "${{ github.workspace }}/kudoai/chatgpt.js/starters/chrome/extension/lib/chatgpt.js"
           echo "export { chatgpt };" >> "${{ github.workspace }}/kudoai/chatgpt.js/starters/chrome/extension/lib/chatgpt.js"
-          git add -u
           cd "${{ github.workspace }}/kudoai/chatgpt.js/starters/chrome/extension"
-          if sed -i -E 's/"version": "(\d+\.\d+\.\d+)\.*(\d*)"/"version": "$(date -u +\%Y.\%-m.\%-d.\$((\2 + 1)))"/' manifest.json; then
+          echo "Contents of manifest.json before substitution:"
+          cat manifest.json
+          if sed -i -E 's/"version": "(\d+\.\d+\.\d+)\.*(\d*)"/"test"/' manifest.json; then
             echo "Manifest.json updated in kudoai/chatgpt.js"
-            git add manifest.json
-            git commit -m "Updated `version`"
           else
             echo "Manifest.json not found or version line not matched"
           fi
-          git push
+          echo "Contents of manifest.json after substitution:"
+          cat manifest.json
 
       - name: Sync chatgpt.js to kudoai/chatgpt.js-chrome-starter/extension/lib/chatgpt.js + update version in manifest.json
         run: |
-          cd $GITHUB_WORKSPACE/kudoai/chatgpt.js-chrome-starter/extension
-          git config user.name "kudo-sync-bot"
-          git config user.email "auto-sync@kudoai.com"
           cp -f "${{ github.workspace }}/kudoai/chatgpt.js/chatgpt.js" "${{ github.workspace }}/kudoai/chatgpt.js-chrome-starter/extension/lib/chatgpt.js"
           echo "export { chatgpt };" >> "${{ github.workspace }}/kudoai/chatgpt.js-chrome-starter/extension/lib/chatgpt.js"
-          git add -u
-          today=$(date -u +"%Y.%-m.%-d")
-          if sed -i -E 's/"version": "(\d+\.\d+\.\d+)\.*(\d*)"/"version": "$(date -u +\%Y.\%-m.\%-d.\$((\2 + 1)))"/' manifest.json; then
+          cd "${{ github.workspace }}/kudoai/chatgpt.js-chrome-starter/extension"
+          echo "Contents of manifest.json before substitution:"
+          cat manifest.json
+          if sed -i -E 's/"version": "(\d+\.\d+\.\d+)\.*(\d*)"/"test"/' manifest.json; then
             echo "Manifest.json updated in kudoai/chatgpt.js-chrome-starter"
-            git add manifest.json
-            git commit -m "Update `version`"
           else
             echo "Manifest.json not found or version line not matched"
           fi
-          git push
+          echo "Contents of manifest.json after substitution:"
+          cat manifest.json
+
+      - name: Push to kudoai/chatgpt.js
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@kudoai.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `kudoai/chatgpt.js`]'
+          file_pattern: 'starters/chrome/extension/**'
+          repository: kudoai/chatgpt.js
+
+      - name: Push to kudoai/chatgpt.js-chrome-starter
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@kudoai.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `kudoai/chatgpt.js`]'
+          file_pattern: 'extension/**'
+          repository: kudoai/chatgpt.js-chrome-starter
