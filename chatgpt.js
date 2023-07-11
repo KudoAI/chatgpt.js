@@ -422,18 +422,19 @@ const chatgpt = {
         let chat = 0, details = [];
         if (validDetails.includes(arguments[0])) // if 1st arg is detail string
             details = Array.from(arguments); // convert to array
-        else { // handle chat selector passed as 1st arg + details as array/arg(s)/unpassed
-            chat = arguments[0] ? arguments[0] : 0;
-            details = ( !arguments[1] ? validDetails // no details passed, populate w/ all valid ones
-                    : Array.isArray(arguments[1]) ? arguments[1] // details array passed, do nothing
-                    : Array.from(arguments).slice(1) ); // details arg(s) passed, convert to array
+        else { // handle chat passed/unpassed + details as array/arg(s)/unpassed
+            const chatPassed = Array.isArray(arguments[0]) || !arguments[0] ? false : true;
+            chat = chatPassed ? arguments[0] : 0;
+            details = ( !arguments[+chatPassed] ? validDetails // no details passed, populate w/ all valid ones
+                    : Array.isArray(arguments[+chatPassed]) ? arguments[+chatPassed] // details array passed, do nothing
+                    : Array.from(arguments).slice(+chatPassed) ); // details arg(s) passed, convert to array
         }
 
         // Validate detail args
-        const detailsValid = details.every(detail => validDetails.includes(detail));
-        if (!detailsValid) { return console.error(
-            '🤖 chatgpt.js >> Invalid detail argument(s) supplied. Valid details are:\n'
-          + '                    [' + validDetails + ']'); }
+        for (const detail of details) {
+            if (!validDetails.includes(detail)) { return console.error(
+                '🤖 chatgpt.js >> Invalid detail arg \'' + detail + '\' supplied. Valid details are:\n'
+              + '                    [' + validDetails + ']'); }}
 
         // Return chat details
         return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
