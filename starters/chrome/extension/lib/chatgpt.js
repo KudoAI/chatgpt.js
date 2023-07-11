@@ -1,4 +1,4 @@
-// (c) 2023 KudoAI & contributors under the MIT license.
+// (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 
 var alertProps = { queue: [] };
@@ -405,11 +405,23 @@ var chatgpt = {
                 xhr.onload = () => {
                     if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
                     const data = JSON.parse(xhr.responseText).items;
-                    if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty');
+                    if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.');
                     if (Number.isInteger(chat) || /^\d+$/.test(chat) || (typeof chat === 'string' && !chat.trim()))
-                        return resolve(data[chat ? parseInt(chat) : 0][detail]);
+                        if (parseInt(chat) - 1 > data.length) return reject('🤖 chatgpt.js >> Chat with index ' + chat + ' is out of bounds. Max is ' + data.length + '.');
+                        else return resolve(data[chat ? parseInt(chat) - 1 : 0][detail]);
                     const chatIdentifier = /^\w{8}-(\w{4}-){3}\w{12}$/.test(chat) ? 'id' : 'title';
-                    data.forEach(item => { if (item[chatIdentifier] === chat) return resolve(item[detail]); });
+                    let found = false;
+                    let idx;
+
+                    for (idx = 0; idx < data.length; idx++) {
+                        if (data[idx][chatIdentifier] === chat) {
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    if (!found) return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chat + ' found.');
+                    return resolve(data[idx][detail]);
                 };
                 xhr.send();
         });}
@@ -478,6 +490,12 @@ var chatgpt = {
     getStopGeneratingButton: function() {
         for (var formButton of document.querySelectorAll('form button')) {
             if (formButton.textContent.toLowerCase().includes('stop')) {
+                return formButton;
+    }}},
+
+    getContinueGeneratingButton: function() {
+        for (var formButton of document.querySelectorAll('form button')) {
+            if (formButton.textContent.toLowerCase().includes('continue')) {
                 return formButton;
     }}},
 
