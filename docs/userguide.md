@@ -403,7 +403,7 @@ Returns a given chat detail as a string.
 
 **Parameters**:
 
-`chat`: A string or number representing the chat.
+`chat`: A string or number representing the chat. Defaults to `0` (latest chat).
 
 If `chat` is a number, that number will represent the chat index in the list. Defaults to the latest chat.
 If `chat` is a string, that string can be either the chat ID or the chat title.
