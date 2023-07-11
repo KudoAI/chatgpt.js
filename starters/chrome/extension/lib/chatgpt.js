@@ -385,11 +385,22 @@ const chatgpt = {
         });
     },
 
-    getAccountDetails: function(...detail) {
-    // detail = [ [email|id|image|name|picture] ] = optional
-        const details = [ 'email', 'id', 'image', 'name', 'picture' ];
-        for (const item of detail)  if (!details.includes(item)) return console.error(`🤖 chatgpt.js >> '${item}' is not a valid account detail.`);
-        detail[0] = details.includes(detail[0]) ? detail[0] : 'email';
+    getAccountDetails: function(...details) {
+    // details = [email|id|image|name|picture] = optional
+
+        // Build details array
+        const validDetails = [ 'email', 'id', 'image', 'name', 'picture' ];
+        details = ( !arguments[0] ? validDetails // no details passed, populate w/ all valid ones
+                : Array.isArray(arguments[0]) ? arguments[0] // details array passed, do nothing
+                : Array.from(arguments) ); // details arg(s) passed, convert to array
+
+        // Validate detail args
+        for (const detail of details) {
+            if (!validDetails.includes(detail)) { return console.error(
+                '🤖 chatgpt.js >> Invalid detail arg \'' + detail + '\' supplied. Valid details are:\n'
+              + '                    [' + validDetails + ']'); }}
+
+        // Return account details
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
             xhr.open('GET', endpoints.session, true);
@@ -397,14 +408,12 @@ const chatgpt = {
             xhr.onload = () => {
                 if (xhr.status === 200) {
                     const data = JSON.parse(xhr.responseText).user;
-                    if (detail.length === 1) return resolve(data[detail[0]]);
+                    if (details.length === 1) return resolve(data[details[0]]);
                     else {
-                        const detailsObj = {};
-                        for (const item of detail) detailsObj[item] = data[item];
-                        return resolve(detailsObj);
-                    }
-                }
-                else return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve account details.');
+                        const detailsToReturn = {};
+                        for (const detail of details) detailsToReturn[detail] = data[detail];
+                        return resolve(detailsToReturn);
+                }} else return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve account details.');
             };
             xhr.send();
         });
