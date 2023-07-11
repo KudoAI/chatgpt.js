@@ -357,7 +357,7 @@ chatgpt.notify('Hello, world!', 'top left', 3, 'on');
 
 ### getAccessToken `async`
 
-Returns an access token as a string.
+Returns an account access token as a string.
 
 ```js
 async function doSomething() {
