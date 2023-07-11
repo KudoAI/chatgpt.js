@@ -386,6 +386,22 @@ var chatgpt = {
         });
     },
 
+    getAccountDetails: function(detail) {
+    // detail = [ email|image|name|picture ] = optional
+        const details = [ 'email', 'image', 'name', 'picture' ];
+        detail = details.includes(detail) ? detail : 'email';
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', endpoints.session, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = () => {
+                if (xhr.status === 200) resolve(JSON.parse(xhr.responseText).user[detail]);
+                else reject('🤖 chatgpt.js >> Request failed. Cannot retrieve account details.');
+            };
+            xhr.send();
+        });
+    },
+
     getChatBox: function() { return document.getElementById('prompt-textarea'); },
 
     getChatDetails: function(chat, detail) {
