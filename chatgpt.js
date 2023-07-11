@@ -493,6 +493,12 @@ var chatgpt = {
                 return formButton;
     }}},
 
+    getContinueGeneratingButton: function() {
+        for (var formButton of document.querySelectorAll('form button')) {
+            if (formButton.textContent.toLowerCase().includes('continue')) {
+                return formButton;
+    }}},
+
     history: {
         isOn: function() {
             for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {

@@ -2,9 +2,11 @@
 
 <div align="right">
 
-###### हिंदी | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../pt#readme">Português</a>
+###### हिंदी | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../es#readme">Español</a> | <a href="../pt#readme">Português</a>
     
 </div>
+
+<br>
 
 <h3>
 
@@ -41,7 +43,7 @@
 - प्रयोग करने में आसान
 - हल्का (फिर भी सर्वोत्तम प्रदर्शन करने वाला)
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
 ## लाइब्रेरी आयात करना
 
@@ -120,7 +122,7 @@ export { chatgpt }
 })();
 ```
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
 ## प्रयोग
 
@@ -139,7 +141,7 @@ chatgpt.get('reply', 'last')
 
 यदि ऐसा नहीं हुआ, तो बस एक [मुद्दा](https://github.com/kudoai/chatgpt.js/issues) या [PR](https://github.com/kudoai/chatgpt.js/pulls) सबमिट करें और इसे एकीकृत किया जाएगा, बहुत आसान!
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
 ## chatgpt.js के साथ बनाया गया
 
@@ -197,7 +199,7 @@ DuckDuckGo साइडबार में ChatGPT उत्तर प्रद�
 
 यदि आपने chatgpt.js के साथ कुछ बनाया है जिसे आप साझा करना चाहते हैं, तो ईमेल करें [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) या बस एक [पुल अनुरोध] खोलें(https://github.com/kudoai/chatgpt.js/pulls)!
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
 ## योगदानकर्ता
 
@@ -217,7 +219,7 @@ DuckDuckGo साइडबार में ChatGPT उत्तर प्रद�
 
 <br>
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
 <div id="star-history" align="center">
 

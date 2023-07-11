@@ -2,9 +2,11 @@
 
 <div align="right">
 
-###### English | <a href="zh-cn#readme">简体中文</a> | <a href="ja#readme">日本</a> | <a href="hi#readme">हिंदी</a> | <a href="pt#readme">Português</a>
+###### English | <a href="zh-cn#readme">简体中文</a> | <a href="ja#readme">日本</a> | <a href="hi#readme">हिंदी</a> | <a href="es#readme">Español</a> | <a href="pt#readme">Português</a>
 
 </div>
+
+<br>
 
 <h3>
 
@@ -22,7 +24,7 @@
 
 <div align="center">
 
-[![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
+[![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=Commits&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js/commits/main)
 ![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-1.11.0.min.js?label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
 [![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
@@ -41,7 +43,7 @@
 - Easy-to-use
 - Lightweight (yet optimally performant)
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
 ## Importing the library
 
@@ -120,7 +122,7 @@ export { chatgpt }
 })();
 ```
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
 ## Usage
 
@@ -139,7 +141,7 @@ Each call equally fetches the last response. If you think it works, it probabily
 
 If it didn't, simply submit an [issue](https://github.com/kudoai/chatgpt.js/issues) or [PR](https://github.com/kudoai/chatgpt.js/pulls) and it will be integrated, ezpz!
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
 ## Made with chatgpt.js
 
@@ -197,7 +199,7 @@ Display ChatGPT answers in DuckDuckGo sidebar (powered by GPT-4!)
 
 If you've made something w/ chatgpt.js you want to share, email [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) or just open a [pull request](https://github.com/kudoai/chatgpt.js/pulls)!
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
 ## Contributors
 
@@ -217,7 +219,7 @@ This library exists thanks to code, translations, issues & ideas from the follow
 
 <br>
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"></p>
+<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
 <div id="star-history" align="center">
 
