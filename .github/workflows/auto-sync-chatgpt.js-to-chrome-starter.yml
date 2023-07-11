@@ -31,11 +31,7 @@ jobs:
           cd "${{ github.workspace }}/kudoai/chatgpt.js/starters/chrome/extension"
           echo "Contents of manifest.json before substitution:"
           cat manifest.json
-          if sed -i -E 's/"version": "(\d+\.\d+\.\d+)\.*(\d*)"/"test"/' manifest.json; then
-            echo "Manifest.json updated in kudoai/chatgpt.js"
-          else
-            echo "Manifest.json not found or version line not matched"
-          fi
+          sed -i -E "s/\"version\": \"(\d+\.\d+\.\d+)\.*(\d*)\"/test/" manifest.json
           echo "Contents of manifest.json after substitution:"
           cat manifest.json
 
@@ -46,11 +42,7 @@ jobs:
           cd "${{ github.workspace }}/kudoai/chatgpt.js-chrome-starter/extension"
           echo "Contents of manifest.json before substitution:"
           cat manifest.json
-          if sed -i -E 's/"version": "(\d+\.\d+\.\d+)\.*(\d*)"/"test"/' manifest.json; then
-            echo "Manifest.json updated in kudoai/chatgpt.js-chrome-starter"
-          else
-            echo "Manifest.json not found or version line not matched"
-          fi
+          sed -i -E "s/\"version\": \"(\d+\.\d+\.\d+)\.*(\d*)\"/test/" manifest.json
           echo "Contents of manifest.json after substitution:"
           cat manifest.json
 
