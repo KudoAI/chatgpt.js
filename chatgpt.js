@@ -380,7 +380,6 @@ var chatgpt = {
 
         const details = [ 'id', 'title', 'create_time', 'update_time' ];
         detail = details.includes(detail) ? detail : 'id';
-        chat = chat ? chat : 0;
         return new Promise((resolve) => { getAccessToken().then(token => {
             getChatData(token).then(data => { resolve(data); });});});
 
