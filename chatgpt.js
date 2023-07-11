@@ -434,7 +434,7 @@ const chatgpt = {
                     const detailsObj = {};
                     if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.');
                     if (Number.isInteger(chat) || /^\d+$/.test(chat) || (typeof chat === 'string' && !chat.trim()))
-                        if (parseInt(chat) > data.length) return reject(`🤖 chatgpt.js >> Chat with index ${ chat - 1 } is out of bounds. Max is ${ data.length }.`);
+                        if (parseInt(chat) > data.length) return reject(`🤖 chatgpt.js >> Chat with index ${ chat } is out of bounds. Max is ${ data.length }.`);
                         else {
                             const chatData = data[chat === 0 ? 0 : parseInt(chat) - 1];
                             if (detail.length === 1) return resolve(chatData[detail[0]]);
