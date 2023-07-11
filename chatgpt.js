@@ -379,7 +379,10 @@ var chatgpt = {
             xhr.open('GET', endpoints.session, true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onload = () => {
-                if (xhr.status === 200) resolve(JSON.parse(xhr.responseText).accessToken);
+                if (xhr.status === 200) {
+                    console.info('🤖 chatgpt.js >> Token expiration: ' + new Date(JSON.parse(xhr.responseText).expires).toLocaleString().replace(',', ' at'));
+                    resolve(JSON.parse(xhr.responseText).accessToken);
+                }
                 else reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
             };
             xhr.send();
