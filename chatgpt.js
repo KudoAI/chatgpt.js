@@ -6,7 +6,7 @@ var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], 
 localStorage.alertProps = JSON.stringify(alertProps);
 localStorage.notifyProps = JSON.stringify(notifyProps);
 
-var functionAliases = [ // whole function names to cross-alias
+const functionAliases = [ // whole function names to cross-alias
     ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
         'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
     ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
@@ -26,16 +26,12 @@ var functionAliases = [ // whole function names to cross-alias
     ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher']
 ];
 
-var synonyms = [ // constituent synonyms within function names
-    ['activate', 'turnOn'],
-    ['chat', 'conversation', 'convo'],
-    ['generating', 'generation'],
-    ['render', 'parse'],
-    ['reply', 'response'],
-    ['send', 'submit']
+const synonyms = [ // constituent synonyms within function names
+    ['activate', 'turnOn'], ['account', 'acct'], ['chat', 'conversation', 'convo'], ['generating', 'generation'],
+    ['render', 'parse'], ['reply', 'response'], ['send', 'submit']
 ];
 
-var targetTypes = [ // for abstracted methods like get, insert
+const targetTypes = [ // for abstracted methods like get, insert
     'button', 'link', 'div', 'response'
 ];
 
@@ -44,7 +40,7 @@ const endpoints = {
     chat: 'https://chat.openai.com/backend-api/conversations'
 };
 
-var chatgpt = {
+const chatgpt = {
 
     activateDarkMode: function() {
         document.documentElement.classList.replace('light', 'dark');
@@ -379,8 +375,27 @@ var chatgpt = {
             xhr.open('GET', endpoints.session, true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onload = () => {
-                if (xhr.status === 200) resolve(JSON.parse(xhr.responseText).accessToken);
+                if (xhr.status === 200) {
+                    console.info('🤖 chatgpt.js >> Token expiration: ' + new Date(JSON.parse(xhr.responseText).expires).toLocaleString().replace(',', ' at'));
+                    resolve(JSON.parse(xhr.responseText).accessToken);
+                }
                 else reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
+            };
+            xhr.send();
+        });
+    },
+
+    getAccountDetails: function(detail) {
+    // detail = [ email|id|image|name|picture ] = optional
+        const details = [ 'email', 'id', 'image', 'name', 'picture' ];
+        detail = details.includes(detail) ? detail : 'email';
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', endpoints.session, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = () => {
+                if (xhr.status === 200) resolve(JSON.parse(xhr.responseText).user[detail]);
+                else reject('🤖 chatgpt.js >> Request failed. Cannot retrieve account details.');
             };
             xhr.send();
         });
