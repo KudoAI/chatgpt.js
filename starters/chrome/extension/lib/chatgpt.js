@@ -385,17 +385,26 @@ const chatgpt = {
         });
     },
 
-    getAccountDetails: function(detail) {
-    // detail = [ email|id|image|name|picture ] = optional
+    getAccountDetails: function(...detail) {
+    // detail = [ [email|id|image|name|picture] ] = optional
         const details = [ 'email', 'id', 'image', 'name', 'picture' ];
-        detail = details.includes(detail) ? detail : 'email';
+        for (const item of detail)  if (!details.includes(item)) return console.error(`🤖 chatgpt.js >> '${item}' is not a valid account detail.`);
+        detail[0] = details.includes(detail[0]) ? detail[0] : 'email';
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
             xhr.open('GET', endpoints.session, true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onload = () => {
-                if (xhr.status === 200) resolve(JSON.parse(xhr.responseText).user[detail]);
-                else reject('🤖 chatgpt.js >> Request failed. Cannot retrieve account details.');
+                if (xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText).user;
+                    if (detail.length === 1) return resolve(data[detail[0]]);
+                    else {
+                        const detailsObj = {};
+                        for (const item of detail) detailsObj[item] = data[item];
+                        return resolve(detailsObj);
+                    }
+                }
+                else return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve account details.');
             };
             xhr.send();
         });
@@ -403,13 +412,31 @@ const chatgpt = {
 
     getChatBox: function() { return document.getElementById('prompt-textarea'); },
 
-    getChatDetails: function(chat, detail) {
-    // [ chat = index/title/id of chat to get, detail = [ id|title|create_time|update_time ]] = optional
+    getChatDetails: function() {
+    // chat = index|title|id of chat to get (defaults to most recent if '')
+    // details = [id|title|create_time|update_time] (defaults to all if '')
+    // * Single detail returns string, multiple details returns obj
 
-        const details = [ 'id', 'title', 'create_time', 'update_time' ];
-        detail = details.includes(detail) ? detail : 'id';
-        chat = chat ? chat : 0;
-        return new Promise((resolve) => { this.getAccessToken().then(token => {
+        // Build arg arrays
+        const validDetails = ['id', 'title', 'create_time', 'update_time'];
+        let chat = 0, details = [];
+        if (validDetails.includes(arguments[0])) // if 1st arg is detail string
+            details = Array.from(arguments); // convert to array
+        else { // handle chat selector passed as 1st arg + details as array/arg(s)/unpassed
+            chat = arguments[0] ? arguments[0] : 0;
+            details = ( !arguments[1] ? validDetails // no details passed, populate w/ all valid ones
+                    : Array.isArray(arguments[1]) ? arguments[1] // details array passed, do nothing
+                    : Array.from(arguments).slice(1) ); // details arg(s) passed, convert to array
+        }
+
+        // Validate detail args
+        const detailsValid = details.every(detail => validDetails.includes(detail));
+        if (!detailsValid) { return console.error(
+            '🤖 chatgpt.js >> Invalid detail argument(s) supplied. Valid details are:\n'
+          + '                    [' + validDetails + ']'); }
+
+        // Return chat details
+        return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
             getChatData(token).then(data => { resolve(data); });});});
 
         function getChatData(token) {
@@ -422,22 +449,32 @@ const chatgpt = {
                     if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
                     const data = JSON.parse(xhr.responseText).items;
                     if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.');
-                    if (Number.isInteger(chat) || /^\d+$/.test(chat) || (typeof chat === 'string' && !chat.trim()))
-                        if (parseInt(chat) > data.length) return reject(`🤖 chatgpt.js >> Chat with index ${ chat - 1 } is out of bounds. Max is ${ data.length }.`);
-                        else return resolve(data[chat === 0 ? 0 : parseInt(chat) - 1][detail]);
+                    const detailsToReturn = {};
+
+                    // Handle chat index or ''
+                    if (Number.isInteger(chat) || /^\d+$/.test(chat) || (typeof chat === 'string' && !chat.trim())) {
+                        if (parseInt(chat) > data.length) // if index out-of-bounds
+                            return reject(`🤖 chatgpt.js >> Chat with index ${ chat } is out of bounds. Only ${ data.length } chats exist!`);
+                        else { // return single detail or obj of details
+                            const chatIndex = data[parseInt(chat) === 0 ? 0 : parseInt(chat) - 1];
+                            if (details.length === 1) return resolve(chatIndex[details[0]]);
+                            else {
+                                for (const detail of details) detailsToReturn[detail] = chatIndex[detail];
+                                return resolve(detailsToReturn);
+                    }}}
+
+                    // Handle non-empty strings
                     const chatIdentifier = /^\w{8}-(\w{4}-){3}\w{12}$/.test(chat) ? 'id' : 'title';
-                    let found = false;
-                    let idx;
-
-                    for (idx = 0; idx < data.length; idx++) {
-                        if (data[idx][chatIdentifier] === chat) {
-                            found = true;
-                            break;
-                        }
-                    }
-
-                    if (!found) return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chat + ' found.');
-                    return resolve(data[idx][detail]);
+                    let idx, chatFound; // index of potentially found chat, flag if found
+                    for (idx = 0; idx < data.length; idx++) { // search for id/title to set chatFound flag
+                        if (data[idx][chatIdentifier] === chat) { chatFound = true; break; }}
+                    if (!chatFound) // exit
+                        return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chat + ' found.');
+                    if (details.length === 1) return resolve(data[idx][details[0]]);
+                    // if (!details) for (const detail of validDetails) detailsToReturn[detail] = data[idx][detail];
+                    // else for (const detail of details) detailsToReturn[detail] = data[idx][detail];
+                    for (const detail of details) detailsToReturn[detail] = data[idx][detail];
+                    return resolve(detailsToReturn);
                 };
                 xhr.send();
         });}
