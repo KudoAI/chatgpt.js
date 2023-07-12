@@ -373,14 +373,23 @@ Returns a given account detail as a string.
 
 **Parameters**:
 
-`detail`: A string representing the account detail that will be returned. Defaults to `email`.
+`detail`: A string representing the account detail(s) that will be returned.
 
-Can be one of the following: `email`, `id`, `image`, `name`, `picture`. If it isn't, it will remain the default value.
+Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single detail is passed, it will be returned as a string, if multiple are passed instead, the function will return an object with the requested details. If no details are passed, the function will return an object with all the avaiable details.
 
 ```js
 async function doSomething() {
   const name = await chatgpt.getAccountDetails('name');
   console.log(name); // Example output: 'chatgpt.js'
+
+  const data = await chatgpt.getAccountDetails('name', 'email');
+  console.log(data);
+  /* Example output:
+  {
+    name: 'chatgpt.js',
+    email: 'showcase@chatgptjs.org'
+  }
+  */
 }
 ```
 
@@ -433,21 +442,35 @@ Returns a given chat detail as a string.
 
 **Parameters**:
 
-`chat`: A string or number representing the chat. Defaults to `0` (latest chat).
+`chat`: A string or number representing the chat. Defaults to the latest chat.
 
 If `chat` is a number, that number will represent the chat index in the list. Defaults to the latest chat.
 If `chat` is a string, that string can be either the chat ID or the chat title.
 
 The chat ID is located in the URL. Example: `https://chat.openai.com/c/[chat id]`
 
-`detail`: A string representing the chat detail that will be returned. Defaults to `id`.
+`detail`: A string representing the chat detail(s) that will be returned.
 
-Can be one of the following: `id`, `title`, `create_time`, `update_time`. If it isn't, it will remain the default value.
+Can be the following: `id`, `title`, `create_time`, `update_time`. If a single detail is passed, it will be returned as a string, if multiple are passed instead, the function will return an object with the requested details. If no details are passed, the function will return an object with all the avaiable details.
 
 ```js
 async function doSomething() {
-  const chatTitle = await chatgpt.getChatDetails(5, 'title');
-  console.log(chatTitle); // Example output: '5th chat title!'
+  var chatData;
+
+  chatData = await chatgpt.getChatDetails(5, 'title');
+  console.log(chatData); // Example output: '5th chat title!'
+
+  chatData = await chatgpt.getChatDetails('title');
+  console.log(chatData); // Example output: '1st chat title!'
+
+  chatData = await chatgpt.getChatDetails(2, 'title', 'id');
+  console.log(chatData);
+  /* Example output:
+  {
+    title: '2nd chat title!',
+    id: '2nd-chat-id'
+  }
+  */
 }
 ```
 
