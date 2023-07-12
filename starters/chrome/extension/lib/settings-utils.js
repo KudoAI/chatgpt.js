@@ -1,5 +1,5 @@
 const config = {
-    prefix: 'chatgptJS', appSymbol: '🤖',
+    prefix: 'chatgptJS', appSymbol: '🤖', appName: 'ChatGPT Extension',
     ghRepoURL: 'https://github.kudoai.com/chatgpt.js-chrome-starter' };
 
 const settings = {
