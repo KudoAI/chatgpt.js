@@ -1,5 +1,5 @@
 <div align="right">
-<h5>French | <a href="../SECURITY.md">English</a> | <a href="../zh-cn/SECURITY.md">简体中文</a> | <a href="../ja/SECURITY.md">日本</a> | <a href="../hi/SECURITY.md">हिंदी</a> | <a href="../de/SECURITY.md">Deutsch</a> | <a href="../es/SECURITY.md">Español</a> | <a href="../pt/SECURITY.md">Português</a></h5>
+<h5>Français | <a href="../SECURITY.md">English</a> | <a href="../zh-cn/SECURITY.md">简体中文</a> | <a href="../ja/SECURITY.md">日本</a> | <a href="../hi/SECURITY.md">हिंदी</a> | <a href="../de/SECURITY.md">Deutsch</a> | <a href="../es/SECURITY.md">Español</a> | <a href="../pt/SECURITY.md">Português</a></h5>
 </div>
 
 # Politique de sécurité
