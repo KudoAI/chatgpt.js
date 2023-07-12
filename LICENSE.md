@@ -1,10 +1,6 @@
-<div align="right">
-<h5>English | <a href="zh-cn/LICENSE.md">简体中文</a> | <a href="ja/LICENSE.md">日本</a> | <a href="hi/LICENSE.md">हिंदी</a> | <a href="de/LICENSE.md">Deutsch</a> | <a href="es/LICENSE.md">Español</a> | <a href="fr/LICENSE.md">Français</a> | <a href="pt/LICENSE.md">Português</a></h5>
-</div>
+MIT License
 
-# MIT License
-
-Copyright (c) 2023 [KudoAI](https://github.com/kudoai) & [contributors](..#contributors)
+Copyright (c) 2023 KudoAI & contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
