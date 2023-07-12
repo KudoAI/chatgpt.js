@@ -407,13 +407,10 @@ const chatgpt = {
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onload = () => {
                 if (xhr.status === 200) {
-                    const data = JSON.parse(xhr.responseText).user;
-                    if (details.length === 1) return resolve(data[details[0]]);
-                    else {
-                        const detailsToReturn = {};
-                        for (const detail of details) detailsToReturn[detail] = data[detail];
-                        return resolve(detailsToReturn);
-                }} else return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve account details.');
+                    const data = JSON.parse(xhr.responseText).user, detailsToReturn = {};
+                    for (const detail of details) detailsToReturn[detail] = data[detail];
+                    return resolve(detailsToReturn);
+                } else return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve account details.');
             };
             xhr.send();
         });
