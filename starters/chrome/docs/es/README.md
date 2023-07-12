@@ -1,10 +1,6 @@
 <div align="right">
 
-<div align="right">
-
-###### Español | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../pt#readme">Português</a>
-
-</div>
+###### Español | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../fr#readme">Français</a> | <a href="../pt#readme">Português</a>
 
 </div>
 
