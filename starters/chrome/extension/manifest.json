@@ -10,8 +10,11 @@
         "64": "icons/icon64.png",
         "128": "icons/icon128.png"
     },
+    "permissions": [ "storage", "tabs" ],
+    "action": { "default_popup": "popup/index.html" },
     "web_accessible_resources": [{
-        "matches": ["<all_urls>"], "resources": ["lib/chatgpt.js"]
+        "matches": ["<all_urls>"],
+        "resources": ["lib/settings-utils.js", "lib/chatgpt.js"]
     }],
     "content_scripts": [{
         "matches": ["https://chat.openai.com/*"],
