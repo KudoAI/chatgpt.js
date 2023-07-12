@@ -5,7 +5,7 @@
 > 🤖 Eine leistungsstarke clientseitige JavaScript-Bibliothek für ChatGPT
 
 [GitHub](https://github.com/kudoai/chatgpt.js)
-[Loslegen](#importing-the-library)
+[Loslegen](#importieren-der-bibliothek)
 
 <!-- background color -->
 
