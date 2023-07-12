@@ -1,0 +1,55 @@
+/* General size */
+html { height: fit-content }
+body { width: 265px ; height: 85pxpx !important ; margin: 0 }
+
+/* General font */
+body, button, input, select, textarea {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,sans-serif ;
+    font-size: .905rem ; user-select: none
+}
+a { color: #999 ; text-decoration: none }
+a:focus, a:hover { text-decoration: underline ; color: inherit }
+
+/* Header */
+.menu-header {
+    border-bottom: solid 1px lightgrey ; padding: 5px 5px 5px 0; margin: 0 ;
+    display: flex; background: white ; align-items: center }
+.logo { margin: 4px 10px 4px 12px }
+.menu-title { font-size: 0.85rem ; font-weight: 600 }
+.menu-icons > .toggle-switch { transform: scale(1.1) } /* make master toggle bigger */
+.main-toggle { margin-left: auto ; display: flex }
+
+/* Menu item elements */
+.menu-item {    
+    position: relative ; align-items: center ; border-bottom: 1px solid lightgrey ;
+    display: flex ; min-height: 2rem ; padding-right: 14px ; white-space: nowrap ; font-size: 91%
+}
+.menu-icon { padding: 8px }
+.menu-area:focus, .menu-area:hover { /* add hover color/cursor */
+    color: var(--bg) ; background: rgb(100, 149, 237) ; cursor: pointer }
+.menu-item:hover .toggle-switch .slider, .menu-item:hover span { filter: invert(1) } /* invert toggle switch + label */
+.menu-item:hover .menu-icon { filter: none } /* ...but not non-toggle icons */
+.menu-item > label > .slider { transform: scale(0.95) ; top: 1px } /* make child toggles smaller */
+.menu-prompt { margin-left: 2px } /* align non-toggle items */
+
+/* Toggle elements */
+.toggle-switch input[type="checkbox"] { display: none } /* hide checkbox from toggles */
+.toggle-switch .slider { /* style sliders */
+    background-color: white;  display: block; border: 1px solid black; border-radius: 7px ; 
+    position: relative ; top: 0.05rem ; height: 10px ; width: 18px ; cursor: pointer ;
+}
+.toggle-switch .slider::before { /* style slider knobs */
+    position: absolute ; height: 0.625rem ; width: 0.625rem ; left: -0.04rem ; top: -0.05rem ;
+    border: 1px solid black ; border-radius: 50% ; background-color: white ; content: ""
+}
+.toggle-switch input[type="checkbox"]:checked + .slider { background-color: black } /* color active slider */
+.toggle-switch input[type="checkbox"]:checked + .slider::before { transform: translateX(9px) } /* move knob right when toggled */
+
+/* Footer */
+footer { font-size: 12px ; text-align: center ; color: #999 ; background: #f5f5f5 ; height: 40px ; line-height: 40px }
+footer > .menu-icon { position: absolute ; bottom: 4px ; opacity: 0.7 }
+.chatgpt-js { position: absolute ; bottom: 0.65rem ; left: 0.7rem }
+
+/* Master toggle effects */
+.disabled { opacity: 0.3 ; pointer-events: none }
+.enabled { opacity: 1 }
