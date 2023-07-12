@@ -46,6 +46,6 @@
                     // remove hacks
                 } else {
                     // sync new settings in settings.load()
-    }});}
+    }});};
 
 })();
