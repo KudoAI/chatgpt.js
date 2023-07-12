@@ -425,6 +425,7 @@ const chatgpt = {
     // chat = index|title|id of chat to get (defaults to most recent if '')
     // details = [id|title|create_time|update_time] (defaults to all if '')
     // * Single detail returns string, multiple details returns obj
+    // * Details param can be supplied as array or comma-separated strings
 
         // Build arg arrays
         const validDetails = ['id', 'title', 'create_time', 'update_time'];
@@ -436,7 +437,7 @@ const chatgpt = {
             chat = chatPassed ? arguments[0] : 0;
             details = ( !arguments[+chatPassed] ? validDetails // no details passed, populate w/ all valid ones
                     : Array.isArray(arguments[+chatPassed]) ? arguments[+chatPassed] // details array passed, do nothing
-                    : Array.from(arguments).slice(+chatPassed) ); // details arg(s) passed, convert to array
+                    : Array.from(arguments).slice(+chatPassed) ); // details string(s) passed, convert to array
         }
 
         // Validate detail args
@@ -464,14 +465,13 @@ const chatgpt = {
                     // Handle chat index or ''
                     if (Number.isInteger(chat) || /^\d+$/.test(chat) || (typeof chat === 'string' && !chat.trim())) {
                         if (parseInt(chat) > data.length) // if index out-of-bounds
-                            return reject(`🤖 chatgpt.js >> Chat with index ${ chat } is out of bounds. Only ${ data.length } chats exist!`);
+                            return reject('🤖 chatgpt.js >> Chat with index ' + chat
+                                + ' is out of bounds. Only ' + data.length + ' chats exist!');
                         else { // return single detail or obj of details
                             const chatIndex = data[parseInt(chat) === 0 ? 0 : parseInt(chat) - 1];
-                            if (details.length === 1) return resolve(chatIndex[details[0]]);
-                            else {
-                                for (const detail of details) detailsToReturn[detail] = chatIndex[detail];
-                                return resolve(detailsToReturn);
-                    }}}
+                            for (const detail of details) detailsToReturn[detail] = chatIndex[detail];
+                            return resolve(detailsToReturn);
+                    }}
 
                     // Handle non-empty strings
                     const chatIdentifier = /^\w{8}-(\w{4}-){3}\w{12}$/.test(chat) ? 'id' : 'title';
@@ -481,8 +481,6 @@ const chatgpt = {
                     if (!chatFound) // exit
                         return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chat + ' found.');
                     if (details.length === 1) return resolve(data[idx][details[0]]);
-                    // if (!details) for (const detail of validDetails) detailsToReturn[detail] = data[idx][detail];
-                    // else for (const detail of details) detailsToReturn[detail] = data[idx][detail];
                     for (const detail of details) detailsToReturn[detail] = data[idx][detail];
                     return resolve(detailsToReturn);
                 };
