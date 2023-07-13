@@ -42,6 +42,7 @@ const endpoints = {
 };
 
 const chatgpt = {
+    openAIaccessToken: undefined,
 
     activateDarkMode: function() {
         document.documentElement.classList.replace('light', 'dark');
@@ -372,15 +373,19 @@ const chatgpt = {
 
     getAccessToken: function() {
         return new Promise((resolve, reject) => {
+            if (chatgpt.openAIaccessToken && !(Date.parse(chatgpt.openAIaccessToken.expireDate) - Date.parse(new Date()) < 0)) // Present and not expired
+                return resolve(chatgpt.openAIaccessToken.token);
             const xhr = new XMLHttpRequest();
             xhr.open('GET', endpoints.session, true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onload = () => {
-                if (xhr.status === 200) {
-                    console.info('🤖 chatgpt.js >> Token expiration: ' + new Date(JSON.parse(xhr.responseText).expires).toLocaleString().replace(',', ' at'));
-                    resolve(JSON.parse(xhr.responseText).accessToken);
-                }
-                else reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
+                if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
+                console.info('🤖 chatgpt.js >> Token expiration: ' + new Date(JSON.parse(xhr.responseText).expires).toLocaleString().replace(',', ' at'));
+                chatgpt.openAIaccessToken = {
+                    token: JSON.parse(xhr.responseText).accessToken,
+                    expireDate: JSON.parse(xhr.responseText).expires
+                };
+                return resolve(chatgpt.openAIaccessToken.token);
             };
             xhr.send();
         });
