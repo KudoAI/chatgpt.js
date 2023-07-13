@@ -6,35 +6,6 @@ var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], 
 localStorage.alertProps = JSON.stringify(alertProps);
 localStorage.notifyProps = JSON.stringify(notifyProps);
 
-const functionAliases = [ // whole function names to cross-alias
-    ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
-        'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
-    ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
-    ['exportChat', 'chatExport'],
-    ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
-    ['isFullScreen', 'isFullscreen'],
-    ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
-    ['new', 'newChat', 'startNewChat'],
-    ['printAllFunctions', 'showAllFunctions'],
-    ['refreshSession', 'sessionRefresh'],
-    ['refreshReply', 'regenerate', 'regenerateReply'],
-    ['renderHTML', 'renderHtml', 'renderLinks', 'renderTags'],
-    ['send', 'sendChat', 'sendMsg'],
-    ['sendInNewChat', 'sendNewChat'],
-    ['stop', 'stopGenerating'],
-    ['toggleScheme', 'toggleMode'],
-    ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher']
-];
-
-const synonyms = [ // constituent synonyms within function names
-    ['activate', 'turnOn'], ['account', 'acct'], ['chat', 'conversation', 'convo'], ['generating', 'generation'],
-    ['render', 'parse'], ['reply', 'response'], ['send', 'submit']
-];
-
-const targetTypes = [ // for abstracted methods like get, insert
-    'button', 'link', 'div', 'response'
-];
-
 const endpoints = {
     session: 'https://chat.openai.com/api/auth/session',
     chats: 'https://chat.openai.com/backend-api/conversations',
@@ -966,8 +937,8 @@ const chatgpt = {
 };
 
 // Create chatgpt.[actions]Button(identifier) functions
-var buttonActions = ['click', 'get'];
-for (var buttonAction of buttonActions) {
+const buttonActions = ['click', 'get'], targetTypes = [ 'button', 'link', 'div', 'response' ];
+for (const buttonAction of buttonActions) {
     chatgpt[buttonAction + 'Button'] = function handleButton(buttonIdentifier) {
         var button = buttonIdentifier.match(
             /^[.#]/) ? document.querySelector(buttonIdentifier) // get via class or id selector
@@ -985,6 +956,29 @@ for (var buttonAction of buttonActions) {
 }
 
 // Create alias functions
+const functionAliases = [ // whole function names to cross-alias
+    ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
+        'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
+    ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
+    ['exportChat', 'chatExport'],
+    ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
+    ['isFullScreen', 'isFullscreen'],
+    ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
+    ['new', 'newChat', 'startNewChat'],
+    ['printAllFunctions', 'showAllFunctions'],
+    ['refreshSession', 'sessionRefresh'],
+    ['refreshReply', 'regenerate', 'regenerateReply'],
+    ['renderHTML', 'renderHtml', 'renderLinks', 'renderTags'],
+    ['send', 'sendChat', 'sendMsg'],
+    ['sendInNewChat', 'sendNewChat'],
+    ['stop', 'stopGenerating'],
+    ['toggleScheme', 'toggleMode'],
+    ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher']
+];
+const synonyms = [ // constituent synonyms within function names
+    ['activate', 'turnOn'], ['account', 'acct'], ['chat', 'conversation', 'convo'], ['generating', 'generation'],
+    ['render', 'parse'], ['reply', 'response'], ['send', 'submit']
+];
 for (var prop in chatgpt) {
 
     // Create new function for each alias
