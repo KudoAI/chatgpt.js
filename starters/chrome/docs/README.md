@@ -38,6 +38,19 @@ That's it! **ChatGPT Extension** will now appear in extension list:
 
 <br>
 
+_**TIP:** To reflect changes to source code, click **reload** on extension tile + **reload** any Chrome tabs extension scripts are running on:_
+
+<div align="center">
+
+<br>
+
+![](../media/images/screenshots/reload-extension-button.png)
+![](../media/images/screenshots/reload-page-button.png)
+
+<br>
+
+</div>
+
 ## Made with chatgpt.js
 
 These are some of the extensions featured by Google that use chatgpt.js:

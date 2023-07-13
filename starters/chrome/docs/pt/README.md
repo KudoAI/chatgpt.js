@@ -36,6 +36,19 @@
 
 <br>
 
+_**DICA:** para refletir as alterações no código-fonte, clique em **recarregar** no bloco de extensão + **recarregar** quaisquer scripts de extensão de guias do Chrome em execução:_
+
+<div align="center">
+
+<br>
+
+![](../../media/images/screenshots/reload-extension-button.png)
+![](../../media/images/screenshots/reload-page-button.png)
+
+<br>
+
+</div>
+
 ## Feito com chatgpt.js
 
 Estas são algumas das extensões apresentadas pelo Google que usam chatgpt.js:

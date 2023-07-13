@@ -38,6 +38,19 @@
 
 <br>
 
+_**टिप:** स्रोत कोड में परिवर्तनों को प्रतिबिंबित करने के लिए, एक्सटेंशन टाइल पर **पुनः लोड करें** पर क्लिक करें + किसी भी Chrome टैब एक्सटेंशन स्क्रिप्ट पर **पुनः लोड करें** पर क्लिक करें:_
+
+<div align="center">
+
+<br>
+
+![](../../media/images/screenshots/reload-extension-button.png)
+![](../../media/images/screenshots/reload-page-button.png)
+
+<br>
+
+</div>
+
 ## chatgpt.js के साथ बनाया गया
 
 ये Google द्वारा प्रदर्शित कुछ एक्सटेंशन हैं जो chatgpt.js का उपयोग करते हैं:

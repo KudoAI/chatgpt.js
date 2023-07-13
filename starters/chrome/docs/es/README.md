@@ -38,6 +38,19 @@
 
 <br>
 
+_**CONSEJO:** Para reflejar los cambios en el código fuente, haga clic en **recargar** en el mosaico de la extensión + **recargar** cualquier script de extensión de pestañas de Chrome que se esté ejecutando en:_
+
+<div align="center">
+
+<br>
+
+![](../../media/images/screenshots/reload-extension-button.png)
+![](../../media/images/screenshots/reload-page-button.png)
+
+<br>
+
+</div>
+
 ## Hecho con chatgpt.js
 
 Estas son algunas de las extensiones presentadas por Google que usan chatgpt.js:

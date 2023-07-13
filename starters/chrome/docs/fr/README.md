@@ -38,6 +38,19 @@ C'est ça! **ChatGPT Extension** apparaîtra désormais dans la liste des extens
 
 <br>
 
+_**CONSEIL:** Pour refléter les modifications apportées au code source, cliquez sur **recharger** sur la vignette d'extension + **recharger** tous les scripts d'extension d'onglets Chrome en cours d'exécution:_
+
+<div align="center">
+
+<br>
+
+![](../../media/images/screenshots/reload-extension-button.png)
+![](../../media/images/screenshots/reload-page-button.png)
+
+<br>
+
+</div>
+
 ## Réalisé avec chatgpt.js
 
 Voici quelques-unes des extensions proposées par Google qui utilisent chatgpt.js:

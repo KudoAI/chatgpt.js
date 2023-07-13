@@ -38,6 +38,19 @@
 
 <br>
 
+_**ヒント:** ソース コードへの変更を反映するには、拡張機能タイルで **再読み込み** をクリックし、Chrome タブの拡張機能スクリプトが実行されている場合は **再読み込み** をクリックします:_
+
+<div align="center">
+
+<br>
+
+![](../../media/images/screenshots/reload-extension-button.png)
+![](../../media/images/screenshots/reload-page-button.png)
+
+<br>
+
+</div>
+
 ## chatgpt.js で作成
 
 以下は、Google が提供する chatgpt.js を使用する拡張機能の一部です:
