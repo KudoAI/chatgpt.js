@@ -386,10 +386,9 @@ const chatgpt = {
         });
     },
 
-    test: function(chatIdx, responseIdx, regeneratedIdx) {
+    getResponseFromAPI: function(chatIdx, responseIdx, regeneratedIdx) {
         chatIdx = chatIdx ? chatIdx : 0;
         responseIdx = responseIdx ? responseIdx - 1 : 0;
-        regeneratedIdx = regeneratedIdx ? regeneratedIdx - 1 : 0;
         return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
             getChatData(token).then(data => { resolve(data); });});});
 
@@ -410,6 +409,7 @@ const chatgpt = {
                             if (data[key].message && data[key].message.author.role === 'assistant' && data[key].parent === userMessages[responseIdx])
                                 responses.push(data[key].message);
                         responses.sort((a, b) => a.create_time - b.create_time);
+                        regeneratedIdx = regeneratedIdx ? regeneratedIdx - 1 : responses.length - 1;
                         resolve(responses[regeneratedIdx].content.parts[0]);
                     };
                     xhr.send();
