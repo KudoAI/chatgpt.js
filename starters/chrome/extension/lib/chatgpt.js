@@ -469,7 +469,7 @@ const chatgpt = {
                     if (Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ||
                             (typeof chatToGet === 'string' && !chatToGet.trim())) {
                         if (parseInt(chatToGet) > data.length) // reject if index out-of-bounds
-                            return reject('🤖 chatgpt.js >> Chat with index ' + chat
+                            return reject('🤖 chatgpt.js >> Chat with index ' + chatToGet
                                 + ' is out of bounds. Only ' + data.length + ' chats exist!');
                         else { // return single detail or obj of details
                             const chatIndex = data[parseInt(chatToGet) === 0 ? 0 : parseInt(chatToGet) - 1];
