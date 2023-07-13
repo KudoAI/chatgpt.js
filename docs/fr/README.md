@@ -45,7 +45,7 @@
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## Importation de la bibliothèque
+## ⚡ Importation de la bibliothèque
 
 ### ES6:
 
@@ -124,7 +124,7 @@ export { chatgpt }
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## Utilisation
+## 💻 Utilisation
 
 **chatgpt.js** a été écrit avec une extrême flexibilité à l'esprit.
 
@@ -143,7 +143,7 @@ Si ce n'est pas le cas, soumettez simplement un [problème](https://github.com/k
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## Réalisé avec chatgpt.js
+## 🤖 Réalisé avec chatgpt.js
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Effacer l'historique de ChatGPT](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
@@ -201,7 +201,7 @@ Si vous avez créé quelque chose avec chatgpt.js que vous souhaitez partager, e
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## Contributeurs
+## 🧠 Contributeurs
 
 Cette bibliothèque existe grâce au code, aux traductions, aux problèmes et aux idées des contributeurs suivants:
 

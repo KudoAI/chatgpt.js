@@ -45,7 +45,7 @@
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## ライブラリのインポート
+## ⚡ ライブラリのインポート
 
 ### ES6:
 
@@ -124,7 +124,7 @@ export { chatgpt }
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## 使用法
+## 💻 使用法
 
 **chatgpt.js** は、超柔軟性を念頭に置いて作成されました。
 
@@ -143,7 +143,7 @@ chatgpt.get('reply', 'last')
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## chatgpt.js で作成
+## 🤖 chatgpt.js で作成
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT の履歴を削除する](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
@@ -201,7 +201,7 @@ chatgpt.js で何かを作成して共有したい場合は、[showcase@chatgptj
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## 貢献者
+## 🧠 貢献者
 
 このライブラリは、次の寄稿者によるコード、翻訳、問題、アイデアのおかげで存在します:
 

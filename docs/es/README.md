@@ -45,7 +45,7 @@
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## Importación de la biblioteca
+## ⚡ Importación de la biblioteca
 
 ### ES6:
 
@@ -124,7 +124,7 @@ export { chatgpt }
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## Uso
+## 💻 Uso
 
 **chatgpt.js** fue escrito con ultra flexibilidad en mente.
 
@@ -143,7 +143,7 @@ Si no fue así, simplemente envíe un [problema](https://github.com/kudoai/chatg
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## Hecho con chatgpt.js
+## 🤖 Hecho con chatgpt.js
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Borrar Historial de ChatGPT](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
@@ -201,7 +201,7 @@ Muestre las respuestas de ChatGPT en la barra lateral de DuckDuckGo (¡con tecno
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## Colaboradores
+## 🧠 Colaboradores
 
 Esta biblioteca existe gracias al código, las traducciones, los problemas y las ideas de los siguientes colaboradores:
 
