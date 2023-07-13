@@ -43,7 +43,7 @@
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## Importando a biblioteca
+## ⚡ Importando a biblioteca
 
 ### ES6:
 
@@ -122,7 +122,7 @@ export { chatgpt }
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## Uso
+## 💻 Uso
 
 **chatgpt.js** foi escrito com ultra flexibilidade em mente.
 
@@ -141,7 +141,7 @@ Caso contrário, basta enviar um [problema](https://github.com/kudoai/chatgpt.js
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## Feito com chatgpt.js
+## 🤖 Feito com chatgpt.js
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Limpar Histórico do ChatGPT](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
@@ -199,7 +199,7 @@ Se você fez algo com chatgpt.js que deseja compartilhar, envie um e-mail para [
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## Colaboradores
+## 🧠 Colaboradores
 
 Esta biblioteca existe graças ao código, traduções, problemas e ideias dos seguintes colaboradores:
 

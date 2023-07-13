@@ -45,7 +45,7 @@ chatgpt.js 是一个功能强大的 JavaScript 库，可轻松与 ChatGPT DOM �
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## 导入库
+## ⚡ 导入库
 
 ### ES6:
 
@@ -124,7 +124,7 @@ export { chatgpt }
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## 用法
+## 💻 用法
 
 **chatgpt.js** 的编写考虑到了超级灵活性。
 
@@ -143,7 +143,7 @@ chatgpt.get('reply', 'last')
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## 用 chatgpt.js 制作
+## 🤖 用 chatgpt.js 制作
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [自动清除 ChatGPT 历史记录](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
@@ -201,7 +201,7 @@ chatgpt.get('reply', 'last')
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## 贡献者
+## 🧠 贡献者
 
 该代码库的存在归功于以下贡献者的代码、翻译、问题和想法:
 
