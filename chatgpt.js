@@ -420,8 +420,8 @@ const chatgpt = {
     getChatBox: function() { return document.getElementById('prompt-textarea'); },
 
     getChatDetails: function() {
-    // chat = index|title|id of chat to get (defaults to most recent if '')
-    // details = [id|title|create_time|update_time] (defaults to all if '')
+    // chat = index|title|id of chat to get (defaults to most recent if '' or blank)
+    // details = [id|title|create_time|update_time] (defaults to all if '' or blank)
     // * Single detail returns string, multiple details returns obj
     // * Details param can be supplied as array or comma-separated strings
 
@@ -543,9 +543,9 @@ const chatgpt = {
     },
 
     getResponseFromAPI: function(chatToGet, responseToGet, regenResponseToGet) {
-    // chatToGet = index|title|id of chat to get (defaults to latest if '')
-    // responseToGet = index of response to get (defaults to latest if '')
-    // regenResponseToGet = index of regenerated response to get (defaults to latest if '')
+    // chatToGet = index|title|id of chat to get (defaults to latest if '' or blank)
+    // responseToGet = index of response to get (defaults to latest if '' or blank)
+    // regenResponseToGet = index of regenerated response to get (defaults to latest if '' or blank)
 
         // Validate args
         for (let i = 0; i < arguments.length; i++) {
