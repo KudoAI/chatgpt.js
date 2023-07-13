@@ -196,7 +196,7 @@ const chatgpt = {
 
             // Run main activate routine
             this.toggle.refreshFrame();
-            scheduleRefreshes( interval ? parseInt(interval) : 30 );
+            scheduleRefreshes( interval ? parseInt(interval, 10) : 30 );
             console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh activated');
 
             // Add listener to send beacons in Chromium to thwart auto-discards if Page Visibility API supported
@@ -440,11 +440,11 @@ const chatgpt = {
                     // Handle chat index or ''
                     if (Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ||
                             (typeof chatToGet === 'string' && !chatToGet.trim())) {
-                        if (parseInt(chatToGet) > data.length) // reject if index out-of-bounds
+                        if (parseInt(chatToGet, 10) > data.length) // reject if index out-of-bounds
                             return reject('🤖 chatgpt.js >> Chat with index ' + chatToGet
                                 + ' is out of bounds. Only ' + data.length + ' chats exist!');
                         else { // return single detail or obj of details
-                            const chatIndex = data[parseInt(chatToGet) === 0 ? 0 : parseInt(chatToGet) - 1];
+                            const chatIndex = data[parseInt(chatToGet, 10) === 0 ? 0 : parseInt(chatToGet, 10) - 1];
                             for (const detail of detailsToGet) detailsToReturn[detail] = chatIndex[detail];
                             return resolve(detailsToReturn);
                     }}
@@ -557,7 +557,7 @@ const chatgpt = {
                                 userMessages.push(data[key].id); }
 
                         // Fill [responses]
-                        if (parseInt(responseToGet) > userMessages.length) // reject if response index out of bounds
+                        if (parseInt(responseToGet, 10) > userMessages.length) // reject if response index out of bounds
                             return reject('🤖 chatgpt.js >> Response with index ' + responseToGet
                                 + ' is out of bounds. Only ' + userMessages.length + ' responses exist!');
                         responseToGet = responseToGet ? responseToGet - 1 : userMessages.length - 1;
