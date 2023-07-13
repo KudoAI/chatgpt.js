@@ -12,7 +12,7 @@
 
 ![](../../media/images/screenshots/extension-loaded.png)
 
-## Installation
+## ⚡ Installation
 
 1. Klicken **Fork** -oder- **Use this template** > **Create a new repository** an https://github.com/kudoai/chatgpt.js-chrome-starter
 
@@ -38,7 +38,7 @@ Das ist es! **ChatGPT Extension** erscheint nun in der Erweiterungsliste:
 
 <br>
 
-_**TIPP:** Um Änderungen am Quellcode widerzuspiegeln, klicken Sie auf der Erweiterungskachel auf **Neu laden** und auf neu laden alle Chrome-Tabs-Erweiterungsskripts, die ausgeführt werden auf:_
+**💡 TIPP:** _Um Änderungen am Quellcode widerzuspiegeln, klicken Sie auf der Erweiterungskachel auf **Neu laden** und auf neu laden alle Chrome-Tabs-Erweiterungsskripts, die ausgeführt werden auf:_
 
 <div align="center">
 
@@ -51,7 +51,7 @@ _**TIPP:** Um Änderungen am Quellcode widerzuspiegeln, klicken Sie auf der Erwe
 
 </div>
 
-## Erstellt mit chatgpt.js
+## 🤖 Erstellt mit chatgpt.js
 
 Dies sind einige der von Google angebotenen Erweiterungen, die chatgpt.js verwenden:
 

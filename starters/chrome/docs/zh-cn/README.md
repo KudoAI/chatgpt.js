@@ -12,7 +12,7 @@
 
 ![](../../media/images/screenshots/extension-loaded.png)
 
-## 安装
+## ⚡ 安装
 
 1. 点击 **Fork** -或者- **Use this template** > **Create a new repository** 在 https://github.com/kudoai/chatgpt.js-chrome-starter
 
@@ -38,7 +38,7 @@
 
 <br>
 
-_**提示:** 要反映对源代码的更改，请单击扩展程序图块上的**重新加载** + 重新加载任何正在运行的 Chrome 选项卡扩展程序脚本：_
+**💡 提示:** _要反映对源代码的更改，请单击扩展程序图块上的**重新加载** + 重新加载任何正在运行的 Chrome 选项卡扩展程序脚本：_
 
 <div align="center">
 
@@ -51,7 +51,7 @@ _**提示:** 要反映对源代码的更改，请单击扩展程序图块上的*
 
 </div>
 
-## 使用 chatgpt.js 制作
+## 🤖 使用 chatgpt.js 制作
 
 以下是 Google 提供的一些使用 chatgpt.js 的扩展:
 

@@ -12,7 +12,7 @@
 
 ![](../../media/images/screenshots/extension-loaded.png)
 
-## インストール
+## ⚡ インストール
 
 1. クリック **Fork** -また- **Use this template** > **Create a new repository** の上 https://github.com/kudoai/chatgpt.js-chrome-starter
 
@@ -38,7 +38,7 @@
 
 <br>
 
-_**ヒント:** ソース コードへの変更を反映するには、拡張機能タイルで **再読み込み** をクリックし、Chrome タブの拡張機能スクリプトが実行されている場合は 再読み込み をクリックします:_
+**💡 ヒント:** _ソース コードへの変更を反映するには、拡張機能タイルで **再読み込み** をクリックし、Chrome タブの拡張機能スクリプトが実行されている場合は 再読み込み をクリックします:_
 
 <div align="center">
 
@@ -51,7 +51,7 @@ _**ヒント:** ソース コードへの変更を反映するには、拡張機
 
 </div>
 
-## chatgpt.js で作成
+## 🤖 chatgpt.js で作成
 
 以下は、Google が提供する chatgpt.js を使用する拡張機能の一部です:
 
