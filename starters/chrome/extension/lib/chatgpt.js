@@ -425,26 +425,26 @@ const chatgpt = {
     getChatBox: function() { return document.getElementById('prompt-textarea'); },
 
     getChatDetails: function() {
-    // chat = index|title|id of chat to get (defaults to most recent if '' or blank)
-    // details = [id|title|create_time|update_time] (defaults to all if '' or blank)
+    // chatToGet = index|title|id of chat to get (defaults to latest if '')
+    // detailsToGet = [id|title|create_time|update_time] (defaults to all if '')
     // * Single detail returns string, multiple details returns obj
     // * Details param can be supplied as array or comma-separated strings
 
         // Build arg arrays
         const validDetails = ['id', 'title', 'create_time', 'update_time'];
-        let chat = 0, details = [];
+        let chatToGet = 0, detailsToGet = [];
         if (validDetails.includes(arguments[0])) // if 1st arg is detail string
-            details = Array.from(arguments); // convert to array
+            detailsToGet = Array.from(arguments); // convert to array
         else { // handle chat passed/unpassed + details as array/arg(s)/unpassed
             const chatPassed = Array.isArray(arguments[0]) || !arguments[0] ? false : true;
-            chat = chatPassed ? arguments[0] : 0;
-            details = ( !arguments[+chatPassed] ? validDetails // no details passed, populate w/ all valid ones
+            chatToGet = chatPassed ? arguments[0] : 0;
+            detailsToGet = ( !arguments[+chatPassed] ? validDetails // no details passed, populate w/ all valid ones
                     : Array.isArray(arguments[+chatPassed]) ? arguments[+chatPassed] // details array passed, do nothing
                     : Array.from(arguments).slice(+chatPassed) ); // details string(s) passed, convert to array
         }
 
         // Validate detail args
-        for (const detail of details) {
+        for (const detail of detailsToGet) {
             if (!validDetails.includes(detail)) { return console.error(
                 '🤖 chatgpt.js >> Invalid detail arg \'' + detail + '\' supplied. Valid details are:\n'
               + '                    [' + validDetails + ']'); }}
@@ -456,7 +456,7 @@ const chatgpt = {
         function getChatData(token) {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                xhr.open('GET', endpoints.chat, true);
+                xhr.open('GET', endpoints.chats, true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                 xhr.onload = () => {
@@ -466,25 +466,26 @@ const chatgpt = {
                     const detailsToReturn = {};
 
                     // Handle chat index or ''
-                    if (Number.isInteger(chat) || /^\d+$/.test(chat) || (typeof chat === 'string' && !chat.trim())) {
-                        if (parseInt(chat) > data.length) // if index out-of-bounds
+                    if (Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ||
+                            (typeof chatToGet === 'string' && !chatToGet.trim())) {
+                        if (parseInt(chatToGet) > data.length) // reject if index out-of-bounds
                             return reject('🤖 chatgpt.js >> Chat with index ' + chat
                                 + ' is out of bounds. Only ' + data.length + ' chats exist!');
                         else { // return single detail or obj of details
-                            const chatIndex = data[parseInt(chat) === 0 ? 0 : parseInt(chat) - 1];
-                            for (const detail of details) detailsToReturn[detail] = chatIndex[detail];
+                            const chatIndex = data[parseInt(chatToGet) === 0 ? 0 : parseInt(chatToGet) - 1];
+                            for (const detail of detailsToGet) detailsToReturn[detail] = chatIndex[detail];
                             return resolve(detailsToReturn);
                     }}
 
                     // Handle non-empty strings
-                    const chatIdentifier = /^\w{8}-(\w{4}-){3}\w{12}$/.test(chat) ? 'id' : 'title';
+                    const chatIdentifier = /^\w{8}-(\w{4}-){3}\w{12}$/.test(chatToGet) ? 'id' : 'title';
                     let idx, chatFound; // index of potentially found chat, flag if found
                     for (idx = 0; idx < data.length; idx++) { // search for id/title to set chatFound flag
-                        if (data[idx][chatIdentifier] === chat) { chatFound = true; break; }}
+                        if (data[idx][chatIdentifier] === chatToGet) { chatFound = true; break; }}
                     if (!chatFound) // exit
-                        return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chat + ' found.');
-                    if (details.length === 1) return resolve(data[idx][details[0]]);
-                    for (const detail of details) detailsToReturn[detail] = data[idx][detail];
+                        return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatToGet + ' found.');
+                    if (detailsToGet.length === 1) return resolve(data[idx][detailsToGet[0]]);
+                    for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail];
                     return resolve(detailsToReturn);
                 };
                 xhr.send();
