@@ -407,7 +407,7 @@ const chatgpt = {
                         // Get user messages id [PARENT] (needed to match ChatGPT responses)
                         for (const key in data) if (data[key].message && data[key].message.author.role === 'user') userMessages.push(data[key].id);
                         if (responseIdx > userMessages.length) // Reject if out of bounds
-                            return reject(`🤖 chatgpt.js >> There's only ${userMessages.length} available regenerated messages. ${responseIdx + 1} is too big.`);
+                            return reject(`🤖 chatgpt.js >> There's only ${userMessages.length} available regenerated messages. ${responseIdx} is too big.`);
                         responseIdx = responseIdx ? responseIdx - 1 : userMessages.length - 1; // Select the response if given else select the latest one
                         // Get ChatGPT responses [CHILDREN] and match them with the user message id selected by 'responseIdx'
                         for (const key in data)
