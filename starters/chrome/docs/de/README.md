@@ -38,7 +38,7 @@ Das ist es! **ChatGPT Extension** erscheint nun in der Erweiterungsliste:
 
 <br>
 
-_**TIPP:** Um Änderungen am Quellcode widerzuspiegeln, klicken Sie auf der Erweiterungskachel auf **Neu laden** und auf **Neu laden** alle Chrome-Tabs-Erweiterungsskripts, die ausgeführt werden auf:_
+_**TIPP:** Um Änderungen am Quellcode widerzuspiegeln, klicken Sie auf der Erweiterungskachel auf **Neu laden** und auf neu laden alle Chrome-Tabs-Erweiterungsskripts, die ausgeführt werden auf:_
 
 <div align="center">
 
