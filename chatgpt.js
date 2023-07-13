@@ -438,9 +438,10 @@ const chatgpt = {
         else { // handle chat passed/unpassed + details as array/arg(s)/unpassed
             const chatPassed = Array.isArray(arguments[0]) || !arguments[0] ? false : true;
             chatToGet = chatPassed ? arguments[0] : 0;
-            detailsToGet = ( !arguments[+chatPassed] ? validDetails // no details passed, populate w/ all valid ones
-                    : Array.isArray(arguments[+chatPassed]) ? arguments[+chatPassed] // details array passed, do nothing
-                    : Array.from(arguments).slice(+chatPassed) ); // details string(s) passed, convert to array
+            const detailsIdx = arguments[0] === '' ? 1 : +chatPassed // offset detailsToGet index from chatToGet
+            detailsToGet = ( !arguments[detailsIdx] ? validDetails // no details passed, populate w/ all valid ones
+                    : Array.isArray(arguments[detailsIdx]) ? arguments[detailsIdx] // details array passed, do nothing
+                    : Array.from(arguments).slice(detailsIdx) ); // details string(s) passed, convert to array
         }
 
         // Validate detail args
