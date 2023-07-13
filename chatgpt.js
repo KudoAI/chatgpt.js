@@ -395,7 +395,7 @@ const chatgpt = {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
                 chatgpt.getChatDetails(chatIdx).then(chat => {
-                    xhr.open('GET', endpoints.singleChat + '/' + chat.id, true);
+                    xhr.open('GET', `${endpoints.singleChat}/${chat.id}`, true);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
