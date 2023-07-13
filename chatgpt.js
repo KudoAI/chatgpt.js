@@ -387,8 +387,7 @@ const chatgpt = {
     },
 
     getResponseFromAPI: function(chatIdx, responseIdx, regeneratedIdx) {
-        chatIdx = chatIdx ? chatIdx : 0;
-        responseIdx = responseIdx ? responseIdx - 1 : 0;
+        chatIdx = chatIdx ? chatIdx : 0; // leave as is because getChatDetails already takes care of -1
         return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
             getChatData(token).then(data => { resolve(data); });});});
 
@@ -401,16 +400,24 @@ const chatgpt = {
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
                         if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat messages.');
-                        const data = JSON.parse(xhr.responseText).mapping;
+                        const data = JSON.parse(xhr.responseText).mapping; // Get chat messages
                         const userMessages = [];
                         const responses = [];
+                        // There's an empty message with the role of 'system' but 'data[key].message.author.role' checks ignore it
+                        // Get user messages id [PARENT] (needed to match ChatGPT responses)
                         for (const key in data) if (data[key].message && data[key].message.author.role === 'user') userMessages.push(data[key].id);
+                        if (responseIdx > userMessages.length) // Reject if out of bounds
+                            return reject(`🤖 chatgpt.js >> There's only ${userMessages.length} available regenerated messages. ${responseIdx + 1} is too big.`);
+                        responseIdx = responseIdx ? responseIdx - 1 : userMessages.length - 1; // Select the response if given else select the latest one
+                            // Get ChatGPT responses [CHILDREN] and match them with the user message id selected by 'responseIdx'
                         for (const key in data)
                             if (data[key].message && data[key].message.author.role === 'assistant' && data[key].parent === userMessages[responseIdx])
                                 responses.push(data[key].message);
-                        responses.sort((a, b) => a.create_time - b.create_time);
-                        regeneratedIdx = regeneratedIdx ? regeneratedIdx - 1 : responses.length - 1;
-                        resolve(responses[regeneratedIdx].content.parts[0]);
+                        responses.sort((a, b) => a.create_time - b.create_time); // Sort by creation time ascending
+                        if (regeneratedIdx > responses.length) // Reject if out of bounds
+                            return reject(`🤖 chatgpt.js >> There's only ${responses.length} available regenerated messages. ${regeneratedIdx} is too big.`);
+                        regeneratedIdx = regeneratedIdx ? regeneratedIdx - 1 : responses.length - 1; // Select the regenerated message if given else select the latest one
+                        return resolve(responses[regeneratedIdx].content.parts[0]); // Resolve the promise with the selected message
                     };
                     xhr.send();
                 });
