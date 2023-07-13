@@ -37,7 +37,8 @@ const targetTypes = [ // for abstracted methods like get, insert
 
 const endpoints = {
     session: 'https://chat.openai.com/api/auth/session',
-    chat: 'https://chat.openai.com/backend-api/conversations'
+    chat: 'https://chat.openai.com/backend-api/conversations',
+    singleChat: 'https://chat.openai.com/backend-api/conversation'
 };
 
 const chatgpt = {
@@ -383,6 +384,37 @@ const chatgpt = {
             };
             xhr.send();
         });
+    },
+
+    test: function(chatIdx, responseIdx, regeneratedIdx) {
+        chatIdx = chatIdx ? chatIdx : 0;
+        responseIdx = responseIdx ? responseIdx - 1 : 0;
+        regeneratedIdx = regeneratedIdx ? regeneratedIdx - 1 : 0;
+        return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
+            getChatData(token).then(data => { resolve(data); });});});
+
+        function getChatData(token) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                chatgpt.getChatDetails(chatIdx).then(chat => {
+                    xhr.open('GET', endpoints.singleChat + '/' + chat.id, true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                    xhr.onload = () => {
+                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat messages.');
+                        const data = JSON.parse(xhr.responseText).mapping;
+                        const userMessages = [];
+                        const responses = [];
+                        for (const key in data) if (data[key].message && data[key].message.author.role === 'user') userMessages.push(data[key].id);
+                        for (const key in data)
+                            if (data[key].message && data[key].message.author.role === 'assistant' && data[key].parent === userMessages[responseIdx])
+                                responses.push(data[key].message);
+                        responses.sort((a, b) => a.create_time - b.create_time);
+                        resolve(responses[regeneratedIdx].content.parts[0]);
+                    };
+                    xhr.send();
+                });
+        });}
     },
 
     getAccountDetails: function(...details) {
