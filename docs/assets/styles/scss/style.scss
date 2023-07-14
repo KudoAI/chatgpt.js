@@ -9,7 +9,24 @@ section.cover p { /* cover tagline size / position */
     font-size: 2rem !important ;
     margin-bottom: 48px ;
     line-height: 2.3rem !important ;
-} 
+}
+
+/* Language selector */
+.language-selector {
+    top: -11px !important ; z-index: 9999 ; width: 175px ; height: 60px ;
+    background: transparent ; border-radius: 0 ; overflow: hidden
+}
+.language-selector select {
+    appearance: none ; background: transparent ; border: none ;
+    width: 100% ; height: 100% ; padding: 5px 15px ;
+    font-size: 28px ; color: white ; cursor: pointer ;
+    text-align: right ; position: relative ; right: 35px
+}
+.language-selector select option { background: black ; color: white }
+.language-selector::after {
+    content: '\25BE' ; color: white ; font-size: 45px ;
+    position: absolute ; right: 10px
+}
 
 /* Buttons */
 .cover-main > p:last-child a { /* all buttons */
@@ -62,6 +79,7 @@ section.cover p { /* cover tagline size / position */
 
 /* MAIN */
 
+#repo-cover { display: none } /* hide repo cover */
 article > div:nth-child(2) img { height: 2.5rem } /* zoom shields */
 article > h2:first-of-type span { display: none !important } /* hide ABOUT heading */
 article > p:first-of-type { margin-top: -51px } /* increase top-margin of description */
@@ -90,9 +108,10 @@ h3 a:hover { text-decoration: underline #42b983 }
 img[src*="promo-tile"] { width: 1111px  } /* enlarge promo tiles */
 
 /* Contributors */
-$contributors: ('contributors', '贡献者', '貢献者', 'योगदानकर्ता', 'colaboradores');
+$contributors: ('contributors', '贡献者', '貢献者', '기여자', 'योगदानकर्ता', 'mitwirkende',
+    'colaboradores', 'contributeurs', 'contributori', 'contribuidores');
 @each $translation in $contributors {
-    $id: unquote('#') + $translation;
+    $id: unquote('#🧠-') + $translation;
     h2#{$id}, h2#{$id} ~ p { text-align: center } /* center contributors section */
     #{$id} ~ * img { width: 74px } /* zoom contributor avatars */
     #{$id} ~ br { display: none } /* hide trailing line break */

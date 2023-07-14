@@ -1,8 +1,8 @@
-<div align="center">
+<div id="repo-cover" align="center">
 
 <div align="right">
 
-###### 简体中文 | <a href="../..#readme">English</a> | <a href="../ja#readme">日本</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../it#readme">Italiano</a> | <a href="../pt#README">Português</a>
+###### 简体中文 | <a href="../..#readme">English</a> | <a href="../ja#readme">日本</a> | <a href="../ko#readme">한국인</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../it#readme">Italiano</a> | <a href="../pt#README">Português</a>
     
 </div>
 
@@ -26,7 +26,7 @@
 
 [![](https://img.shields.io/badge/许可证-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=提交&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js/commits/main)
-![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-1.12.0.min.js?label=缩小尺寸&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
+![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-2.0.0.min.js?label=缩小尺寸&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
 [![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=代码质量&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
 [![](https://img.shields.io/badge/中提到-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
 [![](https://img.shields.io/badge/精选于-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.producthunt.com/posts/chatgpt-js)
@@ -84,7 +84,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@24a755998291094d0cd3b2bd395dff7c6756bbf9/dist/chatgpt-1.12.0.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@09e429363da222312c22ff7b67e3cc0fa08c4665/dist/chatgpt-2.0.0.min.js
 // ==/UserScript==
 
 // 这里是您的代码

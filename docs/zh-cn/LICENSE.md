@@ -1,10 +1,10 @@
 <div align="right">
-<h5>简体中文 | <a href="../../LICENSE.md">English</a> | <a href="../ja/LICENSE.md">日本</a> | <a href="../hi/LICENSE.md">हिंदी</a> | <a href="../de/LICENSE.md">Deutsch</a> | <a href="../es/LICENSE.md">Español</a> | <a href="../fr/LICENSE.md">Français</a> | <a href="../it/LICENSE.md">Italiano</a> | <a href="../pt/LICENSE.md">Português</a></h5>
+<h5>简体中文 | <a href="../../LICENSE.md">English</a> | <a href="../ja/LICENSE.md">日本</a> | <a href="../ko/LICENSE.md">한국인</a> | <a href="../hi/LICENSE.md">हिंदी</a> | <a href="../de/LICENSE.md">Deutsch</a> | <a href="../es/LICENSE.md">Español</a> | <a href="../fr/LICENSE.md">Français</a> | <a href="../it/LICENSE.md">Italiano</a> | <a href="../pt/LICENSE.md">Português</a></h5>
 </div>
 
 # MIT 许可证
 
-版权所有 (c) 2023 [KudoAI](https://github.com/kudoai) & [贡献者](.#🧠-贡献者)
+版权所有 (c) 2023 [KudoAI](https://github.com/kudoai) & [贡献者](.#-贡献者)
 
 特此免费授予获得本软件和相关文档文件（“软件”）副本的任何人不受限制地处理本软件的权限，包括但不限于使用、复制、修改、合并的权利，发布，分发，再许可和/或出售软件的副本，并允许获得软件的人这样做，但须满足以下条件：
 

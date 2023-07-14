@@ -1,5 +1,5 @@
 <div align="right">
-<h5>Português | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a></h5>
+<h5>Português | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../ko#readme">한국인</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../it#readme">Italiano</a></h5>
 </div>
 
 # chatgpt.js-chrome-starter
@@ -36,7 +36,7 @@
 
 <br>
 
-**💡 DICA:** _para refletir as alterações no código-fonte, clique em **Recarregar** no bloco de extensão + recarregar quaisquer scripts de extensão de guias do Chrome em execução:_
+**💡 DICA:** _Para refletir as alterações do código-fonte, clique em **Recarregar** no bloco de extensão + recarregar quaisquer scripts de extensão de guias do Chrome em execução:_
 
 <div align="center">
 
@@ -63,10 +63,8 @@ Estas são algumas das extensões apresentadas pelo Google que usam chatgpt.js:
 
 <a href="https://chatgptwidescreen.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
-<br>
-
 </div>
 
 #
 
-<div align="right"><a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">Obter ajuda</a> / <a href="#">De volta ao topo ↑</a></div>
+<a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">Obter ajuda</a> / <a href="#">De volta ao topo ↑</a>

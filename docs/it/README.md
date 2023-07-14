@@ -1,8 +1,8 @@
-<div align="center">
+<div id="repo-cover" align="center">
 
 <div align="right">
 
-######  Italiano | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../pt#readme">Português</a>
+######  Italiano | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../ko#readme">한국인</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../pt#readme">Português</a>
 
 </div>
 
@@ -16,7 +16,7 @@
 </picture>
 <br><br>
 
-🤖 Eine leistungsstarke clientseitige JavaScript-Bibliothek für ChatGPT
+🤖 Una potente libreria JavaScript lato client per ChatGPT
 <br><br>
 
 </div>
@@ -26,7 +26,7 @@
 
 [![](https://img.shields.io/badge/Licenza-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=Commette&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js/commits/main)
-![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-1.12.0.min.js?label=Dimensione+Minimizzata&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
+![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-2.0.0.min.js?label=Dimensione+Minimizzata&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
 [![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Qualità+del+Codice&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
 [![](https://img.shields.io/badge/Menzionato_in-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
 [![](https://img.shields.io/badge/In_Evidenza-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.producthunt.com/posts/chatgpt-js)
@@ -34,14 +34,14 @@
 
 </div>
 
-## Di
+## Informazioni
 
-**chatgpt.js** è una potente libreria JavaScript che consente un'interazione semplicissima con ChatGPT DOM.
+**chatgpt.js** è una potente libreria JavaScript che consente un'interazione semplicissima con il DOM di ChatGPT.
 
 - Ricco di funzionalità
-- Orientato agli oggetti
+- Orientamento ad oggetti
 - Facile da usare
-- Leggero (ma ottimamente performante)
+- Leggero (ma molto performante)
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
@@ -80,25 +80,25 @@ function yourCode() {
 
 > **Nota** _Per utilizzare un modello iniziale: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
 
-I repository di Userscript come Greasy Fork mantengono una whitelist di CDN pre-approvati (come i riferimenti specifici del commit da `cdn.jsdelivr.net`) quindi l'URL di importazione è sostanzialmente più lungo per preservare la pubblicabilità su questi siti:
+I siti di Userscript come Greasy Fork mantengono una whitelist di CDN pre-approvati (come i riferimenti specifici del commit da `cdn.jsdelivr.net`) quindi l'URL di importazione è sostanzialmente più lungo per preservare la pubblicabilità su questi siti:
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@24a755998291094d0cd3b2bd395dff7c6756bbf9/dist/chatgpt-1.12.0.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@09e429363da222312c22ff7b67e3cc0fa08c4665/dist/chatgpt-2.0.0.min.js
 // ==/UserScript==
 
 // Il tuo codice qui...
 ```
 
-Se non hai intenzione di pubblicare su questi repository, puoi utilizzare il più semplice `https://code.chatgptjs.org/chatgpt-latest.min.js` per importare l'ultima versione minimizzata.
+Se non hai intenzione di pubblicare su questi siti, puoi utilizzare il più semplice URL `https://code.chatgptjs.org/chatgpt-latest.min.js` per importare l'ultima versione minimizzata.
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
 > **Nota** _Per utilizzare un modello iniziale: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
-Poiché Google [alla fine eliminerà gradualmente](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/) Manifest V2, il codice remoto non sarà più consentito, quindi l'importazione locale di chatgpt.js è l'ideale:
+Poiché Google [alla fine eliminerà gradualmente](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/) il Manifest V2, il codice remoto non sarà più consentito, quindi l'importazione locale di chatgpt.js è l'ideale:
 
-1. Salva https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js in una sottodirectory (`lib` in questo esempio)
+1. Salva https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js in una sottocartella (`lib` in questo esempio)
 
 2. Aggiungi la dichiarazione di esportazione ES6 alla fine di `lib/chatgpt.js`
 ```js
@@ -114,7 +114,7 @@ export { chatgpt }
     }],
 ```
 
-4. Negli script che richiedono `chatgpt.js` (in primo piano/sfondo allo stesso modo), importalo in questo modo:
+1. Negli script che richiedono `chatgpt.js` (in primo piano/background), importalo in questo modo:
 ```js
 (async () => {
   const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
@@ -137,9 +137,9 @@ chatgpt.response.getLast();
 chatgpt.get('reply', 'last');
 ```
 
-Ogni chiamata recupera ugualmente l'ultima risposta. Se pensi che funzioni, probabilmente lo farà... quindi digitalo!
+Ogni chiamata ritorna ugualmente l'ultima risposta di ChatGPT. Se pensi che funzioni, probabilmente lo farà... quindi scrivilo!
 
-In caso contrario, invia semplicemente un [problema](https://github.com/kudoai/chatgpt.js/issues) o [PR](https://github.com/kudoai/chatgpt.js/pulls) e sarà integrato, vai tranquillo!
+In caso contrario, crea semplicemente una [issue](https://github.com/kudoai/chatgpt.js/issues) o [PR](https://github.com/kudoai/chatgpt.js/pulls) e sarà integrato, facile!
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
@@ -147,44 +147,44 @@ In caso contrario, invia semplicemente un [problema](https://github.com/kudoai/c
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Cancella Cronologia ChatGPT](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-Cancella automaticamente la cronologia delle query ChatGPT per la massima privacy.
-<br>[Installare](https://github.com/adamlui/autoclear-chatgpt-history#installation) /
-[Leggimi](https://github.com/adamlui/autoclear-chatgpt-history#readme) /
+Cancella automaticamente la cronologia delle chat di ChatGPT per la massima privacy.
+<br>[Installa](https://github.com/adamlui/autoclear-chatgpt-history#installation) /
+[Readme](https://github.com/adamlui/autoclear-chatgpt-history#readme) /
 [Discutere](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
 ### <img width=16 src="https://i.imgur.com/1yjmK3W.png"> [Automatic ChatGPT DAN](https://github.com/madkarmaa/automatic-chatgpt-dan)
 
-Invia automaticamente richieste DAN a ChatGPT.
-<br>[Installare](https://github.com/madkarmaa/automatic-chatgpt-dan#%EF%B8%8F-installation) /
-[Leggimi](https://github.com/madkarmaa/automatic-chatgpt-dan#readme) /
+Invia automaticamente prompt DAN a ChatGPT.
+<br>[Installa](https://github.com/madkarmaa/automatic-chatgpt-dan#%EF%B8%8F-installation) /
+[Readme](https://github.com/madkarmaa/automatic-chatgpt-dan#readme) /
 [Discutere](https://github.com/madkarmaa/automatic-chatgpt-dan/issues)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-Mostra le risposte di ChatGPT nella barra laterale di Brave Search (basata su GPT-4!)
-<br>[Installare](https://github.bravegpt.com/#installation) /
-[Leggimi](https://github.bravegpt.com/#readme) /
+Mostra le risposte di ChatGPT nella barra laterale di Brave Search (basato su GPT-4!)
+<br>[Installa](https://github.bravegpt.com/#installation) /
+[Readme](https://github.bravegpt.com/#readme) /
 [Discutere](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto-Continua ⏩](https://chatgptevo.com/autocontinue/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
 Continua automaticamente a generare più risposte di ChatGPT.<br>
-[Installare](https://github.com/adamlui/chatgpt-auto-continue#installation) /
-[Leggimi](https://github.com/adamlui/chatgpt-auto-continue#readme) /
+[Installa](https://github.com/adamlui/chatgpt-auto-continue#installation) /
+[Readme](https://github.com/adamlui/chatgpt-auto-continue#readme) /
 [Discutere](https://chatgptevo.com/autocontinue/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Aggiornamento Automatico ↻](https://chatgptevo.com/autorefresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-Mantiene aggiornate le sessioni ChatGPT per eliminare errori di rete + controlli Cloudflare.
-<br>[Installare](https://github.com/adamlui/chatgpt-auto-refresh#installation) /
-[Leggimi](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
+Mantieni aggiornate le sessioni ChatGPT per prevenire errori di rete + controlli Cloudflare.
+<br>[Installa](https://github.com/adamlui/chatgpt-auto-refresh#installation) /
+[Readme](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
 [Discutere](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
 ### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-Visualizza le risposte di ChatGPT nella barra laterale di DuckDuckGo (basata su GPT-4!)
-<br>[Installare](https://github.duckduckgpt.com/#installation) /
-[Leggimi](https://github.duckduckgpt.com/#readme) /
+Visualizza le risposte di ChatGPT nella barra laterale di DuckDuckGo (basato su GPT-4!)
+<br>[Installa](https://github.duckduckgpt.com/#installation) /
+[Readme](https://github.duckduckgpt.com/#readme) /
 [Discutere](https://github.duckduckgpt.com/discussions)
 
 <br>
@@ -203,7 +203,7 @@ Se hai creato qualcosa con chatgpt.js che desideri condividere, invia un'email a
 
 ## 🧠 Contributori
 
-Questa libreria esiste grazie al codice, alle traduzioni, ai problemi e alle idee dei seguenti contributori:
+Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle idee dei seguenti contributori:
 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.15&h=50&w=50&mask=circle&maxage=7d '@adamlui')](https://github.com/adamlui)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?first-contrib=2023.03.16-get-functions&h=50&w=50&mask=circle&maxage=7d '@mefengl')](https://github.com/mefengl)
@@ -233,12 +233,12 @@ Questa libreria esiste grazie al codice, alle traduzioni, ai problemi e alle ide
   </picture>
 </a>
 
-<br>_Considera di dare a questo repository un ⭐ se ti ha aiutato!_
+<br>_Considera di dare a questa repository una ⭐ se ti ha aiutato!_
 
 </div>
 
 #
 
-<a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Rilasci**</a> /
+<a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Versioni**</a> /
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Discutere</a> /
-<a href="#">Torna in cima ↑</a>
+<a href="#">Torna all'inizio ↑</a>
