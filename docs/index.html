@@ -27,10 +27,8 @@
         </nav>
         <script>
             function changeLanguage(selector) {
-                const tempDiv = document.createElement('div');
-                tempDiv.innerText = selector.value;
-                const sanitizedLang = tempDiv.innerHTML;
-                window.location.href = '#' + sanitizedLang;
+                const tempDiv = document.createElement('div'); tempDiv.innerText = selector.value;
+                const sanitizedLang = tempDiv.innerHTML; window.location.href = '#' + sanitizedLang;
             }
         </script>
         <div id="app"></div>
