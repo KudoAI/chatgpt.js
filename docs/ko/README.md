@@ -84,7 +84,7 @@ Greasy Fork 와 같은 사용자 스크립트 리포지토리는 사전 승인�
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@24a755998291094d0cd3b2bd395dff7c6756bbf9/dist/chatgpt-1.12.0.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@09e429363da222312c22ff7b67e3cc0fa08c4665/dist/chatgpt-1.12.0.min.js
 // ==/UserScript==
 
 // 여기 코드...
