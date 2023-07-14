@@ -43,6 +43,7 @@
     - [getChatDetails `async`](#getchatdetails-async)
     - [getLastResponse](#getlastresponse)
     - [getResponse](#getresponse)
+    - [getResponseFromAPI `async`](#getresponsefromapi-async)
     - [isIdle `async`](#isidle-async)
     - [regenerate](#regenerate)
     - [scrollToBottom](#scrolltobottom)
@@ -501,6 +502,27 @@ var fifthResp;
 fifthResp = chatgpt.getResponse(5); // Returns the 5th response
 fifthResp = chatgpt.getResponse('fifth'); // Also returns the 5th response
 fifthResp = chatgpt.getResponse('five'); // Returns the 5th response too
+```
+
+### getResponseFromAPI `async`
+
+Returns the Nth response ChatGPT has written in a Nth chat as a string.
+
+**Parameters**:
+
+`chatToGet`: A number representing the index of the chat to get the response from. Defaults to latest.
+
+`responseToGet`: A number representing the index of the response to get. Defaults to latest.
+
+`regenResponseToGet`: A number representing the index of the regenerated response (in case there is one). Defaults to latest.
+
+Example code:
+
+```js
+async function doSomething() {
+  const response = chatgpt.getResponseFromAPI();
+  console.log(response);
+}
 ```
 
 ### isIdle `async`
