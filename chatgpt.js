@@ -466,6 +466,12 @@ const chatgpt = {
 
     getChatInput: function() { return chatgpt.getChatBox().value; },
 
+    getContinueGeneratingButton: function() {
+        for (var formButton of document.querySelectorAll('form button')) {
+            if (formButton.textContent.toLowerCase().includes('continue')) {
+                return formButton;
+    }}},
+
     getLastResponse: function() {
         if (window.location.href.match(/^https:\/\/chat\.openai\.com\/c\//))
             return chatgpt.getLastResponseFromDOM();
@@ -593,9 +599,7 @@ const chatgpt = {
         }
     },
 
-    getSendButton: function() {
-        return document.querySelector('form button[class*="bottom"]');
-    },
+    getSendButton: function() { return document.querySelector('form button[class*="bottom"]'); },
 
     getStopGeneratingButton: function() {
         for (var formButton of document.querySelectorAll('form button')) {
@@ -603,11 +607,8 @@ const chatgpt = {
                 return formButton;
     }}},
 
-    getContinueGeneratingButton: function() {
-        for (var formButton of document.querySelectorAll('form button')) {
-            if (formButton.textContent.toLowerCase().includes('continue')) {
-                return formButton;
-    }}},
+    getUserLanguage: function() {
+        return navigator.languages[0] || navigator.language || navigator.browserLanguage | navigator.systemLanguage || navigator.userLanguage || ''; },
 
     history: {
         isOn: function() {
@@ -616,7 +617,6 @@ const chatgpt = {
             } return true;
         },
         isOff: function() { return !this.isOn(); },
-
         activate: function() { this.isOff() ? this.toggle() : console.info('🤖 chatgpt.js >> Chat history is already enabled!'); },
         deactivate: function() { this.isOn() ? this.toggle() : console.info('🤖 chatgpt.js >> Chat history is already disabled!'); },
         toggle: function() {                
@@ -882,8 +882,7 @@ const chatgpt = {
     },
 
     scrollToBottom: function() {
-        try { document.querySelector('button[class*="cursor"]').click(); } catch (error) { console.error('🤖 chatgpt.js >> ', error); }
-    },
+        try { document.querySelector('button[class*="cursor"]').click(); } catch (error) { console.error('🤖 chatgpt.js >> ', error); }},
 
     send: function(msg, method='') {
         var textArea = document.querySelector('form textarea');
