@@ -62,6 +62,7 @@ section.cover p { /* cover tagline size / position */
 
 /* MAIN */
 
+#repo-cover { display: none } /* hide repo cover */
 article > div:nth-child(2) img { height: 2.5rem } /* zoom shields */
 article > h2:first-of-type span { display: none !important } /* hide ABOUT heading */
 article > p:first-of-type { margin-top: -51px } /* increase top-margin of description */

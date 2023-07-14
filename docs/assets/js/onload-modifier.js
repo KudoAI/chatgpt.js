@@ -11,9 +11,8 @@ const onLoadObserver = new MutationObserver(() => {
     // Exit if not loaded
     if (!document.querySelector('.github-corner')) return;
 
-    // Hide readme cover + append footer to HOMEPAGE
+    // Append footer to HOMEPAGE
     if (location.hash.match(/#\/(\w{2}(-\w{2})?\/)?$/)) {
-        document.querySelector('article > div:first-of-type').style.display = 'none';
         const footer = document.createElement('div');
         fetch('assets/html/footer.html')
             .then(response => response.text()).then(html => {
