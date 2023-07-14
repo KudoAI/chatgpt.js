@@ -2,7 +2,7 @@
 
 <div align="right">
 
-###### English | <a href="zh-cn#readme">简体中文</a> | <a href="ja#readme">日本</a> | <a href="hi#readme">हिंदी</a> | <a href="de#readme">Deutsch</a> | <a href="es#readme">Español</a> | <a href="fr#readme">Français</a> | <a href="it#readme">Italiano</a> | <a href="pt#readme">Português</a>
+###### 한국어 | <a href="../..#readme">English</a> | <a href="zh-cn#readme">简体中文</a> | <a href="ja#readme">日本</a> | <a href="hi#readme">हिंदी</a> | <a href="de#readme">Deutsch</a> | <a href="es#readme">Español</a> | <a href="fr#readme">Français</a> | <a href="it#readme">Italiano</a> | <a href="pt#readme">Português</a>
 
 </div>
 
@@ -16,7 +16,7 @@
 </picture>
 <br><br>
 
-🤖 A powerful client-side JavaScript library for ChatGPT
+🤖 ChatGPT를 위한 강력한 클라이언트 사이드 자바스크립트 라이브러리
 <br><br>
 
 </div>
@@ -24,35 +24,35 @@
 
 <div align="center">
 
-[![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
-[![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=Commits&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js/commits/main)
-![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-1.12.0.min.js?label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
-[![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
-[![](https://img.shields.io/badge/Mentioned_in-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
-[![](https://img.shields.io/badge/Featured_on-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.producthunt.com/posts/chatgpt-js)
+[![](https://img.shields.io/badge/라이센스-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
+[![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=커밋&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js/commits/main)
+![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-1.12.0.min.js?label=압축된%20크기&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
+[![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=코드+품질&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
+[![](https://img.shields.io/badge/언급됨-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
+[![](https://img.shields.io/badge/특집_소개-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.producthunt.com/posts/chatgpt-js)
 ![](https://img.shields.io/jsdelivr/gh/hw/kudoai/chatgpt.js?label=jsDelivr+Hits&logo=jsdelivr&logoColor=white&labelColor=464646&color=gold&style=for-the-badge)
 
 </div>
 
-## About
+## 개요
 
-**chatgpt.js** is a powerful JavaScript library that allows for super easy interaction w/ the ChatGPT DOM.
+**chatgpt.js** 는 Chat GPT DOM과 매우 간편한 상호작용을 가능하게 하는 강력한 자바스크립트 라이브러리입니다.
 
-- Feature-rich
-- Object-oriented
-- Easy-to-use
-- Lightweight (yet optimally performant)
+- 풍부한 기능
+- 객체지향
+- 손쉬운 사용
+- 경량화 (최적의 성능 제공)
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## ⚡ Importing the library
+## ⚡ 라이브러리 호출
 
 ### ES6:
 
 ```js
 (async () => {
   await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
-  // Your code here...
+  // 코드를 여기에 작성해 주세요...
 })();
 ```
 
@@ -66,28 +66,28 @@ xhr.onload = function () {
     var chatgptJS = document.createElement('script');
     chatgptJS.textContent = xhr.responseText;
     document.head.appendChild(chatgptJS);
-    yourCode(); // runs your code
+    yourCode(); // 당신의 코드를 작성해주세요 
   }
 };
 xhr.send();
 
 function yourCode() {
-  // Your code here...
+  // 코드를 여기에 작성해 주세요...
 }
 ```
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://i.imgur.com/SATGr8j.png"></picture><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://i.imgur.com/wcCg3al.png"> Greasemonkey:
 
-> **Note** _To use a starter template: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
+> **참고** _스타터 템플릿: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
 
-Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CDNs (such as commit-specific references from `cdn.jsdelivr.net`) so the import URL is substantially lengthier to preserve publishability to these sites:
+Greasy Fork와 같은 사용자 스크립트 저장소는 미리 승인된 CDN(예: cdn.jsdelivr.net에서의 커밋별 참조)의 화이트리스트를 유지합니다. 따라서, 삽입된(import) URL은 길이가 상당히 길어지게 되는데, 이는 이러한 사이트의 게시를 보존하기 위함입니다.
 
 ```js
 ...
 // @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@24a755998291094d0cd3b2bd395dff7c6756bbf9/dist/chatgpt-1.12.0.min.js
 // ==/UserScript==
 
-// Your code here...
+// 코드를 여기에 작성해 주세요...
 ```
 
 If you don't plan on publishing to these repos, the simpler `https://code.chatgptjs.org/chatgpt-latest.min.js` can be used instead to import the latest minified release.
