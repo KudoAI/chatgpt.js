@@ -14,6 +14,7 @@ const endpoints = {
 };
 
 // Define chatgpt.methods
+const chatgpt = {
     openAIaccessToken: undefined,
 
     activateDarkMode: function() {
