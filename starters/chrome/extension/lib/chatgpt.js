@@ -488,7 +488,13 @@ const chatgpt = {
                 return formButton;
     }}},
 
-    getResponse: function(pos) {
+    getResponse: function() {
+        if (window.location.href.match(/^https:\/\/chat\.openai\.com\/c\//))
+            return chatgpt.getResponseFromDOM.apply(null, arguments);
+        else return chatgpt.getResponseFromAPI.apply(null, arguments);
+    },
+
+    getResponseFromDOM: function(pos) {
         var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
         var strPos = pos.toString().toLowerCase();
         if (/last|final/.test(strPos)) { // get last response
@@ -576,8 +582,7 @@ const chatgpt = {
                         return resolve(responses[regenResponseToGet].content.parts[0]); 
                     };
                     xhr.send();
-                });
-        });}
+        });});}
     },
 
     getSendButton: function() {
