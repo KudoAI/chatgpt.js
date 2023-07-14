@@ -1,4 +1,4 @@
-<div align="center">
+<div id="repo-cover" align="center">
 
 <div align="right">
 <h5>Português | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../it#readme">Italiano</a></h5>

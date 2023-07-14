@@ -1,4 +1,4 @@
-<div align="center">
+<div id="repo-cover" align="center">
 
 <div align="right">
 
