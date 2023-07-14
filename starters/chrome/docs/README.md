@@ -38,7 +38,7 @@ That's it! **ChatGPT Extension** will now appear in extension list:
 
 <br>
 
-**💡 TIP:** _To reflect changes to source code, click **Reload** on extension tile + reload any Chrome tabs extension scripts are running on:_
+**💡 TIP:** _To reflect changes from source code, click **Reload** on extension tile + reload any Chrome tabs extension scripts are running on:_
 
 <div align="center">
 

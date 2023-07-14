@@ -38,7 +38,7 @@ C'est ça! **ChatGPT Extension** apparaîtra désormais dans la liste des extens
 
 <br>
 
-**💡 CONSEIL:** _Pour refléter les modifications apportées au code source, cliquez sur **Recharger** sur la vignette d'extension + recharger tous les scripts d'extension d'onglets Chrome en cours d'exécution:_
+**💡 CONSEIL:** _Pour refléter les modifications du code source, cliquez sur **Recharger** sur la vignette d'extension + recharger tous les scripts d'extension d'onglets Chrome en cours d'exécution:_
 
 <div align="center">
 

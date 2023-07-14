@@ -36,7 +36,7 @@
 
 <br>
 
-**💡 DICA:** _para refletir as alterações no código-fonte, clique em **Recarregar** no bloco de extensão + recarregar quaisquer scripts de extensão de guias do Chrome em execução:_
+**💡 DICA:** _Para refletir as alterações do código-fonte, clique em **Recarregar** no bloco de extensão + recarregar quaisquer scripts de extensão de guias do Chrome em execução:_
 
 <div align="center">
 
