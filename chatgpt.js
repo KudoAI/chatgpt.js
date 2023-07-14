@@ -467,13 +467,21 @@ const chatgpt = {
     getChatInput: function() { return chatgpt.getChatBox().value; },
 
     getLastResponse: function() {
-        var lastResponseDiv = chatgpt.getLastResponseDiv();
-        return lastResponseDiv ? lastResponseDiv.textContent : '';
+        if (window.location.href.match(/^https:\/\/chat\.openai\.com\/c\//))
+            return chatgpt.getLastResponseFromDOM();
+        else return chatgpt.getResponseFromAPI();
     },
 
     getLastResponseDiv: function() {
-        var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
+        const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
         return responseDivs.length ? responseDivs[responseDivs.length - 1] : '';
+    },
+
+    getLastResponseFromAPI: function() { chatgpt.getResponseFromAPI(); },
+
+    getLastResponseFromDOM: function() {
+        const lastResponseDiv = chatgpt.getLastResponseDiv();
+        return lastResponseDiv ? lastResponseDiv.textContent.replace(/^ChatGPTChatGPT\d+ \/ \d+/, '') : '';
     },
 
     getNewChatLink: function() {
