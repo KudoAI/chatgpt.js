@@ -4,6 +4,6 @@
 
 # 보안 정책
 
-If you find a vulnerability, please open a [draft security advisory](https://github.com/kudoai/chatgpt.js/security/advisories/new).
+취약점을 발견하신 경우에, [보안 안내서 초안](https://github.com/kudoai/chatgpt.js/security/advisories/new)을 확인해주세요.
 
-Pull requests are also welcome, but for safety reasons, send an email to security@chatgptjs.org and wait for a response before making it public.
+풀 리퀘스트는 누구에게나 열려있습니다! 하지만 안전을 위해서, security@chatgptjs.org에 메일을 보내시고 답변을 기다린 뒤에 퍼블릭(Public)으로 해주십시오.
