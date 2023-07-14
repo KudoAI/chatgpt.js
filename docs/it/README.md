@@ -34,7 +34,7 @@
 
 </div>
 
-## Di
+## Informazioni
 
 **chatgpt.js** è una potente libreria JavaScript che consente un'interazione semplicissima con il DOM di ChatGPT.
 
