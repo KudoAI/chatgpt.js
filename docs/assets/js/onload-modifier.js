@@ -47,5 +47,8 @@ const onLoadObserver = new MutationObserver(() => {
 onLoadObserver.observe(document.body, { childList: true, subtree: true });
 
 // Re-connect observre on nav to new hash
-window.addEventListener('hashchange', () => { 
-    onLoadObserver.observe(document.body, { childList: true, subtree: true }); });
+let hashChangeCnt = 0; // to ignore 1st redir
+window.addEventListener('hashchange', () => {
+    hashChangeCnt++; if (hashChangeCnt >= 2)
+        onLoadObserver.observe(document.body, { childList: true, subtree: true });
+});
