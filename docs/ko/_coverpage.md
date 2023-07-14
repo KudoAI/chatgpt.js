@@ -5,7 +5,7 @@
 > 🤖 ChatGPT를 위한 강력한 클라이언트 사이드 자바스크립트 라이브러리
 
 [GitHub](https://github.com/kudoai/chatgpt.js)
-[시작하기](#⚡-라이브러리를 불러오는 중)
+[Get Started](#⚡-라이브러리를 불러오는 중)
 
 <!-- background color -->
 
