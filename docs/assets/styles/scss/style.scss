@@ -9,7 +9,24 @@ section.cover p { /* cover tagline size / position */
     font-size: 2rem !important ;
     margin-bottom: 48px ;
     line-height: 2.3rem !important ;
-} 
+}
+
+/* Language selector */
+.language-selector {
+    top: -11px !important ; z-index: 9999 ; width: 175px ; height: 60px ;
+    background: black ; border-radius: 0 ; overflow: hidden
+}
+.language-selector select {
+    appearance: none ; background: black ; border: none ;
+    width: 100% ; height: 100% ; padding: 5px 15px ;
+    font-size: 28px ; color: white ; cursor: pointer ;
+    text-align: right ; position: relative ; right: 35px
+}
+.language-selector select option { background: black ; color: white }
+.language-selector::after {
+    content: '\25BE' ; color: white ; font-size: 45px ;
+    position: absolute ; right: 10px
+}
 
 /* Buttons */
 .cover-main > p:last-child a { /* all buttons */
