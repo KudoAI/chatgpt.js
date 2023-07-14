@@ -2,7 +2,7 @@
 
 <div align="right">
 
-###### 한국인 | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../it#readme">Italiano</a> | <a href="../pt#readme">Português</a>
+###### 한국어 | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../it#readme">Italiano</a> | <a href="../pt#readme">Português</a>
 
 </div>
 
@@ -16,7 +16,8 @@
 </picture>
 <br><br>
 
-🤖 ChatGPT 를 위한 강력한 클라이언트 측 JavaScript 라이브러리
+🤖 ChatGPT를 위한 강력한 클라이언트 사이드 자바스크립트 라이브러리
+
 <br><br>
 
 </div>
@@ -24,35 +25,37 @@
 
 <div align="center">
 
-[![](https://img.shields.io/badge/특허-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
+[![](https://img.shields.io/badge/라이센스-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=커밋&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js/commits/main)
-![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-2.0.0.min.js?label=축소된+크기&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
+![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-2.0.0.min.js?label=압축된%20크기&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
 [![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=코드+품질&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
-[![](https://img.shields.io/badge/에서_언급-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
-[![](https://img.shields.io/badge/특집-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.producthunt.com/posts/chatgpt-js)
-![](https://img.shields.io/jsdelivr/gh/hw/kudoai/chatgpt.js?label=jsDelivr+조회수&logo=jsdelivr&logoColor=white&labelColor=464646&color=gold&style=for-the-badge)
+[![](https://img.shields.io/badge/언급됨-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
+[![](https://img.shields.io/badge/특집_소개-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.producthunt.com/posts/chatgpt-js)
+![](https://img.shields.io/jsdelivr/gh/hw/kudoai/chatgpt.js?label=jsDelivr+Hits&logo=jsdelivr&logoColor=white&labelColor=464646&color=gold&style=for-the-badge)
 
 </div>
 
-## 에 대한
+## 개요
 
-**chatgpt.js**는 ChatGPT DOM과 매우 쉽게 상호 작용할 수 있는 강력한 JavaScript 라이브러리입니다.
+**chatgpt.js** 는 Chat GPT DOM과 매우 간편한 상호작용을 가능하게 하는 강력한 자바스크립트 라이브러리입니다.
 
 - 풍부한 기능
-- 객체 지향
-- 사용하기 쉬운
-- 경량(최적의 성능)
+- 객체지향
+- 손쉬운 사용
+- 경량화 (최적의 성능 제공)
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## ⚡ 라이브러리 가져오기
+## ⚡ 라이브러리 호출
+
 
 ### ES6:
 
 ```js
 (async () => {
   await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
-  // 여기 코드...
+  // 코드를 여기에 작성해 주세요...
+
 })();
 ```
 
@@ -66,47 +69,50 @@ xhr.onload = function () {
     var chatgptJS = document.createElement('script');
     chatgptJS.textContent = xhr.responseText;
     document.head.appendChild(chatgptJS);
-    yourCode(); // 코드 실행
+    yourCode(); // 당신의 코드를 작성해주세요 
+
   }
 };
 xhr.send();
 
 function yourCode() {
-  // 여기 코드...
+  // 코드를 여기에 작성해 주세요...
+
 }
 ```
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://i.imgur.com/SATGr8j.png"></picture><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://i.imgur.com/wcCg3al.png"> Greasemonkey:
 
-> **참고** _스타터 템플릿을 사용하려면: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
+> **참고** _스타터 템플릿을 사용하시려면: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
 
-Greasy Fork 와 같은 사용자 스크립트 리포지토리는 사전 승인된 CDN 의 화이트리스트(예: `cdn.jsdelivr.net`의 커밋 관련 참조)를 유지하므로 가져오기 URL 이 다음 사이트에 게시 가능성을 유지하기 위해 훨씬 더 깁니다:
+Greasy Fork와 같은 사용자 스크립트 저장소는 미리 승인된 CDN(예: cdn.jsdelivr.net에서의 커밋별 참조)의 화이트리스트를 유지합니다. 따라서, 삽입된(import) URL은 길이가 상당히 길어지게 되는데, 이는 이러한 사이트의 게시를 보존하기 위함입니다.
 
 ```js
 ...
 // @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@09e429363da222312c22ff7b67e3cc0fa08c4665/dist/chatgpt-2.0.0.min.js
 // ==/UserScript==
 
-// 여기 코드...
+// 코드를 여기에 작성해 주세요...
 ```
 
-이러한 리포지토리에 게시할 계획이 없다면 더 간단한 `https://code.chatgptjs.org/chatgpt-latest.min.js` 를 대신 사용하여 최신 축소 릴리스를 가져올 수 있습니다.
+만약 이러한 저장소(repo)에 게시하지 않으신다면, 더 간단한 `https://code.chatgptjs.org/chatgpt-latest.min.js` 를 대신 사용하여 가장 최근에 압축된 버전을 가져 올 수 있습니다.
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
-> **참고** _스타터 템플릿을 사용하려면: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
+> **참고** _스타터 템플릿을 사용하시려면: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
-Google 이 [결국 단계적으로 중단](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/) Manifest V2 하므로 원격 코드가 더 이상 허용되지 않으므로 chatgpt.js 를 로컬로 가져오는 것이 이상적입니다:
+Google은 Manifest V2에 대해 [점차적으로 폐지](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/)를 진행할 예정이기 떄문에, Manifest V2에서는 원격코드를 더 이상 허용하지 않을 것입니다. 따라서 chatgpt.js를 로컬에서 가져오는 것이 이상적입니다.
 
-1. https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js 하위 디렉토리(이 예에서는 `lib`)에 저장합니다
+1. https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js 를 하위 디렉토리에 저장합니다. (`lib` 이라고 가정)
 
-2. `lib/chatgpt.js` 끝에 ES6 내보내기 문 추가
+2. `lib/chatgpt.js` 의 끝에 ES6 export 문을 추가합니다.
+
 ```js
 ...
 export { chatgpt }
 ```
 
-3. 프로젝트 (V3) `manifest.json` 에서 `lib/chatgpt.js` 를 웹 액세스 가능 리소스로 추가합니다
+3. 프로젝트(V3)의 `manifest.json` 파일에, `lib/chatgpt.js`를 웹에서 접근가능한 리소스로 추가합니다.
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
@@ -114,21 +120,21 @@ export { chatgpt }
     }],
 ```
 
-4. `chatgpt.js` (포그라운드/백그라운드 유사) 가 필요한 스크립트에서 다음과 같이 가져옵니다:
+4. `chatgpt.js` 를 필요로하는 스크립트 (전경/배경 같은) 에서는 다음과 같이 가져옵니다.
 ```js
 (async () => {
   const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
-  // 여기 코드...
+  // 코드를 여기에 작성해 주세요...
 })();
 ```
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## 💻 용법
+## 💻 사용법
 
-**chatgpt.js**는 극도의 유연성을 염두에 두고 작성되었습니다.
+**chatgpt.js** 는 유연성을 상당히 고려하여 작성되었습니다.
 
-예를 들어:
+예시:
 
 ```js
 chatgpt.getLastResponse();
@@ -137,55 +143,56 @@ chatgpt.response.getLast();
 chatgpt.get('reply', 'last');
 ```
 
-각 호출은 동일하게 마지막 응답을 가져옵니다. 작동한다고 생각되면 아마 작동할 것입니다... 그러니 그냥 입력하세요!
+각 호출은 동일한 방식으로 최신 응답을 가져옵니다. 만약 잘 작동한다고 생각하신다면, 그렇게 하시면 될겁니다... 그러니 그냥 입력하세요!
 
-그렇지 않은 경우 [이슈](https://github.com/kudoai/chatgpt.js/issues) 또는 [PR](https://github.com/kudoai/chatgpt.js/pulls) 을 제출하세요. 그리고 그것은 통합될 것입니다, 쉬워요!
+만약 동작이 잘 안되신다면, 간단하게 [이슈](https://github.com/kudoai/chatgpt.js/issues)를 열거나 [PR](https://github.com/kudoai/chatgpt.js/pulls)을 주시면 통합될 것 입니다, 참 쉽죠!
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
-## 🤖 chatgpt.js 로 제작
+## 🤖 chatgpt.js로 만들어진 프로젝트
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 기록 지우기](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 히스토리 자동삭제](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-최대한의 개인 정보 보호를 위해 ChatGPT 쿼리 기록을 자동으로 지웁니다.
-<br>[설치하다](https://github.com/adamlui/autoclear-chatgpt-history#installation) /
-[읽어보기](https://github.com/adamlui/autoclear-chatgpt-history#readme) /
-[논의하다](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
+최대 개인정보를 위해 ChatGPT 쿼리 히스토리를 자동으로 지는 기능입니다.
+<br>[설치](https://github.com/adamlui/autoclear-chatgpt-history#installation) /
+[리드미](https://github.com/adamlui/autoclear-chatgpt-history#readme) /
+[토론](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
-### <img width=16 src="https://i.imgur.com/1yjmK3W.png"> [Automatic ChatGPT DAN](https://github.com/madkarmaa/automatic-chatgpt-dan)
+### <img width=16 src="https://i.imgur.com/1yjmK3W.png"> [ChatGPT DAN 자동화](https://github.com/madkarmaa/automatic-chatgpt-dan)
 
-ChatGPT 에 DAN 프롬프트를 자동으로 보냅니다.
-<br>[설치하다](https://github.com/madkarmaa/automatic-chatgpt-dan#%EF%B8%8F-installation) /
-[읽어보기](https://github.com/madkarmaa/automatic-chatgpt-dan#readme) /
-[논의하다](https://github.com/madkarmaa/automatic-chatgpt-dan/issues)
+ChatGPT에 자동으로 DAN 프롬프트를 전송하는 기능입니다.
+<br>[설치](https://github.com/madkarmaa/automatic-chatgpt-dan#%EF%B8%8F-installation) /
+[리드미](https://github.com/madkarmaa/automatic-chatgpt-dan#readme) /
+[토론](https://github.com/madkarmaa/automatic-chatgpt-dan/issues)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-Brave Search 사이드바에 ChatGPT 답변 표시 (GPT-4 제공!)
-<br>[설치하다](https://github.bravegpt.com/#installation) /
-[읽어보기](https://github.bravegpt.com/#readme) /
-[논의하다](https://github.bravegpt.com/discussions)
+Brave Search 사이드바에 ChatGPT의 답변을 표시해주는 기능입니다. (GPT-4 기반)
+<br>[설치](https://github.bravegpt.com/#installation) /
+[리드미](https://github.bravegpt.com/#readme) /
+[토론](https://github.bravegpt.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 자동 계속 ⏩](https://chatgptevo.com/autocontinue/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 자동 진행 ⏩](https://chatgptevo.com/autocontinue/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
-ChatGPT 응답을 자동으로 계속 생성하세요.<br>
-[설치하다](https://github.com/adamlui/chatgpt-auto-continue#installation) /
-[읽어보기](https://github.com/adamlui/chatgpt-auto-continue#readme) /
-[논의하다](https://chatgptevo.com/autocontinue/discussions)
+자동으로 여러 개의 ChatGPT 응답을 계속해서 생성하는 기능입니다.<br>
+[설치](https://github.com/adamlui/chatgpt-auto-continue#installation) /
+[리드미](https://github.com/adamlui/chatgpt-auto-continue#readme) /
+[토론](https://chatgptevo.com/autocontinue/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 자동 새로 고침 ↻](https://chatgptevo.com/autorefresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 자동 새로고침 ↻](https://chatgptevo.com/autorefresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-네트워크 오류 + Cloudflare 검사를 제거하기 위해 ChatGPT 세션을 최신 상태로 유지합니다.
-<br>[설치하다](https://github.com/adamlui/chatgpt-auto-refresh#installation) /
-[읽어보기](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
-[논의하다](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
+Cloudflare확인과 네트워크 오류를 제거 하기 위해 ChatGPT세션을 유지하는 기능입니다.
+<br>[설치](https://github.com/adamlui/chatgpt-auto-refresh#installation) /
+[리드미](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
+[토론](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
 ### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-DuckDuckGo 사이드바에 ChatGPT 답변 표시(GPT-4 제공!)
-<br>[설치하다](https://github.duckduckgpt.com/#installation) /
-[읽어보기](https://github.duckduckgpt.com/#readme) /
-[논의하다](https://github.duckduckgpt.com/discussions)
+DuckDuckGo 사이드바에 ChatGPT의 답변을 표시해주는 기능입니다. (GPT-4 기반)
+<br>[설치](https://github.duckduckgpt.com/#installation) /
+[리드미](https://github.duckduckgpt.com/#readme) /
+[토론](https://github.duckduckgpt.com/discussions)
+
 
 <br>
 
@@ -197,13 +204,15 @@ DuckDuckGo 사이드바에 ChatGPT 답변 표시(GPT-4 제공!)
 
 <br>
 
-공유하고 싶은 것을 chatgpt.js 로 만들었다면 [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) 로 이메일을 보내거나 [풀 요청](https://github.com/kudoai/chatgpt.js/pulls)!
+chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) 로 이메일을 보내시거나 [pull request](https://github.com/kudoai/chatgpt.js/pulls)를 열어주세요!
+
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
 ## 🧠 기여자
 
-이 라이브러리는 다음 기여자의 코드, 번역, 문제 및 아이디어 덕분에 존재합니다:
+이 라이브러리는 다음 기여자들의 코드, 번역, 이슈 및 아이디어 덕분에 존재합니다.
+
 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.15&h=50&w=50&mask=circle&maxage=7d '@adamlui')](https://github.com/adamlui)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?first-contrib=2023.03.16-get-functions&h=50&w=50&mask=circle&maxage=7d '@mefengl')](https://github.com/mefengl)
@@ -233,12 +242,13 @@ DuckDuckGo 사이드바에 ChatGPT 답변 표시(GPT-4 제공!)
   </picture>
 </a>
 
-<br>_도움이 되었다면 이 리포지토리에 ⭐를 주는 것을 고려해보세요!_
+<br>_도움이 되셨다면 이 저장소(Repo)에 ⭐을 주세요_
+
 
 </div>
 
 #
 
-<a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**릴리스**</a> /
-<a href="https://github.com/kudoai/chatgpt.js/discussions">논의하다</a> /
-<a href="#">맨 위로 ↑</a>
+<a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**릴리즈**</a> /
+<a href="https://github.com/kudoai/chatgpt.js/discussions">토론</a> /
+<a href="#">상단으로 ↑</a>
