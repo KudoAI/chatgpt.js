@@ -63,10 +63,8 @@ Estas são algumas das extensões apresentadas pelo Google que usam chatgpt.js:
 
 <a href="https://chatgptwidescreen.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
-<br>
-
 </div>
 
 #
 
-<div align="right"><a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">Obter ajuda</a> / <a href="#">De volta ao topo ↑</a></div>
+<a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">Obter ajuda</a> / <a href="#">De volta ao topo ↑</a>
