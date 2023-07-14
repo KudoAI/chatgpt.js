@@ -25,7 +25,14 @@
                 <option value="/pt/">Português</option>
             </select>
         </nav>
-        <script>function changeLanguage(selector) { window.location.href = '#' + selector.value; }</script>
+        <script>
+            function changeLanguage(selector) {
+                const tempDiv = document.createElement('div');
+                tempDiv.innerText = selector.value;
+                const sanitizedLang = tempDiv.innerHTML;
+                window.location.href = '#' + sanitizedLang;
+            }
+        </script>
         <div id="app"></div>
         <script>
             window.$docsify = {
