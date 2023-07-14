@@ -562,7 +562,7 @@ const chatgpt = {
     },
 
     getResponseFromDOM: function(pos) {
-        var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
+        var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
         var strPos = pos.toString().toLowerCase();
         if (/last|final/.test(strPos)) { // get last response
             return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
@@ -822,12 +822,12 @@ const chatgpt = {
         },
 
         getLastDiv: function() {
-            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
+            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
             return responseDivs.length ? responseDivs[responseDivs.length - 1] : '';
         },
 
         getWithIndex: function(pos) {
-            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
+            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
             var strPos = pos.toString().toLowerCase();
             if (/last|final/.test(strPos)) { // get last response
                 return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
