@@ -6,4 +6,4 @@
 
 취약점을 발견하면 [보안 권고 초안](https://github.com/kudoai/chatgpt.js/security/advisories/new)을 여십시오.
 
-풀 요청도 환영하지만 안전상의 이유로 security@chatgptjs.org로 이메일을 보내고 공개하기 전에 응답을 기다리십시오.
+풀 요청도 환영하지만 안전상의 이유로 security@chatgptjs.org 로 이메일을 보내고 공개하기 전에 응답을 기다리십시오.
