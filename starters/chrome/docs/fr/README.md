@@ -1,6 +1,6 @@
 <div align="right">
 
-###### Français | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../pt#readme">Português</a>
+###### Français | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../ko#readme">한국인</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../it#readme">Italiano</a> | <a href="../pt#readme">Português</a>
 
 </div>
 
@@ -38,7 +38,7 @@ C'est ça! **ChatGPT Extension** apparaîtra désormais dans la liste des extens
 
 <br>
 
-**💡 CONSEIL:** _Pour refléter les modifications apportées au code source, cliquez sur **Recharger** sur la vignette d'extension + recharger tous les scripts d'extension d'onglets Chrome en cours d'exécution:_
+**💡 CONSEIL:** _Pour refléter les modifications du code source, cliquez sur **Recharger** sur la vignette d'extension + recharger tous les scripts d'extension d'onglets Chrome en cours d'exécution:_
 
 <div align="center">
 
@@ -65,10 +65,8 @@ Voici quelques-unes des extensions proposées par Google qui utilisent chatgpt.j
 
 <a href="https://chatgptwidescreen.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
-<br>
-
 </div>
 
 #
 
-<div align="right"><a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">Obtenir de l'aide</a> / <a href="#">Retour au sommet ↑</a></div>
+<a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">Obtenir de l'aide</a> / <a href="#">Retour au sommet ↑</a>

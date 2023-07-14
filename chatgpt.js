@@ -466,14 +466,28 @@ const chatgpt = {
 
     getChatInput: function() { return chatgpt.getChatBox().value; },
 
+    getContinueGeneratingButton: function() {
+        for (var formButton of document.querySelectorAll('form button')) {
+            if (formButton.textContent.toLowerCase().includes('continue')) {
+                return formButton;
+    }}},
+
     getLastResponse: function() {
-        var lastResponseDiv = chatgpt.getLastResponseDiv();
-        return lastResponseDiv ? lastResponseDiv.textContent : '';
+        if (window.location.href.match(/^https:\/\/chat\.openai\.com\/c\//))
+            return chatgpt.getLastResponseFromDOM();
+        else return chatgpt.getResponseFromAPI();
     },
 
     getLastResponseDiv: function() {
-        var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
+        const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
         return responseDivs.length ? responseDivs[responseDivs.length - 1] : '';
+    },
+
+    getLastResponseFromAPI: function() { chatgpt.getResponseFromAPI(); },
+
+    getLastResponseFromDOM: function() {
+        const lastResponseDiv = chatgpt.getLastResponseDiv();
+        return lastResponseDiv ? lastResponseDiv.textContent.replace(/^ChatGPTChatGPT\d+ \/ \d+/, '') : '';
     },
 
     getNewChatLink: function() {
@@ -488,36 +502,10 @@ const chatgpt = {
                 return formButton;
     }}},
 
-    getResponse: function(pos) {
-        var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
-        var strPos = pos.toString().toLowerCase();
-        if (/last|final/.test(strPos)) { // get last response
-            return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
-        } else { // get nth response
-            var nthOfResponse = (
-
-                // Calculate base number
-                Number.isInteger(pos) ? pos : // do nothing for integers
-                strPos.match(/^\d+/) ? strPos.match(/^\d+/)[0] : // extract first digits for strings w/ them
-                ( // convert words to integers for digitless strings
-                    /^(1|one|fir)(st)?$/.test(strPos) ? 1
-                    : /^(2|tw(o|en|el(ve|f))|seco)(nd|t[yi])?(e?th)?$/.test(strPos) ? 2
-                    : /^(3|th(ree|ir?))(rd|teen|t[yi])?(e?th)?$/.test(strPos) ? 3
-                    : /^(4|fou?r)(teen|t[yi])?(e?th)?$/.test(strPos) ? 4
-                    : /^(5|fi(ve|f))(teen|t[yi])?(e?th)?$/.test(strPos) ? 5
-                    : /^(6|six)(teen|t[yi])?(e?th)?$/.test(strPos) ? 6
-                    : /^(7|seven)(teen|t[yi])?(e?th)?$/.test(strPos) ? 7
-                    : /^(8|eight?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 8
-                    : /^(9|nine?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 9
-                    : /^(10|ten)(th)?$/.test(strPos) ? 10 : 1 )
-
-                // Transform base number if suffixed
-                * ( /ty|ieth$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
-                + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
-
-            );
-            return responseDivs.length ? responseDivs[nthOfResponse - 1].textContent : '';
-        }
+    getResponse: function() {
+        if (window.location.href.match(/^https:\/\/chat\.openai\.com\/c\//))
+            return chatgpt.getResponseFromDOM.apply(null, arguments);
+        else return chatgpt.getResponseFromAPI.apply(null, arguments);
     },
 
     getResponseFromAPI: function(chatToGet, responseToGet, regenResponseToGet) {
@@ -526,11 +514,11 @@ const chatgpt = {
     // regenResponseToGet = index of regenerated response to get (defaults to latest if '' or blank)
 
         // Validate args
-        for (let i = 0; i < arguments.length; i++) {
+        for (let i = 1; i < arguments.length; i++) {
             if (!(!arguments[i] || Number.isInteger(arguments[i]) || /^\d+$/.test(arguments[i]))) {
                 return console.error('🤖 chatgpt.js >> Invalid '
                     + ( i === 0 ? 'chat' : i === 1 ? 'response' : 'regenResponse' )
-                    + 'toGet arg \'' + chatToGet + '\' supplied. Must be number!'); }}
+                    + 'ToGet arg \'' + chatToGet + '\' supplied. Must be number!'); }}
         chatToGet = chatToGet ? chatToGet : 0;
 
         // Return response
@@ -576,13 +564,42 @@ const chatgpt = {
                         return resolve(responses[regenResponseToGet].content.parts[0]); 
                     };
                     xhr.send();
-                });
-        });}
+        });});}
     },
 
-    getSendButton: function() {
-        return document.querySelector('form button[class*="bottom"]');
+    getResponseFromDOM: function(pos) {
+        var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
+        var strPos = pos.toString().toLowerCase();
+        if (/last|final/.test(strPos)) { // get last response
+            return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
+        } else { // get nth response
+            var nthOfResponse = (
+
+                // Calculate base number
+                Number.isInteger(pos) ? pos : // do nothing for integers
+                strPos.match(/^\d+/) ? strPos.match(/^\d+/)[0] : // extract first digits for strings w/ them
+                ( // convert words to integers for digitless strings
+                    /^(1|one|fir)(st)?$/.test(strPos) ? 1
+                    : /^(2|tw(o|en|el(ve|f))|seco)(nd|t[yi])?(e?th)?$/.test(strPos) ? 2
+                    : /^(3|th(ree|ir?))(rd|teen|t[yi])?(e?th)?$/.test(strPos) ? 3
+                    : /^(4|fou?r)(teen|t[yi])?(e?th)?$/.test(strPos) ? 4
+                    : /^(5|fi(ve|f))(teen|t[yi])?(e?th)?$/.test(strPos) ? 5
+                    : /^(6|six)(teen|t[yi])?(e?th)?$/.test(strPos) ? 6
+                    : /^(7|seven)(teen|t[yi])?(e?th)?$/.test(strPos) ? 7
+                    : /^(8|eight?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 8
+                    : /^(9|nine?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 9
+                    : /^(10|ten)(th)?$/.test(strPos) ? 10 : 1 )
+
+                // Transform base number if suffixed
+                * ( /ty|ieth$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
+                + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
+
+            );
+            return responseDivs.length ? responseDivs[nthOfResponse - 1].textContent : '';
+        }
     },
+
+    getSendButton: function() { return document.querySelector('form button[class*="bottom"]'); },
 
     getStopGeneratingButton: function() {
         for (var formButton of document.querySelectorAll('form button')) {
@@ -590,11 +607,8 @@ const chatgpt = {
                 return formButton;
     }}},
 
-    getContinueGeneratingButton: function() {
-        for (var formButton of document.querySelectorAll('form button')) {
-            if (formButton.textContent.toLowerCase().includes('continue')) {
-                return formButton;
-    }}},
+    getUserLanguage: function() {
+        return navigator.languages[0] || navigator.language || navigator.browserLanguage | navigator.systemLanguage || navigator.userLanguage || ''; },
 
     history: {
         isOn: function() {
@@ -603,7 +617,6 @@ const chatgpt = {
             } return true;
         },
         isOff: function() { return !this.isOn(); },
-
         activate: function() { this.isOff() ? this.toggle() : console.info('🤖 chatgpt.js >> Chat history is already enabled!'); },
         deactivate: function() { this.isOn() ? this.toggle() : console.info('🤖 chatgpt.js >> Chat history is already disabled!'); },
         toggle: function() {                
@@ -809,12 +822,12 @@ const chatgpt = {
         },
 
         getLastDiv: function() {
-            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
+            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
             return responseDivs.length ? responseDivs[responseDivs.length - 1] : '';
         },
 
         getWithIndex: function(pos) {
-            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
+            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
             var strPos = pos.toString().toLowerCase();
             if (/last|final/.test(strPos)) { // get last response
                 return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
@@ -869,8 +882,7 @@ const chatgpt = {
     },
 
     scrollToBottom: function() {
-        try { document.querySelector('button[class*="cursor"]').click(); } catch (error) { console.error('🤖 chatgpt.js >> ', error); }
-    },
+        try { document.querySelector('button[class*="cursor"]').click(); } catch (error) { console.error('🤖 chatgpt.js >> ', error); }},
 
     send: function(msg, method='') {
         var textArea = document.querySelector('form textarea');

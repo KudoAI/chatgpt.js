@@ -1,10 +1,10 @@
 <div align="right">
-<h5>Italiano | <a href="../../LICENSE.md">English</a> | <a href="../zh-cn/LICENSE.md">简体中文</a> | <a href="../ja/LICENSE.md">日本</a> | <a href="../ko/LICENSE.md">한국인</a> | <a href="../hi/LICENSE.md">हिंदी</a> | <a href="../de/LICENSE.md">Deutsch</a> | <a href="../es/LICENSE.md">Español</a> | <a href="../fr/LICENSE.md">Français</a> | <a href="../pt/LICENSE.md">Português</a></h5>
+<h5>Italiano | <a href="../LICENSE.md">English</a> | <a href="../zh-cn/LICENSE.md">简体中文</a> | <a href="../ja/LICENSE.md">日本</a> | <a href="../ko/LICENSE.md">한국인</a> | <a href="../hi/LICENSE.md">हिंदी</a> | <a href="../de/LICENSE.md">Deutsch</a> | <a href="../es/LICENSE.md">Español</a> | <a href="../fr/LICENSE.md">Français</a> | <a href="../pt/LICENSE.md">Português</a></h5>
 </div>
 
 # Licenza MIT
 
-Diritto d'autore (c) 2023 [KudoAI](https://github.com/kudoai) e [contributori](.#-contributori)
+Diritto d'autore (c) 2023 [KudoAI](https://github.com/kudoai) e contributori
 
 L'autorizzazione è concessa, a titolo gratuito, a chiunque ne ottenga una copia di questo software e dei file di documentazione associati (il "Software"), da trattare nel Software senza limitazioni, inclusi, senza limitazioni, i diritti utilizzare, copiare, modificare, unire, pubblicare, distribuire, concedere in sublicenza e/o vendere copie del Software e per consentire alle persone a cui il Software è
 fornito a tal fine, alle seguenti condizioni:

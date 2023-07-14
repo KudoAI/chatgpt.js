@@ -1,6 +1,6 @@
 <div align="right">
 
-###### English | <a href="zh-cn#readme">简体中文</a> | <a href="ja#readme">日本</a> | <a href="hi#readme">हिंदी</a> | <a href="de#readme">Deutsch</a> | <a href="es#readme">Español</a> | <a href="fr#readme">Français</a> | <a href="pt#readme">Português</a>
+###### English | <a href="zh-cn#readme">简体中文</a> | <a href="ja#readme">日本</a> | <a href="ko#readme">한국인</a> | <a href="hi#readme">हिंदी</a> | <a href="de#readme">Deutsch</a> | <a href="es#readme">Español</a> | <a href="fr#readme">Français</a> | <a href="it#readme">Italiano</a> | <a href="pt#readme">Português</a>
 
 </div>
 
@@ -38,7 +38,7 @@ That's it! **ChatGPT Extension** will now appear in extension list:
 
 <br>
 
-**💡 TIP:** _To reflect changes to source code, click **Reload** on extension tile + reload any Chrome tabs extension scripts are running on:_
+**💡 TIP:** _To reflect changes from source code, click **Reload** on extension tile + reload any Chrome tabs extension scripts are running on:_
 
 <div align="center">
 
@@ -65,10 +65,8 @@ These are some of the extensions featured by Google that use chatgpt.js:
 
 <a href="https://chatgptwidescreen.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
-<br>
-
 </div>
 
 #
 
-<div align="right"><a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">Get Help</a> / <a href="#">Back to top ↑</a></div>
+<a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">Get Help</a> / <a href="#">Back to top ↑</a>

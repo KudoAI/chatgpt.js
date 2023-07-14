@@ -1,6 +1,6 @@
 <div align="right">
 
-###### हिंदी | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../pt#readme">Português</a>
+###### हिंदी | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../ja#readme">日本</a> | <a href="../ko#readme">한국인</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../it#readme">Italiano</a> | <a href="../pt#readme">Português</a>
     
 </div>
 
@@ -38,7 +38,7 @@
 
 <br>
 
-**💡 टिप:** _स्रोत कोड में परिवर्तनों को प्रतिबिंबित करने के लिए, एक्सटेंशन टाइल पर **पुनः लोड करें** पर क्लिक करें + किसी भी Chrome टैब एक्सटेंशन स्क्रिप्ट पर पुनः लोड करें पर क्लिक करें:_
+**💡 टिप:** _स्रोत कोड से परिवर्तन प्रतिबिंबित करने के लिए, एक्सटेंशन टाइल पर **पुनः लोड करें** पर क्लिक करें + किसी भी Chrome टैब एक्सटेंशन स्क्रिप्ट पर पुनः लोड करें पर क्लिक करें:_
 
 <div align="center">
 
@@ -65,10 +65,8 @@
 
 <a href="https://chatgptwidescreen.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
-<br>
-
 </div>
 
 #
 
-<div align="right"><a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">मदद लें</a> / <a href="#">वापस शीर्ष पर ↑</a></div>
+<a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">मदद लें</a> / <a href="#">वापस शीर्ष पर ↑</a>

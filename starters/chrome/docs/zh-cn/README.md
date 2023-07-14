@@ -1,6 +1,6 @@
 <div align="right">
 
-###### 简体中文 | <a href="../..#readme">English</a> | <a href="../ja#readme">日本</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../pt#README">Português</a>
+###### 简体中文 | <a href="../..#readme">English</a> | <a href="../ja#readme">日本</a> | <a href="../ko#readme">한국인</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../it#readme">Italiano</a> | <a href="../pt#README">Português</a>
     
 </div>
 
@@ -38,7 +38,7 @@
 
 <br>
 
-**💡 提示:** _要反映对源代码的更改，请单击扩展程序图块上的**重新加载** + 重新加载任何正在运行的 Chrome 选项卡扩展程序脚本：_
+**💡 提示:** _反映源代码的更改，请单击扩展程序图块上的**重新加载** + 重新加载任何正在运行的 Chrome 选项卡扩展程序脚本：_
 
 <div align="center">
 
@@ -65,10 +65,8 @@
 
 <a href="https://chatgptwidescreen.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
-<br>
-
 </div>
 
 #
 
-<div align="right"><a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">得到帮助</a> / <a href="#">回到顶部 ↑</a></div>
+<a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">得到帮助</a> / <a href="#">回到顶部 ↑</a>

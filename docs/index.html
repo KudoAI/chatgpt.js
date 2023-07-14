@@ -11,17 +11,26 @@
         <link rel="stylesheet" href="assets/styles/css/style.css" />
     </head>
     <body>
-        <nav>
-            <a href="#/">English</a>
-            <a href="#/zh-cn/">简体中文</a>
-            <a href="#/ja/">日本</a>
-            <a href="#/hi/">हिंदी</a>
-            <a href="#/de/">Deutsch</a>
-            <a href="#/es/">Español</a>
-            <a href="#/es/">Français</a>
-            <a href="#/it/">Italiano</a>
-            <a href="#/pt/">Português</a>
+        <nav class="language-selector">
+            <select onchange="changeLanguage(this)">
+                <option value="/">English</option>
+                <option value="/zh-cn/">简体中文</option>
+                <option value="/ja/">日本</option>
+                <option value="/ko/">한국인</option>
+                <option value="/hi/">हिंदी</option>
+                <option value="/de/">Deutsch</option>
+                <option value="/es/">Español</option>
+                <option value="/fr/">Français</option>
+                <option value="/it/">Italiano</option>
+                <option value="/pt/">Português</option>
+            </select>
         </nav>
+        <script>
+            function changeLanguage(selector) {
+                const tempDiv = document.createElement('div'); tempDiv.innerText = selector.value;
+                const sanitizedLang = tempDiv.innerHTML; window.location.href = '#' + sanitizedLang;
+            }
+        </script>
         <div id="app"></div>
         <script>
             window.$docsify = {
@@ -29,23 +38,23 @@
                 repo: 'kudoai/chatgpt.js',
                 loadNavbar: true,
                 logo: 'https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-sidepadded-light-mode-650x61.png',
-                coverpage: ['/', '/zh-cn/', '/ja/', '/hi/', '/de/', '/es/', '/fr/', '/it/', '/pt/'],
+                coverpage: ['/', '/zh-cn/', '/ja/', '/ko/', '/hi/', '/de/', '/es/', '/fr/', '/it/', '/pt/'],
                 maxLevel: 3,
                 search: {
                     paths: 'auto',
                     placeholder: { '/': 'Search',
-                        '/zh-cn/': '搜索', '/ja/': '検索', '/hi/': 'खोज', '/de/': 'Suchen', '/es/': 'Buscar',
+                        '/zh-cn/': '搜索', '/ja/': '찾다', '/ko/': '検索', '/hi/': 'खोज', '/de/': 'Suchen', '/es/': 'Buscar',
                         '/fr/': 'Recherche', '/it/': 'Ricerca', '/pt/': 'Procurar' },
                     noData: { '/': 'No results!',
-                        '/zh-cn/': '没有结果!', '/ja/': '結果がありません!', '/hi/': 'कोई परिणाम नहीं!', '/de/': 'Keine Ergebnisse!',
-                        '/es/': '¡No hay resultados!', '/fr/': 'Aucun résultat!', '/it/': 'Nessun risultato!',
-                        '/pt/': 'Sem resultados!' },
-                    pathNamespaces: /^(\/(zh-cn|ja|hi|de|es|fr|it|pt))?/
+                        '/zh-cn/': '没有结果!', '/ja/': '結果がありません!', '/ko/': '결과가 없습니다!', '/hi/': 'कोई परिणाम नहीं!',
+                        '/de/': 'Keine Ergebnisse!', '/es/': '¡No hay resultados!', '/fr/': 'Aucun résultat!',
+                        '/it/': 'Nessun risultato!', '/pt/': 'Sem resultados!' },
+                    pathNamespaces: /^(\/(zh-cn|ja|ko|hi|de|es|fr|it|pt))?/
                 },
                 routes: {
                     '.*javascript.*': function() { // scroll-to-top link
                         history.pushState(null, null, '#') // prevent default nav away
-                        setTimeout(function() { window.scrollTo({ top: 0, behavior: 'smooth' })}, 1)
+                        setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' })}, 1)
                 }}
             }
         </script>

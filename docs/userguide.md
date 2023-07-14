@@ -43,6 +43,7 @@
     - [getChatDetails `async`](#getchatdetails-async)
     - [getLastResponse](#getlastresponse)
     - [getResponse](#getresponse)
+    - [getResponseFromAPI `async`](#getresponsefromapi-async)
     - [isIdle `async`](#isidle-async)
     - [regenerate](#regenerate)
     - [scrollToBottom](#scrolltobottom)
@@ -128,7 +129,7 @@ Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CD
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@8483b553675c3444db5c6b40a8686531c11b2a35/dist/chatgpt-1.12.0.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@09e429363da222312c22ff7b67e3cc0fa08c4665/dist/chatgpt-2.0.0.min.js
 // ==/UserScript==
 
 // Your code here...
@@ -501,6 +502,27 @@ var fifthResp;
 fifthResp = chatgpt.getResponse(5); // Returns the 5th response
 fifthResp = chatgpt.getResponse('fifth'); // Also returns the 5th response
 fifthResp = chatgpt.getResponse('five'); // Returns the 5th response too
+```
+
+### getResponseFromAPI `async`
+
+Returns the Nth response ChatGPT has written in a Nth chat as a string.
+
+**Parameters**:
+
+`chatToGet`: A number representing the index of the chat to get the response from. Defaults to latest.
+
+`responseToGet`: A number representing the index of the response to get. Defaults to latest.
+
+`regenResponseToGet`: A number representing the index of the regenerated response (in case there is one). Defaults to latest.
+
+Example code:
+
+```js
+async function doSomething() {
+  const response = chatgpt.getResponseFromAPI();
+  console.log(response);
+}
 ```
 
 ### isIdle `async`
