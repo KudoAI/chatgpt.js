@@ -494,49 +494,17 @@ const chatgpt = {
         else return chatgpt.getResponseFromAPI.apply(null, arguments);
     },
 
-    getResponseFromDOM: function(pos) {
-        var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
-        var strPos = pos.toString().toLowerCase();
-        if (/last|final/.test(strPos)) { // get last response
-            return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
-        } else { // get nth response
-            var nthOfResponse = (
-
-                // Calculate base number
-                Number.isInteger(pos) ? pos : // do nothing for integers
-                strPos.match(/^\d+/) ? strPos.match(/^\d+/)[0] : // extract first digits for strings w/ them
-                ( // convert words to integers for digitless strings
-                    /^(1|one|fir)(st)?$/.test(strPos) ? 1
-                    : /^(2|tw(o|en|el(ve|f))|seco)(nd|t[yi])?(e?th)?$/.test(strPos) ? 2
-                    : /^(3|th(ree|ir?))(rd|teen|t[yi])?(e?th)?$/.test(strPos) ? 3
-                    : /^(4|fou?r)(teen|t[yi])?(e?th)?$/.test(strPos) ? 4
-                    : /^(5|fi(ve|f))(teen|t[yi])?(e?th)?$/.test(strPos) ? 5
-                    : /^(6|six)(teen|t[yi])?(e?th)?$/.test(strPos) ? 6
-                    : /^(7|seven)(teen|t[yi])?(e?th)?$/.test(strPos) ? 7
-                    : /^(8|eight?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 8
-                    : /^(9|nine?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 9
-                    : /^(10|ten)(th)?$/.test(strPos) ? 10 : 1 )
-
-                // Transform base number if suffixed
-                * ( /ty|ieth$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
-                + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
-
-            );
-            return responseDivs.length ? responseDivs[nthOfResponse - 1].textContent : '';
-        }
-    },
-
     getResponseFromAPI: function(chatToGet, responseToGet, regenResponseToGet) {
     // chatToGet = index|title|id of chat to get (defaults to latest if '' or blank)
     // responseToGet = index of response to get (defaults to latest if '' or blank)
     // regenResponseToGet = index of regenerated response to get (defaults to latest if '' or blank)
 
         // Validate args
-        for (let i = 0; i < arguments.length; i++) {
+        for (let i = 1; i < arguments.length; i++) {
             if (!(!arguments[i] || Number.isInteger(arguments[i]) || /^\d+$/.test(arguments[i]))) {
                 return console.error('🤖 chatgpt.js >> Invalid '
                     + ( i === 0 ? 'chat' : i === 1 ? 'response' : 'regenResponse' )
-                    + 'toGet arg \'' + chatToGet + '\' supplied. Must be number!'); }}
+                    + 'ToGet arg \'' + chatToGet + '\' supplied. Must be number!'); }}
         chatToGet = chatToGet ? chatToGet : 0;
 
         // Return response
@@ -583,6 +551,38 @@ const chatgpt = {
                     };
                     xhr.send();
         });});}
+    },
+
+    getResponseFromDOM: function(pos) {
+        var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group] p');
+        var strPos = pos.toString().toLowerCase();
+        if (/last|final/.test(strPos)) { // get last response
+            return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
+        } else { // get nth response
+            var nthOfResponse = (
+
+                // Calculate base number
+                Number.isInteger(pos) ? pos : // do nothing for integers
+                strPos.match(/^\d+/) ? strPos.match(/^\d+/)[0] : // extract first digits for strings w/ them
+                ( // convert words to integers for digitless strings
+                    /^(1|one|fir)(st)?$/.test(strPos) ? 1
+                    : /^(2|tw(o|en|el(ve|f))|seco)(nd|t[yi])?(e?th)?$/.test(strPos) ? 2
+                    : /^(3|th(ree|ir?))(rd|teen|t[yi])?(e?th)?$/.test(strPos) ? 3
+                    : /^(4|fou?r)(teen|t[yi])?(e?th)?$/.test(strPos) ? 4
+                    : /^(5|fi(ve|f))(teen|t[yi])?(e?th)?$/.test(strPos) ? 5
+                    : /^(6|six)(teen|t[yi])?(e?th)?$/.test(strPos) ? 6
+                    : /^(7|seven)(teen|t[yi])?(e?th)?$/.test(strPos) ? 7
+                    : /^(8|eight?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 8
+                    : /^(9|nine?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 9
+                    : /^(10|ten)(th)?$/.test(strPos) ? 10 : 1 )
+
+                // Transform base number if suffixed
+                * ( /ty|ieth$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
+                + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
+
+            );
+            return responseDivs.length ? responseDivs[nthOfResponse - 1].textContent : '';
+        }
     },
 
     getSendButton: function() {
