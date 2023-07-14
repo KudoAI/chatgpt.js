@@ -1,17 +1,17 @@
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 
-// Ini queues for feedback methods
-var alertQueue = []; localStorage.alertQueue = JSON.stringify(alertQueue);
-var notifyQueue = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
-localStorage.notifyQueue = JSON.stringify(notifyQueue);
-
 // Ini OpenAI endpoints
 const endpoints = {
     session: 'https://chat.openai.com/api/auth/session',
     chats: 'https://chat.openai.com/backend-api/conversations',
     chat: 'https://chat.openai.com/backend-api/conversation'
 };
+
+// Ini queues for feedback methods
+var alertQueue = []; localStorage.alertQueue = JSON.stringify(alertQueue);
+var notifyQueue = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
+localStorage.notifyQueue = JSON.stringify(notifyQueue);
 
 // Define chatgpt.methods
 const chatgpt = {
