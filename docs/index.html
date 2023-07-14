@@ -18,6 +18,7 @@
             <a href="#/hi/">हिंदी</a>
             <a href="#/de/">Deutsch</a>
             <a href="#/es/">Español</a>
+            <a href="#/it/">Italiano</a>
             <a href="#/pt/">Português</a>
         </nav>
         <div id="app"></div>
@@ -27,16 +28,18 @@
                 repo: 'kudoai/chatgpt.js',
                 loadNavbar: true,
                 logo: 'https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-sidepadded-light-mode-650x61.png',
-                coverpage: ['/', '/zh-cn/', '/ja/', '/hi/', '/de/', '/es/', '/pt/'],
+                coverpage: ['/', '/zh-cn/', '/ja/', '/hi/', '/de/', '/es/', '/fr/', '/it/', '/pt/'],
                 maxLevel: 3,
                 search: {
                     paths: 'auto',
                     placeholder: { '/': 'Search',
-                        '/zh-cn/': '搜索', '/ja/': '検索', '/hi/': 'खोज', '/de/': 'Suchen', '/es/': 'Buscar', '/pt/': 'Procurar' },
+                        '/zh-cn/': '搜索', '/ja/': '検索', '/hi/': 'खोज', '/de/': 'Suchen', '/es/': 'Buscar',
+                        '/fr/': 'Recherche', '/it/': 'Ricerca', '/pt/': 'Procurar' },
                     noData: { '/': 'No results!',
                         '/zh-cn/': '没有结果!', '/ja/': '結果がありません!', '/hi/': 'कोई परिणाम नहीं!', '/de/': 'Keine Ergebnisse!',
-                        '/es/': '¡No hay resultados!', '/pt/': 'Sem resultados!' },
-                    pathNamespaces: ['/zh-cn', '/ja', '/hi'],
+                        '/es/': '¡No hay resultados!', '/fr/': 'Aucun résultat!', '/it/': 'Nessun risultato!',
+                        '/pt/': 'Sem resultados!' },
+                    pathNamespaces: /^(\/(zh-cn|ja|hi|de|es|fr|it|pt))?/
                 },
                 routes: {
                     '.*javascript.*': function() { // scroll-to-top link
