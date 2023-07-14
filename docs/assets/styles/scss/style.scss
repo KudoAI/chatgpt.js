@@ -91,10 +91,11 @@ h3 a:hover { text-decoration: underline #42b983 }
 img[src*="promo-tile"] { width: 1111px  } /* enlarge promo tiles */
 
 /* Contributors */
-$contributors: ('contributors', '贡献者', '貢献者', 'योगदानकर्ता', 'colaboradores');
+$contributors: ('contributors', '贡献者', '貢献者', '기여자', 'योगदानकर्ता', 'mitwirkende',
+    'colaboradores', 'contributeurs', 'contributori', 'contribuidores');
 @each $translation in $contributors {
-    $id: unquote('#') + $translation;
-    h2#{$id}, h2#{$id} ~ p { text-align: center } /* center contributors section */
+    $id: unquote('#🧠-') + $translation;
+    h2#{$id}, h2#{$id} ~ p { text-align: center ; right: 0 } /* center contributors section */
     #{$id} ~ * img { width: 74px } /* zoom contributor avatars */
     #{$id} ~ br { display: none } /* hide trailing line break */
 }
