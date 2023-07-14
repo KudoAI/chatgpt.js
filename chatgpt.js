@@ -1,18 +1,19 @@
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 
-var alertProps = { queue: [] };
-var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
-localStorage.alertProps = JSON.stringify(alertProps);
-localStorage.notifyProps = JSON.stringify(notifyProps);
+// Ini queues for feedback methods
+var alertQueue = []; localStorage.alertQueue = JSON.stringify(alertQueue);
+var notifyQueue = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
+localStorage.notifyQueue = JSON.stringify(notifyQueue);
 
+// Ini OpenAI endpoints
 const endpoints = {
     session: 'https://chat.openai.com/api/auth/session',
     chats: 'https://chat.openai.com/backend-api/conversations',
     chat: 'https://chat.openai.com/backend-api/conversation'
 };
 
-const chatgpt = {
+// Define chatgpt.methods
     openAIaccessToken: undefined,
 
     activateDarkMode: function() {
@@ -141,9 +142,9 @@ const chatgpt = {
         modalContainer.appendChild(modal); document.body.appendChild(modalContainer); 
 
         // Enqueue alert
-        alertProps = JSON.parse(localStorage.alertProps);
-        alertProps.queue.push(modalContainer.id);
-        localStorage.alertProps = JSON.stringify(alertProps);
+        alertQueue = JSON.parse(localStorage.alertQueue);
+        alertQueue.push(modalContainer.id);
+        localStorage.alertQueue = JSON.stringify(alertQueue);
 
         // Add listeners
         document.addEventListener('keydown', keyHandler);
@@ -151,13 +152,13 @@ const chatgpt = {
             if (event.target === modalContainer) destroyAlert(); });
 
         // Show alert if none active
-        modalContainer.style.display = (alertProps.queue.length === 1) ? '' : 'none';
+        modalContainer.style.display = (alertQueue.length === 1) ? '' : 'none';
 
         function destroyAlert() {
             modalContainer.remove(); // remove from DOM
-            var alertProps = JSON.parse(localStorage.alertProps);
-            alertProps.queue.shift(); // + memory
-            localStorage.alertProps = JSON.stringify(alertProps); // + storage
+            alertQueue = JSON.parse(localStorage.alertQueue);
+            alertQueue.shift(); // + memory
+            localStorage.alertQueue = JSON.stringify(alertQueue); // + storage
 
             // Prevent memory leaks
             modalContainer.removeEventListener('click', destroyAlert);
@@ -165,8 +166,8 @@ const chatgpt = {
             dismissBtn.removeEventListener('click', destroyAlert);
 
             // Check for pending alerts in queue
-            if (alertProps.queue.length > 0) {
-                var nextAlert = document.getElementById(alertProps.queue[0]);
+            if (alertQueue.length > 0) {
+                var nextAlert = document.getElementById(alertQueue[0]);
                 setTimeout(() => { nextAlert.style.display = 'flex'; }, 500 );
             }
         }
@@ -174,8 +175,8 @@ const chatgpt = {
         function keyHandler(event) {
             var dismissKeys = [13, 27, 32]; // enter/esc/space
             if (dismissKeys.includes(event.keyCode)) {
-                for (var i = 0; i < alertProps.queue.length; i++) { // look to handle only if triggering alert is active
-                    var alert = document.getElementById(alertProps.queue[i]);
+                for (var i = 0; i < alertQueue.length; i++) { // look to handle only if triggering alert is active
+                    var alert = document.getElementById(alertQueue[i]);
                     if (alert && alert.style.display != 'none') { // active alert found
                         if (event.keyCode === 27) destroyAlert(); // if esc pressed, dismiss alert & do nothing
                         else if (event.keyCode === 32 || event.keyCode === 13) { // else if space/enter pressed
@@ -683,9 +684,9 @@ const chatgpt = {
             + (notificationDiv.isRight ? 'Right' : 'Left');
 
         // Store div
-        notifyProps = JSON.parse(localStorage.notifyProps);
-        notifyProps.quadrants[notificationDiv.quadrant].push(notificationDiv.id);
-        localStorage.notifyProps = JSON.stringify(notifyProps);
+        notifyQueue = JSON.parse(localStorage.notifyQueue);
+        notifyQueue.quadrants[notificationDiv.quadrant].push(notificationDiv.id);
+        localStorage.notifyQueue = JSON.stringify(notifyQueue);
 
         // Position notification (defaults to top-right)
         notificationDiv.style.top = notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
@@ -694,7 +695,7 @@ const chatgpt = {
         notificationDiv.style.left = !notificationDiv.isRight ? vpXoffset.toString() + 'px' : '';
 
         // Reposition old notifications
-        var thisQuadrantDivIDs = notifyProps.quadrants[notificationDiv.quadrant];
+        var thisQuadrantDivIDs = notifyQueue.quadrants[notificationDiv.quadrant];
         if (thisQuadrantDivIDs.length > 1) {
             try { // to move old notifications
                 var divsToMove = thisQuadrantDivIDs.slice(0, -1); // exclude new div
@@ -725,9 +726,9 @@ const chatgpt = {
         // Destroy notification
         notificationDiv.destroyTimer = setTimeout(function destroyNotif() {
             notificationDiv.remove(); // remove from DOM
-            notifyProps = JSON.parse(localStorage.notifyProps);
-            notifyProps.quadrants[notificationDiv.quadrant].shift(); // + memory
-            localStorage.notifyProps = JSON.stringify(notifyProps); // + storage
+            notifyQueue = JSON.parse(localStorage.notifyQueue);
+            notifyQueue.quadrants[notificationDiv.quadrant].shift(); // + memory
+            localStorage.notifyQueue = JSON.stringify(notifyQueue); // + storage
             notificationDiv.destroyTimer = null; // prevent memory leaks
         }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
     },
