@@ -52,8 +52,7 @@ const chatgpt = {
                     xhr.onload = () => {
                         if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
                         const data = JSON.parse(xhr.responseText);
-                        console.log(data);
-                        return resolve();
+                        return resolve(data);
                     };
                     xhr.send(JSON.stringify(
                         {
