@@ -924,13 +924,14 @@ const chatgpt = {
         }} setTimeout(() => { chatgpt.send(msg); }, 500);
     },
 
-    shareChat: function(chatToGet) {
+    shareChat: function(chatToGet, method = '') {
         return new Promise((resolve) => {
             chatgpt.getAccessToken().then(token => { // get access token
                 getChatNode(token).then(node => { // get chat node
                     makeChatToShare(token, node).then(data => {
                         confirmShareChat(token, data).then(() => {
                             resolve();
+                            if (['copy', 'clipboard'].includes(method)) navigator.clipboard.writeText(data.share_url);
                             // window.open(data.share_url, '_blank');
                         });
                     });
