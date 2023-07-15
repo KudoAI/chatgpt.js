@@ -16,7 +16,7 @@ localStorage.notifyQueue = JSON.stringify(notifyQueue);
 
 // Define chatgpt.methods
 const chatgpt = {
-    openAIaccessToken: undefined,
+    openAIaccessToken: {},
 
     activateDarkMode: function() {
         document.documentElement.classList.replace('light', 'dark');
@@ -349,7 +349,8 @@ const chatgpt = {
 
     getAccessToken: function() {
         return new Promise((resolve, reject) => {
-            if (chatgpt.openAIaccessToken && !(Date.parse(chatgpt.openAIaccessToken.expireDate) - Date.parse(new Date()) < 0)) // Present and not expired
+            if (Object.keys(chatgpt.openAIaccessToken).length > 0 && // populated
+                    !(Date.parse(chatgpt.openAIaccessToken.expireDate) - Date.parse(new Date()) < 0)) // not expired
                 return resolve(chatgpt.openAIaccessToken.token);
             const xhr = new XMLHttpRequest();
             xhr.open('GET', endpoints.session, true);
