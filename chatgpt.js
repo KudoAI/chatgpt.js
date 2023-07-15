@@ -965,6 +965,11 @@ const chatgpt = {
                         console.log(JSON.parse(xhr.responseText)); // DEBUG
                         return resolve(JSON.parse(xhr.responseText)); // return untouched data
                     };
+                    console.log({
+                        current_node_id: node, // by getChatNode
+                        conversation_id: chat.id, // current chat id
+                        is_anonymous: true // show user name in the conversation or not
+                    });
                     xhr.send(JSON.stringify( // request body
                         {
                             current_node_id: node, // by getChatNode
@@ -986,6 +991,14 @@ const chatgpt = {
                     console.log(JSON.parse(xhr.responseText)); // DEBUG
                     return resolve(); // the response has nothing useful
                 };
+                console.log({
+                    share_id: data.share_id,
+                    highlighted_message_id: data.highlighted_message_id,
+                    title: data.title,
+                    is_public: data.is_public,
+                    is_visible: data.is_visible,
+                    is_anonymous: data.is_anonymous
+                });
                 xhr.send(JSON.stringify( // request body
                     {
                         share_id: data.share_id,
