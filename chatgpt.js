@@ -33,17 +33,17 @@ const chatgpt = {
     // * Spaces are inserted into button labels by parsing function names in camel/kebab/snake case
 
         // Create modal parent/children elements
-        var modalContainer = document.createElement('div');
+        const modalContainer = document.createElement('div');
         modalContainer.id = Math.floor(Math.random() * 1000000) + Date.now();
         modalContainer.classList.add('chatgpt-modal'); // add class to main div
-        var modal = document.createElement('div');
-        var modalTitle = document.createElement('h2');
-        var modalMessage = document.createElement('p');
+        const modal = document.createElement('div');
+        const modalTitle = document.createElement('h2');
+        const modalMessage = document.createElement('p');
 
         // Create/append style if necessary
         if (!document.querySelector('#chatgpt-alert-style')) {
-            var scheme = chatgpt.isDarkMode() ? 'dark' : 'light';
-            var modalStyle = document.createElement('style');
+            const scheme = chatgpt.isDarkMode() ? 'dark' : 'light';
+            const modalStyle = document.createElement('style');
             modalStyle.id = 'chatgpt-alert-style';
             modalStyle.innerText = (
 
@@ -92,23 +92,23 @@ const chatgpt = {
         modalMessage.innerText = msg ? msg : ''; this.renderHTML(modalMessage);
 
         // Create/append buttons (if provided) to buttons div
-        var modalButtons = document.createElement('div');
+        const modalButtons = document.createElement('div');
         modalButtons.classList.add('modal-buttons');
         if (btns) { // are supplied
             if (!Array.isArray(btns)) btns = [btns]; // convert single button to array if necessary
             btns.forEach((buttonFn) => { // create title-cased labels + attach listeners
-                var button = document.createElement('button');
+                const button = document.createElement('button');
                 button.textContent = buttonFn.name
                     .replace(/[_-]\w/g, match => match.slice(1).toUpperCase()) // convert snake/kebab to camel case
                     .replace(/([A-Z])/g, ' $1') // insert spaces
                     .replace(/^\w/, firstChar => firstChar.toUpperCase()); // capitalize first letter
-                button.addEventListener('click', function() { destroyAlert(); buttonFn(); });
+                button.addEventListener('click', () => { destroyAlert(); buttonFn(); });
                 modalButtons.insertBefore(button, modalButtons.firstChild); // insert button to left
             });
         }
 
         // Create/append OK/dismiss button to buttons div
-        var dismissBtn = document.createElement('button');
+        const dismissBtn = document.createElement('button');
         dismissBtn.textContent = btns ? 'Dismiss' : 'OK';
         dismissBtn.addEventListener('click', destroyAlert);
         modalButtons.insertBefore(dismissBtn, modalButtons.firstChild);
@@ -117,16 +117,16 @@ const chatgpt = {
         modalButtons.lastChild.classList.add('primary-modal-btn');
 
         // Create/append checkbox (if provided) to checkbox group div
-        var checkboxDiv = document.createElement('div');
+        const checkboxDiv = document.createElement('div');
         if (checkbox) { // is supplied
             checkboxDiv.classList.add('checkbox-group');
-            var checkboxFn = checkbox; // assign the named function to checkboxFn
-            var checkboxInput = document.createElement('input');
+            const checkboxFn = checkbox; // assign the named function to checkboxFn
+            const checkboxInput = document.createElement('input');
             checkboxInput.type = 'checkbox';
             checkboxInput.addEventListener('change', checkboxFn);
 
             // Create/show label
-            var checkboxLabel = document.createElement('label');
+            const checkboxLabel = document.createElement('label');
             checkboxLabel.addEventListener('click', function() {
                 checkboxInput.checked = !checkboxInput.checked; checkboxFn(); });
             checkboxLabel.textContent = checkboxFn.name.charAt(0).toUpperCase() // capitalize first char
@@ -139,8 +139,8 @@ const chatgpt = {
         }
 
         // Assemble/append div
-        var elements = [modalTitle, modalMessage, modalButtons, checkboxDiv];
-        elements.forEach(function(element) { modal.appendChild(element); });
+        const elements = [modalTitle, modalMessage, modalButtons, checkboxDiv];
+        elements.forEach((element) => { modal.appendChild(element); });
         modalContainer.appendChild(modal); document.body.appendChild(modalContainer); 
 
         // Enqueue alert
@@ -150,7 +150,7 @@ const chatgpt = {
 
         // Add listeners
         document.addEventListener('keydown', keyHandler);
-        modalContainer.addEventListener('click', function(event) {
+        modalContainer.addEventListener('click', (event) => {
             if (event.target === modalContainer) destroyAlert(); });
 
         // Show alert if none active
@@ -169,20 +169,20 @@ const chatgpt = {
 
             // Check for pending alerts in queue
             if (alertQueue.length > 0) {
-                var nextAlert = document.getElementById(alertQueue[0]);
+                const nextAlert = document.getElementById(alertQueue[0]);
                 setTimeout(() => { nextAlert.style.display = 'flex'; }, 500 );
             }
         }
 
         function keyHandler(event) {
-            var dismissKeys = [13, 27, 32]; // enter/esc/space
+            const dismissKeys = [13, 27]; // enter/esc
             if (dismissKeys.includes(event.keyCode)) {
-                for (var i = 0; i < alertQueue.length; i++) { // look to handle only if triggering alert is active
-                    var alert = document.getElementById(alertQueue[i]);
+                for (let i = 0; i < alertQueue.length; i++) { // look to handle only if triggering alert is active
+                    const alert = document.getElementById(alertQueue[i]);
                     if (alert && alert.style.display != 'none') { // active alert found
                         if (event.keyCode === 27) destroyAlert(); // if esc pressed, dismiss alert & do nothing
-                        else if (event.keyCode === 32 || event.keyCode === 13) { // else if space/enter pressed
-                            var mainButton = alert.querySelector('.modal-buttons').lastChild; // look for main button
+                        else if (event.keyCode === 13) { // else if enter pressed
+                            const mainButton = alert.querySelector('.modal-buttons').lastChild; // look for main button
                             if (mainButton) { mainButton.click(); event.preventDefault(); } // click if found
                         } return;
         }}}}
