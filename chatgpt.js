@@ -6,7 +6,8 @@
 const endpoints = {
     session: 'https://chat.openai.com/api/auth/session',
     chats: 'https://chat.openai.com/backend-api/conversations',
-    chat: 'https://chat.openai.com/backend-api/conversation'
+    chat: 'https://chat.openai.com/backend-api/conversation',
+    share: 'https://chat.openai.com/backend-api/share/create'
 };
 
 // Init queues for feedback methods
@@ -17,6 +18,53 @@ localStorage.notifyQueue = JSON.stringify(notifyQueue);
 // Define chatgpt.methods
 const chatgpt = {
     openAIaccessToken: undefined,
+
+    test: function(chatToGet = 1, anonymous = true) {
+        return new Promise((resolve) => {
+            chatgpt.getAccessToken().then(token => {
+                getChatNode(token).then(node => {
+                    shareChat(token, node).then(data => { resolve(data); });
+                });
+            });
+        });
+
+        function getChatNode(token) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                chatgpt.getChatDetails(chatToGet).then(chat => {
+                    xhr.open('GET', `${endpoints.chat}/${chat.id}`, true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                    xhr.onload = () => {
+                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat node.');
+                        return resolve(JSON.parse(xhr.responseText).current_node);
+                    };
+                    xhr.send();
+        });});}
+
+        function shareChat(token, node) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                chatgpt.getChatDetails(chatToGet).then(chat => {
+                    xhr.open('POST', endpoints.share, true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                    xhr.onload = () => {
+                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
+                        const data = JSON.parse(xhr.responseText);
+                        console.log(data);
+                        return resolve();
+                    };
+                    xhr.send(JSON.stringify(
+                        {
+                            current_node_id: node,
+                            conversation_id: chat.id,
+                            is_anonymous: anonymous
+                        }
+                    ));
+                });
+        });}
+    },
 
     activateDarkMode: function() {
         document.documentElement.classList.replace('light', 'dark');
@@ -546,6 +594,7 @@ const chatgpt = {
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
                         if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat messages.');
+                        console.log(JSON.parse(xhr.responseText)); // DEBUG
 
                         // Ini const's
                         const data = JSON.parse(xhr.responseText).mapping; // Get chat messages
