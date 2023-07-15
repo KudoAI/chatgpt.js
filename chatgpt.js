@@ -593,7 +593,6 @@ const chatgpt = {
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
                         if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat messages.');
-                        console.log(JSON.parse(xhr.responseText)); // DEBUG
 
                         // Ini const's
                         const data = JSON.parse(xhr.responseText).mapping; // Get chat messages
