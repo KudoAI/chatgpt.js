@@ -2,14 +2,14 @@
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest-min.js
 
-// Ini OpenAI endpoints
+// Init OpenAI endpoints
 const endpoints = {
     session: 'https://chat.openai.com/api/auth/session',
     chats: 'https://chat.openai.com/backend-api/conversations',
     chat: 'https://chat.openai.com/backend-api/conversation'
 };
 
-// Ini queues for feedback methods
+// Init queues for feedback methods
 var alertQueue = []; localStorage.alertQueue = JSON.stringify(alertQueue);
 var notifyQueue = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
 localStorage.notifyQueue = JSON.stringify(notifyQueue);
@@ -264,15 +264,15 @@ const chatgpt = {
     },
 
     clearChats: function() {
-        var menuBtn = document.querySelector('nav button[id*="headless"]') || {};
+        const menuBtn = document.querySelector('nav button[id*="headless"]') || {};
         try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
         setTimeout(() => {
-            var menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
-            var hasChats = false;
-            for (var menuItem of menuItems) {
+            const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
+            let hasChats = false;
+            for (const menuItem of menuItems) {
                 if (menuItem.text.match(/clear conversations/i)) { menuItem.click(); hasChats = true; break; }
             } if (hasChats) {
-                setTimeout(() => { for (var menuItem of menuItems) {
+                setTimeout(() => { for (const menuItem of menuItems) {
                     if (menuItem.text.match(/confirm/i)) { menuItem.click(); break; }}}, 10);
             } else {
                 menuBtn.click(); setTimeout(() => { chatgpt.getChatBox().focus(); }, 150);
