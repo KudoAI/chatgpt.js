@@ -624,7 +624,7 @@ const chatgpt = {
 
     history: {
         isOn: function() {
-            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+            for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
                 if (/clear chat/i.test(navLink.text)) return false;
             } return true;
         },
@@ -632,7 +632,7 @@ const chatgpt = {
         activate: function() { this.isOff() ? this.toggle() : console.info('🤖 chatgpt.js >> Chat history is already enabled!'); },
         deactivate: function() { this.isOn() ? this.toggle() : console.info('🤖 chatgpt.js >> Chat history is already disabled!'); },
         toggle: function() {                
-            for (var navBtn of document.querySelectorAll('nav[aria-label="Chat history"] button')) {
+            for (const navBtn of document.querySelectorAll('nav[aria-label="Chat history"] button')) {
                 if (/chat history/i.test(navBtn.textContent))
                     navBtn.click(); return;
         }}
