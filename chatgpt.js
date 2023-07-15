@@ -19,7 +19,10 @@ localStorage.notifyQueue = JSON.stringify(notifyQueue);
 const chatgpt = {
     openAIaccessToken: undefined,
 
-    test: function(chatToGet = 1, anonymous = true) {
+    test: function(chatToGet, anonymous) {
+        chatToGet = chatToGet ? chatToGet : 1;
+        anonymous = anonymous && typeof anonymous === 'boolean' ? anonymous : false;
+
         return new Promise((resolve) => {
             chatgpt.getAccessToken().then(token => {
                 getChatNode(token).then(node => {
