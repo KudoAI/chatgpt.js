@@ -937,13 +937,13 @@ const chatgpt = {
     },
 
     startNewChat: function() {
-        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+        for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
                 navLink.click(); return;
     }}},
 
     stop: function() {
-        for (var formButton of document.querySelectorAll('form button')) {
+        for (const formButton of document.querySelectorAll('form button')) {
             if (formButton.textContent.toLowerCase().includes('stop')) {
                 formButton.click(); return;
     }}},
