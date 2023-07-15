@@ -315,6 +315,8 @@ const chatgpt = {
     },
 
     get: function(targetType, targetName = '') {
+    // targetTypes = [ 'button', 'link', 'div', 'response' ]
+    // targetName = [ names in get[targetName][targetType] methods e.g. 'send' ]
 
         // Validate argument types to be string only
         if (typeof targetType !== 'string' || typeof targetName !== 'string') {
@@ -326,9 +328,9 @@ const chatgpt = {
                 + '. Valid values are: ' + JSON.stringify(targetTypes)); }
 
         // Validate targetName scoped to pre-validated targetType
-        var targetNames = [], reTargetName = new RegExp('^get(.*)' + targetType + '$', 'i');
-        for (var prop in this) {
-            if (typeof this[prop] === 'function' && prop.match(reTargetName)) {
+        const targetNames = [], reTargetName = new RegExp('^get(.*)' + targetType + '$', 'i');
+        for (const prop in chatgpt) {
+            if (typeof chatgpt[prop] === 'function' && prop.match(reTargetName)) {
                 targetNames.push( // add found targetName to valid array
                     prop.replace(reTargetName, '$1').toLowerCase());
         }}
@@ -339,8 +341,8 @@ const chatgpt = {
         }
 
         // Call target function using pre-validated name components
-        var targetFuncNameLower = ('get' + targetName + targetType).toLowerCase();
-        var targetFuncName = Object.keys(this).find( // find originally cased target function name
+        const targetFuncNameLower = ('get' + targetName + targetType).toLowerCase();
+        const targetFuncName = Object.keys(this).find( // find originally cased target function name
             function(name) { return name.toLowerCase() === targetFuncNameLower; }); // test for match
         return this[targetFuncName](); // call found function
     },
