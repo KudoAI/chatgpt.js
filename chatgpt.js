@@ -936,13 +936,13 @@ const chatgpt = {
         }
 
         return new Promise((resolve) => {
-            chatgpt.getAccessToken().then(token => {
-                getChatNode(token).then(node => {
-                    initShare(token, node).then(data => {
-                        confirmShareChat(token, data).then(() => {
+            chatgpt.getAccessToken().then(token => { // get access token
+                getChatNode(token).then(node => { // get chat node
+                    initShare(token, node).then(data => { // initialize share
+                        confirmShareChat(token, data).then(() => { // confirm share
                             const detailsToReturn = {};
                             for (const detail of detailsToGet) detailsToReturn[detail] = data[detail];
-                            return resolve(detailsToReturn);
+                            return resolve(detailsToReturn); // resolve main Promise returning the requested data
                         });
                     });
                 });
@@ -958,7 +958,7 @@ const chatgpt = {
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
                         if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat node.');
-                        return resolve(JSON.parse(xhr.responseText).current_node);
+                        return resolve(JSON.parse(xhr.responseText).current_node); // chat messages until now
                     };
                     xhr.send();
         });});}
@@ -972,13 +972,13 @@ const chatgpt = {
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
                         if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot initialize share chat.');
-                        return resolve(JSON.parse(xhr.responseText));
+                        return resolve(JSON.parse(xhr.responseText)); // return untouched data needed for confirmShareChat
                     };
-                    xhr.send(JSON.stringify(
+                    xhr.send(JSON.stringify( // request body
                         {
-                            current_node_id: node,
-                            conversation_id: chat.id,
-                            is_anonymous: anonymous
+                            current_node_id: node, // by getChatNode
+                            conversation_id: chat.id, // current chat id
+                            is_anonymous: anonymous // show user name in the conversation or not
                         }
                     ));
                 });
@@ -992,10 +992,10 @@ const chatgpt = {
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                 xhr.onload = () => {
                     if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot share chat.');
-                    return resolve();
+                    return resolve(); // the response has nothing useful, so return nothing
                 };
-                xhr.send(JSON.stringify(
-                    {
+                xhr.send(JSON.stringify( // request body
+                    { // parse data from initShare
                         share_id: data.share_id,
                         highlighted_message_id: data.highlighted_message_id,
                         title: data.title,
