@@ -18,6 +18,7 @@
   - [General](#general)
     - [generateRandomIP](#generaterandomip)
     - [get](#get)
+    - [getUserLanguage](#getuserlanguage)
     - [isFullScreen](#isfullscreen)
     - [isLoaded `async`](#isloaded-async)
     - [printAllFunctions](#printallfunctions)
@@ -42,8 +43,11 @@
     - [getChatInput](#getchatinput)
     - [getChatDetails `async`](#getchatdetails-async)
     - [getLastResponse](#getlastresponse)
+    - [getLastResponseFromAPI `async`](#getlastresponsefromapi-async)
+    - [getLastResponseFromDOM](#getlastresponsefromdom)
     - [getResponse](#getresponse)
     - [getResponseFromAPI `async`](#getresponsefromapi-async)
+    - [getResponseFromDOM](#getresponsefromdom)
     - [isIdle `async`](#isidle-async)
     - [regenerate](#regenerate)
     - [scrollToBottom](#scrolltobottom)
@@ -192,6 +196,17 @@ var response;
 response = chatgpt.get('reply', 'last');
 // Equivalent of
 response = chatgpt.getLastResponse();
+```
+
+### getUserLanguage
+
+Returns the user language as a string.
+
+Example code:
+
+```js
+const lang = chatgpt.getUserLanguage();
+console.log(lang); // Example output: 'en-US'
 ```
 
 ### isFullScreen
@@ -477,32 +492,37 @@ async function doSomething() {
 
 ### getLastResponse
 
-Returns the last response ChatGPT has written as a string.
+If it's a previously created chat, read [chatgpt.getLastResponseFromDOM](#getlastresponsefromdom)
+If it's a new chat, read [chatgpt.getLastResponseFromAPI](#getlastresponsefromapi-async)
+
+### getLastResponseFromAPI `async`
+
+Returns the last response ChatGPT has written in the latest chat as a string.
 
 Example code:
 
 ```js
-const response = chatgpt.getLastResponse();
-console.log(response); // Example output: 'I am ChatGPT, how can I help you?'
+async function doSomething {
+  const lastResponse = await chatgpt.getLastResponseFromAPI();
+  console.log(lastResponse); // Example output: 'I am ChatGPT, how can I help you?'
+}
+```
+
+### getLastResponseFromDOM
+
+Returns the last response ChatGPT has written in the current chat as a string.
+
+Example code:
+
+```js
+const lastResponse = chatgpt.getLastResponseFromDOM();
+console.log(lastResponse); // Example output: 'I am ChatGPT, how can I help you?'
 ```
 
 ### getResponse
 
-Returns the Nth response ChatGPT has written as a string.
-
-**Parameters**:
-
-`pos`: A string or integer representing the position of the wanted response.
-
-Example code:
-
-```js
-var fifthResp;
-
-fifthResp = chatgpt.getResponse(5); // Returns the 5th response
-fifthResp = chatgpt.getResponse('fifth'); // Also returns the 5th response
-fifthResp = chatgpt.getResponse('five'); // Returns the 5th response too
-```
+If it's a previously created chat, read [chatgpt.getResponseFromDOM](#getresponsefromdom)
+If it's a new chat, read [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
 
 ### getResponseFromAPI `async`
 
@@ -523,6 +543,24 @@ async function doSomething() {
   const response = chatgpt.getResponseFromAPI();
   console.log(response);
 }
+```
+
+### getResponseFromDOM
+
+Returns the Nth response ChatGPT has written as a string.
+
+**Parameters**:
+
+`pos`: A string or integer representing the position of the wanted response.
+
+Example code:
+
+```js
+var fifthResp;
+
+fifthResp = chatgpt.getResponseFromDOM(5); // Returns the 5th response
+fifthResp = chatgpt.getResponseFromDOM('fifth'); // Also returns the 5th response
+fifthResp = chatgpt.getResponseFromDOM('five'); // Returns the 5th response too
 ```
 
 ### isIdle `async`
