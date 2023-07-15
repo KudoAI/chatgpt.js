@@ -656,7 +656,7 @@ const chatgpt = {
 
     isLoaded: function() {
         return new Promise(resolve => {
-            var intervalId = setInterval(() => {
+            const intervalId = setInterval(() => {
                 if (document.querySelector('nav button[id*="menu"]')) {
                     clearInterval(intervalId); resolve();
     }}, 100);});},
