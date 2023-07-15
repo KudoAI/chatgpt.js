@@ -675,11 +675,11 @@ const chatgpt = {
 
     notify: function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
-        var fadeDuration = 0.6; // sec duration of fade-out
-        var vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
+        const fadeDuration = 0.6; // sec duration of fade-out
+        const vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
 
         // Make/stylize/insert div
-        var notificationDiv = document.createElement('div'); // make div
+        const notificationDiv = document.createElement('div'); // make div
         notificationDiv.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
         notificationDiv.style.cssText = ( // stylize it
               ' background-color: black ; padding: 10px ; border-radius: 8px ; ' // box style
@@ -706,14 +706,15 @@ const chatgpt = {
         notificationDiv.style.left = !notificationDiv.isRight ? vpXoffset.toString() + 'px' : '';
 
         // Reposition old notifications
-        var thisQuadrantDivIDs = notifyQueue.quadrants[notificationDiv.quadrant];
+        const thisQuadrantDivIDs = notifyQueue.quadrants[notificationDiv.quadrant];
         if (thisQuadrantDivIDs.length > 1) {
             try { // to move old notifications
-                var divsToMove = thisQuadrantDivIDs.slice(0, -1); // exclude new div
-                for (var j = 0; j < divsToMove.length; j++) {
-                    var oldDiv = document.getElementById(divsToMove[j]);
-                    var offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
-                    var vOffset = /\d+/.exec(+oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
+                const divsToMove = thisQuadrantDivIDs.slice(0, -1); // exclude new div
+                for (let j = 0; j < divsToMove.length; j++) {
+                    const oldDiv = document.getElementById(divsToMove[j]);
+                    const offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
+                    // const vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
+                    const vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
                 }
             } catch (error) {}
@@ -725,17 +726,17 @@ const chatgpt = {
         notificationDiv.style.opacity = 1; // show msg
 
         // Hide notification
-        var hideDelay = ( // set delay before fading
+        const hideDelay = ( // set delay before fading
             fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
             : notifDuration - fadeDuration); // otherwise delay for difference
-        notificationDiv.hideTimer = setTimeout(function hideNotif() { // maintain notification visibility, then fade out
+        notificationDiv.hideTimer = setTimeout(() => { // maintain notification visibility, then fade out
             notificationDiv.style.transition = 'opacity ' + fadeDuration.toString() + 's'; // add fade effect
             notificationDiv.style.opacity = 0; // hide notification
             notificationDiv.hideTimer = null; // prevent memory leaks
         }, hideDelay * 1000); // ...after pre-set duration
 
         // Destroy notification
-        notificationDiv.destroyTimer = setTimeout(function destroyNotif() {
+        notificationDiv.destroyTimer = setTimeout(() => {
             notificationDiv.remove(); // remove from DOM
             notifyQueue = JSON.parse(localStorage.notifyQueue);
             notifyQueue.quadrants[notificationDiv.quadrant].shift(); // + memory
