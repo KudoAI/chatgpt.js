@@ -270,10 +270,10 @@ const chatgpt = {
             const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
             let hasChats = false;
             for (const menuItem of menuItems) {
-                if (menuItem.text.match(/clear conversations/i)) { menuItem.click(); hasChats = true; break; }
+                if (/clear conversations/i.test(menuItem.text)) { menuItem.click(); hasChats = true; break; }
             } if (hasChats) {
                 setTimeout(() => { for (const menuItem of menuItems) {
-                    if (menuItem.text.match(/confirm/i)) { menuItem.click(); break; }}}, 10);
+                    if (/confirm/i.test(menuItem.text)) { menuItem.click(); break; }}}, 10);
             } else {
                 menuBtn.click(); setTimeout(() => { chatgpt.getChatBox().focus(); }, 150);
                 console.info('🤖 chatgpt.js >> No chat history to clear');
@@ -330,7 +330,7 @@ const chatgpt = {
         // Validate targetName scoped to pre-validated targetType
         const targetNames = [], reTargetName = new RegExp('^get(.*)' + targetType + '$', 'i');
         for (const prop in chatgpt) {
-            if (typeof chatgpt[prop] === 'function' && prop.match(reTargetName)) {
+            if (typeof chatgpt[prop] === 'function' && reTargetName.test(prop)) {
                 targetNames.push( // add found targetName to valid array
                     prop.replace(reTargetName, '$1').toLowerCase());
         }}
@@ -479,7 +479,7 @@ const chatgpt = {
 
     getLastResponse: function() {
     // * Returns last response via DOM if OpenAI chat page is active, otherwise uses API
-        if (window.location.href.match(/^https:\/\/chat\.openai\.com\/c\//))
+        if (/^https:\/\/chat\.openai\.com\/c\//.test(window.location.href))
             return chatgpt.getLastResponseFromDOM();
         else return chatgpt.getResponseFromAPI();
     },
@@ -498,7 +498,7 @@ const chatgpt = {
 
     getNewChatLink: function() {
         for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-            if (navLink.text.match(/(new|clear) chat/i)) {
+            if (/(new|clear) chat/i.test(navLink.text)) {
                 return navLink;
     }}},
 
@@ -514,7 +514,7 @@ const chatgpt = {
     // responseToGet = index of response to get (defaults to latest if '' or blank)
     // regenResponseToGet = index of regenerated response to get (defaults to latest if '' or blank)
 
-        if (window.location.href.match(/^https:\/\/chat\.openai\.com\/c\//))
+        if (/^https:\/\/chat\.openai\.com\/c\//.test(window.location.href))
             return chatgpt.getResponseFromDOM.apply(null, arguments);
         else return chatgpt.getResponseFromAPI.apply(null, arguments);
     },
@@ -588,7 +588,7 @@ const chatgpt = {
 
                 // Calculate base number
                 Number.isInteger(pos) ? pos : // do nothing for integers
-                strPos.match(/^\d+/) ? strPos.match(/^\d+/)[0] : // extract first digits for strings w/ them
+                /^\d+/.test(strPos) ? /^\d+/.exec(strPos)[0] : // extract first digits for strings w/ them
                 ( // convert words to integers for digitless strings
                     /^(1|one|fir)(st)?$/.test(strPos) ? 1
                     : /^(2|tw(o|en|el(ve|f))|seco)(nd|t[yi])?(e?th)?$/.test(strPos) ? 2
@@ -624,7 +624,7 @@ const chatgpt = {
     history: {
         isOn: function() {
             for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-                if (navLink.text.match(/clear chat/i)) return false;
+                if (/clear chat/i.test(navLink.text)) return false;
             } return true;
         },
         isOff: function() { return !this.isOn(); },
@@ -632,7 +632,7 @@ const chatgpt = {
         deactivate: function() { this.isOn() ? this.toggle() : console.info('🤖 chatgpt.js >> Chat history is already disabled!'); },
         toggle: function() {                
             for (var navBtn of document.querySelectorAll('nav[aria-label="Chat history"] button')) {
-                if (navBtn.textContent.match(/chat history/i))
+                if (/chat history/i.test(navBtn.textContent))
                     navBtn.click(); return;
         }}
     },
@@ -643,7 +643,7 @@ const chatgpt = {
         var userAgentStr = navigator.userAgent;
         return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
              : userAgentStr.includes('Firefox') ? window.fullScreen
-             : userAgentStr.match(/MSIE|rv:/) ? document.msFullscreenElement : document.webkitIsFullScreen;
+             : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen;
     },
 
     isIdle: function() {
@@ -668,7 +668,7 @@ const chatgpt = {
         setTimeout(() => {
             var menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
             for (var menuItem of menuItems) {
-                if (menuItem.text.match(/log out/i)) { menuItem.click(); break; }}
+                if (/log out/i.test(menuItem.text)) { menuItem.click(); break; }}
         }, 10);
     },
 
@@ -712,7 +712,7 @@ const chatgpt = {
                 for (var j = 0; j < divsToMove.length; j++) {
                     var oldDiv = document.getElementById(divsToMove[j]);
                     var offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
-                    var vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
+                    var vOffset = /\d+/.exec(+oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
                 }
             } catch (error) {}
@@ -853,7 +853,7 @@ const chatgpt = {
     
                     // Calculate base number
                     Number.isInteger(pos) ? pos : // do nothing for integers
-                    strPos.match(/^\d+/) ? strPos.match(/^\d+/)[0] : // extract first digits for strings w/ them
+                    /^\d+/.test(strPos) ? /^\d+/.exec(strPos)[0] : // extract first digits for strings w/ them
                     ( // convert words to integers for digitless strings
                         /^(1|one|fir)(st)?$/.test(strPos) ? 1
                         : /^(2|tw(o|en|el(ve|f))|seco)(nd|t[yi])?(e?th)?$/.test(strPos) ? 2
@@ -917,7 +917,7 @@ const chatgpt = {
 
     sendInNewChat: function(msg) {
         for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-            if (navLink.text.match(/(new|clear) chat/i)) {
+            if (/(new|clear) chat/i.test(navLink.text)) {
                 navLink.click(); break;
         }} setTimeout(() => { chatgpt.send(msg); }, 500);
     },
@@ -930,14 +930,14 @@ const chatgpt = {
 
         toggle: function() {
             for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-                if (navLink.text.match(/hide sidebar/i)) {
+                if (/hide sidebar/i.test(navLink.text)) {
                     navLink.click(); return;                
         }}}
     },
 
     startNewChat: function() {
         for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-            if (navLink.text.match(/(new|clear) chat/i)) {
+            if (/(new|clear) chat/i.test(navLink.text)) {
                 navLink.click(); return;
     }}},
 
@@ -969,8 +969,7 @@ const chatgpt = {
 const buttonActions = ['click', 'get'], targetTypes = [ 'button', 'link', 'div', 'response' ];
 for (const buttonAction of buttonActions) {
     chatgpt[buttonAction + 'Button'] = function handleButton(buttonIdentifier) {
-        var button = buttonIdentifier.match(
-            /^[.#]/) ? document.querySelector(buttonIdentifier) // get via class or id selector
+        var button = /^[.#]/.test(buttonIdentifier) ? document.querySelector(buttonIdentifier)
             : /send/i.test(buttonIdentifier) ? document.querySelector('form button[class*="bottom"]')
             : /scroll/i.test(buttonIdentifier) ? document.querySelector('button[class*="cursor"]')
             : (function() { // get via text content
@@ -1016,7 +1015,7 @@ for (var prop in chatgpt) {
             if (subAliases.some(element => element.includes('.'))) {
                 var nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
                 for (var nestAlias of subAliases) {
-                    if (nestAlias.match(/^(\w+)/)[1] !== prop) { // don't alias og function
+                    if (/^(\w+)/.exec(nestAlias)[1] !== prop) { // don't alias og function
                         chatgpt[nestAlias] = chatgpt[prop][nestedFunction]; // make new function, reference og one
             }}} else { // alias direct functions
                 for (var dirAlias of subAliases) {
