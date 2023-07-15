@@ -50,7 +50,7 @@ const chatgpt = {
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
-                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
+                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot share chat.');
                         const data = JSON.parse(xhr.responseText);
                         return resolve(data);
                     };
