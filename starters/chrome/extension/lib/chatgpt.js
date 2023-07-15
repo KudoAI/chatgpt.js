@@ -34,7 +34,7 @@ const chatgpt = {
 
         // Create modal parent/children elements
         const modalContainer = document.createElement('div');
-        modalContainer.id = Math.floor(Math.random() * 1000000) + Date.now();
+        modalContainer.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
         modalContainer.classList.add('chatgpt-modal'); // add class to main div
         const modal = document.createElement('div');
         const modalTitle = document.createElement('h2');
@@ -207,7 +207,7 @@ const chatgpt = {
                 document.addEventListener('visibilitychange', this.toggle.beacons); }
 
             function scheduleRefreshes(interval) {
-                var randomDelay = Math.max(2, Math.floor(Math.random() * 21 - 10)); // set random delay up to ±10 secs
+                var randomDelay = Math.max(2, Math.floor(chatgpt.randomFloat() * 21 - 10)); // set random delay up to ±10 secs
                 autoRefresh.isActive = setTimeout(() => {
                     var refreshFrame = document.querySelector('#refresh-frame');
                     var manifestScript = document.querySelector('script[src*="_ssgManifest.js"]');
@@ -309,7 +309,7 @@ const chatgpt = {
     },
 
     generateRandomIP: function() {
-        const ip = Array.from({length: 4}, () => Math.floor(Math.random() * 256)).join('.');
+        const ip = Array.from({length: 4}, () => Math.floor(chatgpt.randomFloat() * 256)).join('.');
         console.info('🤖 chatgpt.js >> IP generated: ' + ip);
         return ip;
     },
@@ -479,7 +479,6 @@ const chatgpt = {
 
     getLastResponse: function() {
     // * Returns last response via DOM if OpenAI chat page is active, otherwise uses API
-
         if (window.location.href.match(/^https:\/\/chat\.openai\.com\/c\//))
             return chatgpt.getLastResponseFromDOM();
         else return chatgpt.getResponseFromAPI();
@@ -680,7 +679,7 @@ const chatgpt = {
 
         // Make/stylize/insert div
         var notificationDiv = document.createElement('div'); // make div
-        notificationDiv.id = Math.floor(Math.random() * 1000000) + Date.now();
+        notificationDiv.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
         notificationDiv.style.cssText = ( // stylize it
               ' background-color: black ; padding: 10px ; border-radius: 8px ; ' // box style
             + ' opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; ' // visibility
@@ -767,6 +766,12 @@ const chatgpt = {
                     : (( Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[functionName[1]].name)) + '.' )
                         + this[functionName[1]].name )) + ']' );
         }
+    },
+
+    randomFloat: function() {
+    // * Generates a random, cryptographically secure value between 0 (inclusive) & 1 (exclusive)
+        const crypto = window.crypto || window.msCrypto;
+        return crypto.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF;
     },
 
     regenerate: function() {
