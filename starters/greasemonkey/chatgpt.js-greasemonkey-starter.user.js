@@ -22,7 +22,7 @@
     chatgpt.printAllFunctions(); // in console
     chatgpt.alert('≫ ChatGPT script loaded! 🚀', // title
         'Success! Press Ctrl+Shift+I to view all chatgpt.js functions.', // msg
-        function getHelp() { window.open('https://github.kudoai.com/chatgpt.js-greasemonkey-starter/issues'); }); // button
+        function getHelp() { window.open('https://github.kudoai.com/chatgpt.js-greasemonkey-starter/issues', 'noopener'); }); // button
 
     // Your code here...
 
