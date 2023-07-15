@@ -929,9 +929,8 @@ const chatgpt = {
         isOff: function() { return !!document.querySelector('button[aria-label*="Show sidebar"]'); },
         hide: function() { this.isOn() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already hidden!'); },
         show: function() { this.isOff() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already shown!'); },
-
         toggle: function() {
-            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+            for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
                 if (/hide sidebar/i.test(navLink.text)) {
                     navLink.click(); return;                
         }}}
