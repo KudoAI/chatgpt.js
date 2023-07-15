@@ -641,7 +641,7 @@ const chatgpt = {
     isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
 
     isFullScreen: function() {
-        var userAgentStr = navigator.userAgent;
+        const userAgentStr = navigator.userAgent;
         return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
              : userAgentStr.includes('Firefox') ? window.fullScreen
              : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen;
