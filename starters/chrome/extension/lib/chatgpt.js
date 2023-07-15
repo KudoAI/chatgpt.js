@@ -476,6 +476,8 @@ const chatgpt = {
     }}},
 
     getLastResponse: function() {
+    // * Returns last response via DOM if chat page open, otherwise uses API
+
         if (window.location.href.match(/^https:\/\/chat\.openai\.com\/c\//))
             return chatgpt.getLastResponseFromDOM();
         else return chatgpt.getResponseFromAPI();
@@ -506,6 +508,11 @@ const chatgpt = {
     }}},
 
     getResponse: function() {
+    // * Returns response via DOM by index arg if chat page open, otherwise uses API w/ following args:        
+    // chatToGet = index|title|id of chat to get (defaults to latest if '' or blank)
+    // responseToGet = index of response to get (defaults to latest if '' or blank)
+    // regenResponseToGet = index of regenerated response to get (defaults to latest if '' or blank)
+
         if (window.location.href.match(/^https:\/\/chat\.openai\.com\/c\//))
             return chatgpt.getResponseFromDOM.apply(null, arguments);
         else return chatgpt.getResponseFromAPI.apply(null, arguments);
