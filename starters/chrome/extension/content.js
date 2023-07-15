@@ -1,6 +1,7 @@
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
+// Latest minified release: https://code.chatgptjs.org/chatgpt-latest-min.js
 
 (async () => {
 
@@ -39,13 +40,12 @@
 
     // Define SYNC function
 
-    syncExtension = () => { // settings, then disable modes or sync taller chatbox
-        settings.load('extensionDisabled')
-            .then(() => {
-                if (config.extensionDisabled) {
-                    // remove hacks
-                } else {
-                    // sync new settings in settings.load()
+    syncExtension = () => {
+        settings.load('extensionDisabled').then(() => {
+            if (config.extensionDisabled) {
+                // remove your hacks
+            } else {
+                // sync each potentially updated setting passed to settings.load()
     }});};
 
 })();
