@@ -2,14 +2,14 @@
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest-min.js
 
-// Ini OpenAI endpoints
+// Init OpenAI endpoints
 const endpoints = {
     session: 'https://chat.openai.com/api/auth/session',
     chats: 'https://chat.openai.com/backend-api/conversations',
     chat: 'https://chat.openai.com/backend-api/conversation'
 };
 
-// Ini queues for feedback methods
+// Init queues for feedback methods
 var alertQueue = []; localStorage.alertQueue = JSON.stringify(alertQueue);
 var notifyQueue = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
 localStorage.notifyQueue = JSON.stringify(notifyQueue);
@@ -34,7 +34,7 @@ const chatgpt = {
 
         // Create modal parent/children elements
         const modalContainer = document.createElement('div');
-        modalContainer.id = Math.floor(Math.random() * 1000000) + Date.now();
+        modalContainer.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
         modalContainer.classList.add('chatgpt-modal'); // add class to main div
         const modal = document.createElement('div');
         const modalTitle = document.createElement('h2');
@@ -207,7 +207,7 @@ const chatgpt = {
                 document.addEventListener('visibilitychange', this.toggle.beacons); }
 
             function scheduleRefreshes(interval) {
-                var randomDelay = Math.max(2, Math.floor(Math.random() * 21 - 10)); // set random delay up to ±10 secs
+                var randomDelay = Math.max(2, Math.floor(chatgpt.randomFloat() * 21 - 10)); // set random delay up to ±10 secs
                 autoRefresh.isActive = setTimeout(() => {
                     var refreshFrame = document.querySelector('#refresh-frame');
                     var manifestScript = document.querySelector('script[src*="_ssgManifest.js"]');
@@ -264,15 +264,15 @@ const chatgpt = {
     },
 
     clearChats: function() {
-        var menuBtn = document.querySelector('nav button[id*="headless"]') || {};
+        const menuBtn = document.querySelector('nav button[id*="headless"]') || {};
         try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
         setTimeout(() => {
-            var menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
-            var hasChats = false;
-            for (var menuItem of menuItems) {
+            const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
+            let hasChats = false;
+            for (const menuItem of menuItems) {
                 if (menuItem.text.match(/clear conversations/i)) { menuItem.click(); hasChats = true; break; }
             } if (hasChats) {
-                setTimeout(() => { for (var menuItem of menuItems) {
+                setTimeout(() => { for (const menuItem of menuItems) {
                     if (menuItem.text.match(/confirm/i)) { menuItem.click(); break; }}}, 10);
             } else {
                 menuBtn.click(); setTimeout(() => { chatgpt.getChatBox().focus(); }, 150);
@@ -309,12 +309,14 @@ const chatgpt = {
     },
 
     generateRandomIP: function() {
-        const ip = Array.from({length: 4}, () => Math.floor(Math.random() * 256)).join('.');
+        const ip = Array.from({length: 4}, () => Math.floor(chatgpt.randomFloat() * 256)).join('.');
         console.info('🤖 chatgpt.js >> IP generated: ' + ip);
         return ip;
     },
 
     get: function(targetType, targetName = '') {
+    // targetType = [ 'button', 'link', 'div', 'response' ]
+    // targetName = [ names in get[targetName][targetType] methods e.g. 'send' ]
 
         // Validate argument types to be string only
         if (typeof targetType !== 'string' || typeof targetName !== 'string') {
@@ -326,9 +328,9 @@ const chatgpt = {
                 + '. Valid values are: ' + JSON.stringify(targetTypes)); }
 
         // Validate targetName scoped to pre-validated targetType
-        var targetNames = [], reTargetName = new RegExp('^get(.*)' + targetType + '$', 'i');
-        for (var prop in this) {
-            if (typeof this[prop] === 'function' && prop.match(reTargetName)) {
+        const targetNames = [], reTargetName = new RegExp('^get(.*)' + targetType + '$', 'i');
+        for (const prop in chatgpt) {
+            if (typeof chatgpt[prop] === 'function' && prop.match(reTargetName)) {
                 targetNames.push( // add found targetName to valid array
                     prop.replace(reTargetName, '$1').toLowerCase());
         }}
@@ -339,8 +341,8 @@ const chatgpt = {
         }
 
         // Call target function using pre-validated name components
-        var targetFuncNameLower = ('get' + targetName + targetType).toLowerCase();
-        var targetFuncName = Object.keys(this).find( // find originally cased target function name
+        const targetFuncNameLower = ('get' + targetName + targetType).toLowerCase();
+        const targetFuncName = Object.keys(this).find( // find originally cased target function name
             function(name) { return name.toLowerCase() === targetFuncNameLower; }); // test for match
         return this[targetFuncName](); // call found function
     },
@@ -476,6 +478,7 @@ const chatgpt = {
     }}},
 
     getLastResponse: function() {
+    // * Returns last response via DOM if OpenAI chat page is active, otherwise uses API
         if (window.location.href.match(/^https:\/\/chat\.openai\.com\/c\//))
             return chatgpt.getLastResponseFromDOM();
         else return chatgpt.getResponseFromAPI();
@@ -506,6 +509,11 @@ const chatgpt = {
     }}},
 
     getResponse: function() {
+    // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:        
+    // chatToGet = index|title|id of chat to get (defaults to latest if '' or blank)
+    // responseToGet = index of response to get (defaults to latest if '' or blank)
+    // regenResponseToGet = index of regenerated response to get (defaults to latest if '' or blank)
+
         if (window.location.href.match(/^https:\/\/chat\.openai\.com\/c\//))
             return chatgpt.getResponseFromDOM.apply(null, arguments);
         else return chatgpt.getResponseFromAPI.apply(null, arguments);
@@ -671,7 +679,7 @@ const chatgpt = {
 
         // Make/stylize/insert div
         var notificationDiv = document.createElement('div'); // make div
-        notificationDiv.id = Math.floor(Math.random() * 1000000) + Date.now();
+        notificationDiv.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
         notificationDiv.style.cssText = ( // stylize it
               ' background-color: black ; padding: 10px ; border-radius: 8px ; ' // box style
             + ' opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; ' // visibility
@@ -758,6 +766,12 @@ const chatgpt = {
                     : (( Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[functionName[1]].name)) + '.' )
                         + this[functionName[1]].name )) + ']' );
         }
+    },
+
+    randomFloat: function() {
+    // * Generates a random, cryptographically secure value between 0 (inclusive) & 1 (exclusive)
+        const crypto = window.crypto || window.msCrypto;
+        return crypto.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF;
     },
 
     regenerate: function() {
