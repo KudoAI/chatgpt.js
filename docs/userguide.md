@@ -22,6 +22,7 @@
     - [isFullScreen](#isfullscreen)
     - [isLoaded `async`](#isloaded-async)
     - [printAllFunctions](#printallfunctions)
+    - [randomFloat](#randomfloat)
     - [renderHTML](#renderhtml)
     - [uuidv4](#uuidv4)
   - [Page theme](#page-theme)
@@ -243,6 +244,17 @@ Example code:
 
 ```js
 chatgpt.printAllFunctions();
+```
+
+### randomFloat
+
+Returns a random, cryptographically secure float number between 0 (inclusive) & 1 (exclusive).
+
+Example code:
+
+```js
+const number = chatgpt.randomFloat();
+console.log(number); // Example output: 0.9472113021060851
 ```
 
 ### renderHTML
