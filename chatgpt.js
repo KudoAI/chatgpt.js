@@ -412,18 +412,18 @@ const chatgpt = {
         // Build arg arrays
         const validDetails = ['id', 'title', 'create_time', 'update_time'];
         let chatToGet = 0, detailsToGet = [];
-        if (validDetails.includes(arguments[0])) // if 1st arg is detail string
+        if (validDetails.includes(arguments[0])) // if 1st arg is detailsToGet string
             detailsToGet = Array.from(arguments); // convert to array
-        else { // handle chat passed/unpassed + details as array/arg(s)/unpassed
+        else { // handle chatToGet passed/unpassed + detailsToGet as array/arg(s)/unpassed
             const chatPassed = Array.isArray(arguments[0]) || !arguments[0] ? false : true;
             chatToGet = chatPassed ? arguments[0] : 0;
             const detailsIdx = arguments[0] === '' ? 1 : +chatPassed; // offset detailsToGet index from chatToGet
-            detailsToGet = ( !arguments[detailsIdx] ? validDetails // no details passed, populate w/ all valid ones
-                    : Array.isArray(arguments[detailsIdx]) ? arguments[detailsIdx] // details array passed, do nothing
-                    : Array.from(arguments).slice(detailsIdx) ); // details string(s) passed, convert to array
+            detailsToGet = ( !arguments[detailsIdx] ? validDetails // no detailsToGet passed, populate w/ all valid ones
+                    : Array.isArray(arguments[detailsIdx]) ? arguments[detailsIdx] // detailsToGet array passed, do nothing
+                    : Array.from(arguments).slice(detailsIdx) ); // detailsToGet string(s) passed, convert to array
         }
 
-        // Validate detail args
+        // Validate detailsToGet args
         for (const detail of detailsToGet) {
             if (!validDetails.includes(detail)) { return console.error(
                 '🤖 chatgpt.js >> Invalid detail arg \'' + detail + '\' supplied. Valid details are:\n'
