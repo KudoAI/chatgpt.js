@@ -940,8 +940,8 @@ const chatgpt = {
                             chatgpt.alert('🚀 Share link created!',
                                 '"' + data.title + '" is available at: <a target="blank" rel="noopener" href="'
                                     + data.share_url + '" >' + data.share_url + '</a>',
-                                [ function openLink() { window.open(data.share_url, '_blank', 'noopener') },
-                                  function copyLink() { navigator.clipboard.writeText(data.share_url); }]);
+                                [ function openLink() { window.open(data.share_url, '_blank', 'noopener'); },
+                                    function copyLink() { navigator.clipboard.writeText(data.share_url); }]);
         });});});});});
 
         function getChatNode(token) {
