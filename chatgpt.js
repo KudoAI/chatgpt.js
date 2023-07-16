@@ -984,6 +984,7 @@ const chatgpt = {
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                 xhr.onload = () => {
                     if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot share chat.');
+                    console.info(`🤖 chatgpt.js >> Chat shared at '${data.share_url}'`);
                     return resolve(); // the response has nothing useful
                 };
                 xhr.send(JSON.stringify( // request body
