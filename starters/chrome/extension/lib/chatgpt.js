@@ -624,7 +624,7 @@ const chatgpt = {
 
     history: {
         isOn: function() {
-            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+            for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
                 if (/clear chat/i.test(navLink.text)) return false;
             } return true;
         },
@@ -632,7 +632,7 @@ const chatgpt = {
         activate: function() { this.isOff() ? this.toggle() : console.info('🤖 chatgpt.js >> Chat history is already enabled!'); },
         deactivate: function() { this.isOn() ? this.toggle() : console.info('🤖 chatgpt.js >> Chat history is already disabled!'); },
         toggle: function() {                
-            for (var navBtn of document.querySelectorAll('nav[aria-label="Chat history"] button')) {
+            for (const navBtn of document.querySelectorAll('nav[aria-label="Chat history"] button')) {
                 if (/chat history/i.test(navBtn.textContent))
                     navBtn.click(); return;
         }}
@@ -641,7 +641,7 @@ const chatgpt = {
     isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
 
     isFullScreen: function() {
-        var userAgentStr = navigator.userAgent;
+        const userAgentStr = navigator.userAgent;
         return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
              : userAgentStr.includes('Firefox') ? window.fullScreen
              : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen;
@@ -656,7 +656,7 @@ const chatgpt = {
 
     isLoaded: function() {
         return new Promise(resolve => {
-            var intervalId = setInterval(() => {
+            const intervalId = setInterval(() => {
                 if (document.querySelector('nav button[id*="menu"]')) {
                     clearInterval(intervalId); resolve();
     }}, 100);});},
@@ -675,11 +675,11 @@ const chatgpt = {
 
     notify: function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
-        var fadeDuration = 0.6; // sec duration of fade-out
-        var vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
+        const fadeDuration = 0.6; // sec duration of fade-out
+        const vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
 
         // Make/stylize/insert div
-        var notificationDiv = document.createElement('div'); // make div
+        const notificationDiv = document.createElement('div'); // make div
         notificationDiv.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
         notificationDiv.style.cssText = ( // stylize it
               ' background-color: black ; padding: 10px ; border-radius: 8px ; ' // box style
@@ -706,14 +706,15 @@ const chatgpt = {
         notificationDiv.style.left = !notificationDiv.isRight ? vpXoffset.toString() + 'px' : '';
 
         // Reposition old notifications
-        var thisQuadrantDivIDs = notifyQueue.quadrants[notificationDiv.quadrant];
+        const thisQuadrantDivIDs = notifyQueue.quadrants[notificationDiv.quadrant];
         if (thisQuadrantDivIDs.length > 1) {
             try { // to move old notifications
-                var divsToMove = thisQuadrantDivIDs.slice(0, -1); // exclude new div
-                for (var j = 0; j < divsToMove.length; j++) {
-                    var oldDiv = document.getElementById(divsToMove[j]);
-                    var offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
-                    var vOffset = /\d+/.exec(+oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
+                const divsToMove = thisQuadrantDivIDs.slice(0, -1); // exclude new div
+                for (let j = 0; j < divsToMove.length; j++) {
+                    const oldDiv = document.getElementById(divsToMove[j]);
+                    const offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
+                    // const vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
+                    const vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
                 }
             } catch (error) {}
@@ -725,17 +726,17 @@ const chatgpt = {
         notificationDiv.style.opacity = 1; // show msg
 
         // Hide notification
-        var hideDelay = ( // set delay before fading
+        const hideDelay = ( // set delay before fading
             fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
             : notifDuration - fadeDuration); // otherwise delay for difference
-        notificationDiv.hideTimer = setTimeout(function hideNotif() { // maintain notification visibility, then fade out
+        notificationDiv.hideTimer = setTimeout(() => { // maintain notification visibility, then fade out
             notificationDiv.style.transition = 'opacity ' + fadeDuration.toString() + 's'; // add fade effect
             notificationDiv.style.opacity = 0; // hide notification
             notificationDiv.hideTimer = null; // prevent memory leaks
         }, hideDelay * 1000); // ...after pre-set duration
 
         // Destroy notification
-        notificationDiv.destroyTimer = setTimeout(function destroyNotif() {
+        notificationDiv.destroyTimer = setTimeout(() => {
             notificationDiv.remove(); // remove from DOM
             notifyQueue = JSON.parse(localStorage.notifyQueue);
             notifyQueue.quadrants[notificationDiv.quadrant].shift(); // + memory
@@ -928,22 +929,21 @@ const chatgpt = {
         isOff: function() { return !!document.querySelector('button[aria-label*="Show sidebar"]'); },
         hide: function() { this.isOn() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already hidden!'); },
         show: function() { this.isOff() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already shown!'); },
-
         toggle: function() {
-            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+            for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
                 if (/hide sidebar/i.test(navLink.text)) {
                     navLink.click(); return;                
         }}}
     },
 
     startNewChat: function() {
-        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+        for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
                 navLink.click(); return;
     }}},
 
     stop: function() {
-        for (var formButton of document.querySelectorAll('form button')) {
+        for (const formButton of document.querySelectorAll('form button')) {
             if (formButton.textContent.toLowerCase().includes('stop')) {
                 formButton.click(); return;
     }}},
