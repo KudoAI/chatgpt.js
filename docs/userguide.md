@@ -248,7 +248,7 @@ chatgpt.printAllFunctions();
 
 ### randomFloat
 
-Returns a random, cryptographically secure float number between 0 (inclusive) & 1 (exclusive).
+Returns a random, cryptographically secure float number between 0 (inclusive) and 1 (exclusive).
 
 Example code:
 
