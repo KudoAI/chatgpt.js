@@ -404,8 +404,8 @@ const chatgpt = {
     getChatBox: function() { return document.getElementById('prompt-textarea'); },
 
     getChatDetails: function() {
-    // chatToGet = index|title|id of chat to get (defaults to latest if '')
-    // detailsToGet = [id|title|create_time|update_time] (defaults to all if '')
+    // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
+    // detailsToGet = [id|title|create_time|update_time] (defaults to all if '' or unpassed)
     // * Single detail returns string, multiple details returns obj
     // * Details param can be supplied as array or comma-separated strings
 
@@ -513,9 +513,9 @@ const chatgpt = {
 
     getResponse: function() {
     // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:        
-    // chatToGet = index|title|id of chat to get (defaults to latest if '' or blank)
-    // responseToGet = index of response to get (defaults to latest if '' or blank)
-    // regenResponseToGet = index of regenerated response to get (defaults to latest if '' or blank)
+    // chatToGet = index|title|id of chat to get (defaults to latest if '' unpassed)
+    // responseToGet = index of response to get (defaults to latest if '' unpassed)
+    // regenResponseToGet = index of regenerated response to get (defaults to latest if '' unpassed)
 
         if (/^https:\/\/chat\.openai\.com\/c\//.test(window.location.href))
             return chatgpt.getResponseFromDOM.apply(null, arguments);
@@ -523,9 +523,9 @@ const chatgpt = {
     },
 
     getResponseFromAPI: function(chatToGet, responseToGet, regenResponseToGet) {
-    // chatToGet = index|title|id of chat to get (defaults to latest if '' or blank)
-    // responseToGet = index of response to get (defaults to latest if '' or blank)
-    // regenResponseToGet = index of regenerated response to get (defaults to latest if '' or blank)
+    // chatToGet = index|title|id of chat to get (defaults to latest if '' unpassed)
+    // responseToGet = index of response to get (defaults to latest if '' unpassed)
+    // regenResponseToGet = index of regenerated response to get (defaults to latest if '' unpassed)
 
         // Validate args
         for (let i = 1; i < arguments.length; i++) {
@@ -926,7 +926,10 @@ const chatgpt = {
         }} setTimeout(() => { chatgpt.send(msg); }, 500);
     },
 
-    shareChat: function(chatToGet, method = '') {
+    shareChat: function(chatToGet, method = '') {    
+    // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
+    // method = [ 'url'|'clipboard' ] (defaults to 'clipboard' if '' or unpassed)
+
         return new Promise((resolve) => {
             chatgpt.getAccessToken().then(token => { // get access token
                 getChatNode(token).then(node => { // get chat node
@@ -949,7 +952,8 @@ const chatgpt = {
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
-                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat node.');
+                        if (xhr.status !== 200)
+                            return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat node.');
                         return resolve(JSON.parse(xhr.responseText).current_node); // chat messages until now
                     };
                     xhr.send();
@@ -963,18 +967,16 @@ const chatgpt = {
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
-                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot initialize share chat.');
+                        if (xhr.status !== 200)
+                            return reject('🤖 chatgpt.js >> Request failed. Cannot initialize share chat.');
                         return resolve(JSON.parse(xhr.responseText)); // return untouched data
                     };
-                    xhr.send(JSON.stringify( // request body
-                        {
-                            current_node_id: node, // by getChatNode
-                            conversation_id: chat.id, // current chat id
-                            is_anonymous: true // show user name in the conversation or not
-                        }
-                    ));
-                });
-        });}
+                    xhr.send(JSON.stringify({ // request body
+                        current_node_id: node, // by getChatNode
+                        conversation_id: chat.id, // current chat id
+                        is_anonymous: true // show user name in the conversation or not
+                    }));
+        });});}
 
         function confirmShareChat(token, data) {
             return new Promise((resolve, reject) => {
@@ -983,22 +985,20 @@ const chatgpt = {
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                 xhr.onload = () => {
-                    if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot share chat.');
+                    if (xhr.status !== 200)
+                        return reject('🤖 chatgpt.js >> Request failed. Cannot share chat.');
                     console.info(`🤖 chatgpt.js >> Chat shared at '${data.share_url}'`);
                     return resolve(); // the response has nothing useful
                 };
-                xhr.send(JSON.stringify( // request body
-                    {
-                        share_id: data.share_id,
-                        highlighted_message_id: data.highlighted_message_id,
-                        title: data.title,
-                        is_public: true, // must be true or it'll cause a 404 error
-                        is_visible: data.is_visible,
-                        is_anonymous: data.is_anonymous
-                    }
-                ));
-            });
-        }
+                xhr.send(JSON.stringify({ // request body
+                    share_id: data.share_id,
+                    highlighted_message_id: data.highlighted_message_id,
+                    title: data.title,
+                    is_public: true, // must be true or it'll cause a 404 error
+                    is_visible: data.is_visible,
+                    is_anonymous: data.is_anonymous
+                }));
+        });}
     },
 
     sidebar: {
