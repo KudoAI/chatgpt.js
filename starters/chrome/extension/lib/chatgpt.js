@@ -317,8 +317,8 @@ const chatgpt = {
     },
 
     get: function(targetType, targetName = '') {
-    // targetType = [ 'button', 'link', 'div', 'response' ]
-    // targetName = [ names in get[targetName][targetType] methods e.g. 'send' ]
+    // targetType = 'button'|'link'|'div'|'response'
+    // targetName = from get[targetName][targetType] methods, e.g. 'send'
 
         // Validate argument types to be string only
         if (typeof targetType !== 'string' || typeof targetName !== 'string') {
