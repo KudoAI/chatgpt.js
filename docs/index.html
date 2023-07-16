@@ -52,7 +52,7 @@
                     pathNamespaces: /^(\/(zh-cn|ja|ko|hi|de|es|fr|it|pt))?/
                 },
                 routes: {
-                    '.*javascript.*': function() { // scroll-to-top link
+                    '.*javascript.*': () => { // scroll-to-top link
                         history.pushState(null, null, '#') // prevent default nav away
                         setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' })}, 1)
                 }}
