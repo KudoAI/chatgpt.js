@@ -934,12 +934,12 @@ const chatgpt = {
                         confirmShareChat(token, data).then(() => {
                             resolve();
                             if (['copy', 'clipboard'].includes(method)) navigator.clipboard.writeText(data.share_url);
-                            // window.open(data.share_url, '_blank'); // open the shared chat (optional)
-                        });
-                    });
-                });
-            });
-        });
+                            chatgpt.alert('🚀 Share link created!',
+                                '"' + data.title + '" is available at: <a target="blank" rel="noopener" href="'
+                                    + data.share_url + '" >' + data.share_url + '</a>',
+                                [ function openLink() { window.open(data.share_url, '_blank', 'noopener') },
+                                  function copyLink() { navigator.clipboard.writeText(data.share_url); }]);
+        });});});});});
 
         function getChatNode(token) {
             return new Promise((resolve, reject) => {
