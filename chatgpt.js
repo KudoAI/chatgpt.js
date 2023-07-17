@@ -793,8 +793,7 @@ const chatgpt = {
         }
 
         // Process child nodes
-        for (let i = 0; i < nodeContent.length; i++) {
-            const childNode = nodeContent[i];
+        for (const childNode of nodeContent) {
 
             // Process text node
             if (childNode.nodeType === Node.TEXT_NODE) {
