@@ -605,7 +605,7 @@ const chatgpt = {
                     : /^(10|ten)(th)?$/.test(strPos) ? 10 : 1 )
 
                 // Transform base number if suffixed
-                * ( /ty|ieth$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
+                * ( /(ty|ieth)$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
                 + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
 
             );
@@ -871,7 +871,7 @@ const chatgpt = {
                         : /^(10|ten)(th)?$/.test(strPos) ? 10 : 1 )
     
                     // Transform base number if suffixed
-                    * ( /ty|ieth$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
+                    * ( /(ty|ieth)$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
                     + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
     
                 );
