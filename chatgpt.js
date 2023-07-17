@@ -197,7 +197,7 @@ const chatgpt = {
             if (this.isActive) { // already running, do nothing
                 console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already active!'); return; }
 
-            var autoRefresh = this;
+            const autoRefresh = this;
 
             // Run main activate routine
             this.toggle.refreshFrame();
@@ -209,11 +209,10 @@ const chatgpt = {
                 document.addEventListener('visibilitychange', this.toggle.beacons); }
 
             function scheduleRefreshes(interval) {
-                var randomDelay = Math.max(2, Math.floor(chatgpt.randomFloat() * 21 - 10)); // set random delay up to ±10 secs
+                const randomDelay = Math.max(2, Math.floor(chatgpt.randomFloat() * 21 - 10)); // set random delay up to ±10 secs
                 autoRefresh.isActive = setTimeout(() => {
-                    var refreshFrame = document.querySelector('#refresh-frame');
-                    var manifestScript = document.querySelector('script[src*="_ssgManifest.js"]');
-                    refreshFrame.src = manifestScript.src + '?' + Date.now();
+                    const manifestScript = document.querySelector('script[src*="_ssgManifest.js"]');
+                    document.querySelector('#refresh-frame').src = manifestScript.src + '?' + Date.now();
                     console.info('↻ ChatGPT >> [' + autoRefresh.nowTimeStamp() + '] ChatGPT session refreshed');
                     scheduleRefreshes(interval);
                 }, (interval + randomDelay) * 1000);
@@ -230,11 +229,11 @@ const chatgpt = {
         },
 
         nowTimeStamp: function() {
-            var now = new Date();
-            var hours = now.getHours() % 12 || 12; // Convert to 12-hour format
-            var minutes = now.getMinutes(); var seconds = now.getSeconds();
+            const now = new Date();
+            const hours = now.getHours() % 12 || 12; // Convert to 12-hour format
+            let minutes = now.getMinutes(), seconds = now.getSeconds();
             if (minutes < 10) minutes = '0' + minutes; if (seconds < 10) seconds = '0' + seconds;
-            var meridiem = now.getHours() < 12 ? 'AM' : 'PM';
+            const meridiem = now.getHours() < 12 ? 'AM' : 'PM';
             return hours + ':' + minutes + ':' + seconds + ' ' + meridiem;
         },
 
@@ -254,7 +253,7 @@ const chatgpt = {
             },
 
             refreshFrame: function() {
-                var refreshFrame = document.querySelector('#refresh-frame');
+                let refreshFrame = document.querySelector('#refresh-frame');
                 if (refreshFrame) refreshFrame.remove();
                 else {
                     refreshFrame = Object.assign(document.createElement('iframe'),
