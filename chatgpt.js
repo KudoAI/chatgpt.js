@@ -20,6 +20,98 @@ localStorage.notifyQueue = JSON.stringify(notifyQueue);
 const chatgpt = {
     openAIaccessToken: {},
 
+    getChatData: function(chatSelector = 1, detailsToGet = ['id', 'title', 'create_time', 'update_time'], sender, msgToGet) {
+        sender = sender.toLowerCase();
+        return new Promise((resolve, reject) => { chatgpt.getAccessToken().then(token => {
+            getChatData(token, detailsToGet).then(data => {
+                if (detailsToGet !== 'msg') return resolve(data);
+                else if (!['user', 'chatgpt'].includes(sender)) return reject('🤖 chatgpt.js >> \'sender\' can only be \'user\' or \'chatgpt\'');
+                getChatMsgs(token, detailsToGet).then(messages => resolve(messages));
+            });});});
+
+        function getChatData(token, details) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', endpoints.chats, true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                xhr.onload = () => {
+                    if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
+                    const data = JSON.parse(xhr.responseText).items;
+                    if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.');
+                    const detailsToReturn = {};
+
+                    // Handle chat index or ''
+                    if (Number.isInteger(chatSelector) || /^\d+$/.test(chatSelector) ||
+                            (typeof chatSelector === 'string' && !chatSelector.trim())) {
+                        if (parseInt(chatSelector, 10) > data.length) // reject if index out-of-bounds
+                            return reject('🤖 chatgpt.js >> Chat with index ' + chatSelector
+                                + ' is out of bounds. Only ' + data.length + ' chats exist!');
+                        else { // return single detail or obj of details
+                            const chatIndex = data[parseInt(chatSelector, 10) === 0 ? 0 : parseInt(chatSelector, 10) - 1];
+                            for (const detail of details) detailsToReturn[detail] = chatIndex[detail];
+                            return resolve(detailsToReturn);
+                    }}
+
+                    // Handle non-empty strings
+                    const chatIdentifier = /^\w{8}-(\w{4}-){3}\w{12}$/.test(chatSelector) ? 'id' : 'title';
+                    let idx, chatFound; // index of potentially found chat, flag if found
+                    for (idx = 0; idx < data.length; idx++) { // search for id/title to set chatFound flag
+                        if (data[idx][chatIdentifier] === chatSelector) { chatFound = true; break; }}
+                    if (!chatFound) // exit
+                        return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatSelector + ' found.');
+                    if (detailsToGet.length === 1) return resolve(data[idx][detailsToGet[0]]);
+                    for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail];
+                    return resolve(detailsToReturn);
+                };
+                xhr.send();
+        });}
+
+        function getChatMsgs(token) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                getChatData(token, ['id']).then(obj => {
+                    xhr.open('GET', `${endpoints.chat}/${obj.id}`, true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                    xhr.onload = () => {
+                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat messages.');
+
+                        // Ini const's
+                        const data = JSON.parse(xhr.responseText).mapping; // Get chat messages
+                        const userMessages = [], responses = [];
+
+                        // Fill [userMessages]
+                        for (const key in data) { // get user messages id [PARENT] (needed to match ChatGPT responses)
+                            if (data[key].message && data[key].message.author.role === 'user')
+                                userMessages.push({
+                                    id: data[key].id,
+                                    msg: data[key].message
+                                });}
+                        userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time); // sort in chronological order
+
+                        if (parseInt(msgToGet, 10) > userMessages.length) // reject if index out of bounds
+                            return reject('🤖 chatgpt.js >> Response with index ' + msgToGet
+                                + ' is out of bounds. Only ' + userMessages.length + ' messages and responses exist!');
+                        msgToGet = msgToGet ? msgToGet - 1 : userMessages.length - 1;
+
+                        if (sender === 'user') {
+                            for (const message in userMessages) {
+                                responses.push(userMessages[message].msg.content.parts[0]);
+                            } return resolve(responses[msgToGet]);
+                        }
+
+                        for (const key in data) { // get responses [CHILDREN] to match w/ user message id selected by 'responseToGet'
+                            if (data[key].message && data[key].message.author.role === 'assistant' &&
+                                    data[key].parent === userMessages[msgToGet].id)
+                                responses.push(data[key].message); }
+                        responses.sort((a, b) => a.create_time - b.create_time); // sort in chronological order
+                        return resolve(responses[responses.length - 1].content.parts[0]); // get the latest regenerated response
+                    };
+                    xhr.send();
+        });});}
+    },
+
     activateDarkMode: function() {
         document.documentElement.classList.replace('light', 'dark');
         document.documentElement.style.colorScheme = 'dark';
