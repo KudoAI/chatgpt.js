@@ -11,26 +11,21 @@
         <link rel="stylesheet" href="assets/styles/css/style.css" />
     </head>
     <body>
-        <nav class="language-selector">
-            <select onchange="changeLanguage(this)">
-                <option value="/">English</option>
-                <option value="/zh-cn/">简体中文</option>
-                <option value="/ja/">日本</option>
-                <option value="/ko/">한국인</option>
-                <option value="/hi/">हिंदी</option>
-                <option value="/de/">Deutsch</option>
-                <option value="/es/">Español</option>
-                <option value="/fr/">Français</option>
-                <option value="/it/">Italiano</option>
-                <option value="/pt/">Português</option>
-            </select>
+        <nav>
+            <div id="language-selector">
+                <svg viewBox="0 0 24 24" width="42" height="42" aria-hidden="true">
+                    <path fill="white" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path>
+                </svg>
+                <a href="#" aria-haspopup="true" aria-expanded="false" role="button" id="dropdown-button"></a>
+                <ul id="language-menu">
+                    <li><a href="#/" target="_self" class="dropdown-link">English</a></li>
+                    <li><a href="#/fr/" target="_self" class="dropdown-link">Français</a></li>
+                    <li><a href="#/pt/" target="_self" class="dropdown-link">Português</a></li>
+                    <li><a href="#/ko/" target="_self" class="dropdown-link">한국어</a></li>
+                    <li><a href="#/zh-cn/" target="_self" class="dropdown-link">中文（中国）</a></li>
+                </ul>
+            </div>
         </nav>
-        <script>
-            function changeLanguage(selector) {
-                const tempDiv = document.createElement('div'); tempDiv.innerText = selector.value;
-                const sanitizedLang = tempDiv.innerHTML; window.location.href = '#' + sanitizedLang;
-            }
-        </script>
         <div id="app"></div>
         <script>
             window.$docsify = {
@@ -62,6 +57,7 @@
         <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js" integrity="sha384-LthJPBJ4RGco78kBY+EmKz5rmISZ5vrtAu3+l2ALQ2mrZHOe6Wyf6knyKjeC4cL6" crossorigin="anonymous"></script>
         <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js" integrity="sha384-dATla6z98CccJpUA4MaUwhapbWiF1imvUV6z2RLOUJwB3thwGVdsmnAOKDxiYEV0" crossorigin="anonymous"></script>
         <script src="assets/js/onload-modifier.js"></script>
+        <script src="assets/js/lang-selector-listeners.js"></script>
         <script src="assets/js/copy-code-button.js"></script>
     </body>
 </html>

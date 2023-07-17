@@ -9,7 +9,13 @@ const mdLoaded = new Promise((resolve) => {
 const onLoadObserver = new MutationObserver(() => {
 
     // Exit if not loaded
-    if (!document.querySelector('.github-corner')) return;
+    if (!document.querySelector('.active')) return;
+
+    // Update LANGUAGE SELECTOR word
+    setTimeout(() => {
+        const activeLanguage = document.querySelector('.active').innerText;
+        document.getElementById('dropdown-button').innerText = activeLanguage;
+    }, 15)
 
     // Append footer to HOMEPAGE
     if (location.hash.match(/#\/(\w{2}(-\w{2})?\/)?$/)) {
@@ -46,9 +52,6 @@ const onLoadObserver = new MutationObserver(() => {
 
 onLoadObserver.observe(document.body, { childList: true, subtree: true });
 
-// Re-connect observre on nav to new hash
-let hashChangeCnt = 0; // to ignore 1st redir
+// Re-connect observer on nav to new hash
 window.addEventListener('hashchange', () => {
-    hashChangeCnt++; if (hashChangeCnt >= 2)
-        onLoadObserver.observe(document.body, { childList: true, subtree: true });
-});
+    onLoadObserver.observe(document.body, { childList: true, subtree: true });});
