@@ -351,7 +351,7 @@ const chatgpt = {
     getAccessToken: function() {
         return new Promise((resolve, reject) => {
             if (Object.keys(chatgpt.openAIaccessToken).length > 0 && // populated
-                    !(Date.parse(chatgpt.openAIaccessToken.expireDate) - Date.parse(new Date()) < 0)) // not expired
+                    (Date.parse(chatgpt.openAIaccessToken.expireDate) - Date.parse(new Date()) >= 0)) // not expired
                 return resolve(chatgpt.openAIaccessToken.token);
             const xhr = new XMLHttpRequest();
             xhr.open('GET', endpoints.session, true);
