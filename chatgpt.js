@@ -650,7 +650,7 @@ const chatgpt = {
 
     isIdle: function() {
         return new Promise(resolve => {
-            var intervalId = setInterval(() => {
+            const intervalId = setInterval(() => {
                 if (chatgpt.getRegenerateButton()) {
                     clearInterval(intervalId); resolve();
     }}, 100);});},
@@ -905,11 +905,11 @@ const chatgpt = {
         try { document.querySelector('button[class*="cursor"]').click(); } catch (error) { console.error('🤖 chatgpt.js >> ', error); }},
 
     send: function(msg, method='') {
-        var textArea = document.querySelector('form textarea');
-        var sendButton = document.querySelector('form button[class*="bottom"]');
+        const textArea = document.querySelector('form textarea');
+        const sendButton = document.querySelector('form button[class*="bottom"]');
         textArea.value = msg;
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
-        var delaySend = setInterval(function() {
+        const delaySend = setInterval(() => {
             if (!sendButton.hasAttribute('disabled')) { // send msg
                 method.toLowerCase() == 'click' ? sendButton.click()
                     : textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }));
