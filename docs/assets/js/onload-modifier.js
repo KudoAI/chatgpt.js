@@ -15,7 +15,7 @@ const onLoadObserver = new MutationObserver(() => {
     setTimeout(() => {
         const activeLanguage = document.querySelector('.active').innerText;
         document.getElementById('dropdown-button').innerText = activeLanguage;
-    }, 15)
+    }, 15);
 
     // Append footer to HOMEPAGE
     if (location.hash.match(/#\/(\w{2}(-\w{2})?\/)?$/)) {
