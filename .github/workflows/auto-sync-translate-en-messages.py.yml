@@ -1,0 +1,59 @@
+name: Sync translate-en-messages.py to adamlui/python-utils/translate-messages/
+
+on:
+  push:
+    branches: [master, main]
+    paths: '**/translate-en-messages.py'
+
+jobs:
+  build:
+    if: github.event.commits[0].committer.username != 'kudo-sync-bot'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout kudoai/chatgpt.js
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: kudoai/chatgpt.js
+          path: kudoai/chatgpt.js
+          fetch-depth: 2
+
+      - name: Checkout adamlui/python-utils
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/python-utils
+          path: adamlui/python-utils
+
+      - name: Sync translate-en-messages.py to adamlui/python-utils/translate-messages/
+        run: |
+          cd ${{ github.workspace }}/kudoai/chatgpt.js
+          files=$(find . -name "translate-en-messages.py" -type f)
+          newest_file=""
+          newest_timestamp=0
+
+          # Find the newest translate-en-messages.py file
+          for file in $files; do
+            timestamp=$(git log -1 --format="%ct" -- "$file")
+            if [[ $timestamp -gt $newest_timestamp ]]; then
+              newest_file=$file
+              newest_timestamp=$timestamp
+            fi
+          done
+
+          if [[ -n $newest_file ]]; then
+
+            # Copy the newest_file to adamlui/python-utils/translate-messages/translate-en-messages.py
+            cp -f -v "$newest_file" "${{ github.workspace }}/adamlui/python-utils/translate-messages/translate-en-messages.py"
+          fi
+
+      - name: Push to adamlui/python-utils
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@kudoai.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `kudoai/chatgpt.js`]'
+          file_pattern: '**/translate-en-messages.py'
+          repository: adamlui/python-utils
