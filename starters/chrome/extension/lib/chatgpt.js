@@ -505,7 +505,7 @@ const chatgpt = {
     }}},
 
     getRegenerateButton: function() {
-        for (var formButton of document.querySelectorAll('form button')) {
+        for (const formButton of document.querySelectorAll('form button')) {
             if (formButton.textContent.toLowerCase().includes('regenerate')) {
                 return formButton;
     }}},
@@ -902,7 +902,9 @@ const chatgpt = {
     },
 
     scrollToBottom: function() {
-        try { document.querySelector('button[class*="cursor"]').click(); } catch (error) { console.error('🤖 chatgpt.js >> ', error); }},
+        try { document.querySelector('button[class*="cursor"]').click(); }
+        catch (error) { console.error('🤖 chatgpt.js >> ', error); }
+    },
 
     send: function(msg, method='') {
         const textArea = document.querySelector('form textarea');
