@@ -179,7 +179,7 @@ const chatgpt = {
         function keyHandler(event) {
             const dismissKeys = [13, 27]; // enter/esc
             if (dismissKeys.includes(event.keyCode)) {
-                for (const alertId of alertProps.queue) { // look to handle only if triggering alert is active
+                for (const alertId of alertQueue) { // look to handle only if triggering alert is active
                     const alert = document.getElementById(alertId);
                     if (alert && alert.style.display !== 'none') { // active alert found
                         if (event.keyCode === 27) destroyAlert(); // if esc pressed, dismiss alert & do nothing
