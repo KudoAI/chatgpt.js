@@ -24,9 +24,9 @@ const chatgpt = {
         sender = sender.toLowerCase();
         return new Promise((resolve, reject) => { chatgpt.getAccessToken().then(token => {
             getChatData(token, detailsToGet).then(data => {
-                if (detailsToGet !== 'msg') return resolve(data);
+                if (detailsToGet != 'msg') return resolve(data);
                 else if (!['user', 'chatgpt'].includes(sender)) return reject('🤖 chatgpt.js >> \'sender\' can only be \'user\' or \'chatgpt\'');
-                getChatMsgs(token, detailsToGet).then(messages => resolve(messages));
+                getChatMsgs(token).then(messages => resolve(messages));
             });});});
 
         function getChatData(token, details) {
