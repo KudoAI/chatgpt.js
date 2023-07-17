@@ -18,8 +18,10 @@ languageMenu.addEventListener('mouseleave', () => {
         languageMenu.style.display = 'none'; }, 55);
 });
 
-// Add click listener to dismiss menu
+// Add hover listeners to hide tooltips
+document.querySelectorAll('#language-selector a').forEach((link) => {
+    link.addEventListener('mouseenter', () => { link.removeAttribute('title'); });});
+
+// Add click listeners to dismiss menu
 document.querySelectorAll('.dropdown-link').forEach((link) => {
-    link.addEventListener('click', (event) => {
-        languageMenu.style.display = 'none';
-});});
+    link.addEventListener('click', () => { languageMenu.style.display = 'none'; });});
