@@ -18,7 +18,7 @@ const onLoadObserver = new MutationObserver(() => {
     }, 15);
 
     // Append footer to HOMEPAGE
-    if (location.hash.match(/#\/(\w{2}(-\w{2})?\/)?$/)) {
+    if (/#\/(\w{2}(-\w{2})?\/)?$/.test(location.hash)) {
         const footer = document.createElement('div');
         fetch('assets/html/footer.html')
             .then(response => response.text()).then(html => {
@@ -31,7 +31,7 @@ const onLoadObserver = new MutationObserver(() => {
     } else document.querySelector('.app-nav').style.display = 'none';
 
     // Hack LICENSE/SECURIY pages
-    if (location.hash.match(/LICENSE|SECURITY/)) {
+    if (/LICENSE|SECURITY/.test(location.hash)) {
 
         // Hide sidebar + toggle
         document.body.className = 'ready close';
