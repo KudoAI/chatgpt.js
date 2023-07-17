@@ -786,7 +786,7 @@ const chatgpt = {
 
     renderHTML: function(node) {
         const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g;
-        const reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+(?:\S+)=|[>']))+.)['"]?/g;
+        const reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+(?:(?:\S+|var\([^)]+\))=|[>'])))+.)['"]?/g;
         const nodeContent = node.childNodes;
 
         // Preserve consecutive spaces + line breaks
