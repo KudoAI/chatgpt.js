@@ -126,8 +126,8 @@ const chatgpt = {
                         }
                         userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time); // sort in chronological order
 
-                        if (parseInt(msgToGet, 10) > userMessages.length) // reject if index out of bounds
-                            return reject('🤖 chatgpt.js >> Message/response with index ' + msgToGet
+                        if (parseInt(msgToGet, 10) + 1 > userMessages.length) // reject if index out of bounds
+                            return reject('🤖 chatgpt.js >> Message/response with index ' + ( msgToGet + 1)
                                 + ' is out of bounds. Only ' + userMessages.length + ' messages/responses exist!');
 
                         // Fill [chatGPTMessages]
