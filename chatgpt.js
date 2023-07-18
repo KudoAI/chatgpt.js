@@ -100,8 +100,7 @@ const chatgpt = {
                     if (!chatFound) // exit
                         return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatToGet + ' found.');
                     for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail];
-                    if (typeof detailsToReturn !== 'undefined') return resolve(detailsToReturn);
-                    else reject('🤖 chatgpt.js >> Message with index ' + ( msgToGet  + 1 ) + ' is out of bounds!');
+                    return resolve(detailsToReturn);
                 };
                 xhr.send();
         });}
@@ -128,8 +127,8 @@ const chatgpt = {
                         userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time); // sort in chronological order
 
                         if (parseInt(msgToGet, 10) > userMessages.length) // reject if index out of bounds
-                            return reject('🤖 chatgpt.js >> Response with index ' + msgToGet
-                                + ' is out of bounds. Only ' + userMessages.length + ' messages and responses exist!');
+                            return reject('🤖 chatgpt.js >> Message/response with index ' + msgToGet
+                                + ' is out of bounds. Only ' + userMessages.length + ' messages/responses exist!');
 
                         // Fill [chatGPTMessages]
                         for (const key in data) {
