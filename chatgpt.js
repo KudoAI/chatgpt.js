@@ -106,8 +106,8 @@ const chatgpt = {
         function getChatMsgs(token) {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                getChatDetails(token, ['id']).then(obj => {
-                    xhr.open('GET', `${endpoints.chat}/${obj.id}`, true);
+                getChatDetails(token, ['id']).then(chat => {
+                    xhr.open('GET', `${endpoints.chat}/${chat.id}`, true);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
@@ -115,30 +115,40 @@ const chatgpt = {
 
                         // Init const's
                         const data = JSON.parse(xhr.responseText).mapping; // Get chat messages
-                        const userMessages = [], msgsToReturn = [];
+                        const userMessages = [], chatGPTMessages = [], msgsToReturn = [];
 
                         // Fill [userMessages]
-                        for (const key in data) { // get user messages id [PARENT] (needed to match ChatGPT responses)
+                        for (const key in data) {
                             if (data[key].message && data[key].message.author.role === 'user')
-                                userMessages.push({ id: data[key].id, msg: data[key].message }); }
+                                userMessages.push({ id: data[key].id, msg: data[key].message });
+                        }
                         userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time); // sort in chronological order
 
                         if (parseInt(msgToGet, 10) > userMessages.length) // reject if index out of bounds
                             return reject('🤖 chatgpt.js >> Response with index ' + msgToGet
                                 + ' is out of bounds. Only ' + userMessages.length + ' messages and responses exist!');
 
-                        if (sender === 'user') {
-                            for (const message in userMessages) {
-                                msgsToReturn.push(userMessages[message].msg.content.parts[0]);
-                            } return resolve(msgsToReturn[msgToGet]);
+                        // Fill [chatGPTMessages]
+                        for (const key in data) {
+                            if (data[key].message && data[key].message.author.role === 'assistant') chatGPTMessages.push(data[key].message);
                         }
+                        chatGPTMessages.sort((a, b) => a.create_time - b.create_time); // sort in chronological order
 
-                        for (const key in data) { // get responses [CHILDREN] to match w/ user message id selected by 'responseToGet'
-                            if (data[key].message && data[key].message.author.role === 'assistant' &&
-                                    data[key].parent === userMessages[msgToGet].id)
-                                msgsToReturn.push(data[key].message); }
-                        msgsToReturn.sort((a, b) => a.create_time - b.create_time); // sort in chronological order
-                        return resolve(msgsToReturn[msgsToReturn.length - 1].content.parts[0]); // get the latest regenerated response
+                        if (sender === 'user') { // Fill [msgsToReturn] with user messages
+                            for (const message in userMessages) msgsToReturn.push(userMessages[message].msg.content.parts[0]);
+                        } else if (sender === 'chatgpt') { // Fill [msgsToReturn] with ChatGPT responses
+                            chatGPTMessages.forEach(message => { msgsToReturn.push(message.content.parts[0]); });
+                        } else { // Fill [msgsToReturn] with objects of user messages and chatgpt responses
+                            let i = 0;
+                            for (const message in userMessages) {
+                                msgsToReturn.push({
+                                    user: userMessages[message].msg.content.parts[0],
+                                    chatgpt: chatGPTMessages[i].content.parts[0]
+                                });
+                                i++;
+                            }
+                        }
+                        return resolve(msgToGet === 'all' ? msgsToReturn : msgsToReturn[msgToGet]); // if all messages return array, else return element of array
                     };
                     xhr.send();
         });});}
