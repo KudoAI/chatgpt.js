@@ -500,12 +500,12 @@ const chatgpt = {
                         // Init const's
                         const data = JSON.parse(xhr.responseText).mapping; // Get chat messages
                         const userMessages = [], chatGPTMessages = [], msgsToReturn = [];
+                        let temp = [];
 
                         // Fill [userMessages]
-                        for (const key in data) {
+                        for (const key in data)
                             if (data[key].message && data[key].message.author.role === 'user')
                                 userMessages.push({ id: data[key].id, msg: data[key].message });
-                        }
                         userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time); // sort in chronological order
 
                         if (parseInt(msgToGet, 10) + 1 > userMessages.length) // reject if index out of bounds
@@ -513,10 +513,28 @@ const chatgpt = {
                                 + ' is out of bounds. Only ' + userMessages.length + ' messages/responses exist!');
 
                         // Fill [chatGPTMessages]
-                        for (const key in data) {
-                            if (data[key].message && data[key].message.author.role === 'assistant') chatGPTMessages.push(data[key].message);
+                        for (const key in data)
+                            if (data[key].message && data[key].message.author.role === 'assistant') temp.push(data[key]);
+                        temp.sort((a, b) => a.message.create_time - b.message.create_time); // sort in chronological order
+
+                        function removePrevResposes(objects, key) {
+                            const filteredObjects = [];
+                            let prevValue = null;
+                          
+                            for (const obj of objects) {
+                                if (prevValue === obj[key]) {
+                                    // If the previous object had the same value for the key, remove it from the filtered list
+                                    filteredObjects.pop();
+                                }
+                                prevValue = obj[key];
+                                filteredObjects.push(obj);
+                            }
+                          
+                            return filteredObjects;
                         }
-                        chatGPTMessages.sort((a, b) => a.create_time - b.create_time); // sort in chronological order
+                        // After sorting, remove responses which have the same parent (regenerated) except the last one (latest)
+                        temp = removePrevResposes(temp, 'parent');
+                        for (const msgData of temp) chatGPTMessages.push(msgData.message);
 
                         if (sender === 'user') { // Fill [msgsToReturn] with user messages
                             for (const message in userMessages) msgsToReturn.push(userMessages[message].msg.content.parts[0]);
