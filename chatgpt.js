@@ -59,10 +59,11 @@ const chatgpt = {
 
         // Return chat data
         return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
-            getChatDetails(token, detailsToGet).then(data => {
-                if (!detailsToGet.includes('msg')) return resolve(data); // get just the chat details
-                getChatMsgs(token).then(messages => resolve(messages)); // otherwise get specific msg's
-            });});});
+            if (!detailsToGet.includes('msg')) getChatDetails(token, detailsToGet).then(data => {
+                return resolve(data); // get just the chat details
+            });
+            getChatMsgs(token).then(messages => { return resolve(messages); }); // otherwise get specific msg's
+        });});
 
         function getChatDetails(token, detailsToGet) {
             const re_chatID = /\w{8}-(\w{4}-){3}\w{12}/;
@@ -84,7 +85,7 @@ const chatgpt = {
                         if (chatToGet > data.length) { // reject if index out-of-bounds
                             return reject('🤖 chatgpt.js >> Chat with index ' + ( chatToGet + 1 )
                                 + ' is out of bounds. Only ' + data.length + ' chats exist!'); }
-                        for (const detail of details) detailsToReturn[detail] = data[chatToGet][detail];
+                        for (const detail of detailsToGet) detailsToReturn[detail] = data[chatToGet][detail];
                         return resolve(detailsToReturn);
                     }
 
