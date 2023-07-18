@@ -20,17 +20,50 @@ localStorage.notifyQueue = JSON.stringify(notifyQueue);
 const chatgpt = {
     openAIaccessToken: {},
 
-    getChatData: function(chatSelector, detailsToGet = ['id', 'title', 'create_time', 'update_time'], sender, msgToGet) {
-        chatSelector = chatSelector ? chatSelector : 1;
-        sender = sender.toLowerCase();
+    getChatData: function(chatToGet = 1, detailsToGet = 'all', sender = 'all', msgToGet = 'all') {
+    // chatToGet = 'active' | 'latest' | index|title|id of chat to get (defaults to active OpenAI chat > latest chat)
+    // detailsToGet = 'all' | [ 'id' | 'title' | 'create_time' | 'update_time' | 'msg' ] (defaults to 'all', excludes msg's)
+    // sender = ( 'all' | 'both' ) | 'user' | 'chatgpt' (defaults to 'all', requires 2nd param = 'msg')
+    // msgToGet = 'all' | 'latest' | index of msg to get (defaults to 'all', requires 2nd param = 'msg')
+
+        // Init args
+        const validDetails = [ 'all', 'id', 'title', 'create_time', 'update_time', 'msg' ];
+        const validSenders = [ 'all', 'both', 'user', 'chatgpt' ];
+        chatToGet = !chatToGet ? 0 // if '' passed, set to latest
+                  : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
+                      ( parseInt(chatToGet, 10) === 0 ? 0 : parseInt(chatToGet, 10) - 1 ) // ...offset -1 or keep as 0
+                  : chatToGet // else preserve non-num string as 'active', 'latest' or title/id of chat to get
+        detailsToGet = ['all', ''].includes(detailsToGet) ? // if '' or 'all' passed
+                         validDetails.filter(detail => /^(?!all$|msg$).*/.test(detail)) // populate w/ [validDetails] except 'all' & 'msg'
+                     : Array.isArray(detailsToGet) ? detailsToGet : [detailsToGet]; // else convert to array if needed
+        sender = validSenders.includes(sender.toLowerCase()) ? sender.toLowerCase() : 'invalid'
+        msgToGet = Number.isInteger(msgToGet) || /^\d+$/.test(msgToGet) ? // if string/int num passed
+                     ( parseInt(msgToGet, 10) === 0 ? 0 : parseInt(msgToGet, 10) - 1 ) // ...offset -1 or keep as 0
+                 : ['all', 'latest'].includes(msgToGet.toLowerCase()) ? // else if '', 'all' or 'latest' passed
+                     msgToGet.toLowerCase() // ...preserve it                  
+                 : 'invalid' // else set 'invalid' for validation step
+
+        // Validate args
+        for (const detail of detailsToGet) {
+            if (!validDetails.includes(detail)) { return console.error(
+                '🤖 chatgpt.js >> Invalid detail arg \'' + detail + '\' passed. Valid details are:\n'
+              + '                    [' + validDetails + ']'); }}
+        if (sender === 'invalid') { return console.error(
+            '🤖 chatgpt.js >> Invalid sender arg passed. Valid senders are:\n'
+          + '                    [' + validSenders + ']'); }
+        if (msgToGet === 'invalid') { return console.error(
+            '🤖 chatgpt.js >> Invalid msgToGet arg passed. Valid msg\'s to get are:\n'
+          + '                    [ \'all\' | \'latest\' | index of msg to get ]'); }
+
+        // Return chat data
         return new Promise((resolve, reject) => { chatgpt.getAccessToken().then(token => {
-            getChatData(token, detailsToGet).then(data => {
-                if (detailsToGet != 'msg') return resolve(data);
-                else if (!['user', 'chatgpt'].includes(sender)) return reject('🤖 chatgpt.js >> \'sender\' can only be \'user\' or \'chatgpt\'');
-                getChatMsgs(token).then(messages => resolve(messages));
+            getChatDetails(token, detailsToGet).then(data => {
+                if (!detailsToGet.includes('msg')) return resolve(data); // get just the chat details
+                getChatMsgs(token).then(messages => resolve(messages)); // otherwise get specific msg's
             });});});
 
-        function getChatData(token, details) {
+        function getChatDetails(token, details) {
+            const re_chatID = /\w{8}-(\w{4}-){3}\w{12}/;
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
                 xhr.open('GET', endpoints.chats, true);
@@ -42,25 +75,27 @@ const chatgpt = {
                     if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.');
                     const detailsToReturn = {};
 
-                    // Handle chat index or ''
-                    if (Number.isInteger(chatSelector) || /^\d+$/.test(chatSelector) ||
-                            (typeof chatSelector === 'string' && !chatSelector.trim())) {
-                        if (parseInt(chatSelector, 10) > data.length) // reject if index out-of-bounds
-                            return reject('🤖 chatgpt.js >> Chat with index ' + chatSelector
-                                + ' is out of bounds. Only ' + data.length + ' chats exist!');
-                        else { // return single detail or obj of details
-                            const chatIndex = data[parseInt(chatSelector, 10) === 0 ? 0 : parseInt(chatSelector, 10) - 1];
-                            for (const detail of details) detailsToReturn[detail] = chatIndex[detail];
-                            return resolve(detailsToReturn);
-                    }}
+                    // Return by index if num, 'latest', or 'active' passed but not truly active
+                    if (Number.isInteger(chatToGet) || chatToGet === 'latest' ||
+                            (chatToGet === 'active' && !new RegExp('\/' + re_chatID.source + '$').test(window.location.href))) {
+                        chatToGet = Number.isInteger(chatToGet) ? chatToGet : 0; // preserve index, otherwise get latest
+                        if (chatToGet > data.length) { // reject if index out-of-bounds
+                            return reject('🤖 chatgpt.js >> Chat with index ' + ( chatToGet + 1 )
+                                + ' is out of bounds. Only ' + data.length + ' chats exist!'); }
+                        for (const detail of details) detailsToReturn[detail] = data[chatToGet][detail];
+                        return resolve(detailsToReturn);
+                    }
 
-                    // Handle non-empty strings
-                    const chatIdentifier = /^\w{8}-(\w{4}-){3}\w{12}$/.test(chatSelector) ? 'id' : 'title';
+                    // Return by title, ID or active chat
+                    const chatIdentifier = ( // determine to check by ID or title
+                        chatToGet === 'active' || new RegExp('^' + re_chatID.source + '$').test(chatToGet) ? 'id' : 'title' );
+                    if (chatToGet === 'active') // replace chatToGet w/ actual ID
+                        chatToGet = re_chatID.exec(window.location.href)[0];
                     let idx, chatFound; // index of potentially found chat, flag if found
                     for (idx = 0; idx < data.length; idx++) { // search for id/title to set chatFound flag
-                        if (data[idx][chatIdentifier] === chatSelector) { chatFound = true; break; }}
+                        if (data[idx][chatIdentifier] === chatToGet) { chatFound = true; break; }}
                     if (!chatFound) // exit
-                        return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatSelector + ' found.');
+                        return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatToGet + ' found.');
                     if (detailsToGet.length === 1) return resolve(data[idx][detailsToGet[0]]);
                     for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail];
                     return resolve(detailsToReturn);
@@ -71,43 +106,39 @@ const chatgpt = {
         function getChatMsgs(token) {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                getChatData(token, ['id']).then(obj => {
+                getChatDetails(token, ['id']).then(obj => {
                     xhr.open('GET', `${endpoints.chat}/${obj.id}`, true);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
                         if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat messages.');
 
-                        // Ini const's
+                        // Init const's
                         const data = JSON.parse(xhr.responseText).mapping; // Get chat messages
-                        const userMessages = [], responses = [];
+                        const userMessages = [], chatgptMessages = [], msgsToReturn = [];
 
                         // Fill [userMessages]
                         for (const key in data) { // get user messages id [PARENT] (needed to match ChatGPT responses)
                             if (data[key].message && data[key].message.author.role === 'user')
-                                userMessages.push({
-                                    id: data[key].id,
-                                    msg: data[key].message
-                                });}
+                                userMessages.push({ id: data[key].id, msg: data[key].message }); }
                         userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time); // sort in chronological order
 
                         if (parseInt(msgToGet, 10) > userMessages.length) // reject if index out of bounds
                             return reject('🤖 chatgpt.js >> Response with index ' + msgToGet
                                 + ' is out of bounds. Only ' + userMessages.length + ' messages and responses exist!');
-                        msgToGet = msgToGet ? msgToGet - 1 : userMessages.length - 1;
 
                         if (sender === 'user') {
                             for (const message in userMessages) {
-                                responses.push(userMessages[message].msg.content.parts[0]);
-                            } return resolve(responses[msgToGet]);
+                                msgsToReturn.push(userMessages[message].msg.content.parts[0]);
+                            } return resolve(msgsToReturn[msgToGet]);
                         }
 
                         for (const key in data) { // get responses [CHILDREN] to match w/ user message id selected by 'responseToGet'
                             if (data[key].message && data[key].message.author.role === 'assistant' &&
                                     data[key].parent === userMessages[msgToGet].id)
-                                responses.push(data[key].message); }
-                        responses.sort((a, b) => a.create_time - b.create_time); // sort in chronological order
-                        return resolve(responses[responses.length - 1].content.parts[0]); // get the latest regenerated response
+                                msgsToReturn.push(data[key].message); }
+                        msgsToReturn.sort((a, b) => a.create_time - b.create_time); // sort in chronological order
+                        return resolve(msgsToReturn[msgsToReturn.length - 1].content.parts[0]); // get the latest regenerated response
                     };
                     xhr.send();
         });});}
