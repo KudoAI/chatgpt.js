@@ -567,6 +567,8 @@ const chatgpt = {
         return lastResponseDiv ? lastResponseDiv.textContent.replace(/^ChatGPTChatGPT\d+ \/ \d+/, '') : '';
     },
 
+    getMyLastMsg: async function() { return await chatgpt.getChatData('latest', 'msg', 'user', 'latest'); },
+
     getNewChatLink: function() {
         for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
