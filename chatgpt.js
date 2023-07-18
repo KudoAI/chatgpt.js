@@ -76,8 +76,8 @@ const chatgpt = {
                     const detailsToReturn = {};
 
                     // Return by index if num, 'latest', or 'active' passed but not truly active
-                    if (Number.isInteger(chatToGet) || chatToGet === 'latest' ||
-                            (chatToGet === 'active' && !new RegExp('\/' + re_chatID.source + '$').test(window.location.href))) {
+                    if (Number.isInteger(chatToGet) || chatToGet == 'latest' ||
+                            (chatToGet == 'active' && !new RegExp('\/' + re_chatID.source + '$').test(window.location.href))) {
                         chatToGet = Number.isInteger(chatToGet) ? chatToGet : 0; // preserve index, otherwise get latest
                         if (chatToGet > data.length) { // reject if index out-of-bounds
                             return reject('🤖 chatgpt.js >> Chat with index ' + ( chatToGet + 1 )
@@ -88,8 +88,8 @@ const chatgpt = {
 
                     // Return by title, ID or active chat
                     const chatIdentifier = ( // determine to check by ID or title
-                        chatToGet === 'active' || new RegExp('^' + re_chatID.source + '$').test(chatToGet) ? 'id' : 'title' );
-                    if (chatToGet === 'active') // replace chatToGet w/ actual ID
+                        chatToGet == 'active' || new RegExp('^' + re_chatID.source + '$').test(chatToGet) ? 'id' : 'title' );
+                    if (chatToGet == 'active') // replace chatToGet w/ actual ID
                         chatToGet = re_chatID.exec(window.location.href)[0];
                     let idx, chatFound; // index of potentially found chat, flag if found
                     for (idx = 0; idx < data.length; idx++) { // search for id/title to set chatFound flag
