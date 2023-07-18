@@ -532,7 +532,9 @@ const chatgpt = {
                                 i++;
                             }
                         }
-                        return resolve(msgToGet === 'all' ? msgsToReturn : msgsToReturn[msgToGet]); // if all messages return array, else return element of array
+                        return resolve(msgToGet === 'all' ? msgsToReturn // if 'all' passed, return array
+                                     : msgToGet === 'latest' ? msgsToReturn[msgsToReturn.length - 1] // else if 'latest' passed, return latest
+                                     : msgsToReturn[msgToGet] ); // else return element of array
                     };
                     xhr.send();
         });});}
