@@ -98,7 +98,6 @@ const chatgpt = {
                         if (data[idx][chatIdentifier] === chatToGet) { chatFound = true; break; }}
                     if (!chatFound) // exit
                         return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatToGet + ' found.');
-                    if (detailsToGet.length === 1) return resolve(data[idx][detailsToGet[0]]);
                     for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail];
                     return resolve(detailsToReturn);
                 };
