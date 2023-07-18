@@ -679,7 +679,7 @@ const chatgpt = {
         function getChatData(token) {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                chatgpt.getChatDetails(chatToGet).then(chat => {
+                chatgpt.getChatData(chatToGet).then(chat => {
                     xhr.open('GET', `${endpoints.chat}/${chat.id}`, true);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
@@ -1083,7 +1083,7 @@ const chatgpt = {
         function getChatNode(token) {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                chatgpt.getChatDetails(chatToGet).then(chat => {
+                chatgpt.getChatData(chatToGet).then(chat => {
                     xhr.open('GET', `${endpoints.chat}/${chat.id}`, true);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
@@ -1098,7 +1098,7 @@ const chatgpt = {
         function makeChatToShare(token, node) {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                chatgpt.getChatDetails(chatToGet).then(chat => {
+                chatgpt.getChatData(chatToGet).then(chat => {
                     xhr.open('POST', endpoints.share_create, true);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
@@ -1219,7 +1219,7 @@ const functionAliases = [ // whole function names to cross-alias
 ];
 const synonyms = [ // constituent synonyms within function names
     ['activate', 'turnOn'], ['account', 'acct'], ['chat', 'conversation', 'convo'], ['generating', 'generation'],
-    ['msg', 'message'], ['render', 'parse'], ['reply', 'response'], ['send', 'submit']
+    ['render', 'parse'], ['reply', 'response'], ['send', 'submit']
 ];
 for (var prop in chatgpt) {
 
