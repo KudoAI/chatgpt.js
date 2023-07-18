@@ -64,7 +64,7 @@ const chatgpt = {
                 getChatMsgs(token).then(messages => resolve(messages)); // otherwise get specific msg's
             });});});
 
-        function getChatDetails(token, details) {
+        function getChatDetails(token, detailsToGet) {
             const re_chatID = /\w{8}-(\w{4}-){3}\w{12}/;
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
@@ -99,7 +99,8 @@ const chatgpt = {
                     if (!chatFound) // exit
                         return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatToGet + ' found.');
                     for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail];
-                    return resolve(detailsToReturn);
+                    return typeof detailsToReturn !== 'undefined' ? resolve(detailsToReturn)
+                        : reject('🤖 chatgpt.js >> Message with index ' + ( msgToGet  + 1 ) + ' is out of bounds!');
                 };
                 xhr.send();
         });}
