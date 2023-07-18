@@ -540,75 +540,6 @@ const chatgpt = {
         });});}
     },
 
-    getChatDetails: function() {
-    // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
-    // detailsToGet = [id|title|create_time|update_time] (defaults to all if '' or unpassed)
-    // * Single detail returns string, multiple details returns obj
-    // * Details param can be supplied as array or comma-separated strings
-
-        // Build arg arrays
-        const validDetails = ['id', 'title', 'create_time', 'update_time'];
-        let chatToGet = 0, detailsToGet = [];
-        if (validDetails.includes(arguments[0])) // if 1st arg is detailsToGet string
-            detailsToGet = Array.from(arguments); // convert to array
-        else { // handle chatToGet passed/unpassed + detailsToGet as array/arg(s)/unpassed
-            const chatPassed = Array.isArray(arguments[0]) || !arguments[0] ? false : true;
-            chatToGet = chatPassed ? arguments[0] : 0;
-            const detailsIdx = arguments[0] === '' ? 1 : +chatPassed; // offset detailsToGet index from chatToGet
-            detailsToGet = ( !arguments[detailsIdx] ? validDetails // no detailsToGet passed, populate w/ all valid ones
-                    : Array.isArray(arguments[detailsIdx]) ? arguments[detailsIdx] // detailsToGet array passed, do nothing
-                    : Array.from(arguments).slice(detailsIdx) ); // detailsToGet string(s) passed, convert to array
-        }
-
-        // Validate detailsToGet args
-        for (const detail of detailsToGet) {
-            if (!validDetails.includes(detail)) { return console.error(
-                '🤖 chatgpt.js >> Invalid detail arg \'' + detail + '\' supplied. Valid details are:\n'
-              + '                    [' + validDetails + ']'); }}
-
-        // Return chat details
-        return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
-            getChatData(token).then(data => { resolve(data); });});});
-
-        function getChatData(token) {
-            return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
-                xhr.open('GET', endpoints.chats, true);
-                xhr.setRequestHeader('Content-Type', 'application/json');
-                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                xhr.onload = () => {
-                    if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
-                    const data = JSON.parse(xhr.responseText).items;
-                    if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.');
-                    const detailsToReturn = {};
-
-                    // Handle chat index or ''
-                    if (Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ||
-                            (typeof chatToGet === 'string' && !chatToGet.trim())) {
-                        if (parseInt(chatToGet, 10) > data.length) // reject if index out-of-bounds
-                            return reject('🤖 chatgpt.js >> Chat with index ' + chatToGet
-                                + ' is out of bounds. Only ' + data.length + ' chats exist!');
-                        else { // return single detail or obj of details
-                            const chatIndex = data[parseInt(chatToGet, 10) === 0 ? 0 : parseInt(chatToGet, 10) - 1];
-                            for (const detail of detailsToGet) detailsToReturn[detail] = chatIndex[detail];
-                            return resolve(detailsToReturn);
-                    }}
-
-                    // Handle non-empty strings
-                    const chatIdentifier = /^\w{8}-(\w{4}-){3}\w{12}$/.test(chatToGet) ? 'id' : 'title';
-                    let idx, chatFound; // index of potentially found chat, flag if found
-                    for (idx = 0; idx < data.length; idx++) { // search for id/title to set chatFound flag
-                        if (data[idx][chatIdentifier] === chatToGet) { chatFound = true; break; }}
-                    if (!chatFound) // exit
-                        return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatToGet + ' found.');
-                    if (detailsToGet.length === 1) return resolve(data[idx][detailsToGet[0]]);
-                    for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail];
-                    return resolve(detailsToReturn);
-                };
-                xhr.send();
-        });}
-    },
-
     getChatInput: function() { return chatgpt.getChatBox().value; },
 
     getContinueGeneratingButton: function() {
@@ -1218,8 +1149,8 @@ const functionAliases = [ // whole function names to cross-alias
     ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher']
 ];
 const synonyms = [ // constituent synonyms within function names
-    ['activate', 'turnOn'], ['account', 'acct'], ['chat', 'conversation', 'convo'], ['generating', 'generation'],
-    ['render', 'parse'], ['reply', 'response'], ['send', 'submit']
+    ['activate', 'turnOn'], ['account', 'acct'], ['chat', 'conversation', 'convo'], ['data', 'details'],
+    ['generating', 'generation'], ['render', 'parse'], ['reply', 'response'], ['send', 'submit']
 ];
 for (var prop in chatgpt) {
 
