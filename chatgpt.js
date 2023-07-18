@@ -32,16 +32,16 @@ const chatgpt = {
         chatToGet = !chatToGet ? 0 // if '' passed, set to latest
                   : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
                       ( parseInt(chatToGet, 10) === 0 ? 0 : parseInt(chatToGet, 10) - 1 ) // ...offset -1 or keep as 0
-                  : chatToGet // else preserve non-num string as 'active', 'latest' or title/id of chat to get
+                  : chatToGet; // else preserve non-num string as 'active', 'latest' or title/id of chat to get
         detailsToGet = ['all', ''].includes(detailsToGet) ? // if '' or 'all' passed
                          validDetails.filter(detail => /^(?!all$|msg$).*/.test(detail)) // populate w/ [validDetails] except 'all' & 'msg'
                      : Array.isArray(detailsToGet) ? detailsToGet : [detailsToGet]; // else convert to array if needed
-        sender = validSenders.includes(sender.toLowerCase()) ? sender.toLowerCase() : 'invalid'
+        sender = validSenders.includes(sender.toLowerCase()) ? sender.toLowerCase() : 'invalid';
         msgToGet = Number.isInteger(msgToGet) || /^\d+$/.test(msgToGet) ? // if string/int num passed
                      ( parseInt(msgToGet, 10) === 0 ? 0 : parseInt(msgToGet, 10) - 1 ) // ...offset -1 or keep as 0
                  : ['all', 'latest'].includes(msgToGet.toLowerCase()) ? // else if '', 'all' or 'latest' passed
                      msgToGet.toLowerCase() // ...preserve it                  
-                 : 'invalid' // else set 'invalid' for validation step
+                 : 'invalid'; // else set 'invalid' for validation step
 
         // Validate args
         for (const detail of detailsToGet) {
@@ -56,7 +56,7 @@ const chatgpt = {
           + '                    [ \'all\' | \'latest\' | index of msg to get ]'); }
 
         // Return chat data
-        return new Promise((resolve, reject) => { chatgpt.getAccessToken().then(token => {
+        return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
             getChatDetails(token, detailsToGet).then(data => {
                 if (!detailsToGet.includes('msg')) return resolve(data); // get just the chat details
                 getChatMsgs(token).then(messages => resolve(messages)); // otherwise get specific msg's
@@ -115,7 +115,7 @@ const chatgpt = {
 
                         // Init const's
                         const data = JSON.parse(xhr.responseText).mapping; // Get chat messages
-                        const userMessages = [], chatgptMessages = [], msgsToReturn = [];
+                        const userMessages = [], msgsToReturn = [];
 
                         // Fill [userMessages]
                         for (const key in data) { // get user messages id [PARENT] (needed to match ChatGPT responses)
