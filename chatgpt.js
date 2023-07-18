@@ -100,8 +100,8 @@ const chatgpt = {
                     if (!chatFound) // exit
                         return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatToGet + ' found.');
                     for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail];
-                    return typeof detailsToReturn !== 'undefined' ? resolve(detailsToReturn)
-                        : reject('🤖 chatgpt.js >> Message with index ' + ( msgToGet  + 1 ) + ' is out of bounds!');
+                    if (typeof detailsToReturn !== 'undefined') return resolve(detailsToReturn);
+                    else reject('🤖 chatgpt.js >> Message with index ' + ( msgToGet  + 1 ) + ' is out of bounds!');
                 };
                 xhr.send();
         });}
