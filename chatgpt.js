@@ -84,7 +84,7 @@ const chatgpt = {
                         if (chatToGet > data.length) { // reject if index out-of-bounds
                             return reject('🤖 chatgpt.js >> Chat with index ' + ( chatToGet + 1 )
                                 + ' is out of bounds. Only ' + data.length + ' chats exist!'); }
-                        for (const detail of details) detailsToReturn[detail] = data[chatToGet][detail];
+                        for (const detail of detailsToGet) detailsToReturn[detail] = data[chatToGet][detail];
                         return resolve(detailsToReturn);
                     }
 
