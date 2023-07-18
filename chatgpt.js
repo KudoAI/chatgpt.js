@@ -903,7 +903,7 @@ const chatgpt = {
         return node; // if assignment used
     },
 
-    resend: async function() { chatgpt.send(await chatgpt.getChatData('latest', 'msg', 'user', 'latest')) },
+    resend: async function() { chatgpt.send(await chatgpt.getChatData('latest', 'msg', 'user', 'latest')); },
 
     response: {
         getLast: function() {
