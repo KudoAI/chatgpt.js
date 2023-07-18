@@ -402,6 +402,142 @@ const chatgpt = {
 
     getChatBox: function() { return document.getElementById('prompt-textarea'); },
 
+    getChatData: function(chatToGet = 1, detailsToGet = 'all', sender = 'all', msgToGet = 'all') {
+    // chatToGet = 'active' | 'latest' | index|title|id of chat to get (defaults to active OpenAI chat > latest chat)
+    // detailsToGet = 'all' | [ 'id' | 'title' | 'create_time' | 'update_time' | 'msg' ] (defaults to 'all', excludes msg's)
+    // sender = ( 'all' | 'both' ) | 'user' | 'chatgpt' (defaults to 'all', requires 2nd param = 'msg')
+    // msgToGet = 'all' | 'latest' | index of msg to get (defaults to 'all', requires 2nd param = 'msg')
+
+        // Init args
+        const validDetails = [ 'all', 'id', 'title', 'create_time', 'update_time', 'msg' ];
+        const validSenders = [ 'all', 'both', 'user', 'chatgpt' ];
+        chatToGet = !chatToGet ? 0 // if '' passed, set to latest
+                  : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
+                      ( parseInt(chatToGet, 10) === 0 ? 0 : parseInt(chatToGet, 10) - 1 ) // ...offset -1 or keep as 0
+                  : chatToGet; // else preserve non-num string as 'active', 'latest' or title/id of chat to get
+        detailsToGet = ['all', ''].includes(detailsToGet) ? // if '' or 'all' passed
+                         validDetails.filter(detail => /^(?!all$|msg$).*/.test(detail)) // populate w/ [validDetails] except 'all' & 'msg'
+                     : Array.isArray(detailsToGet) ? detailsToGet : [detailsToGet]; // else convert to array if needed
+        sender = !sender ? 'all' // if '' or unpassed, set to 'all'
+               : validSenders.includes(sender) ? sender : 'invalid'; // else set to validSenders or 'invalid'
+        msgToGet = Number.isInteger(msgToGet) || /^\d+$/.test(msgToGet) ? // if string/int num passed
+                     ( parseInt(msgToGet, 10) === 0 ? 0 : parseInt(msgToGet, 10) - 1 ) // ...offset -1 or keep as 0
+                 : ['all', 'latest'].includes(msgToGet.toLowerCase()) ? // else if 'all' or 'latest' passed
+                     msgToGet.toLowerCase() // ...preserve it
+                 : !msgToGet ? 'all' // else if '', set to 'all'
+                 : 'invalid'; // else set 'invalid' for validation step
+
+        // Validate args
+        for (const detail of detailsToGet) {
+            if (!validDetails.includes(detail)) { return console.error(
+                '🤖 chatgpt.js >> Invalid detail arg \'' + detail + '\' passed. Valid details are:\n'
+              + '                    [' + validDetails + ']'); }}
+        if (sender === 'invalid') { return console.error(
+            '🤖 chatgpt.js >> Invalid sender arg passed. Valid senders are:\n'
+          + '                    [' + validSenders + ']'); }
+        if (msgToGet === 'invalid') { return console.error(
+            '🤖 chatgpt.js >> Invalid msgToGet arg passed. Valid msg\'s to get are:\n'
+          + '                    [ \'all\' | \'latest\' | index of msg to get ]'); }
+
+        // Return chat data
+        return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
+            if (!detailsToGet.includes('msg')) getChatDetails(token, detailsToGet).then(data => {
+                return resolve(data); // get just the chat details
+            });
+            getChatMsgs(token).then(messages => { return resolve(messages); }); // otherwise get specific msg's
+        });});
+
+        function getChatDetails(token, detailsToGet) {
+            const re_chatID = /\w{8}-(\w{4}-){3}\w{12}/;
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', endpoints.chats, true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                xhr.onload = () => {
+                    if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
+                    const data = JSON.parse(xhr.responseText).items;
+                    if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.');
+                    const detailsToReturn = {};
+
+                    // Return by index if num, 'latest', or 'active' passed but not truly active
+                    if (Number.isInteger(chatToGet) || chatToGet == 'latest' ||
+                            (chatToGet == 'active' && !new RegExp('\/' + re_chatID.source + '$').test(window.location.href))) {
+                        chatToGet = Number.isInteger(chatToGet) ? chatToGet : 0; // preserve index, otherwise get latest
+                        if (chatToGet > data.length) { // reject if index out-of-bounds
+                            return reject('🤖 chatgpt.js >> Chat with index ' + ( chatToGet + 1 )
+                                + ' is out of bounds. Only ' + data.length + ' chats exist!'); }
+                        for (const detail of detailsToGet) detailsToReturn[detail] = data[chatToGet][detail];
+                        return resolve(detailsToReturn);
+                    }
+
+                    // Return by title, ID or active chat
+                    const chatIdentifier = ( // determine to check by ID or title
+                        chatToGet == 'active' || new RegExp('^' + re_chatID.source + '$').test(chatToGet) ? 'id' : 'title' );
+                    if (chatToGet == 'active') // replace chatToGet w/ actual ID
+                        chatToGet = re_chatID.exec(window.location.href)[0];
+                    let idx, chatFound; // index of potentially found chat, flag if found
+                    for (idx = 0; idx < data.length; idx++) { // search for id/title to set chatFound flag
+                        if (data[idx][chatIdentifier] === chatToGet) { chatFound = true; break; }}
+                    if (!chatFound) // exit
+                        return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatToGet + ' found.');
+                    for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail];
+                    return resolve(detailsToReturn);
+                };
+                xhr.send();
+        });}
+
+        function getChatMsgs(token) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                getChatDetails(token, ['id']).then(chat => {
+                    xhr.open('GET', `${endpoints.chat}/${chat.id}`, true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                    xhr.onload = () => {
+                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat messages.');
+
+                        // Init const's
+                        const data = JSON.parse(xhr.responseText).mapping; // Get chat messages
+                        const userMessages = [], chatGPTMessages = [], msgsToReturn = [];
+
+                        // Fill [userMessages]
+                        for (const key in data) {
+                            if (data[key].message && data[key].message.author.role === 'user')
+                                userMessages.push({ id: data[key].id, msg: data[key].message });
+                        }
+                        userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time); // sort in chronological order
+
+                        if (parseInt(msgToGet, 10) + 1 > userMessages.length) // reject if index out of bounds
+                            return reject('🤖 chatgpt.js >> Message/response with index ' + ( msgToGet + 1)
+                                + ' is out of bounds. Only ' + userMessages.length + ' messages/responses exist!');
+
+                        // Fill [chatGPTMessages]
+                        for (const key in data) {
+                            if (data[key].message && data[key].message.author.role === 'assistant') chatGPTMessages.push(data[key].message);
+                        }
+                        chatGPTMessages.sort((a, b) => a.create_time - b.create_time); // sort in chronological order
+
+                        if (sender === 'user') { // Fill [msgsToReturn] with user messages
+                            for (const message in userMessages) msgsToReturn.push(userMessages[message].msg.content.parts[0]);
+                        } else if (sender === 'chatgpt') { // Fill [msgsToReturn] with ChatGPT responses
+                            chatGPTMessages.forEach(message => { msgsToReturn.push(message.content.parts[0]); });
+                        } else { // Fill [msgsToReturn] with objects of user messages and chatgpt responses
+                            let i = 0;
+                            for (const message in userMessages) {
+                                msgsToReturn.push({
+                                    user: userMessages[message].msg.content.parts[0],
+                                    chatgpt: chatGPTMessages[i].content.parts[0]
+                                });
+                                i++;
+                            }
+                        }
+                        return resolve(msgToGet === 'all' ? msgsToReturn : msgsToReturn[msgToGet]); // if all messages return array, else return element of array
+                    };
+                    xhr.send();
+        });});}
+    },
+
     getChatDetails: function() {
     // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
     // detailsToGet = [id|title|create_time|update_time] (defaults to all if '' or unpassed)
