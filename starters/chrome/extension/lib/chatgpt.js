@@ -543,14 +543,14 @@ const chatgpt = {
     getChatInput: function() { return chatgpt.getChatBox().value; },
 
     getContinueGeneratingButton: function() {
-        for (var formButton of document.querySelectorAll('form button')) {
+        for (const formButton of document.querySelectorAll('form button')) {
             if (formButton.textContent.toLowerCase().includes('continue')) {
                 return formButton;
     }}},
 
     getLastResponse: function() {
     // * Returns last response via DOM if OpenAI chat page is active, otherwise uses API
-        if (/^https:\/\/chat\.openai\.com\/c\//.test(window.location.href))
+        if (window.location.href.startsWith('https://chat.openai.com/c/'))
             return chatgpt.getLastResponseFromDOM();
         else return chatgpt.getResponseFromAPI();
     },
@@ -570,7 +570,7 @@ const chatgpt = {
     getMyLastMsg: function() { return chatgpt.getChatData('latest', 'msg', 'user', 'latest'); },
 
     getNewChatLink: function() {
-        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+        for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
                 return navLink;
     }}},
@@ -587,7 +587,7 @@ const chatgpt = {
     // responseToGet = index of response to get (defaults to latest if '' unpassed)
     // regenResponseToGet = index of regenerated response to get (defaults to latest if '' unpassed)
 
-        if (/^https:\/\/chat\.openai\.com\/c\//.test(window.location.href))
+        if (window.location.href.startsWith('https://chat.openai.com/c/'))
             return chatgpt.getResponseFromDOM.apply(null, arguments);
         else return chatgpt.getResponseFromAPI.apply(null, arguments);
     },
@@ -652,12 +652,12 @@ const chatgpt = {
     },
 
     getResponseFromDOM: function(pos) {
-        var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
-        var strPos = pos.toString().toLowerCase();
+        const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
+        const strPos = pos.toString().toLowerCase();
         if (/last|final/.test(strPos)) { // get last response
             return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
         } else { // get nth response
-            var nthOfResponse = (
+            const nthOfResponse = (
 
                 // Calculate base number
                 Number.isInteger(pos) ? pos : // do nothing for integers
@@ -736,11 +736,11 @@ const chatgpt = {
     isLightMode: function() { return document.documentElement.classList.contains('light'); },
 
     logout: function() {
-        var menuBtn = document.querySelector('nav button[id*="headless"]') || {};
+        const menuBtn = document.querySelector('nav button[id*="headless"]') || {};
         try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
         setTimeout(() => {
-            var menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
-            for (var menuItem of menuItems) {
+            const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
+            for (const menuItem of menuItems) {
                 if (/log out/i.test(menuItem.text)) { menuItem.click(); break; }}
         }, 10);
     },
@@ -917,12 +917,12 @@ const chatgpt = {
         },
 
         getWithIndex: function(pos) {
-            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
-            var strPos = pos.toString().toLowerCase();
+            const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
+            const strPos = pos.toString().toLowerCase();
             if (/last|final/.test(strPos)) { // get last response
                 return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
             } else { // get nth response
-                var nthOfResponse = (
+                const nthOfResponse = (
     
                     // Calculate base number
                     Number.isInteger(pos) ? pos : // do nothing for integers
