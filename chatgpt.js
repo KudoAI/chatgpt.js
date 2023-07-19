@@ -513,52 +513,34 @@ const chatgpt = {
 
                         // Fill [chatGPTMessages]
                         for (const userMessage of userMessages) {
-                            const sub = [];
+                            let sub = [];
                             for (const key in data) {
                                 if ('message' in data[key] && data[key].message.author.role === 'assistant' && data[key].parent === userMessage.id) {
-                                    sub.push(data[key].message.content.parts[0]);
+                                    sub.push(data[key].message);
                                 }
                             }
-                            chatGPTMessages.push({ user: userMessage.msg.content.parts[0], chatgpt: sub.length === 1 ? sub[0] : sub});
-                            // or 'sub.length === 1 ? sub[0] : sub[sub.length - 1]' for latest regenerated response
+                            sub.sort((a, b) => a.create_time - b.create_time); // sort in chronological order
+                            sub = sub.map((x) => x.content.parts[0]); // pull out the messages after sorting
+                            sub = sub.length === 1 ? sub[0] : sub; // convert not regenerated responses to strings
+                            chatGPTMessages.push(sub); // array of arrays (length > 1 = regenerated responses)
                         }
-                        console.log(chatGPTMessages);
 
-                        // temp.sort((a, b) => a.message.create_time - b.message.create_time); // sort in chronological order
-
-                        // function removePrevResposes(objects, key) {
-                        //     const filteredObjects = [];
-                        //     let prevValue = null;
-                          
-                        //     for (const obj of objects) {
-                        //         if (prevValue === obj[key]) {
-                        //             // If the previous object had the same value for the key, remove it from the filtered list
-                        //             filteredObjects.pop();
-                        //         }
-                        //         prevValue = obj[key];
-                        //         filteredObjects.push(obj);
-                        //     }
-                          
-                        //     return filteredObjects;
-                        // }
-                        // After sorting, remove responses which have the same parent (regenerated) except the last one (latest)
-                        // temp = removePrevResposes(temp, 'parent');
-                        // for (const msgData of temp) chatGPTMessages.push(msgData.message);
-
-                        // if (sender === 'user') { // Fill [msgsToReturn] with user messages
-                        //     for (const message in userMessages) msgsToReturn.push(userMessages[message].msg.content.parts[0]);
-                        // } else if (sender === 'chatgpt') { // Fill [msgsToReturn] with ChatGPT responses
-                            // chatGPTMessages.forEach(message => { msgsToReturn.push(message.content.parts[0]); });
-                        // } else { // Fill [msgsToReturn] with objects of user messages and chatgpt responses
-                            // let i = 0;
-                            // for (const message in userMessages) {
-                            //     msgsToReturn.push({
-                            //         user: userMessages[message].msg.content.parts[0],
-                            //         chatgpt: chatGPTMessages[i].content.parts[0]
-                            //     });
-                            //     i++;
-                            // }
-                        // }
+                        if (sender === 'user') // Fill [msgsToReturn] with user messages
+                            for (const userMessage in userMessages)
+                                msgsToReturn.push(userMessages[userMessage].msg.content.parts[0]);
+                        else if (sender === 'chatgpt') // Fill [msgsToReturn] with ChatGPT responses
+                            for (const chatGPTMessage of chatGPTMessages)
+                                msgsToReturn.push(msgToGet === 'all' ? chatGPTMessage : chatGPTMessage[chatGPTMessage.length - 1]);
+                        else { // Fill [msgsToReturn] with objects of user messages and chatgpt response(s)
+                            let i = 0;
+                            for (const message in userMessages) {
+                                msgsToReturn.push({
+                                    user: userMessages[message].msg.content.parts[0],
+                                    chatgpt: msgToGet === 'all' ? chatGPTMessages[i] : chatGPTMessages[i][chatGPTMessages[i].length - 1]
+                                });
+                                i++;
+                            }
+                        }
                         return resolve(msgToGet === 'all' ? msgsToReturn // if 'all' passed, return array
                                      : msgToGet === 'latest' ? msgsToReturn[msgsToReturn.length - 1] // else if 'latest' passed, return latest
                                      : msgsToReturn[msgToGet] ); // else return element of array
