@@ -502,10 +502,9 @@ const chatgpt = {
                         const userMessages = [], chatGPTMessages = [], msgsToReturn = [];
 
                         // Fill [userMessages]
-                        for (const key in data) {
+                        for (const key in data)
                             if (data[key].message && data[key].message.author.role === 'user')
                                 userMessages.push({ id: data[key].id, msg: data[key].message });
-                        }
                         userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time); // sort in chronological order
 
                         if (parseInt(msgToGet, 10) + 1 > userMessages.length) // reject if index out of bounds
@@ -513,21 +512,31 @@ const chatgpt = {
                                 + ' is out of bounds. Only ' + userMessages.length + ' messages/responses exist!');
 
                         // Fill [chatGPTMessages]
-                        for (const key in data) {
-                            if (data[key].message && data[key].message.author.role === 'assistant') chatGPTMessages.push(data[key].message);
+                        for (const userMessage of userMessages) {
+                            let sub = [];
+                            for (const key in data) {
+                                if ('message' in data[key] && data[key].message.author.role === 'assistant' && data[key].parent === userMessage.id) {
+                                    sub.push(data[key].message);
+                                }
+                            }
+                            sub.sort((a, b) => a.create_time - b.create_time); // sort in chronological order
+                            sub = sub.map((x) => x.content.parts[0]); // pull out the messages after sorting
+                            sub = sub.length === 1 ? sub[0] : sub; // convert not regenerated responses to strings
+                            chatGPTMessages.push(sub); // array of arrays (length > 1 = regenerated responses)
                         }
-                        chatGPTMessages.sort((a, b) => a.create_time - b.create_time); // sort in chronological order
 
-                        if (sender === 'user') { // Fill [msgsToReturn] with user messages
-                            for (const message in userMessages) msgsToReturn.push(userMessages[message].msg.content.parts[0]);
-                        } else if (sender === 'chatgpt') { // Fill [msgsToReturn] with ChatGPT responses
-                            chatGPTMessages.forEach(message => { msgsToReturn.push(message.content.parts[0]); });
-                        } else { // Fill [msgsToReturn] with objects of user messages and chatgpt responses
+                        if (sender === 'user') // Fill [msgsToReturn] with user messages
+                            for (const userMessage in userMessages)
+                                msgsToReturn.push(userMessages[userMessage].msg.content.parts[0]);
+                        else if (sender === 'chatgpt') // Fill [msgsToReturn] with ChatGPT responses
+                            for (const chatGPTMessage of chatGPTMessages)
+                                msgsToReturn.push(msgToGet === 'latest' ? chatGPTMessage[chatGPTMessage.length - 1] : chatGPTMessage );
+                        else { // Fill [msgsToReturn] with objects of user messages and chatgpt response(s)
                             let i = 0;
                             for (const message in userMessages) {
                                 msgsToReturn.push({
                                     user: userMessages[message].msg.content.parts[0],
-                                    chatgpt: chatGPTMessages[i].content.parts[0]
+                                    chatgpt: msgToGet === 'latest' ? chatGPTMessages[i][chatGPTMessages[i].length - 1] : chatGPTMessages[i]
                                 });
                                 i++;
                             }
