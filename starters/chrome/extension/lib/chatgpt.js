@@ -557,7 +557,7 @@ const chatgpt = {
 
     getLastResponseDiv: function() {
         const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
-        return responseDivs.length ? responseDivs[responseDivs.length - 1] : '';
+        return responseDivs.length ? responseDivs[responseDivs.length - 1] : {};
     },
 
     getLastResponseFromAPI: function() { chatgpt.getResponseFromAPI(); },
@@ -686,7 +686,7 @@ const chatgpt = {
     getSendButton: function() { return document.querySelector('form button[class*="bottom"]'); },
 
     getStopGeneratingButton: function() {
-        for (var formButton of document.querySelectorAll('form button')) {
+        for (const formButton of document.querySelectorAll('form button')) {
             if (formButton.textContent.toLowerCase().includes('stop')) {
                 return formButton;
     }}},
@@ -816,19 +816,19 @@ const chatgpt = {
     },
 
     printAllFunctions: function() {
-        var functionNames = [];
-        for (var prop in this) {
+        const functionNames = [];
+        for (const prop in this) {
             if (typeof this[prop] === 'function') {
-                var chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name));
-                var functionParent = chatgptIsParent ? 'chatgpt' : 'other';
+                const chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name));
+                const functionParent = chatgptIsParent ? 'chatgpt' : 'other';
                 functionNames.push([functionParent, prop]);
             } else if (typeof this[prop] === 'object') {
-                for (var nestedProp in this[prop]) {
+                for (const nestedProp in this[prop]) {
                     if (typeof this[prop][nestedProp] === 'function') {
                         functionNames.push([prop, nestedProp]);
         }}}}
         functionNames.sort(function(a, b) { return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]); });
-        for (var functionName of functionNames) {
+        for (const functionName of functionNames) {
             console.info( '🤖 chatgpt.js >> ' + ( /chatgpt|other/.test(functionName[0]) ? '' : ( functionName[0] + '.' )) + functionName[1] + ': ['
                 + ((( functionName[0] === 'chatgpt' && functionName[1] === this[functionName[1]].name ) || // parent is chatgpt + names match or
                     ( !/chatgpt|other/.test(functionName[0]) )) // parent is chatgpt.obj
@@ -847,7 +847,7 @@ const chatgpt = {
     },
 
     regenerate: function() {
-        for (var formButton of document.querySelectorAll('form button')) {
+        for (const formButton of document.querySelectorAll('form button')) {
             if (formButton.textContent.toLowerCase().includes('regenerate')) {
                 formButton.click(); return;
     }}},
@@ -907,13 +907,13 @@ const chatgpt = {
 
     response: {
         getLast: function() {
-            var lastResponseDiv = chatgpt.response.getLastDiv();
+            const lastResponseDiv = chatgpt.response.getLastDiv();
             return lastResponseDiv ? lastResponseDiv.textContent : '';
         },
 
         getLastDiv: function() {
-            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
-            return responseDivs.length ? responseDivs[responseDivs.length - 1] : '';
+            const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
+            return responseDivs.length ? responseDivs[responseDivs.length - 1] : {};
         },
 
         getWithIndex: function(pos) {
@@ -949,13 +949,13 @@ const chatgpt = {
         },
 
         regenerate: function() {
-            for (var formButton of document.querySelectorAll('form button')) {
+            for (const formButton of document.querySelectorAll('form button')) {
                 if (formButton.textContent.toLowerCase().includes('regenerate')) {
                     formButton.click(); return;
         }}},
 
         stopGenerating: function() {
-            for (var formButton of document.querySelectorAll('form button')) {
+            for (const formButton of document.querySelectorAll('form button')) {
                 if (formButton.textContent.toLowerCase().includes('stop')) {
                     formButton.click(); return;
         }}}
@@ -991,7 +991,7 @@ const chatgpt = {
     },
 
     sendInNewChat: function(msg) {
-        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+        for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
                 navLink.click(); break;
         }} setTimeout(() => { chatgpt.send(msg); }, 500);
@@ -1118,14 +1118,14 @@ const chatgpt = {
 const buttonActions = ['click', 'get'], targetTypes = [ 'button', 'link', 'div', 'response' ];
 for (const buttonAction of buttonActions) {
     chatgpt[buttonAction + 'Button'] = function handleButton(buttonIdentifier) {
-        var button = /^[.#]/.test(buttonIdentifier) ? document.querySelector(buttonIdentifier)
+        const button = /^[.#]/.test(buttonIdentifier) ? document.querySelector(buttonIdentifier)
             : /send/i.test(buttonIdentifier) ? document.querySelector('form button[class*="bottom"]')
             : /scroll/i.test(buttonIdentifier) ? document.querySelector('button[class*="cursor"]')
             : (function() { // get via text content
-                for (var button of document.querySelectorAll('button')) { // try buttons
+                for (const button of document.querySelectorAll('button')) { // try buttons
                     if (button.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
                         return button; }}
-                for (var navLink of document.querySelectorAll('nav a')) { // try nav links if no button
+                for (const navLink of document.querySelectorAll('nav a')) { // try nav links if no button
                     if (navLink.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
                         return navLink; }}})();
         if (buttonAction === 'click') { button.click(); } else { return button; }
@@ -1156,36 +1156,36 @@ const synonyms = [ // constituent synonyms within function names
     ['activate', 'turnOn'], ['account', 'acct'], ['chat', 'conversation', 'convo'], ['data', 'details'],
     ['generating', 'generation'], ['render', 'parse'], ['reply', 'response'], ['send', 'submit']
 ];
-for (var prop in chatgpt) {
+for (const prop in chatgpt) {
 
     // Create new function for each alias
-    for (var subAliases of functionAliases) {
+    for (const subAliases of functionAliases) {
         if (subAliases.includes(prop)) {
             if (subAliases.some(element => element.includes('.'))) {
-                var nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
-                for (var nestAlias of subAliases) {
+                const nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
+                for (const nestAlias of subAliases) {
                     if (/^(\w+)/.exec(nestAlias)[1] !== prop) { // don't alias og function
                         chatgpt[nestAlias] = chatgpt[prop][nestedFunction]; // make new function, reference og one
             }}} else { // alias direct functions
-                for (var dirAlias of subAliases) {
+                for (const dirAlias of subAliases) {
                     if (dirAlias !== prop) { // don't alias og function
                         chatgpt[dirAlias] = chatgpt[prop]; // make new function, reference og one
             }}}
     }}
 
     do { // create new function per synonym per word per function
-        var newFunctionsCreated = false;
-        for (var funcName in chatgpt) {
+        let newFunctionsCreated = false;
+        for (const funcName in chatgpt) {
             if (typeof chatgpt[funcName] === 'function') {
-                var funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
-                for (var funcWord of funcWords) {
-                    var synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
+                const funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
+                for (const funcWord of funcWords) {
+                    const synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
                         .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
                         .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
-                    for (var synonym of synonymValues) { // create function per synonym
-                        var newWords = [...funcWords]; // shallow copy funcWords
+                    for (const synonym of synonymValues) { // create function per synonym
+                        const newWords = [...funcWords]; // shallow copy funcWords
                         newWords[newWords.indexOf(funcWord)] = synonym; // replace funcWord w/ synonym
-                        var newFuncName = newWords.map((newWord, index) => // transform new words to create new name
+                        const newFuncName = newWords.map((newWord, index) => // transform new words to create new name
                             index === 0 || newWord === 's' ? newWord : newWord.charAt(0).toUpperCase() + newWord.slice(1) // case each word to form camel
                         ).join(''); // concatenate transformed words
                         if (!chatgpt[newFuncName]) { // don't alias existing functions
