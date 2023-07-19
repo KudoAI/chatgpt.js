@@ -557,7 +557,7 @@ const chatgpt = {
 
     getLastResponseDiv: function() {
         const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
-        return responseDivs.length ? responseDivs[responseDivs.length - 1] : '';
+        return responseDivs.length ? responseDivs[responseDivs.length - 1] : {};
     },
 
     getLastResponseFromAPI: function() { chatgpt.getResponseFromAPI(); },
@@ -913,7 +913,7 @@ const chatgpt = {
 
         getLastDiv: function() {
             var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
-            return responseDivs.length ? responseDivs[responseDivs.length - 1] : '';
+            return responseDivs.length ? responseDivs[responseDivs.length - 1] : {};
         },
 
         getWithIndex: function(pos) {
