@@ -1174,7 +1174,7 @@ for (const prop in chatgpt) {
     }}
 
     do { // create new function per synonym per word per function
-        let newFunctionsCreated = false;
+        var newFunctionsCreated = false;
         for (const funcName in chatgpt) {
             if (typeof chatgpt[funcName] === 'function') {
                 const funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
