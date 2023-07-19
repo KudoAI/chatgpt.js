@@ -603,7 +603,7 @@ const chatgpt = {
                 return console.error('🤖 chatgpt.js >> Invalid '
                     + ( i === 0 ? 'chat' : i === 1 ? 'response' : 'regenResponse' )
                     + 'ToGet arg \'' + chatToGet + '\' supplied. Must be number!'); }}
-        chatToGet = chatToGet ? chatToGet : 0;
+        chatToGet = chatToGet || 0;
 
         // Return response
         return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
