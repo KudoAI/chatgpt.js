@@ -58,7 +58,7 @@ const chatgpt = {
                 // Alert styles
                 + '.chatgpt-modal > div {'
                     + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
-                    + `max-width: ${ width ? width : 454 }px ;`
+                    + `max-width: ${ width || 454 }px ;`
                     + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) }'
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
                 + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
@@ -90,8 +90,8 @@ const chatgpt = {
         }
 
         // Insert text into elements
-        modalTitle.innerText = title ? title : '';
-        modalMessage.innerText = msg ? msg : ''; this.renderHTML(modalMessage);
+        modalTitle.innerText = title || '';
+        modalMessage.innerText = msg || ''; this.renderHTML(modalMessage);
 
         // Create/append buttons (if provided) to buttons div
         const modalButtons = document.createElement('div');
@@ -761,8 +761,8 @@ const chatgpt = {
         document.body.appendChild(notificationDiv); // insert into DOM
 
         // Determine div position/quadrant
-        notificationDiv.isTop = !position || !/low|bottom/i.test(position) ? true : false;
-        notificationDiv.isRight = !position || !/left/i.test(position) ? true : false;
+        notificationDiv.isTop = !position || !/low|bottom/i.test(position);
+        notificationDiv.isRight = !position || !/left/i.test(position);
         notificationDiv.quadrant = (notificationDiv.isTop ? 'top' : 'bottom')
             + (notificationDiv.isRight ? 'Right' : 'Left');
 
