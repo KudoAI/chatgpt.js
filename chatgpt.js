@@ -1153,7 +1153,7 @@ const functionAliases = [ // whole function names to cross-alias
     ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher']
 ];
 const synonyms = [ // constituent synonyms within function names
-    ['activate', 'turnOn'], ['account', 'acct'], ['chat', 'conversation', 'convo'], ['data', 'details'],
+    ['activate', 'turnOn'], ['account', 'acct'], ['chat', 'conversation', 'convo'], ['data', 'details'], ['deactivate', 'deActivate', 'turnOff'],
     ['generating', 'generation'], ['render', 'parse'], ['reply', 'response'], ['send', 'submit']
 ];
 for (const prop in chatgpt) {
