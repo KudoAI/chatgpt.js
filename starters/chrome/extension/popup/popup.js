@@ -54,7 +54,7 @@
     function notify(msg, position) {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, { 
-                action: 'notify', msg: msg, position: position ? position : 'bottom-right' });
+                action: 'notify', msg: msg, position: position || 'bottom-right' });
     });}
     
     function alertToUpdate(version) {

@@ -58,7 +58,7 @@ const chatgpt = {
                 // Alert styles
                 + '.chatgpt-modal > div {'
                     + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
-                    + `max-width: ${ width ? width : 454 }px ;`
+                    + `max-width: ${ width || 454 }px ;`
                     + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) }'
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
                 + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
@@ -90,8 +90,8 @@ const chatgpt = {
         }
 
         // Insert text into elements
-        modalTitle.innerText = title ? title : '';
-        modalMessage.innerText = msg ? msg : ''; this.renderHTML(modalMessage);
+        modalTitle.innerText = title || '';
+        modalMessage.innerText = msg || ''; this.renderHTML(modalMessage);
 
         // Create/append buttons (if provided) to buttons div
         const modalButtons = document.createElement('div');
@@ -540,93 +540,24 @@ const chatgpt = {
         });});}
     },
 
-    getChatDetails: function() {
-    // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
-    // detailsToGet = [id|title|create_time|update_time] (defaults to all if '' or unpassed)
-    // * Single detail returns string, multiple details returns obj
-    // * Details param can be supplied as array or comma-separated strings
-
-        // Build arg arrays
-        const validDetails = ['id', 'title', 'create_time', 'update_time'];
-        let chatToGet = 0, detailsToGet = [];
-        if (validDetails.includes(arguments[0])) // if 1st arg is detailsToGet string
-            detailsToGet = Array.from(arguments); // convert to array
-        else { // handle chatToGet passed/unpassed + detailsToGet as array/arg(s)/unpassed
-            const chatPassed = Array.isArray(arguments[0]) || !arguments[0] ? false : true;
-            chatToGet = chatPassed ? arguments[0] : 0;
-            const detailsIdx = arguments[0] === '' ? 1 : +chatPassed; // offset detailsToGet index from chatToGet
-            detailsToGet = ( !arguments[detailsIdx] ? validDetails // no detailsToGet passed, populate w/ all valid ones
-                    : Array.isArray(arguments[detailsIdx]) ? arguments[detailsIdx] // detailsToGet array passed, do nothing
-                    : Array.from(arguments).slice(detailsIdx) ); // detailsToGet string(s) passed, convert to array
-        }
-
-        // Validate detailsToGet args
-        for (const detail of detailsToGet) {
-            if (!validDetails.includes(detail)) { return console.error(
-                '🤖 chatgpt.js >> Invalid detail arg \'' + detail + '\' supplied. Valid details are:\n'
-              + '                    [' + validDetails + ']'); }}
-
-        // Return chat details
-        return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
-            getChatData(token).then(data => { resolve(data); });});});
-
-        function getChatData(token) {
-            return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
-                xhr.open('GET', endpoints.chats, true);
-                xhr.setRequestHeader('Content-Type', 'application/json');
-                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                xhr.onload = () => {
-                    if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
-                    const data = JSON.parse(xhr.responseText).items;
-                    if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.');
-                    const detailsToReturn = {};
-
-                    // Handle chat index or ''
-                    if (Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ||
-                            (typeof chatToGet === 'string' && !chatToGet.trim())) {
-                        if (parseInt(chatToGet, 10) > data.length) // reject if index out-of-bounds
-                            return reject('🤖 chatgpt.js >> Chat with index ' + chatToGet
-                                + ' is out of bounds. Only ' + data.length + ' chats exist!');
-                        else { // return single detail or obj of details
-                            const chatIndex = data[parseInt(chatToGet, 10) === 0 ? 0 : parseInt(chatToGet, 10) - 1];
-                            for (const detail of detailsToGet) detailsToReturn[detail] = chatIndex[detail];
-                            return resolve(detailsToReturn);
-                    }}
-
-                    // Handle non-empty strings
-                    const chatIdentifier = /^\w{8}-(\w{4}-){3}\w{12}$/.test(chatToGet) ? 'id' : 'title';
-                    let idx, chatFound; // index of potentially found chat, flag if found
-                    for (idx = 0; idx < data.length; idx++) { // search for id/title to set chatFound flag
-                        if (data[idx][chatIdentifier] === chatToGet) { chatFound = true; break; }}
-                    if (!chatFound) // exit
-                        return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatToGet + ' found.');
-                    if (detailsToGet.length === 1) return resolve(data[idx][detailsToGet[0]]);
-                    for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail];
-                    return resolve(detailsToReturn);
-                };
-                xhr.send();
-        });}
-    },
-
     getChatInput: function() { return chatgpt.getChatBox().value; },
 
     getContinueGeneratingButton: function() {
-        for (var formButton of document.querySelectorAll('form button')) {
+        for (const formButton of document.querySelectorAll('form button')) {
             if (formButton.textContent.toLowerCase().includes('continue')) {
                 return formButton;
     }}},
 
     getLastResponse: function() {
     // * Returns last response via DOM if OpenAI chat page is active, otherwise uses API
-        if (/^https:\/\/chat\.openai\.com\/c\//.test(window.location.href))
+        if (window.location.href.startsWith('https://chat.openai.com/c/'))
             return chatgpt.getLastResponseFromDOM();
         else return chatgpt.getResponseFromAPI();
     },
 
     getLastResponseDiv: function() {
         const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
-        return responseDivs.length ? responseDivs[responseDivs.length - 1] : '';
+        return responseDivs.length ? responseDivs[responseDivs.length - 1] : {};
     },
 
     getLastResponseFromAPI: function() { chatgpt.getResponseFromAPI(); },
@@ -636,8 +567,10 @@ const chatgpt = {
         return lastResponseDiv ? lastResponseDiv.textContent.replace(/^ChatGPTChatGPT\d+ \/ \d+/, '') : '';
     },
 
+    getMyLastMsg: function() { return chatgpt.getChatData('latest', 'msg', 'user', 'latest'); },
+
     getNewChatLink: function() {
-        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+        for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
                 return navLink;
     }}},
@@ -654,7 +587,7 @@ const chatgpt = {
     // responseToGet = index of response to get (defaults to latest if '' unpassed)
     // regenResponseToGet = index of regenerated response to get (defaults to latest if '' unpassed)
 
-        if (/^https:\/\/chat\.openai\.com\/c\//.test(window.location.href))
+        if (window.location.href.startsWith('https://chat.openai.com/c/'))
             return chatgpt.getResponseFromDOM.apply(null, arguments);
         else return chatgpt.getResponseFromAPI.apply(null, arguments);
     },
@@ -670,7 +603,7 @@ const chatgpt = {
                 return console.error('🤖 chatgpt.js >> Invalid '
                     + ( i === 0 ? 'chat' : i === 1 ? 'response' : 'regenResponse' )
                     + 'ToGet arg \'' + chatToGet + '\' supplied. Must be number!'); }}
-        chatToGet = chatToGet ? chatToGet : 0;
+        chatToGet = chatToGet || 0;
 
         // Return response
         return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
@@ -679,7 +612,7 @@ const chatgpt = {
         function getChatData(token) {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                chatgpt.getChatDetails(chatToGet).then(chat => {
+                chatgpt.getChatData(chatToGet).then(chat => {
                     xhr.open('GET', `${endpoints.chat}/${chat.id}`, true);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
@@ -719,12 +652,12 @@ const chatgpt = {
     },
 
     getResponseFromDOM: function(pos) {
-        var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
-        var strPos = pos.toString().toLowerCase();
+        const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
+        const strPos = pos.toString().toLowerCase();
         if (/last|final/.test(strPos)) { // get last response
             return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
         } else { // get nth response
-            var nthOfResponse = (
+            const nthOfResponse = (
 
                 // Calculate base number
                 Number.isInteger(pos) ? pos : // do nothing for integers
@@ -753,7 +686,7 @@ const chatgpt = {
     getSendButton: function() { return document.querySelector('form button[class*="bottom"]'); },
 
     getStopGeneratingButton: function() {
-        for (var formButton of document.querySelectorAll('form button')) {
+        for (const formButton of document.querySelectorAll('form button')) {
             if (formButton.textContent.toLowerCase().includes('stop')) {
                 return formButton;
     }}},
@@ -803,11 +736,11 @@ const chatgpt = {
     isLightMode: function() { return document.documentElement.classList.contains('light'); },
 
     logout: function() {
-        var menuBtn = document.querySelector('nav button[id*="headless"]') || {};
+        const menuBtn = document.querySelector('nav button[id*="headless"]') || {};
         try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
         setTimeout(() => {
-            var menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
-            for (var menuItem of menuItems) {
+            const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
+            for (const menuItem of menuItems) {
                 if (/log out/i.test(menuItem.text)) { menuItem.click(); break; }}
         }, 10);
     },
@@ -828,8 +761,8 @@ const chatgpt = {
         document.body.appendChild(notificationDiv); // insert into DOM
 
         // Determine div position/quadrant
-        notificationDiv.isTop = !position || !/low|bottom/i.test(position) ? true : false;
-        notificationDiv.isRight = !position || !/left/i.test(position) ? true : false;
+        notificationDiv.isTop = !position || !/low|bottom/i.test(position);
+        notificationDiv.isRight = !position || !/left/i.test(position);
         notificationDiv.quadrant = (notificationDiv.isTop ? 'top' : 'bottom')
             + (notificationDiv.isRight ? 'Right' : 'Left');
 
@@ -883,19 +816,19 @@ const chatgpt = {
     },
 
     printAllFunctions: function() {
-        var functionNames = [];
-        for (var prop in this) {
+        const functionNames = [];
+        for (const prop in this) {
             if (typeof this[prop] === 'function') {
-                var chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name));
-                var functionParent = chatgptIsParent ? 'chatgpt' : 'other';
+                const chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name));
+                const functionParent = chatgptIsParent ? 'chatgpt' : 'other';
                 functionNames.push([functionParent, prop]);
             } else if (typeof this[prop] === 'object') {
-                for (var nestedProp in this[prop]) {
+                for (const nestedProp in this[prop]) {
                     if (typeof this[prop][nestedProp] === 'function') {
                         functionNames.push([prop, nestedProp]);
         }}}}
         functionNames.sort(function(a, b) { return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]); });
-        for (var functionName of functionNames) {
+        for (const functionName of functionNames) {
             console.info( '🤖 chatgpt.js >> ' + ( /chatgpt|other/.test(functionName[0]) ? '' : ( functionName[0] + '.' )) + functionName[1] + ': ['
                 + ((( functionName[0] === 'chatgpt' && functionName[1] === this[functionName[1]].name ) || // parent is chatgpt + names match or
                     ( !/chatgpt|other/.test(functionName[0]) )) // parent is chatgpt.obj
@@ -914,7 +847,7 @@ const chatgpt = {
     },
 
     regenerate: function() {
-        for (var formButton of document.querySelectorAll('form button')) {
+        for (const formButton of document.querySelectorAll('form button')) {
             if (formButton.textContent.toLowerCase().includes('regenerate')) {
                 formButton.click(); return;
     }}},
@@ -970,24 +903,26 @@ const chatgpt = {
         return node; // if assignment used
     },
 
+    resend: async function() { chatgpt.send(await chatgpt.getChatData('latest', 'msg', 'user', 'latest')); },
+
     response: {
         getLast: function() {
-            var lastResponseDiv = chatgpt.response.getLastDiv();
+            const lastResponseDiv = chatgpt.response.getLastDiv();
             return lastResponseDiv ? lastResponseDiv.textContent : '';
         },
 
         getLastDiv: function() {
-            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
-            return responseDivs.length ? responseDivs[responseDivs.length - 1] : '';
+            const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
+            return responseDivs.length ? responseDivs[responseDivs.length - 1] : {};
         },
 
         getWithIndex: function(pos) {
-            var responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
-            var strPos = pos.toString().toLowerCase();
+            const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
+            const strPos = pos.toString().toLowerCase();
             if (/last|final/.test(strPos)) { // get last response
                 return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
             } else { // get nth response
-                var nthOfResponse = (
+                const nthOfResponse = (
     
                     // Calculate base number
                     Number.isInteger(pos) ? pos : // do nothing for integers
@@ -1014,13 +949,13 @@ const chatgpt = {
         },
 
         regenerate: function() {
-            for (var formButton of document.querySelectorAll('form button')) {
+            for (const formButton of document.querySelectorAll('form button')) {
                 if (formButton.textContent.toLowerCase().includes('regenerate')) {
                     formButton.click(); return;
         }}},
 
         stopGenerating: function() {
-            for (var formButton of document.querySelectorAll('form button')) {
+            for (const formButton of document.querySelectorAll('form button')) {
                 if (formButton.textContent.toLowerCase().includes('stop')) {
                     formButton.click(); return;
         }}}
@@ -1056,7 +991,7 @@ const chatgpt = {
     },
 
     sendInNewChat: function(msg) {
-        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+        for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
                 navLink.click(); break;
         }} setTimeout(() => { chatgpt.send(msg); }, 500);
@@ -1083,7 +1018,7 @@ const chatgpt = {
         function getChatNode(token) {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                chatgpt.getChatDetails(chatToGet).then(chat => {
+                chatgpt.getChatData(chatToGet).then(chat => {
                     xhr.open('GET', `${endpoints.chat}/${chat.id}`, true);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
@@ -1098,7 +1033,7 @@ const chatgpt = {
         function makeChatToShare(token, node) {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                chatgpt.getChatDetails(chatToGet).then(chat => {
+                chatgpt.getChatData(chatToGet).then(chat => {
                     xhr.open('POST', endpoints.share_create, true);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
@@ -1183,14 +1118,14 @@ const chatgpt = {
 const buttonActions = ['click', 'get'], targetTypes = [ 'button', 'link', 'div', 'response' ];
 for (const buttonAction of buttonActions) {
     chatgpt[buttonAction + 'Button'] = function handleButton(buttonIdentifier) {
-        var button = /^[.#]/.test(buttonIdentifier) ? document.querySelector(buttonIdentifier)
+        const button = /^[.#]/.test(buttonIdentifier) ? document.querySelector(buttonIdentifier)
             : /send/i.test(buttonIdentifier) ? document.querySelector('form button[class*="bottom"]')
             : /scroll/i.test(buttonIdentifier) ? document.querySelector('button[class*="cursor"]')
             : (function() { // get via text content
-                for (var button of document.querySelectorAll('button')) { // try buttons
+                for (const button of document.querySelectorAll('button')) { // try buttons
                     if (button.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
                         return button; }}
-                for (var navLink of document.querySelectorAll('nav a')) { // try nav links if no button
+                for (const navLink of document.querySelectorAll('nav a')) { // try nav links if no button
                     if (navLink.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
                         return navLink; }}})();
         if (buttonAction === 'click') { button.click(); } else { return button; }
@@ -1218,21 +1153,21 @@ const functionAliases = [ // whole function names to cross-alias
     ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher']
 ];
 const synonyms = [ // constituent synonyms within function names
-    ['activate', 'turnOn'], ['account', 'acct'], ['chat', 'conversation', 'convo'], ['generating', 'generation'],
-    ['msg', 'message'], ['render', 'parse'], ['reply', 'response'], ['send', 'submit']
+    ['activate', 'turnOn'], ['account', 'acct'], ['chat', 'conversation', 'convo'], ['data', 'details'], ['deactivate', 'deActivate', 'turnOff'],
+    ['generating', 'generation'], ['render', 'parse'], ['reply', 'response'], ['send', 'submit']
 ];
-for (var prop in chatgpt) {
+for (const prop in chatgpt) {
 
     // Create new function for each alias
-    for (var subAliases of functionAliases) {
+    for (const subAliases of functionAliases) {
         if (subAliases.includes(prop)) {
             if (subAliases.some(element => element.includes('.'))) {
-                var nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
-                for (var nestAlias of subAliases) {
+                const nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
+                for (const nestAlias of subAliases) {
                     if (/^(\w+)/.exec(nestAlias)[1] !== prop) { // don't alias og function
                         chatgpt[nestAlias] = chatgpt[prop][nestedFunction]; // make new function, reference og one
             }}} else { // alias direct functions
-                for (var dirAlias of subAliases) {
+                for (const dirAlias of subAliases) {
                     if (dirAlias !== prop) { // don't alias og function
                         chatgpt[dirAlias] = chatgpt[prop]; // make new function, reference og one
             }}}
@@ -1240,17 +1175,17 @@ for (var prop in chatgpt) {
 
     do { // create new function per synonym per word per function
         var newFunctionsCreated = false;
-        for (var funcName in chatgpt) {
+        for (const funcName in chatgpt) {
             if (typeof chatgpt[funcName] === 'function') {
-                var funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
-                for (var funcWord of funcWords) {
-                    var synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
+                const funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
+                for (const funcWord of funcWords) {
+                    const synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
                         .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
                         .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
-                    for (var synonym of synonymValues) { // create function per synonym
-                        var newWords = [...funcWords]; // shallow copy funcWords
+                    for (const synonym of synonymValues) { // create function per synonym
+                        const newWords = [...funcWords]; // shallow copy funcWords
                         newWords[newWords.indexOf(funcWord)] = synonym; // replace funcWord w/ synonym
-                        var newFuncName = newWords.map((newWord, index) => // transform new words to create new name
+                        const newFuncName = newWords.map((newWord, index) => // transform new words to create new name
                             index === 0 || newWord === 's' ? newWord : newWord.charAt(0).toUpperCase() + newWord.slice(1) // case each word to form camel
                         ).join(''); // concatenate transformed words
                         if (!chatgpt[newFuncName]) { // don't alias existing functions
