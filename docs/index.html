@@ -27,6 +27,7 @@
                     <li><a href="#/es/" target="_self" class="dropdown-link">Español</a></li>
                     <li><a href="#/fr/" target="_self" class="dropdown-link">Français</a></li>
                     <li><a href="#/it/" target="_self" class="dropdown-link">Italiano</a></li>
+                    <li><a href="#/nl/" target="_self" class="dropdown-link">Nederlands</a></li>
                     <li><a href="#/pt/" target="_self" class="dropdown-link">Português</a></li>
                 </ul>
             </div>
@@ -38,18 +39,19 @@
                 repo: 'kudoai/chatgpt.js',
                 loadNavbar: true,
                 logo: 'https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-sidepadded-light-mode-650x61.png',
-                coverpage: ['/', '/zh-cn/', '/ja/', '/ko/', '/hi/', '/de/', '/es/', '/fr/', '/it/', '/pt/'],
+                coverpage: ['/', '/zh-cn/', '/ja/', '/ko/', '/hi/', '/de/', '/es/', '/fr/', '/it/', '/nl/', '/pt/'],
                 maxLevel: 3,
                 search: {
                     paths: 'auto',
                     placeholder: { 
                         '/zh-cn/': '搜索', '/ja/': '찾다', '/ko/': '検索', '/hi/': 'खोज', '/de/': 'Suchen', '/es/': 'Buscar',
-                        '/fr/': 'Recherche', '/it/': 'Ricerca', '/pt/': 'Procurar', '/': 'Search' },
+                        '/fr/': 'Recherche', '/it/': 'Ricerca', '/nl/': 'Zoekopdracht', '/pt/': 'Procurar', '/': 'Search' },
                     noData: { 
                         '/zh-cn/': '没有结果!', '/ja/': '結果がありません!', '/ko/': '결과가 없습니다!', '/hi/': 'कोई परिणाम नहीं!',
                         '/de/': 'Keine Ergebnisse!', '/es/': '¡No hay resultados!', '/fr/': 'Aucun résultat!',
-                        '/it/': 'Nessun risultato!', '/pt/': 'Sem resultados!', '/': 'No results!' },
-                    pathNamespaces: /^(\/(zh-cn|ja|ko|hi|de|es|fr|it|pt))?/
+                        '/it/': 'Nessun risultato!', '/nl/': 'Geen resultaten!', '/pt/': 'Sem resultados!',
+                        '/': 'No results!' },
+                    pathNamespaces: /^(\/(zh-cn|ja|ko|hi|de|es|fr|it|nl|pt))?/
                 },
                 routes: {
                     '.*javascript.*': () => { // scroll-to-top link
