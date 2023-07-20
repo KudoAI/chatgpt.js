@@ -113,7 +113,7 @@ img[src*="promo-tile"] { width: 1111px  } /* enlarge promo tiles */
 
 /* Contributors */
 $contributors: ('contributors', '贡献者', '貢献者', '기여자', 'योगदानकर्ता', 'mitwirkende',
-    'colaboradores', 'contributeurs', 'contributori', 'contribuidores');
+    'colaboradores', 'contributeurs', 'contributori', 'bijdragers', 'contribuidores');
 @each $translation in $contributors {
     $id: unquote('#🧠-') + $translation;
     h2#{$id}, h2#{$id} ~ p { text-align: center } /* center contributors section */
