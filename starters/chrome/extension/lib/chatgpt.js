@@ -411,7 +411,7 @@ const chatgpt = {
         // Init args
         const validDetails = [ 'all', 'id', 'title', 'create_time', 'update_time', 'msg' ];
         const validSenders = [ 'all', 'both', 'user', 'chatgpt' ];
-        chatToGet = !chatToGet ? 0 // if '' passed, set to latest
+        chatToGet = !chatToGet ? 'active' // if '' passed, set to active
                   : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
                       ( parseInt(chatToGet, 10) === 0 ? 0 : parseInt(chatToGet, 10) - 1 ) // ...offset -1 or keep as 0
                   : chatToGet; // else preserve non-num string as 'active', 'latest' or title/id of chat to get
