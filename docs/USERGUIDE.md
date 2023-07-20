@@ -83,6 +83,8 @@
     - [getFromAPI `async`](#getfromapi-async)
     - [getFromDOM](#getfromdom)
     - [getLast `async`](#getlast-async)
+    - [regenerate](#regenerate-1)
+    - [stopGenerating](#stopgenerating)
   - [scheme `obj`](#scheme-obj)
     - [isDark](#isdark)
     - [isLight](#islight)
@@ -1000,6 +1002,14 @@ Read [chatgpt.getResponseFromDOM](#getresponsefromdom)
 ### getLast `async`
 
 Read [chatgpt.getLastResponse](#getlastresponse-async)
+
+### regenerate
+
+Read [chatgpt.regenerate](#regenerate)
+
+### stopGenerating
+
+Read [chatgpt.stop](#stop)
 
 ## scheme `obj`
 
