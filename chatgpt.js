@@ -530,7 +530,7 @@ const chatgpt = {
                                 msgsToReturn.push(userMessages[userMessage].msg.content.parts[0]);
                         else if (sender === 'chatgpt') // Fill [msgsToReturn] with ChatGPT responses
                             for (const chatGPTMessage of chatGPTMessages)
-                                msgsToReturn.push(msgToGet === 'latest' ? chatGPTMessage[chatGPTMessage.length - 1] : chatGPTMessage );
+                                msgsToReturn.push(msgToGet === 'latest' ? chatGPTMessages[chatGPTMessages.length - 1] : chatGPTMessage );
                         else { // Fill [msgsToReturn] with objects of user messages and chatgpt response(s)
                             let i = 0;
                             for (const message in userMessages) {
