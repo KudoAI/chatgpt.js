@@ -583,46 +583,8 @@ const chatgpt = {
         else return chatgpt.getResponseFromAPI.apply(null, arguments);
     },
 
-    getResponseFromAPI: function(chatToGet, responseToGet) {
-    // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
-    // responseToGet = index of response to get (defaults to latest if '' or unpassed)
-
-        chatToGet = chatToGet || 'latest'; responseToGet = responseToGet || 'latest';
-        return chatgpt.getChatData(chatToGet, 'msg', 'chatgpt', responseToGet);
-    },
-
-    getResponseFromDOM: function(pos) {
-        const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
-        const strPos = pos.toString().toLowerCase();
-        if (/last|final/.test(strPos)) { // get last response
-            return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
-        } else { // get nth response
-            const nthOfResponse = (
-
-                // Calculate base number
-                Number.isInteger(pos) ? pos : // do nothing for integers
-                /^\d+/.test(strPos) ? /^\d+/.exec(strPos)[0] : // extract first digits for strings w/ them
-                ( // convert words to integers for digitless strings
-                    /^(1|one|fir)(st)?$/.test(strPos) ? 1
-                    : /^(2|tw(o|en|el(ve|f))|seco)(nd|t[yi])?(e?th)?$/.test(strPos) ? 2
-                    : /^(3|th(ree|ir?))(rd|teen|t[yi])?(e?th)?$/.test(strPos) ? 3
-                    : /^(4|fou?r)(teen|t[yi])?(e?th)?$/.test(strPos) ? 4
-                    : /^(5|fi(ve|f))(teen|t[yi])?(e?th)?$/.test(strPos) ? 5
-                    : /^(6|six)(teen|t[yi])?(e?th)?$/.test(strPos) ? 6
-                    : /^(7|seven)(teen|t[yi])?(e?th)?$/.test(strPos) ? 7
-                    : /^(8|eight?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 8
-                    : /^(9|nine?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 9
-                    : /^(10|ten)(th)?$/.test(strPos) ? 10 : 1 )
-
-                // Transform base number if suffixed
-                * ( /(ty|ieth)$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
-                + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
-
-            );
-            return responseDivs.length ? responseDivs[nthOfResponse - 1].textContent : '';
-        }
-    },
-
+    getResponseFromAPI: function(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet) },
+    getResponseFromDOM: function(pos) { return chatgpt.response.getFromDOM(pos) },
     getSendButton: function() { return document.querySelector('form button[class*="bottom"]'); },
 
     getStopGeneratingButton: function() {
@@ -847,24 +809,33 @@ const chatgpt = {
     resend: async function() { chatgpt.send(await chatgpt.getChatData('latest', 'msg', 'user', 'latest')); },
 
     response: {
-        getLast: function() {
-            const lastResponseDiv = chatgpt.response.getLastDiv();
-            return lastResponseDiv ? lastResponseDiv.textContent : '';
+        get: function() {
+            // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:        
+            // chatToGet = index|title|id of chat to get (defaults to latest if '' unpassed)
+            // responseToGet = index of response to get (defaults to latest if '' unpassed)
+            // regenResponseToGet = index of regenerated response to get (defaults to latest if '' unpassed)
+
+                if (window.location.href.startsWith('https://chat.openai.com/c/'))
+                    return this.getFromDOM.apply(null, arguments);
+                else return this.getFromAPI.apply(null, arguments);
         },
 
-        getLastDiv: function() {
-            const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
-            return responseDivs.length ? responseDivs[responseDivs.length - 1] : {};
+        getFromAPI: function(chatToGet, responseToGet) {
+        // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
+        // responseToGet = index of response to get (defaults to latest if '' or unpassed)
+
+            chatToGet = chatToGet || 'latest'; responseToGet = responseToGet || 'latest';
+            return chatgpt.getChatData(chatToGet, 'msg', 'chatgpt', responseToGet);
         },
 
-        getWithIndex: function(pos) {
+        getFromDOM: function(pos) {
             const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
             const strPos = pos.toString().toLowerCase();
             if (/last|final/.test(strPos)) { // get last response
                 return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
             } else { // get nth response
                 const nthOfResponse = (
-    
+
                     // Calculate base number
                     Number.isInteger(pos) ? pos : // do nothing for integers
                     /^\d+/.test(strPos) ? /^\d+/.exec(strPos)[0] : // extract first digits for strings w/ them
@@ -879,15 +850,17 @@ const chatgpt = {
                         : /^(8|eight?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 8
                         : /^(9|nine?)(teen|t[yi])?(e?th)?$/.test(strPos) ? 9
                         : /^(10|ten)(th)?$/.test(strPos) ? 10 : 1 )
-    
+
                     // Transform base number if suffixed
                     * ( /(ty|ieth)$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
                     + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
-    
+
                 );
                 return responseDivs.length ? responseDivs[nthOfResponse - 1].textContent : '';
             }
         },
+
+        getLast: function() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
 
         regenerate: function() {
             for (const formButton of document.querySelectorAll('form button')) {
