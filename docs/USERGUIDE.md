@@ -43,10 +43,8 @@
     - [exportChat](#exportchat)
     - [getChatData `async`](#getchatdata-async)
     - [getChatInput](#getchatinput)
-    - [getLastResponse](#getlastresponse)
-    - [getLastResponseFromAPI `async`](#getlastresponsefromapi-async)
-    - [getLastResponseFromDOM](#getlastresponsefromdom)
-    - [getMyLastMsg `async`](#getmylastmsg-async)
+    - [getLastPrompt `async`](#getlastprompt-async)
+    - [getLastResponse `async`](#getlastresponse-async)
     - [getResponse](#getresponse)
     - [getResponseFromAPI `async`](#getresponsefromapi-async)
     - [getResponseFromDOM](#getresponsefromdom)
@@ -62,7 +60,6 @@
   - [DOM related](#dom-related)
     - [getChatBox](#getchatbox)
     - [getContinueGeneratingButton](#getcontinuegeneratingbutton)
-    - [getLastResponseDiv](#getlastresponsediv)
     - [getNewChatLink](#getnewchatlink)
     - [getRegenerateButton](#getregeneratebutton)
     - [getSendButton](#getsendbutton)
@@ -82,9 +79,10 @@
     - [deactivate](#deactivate-1)
     - [toggle](#toggle)
   - [response `obj`](#response-obj)
-    - [getLast](#getlast)
-    - [getLastDiv](#getlastdiv)
-    - [getWithIndex](#getwithindex)
+    - [get](#get-1)
+    - [getFromAPI `async`](#getfromapi-async)
+    - [getFromDOM](#getfromdom)
+    - [getLast `async`](#getlast-async)
     - [regenerate](#regenerate-1)
     - [stopGenerating](#stopgenerating)
   - [scheme `obj`](#scheme-obj)
@@ -624,49 +622,32 @@ const chatInput = chatgpt.getChatInput();
 console.log(chatInput); // Example output: 'Hello from chatgpt.js!'
 ```
 
-### getLastResponse
-
-If it's a previously created chat, read [chatgpt.getLastResponseFromDOM](#getlastresponsefromdom)
-If it's a new chat, read [chatgpt.getLastResponseFromAPI](#getlastresponsefromapi-async)
-
-### getLastResponseFromAPI `async`
-
-Returns the last response ChatGPT has written in the latest chat as a string.
-
-Example code:
-
-```js
-async function doSomething {
-  const lastResponse = await chatgpt.getLastResponseFromAPI();
-  console.log(lastResponse); // Example output: 'I am ChatGPT, how can I help you?'
-}
-```
-
-### getLastResponseFromDOM
-
-Returns the last response ChatGPT has written in the current chat as a string.
-
-Example code:
-
-```js
-const lastResponse = chatgpt.getLastResponseFromDOM();
-console.log(lastResponse); // Example output: 'I am ChatGPT, how can I help you?'
-```
-
-### getMyLastMsg `async`
+### getLastPrompt `async`
 
 Returns the last message sent by the user as a string.
 
 ```js
 async function doSomething() {
-  const message = await chatgpt.getMyLastMsg();
+  const message = await chatgpt.getLastPrompt();
   console.log(message); // Example output: 'Hello from chatgpt.js!'
+}
+```
+
+### getLastResponse `async`
+
+Returns the last ChatGPT response as a string.
+
+```js
+async function doSomething() {
+  const response = await chatgpt.getLastResponse();
+  console.log(response); // Example output: 'I am ChatGPT!'
 }
 ```
 
 ### getResponse
 
 If it's a previously created chat, read [chatgpt.getResponseFromDOM](#getresponsefromdom)
+
 If it's a new chat, read [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
 
 ### getResponseFromAPI `async`
@@ -675,11 +656,9 @@ Returns the Nth response ChatGPT has written in a Nth chat as a string.
 
 **Parameters**:
 
-`chatToGet`: A number representing the index of the chat to get the response from. Defaults to latest.
+`chatToGet`: A number representing the index of the chat to get the response from. Defaults to `latest`.
 
-`responseToGet`: A number representing the index of the response to get. Defaults to latest.
-
-`regenResponseToGet`: A number representing the index of the regenerated response (in case there is one). Defaults to latest.
+`responseToGet`: A number representing the index of the response to get. Defaults to `latest`.
 
 Example code:
 
@@ -734,7 +713,7 @@ chagpt.regenerate();
 
 ### resend `async`
 
-Re-sends the latest user message.
+Re-sends the last user message.
 
 ```js
 async function doSomething() {
@@ -843,17 +822,6 @@ Example code:
 ```js
 const continueButton = chatgpt.getContinueGeneratingButton();
 continueButton.click();
-```
-
-### getLastResponseDiv
-
-Returns the last response's container HTML element.
-
-Example code:
-
-```js
-const container = chatgpt.getLastResponseDiv();
-container.style.display = 'none';
 ```
 
 ### getNewChatLink
@@ -1017,17 +985,23 @@ chatgpt.history.toggle();
 
 Object related to ChatGPT's responses.
 
-### getLast
+### get
 
-Read [chatgpt.getLastResponse](#getlastresponse)
+If it's a previously created chat, read [chatgpt.getResponseFromDOM](#getresponsefromdom)
 
-### getLastDiv
+If it's a new chat, read [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
 
-Read [chatgpt.getLastResponseDiv](#getlastresponsediv)
+### getFromAPI `async`
 
-### getWithIndex
+Read [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
 
-Read [chatgpt.getResponse](#getresponse)
+### getFromDOM
+
+Read [chatgpt.getResponseFromDOM](#getresponsefromdom)
+
+### getLast `async`
+
+Read [chatgpt.getLastResponse](#getlastresponse-async)
 
 ### regenerate
 
