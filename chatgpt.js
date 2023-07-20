@@ -583,8 +583,8 @@ const chatgpt = {
         else return chatgpt.getResponseFromAPI.apply(null, arguments);
     },
 
-    getResponseFromAPI: function(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet) },
-    getResponseFromDOM: function(pos) { return chatgpt.response.getFromDOM(pos) },
+    getResponseFromAPI: function(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet); },
+    getResponseFromDOM: function(pos) { return chatgpt.response.getFromDOM(pos); },
     getSendButton: function() { return document.querySelector('form button[class*="bottom"]'); },
 
     getStopGeneratingButton: function() {
