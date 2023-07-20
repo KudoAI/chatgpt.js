@@ -503,7 +503,7 @@ const chatgpt = {
 
                         // Fill [userMessages]
                         for (const key in data)
-                            if (data[key].message && data[key].message.author.role === 'user')
+                            if ('message' in data[key] && data[key].message.author.role === 'user')
                                 userMessages.push({ id: data[key].id, msg: data[key].message });
                         userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time); // sort in chronological order
 
@@ -1006,9 +1006,13 @@ const chatgpt = {
         }} setTimeout(() => { chatgpt.send(msg); }, 500);
     },
 
-    shareChat: function(chatToGet, method = '') {    
+    shareChat: function(chatToGet, method = 'clipboard') {
     // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
-    // method = [ 'url'|'clipboard' ] (defaults to 'clipboard' if '' or unpassed)
+    // method = [ 'alert'|'clipboard' ] (defaults to 'clipboard' if '' or unpassed)
+
+        const validMethods = ['alert', 'notify', 'notification', 'clipboard', 'copy'];
+        if (!validMethods.includes(method)) return console.error(
+            '🤖 chatgpt.js >> Invalid method \'' + method + '\' passed. Valid methods are [' + validMethods + '].');
 
         return new Promise((resolve) => {
             chatgpt.getAccessToken().then(token => { // get access token
@@ -1017,7 +1021,7 @@ const chatgpt = {
                         confirmShareChat(token, data).then(() => {
                             resolve();
                             if (['copy', 'clipboard'].includes(method)) navigator.clipboard.writeText(data.share_url);
-                            chatgpt.alert('🚀 Share link created!',
+                            else chatgpt.alert('🚀 Share link created!',
                                 '"' + data.title + '" is available at: <a target="blank" rel="noopener" href="'
                                     + data.share_url + '" >' + data.share_url + '</a>',
                                 [ function openLink() { window.open(data.share_url, '_blank', 'noopener'); },
