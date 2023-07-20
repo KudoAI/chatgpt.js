@@ -650,7 +650,8 @@ const chatgpt = {
     }}},
 
     getUserLanguage: function() {
-        return navigator.languages[0] || navigator.language || navigator.browserLanguage | navigator.systemLanguage || navigator.userLanguage || ''; },
+        return navigator.languages[0] || navigator.language || navigator.browserLanguage ||
+            navigator.systemLanguage || navigator.userLanguage || ''; },
 
     history: {
         isOn: function() {
