@@ -557,26 +557,8 @@ const chatgpt = {
                 return formButton;
     }}},
 
-    getLastResponse: function() {
-    // * Returns last response via DOM if OpenAI chat page is active, otherwise uses API
-        if (window.location.href.startsWith('https://chat.openai.com/c/'))
-            return chatgpt.getLastResponseFromDOM();
-        else return chatgpt.getResponseFromAPI();
-    },
-
-    getLastResponseDiv: function() {
-        const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
-        return responseDivs.length ? responseDivs[responseDivs.length - 1] : {};
-    },
-
-    getLastResponseFromAPI: function() { chatgpt.getResponseFromAPI(); },
-
-    getLastResponseFromDOM: function() {
-        const lastResponseDiv = chatgpt.getLastResponseDiv();
-        return lastResponseDiv ? lastResponseDiv.textContent.replace(/^ChatGPTChatGPT\d+ \/ \d+/, '') : '';
-    },
-
-    getMyLastMsg: function() { return chatgpt.getChatData('latest', 'msg', 'user', 'latest'); },
+    getLastPrompt: function() { return chatgpt.getChatData('active', 'msg', 'user', 'latest'); },
+    getLastResponse: function() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
 
     getNewChatLink: function() {
         for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
@@ -1101,6 +1083,7 @@ const functionAliases = [ // whole function names to cross-alias
         'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
     ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
     ['exportChat', 'chatExport'],
+    ['getLastPrompt', 'getLastQuery', 'getMyLastMsg', 'getMyLastQuery'],
     ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
     ['isFullScreen', 'isFullscreen'],
     ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
