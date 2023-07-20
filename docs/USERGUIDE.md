@@ -41,19 +41,22 @@
   - [Chats](#chats)
     - [clearChats](#clearchats)
     - [exportChat](#exportchat)
+    - [getChatData `async`](#getchatdata-async)
     - [getChatInput](#getchatinput)
-    - [getChatDetails `async`](#getchatdetails-async)
     - [getLastResponse](#getlastresponse)
     - [getLastResponseFromAPI `async`](#getlastresponsefromapi-async)
     - [getLastResponseFromDOM](#getlastresponsefromdom)
+    - [getMyLastMsg `async`](#getmylastmsg-async)
     - [getResponse](#getresponse)
     - [getResponseFromAPI `async`](#getresponsefromapi-async)
     - [getResponseFromDOM](#getresponsefromdom)
     - [isIdle `async`](#isidle-async)
     - [regenerate](#regenerate)
+    - [resend `async`](#resend-async)
     - [scrollToBottom](#scrolltobottom)
     - [send](#send)
     - [sendInNewChat](#sendinnewchat)
+    - [shareChat `async`](#sharechat-async)
     - [startNewChat](#startnewchat)
     - [stop](#stop)
   - [DOM related](#dom-related)
@@ -453,6 +456,163 @@ Example code:
 chatgpt.exportChat(); // Downloads a file called 'ChatGPT_{day}-{month}-{year}_{hour}-{minute}.txt'
 ```
 
+### getChatData `async`
+
+Returns the requested chat data.
+
+**Parameters**:
+
+`chatToGet`: A string representing the chat to get the data from.
+
+Can be the following: `active`, the current chat, `latest`, the latest chat in the list, else the `index`, `title` or `id` of the chat to get. Default is `active` if in a chat, else `latest`.
+
+`detailsToGet`: A string representing the chat data to retrieve.
+
+Can be the following: `all` to get all details, `id`, `title`, `create_time`, `update_time` or `msg`. To get a single detail, just use a string, to get multiple use an array of strings instead. Default is `all`.
+
+_**If `msg` is the requested detail, the following parameters can be used**_:
+
+`sender`: A string representing the chat member to get the message(s) from.
+
+Can be the following: `user` to get the user message(s), `chatgpt` to get ChatGPT's response(s), `all`/`both` to get both of them. Default is `all`.
+
+`msgToGet`: A string/number representing the chat message to retrieve.
+
+Can be the following: `all` to get all the messages in the chat, `latest` to get the latest message/response, or the `index` of the message. Default is `all`.
+
+> **Note** _If any **user** messages were edited, they are added to the index as newly sent messages_
+
+Example code **for all return types**:
+
+_**All details from specified chat**_
+
+```js
+await chatgpt.getChatData();
+// or
+await chatgpt.getChatData('latest'); // can also be 'active', 'title of the chat' or 'id of the chat'
+// or
+await chatgpt.getChatData('latest', 'all');
+```
+
+_Returns a JSON object_
+
+```json
+{
+  "create_time": "2023-07-19T13:24:05.618539+00:00",
+  "id": "e193a219-2311-4232-95f5-8e3a0e466652",
+  "title": "Lemons: Citrus Fruit Overview.",
+  "update_time": "2023-07-19T13:24:18+00:00"
+}
+```
+
+_**Specific detail(s) from specified chat**_
+
+```js
+await chatgpt.getChatData('latest', ['id', 'title']);
+```
+
+_Returns a JSON object_
+
+```json
+{
+  "id": "e193a219-2311-4232-95f5-8e3a0e466652",
+  "title": "Lemons: Citrus Fruit Overview."
+}
+```
+
+_**All messages from both partecipants in a specified chat**_
+
+```js
+await chatgpt.getChatData('latest', 'msg');
+// or
+await chatgpt.getChatData('latest', 'msg', 'all'); // all/both
+// or
+await chatgpt.getChatData('latest', 'msg', 'all', 'all');
+```
+
+_Returns an array of JSON objects_
+
+In case of a response being regenerated, the `chatgpt` object key will be converted to an array containing all the responses.
+
+```json
+[
+    {
+        "user": "what are lemons",
+        "chatgpt": "Lemons are a type of citrus fruit that belongs..."
+    },
+    {
+        "user": "be more specific",
+        "chatgpt": [
+            "Certainly! Here are some more specific...",
+            "Certainly! Here are some specific..." // regenerated responses!
+        ]
+    }
+]
+```
+
+_**All messages from a specific partecipant in a specified chat**_
+
+```js
+await chatgpt.getChatData('latest', 'msg');
+// or
+await chatgpt.getChatData('latest', 'msg', 'chatgpt'); // user/chatgpt
+// or
+await chatgpt.getChatData('latest', 'msg', 'chatgpt', 'all');
+```
+
+_Returns an array of strings/arrays_
+
+In case of a response being regenerated and the requested partecipant being `chatgpt`, it'll be converted to an array containing all the responses.
+
+```json
+[
+    "Lemons are a type of citrus fruit that belongs...",
+    [
+        "Certainly! Here are some more specific details...",
+        "Certainly! Here are some specific..."
+    ]
+]
+```
+
+_**One/latest message from both partecipants in a specified chat**_
+
+```js
+await chatgpt.getChatData('latest', 'msg', 'all', 2); // can also be 'latest' message
+```
+
+_Returns a JSON object_
+
+In case of a response being regenerated, the `chatgpt` object key will be converted to an array containing all the responses.
+
+```json
+{
+    "user": "be more specific",
+    "chatgpt": [
+        "Certainly! Here are some more specific...",
+        "Certainly! Here are some specific..."
+    ]
+}
+```
+
+_**One/latest message from a specific partecipant in a specified chat**_
+
+```js
+await chatgpt.getChatData('latest', 'msg', 'chatgpt', 2);
+```
+
+_Returns a string or an array of strings_
+
+In case of a response being regenerated, the `chatgpt` object key will be converted to an array containing all the responses.
+
+```json
+"Certainly! Here are some more specific..."
+// or
+[
+    "Certainly! Here are some more specific...",
+    "Certainly! Here are some specific..."
+]
+```
+
 ### getChatInput
 
 Returns the value of the chat input field as a string.
@@ -462,44 +622,6 @@ Example code:
 ```js
 const chatInput = chatgpt.getChatInput();
 console.log(chatInput); // Example output: 'Hello from chatgpt.js!'
-```
-
-### getChatDetails `async`
-
-Returns a given chat detail as a string.
-
-**Parameters**:
-
-`chat`: A string or number representing the chat. Defaults to the latest chat.
-
-If `chat` is a number, that number will represent the chat index in the list. Defaults to the latest chat.
-If `chat` is a string, that string can be either the chat ID or the chat title.
-
-The chat ID is located in the URL. Example: `https://chat.openai.com/c/[chat id]`
-
-`detail`: A string representing the chat detail(s) that will be returned.
-
-Can be the following: `id`, `title`, `create_time`, `update_time`. If a single detail is passed, it will be returned as a string, if multiple are passed instead, the function will return an object with the requested details. If no details are passed, the function will return an object with all the avaiable details.
-
-```js
-async function doSomething() {
-  var chatData;
-
-  chatData = await chatgpt.getChatDetails(5, 'title');
-  console.log(chatData); // Example output: '5th chat title!'
-
-  chatData = await chatgpt.getChatDetails('title');
-  console.log(chatData); // Example output: '1st chat title!'
-
-  chatData = await chatgpt.getChatDetails(2, 'title', 'id');
-  console.log(chatData);
-  /* Example output:
-  {
-    title: '2nd chat title!',
-    id: '2nd-chat-id'
-  }
-  */
-}
 ```
 
 ### getLastResponse
@@ -529,6 +651,17 @@ Example code:
 ```js
 const lastResponse = chatgpt.getLastResponseFromDOM();
 console.log(lastResponse); // Example output: 'I am ChatGPT, how can I help you?'
+```
+
+### getMyLastMsg `async`
+
+Returns the last message sent by the user as a string.
+
+```js
+async function doSomething() {
+  const message = await chatgpt.getMyLastMsg();
+  console.log(message); // Example output: 'Hello from chatgpt.js!'
+}
 ```
 
 ### getResponse
@@ -599,6 +732,16 @@ Example code:
 chagpt.regenerate();
 ```
 
+### resend `async`
+
+Re-sends the latest user message.
+
+```js
+async function doSomething() {
+  await chatgpt.resend();
+}
+```
+
 ### scrollToBottom
 
 Scrolls to the bottom of the chat.
@@ -638,6 +781,24 @@ Example code:
 
 ```js
 chatgpt.sendInNewChat('Hello, world!');
+```
+
+### shareChat `async`
+
+Makes the selected chat available to others.
+
+**Parameters**:
+
+`chatToGet`: A number or string representing the `index`, `title` or `id` of the chat to share.
+
+`method`: A string representing the method to share the chat with. Defaults to `clipboard`.
+
+Can be the following: `copy` or `clipboard` to copy the chat URL to clipboard, `alert`, `notify` or `notification` to create an [alert message](#alert) with the details about the shared chat in the website.
+
+```js
+async function doSomething() {
+  await chatgpt.shareChat(1, 'copy'); // copy/clipboard
+}
 ```
 
 ### startNewChat
