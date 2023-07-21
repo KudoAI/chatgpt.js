@@ -1,5 +1,5 @@
 <div align="right">
-<h5>Deutsch | <a href="../../LICENSE.md">English</a> | <a href="../zh-cn/LICENSE.md">简体中文</a> | <a href="../ja/LICENSE.md">日本</a> | <a href="../ko/LICENSE.md">한국인</a> | <a href="../hi/LICENSE.md">हिंदी</a> | <a href="../es/LICENSE.md">Español</a> | <a href="../fr/LICENSE.md">Français</a> | <a href="../it/LICENSE.md">Italiano</a> | <a href="../pt/LICENSE.md">Português</a> | <a href="../vi/LICENSE.md">Việt</a></h5>
+<h5>Deutsch | <a href="../../LICENSE.md">English</a> | <a href="../zh-cn/LICENSE.md">简体中文</a> | <a href="../zh-tw/LICENSE.md">繁體中文</a> | <a href="../ja/LICENSE.md">日本</a> | <a href="../ko/LICENSE.md">한국인</a> | <a href="../hi/LICENSE.md">हिंदी</a> | <a href="../es/LICENSE.md">Español</a> | <a href="../fr/LICENSE.md">Français</a> | <a href="../it/LICENSE.md">Italiano</a> | <a href="../pt/LICENSE.md">Português</a> | <a href="../vi/LICENSE.md">Việt</a></h5>
 </div>
 
 # MIT-Lizenz
