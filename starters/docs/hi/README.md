@@ -18,7 +18,7 @@ Chatgpt.js (पॉप-अप मेनू + सेटिंग्स प्र�
 
 [रेपो](https://github.com/kudoai/chatgpt.js-chrome-starter) / [रीडमी](../../chrome/docs/hi#readme) / [मदद लें](https://github.com/kudoai/chatgpt.js-chrome-starter/issues)
 
-<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://i.imgur.com/SATGr8j.png"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://i.imgur.com/wcCg3al.png"></a> <a href="../../greasemonkey">Greasemonkey स्टार्टर</a></h3>
+<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/tampermonkey-icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/violentmonkey-icon100.png"></a> <a href="../../greasemonkey">Greasemonkey स्टार्टर</a></h3>
 
 chatgpt.js का उपयोग करके Greasemonkey उपयोगकर्तास्क्रिप्ट बनाने के लिए टेम्पलेट
 

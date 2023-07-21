@@ -18,7 +18,7 @@
 
 [存儲庫](https://github.com/kudoai/chatgpt.js-chrome-starter) / [自述文件](../../chrome/docs/zh-tw#readme) / [得到幫助](https://github.com/kudoai/chatgpt.js-chrome-starter/issues)
 
-<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://i.imgur.com/SATGr8j.png"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://i.imgur.com/wcCg3al.png"></a> <a href="../../greasemonkey">Greasemonkey 起動機</a></h3>
+<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/tampermonkey-icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/violentmonkey-icon100.png"></a> <a href="../../greasemonkey">Greasemonkey 起動機</a></h3>
 
 使用 chatgpt.js 創建 Greasemonkey 用戶腳本的模板
 
