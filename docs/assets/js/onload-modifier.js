@@ -34,16 +34,16 @@ const onLoadObserver = new MutationObserver(() => {
                 imgElement.setAttribute('src', srcSet);
                 picture.parentNode.replaceChild(imgElement, picture);
             });
-        });
 
-        // Append footer
-        const footer = document.createElement('div');
-        fetch('assets/html/footer.html')
-            .then(response => response.text()).then(html => {
-                footer.innerHTML = html;
-                const article = document.querySelector('article');
-                article.insertBefore(footer, article.lastElementChild);
-            });
+            // Append footer
+            const footer = document.createElement('div');
+            fetch('assets/html/footer.html')
+                .then(response => response.text()).then(html => {
+                    footer.innerHTML = html;
+                    const article = document.querySelector('article');
+                    article.insertBefore(footer, article.lastElementChild);
+                });
+        });
 
     // Hide site lang selector from NON-HOME pages
     } else document.querySelector('.app-nav').style.display = 'none';
