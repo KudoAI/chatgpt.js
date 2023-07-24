@@ -118,7 +118,8 @@ section.cover p { /* cover tagline size / position */
 
 /* MAIN */
 
-body { background: black ; color: white ; font-family: "PolySans Neutral" }
+body { background: black ; color: white ;
+    font-family: "PolySans Neutral", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif }
 strong, .anchor span { color: white !important } /* whiten all strongs & headings */
 main a { color: #00ffe7 !important }
 #repo-cover, #shields { display: none } /* hide repo cover + shields */
@@ -233,6 +234,5 @@ input#mce-EMAIL { /* email field */
 input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent: 15px }
 #mc-embedded-subscribe { /* sub button */
     font-size: 1.45rem ; color: white ; background: black ; cursor: pointer ;
-    width: 200px ; margin-left: -3px ; border-radius: 0 ; border: 1px ;
-    border: white solid ; margin-left: -6px ;
-    position: relative ; bottom: 1px } /* correct for font-size shifting */ 
+    width: 200px ; margin-left: -6px ; border-radius: 0 ; border: 1px ;
+    border: white solid ; position: relative ; bottom: 1px } /* correct for font-size shifting */ 
