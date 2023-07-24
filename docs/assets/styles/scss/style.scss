@@ -251,4 +251,15 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 #mc-embedded-subscribe { /* sub button */
     font-size: 1.45rem ; color: white ; background: black ; cursor: pointer ;
     width: 200px ; margin-left: -6px ; border-radius: 0 ; border: 1px ;
-    border: white solid ; position: relative ; bottom: 1px } /* correct for font-size shifting */ 
+    border: white solid ; position: relative ; bottom: 1px } /* correct for font-size shifting */
+
+/* MOBILE tweaks */
+
+@media (max-width: 767px) {
+    section.cover, .cover-main { margin: 0 !important }
+    section.cover p { /* cover description */
+        font-family: "PolySans Neutral", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif !important ;
+        font-size: 3.6rem !important ; line-height: 2.8rem !important }
+    .cover-main > p:last-child a:last-child { /* 2nd button */
+        padding: 16px 55px !important }
+}
