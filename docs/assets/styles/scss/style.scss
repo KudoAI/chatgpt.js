@@ -1,6 +1,9 @@
-/* @INITS */
-
 @charset "UTF-8";
+:root { scrollbar-color: rgb(210,210,210) #1a1a1a } /* FF scrollbar */
+
+
+/* Fonts */
+@import url(https://db.onlinewebfonts.com/c/03bd7255184e8e8ad4d2a521fa920b6c?family=PolySans+Neutral); 
 @font-face {
     font-family: eurostile-extended-black;
     src: url('../../fonts/eurostile-extended-black/eurostile-extended-black.otf') format('opentype'),
@@ -9,22 +12,22 @@
          url('../../fonts/eurostile-extended-black/eurostile-extended-black.woff2') format('woff2');
 }
 $font-families: (
-  'ibm-plex-mono': (
-    ('ibm-plex-mono-thin', 100, normal),
-    ('ibm-plex-mono-thin-italic', 100, italic),
-    ('ibm-plex-mono-extralight', 200, normal),
-    ('ibm-plex-mono-extralight-italic', 200, italic),
-    ('ibm-plex-mono-light', 300, normal),
-    ('ibm-plex-mono-light-italic', 300, italic),
-    ('ibm-plex-mono-regular', 400, normal),
-    ('ibm-plex-mono-regular-italic', 400, italic),
-    ('ibm-plex-mono-medium', 500, normal),
-    ('ibm-plex-mono-medium-italic', 500, italic),
-    ('ibm-plex-mono-semibold', 600, normal),
-    ('ibm-plex-mono-semibold-italic', 600, italic),
-    ('ibm-plex-mono-bold', 700, normal),
-    ('ibm-plex-mono-bold-italic', 700, italic)
-  )
+    'ibm-plex-mono': (
+        ('ibm-plex-mono-thin', 100, normal),
+        ('ibm-plex-mono-thin-italic', 100, italic),
+        ('ibm-plex-mono-extralight', 200, normal),
+        ('ibm-plex-mono-extralight-italic', 200, italic),
+        ('ibm-plex-mono-light', 300, normal),
+        ('ibm-plex-mono-light-italic', 300, italic),
+        ('ibm-plex-mono-regular', 400, normal),
+        ('ibm-plex-mono-regular-italic', 400, italic),
+        ('ibm-plex-mono-medium', 500, normal),
+        ('ibm-plex-mono-medium-italic', 500, italic),
+        ('ibm-plex-mono-semibold', 600, normal),
+        ('ibm-plex-mono-semibold-italic', 600, italic),
+        ('ibm-plex-mono-bold', 700, normal),
+        ('ibm-plex-mono-bold-italic', 700, italic)
+    )
 );
 @mixin font-face($font-family, $font-name, $font-weight, $font-style) {
     @font-face {
@@ -43,45 +46,32 @@ $font-families: (
     }
 }
 
-/* FF scrollbar */
-:root { scrollbar-color: rgb(210,210,210) #1a1a1a }
+/* Define theme color + apply to active links */
+$theme-color: rgb(0,255,25); /* bright green */
+.app-nav a.active { border-bottom: 2px solid $theme-color}
 
 /* COVER */
 
-.cover-main > img { margin-bottom: 16px ; width: 1723px } /* cover logo */
+.cover-main > img { margin-bottom: 16px ; width: 98% } /* cover logo */
 .cover-main { color: white } /* all cover txt color */
+section.cover blockquote { /* tagline */
+    font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important }
 section.cover p { /* cover tagline size / position */
-    font-size: 2rem !important ;
-    margin-bottom: 48px ;
-    line-height: 2.3rem !important ;
-}
+    font-size: 2rem !important ; margin-bottom: 48px ; line-height: 2.3rem !important }
 
 /* Buttons */
 .cover-main > p:last-child a { /* all buttons */
-    padding: 16px 68px !important;
-    font-size: 1.4rem !important ;
-    border-radius: 0 !important ;
-    border-color: white !important ;
-    border-width: 3px !important ;
-    color: white !important ;
-    transition: 0.04s !important ;
-}
+    font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
+    text-transform: uppercase ; font-size: 1.4rem !important ; color: white !important ;
+    border-width: 3px !important ; border-radius: 0 !important ; border-color: white !important ;
+    padding: 16px 68px !important ; transition: 0.04s !important }
 .cover-main > p:last-child a:hover { /* 1st button hover */
-    background-color: blue ;
-    color: white !important ;
-    opacity: 1 !important ;
-}
+    background-color: blue ; color: white !important ; opacity: 1 !important }
 .cover-main > p:last-child a:last-child { /* 2nd button */
-    padding: 16px 60px !important;
-    border-color: white !important ;
-    background-color: white !important ;
-    color: black !important
-}
+    padding: 16px 60px !important ; border-color: white !important ; font-weight: bold ;
+    background-color: white !important ; color: black !important }
 .cover-main > p:last-child a:last-child:hover { /* 2nd button hover */
-    background-color: blue !important ;
-    border-color: blue !important ;
-    color: white !important ;
-}
+    background-color: blue !important ; border-color: blue !important ; color: white !important }
 
 /* NAV */
 
@@ -111,7 +101,7 @@ section.cover p { /* cover tagline size / position */
 
 /* GITHUB BADGE */
 
-.github-corner svg { fill: black ; height: 115px ; width: 115px }
+.github-corner svg { fill: white ; color: black ; height: 115px ; width: 115px }
 
 /* SIDEBAR */
 
@@ -128,46 +118,104 @@ section.cover p { /* cover tagline size / position */
 
 /* MAIN */
 
-#repo-cover { display: none } /* hide repo cover */
-article > div:nth-child(2) img { height: 2.5rem } /* zoom shields */
-article > h2:first-of-type span { display: none !important } /* hide ABOUT heading */
-article > p:first-of-type { margin-top: -158px } /* increase top-margin of description */
+body { background: black ; color: white ; font-family: "PolySans Neutral" }
+strong, .anchor span { color: white !important } /* whiten all strongs & headings */
+main a { color: #00ffe7 !important }
+#repo-cover, #shields { display: none } /* hide repo cover + shields */
 main h2 { /* headings */
-    text-align: center ; margin: 5.5rem 0 !important ; font-size: 3.5rem !important ;
+    text-align: center ; margin: 12.5rem 0 7.5rem !important ; font-size: 8rem !important ;
     font-family: "eurostile-extended-black", Georgia, Cambria, Times New Roman, Times, serif ;
+    width: 100vw ; left: -219px ; position: inherit ;
     text-transform: uppercase ; word-break: break-word }
-main h3 { font-size: 2.3rem !important }
-main p { font-size: 1.65rem !important ; line-height: 2.5rem !important}
-main li { font-size: 1.6rem !important ; line-height: 2.1rem }
+.anchor:hover { text-decoration: none }
+main h3 { font-size: 4.5rem !important ; margin-top: 5rem !important }
+main p { font-size: 2.45rem !important ; line-height: 3.5rem !important}
+main blockquote p { /* tips */
+    border-left: none ; width: 38vw ; font-size: 2rem !important ; margin-top: 11% !important ;
+    text-align: left ; float: right ; position: relative ; left: 29px ; line-height: 2.8rem !important }
+main blockquote strong { color: yellow !important }
+main blockquote:first-of-type p { margin-top: 11% !important } /* Greasemonkey tip */
+main blockquote:nth-of-type(2) p { margin-top: 74px !important } /* Chrome tip */
 main code { font-size: 1.35rem !important ; line-height: 2.2rem !important }
 img[type="separator"] { display: none } /* hide section separators */
+h2 + p { /* blurbs after headings w/o tips */
+    font-size: 2.75rem !important ; text-align: center ; margin-top: -85px !important }
+main li::marker { font-size: 2.1rem }
 
 /* Code */
 pre, code, .punctuation {
     font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
-    color: white !important ; background: black !important }
-.lang-js { font-size: 1.3rem !important }
-.docsify-copy-code-button, .success, .error {
-    background: inherit !important ;
-    padding: 13px 18px 13px 15px !important ;
-    font-size: 1.1rem !important ;
-    color: rgb(217, 217, 227) !important ;
-    right: 1px ; /* eliminate code block h-scroll */
+    font-size: 1.3rem !important ; color: white !important ; background: black !important ; }
+pre code { border: white 1px solid ; border-radius: 12px !important ; padding: 26px !important }
+p code {
+    font-size: 1.95rem !important ; position: relative ; bottom: 3px ;
+    padding: 5px 17px !important ; margin: 0 8px !important ;
+    border: white 1px solid ; border-radius: 13px !important }
+pre:after { display: none } /* hide lang indicator */
+.docsify-copy-code-button {    
+    font-size: 1.1rem !important ; background: black !important ; color: white !important ;
+    padding: 13px 18px 13px 15px !important ; right: 30px !important ; top: 2px !important }
+.success, .error { font-size: 1.1rem !important }
+li pre { margin: 65px 0 !important ; width: 75vw ; right: 11vw }
+.token.string { color: $theme-color }
+.token.function, .token.keyword, .token.boolean, .token.number { color: #ffcb00 }
+
+/* About section */
+$about: ('about', '关于', '關於', 'アバウト', '개요', 'अभाउट', 'um',
+    'acerca-de', 'À-propos', 'informazioni', 'over', 'sobre', 'về');
+@each $translation in $about {
+    $id: unquote('#') + $translation;
+    #{$id} ~ p:first-of-type { /* ABOUT description */
+        margin-top: -521px !important ; font-size: 3.1rem !important ;
+        line-height: 4.5rem !important ; text-align: right ; width: 50% }
+    #{$id} ~ ul:first-of-type { /* ABOUT feature list */
+        font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
+        color: $theme-color ; position: absolute ; top: 0 ; right: -123px ; width: 50% }
+    #{$id} ~ ul:first-of-type li { font-size: 1.3rem !important ; line-height: 2.65rem }
+    #{$id} ~ ul:first-of-type li::marker { content: ">>  " }
 }
+article > h2:first-of-type span { display: none !important } /* hide ABOUT heading */
+
+/* Greasemonkey/Chrome sections */
+#-greasemonkey, #-chrome { text-align: center }
+main blockquote + p { font-size: 2.75rem !important ; width: 50% ; text-align: right }
+main pre + p, main pre + p + p { text-align: center ; width: 81% ; margin-left: 9vw !important }
+main ol { width: 59vw ; margin: 95px 0 0 12vw }
+
+/* Usage section */
+#💻-usage ~ pre + p { text-align: left !important ; margin-left: 0 !important }
+#💻-usage ~ pre + p + p { text-align: right !important ; float: right !important ; margin-bottom: 152px }
 
 /* Showcase */
-h3 img { height: 28px !important ; width: auto !important ; margin: 0 10px -2px 0 }
-h3 a { text-decoration: none ; color: #34495e !important }
+$made-with-chatgptjs: ('made-with-chatgptjs', '用-chatgptjs-制作', '用-chatgptjs-製作', 'chatgptjs-で作成',
+    'chatgptjs로-만들어진-프로젝트', 'chatgpt.js-के-साथ-बनाया-गया', 'erstellt-mit-chatgptjs',
+    'hecho-con-chatgptjs', 'réalisé-avec-chatgptjs', 'realizzato-con-chatgptjs', 'gemaakt-met-chatgptjs',
+    'feito-com-chatgptjs', 'Được-tạo-bằng-chatgptjs');
+@each $translation in $made-with-chatgptjs {
+    $id: unquote('#🤖-') + $translation;
+    #{$id} ~ h3:nth-of-type(even),
+    #{$id} ~ p:nth-of-type(odd) { text-align: right }
+    #{$id} ~ br + p { text-align: center !important } /* center showcase tiles */
+}
+h3 img { /* app icons */
+    height: 58px !important ; width: auto !important ; margin: 0 19px -2px 0 }
+h3 a { /* app titles */
+    text-decoration: none ; color: white !important }
 h3 a:hover { text-decoration: underline #42b983 }
-img[src*="promo-tile"] { width: 1111px  } /* enlarge promo tiles */
+img[src*="promo-tile"] { width: 74vw ; border: 1px solid white }
 
 /* Contributors */
-$contributors: ('contributors', '贡献者', '貢献者', '기여자', 'योगदानकर्ता', 'mitwirkende',
+$contributors: ('contributors', '贡献者', '貢獻者', '기여자', 'योगदानकर्ता', 'mitwirkende',
     'colaboradores', 'contributeurs', 'contributori', 'bijdragers', 'contribuidores', 'người-đóng-góp');
 @each $translation in $contributors {
     $id: unquote('#🧠-') + $translation;
-    h2#{$id}, h2#{$id} ~ p { text-align: center } /* center contributors section */
-    #{$id} ~ * img { width: 74px } /* zoom contributor avatars */
+    #{$id} + p { width: 65vw ; margin-left: 9vw } /* narrow contributors heading */
+    h2#{$id}, h2#{$id} ~ p { text-align: center !important } /* center contributors section */
+    h2#{$id} ~ p { width: 49vw ; margin-left: 15vw } /* narrow contributor avatars container + footer links */
+    h2#{$id} + p { /* contributors description */
+        font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
+        font-size: 2.1rem !important ; width: 64vw ; margin-left: 8vw; }
+    #{$id} ~ * img { width: 96px } /* zoom contributor avatars */
     #{$id} ~ br { display: none } /* hide trailing line break */
 }
 
@@ -175,8 +223,8 @@ $contributors: ('contributors', '贡献者', '貢献者', '기여자', 'यो�
 #star-history { display: none } /* hide Star History section */
 #footer { text-align: center ; margin-top: -11px } /* general alignment */
 #mc_embed_signup h2 { /* 1st CTA */
-    font-size: 2.55rem !important ; color: white ; -webkit-text-stroke: 1px black ;
-    text-shadow: black 0px 0px 0px, black -0.35rem 0.35rem 0px ; margin: 3rem 0 3.5rem !important }
+    position: relative ; left: -11vw ; margin: 3rem 0 3.5rem !important ;
+    font-size: 3.55rem !important ; color: white ; -webkit-text-stroke: 1px black }
 .mc-field-group { margin: -4px 0 95px } /* input row div v-margins */
 .mc-field-group input { height: 55px } /* input row height */
 input#mce-EMAIL { /* email field */
@@ -186,4 +234,5 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 #mc-embedded-subscribe { /* sub button */
     font-size: 1.45rem ; color: white ; background: black ; cursor: pointer ;
     width: 200px ; margin-left: -3px ; border-radius: 0 ; border: 1px ;
-    position: relative ; bottom: 1px /* correct for font-size shifting */ }
+    border: white solid ; margin-left: -6px ;
+    position: relative ; bottom: 1px } /* correct for font-size shifting */ 
