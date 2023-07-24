@@ -9,16 +9,34 @@ const mdLoaded = new Promise((resolve) => {
 const onLoadObserver = new MutationObserver(() => {
 
     // Exit if not loaded
-    if (!document.querySelector('.active')) return;
+    if (!document.querySelector('.github-corner')) return;
 
-    // Update LANGUAGE SELECTOR word
-    setTimeout(() => {
-        const activeLanguage = document.querySelector('.active').innerText;
-        document.getElementById('dropdown-button').innerText = activeLanguage;
-    }, 15);
-
-    // Append footer to HOMEPAGE
+    // Hack HOMEPAGE
     if (/#\/(\w{2}(-\w{2})?\/)?$/.test(location.hash)) {
+
+        // Hide sidebar + toggle
+        document.body.className = 'ready close';
+        document.querySelector('.sidebar-toggle-button').style.display = 'none';
+       
+        mdLoaded.then(() => {
+
+            // Update LANGUAGE SELECTOR word
+            setTimeout(() => {
+                const activeLanguage = document.querySelector('.active').innerText;
+                document.getElementById('dropdown-button').innerText = activeLanguage;
+            }, 15);
+
+            // Convert showcase OpenAI icons to dark-mode
+            document.querySelectorAll('picture').forEach(picture => {
+                const srcElement = picture.querySelector('source');
+                const srcSet = srcElement.getAttribute('srcset');
+                const imgElement = document.createElement('img');
+                imgElement.setAttribute('src', srcSet);
+                picture.parentNode.replaceChild(imgElement, picture);
+            });
+        });
+
+        // Append footer
         const footer = document.createElement('div');
         fetch('assets/html/footer.html')
             .then(response => response.text()).then(html => {
