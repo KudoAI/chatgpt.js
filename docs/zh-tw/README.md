@@ -34,7 +34,7 @@
 
 </div>
 
-＃＃ 關於
+## 關於
 
 **chatgpt.js** 是一個功能強大的 JavaScript 庫，允許與 ChatGPT DOM 進行超級簡單的交互。
 
