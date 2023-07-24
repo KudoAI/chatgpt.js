@@ -154,7 +154,7 @@ chatgpt.get('reply', 'last')
 [रीडमी](https://github.com/adamlui/autoclear-chatgpt-history#readme) / 
 [चर्चा करना](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
-### <img width=16 src="https://i.imgur.com/1yjmK3W.png"> [ऑटोमैटिक चैटजीपीटी DAN](https://github.com/madkarmaa/automatic-chatgpt-dan)
+### <img width=16 src="https://i.imgur.com/1yjmK3W.png"> [Automatic ChatGPT DAN](https://github.com/madkarmaa/automatic-chatgpt-dan)
 
 चैटजीपीटी को ऑटोमैटिक रूप से DAN संकेत भेजें।
 <br>[इंस्टॉल](https://github.com/madkarmaa/automatic-chatgpt-dan#%EF%B8%8F-installation) / 
