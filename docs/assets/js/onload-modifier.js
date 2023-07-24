@@ -72,4 +72,6 @@ onLoadObserver.observe(document.body, { childList: true, subtree: true });
 
 // Re-connect observer on nav to new hash
 window.addEventListener('hashchange', () => {
-    onLoadObserver.observe(document.body, { childList: true, subtree: true });});
+    if (window.location.href.includes('#'))
+        onLoadObserver.observe(document.body, { childList: true, subtree: true });
+});
