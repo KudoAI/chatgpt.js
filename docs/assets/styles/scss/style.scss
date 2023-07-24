@@ -8,6 +8,40 @@
          url('../../fonts/eurostile-extended-black/eurostile-extended-black.woff') format('woff'),
          url('../../fonts/eurostile-extended-black/eurostile-extended-black.woff2') format('woff2');
 }
+$font-families: (
+  'ibm-plex-mono': (
+    ('ibm-plex-mono-thin', 100, normal),
+    ('ibm-plex-mono-thin-italic', 100, italic),
+    ('ibm-plex-mono-extralight', 200, normal),
+    ('ibm-plex-mono-extralight-italic', 200, italic),
+    ('ibm-plex-mono-light', 300, normal),
+    ('ibm-plex-mono-light-italic', 300, italic),
+    ('ibm-plex-mono-regular', 400, normal),
+    ('ibm-plex-mono-regular-italic', 400, italic),
+    ('ibm-plex-mono-medium', 500, normal),
+    ('ibm-plex-mono-medium-italic', 500, italic),
+    ('ibm-plex-mono-semibold', 600, normal),
+    ('ibm-plex-mono-semibold-italic', 600, italic),
+    ('ibm-plex-mono-bold', 700, normal),
+    ('ibm-plex-mono-bold-italic', 700, italic)
+  )
+);
+@mixin font-face($font-family, $font-name, $font-weight, $font-style) {
+    @font-face {
+        font-family: '#{$font-family}';
+        src: url('../../fonts/#{$font-family}/otf/#{$font-name}.otf') format('opentype'),
+        url('../../fonts/#{$font-family}/ttf/#{$font-name}.ttf') format('truetype'),
+        url('../../fonts/#{$font-family}/woff/#{$font-name}.woff') format('woff'),
+        url('../../fonts/#{$font-family}/woff2/#{$font-name}.woff2') format('woff2');
+        font-weight: $font-weight; font-style: $font-style;
+    }
+}
+@each $font-family, $variations in $font-families {
+    @each $variation in $variations {
+        $font-name: nth($variation, 1); $font-weight: nth($variation, 2); $font-style: nth($variation, 3);
+        @include font-face($font-family, $font-name, $font-weight, $font-style);
+    }
+}
 
 /* FF scrollbar */
 :root { scrollbar-color: rgb(210,210,210) #1a1a1a }
@@ -99,7 +133,7 @@ article > div:nth-child(2) img { height: 2.5rem } /* zoom shields */
 article > h2:first-of-type span { display: none !important } /* hide ABOUT heading */
 article > p:first-of-type { margin-top: -158px } /* increase top-margin of description */
 main h2 { /* headings */
-    text-align: center ; margin: 5.5rem 0 !important ; font-size: 4rem !important ;
+    text-align: center ; margin: 5.5rem 0 !important ; font-size: 3.5rem !important ;
     font-family: "eurostile-extended-black", Georgia, Cambria, Times New Roman, Times, serif ;
     text-transform: uppercase ; word-break: break-word }
 main h3 { font-size: 2.3rem !important }
@@ -109,7 +143,9 @@ main code { font-size: 1.35rem !important ; line-height: 2.2rem !important }
 img[type="separator"] { display: none } /* hide section separators */
 
 /* Code */
-pre, code, .punctuation { color: white !important ; background: black !important }
+pre, code, .punctuation {
+    font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
+    color: white !important ; background: black !important }
 .lang-js { font-size: 1.3rem !important }
 .docsify-copy-code-button, .success, .error {
     background: inherit !important ;
