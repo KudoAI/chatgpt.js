@@ -1,7 +1,6 @@
 @charset "UTF-8";
 :root { scrollbar-color: rgb(210,210,210) #1a1a1a } /* FF scrollbar */
 
-
 /* Fonts */
 @import url(https://db.onlinewebfonts.com/c/03bd7255184e8e8ad4d2a521fa920b6c?family=PolySans+Neutral); 
 @font-face {
@@ -116,6 +115,23 @@ section.cover p { /* cover tagline size / position */
 .sidebar ul > ul:nth-of-type(2) { display: none } /* hide showcase apps */
 .sidebar li img { display: none } /* hide sidebar icons */
 
+/* Fix `close` style on mobile */
+@media screen and (max-width: 768px) {
+
+  /* Fix behavior for when sidebar should be open */
+  body .sidebar { transform: translateX(300px) }
+  body .content { transform: translateX(300px) }
+  .sidebar-toggle {
+    background-color: rgba(255,255,255,0.8) ; transition: 1s background-color ;
+    width: 284px ; padding: 10px }
+
+  /* Fix behavior for when sidebar should be closed */
+  body.close .sidebar { transform: translateX(0) }
+  body.close .content { transform: translateX(0px) }
+  body.close .sidebar-toggle {
+    background-color: transparent ; width: auto ; padding: 30px 30px 10px 10px }
+}
+
 /* MAIN */
 
 body { background: black ; color: white ;
@@ -126,7 +142,7 @@ main a { color: #00ffe7 !important }
 main h2 { /* headings */
     text-align: center ; margin: 12.5rem 0 7.5rem !important ; font-size: 8rem !important ;
     font-family: "eurostile-extended-black", Georgia, Cambria, Times New Roman, Times, serif ;
-    width: 100vw ; left: -219px ; position: inherit ;
+    width: 100vw ; left: -11vw ; position: inherit ;
     text-transform: uppercase ; word-break: break-word }
 .anchor:hover { text-decoration: none }
 main h3 { font-size: 4.5rem !important ; margin-top: 5rem !important }
