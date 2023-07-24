@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         const coverRect = cover.getBoundingClientRect();
         const opacity = 1 - Math.abs(coverRect.top) / coverHeight;
-        const parallaxOffset = coverRect.top * -0.15;
+        const parallaxOffset = coverRect.top * -0.25;
         cover.style.opacity = opacity;
         coverMain.style.transform = `translateY(${ parallaxOffset }px)`;
     });
