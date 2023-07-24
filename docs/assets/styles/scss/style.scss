@@ -171,9 +171,9 @@ $about: ('about', '关于', '關於', 'アバウト', '개요', 'अभाउट
         line-height: 4.5rem !important ; text-align: right ; width: 50% }
     #{$id} ~ ul:first-of-type { /* ABOUT feature list */
         font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
-        color: $theme-color ; position: absolute ; top: 0 ; right: -123px ; width: 50% }
+        color: $theme-color ; position: absolute ; top: 7px ; right: -123px ; width: 50% }
     #{$id} ~ ul:first-of-type li { font-size: 1.3rem !important ; line-height: 2.65rem }
-    #{$id} ~ ul:first-of-type li::marker { content: ">>  " }
+    #{$id} ~ ul:first-of-type li::marker { content: ">>  " ; font-size: 1.3rem !important }
 }
 article > h2:first-of-type span { display: none !important } /* hide ABOUT heading */
 
