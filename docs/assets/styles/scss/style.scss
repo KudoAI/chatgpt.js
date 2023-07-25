@@ -314,6 +314,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     }
     
     /* BODY */
+    $mobile-p-size: 1.85rem;
 
     /* Headings */
     main h2, main h3 { font-size: 2.5rem !important }
@@ -322,7 +323,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 
     /* Text */
     main p {
-        font-size: 1.85rem !important ; width: inherit !important ;
+        font-size: $mobile-p-size !important ; width: inherit !important ;
         text-align: center !important ; line-height: 2.5rem !important }
     main blockquote { /* platform tips parent */
         margin: 0 18px !important }
@@ -341,6 +342,14 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     main p code { /* zoom/pad p code */
         font-size: 1.45rem !important ; padding: 2px 8px !important }
     .docsify-copy-code-button { display: none }
+
+    /* Usage section */
+    @each $translation in $usage {
+        $id: unquote('#💻-') + $translation;
+        #{$id} ~ pre + p, #{$id} ~ pre + p + p { /* re-size/center text */
+            font-size: $mobile-p-size !important ; text-align: center !important ;
+            margin: 63px 0 !important ; float: none !important }
+    }
 
     /* Showcase */    
     @each $translation in $made-with-chatgptjs {
