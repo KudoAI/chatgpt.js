@@ -366,6 +366,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
             font-size: 1.5rem !important }
         h2#{$id} ~ p { /* remove margin from avatars to fill more widely */
             margin-left: 0 !important }
+        #{$id} ~ * img { width: 82px !important } /* unzoom contributor avatars */
     }
 
     /* Footer */
@@ -373,5 +374,5 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
         font-size: 2.55rem !important ; /* shrink font */
         left: -21px !important } /* nudge right to re-center */
     input#mce-EMAIL::placeholder { /* email placeholder */
-        text-indent: 25% } /* center it */
+        text-indent: 25% !important } /* center it */
 }
