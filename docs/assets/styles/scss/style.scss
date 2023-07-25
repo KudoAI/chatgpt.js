@@ -318,7 +318,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 
     /* Headings */
     main h2, main h3 { font-size: 2.5rem !important }
-    main h2 { margin-left: 30px !important }
+    main h2 { margin-left: 30px !important ; padding: 0 12px 0 16px !important }
     main h3 img { height: 32px !important } /* platform icons */
 
     /* Text */
@@ -375,4 +375,3 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     input#mce-EMAIL::placeholder { /* email placeholder */
         text-indent: 25% } /* center it */
 }
-
