@@ -315,6 +315,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     
     /* BODY */
     $mobile-p-size: 1.85rem;
+    main li::marker { font-size: 1.84rem !important } /* unzoom list markers */
 
     /* Headings */
     main h2, main h3 { font-size: 2.5rem !important }
@@ -329,7 +330,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     main blockquote { /* platform tips parent */
         margin: 0 18px !important }
     main blockquote p { /* platform tips */
-        width: 75vw ; float: none ; position: relative ; left: 0 }
+        float: none ; left: 0 }
     main blockquote + p, main pre + p { /* code-block neighbor p's */
         font-size: 1.65rem !important ; margin: 0 17px !important }
     main ol { width: inherit ; margin: 0 32px } /* platform steps parent */
