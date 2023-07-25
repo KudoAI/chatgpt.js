@@ -272,8 +272,9 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 
 /* MOBILE tweaks */
 
-@media (max-width: 767px) {
-    article { padding: 0 }
+@media screen and (max-width: 767px) {
+    article { padding: 0 }    
+    .markdown-section { max-width: 96% }
 
     /* COVER */
 
@@ -292,23 +293,32 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
             font-size: 2.8rem !important ; line-height: 3.1rem !important ;
             margin: -333px 0 147px !important }
         #{$id} ~ ul:first-of-type { /* ABOUT feature list */
-            position: inherit ; width: inherit ; right: -7px ; top: 28px }
-        #{$id} ~ ul:first-of-type li { font-size: 2.2rem !important ; margin-bottom: 34px }
+            position: inherit ; width: inherit ; left: 47px ; top: 28px }
+        #{$id} ~ ul:first-of-type li { font-size: 1.8rem !important ; margin-bottom: 34px }
     }
     
     /* BODY */
 
+    /* Headings */
     main h2, main h3 { font-size: 2.5rem !important }
+    main h2 { margin-left: 30px !important }
+    h3 img { height: 32px !important } /* platform icons */
+
+    /* Text */
     main p {
         font-size: 1.85rem !important ; width: inherit !important ;
         text-align: center !important ; line-height: 2.5rem !important }
-    h3 img { height: 32px !important } /* platform icons */
+    main blockquote { /* platform tips parent */
+        margin: 0 18px !important }
     main blockquote p { /* platform tips */
         width: 75vw ; float: none ; position: relative ; left: 0 }
-    main blockquote + p { /* pre-code-block p */
-        font-size: 2.25rem !important }
-    main pre + p { /* post-code-block p */
-        margin-left: 0 ; }    
-    main ol { width: inherit ; margin-left: 0 } /* platform steps */
-    p code { font-size: 1.65rem !important ; padding: 2px 8px !important }
+    main blockquote + p, main pre + p { /* code-block neighbor p's */
+        font-size: 1.65rem !important ; margin: 0 17px !important }
+    main ol { width: inherit ; margin: 0 32px } /* platform steps parent */
+    main ol p { text-align: left !important ; word-break: break-word } /* platform steps */
+
+    /* Code */
+    li pre { width: 82vw ; right: 32px ; padding: 0 !important }
+    p code { font-size: 1.45rem !important ; padding: 2px 8px !important }
+    .docsify-copy-code-button { display: none }
 }
