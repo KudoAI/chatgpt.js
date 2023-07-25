@@ -208,8 +208,12 @@ main pre + p, main pre + p + p { text-align: center ; width: 81% ; margin-left: 
 main ol { width: 59vw ; margin: 95px 0 0 12vw }
 
 /* Usage section */
-#💻-usage ~ pre + p { text-align: left !important ; margin-left: 0 !important }
-#💻-usage ~ pre + p + p { text-align: right !important ; float: right !important ; margin-bottom: 152px }
+$usage: ('usage', '用法', '使用法', '사용법', 'प्रयोग', 'verwendung',
+    'uso', 'utilisation', 'utilizzo', 'gebruik', 'cách-sử-dụng');
+@each $translation in $usage {
+    $id: unquote('#💻-') + $translation;
+    #{$id} ~ pre + p { text-align: left !important ; margin-left: 0 !important }
+    #{$id} ~ pre + p + p { text-align: right !important ; float: right !important ; margin-bottom: 152px }}
 
 /* Showcase */
 $made-with-chatgptjs: ('made-with-chatgptjs', '用-chatgptjs-制作', '用-chatgptjs-製作', 'chatgptjs-で作成',
