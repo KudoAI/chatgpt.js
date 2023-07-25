@@ -142,7 +142,7 @@ main a { color: #00ffe7 !important }
 main h2 { /* headings */
     text-align: center ; margin: 12.5rem 0 7.5rem !important ; font-size: 8rem !important ;
     font-family: "eurostile-extended-black", Georgia, Cambria, Times New Roman, Times, serif ;
-    width: 100vw ; left: -11vw ; position: inherit ;
+    width: 100vw ; left: -13vw ; position: inherit ;
     text-transform: uppercase ; word-break: break-word }
 .anchor:hover { text-decoration: none }
 main h3 { font-size: 4.5rem !important ; margin-top: 5rem !important }
@@ -166,7 +166,7 @@ pre, code, .punctuation {
 pre code { border: white 1px solid ; border-radius: 12px !important ; padding: 26px !important }
 p code {
     font-size: 1.95rem !important ; position: relative ; bottom: 3px ;
-    padding: 5px 17px !important ; margin: 0 8px !important ;
+    padding: 5px 17px !important ; margin: 0 8px !important ; word-break: break-all ;
     border: white 1px solid ; border-radius: 13px !important }
 pre:after { display: none } /* hide lang indicator */
 .docsify-copy-code-button {    
@@ -256,10 +256,42 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 /* MOBILE tweaks */
 
 @media (max-width: 767px) {
+    article { padding: 0 }
+
+    /* COVER */
+
     section.cover, .cover-main { margin: 0 !important }
     section.cover p { /* cover description */
         font-family: "PolySans Neutral", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif !important ;
         font-size: 3.6rem !important ; line-height: 2.8rem !important }
     .cover-main > p:last-child a:last-child { /* 2nd button */
         padding: 16px 55px !important }
+
+    /* ABOUT */
+
+    @each $translation in $about {
+        $id: unquote('#') + $translation;
+        #{$id} ~ p:first-of-type { /* ABOUT description */
+            font-size: 2.8rem !important ; line-height: 3.1rem !important ;
+            margin: -333px 0 147px !important }
+        #{$id} ~ ul:first-of-type { /* ABOUT feature list */
+            position: inherit ; width: inherit ; right: -7px }
+        #{$id} ~ ul:first-of-type li { font-size: 2.2rem !important ; margin-bottom: 34px }
+    }
+    
+    /* BODY */
+
+    main h2, main h3 { font-size: 2.5rem !important }
+    main p {
+        font-size: 1.85rem !important ; width: inherit !important ;
+        text-align: center !important ; line-height: 2.5rem !important }
+    h3 img { height: 32px !important } /* platform icons */
+    main blockquote p { /* platform tips */
+        width: 75vw ; float: none ; position: relative ; left: 0 }
+    main blockquote + p { /* pre-code-block p */
+        font-size: 2.25rem !important }
+    main pre + p { /* post-code-block p */
+        margin-left: 0 ; }    
+    main ol { width: inherit ; margin-left: 0 } /* platform steps */
+    p code { font-size: 1.65rem !important ; padding: 2px 8px !important }
 }
