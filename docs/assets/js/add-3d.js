@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Define cover elements
+    // Cache cover elements
     const cover = document.querySelector('.cover');
     const coverMain = document.querySelector('.cover-main');
 
