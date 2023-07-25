@@ -71,9 +71,9 @@ const onLoadObserver = new MutationObserver(() => {
 onLoadObserver.observe(document.body, { childList: true, subtree: true });
 
 // Re-connect observer on nav to new hash
-let fromUnHashedURL = window.location.href.includes('#');
+let fromunhashedURL = window.location.href.includes('#');
 window.addEventListener('hashchange', () => {
-    if (!fromUnHashedURL) fromUnHashedURL = true;
-    else if (fromUnHashedURL)
+    if (!fromunhashedURL) fromunhashedURL = true;
+    else if (fromunhashedURL)
         onLoadObserver.observe(document.body, { childList: true, subtree: true });
 });
