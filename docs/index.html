@@ -56,12 +56,7 @@
                         '/fr/': 'Aucun résultat!', '/it/': 'Nessun risultato!', '/nl/': 'Geen resultaten!',
                         '/pt/': 'Sem resultados!', '/vi/': 'Ko có kết quả!','/': 'No results!' },
                     pathNamespaces: /^(\/(zh-cn|zh-tw|ja|ko|hi|de|es|fr|it|nl|pt|vi))?/
-                },
-                routes: {
-                    '.*javascript.*': () => { // scroll-to-top link
-                        history.pushState(null, null, '#') // prevent default nav away
-                        setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' })}, 1)
-                }}
+                }
             }
         </script>
         <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js" integrity="sha384-KaHhgnx/OTLoJ4J33SSJsF4x1pk4I7q3s5ZOfIDHJYl6IG7Oyn2vNDsHiWJe46fD" crossorigin="anonymous"></script>
