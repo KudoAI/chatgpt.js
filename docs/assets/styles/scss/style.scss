@@ -146,7 +146,7 @@ body { background: black ; color: white ;
     font-family: "PolySans Neutral", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif }
 strong, .anchor span { color: white !important } /* whiten all strongs & headings */
 main a { color: #00ffe7 !important }
-#repo-cover, #shields { display: none } /* hide repo cover + shields */
+#repo-cover { display: none } /* hide repo cover + shields */
 main h2 { /* headings */
     text-align: center ; margin: 12.5rem 0 7.5rem !important ; font-size: 8rem !important ;
     font-family: "eurostile-extended-black", Georgia, Cambria, Times New Roman, Times, serif ;
@@ -185,17 +185,22 @@ li pre { margin: 65px 0 !important ; width: 75vw ; right: 11vw }
 .token.string { color: $theme-color }
 .token.function, .token.keyword, .token.boolean, .token.number { color: #ffcb00 }
 
+/* Shields */
+
+#shields { margin-bottom: 333px }
+#shields img { height: 55px }
+
 /* About section */
 $about: ('about', '关于', '關於', 'アバウト', '개요', 'अभाउट', 'um',
     'acerca-de', 'À-propos', 'informazioni', 'over', 'sobre', 'về');
 @each $translation in $about {
     $id: unquote('#') + $translation;
     #{$id} ~ p:first-of-type { /* ABOUT description */
-        margin-top: -521px !important ; font-size: 3.1rem !important ;
+        margin-top: -476px !important ; font-size: 3.1rem !important ;
         line-height: 4.5rem !important ; text-align: right ; width: 50% }
     #{$id} ~ ul:first-of-type { /* ABOUT feature list */
         font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
-        color: $theme-color ; position: absolute ; top: 7px ; right: -123px ; width: 50% }
+        color: $theme-color ; position: absolute ; top: 562px ; right: -123px ; width: 50% }
     #{$id} ~ ul:first-of-type li { font-size: 1.3rem !important ; line-height: 2.65rem }
     #{$id} ~ ul:first-of-type li::marker { content: ">>  " ; font-size: 1.3rem !important }
 }
@@ -287,7 +292,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
             font-size: 2.8rem !important ; line-height: 3.1rem !important ;
             margin: -333px 0 147px !important }
         #{$id} ~ ul:first-of-type { /* ABOUT feature list */
-            position: inherit ; width: inherit ; right: -7px }
+            position: inherit ; width: inherit ; right: -7px ; top: 28px }
         #{$id} ~ ul:first-of-type li { font-size: 2.2rem !important ; margin-bottom: 34px }
     }
     
