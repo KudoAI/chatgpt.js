@@ -43,6 +43,11 @@ const onLoadObserver = new MutationObserver(() => {
                     const article = document.querySelector('article');
                     article.insertBefore(footer, article.lastElementChild);
                 });
+                
+            // Remove 'Back to top' link for button
+            const readmeBTTlink = document.querySelector('p a[href="#"]');
+            readmeBTTlink.previousSibling.remove();
+            readmeBTTlink.remove();
         });
 
     // Hide site lang selector from NON-HOME pages
