@@ -351,9 +351,10 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
             margin: 63px 0 !important ; float: none !important }
     }
 
-    /* Showcase */    
+    /* Showcase */
     @each $translation in $made-with-chatgptjs {
         $id: unquote('#🤖-') + $translation;
         #{$id} ~ h3, #{$id} ~ p { text-align: center !important } /* center titles */
     }
+    img[src*=promo-tile] { width: 100% !important } /* expand tiles full-width */
 }
