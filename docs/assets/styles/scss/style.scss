@@ -341,4 +341,10 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     main p code { /* zoom/pad p code */
         font-size: 1.45rem !important ; padding: 2px 8px !important }
     .docsify-copy-code-button { display: none }
+
+    /* Showcase */    
+    @each $translation in $made-with-chatgptjs {
+        $id: unquote('#🤖-') + $translation;
+        #{$id} ~ h3, #{$id} ~ p { text-align: center !important } /* center titles */
+    }
 }
