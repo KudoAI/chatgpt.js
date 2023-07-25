@@ -46,7 +46,7 @@ $font-families: (
 }
 
 /* COLORS */
-$green: lime; $blue: cyan;
+$green: lime; $blue: #64ffff;
 
 /* GENERAL */
 
@@ -175,7 +175,7 @@ main pre, main code, .punctuation {
     font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
     font-size: 1.3rem !important ; color: white !important ; background: black !important ;
     margin-bottom: 1px } /* fix bottom border disappears glitch */
-main pre code { border: #64ffff 2px solid ; border-radius: 12px !important ; padding: 26px !important }
+main pre code { border: $blue 2px solid ; border-radius: 12px !important ; padding: 26px !important }
 main p code {
     font-size: 1.95rem !important ; position: relative ; bottom: 3px ;
     padding: 5px 17px !important ; margin: 0 8px !important ; word-break: break-all ;
