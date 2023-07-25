@@ -303,7 +303,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
         $id: unquote('#') + $translation;
         #{$id} ~ p:first-of-type { /* ABOUT description */
             font-size: 2.8rem !important ; line-height: 3.1rem !important ;
-            margin: -333px 0 147px !important }
+            margin: -323px 0 147px !important }
         #{$id} ~ ul:first-of-type { /* ABOUT feature list */
             position: inherit ; width: inherit ; left: 47px ; top: 28px }
         #{$id} ~ ul:first-of-type li { font-size: 1.5rem !important ; margin-bottom: 34px }
