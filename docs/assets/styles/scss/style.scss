@@ -46,12 +46,12 @@ $font-families: (
 }
 
 /* COLORS */
-$lime: lime; $cyan: cyan;
+$green: lime; $blue: cyan;
 
 /* GENERAL */
 
 :root { scrollbar-color: rgb(210,210,210) #1a1a1a } /* FF scrollbar */
-.app-nav a.active { border-bottom: 2px solid $lime}
+.app-nav a.active { border-bottom: 2px solid $green}
 .top-gradient { /* for Star Wars effect in `assets/js/add-3d.js` */
     position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 20vh ;
     background-image: linear-gradient(to top, transparent, #000);
@@ -147,7 +147,7 @@ section.cover p { /* cover tagline size / position */
 body { background: black ; color: white ;
     font-family: "PolySans Neutral", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif }
 strong, .anchor span { color: white !important } /* whiten all strongs & headings */
-main a { color: $cyan !important }
+main a { color: $blue !important }
 #repo-cover { display: none } /* hide repo cover + shields */
 main h2 { /* headings */
     text-align: center ; margin: 12.5rem 0 7.5rem !important ; font-size: 8rem !important ;
@@ -157,6 +157,7 @@ main h2 { /* headings */
 .anchor:hover { text-decoration: none }
 main h3 { font-size: 4.5rem !important ; margin-top: 5rem !important }
 main p { font-size: 2.45rem !important ; line-height: 3.5rem !important}
+main blockquote { border-left: 4px solid $green !important }
 main blockquote p { /* tips */
     border-left: none ; width: 38vw ; font-size: 2rem !important ; margin-top: 11% !important ;
     text-align: left ; float: right ; position: relative ; left: 29px ; line-height: 2.8rem !important }
@@ -165,26 +166,27 @@ main blockquote:first-of-type p { margin-top: 11% !important } /* Greasemonkey t
 main blockquote:nth-of-type(2) p { margin-top: 74px !important } /* Chrome tip */
 main code { font-size: 1.35rem !important ; line-height: 2.2rem !important }
 img[type="separator"] { display: none } /* hide section separators */
-h2 + p { /* blurbs after headings w/o tips */
+main h2 + p { /* blurbs after headings w/o tips */
     font-size: 2.75rem !important ; text-align: center ; margin-top: -85px !important }
 main li::marker { font-size: 2.1rem }
 
 /* Code */
-pre, code, .punctuation {
+main pre, main code, .punctuation {
     font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
-    font-size: 1.3rem !important ; color: white !important ; background: black !important ; }
-pre code { border: white 1px solid ; border-radius: 12px !important ; padding: 26px !important }
-p code {
+    font-size: 1.3rem !important ; color: white !important ; background: black !important ;
+    margin-bottom: 1px } /* fix bottom border disappears glitch */
+main pre code { border: #64ffff 2px solid ; border-radius: 12px !important ; padding: 26px !important }
+main p code {
     font-size: 1.95rem !important ; position: relative ; bottom: 3px ;
     padding: 5px 17px !important ; margin: 0 8px !important ; word-break: break-all ;
     border: white 1px solid ; border-radius: 13px !important }
-pre:after { display: none } /* hide lang indicator */
+main pre:after { display: none } /* hide lang indicator */
 .docsify-copy-code-button {    
     font-size: 1.1rem !important ; background: black !important ; color: white !important ;
     padding: 13px 18px 13px 15px !important ; right: 30px !important ; top: 2px !important }
 .success, .error { font-size: 1.1rem !important }
-li pre { margin: 65px 0 !important ; width: 75vw ; right: 11vw }
-.token.string { color: $lime }
+main li pre { margin: 65px 0 !important ; width: 75vw ; right: 11vw }
+.token.string { color: $green }
 .token.function, .token.keyword, .token.boolean, .token.number { color: #ffcb00 }
 
 /* Shields */
@@ -202,7 +204,7 @@ $about: ('about', '关于', '關於', 'アバウト', '개요', 'अभाउट
         line-height: 4.5rem !important ; text-align: right ; width: 50% }
     #{$id} ~ ul:first-of-type { /* ABOUT feature list */
         font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
-        color: $lime ; position: absolute ; top: 562px ; right: -123px ; width: 50% }
+        color: $green ; position: absolute ; top: 562px ; right: -123px ; width: 50% }
     #{$id} ~ ul:first-of-type li { font-size: 1.3rem !important ; line-height: 2.65rem }
     #{$id} ~ ul:first-of-type li::marker { content: ">>  " ; font-size: 1.3rem !important }
 }
@@ -233,11 +235,11 @@ $made-with-chatgptjs: ('made-with-chatgptjs', '用-chatgptjs-制作', '用-chatg
     #{$id} ~ p:nth-of-type(odd) { text-align: right }
     #{$id} ~ br + p { text-align: center !important } /* center showcase tiles */
 }
-h3 img { /* app icons */
+main h3 img { /* app icons */
     height: 58px !important ; width: auto !important ; margin: 0 19px -2px 0 }
-h3 a { /* app titles */
+main h3 a { /* app titles */
     text-decoration: none ; color: white !important }
-h3 a:hover { text-decoration: underline #42b983 }
+main h3 a:hover { text-decoration: underline #42b983 }
 img[src*="promo-tile"] { width: 74vw ; border: 1px solid white }
 
 /* Contributors */
@@ -316,7 +318,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     /* Headings */
     main h2, main h3 { font-size: 2.5rem !important }
     main h2 { margin-left: 30px !important }
-    h3 img { height: 32px !important } /* platform icons */
+    main h3 img { height: 32px !important } /* platform icons */
 
     /* Text */
     main p {
@@ -332,7 +334,11 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     main ol p { text-align: left !important ; word-break: break-word } /* platform steps */
 
     /* Code */
-    li pre { width: 82vw ; right: 32px ; padding: 0 !important }
-    p code { font-size: 1.45rem !important ; padding: 2px 8px !important }
+    main code, .token { font-size: 1.2rem !important } /* shrink font */
+    main pre { padding: 0 0.11rem !important } /* widen blocks */
+    main li pre { /* widen/center li blocks */
+        width: 86vw ; right: 50px ; padding: 0 !important } 
+    main p code { /* zoom/pad p code */
+        font-size: 1.45rem !important ; padding: 2px 8px !important }
     .docsify-copy-code-button { display: none }
 }
