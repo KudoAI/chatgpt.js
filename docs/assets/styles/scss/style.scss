@@ -45,11 +45,13 @@ $font-families: (
     }
 }
 
+/* COLORS */
+$lime: lime; $cyan: cyan;
+
 /* GENERAL */
 
 :root { scrollbar-color: rgb(210,210,210) #1a1a1a } /* FF scrollbar */
-$theme-color: rgb(0,255,25); /* bright green */
-.app-nav a.active { border-bottom: 2px solid $theme-color}
+.app-nav a.active { border-bottom: 2px solid $lime}
 .top-gradient { /* for Star Wars effect in `assets/js/add-3d.js` */
     position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 20vh ;
     background-image: linear-gradient(to top, transparent, #000);
@@ -145,7 +147,7 @@ section.cover p { /* cover tagline size / position */
 body { background: black ; color: white ;
     font-family: "PolySans Neutral", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif }
 strong, .anchor span { color: white !important } /* whiten all strongs & headings */
-main a { color: #00ffe7 !important }
+main a { color: $cyan !important }
 #repo-cover { display: none } /* hide repo cover + shields */
 main h2 { /* headings */
     text-align: center ; margin: 12.5rem 0 7.5rem !important ; font-size: 8rem !important ;
@@ -182,7 +184,7 @@ pre:after { display: none } /* hide lang indicator */
     padding: 13px 18px 13px 15px !important ; right: 30px !important ; top: 2px !important }
 .success, .error { font-size: 1.1rem !important }
 li pre { margin: 65px 0 !important ; width: 75vw ; right: 11vw }
-.token.string { color: $theme-color }
+.token.string { color: $lime }
 .token.function, .token.keyword, .token.boolean, .token.number { color: #ffcb00 }
 
 /* Shields */
@@ -200,7 +202,7 @@ $about: ('about', '关于', '關於', 'アバウト', '개요', 'अभाउट
         line-height: 4.5rem !important ; text-align: right ; width: 50% }
     #{$id} ~ ul:first-of-type { /* ABOUT feature list */
         font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
-        color: $theme-color ; position: absolute ; top: 562px ; right: -123px ; width: 50% }
+        color: $lime ; position: absolute ; top: 562px ; right: -123px ; width: 50% }
     #{$id} ~ ul:first-of-type li { font-size: 1.3rem !important ; line-height: 2.65rem }
     #{$id} ~ ul:first-of-type li::marker { content: ">>  " ; font-size: 1.3rem !important }
 }
