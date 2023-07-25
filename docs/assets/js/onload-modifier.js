@@ -44,10 +44,9 @@ const onLoadObserver = new MutationObserver(() => {
                     article.insertBefore(footer, article.lastElementChild);
                 });
                 
-            // Remove 'Back to top' link for button
+            // Remove readme's back-to-top link
             const readmeBTTlink = document.querySelector('p a[href="#"]');
-            readmeBTTlink.previousSibling.remove();
-            readmeBTTlink.remove();
+            readmeBTTlink.previousSibling.remove(); readmeBTTlink.remove();
         });
 
     // Hide site lang selector from NON-HOME pages
