@@ -276,12 +276,13 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     width: 200px ; margin-left: -6px ; border-radius: 0 ; border: 1px ;
     border: white solid ; position: relative ; bottom: 1px } /* correct for font-size shifting */
 
+/* BUTTONS */
+
 .back-to-top {
-    margin: 0 ; padding: 0 ; border: none ;
+    margin: 0 ; padding: 0 ; border: none ; cursor: pointer ;
     outline: none ; width: fit-content ; height: fit-content ;
     background: none ; position: fixed ; bottom: 5% ;
-    right: 3% ; display: none ; opacity: 0 }
-    
+    right: 3% ; display: none ; opacity: 0 }    
 .back-to-top svg > path { fill: #fff; }
 
 /* MOBILE tweaks */
