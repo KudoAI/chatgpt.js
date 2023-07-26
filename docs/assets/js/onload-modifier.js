@@ -7,7 +7,7 @@ const mdLoaded = new Promise((resolve) => {
 });
 
 let featureListInView = false;            
-featureListObserver = new IntersectionObserver(entries => {
+const featureListObserver = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting) {
         featureListInView = true;
         featureListObserver.unobserve(document.querySelector('#feature-list')); 
