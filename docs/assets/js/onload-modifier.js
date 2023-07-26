@@ -68,7 +68,7 @@ const onLoadObserver = new MutationObserver(() => {
                     if (iniTxtToType != txtToType.length) { // if end of string reached
                         iniArrLength = txtToType[iniTxtToType].length; // reset array length
                         setTimeout(typeText, 88); // pause til next string
-                }} else setTimeout(typeText, typeSpeed);
+                }} else setTimeout(typeText, typeSpeed + (Math.random() * 220) - 110);
             }
             (function checkOrTypeFeatureList() {
                 if (featureListInView) typeText();
