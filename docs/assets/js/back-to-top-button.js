@@ -21,8 +21,8 @@ document.body.appendChild(button);
 function fadeIn(el, duration) {
     if (el.classList.contains('done')) return;
     el.classList.add('done'); el.style.opacity = 0;
-    var last = +new Date();
-    var tick = () => {
+    let last = +new Date();
+    const tick = () => {
         el.style.opacity = +el.style.opacity + (new Date() - last) / duration;
         last = +new Date();    
         if (+el.style.opacity < 1) 
@@ -36,8 +36,8 @@ function fadeIn(el, duration) {
 function fadeOut(el, duration) {
     if (!el.classList.contains('done')) return;
     el.classList.remove('done'); el.style.opacity = 1;
-    var last = +new Date();
-    var tick = () => {
+    let last = +new Date();
+    const tick = () => {
         el.style.opacity = +el.style.opacity - (new Date() - last) / duration;
         last = +new Date();
         if (+el.style.opacity > 0)
