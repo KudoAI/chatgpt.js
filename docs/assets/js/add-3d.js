@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTGvisibility();
         const coverRect = cover.getBoundingClientRect();
         const newOpacity = 1 - Math.abs(coverRect.top) / cover.offsetHeight;
-        const parallaxOffset = coverRect.top * -0.25;
+        const parallaxOffset = coverRect.top * -0.55;
         cover.style.opacity = newOpacity;
         coverMain.style.transform = `translateY(${ parallaxOffset }px)`;
     });
