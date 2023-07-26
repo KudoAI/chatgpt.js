@@ -202,13 +202,15 @@ $about: ('about', '关于', '關於', 'アバウト', '개요', 'अभाउट
     #{$id} ~ p:first-of-type { /* ABOUT description */
         margin-top: -476px !important ; font-size: 3.1rem !important ;
         line-height: 4.5rem !important ; text-align: right ; width: 50% }
-    #{$id} ~ ul:first-of-type { /* ABOUT feature list */
-        font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
-        color: $green ; position: absolute ; top: 562px ; right: -123px ; width: 50% }
+    #{$id} ~ ul:first-of-type { display: none } /* hide readme feature list */
     #{$id} ~ ul:first-of-type li { font-size: 1.3rem !important ; line-height: 2.65rem }
     #{$id} ~ ul:first-of-type li::marker { content: ">>  " ; font-size: 1.3rem !important }
 }
 article > h2:first-of-type span { display: none !important } /* hide ABOUT heading */
+#feature-list { /* generated in `js/online-modifier.js` */
+    font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
+    font-size: 1.45rem ; color: $green ; position: relative ; float: right ;
+    top: -323px ; right: -123px ; width: 50% }
 
 /* Greasemonkey/Chrome sections */
 #-greasemonkey, #-chrome { text-align: center }
@@ -307,11 +309,12 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
         $id: unquote('#') + $translation;
         #{$id} ~ p:first-of-type { /* ABOUT description */
             font-size: 2.8rem !important ; line-height: 3.1rem !important ;
-            margin: -236px 0 147px !important }
-        #{$id} ~ ul:first-of-type { /* ABOUT feature list */
-            position: inherit ; width: inherit ; left: 47px ; top: 28px }
+            margin: -236px 0 490px !important }
         #{$id} ~ ul:first-of-type li { font-size: 1.5rem !important ; margin-bottom: 34px }
     }
+    #feature-list { /* generated in `js/onload-modifier.js` */
+        font-size: 1.7rem! important ; margin-bottom: -136px !important ;
+        position: relative ; width: inherit ; left: 16px ; top: -244px ; float: none }
     
     /* BODY */
     $mobile-p-size: 1.85rem;
