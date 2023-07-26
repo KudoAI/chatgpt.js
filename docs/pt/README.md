@@ -24,7 +24,7 @@
 
 [![](https://img.shields.io/badge/Licença-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=Confirma&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js/commits/main)
-![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-2.0.1.min.js?label=Tamanho+Reduzido&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
+![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-2.0.2.min.js?label=Tamanho+Reduzido&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
 [![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Qualidade+do+Código&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
 [![](https://img.shields.io/badge/Mencionado_em-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
 [![](https://img.shields.io/badge/Destaque_em-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.producthunt.com/posts/chatgpt-js)
@@ -82,7 +82,7 @@ Repositórios de script de usuário como o Greasy Fork mantêm uma lista branca 
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@452481712beb19004cdee26124beec7a6d7ce24f/dist/chatgpt-2.0.1.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@452481712beb19004cdee26124beec7a6d7ce24f/dist/chatgpt-2.0.2.min.js
 // ==/UserScript==
 
 // Seu código aqui...
