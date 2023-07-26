@@ -991,13 +991,13 @@ const chatgpt = {
     },
 
     sidebar: {
-        isOn: function() { return !document.querySelector('button[aria-label*="Show sidebar"]'); },
-        isOff: function() { return !!document.querySelector('button[aria-label*="Show sidebar"]'); },
+        isOn: function() { return !document.querySelector('button[aria-label*="Open sidebar"]'); },
+        isOff: function() { return !!document.querySelector('button[aria-label*="Open sidebar"]'); },
         hide: function() { this.isOn() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already hidden!'); },
         show: function() { this.isOff() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already shown!'); },
         toggle: function() {
             for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-                if (/hide sidebar/i.test(navLink.text)) {
+                if (/close sidebar/i.test(navLink.text)) {
                     navLink.click(); return;                
         }}}
     },
