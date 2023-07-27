@@ -22,7 +22,7 @@ const onLoadObserver = new MutationObserver(() => {
     if (/#\/(\w{2}(-\w{2})?\/)?$/.test(location.hash)) {
 
         // Hide sidebar
-        document.body.className = 'ready close';
+        if (!isMobileDevice()) document.body.className = 'ready close';
        
         mdLoaded.then(() => {
 
@@ -74,7 +74,7 @@ const onLoadObserver = new MutationObserver(() => {
                 else setTimeout(checkOrTypeFeatureList, 100); 
             })();
 
-            // Convert OpenAI icons in showcase apps to dark-mode
+            // Convert OpenAI showcase icons + sidebar logo to dark-mode
             document.querySelectorAll('picture').forEach(picture => {
                 const srcElement = picture.querySelector('source');
                 const srcSet = srcElement.getAttribute('srcset');
@@ -104,7 +104,7 @@ const onLoadObserver = new MutationObserver(() => {
     if (/LICENSE|SECURITY/.test(location.hash)) {
 
         // Hide sidebar
-        document.body.className = 'ready close';
+        if (!isMobileDevice()) document.body.className = 'ready close';
 
         // Correct doc lang selector links
         mdLoaded.then(() => {
@@ -128,3 +128,6 @@ window.addEventListener('hashchange', () => {
     else if (fromUnhashedURL)
         onLoadObserver.observe(document.body, { childList: true, subtree: true });
 });
+
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
