@@ -293,12 +293,13 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 
     /* COVER */
 
+    .cover-main { padding-top: 90px } /* make room for lang selector + GitHub badge */
     section.cover, .cover-main { margin: 0 !important }
     section.cover p { /* cover description */
         font-family: "PolySans Neutral", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif !important ;
-        font-size: 3.6rem !important ; line-height: 2.8rem !important }
-    .cover-main > p:last-child a:last-child { /* 2nd button */
-        padding: 16px 55px !important }
+        font-size: 3.2rem !important ; line-height: 2.8rem !important }
+    .cover-main > p:last-child a, .cover-main > p:last-child a:last-child { /* buttons */
+        padding: 2px 43px !important }
 
     /* BUTTONS */
 
