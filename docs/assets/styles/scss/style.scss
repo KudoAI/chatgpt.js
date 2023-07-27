@@ -122,13 +122,16 @@ section.cover p { /* cover tagline size / position */
 .sidebar li.active > a { border-right: 0 !important } /* move line indicator from active links... */
 .sidebar li.active { border-right: 4px solid $green ;  /* ...to active li's */
     padding-right: 15px } /* ...so padding can be applied */
+.sidebar ul > ul { margin: 0 0 12px 26px } /* indent subheadings */
+.sidebar ul > li:first-child { margin-top: 8px } /* lower subheadings */
+.sidebar ul > ul a { font-size: 2rem !important ; line-height: 3.1rem } /* shrink subheadings */
+.sidebar li img { display: none } /* hide sub icons */
 .search { background-color: white ; font-size: 1.3rem }
 .matching-post { transform: scale(.7) ; margin: -31px }
 .app-name { margin: 19px 18px 13px !important }
 .app-name-link img { padding: 0 2px }
 .sidebar-toggle { background-color: inherit }
 .sidebar ul > ul:nth-of-type(2) { display: none } /* hide showcase apps */
-.sidebar li img { display: none } /* hide sidebar icons */
 
 /* Fix `close` style on mobile */
 @media screen and (max-width: 768px) {
