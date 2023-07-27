@@ -114,6 +114,9 @@ section.cover p { /* cover tagline size / position */
 
 /* SIDEBAR */
 
+.sidebar-toggle { bottom: 36px ; left: 16px } /* toggle position */
+.sidebar-toggle span { /* color/size/space toggle bars */
+    background-color: white ; width: 20px ; height: 3px ; margin-bottom: 5px }
 .sidebar { background-color: black ; padding-right: 5px !important }
 .sidebar a { font-size: 2.1rem !important ; line-height: 3.8rem ; color: white !important }
 .sidebar li.active > a { border-right: 0 !important } /* move line indicator from active links... */
