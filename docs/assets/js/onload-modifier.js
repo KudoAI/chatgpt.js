@@ -21,9 +21,8 @@ const onLoadObserver = new MutationObserver(() => {
     // Hack HOMEPAGE
     if (/#\/(\w{2}(-\w{2})?\/)?$/.test(location.hash)) {
 
-        // Hide sidebar + toggle
+        // Hide sidebar
         document.body.className = 'ready close';
-        document.querySelector('.sidebar-toggle-button').style.display = 'none';
        
         mdLoaded.then(() => {
 
@@ -104,9 +103,8 @@ const onLoadObserver = new MutationObserver(() => {
     // Hack LICENSE/SECURIY pages
     if (/LICENSE|SECURITY/.test(location.hash)) {
 
-        // Hide sidebar + toggle
+        // Hide sidebar
         document.body.className = 'ready close';
-        document.querySelector('.sidebar-toggle-button').style.display = 'none';
 
         // Correct doc lang selector links
         mdLoaded.then(() => {
