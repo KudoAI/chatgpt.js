@@ -298,9 +298,8 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 
     /* COVER */
 
-    .cover-main { padding-top: 27px } /* make room for lang selector + GitHub badge */
     section.cover, .cover-main { margin: 0 !important }
-    .cover-main > img { width: 100% } /* cover logo */
+    .cover-main > img { width: 100% ; margin-bottom: 0 } /* cover logo */
     section.cover p { /* cover description */
         font-family: "PolySans Neutral", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif !important ;
         font-size: 6.3vh !important ; line-height: 4.6vh !important }
