@@ -300,16 +300,6 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     .cover-main > p:last-child a:last-child { /* 2nd button */
         padding: 16px 55px !important }
 
-    /* SIDEBAR */
-
-    /* Fix behavior for when sidebar should be open */
-    body .sidebar { transform: translateX(300px) }
-    body .content { transform: translateX(300px) }
-
-    /* Fix behavior for when sidebar should be closed */
-    body.close .sidebar { transform: translateX(0) }
-    body.close .content { transform: translateX(0px) }
-
     /* BUTTONS */
 
     .sidebar-toggle { bottom: 33px ; left: 5px ; background: transparent !important }
