@@ -371,7 +371,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
             font-size: 1.5rem !important }
         h2#{$id} ~ p { /* remove margin from avatars to fill more widely */
             margin-left: 0 !important }
-        #{$id} ~ * img { width: 82px !important } /* unzoom contributor avatars */
+        #{$id} ~ * img { width: 69px !important } /* unzoom contributor avatars */
     }
 
     /* Footer */
