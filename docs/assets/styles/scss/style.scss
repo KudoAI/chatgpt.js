@@ -378,6 +378,6 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     #mc_embed_signup h2 { /* CTA */
         font-size: 2.55rem !important ; /* shrink font */
         left: -21px !important } /* nudge right to re-center */
-    input#mce-EMAIL::placeholder { /* email placeholder */
-        text-indent: 25% !important } /* center it */
+    input#mce-EMAIL, input#mce-EMAIL::placeholder { /* email input txt/placeholder */
+        text-indent: 0 !important ; text-align: center } /* center them */
 }
