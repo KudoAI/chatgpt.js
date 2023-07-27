@@ -45,8 +45,18 @@ $font-families: (
     }
 }
 
-/* COLORS */
+/* VARIABLES */
+
 $green: lime; $blue: #64ffff;
+$no-select: (
+    -webkit-touch-callout: none !important,
+    -webkit-user-select: none !important,
+    -khtml-user-select: none !important,
+    -moz-user-select: none !important,
+    -ms-user-select: none !important,
+    user-select: none !important,
+    -webkit-tap-highlight-color: transparent
+);
 
 /* GENERAL */
 
@@ -130,25 +140,8 @@ section.cover p { /* cover tagline size / position */
 .matching-post { transform: scale(.7) ; margin: -31px }
 .app-name { margin: 19px 18px 13px !important }
 .app-name-link img { padding: 0 2px }
-.sidebar-toggle { background-color: inherit }
+.sidebar-toggle { background-color: transparent }
 .sidebar ul > ul:nth-of-type(2) { display: none } /* hide showcase apps */
-
-/* Fix `close` style on mobile */
-@media screen and (max-width: 768px) {
-
-  /* Fix behavior for when sidebar should be open */
-  body .sidebar { transform: translateX(300px) }
-  body .content { transform: translateX(300px) }
-  .sidebar-toggle {
-    background-color: rgba(255,255,255,0.8) ; transition: 1s background-color ;
-    width: 284px ; padding: 10px }
-
-  /* Fix behavior for when sidebar should be closed */
-  body.close .sidebar { transform: translateX(0) }
-  body.close .content { transform: translateX(0px) }
-  body.close .sidebar-toggle {
-    background-color: transparent ; width: auto ; padding: 30px 30px 10px 10px }
-}
 
 /* MAIN */
 
@@ -198,7 +191,6 @@ main li pre { margin: 65px 0 !important ; width: 75vw ; right: 11vw }
 .token.function, .token.keyword, .token.boolean, .token.number { color: #ffcb00 }
 
 /* Shields */
-
 #shields { margin: 155px 0 433px }
 #shields img { height: 55px }
 
@@ -308,6 +300,21 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     .cover-main > p:last-child a:last-child { /* 2nd button */
         padding: 16px 55px !important }
 
+    /* SIDEBAR */
+
+    /* Fix behavior for when sidebar should be open */
+    body .sidebar { transform: translateX(300px) }
+    body .content { transform: translateX(300px) }
+
+    /* Fix behavior for when sidebar should be closed */
+    body.close .sidebar { transform: translateX(0) }
+    body.close .content { transform: translateX(0px) }
+
+    /* BUTTONS */
+
+    .sidebar-toggle { bottom: 33px ; left: 5px ; background: transparent !important }
+    .back-to-top { bottom: 39px ; right: 10px }
+
     /* SHIELDS */
 
     #shields { display: none }
@@ -326,6 +333,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
         position: relative ; width: inherit ; left: 16px ; top: -244px ; float: none }
     
     /* BODY */
+
     $mobile-p-size: 1.85rem;
     main li::marker { font-size: 1.84rem !important } /* unzoom list markers */
 
