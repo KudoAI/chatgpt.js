@@ -298,6 +298,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 
     /* COVER */
 
+    .cover-main { padding-top: 21px } /* make room for lang selector + GitHub badge */
     section.cover, .cover-main { margin: 0 !important }
     .cover-main > img { width: 100% ; margin-bottom: 0 } /* cover logo */
     section.cover p { /* cover description */
