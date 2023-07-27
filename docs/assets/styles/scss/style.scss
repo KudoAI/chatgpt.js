@@ -290,11 +290,17 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 @media screen and (max-width: 767px) {
     article { padding: 0 }    
     .markdown-section { max-width: 96% }
+    .github-corner svg { height: 88px ; width: 88px }
+
+    /* LANGUAGE SELECTOR */
+    #language-selector a { font-size: 26px }
+    #language-selector svg { width: 28px ; height: 28px }
 
     /* COVER */
 
-    .cover-main { padding-top: 90px } /* make room for lang selector + GitHub badge */
+    .cover-main { padding-top: 27px } /* make room for lang selector + GitHub badge */
     section.cover, .cover-main { margin: 0 !important }
+    .cover-main > img { width: 100% } /* cover logo */
     section.cover p { /* cover description */
         font-family: "PolySans Neutral", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif !important ;
         font-size: 6.3vh !important ; line-height: 4.6vh !important }
