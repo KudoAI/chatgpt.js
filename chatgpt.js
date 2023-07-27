@@ -192,6 +192,12 @@ const chatgpt = {
         return modalContainer.id;
     },
 
+    askAndGetReply: async function(query) {
+        chatgpt.send(query); await chatgpt.isIdle();
+        const response = await chatgpt.getLastResponse();
+        return response
+    },
+
     autoRefresh: {
         activate: function(interval) {
             if (this.isActive) { // already running, do nothing
@@ -1072,8 +1078,8 @@ const functionAliases = [ // whole function names to cross-alias
     ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher']
 ];
 const synonyms = [ // constituent synonyms within function names
-    ['activate', 'turnOn'], ['account', 'acct'], ['chat', 'conversation', 'convo'], ['data', 'details'], ['deactivate', 'deActivate', 'turnOff'],
-    ['generating', 'generation'], ['render', 'parse'], ['reply', 'response'], ['send', 'submit']
+    ['activate', 'turnOn'], ['account', 'acct'], ['ask', 'send', 'submit'], ['chat', 'conversation', 'convo'], ['data', 'details'],
+    ['deactivate', 'deActivate', 'turnOff'], ['generating', 'generation'], ['render', 'parse'], ['reply', 'response']
 ];
 for (const prop in chatgpt) {
 
