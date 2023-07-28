@@ -1086,3 +1086,8 @@ Example code:
 ```js
 chatgpt.sidebar.toggle();
 ```
+
+#
+
+<a href="https://github.com/kudoai/chatgpt.js/discussions">Discuss</a> /
+<a href="#">Back to top ↑</a>
