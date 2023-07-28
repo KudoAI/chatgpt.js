@@ -194,8 +194,7 @@ const chatgpt = {
 
     askAndGetReply: async function(query) {
         chatgpt.send(query); await chatgpt.isIdle();
-        const response = await chatgpt.getLastResponse();
-        return response;
+        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
 
     autoRefresh: {
