@@ -138,10 +138,9 @@ chatgpt.response.getLast()
 chatgpt.get('reply', 'last')
 ```
 
-यह सभी समान रिजल्ट देते है, जैसे की लास्ट रिस्पॉन्स। अगर आपको लगता है कि जो आप लिख रहे है वो काम करेगा..., तो यह संभव है की वो काम करेगा तो बस लिख के देखें।
+यह सभी समान रिजल्ट देते है, जैसे की लास्ट रिस्पॉन्स। अगर आपको लगता है कि जो आप लिख रहे है वो काम करेगा..., तो यह संभव है की वो काम करेगा तो बस लिख के देखें।
 
-
-यदि ऐसा नहीं हुआ, तो बस एक [इशू](https://github.com/kudoai/chatgpt.js/issues) या [PR](https://github.com/kudoai/chatgpt.js/pulls) सबमिट करें और हम न्यू अपडेट में ऐड कराएंगे, बहुत आसान!
+यदि ऐसा नहीं हुआ, तो विस्तारित [यूजरगाइड](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) देखें, या बस एक [इश्यू](https://github.com/kudoai/chatgpt.js/issues) सबमिट करें या [PR](https://github.com/kudoai/chatgpt.js/pulls) और इसे एकीकृत किया जाएगा, आसान!
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
@@ -244,6 +243,7 @@ chatgpt.get('reply', 'last')
 
 #
 
-<a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**विज्ञप्ति**</a> / 
+<a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**विज्ञप्ति**</a> /
+<a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">यूजरगाइड</a> / 
 <a href="https://github.com/kudoai/chatgpt.js/discussions">चर्चा करना</a> / 
 <a href="#">वापस शीर्ष पर ↑</a>

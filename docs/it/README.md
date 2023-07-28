@@ -139,7 +139,7 @@ chatgpt.get('reply', 'last');
 
 Ogni chiamata ritorna ugualmente l'ultima risposta di ChatGPT. Se pensi che funzioni, probabilmente lo farà... quindi scrivilo!
 
-In caso contrario, crea semplicemente una [issue](https://github.com/kudoai/chatgpt.js/issues) o [PR](https://github.com/kudoai/chatgpt.js/pulls) e sarà integrato, facile!
+In caso contrario, consulta la [guida per l'utente](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) estesa o invia semplicemente un [problema](https://github.com/kudoai/chatgpt.js/issues) o [PR](https://github.com/kudoai/chatgpt.js/pulls) e sarà integrato, facile!
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
@@ -243,5 +243,6 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 #
 
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Versioni**</a> /
+<a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">Guida per l'utente</a> /
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Discutere</a> /
 <a href="#">Torna all'inizio ↑</a>

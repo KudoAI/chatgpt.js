@@ -137,7 +137,7 @@ chatgpt.get('reply', 'last');
 
 Cada chamada busca igualmente a última resposta. Se você acha que funciona, provavelmente funcionará... então apenas digite! (Quem tem tempo para documentos?)
 
-Caso contrário, basta enviar um [problema](https://github.com/kudoai/chatgpt.js/issues) ou [PR](https://github.com/kudoai/chatgpt.js/pulls) e será integrado, mole-mole!
+Caso contrário, verifique o [guia do usuário](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) estendido  ou simplesmente envie um [problema](https://github.com/kudoai/chatgpt.js/issues) ou [PR](https://github.com/kudoai/chatgpt.js/pulls) e será integrado, mole-mole!
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
@@ -241,5 +241,6 @@ Esta biblioteca existe graças ao código, traduções, problemas e ideias dos s
 #
 
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Lançamentos**</a> /
+<a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">guia do usuário</a> /
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Discutir</a> /
 <a href="#">De volta ao topo ↑</a>

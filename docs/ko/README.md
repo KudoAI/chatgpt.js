@@ -145,7 +145,7 @@ chatgpt.get('reply', 'last');
 
 각 호출은 동일한 방식으로 최신 응답을 가져옵니다. 만약 잘 작동한다고 생각하신다면, 그렇게 하시면 될겁니다... 그러니 그냥 입력하세요!
 
-만약 동작이 잘 안되신다면, 간단하게 [이슈](https://github.com/kudoai/chatgpt.js/issues)를 열거나 [PR](https://github.com/kudoai/chatgpt.js/pulls)을 주시면 통합될 것 입니다, 참 쉽죠!
+그렇지 않은 경우 확장된 [사용자 가이드](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md)를 확인하거나 간단히 [문제](https://github.com/kudoai/chatgpt.js/issues) 또는 [PR](https://github.com/kudoai/chatgpt.js/pulls)을 주시면 통합될 것 입니다, 참 쉽죠!
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
@@ -252,6 +252,7 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, [showcas
 
 #
 
-<a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**릴리즈**</a> /
+<a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**릴리스**</a> /
+<a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">사용자 가이드</a> /
 <a href="https://github.com/kudoai/chatgpt.js/discussions">토론</a> /
 <a href="#">상단으로 ↑</a>

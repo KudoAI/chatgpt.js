@@ -139,7 +139,7 @@ chatgpt.get('reply', 'last');
 
 每個調用都會同等地獲取最後一個響應。 如果您認為它有效，它可能會......所以只需輸入它即可！
 
-如果沒有，只需提交一個[問題](https://github.com/kudoai/chatgpt.js/issues)或 [PR](https://github.com/kudoai/chatgpt.js/pulls)，它就會被集成，簡單易行！
+如果沒有，請查看擴展的[用戶指南](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md)，或者只需提交一個[問題](https://github.com/kudoai/chatgpt.js/issues) 或 [PR](https://github.com/kudoai/chatgpt.js/pulls) 它將被集成，簡單易行！
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
@@ -243,5 +243,6 @@ chatgpt.get('reply', 'last');
 #
 
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**發布**</a> /
+<a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">用戶指南</a> /
 <a href="https://github.com/kudoai/chatgpt.js/discussions">討論</a> /
 <a href="#">回到頂部 ↑</a>

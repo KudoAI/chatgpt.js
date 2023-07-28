@@ -139,7 +139,7 @@ chatgpt.get('reply', 'last');
 
 Each call equally fetches the last response. If you think it works, it probabily will... so just type it!
 
-If it didn't, simply submit an [issue](https://github.com/kudoai/chatgpt.js/issues) or [PR](https://github.com/kudoai/chatgpt.js/pulls) and it will be integrated, ezpz!
+If it didn't, check out the extended [userguide](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md), or simply submit an [issue](https://github.com/kudoai/chatgpt.js/issues) or [PR](https://github.com/kudoai/chatgpt.js/pulls) and it will be integrated, ezpz!
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
@@ -243,5 +243,6 @@ This library exists thanks to code, translations, issues & ideas from the follow
 #
 
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Releases**</a> /
+<a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">Userguide</a> /
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Discuss</a> /
 <a href="#">Back to top ↑</a>

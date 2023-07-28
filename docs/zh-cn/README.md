@@ -139,7 +139,7 @@ chatgpt.get('reply', 'last')
 
 每个调用都会同样获取最后一个回应。如果您认为它有效，那么它可能就是有效的……所以只需输入它！（谁有时间看文档？）
 
-如果它不起作用，只需提交 [issue](https://github.com/kudoai/chatgpt.js/issues) 或 [PR](https://github.com/kudoai/chatgpt.js/pulls)，它将被集成，简单易行！
+如果没有，请查看扩展的[用户指南](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md)，或者只需提交一个[问题](https://github.com/kudoai/chatgpt.js/issues) 或 [PR](https://github.com/kudoai/chatgpt.js/pulls) 它将被集成，简单易行！
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
@@ -242,6 +242,7 @@ chatgpt.get('reply', 'last')
 
 #
 
-<a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**版本发布**</a> / 
+<a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**发布**</a> /
+<a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">用户指南</a> / 
 <a href="https://github.com/kudoai/chatgpt.js/discussions">讨论</a> / 
 <a href="#">返回顶部 ↑</a>

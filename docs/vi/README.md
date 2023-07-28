@@ -139,7 +139,7 @@ chatgpt.get('reply', 'last');
 
 Mỗi cuộc gọi đều tìm nạp phản hồi cuối cùng. Nếu bạn nghĩ rằng nó hoạt động, nó có thể sẽ... vì vậy hãy gõ nó!
 
-Nếu không, chỉ cần gửi [issue](https://github.com/kudoai/chatgpt.js/issues) hoặc [PR](https://github.com/kudoai/chatgpt.js/pulls) và nó sẽ được tích hợp, dễ thôi!
+Nếu không, hãy xem [hướng dẫn sử dụng](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) mở rộng hoặc chỉ cần gửi [vấn đề](https://github.com/kudoai/chatgpt.js/issues) hoặc [PR](https://github.com/kudoai/chatgpt.js/pulls) và nó sẽ được tích hợp, thật dễ dàng!
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
@@ -243,5 +243,6 @@ Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng 
 #
 
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Phát hành**</a> /
+<a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">Hướng dẫn sử dụng</a> /
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Bàn luận</a> /
 <a href="#">Trở lại đầu trang ↑</a>
