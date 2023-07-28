@@ -242,7 +242,11 @@ Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng 
 
 #
 
+<div align="center">
+
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Phát hành**</a> /
 <a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">Hướng dẫn sử dụng</a> /
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Bàn luận</a> /
 <a href="#">Trở lại đầu trang ↑</a>
+
+</div>

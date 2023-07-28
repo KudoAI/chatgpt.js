@@ -242,7 +242,11 @@ This library exists thanks to code, translations, issues & ideas from the follow
 
 #
 
+<div align="center">
+
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Releases**</a> /
 <a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">Userguide</a> /
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Discuss</a> /
 <a href="#">Back to top ↑</a>
+
+</div>

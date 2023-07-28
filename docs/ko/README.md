@@ -252,7 +252,11 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, [showcas
 
 #
 
+<div align="center">
+
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**릴리스**</a> /
 <a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">사용자 가이드</a> /
 <a href="https://github.com/kudoai/chatgpt.js/discussions">토론</a> /
 <a href="#">상단으로 ↑</a>
+
+</div>

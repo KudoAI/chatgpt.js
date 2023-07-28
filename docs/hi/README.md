@@ -243,7 +243,11 @@ chatgpt.get('reply', 'last')
 
 #
 
+<div align="center">
+
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**विज्ञप्ति**</a> /
 <a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">यूजरगाइड</a> / 
 <a href="https://github.com/kudoai/chatgpt.js/discussions">चर्चा करना</a> / 
 <a href="#">वापस शीर्ष पर ↑</a>
+
+</div>

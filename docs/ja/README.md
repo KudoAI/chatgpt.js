@@ -243,7 +243,11 @@ chatgpt.js で何かを作成して共有したい場合は、[showcase@chatgptj
 
 #
 
+<div align="center">
+
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**リリース**</a> /
 <a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">ユーザーガイド</a> / 
 <a href="https://github.com/kudoai/chatgpt.js/discussions">議論</a> / 
 <a href="#">トップに戻る ↑</a>
+
+</div>

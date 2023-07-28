@@ -242,7 +242,11 @@ Cette bibliothèque existe grâce au code, aux traductions, aux problèmes et au
 
 #
 
+<div align="center">
+
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Communiqués**</a> /
 <a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">Guide de l'utilisateur</a> /
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Discuter</a> /
 <a href="#">Retour au sommet ↑</a>
+
+</div>

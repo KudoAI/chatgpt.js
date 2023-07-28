@@ -242,7 +242,11 @@ Deze bibliotheek bestaat dankzij code, vertalingen, problemen en ideeën van de 
 
 #
 
+<div align="center">
+
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Uitgaven**</a> /
 <a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">gebruikershandleiding</a> /
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Bespreken</a> /
 <a href="#">Terug naar boven ↑</a>
+
+</div>

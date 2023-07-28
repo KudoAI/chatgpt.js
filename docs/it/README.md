@@ -242,7 +242,11 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 
 #
 
+<div align="center">
+
 <a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Versioni**</a> /
 <a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">Guida per l'utente</a> /
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Discutere</a> /
 <a href="#">Torna all'inizio ↑</a>
+
+</div>
