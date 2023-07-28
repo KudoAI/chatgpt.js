@@ -175,6 +175,8 @@ export { chatgpt }
 
 # Library methods
 
+Unless noted otherwise, methods are **synchronous**: they wait for the operation to finish, instead of returning immediately. If you need to know the result of calling **asynchronous** methods, use the returned promise or pass a callback function into the method.
+
 ## General
 
 ### generateRandomIP
