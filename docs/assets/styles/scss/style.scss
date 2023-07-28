@@ -124,7 +124,7 @@ section.cover p { /* cover tagline size / position */
 
 /* SIDEBAR */
 
-.sidebar-toggle { bottom: 36px ; left: 29px } /* toggle position */
+.sidebar-toggle { bottom: 36px ; left: 29px ; background-color: transparent }
 .sidebar-toggle span { /* color/size/space toggle bars */
     background-color: white ; width: 20px ; height: 3px ; margin-bottom: 5px }
 .sidebar { background-color: black ; padding-right: 5px !important }
@@ -140,7 +140,6 @@ section.cover p { /* cover tagline size / position */
 .matching-post { transform: scale(.7) ; margin: -31px }
 .app-name { margin: 19px 18px 13px !important }
 .app-name-link img { padding: 0 2px }
-.sidebar-toggle { background-color: transparent }
 .sidebar ul > ul:nth-of-type(2) { display: none } /* hide showcase apps */
 
 /* MAIN */
