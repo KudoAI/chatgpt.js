@@ -5,7 +5,7 @@
 > 🤖 Thư viện JavaScript phía máy khách mạnh mẽ cho ChatGPT
 
 [GitHub](https://github.com/kudoai/chatgpt.js)
-[Bắt đầu](#⚡-nhập-thư-viện)
+[Bắt Đầu Nhanh](#⚡-nhập-thư-viện)
 
 <!-- background color -->
 
