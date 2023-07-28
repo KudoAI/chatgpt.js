@@ -5,7 +5,7 @@
 > 🤖 適用於 ChatGPT 的強大客戶端 JavaScript 庫
 
 [GitHub](https://github.com/kudoai/chatgpt.js)
-[快速開始](#⚡-導入庫)
+[開始使用](#⚡-導入庫)
 
 <!-- background color -->
 
