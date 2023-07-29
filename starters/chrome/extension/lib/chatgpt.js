@@ -42,52 +42,55 @@ const chatgpt = {
         const modalTitle = document.createElement('h2');
         const modalMessage = document.createElement('p');
 
-        // Create/append style if necessary
+        // Select or crate/append style
+        let modalStyle
         if (!document.querySelector('#chatgpt-alert-style')) {
-            const scheme = chatgpt.isDarkMode() ? 'dark' : 'light';
-            const modalStyle = document.createElement('style');
+            modalStyle = document.createElement('style');
             modalStyle.id = 'chatgpt-alert-style';
-            modalStyle.innerText = (
-
-                // Background styles
-                '.chatgpt-modal {' 
-                    + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
-                    + 'background-color: rgba(67, 70, 72, 0.75) ;' // dim bg
-                    + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
-
-                // Alert styles
-                + '.chatgpt-modal > div {'
-                    + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
-                    + `max-width: ${ width || 454 }px ;`
-                    + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) }'
-                + '.chatgpt-modal h2 { margin-bottom: 9px }'
-                + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
-
-                // Button styles
-                + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 }'
-                + '.chatgpt-modal button {'
-                    + 'margin-left: 10px ; padding: 4px 18px ; border-radius: 15px ;'
-                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
-                + '.primary-modal-btn {'
-                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
-                    + `background: ${ scheme == 'dark' ? 'white' : 'black' } ;`
-                    + `color: ${ scheme == 'dark' ? 'black' : 'white' }}`
-                + '.chatgpt-modal button:hover { background-color: #42B4BF ; border-color: #42B4BF ; color: black }'
-
-                /* Checkbox styles */
-                + '.chatgpt-modal .checkbox-group { display: flex ; margin-top: -18px }'
-                + '.chatgpt-modal .checkbox-group label {'
-                    + 'font-size: .7rem ; margin: -.04rem 0 0px .3rem ;'
-                    + `color: ${ scheme == 'dark' ? '#e1e1e1' : '#1e1e1e' }}`
-                + '.chatgpt-modal input[type="checkbox"] { transform: scale(0.7) ;'
-                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
-                + '.chatgpt-modal input[type="checkbox"]:checked {'
-                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
-                    + 'background-color: black ; position: inherit }'
-                + '.chatgpt-modal input[type="checkbox"]:focus { outline: none ; box-shadow: none }'
-            );
             document.head.appendChild(modalStyle);
-        }
+        } else modalStyle = document.querySelector('#chatgpt-alert-style');
+
+        // Define styles
+        const scheme = chatgpt.isDarkMode() ? 'dark' : 'light';
+        modalStyle.innerText = (
+
+            // Background styles
+            '.chatgpt-modal {' 
+                + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
+                + 'background-color: rgba(67, 70, 72, 0.75) ;' // dim bg
+                + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
+
+            // Alert styles
+            + '.chatgpt-modal > div {'
+                + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
+                + ( width ? `width: ${ width }px` : 'max-width: 454px ') + ' ;'
+                + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) }'
+            + '.chatgpt-modal h2 { margin-bottom: 9px }'
+            + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
+
+            // Button styles
+            + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 }'
+            + '.chatgpt-modal button {'
+                + 'margin-left: 10px ; padding: 4px 18px ; border-radius: 15px ;'
+                + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
+            + '.primary-modal-btn {'
+                + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
+                + `background: ${ scheme == 'dark' ? 'white' : 'black' } ;`
+                + `color: ${ scheme == 'dark' ? 'black' : 'white' }}`
+            + '.chatgpt-modal button:hover { background-color: #42B4BF ; border-color: #42B4BF ; color: black }'
+
+            /* Checkbox styles */
+            + '.chatgpt-modal .checkbox-group { display: flex ; margin-top: -18px }'
+            + '.chatgpt-modal .checkbox-group label {'
+                + 'font-size: .7rem ; margin: -.04rem 0 0px .3rem ;'
+                + `color: ${ scheme == 'dark' ? '#e1e1e1' : '#1e1e1e' }}`
+            + '.chatgpt-modal input[type="checkbox"] { transform: scale(0.7) ;'
+                + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
+            + '.chatgpt-modal input[type="checkbox"]:checked {'
+                + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
+                + 'background-color: black ; position: inherit }'
+            + '.chatgpt-modal input[type="checkbox"]:focus { outline: none ; box-shadow: none }'
+        );
 
         // Insert text into elements
         modalTitle.innerText = title || '';
