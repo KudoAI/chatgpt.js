@@ -894,7 +894,7 @@ const chatgpt = {
     },
 
     scrollToBottom: function() {
-        try { document.querySelector('button[class*="cursor"]').click(); }
+        try { document.querySelector('button[class*="cursor"][class*="bottom"]').click(); }
         catch (error) { console.error('🤖 chatgpt.js >> ', error); }
     },
 
