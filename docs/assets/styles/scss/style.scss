@@ -49,14 +49,11 @@ $font-families: (
 
 $green: lime; $blue: #64ffff;
 $no-select: (
-    -webkit-touch-callout: none !important,
-    -webkit-user-select: none !important,
-    -khtml-user-select: none !important,
-    -moz-user-select: none !important,
-    -ms-user-select: none !important,
-    user-select: none !important,
-    -webkit-tap-highlight-color: transparent
-);
+    -webkit-user-select: none !important, -khtml-user-select: none !important,
+    -moz-user-select: none !important, -ms-user-select: none !important,
+    user-select: none !important );
+$no-touch-select: (
+    -webkit-touch-callout: none !important, -webkit-tap-highlight-color: transparent );
 
 /* GENERAL */
 
@@ -82,7 +79,9 @@ section.cover p { /* cover tagline size / position */
     font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
     text-transform: uppercase ; font-size: 1.4rem !important ; color: white !important ;
     border-width: 3px !important ; border-radius: 0 !important ; border-color: white !important ;
-    padding: 16px 68px !important ; transition: 0.04s !important }
+    padding: 16px 68px !important ; transition: 0.04s !important ;
+    @each $property, $value in $no-select { #{$property}: #{$value}; }
+    @each $property, $value in $no-touch-select { #{$property}: #{$value}; }}
 .cover-main > p:last-child a:hover { /* 1st button hover */
     background-color: blue ; color: white !important ; opacity: 1 !important }
 .cover-main > p:last-child a:last-child { /* 2nd button */
@@ -124,7 +123,9 @@ section.cover p { /* cover tagline size / position */
 
 /* SIDEBAR */
 
-.sidebar-toggle { bottom: 36px ; left: 29px ; background-color: transparent }
+.sidebar-toggle { bottom: 36px ; left: 29px ; background-color: transparent ;
+   @each $property, $value in $no-touch-select { #{$property}: #{$value}; }}
+.sidebar-toggle:hover .sidebar-toggle-button { opacity: 1 }
 .sidebar-toggle span { /* color/size/space toggle bars */
     background-color: white ; width: 20px ; height: 3px ; margin-bottom: 5px }
 .sidebar { background-color: black ; padding-right: 5px !important }
@@ -281,7 +282,8 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     margin: 0 ; padding: 0 ; border: none ; cursor: pointer ;
     outline: none ; width: fit-content ; height: fit-content ;
     background: none ; position: fixed ; bottom: 5% ;
-    right: 3% ; display: none ; opacity: 0 }    
+    right: 3% ; display: none ; opacity: 0 ;
+    @each $property, $value in $no-touch-select { #{$property}: #{$value}; }}    
 .back-to-top svg > path { fill: #fff; }
 
 /* MOBILE tweaks */
