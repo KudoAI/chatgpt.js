@@ -43,7 +43,7 @@ const chatgpt = {
         const modalMessage = document.createElement('p');
 
         // Select or crate/append style
-        let modalStyle
+        let modalStyle;
         if (!document.querySelector('#chatgpt-alert-style')) {
             modalStyle = document.createElement('style');
             modalStyle.id = 'chatgpt-alert-style';
