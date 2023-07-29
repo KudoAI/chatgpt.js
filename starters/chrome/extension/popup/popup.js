@@ -4,7 +4,7 @@
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'));
 
     // Initialize popup toggles
-    settings.load('fullerWindows', 'tcbDisabled', 'notifHidden', 'extensionDisabled')
+    settings.load('extensionDisabled')
         .then(function() { // restore extension/toggle states
             mainToggle.checked = !config.extensionDisabled;
             updateGreyness();
