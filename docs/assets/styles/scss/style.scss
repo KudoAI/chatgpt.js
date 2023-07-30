@@ -139,8 +139,10 @@ section.cover p { /* cover tagline size / position */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) ; padding: 5px 0 ; z-index: 1 }
 .dropdown--hoverable:hover #language-menu { display: block }
 .dropdown-link {
-    display: block ; padding: 5px 15px ; color: #333333 ; text-decoration: none }
-.dropdown-link:hover { background-color: #42b983 }
+    display: block ; padding: 5px 15px ; color: #333333 ;
+    text-decoration: none ; transition: none !important }
+#language-selector li:hover { background-color: $green }
+.dropdown-link:hover { color: black !important}
 #dropdown-button { position: relative ; padding-right: 20px }
 #dropdown-button:after {
     content: '▼' ; position: absolute ; right: -18px ; top: 0.159rem ;
