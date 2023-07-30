@@ -275,19 +275,36 @@ main h3 a:hover { text-decoration: underline #42b983 }
 img[src*="promo-tile"] { width: 74vw ; border: 1px solid white }
 
 /* Contributors */
-$contributors: ('contributors', '贡献者', '貢獻者', '기여자', 'योगदानकर्ता', 'mitwirkende',
-    'colaboradores', 'contributeurs', 'contributori', 'bijdragers', 'contribuidores', 'người-đóng-góp');
-@each $translation in $contributors {
-    $id: unquote('#🧠-') + $translation;
-    #{$id} + p { width: 65vw ; margin-left: 9vw } /* narrow contributors heading */
-    h2#{$id}, h2#{$id} ~ p { text-align: center !important } /* center contributors section */
-    h2#{$id} ~ p { width: 49vw ; margin-left: 15vw } /* narrow contributor avatars container + footer links */
-    h2#{$id} + p { /* contributors description */
-        font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
-        font-size: 2.1rem !important ; width: 64vw ; margin-left: 8vw; }
-    #{$id} ~ * img { width: 96px } /* zoom contributor avatars */
-    #{$id} ~ br { display: none } /* hide trailing line break */
-}
+$contributors_translations: (
+    'contributors', /* English */
+    '贡献者', /* Simplified Chinese + Japanese */
+    '貢獻者', /* Traditional Chinese */
+    '기여자', /* Korean */
+    'योगदानकर्ता', /* Hindi */
+    'mitwirkende', /* German */
+    'colaboradores', /* Spanish */
+    'contributeurs', /* French */
+    'contributori', /* Italian */
+    'bijdragers', /* Dutch */
+    'contribuidores', /* Portuguese */
+    'người-đóng-góp'); /* Vietnamese */
+$contributors_ids: (); $contributors_ps: (); $contributors_descriptions: ();
+$contributors_avatars: (); $contributors_trailing_brs: ();
+@each $translation in $contributors_translations { /* build full id selectors */
+    $id_selector: unquote('#🧠-') + $translation;
+    $contributors_ids: append($contributors_ids, $id_selector, comma); }
+@each $id_selector in $contributors_ids { /* build specific selectors */
+    $contributors_ps: append($contributors_ps, '#{$id_selector} ~ p', comma);
+    $contributors_descriptions: append($contributors_descriptions, '#{$id_selector} + p', comma);
+    $contributors_avatars: append($contributors_avatars, '#{$id_selector} ~ * img', comma);
+    $contributors_trailing_brs: append($contributors_trailing_brs, '#{$id_selector} ~ br', comma); }
+#{$contributors_ids}, #{$contributors_ps} { text-align: center !important } /* center contributors section */
+#{$contributors_ps} { width: 49vw ; margin-left: 15vw } /* narrow contributor avatars container + footer links */
+#{$contributors_descriptions} { /* contributors description */
+    font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
+    font-size: 2.1rem !important ; width: 64vw ; margin-left: 8vw; }
+#{$contributors_avatars} { width: 96px } /* zoom contributor avatars */
+#{$contributors_trailing_brs} { display: none } /* hide trailing line break */
 
 /* Footer */
 #star-history { display: none } /* hide Star History section */
@@ -409,14 +426,11 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     img[src*=promo-tile] { width: 100% !important } /* expand tiles full-width */
 
     /* Contributors */
-    @each $translation in $contributors {
-        $id: unquote('#🧠-') + $translation;
-        h2#{$id} + p { /* shrink contributors description font */
-            font-size: 1.5rem !important }
-        h2#{$id} ~ p { /* remove margin from avatars to fill more widely */
-            margin-left: 0 !important }
-        #{$id} ~ * img { width: 69px !important } /* unzoom contributor avatars */
-    }
+    #{$contributors_descriptions} { /* shrink contributors description font */
+        font-size: 1.5rem !important }
+    #{$contributors_ps} { /* remove margin from avatars to fill more widely */
+        margin-left: 0 !important }
+    #{$contributors_avatars} { width: 69px !important } /* unzoom contributor avatars */
 
     /* Footer */
     #mc_embed_signup h2 { /* CTA */
