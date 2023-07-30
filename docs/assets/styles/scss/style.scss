@@ -249,12 +249,27 @@ main pre + p, main pre + p + p { text-align: center ; width: 81% ; margin-left: 
 main ol { width: 59vw ; margin: 95px 0 0 12vw }
 
 /* Usage section */
-$usage: ('usage', '用法', '使用法', '사용법', 'प्रयोग', 'verwendung',
-    'uso', 'utilisation', 'utilizzo', 'gebruik', 'cách-sử-dụng');
-@each $translation in $usage {
-    $id: unquote('#💻-') + $translation;
-    #{$id} ~ pre + p { text-align: left !important ; margin-left: 0 !important }
-    #{$id} ~ pre + p + p { text-align: right !important ; float: right !important ; margin-bottom: 152px }}
+$usage_translations: (
+    'usage', /* English */
+    '用法', /* Simplified Chinese */
+    '使用法', /* Traditional Chinese + Japanese */
+    '사용법', /* Korean */
+    'प्रयोग', /* Hindi */
+    'verwendung', /* German */
+    'uso', /* Spanish + Portuguese */
+    'utilisation', /* French */ 
+    'utilizzo', /* Italian */
+    'gebruik', /* Dutch */
+    'cách-sử-dụng'); /* Vietnamese */
+$usage_ids: (); $usage_post_pre_ps: (); $usage_post_pre_p_2s: ();
+@each $translation in $usage_translations { /* build full id selectors */
+    $id_selector: unquote('#💻-') + $translation;
+    $usage_ids: append($usage_ids, $id_selector, comma); }
+@each $id_selector in $usage_ids { /* build specific selectors */
+    $usage_post_pre_ps: append($usage_post_pre_ps, '#{$id_selector} ~ pre + p', comma);
+    $usage_post_pre_p_2s: append($usage_post_pre_p_2s, '#{$id_selector} ~ pre + p + p', comma); }
+#{$usage_post_pre_ps} { text-align: left !important ; margin-left: 0 !important }
+#{$usage_post_pre_p_2s} { text-align: right !important ; float: right !important ; margin-bottom: 152px }
 
 /* Showcase */
 $made-with-chatgptjs: ('made-with-chatgptjs', '用-chatgptjs-制作', '用-chatgptjs-製作', 'chatgptjs-で作成',
@@ -411,12 +426,9 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     .docsify-copy-code-button { display: none }
 
     /* Usage section */
-    @each $translation in $usage {
-        $id: unquote('#💻-') + $translation;
-        #{$id} ~ pre + p, #{$id} ~ pre + p + p { /* re-size/center text */
-            font-size: $mobile-p-size !important ; text-align: center !important ;
-            margin: 63px 0 !important ; float: none !important }
-    }
+    #{$usage_post_pre_ps}, #{$usage_post_pre_p_2s} { /* re-size/center text */
+        font-size: $mobile-p-size !important ; text-align: center !important ;
+        margin: 63px 0 !important ; float: none !important }
 
     /* Showcase */
     @each $translation in $made-with-chatgptjs {
