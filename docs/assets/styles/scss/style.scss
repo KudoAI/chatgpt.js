@@ -4,44 +4,74 @@
 
 @import url(https://db.onlinewebfonts.com/c/03bd7255184e8e8ad4d2a521fa920b6c?family=PolySans+Neutral); 
 @font-face {
-    font-family: eurostile-extended-black;
-    src: url('../../fonts/eurostile-extended-black/eurostile-extended-black.otf') format('opentype'),
-         url('../../fonts/eurostile-extended-black/eurostile-extended-black.ttf') format('truetype'),
-         url('../../fonts/eurostile-extended-black/eurostile-extended-black.woff') format('woff'),
-         url('../../fonts/eurostile-extended-black/eurostile-extended-black.woff2') format('woff2');
+    font-family: 'Eurostile Extended Black';
+    src: local('Eurostile Extended Black'), local('EurostileExtendedBlack'),
+         url('../../fonts/eurostile-extended-black/EurostileExtendedBlack.otf') format('opentype'),
+         url('../../fonts/eurostile-extended-black/EurostileExtendedBlack.ttf') format('truetype'),
+         url('../../fonts/eurostile-extended-black/EurostileExtendedBlack.woff') format('woff'),
+         url('../../fonts/eurostile-extended-black/EurostileExtendedBlack.woff2') format('woff2');
 }
 $font-families: (
-    'ibm-plex-mono': (
-        ('ibm-plex-mono-thin', 100, normal),
-        ('ibm-plex-mono-thin-italic', 100, italic),
-        ('ibm-plex-mono-extralight', 200, normal),
-        ('ibm-plex-mono-extralight-italic', 200, italic),
-        ('ibm-plex-mono-light', 300, normal),
-        ('ibm-plex-mono-light-italic', 300, italic),
-        ('ibm-plex-mono-regular', 400, normal),
-        ('ibm-plex-mono-regular-italic', 400, italic),
-        ('ibm-plex-mono-medium', 500, normal),
-        ('ibm-plex-mono-medium-italic', 500, italic),
-        ('ibm-plex-mono-semibold', 600, normal),
-        ('ibm-plex-mono-semibold-italic', 600, italic),
-        ('ibm-plex-mono-bold', 700, normal),
-        ('ibm-plex-mono-bold-italic', 700, italic)
+    'IBM Plex Mono': (
+        ('IBMPlexMono-Thin', 100, normal),
+        ('IBMPlexMono-ThinItalic', 100, italic),
+        ('IBMPlexMono-ExtraLight', 200, normal),
+        ('IBMPlexMono-ExtraLightItalic', 200, italic),
+        ('IBMPlexMono-Light', 300, normal),
+        ('IBMPlexMono-LightItalic', 300, italic),
+        ('IBMPlexMono-Regular', 400, normal),
+        ('IBMPlexMono-RegularItalic', 400, italic),
+        ('IBMPlexMono-Medium', 500, normal),
+        ('IBMPlexMono-MediumItalic', 500, italic),
+        ('IBMPlexMono-SemiBold', 600, normal),
+        ('IBMPlexMono-SemiBoldItalic', 600, italic),
+        ('IBMPlexMono-Bold', 700, normal),
+        ('IBMPlexMono-BoldItalic', 700, italic)
     )
 );
-@mixin font-face($font-family, $font-name, $font-weight, $font-style) {
+@mixin font-face($font-family, $full-name, $postscript-name, $font-weight, $font-style) {
     @font-face {
-        font-family: '#{$font-family}';
-        src: url('../../fonts/#{$font-family}/otf/#{$font-name}.otf') format('opentype'),
-        url('../../fonts/#{$font-family}/ttf/#{$font-name}.ttf') format('truetype'),
-        url('../../fonts/#{$font-family}/woff/#{$font-name}.woff') format('woff'),
-        url('../../fonts/#{$font-family}/woff2/#{$font-name}.woff2') format('woff2');
+        src:
+            local('#{$full-name}'), local('#{$postscript-name}'),
+            url('../../fonts/#{$font-family}/otf/#{$postscript-name}.otf') format('opentype'),
+            url('../../fonts/#{$font-family}/ttf/#{$postscript-name}.ttf') format('truetype'),
+            url('../../fonts/#{$font-family}/woff/#{$postscript-name}.woff') format('woff'),
+            url('../../fonts/#{$font-family}/woff2/#{$postscript-name}.woff2') format('woff2');
         font-weight: $font-weight; font-style: $font-style;
     }
 }
 @each $font-family, $variations in $font-families {
     @each $variation in $variations {
-        $font-name: nth($variation, 1); $font-weight: nth($variation, 2); $font-style: nth($variation, 3);
-        @include font-face($font-family, $font-name, $font-weight, $font-style);
+
+        // Extract elements
+        $postscript-name: nth($variation, 1); $font-weight: nth($variation, 2); $font-style: nth($variation, 3);
+
+        // Generate full name (w/ style) for 1st `local()`
+        $full-name: '#{$font-family}';
+        $style: str-slice($postscript-name, str-index($postscript-name, '-') + 1);
+        @if $style != 'Regular' { // insert spaces
+
+            // Find indices of uppercase letters
+            $upper-indices: ();
+            @for $i from 2 through str-length($style) { // start at 2 since 1st char is irrelevant to spacing
+                $char: str-slice($style, $i, $i);
+                @if $char == to-upper-case($char) { $upper-indices: append($upper-indices, $i); }
+            }
+
+            // Insert spaces if needed
+            @if length($upper-indices) > 0 {
+                $offset: 0;
+                @each $index in $upper-indices {
+                    $index: $index + $offset; // since each iteration increases length +1
+                    $style: str-insert($style, " ", $index); // insert the space
+                    $offset: $offset + 1;
+                }
+            }
+
+            $full-name: '#{$font-family} #{$style}';
+        }
+
+        @include font-face($font-family, $full-name, $postscript-name, $font-weight, $font-style);
     }
 }
 
@@ -70,13 +100,13 @@ $no-touch-select: (
 .cover-main > img { margin-bottom: 16px ; width: 98% } /* cover logo */
 .cover-main { color: white } /* all cover txt color */
 section.cover blockquote { /* tagline */
-    font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important }
+    font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important }
 section.cover p { /* cover tagline size / position */
     font-size: 2rem !important ; margin-bottom: 48px ; line-height: 2.3rem !important }
 
 /* Buttons */
 .cover-main > p:last-child a { /* all buttons */
-    font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
+    font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
     text-transform: uppercase ; font-size: 1.4rem !important ; color: white !important ;
     border-width: 3px !important ; border-radius: 0 !important ; border-color: white !important ;
     padding: 16px 68px !important ; transition: 0.04s !important ;
@@ -152,7 +182,7 @@ main a { color: $blue !important }
 #repo-cover { display: none } /* hide repo cover + shields */
 main h2 { /* headings */
     text-align: center ; margin: 12.5rem 0 7.5rem !important ; font-size: 8rem !important ;
-    font-family: "eurostile-extended-black", Georgia, Cambria, Times New Roman, Times, serif ;
+    font-family: "Eurostile Extended Black", Georgia, Cambria, Times New Roman, Times, serif ;
     width: 100vw ; left: -13vw ; position: inherit ;
     text-transform: uppercase ; word-break: break-word }
 .anchor:hover { text-decoration: none }
@@ -173,7 +203,7 @@ main li::marker { font-size: 2.1rem }
 
 /* Code */
 main pre, main code, .punctuation {
-    font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
+    font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
     font-size: 1.3rem !important ; color: white !important ; background: black !important ;
     margin-bottom: 1px } /* fix bottom border disappears glitch */
 main pre code { border: $blue 2px solid ; border-radius: 12px !important ; padding: 26px !important }
@@ -208,7 +238,7 @@ $about: ('about', '关于', '關於', 'アバウト', '개요', 'अभाउट
 }
 article > h2:first-of-type span { display: none !important } /* hide ABOUT heading */
 #feature-list { /* generated in `js/online-modifier.js` */
-    font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
+    font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
     font-size: 1.45rem ; color: $green ; position: relative ; float: right ;
     top: -323px ; right: -123px ; width: 50% }
 
@@ -253,7 +283,7 @@ $contributors: ('contributors', '贡献者', '貢獻者', '기여자', 'यो�
     h2#{$id}, h2#{$id} ~ p { text-align: center !important } /* center contributors section */
     h2#{$id} ~ p { width: 49vw ; margin-left: 15vw } /* narrow contributor avatars container + footer links */
     h2#{$id} + p { /* contributors description */
-        font-family: ibm-plex-mono, "Roboto Mono", Monaco, courier, monospace !important ;
+        font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
         font-size: 2.1rem !important ; width: 64vw ; margin-left: 8vw; }
     #{$id} ~ * img { width: 96px } /* zoom contributor avatars */
     #{$id} ~ br { display: none } /* hide trailing line break */
