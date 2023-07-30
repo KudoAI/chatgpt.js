@@ -225,17 +225,31 @@ main li pre { margin: 65px 0 !important ; width: 75vw ; right: 11vw }
 #shields img { height: 55px }
 
 /* About section */
-$about: ('about', '关于', '關於', 'アバウト', '개요', 'अभाउट', 'um',
-    'acerca-de', 'À-propos', 'informazioni', 'over', 'sobre', 'về');
-@each $translation in $about {
-    $id: unquote('#') + $translation;
-    #{$id} ~ p:first-of-type { /* ABOUT description */
-        margin-top: -476px !important ; font-size: 3.1rem !important ;
-        line-height: 4.5rem !important ; text-align: right ; width: 50% }
-    #{$id} ~ ul:first-of-type { display: none } /* hide readme feature list */
-    #{$id} ~ ul:first-of-type li { font-size: 1.3rem !important ; line-height: 2.65rem }
-    #{$id} ~ ul:first-of-type li::marker { content: ">>  " ; font-size: 1.3rem !important }
-}
+$about_translations: (
+    'about', /* English */
+    '关于', /* Simplified Chinese */
+    '關於', /* Traditional Chinese */
+    'アバウト', /* Japanese */
+    '개요', /* Korean */
+    'अभाउट', /* Hindi */
+    'um', /* German */
+    'acerca-de', /* Spanish */
+    'À-propos', /* French */
+    'informazioni', /* Italian */
+    'over', /* Dutch */
+    'sobre', /* Portuguese */
+    'về'); /* Vietnamese */
+$about_ids: (); $about_descriptions: (); $about_features: ();
+@each $translation in $about_translations { /* build full id selectors */
+    $id_selector: unquote('#') + $translation;
+    $about_ids: append($about_ids, $id_selector, comma); }
+@each $id_selector in $about_ids { /* build specific selectors */
+    $about_descriptions: append($about_descriptions, '#{$id_selector} ~ p:first-of-type', comma);
+    $about_features: append($about_features, '#{$id_selector} ~ ul:first-of-type', comma); }
+#{$about_descriptions} { /* ABOUT description */
+    margin-top: -476px !important ; font-size: 3.1rem !important ;
+    line-height: 4.5rem !important ; text-align: right ; width: 50% }
+#{$about_features} { display: none } /* hide readme feature list */
 article > h2:first-of-type span { display: none !important } /* hide ABOUT heading */
 #feature-list { /* generated in `js/online-modifier.js` */
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
@@ -381,13 +395,9 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 
     /* ABOUT */
 
-    @each $translation in $about {
-        $id: unquote('#') + $translation;
-        #{$id} ~ p:first-of-type { /* ABOUT description */
-            font-size: 2.8rem !important ; line-height: 3.1rem !important ;
-            margin: -236px 0 490px !important }
-        #{$id} ~ ul:first-of-type li { font-size: 1.5rem !important ; margin-bottom: 34px }
-    }
+    #{$about_descriptions} ~ p:first-of-type { /* ABOUT description */
+        font-size: 2.8rem !important ; line-height: 3.1rem !important ;
+        margin: -236px 0 490px !important }
     #feature-list { /* generated in `js/onload-modifier.js` */
         font-size: 1.7rem! important ; margin-bottom: -136px !important ;
         position: relative ; width: inherit ; left: 16px ; top: -244px ; float: none }
