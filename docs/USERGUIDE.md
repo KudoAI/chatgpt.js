@@ -39,6 +39,7 @@
     - [getAccountDetails `async`](#getaccountdetails-async)
     - [logout](#logout)
   - [Chats](#chats)
+    - [askAndGetReply `async`](#askandgetreply-async)
     - [clearChats](#clearchats)
     - [exportChat](#exportchat)
     - [getChatData `async`](#getchatdata-async)
@@ -435,6 +436,19 @@ chatgpt.logout();
 ```
 
 ## Chats
+
+### askAndGetReply `async`
+
+Sends a given message to ChatGPT and returns the response as a string.
+
+Example code:
+
+```js
+async function doSomething() {
+  const response = await chatgpt.askAndGetReply('Hello, ChatGPT');
+  console.log(response); // Example output: 'Hello user, I'm ChatGPT!'
+}
+```
 
 ### clearChats
 
@@ -880,6 +894,10 @@ Object related to keeping the user's session alive and fresh.
 
 Activates the auto-refresh functionality.
 
+**Parameters**:
+
+`interval`: A number representing the interval in seconds between sessions refreshes. Defaults to `30`.
+
 Example code:
 
 ```js
@@ -1087,7 +1105,8 @@ Example code:
 chatgpt.sidebar.toggle();
 ```
 
-#
+<br>
+<br>
 
 <a href="https://github.com/kudoai/chatgpt.js/discussions">Discuss</a> /
 <a href="#">Back to top ↑</a>
