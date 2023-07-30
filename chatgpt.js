@@ -289,7 +289,7 @@ const chatgpt = {
                 const clearBtn = document.querySelector('button[class*="btn relative btn-danger"]');
                 if (clearBtn.disabled) {
                     exitMenu();
-                    return console.error('🤖 chatgpt.js >> No chats to clear');
+                    return console.error('🤖 chatgpt.js >> No chat history to clear');
                 }
                 clearBtn.click();
                 setTimeout(() => {
