@@ -284,10 +284,6 @@ const chatgpt = {
                 const settingsBtns = document.querySelectorAll('[id*=radix] button');
                 for (const settingsBtn of settingsBtns) {
                     if (/^clear/i.test(settingsBtn.textContent)) {
-                        if (settingsBtn.disabled) {
-                            exitMenu();
-                            return console.error('🤖 chatgpt.js >> No chat history to clear');
-                        }
                         settingsBtn.click(); break;
                     }
                 }
@@ -463,7 +459,7 @@ const chatgpt = {
             if (!detailsToGet.includes('msg')) getChatDetails(token, detailsToGet).then(data => {
                 return resolve(data); // get just the chat details
             });
-            getChatMsgs(token).then(messages => { return resolve(messages); }); // otherwise get specific msg's
+            else getChatMsgs(token).then(messages => { return resolve(messages); }); // otherwise get specific msg's
         });});
 
         function getChatDetails(token, detailsToGet) {

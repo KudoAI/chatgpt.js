@@ -40,7 +40,7 @@
     - [logout](#logout)
   - [Chats](#chats)
     - [askAndGetReply `async`](#askandgetreply-async)
-    - [clearChats](#clearchats)
+    - [clearChats `async`](#clearchats-async)
     - [exportChat](#exportchat)
     - [getChatData `async`](#getchatdata-async)
     - [getChatInput](#getchatinput)
@@ -450,14 +450,16 @@ async function doSomething() {
 }
 ```
 
-### clearChats
+### clearChats `async`
 
 Clears the user's chat history.
 
 Example code:
 
 ```js
-chatgpt.clearChats();
+async function doSomething() {
+  await chatgpt.clearChats();
+}
 ```
 
 ### exportChat
