@@ -282,17 +282,12 @@ const chatgpt = {
                 if (/settings/i.test(menuItem.text)) { menuItem.click(); break; }
             setTimeout(() => { // clear chats
                 const settingsBtns = document.querySelectorAll('[id*=radix] button');
-                for (const settingsBtn of settingsBtns) {
-                    if (/^clear/i.test(settingsBtn.textContent)) {
-                        settingsBtn.click(); break;
-                    }
-                }
+                for (const settingsBtn of settingsBtns)
+                    if (/^clear/i.test(settingsBtn.textContent)) { settingsBtn.click(); break; }
                 setTimeout(() => { // confirm clear
                     document.querySelector('[id*=radix] button').click();
                     setTimeout(exitMenu, 10);
-                }, 10);
-            }, 10);
-        }, 10);
+        }, 10); }, 10); }, 10);
 
         function exitMenu() { document.querySelector('div[id*=radix] button').click(); }
     },
