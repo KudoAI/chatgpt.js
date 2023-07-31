@@ -107,10 +107,9 @@ $no-touch-select: (
 
 .cover-main > img { margin-bottom: 16px ; width: 98% } /* cover logo */
 .cover-main { color: white } /* all cover txt color */
-section.cover blockquote { /* tagline */
-    font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important }
-section.cover p { /* cover tagline size / position */
-    font-size: 2rem !important ; margin-bottom: 48px ; line-height: 2.3rem !important }
+section.cover p { /* cover tagline size / weight / position */
+    font-family: "Major Mono Display", "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
+    font-size: 2.25rem !important ; font-weight: bold ; margin-bottom: 48px ; line-height: 2.3rem !important }
 
 /* Buttons */
 .cover-main > p:last-child a { /* all buttons */
