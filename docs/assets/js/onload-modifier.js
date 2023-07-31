@@ -21,7 +21,10 @@ const onLoadObserver = new MutationObserver(() => {
     // Hack HOMEPAGE
     if (/#\/(\w{2}(-\w{2})?\/)?$/.test(location.hash)) {
 
-        // Animate cover TAGLINE
+        // Hide SIDEBAR
+        if (!isMobileDevice()) document.body.className = 'ready close';
+
+        // Animate COVER TAGLINE
         const tagline = document.querySelector('.cover-main blockquote p');
         const taglineWithUnderscore = tagline.textContent + '_';
         tagline.textContent = taglineWithUnderscore;
@@ -35,8 +38,26 @@ const onLoadObserver = new MutationObserver(() => {
             setTimeout(animateTagline, delay);
         })();
 
-        // Hide SIDEBAR
-        if (!isMobileDevice()) document.body.className = 'ready close';
+        // Add TOP GRADIENT
+        const cover = document.querySelector('.cover');
+        const topGradient = document.createElement('div');
+        topGradient.classList.add('top-gradient');
+        document.body.appendChild(topGradient);
+        updateTGvisibility(); // since page load can be below fold
+        function updateTGvisibility() {
+            topGradient.style.display = ( // hide/show when fold is 85% at top
+                window.scrollY > 0.85 * cover.offsetHeight ? '' : 'none' ); }
+
+        // Add PARALLAX to scroll
+        const coverMain = document.querySelector('.cover-main');
+        window.addEventListener('scroll', () => {
+            updateTGvisibility();
+            const coverRect = cover.getBoundingClientRect();
+            const newOpacity = 1 - Math.abs(coverRect.top) / cover.offsetHeight;
+            const parallaxOffset = coverRect.top * -0.35;
+            cover.style.opacity = newOpacity;
+            coverMain.style.transform = `translateY(${ parallaxOffset }px)`;
+        });
        
         mdLoaded.then(() => {
 
