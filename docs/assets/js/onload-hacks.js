@@ -18,11 +18,11 @@ const onLoadObserver = new MutationObserver(() => {
     // Exit if not loaded
     if (!document.querySelector('.cover-main blockquote p')) return;
 
+    // Hide SIDEBAR
+    if (!isMobileDevice()) document.body.className = 'ready close';
+
     // Hack HOMEPAGE
     if (/#\/(\w{2}(-\w{2})?\/)?$/.test(location.hash)) {
-
-        // Hide SIDEBAR
-        if (!isMobileDevice()) document.body.className = 'ready close';
 
         // Animate COVER TAGLINE
         const tagline = document.querySelector('.cover-main blockquote p');
@@ -137,9 +137,6 @@ const onLoadObserver = new MutationObserver(() => {
 
     // Hack LICENSE/SECURIY pages
     if (/LICENSE|SECURITY/.test(location.hash)) {
-
-        // Hide sidebar
-        if (!isMobileDevice()) document.body.className = 'ready close';
 
         // Correct doc lang selector links
         mdLoaded.then(() => {
