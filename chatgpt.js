@@ -271,6 +271,7 @@ const chatgpt = {
             }
         }
     },
+
     clearChats: function() {
         const menuBtn = document.querySelector('nav button[id*="headless"]') || {};
         try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
