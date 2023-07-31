@@ -185,7 +185,6 @@ main a { color: $blue !important }
 main h2 { /* headings */
     text-align: center ; margin: 12.5rem 0 7.5rem !important ; font-size: 8rem !important ;
     font-family: "Eurostile Extended Black", Georgia, Cambria, Times New Roman, Times, serif ;
-    width: 100vw ; left: -13vw ; position: inherit ;
     text-transform: uppercase ; word-break: break-word }
 .anchor:hover { text-decoration: none }
 main h3 { font-size: 4.5rem !important ; margin-top: 5rem !important }
@@ -211,14 +210,14 @@ main pre, main code, .punctuation {
 main pre code { border: $blue 2px solid ; border-radius: 12px !important ; padding: 26px !important }
 main p code {
     font-size: 1.95rem !important ; position: relative ; bottom: 3px ;
-    padding: 5px 17px !important ; margin: 0 8px !important ; word-break: break-all ;
+    padding: 5px 17px !important ; margin: 0 8px !important ; word-break: break-word ;
     border: white 1px solid ; border-radius: 13px !important }
 main pre:after { display: none } /* hide lang indicator */
 .docsify-copy-code-button {    
     font-size: 1.1rem !important ; background: black !important ; color: white !important ;
     padding: 13px 18px 13px 15px !important ; right: 30px !important ; top: 2px !important }
 .success, .error { font-size: 1.1rem !important }
-main li pre { margin: 65px 0 !important ; width: 75vw ; right: 11vw }
+main li pre { margin: 65px 0 !important }
 .token.string { color: $green }
 .token.function, .token.keyword, .token.boolean, .token.number { color: #ffcb00 }
 
@@ -261,8 +260,8 @@ article > h2:first-of-type span { display: none !important } /* hide ABOUT headi
 /* Greasemonkey/Chrome sections */
 #-greasemonkey, #-chrome { text-align: center }
 main blockquote + p { font-size: 2.75rem !important ; width: 50% ; text-align: right }
-main pre + p, main pre + p + p { text-align: center ; width: 81% ; margin-left: 9vw !important }
-main ol { width: 59vw ; margin: 95px 0 0 12vw }
+main pre + p, main pre + p + p { text-align: center ; padding: 0 201px }
+main ol { margin-top: 95px ; padding: 0 115px 0 228px !important }
 
 /* Usage section */
 $usage_translations: (
@@ -330,10 +329,10 @@ $contributors_avatars: (); $contributors_trailing_brs: ();
     $contributors_avatars: append($contributors_avatars, '#{$id_selector} ~ * img', comma);
     $contributors_trailing_brs: append($contributors_trailing_brs, '#{$id_selector} ~ br', comma); }
 #{$contributors_ids}, #{$contributors_ps} { text-align: center !important } /* center contributors section */
-#{$contributors_ps} { width: 49vw ; margin-left: 15vw } /* narrow contributor avatars container + footer links */
+#{$contributors_ps} { padding: 0 311px } /* narrow container of avatars */
 #{$contributors_descriptions} { /* contributors description */
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
-    font-size: 2.1rem !important ; width: 64vw ; margin-left: 8vw; }
+    font-size: 2.1rem !important ; padding: 0 111px }
 #{$contributors_avatars} { width: 96px } /* zoom contributor avatars */
 #{$contributors_trailing_brs} { display: none } /* hide trailing line break */
 
@@ -341,7 +340,7 @@ $contributors_avatars: (); $contributors_trailing_brs: ();
 #star-history { display: none } /* hide Star History section */
 #footer { text-align: center ; margin-top: -11px } /* general alignment */
 #mc_embed_signup h2 { /* 1st CTA */
-    position: relative ; left: -11vw ; margin: 3rem 0 3.5rem !important ;
+    margin: 3rem 0 3.5rem !important ;
     font-size: 3.55rem !important ; color: white ; -webkit-text-stroke: 1px black }
 .mc-field-group { margin: -4px 0 95px } /* input row div v-margins */
 .mc-field-group input { height: 55px } /* input row height */
@@ -411,7 +410,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 
     /* Headings */
     main h2, main h3 { font-size: 2.5rem !important }
-    main h2 { margin-left: 30px !important ; padding: 0 12px 0 16px !important }
+    main h2 { padding: 0 12px 0 16px !important }
     main h3 img { height: 32px !important } /* platform icons */
 
     /* Text */
@@ -425,14 +424,15 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
         float: none ; left: 0 }
     main blockquote + p, main pre + p { /* code-block neighbor p's */
         font-size: 1.65rem !important ; margin: 0 17px !important }
-    main ol { width: inherit ; margin: 0 32px } /* platform steps parent */
+    main pre + p, main pre + p + p { padding: 0 !important } /* remove padding from 2x p's following code blocks */
+    main ol { width: inherit ; margin: 0 32px ; padding: 0 0 0 15px !important } /* platform steps parent */
     main ol p { text-align: left !important ; word-break: break-word } /* platform steps */
 
     /* Code */
     main code, .token { font-size: 1.2rem !important } /* shrink font */
     main pre { padding: 0 0.11rem !important } /* widen blocks */
     main li pre { /* widen/center li blocks */
-        width: 86vw ; right: 50px ; padding: 0 !important } 
+        padding: 0 !important } 
     main p code { /* zoom/pad p code */
         font-size: 1.45rem !important ; padding: 2px 8px !important }
     .docsify-copy-code-button { display: none }
@@ -450,10 +450,10 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     img[src*=promo-tile] { width: 100% !important } /* expand tiles full-width */
 
     /* Contributors */
-    #{$contributors_descriptions} { /* shrink contributors description font */
-        font-size: 1.5rem !important }
-    #{$contributors_ps} { /* remove margin from avatars to fill more widely */
-        margin-left: 0 !important }
+    #{$contributors_descriptions} { /* shrink contributors description font, remove padding */
+        font-size: 1.5rem !important ; padding: 0 5px !important }
+    #{$contributors_ps} { /* remove padding from avatars container */
+        padding: 0 !important }
     #{$contributors_avatars} { width: 69px !important } /* unzoom contributor avatars */
 
     /* Footer */
