@@ -21,16 +21,21 @@ const onLoadObserver = new MutationObserver(() => {
     // Hack HOMEPAGE
     if (/#\/(\w{2}(-\w{2})?\/)?$/.test(location.hash)) {
 
-        // Animate tagline
-        const tagline = document.querySelector('.cover-main blockquote p'); 
+        // Animate cover TAGLINE
+        const tagline = document.querySelector('.cover-main blockquote p');
         const taglineWithUnderscore = tagline.textContent + '_';
         tagline.textContent = taglineWithUnderscore;
-        setInterval(() => { tagline.textContent = taglineWithUnderscore
-            .split('').map(letter => {
-                return Math.random() < 0.5 ? letter.toUpperCase() : letter.toLowerCase(); })
-            .join(''); }, 1000);
+        let delay = 25; const maxDelay = 1000;
+        (function animateTagline() {
+            tagline.textContent = taglineWithUnderscore.split('').map(letter => {
+                return Math.random() < 0.5 ? letter.toUpperCase() : letter.toLowerCase();
+            }).join('');
+            delay += delay < 120 ? 10 : 110; // super-saiyan to 120ms, then +110ms to 1s
+            if (delay > maxDelay) delay = maxDelay; // cap at `maxDelay`
+            setTimeout(animateTagline, delay);
+        })();
 
-        // Hide sidebar
+        // Hide SIDEBAR
         if (!isMobileDevice()) document.body.className = 'ready close';
        
         mdLoaded.then(() => {
