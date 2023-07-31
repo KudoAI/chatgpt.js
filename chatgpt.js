@@ -271,34 +271,32 @@ const chatgpt = {
             }
         }
     },
-
     clearChats: function() {
         const menuBtn = document.querySelector('nav button[id*="headless"]') || {};
         try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
-
-        function exitMenu() {
-            const exitMenuBtn = document.querySelector('button[class*="text-gray-500 transition"]:has(svg)');
-            exitMenuBtn.click();
-        }
-
         setTimeout(() => {
             const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
-            for (const menuItem of menuItems) {
-                if (/settings/i.test(menuItem.text)) { menuItem.click(); break; }}
-            setTimeout(() => {
-                const clearBtn = document.querySelector('button[class*="btn relative btn-danger"]');
-                if (clearBtn.disabled) {
-                    exitMenu();
-                    return console.error('🤖 chatgpt.js >> No chat history to clear');
+            for (const menuItem of menuItems)
+                if (/settings/i.test(menuItem.text)) { menuItem.click(); break; }
+            setTimeout(() => { // clear chats
+                const settingsBtns = document.querySelectorAll('[id*=radix] button');
+                for (const settingsBtn of settingsBtns) {
+                    if (/^clear/i.test(settingsBtn.textContent)) {
+                        if (settingsBtn.disabled) {
+                            exitMenu();
+                            return console.error('🤖 chatgpt.js >> No chat history to clear');
+                        }
+                        settingsBtn.click(); break;
+                    }
                 }
-                clearBtn.click();
-                setTimeout(() => {
-                    const confirmBtn = document.querySelector('button[class="btn relative btn-primary"]');
-                    confirmBtn.click();
+                setTimeout(() => { // confirm clear
+                    document.querySelector('[id*=radix] button').click();
                     setTimeout(exitMenu, 10);
                 }, 10);
             }, 10);
         }, 10);
+
+        function exitMenu() { document.querySelector('div[id*=radix] button').click(); }
     },
 
     exportChat: function() {
