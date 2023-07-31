@@ -101,8 +101,12 @@ a { word-break: break-all }
 .top-gradient { /* for Star Wars effect in `assets/js/add-3d.js` */
     position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 20vh ;
     background-image: linear-gradient(to top, transparent, #000);
-    pointer-events: none ; z-index: 1
-}
+    pointer-events: none ; z-index: 1 }
+
+/* Starry background (from `../../js/starry-background.js`) */
+canvas { position: fixed ; width: 100% ; height: 100% }
+.cover, main { pointer-events: none }
+.cover p, a, input, button { pointer-events: auto }
 
 /* COVER */
 
@@ -195,6 +199,7 @@ main h2 { /* headings */
     font-family: "Eurostile Extended Black", Georgia, Cambria, Times New Roman, Times, serif ;
     text-transform: uppercase }
 main h2 span { word-break: break-word }
+main h2 a { pointer-events: none }
 .anchor:hover { text-decoration: none }
 main h3 { font-size: 4.5rem !important ; margin-top: 5rem !important }
 main p { font-size: 2.45rem !important ; line-height: 3.5rem !important}
