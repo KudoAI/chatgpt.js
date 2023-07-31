@@ -9,7 +9,7 @@ module.exports  = {
         'comma-dangle': ['error', 'never'], // enforce no trailing commas in arrays or objects
         'no-empty': 'off', // allow empty blocks
         'no-useless-escape': 'off', // allow all escape chars cause ESLint sucks at detecting truly useless ones
-        "no-inner-declarations": ["error", {"functions": false}]
+        "no-inner-declarations": ["error", "functions"]
     },
     'globals': { 'chatgpt': 'readonly', 'chrome': 'readonly', 'syncExtension': 'writable', 'Uint8Array': 'readonly' },
     'parserOptions': { 'ecmaVersion': 2022, 'sourceType': 'script' },
