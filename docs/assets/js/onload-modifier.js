@@ -25,12 +25,12 @@ const onLoadObserver = new MutationObserver(() => {
         const tagline = document.querySelector('.cover-main blockquote p');
         const taglineWithUnderscore = tagline.textContent + '_';
         tagline.textContent = taglineWithUnderscore;
-        let delay = 25; const maxDelay = 1000;
+        let delay = 15; const maxDelay = 1000;
         (function animateTagline() {
             tagline.textContent = taglineWithUnderscore.split('').map(letter => {
                 return Math.random() < 0.5 ? letter.toUpperCase() : letter.toLowerCase();
             }).join('');
-            delay += delay < 120 ? 10 : 110; // super-saiyan to 120ms, then +110ms to 1s
+            delay += delay < 95 ? 10 : 135; // super-saiyan to 95ms, then +135ms to 1s
             if (delay > maxDelay) delay = maxDelay; // cap at `maxDelay`
             setTimeout(animateTagline, delay);
         })();
