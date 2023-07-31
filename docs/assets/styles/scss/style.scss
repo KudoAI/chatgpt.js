@@ -97,6 +97,7 @@ $no-touch-select: (
 
 :root { scrollbar-color: rgb(210,210,210) #1a1a1a } /* FF scrollbar */
 .app-nav a.active { border-bottom: 2px solid $green}
+a { word-break: break-all }
 .top-gradient { /* for Star Wars effect in `assets/js/add-3d.js` */
     position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 20vh ;
     background-image: linear-gradient(to top, transparent, #000);
@@ -192,7 +193,8 @@ main a { color: $blue !important }
 main h2 { /* headings */
     text-align: center ; margin: 12.5rem 0 7.5rem !important ; font-size: 8rem !important ;
     font-family: "Eurostile Extended Black", Georgia, Cambria, Times New Roman, Times, serif ;
-    text-transform: uppercase ; word-break: break-word }
+    text-transform: uppercase }
+main h2 span { word-break: break-word }
 .anchor:hover { text-decoration: none }
 main h3 { font-size: 4.5rem !important ; margin-top: 5rem !important }
 main p { font-size: 2.45rem !important ; line-height: 3.5rem !important}
@@ -267,8 +269,8 @@ article > h2:first-of-type span { display: none !important } /* hide ABOUT headi
 /* Greasemonkey/Chrome sections */
 #-greasemonkey, #-chrome { text-align: center }
 main blockquote + p { font-size: 2.75rem !important ; width: 50% ; text-align: right }
-main pre + p, main pre + p + p { text-align: center ; padding: 0 201px }
-main ol { margin-top: 95px ; padding: 0 115px 0 228px !important }
+main pre + p, main pre + p + p { text-align: center ; padding: 0 10vw }
+main ol { margin-top: 95px ; padding: 0 9vw 0 12vw !important }
 
 /* Usage section */
 $usage_translations: (
@@ -336,10 +338,10 @@ $contributors_avatars: (); $contributors_trailing_brs: ();
     $contributors_avatars: append($contributors_avatars, '#{$id_selector} ~ * img', comma);
     $contributors_trailing_brs: append($contributors_trailing_brs, '#{$id_selector} ~ br', comma); }
 #{$contributors_ids}, #{$contributors_ps} { text-align: center !important } /* center contributors section */
-#{$contributors_ps} { padding: 0 311px } /* narrow container of avatars */
+#{$contributors_ps} { padding: 0 15vw } /* narrow container of avatars */
 #{$contributors_descriptions} { /* contributors description */
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
-    font-size: 2.1rem !important ; padding: 0 111px }
+    font-size: 2.1rem !important ; padding: 0 8vw }
 #{$contributors_avatars} { width: 96px } /* zoom contributor avatars */
 #{$contributors_trailing_brs} { display: none } /* hide trailing line break */
 
@@ -372,12 +374,23 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 
 /* MOBILE tweaks */
 
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    #{$about_descriptions} { line-height: 3.6rem !important }
+    main h2 { font-size: 5rem !important }
+    main h3 { font-size: 3.55rem !important }
+    main p, main blockquote + p, main blockquote + p + p {
+        font-size: 1.85rem !important ; line-height: 2.7rem !important }
+    main p code {
+        font-size: 1.5rem !important ; padding: 2px 9px !important ; border-radius: 8px !important }
+}
+
 @media screen and (max-width: 767px) {
     article { padding: 0 }    
     .markdown-section { max-width: 96% }
     .github-corner svg { height: 88px ; width: 88px }
 
     /* LANGUAGE SELECTOR */
+
     #language-selector a { font-size: 26px }
     #language-selector svg { width: 28px ; height: 28px }
 
@@ -387,8 +400,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     section.cover, .cover-main { margin: 0 !important }
     .cover-main > img { width: 100% ; margin-bottom: 0 } /* cover logo */
     section.cover p { /* cover description */
-        font-family: "PolySans Neutral", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif !important ;
-        font-size: 6.3vh !important ; line-height: 4.6vh !important }
+        font-size: 6.3vh !important ; line-height: 4.3vh !important }
     .cover-main > p:last-child a, .cover-main > p:last-child a:last-child { /* buttons */
         padding: 12px 43px !important }
 
@@ -416,8 +428,9 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     main li::marker { font-size: 1.84rem !important } /* unzoom list markers */
 
     /* Headings */
-    main h2, main h3 { font-size: 2.5rem !important }
+    main h2 { font-size: 3rem !important }
     main h2 { padding: 0 12px 0 16px !important }
+    main h3 { font-size: 2.5rem !important }
     main h3 img { height: 32px !important } /* platform icons */
 
     /* Text */
