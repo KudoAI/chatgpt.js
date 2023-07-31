@@ -661,7 +661,7 @@ const chatgpt = {
         setTimeout(() => {
             const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
             for (const menuItem of menuItems) {
-                if (/log out/i.test(menuItem.text)) { menuItem.click(); break; }}
+                if (/log out/i.test(menuItem.textContent)) { menuItem.click(); break; }}
         }, 10);
     },
 
