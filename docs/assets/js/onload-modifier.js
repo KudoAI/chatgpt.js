@@ -16,10 +16,19 @@ const featureListObserver = new IntersectionObserver(entries => {
 const onLoadObserver = new MutationObserver(() => {
 
     // Exit if not loaded
-    if (!document.querySelector('.github-corner')) return;
+    if (!document.querySelector('.cover-main blockquote p')) return;
 
     // Hack HOMEPAGE
     if (/#\/(\w{2}(-\w{2})?\/)?$/.test(location.hash)) {
+
+        // Animate tagline
+        const tagline = document.querySelector('.cover-main blockquote p'); 
+        const taglineWithUnderscore = tagline.textContent + '_';
+        tagline.textContent = taglineWithUnderscore;
+        setInterval(() => { tagline.textContent = taglineWithUnderscore
+            .split('').map(letter => {
+                return Math.random() < 0.5 ? letter.toUpperCase() : letter.toLowerCase(); })
+            .join(''); }, 1000);
 
         // Hide sidebar
         if (!isMobileDevice()) document.body.className = 'ready close';
