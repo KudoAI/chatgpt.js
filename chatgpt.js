@@ -272,7 +272,7 @@ const chatgpt = {
         }
     },
 
-    clearChats: function() {
+    clearChats: async function() {
         try { await chatgpt.getChatData(); } catch { return; } // check if chat history exists
         const menuBtn = document.querySelector('nav button[id*="headless"]') || {};
         try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
