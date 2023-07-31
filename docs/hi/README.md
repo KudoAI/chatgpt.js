@@ -84,7 +84,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@9fd2d62ad4c325c0f7993dec2db7abed46c8a75d/dist/chatgpt-2.0.4.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@794614321da08c1a577090bfe3f3c88291357ca9/dist/chatgpt-2.0.4.min.js
 // ==/UserScript==
 
 // आपका कोड यहां लिखें...
