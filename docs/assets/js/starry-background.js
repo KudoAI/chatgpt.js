@@ -4,7 +4,7 @@
    .      * .        .          * .        */
 
 const starColor = '#fff', starSize = 4, starMinScale = 0.2, overflowThreshold = 50;
-const starCount = ( window.innerWidth + window.innerHeight ) / 32;
+const starCount = ( window.innerWidth + window.innerHeight ) / 16;
 const canvas = document.querySelector( 'canvas' ),
       context = canvas.getContext( '2d' );
 let scale = 1, // device pixel ratio
