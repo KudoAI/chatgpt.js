@@ -9,4 +9,4 @@
 
 <!-- background color -->
 
-![color](black)
+![color](transparent)
