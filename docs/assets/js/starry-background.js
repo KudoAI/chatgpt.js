@@ -83,7 +83,7 @@ function render() {
         context.strokeStyle = starColor;
         context.beginPath();
         context.moveTo( star.x, star.y );
-        var tailX = velocity.x * 2,
+        let tailX = velocity.x * 2,
             tailY = velocity.y * 2;
 
         // stroke() wont work on an invisible line
@@ -107,9 +107,9 @@ function movePointer(x, y) {
 
 function onMouseMove(event) { touchInput = false; movePointer(event.clientX, event.clientY); }
 
-function onTouchMove( event ) {
+function onTouchMove(event) {
     touchInput = true;
-    movePointer( event.touches[0].clientX, event.touches[0].clientY, true );
+    movePointer(event.touches[0].clientX, event.touches[0].clientY);
     event.preventDefault();
 }
 
