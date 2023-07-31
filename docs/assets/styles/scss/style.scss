@@ -2,7 +2,7 @@
 
 /* FONTS */
 
-@import url(https://db.onlinewebfonts.com/c/03bd7255184e8e8ad4d2a521fa920b6c?family=PolySans+Neutral); 
+@import url(https://db.onlinewebfonts.com/c/03bd7255184e8e8ad4d2a521fa920b6c?family=PolySans+Neutral);
 @font-face {
     font-family: 'Eurostile Extended Black';
     src: local('Eurostile Extended Black'), local('EurostileExtendedBlack'),
@@ -10,6 +10,14 @@
          url('../../fonts/eurostile-extended-black/EurostileExtendedBlack.ttf') format('truetype'),
          url('../../fonts/eurostile-extended-black/EurostileExtendedBlack.woff') format('woff'),
          url('../../fonts/eurostile-extended-black/EurostileExtendedBlack.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Major Mono Display';
+    src: local('Major Mono Display'), local('MajorMonoDisplay-Regular'),
+         url('../../fonts/major-mono-display/MajorMonoDisplay-Regular.otf') format('opentype'),
+         url('../../fonts/major-mono-display/MajorMonoDisplay-Regular.ttf') format('truetype'),
+         url('../../fonts/major-mono-display/MajorMonoDisplay-Regular.woff') format('woff'),
+         url('../../fonts/major-mono-display/MajorMonoDisplay-Regular.woff2') format('woff2');
 }
 $font-families: (
     'IBM Plex Mono': (
