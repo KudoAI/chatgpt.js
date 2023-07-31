@@ -433,8 +433,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     main li::marker { font-size: 1.84rem !important } /* unzoom list markers */
 
     /* Headings */
-    main h2 { font-size: 3rem !important }
-    main h2 { padding: 0 12px 0 16px !important }
+    main h2 { font-size: 3rem !important ; padding: 0 12px 0 16px !important }
     main h3 { font-size: 2.5rem !important }
     main h3 img { height: 32px !important } /* platform icons */
 
