@@ -24,13 +24,12 @@ function minifyFile(inputFilePath, outputFilePath) {
     const code = fs.readFileSync(inputFilePath, 'utf8');
     const minifiedCode = uglifyJS.minify(code).code;
     fs.writeFileSync(outputFilePath, minifiedCode, 'utf8');
-};
+}
 
 // Minify all files in a dir recursively
 function minifyDirectory(inputDir, outputDir) {
     fs.readdirSync(inputDir).forEach(file => {
         const inputFilePath = path.join(inputDir, file);
-        const outputFilePath = path.join(outputDir, file);
         const stats = fs.statSync(inputFilePath);
         if (stats.isDirectory()) { // create corresponding output dir & continue minification
             const newOutputDir = outputDir; // keep track of output dir at this level
@@ -41,4 +40,4 @@ function minifyDirectory(inputDir, outputDir) {
             const minifiedOutputFilePath = path.join(outputDir, minifiedFileName);
             minifyFile(inputFilePath, minifiedOutputFilePath);
         }
-});};
+});}
