@@ -10,7 +10,7 @@ Since ChatGPT launched on November 20, 2022, it has become the [fastest-growing 
 
 Unsurprisingly, an ecosystem of tools that either utilize or enhance the AI's astounding power has blossomed.
 
-[chatgpt.js](https://chatgpt.js.org) is a JavaScript library that supports this ecosystem by allowing for super-easy interaction w/ the ChatGPT DOM.
+**[chatgpt.js](https://chatgpt.js.org)** is a JavaScript library that supports this ecosystem by allowing for super-easy interaction w/ the ChatGPT DOM.
 
 For example:
 
@@ -40,7 +40,7 @@ Importing the library is equally simplistic:
 
 ## Made with chatgpt.js
 
-Some popular & award-winning apps made w/ chatgpt.js include:
+Some popular & award-winning apps made w/ **chatgpt.js** include:
 
 - [Autoclear ChatGPT History](https://autoclearchatgpt.com) - Auto-clears your ChatGPT query history for maximum privacy
 - [Automatic ChatGPT DAN](https://github.com/madkarmaa/automati-chatgpt-dan) - Automatically send DAN prompts to ChatGPT
@@ -53,7 +53,7 @@ Some popular & award-winning apps made w/ chatgpt.js include:
 
 ## Star growth
 
-chatgpt.js is still a very young lib, but as shown by the Star History chart, it had a stunning growth period during a span of just weeks:
+**chatgpt.js** is still a very young lib, but as shown by the Star History chart, it had a stunning growth period during a span of mere weeks:
 
 <div align="center">
 
@@ -68,7 +68,7 @@ chatgpt.js is still a very young lib, but as shown by the Star History chart, it
 
 Two main events can be attributed with causing this astonishing growth spurt:
 
-- In June 2023, Product Hunt editors [featured](https://www.producthunt.com/products/chatgpt-js#chatgpt-js) chatgpt.js on its front page, resulting in 100+ upvotes & thousands of unique visitors in the following days
+- In June 2023, Product Hunt editors [featured](https://www.producthunt.com/products/chatgpt-js#chatgpt-js) **chatgpt.js** on its front page, resulting in 100+ upvotes & thousands of unique visitors in the following days
 
 <div align="center">
 
@@ -86,6 +86,6 @@ Two main events can be attributed with causing this astonishing growth spurt:
 
 ## Future development
 
-chatgpt.js is continuously maintained, with new features added based on user demand in the [GitHub repo](https://github.com/kudoai/chatgpt.js).
+**chatgpt.js** is continuously maintained, with new features added based on user demand in the [GitHub repo](https://github.com/kudoai/chatgpt.js).
 
 The project is open to sponsorships: if you are a company or individual and believe in the project, you can consider [pioneering chatgpt.js growth](https://github.com/sponsors/kudoai)!
