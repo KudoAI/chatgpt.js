@@ -68,7 +68,7 @@ Some popular & award-winning apps made w/ **chatgpt.js** include:
 
 Two main events can be attributed with causing this astonishing growth spurt:
 
-- In June 2023, Product Hunt editors [featured](https://www.producthunt.com/products/chatgpt-js#chatgpt-js) **chatgpt.js** on its front page, resulting in 100+ upvotes & thousands of unique visitors in the following days
+- In June 2023, editors at Product Hunt [featured](https://www.producthunt.com/products/chatgpt-js#chatgpt-js) **chatgpt.js** on its front page, resulting in 100+ upvotes & thousands of unique visitors in the following days
 
 <div align="center">
 
