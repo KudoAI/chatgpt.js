@@ -76,7 +76,7 @@ Two main events can be attributed with causing this astonishing growth spurt:
 
 </div>
 
-- Within that same week, TLDR, a tech & programming newsletter w/ over 1,000,000 readers featured the repo near the bottom of e-mail (where readers anchor to frequently)
+- Within that same week, TLDR — a tech & programming newsletter w/ over 1,000,000 readers — featured the repo near the bottom of e-mail (where readers anchor to frequently)
 
 <div align="center">
 
