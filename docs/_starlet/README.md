@@ -43,7 +43,7 @@ Importing the library is equally simplistic:
 Some popular & award-winning apps made w/ **chatgpt.js** include:
 
 - **[Autoclear ChatGPT History](https://autoclearchatgpt.com)** - <ins>Featured by Futurepedia</ins> - Auto-clears your ChatGPT query history for maximum privacy
-- **[Automatic ChatGPT DAN](https://github.com/madkarmaa/automati-chatgpt-dan)** - Automatically send DAN prompts to ChatGPT
+- **[Automatic ChatGPT DAN](https://github.com/madkarmaa/automatic-chatgpt-dan)** - Automatically send DAN prompts to ChatGPT
 - **[BraveGPT](https://bravegpt.com)** - <ins>Featured by Product Hunt</ins> - Display ChatGPT answers in Brave Search sidebar (powered by GPT-4!)
 - **[ChatGPT Auto-Continue](https://chatgptautocontinue.com)** - <ins>Mentioned in Awesome</ins> - Automatically continue generating multiple ChatGPT responses
 - **[ChatGPT Auto Refresh](https://chatgptautorefresh.com)** - <ins>Featured by Futurepedia</ins> - Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks
