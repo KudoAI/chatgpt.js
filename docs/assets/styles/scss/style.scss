@@ -98,10 +98,21 @@ $no-touch-select: (
 :root { scrollbar-color: rgb(210,210,210) #1a1a1a } /* FF scrollbar */
 .app-nav a.active { border-bottom: 2px solid $green}
 a { word-break: break-all }
-.top-gradient { /* for Star Wars effect in `assets/js/add-3d.js` */
+.top-gradient { /* for Star Wars effect (from `../../js/onload-hacks.js`) */
     position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 20vh ;
-    background-image: linear-gradient(to top, transparent, #000);
+    background-image: linear-gradient(to top, transparent, #000) ;
     pointer-events: none ; z-index: 1 }
+
+/* KudoAI logo */
+#kudoai {
+    position: fixed ; top: 15px ; left: 35px ;
+    font-family: Major Mono Display ; font-size: 2.5vw ; z-index: 500 }
+#kudoai a { color: white ; text-decoration: none }
+.kudo { font-size: 135% ; text-shadow: .25vw .25vw white ; padding-right: 4px }
+
+/* GitHub badge */
+.github-corner { z-index: 5 } /* to cover .top-gradient */
+.github-corner svg { fill: white ; color: black ; height: 115px ; width: 115px }
 
 /* Starry background (from `../../js/starry-background.js`) */
 canvas { position: fixed ; width: 100% ; height: 100% }
@@ -159,11 +170,6 @@ section.cover p { /* cover tagline size / weight / position */
 #dropdown-button:after {
     content: '▼' ; position: absolute ; right: -18px ; top: 0.159rem ;
     transform: scale(0.7) }
-
-/* GITHUB BADGE */
-
-.github-corner { z-index: 5 } /* to cover .top-gradient */
-.github-corner svg { fill: white ; color: black ; height: 115px ; width: 115px }
 
 /* SIDEBAR */
 
