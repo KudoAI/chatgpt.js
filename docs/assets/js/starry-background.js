@@ -3,8 +3,8 @@
  *  .  .      .      *     .      .   *
    .      * .        .          * .        */
 
-const starColor = '#fff', starSize = 6, starMinScale = 0.2, overflowThreshold = 50;
-const starCount = ( window.innerWidth + window.innerHeight ) / 16;
+const starColor = '#fff', starSize = 5, starMinScale = 0.1, overflowThreshold = 50;
+const starCount = ( window.innerWidth + window.innerHeight ) / 21;
 const canvas = document.querySelector( 'canvas' ),
       context = canvas.getContext( '2d' );
 let scale = 1, // device pixel ratio
@@ -57,7 +57,7 @@ function step() {
 }
 
 function update() {
-    velocity.tx *= 0.96; velocity.ty *= 0.96;
+    velocity.tx *= 0.86; velocity.ty *= 0.86; /* proportional to momentum */
     velocity.x += ( velocity.tx - velocity.x ) * 0.8;
     velocity.y += ( velocity.ty - velocity.y ) * 0.8;
     stars.forEach((star) => {
