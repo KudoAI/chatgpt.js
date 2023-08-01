@@ -395,7 +395,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
         font-size: 1.5rem !important ; padding: 2px 9px !important ; border-radius: 8px !important }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) and (orientation: portrait) {
     article { padding: 0 }    
     .markdown-section { max-width: 96% }
     .github-corner svg { height: 88px ; width: 88px }
@@ -411,9 +411,10 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     section.cover, .cover-main { margin: 0 !important }
     .cover-main > img { width: 100% ; margin-bottom: 0 } /* cover logo */
     section.cover p { /* cover description */
-        font-size: 6.3vh !important ; line-height: 4.3vh !important }
+        font-size: 6.3vw !important ; line-height: 4.3vh !important }
     .cover-main > p:last-child a, .cover-main > p:last-child a:last-child { /* buttons */
         padding: 12px 43px !important }
+    blockquote { margin: 0 !important; }
 
     /* BUTTONS */
 
