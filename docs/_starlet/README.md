@@ -6,7 +6,7 @@
 
 </div>
 
-Since ChatGPT launched on November 20, 2022, it has become the [fastest-growing app in human history](https://www.zdnet.com/article/chatgpt-just-became-the-fastest-growing-app-of-all-time/) (outpacing even TikTok/Douyin).
+Since ChatGPT launched on November 20, 2022, it has captured the imagination of humankind, becoming the [fastest-growing app in human history](https://www.zdnet.com/article/chatgpt-just-became-the-fastest-growing-app-of-all-time/) (outpacing even TikTok/Douyin) and never letting go.
 
 Unsurprisingly, an ecosystem of tools that either utilize or enhance the AI's astounding power has blossomed.
 
