@@ -246,32 +246,11 @@ main li pre { margin: 65px 0 !important }
 #shields img { height: 55px }
 
 /* About section */
-$about_translations: (
-    'about', /* English */
-    '关于', /* Simplified Chinese */
-    '關於', /* Traditional Chinese */
-    'アバウト', /* Japanese */
-    '개요', /* Korean */
-    'अभाउट', /* Hindi */
-    'um', /* German */
-    'acerca-de', /* Spanish */
-    'À-propos', /* French */
-    'informazioni', /* Italian */
-    'over', /* Dutch */
-    'sobre', /* Portuguese */
-    'về'); /* Vietnamese */
-$about_ids: (); $about_descriptions: (); $about_features: ();
-@each $translation in $about_translations { /* build full id selectors */
-    $id_selector: unquote('#') + $translation;
-    $about_ids: append($about_ids, $id_selector, comma); }
-@each $id_selector in $about_ids { /* build specific selectors */
-    $about_descriptions: append($about_descriptions, '#{$id_selector} ~ p:first-of-type', comma);
-    $about_features: append($about_features, '#{$id_selector} ~ ul:first-of-type', comma); }
-#{$about_descriptions} { /* ABOUT description */
+#intro ~ p:first-of-type { /* ABOUT description */
     margin-top: -476px !important ; font-size: 3.1rem !important ;
     line-height: 4.5rem !important ; text-align: right ; width: 50% }
-#{$about_features} { display: none } /* hide readme feature list */
-article > h2:first-of-type span { display: none !important } /* hide ABOUT heading */
+#intro ~ ul:first-of-type { display: none } /* hide readme feature list */
+#intro h2 span { display: none !important } /* hide ABOUT heading */
 #feature-list { /* generated in `js/online-modifier.js` */
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
     font-size: 1.45rem ; color: $green ; position: relative ; float: right ;
@@ -284,39 +263,15 @@ main pre + p, main pre + p + p { text-align: center ; padding: 0 10vw }
 main ol { margin-top: 95px ; padding: 0 9vw 0 12vw !important }
 
 /* Usage section */
-$usage_translations: (
-    'usage', /* English */
-    '用法', /* Simplified Chinese */
-    '使用法', /* Traditional Chinese + Japanese */
-    '사용법', /* Korean */
-    'प्रयोग', /* Hindi */
-    'verwendung', /* German */
-    'uso', /* Spanish + Portuguese */
-    'utilisation', /* French */ 
-    'utilizzo', /* Italian */
-    'gebruik', /* Dutch */
-    'cách-sử-dụng'); /* Vietnamese */
-$usage_ids: (); $usage_post_pre_ps: (); $usage_post_pre_p_2s: ();
-@each $translation in $usage_translations { /* build full id selectors */
-    $id_selector: unquote('#💻-') + $translation;
-    $usage_ids: append($usage_ids, $id_selector, comma); }
-@each $id_selector in $usage_ids { /* build specific selectors */
-    $usage_post_pre_ps: append($usage_post_pre_ps, '#{$id_selector} ~ pre + p', comma);
-    $usage_post_pre_p_2s: append($usage_post_pre_p_2s, '#{$id_selector} ~ pre + p + p', comma); }
-#{$usage_post_pre_ps} { text-align: left !important ; margin-left: 0 !important }
-#{$usage_post_pre_p_2s} { text-align: right !important ; float: right !important ; margin-bottom: 152px }
+#usage ~ pre + p { /* 1st p after pre */
+    text-align: left !important ; margin-left: 0 !important }
+#usage ~ pre + p + p { /* 2nd p after pre */
+    text-align: right !important ; float: right !important ; margin-bottom: 152px }
 
 /* Showcase */
-$made-with-chatgptjs: ('made-with-chatgptjs', '用-chatgptjs-制作', '用-chatgptjs-製作', 'chatgptjs-で作成',
-    'chatgptjs로-만들어진-프로젝트', 'chatgpt.js-के-साथ-बनाया-गया', 'erstellt-mit-chatgptjs',
-    'hecho-con-chatgptjs', 'réalisé-avec-chatgptjs', 'realizzato-con-chatgptjs', 'gemaakt-met-chatgptjs',
-    'feito-com-chatgptjs', 'Được-tạo-bằng-chatgptjs');
-@each $translation in $made-with-chatgptjs {
-    $id: unquote('#🤖-') + $translation;
-    #{$id} ~ h3:nth-of-type(even),
-    #{$id} ~ p:nth-of-type(odd) { text-align: right }
-    #{$id} ~ br + p { text-align: center !important } /* center showcase tiles */
-}
+#showcase ~ h3:nth-of-type(even),
+#showcase ~ p:nth-of-type(odd) { text-align: right }
+#showcase ~ br + p { text-align: center !important } /* center showcase tiles */
 main h3 img { /* app icons */
     height: 58px !important ; width: auto !important ; margin: 0 19px -2px 0 }
 main h3 a { /* app titles */
@@ -325,36 +280,13 @@ main h3 a:hover { text-decoration: underline #42b983 }
 img[src*="promo-tile"] { width: 74vw ; border: 1px solid white }
 
 /* Contributors */
-$contributors_translations: (
-    'contributors', /* English */
-    '贡献者', /* Simplified Chinese + Japanese */
-    '貢獻者', /* Traditional Chinese */
-    '기여자', /* Korean */
-    'योगदानकर्ता', /* Hindi */
-    'mitwirkende', /* German */
-    'colaboradores', /* Spanish */
-    'contributeurs', /* French */
-    'contributori', /* Italian */
-    'bijdragers', /* Dutch */
-    'contribuidores', /* Portuguese */
-    'người-đóng-góp'); /* Vietnamese */
-$contributors_ids: (); $contributors_ps: (); $contributors_descriptions: ();
-$contributors_avatars: (); $contributors_trailing_brs: ();
-@each $translation in $contributors_translations { /* build full id selectors */
-    $id_selector: unquote('#🧠-') + $translation;
-    $contributors_ids: append($contributors_ids, $id_selector, comma); }
-@each $id_selector in $contributors_ids { /* build specific selectors */
-    $contributors_ps: append($contributors_ps, '#{$id_selector} ~ p', comma);
-    $contributors_descriptions: append($contributors_descriptions, '#{$id_selector} + p', comma);
-    $contributors_avatars: append($contributors_avatars, '#{$id_selector} ~ * img', comma);
-    $contributors_trailing_brs: append($contributors_trailing_brs, '#{$id_selector} ~ br', comma); }
-#{$contributors_ids}, #{$contributors_ps} { text-align: center !important } /* center contributors section */
-#{$contributors_ps} { padding: 0 15vw } /* narrow container of avatars */
-#{$contributors_descriptions} { /* contributors description */
+#contributors, #contributors ~ p { text-align: center !important } /* center contributors section */
+#contributors ~ p { padding: 0 15vw } /* narrow container of avatars */
+#contributors + p { /* contributors description */
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
     font-size: 2.1rem !important ; padding: 0 8vw }
-#{$contributors_avatars} { width: 96px } /* zoom contributor avatars */
-#{$contributors_trailing_brs} { display: none } /* hide trailing line break */
+#contributors ~ * img { width: 96px } /* zoom contributor avatars */
+#contributors ~ br { display: none } /* hide trailing line break */
 
 /* Footer */
 #star-history { display: none } /* hide Star History section */
@@ -386,7 +318,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 /* MOBILE tweaks */
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
-    #{$about_descriptions} { line-height: 3.6rem !important }
+    #intro ~ p:first-of-type { line-height: 3.6rem !important }
     main h2 { font-size: 5rem !important }
     main h3 { font-size: 3.55rem !important }
     main p, main blockquote + p, main blockquote + p + p {
@@ -427,7 +359,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 
     /* ABOUT */
 
-    #{$about_descriptions} ~ p:first-of-type { /* ABOUT description */
+    #intro ~ p:first-of-type { /* ABOUT description */
         font-size: 2.8rem !important ; line-height: 3.1rem !important ;
         margin: -236px 0 490px !important }
     #feature-list { /* generated in `js/onload-modifier.js` */
@@ -469,23 +401,20 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     .docsify-copy-code-button { display: none }
 
     /* Usage section */
-    #{$usage_post_pre_ps}, #{$usage_post_pre_p_2s} { /* re-size/center text */
+    #usage ~ pre + p, #usage ~ pre + p + p { /* re-size/center text */
         font-size: $mobile-p-size !important ; text-align: center !important ;
         margin: 63px 0 !important ; float: none !important }
 
     /* Showcase */
-    @each $translation in $made-with-chatgptjs {
-        $id: unquote('#🤖-') + $translation;
-        #{$id} ~ h3, #{$id} ~ p { text-align: center !important } /* center titles */
-    }
+    #showcase ~ h3, #showcase ~ p { text-align: center !important } /* center titles */
     img[src*=promo-tile] { width: 100% !important } /* expand tiles full-width */
 
     /* Contributors */
-    #{$contributors_descriptions} { /* shrink contributors description font, remove padding */
+    #contributors + p { /* shrink contributors description font, remove padding */
         font-size: 1.5rem !important ; padding: 0 5px !important }
-    #{$contributors_ps} { /* remove padding from avatars container */
+    #contributors ~ p { /* remove padding from avatars container */
         padding: 0 !important }
-    #{$contributors_avatars} { width: 69px !important } /* unzoom contributor avatars */
+    #contributors ~ * img { width: 69px !important } /* unzoom contributor avatars */
 
     /* Footer */
     #mc_embed_signup h2 { /* CTA */
