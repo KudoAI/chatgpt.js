@@ -4,4 +4,7 @@ A starting point for developing your own Greasemonkey userscript using [chatgpt.
 
 <br>
 
-![](https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/greasemonkey/media/images/screenshots/chatgpt-userscript-on.png)
+<picture>
+    <source type="image/webp" srcset="../media/images/screenshots/chatgpt-userscript-on.webp">
+    <img src="../media/images/screenshots/chatgpt-userscript-on.webp">
+</picture>

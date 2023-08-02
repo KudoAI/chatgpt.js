@@ -10,7 +10,10 @@
 
 <br>
 
-![](../../media/images/screenshots/extension-loaded.png)
+<picture>
+    <source type="image/webp" srcset="../../media/images/screenshots/extension-loaded.webp">
+    <img src="../../media/images/screenshots/extension-loaded.png">
+</picture>
 
 ## ⚡ Installatie
 
@@ -44,10 +47,16 @@ Dat is het! **ChatGPT Extension** verschijnt nu in de extensielijst:
 
 <br>
 
-![](../../media/images/screenshots/reload-extension-button.png)
-![](../../media/images/screenshots/reload-page-button.png)
+<picture>
+    <source type="image/webp" srcset="../../media/images/screenshots/reload-extension-button.webp">
+    <img src="../../media/images/screenshots/reload-extension-button.png">
+</picture>
+<picture>
+    <source type="image/webp" srcset="../../media/images/screenshots/reload-page-button.webp">
+    <img src="../../media/images/screenshots/reload-page-button.png">
+</picture>
 
-<br>
+<br><br>
 
 </div>
 
