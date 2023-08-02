@@ -72,9 +72,9 @@ const onLoadObserver = new MutationObserver(() => {
                                    document.createElement('div'); // ...or create it
             if (!featureListDiv.parentElement) { // append created div if not in DOM
                 featureListDiv.setAttribute('id', 'feature-list');
-                const aboutH2 = document.querySelector('h2#about');
-                aboutH2.parentElement.insertBefore( // insert after description
-                    featureListDiv, aboutH2.nextSibling.nextSibling);
+                const introDiv = document.querySelector('#intro');
+                introDiv.parentElement.insertBefore( // insert after description
+                    featureListDiv, introDiv.nextElementSibling.nextElementSibling);
             }
 
             // ...then observe for when it's in view (self-disconnects)
