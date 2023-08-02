@@ -34,7 +34,11 @@
 
 </div>
 
+<div id="intro">
+
 ## Informazioni
+
+</div>
 
 **chatgpt.js** è una potente libreria JavaScript che consente un'interazione semplicissima con il DOM di ChatGPT.
 
@@ -124,7 +128,11 @@ export { chatgpt }
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="usage">
+
 ## 💻 Utilizzo
+
+</div>
 
 **chatgpt.js** è stato scritto pensando all'estrema flessibilità.
 
@@ -143,7 +151,11 @@ In caso contrario, consulta la [guida per l'utente](https://github.com/kudoai/ch
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="showcase">
+
 ## 🤖 Realizzato con chatgpt.js
+
+</div>
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Cancella Cronologia ChatGPT](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
@@ -201,7 +213,11 @@ Se hai creato qualcosa con chatgpt.js che desideri condividere, invia un'email a
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="contributors">
+
 ## 🧠 Contributori
+
+</div>
 
 Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle idee dei seguenti contributori:
 

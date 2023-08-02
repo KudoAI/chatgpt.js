@@ -35,7 +35,11 @@
 
 </div>
 
+<div id="intro">
+
 ## 개요
+
+</div>
 
 **chatgpt.js** 는 Chat GPT DOM과 매우 간편한 상호작용을 가능하게 하는 강력한 자바스크립트 라이브러리입니다.
 
@@ -130,7 +134,11 @@ export { chatgpt }
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="usage">
+
 ## 💻 사용법
+
+</div>
 
 **chatgpt.js** 는 유연성을 상당히 고려하여 작성되었습니다.
 
@@ -149,7 +157,11 @@ chatgpt.get('reply', 'last');
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="showcase">
+
 ## 🤖 chatgpt.js로 만들어진 프로젝트
+
+</div>
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 히스토리 자동삭제](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
@@ -209,7 +221,11 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, [showcas
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="contributors">
+
 ## 🧠 기여자
+
+</div>
 
 이 라이브러리는 다음 기여자들의 코드, 번역, 이슈 및 아이디어 덕분에 존재합니다.
 

@@ -34,7 +34,11 @@
 
 </div>
 
+<div id="intro">
+
 ## About
+
+</div>
 
 **chatgpt.js** is a powerful JavaScript library that allows for super easy interaction w/ the ChatGPT DOM.
 
@@ -124,7 +128,11 @@ export { chatgpt }
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="usage">
+
 ## 💻 Usage
+
+</div>
 
 **chatgpt.js** was written w/ ultra flexibility in mind.
 
@@ -143,7 +151,11 @@ If it didn't, check out the extended [userguide](https://github.com/kudoai/chatg
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="showcase">
+
 ## 🤖 Made with chatgpt.js
+
+</div>
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Autoclear ChatGPT History](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
@@ -201,7 +213,11 @@ If you've made something w/ chatgpt.js you want to share, email [showcase@chatgp
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="contributors">
+
 ## 🧠 Contributors
+
+</div>
 
 This library exists thanks to code, translations, issues & ideas from the following contributors:
 

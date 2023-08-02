@@ -34,7 +34,11 @@
 
 </div>
 
+<div id="intro">
+
 ## 關於
+
+</div>
 
 **chatgpt.js** 是一個功能強大的 JavaScript 庫，允許與 ChatGPT DOM 進行超級簡單的交互。
 
@@ -124,7 +128,11 @@ export { chatgpt }
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="usage">
+
 ## 💻 用法
+
+</div>
 
 **chatgpt.js** 的編寫考慮到了超級靈活性。
 
@@ -143,7 +151,11 @@ chatgpt.get('reply', 'last');
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="showcase">
+
 ## 🤖 用 chatgpt.js 製作
+
+</div>
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [自動清除 ChatGPT 歷史記錄](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
@@ -201,7 +213,11 @@ chatgpt.get('reply', 'last');
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="contributors">
+
 ## 🧠 貢獻者
+
+</div>
 
 該庫的存在得益於以下貢獻者的代碼、翻譯、問題和想法：
 

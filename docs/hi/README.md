@@ -34,7 +34,11 @@
 
 </div>
 
+<div id="intro">
+
 ## अभाउट
+
+</div>
 
 **chatgpt.js** एक शक्तिशाली जावास्क्रिप्ट लाइब्रेरी है जो ChatGPT DOM के साथ बेहद आसान इंटरैक्शन की अनुमति देती है।
 
@@ -125,7 +129,11 @@ export { chatgpt }
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="usage">
+
 ## 💻 प्रयोग
+
+</div>
 
 **chatgpt.js** को लिखते समय उसके फ्लेक्सिबिलिटी को ध्यान में रखकर लिखा गया है।
 
@@ -144,7 +152,11 @@ chatgpt.get('reply', 'last')
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="showcase">
+
 ## 🤖 chatgpt.js के साथ बनाया गया
+
+</div>
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ऑटोक्लियर चैटजीपीटी हिस्ट्री](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
@@ -202,7 +214,11 @@ chatgpt.get('reply', 'last')
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="contributors">
+
 ## 🧠 योगदानकर्ता
+
+</div>
 
 यह लाइब्रेरी निम्नलिखित योगदानकर्ताओं के कोड, अनुवाद, मुद्दों और विचारों की बदौलत मौजूद है:
 

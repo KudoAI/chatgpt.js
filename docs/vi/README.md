@@ -34,7 +34,11 @@
 
 </div>
 
+<div id="intro">
+
 ## Về
+
+</div>
 
 **chatgpt.js** là một thư viện JavaScript mạnh mẽ cho phép tương tác siêu dễ dàng với ChatGPT DOM.
 
@@ -124,7 +128,11 @@ export { chatgpt }
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="usage">
+
 ## 💻 Cách sử dụng
+
+</div>
 
 **chatgpt.js** được viết với tính linh hoạt cực cao.
 
@@ -143,7 +151,11 @@ Nếu không, hãy xem [hướng dẫn sử dụng](https://github.com/kudoai/ch
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="showcase">
+
 ## 🤖 Được tạo bằng chatgpt.js
+
+</div>
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Xóa Lịch Sử ChatGPT](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
@@ -201,7 +213,11 @@ Nếu bạn đã tạo nội dung nào đó với chatgpt.js mà bạn muốn ch
 
 <p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
 
+<div id="contributors">
+
 ## 🧠 Người đóng góp
+
+</div>
 
 Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng từ những người đóng góp sau:
 
