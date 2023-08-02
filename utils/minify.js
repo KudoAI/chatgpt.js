@@ -1,12 +1,19 @@
-/* Minify JS scripts in `inputDir` to `outputDir` */
+/* ========================================================
+Script:       minify.js
+Version:      2023.8.1
+Description:  Minify all JavaScript in a directory
+Author:       Adam Lui
+URL:          https://github.com/adamlui/js-utils
+=========================================================== */
+
+// Init config
+const inputDir = path.join(__dirname, '../docs/assets/js/src'),
+      outputDir = path.join(__dirname, '../docs/assets/js/minified');
 
 // Import libs
 const fs = require('fs'),
       path = require('path'),
       uglifyJS = require('uglify-js');
-
-const inputDir = path.join(__dirname, '../docs/assets/js/src');
-const outputDir = path.join(__dirname, '../docs/assets/js/minified');
 
 try { // to minify `inputDir` contents
     if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
