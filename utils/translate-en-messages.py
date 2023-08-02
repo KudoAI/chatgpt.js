@@ -1,4 +1,10 @@
-# Translate msg's from en/messages.json to [[output_langs]/messages.json]
+'''
+Script:       translate-en-messages.py
+Version:      2023.7.14
+Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
+Author:       Adam Lui
+URL:          https://github.com/adamlui/python-utils
+'''
 
 import os, json
 from sys import stdout # for dynamic prints
