@@ -47,7 +47,10 @@
 - प्रयोग करने में आसान
 - लाइटवेट (फिर भी सर्वोत्तम प्रदर्शन करने वाला)
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
+<picture>
+    <source type="img/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
 
 ## ⚡ लाइब्रेरी इम्पोर्ट करने के तरीके
 
@@ -127,7 +130,10 @@ export { chatgpt }
 })();
 ```
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
+<picture>
+    <source type="img/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
 
 <div id="usage">
 
@@ -150,7 +156,10 @@ chatgpt.get('reply', 'last')
 
 यदि ऐसा नहीं हुआ, तो विस्तारित [यूजरगाइड](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) देखें, या बस एक [इश्यू](https://github.com/kudoai/chatgpt.js/issues) सबमिट करें या [PR](https://github.com/kudoai/chatgpt.js/pulls) और इसे एकीकृत किया जाएगा, आसान!
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
+<picture>
+    <source type="img/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
 
 <div id="showcase">
 
@@ -212,7 +221,10 @@ chatgpt.get('reply', 'last')
 
 यदि आपने chatgpt.js के साथ कुछ बनाया है जिसे आप साझा करना चाहते हैं, तो ईमेल करें [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) या बस एक [पुल अनुरोध] खोलें(https://github.com/kudoai/chatgpt.js/pulls)!
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
+<picture>
+    <source type="img/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
 
 <div id="contributors">
 
@@ -242,7 +254,10 @@ chatgpt.get('reply', 'last')
 
 <br>
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
+<picture>
+    <source type="img/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
 
 <div id="star-history" align="center">
 

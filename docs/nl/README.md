@@ -47,7 +47,10 @@
 - Makkelijk te gebruiken
 - Lichtgewicht (maar toch optimaal presterend)
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
+<picture>
+    <source type="img/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
 
 ## ⚡ De bibliotheek importeren
 
@@ -126,7 +129,10 @@ export { chatgpt }
 })();
 ```
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
+<picture>
+    <source type="img/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
 
 <div id="usage">
 
@@ -149,7 +155,10 @@ Elke oproep haalt gelijkelijk het laatste antwoord op. Als je denkt dat het werk
 
 Als dit niet het geval is, bekijk dan de uitgebreide [gebruikershandleiding](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md), of dien gewoon een [probleem](https://github.com/kudoai/chatgpt.js/issues) in of [PR](https://github.com/kudoai/chatgpt.js/pulls) en het wordt geïntegreerd, makkelijk!
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
+<picture>
+    <source type="img/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
 
 <div id="showcase">
 
@@ -211,7 +220,10 @@ Geef ChatGPT-antwoorden weer in DuckDuckGo-zijbalk (mogelijk gemaakt door GPT-4!
 
 Als je iets hebt gemaakt met chatgpt.js dat je wilt delen, stuur dan een e-mail naar [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) of open gewoon een [pull request](https://github.com/kudoai/chatgpt.js/pulls)!
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
+<picture>
+    <source type="img/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
 
 <div id="contributors">
 
@@ -241,7 +253,10 @@ Deze bibliotheek bestaat dankzij code, vertalingen, problemen en ideeën van de 
 
 <br>
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
+<picture>
+    <source type="img/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
 
 <div id="star-history" align="center">
 

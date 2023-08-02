@@ -47,7 +47,10 @@
 - Facile da usare
 - Leggero (ma molto performante)
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
+<picture>
+    <source type="img/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
 
 ## ⚡ Importazione della libreria
 
@@ -126,7 +129,10 @@ export { chatgpt }
 })();
 ```
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
+<picture>
+    <source type="img/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
 
 <div id="usage">
 
@@ -149,7 +155,10 @@ Ogni chiamata ritorna ugualmente l'ultima risposta di ChatGPT. Se pensi che funz
 
 In caso contrario, consulta la [guida per l'utente](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) estesa o invia semplicemente un [problema](https://github.com/kudoai/chatgpt.js/issues) o [PR](https://github.com/kudoai/chatgpt.js/pulls) e sarà integrato, facile!
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
+<picture>
+    <source type="img/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
 
 <div id="showcase">
 
@@ -211,7 +220,10 @@ Visualizza le risposte di ChatGPT nella barra laterale di DuckDuckGo (basato su 
 
 Se hai creato qualcosa con chatgpt.js che desideri condividere, invia un'email a [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) o semplicemente apri una [pull request](https://github.com/kudoai/chatgpt.js/pulls)!
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
+<picture>
+    <source type="img/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
 
 <div id="contributors">
 
@@ -241,7 +253,10 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 
 <br>
 
-<p><img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png"></p>
+<picture>
+    <source type="img/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img type="separator" height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
 
 <div id="star-history" align="center">
 
