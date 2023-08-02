@@ -48,7 +48,7 @@ URL:          https://github.com/adamlui/js-utils
     async function fileExists(file) {
         try { await fs.access(file); return true; }
         catch (err) { return false; }
-    };
+    }
 
     async function processImages(files, options) {
         const { extension, qualityOptions, type } = options;
@@ -65,13 +65,13 @@ URL:          https://github.com/adamlui/js-utils
             // Compress image, output WebP file
             await imagemin.default([file], {
                 destination: path.dirname(outputFileName),
-                plugins: [webp.default(qualityOptions)],
+                plugins: [webp.default(qualityOptions)]
             });
             compressedCount++;
             console.log(`${ type } processed: ${file} => ${ outputFileName }`);
 
         }));
         return { compressedCount, skippedCount };
-    };
+    }
 
 })();
