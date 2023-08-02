@@ -1,7 +1,7 @@
 /* ========================================================
 Script:       img-to-webp.js
 Version:      2023.8.2
-Description:  Compress JPG/PNG images to WEBPs
+Description:  Compress all JPG/PNG images in a directory to WEBPs
 Author:       Adam Lui
 URL:          https://github.com/adamlui/js-utils
 =========================================================== */
