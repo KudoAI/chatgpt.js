@@ -217,7 +217,7 @@ main blockquote strong { color: yellow !important }
 main blockquote:first-of-type p { margin-top: 11% !important } /* Greasemonkey tip */
 main blockquote:nth-of-type(2) p { margin-top: 74px !important } /* Chrome tip */
 main code { font-size: 1.35rem !important ; line-height: 2.2rem !important }
-img[type="separator"] { display: none } /* hide section separators */
+img[src*="separator"] { display: none } /* hide section separators */
 main h2 + p { /* blurbs after headings w/o tips */
     font-size: 2.75rem !important ; text-align: center ; margin-top: -85px !important }
 main li::marker { font-size: 2.1rem }
