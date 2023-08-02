@@ -10,15 +10,18 @@
 
 <br>
 
-![](../../chrome/media/images/screenshots/extension-loaded.png)
+<picture>
+    <source type="img/webp" srcset="../../chrome/media/images/screenshots/extension-loaded.webp">
+    <img src="../../chrome/media/images/screenshots/extension-loaded.png">
+</picture>
 
-<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"></a> <a href="../../chrome">Chrome Arrancador</a></h3>
+<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"></a> <a href="../../chrome">Chrome Arrancador</a></h2>
 
 Plantilla para crear una extensión de Chrome usando chatgpt.js (incluido el menú emergente + administración de configuraciones)
 
 [Repo](https://github.com/kudoai/chatgpt.js-chrome-starter) / [Léame](../../chrome/docs/es#readme) / [Consigue ayuda](https://github.com/kudoai/chatgpt.js-chrome-starter/issues)
 
-<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/tampermonkey-icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/violentmonkey-icon100.png"></a> <a href="../../greasemonkey">Greasemonkey Arrancador</a></h3>
+<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/tampermonkey-icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/violentmonkey-icon100.png"></a> <a href="../../greasemonkey">Greasemonkey Arrancador</a></h2>
 
 Plantilla para crear un script de usuario de Greasemonkey usando chatgpt.js
 

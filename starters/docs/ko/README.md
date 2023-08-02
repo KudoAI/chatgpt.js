@@ -10,15 +10,18 @@
 
 <br>
 
-![](../../chrome/media/images/screenshots/extension-loaded.png)
+<picture>
+    <source type="img/webp" srcset="../../chrome/media/images/screenshots/extension-loaded.webp">
+    <img src="../../chrome/media/images/screenshots/extension-loaded.png">
+</picture>
 
-<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"></a> <a href="../../chrome">Chrome 기동기</a></h3>
+<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"></a> <a href="../../chrome">Chrome 기동기</a></h2>
 
 chatgpt.js 를 사용하여 Chrome 확장 프로그램을 만들기 위한 템플릿 (팝업 메뉴 + 설정 관리 포함)
 
 [저장소](https://github.com/kudoai/chatgpt.js-chrome-starter) / [읽어보기](../../chrome/docs/ko#readme) / [도움 받기](https://github.com/kudoai/chatgpt.js-chrome-starter/issues)
 
-<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/tampermonkey-icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/violentmonkey-icon100.png"></a> <a href="../../greasemonkey">Greasemonkey 기동기</a></h3>
+<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/tampermonkey-icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/violentmonkey-icon100.png"></a> <a href="../../greasemonkey">Greasemonkey 기동기</a></h2>
 
 chatgpt.js 를 사용하여 Greasemonkey 사용자 스크립트를 생성하기 위한 템플릿
 
