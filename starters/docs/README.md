@@ -11,7 +11,7 @@
 <br>
 
 <picture>
-    <source type="img/webp" srcset="../chrome/media/images/screenshots/extension-loaded.webp">
+    <source type="image/webp" srcset="../chrome/media/images/screenshots/extension-loaded.webp">
     <img src="../chrome/media/images/screenshots/extension-loaded.png">
 </picture>
 
