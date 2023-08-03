@@ -244,6 +244,7 @@ main pre:after { display: none } /* hide lang indicator */
 .success, .error { font-size: 1.1rem !important }
 main li pre { margin: 65px 0 !important }
 .token.string { color: $green }
+.token.comment { color: #b6e3d4 }
 .token.function, .token.keyword, .token.boolean, .token.number { color: #ffcb00 }
 
 /* Shields */
