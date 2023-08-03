@@ -110,7 +110,7 @@ a { word-break: break-all }
 #kudoai a { color: white ; text-decoration: none }
 .kudo { font-size: 135% ; text-shadow: .25vw .25vw white ; padding-right: 4px }
 #kudoai:hover .kudo {  /* slide 'kudo' + shadow circularly */
-    position: relative ; animation: circular-slide 2.5s linear infinite }
+    position: relative ; animation: circular-slide 2.1s linear infinite }
 @keyframes circular-slide {
     0%, 100% { top: 0 ;  left: 0 ; text-shadow: .25vw .25vw white }
     25% { top: 0 ; left: .25vw ; text-shadow: -.25vw .25vw white }
