@@ -8,15 +8,15 @@ URL:          https://github.com/adamlui/js-utils
 
 (async () => {
 
-    // Init config
-    const inputDir = '../media/images',
-          overwriteExisting = false; // whether to overwrite existing WEBPs
-
     // Import libs
     const fs = require('fs').promises,
           path = require('path'),
           glob = require('glob'),
          [imagemin, webp] = await Promise.all([import('imagemin'), import('imagemin-webp')]);
+
+    // Init config
+    const inputDir = '../media/images',
+          overwriteExisting = false; // whether to overwrite existing WEBPs
 
     // Check if `inputDir`` exists
     try { await fs.access(inputDir); }
