@@ -295,6 +295,8 @@ a[href*="mailto:showcase"] { word-break: keep-all }
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
     font-size: 2.1rem !important ; padding: 0 8vw }
 #contributors ~ * img { width: 96px } /* zoom contributor avatars */
+a[href="https://chat.openai.com"] img { /* outline ChatGPT's avatar */
+    border: 3px solid #aeecff ; border-radius: 50% }
 #contributors ~ br { display: none } /* hide trailing line break */
 
 /* Footer */
