@@ -275,14 +275,16 @@ main ol { margin-top: 95px ; padding: 0 9vw 0 12vw !important }
 
 /* Showcase */
 #showcase ~ h3:nth-of-type(even),
-#showcase ~ p:nth-of-type(odd) { text-align: right }
-#showcase ~ br + p { text-align: center !important } /* center showcase tiles */
+#showcase ~ p:nth-of-type(even) { text-align: right }
+#showcase ~ a, #showcase p a, #showcase ~ a + p + p + p { /* center showcase tiles + CTA */
+    text-align: center !important }
 main h3 img { /* app icons */
     height: 58px !important ; width: auto !important ; margin: 0 19px -2px 0 }
 main h3 a { /* app titles */
     text-decoration: none ; color: white !important }
 main h3 a:hover { text-decoration: underline #42b983 }
 img[src*="promo-tile"] { width: 74vw ; border: 1px solid white }
+a[href*="mailto:showcase"] { word-break: keep-all }
 
 /* Contributors */
 #contributors, #contributors ~ p { text-align: center !important } /* center contributors section */
