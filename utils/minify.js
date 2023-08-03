@@ -1,6 +1,6 @@
 /* ========================================================
 Script:       minify.js
-Version:      2023.8.2
+Version:      2023.8.3
 Description:  Minify all JavaScript in a directory
 Author:       Adam Lui
 URL:          https://github.com/adamlui/js-utils
@@ -43,8 +43,8 @@ function minifyDirectory(inputDir, outputDir) {
             fs.mkdirSync(newOutputDir, { recursive: true });
             minifyDirectory(inputFilePath, newOutputDir);
         } else if (stats.isFile() && file.endsWith('.js') && !isMinifiedFile(file)) { // proceed w/ minification
-            const minifiedFileName = path.basename(file, '.js') + '.min.js';
-            const minifiedOutputFilePath = path.join(outputDir, minifiedFileName);
-            minifyFile(inputFilePath, minifiedOutputFilePath);
+            const minFileName = path.basename(file, '.js') + '.min.js',
+                  minOutputFilePath = path.join(outputDir, minFileName);
+            minifyFile(inputFilePath, minOutputFilePath);
         }
 });}
