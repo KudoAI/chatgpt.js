@@ -212,13 +212,23 @@ chatgpt.get('reply', 'last')
 
 <br>
 
-<a href="https://chatgptinfinity.com" target="_blank"><img width=555 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
+<a href="https://chatgptinfinity.com" target="_blank">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
+        <img width=555 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+    </picture>
+</a>
 
-<br>
+<p><br>
 
-<a href="https://chatgptwidescreen.com" target="_blank"><img width=555 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
+<a href="https://chatgptwidescreen.com" target="_blank">
+    <picture>
+        <source type="iage/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
+        <img width=555 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+    </picture>
+</a>
 
-<br>
+<p><br>
 
 如果您使用 chatgpt.js 制作了一些想要分享的内容，请发送电子邮件至 [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) 或打开一个 [pull request](https://github.com/kudoai/chatgpt.js/pulls)!
 

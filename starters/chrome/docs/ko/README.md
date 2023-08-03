@@ -37,9 +37,12 @@
 
 <br>
 
-![](../../media/images/screenshots/chatgpt-extension-in-list.png)
+<picture>
+    <source type="image/webp" srcset="../../media/images/screenshots/chatgpt-extension-in-list.webp">
+    <img src="../../media/images/screenshots/chatgpt-extension-in-list.png">
+</picture>
 
-<br>
+<p><br>
 
 **💡 조언:** _소스 코드의 변경 사항을 반영하려면 확장 프로그램 타일에서 **다시 로드**를 클릭하고 확장 프로그램 스크립트가 실행 중인 모든 Chrome 탭을 다시 로드합니다:_
 
@@ -56,7 +59,7 @@
     <img src="../../media/images/screenshots/reload-page-button.png">
 </picture>
 
-<br><br>
+<p><br>
 
 </div>
 
@@ -68,11 +71,22 @@
 
 <br>
 
-<a href="https://chatgptinfinity.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
-<br>
+<a href="https://chatgptinfinity.com" target="_blank">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
+        <img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+    </picture>
+</a>
 
-<a href="https://chatgptwidescreen.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
+<p><br>
+
+<a href="https://chatgptwidescreen.com" target="_blank">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
+        <img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+    </picture>
+</a>
 
 </div>
 

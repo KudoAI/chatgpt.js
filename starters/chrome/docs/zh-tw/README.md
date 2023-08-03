@@ -37,9 +37,12 @@
 
 <br>
 
-![](../../media/images/screenshots/chatgpt-extension-in-list.png)
+<picture>
+    <source type="image/webp" srcset="../../media/images/screenshots/chatgpt-extension-in-list.webp">
+    <img src="../../media/images/screenshots/chatgpt-extension-in-list.png">
+</picture>
 
-<br>
+<p><br>
 
 **💡 建議:** _要反映源代碼的更改，請點擊擴展磁貼上的 **重新加載** + 重新加載正在運行的任何 Chrome 選項卡擴展腳本:_
 
@@ -56,7 +59,7 @@
     <img src="../../media/images/screenshots/reload-page-button.png">
 </picture>
 
-<br><br>
+<p><br>
 
 </div>
 
@@ -68,11 +71,22 @@
 
 <br>
 
-<a href="https://chatgptinfinity.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
-<br>
+<a href="https://chatgptinfinity.com" target="_blank">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
+        <img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+    </picture>
+</a>
 
-<a href="https://chatgptwidescreen.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
+<p><br>
+
+<a href="https://chatgptwidescreen.com" target="_blank">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
+        <img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+    </picture>
+</a>
 
 </div>
 

@@ -37,9 +37,12 @@ Questo è tutto! **ChatGPT Extension** verrà ora visualizzata nell'elenco delle
 
 <br>
 
-![](../../media/images/screenshots/chatgpt-extension-in-list.png)
+<picture>
+    <source type="image/webp" srcset="../../media/images/screenshots/chatgpt-extension-in-list.webp">
+    <img src="../../media/images/screenshots/chatgpt-extension-in-list.png">
+</picture>
 
-<br>
+<p><br>
 
 **💡 CONSIGLIO:** _Per riflettere le modifiche rispetto al codice sorgente, fai clic su **Ricarica** nel riquadro dell'estensione + ricarica eventuali script di estensione delle schede di Chrome in cui sono in esecuzione:_
 
@@ -56,7 +59,7 @@ Questo è tutto! **ChatGPT Extension** verrà ora visualizzata nell'elenco delle
     <img src="../../media/images/screenshots/reload-page-button.png">
 </picture>
 
-<br><br>
+<p><br>
 
 </div>
 
@@ -68,11 +71,22 @@ Queste sono alcune delle estensioni presenti in Google che utilizzano chatgpt.js
 
 <br>
 
-<a href="https://chatgptinfinity.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
-<br>
+<a href="https://chatgptinfinity.com" target="_blank">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
+        <img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+    </picture>
+</a>
 
-<a href="https://chatgptwidescreen.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
+<p><br>
+
+<a href="https://chatgptwidescreen.com" target="_blank">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
+        <img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+    </picture>
+</a>
 
 </div>
 

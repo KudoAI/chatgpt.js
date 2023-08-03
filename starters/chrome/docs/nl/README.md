@@ -37,9 +37,12 @@ Dat is het! **ChatGPT Extension** verschijnt nu in de extensielijst:
 
 <br>
 
-![](../../media/images/screenshots/chatgpt-extension-in-list.png)
+<picture>
+    <source type="image/webp" srcset="../../media/images/screenshots/chatgpt-extension-in-list.webp">
+    <img src="../../media/images/screenshots/chatgpt-extension-in-list.png">
+</picture>
 
-<br>
+<p><br>
 
 **💡 TIP:** _Om wijzigingen in de broncode weer te geven, klikt u op **Opnieuw laden** op de extensietegel + laadt u alle Chrome-tabbladextensiescripts opnieuw waarop wordt uitgevoerd:_
 
@@ -56,7 +59,7 @@ Dat is het! **ChatGPT Extension** verschijnt nu in de extensielijst:
     <img src="../../media/images/screenshots/reload-page-button.png">
 </picture>
 
-<br><br>
+<p><br>
 
 </div>
 
@@ -68,11 +71,22 @@ Dit zijn enkele van de extensies van Google die chatgpt.js gebruiken:
 
 <br>
 
-<a href="https://chatgptinfinity.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
-<br>
+<a href="https://chatgptinfinity.com" target="_blank">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
+        <img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+    </picture>
+</a>
 
-<a href="https://chatgptwidescreen.com" target="_blank"><img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
+<p><br>
+
+<a href="https://chatgptwidescreen.com" target="_blank">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
+        <img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+    </picture>
+</a>
 
 </div>
 
