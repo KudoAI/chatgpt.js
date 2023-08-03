@@ -109,12 +109,19 @@ a { word-break: break-all }
     font-family: Major Mono Display ; font-size: 2.25vw ; z-index: 500 }
 #kudoai a { color: white ; text-decoration: none }
 .kudo { font-size: 135% ; text-shadow: .25vw .25vw white ; padding-right: 4px }
+#kudoai:hover .kudo {  /* slide 'kudo' + shadow circularly */
+    position: relative ; animation: circular-slide 2.5s linear infinite }    
+@keyframes circular-slide {
+    0%, 100% { top: 0 ;  left: 0 ; text-shadow: .25vw .25vw white }  
+    25% { top: 0 ; left: .25vw ; text-shadow: -.25vw .25vw white }  
+    50% { top: .25vw ; left: .25vw ; text-shadow: -.25vw -.25vw white }  
+    75% { top: .25vw ; left: 0 ; text-shadow: .25vw -.25vw white }}
 
 /* GitHub badge */
 .github-corner { z-index: 5 } /* to cover .top-gradient */
 .github-corner svg { fill: white ; color: black ; height: 115px ; width: 115px }
 
-/* Starry background (from `../../js/starry-background.js`) */
+/* Starry background (from `../../js/src/starry-background.js`) */
 canvas { position: fixed ; width: 100% ; height: 100% ; pointer-events: none }
 
 /* COVER */
@@ -249,7 +256,7 @@ main li pre { margin: 65px 0 !important }
     line-height: 4.5rem !important ; text-align: right ; width: 50% }
 #intro ~ ul:first-of-type { display: none } /* hide readme feature list */
 #intro h2 span { display: none !important } /* hide ABOUT heading */
-#feature-list { /* generated in `js/online-modifier.js` */
+#feature-list { /* generated in `../../js/src/online-modifier.js` */
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
     font-size: 1.45rem ; color: $green ; position: relative ; float: right ;
     top: -323px ; right: -123px ; width: 50% }
@@ -360,7 +367,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     #intro ~ p:first-of-type { /* ABOUT description */
         font-size: 2.8rem !important ; line-height: 3.1rem !important ;
         margin: -236px 0 490px !important }
-    #feature-list { /* generated in `js/onload-modifier.js` */
+    #feature-list { /* generated in `../../js/src/onload-modifier.js` */
         font-size: 1.7rem! important ; margin-bottom: -136px !important ;
         position: relative ; width: inherit ; left: 16px ; top: -244px ; float: none }
     
