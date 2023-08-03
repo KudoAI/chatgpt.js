@@ -115,9 +115,7 @@ a { word-break: break-all }
 .github-corner svg { fill: white ; color: black ; height: 115px ; width: 115px }
 
 /* Starry background (from `../../js/starry-background.js`) */
-canvas { position: fixed ; width: 100% ; height: 100% }
-.cover, main { pointer-events: none }
-.cover p, a, input, button { pointer-events: auto }
+canvas { position: fixed ; width: 100% ; height: 100% ; pointer-events: none }
 
 /* COVER */
 

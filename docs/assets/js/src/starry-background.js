@@ -13,9 +13,9 @@ let stars = [], velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0005 };
 let touchInput = false;
 generate(); resize(); step();
 window.onresize = resize;
-canvas.onmousemove = onMouseMove;
-canvas.ontouchmove = onTouchMove;
-canvas.ontouchend = onMouseLeave;
+document.onmousemove = onMouseMove;
+document.ontouchmove = onTouchMove;
+document.ontouchend = onMouseLeave;
 document.onmouseleave = onMouseLeave;
 
 // Define FUNCTIONS
