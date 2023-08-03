@@ -163,7 +163,7 @@ section.cover p { /* cover tagline size / weight / position */
 #language-menu {
     display: none ; position: absolute ; top: 127% ; right: -18px ;
     width: 256px ; font-size: 28px !important; text-align: left ;
-    background-color: black ; border: 3px solid #cccccc ; border-radius: 4px ;
+    background: rgba(0, 0, 0, 0.65) ; border: 3px solid #cccccc ; border-radius: 4px ;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) ; padding: 5px 0 ; z-index: 1 }
 .dropdown--hoverable:hover #language-menu { display: block }
 .dropdown-link {
@@ -230,7 +230,7 @@ main li::marker { font-size: 2.1rem }
 /* Code */
 main pre, main code, .punctuation {
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
-    font-size: 1.3rem !important ; color: white !important ; background: rgba(0, 0, 0, 0.25) !important ;
+    font-size: 1.3rem !important ; color: white !important ; background: rgba(0, 0, 0, 0.35) !important ;
     margin-bottom: 1px } /* fix bottom border disappears glitch */
 main pre code { border: $blue 2px solid ; border-radius: 12px !important ; padding: 26px !important }
 main p code {
