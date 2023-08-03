@@ -110,11 +110,11 @@ a { word-break: break-all }
 #kudoai a { color: white ; text-decoration: none }
 .kudo { font-size: 135% ; text-shadow: .25vw .25vw white ; padding-right: 4px }
 #kudoai:hover .kudo {  /* slide 'kudo' + shadow circularly */
-    position: relative ; animation: circular-slide 2.5s linear infinite }    
+    position: relative ; animation: circular-slide 2.5s linear infinite }
 @keyframes circular-slide {
-    0%, 100% { top: 0 ;  left: 0 ; text-shadow: .25vw .25vw white }  
-    25% { top: 0 ; left: .25vw ; text-shadow: -.25vw .25vw white }  
-    50% { top: .25vw ; left: .25vw ; text-shadow: -.25vw -.25vw white }  
+    0%, 100% { top: 0 ;  left: 0 ; text-shadow: .25vw .25vw white }
+    25% { top: 0 ; left: .25vw ; text-shadow: -.25vw .25vw white }
+    50% { top: .25vw ; left: .25vw ; text-shadow: -.25vw -.25vw white }
     75% { top: .25vw ; left: 0 ; text-shadow: .25vw -.25vw white }}
 
 /* GitHub badge */
@@ -230,7 +230,7 @@ main li::marker { font-size: 2.1rem }
 /* Code */
 main pre, main code, .punctuation {
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
-    font-size: 1.3rem !important ; color: white !important ; background: black !important ;
+    font-size: 1.3rem !important ; color: white !important ; background: rgba(0, 0, 0, 0.25) !important ;
     margin-bottom: 1px } /* fix bottom border disappears glitch */
 main pre code { border: $blue 2px solid ; border-radius: 12px !important ; padding: 26px !important }
 main p code {
