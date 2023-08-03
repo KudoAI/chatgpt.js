@@ -27,11 +27,11 @@
 ![](../../media/images/screenshots/developer-mode-toggle.png)
 
 5. Hacer clic **Load unpacked**<br><br>
-<img src="../media/images/screenshots/load-unpacked-button.png">
+<img src="../../media/images/screenshots/load-unpacked-button.png">
 <br>
 
 6. En la ventana emergente, seleccione la carpeta **extension** > hacer clic **Select Folder**<br><br><br>
-<img src="../media/images/screenshots/select-extension-folder.png"><br><br>
+<img src="../../media/images/screenshots/select-extension-folder.png"><br><br>
 
 ¡Eso es todo! **ChatGPT Extension** ahora aparecerá en la lista de extensiones:
 
