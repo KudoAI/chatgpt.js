@@ -163,7 +163,7 @@ section.cover p { /* cover tagline size / weight / position */
 #language-menu {
     display: none ; position: absolute ; top: 127% ; right: -18px ;
     width: 256px ; font-size: 28px !important; text-align: left ;
-    background: rgba(0, 0, 0, 0.65) ; border: 3px solid #cccccc ; border-radius: 4px ;
+    background: rgba(0, 0, 0, 0.75) ; border: 3px solid #cccccc ; border-radius: 4px ;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) ; padding: 5px 0 ; z-index: 1 }
 .dropdown--hoverable:hover #language-menu { display: block }
 .dropdown-link {
