@@ -215,10 +215,11 @@ main h2 a { pointer-events: none }
 main h3 { font-size: 4.5rem !important ; margin-top: 5rem !important }
 main p { font-size: 2.45rem !important ; line-height: 3.5rem !important}
 main blockquote { border-left: 4px solid $green !important }
-main blockquote p { /* tips */
+main blockquote strong { color: yellow !important } /* tips' title */
+main blockquote em { color: #87a99d !important } /* tips' italics */
+main blockquote p { /* tips content */
     border-left: none ; width: 38vw ; font-size: 2rem !important ; margin-top: 11% !important ;
     text-align: left ; float: right ; position: relative ; left: 29px ; line-height: 2.8rem !important }
-main blockquote strong { color: yellow !important }
 main blockquote:first-of-type p { margin-top: 11% !important } /* Greasemonkey tip */
 main blockquote:nth-of-type(2) p { margin-top: 74px !important } /* Chrome tip */
 main code { font-size: 1.35rem !important ; line-height: 2.2rem !important }
