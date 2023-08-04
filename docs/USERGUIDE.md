@@ -1110,5 +1110,5 @@ chatgpt.sidebar.toggle();
 <br>
 <br>
 
-<a href="https://github.com/kudoai/chatgpt.js/discussions">Discuss</a> /
+[Discuss](https://github.com/kudoai/chatgpt.js/discussions) /
 <a href="#">Back to top ↑</a>

@@ -168,7 +168,7 @@ Si no fue así, consulte la [guía del usuario](https://github.com/kudoai/chatgp
 
 </div>
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Borrar Historial de ChatGPT](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Borrar Historial de ChatGPT](https://chatgptevo.com/autoclear) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 Borre automáticamente su historial de consultas de ChatGPT para obtener la máxima privacidad.
 <br>[Instalar](https://github.com/adamlui/autoclear-chatgpt-history#installation) /
@@ -182,28 +182,28 @@ Envía automáticamente avisos de DAN a ChatGPT.
 [Léame](https://github.com/madkarmaa/automatic-chatgpt-dan#readme) /
 [Conversar](https://github.com/madkarmaa/automatic-chatgpt-dan/issues)
 
-### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
+### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 Muestre las respuestas de ChatGPT en la barra lateral de Brave Search (¡con tecnología de GPT-4!)
 <br>[Instalar](https://github.bravegpt.com/#installation) /
 [Léame](https://github.bravegpt.com/#readme) /
 [Conversar](https://github.bravegpt.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto-Continuar ⏩](https://chatgptevo.com/autocontinue/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto-Continuar ⏩](https://chatgptevo.com/autocontinue/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
 Continúa generando automáticamente múltiples respuestas de ChatGPT.<br>
 [Instalar](https://github.com/adamlui/chatgpt-auto-continue#installation) /
 [Léame](https://github.com/adamlui/chatgpt-auto-continue#readme) /
 [Conversar](https://chatgptevo.com/autocontinue/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Actualización Automática ↻](https://chatgptevo.com/autorefresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Actualización Automática ↻](https://chatgptevo.com/autorefresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 Mantiene las sesiones de ChatGPT actualizadas para eliminar errores de red + verificaciones de Cloudflare.
 <br>[Instalar](https://github.com/adamlui/chatgpt-auto-refresh#installation) /
 [Léame](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
 [Conversar](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
-### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
+### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 Muestre las respuestas de ChatGPT en la barra lateral de DuckDuckGo (¡con tecnología de GPT-4!)
 <br>[Instalar](https://github.duckduckgpt.com/#installation) /
@@ -212,7 +212,7 @@ Muestre las respuestas de ChatGPT en la barra lateral de DuckDuckGo (¡con tecno
 
 <br>
 
-<a href="https://chatgptinfinity.com" target="_blank">
+<a href="https://chatgptinfinity.com" target="_blank" rel="noopener">
     <picture>
         <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
         <img width=555 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
@@ -221,7 +221,7 @@ Muestre las respuestas de ChatGPT en la barra lateral de DuckDuckGo (¡con tecno
 
 <p><br>
 
-<a href="https://chatgptwidescreen.com" target="_blank">
+<a href="https://chatgptwidescreen.com" target="_blank" rel="noopener">
     <picture>
         <source type="iage/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
         <img width=555 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
@@ -274,7 +274,7 @@ Esta biblioteca existe gracias al código, las traducciones, los problemas y las
 
 <br>
 
-<a href="https://star-history.com/#kudoai/chatgpt.js&Timeline">
+<a href="https://star-history.com/#kudoai/chatgpt.js&Timeline" target="_blank" rel="noopener">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline&theme=dark" />
     <img width=665 src="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
@@ -289,9 +289,9 @@ Esta biblioteca existe gracias al código, las traducciones, los problemas y las
 
 <div align="center">
 
-<a href="https://github.com/kudoai/chatgpt.js/tree/main/dist">**Lanzamientos**</a> /
-<a href="https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md">Guía del usuario</a> /
-<a href="https://github.com/kudoai/chatgpt.js/discussions">Conversar</a> /
+**[Lanzamientos](https://github.com/kudoai/chatgpt.js/tree/main/dist)** /
+[Guía del usuario](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) /
+[Conversar](https://github.com/kudoai/chatgpt.js/discussions) /
 <a href="#">Volver arriba ↑</a>
 
 </div>
