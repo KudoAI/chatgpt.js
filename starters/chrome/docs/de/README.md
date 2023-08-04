@@ -72,7 +72,7 @@ Dies sind einige der von Google angebotenen Erweiterungen, die chatgpt.js verwen
 <br>
 
 
-<a href="https://chatgptinfinity.com" target="_blank">
+<a href="https://chatgptinfinity.com" target="_blank" rel="noopener">
     <picture>
         <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
         <img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
@@ -81,7 +81,7 @@ Dies sind einige der von Google angebotenen Erweiterungen, die chatgpt.js verwen
 
 <p><br>
 
-<a href="https://chatgptwidescreen.com" target="_blank">
+<a href="https://chatgptwidescreen.com" target="_blank" rel="noopener">
     <picture>
         <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
         <img width=777 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">

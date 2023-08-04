@@ -97,7 +97,7 @@ $no-touch-select: (
 
 :root { scrollbar-color: rgb(210,210,210) #1a1a1a } /* FF scrollbar */
 .app-nav a.active { border-bottom: 2px solid $green}
-a { word-break: break-all }
+a { word-break: break-word }
 .top-gradient { /* for Star Wars effect (from `../../js/onload-hacks.js`) */
     position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 20vh ;
     background-image: linear-gradient(to top, transparent, #000) ;
@@ -163,7 +163,7 @@ section.cover p { /* cover tagline size / weight / position */
 #language-menu {
     display: none ; position: absolute ; top: 127% ; right: -18px ;
     width: 256px ; font-size: 28px !important; text-align: left ;
-    background-color: black ; border: 3px solid #cccccc ; border-radius: 4px ;
+    background: rgba(0, 0, 0, 0.75) ; border: 3px solid #cccccc ; border-radius: 4px ;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) ; padding: 5px 0 ; z-index: 1 }
 .dropdown--hoverable:hover #language-menu { display: block }
 .dropdown-link {
@@ -215,10 +215,11 @@ main h2 a { pointer-events: none }
 main h3 { font-size: 4.5rem !important ; margin-top: 5rem !important }
 main p { font-size: 2.45rem !important ; line-height: 3.5rem !important}
 main blockquote { border-left: 4px solid $green !important }
-main blockquote p { /* tips */
+main blockquote strong { color: yellow !important } /* tips' title */
+main blockquote em { color: #87a99d !important } /* tips' italics */
+main blockquote p { /* tips content */
     border-left: none ; width: 38vw ; font-size: 2rem !important ; margin-top: 11% !important ;
     text-align: left ; float: right ; position: relative ; left: 29px ; line-height: 2.8rem !important }
-main blockquote strong { color: yellow !important }
 main blockquote:first-of-type p { margin-top: 11% !important } /* Greasemonkey tip */
 main blockquote:nth-of-type(2) p { margin-top: 74px !important } /* Chrome tip */
 main code { font-size: 1.35rem !important ; line-height: 2.2rem !important }
@@ -230,7 +231,7 @@ main li::marker { font-size: 2.1rem }
 /* Code */
 main pre, main code, .punctuation {
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
-    font-size: 1.3rem !important ; color: white !important ; background: rgba(0, 0, 0, 0.25) !important ;
+    font-size: 1.3rem !important ; color: white !important ; background: rgba(0, 0, 0, 0.35) !important ;
     margin-bottom: 1px } /* fix bottom border disappears glitch */
 main pre code { border: $blue 2px solid ; border-radius: 12px !important ; padding: 26px !important }
 main p code {
@@ -244,6 +245,7 @@ main pre:after { display: none } /* hide lang indicator */
 .success, .error { font-size: 1.1rem !important }
 main li pre { margin: 65px 0 !important }
 .token.string { color: $green }
+.token.comment { color: #b6e3d4 }
 .token.function, .token.keyword, .token.boolean, .token.number { color: #ffcb00 }
 
 /* Shields */
@@ -275,14 +277,16 @@ main ol { margin-top: 95px ; padding: 0 9vw 0 12vw !important }
 
 /* Showcase */
 #showcase ~ h3:nth-of-type(even),
-#showcase ~ p:nth-of-type(odd) { text-align: right }
-#showcase ~ br + p { text-align: center !important } /* center showcase tiles */
+#showcase ~ p:nth-of-type(even) { text-align: right }
+#showcase ~ a, #showcase p a, #showcase ~ a + p + p + p { /* center showcase tiles + CTA */
+    text-align: center !important }
 main h3 img { /* app icons */
     height: 58px !important ; width: auto !important ; margin: 0 19px -2px 0 }
 main h3 a { /* app titles */
     text-decoration: none ; color: white !important }
 main h3 a:hover { text-decoration: underline #42b983 }
 img[src*="promo-tile"] { width: 74vw ; border: 1px solid white }
+a[href*="mailto:showcase"] { word-break: keep-all }
 
 /* Contributors */
 #contributors, #contributors ~ p { text-align: center !important } /* center contributors section */
@@ -291,6 +295,8 @@ img[src*="promo-tile"] { width: 74vw ; border: 1px solid white }
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
     font-size: 2.1rem !important ; padding: 0 8vw }
 #contributors ~ * img { width: 96px } /* zoom contributor avatars */
+a[href="https://chat.openai.com"] img { /* outline ChatGPT's avatar */
+    border: 3px solid #aeecff ; border-radius: 50% }
 #contributors ~ br { display: none } /* hide trailing line break */
 
 /* Footer */
