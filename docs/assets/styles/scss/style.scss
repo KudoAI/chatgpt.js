@@ -85,7 +85,7 @@ $font-families: (
 
 /* VARIABLES */
 
-$green: lime; $blue: #64ffff;
+$green: lime; $blue: #64ffff; $kudo-depth: .225vw;
 $no-select: (
     -webkit-user-select: none !important, -khtml-user-select: none !important,
     -moz-user-select: none !important, -ms-user-select: none !important,
@@ -108,14 +108,14 @@ a { word-break: break-word }
     position: fixed ; top: 15px ; left: 35px ;
     font-family: Major Mono Display ; font-size: 2.25vw ; z-index: 500 }
 #kudoai a { color: white ; text-decoration: none }
-.kudo { font-size: 135% ; text-shadow: .25vw .25vw white ; padding-right: 4px }
+.kudo { font-size: 135% ; text-shadow: $kudo-depth $kudo-depth white ; padding-right: 4px }
 #kudoai:hover .kudo {  /* slide 'kudo' + shadow circularly on hover */
-    position: relative ; animation: circular-slide 2.1s linear infinite }
+    position: relative ; animation: circular-slide 1.8s linear infinite }
 @keyframes circular-slide {
-    0%, 100% { top: 0 ;  left: 0 ; text-shadow: .25vw .25vw white }
-    25% { top: 0 ; left: .25vw ; text-shadow: -.25vw .25vw white }
-    50% { top: .25vw ; left: .25vw ; text-shadow: -.25vw -.25vw white }
-    75% { top: .25vw ; left: 0 ; text-shadow: .25vw -.25vw white }}
+    0%, 100% { top: 0 ;  left: 0 ; text-shadow: $kudo-depth $kudo-depth white }
+    25% { top: 0 ; left: $kudo-depth ; text-shadow: -$kudo-depth $kudo-depth white }
+    50% { top: $kudo-depth ; left: $kudo-depth ; text-shadow: -$kudo-depth (-$kudo-depth) white }
+    75% { top: $kudo-depth ; left: 0 ; text-shadow: $kudo-depth (-$kudo-depth) white }}
 
 /* GitHub badge */
 .github-corner { z-index: 5 } /* to cover .top-gradient */
