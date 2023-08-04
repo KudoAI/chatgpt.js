@@ -25,8 +25,8 @@ const onLoadObserver = new MutationObserver(() => {
     if (/#\/(\w{2}(-\w{2})?\/)?$/.test(location.hash)) {
 
         // Animate COVER TAGLINE
-        const tagline = document.querySelector('.cover-main blockquote p');
-        const taglineWithUnderscore = tagline.textContent + '_';
+        const tagline = document.querySelector('.cover-main blockquote p'),
+              taglineWithUnderscore = tagline.textContent + '_';
         tagline.textContent = taglineWithUnderscore;
         let delay = 15; const maxDelay = 1000;
         (function animateTagline() {
@@ -39,8 +39,8 @@ const onLoadObserver = new MutationObserver(() => {
         })();
 
         // Add TOP GRADIENT
-        const cover = document.querySelector('.cover');
-        const topGradient = document.createElement('div');
+        const cover = document.querySelector('.cover'),
+              topGradient = document.createElement('div');
         topGradient.classList.add('top-gradient');
         document.body.appendChild(topGradient);
         updateTGvisibility(); // since page load can be below fold
@@ -52,9 +52,9 @@ const onLoadObserver = new MutationObserver(() => {
         const coverMain = document.querySelector('.cover-main');
         window.addEventListener('scroll', () => {
             updateTGvisibility();
-            const coverRect = cover.getBoundingClientRect();
-            const newOpacity = 1 - Math.abs(coverRect.top) / cover.offsetHeight;
-            const parallaxOffset = coverRect.top * -0.35;
+            const coverRect = cover.getBoundingClientRect(),
+                  newOpacity = 1 - Math.abs(coverRect.top) / cover.offsetHeight,
+                  parallaxOffset = coverRect.top * -0.35;
             cover.style.opacity = newOpacity;
             coverMain.style.transform = `translateY(${ parallaxOffset }px)`;
         });
@@ -83,14 +83,14 @@ const onLoadObserver = new MutationObserver(() => {
             // ...then loop check for observer flag to begin typing
             const txtToType = new Array( // features to type
                 '>>  Feature-rich', '>>  Object-oriented', '>>  Easy-to-use',
-                '>>  Lightweight (yet optimally performant)');
-            const typeSpeed = 30; // ms between chars typed
-            let iniTxtToType = 0; // index of array txt to start typing
-            let iniTxtPos = 3; // position in txt to start typing from
-            const linesToScrollAt = 5; // start scrolling up at this many lines
-            let iniArrLength = txtToType[0].length; // initial length of txt array
-            let typeContent = ''; // init contents variable
-            let iniRow; // init current row     
+                '>>  Lightweight (yet optimally performant)'),
+                  typeSpeed = 30, // ms between chars typed
+                  linesToScrollAt = 5; // start scrolling up at this many lines
+            let iniTxtToType = 0, // index of array txt to start typing
+                iniTxtPos = 3, // position in txt to start typing from
+                iniArrLength = txtToType[0].length, // initial length of txt array
+                typeContent = '', // init contents variable
+                iniRow; // init current row     
             function typeText() {
                 typeContent =  ' ';
                 iniRow = Math.max(0, iniTxtToType - linesToScrollAt);
@@ -111,9 +111,9 @@ const onLoadObserver = new MutationObserver(() => {
 
             // Convert OpenAI showcase icons + sidebar logo to dark-mode
             document.querySelectorAll('picture').forEach(picture => {
-                const srcElement = picture.querySelector('source');
-                const srcSet = srcElement.getAttribute('srcset');
-                const imgElement = document.createElement('img');
+                const srcElement = picture.querySelector('source'),
+                      srcSet = srcElement.getAttribute('srcset'),
+                      imgElement = document.createElement('img');
                 imgElement.setAttribute('src', srcSet);
                 picture.parentNode.replaceChild(imgElement, picture);
             });
