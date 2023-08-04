@@ -536,7 +536,7 @@ _Returns a JSON object_
 }
 ```
 
-_**All messages from both partecipants in a specified chat**_
+_**All messages from both participants in a specified chat**_
 
 ```js
 await chatgpt.getChatData('latest', 'msg');
@@ -566,7 +566,7 @@ In case of a response being regenerated, the `chatgpt` object key will be conver
 ]
 ```
 
-_**All messages from a specific partecipant in a specified chat**_
+_**All messages from a specific participant in a specified chat**_
 
 ```js
 await chatgpt.getChatData('latest', 'msg');
@@ -578,7 +578,7 @@ await chatgpt.getChatData('latest', 'msg', 'chatgpt', 'all');
 
 _Returns an array of strings/arrays_
 
-In case of a response being regenerated and the requested partecipant being `chatgpt`, it'll be converted to an array containing all the responses.
+In case of a response being regenerated and the requested participant being `chatgpt`, it'll be converted to an array containing all the responses.
 
 ```json
 [
@@ -590,7 +590,7 @@ In case of a response being regenerated and the requested partecipant being `cha
 ]
 ```
 
-_**One/latest message from both partecipants in a specified chat**_
+_**One/latest message from both participants in a specified chat**_
 
 ```js
 await chatgpt.getChatData('latest', 'msg', 'all', 2); // can also be 'latest' message
@@ -610,7 +610,7 @@ In case of a response being regenerated, the `chatgpt` object key will be conver
 }
 ```
 
-_**One/latest message from a specific partecipant in a specified chat**_
+_**One/latest message from a specific participant in a specified chat**_
 
 ```js
 await chatgpt.getChatData('latest', 'msg', 'chatgpt', 2);
