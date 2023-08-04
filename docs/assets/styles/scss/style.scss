@@ -109,7 +109,7 @@ a { word-break: break-word }
     font-family: Major Mono Display ; font-size: 2.25vw ; z-index: 500 }
 #kudoai a { color: white ; text-decoration: none }
 .kudo { font-size: 135% ; text-shadow: $kudo-depth $kudo-depth white ; padding-right: 4px }
-#kudoai:hover .kudo {  /* slide 'kudo' + shadow circularly */
+#kudoai:hover .kudo {  /* slide 'kudo' + shadow circularly on hover */
     position: relative ; animation: circular-slide 1.8s linear infinite }
 @keyframes circular-slide {
     0%, 100% { top: 0 ;  left: 0 ; text-shadow: $kudo-depth $kudo-depth white }
