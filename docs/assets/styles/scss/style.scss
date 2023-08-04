@@ -97,7 +97,7 @@ $no-touch-select: (
 
 :root { scrollbar-color: rgb(210,210,210) #1a1a1a } /* FF scrollbar */
 .app-nav a.active { border-bottom: 2px solid $green}
-a { word-break: break-all }
+a { word-break: break-word }
 .top-gradient { /* for Star Wars effect (from `../../js/onload-hacks.js`) */
     position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 20vh ;
     background-image: linear-gradient(to top, transparent, #000) ;
@@ -109,7 +109,7 @@ a { word-break: break-all }
     font-family: Major Mono Display ; font-size: 2.25vw ; z-index: 500 }
 #kudoai a { color: white ; text-decoration: none }
 .kudo { font-size: 135% ; text-shadow: .25vw .25vw white ; padding-right: 4px }
-#kudoai:hover .kudo {  /* slide 'kudo' + shadow circularly */
+#kudoai:hover .kudo {  /* slide 'kudo' + shadow circularly on hover */
     position: relative ; animation: circular-slide 2.1s linear infinite }
 @keyframes circular-slide {
     0%, 100% { top: 0 ;  left: 0 ; text-shadow: .25vw .25vw white }
