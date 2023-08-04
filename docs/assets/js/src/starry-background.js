@@ -71,8 +71,8 @@ function animateStars() {
             if (direction === 'z') { star.z = 0.1; star.x = Math.random() * width; star.y = Math.random() * height; }
             else if (direction === 'l') { star.x = -overflowThreshold; star.y = height * Math.random(); }
             else if (direction === 'r') { star.x = width + overflowThreshold; star.y = height * Math.random(); }
-            else if( direction === 't' ) { star.x = width * Math.random(); star.y = -overflowThreshold; }
-            else if( direction === 'b' ) { star.x = width * Math.random(); star.y = height + overflowThreshold; }
+            else if (direction === 't') { star.x = width * Math.random(); star.y = -overflowThreshold; }
+            else if (direction === 'b') { star.x = width * Math.random(); star.y = height + overflowThreshold; }
         }
     });
     
