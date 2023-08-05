@@ -83,7 +83,7 @@ const onLoadObserver = new MutationObserver(() => {
             // ...then loop check for observer flag to begin typing
             const features = [ // features to type
                 '>>  Feature-rich', '>>  Object-oriented', '>>  Easy-to-use',
-                '>>  Lightweight (yet optimally performant)']
+                '>>  Lightweight (yet optimally performant)'];
             function checkOrTypeFeatureList() {
                 if (featureListInView) typeText(features, document.getElementById('feature-list'));
                 else setTimeout(checkOrTypeFeatureList, 100); 
@@ -170,9 +170,9 @@ function typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos, li
         iniTxtPos = 0; iniTxtToType++;
         if (iniTxtToType != txtToType.length) { // if end of string reached
             setTimeout(() => {
-                typeText(txtToType, destination, '', iniTxtToType, iniTxtPos)
+                typeText(txtToType, destination, '', iniTxtToType, iniTxtPos);
             }, 88); // pause til next string
     }} else setTimeout(() => {
-        typeText(txtToType, destination, '', iniTxtToType, iniTxtPos)
+        typeText(txtToType, destination, '', iniTxtToType, iniTxtPos);
     }, typeDelay + (Math.random() * 220) - 110);
 }
