@@ -81,33 +81,14 @@ const onLoadObserver = new MutationObserver(() => {
             if (!featureListInView) featureListObserver.observe(featureListDiv); 
 
             // ...then loop check for observer flag to begin typing
-            const txtToType = new Array( // features to type
+            const features = [ // features to type
                 '>>  Feature-rich', '>>  Object-oriented', '>>  Easy-to-use',
-                '>>  Lightweight (yet optimally performant)'),
-                  typeSpeed = 30, // ms between chars typed
-                  linesToScrollAt = 5; // start scrolling up at this many lines
-            let iniTxtToType = 0, // index of array txt to start typing
-                iniTxtPos = 3, // position in txt to start typing from
-                iniArrLength = txtToType[0].length, // initial length of txt array
-                typeContent = '', // init contents variable
-                iniRow; // init current row     
-            function typeText() {
-                typeContent =  ' ';
-                iniRow = Math.max(0, iniTxtToType - linesToScrollAt);
-                const destination = document.getElementById('feature-list');
-                while (iniRow < iniTxtToType) typeContent += txtToType[iniRow++] + '<br /><br />';
-                destination.innerHTML = typeContent + txtToType[iniTxtToType].substring(0, iniTxtPos) + '_';
-                if (iniTxtPos++ == iniArrLength) {
-                    iniTxtPos = 0; iniTxtToType++;
-                    if (iniTxtToType != txtToType.length) { // if end of string reached
-                        iniArrLength = txtToType[iniTxtToType].length; // reset array length
-                        setTimeout(typeText, 88); // pause til next string
-                }} else setTimeout(typeText, typeSpeed + (Math.random() * 220) - 110);
-            }
-            (function checkOrTypeFeatureList() {
-                if (featureListInView) typeText();
+                '>>  Lightweight (yet optimally performant)']
+            function checkOrTypeFeatureList() {
+                if (featureListInView) typeText(features, document.getElementById('feature-list'));
                 else setTimeout(checkOrTypeFeatureList, 100); 
-            })();
+            }
+            checkOrTypeFeatureList();
 
             // Convert OpenAI showcase icons + sidebar logo to dark-mode
             document.querySelectorAll('picture').forEach(picture => {
@@ -166,3 +147,32 @@ window.addEventListener('hashchange', () => {
 
 function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
+
+function typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos, linesToScrollAt) {
+
+    // Validate args
+    if (typeof txtToType === 'string') txtToType = [txtToType]; // array of strings to type
+    if (!destination || !destination.nodeName) // DOM element to type to
+        throw new Error('Destination must be a DOM element');
+    typeDelay = typeDelay || 30; // ms to delay betwteen chars typed
+    iniTxtToType = iniTxtToType || 0; // index of txt array to start typing
+    iniTxtPos = iniTxtPos || 3; // position in txt string to start typing from
+    linesToScrollAt = linesToScrollAt || 5; // lines reached before scrolling up
+    
+    // Init variables
+    let typeContent =  ' ',
+        iniRow = Math.max(0, iniTxtToType - linesToScrollAt);
+
+    // Type text
+    while (iniRow < iniTxtToType) typeContent += txtToType[iniRow++] + '<br /><br />';
+    destination.innerHTML = typeContent + txtToType[iniTxtToType].substring(0, iniTxtPos) + '_';
+    if (iniTxtPos++ == txtToType[iniTxtToType].length) {
+        iniTxtPos = 0; iniTxtToType++;
+        if (iniTxtToType != txtToType.length) { // if end of string reached
+            setTimeout(() => {
+                typeText(txtToType, destination, '', iniTxtToType, iniTxtPos)
+            }, 88); // pause til next string
+    }} else setTimeout(() => {
+        typeText(txtToType, destination, '', iniTxtToType, iniTxtPos)
+    }, typeDelay + (Math.random() * 220) - 110);
+}
