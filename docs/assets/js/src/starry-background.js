@@ -3,11 +3,11 @@
  *  .  .      .      *     .      .   *     */
 
 // Init variables
-const starColor = '#fff', starSize = 5, starMinScale = 0.1, overflowThreshold = 50,
-      starCount = ( window.innerWidth + window.innerHeight ) / 21,
+const starColor = '#fff', starSize = 6, starMinScale = 0.025, overflowThreshold = 50,
+      starCount = ( window.innerWidth + window.innerHeight ) / 18,
       canvas = document.querySelector( 'canvas' ),
       context = canvas.getContext( '2d' );
-let scale = 1, // device pixel ratio
+let scale = 0.5, // device pixel ratio
     stars = [], width, height, pointerX, pointerY,
     velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0005 },
     touchInput = false;
@@ -33,7 +33,6 @@ document.onmouseleave = () => { pointerX = null; pointerY = null; };
 // Define FUNCTIONS
 
 function updateCanvasSize() {
-    scale = window.devicePixelRatio || 1;
     width = window.innerWidth * scale; height = window.innerHeight * scale;
     canvas.width = width; canvas.height = height;
     stars.forEach((star) => { // position it
