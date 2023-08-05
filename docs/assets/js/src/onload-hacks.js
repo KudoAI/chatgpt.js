@@ -15,7 +15,7 @@ const mdLoaded = new Promise((resolve) => {
 const iObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.target.id === 'feature-list') { // type features or clear content/timeouts
-            if (entry.isIntersecting) typeText(features, entry.target, 20)
+            if (entry.isIntersecting) typeText(features, entry.target, 20);
             else { entry.target.innerHTML = ''; clearTimeout(typeTextID); }
         }
     });
@@ -138,7 +138,7 @@ const onLoadObserver = new MutationObserver(() => {
 function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
 
-let typeTextID // for iObserver to clear
+let typeTextID; // for iObserver to clear
 function typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos, linesToScrollAt) {
 
     // Validate args
