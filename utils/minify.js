@@ -1,6 +1,6 @@
 /* ========================================================
 Script:       minify.js
-Version:      2023.8.4
+Version:      2023.8.4.1
 Description:  Minify all JavaScript in a directory
 Author:       Adam Lui
 URL:          https://github.com/adamlui/js-utils
@@ -18,7 +18,7 @@ const inputDir = path.join(__dirname, '../docs/assets/js/src'),
 try { // to minify `inputDir` contents
     if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
     minifyDirectory(inputDir, outputDir);
-} catch (err) { console.error('Error occurred during minification:', error.message); }
+} catch (err) { console.error('Error occurred during minification:', err.message); }
 
 // Define FUNCTIONS
 
