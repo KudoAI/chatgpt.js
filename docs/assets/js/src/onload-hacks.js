@@ -179,7 +179,7 @@ function scrambleText(text, destination, delayBetweenWords, textIdx = 0) {
     }
 
     // Scramble text
-    const textToScramble = new scramble(destination);
+    const textToScramble = new Scramble(destination);
     textToScramble.setText(text[textIdx])
         .then(() => { if (delayBetweenWords && visibilityMap['cover-main']) {
             scrambleText.timeoutID = setTimeout(() => {
@@ -193,15 +193,15 @@ function randomizeCase(targetNode, iniDelay, finalDelay, incrementA, incrementB,
     if (!targetNode?.nodeName) // DOM element to randomize case of text content
         throw new Error('Target node (1st arg) must be a DOM element');
     iniDelay = validateIntArg( // ms to initially between case switches
-        iniDelay, 'Initial delay', 15);
+        iniDelay, 'Initial delay', 5);
     finalDelay = validateIntArg( // ms to finally delay between case switches
         finalDelay, 'Final delay', 1000);
     incrementA = validateIntArg( // ms to initially increment from iniDelay to finalDelay
         incrementA, 'Increment A', 10);
     incrementB = validateIntArg( // ms to increment from iniDelay to finalDelay after inflection
-        incrementB, 'Increment B', 135);
+        incrementB, 'Increment B', 111);
     inflectionPt = validateIntArg( // ms of iniDelay state before inflecting to Increment B
-        inflectionPt, 'Inflection point', 195);
+        inflectionPt, 'Inflection point', 265);
 
     // Randomize case
     targetNode.textContent = targetNode.textContent.split('').map(letter => {
@@ -250,7 +250,7 @@ function typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos, li
 
 // Define SCRAMBLE class
 
-class scramble {
+class Scramble {
     constructor(el) {
         this.el = el;
         this.chars = '!<>-_\\/[]{}—=+*^?#________';
@@ -264,8 +264,8 @@ class scramble {
         for (let i = 0; i < length; i++) {
             const from = oldText[i] || '',
                   to = newText[i] || '',
-                  start = Math.floor(Math.random() * 35), // speed of beginning scramble
-                  end = start + Math.floor(Math.random() * 35); // speed of end scramble
+                  start = Math.floor(Math.random() * 45), // speed of beginning scramble
+                  end = start + Math.floor(Math.random() * 45); // speed of end scramble
             this.queue.push({ from, to, start, end });
         }
         cancelAnimationFrame(this.frameRequest);
@@ -281,7 +281,7 @@ class scramble {
                     char = this.randomChar();
                     this.queue[i].char = char;
                 }
-                output += `<span class="dud">${char}</span>`;
+                output += `<span class="dud">${ char }</span>`;
             } else output += from;
         }
         this.el.innerHTML = output;
