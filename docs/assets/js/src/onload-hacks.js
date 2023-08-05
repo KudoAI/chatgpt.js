@@ -31,8 +31,8 @@ const iObserver = new IntersectionObserver(entries => {  entries.forEach(entry =
             scrambleText([taglineWords[0]], document.querySelector('#tagline-pre-adj'));
             scrambleText(taglineWords[1], document.querySelector('#tagline-adj'), 750);
             scrambleText([taglineWords[2]], document.querySelector('#tagline-post-adj'));
-            randomizeCase(document.querySelector('#tagline-post-adj'));
             randomizeCase(document.querySelector('#tagline-pre-adj'));
+            randomizeCase(document.querySelector('#tagline-post-adj'));
 
         } else { // stop scrambling tagline adjective
             clearTimeout(scrambleText.timeoutID);
