@@ -1,4 +1,6 @@
-// Hack page elements on load
+/* Hack page elements on load */
+
+// Define OBSERVERES
 
 const mdLoaded = new Promise((resolve) => {
     const mdObserver = new MutationObserver((mutationsList, observer) => {
@@ -135,15 +137,7 @@ const onLoadObserver = new MutationObserver(() => {
 
 });
 
-onLoadObserver.observe(document.body, { childList: true, subtree: true });
-
-// Re-connect observer on nav to new hash
-let fromUnhashedURL = window.location.href.includes('#');
-window.addEventListener('hashchange', () => {
-    if (!fromUnhashedURL) fromUnhashedURL = true;
-    else if (fromUnhashedURL)
-        onLoadObserver.observe(document.body, { childList: true, subtree: true });
-});
+// Define FUNCTIONS
 
 function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
@@ -152,7 +146,7 @@ function typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos, li
 
     // Validate args
     if (typeof txtToType === 'string') txtToType = [txtToType]; // array of strings to type
-    if (!destination || !destination.nodeName) // DOM element to type to
+    if (!destination?.nodeName) // DOM element to type to
         throw new Error('Destination must be a DOM element');
     typeDelay = typeDelay || 30; // ms to delay betwteen chars typed
     iniTxtToType = iniTxtToType || 0; // index of txt array to start typing
@@ -176,3 +170,15 @@ function typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos, li
         typeText(txtToType, destination, '', iniTxtToType, iniTxtPos);
     }, typeDelay + (Math.random() * 220) - 110);
 }
+
+// Run MAIN routine
+
+onLoadObserver.observe(document.body, { childList: true, subtree: true });
+
+// Re-connect observer on nav to new hash
+let fromUnhashedURL = window.location.href.includes('#');
+window.addEventListener('hashchange', () => {
+    if (!fromUnhashedURL) fromUnhashedURL = true;
+    else if (fromUnhashedURL)
+        onLoadObserver.observe(document.body, { childList: true, subtree: true });
+});
