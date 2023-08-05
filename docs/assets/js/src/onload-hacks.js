@@ -1,6 +1,10 @@
 /* Hack page elements on load */
 
-// Define OBSERVERES
+const features = [ // to typeText(features) in #feature-list
+    '>>  Feature-rich', '>>  Object-oriented', '>>  Easy-to-use',
+    '>>  Lightweight (yet optimally performant)'];
+
+// Define OBSERVERS
 
 const mdLoaded = new Promise((resolve) => {
     const mdObserver = new MutationObserver((mutationsList, observer) => {
@@ -8,12 +12,14 @@ const mdLoaded = new Promise((resolve) => {
     mdObserver.observe(document.body, { childList: true, subtree: true });
 });
 
-let featureListInView = false;            
-const featureListObserver = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) {
-        featureListInView = true;
-        featureListObserver.unobserve(document.querySelector('#feature-list')); 
-}});
+const iObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.target.id === 'feature-list') { // type features or clear content/timeouts
+            if (entry.isIntersecting) typeText(features, entry.target)
+            else { entry.target.innerHTML = ''; clearTimeout(typeTextID); }
+        }
+    });
+});
 
 const onLoadObserver = new MutationObserver(() => {
 
@@ -79,18 +85,8 @@ const onLoadObserver = new MutationObserver(() => {
                     featureListDiv, introDiv.nextElementSibling.nextElementSibling);
             }
 
-            // ...then observe for when it's in view (self-disconnects)
-            if (!featureListInView) featureListObserver.observe(featureListDiv); 
-
-            // ...then loop check for observer flag to begin typing
-            const features = [ // features to type
-                '>>  Feature-rich', '>>  Object-oriented', '>>  Easy-to-use',
-                '>>  Lightweight (yet optimally performant)'];
-            function checkOrTypeFeatureList() {
-                if (featureListInView) typeText(features, document.getElementById('feature-list'));
-                else setTimeout(checkOrTypeFeatureList, 100); 
-            }
-            checkOrTypeFeatureList();
+            // ...then observe for when it's in view
+            iObserver.observe(featureListDiv);
 
             // Convert OpenAI showcase icons + sidebar logo to dark-mode
             document.querySelectorAll('picture').forEach(picture => {
@@ -142,6 +138,7 @@ const onLoadObserver = new MutationObserver(() => {
 function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
 
+let typeTextID // for iObserver to clear
 function typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos, linesToScrollAt) {
 
     // Validate args
@@ -163,10 +160,10 @@ function typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos, li
     if (iniTxtPos++ == txtToType[iniTxtToType].length) {
         iniTxtPos = 0; iniTxtToType++;
         if (iniTxtToType != txtToType.length) { // if end of string reached
-            setTimeout(() => {
+            typeTextID = setTimeout(() => {
                 typeText(txtToType, destination, '', iniTxtToType, iniTxtPos);
             }, 88); // pause til next string
-    }} else setTimeout(() => {
+    }} else typeTextID = setTimeout(() => {
         typeText(txtToType, destination, '', iniTxtToType, iniTxtPos);
     }, typeDelay + (Math.random() * 220) - 110);
 }
