@@ -1,6 +1,6 @@
 /* ========================================================
 Script:       img-to-webp.js
-Version:      2023.8.2
+Version:      2023.8.4
 Description:  Compress all JPG/PNG images in a directory to WEBPs
 Author:       Adam Lui
 URL:          https://github.com/adamlui/js-utils
@@ -18,13 +18,13 @@ URL:          https://github.com/adamlui/js-utils
     const inputDir = '../media/images',
           overwriteExisting = false; // whether to overwrite existing WEBPs
 
-    // Check if `inputDir`` exists
+    // Check if `inputDir` exists
     try { await fs.access(inputDir); }
-    catch (error) { console.error(`Input directory '${inputDir}' not found.`); return; }
+    catch (err) { console.error(`Input directory '${ inputDir }' not found.`); return; }
 
     // Get all PNG/JPG files from `inputDir`
     const pngFiles = glob.sync(path.join(inputDir, '**/*.png'), { nodir: true }),
-          jpgFiles = glob.sync(path.join(inputDir, '**/*.{jpg,jpeg}'), { nodir: true });
+          jpgFiles = glob.sync(path.join(inputDir, '**/*.{ jpg, jpeg }'), { nodir: true });
 
     // Process PNG images
     const pngOptions = { extension: '.webp', qualityOptions: { lossless: true }, type: 'PNG' },
@@ -68,7 +68,7 @@ URL:          https://github.com/adamlui/js-utils
                 plugins: [webp.default(qualityOptions)]
             });
             compressedCount++;
-            console.log(`${ type } processed: ${file} => ${ outputFileName }`);
+            console.log(`${ type } processed: ${ file } => ${ outputFileName }`);
 
         }));
         return { compressedCount, skippedCount };
