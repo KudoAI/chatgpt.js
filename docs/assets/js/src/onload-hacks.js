@@ -138,16 +138,27 @@ const onLoadObserver = new MutationObserver(() => {
 function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
 
+function validateIntArg(arg, name, defaultVal) {
+    if (arg === undefined) return defaultVal; // no validation required
+    if (!Number.isInteger(arg) || !/^\d+$/.test(arg))
+        throw new Error(name + ' must be an integer.');
+    return parseInt(arg, 10); 
+}
+
 function typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos, linesToScrollAt) {
 
     // Validate args
     if (typeof txtToType === 'string') txtToType = [txtToType]; // array of strings to type
     if (!destination?.nodeName) // DOM element to type to
         throw new Error('Destination must be a DOM element');
-    typeDelay = typeDelay || 30; // ms to delay betwteen chars typed
-    iniTxtToType = iniTxtToType || 0; // index of txt array to start typing
-    iniTxtPos = iniTxtPos || 3; // position in txt string to start typing from
-    linesToScrollAt = linesToScrollAt || 5; // lines reached before scrolling up
+    typeDelay = validateIntArg( // ms to delay between chars typed
+        typeDelay, 'Typing delay', 30);
+    iniTxtToType = validateIntArg( // index of txt array to start typing
+        iniTxtToType, 'Initial text array index', 0);
+    iniTxtPos = validateIntArg( // position in txt string to start typing from
+        iniTxtPos, 'Initial text string position', 3);
+    linesToScrollAt = validateIntArg( // lines reached before scrolling up
+        linesToScrollAt, 'Lines to scroll at', 5);
     
     // Init variables
     let typeContent =  ' ',
