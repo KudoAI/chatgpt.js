@@ -29,8 +29,7 @@ const iObserver = new IntersectionObserver(entries => {  entries.forEach(entry =
                 document.querySelectorAll('span[id^="tagline"]'))
                     .forEach(span => { span.textContent = ''; });
             scrambleText([taglineWords[0]], document.querySelector('#tagline-pre-adj'));
-            taglineAdjTimeoutID = scrambleText( // for loop
-                taglineWords[1], document.querySelector('#tagline-adj'), 750);
+            scrambleText(taglineWords[1], document.querySelector('#tagline-adj'), 750);
             scrambleText([taglineWords[2]], document.querySelector('#tagline-post-adj'));
             randomizeCase(document.querySelector('#tagline-post-adj'));
             randomizeCase(document.querySelector('#tagline-pre-adj'));
@@ -62,7 +61,7 @@ const onLoadObserver = new MutationObserver(() => {
         // Populate [taglineWords] for iObserver's scrambleText() + randomizeCase()
         const taglineSpans = Array.from(document.querySelectorAll('span[id^="tagline"]'));
         taglineSpans.map(span => { taglineWords.push(
-            /pre|post/.exec(span.id) ? span.textContent : span.textContent.split('|'))});
+            /pre|post/.exec(span.id) ? span.textContent : span.textContent.split('|')); });
         taglineSpans.forEach(span => { span.textContent = ''; }); // clear them out
 
         // Observe COVER for visibility change hacks
@@ -184,7 +183,7 @@ function scrambleText(text, destination, delayBetweenWords, textIdx = 0) {
     textToScramble.setText(text[textIdx])
         .then(() => { if (delayBetweenWords && visibilityMap['cover-main']) {
             scrambleText.timeoutID = setTimeout(() => {
-                scrambleText(text, destination, delayBetweenWords, (textIdx + 1) % text.length) }, delayBetweenWords);
+                scrambleText(text, destination, delayBetweenWords, (textIdx + 1) % text.length); }, delayBetweenWords);
         }});
 }
 
