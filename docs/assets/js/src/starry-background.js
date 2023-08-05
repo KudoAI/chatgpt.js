@@ -3,7 +3,7 @@
  *  .  .      .      *     .      .   *     */
 
 // Init variables
-const starColor = '#fff', starSize = 6, starMinScale = 0.025, overflowThreshold = 50,
+const starColor = '#fff', starSize = 6, starMinScale = 0.00000000025, overflowThreshold = 50,
       starCount = ( window.innerWidth + window.innerHeight ) / 18,
       canvas = document.querySelector( 'canvas' ),
       context = canvas.getContext( '2d' );
