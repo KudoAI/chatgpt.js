@@ -1,8 +1,10 @@
 /* Hack page elements on load */
 
-const features = [ // to typeText(features) in #feature-list
+const taglineWords = []; // for iObserver's scrambleText() + randomizeCase()
+const features = [ // for iObserver's typeText() to #feature-list
     '>>  Feature-rich', '>>  Object-oriented', '>>  Easy-to-use',
-    '>>  Lightweight (yet optimally performant)'];
+    '>>  Lightweight (yet optimally performant)' ];
+const visibilityMap = []; // to store flags for section visibility
 
 // Define OBSERVERS
 
@@ -12,14 +14,39 @@ const mdLoaded = new Promise((resolve) => {
     mdObserver.observe(document.body, { childList: true, subtree: true });
 });
 
-const iObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.target.id === 'feature-list') { // type features or clear content/timeouts
-            if (entry.isIntersecting) typeText(features, entry.target, 20);
-            else { entry.target.innerHTML = ''; clearTimeout(typeText.timeoutID); }
+const iObserver = new IntersectionObserver(entries => {  entries.forEach(entry => {
+
+    // Set visibility FLAG
+    const key = entry.target.id || entry.target.className;
+    visibilityMap[key] = entry.isIntersecting;
+
+    // Handle COVER    
+    if (entry.target.className === 'cover-main') {
+        if (entry.isIntersecting) {
+
+            // Scramble entire tagline + add case randomization layer
+            Array.from( // clear tagline spans to maintain grow effect
+                document.querySelectorAll('span[id^="tagline"]'))
+                    .forEach(span => { span.textContent = ''; });
+            scrambleText([taglineWords[0]], document.querySelector('#tagline-pre-adj'));
+            taglineAdjTimeoutID = scrambleText( // for loop
+                taglineWords[1], document.querySelector('#tagline-adj'), 750);
+            scrambleText([taglineWords[2]], document.querySelector('#tagline-post-adj'));
+            randomizeCase(document.querySelector('#tagline-post-adj'));
+            randomizeCase(document.querySelector('#tagline-pre-adj'));
+
+        } else { // stop scrambling tagline adjective
+            clearTimeout(scrambleText.timeoutID);
         }
-    });
-});
+    }
+
+    // Handle FEATURE LIST
+    if (entry.target.id === 'feature-list') { // type features or clear content/timeouts
+        if (entry.isIntersecting) typeText(features, entry.target, 20);
+        else { entry.target.innerHTML = ''; clearTimeout(typeText.timeoutID); }
+    }
+
+});});
 
 const onLoadObserver = new MutationObserver(() => {
 
@@ -32,19 +59,14 @@ const onLoadObserver = new MutationObserver(() => {
         // Hide SIDEBAR
         if (!isMobileDevice()) document.body.className = 'ready close';
 
-        // Animate COVER TAGLINE
-        const tagline = document.querySelector('.cover-main blockquote p'),
-              taglineWithUnderscore = tagline.textContent + '_';
-        tagline.textContent = taglineWithUnderscore;
-        let delay = 15; const maxDelay = 1000;
-        (function animateTagline() {
-            tagline.textContent = taglineWithUnderscore.split('').map(letter => {
-                return Math.random() < 0.5 ? letter.toUpperCase() : letter.toLowerCase();
-            }).join('');
-            delay += delay < 95 ? 10 : 135; // super-saiyan to 95ms, then +135ms to 1s
-            if (delay > maxDelay) delay = maxDelay; // cap at `maxDelay`
-            setTimeout(animateTagline, delay);
-        })();
+        // Populate [taglineWords] for iObserver's scrambleText() + randomizeCase()
+        const taglineSpans = Array.from(document.querySelectorAll('span[id^="tagline"]'));
+        taglineSpans.map(span => { taglineWords.push(
+            /pre|post/.exec(span.id) ? span.textContent : span.textContent.split('|'))});
+        taglineSpans.forEach(span => { span.textContent = ''; }); // clear them out
+
+        // Observe COVER for visibility change hacks
+        iObserver.observe(document.querySelector('.cover-main'));        
 
         // Add TOP GRADIENT
         const cover = document.querySelector('.cover'),
@@ -145,6 +167,55 @@ function validateIntArg(arg, name, defaultVal) {
     return parseInt(arg, 10); 
 }
 
+function scrambleText(text, destination, delayBetweenWords, textIdx = 0) {
+
+    // Validate args
+    if (typeof text === 'string') text = [text]; // array of strings to scramble
+    if (!destination?.nodeName) // DOM element to scramble to
+        throw new Error('Destination (2nd arg) must be a DOM element');
+    if (delayBetweenWords) { // ms to delay between scrambles
+        if (!Number.isInteger(delayBetweenWords) || !/^\d+$/.test(delayBetweenWords))
+            throw new Error('Delay betweeen words (3nd arg) must be an integer (ms)');
+        delayBetweenWords = parseInt(delayBetweenWords, 10);
+    }
+
+    // Scramble text
+    const textToScramble = new scramble(destination);
+    textToScramble.setText(text[textIdx])
+        .then(() => { if (delayBetweenWords && visibilityMap['cover-main']) {
+            scrambleText.timeoutID = setTimeout(() => {
+                scrambleText(text, destination, delayBetweenWords, (textIdx + 1) % text.length) }, delayBetweenWords);
+        }});
+}
+
+function randomizeCase(targetNode, iniDelay, finalDelay, incrementA, incrementB, inflectionPt) {
+
+    // Validate args            
+    if (!targetNode?.nodeName) // DOM element to randomize case of text content
+        throw new Error('Target node (1st arg) must be a DOM element');
+    iniDelay = validateIntArg( // ms to initially between case switches
+        iniDelay, 'Initial delay', 15);
+    finalDelay = validateIntArg( // ms to finally delay between case switches
+        finalDelay, 'Final delay', 1000);
+    incrementA = validateIntArg( // ms to initially increment from iniDelay to finalDelay
+        incrementA, 'Increment A', 10);
+    incrementB = validateIntArg( // ms to increment from iniDelay to finalDelay after inflection
+        incrementB, 'Increment B', 135);
+    inflectionPt = validateIntArg( // ms of iniDelay state before inflecting to Increment B
+        inflectionPt, 'Inflection point', 195);
+
+    // Randomize case
+    targetNode.textContent = targetNode.textContent.split('').map(letter => {
+        return Math.random() < 0.5 ? letter.toUpperCase() : letter.toLowerCase();
+    }).join('');
+    randomizeCase.iniDelay = randomizeCase.iniDelay || iniDelay;
+    randomizeCase.iniDelay += randomizeCase.iniDelay < inflectionPt ? incrementA : incrementB;
+    if (randomizeCase.iniDelay > finalDelay) randomizeCase.iniDelay = finalDelay; // cap at `finalDelay`
+    setTimeout(() => {
+        randomizeCase(targetNode, iniDelay, finalDelay, incrementA, incrementB, inflectionPt);
+    }, randomizeCase.iniDelay);
+}
+
 function typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos, linesToScrollAt) {
 
     // Validate args
@@ -176,6 +247,53 @@ function typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos, li
     }} else typeText.timeoutID = setTimeout(() => {
         typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos);
     }, typeDelay + (Math.random() * 220) - 110);
+}
+
+// Define SCRAMBLE class
+
+class scramble {
+    constructor(el) {
+        this.el = el;
+        this.chars = '!<>-_\\/[]{}—=+*^?#________';
+        this.update = this.update.bind(this);
+    }
+    setText(newText) {
+        const oldText = this.el.innerText,
+              length = Math.max(oldText.length, newText.length),
+              promise = new Promise((resolve) => this.resolve = resolve);
+        this.queue = [];
+        for (let i = 0; i < length; i++) {
+            const from = oldText[i] || '',
+                  to = newText[i] || '',
+                  start = Math.floor(Math.random() * 35), // speed of beginning scramble
+                  end = start + Math.floor(Math.random() * 35); // speed of end scramble
+            this.queue.push({ from, to, start, end });
+        }
+        cancelAnimationFrame(this.frameRequest);
+        this.frame = 0; this.update(); return promise;
+    }
+    update() {
+        let output = '', complete = 0;
+        for (let i = 0, n = this.queue.length; i < n; i++) {
+            let { from, to, start, end, char } = this.queue[i];
+            if (this.frame >= end) { complete++; output += to; }
+            else if (this.frame >= start) {
+                if (!char || Math.random() < 0.28) {
+                    char = this.randomChar();
+                    this.queue[i].char = char;
+                }
+                output += `<span class="dud">${char}</span>`;
+            } else output += from;
+        }
+        this.el.innerHTML = output;
+        if (complete === this.queue.length) this.resolve();
+        else {
+            this.frameRequest = requestAnimationFrame(this.update);
+            this.frame++;
+        }
+    }
+    randomChar() {
+        return this.chars[Math.floor(Math.random() * this.chars.length)]; }
 }
 
 // Run MAIN routine
