@@ -15,7 +15,7 @@ const mdLoaded = new Promise((resolve) => {
 const iObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.target.id === 'feature-list') { // type features or clear content/timeouts
-            if (entry.isIntersecting) typeText(features, entry.target)
+            if (entry.isIntersecting) typeText(features, entry.target, 20)
             else { entry.target.innerHTML = ''; clearTimeout(typeTextID); }
         }
     });
@@ -161,10 +161,10 @@ function typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos, li
         iniTxtPos = 0; iniTxtToType++;
         if (iniTxtToType != txtToType.length) { // if end of string reached
             typeTextID = setTimeout(() => {
-                typeText(txtToType, destination, '', iniTxtToType, iniTxtPos);
+                typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos);
             }, 88); // pause til next string
     }} else typeTextID = setTimeout(() => {
-        typeText(txtToType, destination, '', iniTxtToType, iniTxtPos);
+        typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos);
     }, typeDelay + (Math.random() * 220) - 110);
 }
 
