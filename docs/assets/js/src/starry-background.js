@@ -82,7 +82,7 @@ function animateStars() {
         context.lineCap = 'round';
         context.lineWidth = starSize * star.z * scale;
         context.globalAlpha = 0.5 + 0.5*Math.random();
-        context.strokeStyle = starColor;
+        context.strokeStyle = window.starColor;
         context.beginPath();
         context.moveTo( star.x, star.y );
         let tailX = velocity.x * 2,
