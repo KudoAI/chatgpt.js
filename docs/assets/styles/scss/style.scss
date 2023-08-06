@@ -131,7 +131,6 @@ canvas { position: fixed ; width: 100% ; height: 100% ; pointer-events: none }
 section.cover p { /* cover tagline size / weight / position */
     font-family: "Major Mono Display", "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
     font-size: 2.25rem !important ; font-weight: bold ; margin-bottom: 48px ; line-height: 2.3rem !important }
-#tagline-adj { color: aqua } /* tagline adjective */
 
 /* Buttons */
 .cover-main > p:last-child a { /* all buttons */
