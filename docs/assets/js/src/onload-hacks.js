@@ -5,7 +5,7 @@ const features = [ // for iObserver's typeText() to #feature-list
     '>>  Feature-rich', '>>  Object-oriented', '>>  Easy-to-use',
     '>>  Lightweight (yet optimally performant)' ];
 const visibilityMap = []; // to store flags for section visibility
-const starColors = [ // for mdLoaded.then's scroll listener
+const sectionColors = [ // for mdLoaded.then's scroll color hacks
     '#64ffff', // Importing the Library
     '#f9ee16', // Greasemonkey
     'lime', // Chrome
@@ -31,6 +31,9 @@ const iObserver = new IntersectionObserver(entries => { entries.forEach(entry =>
     // Handle COVER    
     if (entry.target.className === 'cover-main') {
         if (entry.isIntersecting) {
+
+            // Reset colors
+            document.querySelector('#kudoai a').style.color = 'white';
             window.starColor = 'white';
 
             // Scramble entire tagline + add case randomization layer
@@ -64,6 +67,11 @@ const onLoadObserver = new MutationObserver(() => {
 
         // Hide SIDEBAR
         if (!isMobileDevice()) document.body.className = 'ready close';
+
+        // Animate KudoAI logo
+        const kudo = document.querySelector('.kudo');
+        kudo.classList.add('hover');
+        setTimeout(() => { kudo.classList.remove('hover'); }, 1000);
 
         // Populate [taglineWords] for iObserver's scrambleText() + randomizeCase()
         const taglineSpans = Array.from(document.querySelectorAll('span[id^="tagline"]'));
@@ -127,7 +135,7 @@ const onLoadObserver = new MutationObserver(() => {
             });
             triggerPoints.sort((a, b) => a - b); // sort ascending
 
-            // Update STAR COLOR on scroll
+            // Update COLORS + STAR VELOCITY on scroll
             window.addEventListener('scroll', () => {
 
                 // Exit if still in 1st two sections
@@ -139,19 +147,32 @@ const onLoadObserver = new MutationObserver(() => {
                         currentSection < triggerPoints.length)
                     currentSection++; 
 
-                // Update star color/velocity if section changed
-                const starColorsIdx = currentSection - 2; // offset for cover/about
-                const sectionStarColor = starColors[starColorsIdx];
-                if (sectionStarColor !== window.starColor) {
-                    window.starColor = sectionStarColor; // update color
+                // Color/animate stars/logo if section changed
+                const sectionColor = sectionColors[currentSection - 2];
+                if (sectionColor !== window.starColor) {
+                    const warpDuration = 1600, hiWarpDuration = 1400, starResetDelay = 15,
+                          kudoAIlogo = document.querySelector('#kudoai a');
+
+                    // Update colors + trigger logo animation
+                    kudoAIlogo.style.color = sectionColor;
+                    kudo.classList.add('hover'); // to trigger slide animation
+                    window.starColor = sectionColor;
+                    setTimeout(() => { // reset logo color
+                        if (window.starColor === visibilityMap['cover-main'] ? 'white' 
+                                                                             : sectionColor) {
+                            kudoAIlogo.style.color = 'white';
+                            kudo.classList.remove('hover'); // to stop slide animation
+                    }}, warpDuration);
+                    setTimeout(() => { // reset star color
+                        if (window.starColor === sectionColor) {
+                            window.starColor = 'white'; }}, warpDuration + starResetDelay);
+
+                    // Update star velocity
                     window.starVelocity.z += .0045; // boost velocity
                     setTimeout(() => { // slow velocity
-                        window.starVelocity.z -= .0025; }, 1400);
+                        window.starVelocity.z -= .0025; }, hiWarpDuration);
                     setTimeout(() => { // slow velocity to original
-                        window.starVelocity.z -= .002; }, 1600);
-                    setTimeout(() => { // reset color
-                        if (window.starColor === sectionStarColor)
-                            window.starColor = 'white'; }, 1615);
+                        window.starVelocity.z -= .002; }, warpDuration);
                 }
             });
 
