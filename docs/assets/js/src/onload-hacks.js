@@ -158,13 +158,12 @@ const onLoadObserver = new MutationObserver(() => {
                     kudo.classList.add('hover'); // to trigger slide animation
                     window.starColor = sectionColor;
                     setTimeout(() => { // reset logo color
-                        if (window.starColor === visibilityMap['cover-main'] ? 'white' 
-                                                                             : sectionColor) {
+                        if (window.starVelocity.z <= 0.0005) {
                             kudoAIlogo.style.color = 'white';
                             kudo.classList.remove('hover'); // to stop slide animation
-                    }}, warpDuration);
+                    }}, warpDuration + 5);
                     setTimeout(() => { // reset star color
-                        if (window.starColor === sectionColor) {
+                        if (window.starVelocity.z <= 0.0005) {
                             window.starColor = 'white'; }}, warpDuration + starResetDelay);
 
                     // Update star velocity
