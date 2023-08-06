@@ -183,7 +183,7 @@ section.cover p { /* cover tagline size / weight / position */
 .sidebar-toggle:hover .sidebar-toggle-button { opacity: 1 }
 .sidebar-toggle span { /* color/size/space toggle bars */
     background-color: white ; width: 20px ; height: 3px ; margin-bottom: 5px }
-.sidebar { background-color: black ; padding-right: 5px !important }
+.sidebar { background-color: transparent ; padding-right: 5px !important }
 .sidebar a { font-size: 2.1rem !important ; line-height: 3.8rem ; color: white !important }
 .sidebar li.active > a { border-right: 0 !important } /* move line indicator from active links... */
 .sidebar li.active { border-right: 4px solid $green ;  /* ...to active li's */
