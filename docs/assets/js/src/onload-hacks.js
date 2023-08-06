@@ -139,11 +139,20 @@ const onLoadObserver = new MutationObserver(() => {
                         currentSection < triggerPoints.length)
                     currentSection++; 
 
-                // Update star color if section changed
+                // Update star color/velocity if section changed
                 const starColorsIdx = currentSection - 2; // offset for cover/about
                 const sectionStarColor = starColors[starColorsIdx];
-                if (sectionStarColor !== window.starColor)
-                    window.starColor = sectionStarColor;              
+                if (sectionStarColor !== window.starColor) {
+                    window.starColor = sectionStarColor; // update color
+                    window.starVelocity.z += .0045; // boost velocity
+                    setTimeout(() => { // slow velocity
+                        window.starVelocity.z -= .0025; }, 1400);
+                    setTimeout(() => { // slow velocity to original
+                        window.starVelocity.z -= .002; }, 1600);
+                    setTimeout(() => { // reset color
+                        if (window.starColor === sectionStarColor)
+                            window.starColor = 'white'; }, 1615);
+                }
             });
 
             // Update LANGUAGE SELECTOR word
