@@ -5,6 +5,14 @@ const features = [ // for iObserver's typeText() to #feature-list
     '>>  Feature-rich', '>>  Object-oriented', '>>  Easy-to-use',
     '>>  Lightweight (yet optimally performant)' ];
 const visibilityMap = []; // to store flags for section visibility
+const starColors = [ // for mdLoaded.then's scroll listener
+    '#64ffff', // Importing the Library
+    '#f9ee16', // Greasemonkey
+    'lime', // Chrome
+    'orange', // Usage
+    '#b981f9', // Made w/ chatgpt.js
+    '#f581f9', // ChatGPT Infinity tile
+    '#81f9c3' ]; // Contributors
 
 // Define OBSERVERS
 
@@ -14,7 +22,7 @@ const mdLoaded = new Promise((resolve) => {
     mdObserver.observe(document.body, { childList: true, subtree: true });
 });
 
-const iObserver = new IntersectionObserver(entries => {  entries.forEach(entry => {
+const iObserver = new IntersectionObserver(entries => { entries.forEach(entry => {
 
     // Set visibility FLAG
     const key = entry.target.id || entry.target.className;
@@ -23,6 +31,7 @@ const iObserver = new IntersectionObserver(entries => {  entries.forEach(entry =
     // Handle COVER    
     if (entry.target.className === 'cover-main') {
         if (entry.isIntersecting) {
+            window.starColor = 'white';
 
             // Scramble entire tagline + add case randomization layer
             Array.from( // clear tagline spans to maintain grow effect
@@ -34,13 +43,11 @@ const iObserver = new IntersectionObserver(entries => {  entries.forEach(entry =
             randomizeCase(document.querySelector('#tagline-pre-adj'));
             randomizeCase(document.querySelector('#tagline-post-adj'));
 
-        } else { // stop scrambling tagline adjective
+        } else // stop scrambling tagline adjective
             clearTimeout(scrambleText.timeoutID);
-        }
-    }
 
     // Handle FEATURE LIST
-    if (entry.target.id === 'feature-list') { // type features or clear content/timeouts
+    } else if (entry.target.id === 'feature-list') { // type features or clear content/timeouts
         if (entry.isIntersecting) typeText(features, entry.target, 20);
         else { entry.target.innerHTML = ''; clearTimeout(typeText.timeoutID); }
     }
@@ -64,8 +71,8 @@ const onLoadObserver = new MutationObserver(() => {
             /pre|post/.exec(span.id) ? span.textContent : span.textContent.split('|')); });
         taglineSpans.forEach(span => { span.textContent = ''; }); // clear them out
 
-        // Observe COVER for visibility change hacks
-        iObserver.observe(document.querySelector('.cover-main'));        
+        // Observe COVER for visibility change tagline hacks
+        iObserver.observe(document.querySelector('.cover-main'));
 
         // Add TOP GRADIENT
         const cover = document.querySelector('.cover'),
@@ -90,12 +97,6 @@ const onLoadObserver = new MutationObserver(() => {
        
         mdLoaded.then(() => {
 
-            // Update LANGUAGE SELECTOR word
-            setTimeout(() => {
-                const activeLanguage = document.querySelector('.active').innerText;
-                document.getElementById('dropdown-button').innerText = activeLanguage;
-            }, 15);
-
             // Create/select FEATURE LIST
             const featureListDiv = document.querySelector('#feature-list') || // select div
                                    document.createElement('div'); // ...or create it
@@ -106,8 +107,50 @@ const onLoadObserver = new MutationObserver(() => {
                     featureListDiv, introDiv.nextElementSibling.nextElementSibling);
             }
 
-            // ...then observe for when it's in view
+            // ...then observe for visibility change typing hacks
             iObserver.observe(featureListDiv);
+
+            // Establish TRIGGER POINTS for scroll FX
+            const triggerElements = [], triggerPoints = [];
+            triggerElements.push(...document.querySelectorAll('h2'));
+            triggerElements.push(document.querySelector('h3#-greasemonkey'));
+            triggerElements.push(document.querySelector('h3#-chrome'));
+            triggerElements.push( // 1st showcase tile
+                document.querySelector('img[src*="chatgpt-infinity"]'));
+            triggerElements.forEach(element => {
+                const elementPos = element.getBoundingClientRect().top;
+                const vOffsetDivisor = ( // higher = lower pos
+                    element.id.includes('⚡') ? 1.5
+                    : element.tagName === 'IMG' ? 0.8 
+                                                : 8.8 ); // headings
+                triggerPoints.push(elementPos - window.innerHeight/vOffsetDivisor);
+            });
+            triggerPoints.sort((a, b) => a - b); // sort ascending
+
+            // Update STAR COLOR on scroll
+            window.addEventListener('scroll', () => {
+
+                // Exit if still in 1st two sections
+                if (visibilityMap['cover-main'] || visibilityMap['feature-list']) return;
+              
+                // Determine current section
+                let currentSection = 0;
+                while (window.scrollY > triggerPoints[currentSection] && 
+                        currentSection < triggerPoints.length)
+                    currentSection++; 
+
+                // Update star color if section changed
+                const starColorsIdx = currentSection - 2; // offset for cover/about
+                const sectionStarColor = starColors[starColorsIdx];
+                if (sectionStarColor !== window.starColor)
+                    window.starColor = sectionStarColor;              
+            });
+
+            // Update LANGUAGE SELECTOR word
+            setTimeout(() => {
+                const activeLanguage = document.querySelector('.active').innerText;
+                document.getElementById('dropdown-button').innerText = activeLanguage;
+            }, 15);
 
             // Convert OpenAI showcase icons + sidebar logo to dark-mode
             document.querySelectorAll('picture').forEach(picture => {
