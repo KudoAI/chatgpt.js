@@ -63,7 +63,7 @@ const onLoadObserver = new MutationObserver(() => {
     if (!document.querySelector('.cover-main blockquote p')) return;
 
     // Activate SMOOTH SCROLL
-    new SmoothScroll(document, 135, 13);
+    smoothScroll(document, 135, 13);
 
     // Hack HOMEPAGE
     if (/#\/(\w{2}(-\w{2})?\/)?$/.test(location.hash)) {
@@ -241,7 +241,7 @@ function validateIntArg(arg, name, defaultVal) {
     return parseInt(arg, 10); 
 }
 
-function SmoothScroll(target, speed, smooth) {
+function smoothScroll(target, speed, smooth) {
 
     // Init target
     if (target === document)
@@ -261,7 +261,7 @@ function SmoothScroll(target, speed, smooth) {
 
     function scrolled(e) {
         e.preventDefault(); // disable default scrolling
-        var delta = normalizeWheelDelta(e);
+        const delta = normalizeWheelDelta(e);
         pos += -delta * speed;
         pos = ( // limit scrolling
             Math.max(0, Math.min(pos, target.scrollHeight - frame.clientHeight)));
