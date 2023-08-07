@@ -63,7 +63,7 @@ const onLoadObserver = new MutationObserver(() => {
     if (!document.querySelector('.cover-main blockquote p')) return;
 
     // Activate SMOOTH SCROLL
-    smoothScroll(document, 135, 13);
+    smoothScroll(document, 155, 9);
 
     // Hack HOMEPAGE
     if (/#\/(\w{2}(-\w{2})?\/)?$/.test(location.hash)) {
