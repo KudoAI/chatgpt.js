@@ -62,8 +62,8 @@
 
 ```js
 (async () => {
-  await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
-  // 코드를 여기에 작성해 주세요...
+    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
+    // 코드를 여기에 작성해 주세요...
 
 })();
 ```
@@ -74,18 +74,18 @@
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js');
 xhr.onload = function () {
-  if (xhr.status === 200) {
-    var chatgptJS = document.createElement('script');
-    chatgptJS.textContent = xhr.responseText;
-    document.head.appendChild(chatgptJS);
-    yourCode(); // 당신의 코드를 작성해주세요 
+    if (xhr.status === 200) {
+        var chatgptJS = document.createElement('script');
+        chatgptJS.textContent = xhr.responseText;
+        document.head.appendChild(chatgptJS);
+        yourCode(); // 당신의 코드를 작성해주세요 
 
-  }
+    }
 };
 xhr.send();
 
 function yourCode() {
-  // 코드를 여기에 작성해 주세요...
+    // 코드를 여기에 작성해 주세요...
 
 }
 ```
@@ -132,8 +132,8 @@ export { chatgpt }
 4. `chatgpt.js` 를 필요로하는 스크립트 (전경/배경 같은) 에서는 다음과 같이 가져옵니다.
 ```js
 (async () => {
-  const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
-  // 코드를 여기에 작성해 주세요...
+    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
+    // 코드를 여기에 작성해 주세요...
 })();
 ```
 

@@ -60,8 +60,8 @@
 
 ```js
 (async () => {
-  await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
-  // Your code here...
+    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
+    // Your code here...
 })();
 ```
 
@@ -71,17 +71,17 @@
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js');
 xhr.onload = function () {
-  if (xhr.status === 200) {
-    var chatgptJS = document.createElement('script');
-    chatgptJS.textContent = xhr.responseText;
-    document.head.appendChild(chatgptJS);
-    yourCode(); // runs your code
-  }
+    if (xhr.status === 200) {
+        var chatgptJS = document.createElement('script');
+        chatgptJS.textContent = xhr.responseText;
+        document.head.appendChild(chatgptJS);
+        yourCode(); // runs your code
+    }
 };
 xhr.send();
 
 function yourCode() {
-  // Your code here...
+    // Your code here...
 }
 ```
 
@@ -126,8 +126,8 @@ export { chatgpt }
 4. In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
 ```js
 (async () => {
-  const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
-  // Your code here...
+    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
+    // Your code here...
 })();
 ```
 

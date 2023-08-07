@@ -60,8 +60,8 @@
 
 ```js
 (async () => {
-  await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
-  // 你的代碼在這裡...
+    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
+    // 你的代碼在這裡...
 })();
 ```
 
@@ -71,17 +71,17 @@
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js');
 xhr.onload = function () {
-  if (xhr.status === 200) {
-    var chatgptJS = document.createElement('script');
-    chatgptJS.textContent = xhr.responseText;
-    document.head.appendChild(chatgptJS);
-    yourCode(); // 運行你的代碼
-  }
+    if (xhr.status === 200) {
+        var chatgptJS = document.createElement('script');
+        chatgptJS.textContent = xhr.responseText;
+        document.head.appendChild(chatgptJS);
+        yourCode(); // 運行你的代碼
+    }
 };
 xhr.send();
 
 function yourCode() {
-  // 你的代碼在這裡...
+    // 你的代碼在這裡...
 }
 ```
 
@@ -126,8 +126,8 @@ export { chatgpt }
 4. 在需要 `chatgpt.js` （前台/後台類似）的腳本中，像這樣導入它：
 ```js
 (async () => {
-  const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
-  // 你的代碼在這裡...
+    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
+    // 你的代碼在這裡...
 })();
 ```
 

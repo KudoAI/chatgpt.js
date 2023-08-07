@@ -60,8 +60,8 @@
 
 ```js
 (async () => {
-  await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
-  // Tu código aquí...
+    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
+    // Tu código aquí...
 })();
 ```
 
@@ -71,17 +71,17 @@
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js');
 xhr.onload = function () {
-  if (xhr.status === 200) {
-    var chatgptJS = document.createElement('script');
-    chatgptJS.textContent = xhr.responseText;
-    document.head.appendChild(chatgptJS);
-    yourCode(); // ejecuta tu código
-  }
+    if (xhr.status === 200) {
+        var chatgptJS = document.createElement('script');
+        chatgptJS.textContent = xhr.responseText;
+        document.head.appendChild(chatgptJS);
+        yourCode(); // ejecuta tu código
+    }
 };
 xhr.send();
 
 function yourCode() {
-  // Tu código aquí...
+    // Tu código aquí...
 }
 ```
 
@@ -126,8 +126,8 @@ export { chatgpt }
 4. En los scripts que necesitan `chatgpt.js` (primer plano/fondo por igual), impórtelo así:
 ```js
 (async () => {
-  const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
-  // Tu código aquí...
+    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
+    // Tu código aquí...
 })();
 ```
 
