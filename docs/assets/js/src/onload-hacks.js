@@ -130,8 +130,8 @@ const onLoadObserver = new MutationObserver(() => {
             animateElements.forEach((element) => { element.classList.add('content-fadeup'); });
 
             // ...then observe for visibility change to flag state 
-            const animteObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry) => {
+            const animteObserver = new IntersectionObserver(
+                (entries) => { entries.forEach((entry) => {
                     if (entry.isIntersecting) entry.target.classList.add('visible');
                     else entry.target.classList.remove('visible');
                 });}, { root: null, threshold: 0.02 });
