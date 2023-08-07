@@ -103,11 +103,15 @@ a { word-break: break-word }
     background-image: linear-gradient(to top, transparent, #000) ;
     pointer-events: none ; z-index: 1 }
 
-/* Fade animation */
+/* Fade animations */
+.menu-fadeup { opacity: 0 ; transform: translateY(5px) }
+.menu-fadeup.visible { opacity: 1 ; transform: translateY(0) ;
+    transition: opacity 0.2s cubic-bezier(.165, .84, .44, 1),
+        transform 0.5s cubic-bezier(.165, .84, .44, 1) }
 .content-fadeup { opacity: 0 ; transform: translateY(20px) }
 .content-fadeup.visible { opacity: 1 ; transform: translateY(0) ;
-    transition: opacity 0.2s cubic-bezier(.165, .84, .44, 1) 0.3s,
-        transform 0.5s cubic-bezier(.165, .84, .44, 1) 0.3s }
+    transition: opacity 0.2s cubic-bezier(.165, .84, .44, 1) 0.15s,
+        transform 0.5s cubic-bezier(.165, .84, .44, 1) 0.15s }
 
 /* KudoAI logo */
 #kudoai {
