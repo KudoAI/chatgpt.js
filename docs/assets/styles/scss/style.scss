@@ -103,6 +103,12 @@ a { word-break: break-word }
     background-image: linear-gradient(to top, transparent, #000) ;
     pointer-events: none ; z-index: 1 }
 
+/* Fade animation */
+.content-fadeup { opacity: 0 ; transform: translateY(20px) }
+.content-fadeup.visible { opacity: 1 ; transform: translateY(0) ;
+    transition: opacity 0.2s cubic-bezier(.165, .84, .44, 1) 0.3s,
+        transform 0.5s cubic-bezier(.165, .84, .44, 1) 0.3s }
+
 /* KudoAI logo */
 #kudoai {
     position: fixed ; top: 15px ; left: 35px ;

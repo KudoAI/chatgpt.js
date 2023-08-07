@@ -13,6 +13,7 @@ const sectionColors = [ // for mdLoaded.then's scroll color hacks
     '#b981f9', // Made w/ chatgpt.js
     '#f581f9', // ChatGPT Infinity tile
     '#81f9c3' ]; // Contributors
+const animateElements = []; // for mdLoaded.then's animteObserver
 
 // Define OBSERVERS
 
@@ -118,8 +119,23 @@ const onLoadObserver = new MutationObserver(() => {
                     featureListDiv, introDiv.nextElementSibling.nextElementSibling);
             }
 
-            // ...then observe for visibility change typing hacks
+            // ...then observe for visibility change to apply typing hack
             iObserver.observe(featureListDiv);
+
+            // Add FADE class to elements
+            animateElements.push(...document.querySelectorAll( // cover elements
+                '.cover-main img, .cover-main a'));
+            animateElements.push(...document.querySelectorAll( // general elements
+                'h2, h3, p, pre, li'));
+            animateElements.forEach((element) => { element.classList.add('content-fadeup'); });
+
+            // ...then observe for visibility change to flag state 
+            const animteObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                    else entry.target.classList.remove('visible');
+                });}, { root: null, threshold: 0.02 });
+            animateElements.forEach((element) => { animteObserver.observe(element); });
 
             // Establish TRIGGER POINTS for scroll FX
             const triggerElements = [], triggerPoints = [];
