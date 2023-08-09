@@ -198,7 +198,7 @@ section.cover p { /* cover tagline size / weight / position */
 .sidebar-nav { padding-top: 20px }
 .sidebar a { font-size: 2.1rem !important ; line-height: 3.8rem ; color: white !important }
 .sidebar li.active > a { border-right: 0 !important } /* move line indicator from active links... */
-.sidebar li.active { border-right: 4px solid $green ;  /* ...to active li's */
+.sidebar li.nav-active { border-right: 4px solid $green ;  /* ...to active li's */
     padding-right: 15px } /* ...so padding can be applied */
 .sidebar ul > ul { margin: 0 0 12px 26px } /* indent subheadings */
 .sidebar ul > li:first-child { margin-top: 8px } /* lower subheadings */

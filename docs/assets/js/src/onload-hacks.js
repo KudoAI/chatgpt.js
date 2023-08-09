@@ -131,11 +131,28 @@ const onLoadObserver = new MutationObserver(() => {
             fadeElements.push(document.querySelector('#language-menu'));
             fadeElements[fadeElements.length - 1].classList.add('menu-fadeup');
 
-            // ...then observe for visibility change to flag state 
+            // ...then observe for visibility change to update element/sidebar states
+            const sideNavItems = [...document.querySelectorAll('.sidebar-nav li')];
             const fadeObserver = new IntersectionObserver(
                 (entries) => { entries.forEach((entry) => {
-                    if (entry.isIntersecting) entry.target.classList.add('visible');
-                    else entry.target.classList.remove('visible');
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+
+                        // Update sidebar w/ active class for H2/H3's
+                        if (entry.target.tagName.startsWith('H')) {
+
+                            // Find the nav item that matches intersecting heading
+                            const headingText = entry.target.querySelector('a').textContent,
+                                  activeNavItem = document.querySelector(
+                                      `a[title="${ headingText }"]`).parentElement;
+
+                            // Add nav-active class to matched nav item                        
+                            if (activeNavItem) {
+                                sideNavItems.forEach(item => item.classList.remove('nav-active'));
+                                activeNavItem.classList.add('nav-active');
+                            }
+                        }
+                    } else entry.target.classList.remove('visible');
                 });}, { root: null, threshold: 0.02 });
             fadeElements.forEach((element) => { fadeObserver.observe(element); });
 
@@ -211,7 +228,7 @@ const onLoadObserver = new MutationObserver(() => {
                 picture.parentNode.replaceChild(imgElement, picture);
             });
 
-            // Append footer
+            // Append FOOTER
             const footer = document.createElement('div');
             fetch('assets/html/footer.html')
                 .then(response => response.text()).then(html => {
@@ -220,12 +237,12 @@ const onLoadObserver = new MutationObserver(() => {
                     article.insertBefore(footer, article.lastElementChild);
                 });
                 
-            // Remove readme's back-to-top link
+            // Remove readme's BACK-TO-TOP link
             const readmeBTTlink = document.querySelector('p a[href="#"]');
             readmeBTTlink.previousSibling.remove(); readmeBTTlink.remove();
         });
 
-    // Hide site lang selector from NON-HOME pages
+    // Hide SITE LANG SELECTOR from NON-HOME pages
     } else document.querySelector('.app-nav').style.display = 'none';
 
     // Hack LICENSE/SECURIY pages
@@ -234,7 +251,7 @@ const onLoadObserver = new MutationObserver(() => {
         // Hide SIDEBAR
         if (!isMobileDevice()) document.body.className = 'ready close';
 
-        // Correct doc lang selector links
+        // Correct DOC LANG SELECTOR links
         mdLoaded.then(() => {
             const docLangSelector = document.querySelectorAll('h5 a');
             for (const lang of docLangSelector)
@@ -242,7 +259,7 @@ const onLoadObserver = new MutationObserver(() => {
         });
     }
 
-    // Disconnect observer
+    // DISCONNECT observer
     onLoadObserver.disconnect();
 
 });
