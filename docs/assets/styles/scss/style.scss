@@ -112,6 +112,12 @@ a { word-break: break-word }
 .content-fadeup.visible { opacity: 1 ; transform: translateY(0) ;
     transition: opacity 0.2s cubic-bezier(.165, .84, .44, 1) 0.15s,
         transform 0.5s cubic-bezier(.165, .84, .44, 1) 0.15s }
+.content-faderight { opacity: 0 ; transform: translateX(-20px) }
+.content-fadeleft { opacity: 0 ; transform: translateX(20px) }
+.content-faderight.visible, .content-fadeleft.visible {
+    opacity: 1 ; transform: translateX(0) ;
+    transition: opacity 0.2s cubic-bezier(.165, .84, .44, 1) 0.15s,
+        transform 0.5s cubic-bezier(.165, .84, .44, 1) 0.15s }
 
 /* KudoAI logo */
 #kudoai {
