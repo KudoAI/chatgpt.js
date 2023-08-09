@@ -39,6 +39,11 @@ const iObserver = new IntersectionObserver(entries => { entries.forEach(entry =>
             document.querySelector('#kudoai a').style.color = 'white';
             window.starColor = 'white';
 
+            // Animate KudoAI logo
+            const kudo = document.querySelector('.kudo');
+            kudo.classList.add('hover');
+            setTimeout(() => { kudo.classList.remove('hover'); }, 955);
+
             // Star boost
             if (window.starVelocity.z <= iniStarVelocity) { // to avoid reverse boost from scroll-ups
                 window.starVelocity.z += .024; // boost velocity
@@ -82,11 +87,6 @@ const onLoadObserver = new MutationObserver(() => {
 
         // Hide SIDEBAR
         if (!isMobileDevice()) document.body.className = 'ready close';
-
-        // Animate KudoAI logo
-        const kudo = document.querySelector('.kudo');
-        kudo.classList.add('hover');
-        setTimeout(() => { kudo.classList.remove('hover'); }, 1000);
 
         // Populate [taglineWords] for iObserver's scrambleText() + randomizeCase()
         const taglineSpans = Array.from(document.querySelectorAll('span[id^="tagline"]'));
@@ -201,7 +201,8 @@ const onLoadObserver = new MutationObserver(() => {
                 if (sectionColor !== window.starColor) {
 
                     // Update colors + trigger logo animation
-                    const kudoAIlogo = document.querySelector('#kudoai a');
+                    const kudoAIlogo = document.querySelector('#kudoai a'),
+                          kudo = document.querySelector('.kudo');
                     kudoAIlogo.style.color = sectionColor;
                     kudo.classList.add('hover'); // to trigger slide animation
                     window.starColor = sectionColor;
