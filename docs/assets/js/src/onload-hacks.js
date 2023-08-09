@@ -14,6 +14,8 @@ const sectionColors = [ // for mdLoaded.then's scroll color hacks
     '#f581f9', // ChatGPT Infinity tile
     '#81f9c3' ]; // Contributors
 const fadeElements = []; // for mdLoaded.then's fadeObserver
+const iniStarVelocity = window.starVelocity.z,
+      warpDuration = 1600, hiWarpDuration = 1400, starResetDelay = 15;
 
 // Define OBSERVERS
 
@@ -36,6 +38,15 @@ const iObserver = new IntersectionObserver(entries => { entries.forEach(entry =>
             // Reset colors
             document.querySelector('#kudoai a').style.color = 'white';
             window.starColor = 'white';
+
+            // Star boost
+            if (window.starVelocity.z <= iniStarVelocity) { // to avoid reverse boost from scroll-ups
+                window.starVelocity.z += .024; // boost velocity
+                setTimeout(() => { // slow velocity
+                    window.starVelocity.z -= .02; }, 855);
+                setTimeout(() => { // slow velocity to original
+                    window.starVelocity.z = iniStarVelocity; }, 955);
+            }
 
             // Scramble entire tagline + add case randomization layer
             Array.from( // clear tagline spans to maintain grow effect
@@ -188,20 +199,19 @@ const onLoadObserver = new MutationObserver(() => {
                 // Color/animate stars/logo if section changed
                 const sectionColor = sectionColors[currentSection - 2];
                 if (sectionColor !== window.starColor) {
-                    const warpDuration = 1600, hiWarpDuration = 1400, starResetDelay = 15,
-                          kudoAIlogo = document.querySelector('#kudoai a');
 
                     // Update colors + trigger logo animation
+                    const kudoAIlogo = document.querySelector('#kudoai a');
                     kudoAIlogo.style.color = sectionColor;
                     kudo.classList.add('hover'); // to trigger slide animation
                     window.starColor = sectionColor;
                     setTimeout(() => { // reset logo color
-                        if (window.starVelocity.z <= 0.0005) {
+                        if (window.starVelocity.z <= iniStarVelocity) {
                             kudoAIlogo.style.color = 'white';
                             kudo.classList.remove('hover'); // to stop slide animation
                     }}, warpDuration + 5);
                     setTimeout(() => { // reset star color
-                        if (window.starVelocity.z <= 0.0005) {
+                        if (window.starVelocity.z <= iniStarVelocity) {
                             window.starColor = 'white'; }}, warpDuration + starResetDelay);
 
                     // Update star velocity
@@ -348,7 +358,8 @@ function scrambleText(text, destination, delayBetweenWords, textIdx = 0) {
     textToScramble.setText(text[textIdx])
         .then(() => { if (delayBetweenWords && visibilityMap['cover-main']) {
             scrambleText.timeoutID = setTimeout(() => {
-                scrambleText(text, destination, delayBetweenWords, (textIdx + 1) % text.length); }, delayBetweenWords);
+                scrambleText(text, destination, delayBetweenWords, (textIdx + 1) % text.length); },
+            delayBetweenWords);
         }});
 }
 
