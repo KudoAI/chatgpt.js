@@ -4,7 +4,7 @@ module.exports  = {
     'rules': {
         'indent': 'off',
         'semi': ['error', 'always'], // enforce semicolons at end of statement
-        'quotes': ['error', 'single', { allowTemplateLiterals: true }], // enforce single quotes or backticks for string literals
+        'quotes': ['error', 'single'], // enforce single quotes for string literals
         'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }], // enforce spacing in object properties
         'comma-dangle': ['error', 'never'], // enforce no trailing commas in arrays or objects
         'no-empty': 'off', // allow empty blocks
