@@ -1026,26 +1026,6 @@ const chatgpt = {
 
     speak: function(msg, options = {}) {
         const { voiceIndex = 0, pitch = 1, speed = 1 } = options;
-        const waitUntilVoicesLoaded = async (maxRetries = 5, retryInterval = 1000) => {
-            return new Promise(async (resolve, reject) => {
-                const tts = speechSynthesis;
-                let retries = 0;
-                await waitUntilVoicesLoaded();
-                const checkVoices = () => {
-                    if (tts.getVoices().length !== 0) {
-                        resolve();
-                    } else {
-                        retries++;
-                        if (retries < maxRetries) {
-                            setTimeout(checkVoices, retryInterval);
-                        } else {
-                            reject(new Error('Failed to load voices'));
-                        }   
-                    }      
-                };
-                checkVoices();
-            });
-        };
         try {
             const voices = speechSynthesis.getVoices();
             if (voiceIndex >= 0 && voiceIndex < voices.length) {
