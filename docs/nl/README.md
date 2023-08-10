@@ -211,7 +211,7 @@ Geef ChatGPT-antwoorden weer in DuckDuckGo-zijbalk (mogelijk gemaakt door GPT-4!
 [Leesmij](https://github.duckduckgpt.com/#readme) /
 [Bespreken](https://github.duckduckgpt.com/discussions)
 
-<br>
+<p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">
     <picture>

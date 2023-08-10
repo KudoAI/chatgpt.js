@@ -212,7 +212,7 @@ chatgpt.get('reply', 'last')
 [रीडमी](https://github.duckduckgpt.com/#readme) / 
 [चर्चा करना](https://github.duckduckgpt.com/discussions)
 
-<br>
+<p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">
     <picture>

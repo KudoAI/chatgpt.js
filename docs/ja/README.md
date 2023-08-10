@@ -211,7 +211,7 @@ DuckDuckGo サイドバーに ChatGPT の回答を表示 (GPT-4 を搭載!)
 [お読みください](https://github.duckduckgpt.com/#readme) / 
 [議論](https://github.duckduckgpt.com/discussions)
 
-<br>
+<p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">
     <picture>

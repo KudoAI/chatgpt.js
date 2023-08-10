@@ -217,8 +217,7 @@ DuckDuckGo 사이드바에 ChatGPT의 답변을 표시해주는 기능입니다.
 [리드미](https://github.duckduckgpt.com/#readme) /
 [토론](https://github.duckduckgpt.com/discussions)
 
-
-<br>
+<p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">
     <picture>

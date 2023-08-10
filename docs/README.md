@@ -211,7 +211,7 @@ Display ChatGPT answers in DuckDuckGo sidebar (powered by GPT-4!)
 [Readme](https://github.duckduckgpt.com/#readme) /
 [Discuss](https://github.duckduckgpt.com/discussions)
 
-<br>
+<p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">
     <picture>

@@ -211,7 +211,7 @@ chatgpt.get('reply', 'last');
 [自述文件](https://github.duckduckgpt.com/#readme) /
 [討論](https://github.duckduckgpt.com/discussions)
 
-<br>
+<p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">
     <picture>

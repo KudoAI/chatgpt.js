@@ -211,7 +211,7 @@ ChatGPT-Antworten in der DuckDuckGo-Seitenleiste anzeigen (unterstützt von GPT-
 [Liesmich](https://github.duckduckgpt.com/#readme) /
 [Diskutieren](https://github.duckduckgpt.com/discussions)
 
-<br>
+<p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">
     <picture>

@@ -211,7 +211,7 @@ Visualizza le risposte di ChatGPT nella barra laterale di DuckDuckGo (basato su 
 [Readme](https://github.duckduckgpt.com/#readme) /
 [Discutere](https://github.duckduckgpt.com/discussions)
 
-<br>
+<p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">
     <picture>

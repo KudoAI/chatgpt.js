@@ -211,7 +211,7 @@ Hiển thị câu trả lời ChatGPT trong thanh bên DuckDuckGo (do GPT-4 cung
 [Đọc tôi](https://github.duckduckgpt.com/#readme) /
 [Bàn luận](https://github.duckduckgpt.com/discussions)
 
-<br>
+<p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">
     <picture>
