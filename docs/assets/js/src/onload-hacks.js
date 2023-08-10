@@ -37,6 +37,9 @@ const iObserver = new IntersectionObserver(entries => { entries.forEach(entry =>
             // Reset colors
             document.querySelector('#kudoai a').style.color = 'white';
             window.starColor = 'white';
+            (document.querySelector('#scrollbar-style') || {}).innerText = (
+                `:root { scrollbar-color: white #1a1a1a }`
+              + `::-webkit-scrollbar-thumb { background-color: white }`);
 
             // Animate KudoAI logo
             const kudo = document.querySelector('.kudo');
@@ -206,31 +209,51 @@ const onLoadObserver = new MutationObserver(() => {
                         currentSection < triggerPoints.length)
                     currentSection++; 
 
-                // Color/animate stars/logo if section changed
+                // Color/animate logo/stars + color scrollbar if section changed
                 const sectionColor = sectionColors[currentSection - 2];
                 if (sectionColor !== window.starColor) {
 
-                    // Update colors + trigger logo animation
+                    // Color/animate stars
+                    window.starColor = sectionColor;
+                    setTimeout(() => { // schedule color reset
+                        if (window.starVelocity.z <= iniStarZvelocity) {
+                            window.starColor = 'white'; }}, warpDuration + starResetDelay);
+                    window.starVelocity.z += .0045; // boost velocity
+                    setTimeout(() => { // slow velocity
+                        window.starVelocity.z = Math.max(iniStarZvelocity, window.starVelocity.z - .0025);
+                    }, hiWarpDuration);
+                    setTimeout(() => { // slow velocity to original
+                        window.starVelocity.z = Math.max(iniStarZvelocity, window.starVelocity.z - .002);
+                    }, warpDuration);
+
+                    // Color/animate logo
                     const kudoAIlogo = document.querySelector('#kudoai a'),
                           kudo = document.querySelector('.kudo');
                     kudoAIlogo.style.color = sectionColor;
-                    kudo.classList.add('hover'); // to trigger slide animation
-                    window.starColor = sectionColor;
-                    setTimeout(() => { // reset logo color
+                    kudo.classList.add('hover'); // trigger slide animation
+                    setTimeout(() => { // schedule color/animation reset
                         if (window.starVelocity.z <= iniStarZvelocity) {
                             kudoAIlogo.style.color = 'white';
-                            kudo.classList.remove('hover'); // to stop slide animation
+                            kudo.classList.remove('hover');
                     }}, warpDuration + 5);
-                    setTimeout(() => { // reset star color
-                        if (window.starVelocity.z <= iniStarZvelocity) {
-                            window.starColor = 'white'; }}, warpDuration + starResetDelay);
 
-                    // Update star velocity
-                    window.starVelocity.z += .0045; // boost velocity
-                    setTimeout(() => { // slow velocity
-                        window.starVelocity.z -= .0025; }, hiWarpDuration);
-                    setTimeout(() => { // slow velocity to original
-                        window.starVelocity.z -= .002; }, warpDuration);
+                    // Color scrollbar
+                    const scrollbarStyle = document.querySelector('#scrollbar-style') || // select div
+                                           document.createElement('style'); // ...or create it
+                    if (!scrollbarStyle.parentElement) { // append created div if not in DOM
+                        scrollbarStyle.setAttribute('id', 'scrollbar-style');
+                        document.head.appendChild(scrollbarStyle);
+                    }
+                    scrollbarStyle.innerText = (
+                        `:root { scrollbar-color: ${ sectionColor } #1a1a1a }`
+                      + `::-webkit-scrollbar-thumb { background-color: ${ sectionColor } }`);
+                    setTimeout(() => { // schedule color reset
+                        if (window.starVelocity.z <= iniStarZvelocity) {
+                            scrollbarStyle.innerText = (
+                                `:root { scrollbar-color: white #1a1a1a }`
+                              + `::-webkit-scrollbar-thumb { background-color: white }`);
+                    }}, warpDuration + 5);
+
                 }
             });
 
