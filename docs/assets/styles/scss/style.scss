@@ -221,7 +221,7 @@ body { background: black ; color: white ;
     font-family: "PolySans Neutral", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif }
 strong, .anchor span { color: white !important } /* whiten all strongs & headings */
 main a { color: $blue !important }
-#repo-cover { display: none } /* hide repo cover + shields */
+#repo-cover { display: none } /* hide repo cover */
 main h2 { /* headings */
     text-align: center ; margin: 12.5rem 0 7.5rem !important ; font-size: 8rem !important ;
     font-family: "Eurostile Extended Black", Georgia, Cambria, Times New Roman, Times, serif ;
@@ -268,6 +268,7 @@ main li pre { margin: 65px 0 !important }
 /* Shields */
 #shields { margin: 125px 0 433px }
 #shields img { height: 55px }
+#shields a[href="https://chatgpt.js.org"] { display: none } /* hide web URL shield */
 
 /* About section */
 #intro ~ p:first-of-type { /* ABOUT description */
