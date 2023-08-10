@@ -13,7 +13,6 @@ const sectionColors = [ // for mdLoaded.then's scroll color hacks
     '#b981f9', // Made w/ chatgpt.js
     '#f581f9', // ChatGPT Infinity tile
     '#81f9c3' ]; // Contributors
-const fadeElements = []; // for mdLoaded.then's fadeObserver
 const iniStarVelocity = window.starVelocity.z,
       warpDuration = 1600, hiWarpDuration = 1400, starResetDelay = 15;
 
@@ -134,13 +133,24 @@ const onLoadObserver = new MutationObserver(() => {
             iObserver.observe(featureListDiv);
 
             // Add FADE classes to elements
-            fadeElements.push(...document.querySelectorAll( // cover elements
+            const fadeUpElements = [], fadeRightElements = [], fadeLeftElements = [];
+            fadeUpElements.push(...document.querySelectorAll( // cover elements
                 '.cover-main img, .cover-main a'));
-            fadeElements.push(...document.querySelectorAll( // general elements
+            fadeUpElements.push(...document.querySelectorAll( // general elements
                 'h2, h3, p, pre, main li'));
-            fadeElements.forEach((element) => { element.classList.add('content-fadeup'); });
-            fadeElements.push(document.querySelector('#language-menu'));
-            fadeElements[fadeElements.length - 1].classList.add('menu-fadeup');
+            fadeUpElements.forEach((element) => { element.classList.add('content-fadeup'); });
+            fadeUpElements.push( // language selector
+                document.querySelector('#language-menu'));
+            fadeUpElements[fadeUpElements.length - 1].classList.add('menu-fadeup');
+            fadeRightElements.push(...document.querySelectorAll( // left-side showcase apps
+                `#showcase ~ h3:nth-of-type(odd):not(#contributors ~ *,
+                 #showcase ~ p:nth-of-type(odd):not(#contributors ~ *`));
+            fadeRightElements.forEach((element) => { element.classList.add('content-faderight'); });
+            fadeLeftElements.push(...document.querySelectorAll( // right-side showcase apps
+                `#showcase ~ h3:nth-of-type(even):not(#contributors ~ *,
+                 #showcase ~ p:nth-of-type(even):not(#contributors ~ *`));
+            fadeLeftElements.forEach((element) => { element.classList.add('content-fadeleft'); });
+            const fadeElements = [...fadeUpElements, ...fadeRightElements, ...fadeLeftElements];
 
             // ...then observe for visibility change to update element/sidebar states
             const sideNavItems = [...document.querySelectorAll('.sidebar-nav li')];
