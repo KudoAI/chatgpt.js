@@ -95,13 +95,19 @@ $no-touch-select: (
 
 /* GENERAL */
 
-:root { scrollbar-color: rgb(210,210,210) #1a1a1a } /* FF scrollbar */
 .app-nav a.active { border-bottom: 2px solid $green}
 a { word-break: break-word }
 .top-gradient { /* for Star Wars effect (from `../../js/onload-hacks.js`) */
     position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 20vh ;
     background-image: linear-gradient(to top, transparent, #000) ;
     pointer-events: none ; z-index: 1 }
+
+/* Scrollbar */
+:root { scrollbar-color: $blue #1a1a1a ; scrollbar-width: thin } /* Firefox */
+::-webkit-scrollbar { width: 8px } /* Chromium/Safari */
+::-webkit-scrollbar-thumb { border-radius: 4px }
+::-webkit-scrollbar-track { background: #1a1a1a }
+::-webkit-scrollbar-thumb { background: $blue }
 
 /* Fade animations */
 .menu-fadeup { opacity: 0 ; transform: translateY(5px) }
