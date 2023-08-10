@@ -44,15 +44,6 @@ const iObserver = new IntersectionObserver(entries => { entries.forEach(entry =>
             kudo.classList.add('hover');
             setTimeout(() => { kudo.classList.remove('hover'); }, 955);
 
-            // Star boost
-            if (window.starVelocity.z <= iniStarVelocity) { // to avoid reverse boost from scroll-ups
-                window.starVelocity.z += .024; // boost velocity
-                setTimeout(() => { // slow velocity
-                    window.starVelocity.z -= .02; }, 855);
-                setTimeout(() => { // slow velocity to original
-                    window.starVelocity.z = iniStarVelocity; }, 955);
-            }
-
             // Scramble entire tagline + add case randomization layer
             Array.from( // clear tagline spans to maintain grow effect
                 document.querySelectorAll('span[id^="tagline"]'))
@@ -62,6 +53,15 @@ const iObserver = new IntersectionObserver(entries => { entries.forEach(entry =>
             scrambleText([taglineWords[2]], document.querySelector('#tagline-post-adj'));
             randomizeCase(document.querySelector('#tagline-pre-adj'));
             randomizeCase(document.querySelector('#tagline-post-adj'));
+
+            // Star boost
+            if (window.starVelocity.z <= iniStarVelocity) { // to avoid reverse boost from scroll-ups
+                window.starVelocity.z += .024; // boost velocity
+                setTimeout(() => { // slow velocity
+                    window.starVelocity.z -= .02; }, 1155);
+                setTimeout(() => { // slow velocity to original
+                    window.starVelocity.z = iniStarVelocity; }, 1355);
+            }
 
         } else // stop scrambling tagline adjective
             clearTimeout(scrambleText.timeoutID);
