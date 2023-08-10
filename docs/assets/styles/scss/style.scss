@@ -103,9 +103,9 @@ a { word-break: break-word }
     pointer-events: none ; z-index: 1 }
 
 /* Scrollbar */
-:root { scrollbar-color: $blue #1a1a1a ; scrollbar-width: thin } /* Firefox */
+:root { scrollbar-color: white #1a1a1a ; scrollbar-width: thin } /* Firefox */
 ::-webkit-scrollbar { width: 8px } /* Chromium/Safari */
-::-webkit-scrollbar-thumb { background: $blue ; border-radius: 4px }
+::-webkit-scrollbar-thumb { background: white ; border-radius: 4px }
 ::-webkit-scrollbar-track { background: #1a1a1a }
 
 /* Fade animations */
