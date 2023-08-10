@@ -295,8 +295,8 @@ main ol { margin-top: 95px ; padding: 0 9vw 0 12vw !important }
 
 /* Showcase */
 #showcase ~ h3:nth-of-type(even):not(#contributors ~ *),
-#showcase ~ p:nth-of-type(even):not(#contributors ~ *) { text-align: right }
-#showcase ~ h3 ~ p:not(#contributors ~ *) { /* center showcase tiles + CTA */
+#showcase ~ h3 + p:nth-of-type(even):not(#contributors ~ *) { text-align: right }
+#showcase ~ h3 + p + p ~ p:not(#contributors ~ *) { /* center showcase tiles + CTA */
     text-align: center !important }
 main h3 img { /* app icons */
     height: 58px !important ; width: auto !important ; margin: 0 19px -2px 0 }

@@ -143,12 +143,12 @@ const onLoadObserver = new MutationObserver(() => {
                 document.querySelector('#language-menu'));
             fadeUpElements[fadeUpElements.length - 1].classList.add('menu-fadeup');
             fadeRightElements.push(...document.querySelectorAll( // left-side showcase apps
-                `#showcase ~ h3:nth-of-type(odd):not(#contributors ~ *,
-                 #showcase ~ p:nth-of-type(odd):not(#contributors ~ *`));
+                `#showcase ~ h3:nth-of-type(odd):not(#contributors ~ *),
+                 #showcase ~ h3 + p:nth-of-type(odd):not(#contributors ~ *`));
             fadeRightElements.forEach((element) => { element.classList.add('content-faderight'); });
             fadeLeftElements.push(...document.querySelectorAll( // right-side showcase apps
-                `#showcase ~ h3:nth-of-type(even):not(#contributors ~ *,
-                 #showcase ~ p:nth-of-type(even):not(#contributors ~ *`));
+                `#showcase ~ h3:nth-of-type(even):not(#contributors ~ *),
+                 #showcase ~ h3 + p:nth-of-type(even):not(#contributors ~ *`));
             fadeLeftElements.forEach((element) => { element.classList.add('content-fadeleft'); });
             const fadeElements = [...fadeUpElements, ...fadeRightElements, ...fadeLeftElements];
 
