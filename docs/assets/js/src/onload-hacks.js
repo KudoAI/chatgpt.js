@@ -13,7 +13,7 @@ const sectionColors = [ // for mdLoaded.then's scroll color hacks
     '#b981f9', // Made w/ chatgpt.js
     '#f581f9', // ChatGPT Infinity tile
     '#81f9c3' ]; // Contributors
-const iniStarVelocity = window.starVelocity.z,
+const iniStarZvelocity = window.starVelocity.z,
       warpDuration = 1600, hiWarpDuration = 1400, starResetDelay = 15;
 
 // Define OBSERVERS
@@ -54,12 +54,12 @@ const iObserver = new IntersectionObserver(entries => { entries.forEach(entry =>
             randomizeCase(document.querySelector('#tagline-post-adj'));
 
             // Star boost
-            if (window.starVelocity.z <= iniStarVelocity) { // to avoid reverse boost from scroll-ups
+            if (window.starVelocity.z <= iniStarZvelocity) { // to avoid reverse boost from scroll-ups
                 window.starVelocity.z += .024; // boost velocity
                 setTimeout(() => { // slow velocity
                     window.starVelocity.z -= .02; }, 1155);
                 setTimeout(() => { // slow velocity to original
-                    window.starVelocity.z = iniStarVelocity; }, 1355);
+                    window.starVelocity.z = iniStarZvelocity; }, 1355);
             }
 
         } else // stop scrambling tagline adjective
@@ -217,12 +217,12 @@ const onLoadObserver = new MutationObserver(() => {
                     kudo.classList.add('hover'); // to trigger slide animation
                     window.starColor = sectionColor;
                     setTimeout(() => { // reset logo color
-                        if (window.starVelocity.z <= iniStarVelocity) {
+                        if (window.starVelocity.z <= iniStarZvelocity) {
                             kudoAIlogo.style.color = 'white';
                             kudo.classList.remove('hover'); // to stop slide animation
                     }}, warpDuration + 5);
                     setTimeout(() => { // reset star color
-                        if (window.starVelocity.z <= iniStarVelocity) {
+                        if (window.starVelocity.z <= iniStarZvelocity) {
                             window.starColor = 'white'; }}, warpDuration + starResetDelay);
 
                     // Update star velocity
