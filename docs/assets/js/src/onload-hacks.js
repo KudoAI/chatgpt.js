@@ -238,7 +238,7 @@ const onLoadObserver = new MutationObserver(() => {
             setTimeout(() => {
                 const activeLanguage = document.querySelector('.active').innerText;
                 document.getElementById('dropdown-button').innerText = activeLanguage;
-            }, 15);
+            }, 250);
 
             // Convert OpenAI showcase icons + sidebar logo to dark-mode
             document.querySelectorAll('picture').forEach(picture => {
