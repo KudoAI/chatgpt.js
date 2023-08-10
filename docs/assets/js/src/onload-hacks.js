@@ -484,9 +484,28 @@ class Scramble {
 
 // Run MAIN routine
 
-onLoadObserver.observe(document.body, { childList: true, subtree: true });
+// Add listeners to language selector
+const languageMenu = document.getElementById('language-menu'),
+      languageSelector = document.getElementById('language-selector');
+languageMenu.style.display = 'none'; // hide on page load
+let hideTimeout; // to account for gap between button & menu
+languageSelector.addEventListener('mouseenter', () => {
+    clearTimeout(hideTimeout); languageMenu.style.display = 'block'; });
+languageSelector.addEventListener('mouseleave', () => {
+    hideTimeout = setTimeout(() => { languageMenu.style.display = 'none'; }, 55); });
+languageMenu.addEventListener('mouseenter', () => {
+    clearTimeout(hideTimeout); languageMenu.style.display = 'block'; });
+languageMenu.addEventListener('mouseleave', () => {
+    clearTimeout(hideTimeout); hideTimeout = setTimeout(() => {
+        languageMenu.style.display = 'none'; }, 55);
+});
+document.querySelectorAll('#language-selector a').forEach((link) => { // add listener to hide tooltips
+    link.addEventListener('mouseenter', () => { link.removeAttribute('title'); });});
+document.querySelectorAll('.dropdown-link').forEach((link) => { // add listener to dismisss menu
+    link.addEventListener('click', () => { languageMenu.style.display = 'none'; });});
 
-// Re-connect observer on nav to new hash
+// Observe for load + re-connect on nav to new hash
+onLoadObserver.observe(document.body, { childList: true, subtree: true });
 let fromUnhashedURL = window.location.href.includes('#');
 window.addEventListener('hashchange', () => {
     if (!fromUnhashedURL) fromUnhashedURL = true;
