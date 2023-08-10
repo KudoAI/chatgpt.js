@@ -1024,6 +1024,26 @@ const chatgpt = {
                 formButton.click(); return;
     }}},
 
+    speak: function(msg, options = {}) {
+        const { voiceIndex = 0, pitch = 1, speed = 1 } = options;
+        try {
+            const voices = speechSynthesis.getVoices();
+            if (voiceIndex >= 0 && voiceIndex < voices.length) {
+                const utterance = new SpeechSynthesisUtterance();
+                utterance.text = msg;
+                utterance.voice = voices[voiceIndex];
+                utterance.pitch = pitch;
+                utterance.rate = speed;
+                speechSynthesis.speak(utterance);
+                } 
+            else {
+                console.error('🤖 chatgpt.js >> Invalid voice index');
+            }
+        } catch (error) {
+            console.error('🤖 chatgpt.js >> ', error);
+        }
+    },
+
     toggleScheme: function() { 
         const [schemeToRemove, schemeToAdd] = document.documentElement.classList.contains('dark') ? ['dark', 'light'] : ['light', 'dark'];
         document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
