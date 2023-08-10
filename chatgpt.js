@@ -1024,6 +1024,46 @@ const chatgpt = {
                 formButton.click(); return;
     }}},
 
+    speak: function(msg, options = {}) {
+        const { voiceIndex = 0, pitch = 1, speed = 1 } = options;
+        const waitUntilVoicesLoaded = async (maxRetries = 5, retryInterval = 1000) => {
+            return new Promise(async (resolve, reject) => {
+                const tts = speechSynthesis;
+                let retries = 0;
+                await waitUntilVoicesLoaded();
+                const checkVoices = () => {
+                    if (tts.getVoices().length !== 0) {
+                        resolve();
+                    } else {
+                        retries++;
+                        if (retries < maxRetries) {
+                            setTimeout(checkVoices, retryInterval);
+                        } else {
+                            reject(new Error('Failed to load voices'));
+                        }   
+                    }      
+                };
+                checkVoices();
+            });
+        };
+        try {
+            const voices = speechSynthesis.getVoices();
+            if (voiceIndex >= 0 && voiceIndex < voices.length) {
+                const utterance = new SpeechSynthesisUtterance();
+                utterance.text = msg;
+                utterance.voice = voices[voiceIndex];
+                utterance.pitch = pitch;
+                utterance.rate = speed;
+                speechSynthesis.speak(utterance);
+                } 
+            else {
+                console.error('🤖 chatgpt.js >> Invalid voice index');
+            }
+        } catch (error) {
+            console.error('🤖 chatgpt.js >> ', error);
+        }
+    },
+
     toggleScheme: function() { 
         const [schemeToRemove, schemeToAdd] = document.documentElement.classList.contains('dark') ? ['dark', 'light'] : ['light', 'dark'];
         document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
