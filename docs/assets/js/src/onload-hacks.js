@@ -39,7 +39,7 @@ const iObserver = new IntersectionObserver(entries => { entries.forEach(entry =>
             window.starColor = 'white';
             (document.querySelector('#scrollbar-style') || {}).innerText = (
                 ':root { scrollbar-color: white #1a1a1a }'
-              + '::-webkit-scrollbar-thumb { background-color: white }');
+              + 'body::-webkit-scrollbar-thumb { background-color: white }');
 
             // Animate KudoAI logo
             const kudo = document.querySelector('.kudo');
@@ -246,12 +246,12 @@ const onLoadObserver = new MutationObserver(() => {
                     }
                     scrollbarStyle.innerText = (
                         `:root { scrollbar-color: ${ sectionColor } #1a1a1a }`
-                      + `::-webkit-scrollbar-thumb { background-color: ${ sectionColor } }`);
+                      + `body::-webkit-scrollbar-thumb { background-color: ${ sectionColor } }`);
                     setTimeout(() => { // schedule color reset
                         if (window.starVelocity.z <= iniStarZvelocity) {
                             scrollbarStyle.innerText = (
                                 ':root { scrollbar-color: white #1a1a1a }'
-                              + '::-webkit-scrollbar-thumb { background-color: white }');
+                              + 'body::-webkit-scrollbar-thumb { background-color: white }');
                     }}, warpDuration + 5);
 
                 }
