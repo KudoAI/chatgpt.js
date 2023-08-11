@@ -1,6 +1,6 @@
 /* ========================================================
 Script:       minify.js
-Version:      2023.8.4.1
+Version:      2023.8.11
 Description:  Minify all JavaScript in a directory
 Author:       Adam Lui
 URL:          https://github.com/adamlui/js-utils
@@ -13,7 +13,7 @@ const fs = require('fs'),
 
 // Init config
 const inputDir = path.join(__dirname, '../assets/js/src'),
-      outputDir = path.join(__dirname, '../assets/js/minified');
+      outputDir = path.join(__dirname, '../assets/js/min');
 
 try { // to minify `inputDir` contents
     if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
