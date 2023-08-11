@@ -152,12 +152,12 @@ canvas { position: fixed ; width: 100% ; height: 100% ; pointer-events: none }
 .cover-main { color: white } /* all cover txt color */
 section.cover p { /* cover tagline size / weight / position */
     font-family: "Major Mono Display", "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
-    font-size: 2.25rem !important ; font-weight: bold ; margin-bottom: 48px ; line-height: 2.3rem !important }
+    font-size: 1.75rem !important ; font-weight: bold ; margin-bottom: 48px ; line-height: 2.3rem !important }
 
 /* Buttons */
 .cover-main > p:last-child a { /* all buttons */
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
-    text-transform: uppercase ; font-size: 1.4rem !important ; color: white !important ;
+    text-transform: uppercase ; font-size: 1.35rem !important ; color: white !important ;
     border-width: 3px !important ; border-radius: 0 !important ; border-color: white !important ;
     padding: 16px 68px !important ; transition: 0.04s !important ;
     @each $property, $value in $no-select { #{$property}: #{$value}; }
@@ -229,38 +229,39 @@ strong, .anchor span { color: white !important } /* whiten all strongs & heading
 main a { color: $blue !important }
 #repo-cover { display: none } /* hide repo cover */
 main h2 { /* headings */
-    text-align: center ; margin: 12.5rem 0 7.5rem !important ; font-size: 8rem !important ;
+    text-align: center ; margin: 8.4rem 0 5rem !important ; font-size: 5.36rem !important ;
     font-family: "Eurostile Extended Black", Georgia, Cambria, Times New Roman, Times, serif ;
     text-transform: uppercase }
 main h2 span { word-break: break-word }
 main h2 a { pointer-events: none }
 .anchor:hover { text-decoration: none }
-main h3 { font-size: 4.5rem !important ; margin-top: 5rem !important }
-main p { font-size: 2.45rem !important ; line-height: 3.5rem !important}
+main h3 { font-size: 3rem !important ; margin-top: 3.35rem !important }
+main p { font-size: 1.78rem !important ; line-height: 2.35rem !important}
 main blockquote { border-left: 4px solid $green !important }
 main blockquote strong { color: yellow !important } /* tips' title */
 main blockquote em { color: #87a99d !important } /* tips' italics */
 main blockquote p { /* tips content */
-    border-left: none ; width: 38vw ; font-size: 2rem !important ; margin-top: 11% !important ;
-    text-align: left ; float: right ; position: relative ; left: 29px ; line-height: 2.8rem !important }
-main blockquote:first-of-type p { margin-top: 11% !important } /* Greasemonkey tip */
-main blockquote:nth-of-type(2) p { margin-top: 74px !important } /* Chrome tip */
-main code { font-size: 1.35rem !important ; line-height: 2.2rem !important }
+    border-left: none ; width: 38vw ; font-size: 1.5rem !important ; line-height: 2.1rem !important ;
+    text-align: left ; float: right ; position: relative ; left: 29px }
+main blockquote:first-of-type p { margin-top: 55px !important } /* Greasemonkey tip */
+main blockquote:nth-of-type(2) p { margin-top: 25px !important } /* Chrome tip */
 img[src*="separator"] { display: none } /* hide section separators */
 main h2 + p { /* blurbs after headings w/o tips */
     font-size: 2.75rem !important ; text-align: center ; margin-top: -85px !important }
-main li::marker { font-size: 2.1rem }
+main li::marker { font-size: 1.4rem }
 
 /* Code */
+main pre { width: 100% } /* to avoid shrinking from adjacent left/right floats */
+main code { font-size: 1.35rem !important ; line-height: 1.8rem !important }
 main pre, main code, .punctuation {
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
-    font-size: 1.3rem !important ; color: white !important ; background: rgba(0, 0, 0, 0.35) !important ;
+    font-size: 1.1rem !important ; color: white !important ; background: rgba(0, 0, 0, 0.35) !important ;
     margin-bottom: 1px } /* fix bottom border disappears glitch */
 main pre code { border: $blue 2px solid ; border-radius: 12px !important ; padding: 26px !important }
 main p code {
-    font-size: 1.95rem !important ; position: relative ; bottom: 3px ;
-    padding: 5px 17px !important ; margin: 0 8px !important ; word-break: break-word ;
-    border: white 1px solid ; border-radius: 13px !important }
+    font-size: 1.3rem !important ; position: relative ; bottom: 2px ;
+    padding: 2px 12px 5px !important ; margin: 0 5px !important ; word-break: break-word ;
+    border: white 1px solid ; border-radius: 8px !important }
 main pre:after { display: none } /* hide lang indicator */
 .docsify-copy-code-button {    
     font-size: 1.1rem !important ; background: black !important ; color: white !important ;
@@ -272,24 +273,24 @@ main li pre { margin: 65px 0 !important }
 .token.function, .token.keyword, .token.boolean, .token.number { color: #ffcb00 }
 
 /* Shields */
-#shields { margin: 125px 0 433px }
-#shields img { height: 55px }
+#shields { margin: 115px 0 433px }
+#shields img { height: 40px ; margin: 4px -2px }
 #shields a[href="https://chatgpt.js.org"] { display: none } /* hide web URL shield */
 
 /* About section */
 #intro ~ p:first-of-type { /* ABOUT description */
-    margin-top: -476px !important ; font-size: 3.1rem !important ;
-    line-height: 4.5rem !important ; text-align: right ; width: 50% }
+    margin-top: -488px !important ; font-size: 2.5rem !important ;
+    line-height: 3.75rem !important ; text-align: right ; width: 50% }
 #intro ~ ul:first-of-type { display: none } /* hide readme feature list */
 #intro h2 span { display: none !important } /* hide ABOUT heading */
 #feature-list { /* generated in `../../js/src/online-modifier.js` */
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
-    font-size: 1.45rem ; color: $green ; position: relative ; float: right ;
-    height: 100px ; top: -323px ; right: -123px ; width: 50% }
+    font-size: 1.1rem ; color: $green ; position: relative ; float: right ;
+    height: 100px ; top: -263px ; right: -123px ; width: 50% }
 
 /* Greasemonkey/Chrome sections */
 #-greasemonkey, #-chrome { text-align: center }
-main blockquote + p { font-size: 2.75rem !important ; width: 50% ; text-align: right }
+main blockquote + p { font-size: 1.85rem !important ; width: 50% ; text-align: right }
 main pre + p, main pre + p + p { text-align: center ; padding: 0 10vw }
 main ol { margin-top: 95px ; padding: 0 9vw 0 12vw !important }
 
@@ -306,7 +307,7 @@ main ol { margin-top: 95px ; padding: 0 9vw 0 12vw !important }
 #showcase ~ h3 + p + p ~ p:not(#contributors ~ *) { /* 2nd+ showcase tiles + CTA */
     text-align: center !important }
 main h3 img { /* app icons */
-    height: 58px !important ; width: auto !important ; margin: 0 19px -2px 0 }
+    height: 39px !important ; width: auto !important ; margin: 0 19px -2px 0 }
 main h3 a { /* app titles */
     text-decoration: none ; color: white !important }
 main h3 a:hover { text-decoration: underline #42b983 }
@@ -318,10 +319,10 @@ a[href*="mailto:showcase"] { word-break: keep-all }
 #contributors ~ p { padding: 0 15vw } /* narrow container of avatars */
 #contributors + p { /* contributors description */
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
-    font-size: 2.1rem !important ; padding: 0 8vw }
-#contributors ~ * img { width: 96px } /* zoom contributor avatars */
+    font-size: 1.4rem !important ; padding: 0 8vw }
+#contributors ~ * img { width: 65px } /* zoom contributor avatars */
 a[href="https://chat.openai.com"] img { /* outline ChatGPT's avatar */
-    border: 3px solid #aeecff ; border-radius: 50% }
+    border: 2px solid #aeecff ; border-radius: 50% }
 #contributors ~ br { display: none } /* hide trailing line break */
 
 /* Footer */
@@ -329,7 +330,7 @@ a[href="https://chat.openai.com"] img { /* outline ChatGPT's avatar */
 #footer { text-align: center ; margin-top: -11px } /* general alignment */
 #mc_embed_signup h2 { /* 1st CTA */
     margin: 3rem 0 3.5rem !important ;
-    font-size: 3.55rem !important ; color: white ; -webkit-text-stroke: 1px black }
+    font-size: 2.38rem !important ; color: white ; -webkit-text-stroke: 1px black }
 .mc-field-group { margin: -4px 0 95px } /* input row div v-margins */
 .mc-field-group input { height: 55px } /* input row height */
 input#mce-EMAIL { /* email field */
