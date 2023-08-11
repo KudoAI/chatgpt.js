@@ -6,7 +6,7 @@
 window.starColor = 'white';
 window.starVelocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0005 };
 const starSize = 6, starMinScale = 0.00000000025, overflowThreshold = 50,
-      starCount = ( window.innerWidth + window.innerHeight ) / 18,
+      starCount = ( window.innerWidth + window.innerHeight ) / 11,
       canvas = document.querySelector( 'canvas' ),
       context = canvas.getContext( '2d' );
 let scale = 0.5, // device pixel ratio
