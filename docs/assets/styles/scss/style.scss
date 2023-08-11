@@ -103,8 +103,8 @@ a { word-break: break-word }
     pointer-events: none ; z-index: 1 }
 
 /* Scrollbar */
-:root { scrollbar-color: white #1a1a1a ; scrollbar-width: thin } /* Firefox */
-::-webkit-scrollbar { width: 10px } /* Chromium/Safari */
+* { scrollbar-color: white #1a1a1a ; scrollbar-width: thin } /* Firefox */
+::-webkit-scrollbar { width: 10px ; height: 10px } /* Chromium/Safari */
 ::-webkit-scrollbar-thumb { background: white ; border-radius: 4px ; border: 1px black solid }
 ::-webkit-scrollbar-track { background: #1a1a1a }
 
