@@ -14,7 +14,7 @@ It was not until the launch of ChatGPT (powered by GPT-3.5) on November 20, 2022
 
 Unsurprisingly, an ecosystem of tools that either utilize or enhance the AI's astounding power has blossomed.
 
-**[chatgpt.js](https://chatgpt.js.org)** is a JavaScript library that supports this ecosystem by allowing for super-easy interaction w/ the ChatGPT DOM.
+**[chatgpt.js](https://chatgpt.js.org)** is a JavaScript library that emerged in the following months, supporting this ecosystem by allowing for super-easy interaction w/ the ChatGPT DOM.
 
 ## Importing the library
 
