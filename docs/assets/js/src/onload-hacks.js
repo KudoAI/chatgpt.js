@@ -315,7 +315,7 @@ function isMobileDevice() {
 
 function validateIntArg(arg, name, defaultVal) {
     if (arg === undefined) return defaultVal; // no validation required
-    if (!Number.isInteger(arg) || !/^\d+$/.test(arg))
+    if (!Number.isInteger(arg) && !/^\d+$/.test(arg))
         throw new Error(name + ' must be an integer.');
     return parseInt(arg, 10); 
 }
@@ -382,7 +382,7 @@ function scrambleText(text, destination, delayBetweenWords, textIdx = 0) {
     if (!destination?.nodeName) // DOM element to scramble to
         throw new Error('Destination (2nd arg) must be a DOM element');
     if (delayBetweenWords) { // ms to delay between scrambles
-        if (!Number.isInteger(delayBetweenWords) || !/^\d+$/.test(delayBetweenWords))
+        if (!Number.isInteger(delayBetweenWords) && !/^\d+$/.test(delayBetweenWords))
             throw new Error('Delay betweeen words (3nd arg) must be an integer (ms)');
         delayBetweenWords = parseInt(delayBetweenWords, 10);
     }
