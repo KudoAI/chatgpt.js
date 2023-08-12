@@ -24,7 +24,7 @@
     await chatgpt.isLoaded();
     chatgpt.printAllFunctions(); // to console
     chatgpt.alert('≫ ChatGPT extension loaded! 🚀', // title
-        'Success! Press Ctrl+Shift+I to view all chatgpt.js methods.', // msg
+        'Success! Press Ctrl+Shift+J to view all chatgpt.js methods.', // msg
         function getHelp() { window.open(config.ghRepoURL + '/issues', '_blank', 'noopener'); }); // button
 
     // Your code here...
