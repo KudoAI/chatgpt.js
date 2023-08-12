@@ -1025,23 +1025,30 @@ const chatgpt = {
     }}},
 
     speak: function(msg, options = {}) {
-        const { voiceIndex = 0, pitch = 1, speed = 1 } = options;
-        try {
-            const voices = speechSynthesis.getVoices();
-            if (voiceIndex >= 0 && voiceIndex < voices.length) {
-                const utterance = new SpeechSynthesisUtterance();
-                utterance.text = msg;
-                utterance.voice = voices[voiceIndex];
-                utterance.pitch = pitch;
-                utterance.rate = speed;
-                speechSynthesis.speak(utterance);
-                } 
-            else {
-                console.error('🤖 chatgpt.js >> Invalid voice index');
-            }
-        } catch (error) {
-            console.error('🤖 chatgpt.js >> ', error);
+    // Usage example: chatgpt.speak(await chatgpt.getLastResponse(), { voice: 1, pitch: 2, speed: 3 })
+    // options.voice = index of voices available on user device
+    // options.pitch = float for pitch of speech from 0 to 2
+    // options.speed = float for rate of speech from 0.1 to 10
+
+        const { voice = 2, pitch = 2, speed = 1.1 } = options;
+
+        // Validate args
+        for (let key in options) {
+            const value = options[key];
+            if (typeof value !== 'number' && !/^\d+$/.test(value))
+                return console.error(
+                    `🤖 chatgpt.js >> Invalid ${ key } index '${ value }'. Must be a number`);
         }
+
+        try { // to speak msg using {options}
+            const voices = speechSynthesis.getVoices(),
+                  utterance = new SpeechSynthesisUtterance();
+            utterance.text = msg;
+            utterance.voice = voices[voice];
+            utterance.pitch = pitch;
+            utterance.rate = speed;
+            speechSynthesis.speak(utterance);
+        } catch (error) { console.error('🤖 chatgpt.js >>', error); }
     },
 
     toggleScheme: function() { 
@@ -1103,7 +1110,8 @@ const functionAliases = [ // whole function names to cross-alias
 ];
 const synonyms = [ // constituent synonyms within function names
     ['activate', 'turnOn'], ['account', 'acct'], ['ask', 'send', 'submit'], ['chat', 'conversation', 'convo'], ['data', 'details'],
-    ['deactivate', 'deActivate', 'turnOff'], ['generating', 'generation'], ['render', 'parse'], ['reply', 'response']
+    ['deactivate', 'deActivate', 'turnOff'], ['generating', 'generation'], ['render', 'parse'], ['reply', 'response'],
+    ['speak', 'say', 'speech', 'talk', 'tts']
 ];
 for (const prop in chatgpt) {
 
