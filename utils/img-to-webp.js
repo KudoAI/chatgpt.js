@@ -4,7 +4,7 @@ Version:      2023.8.4.2
 Description:  Compress all JPG/PNG images in a directory to WEBPs
 Author:       Adam Lui
 URL:          https://github.com/adamlui/js-utils
-=========================================================== */
+========================================================= */
 
 (async () => {
 
