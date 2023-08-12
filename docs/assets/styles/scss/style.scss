@@ -229,13 +229,13 @@ strong, .anchor span { color: white !important } /* whiten all strongs & heading
 main a { color: $blue !important }
 #repo-cover { display: none } /* hide repo cover */
 main h2 { /* headings */
-    text-align: center ; margin: 8.4rem 0 5rem !important ; font-size: 5.36rem !important ;
+    text-align: center ; margin: 8.4rem 0 5rem !important ; font-size: 6rem !important ;
     font-family: "Eurostile Extended Black", Georgia, Cambria, Times New Roman, Times, serif ;
     text-transform: uppercase }
 main h2 span { word-break: break-word }
 main h2 a { pointer-events: none }
 .anchor:hover { text-decoration: none }
-main h3 { font-size: 3rem !important ; margin-top: 3.35rem !important }
+main h3 { font-size: 3.6rem !important ; margin: 4.75rem 0 2rem !important }
 main p { font-size: 1.78rem !important ; line-height: 2.35rem !important}
 main blockquote { border-left: 4px solid $green !important }
 main blockquote strong { color: yellow !important } /* tips' title */
@@ -251,7 +251,8 @@ main h2 + p { /* blurbs after headings w/o tips */
 main li::marker { font-size: 1.4rem }
 
 /* Code */
-main pre { width: 100% } /* to avoid shrinking from adjacent left/right floats */
+main pre { width: 100% ; /* to avoid shrinking from adjacent left/right floats */
+    margin: 65px 0 !important }
 main code { font-size: 1.35rem !important ; line-height: 1.8rem !important }
 main pre, main code, .punctuation {
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
@@ -278,24 +279,24 @@ main li pre { margin: 65px 0 !important }
 
 /* About section */
 #intro ~ p:first-of-type { /* ABOUT description */
-    margin-top: -488px !important ; font-size: 2.5rem !important ;
+    margin-top: -488px !important ; font-size: 2.8rem !important ;
     line-height: 3.75rem !important ; text-align: right ; width: 50% }
 #intro ~ ul:first-of-type { display: none } /* hide readme feature list */
 #intro h2 span { display: none !important } /* hide ABOUT heading */
 #feature-list { /* generated in `../../js/src/online-modifier.js` */
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
-    font-size: 1.1rem ; color: $green ; position: relative ; float: right ;
+    font-size: 1.3rem ; color: $green ; position: relative ; float: right ;
     height: 100px ; top: -263px ; right: -123px ; width: 50% }
 
 /* Greasemonkey/Chrome sections */
-#-greasemonkey, #-chrome { text-align: center }
+#-greasemonkey, #-chrome { text-align: center ; margin-bottom: 55px !important }
 main blockquote + p { font-size: 1.85rem !important ; width: 50% ; text-align: right }
 main pre + p, main pre + p + p { text-align: center ; padding: 0 10vw }
 main ol { margin-top: 95px ; padding: 0 9vw 0 12vw !important }
 
 /* Usage section */
 #usage ~ pre + p { /* 1st p after pre */
-    text-align: left !important ; margin-left: 0 !important }
+    text-align: left !important ; margin: 65px 0 0 0 !important }
 #usage ~ pre + p + p { /* 2nd p after pre */
     text-align: right !important ; float: right !important ; margin-bottom: 152px }
 
@@ -310,7 +311,7 @@ main h3 img { /* app icons */
 main h3 a { /* app titles */
     text-decoration: none ; color: white !important }
 main h3 a:hover { text-decoration: underline #42b983 }
-img[src*="promo-tile"] { width: 74vw ; border: 1px solid white }
+img[src*="promo-tile"] { width: 74vw ; border: 1px solid white ; margin: 32px 0 }
 a[href*="mailto:showcase"] { word-break: keep-all }
 
 /* Contributors */
@@ -318,7 +319,7 @@ a[href*="mailto:showcase"] { word-break: keep-all }
 #contributors ~ p { padding: 0 15vw } /* narrow container of avatars */
 #contributors + p { /* contributors description */
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
-    font-size: 1.4rem !important ; padding: 0 8vw }
+    font-size: 1.7rem !important ; padding: 0 12vw }
 #contributors ~ * img { width: 65px } /* zoom contributor avatars */
 a[href="https://chat.openai.com"] img { /* outline ChatGPT's avatar */
     border: 2px solid #aeecff ; border-radius: 50% }
@@ -364,7 +365,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 }
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
-    article { padding: 0 }    
+    article { padding: 0 }
     .markdown-section { max-width: 96% }
     .github-corner svg { height: 88px ; width: 88px }
 
