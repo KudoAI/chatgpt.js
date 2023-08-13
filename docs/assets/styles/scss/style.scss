@@ -372,8 +372,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     #kudoai { transform: scale(1.7); margin-top: 5.2px; }
 
     /* LANGUAGE SELECTOR */
-
-    #language-selector { transform: scale(0.7); }
+    #language-selector { transform: scale(0.7) ; right: 0 !important }
     #language-selector a { font-size: 26px }
     #language-selector svg { width: 28px ; height: 28px }
 
