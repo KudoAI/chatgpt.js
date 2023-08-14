@@ -253,10 +253,10 @@ main li::marker { font-size: 1.4rem }
 /* Code */
 main pre { width: 100% ; /* to avoid shrinking from adjacent left/right floats */
     margin: 65px 0 !important }
-main code { font-size: 1.35rem !important ; line-height: 1.8rem !important }
+main code { line-height: 2.1rem !important }
 main pre, main code, .punctuation {
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
-    font-size: 1.1rem !important ; color: white !important ; background: rgba(0, 0, 0, 0.35) !important ;
+    font-size: 1.35rem !important ; color: white !important ; background: rgba(0, 0, 0, 0.35) !important ;
     margin-bottom: 1px } /* fix bottom border disappears glitch */
 main pre code { border: $blue 2px solid ; border-radius: 12px !important ; padding: 26px !important }
 main p code {
