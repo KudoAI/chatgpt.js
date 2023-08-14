@@ -2,7 +2,6 @@
 
 /* FONTS */
 
-@import url(https://db.onlinewebfonts.com/c/03bd7255184e8e8ad4d2a521fa920b6c?family=PolySans+Neutral);
 @font-face {
     font-family: 'Eurostile Extended Black';
     src: local('Eurostile Extended Black'), local('EurostileExtendedBlack'),
@@ -18,6 +17,15 @@
          url('../../fonts/major-mono-display/MajorMonoDisplay-Regular.ttf') format('truetype'),
          url('../../fonts/major-mono-display/MajorMonoDisplay-Regular.woff') format('woff'),
          url('../../fonts/major-mono-display/MajorMonoDisplay-Regular.woff2') format('woff2');
+}
+@font-face{
+    font-family: 'PolySans Neutral';
+    src: local('PolySans Neutral'), local('PolySansNeutral-Regular'),
+         url('../../fonts/polysans-neutral/PolySansNeutral.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/polysans-neutral/PolySansNeutral.woff') format('woff'),
+         url('../../fonts/polysans-neutral/PolySansNeutral.woff2') format('woff2'),
+         url('../../fonts/polysans-neutral/PolySansNeutral.ttf') format("truetype");
+    font-weight:normal; font-style:normal; font-display:swap;
 }
 $font-families: (
     'IBM Plex Mono': (
