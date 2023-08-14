@@ -306,6 +306,9 @@ main ol { margin-top: 95px ; padding: 0 9vw 0 12vw !important }
 #showcase ~ h3 + p + p:not(#contributors ~ *), /* 1st showcase tile */
 #showcase ~ h3 + p + p ~ p:not(#contributors ~ *) { /* 2nd+ showcase tiles + CTA */
     text-align: center !important }
+#showcase-cta {
+    font-size: 2.5rem !important ; line-height: 3.5rem !important ;
+    padding: 0 10vw ; margin-top: -29px }
 main h3 img { /* app icons */
     height: 39px !important ; width: auto !important ; margin: 0 19px -2px 0 }
 main h3 a { /* app titles */
