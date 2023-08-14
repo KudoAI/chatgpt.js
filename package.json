@@ -45,7 +45,7 @@
   },
   "homepage": "https://chatgpt.js.org",
   "devDependencies": {
-    "eslint": "^8.46.0",
+    "eslint": "^8.47.0",
     "imagemin": "^8.0.1",
     "imagemin-webp": "^8.0.0",
     "uglify-js": "^3.17.4"
