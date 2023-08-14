@@ -231,9 +231,7 @@ chatgpt.get('reply', 'last')
 <p><br>
 
 <p id="showcase-cta">
-
-如果您使用 chatgpt.js 制作了一些想要分享的内容，请发送电子邮件至 [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) 或打开一个 [pull request](https://github.com/kudoai/chatgpt.js/pulls)!
-
+如果您使用 chatgpt.js 制作了一些想要分享的内容，请发送电子邮件至 <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> 或打开一个 <a href="https://github.com/kudoai/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>!
 </p>
 
 <picture>

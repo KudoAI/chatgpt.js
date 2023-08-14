@@ -231,9 +231,7 @@ Display ChatGPT answers in DuckDuckGo sidebar (powered by GPT-4!)
 <p><br>
 
 <p id="showcase-cta">
-
-If you've made something w/ chatgpt.js you want to share, email [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) or just open a [pull request](https://github.com/kudoai/chatgpt.js/pulls)!
-
+If you've made something w/ chatgpt.js you want to share, email <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> or just open a <a href="https://github.com/kudoai/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>!
 </p>
 
 <picture>

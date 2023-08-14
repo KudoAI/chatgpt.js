@@ -231,9 +231,7 @@ Hiển thị câu trả lời ChatGPT trong thanh bên DuckDuckGo (do GPT-4 cung
 <p><br>
 
 <p id="showcase-cta">
-
-Nếu bạn đã tạo nội dung nào đó với chatgpt.js mà bạn muốn chia sẻ, hãy gửi email đến [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) hoặc chỉ cần mở một [pull request](https://github.com/kudoai/chatgpt.js/pulls)!
-
+Nếu bạn đã tạo nội dung nào đó với chatgpt.js mà bạn muốn chia sẻ, hãy gửi email đến <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> hoặc chỉ cần mở một <a href="https://github.com/kudoai/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>!
 </p>
 
 <picture>

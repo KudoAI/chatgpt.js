@@ -231,9 +231,7 @@ Affichez les réponses ChatGPT dans la barre latérale DuckDuckGo (propulsé par
 <p><br>
 
 <p id="showcase-cta">
-
-Si vous avez créé quelque chose avec chatgpt.js que vous souhaitez partager, envoyez un e-mail à [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) ou ouvrez simplement une [pull request](https://github.com/kudoai/chatgpt.js/pulls)!
-
+Si vous avez créé quelque chose avec chatgpt.js que vous souhaitez partager, envoyez un e-mail à <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> ou ouvrez simplement une <a href="https://github.com/kudoai/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>!
 </p>
 
 <picture>

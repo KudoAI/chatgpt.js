@@ -237,9 +237,7 @@ DuckDuckGo 사이드바에 ChatGPT의 답변을 표시해주는 기능입니다.
 <p><br>
 
 <p id="showcase-cta">
-
-chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) 로 이메일을 보내시거나 [pull request](https://github.com/kudoai/chatgpt.js/pulls)를 열어주세요!
-
+chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> 로 이메일을 보내시거나 <a href="https://github.com/kudoai/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>를 열어주세요!
 </p>
 
 <picture>
