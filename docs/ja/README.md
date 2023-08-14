@@ -230,7 +230,11 @@ DuckDuckGo サイドバーに ChatGPT の回答を表示 (GPT-4 を搭載!)
 
 <p><br>
 
+<p id="showcase-cta">
+
 chatgpt.js で何かを作成して共有したい場合は、[showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) にメールするか、[プル リクエスト](https://github.com/kudoai/chatgpt.js/pulls)!
+
+</p>
 
 <picture>
     <source type="image/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">

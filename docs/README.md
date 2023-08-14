@@ -230,7 +230,11 @@ Display ChatGPT answers in DuckDuckGo sidebar (powered by GPT-4!)
 
 <p><br>
 
+<p id="showcase-cta">
+
 If you've made something w/ chatgpt.js you want to share, email [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) or just open a [pull request](https://github.com/kudoai/chatgpt.js/pulls)!
+
+</p>
 
 <picture>
     <source type="image/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">

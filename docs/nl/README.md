@@ -230,7 +230,11 @@ Geef ChatGPT-antwoorden weer in DuckDuckGo-zijbalk (mogelijk gemaakt door GPT-4!
 
 <p><br>
 
+<p id="showcase-cta">
+
 Als je iets hebt gemaakt met chatgpt.js dat je wilt delen, stuur dan een e-mail naar [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) of open gewoon een [pull request](https://github.com/kudoai/chatgpt.js/pulls)!
+
+</p>
 
 <picture>
     <source type="image/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">

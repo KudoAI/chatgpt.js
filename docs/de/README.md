@@ -230,7 +230,11 @@ ChatGPT-Antworten in der DuckDuckGo-Seitenleiste anzeigen (unterstützt von GPT-
 
 <p><br>
 
+<p id="showcase-cta">
+
 Wenn Sie etwas mit chatgpt.js erstellt haben, das Sie teilen möchten, senden Sie eine E-Mail an [showcase@chatgptjs.org](mailto:showcase@chatgptjs.org) oder öffnen Sie einfach eine [Pull-Anfrage](https://github.com/kudoai/chatgpt.js/pulls)!
+
+</p>
 
 <picture>
     <source type="image/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
