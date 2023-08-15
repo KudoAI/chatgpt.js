@@ -56,6 +56,7 @@
     - [send](#send)
     - [sendInNewChat](#sendinnewchat)
     - [shareChat `async`](#sharechat-async)
+    - [speak](#speak)
     - [startNewChat](#startnewchat)
     - [stop](#stop)
   - [DOM related](#dom-related)
@@ -795,6 +796,30 @@ Can be the following: `copy` or `clipboard` to copy the chat URL to clipboard, `
 ```js
 async function doSomething() {
   await chatgpt.shareChat(1, 'copy'); // copy/clipboard
+}
+```
+
+### speak
+
+Text To Speech (TTS) conversion of a given message.
+
+**Parameters**:
+
+`msg`: A string representing the message to TTS.
+
+`options`: An object containing the options for the vocal synthesizer.
+
+Available options:
+
+ - `voice`: A number representing the index of voices available on the user device.
+ - `pitch`: A float representing the pitch of the speech. From `0` to `2`.
+ - `speed`: A float representing the speed of the speech. From `0.1` to `10`.
+
+Example code:
+
+```js
+async function doSomething() {
+  chatgpt.speak(await chatgpt.getLastResponse(), { voice: 1, pitch: 2, speed: 3 });
 }
 ```
 
