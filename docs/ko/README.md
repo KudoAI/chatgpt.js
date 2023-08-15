@@ -272,6 +272,11 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href=
 [![](https://images.weserv.nl/?url=https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/icons/poe-icon128.svg?first-contrib=2023.07.27-getandshowreply-method&h=44&w=44&mask=circle&maxage=7d 'Poe')](https://poe.com)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=44&w=44&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 
+<picture>
+    <source type="image/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
+    <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+</picture>
+
 <div id="partners">
 
 ## 🤝 파트너
