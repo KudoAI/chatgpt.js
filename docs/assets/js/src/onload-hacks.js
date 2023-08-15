@@ -137,10 +137,10 @@ const onLoadObserver = new MutationObserver(() => {
 
             // Add FADE classes to elements
             const fadeUpElements = [], fadeRightElements = [], fadeLeftElements = [];
-            fadeUpElements.push(...document.querySelectorAll( // cover elements
-                '.cover-main img, .cover-main a'));
-            fadeUpElements.push(...document.querySelectorAll( // general elements
-                'h2, h3, p, pre, main li'));
+            fadeUpElements.push(...document.querySelectorAll(
+                '.cover-main img, .cover-main a,' // cover elements
+                  + 'h2, h3, p, pre, main li,' // general elements
+                  + 'div#partners-collage')); // footer elements
             fadeUpElements.forEach((element) => { element.classList.add('content-fadeup'); });
             fadeUpElements.push( // language selector
                 document.querySelector('#language-menu'));
