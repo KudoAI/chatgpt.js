@@ -272,15 +272,25 @@ const onLoadObserver = new MutationObserver(() => {
                 picture.parentNode.replaceChild(imgElement, picture);
             });
 
-            // Append FOOTER
-            const footer = document.createElement('div');
+            // Append EMAIL SIGNUP footer
+            const article = document.querySelector('article');
+            const emailFooter = document.createElement('div');
             fetch('assets/html/footer.html')
                 .then(response => response.text()).then(html => {
-                    footer.innerHTML = html;
-                    const article = document.querySelector('article');
-                    article.insertBefore(footer, article.lastElementChild);
+                    emailFooter.innerHTML = html;
+                    article.insertBefore(emailFooter, article.lastElementChild);
                 });
-                
+
+            // Append COPYRIGHT NOTICE footer
+            const copyrightFooter = document.createElement('div');
+            copyrightFooter.id = 'copyright-footer';
+            copyrightFooter.innerHTML = 'Copyright © 2023 '
+                + '<a href="https://kudoai.com" target="_blank" rel="noopener">KudoAI</a>. '
+                + 'Powered by <a href="https://docsify.js.org" target="_blank" rel="noopener">Docsify</a>. '
+                + 'Designed by <a href="https://adamlui.com" target="_blank" rel="noopener">Adam Lui</a>. '
+                + 'Hosting by <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>.';
+            article.appendChild(copyrightFooter);
+
             // Remove readme's BACK-TO-TOP link
             const readmeBTTlink = document.querySelector('p a[href="#"]');
             readmeBTTlink.previousSibling.remove(); readmeBTTlink.remove();
