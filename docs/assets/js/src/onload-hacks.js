@@ -273,16 +273,17 @@ const onLoadObserver = new MutationObserver(() => {
             });
 
             // Append EMAIL SIGNUP footer
-            const article = document.querySelector('article');
-            const emailFooter = document.createElement('div');
+            const partnersCollage = document.getElementById('partners-collage'), // to insert after
+                  emailFooter = document.createElement('div');
             fetch('assets/html/footer.html')
                 .then(response => response.text()).then(html => {
                     emailFooter.innerHTML = html;
-                    article.insertBefore(emailFooter, article.lastElementChild);
+                    partnersCollage.insertAdjacentElement('afterend', emailFooter);
                 });
 
             // Append COPYRIGHT NOTICE footer
-            const copyrightFooter = document.createElement('div');
+            const article = document.querySelector('article'), // to insert at end of
+                  copyrightFooter = document.createElement('div');
             copyrightFooter.id = 'copyright-footer';
             copyrightFooter.innerHTML = 'Copyright © 2023 '
                 + '<a href="https://kudoai.com" target="_blank" rel="noopener">KudoAI</a>. '
