@@ -1,5 +1,16 @@
 @charset "UTF-8";
 
+/* FUNCTIONS */
+
+@function str-replace($string, $search, $replace) {
+    $index: str-index($string, $search);
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace
+            + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+    @return $string;
+}
+
 /* FONTS */
 
 @font-face {
@@ -46,13 +57,15 @@ $font-families: (
     )
 );
 @mixin font-face($font-family, $full-name, $postscript-name, $font-weight, $font-style) {
+    $font-family-dashed: to-lower-case(str-replace($font-family, ' ', '-'));
     @font-face {
+        font-family: $font-family;
         src:
             local('#{$full-name}'), local('#{$postscript-name}'),
-            url('../../fonts/#{$font-family}/otf/#{$postscript-name}.otf') format('opentype'),
-            url('../../fonts/#{$font-family}/ttf/#{$postscript-name}.ttf') format('truetype'),
-            url('../../fonts/#{$font-family}/woff/#{$postscript-name}.woff') format('woff'),
-            url('../../fonts/#{$font-family}/woff2/#{$postscript-name}.woff2') format('woff2');
+            url('../../fonts/#{$font-family-dashed}/otf/#{$postscript-name}.otf') format('opentype'),
+            url('../../fonts/#{$font-family-dashed}/ttf/#{$postscript-name}.ttf') format('truetype'),
+            url('../../fonts/#{$font-family-dashed}/woff/#{$postscript-name}.woff') format('woff'),
+            url('../../fonts/#{$font-family-dashed}/woff2/#{$postscript-name}.woff2') format('woff2');
         font-weight: $font-weight; font-style: $font-style;
     }
 }
@@ -263,7 +276,7 @@ main pre { width: 100% ; /* to avoid shrinking from adjacent left/right floats *
     margin: 65px 0 !important }
 main code { line-height: 2.1rem !important }
 main pre, main code, .punctuation {
-    font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
+    font-family: "Roboto Mono", Monaco, courier, monospace !important ;
     font-size: 1.35rem !important ; color: white !important ; background: rgba(0, 0, 0, 0.35) !important ;
     margin-bottom: 1px } /* fix bottom border disappears glitch */
 main pre code { border: $blue 2px solid ; border-radius: 12px !important ; padding: 26px !important }
@@ -352,6 +365,10 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     font-size: 1.45rem ; color: white ; background: black ; cursor: pointer ;
     width: 200px ; margin-left: -6px ; border-radius: 0 ; border: 1px ;
     border: white solid ; position: relative ; bottom: 1px } /* correct for font-size shifting */
+#copyright-footer {
+    font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
+    text-align: center ; margin-bottom: 25px ; font-size: 1.15rem ; line-height: 29px }
+#copyright-footer a { color: white !important ; font-weight: 400 ; text-decoration-line: underline }
 
 /* BUTTONS */
 
