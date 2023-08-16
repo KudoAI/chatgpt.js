@@ -143,7 +143,7 @@ const onLoadObserver = new MutationObserver(() => {
                 + '<a href="https://kudoai.com" target="_blank" rel="noopener">KudoAI</a>. '
                 + 'Powered by <a href="https://docsify.js.org" target="_blank" rel="noopener">Docsify</a>. '
                 + 'Designed by <a href="https://adamlui.com" target="_blank" rel="noopener">Adam Lui</a>. '
-                + 'Hosting by <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>.';
+                + 'Hosted by <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>.';
             article.appendChild(copyrightFooter);
 
             // Add FADE classes to elements
