@@ -344,7 +344,7 @@ a[href*="mailto:showcase"] { word-break: keep-all }
 #contributors + p { /* contributors description */
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
     font-size: 1.7rem !important ; padding: 0 12vw }
-#contributors ~ * img:not(#partners ~ * *) { width: 65px } /* zoom contributor avatars */
+#contributors ~ * img:not(#partners ~ * *) { width: 6vw } /* resize contributor avatars */
 a[href="https://chat.openai.com"] img { /* outline ChatGPT's avatar */
     border: 2px solid #aeecff ; border-radius: 50% }
 #contributors ~ br { display: none } /* hide trailing line break */
@@ -488,7 +488,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
         font-size: 1.5rem !important ; padding: 0 5px !important }
     #contributors ~ p { /* remove padding from avatars container */
         padding: 0 !important }
-    #contributors ~ * img { width: 69px !important } /* unzoom contributor avatars */
+    #contributors ~ * img { width: 69px !important } /* resize contributor avatars */
 
     /* Footer */
     #mc_embed_signup h2 { /* CTA */
