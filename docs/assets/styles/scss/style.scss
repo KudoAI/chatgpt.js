@@ -344,7 +344,7 @@ a[href*="mailto:showcase"] { word-break: keep-all }
 #contributors + p { /* contributors description */
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
     font-size: 1.7rem !important ; padding: 0 12vw }
-#contributors ~ * img:not(#partners ~ * *) { width: 6vw } /* resize contributor avatars */
+#contributors ~ * img:not(#partners ~ * *) { width: 5.5vw } /* resize contributor avatars */
 a[href="https://chat.openai.com"] img { /* outline ChatGPT's avatar */
     border: 2px solid #aeecff ; border-radius: 50% }
 #contributors ~ br { display: none } /* hide trailing line break */
