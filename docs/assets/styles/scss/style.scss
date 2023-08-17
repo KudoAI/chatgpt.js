@@ -299,15 +299,15 @@ main li pre { margin: 65px 0 !important }
 #shields img { height: 48px ; margin: 4px -2px }
 
 /* About section */
-#intro ~ p:first-of-type { /* ABOUT description */
-    margin-top: -488px !important ; font-size: 2.8rem !important ;
-    line-height: 3.75rem !important ; text-align: right ; width: 50% }
+#intro + p { /* ABOUT description */
+    margin-top: -488px !important ; font-size: 3.3rem !important ; color: #bbb ;
+    line-height: 4.3rem !important ; text-align: right ; width: 59% }
 #intro ~ ul:first-of-type { display: none } /* hide readme feature list */
 #intro h2 span { display: none !important } /* hide ABOUT heading */
 #feature-list { /* generated in `../../js/src/online-modifier.js` */
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
-    font-size: 1.3rem ; color: $green ; position: relative ; float: right ;
-    height: 100px ; top: -263px ; right: -123px ; width: 50% }
+    font-size: 1.4rem ; color: $green ; position: relative ; float: right ;
+    height: 100px ; top: -311px ; right: -90px ; width: 41% }
 
 /* Greasemonkey/Chrome sections */
 #-greasemonkey, #-chrome { text-align: center ; margin-bottom: 55px !important }
