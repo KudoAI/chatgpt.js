@@ -43,7 +43,7 @@
 
 </div>
 
-**chatgpt.js** 는 Chat GPT DOM과 매우 간편한 상호작용을 가능하게 하는 강력한 자바스크립트 라이브러리입니다.
+<span style="color: white">chatgpt.js</span> 는 Chat GPT DOM과 <span style="color: white">매우 간편한</span> 상호작용을 가능하게 하는 <span style="color: white">강력한</span> 자바스크립트 라이브러리입니다.
 
 - 풍부한 기능
 - 객체지향

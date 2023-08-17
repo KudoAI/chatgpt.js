@@ -42,7 +42,7 @@
 
 </div>
 
-**chatgpt.js** は、ChatGPT DOM との非常に簡単な対話を可能にする強力な JavaScript ライブラリです。
+<span style="color: white">chatgpt.js</span> は、ChatGPT DOM との非<span style="color: white">常に簡</span>単な対話を可能にする<span style="color: white">強力な</span> JavaScript ライブラリです。
 
 - 豊富な機能
 - オブジェクト指向
