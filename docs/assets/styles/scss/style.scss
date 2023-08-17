@@ -350,6 +350,7 @@ a[href="https://chat.openai.com"] img { /* outline ChatGPT's avatar */
 #contributors ~ br { display: none } /* hide trailing line break */
 
 /* Footer */
+a[href="https://100.builders"] { color: $green !important }
 #star-history { display: none } /* hide Star History section */
 #footer { text-align: center ; margin: 115px 0 -105px } /* general position */
 #mc_embed_signup h2 { /* 1st CTA */
