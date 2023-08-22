@@ -20,6 +20,70 @@ localStorage.notifyQueue = JSON.stringify(notifyQueue);
 const chatgpt = {
     openAIaccessToken: {},
 
+    elements: [], // testing
+
+    // TODO: Disable created MutationObserver(s) on function call to prevent massive use of device resources
+    // TODO: Maybe(?) add more valid elements
+    // TODO: Add 'options' to 'select' either from 'appendToSidebar' additional param or from 'attrs'
+    appendToSidebar: function(element, attrs) {
+        let observer, cssClasses;
+        const validElements = ['select', 'button'];
+
+        element = element.toLowerCase(); // Lowercase the element string
+
+        // Error handling
+        if (!element) return console.error('🤖 chatgpt.js >> No element was specified');
+        else if (!validElements.includes(element))
+            return console.error(`🤖 chatgpt.js >> '${element}' is not a valid element. Valid elements are ` + validElements);
+
+        // Create the given element
+        const newElement = document.createElement(element);
+        // Apply elements attributes if supplied, but ignore 'id'
+        if (attrs && typeof attrs === 'object')
+            Object.entries(attrs).forEach(([key, value]) => {
+                if (key !== 'id') newElement[key] = value;
+            });
+
+        // Grab CSS from original website elements
+        for (let navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+            if (navLink.text.match(/.*chat/)) {
+                cssClasses = navLink.classList;
+                navLink.parentNode.style.margin = '2px 0'; // add v-margins to ensure consistency across all inserted buttons
+                break;
+            }
+        }
+
+        activateObserver();
+
+        function activateObserver() {
+            const navBar = document.querySelector('nav[aria-label="Chat history"]');
+
+            // Apply CSS to make the added elements look like they belong to the website
+            chatgpt.elements.forEach(element => {
+                element.setAttribute('class', cssClasses);
+            });
+
+            // Create MutationObserver instance
+            observer = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    if (mutation.type === 'childList' && mutation.addedNodes.length)
+                        // Try to insert each element...
+                        chatgpt.elements.forEach(element => {
+                            // ...if it's not already present...
+                            if (!navBar.contains(element))
+                                try {
+                                    // ...at the top of the sidebar
+                                    navBar.insertBefore(element, navBar.querySelector('a').parentNode);
+                                } catch (error) {
+                                    console.error(error);
+                            }});
+                });
+            });
+
+            observer.observe(document.documentElement, { childList: true, subtree: true });
+        }
+    },
+
     activateDarkMode: function() {
         document.documentElement.classList.replace('light', 'dark');
         document.documentElement.style.colorScheme = 'dark';
