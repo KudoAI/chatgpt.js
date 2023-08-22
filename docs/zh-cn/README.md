@@ -36,6 +36,14 @@
 
 </div>
 
+<div id="bat-signal" align="center">
+
+<br>
+
+📣 _您是 OSS 支持者吗？ 你喜欢 JavaScript 吗？ 那么为什么不为 ChatGPT 应用程序开发的未来做出贡献呢？ **chatgpt.js** 正在为此寻找合作者！ 只需打开 [讨论](https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas) 或 [拉取请求](https://github.com/KudoAI/chatgpt.js/pulls)（欢迎**任何**大小的想法！）_
+    
+</div>
+
 <div id="intro">
 
 ## 关于
