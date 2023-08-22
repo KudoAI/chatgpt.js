@@ -1114,7 +1114,7 @@ const synonyms = [ // constituent synonyms within function names
     ['speak', 'say', 'speech', 'talk', 'tts']
 ];
 const camelCaser = (words) => {
-    return words.map((word, index) => index === 0 || word === 's' ? word : word.charAt(0).toUpperCase() + word.slice(1)).join(''); }
+    return words.map((word, index) => index === 0 || word === 's' ? word : word.charAt(0).toUpperCase() + word.slice(1)).join(''); };
 for (const prop in chatgpt) {
 
     // Create new function for each alias
