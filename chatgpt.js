@@ -24,7 +24,7 @@ const chatgpt = {
 
     // TODO: Disable created MutationObserver(s) on function call to prevent massive use of device resources
     // TODO: Maybe(?) add more valid elements
-    // TODO: Add 'options' to 'select' either from 'appendToSidebar' additional param or from 'attrs'
+    // TODO: Add 'options' to 'select' either from 'appendToSidebar' additional param or from 'attrs' param object
     appendToSidebar: function(element, attrs) {
         let observer, cssClasses;
         const validElements = ['select', 'button'];
