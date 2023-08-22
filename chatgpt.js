@@ -12,8 +12,9 @@ const endpoints = {
 };
 
 // Init queues for feedback methods
-var alertQueue = []; localStorage.alertQueue = JSON.stringify(alertQueue);
-var notifyQueue = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
+var alertQueue = [],
+    notifyQueue = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
+localStorage.alertQueue = JSON.stringify(alertQueue);
 localStorage.notifyQueue = JSON.stringify(notifyQueue);
 
 // Define chatgpt.methods
