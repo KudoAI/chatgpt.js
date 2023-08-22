@@ -1113,6 +1113,8 @@ const synonyms = [ // constituent synonyms within function names
     ['deactivate', 'deActivate', 'turnOff'], ['generating', 'generation'], ['render', 'parse'], ['reply', 'response'],
     ['speak', 'say', 'speech', 'talk', 'tts']
 ];
+const camelCaser = (words) => {
+    return words.map((word, index) => index === 0 || word === 's' ? word : word.charAt(0).toUpperCase() + word.slice(1)).join(''); }
 for (const prop in chatgpt) {
 
     // Create new function for each alias
@@ -1140,11 +1142,7 @@ for (const prop in chatgpt) {
                         .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
                         .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
                     for (const synonym of synonymValues) { // create function per synonym
-                        const newWords = [...funcWords]; // shallow copy funcWords
-                        newWords[newWords.indexOf(funcWord)] = synonym; // replace funcWord w/ synonym
-                        const newFuncName = newWords.map((newWord, index) => // transform new words to create new name
-                            index === 0 || newWord === 's' ? newWord : newWord.charAt(0).toUpperCase() + newWord.slice(1) // case each word to form camel
-                        ).join(''); // concatenate transformed words
+                        const newFuncName = camelCaser(funcWords.map(word => (word === funcWord ? synonym : word)));
                         if (!chatgpt[newFuncName]) { // don't alias existing functions
                             chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
                             newFunctionsCreated = true;
