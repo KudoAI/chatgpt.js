@@ -750,7 +750,7 @@ const chatgpt = {
 
             console.info( '%c>> %c' + ( isChatGptObjParent ? '' : `${functionName[0]}.%c`) + functionName[1] + '\n\n%c[%c'
                 + ((( functionName[0] === 'chatgpt' && functionName[1] === this[functionName[1]].name ) || // parent is chatgpt + names match or
-                    ( !isChatGptObjParent )) // parent is chatgpt.obj
+                    !isChatGptObjParent) // parent is chatgpt.obj
                         ? 'Function' : 'Alias of' ) + '%c: %c'
                 + ( functionName[0] === 'chatgpt' ? this[functionName[1]].name
                     : functionName[0] !== 'other' ? functionName[0] + '.' + functionName[1]
