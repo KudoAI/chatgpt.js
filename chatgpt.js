@@ -22,12 +22,12 @@ const chatgpt = {
     openAIaccessToken: {},
 
     elements: [], // testing
+    observer: {}, // testing
 
-    // TODO: Disable created MutationObserver(s) on function call to prevent massive use of device resources
     // TODO: Maybe(?) add more valid elements
     // TODO: Add 'options' to 'select' either from 'appendToSidebar' additional param or from 'attrs' param object
     appendToSidebar: function(element, attrs) {
-        let observer, cssClasses;
+        let cssClasses;
         const validElements = ['select', 'button'];
 
         element = element.toLowerCase(); // Lowercase the element string
@@ -45,6 +45,11 @@ const chatgpt = {
                 if (key !== 'id') newElement[key] = value;
             });
 
+        /* No clue why, but it's necessary otherwise the element becomes too large
+        even tho there's no CSS rule that gives the element that size
+        and setting 'height' only, even with '!important' will not work */
+        newElement.style.maxHeight = '44px';
+
         // Grab CSS from original website elements
         for (let navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (navLink.text.match(/.*chat/)) {
@@ -54,9 +59,12 @@ const chatgpt = {
             }
         }
 
+        chatgpt.elements.push(newElement);
         activateObserver();
 
         function activateObserver() {
+            if (chatgpt.observer instanceof MutationObserver) chatgpt.observer.disconnect(); // Stop the previous observer to preserve resources
+
             const navBar = document.querySelector('nav[aria-label="Chat history"]');
 
             // Apply CSS to make the added elements look like they belong to the website
@@ -65,7 +73,7 @@ const chatgpt = {
             });
 
             // Create MutationObserver instance
-            observer = new MutationObserver(mutations => {
+            chatgpt.observer = new MutationObserver(mutations => {
                 mutations.forEach(mutation => {
                     if (mutation.type === 'childList' && mutation.addedNodes.length)
                         // Try to insert each element...
@@ -81,8 +89,10 @@ const chatgpt = {
                 });
             });
 
-            observer.observe(document.documentElement, { childList: true, subtree: true });
+            chatgpt.observer.observe(document.documentElement, { childList: true, subtree: true });
         }
+
+        return newElement; // Return the element (for event listeners, etc)
     },
 
     activateDarkMode: function() {
