@@ -25,7 +25,6 @@ const chatgpt = {
     observer: {}, // testing
 
     // TODO: Maybe(?) add more valid elements
-    // TODO: Add 'options' to 'select' either from 'appendToSidebar' additional param or from 'attrs' param object
     appendToSidebar: function(element, attrs) {
         let cssClasses;
         const validElements = ['select', 'button'];
