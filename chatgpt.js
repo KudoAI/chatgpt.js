@@ -742,15 +742,40 @@ const chatgpt = {
                         functionNames.push([prop, nestedProp]);
         }}}}
         functionNames.sort(function(a, b) { return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]); });
+
+        console.info('\n%c🤖 chatgpt.js\n', 'font-size: xx-large; color: cyan; font-family: sans-serif; font-weight: bold;');
+
         for (const functionName of functionNames) {
-            console.info( '🤖 chatgpt.js >> ' + ( /chatgpt|other/.test(functionName[0]) ? '' : ( functionName[0] + '.' )) + functionName[1] + ': ['
+            const isChatGptObjParent = /chatgpt|other/.test(functionName[0]);
+
+            console.info( '%c>> %c' + ( isChatGptObjParent ? '' : `${functionName[0]}.%c`) + functionName[1] + '\n\n%c[%c'
                 + ((( functionName[0] === 'chatgpt' && functionName[1] === this[functionName[1]].name ) || // parent is chatgpt + names match or
-                    ( !/chatgpt|other/.test(functionName[0]) )) // parent is chatgpt.obj
-                        ? 'Function' : 'Alias of' ) + ': '
+                    ( !isChatGptObjParent )) // parent is chatgpt.obj
+                        ? 'Function' : 'Alias of' ) + '%c: %c'
                 + ( functionName[0] === 'chatgpt' ? this[functionName[1]].name
                     : functionName[0] !== 'other' ? functionName[0] + '.' + functionName[1]
                     : (( Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[functionName[1]].name)) + '.' )
-                        + this[functionName[1]].name )) + ']' );
+                        + this[functionName[1]].name )) + '%c]',
+                'font-size: larger; color: #0f0; font-family: monospace; font-weight: bold;',
+                isChatGptObjParent ?
+                    'font-size: larger; color: orange; font-family: monospace; font-weight: bold;'
+                    : 'font-size: larger; color: rgb(249, 238, 22); font-family: monospace; font-weight: bold;',
+                isChatGptObjParent ?
+                    'font-size: larger; color: initial; font-family: monospace; font-weight: initial;'
+                    : 'font-size: larger; color: orange; font-family: monospace; font-weight: bold;',
+                isChatGptObjParent ?
+                    'font-size: larger; color: rgb(185, 129, 249); font-family: monospace; font-weight: bold;'
+                    : 'font-size: larger; color: initial; font-family: monospace; font-weight: initial;',
+                isChatGptObjParent ?
+                    'font-size: larger; color: initial; font-family: monospace; font-weight: initial;'
+                    : 'font-size: larger; color: rgb(185, 129, 249); font-family: monospace; font-weight: bold;',
+                isChatGptObjParent ?
+                    'font-size: larger; color: cyan; font-family: monospace; font-style: italic;'
+                    : 'font-size: larger; color: initial; font-family: monospace; font-weight: initial;',
+                isChatGptObjParent ?
+                    'font-size: larger; color: initial; font-family: monospace; font-weight: initial;'
+                    : 'font-size: larger; color: cyan; font-family: monospace; font-style: italic;',
+                isChatGptObjParent ? '' : 'font-size: larger; color: initial; font-family: monospace; font-weight: initial;' );
         }
     },
 
