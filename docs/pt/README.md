@@ -36,6 +36,14 @@
 
 </div>
 
+<div id="bat-signal" align="center">
+
+<br>
+
+📣 _Você é um apoiador do OSS? Você ama JavaScript? Então, por que não contribuir para o futuro do desenvolvimento de aplicativos AI? **chatgpt.js** procura colaboradores precisamente para esta causa! Basta abrir uma [discussão](https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas) ou [pull request](https://github.com/KudoAI/chatgpt.js/pulls) (idéias de **qualquer** tamanho são bem-vindas!)_
+    
+</div>
+
 <div id="intro">
 
 ## Sobre
