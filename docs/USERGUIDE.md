@@ -408,7 +408,7 @@ Returns a given account detail as a string.
 
 `detail`: A string representing the account detail(s) that will be returned.
 
-Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single detail is passed, it will be returned as a string, if multiple are passed instead, the function will return an object with the requested details. If no details are passed, the function will return an object with all the avaiable details.
+Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single detail is passed, it will be returned as a string, if multiple are passed instead, the function will return an object with the requested details. If no details are passed, the function will return an object with all the available details.
 
 ```js
 async function doSomething() {
