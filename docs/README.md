@@ -161,7 +161,7 @@ chatgpt.response.getLast();
 chatgpt.get('reply', 'last');
 ```
 
-Each call equally fetches the last response. If you think it works, it probabily will... so just type it!
+Each call equally fetches the last response. If you think it works, it probably will... so just type it!
 
 If it didn't, check out the extended [userguide](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md), or simply submit an [issue](https://github.com/kudoai/chatgpt.js/issues) or [PR](https://github.com/kudoai/chatgpt.js/pulls) and it will be integrated, ezpz!
 
