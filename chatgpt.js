@@ -50,6 +50,8 @@ const chatgpt = {
         and setting 'height' only, even with '!important' will not work */
         newElement.style.maxHeight = '44px';
 
+        if (element === 'select') newElement.style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))'; // Fix for blank background on select elements
+
         // Grab CSS from original website elements
         for (let navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (navLink.text.match(/.*chat/)) {
