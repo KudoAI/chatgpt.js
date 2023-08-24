@@ -28,7 +28,7 @@ jobs:
 
       - name: Sync /starters/greasemonkey/ to kudoai/chatgpt.js-greasemonkey-starter/
         run: |
-          rsync -avhr
+          rsync -avhr \
             "${{ github.workspace }}/kudoai/chatgpt.js/starters/greasemonkey/" \
             "${{ github.workspace }}/kudoai/chatgpt.js-greasemonkey-starter/"
 
