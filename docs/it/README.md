@@ -2,7 +2,7 @@
 
 <div align="center">
 
-###### <a href="https://github.com/kudoai/chatgpt.js/tree/main/docs"><img height=15 style="margin: 0 3px -2px" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/0fc3060273fcff77d3e2ff968d5c74acdab62beb/media/images/icons/earth-americas-icon32.svg"></a>  Italiano | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../zh-tw#readme">繁體中文</a> | <a href="../ja#readme">日本</a> | <a href="../ko#readme">한국인</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../nl#readme">Nederlands</a> | <a href="../pt#readme">Português</a> | <a href="../vi#readme">Việt</a>
+###### <a href="https://github.com/kudoai/chatgpt.js/tree/main/docs"><img height=15 style="margin: 0 3px -2px" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/0fc3060273fcff77d3e2ff968d5c74acdab62beb/media/images/icons/earth-americas-icon32.svg"></a> Italiano | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../zh-tw#readme">繁體中文</a> | <a href="../ja#readme">日本</a> | <a href="../ko#readme">한국인</a> | <a href="../hi#readme">हिंदी</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../nl#readme">Nederlands</a> | <a href="../pt#readme">Português</a> | <a href="../vi#readme">Việt</a>
 
 </div>
 
@@ -38,7 +38,7 @@
 
 <br>
 
-📣 _Sei un sostenitore dell'OSS? Ti piace JavaScript? Allora perché non contribuire al futuro dello sviluppo della tecnologia AI? **chatgpt.js** cerca collaboratori proprio per questo! Basta iniziare una [discussione](https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas) o aprire una [pull request](https://github.com/KudoAI/chatgpt.js/pulls) (sono benvenute idee di **qualsiasi** grandezza!)_
+📣 _Ti piace l'OSS? JavaScript è la tua passione? Allora perché non contribuire al futuro dello sviluppo della tecnologia AI? **chatgpt.js** cerca collaboratori proprio per questo! Basta iniziare una [discussione](https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas) o aprire una [pull request](https://github.com/KudoAI/chatgpt.js/pulls) (sono benvenute idee di **qualsiasi** grandezza!)_
 
 </div>
 
@@ -52,10 +52,10 @@
 
 <span style="color: white">chatgpt.js</span> è una <span style="color: white">potente</span> libreria JavaScript che consente un'interazione <span style="color: white">semplicissima</span> con il DOM di ChatGPT.
 
-- Ricco di funzionalità
-- Orientamento ad oggetti
-- Facile da usare
-- Leggero (ma molto performante)
+-   Ricco di funzionalità
+-   Orientamento ad oggetti
+-   Facile da usare
+-   Leggero (ma molto performante)
 
 <picture>
     <source type="image/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
@@ -118,12 +118,14 @@ Poiché Google [alla fine eliminerà gradualmente](https://developer.chrome.com/
 1. Salva https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js in una sottocartella (`lib` in questo esempio)
 
 2. Aggiungi la dichiarazione di esportazione ES6 alla fine di `lib/chatgpt.js`
+
 ```js
 ...
 export { chatgpt }
 ```
 
 3. In `manifest.json` del progetto (V3), aggiungi `lib/chatgpt.js` come risorsa accessibile dal web
+
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
@@ -132,6 +134,7 @@ export { chatgpt }
 ```
 
 1. Negli script che richiedono `chatgpt.js` (in primo piano/background), importalo in questo modo:
+
 ```js
 (async () => {
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
@@ -272,7 +275,7 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=41&w=41&mask=circle&maxage=7d 'Dependabot')](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=41&w=41&mask=circle&maxage=7d 'ChatGPT')](https://chat.openai.com)
 [![](https://images.weserv.nl/?url=https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/icons/poe-icon128.svg?first-contrib=2023.07.27-getandshowreply-method&h=41&w=41&mask=circle&maxage=7d 'Poe')](https://poe.com)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=41&w=41&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=41&w=41&mask=circle&maxage=7d '@ImgBotApp')](https://github.com/ImgBotApp)
 
 <picture>
     <source type="image/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.webp">
