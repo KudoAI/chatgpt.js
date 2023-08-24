@@ -410,7 +410,7 @@ function scrambleText(text, destination, delayBetweenWords, textIdx = 0) {
 
 function randomizeCase(targetNode, iniDelay, finalDelay, incrementA, incrementB, inflectionPt) {
 
-    // Validate args            
+    // Validate args
     if (!targetNode?.nodeName) // DOM element to randomize case of text content
         throw new Error('Target node (1st arg) must be a DOM element');
     iniDelay = validateIntArg( // ms to initially between case switches
