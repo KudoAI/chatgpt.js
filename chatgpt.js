@@ -1057,6 +1057,22 @@ const chatgpt = {
             // Stop the previous observer to preserve resources
             if (this.observer instanceof MutationObserver)
                 try { this.observer.disconnect(); } catch (e) {}
+
+            let cssClasses;
+            // Grab CSS from original website elements
+            for (let navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+                if (navLink.text.match(/.*chat/)) {
+                    cssClasses = navLink.classList;
+                    navLink.parentNode.style.margin = '2px 0'; // add v-margins to ensure consistency across all inserted buttons
+                    break;
+                }
+            }
+    
+            // Apply CSS to make the added elements look like they belong to the website
+            this.elements.forEach(element => {
+                element.setAttribute('class', cssClasses);
+                element.style.maxHeight = '44px'; // Fix the height of the element
+            });
         }
     },
 
