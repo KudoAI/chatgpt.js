@@ -1112,6 +1112,8 @@ const chatgpt = {
             if (this.observer instanceof MutationObserver)
                 try { this.observer.disconnect(); } catch (e) {}
 
+            if (!this.elements.length) return console.error('🤖 chatgpt.js >> No elements to append!');
+
             let cssClasses;
             // Grab CSS from original website elements
             for (let navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
