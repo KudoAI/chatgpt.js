@@ -293,31 +293,91 @@ const chatgpt = {
         function exitMenu() { document.querySelector('div[id*=radix] button').click(); }
     },
 
-    exportChat: function() {
-        const chatDivs = document.querySelectorAll('main > div > div > div > div > div > div[class*=group]');
-        if (chatDivs.length === 0) { console.error('🤖 chatgpt.js >> Chat is empty!'); return; }
-        const msgs = [];
-        chatDivs.forEach((div) => {
-            const sender = div.textContent.startsWith('ChatGPTChatGPT') ? 'CHATGPT' : 'USER';
-            let msg = Array.from(div.childNodes).map(node => node.innerText)
-                .join('\n\n') // insert double line breaks between paragraphs
-                .replace('Copy code', '');
-            if (sender === 'CHATGPT') msg = msg.replace(/^ChatGPT\n\n/, '');
-            msgs.push(sender + ': ' + msg);
-        });
+    exportChat: async function(chatToGet, format) {
+    // chatToGet = 'active' (default) | 'latest' | index|title|id of chat to get
+    // format = 'html' (default) | 'text'
 
-        // Export as .txt
-        const blob = new Blob([msgs.join('\n\n')], { type: 'text/plain' });
-        const now = new Date();
-        const day = now.getDate().toString().padStart(2, '0');
-        const month = (now.getMonth() + 1).toString().padStart(2, '0');
-        const year = now.getFullYear();
-        const hour = now.getHours().toString().padStart(2, '0');
-        const minute = now.getMinutes().toString().padStart(2, '0');
-        const filename = `ChatGPT_${day}-${month}-${year}_${hour}-${minute}.txt`;
-        const url = URL.createObjectURL(blob), link = document.createElement('a');
-        link.href = url; link.download = filename; document.body.appendChild(link);
-        link.click(); document.body.removeChild(link); URL.revokeObjectURL(url);
+        // Init args
+        chatToGet = !chatToGet ? 'active' // default to 'active' if unpassed
+                  : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
+                      parseInt(chatToGet, 10) // parse as integer
+                  : chatToGet; // else preserve non-num string as 'active', 'latest' or title/id of chat to get
+        format = !format ? 'html' : format; // default to 'html' if unpassed
+
+        // Validate format
+        const validFormats = ['html', 'text', 'txt'];
+        if (!validFormats.includes(format)) { return console.error(
+            '🤖 chatgpt.js >> Invalid format arg \'' + format + '\' supplied. Valid formats are:\n'
+          + '                    [' + validFormats + ']'); }
+
+        // Create transcript string + filename for HTML export
+        let filename, strTranscript = '';
+        if (format == 'html') {
+            console.info('🤖 chatgpt.js >> Exporting chat to HTML...');
+
+            // Fetch HTML transcript from OpenAI
+            const response = await fetch(await chatgpt.shareChat(chatToGet)),
+                  htmlContent = await response.text();
+
+            // Format filename after <title>
+            const parser = new DOMParser(),
+                  parsedHtml = parser.parseFromString(htmlContent, 'text/html'),
+                  title = parsedHtml.querySelector('title').textContent;
+            filename = title + '.html';
+
+            // Convert relative CSS paths to absolute ones
+            const cssLinks = parsedHtml.querySelectorAll('link[rel="stylesheet"]');
+            cssLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('/'))
+                    link.setAttribute('href', 'https://chat.openai.com' + href);
+            });
+
+            // Serialize updated HTML to string
+            strTranscript = new XMLSerializer().serializeToString(parsedHtml);
+
+        } else { // create transcript string + filename for TXT export
+            console.info('🤖 chatgpt.js >> Exporting chat to TXT...');
+
+            // Format filename using date/time
+            const now = new Date(),
+                  day = now.getDate().toString().padStart(2, '0'),
+                  month = (now.getMonth() + 1).toString().padStart(2, '0'),
+                  year = now.getFullYear(),
+                  hour = now.getHours().toString().padStart(2, '0'),
+                  minute = now.getMinutes().toString().padStart(2, '0');
+            filename = `ChatGPT_${ day }-${ month }-${ year }_${ hour }-${ minute }.txt`;
+
+            // Create string transcript from active chat
+            if (chatToGet == 'active' && /\/\w{8}-(\w{4}-){3}\w{12}$/.test(window.location.href)) {
+                const chatDivs = document.querySelectorAll('main > div > div > div > div > div > div[class*=group]');
+                if (chatDivs.length === 0) { console.error('🤖 chatgpt.js >> Chat is empty!'); return; }
+                const msgs = []; let isUserMessage = true;
+                chatDivs.forEach((div) => {
+                    const sender = isUserMessage ? 'USER' : 'CHATGPT';
+                    isUserMessage = !isUserMessage;
+                    let msg = Array.from(div.childNodes).map(node => node.innerText)
+                        .join('\n\n') // insert double line breaks between paragraphs
+                        .replace('Copy code', '');
+                    if (sender === 'CHATGPT') msg = msg.replace(/^ChatGPT\n\n/, '');
+                    msgs.push(sender + ': ' + msg);
+                });
+                strTranscript = msgs.join('\n\n');                     
+
+            // ...or from getChatData(chatToGet)
+            } else {
+                const convo = await chatgpt.getChatData(chatToGet, 'msg', 'both', 'all');
+                for (const entry of convo) {
+                    strTranscript += `USER: ${ entry.user }\n\n`;
+                    strTranscript += `CHATGPT: ${ entry.chatgpt }\n\n`;
+            }}
+        }
+
+        // Save to file
+        const blob = new Blob([strTranscript], { type: 'text/' + ( filename.includes('html') ? 'html' : 'plain' )}),
+              link = document.createElement('a'), blobURL = URL.createObjectURL(blob);
+        link.href = blobURL; link.download = filename; document.body.appendChild(link);
+        link.click(); document.body.removeChild(link); URL.revokeObjectURL(blobURL);
     },
 
     generateRandomIP: function() {
