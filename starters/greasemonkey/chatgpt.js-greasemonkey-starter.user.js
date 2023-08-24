@@ -15,7 +15,7 @@
 // @supportURL    https://github.com/kudoai/chatgpt.js-greasemonkey-starter/issues
 // ==/UserScript==
 
-// NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license.
+// NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license
 
 (async () => {
     await chatgpt.isLoaded();
