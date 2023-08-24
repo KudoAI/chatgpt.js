@@ -1108,6 +1108,11 @@ const chatgpt = {
         }}},
 
         activateObserver: function() {
+            const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]'),
+                firstButton = chatHistoryNav.querySelector('a');
+            if (chatgpt.history.isOff()) // Hide enable history spam div
+                try { firstButton.parentNode.nextElementSibling.style.display = 'none'; } catch (error) {}
+
             // Stop the previous observer to preserve resources
             if (this.observer instanceof MutationObserver)
                 try { this.observer.disconnect(); } catch (e) {}
