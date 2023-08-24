@@ -1162,6 +1162,10 @@ const chatgpt = {
                 return console.error(`🤖 chatgpt.js >> Invalid element! Received: ${element} Valid elements: ${validElements}`);
 
             const newElement = document.createElement(element);
+            if (attrs && typeof attrs === 'object')
+                Object.entries(attrs).forEach(([key, value]) => {
+                    if (key !== 'id' || key !== 'callback') newElement[key] = value;
+                });
 
             this.elements.push(newElement);
         }
