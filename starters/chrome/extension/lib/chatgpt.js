@@ -294,7 +294,7 @@ const chatgpt = {
     },
 
     exportChat: function() {
-        const chatDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
+        const chatDivs = document.querySelectorAll('main > div > div > div > div > div > div[class*=group]');
         if (chatDivs.length === 0) { console.error('🤖 chatgpt.js >> Chat is empty!'); return; }
         const msgs = [];
         chatDivs.forEach((div) => {
