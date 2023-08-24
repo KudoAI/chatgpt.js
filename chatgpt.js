@@ -1152,7 +1152,14 @@ const chatgpt = {
         },
 
         append: function(element, attrs = {}) {
+            const validElements = ['button', 'select'];
 
+            if (!element || typeof element !== 'string') // Element not passed or invalid type
+                return console.error('🤖 chatgpt.js >> Please supply a valid string element name!');
+            element = element.toLowerCase();
+
+            if (!validElements.includes(element)) // Element not in list
+                return console.error(`🤖 chatgpt.js >> Invalid element! Received: ${element} Valid elements: ${validElements}`);
         }
     },
 
