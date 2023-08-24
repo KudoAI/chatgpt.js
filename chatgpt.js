@@ -1178,6 +1178,20 @@ const chatgpt = {
             if (element === 'button' && attrs?.callback && typeof attrs.callback === 'function')
                 newElement.addEventListener('click', attrs.callback);
 
+            if (
+                element === 'select' &&
+                attrs?.options && // There are options to add 
+                Array.isArray(attrs.options) && // It's an array of options
+                attrs.options.length && // The array is not empty
+                attrs.options.every(el => typeof el === 'object') // The entries of the array are all objects
+            )
+                    attrs.options.forEach(option => {
+                        const optionElement = document.createElement('option');
+                        optionElement.textContent = option?.text;
+                        optionElement.value = option?.value;
+                        newElement.add(optionElement);
+                    });
+
             // Fix for blank background on select elements
             if (element === 'select') newElement.style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))';
 
