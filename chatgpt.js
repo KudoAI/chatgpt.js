@@ -1167,14 +1167,16 @@ const chatgpt = {
                 return console.error(`🤖 chatgpt.js >> Invalid element! Received: ${element} Valid elements: ${validElements}`);
 
             const newElement = document.createElement(element);
+            const invalidAttributes = ['id', 'callback', 'options'];
+
             if (attrs && typeof attrs === 'object')
                 Object.entries(attrs).forEach(([key, value]) => {
-                    if (key !== 'id' || key !== 'callback') newElement[key] = value;
+                    if (!invalidAttributes.includes(key)) newElement[key] = value;
                 });
 
             // Add a click handler if the callback is specified on a button element
             if (element === 'button' && attrs?.callback && typeof attrs.callback === 'function')
-                    newElement.addEventListener('click', attrs.callback);
+                newElement.addEventListener('click', attrs.callback);
 
             // Fix for blank background on select elements
             if (element === 'select') newElement.style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))';
