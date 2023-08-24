@@ -1160,6 +1160,10 @@ const chatgpt = {
 
             if (!validElements.includes(element)) // Element not in list
                 return console.error(`🤖 chatgpt.js >> Invalid element! Received: ${element} Valid elements: ${validElements}`);
+
+            const newElement = document.createElement(element);
+
+            this.elements.push(newElement);
         }
     },
 
