@@ -1167,8 +1167,13 @@ const chatgpt = {
                     if (key !== 'id' || key !== 'callback') newElement[key] = value;
                 });
 
+            // Add a click handler if the callback is specified on a button element
+            if (element === 'button' && attrs?.callback && typeof attrs.callback === 'function')
+                    newElement.addEventListener('click', attrs.callback);
+
             // Fix for blank background on select elements
             if (element === 'select') newElement.style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))';
+
             this.elements.push(newElement);
             this.activateObserver();
         }
