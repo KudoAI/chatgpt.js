@@ -1053,7 +1053,11 @@ const chatgpt = {
                     navLink.click(); return;                
         }}},
 
-
+        activateObserver: function() {
+            // Stop the previous observer to preserve resources
+            if (this.observer instanceof MutationObserver)
+                try { this.observer.disconnect(); } catch (e) {}
+        }
     },
 
     startNewChat: function() {
