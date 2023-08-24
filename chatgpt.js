@@ -743,7 +743,7 @@ const chatgpt = {
         Object.keys(colors).forEach(element => { // populate dark scheme colors if missing
             colors[element][1] = colors[element][1] ||
                 '#' + (Number(`0x1${ colors[element][0].replace(/^#/, '') }`) ^ 0xFFFFFF)
-                    .toString(16).substr(1).toUpperCase(); // convert to hex
+                    .toString(16).substring(1).toUpperCase(); // convert to hex
         });
 
         // Create [functionNames]
