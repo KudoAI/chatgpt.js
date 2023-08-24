@@ -304,39 +304,9 @@ const chatgpt = {
                   : chatToGet; // else preserve non-num string as 'active', 'latest' or title/id of chat to get
         format = !format ? 'html' : format; // default to 'html' if unpassed
 
-        // Validate format
-        const validFormats = ['html', 'text', 'txt'];
-        if (!validFormats.includes(format)) { return console.error(
-            '🤖 chatgpt.js >> Invalid format arg \'' + format + '\' supplied. Valid formats are:\n'
-          + '                    [' + validFormats + ']'); }
-
-        // Create transcript string + filename for HTML export
+        // Create transcript string + filename for TXT export
         let filename, strTranscript = '';
-        if (format == 'html') {
-            console.info('🤖 chatgpt.js >> Exporting chat to HTML...');
-
-            // Fetch HTML transcript from OpenAI
-            const response = await fetch(await chatgpt.shareChat(chatToGet)),
-                  htmlContent = await response.text();
-
-            // Format filename after <title>
-            const parser = new DOMParser(),
-                  parsedHtml = parser.parseFromString(htmlContent, 'text/html'),
-                  title = parsedHtml.querySelector('title').textContent;
-            filename = title + '.html';
-
-            // Convert relative CSS paths to absolute ones
-            const cssLinks = parsedHtml.querySelectorAll('link[rel="stylesheet"]');
-            cssLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href && href.startsWith('/'))
-                    link.setAttribute('href', 'https://chat.openai.com' + href);
-            });
-
-            // Serialize updated HTML to string
-            strTranscript = new XMLSerializer().serializeToString(parsedHtml);
-
-        } else { // create transcript string + filename for TXT export
+        if (/te?xt/.test(format)) { // create transcript string + filename for TXT export
             console.info('🤖 chatgpt.js >> Exporting chat to TXT...');
 
             // Format filename using date/time
@@ -371,7 +341,31 @@ const chatgpt = {
                     strTranscript += `USER: ${ entry.user }\n\n`;
                     strTranscript += `CHATGPT: ${ entry.chatgpt }\n\n`;
             }}
-        }
+
+        } else { // create transcript string + filename for HTML export
+            console.info('🤖 chatgpt.js >> Exporting chat to HTML...');
+
+            // Fetch HTML transcript from OpenAI
+            const response = await fetch(await chatgpt.shareChat(chatToGet)),
+                  htmlContent = await response.text();
+
+            // Format filename after <title>
+            const parser = new DOMParser(),
+                  parsedHtml = parser.parseFromString(htmlContent, 'text/html'),
+                  title = parsedHtml.querySelector('title').textContent;
+            filename = title + '.html';
+
+            // Convert relative CSS paths to absolute ones
+            const cssLinks = parsedHtml.querySelectorAll('link[rel="stylesheet"]');
+            cssLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('/'))
+                    link.setAttribute('href', 'https://chat.openai.com' + href);
+            });
+
+            // Serialize updated HTML to string
+            strTranscript = new XMLSerializer().serializeToString(parsedHtml);
+        } 
 
         // Save to file
         const blob = new Blob([strTranscript], { type: 'text/' + ( filename.includes('html') ? 'html' : 'plain' )}),
