@@ -1094,7 +1094,7 @@ const chatgpt = {
     },
 
     sidebar: {
-        elements: [], // .style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))'; // Fix for blank background on select elements
+        elements: [],
         observer: {},
 
         isOn: function() { return !document.querySelector('button[aria-label*="Open sidebar"]'); },
@@ -1149,6 +1149,10 @@ const chatgpt = {
             });
     
             this.observer.observe(document.documentElement, { childList: true, subtree: true });
+        },
+
+        append: function(element, attrs = {}) {
+
         }
     },
 
