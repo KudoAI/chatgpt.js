@@ -21,81 +21,6 @@ localStorage.notifyQueue = JSON.stringify(notifyQueue);
 const chatgpt = {
     openAIaccessToken: {},
 
-    elements: [], // testing
-    observer: {}, // testing
-
-    // TODO: Maybe(?) add more valid elements
-    appendToSidebar: function(element, attrs) {
-        let cssClasses;
-        const validElements = ['select', 'button'];
-
-        element = element.toLowerCase(); // Lowercase the element string
-
-        // Error handling
-        if (!element) return console.error('🤖 chatgpt.js >> No element was specified');
-        else if (!validElements.includes(element))
-            return console.error(`🤖 chatgpt.js >> '${element}' is not a valid element. Valid elements are ` + validElements);
-
-        // Create the given element
-        const newElement = document.createElement(element);
-        // Apply elements attributes if supplied, but ignore 'id'
-        if (attrs && typeof attrs === 'object')
-            Object.entries(attrs).forEach(([key, value]) => {
-                if (key !== 'id') newElement[key] = value;
-            });
-
-        /* No clue why, but it's necessary otherwise the element becomes too large
-        even tho there's no CSS rule that gives the element that size
-        and setting 'height' only, even with '!important' will not work */
-        newElement.style.maxHeight = '44px';
-
-        if (element === 'select') newElement.style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))'; // Fix for blank background on select elements
-
-        // Grab CSS from original website elements
-        for (let navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-            if (navLink.text.match(/.*chat/)) {
-                cssClasses = navLink.classList;
-                navLink.parentNode.style.margin = '2px 0'; // add v-margins to ensure consistency across all inserted buttons
-                break;
-            }
-        }
-
-        chatgpt.elements.push(newElement);
-        activateObserver();
-
-        function activateObserver() {
-            if (chatgpt.observer instanceof MutationObserver) chatgpt.observer.disconnect(); // Stop the previous observer to preserve resources
-
-            const navBar = document.querySelector('nav[aria-label="Chat history"]');
-
-            // Apply CSS to make the added elements look like they belong to the website
-            chatgpt.elements.forEach(element => {
-                element.setAttribute('class', cssClasses);
-            });
-
-            // Create MutationObserver instance
-            chatgpt.observer = new MutationObserver(mutations => {
-                mutations.forEach(mutation => {
-                    if (mutation.type === 'childList' && mutation.addedNodes.length)
-                        // Try to insert each element...
-                        chatgpt.elements.forEach(element => {
-                            // ...if it's not already present...
-                            if (!navBar.contains(element))
-                                try {
-                                    // ...at the top of the sidebar
-                                    navBar.insertBefore(element, navBar.querySelector('a').parentNode);
-                                } catch (error) {
-                                    console.error(error);
-                            }});
-                });
-            });
-
-            chatgpt.observer.observe(document.documentElement, { childList: true, subtree: true });
-        }
-
-        return newElement; // Return the element (for event listeners, etc)
-    },
-
     activateDarkMode: function() {
         document.documentElement.classList.replace('light', 'dark');
         document.documentElement.style.colorScheme = 'dark';
@@ -1115,6 +1040,9 @@ const chatgpt = {
     },
 
     sidebar: {
+        elements: [], // .style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))'; // Fix for blank background on select elements
+        observer: {},
+
         isOn: function() { return !document.querySelector('button[aria-label*="Open sidebar"]'); },
         isOff: function() { return !!document.querySelector('button[aria-label*="Open sidebar"]'); },
         hide: function() { this.isOn() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already hidden!'); },
@@ -1123,7 +1051,9 @@ const chatgpt = {
             for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
                 if (/close sidebar/i.test(navLink.text)) {
                     navLink.click(); return;                
-        }}}
+        }}},
+
+
     },
 
     startNewChat: function() {
