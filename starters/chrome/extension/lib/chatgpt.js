@@ -733,7 +733,6 @@ const chatgpt = {
 
         // Define colors
         const colors = { // element: [light, dark]
-            title: ['#000000'], // black, white
             cmdPrompt: ['#ff00ff', '#00ff00'], // pink, green
             objName: ['#0611e9', '#f9ee16'], // blue, yellow
             methodName: ['#005aff', '#ffa500'], // blue, orange
@@ -763,8 +762,7 @@ const chatgpt = {
         // Print methods
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches,
               baseFontStyles = 'font-family: monospace ; font-size: larger ; ';
-        console.info('\n%c🤖 chatgpt.js methods\n',
-            'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold ; color: ' + colors.title[+isDarkMode]);
+        console.info('\n%c🤖 chatgpt.js methods\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
         for (const functionName of functionNames) {
             const isChatGptObjParent = /chatgpt|other/.test(functionName[0]);
             console.info('%c>> %c' + ( isChatGptObjParent ? '' : `${ functionName[0] }.%c`) + functionName[1] + '\n\n%c[%c'
