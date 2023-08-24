@@ -116,7 +116,6 @@ $no-touch-select: (
 
 /* GENERAL */
 
-body { cursor: url('../../cursors/futuristic/pointer.cur'), auto }
 .app-nav a.active { border-bottom: 2px solid $green}
 a { word-break: break-word }
 .top-gradient { /* for Star Wars effect (from `../../js/onload-hacks.js`) */
@@ -245,7 +244,7 @@ section.cover p { /* cover tagline size / weight / position */
 
 /* MAIN */
 
-body { background: black ; color: white ;
+body { background: black ; color: white ; cursor: url('../../cursors/futuristic/pointer.cur'), auto ;
     font-family: "PolySans Neutral", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif }
 strong, .anchor span { color: white !important } /* whiten all strongs & headings */
 main a { color: $blue !important }
