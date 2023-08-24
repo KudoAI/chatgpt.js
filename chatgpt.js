@@ -1170,6 +1170,7 @@ const chatgpt = {
             // Fix for blank background on select elements
             if (element === 'select') newElement.style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))';
             this.elements.push(newElement);
+            this.activateObserver();
         }
     },
 
