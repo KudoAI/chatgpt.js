@@ -304,9 +304,9 @@ const chatgpt = {
                   : chatToGet; // else preserve non-num string as 'active', 'latest' or title/id of chat to get
         format = !format ? 'html' : format; // default to 'html' if unpassed
 
-        // Create transcript string + filename for TXT export
-        let filename, strTranscript = '';
-        if (/te?xt/.test(format)) { // create transcript string + filename for TXT export
+        // Create transcript + filename for TXT export
+        let filename, transcript = '';
+        if (/te?xt/.test(format)) {
             console.info('🤖 chatgpt.js >> Exporting chat to TXT...');
 
             // Format filename using date/time
@@ -318,31 +318,28 @@ const chatgpt = {
                   minute = now.getMinutes().toString().padStart(2, '0');
             filename = `ChatGPT_${ day }-${ month }-${ year }_${ hour }-${ minute }.txt`;
 
-            // Create string transcript from active chat
+            // Create transcript from active chat
             if (chatToGet == 'active' && /\/\w{8}-(\w{4}-){3}\w{12}$/.test(window.location.href)) {
                 const chatDivs = document.querySelectorAll('main > div > div > div > div > div > div[class*=group]');
                 if (chatDivs.length === 0) { console.error('🤖 chatgpt.js >> Chat is empty!'); return; }
-                const msgs = []; let isUserMessage = true;
+                const msgs = []; let isUserMsg = true;
                 chatDivs.forEach((div) => {
-                    const sender = isUserMessage ? 'USER' : 'CHATGPT';
-                    isUserMessage = !isUserMessage;
+                    const sender = isUserMsg ? 'USER' : 'CHATGPT'; isUserMsg = !isUserMsg;
                     let msg = Array.from(div.childNodes).map(node => node.innerText)
                         .join('\n\n') // insert double line breaks between paragraphs
                         .replace('Copy code', '');
-                    if (sender === 'CHATGPT') msg = msg.replace(/^ChatGPT\n\n/, '');
                     msgs.push(sender + ': ' + msg);
                 });
-                strTranscript = msgs.join('\n\n');                     
+                transcript = msgs.join('\n\n');                     
 
             // ...or from getChatData(chatToGet)
             } else {
-                const convo = await chatgpt.getChatData(chatToGet, 'msg', 'both', 'all');
-                for (const entry of convo) {
-                    strTranscript += `USER: ${ entry.user }\n\n`;
-                    strTranscript += `CHATGPT: ${ entry.chatgpt }\n\n`;
+                for (const entry of await chatgpt.getChatData(chatToGet, 'msg', 'both', 'all')) {
+                    transcript += `USER: ${ entry.user }\n\n`;
+                    transcript += `CHATGPT: ${ entry.chatgpt }\n\n`;
             }}
 
-        } else { // create transcript string + filename for HTML export
+        } else { // create transcript + filename for HTML export
             console.info('🤖 chatgpt.js >> Exporting chat to HTML...');
 
             // Fetch HTML transcript from OpenAI
@@ -351,9 +348,8 @@ const chatgpt = {
 
             // Format filename after <title>
             const parser = new DOMParser(),
-                  parsedHtml = parser.parseFromString(htmlContent, 'text/html'),
-                  title = parsedHtml.querySelector('title').textContent;
-            filename = title + '.html';
+                  parsedHtml = parser.parseFromString(htmlContent, 'text/html');
+            filename = parsedHtml.querySelector('title').textContent + '.html';
 
             // Convert relative CSS paths to absolute ones
             const cssLinks = parsedHtml.querySelectorAll('link[rel="stylesheet"]');
@@ -364,11 +360,11 @@ const chatgpt = {
             });
 
             // Serialize updated HTML to string
-            strTranscript = new XMLSerializer().serializeToString(parsedHtml);
+            transcript = new XMLSerializer().serializeToString(parsedHtml);
         } 
 
         // Save to file
-        const blob = new Blob([strTranscript], { type: 'text/' + ( filename.includes('html') ? 'html' : 'plain' )}),
+        const blob = new Blob([transcript], { type: 'text/' + ( filename.includes('html') ? 'html' : 'plain' )}),
               link = document.createElement('a'), blobURL = URL.createObjectURL(blob);
         link.href = blobURL; link.download = filename; document.body.appendChild(link);
         link.click(); document.body.removeChild(link); URL.revokeObjectURL(blobURL);
