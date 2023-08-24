@@ -1073,6 +1073,26 @@ const chatgpt = {
                 element.setAttribute('class', cssClasses);
                 element.style.maxHeight = '44px'; // Fix the height of the element
             });
+    
+            const navBar = document.querySelector('nav[aria-label="Chat history"]');
+            // Create MutationObserver instance
+            this.observer = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    if (mutation.type === 'childList' && mutation.addedNodes.length)
+                        // Try to insert each element...
+                        this.elements.forEach(element => {
+                            // ...if it's not already present...
+                            if (!navBar.contains(element))
+                                try {
+                                    // ...at the top of the sidebar
+                                    navBar.insertBefore(element, navBar.querySelector('a').parentNode);
+                                } catch (error) {
+                                    console.error(error);
+                            }});
+                });
+            });
+    
+            this.observer.observe(document.documentElement, { childList: true, subtree: true });
         }
     },
 
