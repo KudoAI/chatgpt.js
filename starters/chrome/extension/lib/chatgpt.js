@@ -293,6 +293,16 @@ const chatgpt = {
         function exitMenu() { document.querySelector('div[id*=radix] button').click(); }
     },
 
+    code: {
+        review: async function(code) {
+            if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
+            chatgpt.send('Review the following code for me:\n\n' + code);
+            chatgpt.console.info('Reviewing code...');
+            await chatgpt.isIdle();
+            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+        }
+    },
+
     console: {
         info: function(msg) { console.info('🤖 chatgpt.js >> ' + msg); },
         error: function(msg, error) { console.error('🤖 chatgpt.js >> ERROR: ' + msg, error || ''); }
@@ -1157,6 +1167,7 @@ const chatgpt = {
         if (!outputLang) return chatgpt.console.error('2nd argument not supplied. Must be output language');
         chatgpt.send('Translate the following text to ' + outputLang 
             + '. Only reply with the translation.\n\n' + text);
+        chatgpt.console.info('Translating text...');
         await chatgpt.isIdle();
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
