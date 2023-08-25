@@ -1260,7 +1260,8 @@ const functionAliases = [ // whole function names to cross-alias
     ['sendInNewChat', 'sendNewChat'],
     ['stop', 'stopGenerating'],
     ['toggleScheme', 'toggleMode'],
-    ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher']
+    ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher'],
+    ['translate', 'translation', 'translator']
 ];
 const synonyms = [ // constituent synonyms within function names
     ['activate', 'turnOn'], ['account', 'acct'], ['ask', 'send', 'submit'], ['chat', 'conversation', 'convo'], ['data', 'details'],
