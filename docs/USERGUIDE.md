@@ -41,7 +41,7 @@
   - [Chats](#chats)
     - [askAndGetReply `async`](#askandgetreply-async)
     - [clearChats `async`](#clearchats-async)
-    - [exportChat](#exportchat)
+    - [exportChat `async`](#exportchat-async)
     - [getChatData `async`](#getchatdata-async)
     - [getChatInput](#getchatinput)
     - [getLastPrompt `async`](#getlastprompt-async)
@@ -463,14 +463,24 @@ async function doSomething() {
 }
 ```
 
-### exportChat
+### exportChat `async`
 
-Exports the current chat as a text file.
+Exports a given chat as a file.
 
-Example code:
+**Parameters**:
+
+`chatToGet`: A string representing the chat to get the data from.
+
+Can be the following: `active`, the current chat, `latest`, the latest chat in the list, else the `index`, `title` or `id` of the chat to get. Default is `active` if in a chat, else `latest`.
+
+`format`: A string representing the format of the export file.
+
+Can be the following: `html` or `text`. Defaults to `html`.
 
 ```js
-chatgpt.exportChat(); // Downloads a file called 'ChatGPT_{day}-{month}-{year}_{hour}-{minute}.txt'
+async function doSomething() {
+  await chatgpt.exportChat('latest', 'html'); // Downloads a '.html' file
+}
 ```
 
 ### getChatData `async`
@@ -783,7 +793,7 @@ chatgpt.sendInNewChat('Hello, world!');
 
 ### shareChat `async`
 
-Makes the selected chat available to others.
+Makes the selected chat available to others. Returns the URL of the chat as a string.
 
 **Parameters**:
 
