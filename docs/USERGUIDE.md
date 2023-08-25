@@ -24,6 +24,8 @@
     - [printAllFunctions](#printallfunctions)
     - [randomFloat](#randomfloat)
     - [renderHTML](#renderhtml)
+    - [summarize `async`](#summarize-async)
+    - [translate `async`](#translate-async)
     - [uuidv4](#uuidv4)
   - [Page theme](#page-theme)
     - [activateDarkMode](#activatedarkmode)
@@ -41,7 +43,7 @@
   - [Chats](#chats)
     - [askAndGetReply `async`](#askandgetreply-async)
     - [clearChats `async`](#clearchats-async)
-    - [exportChat](#exportchat)
+    - [exportChat `async`](#exportchat-async)
     - [getChatData `async`](#getchatdata-async)
     - [getChatInput](#getchatinput)
     - [getLastPrompt `async`](#getlastprompt-async)
@@ -74,6 +76,10 @@
     - [toggle `obj`](#toggle-obj)
       - [beacons](#beacons)
       - [refreshFrame](#refreshframe)
+  - [code `obj`](#code-obj)
+    - [refactor `async`](#refactor-async)
+    - [review `async`](#review-async)
+    - [write `async`](#write-async)
   - [history `obj`](#history-obj)
     - [isOn](#ison)
     - [isOff](#isoff)
@@ -264,12 +270,52 @@ console.log(number); // Example output: 0.9472113021060851
 
 ### renderHTML
 
+Cleans and renders given HTML code.
+
+**Parameters**:
+
+`node`: A string representing the HTML to be rendered.
+
 Example code:
 
 ```js
 document.body.appendChild(
     chatgpt.renderHTML('<div>Hello World!</div>');
 );
+```
+
+### summarize `async`
+
+Asks ChatGPT to summarize given text.
+
+**Parameters**:
+
+`text`: A string being the text to be summarized.
+
+Example code:
+
+```js
+async function doSomething() {
+  await chatgpt.summarize('A very long text...'); // Example output: 'A very short text...'
+}
+```
+
+### translate `async`
+
+Asks ChatGPT to translate given text to a given language.
+
+**Parameters**:
+
+`text`: A string being the text to translate.
+
+`outputLang`: A string representing the output language of the translation.
+
+Example code:
+
+```js
+async function doSomething() {
+  await chatgpt.translate('Hello, how are you?', 'spanish'); // Example output: 'Hola, ¿cómo estás?'
+}
 ```
 
 ### uuidv4
@@ -463,14 +509,26 @@ async function doSomething() {
 }
 ```
 
-### exportChat
+### exportChat `async`
 
-Exports the current chat as a text file.
+Exports a given chat as a file.
+
+**Parameters**:
+
+`chatToGet`: A string representing the chat to get the data from.
+
+Can be the following: `active`, the current chat, `latest`, the latest chat in the list, else the `index`, `title` or `id` of the chat to get. Default is `active` if in a chat, else `latest`.
+
+`format`: A string representing the format of the export file.
+
+Can be the following: `html` or `text`. Defaults to `html`.
 
 Example code:
 
 ```js
-chatgpt.exportChat(); // Downloads a file called 'ChatGPT_{day}-{month}-{year}_{hour}-{minute}.txt'
+async function doSomething() {
+  await chatgpt.exportChat('latest', 'html'); // Downloads a '.html' file
+}
 ```
 
 ### getChatData `async`
@@ -783,7 +841,7 @@ chatgpt.sendInNewChat('Hello, world!');
 
 ### shareChat `async`
 
-Makes the selected chat available to others.
+Makes the selected chat available to others. Returns the URL of the chat as a string.
 
 **Parameters**:
 
@@ -968,6 +1026,73 @@ Example code:
 
 ```js
 chatgpt.autoRefresh.toggle.refreshFrame();
+```
+
+## code `obj`
+
+### refactor `async`
+
+Asks ChatGPT to refactor the given code.
+
+**Parameters**:
+
+`code`: A string being the code to be refactored.
+
+`objective`: A string reprenting the objective of the refactoring. Defaults to `brevity`.
+
+Example code:
+
+```js
+async function doSomething() {
+  const code = `
+  if (6 > 5) {
+    return true;
+  } else {
+    return false;
+  }
+  `;
+  await chatgpt.code.refactor(code, 'brevity'); // Example output: 'return 6 > 5;'
+}
+```
+
+### review `async`
+
+Asks ChatGPT to review given code.
+
+**Parameters**:
+
+`code`: A string being the code to be reviewed.
+
+Example code:
+
+```js
+async function doSomething() {
+  await chatgpt.code.review('btoa("Hello World")');
+  /* Example output:
+  The code appears to be correct. It uses the `btoa` function to encode the string "Hello World" in base64. */
+}
+```
+
+### write `async`
+
+Asks ChatGPT to write code given a prompt.
+
+**Parameters**:
+
+`prompt`: A string describing the code to be generated.
+
+`outputLang`: A string representing the code language to generate the prompt with.
+
+Example code:
+
+```js
+async function doSomething() {
+  await chatgpt.code.write('Repeat a task every 10 seconds', 'javascript');
+  /* Example output:
+  setInterval(function() {
+    // Your task code here
+  }, 10000); */
+}
 ```
 
 ## history `obj`
