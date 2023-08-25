@@ -1206,7 +1206,7 @@ const chatgpt = {
                 return console.error(`🤖 chatgpt.js >> Invalid element! Received: ${element} Valid elements: ${validElements}`);
 
             const newElement = document.createElement(element);
-            const invalidAttributes = ['id', 'callback', 'options'];
+            const invalidAttributes = ['id', 'callback', 'items'];
 
             if (attrs && typeof attrs === 'object')
                 Object.entries(attrs).forEach(([key, value]) => {
@@ -1219,15 +1219,15 @@ const chatgpt = {
 
             if (
                 element === 'select' &&
-                attrs?.options && // There are options to add 
-                Array.isArray(attrs.options) && // It's an array of options
-                attrs.options.length && // The array is not empty
-                attrs.options.every(el => typeof el === 'object') // The entries of the array are all objects
+                attrs?.items && // There are options to add 
+                Array.isArray(attrs.items) && // It's an array of options
+                attrs.items.length && // The array is not empty
+                attrs.items.every(el => typeof el === 'object') // The entries of the array are all objects
             )
-                    attrs.options.forEach(option => {
+                    attrs.items.forEach(item => {
                         const optionElement = document.createElement('option');
-                        optionElement.textContent = option?.text;
-                        optionElement.value = option?.value;
+                        optionElement.textContent = item?.text;
+                        optionElement.value = item?.value;
                         newElement.add(optionElement);
                     });
 
