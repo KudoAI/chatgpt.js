@@ -294,6 +294,19 @@ const chatgpt = {
     },
 
     code: {
+    // Tip: Use template literals for easy passing of code arguments
+
+        refactor: async function(code, objective) {
+            if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
+            for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
+                return chatgpt.console.error(`Argument ${ i + 1 } must be a string.`);
+            chatgpt.send('Refactor the following code for the objective of ' + (objective || 'brevity')
+                + '. Reply with a single code block. Do not type anything else:\n\n' + code);
+            chatgpt.console.info('Refactoring code...');
+            await chatgpt.isIdle();
+            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+        },
+
         review: async function(code) {
             if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
             if (typeof code !== 'string') chatgpt.console.error('Code argument must be a string!');
@@ -1007,7 +1020,7 @@ const chatgpt = {
 
     send: function(msg, method='') {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
-            return chatgpt.console.error(`Argument ${i + 1} must be a string!`);
+            return chatgpt.console.error(`Argument ${ i + 1 } must be a string!`);
         const textArea = document.querySelector('form textarea'),
               sendButton = document.querySelector('form button[class*="bottom"]');
         textArea.value = msg;
@@ -1169,7 +1182,7 @@ const chatgpt = {
 
     translate: async function(text, outputLang) {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
-            return chatgpt.console.error(`Argument ${i + 1} must be a string!`);
+            return chatgpt.console.error(`Argument ${ i + 1 } must be a string!`);
         if (!outputLang) return chatgpt.console.error('2nd argument not supplied. Must be output language');
         chatgpt.send('Translate the following text to ' + outputLang 
             + '. Only reply with the translation.\n\n' + text);
