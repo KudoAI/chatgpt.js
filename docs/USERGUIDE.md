@@ -75,6 +75,7 @@
     - [toggle `obj`](#toggle-obj)
       - [beacons](#beacons)
       - [refreshFrame](#refreshframe)
+  - [code `obj`](#code-obj)
   - [history `obj`](#history-obj)
     - [isOn](#ison)
     - [isOff](#isoff)
@@ -996,6 +997,8 @@ Example code:
 ```js
 chatgpt.autoRefresh.toggle.refreshFrame();
 ```
+
+## code `obj`
 
 ## history `obj`
 
