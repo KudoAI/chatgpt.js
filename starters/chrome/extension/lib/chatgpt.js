@@ -314,6 +314,18 @@ const chatgpt = {
             chatgpt.console.info('Reviewing code...');
             await chatgpt.isIdle();
             return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+        },
+
+        write: async function(prompt, outputLang) {
+            if (!prompt) return chatgpt.console.error('Prompt (1st) argument not supplied. Pass a prompt!');
+            if (!outputLang) return chatgpt.console.error('outputLang (2nd) argument not supplied. Pass a language!');
+            for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
+                return chatgpt.console.error(`Argument ${ i + 1 } must be a string.`);
+            chatgpt.send(prompt + '\n\nWrite this as code in ' + outputLang
+                + '. Reply with a single code block. Do not type anything else');
+            chatgpt.console.info('Writing code...');
+            await chatgpt.isIdle();
+            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
         }
     },
 
