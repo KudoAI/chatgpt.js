@@ -79,6 +79,7 @@
   - [code `obj`](#code-obj)
     - [refactor `async`](#refactor-async)
     - [review `async`](#review-async)
+    - [write `async`](#write-async)
   - [history `obj`](#history-obj)
     - [isOn](#ison)
     - [isOff](#isoff)
@@ -1059,6 +1060,26 @@ async function doSomething() {
   await chatgpt.code.review('btoa("Hello World")');
   /* Example output:
   The code appears to be correct. It uses the `btoa` function to encode the string "Hello World" in base64. */
+}
+```
+
+### write `async`
+
+Asks ChatGPT to write code given a prompt.
+
+**Parameters**:
+
+`prompt`: A string describing the code to be generated.
+
+`outputLang`: A string representing the code language to generate the prompt with.
+
+```js
+async function doSomething() {
+  await chatgpt.code.write('Repeat a task every 10 seconds', 'javascript');
+  /* Example output:
+  setInterval(function() {
+    // Your task code here
+  }, 10000); */
 }
 ```
 
