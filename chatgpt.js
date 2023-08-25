@@ -1136,16 +1136,6 @@ const chatgpt = {
         elements: [],
         observer: {},
 
-        isOn: function() { return !document.querySelector('button[aria-label*="Open sidebar"]'); },
-        isOff: function() { return !!document.querySelector('button[aria-label*="Open sidebar"]'); },
-        hide: function() { this.isOn() ? this.toggle() : chatgpt.console.info('Sidebar already hidden!'); },
-        show: function() { this.isOff() ? this.toggle() : chatgpt.console.info('Sidebar already shown!'); },
-        toggle: function() {
-            for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-                if (/close sidebar/i.test(navLink.text)) {
-                    navLink.click(); return;                
-        }}},
-
         activateObserver: function() {
             const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]'),
                 firstButton = chatHistoryNav.querySelector('a');
@@ -1247,7 +1237,17 @@ const chatgpt = {
             this.activateObserver();
 
             return newElement.id; // Return the element id
-        }
+        },
+
+        isOn: function() { return !document.querySelector('button[aria-label*="Open sidebar"]'); },
+        isOff: function() { return !!document.querySelector('button[aria-label*="Open sidebar"]'); },
+        hide: function() { this.isOn() ? this.toggle() : chatgpt.console.info('Sidebar already hidden!'); },
+        show: function() { this.isOff() ? this.toggle() : chatgpt.console.info('Sidebar already shown!'); },
+        toggle: function() {
+            for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+                if (/close sidebar/i.test(navLink.text)) {
+                    navLink.click(); return;                
+        }}}
     },
 
     startNewChat: function() {
