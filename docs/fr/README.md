@@ -32,7 +32,7 @@
 [![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Qualité+du+Code&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
 [![](https://img.shields.io/badge/Mentionné_dans-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
 [![](https://img.shields.io/badge/Présenté_sur-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.producthunt.com/posts/chatgpt-js)
-[![](https://img.shields.io/badge/Incubé_par-100_Builders-9146ff?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://app.100.builders/directory)
+[![](https://img.shields.io/badge/Incubé_par-100.builders-9146ff?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://app.100.builders/directory)
 ![](https://img.shields.io/jsdelivr/gh/hm/kudoai/chatgpt.js?label=jsDelivr+Demandes&logo=jsdelivr&logoColor=white&labelColor=464646&color=gold&style=for-the-badge)
 
 </div>
