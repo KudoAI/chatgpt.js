@@ -727,8 +727,8 @@ const chatgpt = {
 
     notify: function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
-        const fadeDuration = 0.6; // sec duration of fade-out
-        const vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
+        const fadeDuration = 0.6, // sec duration of fade-out
+              vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
 
         // Make/stylize/insert div
         const notificationDiv = document.createElement('div'); // make div
@@ -762,9 +762,9 @@ const chatgpt = {
         if (thisQuadrantDivIDs.length > 1) {
             try { // to move old notifications
                 for (const divId of thisQuadrantDivIDs.slice(0, -1)) { // exclude new div
-                    const oldDiv = document.getElementById(divId);
-                    const offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
-                    const vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
+                    const oldDiv = document.getElementById(divId),
+                          offsetProp = oldDiv.style.top ? 'top' : 'bottom', // pick property to change
+                          vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
                 }
             } catch (error) {}
@@ -871,9 +871,9 @@ const chatgpt = {
     }}},
 
     renderHTML: function(node) {
-        const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g;
-        const reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+(?:\S+)=|[>']))+.)['"]?/g;
-        const nodeContent = node.childNodes;
+        const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
+              reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+(?:\S+)=|[>']))+.)['"]?/g,
+              nodeContent = node.childNodes;
 
         // Preserve consecutive spaces + line breaks
         if (!this.renderHTML.preWrapSet) {
@@ -886,14 +886,14 @@ const chatgpt = {
 
             // Process text node
             if (childNode.nodeType === Node.TEXT_NODE) {
-                const text = childNode.nodeValue;
-                const elems = Array.from(text.matchAll(reTags));
+                const text = childNode.nodeValue,
+                      elems = Array.from(text.matchAll(reTags));
 
                 // Process 1st element to render
                 if (elems.length > 0) {
-                    const elem = elems[0];
-                    const [tagContent, tagName, tagAttributes, tagText] = elem.slice(0, 4);
-                    const tagNode = document.createElement(tagName); tagNode.textContent = tagText;
+                    const elem = elems[0],
+                          [tagContent, tagName, tagAttributes, tagText] = elem.slice(0, 4),
+                          tagNode = document.createElement(tagName); tagNode.textContent = tagText;
 
                     // Extract/set attributes
                     const attributes = Array.from(tagAttributes.matchAll(reAttributes));
@@ -905,8 +905,8 @@ const chatgpt = {
                     const renderedNode = this.renderHTML(tagNode); // render child elements of newly created node
 
                     // Insert newly rendered node
-                    const beforeTextNode = document.createTextNode(text.substring(0, elem.index));
-                    const afterTextNode = document.createTextNode(text.substring(elem.index + tagContent.length));
+                    const beforeTextNode = document.createTextNode(text.substring(0, elem.index)),
+                          afterTextNode = document.createTextNode(text.substring(elem.index + tagContent.length));
 
                     // Replace text node with processed nodes
                     node.replaceChild(beforeTextNode, childNode);
@@ -944,8 +944,8 @@ const chatgpt = {
         },
 
         getFromDOM: function(pos) {
-            const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]');
-            const strPos = pos.toString().toLowerCase();
+            const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]'),
+                  strPos = pos.toString().toLowerCase();
             if (/last|final/.test(strPos)) { // get last response
                 return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
             } else { // get nth response
@@ -1008,8 +1008,8 @@ const chatgpt = {
     send: function(msg, method='') {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return chatgpt.console.error(`Argument ${i + 1} must be a string!`);
-        const textArea = document.querySelector('form textarea');
-        const sendButton = document.querySelector('form button[class*="bottom"]');
+        const textArea = document.querySelector('form textarea'),
+              sendButton = document.querySelector('form button[class*="bottom"]');
         textArea.value = msg;
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
         const delaySend = setInterval(() => {
@@ -1022,7 +1022,7 @@ const chatgpt = {
     },
 
     sendInNewChat: function(msg) {
-        if (typeof msg !== 'string') return chatgpt.console.error(`Message must be a string!`);
+        if (typeof msg !== 'string') return chatgpt.console.error('Message must be a string!');
         for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
                 navLink.click(); break;
