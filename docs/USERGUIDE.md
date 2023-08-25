@@ -76,6 +76,7 @@
       - [beacons](#beacons)
       - [refreshFrame](#refreshframe)
   - [code `obj`](#code-obj)
+    - [review `async`](#review-async)
   - [history `obj`](#history-obj)
     - [isOn](#ison)
     - [isOff](#isoff)
@@ -999,6 +1000,22 @@ chatgpt.autoRefresh.toggle.refreshFrame();
 ```
 
 ## code `obj`
+
+### review `async`
+
+Asks ChatGPT to review given code.
+
+**Parameters**:
+
+`code`: A string being the code to be reviewed.
+
+```js
+async function doSomething() {
+  await chatgpt.code.review('btoa("Hello World")');
+  /* Example output:
+  The code appears to be correct. It uses the `btoa` function to encode the string "Hello World" in base64. */
+}
+```
 
 ## history `obj`
 
