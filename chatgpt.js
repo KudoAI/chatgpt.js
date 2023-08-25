@@ -1171,7 +1171,7 @@ const chatgpt = {
             // Apply CSS to make the added elements look like they belong to the website
             this.elements.forEach(element => {
                 element.setAttribute('class', cssClasses);
-                element.style.maxHeight = '44px'; // Fix the height of the element
+                element.style.maxHeight = element.style.minHeight = '44px'; // Fix the height of the element
             });
     
             const navBar = document.querySelector('nav[aria-label="Chat history"]');
