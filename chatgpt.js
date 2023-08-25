@@ -1215,9 +1215,16 @@ const chatgpt = {
 
             newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // Add random id to the element
 
-            // Add a click handler if the callback is specified on a button element
-            if (element === 'button' && attrs?.callback && typeof attrs.callback === 'function')
-                newElement.addEventListener('click', attrs.callback);
+            if (element === 'button') {
+                if (attrs?.icon && typeof attrs.icon === 'string') { // Add icon to button element if given
+                    const icon = document.createElement('img');
+                    icon.src = attrs.icon; // Can also be base64 encoded image string
+                    icon.width = 18;
+                    newElement.insertBefore(icon, newElement.firstChild);
+                }
+                if (attrs?.callback && typeof attrs.callback === 'function') // Add a click handler if the callback is specified on a button element
+                    newElement.addEventListener('click', attrs.callback);
+            }
 
             if (
                 element === 'select' &&
