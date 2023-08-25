@@ -34,6 +34,9 @@ const chatgpt = {
                 if (!prompt) return resolve(listPrompts(data)); // List prompts
 
                 const selectedPrompt = data.prompts.find(obj => obj.title.toLowerCase() === prompt.toLowerCase()); // Search for selected prompt
+                if (!selectedPrompt) return reject(`🤖 chatgpt.js >> Prompt '${prompt}' was not found!`); // Reject if not found
+
+                return resolve(chatgpt.send(selectedPrompt.prompt, 'click')); // Send selected prompt
             };
             xhr.send();
         });
