@@ -295,7 +295,7 @@ const chatgpt = {
 
     console: {
         info: function(msg) { console.info('🤖 chatgpt.js >> ' + msg); },
-        error: function(msg, error) { console.error('🤖 chatgpt.js >> ERROR: ' + msg, error); }
+        error: function(msg, error) { console.error('🤖 chatgpt.js >> ERROR: ' + msg, error || ''); }
     },
 
     exportChat: async function(chatToGet, format) {
