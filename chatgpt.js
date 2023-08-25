@@ -1140,8 +1140,10 @@ const chatgpt = {
         } catch (error) { console.error('🤖 chatgpt.js >>', error); }
     },
 
-    toggleScheme: function() { 
-        const [schemeToRemove, schemeToAdd] = document.documentElement.classList.contains('dark') ? ['dark', 'light'] : ['light', 'dark'];
+    toggleScheme: function() {
+        const [schemeToRemove, schemeToAdd] = (
+            document.documentElement.classList.contains('dark') ?
+               ['dark', 'light'] : ['light', 'dark'] );
         document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
         document.documentElement.style.colorScheme = schemeToAdd;
     },
