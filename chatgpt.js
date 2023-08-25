@@ -827,23 +827,22 @@ const chatgpt = {
             xhr.open('GET', promptsUrl, true);
             xhr.onload = () => {
                 if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.');
-                const data = JSON.parse(xhr.responseText);
-                
-                if (!prompt) {
-                    listPrompts(data); return resolve(); } // List prompts
+                const data = JSON.parse(xhr.responseText).prompts;
 
-                const selectedPrompt = data.prompts.find(obj => obj.title.toLowerCase() === prompt.toLowerCase()); // Search for selected prompt
+                if (!prompt) {
+                    console.info('\n%c🤖 chatgpt.js prompts\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
+                    for (const prompt of data) // List prompts
+                        console.info(`%c${prompt.title}`, 'font-family: monospace ; font-size: larger ;');
+                    return resolve(); }
+
+                const selectedPrompt = data.find(obj => obj.title.toLowerCase() === prompt.toLowerCase()); // Search for selected prompt
                 if (!selectedPrompt) return reject(`🤖 chatgpt.js >> Prompt '${prompt}' was not found!`); // Reject if not found
 
-                return resolve(chatgpt.send(selectedPrompt.prompt, 'click')); // Send selected prompt
+                chatgpt.send(selectedPrompt.prompt, 'click'); // Send selected prompt
+                return resolve();
             };
             xhr.send();
         });
-
-        function listPrompts(promptsData) {
-            console.info('\n%c🤖 chatgpt.js prompts\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
-            for (const prompt of promptsData.prompts) console.info(`%c${prompt.title}`, 'font-family: monospace ; font-size: larger ;');
-        }
     },
 
     printAllFunctions: function() {
