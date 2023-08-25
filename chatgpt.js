@@ -1213,6 +1213,8 @@ const chatgpt = {
                     if (!invalidAttributes.includes(key)) newElement[key] = value;
                 });
 
+            newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // Add random id to the element
+
             // Add a click handler if the callback is specified on a button element
             if (element === 'button' && attrs?.callback && typeof attrs.callback === 'function')
                 newElement.addEventListener('click', attrs.callback);
@@ -1236,6 +1238,8 @@ const chatgpt = {
 
             this.elements.push(newElement);
             this.activateObserver();
+
+            return newElement.id; // Return the element id
         }
     },
 
