@@ -24,6 +24,7 @@
     - [printAllFunctions](#printallfunctions)
     - [randomFloat](#randomfloat)
     - [renderHTML](#renderhtml)
+    - [translate `async`](#translate-async)
     - [uuidv4](#uuidv4)
   - [Page theme](#page-theme)
     - [activateDarkMode](#activatedarkmode)
@@ -270,6 +271,22 @@ Example code:
 document.body.appendChild(
     chatgpt.renderHTML('<div>Hello World!</div>');
 );
+```
+
+### translate `async`
+
+Asks ChatGPT to translate given text to a given language.
+
+**Parameters**:
+
+`text`: A string representing the text to translate.
+
+`outputLang`: A string representing the output language of the translation.
+
+```js
+async function doSomething() {
+  await chatgpt.translate('Hello, how are you?', 'spanish'); // Example output: 'Hola, ¿cómo estás?'
+}
 ```
 
 ### uuidv4
