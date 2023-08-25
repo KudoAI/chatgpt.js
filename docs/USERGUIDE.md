@@ -24,6 +24,7 @@
     - [printAllFunctions](#printallfunctions)
     - [randomFloat](#randomfloat)
     - [renderHTML](#renderhtml)
+    - [summarize `async`](#summarize-async)
     - [translate `async`](#translate-async)
     - [uuidv4](#uuidv4)
   - [Page theme](#page-theme)
@@ -276,13 +277,27 @@ document.body.appendChild(
 );
 ```
 
+### summarize `async`
+
+Asks ChatGPT to summarize given text.
+
+**Parameters**:
+
+`text`: A string being the text to be summarized.
+
+```js
+async function doSomething() {
+  await chatgpt.summarize('A very long text...'); // Example output: 'A very short text...'
+}
+```
+
 ### translate `async`
 
 Asks ChatGPT to translate given text to a given language.
 
 **Parameters**:
 
-`text`: A string representing the text to translate.
+`text`: A string being the text to translate.
 
 `outputLang`: A string representing the output language of the translation.
 
