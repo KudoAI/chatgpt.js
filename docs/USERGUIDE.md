@@ -292,6 +292,8 @@ Asks ChatGPT to summarize given text.
 
 `text`: A string being the text to be summarized.
 
+Example code:
+
 ```js
 async function doSomething() {
   await chatgpt.summarize('A very long text...'); // Example output: 'A very short text...'
@@ -307,6 +309,8 @@ Asks ChatGPT to translate given text to a given language.
 `text`: A string being the text to translate.
 
 `outputLang`: A string representing the output language of the translation.
+
+Example code:
 
 ```js
 async function doSomething() {
@@ -518,6 +522,8 @@ Can be the following: `active`, the current chat, `latest`, the latest chat in t
 `format`: A string representing the format of the export file.
 
 Can be the following: `html` or `text`. Defaults to `html`.
+
+Example code:
 
 ```js
 async function doSomething() {
@@ -1034,6 +1040,8 @@ Asks ChatGPT to refactor the given code.
 
 `objective`: A string reprenting the objective of the refactoring. Defaults to `brevity`.
 
+Example code:
+
 ```js
 async function doSomething() {
   const code = `
@@ -1055,6 +1063,8 @@ Asks ChatGPT to review given code.
 
 `code`: A string being the code to be reviewed.
 
+Example code:
+
 ```js
 async function doSomething() {
   await chatgpt.code.review('btoa("Hello World")');
@@ -1072,6 +1082,8 @@ Asks ChatGPT to write code given a prompt.
 `prompt`: A string describing the code to be generated.
 
 `outputLang`: A string representing the code language to generate the prompt with.
+
+Example code:
 
 ```js
 async function doSomething() {
