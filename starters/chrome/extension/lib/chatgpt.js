@@ -276,7 +276,7 @@ const chatgpt = {
     clearChats: async function() {
         try { await chatgpt.getChatData(); } catch { return; } // check if chat history exists
         const menuBtn = document.querySelector('nav button[id*="headless"]') || {};
-        try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
+        try { menuBtn.click(); } catch (error) { chatgpt.console.error('Headless menu not found'); return; }
         setTimeout(() => {
             const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
             for (const menuItem of menuItems)
@@ -293,6 +293,11 @@ const chatgpt = {
         function exitMenu() { document.querySelector('div[id*=radix] button').click(); }
     },
 
+    console: {
+        info: function(msg) { console.info('🤖 chatgpt.js >> ' + msg); },
+        error: function(msg, error) { console.error('🤖 chatgpt.js >> ERROR: ' + msg, error); }
+    },
+
     exportChat: async function(chatToGet, format) {
     // chatToGet = 'active' (default) | 'latest' | index|title|id of chat to get
     // format = 'html' (default) | 'text'
@@ -307,7 +312,7 @@ const chatgpt = {
         // Create transcript + filename for TXT export
         let filename, transcript = '';
         if (/te?xt/.test(format)) {
-            console.info('🤖 chatgpt.js >> Exporting chat to TXT...');
+            chatgpt.console.info('Exporting chat to TXT...');
 
             // Format filename using date/time
             const now = new Date(),
@@ -321,7 +326,7 @@ const chatgpt = {
             // Create transcript from active chat
             if (chatToGet == 'active' && /\/\w{8}-(\w{4}-){3}\w{12}$/.test(window.location.href)) {
                 const chatDivs = document.querySelectorAll('main > div > div > div > div > div > div[class*=group]');
-                if (chatDivs.length === 0) { console.error('🤖 chatgpt.js >> Chat is empty!'); return; }
+                if (chatDivs.length === 0) { chatgpt.console.error('Chat is empty!'); return; }
                 const msgs = []; let isUserMsg = true;
                 chatDivs.forEach((div) => {
                     const sender = isUserMsg ? 'USER' : 'CHATGPT'; isUserMsg = !isUserMsg;
@@ -340,7 +345,7 @@ const chatgpt = {
             }}
 
         } else { // create transcript + filename for HTML export
-            console.info('🤖 chatgpt.js >> Exporting chat to HTML...');
+            chatgpt.console.info('Exporting chat to HTML...');
 
             // Fetch HTML transcript from OpenAI
             const response = await fetch(await chatgpt.shareChat(chatToGet)),
@@ -372,7 +377,7 @@ const chatgpt = {
 
     generateRandomIP: function() {
         const ip = Array.from({length: 4}, () => Math.floor(chatgpt.randomFloat() * 256)).join('.');
-        console.info('🤖 chatgpt.js >> IP generated: ' + ip);
+        chatgpt.console.info('IP generated: ' + ip);
         return ip;
     },
 
@@ -419,7 +424,7 @@ const chatgpt = {
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onload = () => {
                 if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
-                console.info('🤖 chatgpt.js >> Token expiration: ' + new Date(JSON.parse(xhr.responseText).expires).toLocaleString().replace(',', ' at'));
+                chatgpt.console.info('Token expiration: ' + new Date(JSON.parse(xhr.responseText).expires).toLocaleString().replace(',', ' at'));
                 chatgpt.openAIaccessToken = {
                     token: JSON.parse(xhr.responseText).accessToken,
                     expireDate: JSON.parse(xhr.responseText).expires
@@ -441,8 +446,8 @@ const chatgpt = {
 
         // Validate detail args
         for (const detail of details) {
-            if (!validDetails.includes(detail)) { return console.error(
-                '🤖 chatgpt.js >> Invalid detail arg \'' + detail + '\' supplied. Valid details are:\n'
+            if (!validDetails.includes(detail)) { return chatgpt.console.error(
+                'Invalid detail arg \'' + detail + '\' supplied. Valid details are:\n'
               + '                    [' + validDetails + ']'); }}
 
         // Return account details
@@ -490,14 +495,14 @@ const chatgpt = {
 
         // Validate args
         for (const detail of detailsToGet) {
-            if (!validDetails.includes(detail)) { return console.error(
-                '🤖 chatgpt.js >> Invalid detail arg \'' + detail + '\' passed. Valid details are:\n'
+            if (!validDetails.includes(detail)) { return chatgpt.console.error(
+                'Invalid detail arg \'' + detail + '\' passed. Valid details are:\n'
               + '                    [' + validDetails + ']'); }}
-        if (sender === 'invalid') { return console.error(
-            '🤖 chatgpt.js >> Invalid sender arg passed. Valid senders are:\n'
+        if (sender === 'invalid') { return chatgpt.console.error(
+            'Invalid sender arg passed. Valid senders are:\n'
           + '                    [' + validSenders + ']'); }
-        if (msgToGet === 'invalid') { return console.error(
-            '🤖 chatgpt.js >> Invalid msgToGet arg passed. Valid msg\'s to get are:\n'
+        if (msgToGet === 'invalid') { return chatgpt.console.error(
+            'Invalid msgToGet arg passed. Valid msg\'s to get are:\n'
           + '                    [ \'all\' | \'latest\' | index of msg to get ]'); }
 
         // Return chat data
@@ -665,8 +670,8 @@ const chatgpt = {
             } return true;
         },
         isOff: function() { return !this.isOn(); },
-        activate: function() { this.isOff() ? this.toggle() : console.info('🤖 chatgpt.js >> Chat history is already enabled!'); },
-        deactivate: function() { this.isOn() ? this.toggle() : console.info('🤖 chatgpt.js >> Chat history is already disabled!'); },
+        activate: function() { this.isOff() ? this.toggle() : chatgpt.console.info('Chat history is already enabled!'); },
+        deactivate: function() { this.isOn() ? this.toggle() : chatgpt.console.info('Chat history is already disabled!'); },
         toggle: function() {                
             for (const navBtn of document.querySelectorAll('nav[aria-label="Chat history"] button')) {
                 if (/chat history/i.test(navBtn.textContent))
@@ -701,7 +706,7 @@ const chatgpt = {
 
     logout: function() {
         const menuBtn = document.querySelector('nav button[id*="headless"]') || {};
-        try { menuBtn.click(); } catch (error) { console.error('🤖 chatgpt.js >> Headless menu not found'); return; }
+        try { menuBtn.click(); } catch (error) { chatgpt.console.error('Headless menu not found'); return; }
         setTimeout(() => {
             const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
             for (const menuItem of menuItems) {
@@ -986,7 +991,7 @@ const chatgpt = {
 
     scrollToBottom: function() {
         try { document.querySelector('button[class*="cursor"][class*="bottom"]').click(); }
-        catch (error) { console.error('🤖 chatgpt.js >> ', error); }
+        catch (error) { chatgpt.console.error('', error); }
     },
 
     send: function(msg, method='') {
@@ -1015,8 +1020,8 @@ const chatgpt = {
     // method = [ 'alert'|'clipboard' ] (defaults to 'clipboard' if '' or unpassed)
 
         const validMethods = ['alert', 'notify', 'notification', 'clipboard', 'copy'];
-        if (!validMethods.includes(method)) return console.error(
-            '🤖 chatgpt.js >> Invalid method \'' + method + '\' passed. Valid methods are [' + validMethods + '].');
+        if (!validMethods.includes(method)) return chatgpt.console.error(
+            'Invalid method \'' + method + '\' passed. Valid methods are [' + validMethods + '].');
 
         return new Promise((resolve) => {
             chatgpt.getAccessToken().then(token => { // get access token
@@ -1036,7 +1041,7 @@ const chatgpt = {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
                 chatgpt.getChatData(chatToGet).then(chat => {
-                    xhr.open('GET', `${endpoints.chat}/${chat.id}`, true);
+                    xhr.open('GET', `${ endpoints.chat }/${ chat.id }`, true);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
@@ -1069,13 +1074,13 @@ const chatgpt = {
         function confirmShareChat(token, data) {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                xhr.open('PATCH', `${endpoints.share}/${data.share_id}`, true);
+                xhr.open('PATCH', `${ endpoints.share }/${ data.share_id }`, true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                 xhr.onload = () => {
                     if (xhr.status !== 200)
                         return reject('🤖 chatgpt.js >> Request failed. Cannot share chat.');
-                    console.info(`🤖 chatgpt.js >> Chat shared at '${data.share_url}'`);
+                    chatgpt.console.info(`Chat shared at '${ data.share_url }'`);
                     return resolve(); // the response has nothing useful
                 };
                 xhr.send(JSON.stringify({ // request body
@@ -1092,8 +1097,8 @@ const chatgpt = {
     sidebar: {
         isOn: function() { return !document.querySelector('button[aria-label*="Open sidebar"]'); },
         isOff: function() { return !!document.querySelector('button[aria-label*="Open sidebar"]'); },
-        hide: function() { this.isOn() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already hidden!'); },
-        show: function() { this.isOff() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already shown!'); },
+        hide: function() { this.isOn() ? this.toggle() : chatgpt.console.info('Sidebar already hidden!'); },
+        show: function() { this.isOff() ? this.toggle() : chatgpt.console.info('Sidebar already shown!'); },
         toggle: function() {
             for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
                 if (/close sidebar/i.test(navLink.text)) {
@@ -1125,8 +1130,8 @@ const chatgpt = {
         for (let key in options) {
             const value = options[key];
             if (typeof value !== 'number' && !/^\d+$/.test(value))
-                return console.error(
-                    `🤖 chatgpt.js >> Invalid ${ key } index '${ value }'. Must be a number`);
+                return chatgpt.console.error(
+                    `Invalid ${ key } index '${ value }'. Must be a number`);
         }
 
         try { // to speak msg using {options}
@@ -1137,7 +1142,7 @@ const chatgpt = {
             utterance.pitch = pitch;
             utterance.rate = speed;
             speechSynthesis.speak(utterance);
-        } catch (error) { console.error('🤖 chatgpt.js >>', error); }
+        } catch (error) { chatgpt.console.error('', error); }
     },
 
     toggleScheme: function() {
@@ -1149,7 +1154,7 @@ const chatgpt = {
     },
 
     translate: async function(text, outputLang) {
-        if (!outputLang) return console.error('🤖 chatgpt.js >> 2nd argument not supplied. Must be output language');
+        if (!outputLang) return chatgpt.console.error('2nd argument not supplied. Must be output language');
         chatgpt.send('Translate the following text to ' + outputLang 
             + '. Only reply with the translation.\n\n' + text);
         await chatgpt.isIdle();
