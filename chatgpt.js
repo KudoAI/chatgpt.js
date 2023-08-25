@@ -30,10 +30,17 @@ const chatgpt = {
             xhr.onload = () => {
                 if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.');
                 const data = JSON.parse(xhr.responseText);
+                
+                if (!prompt) listPrompts(data);
                 return resolve();
             };
             xhr.send();
         });
+
+        function listPrompts(promptsData) {
+            console.info('\n%c🤖 chatgpt.js prompts\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
+            for (const prompt of promptsData.prompts) console.info(`%c${prompt.title}`, 'font-family: monospace ; font-size: larger ;');
+        }
     },
 
     activateDarkMode: function() {
