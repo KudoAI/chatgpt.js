@@ -23,6 +23,17 @@ const chatgpt = {
 
     preMadePrompt: function(prompt) {
         const promptsUrl = 'https://raw.githubusercontent.com/KudoAI/chat-prompts/main/dist/prompts.min.json';
+
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', promptsUrl, true);
+            xhr.onload = () => {
+                if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.');
+                const data = JSON.parse(xhr.responseText);
+                return resolve();
+            };
+            xhr.send();
+        });
     },
 
     activateDarkMode: function() {
