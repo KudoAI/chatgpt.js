@@ -829,7 +829,8 @@ const chatgpt = {
                 if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.');
                 const data = JSON.parse(xhr.responseText);
                 
-                if (!prompt) return resolve(listPrompts(data)); // List prompts
+                if (!prompt) {
+                    listPrompts(data); return resolve(); } // List prompts
 
                 const selectedPrompt = data.prompts.find(obj => obj.title.toLowerCase() === prompt.toLowerCase()); // Search for selected prompt
                 if (!selectedPrompt) return reject(`🤖 chatgpt.js >> Prompt '${prompt}' was not found!`); // Reject if not found
