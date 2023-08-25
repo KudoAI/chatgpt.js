@@ -1148,6 +1148,14 @@ const chatgpt = {
         document.documentElement.style.colorScheme = schemeToAdd;
     },
 
+    translate: async function(text, outputLang) {
+        if (!outputLang) return console.error('🤖 chatgpt.js >> 2nd argument not supplied. Must be output language');
+        chatgpt.send('Translate the following text to ' + outputLang 
+            + '. Only reply with the translation.\n\n' + text);
+        await chatgpt.isIdle();
+        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+    },
+
     uuidv4: function() {
         let d = new Date().getTime(); // get current timestamp in ms (to ensure UUID uniqueness)
         const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
