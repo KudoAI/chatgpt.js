@@ -302,7 +302,7 @@ const chatgpt = {
                   : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
                       parseInt(chatToGet, 10) // parse as integer
                   : chatToGet; // else preserve non-num string as 'active', 'latest' or title/id of chat to get
-        format = !format ? 'html' : format; // default to 'html' if unpassed
+        format = format || 'html'; // default to 'html' if unpassed
 
         // Create transcript + filename for TXT export
         let filename, transcript = '';
