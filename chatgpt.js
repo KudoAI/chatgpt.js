@@ -384,8 +384,7 @@ const chatgpt = {
             const cssLinks = parsedHtml.querySelectorAll('link[rel="stylesheet"]');
             cssLinks.forEach(link => {
                 const href = link.getAttribute('href');
-                if (href && href.startsWith('/'))
-                    link.setAttribute('href', 'https://chat.openai.com' + href);
+                if (href?.startsWith('/')) link.setAttribute('href', 'https://chat.openai.com' + href);
             });
 
             // Serialize updated HTML to string
@@ -1235,7 +1234,7 @@ const functionAliases = [ // whole function names to cross-alias
     ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
         'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
     ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
-    ['exportChat', 'chatExport'],
+    ['exportChat', 'chatExport', 'export'],
     ['getLastPrompt', 'getLastQuery', 'getMyLastMsg', 'getMyLastQuery'],
     ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
     ['isFullScreen', 'isFullscreen'],
