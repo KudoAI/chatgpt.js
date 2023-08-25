@@ -296,6 +296,7 @@ const chatgpt = {
     code: {
         review: async function(code) {
             if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
+            if (typeof code !== 'string') chatgpt.console.error('Code argument must be a string!');
             chatgpt.send('Review the following code for me:\n\n' + code);
             chatgpt.console.info('Reviewing code...');
             await chatgpt.isIdle();
@@ -1005,6 +1006,8 @@ const chatgpt = {
     },
 
     send: function(msg, method='') {
+        for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
+            return chatgpt.console.error(`Argument ${i + 1} must be a string!`);
         const textArea = document.querySelector('form textarea');
         const sendButton = document.querySelector('form button[class*="bottom"]');
         textArea.value = msg;
@@ -1019,6 +1022,7 @@ const chatgpt = {
     },
 
     sendInNewChat: function(msg) {
+        if (typeof msg !== 'string') return chatgpt.console.error(`Message must be a string!`);
         for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
                 navLink.click(); break;
@@ -1137,11 +1141,11 @@ const chatgpt = {
         const { voice = 2, pitch = 2, speed = 1.1 } = options;
 
         // Validate args
+        if (typeof msg !== 'string') return chatgpt.console.error('Message must be a string!');
         for (let key in options) {
             const value = options[key];
             if (typeof value !== 'number' && !/^\d+$/.test(value))
-                return chatgpt.console.error(
-                    `Invalid ${ key } index '${ value }'. Must be a number`);
+                return chatgpt.console.error(`Invalid ${ key } index '${ value }'. Must be a number!`);
         }
 
         try { // to speak msg using {options}
@@ -1164,6 +1168,8 @@ const chatgpt = {
     },
 
     translate: async function(text, outputLang) {
+        for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
+            return chatgpt.console.error(`Argument ${i + 1} must be a string!`);
         if (!outputLang) return chatgpt.console.error('2nd argument not supplied. Must be output language');
         chatgpt.send('Translate the following text to ' + outputLang 
             + '. Only reply with the translation.\n\n' + text);
