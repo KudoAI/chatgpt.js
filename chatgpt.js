@@ -32,6 +32,8 @@ const chatgpt = {
                 const data = JSON.parse(xhr.responseText);
                 
                 if (!prompt) return resolve(listPrompts(data)); // List prompts
+
+                const selectedPrompt = data.prompts.find(obj => obj.title.toLowerCase() === prompt.toLowerCase()); // Search for selected prompt
             };
             xhr.send();
         });
