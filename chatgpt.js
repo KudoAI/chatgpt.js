@@ -21,6 +21,10 @@ localStorage.notifyQueue = JSON.stringify(notifyQueue);
 const chatgpt = {
     openAIaccessToken: {},
 
+    preMadePrompt: function(prompt) {
+        const promptsUrl = 'https://raw.githubusercontent.com/KudoAI/chat-prompts/main/dist/prompts.min.json';
+    },
+
     activateDarkMode: function() {
         document.documentElement.classList.replace('light', 'dark');
         document.documentElement.style.colorScheme = 'dark';
