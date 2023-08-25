@@ -1172,6 +1172,15 @@ const chatgpt = {
         } catch (error) { chatgpt.console.error('', error); }
     },
 
+    summarize: async function(text) {
+        if (!text) return chatgpt.console.error('Text argument not supplied. Pass some text!');
+        if (typeof text !== 'string') return chatgpt.console.error('Text argument must be a string!');
+        chatgpt.send('Summarize the following text:\n\n' + text);
+        chatgpt.console.info('Summarizing text...');
+        await chatgpt.isIdle();
+        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+    },
+
     toggleScheme: function() {
         const [schemeToRemove, schemeToAdd] = (
             document.documentElement.classList.contains('dark') ?
