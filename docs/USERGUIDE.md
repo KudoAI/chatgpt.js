@@ -269,6 +269,12 @@ console.log(number); // Example output: 0.9472113021060851
 
 ### renderHTML
 
+Cleans and renders given HTML code.
+
+**Parameters**:
+
+`node`: A string representing the HTML to be rendered.
+
 Example code:
 
 ```js
