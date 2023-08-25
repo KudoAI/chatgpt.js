@@ -76,6 +76,7 @@
       - [beacons](#beacons)
       - [refreshFrame](#refreshframe)
   - [code `obj`](#code-obj)
+    - [refactor `async`](#refactor-async)
     - [review `async`](#review-async)
   - [history `obj`](#history-obj)
     - [isOn](#ison)
@@ -1000,6 +1001,29 @@ chatgpt.autoRefresh.toggle.refreshFrame();
 ```
 
 ## code `obj`
+
+### refactor `async`
+
+Asks ChatGPT to refactor the given code.
+
+**Parameters**:
+
+`code`: A string being the code to be refactored.
+
+`objective`: A string reprenting the objective of the refactoring. Defaults to `brevity`.
+
+```js
+async function doSomething() {
+  const code = `
+  if (6 > 5) {
+    return true;
+  } else {
+    return false;
+  }
+  `;
+  await chatgpt.code.refactor(code, 'brevity'); // Example output: 'return 6 > 5;'
+}
+```
 
 ### review `async`
 
