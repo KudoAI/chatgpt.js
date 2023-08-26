@@ -384,7 +384,7 @@ const chatgpt = {
 
             // Fetch HTML transcript from OpenAI
             const response = await fetch(await chatgpt.shareChat(chatToGet)),
-            htmlContent = await response.text();
+                  htmlContent = await response.text();
 
             // Format filename after <title>
             const parser = new DOMParser(),
