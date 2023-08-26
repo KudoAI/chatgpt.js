@@ -294,7 +294,7 @@ const chatgpt = {
     },
 
     code: {
-    // Tip: Use template literals for easier passing of code arguments
+    // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
         minify: async function(code) {
             if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
@@ -330,6 +330,15 @@ const chatgpt = {
             if (typeof code !== 'string') chatgpt.console.error('Code argument must be a string!');
             chatgpt.send('Review the following code for me:\n\n' + code);
             chatgpt.console.info('Reviewing code...');
+            await chatgpt.isIdle();
+            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+        },
+
+        unminify: async function(code) {
+            if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
+            if (typeof code !== 'string') chatgpt.console.error('Code argument must be a string!');
+            chatgpt.send('Unminify the following code. Reply with a single code block. Do not type anything else:\n\n' + code);
+            chatgpt.console.info('Unminifying code...');
             await chatgpt.isIdle();
             return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
         },
@@ -1296,7 +1305,8 @@ const functionAliases = [ // whole function names to cross-alias
     ['stop', 'stopGenerating'],
     ['toggleScheme', 'toggleMode'],
     ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher'],
-    ['translate', 'translation', 'translator']
+    ['translate', 'translation', 'translator'],
+    ['unminify', 'beautify', 'prettify', 'prettyPrint']
 ];
 const synonyms = [ // constituent synonyms within function names
     ['activate', 'turnOn'], ['account', 'acct'], ['ask', 'send', 'submit'], ['chat', 'conversation', 'convo'], ['data', 'details'],
