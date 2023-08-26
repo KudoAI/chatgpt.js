@@ -21,6 +21,34 @@ localStorage.notifyQueue = JSON.stringify(notifyQueue);
 const chatgpt = {
     openAIaccessToken: {},
 
+    actAs: function(persona) {
+    // Prompts ChatGPT to act as a persona from https://github.com/KudoAI/chat-prompts/blob/main/personas.json
+
+        const promptsUrl = 'https://raw.githubusercontent.com/KudoAI/chat-prompts/main/dist/personas.min.json';
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', promptsUrl, true); xhr.send();
+            xhr.onload = () => {
+                if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.');
+                const data = JSON.parse(xhr.responseText).personas;
+                if (!persona) {
+                    console.info('\n%c🤖 chatgpt.js personas\n',
+                        'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
+                    for (const prompt of data) // list personas
+                        console.info(`%c${ prompt.title }`, 'font-family: monospace ; font-size: larger ;');
+                    return resolve();
+                }
+                const selectedPrompt = data.find(obj => obj.title.toLowerCase() === persona.toLowerCase());
+                if (!selectedPrompt)
+                    return reject(`🤖 chatgpt.js >> Persona '${ persona }' was not found!`);
+                chatgpt.send(selectedPrompt.prompt, 'click');
+                chatgpt.console.info(`Loading ${ persona } persona...`);
+                chatgpt.isIdle().then(() => { chatgpt.console.info('Persona activated!'); });
+                return resolve();
+            };
+        });
+    },
+
     activateDarkMode: function() {
         document.documentElement.classList.replace('light', 'dark');
         document.documentElement.style.colorScheme = 'dark';
@@ -861,34 +889,6 @@ const chatgpt = {
         }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
     },
 
-    persona: function(prompt) {
-    // Prompts ChatGPT to act as a persona from https://github.com/KudoAI/chat-prompts/blob/main/personas.json
-
-        const promptsUrl = 'https://raw.githubusercontent.com/KudoAI/chat-prompts/main/dist/personas.min.json';
-
-        return new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', promptsUrl, true);
-            xhr.onload = () => {
-                if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.');
-                const data = JSON.parse(xhr.responseText).prompts;
-
-                if (!prompt) {
-                    console.info('\n%c🤖 chatgpt.js prompts\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
-                    for (const prompt of data) // List prompts
-                        console.info(`%c${prompt.title}`, 'font-family: monospace ; font-size: larger ;');
-                    return resolve(); }
-
-                const selectedPrompt = data.find(obj => obj.title.toLowerCase() === prompt.toLowerCase()); // Search for selected prompt
-                if (!selectedPrompt) return reject(`🤖 chatgpt.js >> Prompt '${prompt}' was not found!`); // Reject if not found
-
-                chatgpt.send(selectedPrompt.prompt, 'click'); // Send selected prompt
-                return resolve();
-            };
-            xhr.send();
-        });
-    },
-
     printAllFunctions: function() {
 
         // Define colors
@@ -1313,6 +1313,7 @@ for (const buttonAction of buttonActions) {
 
 // Create alias functions
 const functionAliases = [ // whole function names to cross-alias
+    ['actAs', 'actas', 'act', 'become', 'persona', 'premadePrompt', 'preMadePrompt', 'prePrompt', 'preprompt', 'roleplay', 'rolePlay', 'rp'],
     ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
         'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
     ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
