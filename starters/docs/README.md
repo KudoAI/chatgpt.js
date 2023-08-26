@@ -10,10 +10,7 @@
 
 <br>
 
-<picture>
-    <source type="image/webp" srcset="../chrome/media/images/screenshots/extension-loaded.webp">
-    <img src="../chrome/media/images/screenshots/extension-loaded.png">
-</picture>
+<img src="../chrome/media/images/screenshots/extension-loaded.png">
 
 <h2><a href="../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"></a> <a href="../chrome">Chrome starter</a></h2>
 
