@@ -304,7 +304,7 @@ const chatgpt = {
     clearChats: async function() {
         try { await chatgpt.getChatData(); } catch { return; } // check if chat history exists
         const menuBtn = document.querySelector('nav button[id*="headless"]') || {};
-        try { menuBtn.click(); } catch (error) { chatgpt.console.error('Headless menu not found'); return; }
+        try { menuBtn.click(); } catch (err) { return chatgpt.console.error('Headless menu not found'); }
         setTimeout(() => {
             const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
             for (const menuItem of menuItems)
@@ -326,7 +326,7 @@ const chatgpt = {
 
         minify: async function(code) {
             if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
-            if (typeof code !== 'string') chatgpt.console.error('Code argument must be a string!');
+            if (typeof code !== 'string') return chatgpt.console.error('Code argument must be a string!');
             chatgpt.send('Minify the following code. Reply with a single code block. Do not type anything else:\n\n' + code);
             chatgpt.console.info('Minifying code...');
             await chatgpt.isIdle();
@@ -335,7 +335,7 @@ const chatgpt = {
 
         obfuscate: async function(code) {
             if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
-            if (typeof code !== 'string') chatgpt.console.error('Code argument must be a string!');
+            if (typeof code !== 'string') return chatgpt.console.error('Code argument must be a string!');
             chatgpt.send('Obfuscate the following code. Reply with a single code block. Do not type anything else:\n\n' + code);
             chatgpt.console.info('Obfuscating code...');
             await chatgpt.isIdle();
@@ -355,7 +355,7 @@ const chatgpt = {
 
         review: async function(code) {
             if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
-            if (typeof code !== 'string') chatgpt.console.error('Code argument must be a string!');
+            if (typeof code !== 'string') return chatgpt.console.error('Code argument must be a string!');
             chatgpt.send('Review the following code for me:\n\n' + code);
             chatgpt.console.info('Reviewing code...');
             await chatgpt.isIdle();
@@ -364,7 +364,7 @@ const chatgpt = {
 
         unminify: async function(code) {
             if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
-            if (typeof code !== 'string') chatgpt.console.error('Code argument must be a string!');
+            if (typeof code !== 'string') return chatgpt.console.error('Code argument must be a string!');
             chatgpt.send('Unminify the following code. Reply with a single code block. Do not type anything else:\n\n' + code);
             chatgpt.console.info('Unminifying code...');
             await chatgpt.isIdle();
@@ -417,7 +417,7 @@ const chatgpt = {
             // Create transcript from active chat
             if (chatToGet == 'active' && /\/\w{8}-(\w{4}-){3}\w{12}$/.test(window.location.href)) {
                 const chatDivs = document.querySelectorAll('main > div > div > div > div > div > div[class*=group]');
-                if (chatDivs.length === 0) { chatgpt.console.error('Chat is empty!'); return; }
+                if (chatDivs.length === 0) return chatgpt.console.error('Chat is empty!');
                 const msgs = []; let isUserMsg = true;
                 chatDivs.forEach((div) => {
                     const sender = isUserMsg ? 'USER' : 'CHATGPT'; isUserMsg = !isUserMsg;
@@ -811,7 +811,7 @@ const chatgpt = {
 
     logout: function() {
         const menuBtn = document.querySelector('nav button[id*="headless"]') || {};
-        try { menuBtn.click(); } catch (error) { chatgpt.console.error('Headless menu not found'); return; }
+        try { menuBtn.click(); } catch (err) { return chatgpt.console.error('Headless menu not found'); }
         setTimeout(() => {
             const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
             for (const menuItem of menuItems) {
@@ -861,7 +861,7 @@ const chatgpt = {
                           vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
                 }
-            } catch (error) {}
+            } catch (err) {}
         }
 
         // Show notification
@@ -1096,7 +1096,7 @@ const chatgpt = {
 
     scrollToBottom: function() {
         try { document.querySelector('button[class*="cursor"][class*="bottom"]').click(); }
-        catch (error) { chatgpt.console.error('', error); }
+        catch (err) { chatgpt.console.error('', err); }
     },
 
     send: function(msg, method='') {
@@ -1250,7 +1250,7 @@ const chatgpt = {
             utterance.pitch = pitch;
             utterance.rate = speed;
             speechSynthesis.speak(utterance);
-        } catch (error) { chatgpt.console.error('', error); }
+        } catch (err) { chatgpt.console.error('', err); }
     },
 
     summarize: async function(text) {
@@ -1379,6 +1379,6 @@ for (const prop in chatgpt) {
 }
 
 // Export chatgpt object
-try { window.chatgpt = chatgpt; } catch (error) {} // for Greasemonkey
-try { module.exports = chatgpt; } catch (error) {} // for CommonJS
+try { window.chatgpt = chatgpt; } catch (err) {} // for Greasemonkey
+try { module.exports = chatgpt; } catch (err) {} // for CommonJS
 export { chatgpt };
