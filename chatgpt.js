@@ -345,10 +345,10 @@ const chatgpt = {
                   : chatToGet; // else preserve non-num string as 'active', 'latest' or title/id of chat to get
         format = format || 'html'; // default to 'html' if unpassed
 
-        // Create transcript + filename for TXT export
-        let filename, transcript = '';
-        if (/te?xt/.test(format)) {
-            chatgpt.console.info('Exporting chat to TXT...');
+        // Create transcript + filename
+        chatgpt.console.info('Generating transcript...');
+        let transcript = '', filename;
+        if (/te?xt/.test(format)) { // generate plain transcript + filename for TXT export
 
             // Format filename using date/time
             const now = new Date(),
@@ -380,12 +380,11 @@ const chatgpt = {
                     transcript += `CHATGPT: ${ entry.chatgpt }\n\n`;
             }}
 
-        } else { // create transcript + filename for HTML export
-            chatgpt.console.info('Exporting chat to HTML...');
+        } else { // generate rich transcript + filename for HTML/PDF export
 
             // Fetch HTML transcript from OpenAI
             const response = await fetch(await chatgpt.shareChat(chatToGet)),
-                  htmlContent = await response.text();
+            htmlContent = await response.text();
 
             // Format filename after <title>
             const parser = new DOMParser(),
@@ -401,13 +400,29 @@ const chatgpt = {
 
             // Serialize updated HTML to string
             transcript = new XMLSerializer().serializeToString(parsedHtml);
-        } 
+        }
 
-        // Save to file
-        const blob = new Blob([transcript], { type: 'text/' + ( filename.includes('html') ? 'html' : 'plain' )}),
-              link = document.createElement('a'), blobURL = URL.createObjectURL(blob);
-        link.href = blobURL; link.download = filename; document.body.appendChild(link);
-        link.click(); document.body.removeChild(link); URL.revokeObjectURL(blobURL);
+        // Export transcript
+        chatgpt.console.info(`Exporting transcript as ${ format.toUpperCase() }...`);
+        if (format == 'pdf') { // launch PDF printer
+
+            // Convert SVG icons to data URLs for proper PDF rendering
+            transcript = transcript.replace(/<svg.*?<\/svg>/g, (match) => {
+                const dataURL = 'data:image/svg+xml,' + encodeURIComponent(match);
+                return `<img src="${ dataURL }">`;
+            });
+
+            // Launch PDF printer
+            const transcriptPopup = window.open('', '', 'toolbar=0, location=0, menubar=0, height=600, width=800');
+            transcriptPopup.document.write(transcript);
+            setTimeout(() => { transcriptPopup.print({ toPDF: true }); }, 100);
+
+        } else { // auto-save to file
+            const blob = new Blob([transcript], { type: 'text/' + ( filename.includes('html') ? 'html' : 'plain' )}),
+                  link = document.createElement('a'), blobURL = URL.createObjectURL(blob);
+            link.href = blobURL; link.download = filename; document.body.appendChild(link);
+            link.click(); document.body.removeChild(link); URL.revokeObjectURL(blobURL);
+        }
     },
 
     generateRandomIP: function() {
