@@ -296,6 +296,15 @@ const chatgpt = {
     code: {
     // Tip: Use template literals for easier passing of code arguments
 
+        minify: async function(code) {
+            if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
+            if (typeof code !== 'string') chatgpt.console.error('Code argument must be a string!');
+            chatgpt.send('Minify the following code. Reply with a single code block. Do not type anything else:\n\n' + code);
+            chatgpt.console.info('Minifying code...');
+            await chatgpt.isIdle();
+            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+        },
+
         obfuscate: async function(code) {
             if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
             if (typeof code !== 'string') chatgpt.console.error('Code argument must be a string!');
@@ -1275,8 +1284,10 @@ const functionAliases = [ // whole function names to cross-alias
     ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
     ['isFullScreen', 'isFullscreen'],
     ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
+    ['minify', 'uglify'],
     ['new', 'newChat', 'startNewChat'],
     ['printAllFunctions', 'showAllFunctions'],
+    ['refactor', 'rewrite'],
     ['refreshSession', 'sessionRefresh'],
     ['refreshReply', 'regenerate', 'regenerateReply'],
     ['renderHTML', 'renderHtml', 'renderLinks', 'renderTags'],
