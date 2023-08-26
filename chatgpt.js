@@ -861,6 +861,32 @@ const chatgpt = {
         }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
     },
 
+    preMadePrompt: function(prompt) {
+        const promptsUrl = 'https://raw.githubusercontent.com/KudoAI/chat-prompts/main/dist/prompts.min.json';
+
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', promptsUrl, true);
+            xhr.onload = () => {
+                if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.');
+                const data = JSON.parse(xhr.responseText).prompts;
+
+                if (!prompt) {
+                    console.info('\n%c🤖 chatgpt.js prompts\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
+                    for (const prompt of data) // List prompts
+                        console.info(`%c${prompt.title}`, 'font-family: monospace ; font-size: larger ;');
+                    return resolve(); }
+
+                const selectedPrompt = data.find(obj => obj.title.toLowerCase() === prompt.toLowerCase()); // Search for selected prompt
+                if (!selectedPrompt) return reject(`🤖 chatgpt.js >> Prompt '${prompt}' was not found!`); // Reject if not found
+
+                chatgpt.send(selectedPrompt.prompt, 'click'); // Send selected prompt
+                return resolve();
+            };
+            xhr.send();
+        });
+    },
+
     printAllFunctions: function() {
 
         // Define colors
