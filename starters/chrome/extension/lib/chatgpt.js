@@ -861,8 +861,10 @@ const chatgpt = {
         }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
     },
 
-    preMadePrompt: function(prompt) {
-        const promptsUrl = 'https://raw.githubusercontent.com/KudoAI/chat-prompts/main/dist/prompts.min.json';
+    persona: function(prompt) {
+    // Prompts ChatGPT to act as a persona from https://github.com/KudoAI/chat-prompts/blob/main/personas.json
+
+        const promptsUrl = 'https://raw.githubusercontent.com/KudoAI/chat-prompts/main/dist/personas.min.json';
 
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
