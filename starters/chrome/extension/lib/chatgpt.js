@@ -294,7 +294,16 @@ const chatgpt = {
     },
 
     code: {
-    // Tip: Use template literals for easy passing of code arguments
+    // Tip: Use template literals for easier passing of code arguments
+
+        obfuscate: async function(code) {
+            if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
+            if (typeof code !== 'string') chatgpt.console.error('Code argument must be a string!');
+            chatgpt.send('Obfuscate the following code. Reply with a single code block. Do not type anything else:\n\n' + code);
+            chatgpt.console.info('Obfuscating code...');
+            await chatgpt.isIdle();
+            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+        },
 
         refactor: async function(code, objective) {
             if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
