@@ -41,7 +41,7 @@
 
 <br>
 
-📣 _您是 OSS 支持者吗？ 你喜欢 JavaScript 吗？ 那么为什么不为 AI 应用程序开发的未来做出贡献呢？ **chatgpt.js** 正在为此寻找合作者！ 只需打开 [讨论](https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas) 或 [拉取请求](https://github.com/KudoAI/chatgpt.js/pulls)（欢迎**任何**大小的想法）或者查看我们的[公共路线图](https://github.com/orgs/KudoAI/projects/1) 来做出贡献！_
+📣 _您是 OSS 支持者吗？ 你喜欢 JavaScript 吗？ 那么为什么不为 AI 应用程序开发的未来做出贡献呢？ **chatgpt.js** 正在为此寻找合作者！ 只需打开 [讨论](https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas) 或 [拉取请求](https://github.com/KudoAI/chatgpt.js/pulls)（欢迎**任何**大小的想法）或者查看我们的[路线图](https://github.com/orgs/KudoAI/projects/1) 来做出贡献！_
     
 </div>
 
