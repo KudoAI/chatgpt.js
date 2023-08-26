@@ -41,7 +41,7 @@
 
 <br>
 
-📣 _您是 OSS 支持者嗎？ 你喜歡 JavaScript 嗎？ 那麼為什麼不為 AI 應用程序開發的未來做出貢獻呢？ **chatgpt.js** 正在為此尋找合作者！ 只需打開[討論](https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas) 或[拉取請求](https://github.com/KudoAI/chatgpt.js/ pulls)（歡迎**任何**大小的想法！）_
+📣 _您是 OSS 支持者嗎？ 你喜歡 JavaScript 嗎？ 那麼為什麼不為 AI 應用程序開發的未來做出貢獻呢？ **chatgpt.js** 正在為此尋找合作者！ 只需打開[討論](https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas) 或[拉取請求](https://github.com/KudoAI/chatgpt.js/ pulls)（歡迎**任何**大小的想法）或者查看我們的[公共路線圖](https://github.com/orgs/KudoAI/projects/1) 來做出貢獻！_
     
 </div>
 
