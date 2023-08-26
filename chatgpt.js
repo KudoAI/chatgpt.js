@@ -1203,6 +1203,112 @@ const chatgpt = {
     },
 
     sidebar: {
+        elements: [],
+        observer: {},
+
+        activateObserver: function() {
+            const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]'),
+                firstButton = chatHistoryNav.querySelector('a');
+            if (chatgpt.history.isOff()) // Hide enable history spam div
+                try { firstButton.parentNode.nextElementSibling.style.display = 'none'; } catch (error) {}
+
+            // Stop the previous observer to preserve resources
+            if (this.observer instanceof MutationObserver)
+                try { this.observer.disconnect(); } catch (e) {}
+
+            if (!this.elements.length) return console.error('🤖 chatgpt.js >> No elements to append!');
+
+            let cssClasses;
+            // Grab CSS from original website elements
+            for (let navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+                if (navLink.text.match(/.*chat/)) {
+                    cssClasses = navLink.classList;
+                    navLink.parentNode.style.margin = '2px 0'; // add v-margins to ensure consistency across all inserted buttons
+                    break;
+                }
+            }
+    
+            // Apply CSS to make the added elements look like they belong to the website
+            this.elements.forEach(element => {
+                element.setAttribute('class', cssClasses);
+                element.style.maxHeight = element.style.minHeight = '44px'; // Fix the height of the element
+            });
+    
+            const navBar = document.querySelector('nav[aria-label="Chat history"]');
+            // Create MutationObserver instance
+            this.observer = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    if (mutation.type === 'childList' && mutation.addedNodes.length)
+                        // Try to insert each element...
+                        this.elements.forEach(element => {
+                            // ...if it's not already present...
+                            if (!navBar.contains(element))
+                                try {
+                                    // ...at the top of the sidebar
+                                    navBar.insertBefore(element, navBar.querySelector('a').parentNode);
+                                } catch (error) {
+                                    console.error(error);
+                            }});
+                });
+            });
+    
+            this.observer.observe(document.documentElement, { childList: true, subtree: true });
+        },
+
+        append: function(element, attrs = {}) {
+            const validElements = ['button', 'select'];
+
+            if (!element || typeof element !== 'string') // Element not passed or invalid type
+                return console.error('🤖 chatgpt.js >> Please supply a valid string element name!');
+            element = element.toLowerCase();
+
+            if (!validElements.includes(element)) // Element not in list
+                return console.error(`🤖 chatgpt.js >> Invalid element! Received: ${element} Valid elements: ${validElements}`);
+
+            const newElement = document.createElement(element);
+            const invalidAttributes = ['id', 'callback', 'items'];
+
+            if (attrs && typeof attrs === 'object')
+                Object.entries(attrs).forEach(([key, value]) => {
+                    if (!invalidAttributes.includes(key)) newElement[key] = value;
+                });
+
+            newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // Add random id to the element
+
+            if (element === 'button') {
+                if (attrs?.icon && typeof attrs.icon === 'string') { // Add icon to button element if given
+                    const icon = document.createElement('img');
+                    icon.src = attrs.icon; // Can also be base64 encoded image string
+                    icon.width = 18;
+                    newElement.insertBefore(icon, newElement.firstChild);
+                }
+                if (attrs?.callback && typeof attrs.callback === 'function') // Add a click handler if the callback is specified on a button element
+                    newElement.addEventListener('click', attrs.callback);
+            }
+
+            if (
+                element === 'select' &&
+                attrs?.items && // There are options to add 
+                Array.isArray(attrs.items) && // It's an array of options
+                attrs.items.length && // The array is not empty
+                attrs.items.every(el => typeof el === 'object') // The entries of the array are all objects
+            )
+                    attrs.items.forEach(item => {
+                        const optionElement = document.createElement('option');
+                        optionElement.textContent = item?.text;
+                        optionElement.value = item?.value;
+                        newElement.add(optionElement);
+                    });
+
+            // Fix for blank background on select elements
+            if (element === 'select') newElement.style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))';
+
+            this.elements.push(newElement);
+            this.activateObserver();
+
+            return newElement.id; // Return the element id
+        },
+
         isOn: function() { return !document.querySelector('button[aria-label*="Open sidebar"]'); },
         isOff: function() { return !!document.querySelector('button[aria-label*="Open sidebar"]'); },
         hide: function() { this.isOn() ? this.toggle() : chatgpt.console.info('Sidebar already hidden!'); },
