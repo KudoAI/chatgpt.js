@@ -11,7 +11,8 @@ module.exports  = {
         'no-useless-escape': 'off', // allow all escape chars cause ESLint sucks at detecting truly useless ones
         'no-inner-declarations': 'off'
     },
-    'globals': { 'chatgpt': 'readonly', 'chrome': 'readonly', 'syncExtension': 'writable', 'Uint8Array': 'readonly' },
+    'globals': { 'chatgpt': 'readonly', 'chrome': 'readonly', 'functionAliases': 'readonly',
+        'syncExtension': 'writable', 'synonyms': 'readonly', 'Uint8Array': 'readonly' },
     'parserOptions': { 'ecmaVersion': 2022, 'sourceType': 'script' },
     'overrides': [{ 'files': ['**/lib*/**.js'], 'parserOptions': { 'sourceType': 'module' }}],
     'env': { 'browser': true, 'node': true, 'es6': true, 'greasemonkey': true }
