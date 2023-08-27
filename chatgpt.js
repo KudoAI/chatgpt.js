@@ -1463,6 +1463,7 @@ const functionAliases = [ // whole function names to cross-alias
     ['sendInNewChat', 'sendNewChat'],
     ['sentiment', 'analyzeSentiment', 'sentimentAnalysis'],
     ['stop', 'stopGenerating'],
+    ['suggest', 'suggestion', 'recommend'],
     ['toggleScheme', 'toggleMode'],
     ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher'],
     ['translate', 'translation', 'translator'],
@@ -1520,8 +1521,8 @@ for (const prop in chatgpt) {
 
 // Prefix console logs w/ '🤖 chatgpt.js >> '
 const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info;
-console.error = (...args) => { ogError(consolePrefix + args[0], ...args.slice(1)); }
-console.info = (msg) => { ogInfo(consolePrefix + msg); }
+console.error = (...args) => { ogError(consolePrefix + args[0], ...args.slice(1)); };
+console.info = (msg) => { ogInfo(consolePrefix + msg); };
 
 // Export chatgpt object
 try { window.chatgpt = chatgpt; } catch (err) {} // for Greasemonkey
