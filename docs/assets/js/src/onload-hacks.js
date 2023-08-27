@@ -122,6 +122,10 @@ const onLoadObserver = new MutationObserver(() => {
        
         mdLoaded.then(() => {
 
+            // Disable SEARCH
+            document.querySelector('.search').style.display = 'none';
+            document.querySelector('.sidebar-nav').style.paddingTop = '102px';
+
             // Create/select FEATURE LIST
             const featureListDiv = document.querySelector('#feature-list') || // select div
                                    document.createElement('div'); // ...or create it
