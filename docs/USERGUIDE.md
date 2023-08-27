@@ -1,111 +1,112 @@
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
-    <img width=700 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
-  </picture>
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
+        <img width=700 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
+    </picture>
 
 **chatgpt.js** is a powerful JavaScript library that allows for super easy interaction w/ the ChatGPT DOM.
+
 </div>
 
 ## Table of contents
 
-- [Importing the library](#importing-the-library)
-  - [ES6](#es6)
-  - [ES5](#es5)
-  - [Greasemonkey](#greasemonkey)
-  - [Chrome](#chrome)
-- [Library methods](#library-methods)
-  - [General](#general)
-    - [generateRandomIP](#generaterandomip)
-    - [get](#get)
-    - [getUserLanguage](#getuserlanguage)
-    - [isFullScreen](#isfullscreen)
-    - [isLoaded `async`](#isloaded-async)
-    - [printAllFunctions](#printallfunctions)
-    - [randomFloat](#randomfloat)
-    - [renderHTML](#renderhtml)
-    - [summarize `async`](#summarize-async)
-    - [translate `async`](#translate-async)
-    - [uuidv4](#uuidv4)
-  - [Page theme](#page-theme)
-    - [activateDarkMode](#activatedarkmode)
-    - [activateLightMode](#activatelightmode)
-    - [isDarkMode](#isdarkmode)
-    - [isLightMode](#islightmode)
-    - [toggleScheme](#togglescheme)
-  - [In-site notifications](#in-site-notifications)
-    - [alert](#alert)
-    - [notify](#notify)
-  - [User session](#user-session)
-    - [getAccessToken `async`](#getaccesstoken-async)
-    - [getAccountDetails `async`](#getaccountdetails-async)
-    - [logout](#logout)
-  - [Chats](#chats)
-    - [askAndGetReply `async`](#askandgetreply-async)
-    - [clearChats `async`](#clearchats-async)
-    - [exportChat `async`](#exportchat-async)
-    - [getChatData `async`](#getchatdata-async)
-    - [getChatInput](#getchatinput)
-    - [getLastPrompt `async`](#getlastprompt-async)
-    - [getLastResponse `async`](#getlastresponse-async)
-    - [getResponse](#getresponse)
-    - [getResponseFromAPI `async`](#getresponsefromapi-async)
-    - [getResponseFromDOM](#getresponsefromdom)
-    - [isIdle `async`](#isidle-async)
-    - [regenerate](#regenerate)
-    - [resend `async`](#resend-async)
-    - [scrollToBottom](#scrolltobottom)
-    - [send](#send)
-    - [sendInNewChat](#sendinnewchat)
-    - [shareChat `async`](#sharechat-async)
-    - [speak](#speak)
-    - [startNewChat](#startnewchat)
-    - [stop](#stop)
-  - [DOM related](#dom-related)
-    - [getChatBox](#getchatbox)
-    - [getContinueGeneratingButton](#getcontinuegeneratingbutton)
-    - [getNewChatLink](#getnewchatlink)
-    - [getRegenerateButton](#getregeneratebutton)
-    - [getSendButton](#getsendbutton)
-    - [getStopGeneratingButton](#getstopgeneratingbutton)
-- [Library objects](#library-objects)
-  - [autoRefresh `obj`](#autorefresh-obj)
-      - [activate](#activate)
-      - [deactivate](#deactivate)
-      - [nowTimeStamp](#nowtimestamp)
-    - [toggle `obj`](#toggle-obj)
-      - [beacons](#beacons)
-      - [refreshFrame](#refreshframe)
-  - [code `obj`](#code-obj)
-    - [minify `async`](#minify-async)
-    - [obfuscate `async`](#obfuscate-async)
-    - [refactor `async`](#refactor-async)
-    - [review `async`](#review-async)
-    - [unminify `async`](#unminify-async)
-    - [write `async`](#write-async)
-  - [history `obj`](#history-obj)
-    - [isOn](#ison)
-    - [isOff](#isoff)
-    - [activate](#activate-1)
-    - [deactivate](#deactivate-1)
-    - [toggle](#toggle)
-  - [response `obj`](#response-obj)
-    - [get](#get-1)
-    - [getFromAPI `async`](#getfromapi-async)
-    - [getFromDOM](#getfromdom)
-    - [getLast `async`](#getlast-async)
-    - [regenerate](#regenerate-1)
-    - [stopGenerating](#stopgenerating)
-  - [scheme `obj`](#scheme-obj)
-    - [isDark](#isdark)
-    - [isLight](#islight)
-    - [toggle](#toggle-1)
-  - [sidebar `obj`](#sidebar-obj)
-    - [isOn](#ison-1)
-    - [isOff](#isoff-1)
-    - [hide](#hide)
-    - [show](#show)
-    - [toggle](#toggle-2)
+-   [Importing the library](#importing-the-library)
+    -   [ES6](#es6)
+    -   [ES5](#es5)
+    -   [Greasemonkey](#greasemonkey)
+    -   [Chrome](#chrome)
+-   [Library methods](#library-methods)
+    -   [General](#general)
+        -   [generateRandomIP](#generaterandomip)
+        -   [get](#get)
+        -   [getUserLanguage](#getuserlanguage)
+        -   [isFullScreen](#isfullscreen)
+        -   [isLoaded `async`](#isloaded-async)
+        -   [printAllFunctions](#printallfunctions)
+        -   [randomFloat](#randomfloat)
+        -   [renderHTML](#renderhtml)
+        -   [summarize `async`](#summarize-async)
+        -   [translate `async`](#translate-async)
+        -   [uuidv4](#uuidv4)
+    -   [Page theme](#page-theme)
+        -   [activateDarkMode](#activatedarkmode)
+        -   [activateLightMode](#activatelightmode)
+        -   [isDarkMode](#isdarkmode)
+        -   [isLightMode](#islightmode)
+        -   [toggleScheme](#togglescheme)
+    -   [In-site notifications](#in-site-notifications)
+        -   [alert](#alert)
+        -   [notify](#notify)
+    -   [User session](#user-session)
+        -   [getAccessToken `async`](#getaccesstoken-async)
+        -   [getAccountDetails `async`](#getaccountdetails-async)
+        -   [logout](#logout)
+    -   [Chats](#chats)
+        -   [askAndGetReply `async`](#askandgetreply-async)
+        -   [clearChats `async`](#clearchats-async)
+        -   [exportChat `async`](#exportchat-async)
+        -   [getChatData `async`](#getchatdata-async)
+        -   [getChatInput](#getchatinput)
+        -   [getLastPrompt `async`](#getlastprompt-async)
+        -   [getLastResponse `async`](#getlastresponse-async)
+        -   [getResponse](#getresponse)
+        -   [getResponseFromAPI `async`](#getresponsefromapi-async)
+        -   [getResponseFromDOM](#getresponsefromdom)
+        -   [isIdle `async`](#isidle-async)
+        -   [regenerate](#regenerate)
+        -   [resend `async`](#resend-async)
+        -   [scrollToBottom](#scrolltobottom)
+        -   [send](#send)
+        -   [sendInNewChat](#sendinnewchat)
+        -   [shareChat `async`](#sharechat-async)
+        -   [speak](#speak)
+        -   [startNewChat](#startnewchat)
+        -   [stop](#stop)
+    -   [DOM related](#dom-related)
+        -   [getChatBox](#getchatbox)
+        -   [getContinueGeneratingButton](#getcontinuegeneratingbutton)
+        -   [getNewChatLink](#getnewchatlink)
+        -   [getRegenerateButton](#getregeneratebutton)
+        -   [getSendButton](#getsendbutton)
+        -   [getStopGeneratingButton](#getstopgeneratingbutton)
+-   [Library objects](#library-objects)
+    -   [autoRefresh `obj`](#autorefresh-obj)
+        -   [activate](#activate)
+        -   [deactivate](#deactivate)
+        -   [nowTimeStamp](#nowtimestamp)
+        -   [toggle `obj`](#toggle-obj)
+            -   [beacons](#beacons)
+            -   [refreshFrame](#refreshframe)
+    -   [code `obj`](#code-obj)
+        -   [minify `async`](#minify-async)
+        -   [obfuscate `async`](#obfuscate-async)
+        -   [refactor `async`](#refactor-async)
+        -   [review `async`](#review-async)
+        -   [unminify `async`](#unminify-async)
+        -   [write `async`](#write-async)
+    -   [history `obj`](#history-obj)
+        -   [isOn](#ison)
+        -   [isOff](#isoff)
+        -   [activate](#activate-1)
+        -   [deactivate](#deactivate-1)
+        -   [toggle](#toggle)
+    -   [response `obj`](#response-obj)
+        -   [get](#get-1)
+        -   [getFromAPI `async`](#getfromapi-async)
+        -   [getFromDOM](#getfromdom)
+        -   [getLast `async`](#getlast-async)
+        -   [regenerate](#regenerate-1)
+        -   [stopGenerating](#stopgenerating)
+    -   [scheme `obj`](#scheme-obj)
+        -   [isDark](#isdark)
+        -   [isLight](#islight)
+        -   [toggle](#toggle-1)
+    -   [sidebar `obj`](#sidebar-obj)
+        -   [isOn](#ison-1)
+        -   [isOff](#isoff-1)
+        -   [hide](#hide)
+        -   [show](#show)
+        -   [toggle](#toggle-2)
 
 # Importing the library
 
@@ -113,8 +114,8 @@
 
 ```js
 (async () => {
-  await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
-  // Your code here...
+    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
+    // Your code here...
 })();
 ```
 
@@ -124,17 +125,17 @@
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js');
 xhr.onload = function () {
-  if (xhr.status === 200) {
-    var chatgptJS = document.createElement('script');
-    chatgptJS.textContent = xhr.responseText;
-    document.head.appendChild(chatgptJS);
-    yourCode(); // runs your code
-  }
+    if (xhr.status === 200) {
+        var chatgptJS = document.createElement('script');
+        chatgptJS.textContent = xhr.responseText;
+        document.head.appendChild(chatgptJS);
+        yourCode(); // runs your code
+    }
 };
 xhr.send();
 
 function yourCode() {
-  // Your code here...
+    // Your code here...
 }
 ```
 
@@ -163,12 +164,14 @@ Since Google will [eventually phase out](https://developer.chrome.com/docs/exten
 1. Save https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js to a subdirectory (`lib` in this example)
 
 2. Add ES6 export statement to end of `lib/chatgpt.js`
+
 ```js
 ...
 export { chatgpt }
 ```
 
 3. In project's (V3) `manifest.json`, add `lib/chatgpt.js` as a web accessible resource
+
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
@@ -177,10 +180,11 @@ export { chatgpt }
 ```
 
 4. In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
+
 ```js
 (async () => {
-  const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
-  // Your code here...
+    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
+    // Your code here...
 })();
 ```
 
@@ -232,7 +236,7 @@ Example code:
 
 ```js
 if (chatgpt.isFullScreen()) {
-  // Do something
+    // Do something
 }
 ```
 
@@ -244,9 +248,9 @@ Example code:
 
 ```js
 async function doSomething() {
-  if (await chatgpt.isLoaded()) {
-    // Do something
-  }
+    if (await chatgpt.isLoaded()) {
+        // Do something
+    }
 }
 ```
 
@@ -299,7 +303,7 @@ Example code:
 
 ```js
 async function doSomething() {
-  await chatgpt.summarize('A very long text...'); // Example output: 'A very short text...'
+    await chatgpt.summarize('A very long text...'); // Example output: 'A very short text...'
 }
 ```
 
@@ -317,7 +321,7 @@ Example code:
 
 ```js
 async function doSomething() {
-  await chatgpt.translate('Hello, how are you?', 'spanish'); // Example output: 'Hola, ¿cómo estás?'
+    await chatgpt.translate('Hello, how are you?', 'spanish'); // Example output: 'Hola, ¿cómo estás?'
 }
 ```
 
@@ -360,7 +364,7 @@ Example code:
 
 ```js
 if (chatgpt.isDarkMode()) {
-  // Do something
+    // Do something
 }
 ```
 
@@ -372,7 +376,7 @@ Example code:
 
 ```js
 if (chatgpt.isLightMode()) {
-  // Do something
+    // Do something
 }
 ```
 
@@ -444,8 +448,8 @@ Returns an account access token as a string.
 
 ```js
 async function doSomething() {
-  const token = await chatgpt.getAccessToken();
-  console.log(token); // Example output: 'abcdef[...]'
+    const token = await chatgpt.getAccessToken();
+    console.log(token); // Example output: 'abcdef[...]'
 }
 ```
 
@@ -461,12 +465,12 @@ Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single det
 
 ```js
 async function doSomething() {
-  const name = await chatgpt.getAccountDetails('name');
-  console.log(name); // Example output: 'chatgpt.js'
+    const name = await chatgpt.getAccountDetails('name');
+    console.log(name); // Example output: 'chatgpt.js'
 
-  const data = await chatgpt.getAccountDetails('name', 'email');
-  console.log(data);
-  /* Example output:
+    const data = await chatgpt.getAccountDetails('name', 'email');
+    console.log(data);
+    /* Example output:
   {
     name: 'chatgpt.js',
     email: 'showcase@chatgptjs.org'
@@ -495,8 +499,8 @@ Example code:
 
 ```js
 async function doSomething() {
-  const response = await chatgpt.askAndGetReply('Hello, ChatGPT');
-  console.log(response); // Example output: 'Hello user, I'm ChatGPT!'
+    const response = await chatgpt.askAndGetReply('Hello, ChatGPT');
+    console.log(response); // Example output: 'Hello user, I'm ChatGPT!'
 }
 ```
 
@@ -508,7 +512,7 @@ Example code:
 
 ```js
 async function doSomething() {
-  await chatgpt.clearChats();
+    await chatgpt.clearChats();
 }
 ```
 
@@ -530,7 +534,7 @@ Example code:
 
 ```js
 async function doSomething() {
-  await chatgpt.exportChat('latest', 'html'); // Downloads a '.html' file
+    await chatgpt.exportChat('latest', 'html'); // Downloads a '.html' file
 }
 ```
 
@@ -576,10 +580,10 @@ _Returns a JSON object_
 
 ```json
 {
-  "create_time": "2023-07-19T13:24:05.618539+00:00",
-  "id": "e193a219-2311-4232-95f5-8e3a0e466652",
-  "title": "Lemons: Citrus Fruit Overview.",
-  "update_time": "2023-07-19T13:24:18+00:00"
+    "create_time": "2023-07-19T13:24:05.618539+00:00",
+    "id": "e193a219-2311-4232-95f5-8e3a0e466652",
+    "title": "Lemons: Citrus Fruit Overview.",
+    "update_time": "2023-07-19T13:24:18+00:00"
 }
 ```
 
@@ -593,8 +597,8 @@ _Returns a JSON object_
 
 ```json
 {
-  "id": "e193a219-2311-4232-95f5-8e3a0e466652",
-  "title": "Lemons: Citrus Fruit Overview."
+    "id": "e193a219-2311-4232-95f5-8e3a0e466652",
+    "title": "Lemons: Citrus Fruit Overview."
 }
 ```
 
@@ -645,10 +649,7 @@ In case of a response being regenerated and the requested participant being `cha
 ```json
 [
     "Lemons are a type of citrus fruit that belongs...",
-    [
-        "Certainly! Here are some more specific details...",
-        "Certainly! Here are some specific..."
-    ]
+    ["Certainly! Here are some more specific details...", "Certainly! Here are some specific..."]
 ]
 ```
 
@@ -665,10 +666,7 @@ In case of a response being regenerated, the `chatgpt` object key will be conver
 ```json
 {
     "user": "be more specific",
-    "chatgpt": [
-        "Certainly! Here are some more specific...",
-        "Certainly! Here are some specific..."
-    ]
+    "chatgpt": ["Certainly! Here are some more specific...", "Certainly! Here are some specific..."]
 }
 ```
 
@@ -708,8 +706,8 @@ Returns the last message sent by the user as a string.
 
 ```js
 async function doSomething() {
-  const message = await chatgpt.getLastPrompt();
-  console.log(message); // Example output: 'Hello from chatgpt.js!'
+    const message = await chatgpt.getLastPrompt();
+    console.log(message); // Example output: 'Hello from chatgpt.js!'
 }
 ```
 
@@ -719,8 +717,8 @@ Returns the last ChatGPT response as a string.
 
 ```js
 async function doSomething() {
-  const response = await chatgpt.getLastResponse();
-  console.log(response); // Example output: 'I am ChatGPT!'
+    const response = await chatgpt.getLastResponse();
+    console.log(response); // Example output: 'I am ChatGPT!'
 }
 ```
 
@@ -744,8 +742,8 @@ Example code:
 
 ```js
 async function doSomething() {
-  const response = chatgpt.getResponseFromAPI();
-  console.log(response);
+    const response = chatgpt.getResponseFromAPI();
+    console.log(response);
 }
 ```
 
@@ -775,9 +773,9 @@ Example code:
 
 ```js
 async function doSomething() {
-  if (await chatgpt.isIdle()) {
-    // Do something
-  }
+    if (await chatgpt.isIdle()) {
+        // Do something
+    }
 }
 ```
 
@@ -797,7 +795,7 @@ Re-sends the last user message.
 
 ```js
 async function doSomething() {
-  await chatgpt.resend();
+    await chatgpt.resend();
 }
 ```
 
@@ -856,7 +854,7 @@ Can be the following: `copy` or `clipboard` to copy the chat URL to clipboard, `
 
 ```js
 async function doSomething() {
-  await chatgpt.shareChat(1, 'copy'); // copy/clipboard
+    await chatgpt.shareChat(1, 'copy'); // copy/clipboard
 }
 ```
 
@@ -872,15 +870,15 @@ Text To Speech (TTS) conversion of a given message.
 
 Available options:
 
- - `voice`: A number representing the index of voices available on the user device.
- - `pitch`: A float representing the pitch of the speech. From `0` to `2`.
- - `speed`: A float representing the speed of the speech. From `0.1` to `10`.
+-   `voice`: A number representing the index of voices available on the user device.
+-   `pitch`: A float representing the pitch of the speech. From `0` to `2`.
+-   `speed`: A float representing the speed of the speech. From `0.1` to `10`.
 
 Example code:
 
 ```js
 async function doSomething() {
-  chatgpt.speak(await chatgpt.getLastResponse(), { voice: 1, pitch: 2, speed: 3 });
+    chatgpt.speak(await chatgpt.getLastResponse(), { voice: 1, pitch: 2, speed: 3 });
 }
 ```
 
@@ -1055,7 +1053,8 @@ Example code:
              }
              replyBox.style.height = replyBox.scrollHeight + 'px'
              prevLength = newLength
-        }`);
+        }`
+    );
     console.log(minifiedCode); // logs 'function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}'
 })();
 ```
@@ -1072,8 +1071,7 @@ Example code:
 
 ```js
 (async () => {
-    const obfuscatedCode = await chatgpt.code.obfuscate(
-        `window[elem].addEventListener('mouseover', toggleTooltip)`);
+    const obfuscatedCode = await chatgpt.code.obfuscate(`window[elem].addEventListener('mouseover', toggleTooltip)`);
     console.log(obfuscatedCode); // logs '(window[elem])[btoa('YWxlcnRWaWV3')](btoa('bW91c2VyYm94ZXJOYW1l'), btoa('dG9nZ2VkT3V0d2FsbA=='));'
 })();
 ```
@@ -1092,14 +1090,14 @@ Example code:
 
 ```js
 async function doSomething() {
-  const code = `
+    const code = `
   if (6 > 5) {
     return true;
   } else {
     return false;
   }
   `;
-  await chatgpt.code.refactor(code, 'brevity'); // Example output: 'return 6 > 5;'
+    await chatgpt.code.refactor(code, 'brevity'); // Example output: 'return 6 > 5;'
 }
 ```
 
@@ -1115,8 +1113,8 @@ Example code:
 
 ```js
 async function doSomething() {
-  await chatgpt.code.review('btoa("Hello World")');
-  /* Example output:
+    await chatgpt.code.review('btoa("Hello World")');
+    /* Example output:
   The code appears to be correct. It uses the `btoa` function to encode the string "Hello World" in base64. */
 }
 ```
@@ -1134,7 +1132,8 @@ Example code:
 ```js
 (async () => {
     const minifiedCode = await chatgpt.code.unminify(
-        `function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}`);
+        `function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}`
+    );
     console.log(minifiedCode);
     /* logs `function autosizeBox() {
              const newLength = replyBox.value.length
@@ -1163,8 +1162,8 @@ Example code:
 
 ```js
 async function doSomething() {
-  await chatgpt.code.write('Repeat a task every 10 seconds', 'javascript');
-  /* Example output:
+    await chatgpt.code.write('Repeat a task every 10 seconds', 'javascript');
+    /* Example output:
   setInterval(function() {
     // Your task code here
   }, 10000); */
@@ -1183,7 +1182,7 @@ Example code:
 
 ```js
 if (chatgpt.history.isOn()) {
-  // Do something
+    // Do something
 }
 ```
 
@@ -1195,7 +1194,7 @@ Example code:
 
 ```js
 if (chatgpt.history.isOff()) {
-  // Do something
+    // Do something
 }
 ```
 
@@ -1287,7 +1286,7 @@ Example code:
 
 ```js
 if (chatgpt.sidebar.isOn()) {
-  // Do something
+    // Do something
 }
 ```
 
@@ -1299,7 +1298,7 @@ Example code:
 
 ```js
 if (chatgpt.sidebar.isOff()) {
-  // Do something
+    // Do something
 }
 ```
 
