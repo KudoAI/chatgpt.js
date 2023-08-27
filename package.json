@@ -48,7 +48,6 @@
     "eslint": "^8.47.0",
     "imagemin": "^8.0.1",
     "imagemin-webp": "^8.0.0",
-    "jq": "^1.7.2",
     "uglify-js": "^3.17.4"
   }
 }
