@@ -1449,6 +1449,7 @@ const functionAliases = [ // whole function names to cross-alias
     ['renderHTML', 'renderHtml', 'renderLinks', 'renderTags'],
     ['send', 'sendChat', 'sendMsg'],
     ['sendInNewChat', 'sendNewChat'],
+    ['sentiment', 'analyzeSentiment', 'sentimentAnalysis'],
     ['stop', 'stopGenerating'],
     ['toggleScheme', 'toggleMode'],
     ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher'],
@@ -1456,8 +1457,17 @@ const functionAliases = [ // whole function names to cross-alias
     ['unminify', 'beautify', 'prettify', 'prettyPrint']
 ];
 const synonyms = [ // constituent synonyms within function names
-    ['activate', 'turnOn'], ['account', 'acct'], ['ask', 'send', 'submit'], ['chat', 'conversation', 'convo'], ['data', 'details'],
-    ['deactivate', 'deActivate', 'turnOff'], ['generating', 'generation'], ['render', 'parse'], ['reply', 'response'],
+    ['activate', 'turnOn'],
+    ['account', 'acct'],
+    ['analyze', 'check', 'evaluate', 'review'],
+    ['ask', 'send', 'submit'],
+    ['chat', 'conversation', 'convo'],
+    ['data', 'details'],
+    ['deactivate', 'deActivate', 'turnOff'],
+    ['generating', 'generation'],
+    ['render', 'parse'],
+    ['reply', 'response'],
+    ['sentiment', 'attitude', 'emotion', 'feeling', 'opinion', 'perception'],
     ['speak', 'say', 'speech', 'talk', 'tts']
 ];
 const camelCaser = (words) => {
