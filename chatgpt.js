@@ -1123,6 +1123,18 @@ const chatgpt = {
         }} setTimeout(() => { chatgpt.send(msg); }, 500);
     },
 
+    sentiment: async function(text, entity) {
+        if (!text) return chatgpt.console.error('Text argument not supplied. Pass some text to analyze!');
+        for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
+            return chatgpt.console.error(`Argument ${ i + 1 } must be a string.`);
+        chatgpt.send('What is the sentiment of the following text'
+            + ( entity ? ` towards the entity ${ entity },` : '')
+            + ' from strongly negative to strongly positive?\n\n' + text );
+        chatgpt.console.info('Analyzing sentiment...');
+        await chatgpt.isIdle();
+        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+    },
+
     shareChat: function(chatToGet, method = 'clipboard') {
     // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
     // method = [ 'alert'|'clipboard' ] (defaults to 'clipboard' if '' or unpassed)
