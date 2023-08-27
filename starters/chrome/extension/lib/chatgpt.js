@@ -343,7 +343,7 @@ const chatgpt = {
         },
 
         refactor: async function(code, objective) {
-            if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
+            if (!code) return chatgpt.console.error('Code (1st) argument not supplied. Pass some code!');
             for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
                 return chatgpt.console.error(`Argument ${ i + 1 } must be a string.`);
             chatgpt.send('Refactor the following code for the objective of ' + (objective || 'brevity')
@@ -1130,7 +1130,6 @@ const chatgpt = {
     },
 
     sentiment: async function(text, entity) {
-        if (!text) return chatgpt.console.error('Text argument not supplied. Pass some text to analyze!');
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return chatgpt.console.error(`Argument ${ i + 1 } must be a string.`);
         chatgpt.send('What is the sentiment of the following text'
@@ -1378,7 +1377,7 @@ const chatgpt = {
     },
 
     summarize: async function(text) {
-        if (!text) return chatgpt.console.error('Text argument not supplied. Pass some text!');
+        if (!text) return chatgpt.console.error('Text (1st) argument not supplied. Pass some text!');
         if (typeof text !== 'string') return chatgpt.console.error('Text argument must be a string!');
         chatgpt.send('Summarize the following text:\n\n' + text);
         chatgpt.console.info('Summarizing text...');
@@ -1395,9 +1394,10 @@ const chatgpt = {
     },
 
     translate: async function(text, outputLang) {
+        if (!text) return chatgpt.console.error('Text (1st) argument not supplied. Pass some text!');
+        if (!outputLang) return chatgpt.console.error('outputLang (2nd) argument not supplied. Pass a language!');
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return chatgpt.console.error(`Argument ${ i + 1 } must be a string!`);
-        if (!outputLang) return chatgpt.console.error('2nd argument not supplied. Must be output language');
         chatgpt.send('Translate the following text to ' + outputLang 
             + '. Only reply with the translation.\n\n' + text);
         chatgpt.console.info('Translating text...');
