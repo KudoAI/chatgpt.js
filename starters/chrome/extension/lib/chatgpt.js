@@ -330,30 +330,29 @@ const chatgpt = {
         minify: async function(code) {
             if (!code) return console.error('Code argument not supplied. Pass some code!');
             if (typeof code !== 'string') return console.error('Code argument must be a string!');
-            chatgpt.send('Minify the following code. Reply with a single code block. Do not type anything else:\n\n' + code);
+            chatgpt.send('Minify the following code:\n\n' + code);
             console.info('Minifying code...');
             await chatgpt.isIdle();
-            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
         },
 
         obfuscate: async function(code) {
             if (!code) return console.error('Code argument not supplied. Pass some code!');
             if (typeof code !== 'string') return console.error('Code argument must be a string!');
-            chatgpt.send('Obfuscate the following code. Reply with a single code block. Do not type anything else:\n\n' + code);
+            chatgpt.send('Obfuscate the following code:\n\n' + code);
             console.info('Obfuscating code...');
             await chatgpt.isIdle();
-            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
         },
 
         refactor: async function(code, objective) {
             if (!code) return console.error('Code (1st) argument not supplied. Pass some code!');
             for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
                 return console.error(`Argument ${ i + 1 } must be a string.`);
-            chatgpt.send('Refactor the following code for the objective of ' + (objective || 'brevity')
-                + '. Reply with a single code block. Do not type anything else:\n\n' + code);
+            chatgpt.send('Refactor the following code for ' + (objective || 'brevity') + ':\n\n' + code);
             console.info('Refactoring code...');
             await chatgpt.isIdle();
-            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
         },
 
         review: async function(code) {
@@ -368,10 +367,10 @@ const chatgpt = {
         unminify: async function(code) {
             if (!code) return console.error('Code argument not supplied. Pass some code!');
             if (typeof code !== 'string') return console.error('Code argument must be a string!');
-            chatgpt.send('Unminify the following code. Reply with a single code block. Do not type anything else:\n\n' + code);
+            chatgpt.send('Unminify the following code.:\n\n' + code);
             console.info('Unminifying code...');
             await chatgpt.isIdle();
-            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
         },
 
         write: async function(prompt, outputLang) {
@@ -379,11 +378,10 @@ const chatgpt = {
             if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!');
             for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
                 return console.error(`Argument ${ i + 1 } must be a string.`);
-            chatgpt.send(prompt + '\n\nWrite this as code in ' + outputLang
-                + '. Reply with a single code block. Do not type anything else');
+            chatgpt.send(prompt + '\n\nWrite this as code in ' + outputLang);
             console.info('Writing code...');
             await chatgpt.isIdle();
-            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
         }
     },
 
