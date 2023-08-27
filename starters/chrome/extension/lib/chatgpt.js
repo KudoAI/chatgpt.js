@@ -1239,7 +1239,7 @@ const chatgpt = {
             let cssClasses;
             // Grab CSS from original website elements
             for (let navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-                if (/.*chat/.exec(navLink.text)[0] {
+                if (/.*chat/.exec(navLink.text)[0]) {
                     cssClasses = navLink.classList;
                     navLink.parentNode.style.margin = '2px 0'; // add v-margins to ensure consistency across all inserted buttons
                     break;
