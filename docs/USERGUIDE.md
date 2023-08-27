@@ -77,6 +77,7 @@
       - [beacons](#beacons)
       - [refreshFrame](#refreshframe)
   - [code `obj`](#code-obj)
+    - [obfuscate `async`](#obfuscate-async)
     - [refactor `async`](#refactor-async)
     - [review `async`](#review-async)
     - [write `async`](#write-async)
@@ -1029,6 +1030,24 @@ chatgpt.autoRefresh.toggle.refreshFrame();
 ```
 
 ## code `obj`
+
+### obfuscate `async`
+
+Asks ChatGPT to obfuscate the given code.
+
+**Parameters**:
+
+`code`: A string being the code to be refactored.
+
+Example code:
+
+```js
+(async () => {
+    const obfuscatedCode = await chatgpt.code.obfuscate(
+        `window[elem].addEventListener('mouseover', toggleTooltip)`);
+    console.log(obfuscatedCode); // logs '(window[elem])[btoa('YWxlcnRWaWV3')](btoa('bW91c2VyYm94ZXJOYW1l'), btoa('dG9nZ2VkT3V0d2FsbA=='));'
+})();
+```
 
 ### refactor `async`
 
