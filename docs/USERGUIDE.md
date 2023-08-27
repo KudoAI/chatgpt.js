@@ -77,6 +77,7 @@
       - [beacons](#beacons)
       - [refreshFrame](#refreshframe)
   - [code `obj`](#code-obj)
+    - [minify `async`](#minify-async)
     - [obfuscate `async`](#obfuscate-async)
     - [refactor `async`](#refactor-async)
     - [review `async`](#review-async)
@@ -1030,6 +1031,33 @@ chatgpt.autoRefresh.toggle.refreshFrame();
 ```
 
 ## code `obj`
+
+### minify `async`
+
+Asks ChatGPT to minify the given code.
+
+**Parameters**:
+
+`code`: A string being the code to be minified.
+
+Example code:
+
+```js
+(async () => {
+    const minifiedCode = await chatgpt.code.minify(
+        `function autosizeBox() {
+             const newLength = replyBox.value.length
+             if (newLength < prevLength) { // if deleting txt
+                 replyBox.style.height = 'auto' // ...auto-fit height
+                 if (parseInt(getComputedStyle(replyBox).height) < 55) { // if down to one line
+                     replyBox.style.height = '2.15rem' } // ...reset to original height
+             }
+             replyBox.style.height = replyBox.scrollHeight + 'px'
+             prevLength = newLength
+        }`);
+    console.log(minifiedCode); // logs 'function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}'
+})();
+```
 
 ### obfuscate `async`
 
