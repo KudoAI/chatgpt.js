@@ -32,18 +32,18 @@ const chatgpt = {
                 if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.');
                 const data = JSON.parse(xhr.responseText).personas;
                 if (!persona) {
-                    console.info('\n%c🤖 chatgpt.js personas\n',
+                    console.log('\n%c🤖 chatgpt.js personas\n',
                         'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
                     for (const prompt of data) // list personas
-                        console.info(`%c${ prompt.title }`, 'font-family: monospace ; font-size: larger ;');
+                        console.log(`%c${ prompt.title }`, 'font-family: monospace ; font-size: larger ;');
                     return resolve();
                 }
                 const selectedPrompt = data.find(obj => obj.title.toLowerCase() === persona.toLowerCase());
                 if (!selectedPrompt)
                     return reject(`🤖 chatgpt.js >> Persona '${ persona }' was not found!`);
                 chatgpt.send(selectedPrompt.prompt, 'click');
-                chatgpt.console.info(`Loading ${ persona } persona...`);
-                chatgpt.isIdle().then(() => { chatgpt.console.info('Persona activated!'); });
+                console.info(`Loading ${ persona } persona...`);
+                chatgpt.isIdle().then(() => { console.info('Persona activated!'); });
                 return resolve();
             };
         });
@@ -232,14 +232,14 @@ const chatgpt = {
     autoRefresh: {
         activate: function(interval) {
             if (this.isActive) { // already running, do nothing
-                console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already active!'); return; }
+                console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already active!'); return; }
 
             const autoRefresh = this;
 
             // Run main activate routine
             this.toggle.refreshFrame();
             scheduleRefreshes( interval ? parseInt(interval, 10) : 30 );
-            console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh activated');
+            console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh activated');
 
             // Add listener to send beacons in Chromium to thwart auto-discards if Page Visibility API supported
             if (navigator.userAgent.includes('Chrome') && typeof document.hidden !== 'undefined') {
@@ -250,7 +250,7 @@ const chatgpt = {
                 autoRefresh.isActive = setTimeout(() => {
                     const manifestScript = document.querySelector('script[src*="_ssgManifest.js"]');
                     document.querySelector('#refresh-frame').src = manifestScript.src + '?' + Date.now();
-                    console.info('↻ ChatGPT >> [' + autoRefresh.nowTimeStamp() + '] ChatGPT session refreshed');
+                    console.log('↻ ChatGPT >> [' + autoRefresh.nowTimeStamp() + '] ChatGPT session refreshed');
                     scheduleRefreshes(interval);
                 }, (interval + randomDelay) * 1000);
             }
@@ -261,8 +261,8 @@ const chatgpt = {
                 this.toggle.refreshFrame();
                 document.removeEventListener('visibilitychange', this.toggle.beacons);
                 clearTimeout(this.isActive); this.isActive = null;
-                console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh de-activated');
-            } else { console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already inactive!'); }
+                console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh de-activated');
+            } else { console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already inactive!'); }
         },
 
         nowTimeStamp: function() {
@@ -279,13 +279,13 @@ const chatgpt = {
             beacons: function() {
                 if (chatgpt.autoRefresh.beaconID) {
                     clearInterval(chatgpt.autoRefresh.beaconID); chatgpt.autoRefresh.beaconID = null;
-                    console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons de-activated');
+                    console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons de-activated');
                 } else {
                     chatgpt.autoRefresh.beaconID = setInterval(function() {
                         navigator.sendBeacon('https://httpbin.org/post', new Uint8Array());
-                        console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacon sent');
+                        console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacon sent');
                     }, 90000);
-                    console.info('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons activated');
+                    console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons activated');
                 }
             },
 
@@ -304,7 +304,7 @@ const chatgpt = {
     clearChats: async function() {
         try { await chatgpt.getChatData(); } catch { return; } // check if chat history exists
         const menuBtn = document.querySelector('nav button[id*="headless"]') || {};
-        try { menuBtn.click(); } catch (err) { return chatgpt.console.error('Headless menu not found'); }
+        try { menuBtn.click(); } catch (err) { return console.error('Headless menu not found'); }
         setTimeout(() => {
             const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
             for (const menuItem of menuItems)
@@ -325,68 +325,63 @@ const chatgpt = {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
         minify: async function(code) {
-            if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
-            if (typeof code !== 'string') return chatgpt.console.error('Code argument must be a string!');
+            if (!code) return console.error('Code argument not supplied. Pass some code!');
+            if (typeof code !== 'string') return console.error('Code argument must be a string!');
             chatgpt.send('Minify the following code. Reply with a single code block. Do not type anything else:\n\n' + code);
-            chatgpt.console.info('Minifying code...');
+            console.info('Minifying code...');
             await chatgpt.isIdle();
             return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
         },
 
         obfuscate: async function(code) {
-            if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
-            if (typeof code !== 'string') return chatgpt.console.error('Code argument must be a string!');
+            if (!code) return console.error('Code argument not supplied. Pass some code!');
+            if (typeof code !== 'string') return console.error('Code argument must be a string!');
             chatgpt.send('Obfuscate the following code. Reply with a single code block. Do not type anything else:\n\n' + code);
-            chatgpt.console.info('Obfuscating code...');
+            console.info('Obfuscating code...');
             await chatgpt.isIdle();
             return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
         },
 
         refactor: async function(code, objective) {
-            if (!code) return chatgpt.console.error('Code (1st) argument not supplied. Pass some code!');
+            if (!code) return console.error('Code (1st) argument not supplied. Pass some code!');
             for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
-                return chatgpt.console.error(`Argument ${ i + 1 } must be a string.`);
+                return console.error(`Argument ${ i + 1 } must be a string.`);
             chatgpt.send('Refactor the following code for the objective of ' + (objective || 'brevity')
                 + '. Reply with a single code block. Do not type anything else:\n\n' + code);
-            chatgpt.console.info('Refactoring code...');
+            console.info('Refactoring code...');
             await chatgpt.isIdle();
             return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
         },
 
         review: async function(code) {
-            if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
-            if (typeof code !== 'string') return chatgpt.console.error('Code argument must be a string!');
+            if (!code) return console.error('Code argument not supplied. Pass some code!');
+            if (typeof code !== 'string') return console.error('Code argument must be a string!');
             chatgpt.send('Review the following code for me:\n\n' + code);
-            chatgpt.console.info('Reviewing code...');
+            console.info('Reviewing code...');
             await chatgpt.isIdle();
             return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
         },
 
         unminify: async function(code) {
-            if (!code) return chatgpt.console.error('Code argument not supplied. Pass some code!');
-            if (typeof code !== 'string') return chatgpt.console.error('Code argument must be a string!');
+            if (!code) return console.error('Code argument not supplied. Pass some code!');
+            if (typeof code !== 'string') return console.error('Code argument must be a string!');
             chatgpt.send('Unminify the following code. Reply with a single code block. Do not type anything else:\n\n' + code);
-            chatgpt.console.info('Unminifying code...');
+            console.info('Unminifying code...');
             await chatgpt.isIdle();
             return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
         },
 
         write: async function(prompt, outputLang) {
-            if (!prompt) return chatgpt.console.error('Prompt (1st) argument not supplied. Pass a prompt!');
-            if (!outputLang) return chatgpt.console.error('outputLang (2nd) argument not supplied. Pass a language!');
+            if (!prompt) return console.error('Prompt (1st) argument not supplied. Pass a prompt!');
+            if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!');
             for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
-                return chatgpt.console.error(`Argument ${ i + 1 } must be a string.`);
+                return console.error(`Argument ${ i + 1 } must be a string.`);
             chatgpt.send(prompt + '\n\nWrite this as code in ' + outputLang
                 + '. Reply with a single code block. Do not type anything else');
-            chatgpt.console.info('Writing code...');
+            console.info('Writing code...');
             await chatgpt.isIdle();
             return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
         }
-    },
-
-    console: {
-        info: function(msg) { console.info('🤖 chatgpt.js >> ' + msg); },
-        error: function(msg, error) { console.error('🤖 chatgpt.js >> ERROR: ' + msg, error || ''); }
     },
 
     exportChat: async function(chatToGet, format) {
@@ -401,7 +396,7 @@ const chatgpt = {
         format = format.toLowerCase() || 'html'; // default to 'html' if unpassed
 
         // Create transcript + filename
-        chatgpt.console.info('Generating transcript...');
+        console.info('Generating transcript...');
         let transcript = '', filename;
         if (/te?xt/.test(format)) { // generate plain transcript + filename for TXT export
 
@@ -417,7 +412,7 @@ const chatgpt = {
             // Create transcript from active chat
             if (chatToGet == 'active' && /\/\w{8}-(\w{4}-){3}\w{12}$/.test(window.location.href)) {
                 const chatDivs = document.querySelectorAll('main > div > div > div > div > div > div[class*=group]');
-                if (chatDivs.length === 0) return chatgpt.console.error('Chat is empty!');
+                if (chatDivs.length === 0) return console.error('Chat is empty!');
                 const msgs = []; let isUserMsg = true;
                 chatDivs.forEach((div) => {
                     const sender = isUserMsg ? 'USER' : 'CHATGPT'; isUserMsg = !isUserMsg;
@@ -458,7 +453,7 @@ const chatgpt = {
         }
 
         // Export transcript
-        chatgpt.console.info(`Exporting transcript as ${ format.toUpperCase() }...`);
+        console.info(`Exporting transcript as ${ format.toUpperCase() }...`);
         if (format == 'pdf') { // convert SVGs + launch PDF printer
 
             // Convert SVG icons to data URLs for proper PDF rendering
@@ -488,7 +483,7 @@ const chatgpt = {
 
     generateRandomIP: function() {
         const ip = Array.from({length: 4}, () => Math.floor(chatgpt.randomFloat() * 256)).join('.');
-        chatgpt.console.info('IP generated: ' + ip);
+        console.info('IP generated: ' + ip);
         return ip;
     },
 
@@ -535,7 +530,7 @@ const chatgpt = {
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onload = () => {
                 if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
-                chatgpt.console.info('Token expiration: ' + new Date(JSON.parse(xhr.responseText).expires).toLocaleString().replace(',', ' at'));
+                console.info('Token expiration: ' + new Date(JSON.parse(xhr.responseText).expires).toLocaleString().replace(',', ' at'));
                 chatgpt.openAIaccessToken = {
                     token: JSON.parse(xhr.responseText).accessToken,
                     expireDate: JSON.parse(xhr.responseText).expires
@@ -557,7 +552,7 @@ const chatgpt = {
 
         // Validate detail args
         for (const detail of details) {
-            if (!validDetails.includes(detail)) { return chatgpt.console.error(
+            if (!validDetails.includes(detail)) { return console.error(
                 'Invalid detail arg \'' + detail + '\' supplied. Valid details are:\n'
               + '                    [' + validDetails + ']'); }}
 
@@ -606,13 +601,13 @@ const chatgpt = {
 
         // Validate args
         for (const detail of detailsToGet) {
-            if (!validDetails.includes(detail)) { return chatgpt.console.error(
+            if (!validDetails.includes(detail)) { return console.error(
                 'Invalid detail arg \'' + detail + '\' passed. Valid details are:\n'
               + '                    [' + validDetails + ']'); }}
-        if (sender === 'invalid') { return chatgpt.console.error(
+        if (sender === 'invalid') { return console.error(
             'Invalid sender arg passed. Valid senders are:\n'
           + '                    [' + validSenders + ']'); }
-        if (msgToGet === 'invalid') { return chatgpt.console.error(
+        if (msgToGet === 'invalid') { return console.error(
             'Invalid msgToGet arg passed. Valid msg\'s to get are:\n'
           + '                    [ \'all\' | \'latest\' | index of msg to get ]'); }
 
@@ -781,8 +776,8 @@ const chatgpt = {
             } return true;
         },
         isOff: function() { return !this.isOn(); },
-        activate: function() { this.isOff() ? this.toggle() : chatgpt.console.info('Chat history is already enabled!'); },
-        deactivate: function() { this.isOn() ? this.toggle() : chatgpt.console.info('Chat history is already disabled!'); },
+        activate: function() { this.isOff() ? this.toggle() : console.info('Chat history is already enabled!'); },
+        deactivate: function() { this.isOn() ? this.toggle() : console.info('Chat history is already disabled!'); },
         toggle: function() {                
             for (const navBtn of document.querySelectorAll('nav[aria-label="Chat history"] button')) {
                 if (/chat history/i.test(navBtn.textContent))
@@ -817,7 +812,7 @@ const chatgpt = {
 
     logout: function() {
         const menuBtn = document.querySelector('nav button[id*="headless"]') || {};
-        try { menuBtn.click(); } catch (err) { return chatgpt.console.error('Headless menu not found'); }
+        try { menuBtn.click(); } catch (err) { return console.error('Headless menu not found'); }
         setTimeout(() => {
             const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
             for (const menuItem of menuItems) {
@@ -928,10 +923,10 @@ const chatgpt = {
         // Print methods
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches,
               baseFontStyles = 'font-family: monospace ; font-size: larger ; ';
-        console.info('\n%c🤖 chatgpt.js methods\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
+        console.log('\n%c🤖 chatgpt.js methods\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
         for (const functionName of functionNames) {
             const isChatGptObjParent = /chatgpt|other/.test(functionName[0]);
-            console.info('%c>> %c' + ( isChatGptObjParent ? '' : `${ functionName[0] }.%c`) + functionName[1] + '\n\n%c[%c'
+            console.log('%c>> %c' + ( isChatGptObjParent ? '' : `${ functionName[0] }.%c`) + functionName[1] + '\n\n%c[%c'
                 + ((( functionName[0] === 'chatgpt' && functionName[1] === this[functionName[1]].name ) || // parent is chatgpt + names match or
                     !isChatGptObjParent) // parent is chatgpt.obj
                         ? 'Function' : 'Alias of' ) + '%c: %c'
@@ -1102,12 +1097,12 @@ const chatgpt = {
 
     scrollToBottom: function() {
         try { document.querySelector('button[class*="cursor"][class*="bottom"]').click(); }
-        catch (err) { chatgpt.console.error('', err); }
+        catch (err) { console.error('', err); }
     },
 
     send: function(msg, method='') {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
-            return chatgpt.console.error(`Argument ${ i + 1 } must be a string!`);
+            return console.error(`Argument ${ i + 1 } must be a string!`);
         const textArea = document.querySelector('form textarea'),
               sendButton = document.querySelector('form button[class*="bottom"]');
         textArea.value = msg;
@@ -1122,7 +1117,7 @@ const chatgpt = {
     },
 
     sendInNewChat: function(msg) {
-        if (typeof msg !== 'string') return chatgpt.console.error('Message must be a string!');
+        if (typeof msg !== 'string') return console.error('Message must be a string!');
         for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
                 navLink.click(); break;
@@ -1131,11 +1126,11 @@ const chatgpt = {
 
     sentiment: async function(text, entity) {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
-            return chatgpt.console.error(`Argument ${ i + 1 } must be a string.`);
+            return console.error(`Argument ${ i + 1 } must be a string.`);
         chatgpt.send('What is the sentiment of the following text'
             + ( entity ? ` towards the entity ${ entity },` : '')
             + ' from strongly negative to strongly positive?\n\n' + text );
-        chatgpt.console.info('Analyzing sentiment...');
+        console.info('Analyzing sentiment...');
         await chatgpt.isIdle();
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
@@ -1145,7 +1140,7 @@ const chatgpt = {
     // method = [ 'alert'|'clipboard' ] (defaults to 'clipboard' if '' or unpassed)
 
         const validMethods = ['alert', 'notify', 'notification', 'clipboard', 'copy'];
-        if (!validMethods.includes(method)) return chatgpt.console.error(
+        if (!validMethods.includes(method)) return console.error(
             'Invalid method \'' + method + '\' passed. Valid methods are [' + validMethods + '].');
 
         return new Promise((resolve) => {
@@ -1205,7 +1200,7 @@ const chatgpt = {
                 xhr.onload = () => {
                     if (xhr.status !== 200)
                         return reject('🤖 chatgpt.js >> Request failed. Cannot share chat.');
-                    chatgpt.console.info(`Chat shared at '${ data.share_url }'`);
+                    console.info(`Chat shared at '${ data.share_url }'`);
                     return resolve(); // the response has nothing useful
                 };
                 xhr.send(JSON.stringify({ // request body
@@ -1328,8 +1323,8 @@ const chatgpt = {
 
         isOn: function() { return !document.querySelector('button[aria-label*="Open sidebar"]'); },
         isOff: function() { return !!document.querySelector('button[aria-label*="Open sidebar"]'); },
-        hide: function() { this.isOn() ? this.toggle() : chatgpt.console.info('Sidebar already hidden!'); },
-        show: function() { this.isOff() ? this.toggle() : chatgpt.console.info('Sidebar already shown!'); },
+        hide: function() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
+        show: function() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
         toggle: function() {
             for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
                 if (/close sidebar/i.test(navLink.text)) {
@@ -1350,12 +1345,12 @@ const chatgpt = {
     }}},
 
     suggest: async function(suggestionType, details) {
-        if (!suggestionType) return chatgpt.console.error('suggestionType (1st argument) not supplied'
+        if (!suggestionType) return console.error('suggestionType (1st argument) not supplied'
             + '(e.g. \'gifts\', \'names\', \'recipes\', etc.)');
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
-            return chatgpt.console.error(`Argument ${ i + 1 } must be a string.`);
+            return console.error(`Argument ${ i + 1 } must be a string.`);
         chatgpt.send('Suggest some names. ' + ( details || '' ));
-        chatgpt.console.info(`Creating ${ suggestionType }...`);
+        console.info(`Creating ${ suggestionType }...`);
         await chatgpt.isIdle();
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
@@ -1369,11 +1364,11 @@ const chatgpt = {
         const { voice = 2, pitch = 2, speed = 1.1 } = options;
 
         // Validate args
-        if (typeof msg !== 'string') return chatgpt.console.error('Message must be a string!');
+        if (typeof msg !== 'string') return console.error('Message must be a string!');
         for (let key in options) {
             const value = options[key];
             if (typeof value !== 'number' && !/^\d+$/.test(value))
-                return chatgpt.console.error(`Invalid ${ key } index '${ value }'. Must be a number!`);
+                return console.error(`Invalid ${ key } index '${ value }'. Must be a number!`);
         }
 
         try { // to speak msg using {options}
@@ -1384,14 +1379,14 @@ const chatgpt = {
             utterance.pitch = pitch;
             utterance.rate = speed;
             speechSynthesis.speak(utterance);
-        } catch (err) { chatgpt.console.error('', err); }
+        } catch (err) { console.error('', err); }
     },
 
     summarize: async function(text) {
-        if (!text) return chatgpt.console.error('Text (1st) argument not supplied. Pass some text!');
-        if (typeof text !== 'string') return chatgpt.console.error('Text argument must be a string!');
+        if (!text) return console.error('Text (1st) argument not supplied. Pass some text!');
+        if (typeof text !== 'string') return console.error('Text argument must be a string!');
         chatgpt.send('Summarize the following text:\n\n' + text);
-        chatgpt.console.info('Summarizing text...');
+        console.info('Summarizing text...');
         await chatgpt.isIdle();
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
@@ -1405,13 +1400,13 @@ const chatgpt = {
     },
 
     translate: async function(text, outputLang) {
-        if (!text) return chatgpt.console.error('Text (1st) argument not supplied. Pass some text!');
-        if (!outputLang) return chatgpt.console.error('outputLang (2nd) argument not supplied. Pass a language!');
+        if (!text) return console.error('Text (1st) argument not supplied. Pass some text!');
+        if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!');
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
-            return chatgpt.console.error(`Argument ${ i + 1 } must be a string!`);
+            return console.error(`Argument ${ i + 1 } must be a string!`);
         chatgpt.send('Translate the following text to ' + outputLang 
             + '. Only reply with the translation.\n\n' + text);
-        chatgpt.console.info('Translating text...');
+        console.info('Translating text...');
         await chatgpt.isIdle();
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
@@ -1522,6 +1517,11 @@ for (const prop in chatgpt) {
                             newFunctionsCreated = true;
     }}}}}} while (newFunctionsCreated); // loop over new functions to encompass all variations
 }
+
+// Prefix console logs w/ '🤖 chatgpt.js >> '
+const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info;
+console.error = (...args) => { ogError(consolePrefix + args[0], ...args.slice(1)); }
+console.info = (msg) => { ogInfo(consolePrefix + msg); }
 
 // Export chatgpt object
 try { window.chatgpt = chatgpt; } catch (err) {} // for Greasemonkey
