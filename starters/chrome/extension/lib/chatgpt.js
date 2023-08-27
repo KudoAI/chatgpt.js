@@ -391,14 +391,14 @@ const chatgpt = {
 
     exportChat: async function(chatToGet, format) {
     // chatToGet = 'active' (default) | 'latest' | index|title|id of chat to get
-    // format = 'html' (default) | 'text'
+    // format = 'html' (default) | 'md' | 'pdf' | 'text'
 
         // Init args
         chatToGet = !chatToGet ? 'active' // default to 'active' if unpassed
                   : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
                       parseInt(chatToGet, 10) // parse as integer
                   : chatToGet; // else preserve non-num string as 'active', 'latest' or title/id of chat to get
-        format = format || 'html'; // default to 'html' if unpassed
+        format = format.toLowerCase() || 'html'; // default to 'html' if unpassed
 
         // Create transcript + filename
         chatgpt.console.info('Generating transcript...');
@@ -435,7 +435,7 @@ const chatgpt = {
                     transcript += `CHATGPT: ${ entry.chatgpt }\n\n`;
             }}
 
-        } else { // generate rich transcript + filename for HTML/PDF export
+        } else { // generate rich transcript + filename for HTML/MD/PDF export
 
             // Fetch HTML transcript from OpenAI
             const response = await fetch(await chatgpt.shareChat(chatToGet)),
@@ -459,7 +459,7 @@ const chatgpt = {
 
         // Export transcript
         chatgpt.console.info(`Exporting transcript as ${ format.toUpperCase() }...`);
-        if (format == 'pdf') { // launch PDF printer
+        if (format == 'pdf') { // convert SVGs + launch PDF printer
 
             // Convert SVG icons to data URLs for proper PDF rendering
             transcript = transcript.replace(/<svg.*?<\/svg>/g, (match) => {
@@ -473,8 +473,15 @@ const chatgpt = {
             setTimeout(() => { transcriptPopup.print({ toPDF: true }); }, 100);
 
         } else { // auto-save to file
-            const blob = new Blob([transcript], { type: 'text/' + ( filename.includes('html') ? 'html' : 'plain' )}),
-                  link = document.createElement('a'), blobURL = URL.createObjectURL(blob);
+
+            if (format == 'md') { // remove extraneous HTML + fix file extension
+                const reMDcontent = /<!?.*(<h1(.|\n)*?href=".*?continue.*?".*?\/a>.*?)<[^\/]/,
+                      mdMatch = transcript.match(reMDcontent);
+                transcript = mdMatch[1] || transcript; filename = filename.replace('.html', '.md');
+            }
+            const blob = new Blob([transcript],
+                { type: 'text/' + ( format == 'html' ? 'html' : format == 'md' ? 'markdown' : 'plain' )});
+            const link = document.createElement('a'), blobURL = URL.createObjectURL(blob);
             link.href = blobURL; link.download = filename; document.body.appendChild(link);
             link.click(); document.body.removeChild(link); URL.revokeObjectURL(blobURL);
         }
