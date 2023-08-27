@@ -1442,47 +1442,6 @@ for (const buttonAction of buttonActions) {
 }
 
 // Create alias functions
-const functionAliases = [ // whole function names to cross-alias
-    ['actAs', 'actas', 'act', 'become', 'persona', 'premadePrompt', 'preMadePrompt', 'prePrompt', 'preprompt', 'roleplay', 'rolePlay', 'rp'],
-    ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
-        'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
-    ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
-    ['exportChat', 'chatExport', 'export'],
-    ['getLastPrompt', 'getLastQuery', 'getMyLastMsg', 'getMyLastQuery'],
-    ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
-    ['isFullScreen', 'isFullscreen'],
-    ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
-    ['minify', 'uglify'],
-    ['new', 'newChat', 'startNewChat'],
-    ['printAllFunctions', 'showAllFunctions'],
-    ['refactor', 'rewrite'],
-    ['refreshSession', 'sessionRefresh'],
-    ['refreshReply', 'regenerate', 'regenerateReply'],
-    ['renderHTML', 'renderHtml', 'renderLinks', 'renderTags'],
-    ['send', 'sendChat', 'sendMsg'],
-    ['sendInNewChat', 'sendNewChat'],
-    ['sentiment', 'analyzeSentiment', 'sentimentAnalysis'],
-    ['stop', 'stopGenerating'],
-    ['suggest', 'suggestion', 'recommend'],
-    ['toggleScheme', 'toggleMode'],
-    ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher'],
-    ['translate', 'translation', 'translator'],
-    ['unminify', 'beautify', 'prettify', 'prettyPrint']
-];
-const synonyms = [ // constituent synonyms within function names
-    ['activate', 'turnOn'],
-    ['account', 'acct'],
-    ['analyze', 'check', 'evaluate', 'review'],
-    ['ask', 'send', 'submit'],
-    ['chat', 'conversation', 'convo'],
-    ['data', 'details'],
-    ['deactivate', 'deActivate', 'turnOff'],
-    ['generating', 'generation'],
-    ['render', 'parse'],
-    ['reply', 'response'],
-    ['sentiment', 'attitude', 'emotion', 'feeling', 'opinion', 'perception'],
-    ['speak', 'say', 'speech', 'talk', 'tts']
-];
 const camelCaser = (words) => {
     return words.map((word, index) => index === 0 || word === 's' ? word : word.charAt(0).toUpperCase() + word.slice(1)).join(''); };
 for (const prop in chatgpt) {

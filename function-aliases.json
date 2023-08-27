@@ -1,0 +1,43 @@
+{
+  "functionAliases": [
+    ["actAs", "actas", "act", "become", "persona", "premadePrompt", "preMadePrompt", "prePrompt", "preprompt", "roleplay", "rolePlay", "rp"],
+    ["activateAutoRefresh", "activateAutoRefresher", "activateRefresher", "activateSessionRefresher",
+        "autoRefresh", "autoRefresher", "autoRefreshSession", "refresher", "sessionRefresher"],
+    ["deactivateAutoRefresh", "deactivateAutoRefresher", "deactivateRefresher", "deactivateSessionRefresher"],
+    ["exportChat", "chatExport", "export"],
+    ["getLastPrompt", "getLastQuery", "getMyLastMsg", "getMyLastQuery"],
+    ["getTextarea", "getTextArea", "getChatbox", "getChatBox"],
+    ["isFullScreen", "isFullscreen"],
+    ["logOut", "logout", "logOff", "logoff", "signOut", "signout", "signOff", "signoff"],
+    ["minify", "uglify"],
+    ["new", "newChat", "startNewChat"],
+    ["printAllFunctions", "showAllFunctions"],
+    ["refactor", "rewrite"],
+    ["refreshSession", "sessionRefresh"],
+    ["refreshReply", "regenerate", "regenerateReply"],
+    ["renderHTML", "renderHtml", "renderLinks", "renderTags"],
+    ["send", "sendChat", "sendMsg"],
+    ["sendInNewChat", "sendNewChat"],
+    ["sentiment", "analyzeSentiment", "sentimentAnalysis"],
+    ["stop", "stopGenerating"],
+    ["suggest", "suggestion", "recommend"],
+    ["toggleScheme", "toggleMode"],
+    ["toggleAutoRefresh", "toggleAutoRefresher", "toggleRefresher", "toggleSessionRefresher"],
+    ["translate", "translation", "translator"],
+    ["unminify", "beautify", "prettify", "prettyPrint"]
+  ],
+  "synonyms": [
+    ["activate", "turnOn"],
+    ["account", "acct"],
+    ["analyze", "check", "evaluate", "review"],
+    ["ask", "send", "submit"],
+    ["chat", "conversation", "convo"],
+    ["data", "details"],
+    ["deactivate", "deActivate", "turnOff"],
+    ["generating", "generation"],
+    ["render", "parse"],
+    ["reply", "response"],
+    ["sentiment", "attitude", "emotion", "feeling", "opinion", "perception"],
+    ["speak", "say", "speech", "talk", "tts"]
+  ]
+}
