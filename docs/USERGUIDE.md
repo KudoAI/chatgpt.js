@@ -42,6 +42,7 @@
         -   [getAccountDetails `async`](#getaccountdetails-async)
         -   [logout](#logout)
     -   [Chats](#chats)
+        -   [actAs `async`](#actas-async)
         -   [askAndGetReply `async`](#askandgetreply-async)
         -   [clearChats `async`](#clearchats-async)
         -   [exportChat `async`](#exportchat-async)
@@ -490,6 +491,24 @@ chatgpt.logout();
 ```
 
 ## Chats
+
+### actAs `async`
+
+Sends a pre-made prompt to ChatGPT.
+
+> **Note**: Find prompts at [https://github.com/KudoAI/chat-prompts](https://github.com/KudoAI/chat-prompts/blob/main/personas.json)
+
+**Parameters**:
+
+`persona`: A string representing the title (or _persona_) of the prompt to send in the chat. If none is provided, the avaiable prompts will be listed in the console.
+
+Example code:
+
+```js
+async function doSomething() {
+    await chatgpt.actAs('Linux Terminal');
+}
+```
 
 ### askAndGetReply `async`
 
