@@ -1349,6 +1349,17 @@ const chatgpt = {
                 formButton.click(); return;
     }}},
 
+    suggest: async function(suggestionType, details) {
+        if (!suggestionType) return chatgpt.console.error('suggestionType (1st argument) not supplied'
+            + '(e.g. \'gifts\', \'names\', \'recipes\', etc.)');
+        for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
+            return chatgpt.console.error(`Argument ${ i + 1 } must be a string.`);
+        chatgpt.send('Suggest some names. ' + ( details || '' ));
+        chatgpt.console.info(`Creating ${ suggestionType }...`);
+        await chatgpt.isIdle();
+        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+    },
+
     speak: function(msg, options = {}) {
     // Usage example: chatgpt.speak(await chatgpt.getLastResponse(), { voice: 1, pitch: 2, speed: 3 })
     // options.voice = index of voices available on user device
