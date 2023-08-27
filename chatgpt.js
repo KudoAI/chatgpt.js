@@ -475,9 +475,8 @@ const chatgpt = {
         } else { // auto-save to file
 
             if (format == 'md') { // remove extraneous HTML + fix file extension
-                const reMDcontent = /<!?.*(<h1(.|\n)*?href=".*?continue.*?".*?\/a>.*?)<[^\/]/,
-                      mdMatch = transcript.match(reMDcontent);
-                transcript = mdMatch[1] || transcript; filename = filename.replace('.html', '.md');
+                const mdMatch = /<!?.*(<h1(.|\n)*?href=".*?continue.*?".*?\/a>.*?)<[^/]/.exec(transcript)[1];
+                transcript = mdMatch || transcript; filename = filename.replace('.html', '.md');
             }
             const blob = new Blob([transcript],
                 { type: 'text/' + ( format == 'html' ? 'html' : format == 'md' ? 'markdown' : 'plain' )});
@@ -1240,7 +1239,7 @@ const chatgpt = {
             let cssClasses;
             // Grab CSS from original website elements
             for (let navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-                if (navLink.text.match(/.*chat/)) {
+                if (/.*chat/.exec(navLink.text)[0] {
                     cssClasses = navLink.classList;
                     navLink.parentNode.style.margin = '2px 0'; // add v-margins to ensure consistency across all inserted buttons
                     break;
