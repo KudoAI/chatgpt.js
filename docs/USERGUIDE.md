@@ -521,7 +521,7 @@ Can be the following: `active`, the current chat, `latest`, the latest chat in t
 
 `format`: A string representing the format of the export file.
 
-Can be the following: `html` or `text`. Defaults to `html`.
+Can be the following: `html`, `md`, `pdf` or `text`. Defaults to `html`.
 
 Example code:
 
