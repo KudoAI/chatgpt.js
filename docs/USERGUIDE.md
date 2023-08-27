@@ -81,6 +81,7 @@
     - [obfuscate `async`](#obfuscate-async)
     - [refactor `async`](#refactor-async)
     - [review `async`](#review-async)
+    - [unminify `async`](#unminify-async)
     - [write `async`](#write-async)
   - [history `obj`](#history-obj)
     - [isOn](#ison)
@@ -1118,6 +1119,34 @@ async function doSomething() {
   /* Example output:
   The code appears to be correct. It uses the `btoa` function to encode the string "Hello World" in base64. */
 }
+```
+
+### unminify `async`
+
+Asks ChatGPT to unminify the given code.
+
+**Parameters**:
+
+`code`: A string being the code to be unminify.
+
+Example code:
+
+```js
+(async () => {
+    const minifiedCode = await chatgpt.code.unminify(
+        `function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}`);
+    console.log(minifiedCode);
+    /* logs `function autosizeBox() {
+             const newLength = replyBox.value.length
+             if (newLength < prevLength) { // if deleting txt
+                 replyBox.style.height = 'auto' // ...auto-fit height
+                 if (parseInt(getComputedStyle(replyBox).height) < 55) { // if down to one line
+                     replyBox.style.height = '2.15rem' } // ...reset to original height
+             }
+             replyBox.style.height = replyBox.scrollHeight + 'px'
+             prevLength = newLength
+        }` */
+})();
 ```
 
 ### write `async`
