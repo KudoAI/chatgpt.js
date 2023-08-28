@@ -25,6 +25,7 @@
     - [randomFloat](#randomfloat)
     - [renderHTML](#renderhtml)
     - [sentiment `async`](#sentiment-async)
+    - [suggest `async`](#suggest-async)
     - [summarize `async`](#summarize-async)
     - [translate `async`](#translate-async)
     - [uuidv4](#uuidv4)
@@ -313,6 +314,47 @@ Example code:
     the project. Phrases like "contribute to the future," "seeking collabs," and the inclusion of the hashtag
     #100Builders project indicate a positive and enthusiastic tone, promoting engagement and collaboration
     with the project. */
+})();
+```
+
+### suggest `async`
+
+Asks ChatGPT to suggest ideas.
+
+**Parameters**:
+
+`ideaType`: A string being the type of idea to suggest.
+
+`details`: A string being details to fine-tune the suggestion.
+
+Example code:
+
+```js
+(async () => {
+    const suggestions = await chatgpt.suggest('names', 'baby boy');
+    console.log(suggestions);
+
+    /* Logs:
+    1. Liam
+    2. Noah
+    3. Ethan
+    4. Oliver
+    5. Jackson
+    6. Aiden
+    7. Lucas
+    8. Benjamin
+    9. Henry
+    10. Leo
+    11. Samuel
+    12. Caleb
+    13. Owen
+    14. Daniel
+    15. Elijah
+    16. Matthew
+    17. Alexander
+    18. James
+    19. Nathan
+    20. Gabriel */
 })();
 ```
 
