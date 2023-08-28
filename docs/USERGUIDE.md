@@ -1209,13 +1209,13 @@ Example code:
 ```js
 (async () => {
     const code =  `
-if (6 > 5) {
-    return true;
-} else {
-    return false;
-}`;
+        if (6 > 5) {
+            return true;
+        } else {
+            return false;
+        }`;
     const refactoredCode = await chatgpt.code.refactor(code, 'brevity');
-    console.log(obfuscatedCode);
+    console.log(refactoredCode);
 
     /* Logs:
     return 6 > 5; */
