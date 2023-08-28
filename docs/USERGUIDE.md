@@ -1236,7 +1236,7 @@ Example code:
 (async () => {
     console.log(await chatgpt.code.review('btoa("Hello World")'));
 
-    /* Logs:
+    /* Example output:
     The code appears to be correct. It uses the `btoa` function to encode the string "Hello World" in base64. */
 })();
 ```
@@ -1254,6 +1254,7 @@ Example code:
 ```js
 (async () => {
     const code = `function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}`;
+
     const minifiedCode = await chatgpt.code.unminify(code);
     console.log(minifiedCode);
 
