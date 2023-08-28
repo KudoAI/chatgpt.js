@@ -824,14 +824,7 @@ const chatgpt = {
 
     isLightMode: function() { return document.documentElement.classList.contains('light'); },
 
-    logout: function() {
-        chatgpt.menu.open();
-        setTimeout(() => {
-            const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
-            for (const menuItem of menuItems) {
-                if (/log out/i.test(menuItem.textContent)) { menuItem.click(); break; }}
-        }, 10);
-    },
+    logout: function() { window.location.href = 'https://chat.openai.com/auth/logout'; },
 
     menu: {
         open: function() {
