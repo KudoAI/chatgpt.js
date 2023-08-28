@@ -493,6 +493,8 @@ const chatgpt = {
         }
     },
 
+    extractCode: function() { chatgpt.code.extract(); },
+
     generateRandomIP: function() {
         const ip = Array.from({length: 4}, () => Math.floor(chatgpt.randomFloat() * 256)).join('.');
         console.info('IP generated: ' + ip);
@@ -845,6 +847,8 @@ const chatgpt = {
         }
     },
 
+    minify: function() { chatgpt.code.minify(); },
+
     notify: function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
         const fadeDuration = 0.6, // sec duration of fade-out
@@ -915,6 +919,8 @@ const chatgpt = {
         }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
     },
 
+    obfuscate: function() { chatgpt.code.obfuscate(); },
+
     printAllFunctions: function() {
 
         // Define colors
@@ -983,6 +989,8 @@ const chatgpt = {
         const crypto = window.crypto || window.msCrypto;
         return crypto.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF;
     },
+
+    refactor: function() { chatgpt.code.refactor(); },
 
     regenerate: function() {
         for (const formButton of document.querySelectorAll('form button')) {
@@ -1109,6 +1117,8 @@ const chatgpt = {
                     formButton.click(); return;
         }}}
     },
+
+    reviewCode: function() { chatgpt.code.review(); },
 
     scheme: {
         isDark: function() { return document.documentElement.classList.contains('dark'); },
@@ -1436,6 +1446,8 @@ const chatgpt = {
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
 
+    unminify: function() { chatgpt.code.unminify(); },
+
     uuidv4: function() {
         let d = new Date().getTime(); // get current timestamp in ms (to ensure UUID uniqueness)
         const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
@@ -1445,7 +1457,9 @@ const chatgpt = {
             return ( c == 'x' ? r : (r&0x3|0x8) ).toString(16); // generate random hexadecimal digit
         });
         return uuid;
-    }
+    },
+
+    writeCode: function() { chatgpt.code.write(); }
 };
 
 // Create chatgpt.[actions]Button(identifier) functions
