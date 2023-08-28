@@ -80,8 +80,8 @@
       - [beacons](#beacons)
       - [refreshFrame](#refreshframe)
   - [code `obj`](#code-obj)
-    - [extract](#extract)
     - [minify `async`](#minify-async)
+    - [extract](#extract)
     - [obfuscate `async`](#obfuscate-async)
     - [refactor `async`](#refactor-async)
     - [review `async`](#review-async)
@@ -206,8 +206,8 @@ Example code:
 
 ```js
 (async () => {
-    await chatgpt.detectLanguage('我是一個大男孩');
-
+    const language = await chatgpt.detectLanguage('我是一個大男孩');
+    console.log(language);
     /* Logs:
     Chinese (Traditional) */
 })();
@@ -243,8 +243,8 @@ Returns the user language as a string.
 Example code:
 
 ```js
-const lang = chatgpt.getUserLanguage();
-console.log(lang); // Example output: 'en-US'
+const userLanguage = chatgpt.getUserLanguage();
+console.log(userLanguage); // Example output: 'en-US'
 ```
 
 ### isFullScreen
@@ -290,8 +290,8 @@ Returns a random, cryptographically secure float number between 0 (inclusive) an
 Example code:
 
 ```js
-const number = chatgpt.randomFloat();
-console.log(number); // Example output: 0.9472113021060851
+const randomNumber = chatgpt.randomFloat();
+console.log(randomNumber); // Example output: 0.9472113021060851
 ```
 
 ### renderHTML
@@ -328,7 +328,7 @@ Example code:
     const sentiment = await chatgpt.sentiment(text, '100 Builders');
     console.log(sentiment);
 
-    /* Logs:
+    /* Example output:
     The sentiment of the text towards the entity "100 Builders" is strongly positive. The text encourages
     individuals who support open-source software (OSS) and have an affinity for JavaScript to get involved with
     the project. Phrases like "contribute to the future," "seeking collabs," and the inclusion of the hashtag
@@ -354,7 +354,7 @@ Example code:
     const suggestions = await chatgpt.suggest('names', 'baby boy');
     console.log(suggestions);
 
-    /* Logs:
+    /* Example output:
     1. Liam
     2. Noah
     3. Ethan
@@ -390,7 +390,8 @@ Example code:
 
 ```js
 (async () => {
-    await chatgpt.summarize('A very long text...'); // Example output: 'A very short text...'
+    const summary = await chatgpt.summarize('A very long text...');
+    console.log(summary); // Example output: 'A very short text...'
 })();
 ```
 
@@ -408,7 +409,8 @@ Example code:
 
 ```js
 (async () => {
-    await chatgpt.translate('Hello, how are you?', 'spanish'); // Example output: 'Hola, ¿cómo estás?'
+    const translation = await chatgpt.translate('Hello, how are you?', 'spanish');
+    console.log(translation); // Logs: 'Hola, ¿cómo estás?'
 })();
 ```
 
