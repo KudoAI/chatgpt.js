@@ -16,6 +16,7 @@
   - [Chrome](#chrome)
 - [Library methods](#library-methods)
   - [General](#general)
+    - [detectLanguage `async`](#detectlanguage-async)
     - [generateRandomIP](#generaterandomip)
     - [get](#get)
     - [getUserLanguage](#getuserlanguage)
@@ -192,6 +193,25 @@ export { chatgpt }
 Unless noted otherwise, methods are **synchronous**: they wait for the operation to finish, instead of returning immediately. If you need to know the result of calling **asynchronous** methods, use the returned promise or pass a callback function into the method.
 
 ## General
+
+### detectLanguage `async`
+
+Asks ChatGPT to detect the language of given text.
+
+**Parameters**:
+
+`text`: A string being the text to detect the language of.
+
+Example code:
+
+```js
+(async () => {
+    await chatgpt.detectLanguage('我是一個大男孩');
+
+    /* Logs:
+    Chinese (Traditional) */
+})();
+```
 
 ### generateRandomIP
 
