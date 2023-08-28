@@ -76,12 +76,9 @@
       - [activate](#activate)
       - [deactivate](#deactivate)
       - [nowTimeStamp](#nowtimestamp)
-    - [toggle `obj`](#toggle-obj)
-      - [beacons](#beacons)
-      - [refreshFrame](#refreshframe)
   - [code `obj`](#code-obj)
-    - [extract](#extract)
     - [minify `async`](#minify-async)
+    - [extract](#extract)
     - [obfuscate `async`](#obfuscate-async)
     - [refactor `async`](#refactor-async)
     - [review `async`](#review-async)
@@ -206,8 +203,8 @@ Example code:
 
 ```js
 (async () => {
-    await chatgpt.detectLanguage('我是一個大男孩');
-
+    const language = await chatgpt.detectLanguage('我是一個大男孩');
+    console.log(language);
     /* Logs:
     Chinese (Traditional) */
 })();
@@ -243,8 +240,8 @@ Returns the user language as a string.
 Example code:
 
 ```js
-const lang = chatgpt.getUserLanguage();
-console.log(lang); // Example output: 'en-US'
+const userLanguage = chatgpt.getUserLanguage();
+console.log(userLanguage); // Example output: 'en-US'
 ```
 
 ### isFullScreen
@@ -290,8 +287,8 @@ Returns a random, cryptographically secure float number between 0 (inclusive) an
 Example code:
 
 ```js
-const number = chatgpt.randomFloat();
-console.log(number); // Example output: 0.9472113021060851
+const randomNumber = chatgpt.randomFloat();
+console.log(randomNumber); // Example output: 0.9472113021060851
 ```
 
 ### renderHTML
@@ -328,7 +325,7 @@ Example code:
     const sentiment = await chatgpt.sentiment(text, '100 Builders');
     console.log(sentiment);
 
-    /* Logs:
+    /* Example output:
     The sentiment of the text towards the entity "100 Builders" is strongly positive. The text encourages
     individuals who support open-source software (OSS) and have an affinity for JavaScript to get involved with
     the project. Phrases like "contribute to the future," "seeking collabs," and the inclusion of the hashtag
@@ -354,7 +351,7 @@ Example code:
     const suggestions = await chatgpt.suggest('names', 'baby boy');
     console.log(suggestions);
 
-    /* Logs:
+    /* Example output:
     1. Liam
     2. Noah
     3. Ethan
@@ -390,7 +387,8 @@ Example code:
 
 ```js
 (async () => {
-    await chatgpt.summarize('A very long text...'); // Example output: 'A very short text...'
+    const summary = await chatgpt.summarize('A very long text...');
+    console.log(summary); // Example output: 'A very short text...'
 })();
 ```
 
@@ -408,7 +406,8 @@ Example code:
 
 ```js
 (async () => {
-    await chatgpt.translate('Hello, how are you?', 'spanish'); // Example output: 'Hola, ¿cómo estás?'
+    const translation = await chatgpt.translate('Hello, how are you?', 'spanish');
+    console.log(translation); // Logs: 'Hola, ¿cómo estás?'
 })();
 ```
 
@@ -498,13 +497,14 @@ Creates a static alert box which displays a message. Only a user interaction can
 Example code:
 
 ```js
-function doSomething() { ... }
+function doSomething() { /* Your code */ }
 
-function doSomethingElse() { ... }
+function doSomethingElse() { /* Your code */ }
 
 function sayHello() { console.log('Hello!'); }
 
-chatgpt.alert('Hello, world!', 'The sky is blue.', [doSomething, doSomethingElse], sayHello, 200);
+const alertID = chatgpt.alert('Hello, world!', 'The sky is blue.', [doSomething, doSomethingElse], sayHello, 200);
+console.log(alertID); // Example output: '1693237957878'
 ```
 
 ### notify
@@ -552,11 +552,11 @@ Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single det
 
 ```js
 (async () => {
-    const name = await chatgpt.getAccountDetails('name');
-    console.log(name); // Example output: 'chatgpt.js'
+    const accountName = await chatgpt.getAccountDetails('name');
+    console.log(accountName); // Example output: 'chatgpt.js'
 
-    const data = await chatgpt.getAccountDetails('name', 'email');
-    console.log(data);
+    const accountData = await chatgpt.getAccountDetails('name', 'email');
+    console.log(accountData);
     /* Example output:
     {
         name: 'chatgpt.js',
@@ -836,7 +836,7 @@ Example code:
 ```js
 (async () => {
     const response = chatgpt.getResponseFromAPI();
-    console.log(response);
+    console.log(response); // Example output: 'Hello from ChatGPT!'
 })();
 ```
 
@@ -856,6 +856,8 @@ var fifthResp;
 fifthResp = chatgpt.getResponseFromDOM(5); // Returns the 5th response
 fifthResp = chatgpt.getResponseFromDOM('fifth'); // Also returns the 5th response
 fifthResp = chatgpt.getResponseFromDOM('five'); // Returns the 5th response too
+
+console.log(fifthResp); // Example output: 'Hello from ChatGPT!'
 ```
 
 ### isIdle `async`
@@ -1026,8 +1028,8 @@ Returns the button which creates a new chat as an HTML element.
 Example code:
 
 ```js
-const link = chatgpt.getNewChatLink();
-link.click();
+const newChatLink = chatgpt.getNewChatLink();
+newChatLink.click();
 ```
 
 ### getRegenerateButton
@@ -1102,24 +1104,6 @@ Example code:
 ```js
 const timeStamp = chatgpt.autoRefresh.nowTimeStamp();
 console.log(timeStamp); // Example output: '1:56:25 PM'
-```
-
-### toggle `obj`
-
-#### beacons
-
-Example code:
-
-```js
-chatgpt.autoRefresh.toggle.beacons();
-```
-
-#### refreshFrame
-
-Example code:
-
-```js
-chatgpt.autoRefresh.toggle.refreshFrame();
 ```
 
 ## code `obj`
@@ -1225,13 +1209,13 @@ Example code:
 ```js
 (async () => {
     const code =  `
-if (6 > 5) {
-    return true;
-} else {
-    return false;
-}`;
+        if (6 > 5) {
+            return true;
+        } else {
+            return false;
+        }`;
     const refactoredCode = await chatgpt.code.refactor(code, 'brevity');
-    console.log(obfuscatedCode);
+    console.log(refactoredCode);
 
     /* Logs:
     return 6 > 5; */
@@ -1252,7 +1236,7 @@ Example code:
 (async () => {
     console.log(await chatgpt.code.review('btoa("Hello World")'));
 
-    /* Logs:
+    /* Example output:
     The code appears to be correct. It uses the `btoa` function to encode the string "Hello World" in base64. */
 })();
 ```
@@ -1270,6 +1254,7 @@ Example code:
 ```js
 (async () => {
     const code = `function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}`;
+
     const minifiedCode = await chatgpt.code.unminify(code);
     console.log(minifiedCode);
 
