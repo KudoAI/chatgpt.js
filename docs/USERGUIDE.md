@@ -246,11 +246,11 @@ Returns a boolean value. `true` if the website has finished loading, `false` oth
 Example code:
 
 ```js
-async function doSomething() {
+(async () => {
     if (await chatgpt.isLoaded()) {
         // Do something
     }
-}
+})();
 ```
 
 ### printAllFunctions
@@ -369,9 +369,9 @@ Asks ChatGPT to summarize given text.
 Example code:
 
 ```js
-async function doSomething() {
+(async () => {
     await chatgpt.summarize('A very long text...'); // Example output: 'A very short text...'
-}
+})();
 ```
 
 ### translate `async`
@@ -387,9 +387,9 @@ Asks ChatGPT to translate given text to a given language.
 Example code:
 
 ```js
-async function doSomething() {
+(async () => {
     await chatgpt.translate('Hello, how are you?', 'spanish'); // Example output: 'Hola, ¿cómo estás?'
-}
+})();
 ```
 
 ### uuidv4
@@ -514,10 +514,10 @@ chatgpt.notify('Hello, world!', 'top left', 3, 'on');
 Returns an account access token as a string.
 
 ```js
-async function doSomething() {
+(async () => {
     const token = await chatgpt.getAccessToken();
     console.log(token); // Example output: 'abcdef[...]'
-}
+})();
 ```
 
 ### getAccountDetails `async`
@@ -531,7 +531,7 @@ Returns a given account detail as a string.
 Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single detail is passed, it will be returned as a string, if multiple are passed instead, the function will return an object with the requested details. If no details are passed, the function will return an object with all the available details.
 
 ```js
-async function doSomething() {
+(async () => {
     const name = await chatgpt.getAccountDetails('name');
     console.log(name); // Example output: 'chatgpt.js'
 
@@ -543,7 +543,7 @@ async function doSomething() {
         email: 'showcase@chatgptjs.org'
     }
     */
-}
+})();
 ```
 
 ### logout
@@ -565,10 +565,10 @@ Sends a given message to ChatGPT and returns the response as a string.
 Example code:
 
 ```js
-async function doSomething() {
+(async () => {
     const response = await chatgpt.askAndGetReply('Hello, ChatGPT');
     console.log(response); // Example output: 'Hello user, I'm ChatGPT!'
-}
+})();
 ```
 
 ### clearChats `async`
@@ -578,9 +578,9 @@ Clears the user's chat history.
 Example code:
 
 ```js
-async function doSomething() {
+(async () => {
     await chatgpt.clearChats();
-}
+})();
 ```
 
 ### exportChat `async`
@@ -600,9 +600,9 @@ Can be the following: `html`, `md`, `pdf` or `text`. Defaults to `html`.
 Example code:
 
 ```js
-async function doSomething() {
+(async () => {
     await chatgpt.exportChat('latest', 'html'); // Downloads a '.html' file
-}
+})();
 ```
 
 ### getChatData `async`
@@ -778,10 +778,10 @@ console.log(chatInput); // Example output: 'Hello from chatgpt.js!'
 Returns the last message sent by the user as a string.
 
 ```js
-async function doSomething() {
+(async () => {
     const message = await chatgpt.getLastPrompt();
     console.log(message); // Example output: 'Hello from chatgpt.js!'
-}
+})();
 ```
 
 ### getLastResponse `async`
@@ -789,10 +789,10 @@ async function doSomething() {
 Returns the last ChatGPT response as a string.
 
 ```js
-async function doSomething() {
+(async () => {
     const response = await chatgpt.getLastResponse();
     console.log(response); // Example output: 'I am ChatGPT!'
-}
+})();
 ```
 
 ### getResponse
@@ -814,10 +814,10 @@ Returns the Nth response ChatGPT has written in a Nth chat as a string.
 Example code:
 
 ```js
-async function doSomething() {
+(async () => {
     const response = chatgpt.getResponseFromAPI();
     console.log(response);
-}
+})();
 ```
 
 ### getResponseFromDOM
@@ -845,11 +845,11 @@ Returns a boolean value. `true` if ChatGPT has finished generating a response, `
 Example code:
 
 ```js
-async function doSomething() {
+(async () => {
     if (await chatgpt.isIdle()) {
         // Do something
     }
-}
+})();
 ```
 
 ### regenerate
@@ -867,9 +867,9 @@ chagpt.regenerate();
 Re-sends the last user message.
 
 ```js
-async function doSomething() {
+(async () => {
     await chatgpt.resend();
-}
+})();
 ```
 
 ### scrollToBottom
@@ -926,9 +926,9 @@ Makes the selected chat available to others. Returns the URL of the chat as a st
 Can be the following: `copy` or `clipboard` to copy the chat URL to clipboard, `alert`, `notify` or `notification` to create an [alert message](#alert) with the details about the shared chat in the website.
 
 ```js
-async function doSomething() {
+(async () => {
     await chatgpt.shareChat(1, 'copy'); // copy/clipboard
-}
+})();
 ```
 
 ### speak
@@ -950,9 +950,9 @@ Available options:
 Example code:
 
 ```js
-async function doSomething() {
+(async () => {
     chatgpt.speak(await chatgpt.getLastResponse(), { voice: 1, pitch: 2, speed: 3 });
-}
+})();
 ```
 
 ### startNewChat
