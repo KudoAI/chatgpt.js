@@ -500,13 +500,14 @@ Creates a static alert box which displays a message. Only a user interaction can
 Example code:
 
 ```js
-function doSomething() { ... }
+function doSomething() { /* Your code */ }
 
-function doSomethingElse() { ... }
+function doSomethingElse() { /* Your code */ }
 
 function sayHello() { console.log('Hello!'); }
 
-chatgpt.alert('Hello, world!', 'The sky is blue.', [doSomething, doSomethingElse], sayHello, 200);
+const alertID = chatgpt.alert('Hello, world!', 'The sky is blue.', [doSomething, doSomethingElse], sayHello, 200);
+console.log(alertID); // Example output: '1693237957878'
 ```
 
 ### notify
