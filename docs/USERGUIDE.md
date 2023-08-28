@@ -78,7 +78,6 @@
       - [nowTimeStamp](#nowtimestamp)
     - [toggle `obj`](#toggle-obj)
       - [beacons](#beacons)
-      - [refreshFrame](#refreshframe)
   - [code `obj`](#code-obj)
     - [minify `async`](#minify-async)
     - [extract](#extract)
@@ -1117,14 +1116,6 @@ Example code:
 
 ```js
 chatgpt.autoRefresh.toggle.beacons();
-```
-
-#### refreshFrame
-
-Example code:
-
-```js
-chatgpt.autoRefresh.toggle.refreshFrame();
 ```
 
 ## code `obj`
