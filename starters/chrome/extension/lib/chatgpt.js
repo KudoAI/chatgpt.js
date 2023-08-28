@@ -303,8 +303,7 @@ const chatgpt = {
 
     clearChats: async function() {
         try { await chatgpt.getChatData(); } catch { return; } // check if chat history exists
-        const menuBtn = document.querySelector('nav button[id*="headless"]') || {};
-        try { menuBtn.click(); } catch (err) { return console.error('Headless menu not found'); }
+        chatgpt.menu.open();
         setTimeout(() => {
             const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
             for (const menuItem of menuItems)
@@ -814,13 +813,26 @@ const chatgpt = {
     isLightMode: function() { return document.documentElement.classList.contains('light'); },
 
     logout: function() {
-        const menuBtn = document.querySelector('nav button[id*="headless"]') || {};
-        try { menuBtn.click(); } catch (err) { return console.error('Headless menu not found'); }
+        chatgpt.menu.open();
         setTimeout(() => {
             const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
             for (const menuItem of menuItems) {
                 if (/log out/i.test(menuItem.textContent)) { menuItem.click(); break; }}
         }, 10);
+    },
+
+    menu: {
+        open: function() {
+            if (document.querySelector('[role="menu"]')) { console.error('Menu already open!'); throw new Error(); }
+            const menuBtn = document.querySelector('nav button[id*="headless"]');
+            try { menuBtn.click(); } catch (err) { console.error('Headless menu not found'); throw new Error(); }
+        },
+
+        close: function() {
+            if (!document.querySelector('[role="menu"]')) { console.error('Menu already hidden!'); throw new Error(); }
+            const menuBtn = document.querySelector('nav button[id*="headless"]');
+            try { menuBtn.click(); } catch (err) { console.error('Headless menu not found'); throw new Error(); }
+        }
     },
 
     notify: function(msg, position, notifDuration, shadow) {
