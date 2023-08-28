@@ -1347,13 +1347,13 @@ const chatgpt = {
                 formButton.click(); return;
     }}},
 
-    suggest: async function(suggestionType, details) {
-        if (!suggestionType) return console.error('suggestionType (1st argument) not supplied'
+    suggest: async function(ideaType, details) {
+        if (!ideaType) return console.error('ideaType (1st argument) not supplied'
             + '(e.g. \'gifts\', \'names\', \'recipes\', etc.)');
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return console.error(`Argument ${ i + 1 } must be a string.`);
         chatgpt.send('Suggest some names. ' + ( details || '' ));
-        console.info(`Creating ${ suggestionType }...`);
+        console.info(`Creating ${ ideaType }...`);
         await chatgpt.isIdle();
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
