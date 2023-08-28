@@ -10,13 +10,15 @@
     ["getTextarea", "getTextArea", "getChatbox", "getChatBox"],
     ["isFullScreen", "isFullscreen"],
     ["logOut", "logout", "logOff", "logoff", "signOut", "signout", "signOff", "signoff"],
-    ["minify", "uglify"],
+    ["minify", "codeMinify", "minifyCode"],
     ["new", "newChat", "startNewChat"],
+    ["obfuscate", "codeObfuscate", "obfuscateCode"],
     ["printAllFunctions", "showAllFunctions"],
-    ["refactor", "rewrite"],
+    ["refactor", "codeRefactor", "refactorCode"],
     ["refreshSession", "sessionRefresh"],
     ["refreshReply", "regenerate", "regenerateReply"],
     ["renderHTML", "renderHtml", "renderLinks", "renderTags"],
+    ["reviewCode", "codeReview"],
     ["send", "sendChat", "sendMsg"],
     ["sendInNewChat", "sendNewChat"],
     ["sentiment", "analyzeSentiment", "sentimentAnalysis"],
@@ -25,7 +27,8 @@
     ["toggleScheme", "toggleMode"],
     ["toggleAutoRefresh", "toggleAutoRefresher", "toggleRefresher", "toggleSessionRefresher"],
     ["translate", "translation", "translator"],
-    ["unminify", "beautify", "prettify", "prettyPrint"]
+    ["unminify", "unminifyCode", "codeUnminify"],
+    ["writeCode", "codeWrite"]
   ],
   "synonyms": [
     ["activate", "turnOn"],
@@ -36,9 +39,12 @@
     ["data", "details"],
     ["deactivate", "deActivate", "turnOff"],
     ["generating", "generation"],
+    ["minify", "uglify"],
+    ["refactor", "rewrite"],
     ["render", "parse"],
     ["reply", "response"],
     ["sentiment", "attitude", "emotion", "feeling", "opinion", "perception"],
-    ["speak", "say", "speech", "talk", "tts"]
+    ["speak", "say", "speech", "talk", "tts"],
+    ["unminify", "beautify", "prettify", "prettyPrint"]
   ]
 }
