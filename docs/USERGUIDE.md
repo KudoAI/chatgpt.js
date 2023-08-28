@@ -555,11 +555,11 @@ Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single det
 
 ```js
 (async () => {
-    const name = await chatgpt.getAccountDetails('name');
-    console.log(name); // Example output: 'chatgpt.js'
+    const accountName = await chatgpt.getAccountDetails('name');
+    console.log(accountName); // Example output: 'chatgpt.js'
 
-    const data = await chatgpt.getAccountDetails('name', 'email');
-    console.log(data);
+    const accountData = await chatgpt.getAccountDetails('name', 'email');
+    console.log(accountData);
     /* Example output:
     {
         name: 'chatgpt.js',
