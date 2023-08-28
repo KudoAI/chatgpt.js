@@ -24,6 +24,7 @@
     - [printAllFunctions](#printallfunctions)
     - [randomFloat](#randomfloat)
     - [renderHTML](#renderhtml)
+    - [sentiment `async`](#sentiment-async)
     - [summarize `async`](#summarize-async)
     - [translate `async`](#translate-async)
     - [uuidv4](#uuidv4)
@@ -286,6 +287,33 @@ Example code:
 document.body.appendChild(
     chatgpt.renderHTML('<div>Hello World!</div>');
 );
+```
+
+### sentiment `async`
+
+Asks ChatGPT to analyze sentiment from a given text.
+
+**Parameters**:
+
+`text`: A string being the text to be analyzed.
+
+`entity`: A string being the entity to analyze sentiment towards.
+
+Example code:
+
+```js
+(async () => {
+    const text = 'Are you an #OSS supporter? Do you love JavaScript? Then why not contribute to the future of #AI app development? https://chatgpt.js.org (a #100Builders project) is seeking collabs for exactly this! @withBackdrop';
+    const sentiment = await chatgpt.sentiment(text, '100 Builders');
+    console.log(sentiment);
+
+    /* Logs:
+    The sentiment of the text towards the entity "100 Builders" is strongly positive. The text encourages
+    individuals who support open-source software (OSS) and have an affinity for JavaScript to get involved with
+    the project. Phrases like "contribute to the future," "seeking collabs," and the inclusion of the hashtag
+    #100Builders project indicate a positive and enthusiastic tone, promoting engagement and collaboration
+    with the project. */
+})();
 ```
 
 ### summarize `async`
