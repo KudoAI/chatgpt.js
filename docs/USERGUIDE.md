@@ -1031,8 +1031,8 @@ Returns the button which creates a new chat as an HTML element.
 Example code:
 
 ```js
-const link = chatgpt.getNewChatLink();
-link.click();
+const newChatLink = chatgpt.getNewChatLink();
+newChatLink.click();
 ```
 
 ### getRegenerateButton
