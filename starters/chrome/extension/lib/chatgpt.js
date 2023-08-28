@@ -386,6 +386,16 @@ const chatgpt = {
         }
     },
 
+    detectLanguage: async function(text) {
+        if (!text) return console.error('Text argument not supplied. Pass some text!');
+        if (typeof text !== 'string') return console.error('Text argument must be a string!');
+        chatgpt.send('Detect the language of the following text:\n\n' + text
+            + '\n\nOnly respond with the name of the language');
+        console.info('Reviewing text...');
+        await chatgpt.isIdle();
+        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+    },
+
     exportChat: async function(chatToGet, format) {
     // chatToGet = 'active' (default) | 'latest' | index|title|id of chat to get
     // format = 'html' (default) | 'md' | 'pdf' | 'text'
