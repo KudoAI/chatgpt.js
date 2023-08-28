@@ -76,8 +76,6 @@
       - [activate](#activate)
       - [deactivate](#deactivate)
       - [nowTimeStamp](#nowtimestamp)
-    - [toggle `obj`](#toggle-obj)
-      - [beacons](#beacons)
   - [code `obj`](#code-obj)
     - [minify `async`](#minify-async)
     - [extract](#extract)
@@ -1106,16 +1104,6 @@ Example code:
 ```js
 const timeStamp = chatgpt.autoRefresh.nowTimeStamp();
 console.log(timeStamp); // Example output: '1:56:25 PM'
-```
-
-### toggle `obj`
-
-#### beacons
-
-Example code:
-
-```js
-chatgpt.autoRefresh.toggle.beacons();
 ```
 
 ## code `obj`
