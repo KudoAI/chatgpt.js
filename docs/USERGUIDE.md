@@ -1046,18 +1046,21 @@ Example code:
 
 ```js
 (async () => {
-    const minifiedCode = await chatgpt.code.minify(
-        `function autosizeBox() {
-             const newLength = replyBox.value.length
-             if (newLength < prevLength) { // if deleting txt
-                 replyBox.style.height = 'auto' // ...auto-fit height
-                 if (parseInt(getComputedStyle(replyBox).height) < 55) { // if down to one line
-                     replyBox.style.height = '2.15rem' } // ...reset to original height
-             }
-             replyBox.style.height = replyBox.scrollHeight + 'px'
-             prevLength = newLength
+    const minifiedCode = await chatgpt.code.minify(`
+        function autosizeBox() {
+            const newLength = replyBox.value.length
+            if (newLength < prevLength) { // if deleting txt
+                replyBox.style.height = 'auto' // ...auto-fit height
+                if (parseInt(getComputedStyle(replyBox).height) < 55) { // if down to one line
+                    replyBox.style.height = '2.15rem' } // ...reset to original height
+            }
+            replyBox.style.height = replyBox.scrollHeight + 'px'
+            prevLength = newLength
         }`);
-    console.log(minifiedCode); // logs 'function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}'
+    console.log(minifiedCode);
+
+    /* Logs:
+    'function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}' */
 })();
 ```
 
@@ -1078,19 +1081,21 @@ Example code:
     const response = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'),
           scriptCode = chatgpt.code.extract(response);
     console.log(scriptCode);
-    /* logs `const fs = require('fs');
 
-             // Specify the path of the file(s) you want to delete
-             const filePath = 'path/to/your/file.txt';
+    /* Logs:    
+    const fs = require('fs');
 
-             // Delete the file
-             fs.unlink(filePath, (err) => {
-                 if (err) {
-                     console.error('Error deleting file:', err);
-                 } else {
-                     console.log('File deleted successfully');
-                 }
-             });` */
+    // Specify the path of the file(s) you want to delete
+    const filePath = 'path/to/your/file.txt';
+
+    // Delete the file
+    fs.unlink(filePath, (err) => {
+        if (err) {
+            console.error('Error deleting file:', err);
+        } else {
+            console.log('File deleted successfully');
+        }
+    }); */
 })();
 ```
 
@@ -1106,9 +1111,12 @@ Example code:
 
 ```js
 (async () => {
-    const obfuscatedCode = await chatgpt.code.obfuscate(
-        `window[elem].addEventListener('mouseover', toggleTooltip)`);
-    console.log(obfuscatedCode); // logs '(window[elem])[btoa('YWxlcnRWaWV3')](btoa('bW91c2VyYm94ZXJOYW1l'), btoa('dG9nZ2VkT3V0d2FsbA=='));'
+    const code = `window[elem].addEventListener('mouseover', toggleTooltip)`
+    const obfuscatedCode = await chatgpt.code.obfuscate(code);
+    console.log(obfuscatedCode);
+
+    /* Logs:
+    '(window[elem])[btoa('YWxlcnRWaWV3')](btoa('bW91c2VyYm94ZXJOYW1l'), btoa('dG9nZ2VkT3V0d2FsbA==')); */
 })();
 ```
 
@@ -1125,16 +1133,19 @@ Asks ChatGPT to refactor the given code.
 Example code:
 
 ```js
-async function doSomething() {
-  const code = `
-  if (6 > 5) {
+(async () => {
+    const code =  `
+if (6 > 5) {
     return true;
-  } else {
+} else {
     return false;
-  }
-  `;
-  await chatgpt.code.refactor(code, 'brevity'); // Example output: 'return 6 > 5;'
-}
+}`;
+    const refactoredCode = await chatgpt.code.refactor(code, 'brevity');
+    console.log(obfuscatedCode);
+
+    /* Logs:
+    return 6 > 5; */
+})();
 ```
 
 ### review `async`
@@ -1148,11 +1159,12 @@ Asks ChatGPT to review given code.
 Example code:
 
 ```js
-async function doSomething() {
-  await chatgpt.code.review('btoa("Hello World")');
-  /* Example output:
-  The code appears to be correct. It uses the `btoa` function to encode the string "Hello World" in base64. */
-}
+(async () => {
+    console.log(await chatgpt.code.review('btoa("Hello World")'));
+
+    /* Logs:
+    The code appears to be correct. It uses the `btoa` function to encode the string "Hello World" in base64. */
+})();
 ```
 
 ### unminify `async`
@@ -1167,19 +1179,21 @@ Example code:
 
 ```js
 (async () => {
-    const minifiedCode = await chatgpt.code.unminify(
-        `function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}`);
+    const code = `function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}`;
+    const minifiedCode = await chatgpt.code.unminify(code);
     console.log(minifiedCode);
-    /* logs `function autosizeBox() {
-                 const newLength = replyBox.value.length
-                 if (newLength < prevLength) { // if deleting txt
-                     replyBox.style.height = 'auto' // ...auto-fit height
-                     if (parseInt(getComputedStyle(replyBox).height) < 55) { // if down to one line
-                         replyBox.style.height = '2.15rem' } // ...reset to original height
-                 }
-                 replyBox.style.height = replyBox.scrollHeight + 'px'
-                 prevLength = newLength
-             }` */
+
+    /* Logs:
+    function autosizeBox() {
+        const newLength = replyBox.value.length
+        if (newLength < prevLength) { // if deleting txt
+            replyBox.style.height = 'auto' // ...auto-fit height
+            if (parseInt(getComputedStyle(replyBox).height) < 55) { // if down to one line
+                replyBox.style.height = '2.15rem' } // ...reset to original height
+        }
+        replyBox.style.height = replyBox.scrollHeight + 'px'
+        prevLength = newLength
+    }` */
 })();
 ```
 
@@ -1196,13 +1210,15 @@ Asks ChatGPT to write code given a prompt.
 Example code:
 
 ```js
-async function doSomething() {
-  await chatgpt.code.write('Repeat a task every 10 seconds', 'javascript');
-  /* Example output:
-  setInterval(function() {
-    // Your task code here
-  }, 10000); */
-}
+(async () => {
+    const code = await chatgpt.code.write('Repeat a task every 10 seconds', 'javascript');
+    console.log(code);
+
+    /* Logs:
+    setInterval(function() {
+        // Your task code here
+    }, 10000); */
+})();
 ```
 
 ## history `obj`
