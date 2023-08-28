@@ -77,6 +77,7 @@
       - [beacons](#beacons)
       - [refreshFrame](#refreshframe)
   - [code `obj`](#code-obj)
+    - [extract](#extract)
     - [minify `async`](#minify-async)
     - [obfuscate `async`](#obfuscate-async)
     - [refactor `async`](#refactor-async)
@@ -1060,6 +1061,39 @@ Example code:
 })();
 ```
 
+### extract
+
+Extracts pure code from response.
+
+**Parameters**:
+
+`msg`: A string being the response to extract code from.
+
+Example code:
+
+```js
+(async () => {
+    chatgpt.send('What is a short script to delete files?');
+    await chatgpt.isIdle();
+    const response = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'),
+          scriptCode = chatgpt.code.extract(response);
+    console.log(scriptCode);
+    /* logs `const fs = require('fs');
+
+             // Specify the path of the file(s) you want to delete
+             const filePath = 'path/to/your/file.txt';
+
+             // Delete the file
+             fs.unlink(filePath, (err) => {
+                 if (err) {
+                     console.error('Error deleting file:', err);
+                 } else {
+                     console.log('File deleted successfully');
+                 }
+             });` */
+})();
+```
+
 ### obfuscate `async`
 
 Asks ChatGPT to obfuscate the given code.
@@ -1137,15 +1171,15 @@ Example code:
         `function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}`);
     console.log(minifiedCode);
     /* logs `function autosizeBox() {
-             const newLength = replyBox.value.length
-             if (newLength < prevLength) { // if deleting txt
-                 replyBox.style.height = 'auto' // ...auto-fit height
-                 if (parseInt(getComputedStyle(replyBox).height) < 55) { // if down to one line
-                     replyBox.style.height = '2.15rem' } // ...reset to original height
-             }
-             replyBox.style.height = replyBox.scrollHeight + 'px'
-             prevLength = newLength
-        }` */
+                 const newLength = replyBox.value.length
+                 if (newLength < prevLength) { // if deleting txt
+                     replyBox.style.height = 'auto' // ...auto-fit height
+                     if (parseInt(getComputedStyle(replyBox).height) < 55) { // if down to one line
+                         replyBox.style.height = '2.15rem' } // ...reset to original height
+                 }
+                 replyBox.style.height = replyBox.scrollHeight + 'px'
+                 prevLength = newLength
+             }` */
 })();
 ```
 
