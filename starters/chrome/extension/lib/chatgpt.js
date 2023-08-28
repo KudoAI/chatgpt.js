@@ -325,7 +325,9 @@ const chatgpt = {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
         extract: function(msg) { // extract pure code from response
-            return /```.*\n((.*|\n)+)*```/.exec(msg)[1]; },
+            const match = /```.*\n((.*|\n)+)*```/.exec(msg);
+            return match ? match[1] : msg;
+        },
 
         minify: async function(code) {
             if (!code) return console.error('Code argument not supplied. Pass some code!');
