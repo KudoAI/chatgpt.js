@@ -839,7 +839,7 @@ Example code:
 ```js
 (async () => {
     const response = chatgpt.getResponseFromAPI();
-    console.log(response);
+    console.log(response); // Example output: 'Hello from ChatGPT!'
 })();
 ```
 
@@ -859,6 +859,8 @@ var fifthResp;
 fifthResp = chatgpt.getResponseFromDOM(5); // Returns the 5th response
 fifthResp = chatgpt.getResponseFromDOM('fifth'); // Also returns the 5th response
 fifthResp = chatgpt.getResponseFromDOM('five'); // Returns the 5th response too
+
+console.log(fifthResp); // Example output: 'Hello from ChatGPT!'
 ```
 
 ### isIdle `async`
