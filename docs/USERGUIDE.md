@@ -116,8 +116,8 @@
 
 ```js
 (async () => {
-  await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
-  // Your code here...
+    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
+    // Your code here...
 })();
 ```
 
@@ -127,17 +127,17 @@
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js');
 xhr.onload = function () {
-  if (xhr.status === 200) {
-    var chatgptJS = document.createElement('script');
-    chatgptJS.textContent = xhr.responseText;
-    document.head.appendChild(chatgptJS);
-    yourCode(); // runs your code
-  }
+    if (xhr.status === 200) {
+        var chatgptJS = document.createElement('script');
+        chatgptJS.textContent = xhr.responseText;
+        document.head.appendChild(chatgptJS);
+        yourCode(); // runs your code
+    }
 };
 xhr.send();
 
 function yourCode() {
-  // Your code here...
+    // Your code here...
 }
 ```
 
@@ -182,8 +182,8 @@ export { chatgpt }
 4. In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
 ```js
 (async () => {
-  const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
-  // Your code here...
+    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
+    // Your code here...
 })();
 ```
 
@@ -235,7 +235,7 @@ Example code:
 
 ```js
 if (chatgpt.isFullScreen()) {
-  // Do something
+    // Do something
 }
 ```
 
@@ -247,9 +247,9 @@ Example code:
 
 ```js
 async function doSomething() {
-  if (await chatgpt.isLoaded()) {
-    // Do something
-  }
+    if (await chatgpt.isLoaded()) {
+        // Do something
+    }
 }
 ```
 
@@ -370,7 +370,7 @@ Example code:
 
 ```js
 async function doSomething() {
-  await chatgpt.summarize('A very long text...'); // Example output: 'A very short text...'
+    await chatgpt.summarize('A very long text...'); // Example output: 'A very short text...'
 }
 ```
 
@@ -388,7 +388,7 @@ Example code:
 
 ```js
 async function doSomething() {
-  await chatgpt.translate('Hello, how are you?', 'spanish'); // Example output: 'Hola, ¿cómo estás?'
+    await chatgpt.translate('Hello, how are you?', 'spanish'); // Example output: 'Hola, ¿cómo estás?'
 }
 ```
 
@@ -431,7 +431,7 @@ Example code:
 
 ```js
 if (chatgpt.isDarkMode()) {
-  // Do something
+    // Do something
 }
 ```
 
@@ -443,7 +443,7 @@ Example code:
 
 ```js
 if (chatgpt.isLightMode()) {
-  // Do something
+    // Do something
 }
 ```
 
@@ -515,8 +515,8 @@ Returns an account access token as a string.
 
 ```js
 async function doSomething() {
-  const token = await chatgpt.getAccessToken();
-  console.log(token); // Example output: 'abcdef[...]'
+    const token = await chatgpt.getAccessToken();
+    console.log(token); // Example output: 'abcdef[...]'
 }
 ```
 
@@ -532,17 +532,17 @@ Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single det
 
 ```js
 async function doSomething() {
-  const name = await chatgpt.getAccountDetails('name');
-  console.log(name); // Example output: 'chatgpt.js'
+    const name = await chatgpt.getAccountDetails('name');
+    console.log(name); // Example output: 'chatgpt.js'
 
-  const data = await chatgpt.getAccountDetails('name', 'email');
-  console.log(data);
-  /* Example output:
-  {
-    name: 'chatgpt.js',
-    email: 'showcase@chatgptjs.org'
-  }
-  */
+    const data = await chatgpt.getAccountDetails('name', 'email');
+    console.log(data);
+    /* Example output:
+    {
+        name: 'chatgpt.js',
+        email: 'showcase@chatgptjs.org'
+    }
+    */
 }
 ```
 
@@ -566,8 +566,8 @@ Example code:
 
 ```js
 async function doSomething() {
-  const response = await chatgpt.askAndGetReply('Hello, ChatGPT');
-  console.log(response); // Example output: 'Hello user, I'm ChatGPT!'
+    const response = await chatgpt.askAndGetReply('Hello, ChatGPT');
+    console.log(response); // Example output: 'Hello user, I'm ChatGPT!'
 }
 ```
 
@@ -579,7 +579,7 @@ Example code:
 
 ```js
 async function doSomething() {
-  await chatgpt.clearChats();
+    await chatgpt.clearChats();
 }
 ```
 
@@ -601,7 +601,7 @@ Example code:
 
 ```js
 async function doSomething() {
-  await chatgpt.exportChat('latest', 'html'); // Downloads a '.html' file
+    await chatgpt.exportChat('latest', 'html'); // Downloads a '.html' file
 }
 ```
 
@@ -685,17 +685,17 @@ In case of a response being regenerated, the `chatgpt` object key will be conver
 
 ```json
 [
-    {
-        "user": "what are lemons",
-        "chatgpt": "Lemons are a type of citrus fruit that belongs..."
-    },
-    {
-        "user": "be more specific",
-        "chatgpt": [
-            "Certainly! Here are some more specific...",
-            "Certainly! Here are some specific..." // regenerated responses!
-        ]
-    }
+  {
+    "user": "what are lemons",
+    "chatgpt": "Lemons are a type of citrus fruit that belongs..."
+  },
+  {
+    "user": "be more specific",
+    "chatgpt": [
+      "Certainly! Here are some more specific...",
+      "Certainly! Here are some specific..." // regenerated responses!
+    ]
+  }
 ]
 ```
 
@@ -715,11 +715,11 @@ In case of a response being regenerated and the requested participant being `cha
 
 ```json
 [
-    "Lemons are a type of citrus fruit that belongs...",
-    [
-        "Certainly! Here are some more specific details...",
-        "Certainly! Here are some specific..."
-    ]
+  "Lemons are a type of citrus fruit that belongs...",
+  [
+    "Certainly! Here are some more specific details...",
+    "Certainly! Here are some specific..."
+  ]
 ]
 ```
 
@@ -735,11 +735,11 @@ In case of a response being regenerated, the `chatgpt` object key will be conver
 
 ```json
 {
-    "user": "be more specific",
-    "chatgpt": [
-        "Certainly! Here are some more specific...",
-        "Certainly! Here are some specific..."
-    ]
+  "user": "be more specific",
+  "chatgpt": [
+    "Certainly! Here are some more specific...",
+    "Certainly! Here are some specific..."
+  ]
 }
 ```
 
@@ -757,8 +757,8 @@ In case of a response being regenerated, the `chatgpt` object key will be conver
 "Certainly! Here are some more specific..."
 // or
 [
-    "Certainly! Here are some more specific...",
-    "Certainly! Here are some specific..."
+  "Certainly! Here are some more specific...",
+  "Certainly! Here are some specific..."
 ]
 ```
 
@@ -779,8 +779,8 @@ Returns the last message sent by the user as a string.
 
 ```js
 async function doSomething() {
-  const message = await chatgpt.getLastPrompt();
-  console.log(message); // Example output: 'Hello from chatgpt.js!'
+    const message = await chatgpt.getLastPrompt();
+    console.log(message); // Example output: 'Hello from chatgpt.js!'
 }
 ```
 
@@ -790,8 +790,8 @@ Returns the last ChatGPT response as a string.
 
 ```js
 async function doSomething() {
-  const response = await chatgpt.getLastResponse();
-  console.log(response); // Example output: 'I am ChatGPT!'
+    const response = await chatgpt.getLastResponse();
+    console.log(response); // Example output: 'I am ChatGPT!'
 }
 ```
 
@@ -815,8 +815,8 @@ Example code:
 
 ```js
 async function doSomething() {
-  const response = chatgpt.getResponseFromAPI();
-  console.log(response);
+    const response = chatgpt.getResponseFromAPI();
+    console.log(response);
 }
 ```
 
@@ -846,9 +846,9 @@ Example code:
 
 ```js
 async function doSomething() {
-  if (await chatgpt.isIdle()) {
-    // Do something
-  }
+    if (await chatgpt.isIdle()) {
+        // Do something
+    }
 }
 ```
 
@@ -868,7 +868,7 @@ Re-sends the last user message.
 
 ```js
 async function doSomething() {
-  await chatgpt.resend();
+    await chatgpt.resend();
 }
 ```
 
@@ -927,7 +927,7 @@ Can be the following: `copy` or `clipboard` to copy the chat URL to clipboard, `
 
 ```js
 async function doSomething() {
-  await chatgpt.shareChat(1, 'copy'); // copy/clipboard
+    await chatgpt.shareChat(1, 'copy'); // copy/clipboard
 }
 ```
 
@@ -951,7 +951,7 @@ Example code:
 
 ```js
 async function doSomething() {
-  chatgpt.speak(await chatgpt.getLastResponse(), { voice: 1, pitch: 2, speed: 3 });
+    chatgpt.speak(await chatgpt.getLastResponse(), { voice: 1, pitch: 2, speed: 3 });
 }
 ```
 
@@ -1303,7 +1303,7 @@ Example code:
 
 ```js
 if (chatgpt.history.isOn()) {
-  // Do something
+    // Do something
 }
 ```
 
@@ -1315,7 +1315,7 @@ Example code:
 
 ```js
 if (chatgpt.history.isOff()) {
-  // Do something
+    // Do something
 }
 ```
 
@@ -1407,7 +1407,7 @@ Example code:
 
 ```js
 if (chatgpt.sidebar.isOn()) {
-  // Do something
+    // Do something
 }
 ```
 
@@ -1419,7 +1419,7 @@ Example code:
 
 ```js
 if (chatgpt.sidebar.isOff()) {
-  // Do something
+    // Do something
 }
 ```
 
