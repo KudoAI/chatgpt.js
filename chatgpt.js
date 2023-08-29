@@ -21,7 +21,7 @@ localStorage.notifyQueue = JSON.stringify(notifyQueue);
 const chatgpt = {
     openAIaccessToken: {},
 
-    ApiClearChats: function() {
+    apiClearChats: function() {
         return new Promise((resolve) => {
             chatgpt.getAccessToken().then(token => {
                 sendClearRequest(token).then(() => resolve());
