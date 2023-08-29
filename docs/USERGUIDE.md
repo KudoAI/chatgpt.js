@@ -91,6 +91,7 @@
     - [deactivate](#deactivate-1)
     - [toggle](#toggle)
   - [menu `obj`](#menu-obj)
+    - [open](#open)
   - [response `obj`](#response-obj)
     - [get](#get-1)
     - [getFromAPI `async`](#getfromapi-async)
@@ -1358,6 +1359,16 @@ chatgpt.history.toggle();
 ## menu `obj`
 
 The small menu that shows up when clicking on the account button.
+
+### open
+
+Opens the menu.
+
+Example code:
+
+```js
+chatgpt.menu.open();
+```
 
 ## response `obj`
 
