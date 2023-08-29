@@ -1322,7 +1322,7 @@ const chatgpt = {
                 newElement.insertBefore(icon, newElement.firstChild);
             }
 
-            if (
+            else if (
                 element === 'select' &&
                 attrs?.items && // There are options to add 
                 Array.isArray(attrs.items) && // It's an array of options
