@@ -105,6 +105,7 @@
     - [isLight](#islight)
     - [toggle](#toggle-1)
   - [sidebar `obj`](#sidebar-obj)
+    - [append](#append)
     - [isOn](#ison-1)
     - [isOff](#isoff-1)
     - [hide](#hide)
@@ -1430,6 +1431,55 @@ Read [chatgpt.toggleScheme](#togglescheme)
 ## sidebar `obj`
 
 Object related to the sidebar's behavior.
+
+### append
+
+Appends a new element to the sidebar. Returns the `id` property of the element.
+
+**Parameters**:
+
+`element`: A string being the name of the element to append.
+
+Currently supported elements are [`button`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) and [`select`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
+
+`attrs`: An object which can contain all the common attributes of an HTML element, plus some custom ones.
+
+_**Custom attributes for `button`**_
+
+`icon`: A string being either a url to an image or a base64 encoded string of the image data.
+
+`callback`: A function which will be called when the button is clicked.
+
+_**Custom attributes for `select`**_
+
+`items`: An array of objects where the `text` key is the displayed text of the option, and the `value` key is the value of the option.
+
+Example item object:
+
+```js
+{
+    text: 'The text to display in the option',
+    value: 'The value of the option'
+}
+```
+
+Example code:
+
+```js
+const buttonId = chatgpt.sidebar.append('button', {
+    textContent: 'I am a button!',
+    icon: 'https://chat.openai.com/favicon-32x32.png'
+});
+console.log(buttonId); // Example output: 1693295258727
+
+const selectId = chatgpt.sidebar.append('select', {
+    items: [
+        { text: 'Hello world', value: 'helloworld' },
+        { text: 'Hello there', value: 'hellothere' }
+    ]
+});
+console.log(selectId); // Example output: 1693294795240
+```
 
 ### isOn
 
