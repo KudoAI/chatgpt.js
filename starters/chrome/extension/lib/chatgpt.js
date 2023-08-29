@@ -1306,7 +1306,7 @@ const chatgpt = {
                 return console.error(`🤖 chatgpt.js >> Invalid element! Received: ${element} Valid elements: ${validElements}`);
 
             const newElement = document.createElement(element);
-            const invalidAttributes = ['id', 'callback', 'items'];
+            const invalidAttributes = ['id', 'icon', 'items'];
 
             if (attrs && typeof attrs === 'object')
                 Object.entries(attrs).forEach(([key, value]) => {
@@ -1315,18 +1315,14 @@ const chatgpt = {
 
             newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // Add random id to the element
 
-            if (element === 'button') {
-                if (attrs?.icon && typeof attrs.icon === 'string') { // Add icon to button element if given
-                    const icon = document.createElement('img');
-                    icon.src = attrs.icon; // Can also be base64 encoded image string
-                    icon.width = 18;
-                    newElement.insertBefore(icon, newElement.firstChild);
-                }
-                if (attrs?.callback && typeof attrs.callback === 'function') // Add a click handler if the callback is specified on a button element
-                    newElement.addEventListener('click', attrs.callback);
+            if (element === 'button' && attrs?.icon && typeof attrs.icon === 'string') { // Add icon to button element if given
+                const icon = document.createElement('img');
+                icon.src = attrs.icon; // Can also be base64 encoded image string
+                icon.width = 18;
+                newElement.insertBefore(icon, newElement.firstChild);
             }
 
-            if (
+            else if (
                 element === 'select' &&
                 attrs?.items && // There are options to add 
                 Array.isArray(attrs.items) && // It's an array of options
