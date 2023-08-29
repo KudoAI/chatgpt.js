@@ -26,6 +26,33 @@ const chatgpt = {
         add: function(instruction, target) {
         },
         clear: function(target) {
+            return new Promise((resolve) => {
+                chatgpt.getAccessToken().then(token => {
+                    chatgpt.instructions.fetch(token).then(instructionsData => {
+                        sendClearRequest(token, instructionsData).then(() => resolve());
+                    });
+                });
+            });
+
+            function sendClearRequest(token, instructionsData) {
+                return new Promise((resolve, reject) => {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', endpoints.instructions, true);
+                    xhr.setRequestHeader('Accept-Language', 'en-US');
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                    xhr.onload = () => {
+                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot clear custom instructions.');
+                        console.info('Custom instructions cleared.');
+                        return resolve();
+                    };
+                    xhr.send(JSON.stringify({
+                        about_user_message: target === 'user' ? '' : instructionsData.about_user_message,
+                        about_model_message: target === 'chatgpt' ? '' : instructionsData.about_model_message,
+                        enabled: true
+                    }));
+                });
+            }
         },
         fetch: function() {
             return new Promise((resolve) => {
