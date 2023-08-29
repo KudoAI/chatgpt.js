@@ -8,7 +8,8 @@ const endpoints = {
     chats: 'https://chat.openai.com/backend-api/conversations',
     chat: 'https://chat.openai.com/backend-api/conversation',
     share_create: 'https://chat.openai.com/backend-api/share/create',
-    share: 'https://chat.openai.com/backend-api/share'
+    share: 'https://chat.openai.com/backend-api/share',
+    instructions: 'https://chat.openai.com/backend-api/user_system_messages'
 };
 
 // Init queues for feedback methods
@@ -20,6 +21,17 @@ localStorage.notifyQueue = JSON.stringify(notifyQueue);
 // Define chatgpt.methods
 const chatgpt = {
     openAIaccessToken: {},
+
+    instructions: {
+        add: function(instruction, target) {
+        },
+        clear: function(target) {
+        },
+        fetch: function() {
+        },
+        turnOn: function() {},
+        turnOff: function() {}
+    },
 
     actAs: function(persona) {
     // Prompts ChatGPT to act as a persona from https://github.com/KudoAI/chat-prompts/blob/main/personas.json
