@@ -24,14 +24,15 @@ const chatgpt = {
 
     instructions: {
         add: function(instruction, target) {
-            const validTargets = ['user', 'chatgpt'];
+            const validTargets = ['user', 'chatgpt']; // Valid targets
 
             if (!target) return console.error('Please provide a valid target!');
-            target = target.toLowerCase();
+            target = target.toLowerCase(); // Lowercase target
 
-            if (!validTargets.includes(target)) return console.error(`Invalid target ${target}. Valid targets are ${validTargets}`);
+            if (!validTargets.includes(target))
+                return console.error(`Invalid target ${target}. Valid targets are ${validTargets}`);
 
-            instruction = `\n\n${instruction}`;
+            instruction = `\n\n${instruction}`; // Add 2 newlines to the new instruction
 
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
@@ -54,21 +55,24 @@ const chatgpt = {
                         return resolve();
                     };
                     xhr.send(JSON.stringify({
+                        // Previous user instructions + new instruction if the target is 'user'
                         about_user_message: `${instructionsData.about_user_message}${target === 'user' ? instruction : ''}`,
+                        // Previous chatgpt instructions + new instruction if the target is 'chatgpt'
                         about_model_message: `${instructionsData.about_model_message}${target === 'chatgpt' ? instruction : ''}`,
-                        enabled: instructionsData.enabled
+                        enabled: instructionsData.enabled // Keep the previous 'enabled' value
                     }));
                 });
             }
         },
 
         clear: function(target) {
-            const validTargets = ['user', 'chatgpt'];
+            const validTargets = ['user', 'chatgpt']; // Valid targets
 
             if (!target) return console.error('Please provide a valid target!');
-            target = target.toLowerCase();
+            target = target.toLowerCase(); // Lowercase target
 
-            if (!validTargets.includes(target)) return console.error(`Invalid target ${target}. Valid targets are ${validTargets}`);
+            if (!validTargets.includes(target))
+                return console.error(`Invalid target ${target}. Valid targets are ${validTargets}`);
 
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
@@ -91,9 +95,11 @@ const chatgpt = {
                         return resolve();
                     };
                     xhr.send(JSON.stringify({
+                        // Send empty string to clear the user instructions if the target is 'user', else send previous instructions
                         about_user_message: target === 'user' ? '' : instructionsData.about_user_message,
+                        // Send empty string to clear the chatgpt instructions if the target is 'chatgpt', else send previous instructions
                         about_model_message: target === 'chatgpt' ? '' : instructionsData.about_model_message,
-                        enabled: instructionsData.enabled
+                        enabled: instructionsData.enabled // Keep the previous 'enabled' value
                     }));
                 });
             }
@@ -114,7 +120,7 @@ const chatgpt = {
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
                         if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot fetch custom instructions.');
-                        return resolve(JSON.parse(xhr.responseText));
+                        return resolve(JSON.parse(xhr.responseText)); // Return the response JSON
                     };
                     xhr.send();
                 });
@@ -143,9 +149,9 @@ const chatgpt = {
                         return resolve();
                     };
                     xhr.send(JSON.stringify({
-                        about_user_message: instructionsData.about_user_message,
-                        about_model_message: instructionsData.about_model_message,
-                        enabled: false
+                        about_user_message: instructionsData.about_user_message, // Keep the previous value
+                        about_model_message: instructionsData.about_model_message, // Keep the previous value
+                        enabled: false // Set 'enabled' to false to disable custom instructions
                     }));
                 });
             }
@@ -173,9 +179,9 @@ const chatgpt = {
                         return resolve();
                     };
                     xhr.send(JSON.stringify({
-                        about_user_message: instructionsData.about_user_message,
-                        about_model_message: instructionsData.about_model_message,
-                        enabled: true
+                        about_user_message: instructionsData.about_user_message, // Keep the previous 'enabled' value
+                        about_model_message: instructionsData.about_model_message, // Keep the previous 'enabled' value
+                        enabled: true // Set 'enabled' to true to enable custom instructions
                     }));
                 });
             }
@@ -185,9 +191,9 @@ const chatgpt = {
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
                     chatgpt.instructions.fetchData(token).then(instructionsData => {
-                        instructionsData.enabled ?
-                            chatgpt.instructions.turnOff().then(resolve())
-                            : chatgpt.instructions.turnOn().then(resolve());
+                        instructionsData.enabled ? // Are custom instructions enabled?
+                            chatgpt.instructions.turnOff().then(resolve()) : // YES: disable them
+                            chatgpt.instructions.turnOn().then(resolve()); // NO: enable them
                     });
                 });
             });
