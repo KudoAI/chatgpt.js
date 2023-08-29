@@ -28,6 +28,25 @@ const chatgpt = {
         clear: function(target) {
         },
         fetch: function() {
+            return new Promise((resolve) => {
+                chatgpt.getAccessToken().then(token => {
+                    sendFetchRequest(token).then(instructions => resolve(instructions));
+                });
+            });
+
+            function sendFetchRequest(token) {
+                return new Promise((resolve, reject) => {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('GET', endpoints.instructions, true);
+                    xhr.setRequestHeader('Accept-Language', 'en-US');
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                    xhr.onload = () => {
+                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot fetch custom instructions.');
+                        return resolve(JSON.parse(xhr.responseText));
+                    };
+                    xhr.send();
+                });
+            }
         },
         turnOn: function() {},
         turnOff: function() {}
