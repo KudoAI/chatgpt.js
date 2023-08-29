@@ -1448,8 +1448,6 @@ _**Custom attributes for `button`**_
 
 `icon`: A string being either a url to an image or a base64 encoded string of the image data.
 
-`callback`: A function which will be called when the button is clicked.
-
 _**Custom attributes for `select`**_
 
 `items`: An array of objects where the `text` key is the displayed text of the option, and the `value` key is the value of the option.
@@ -1468,7 +1466,10 @@ Example code:
 ```js
 const buttonId = chatgpt.sidebar.append('button', {
     textContent: 'I am a button!',
-    icon: 'https://chat.openai.com/favicon-32x32.png'
+    icon: 'https://chat.openai.com/favicon-32x32.png',
+    onclick: function() {
+        console.log('Clicked!');
+    }
 });
 console.log(buttonId); // Example output: 1693295258727
 
