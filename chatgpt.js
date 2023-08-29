@@ -1306,7 +1306,7 @@ const chatgpt = {
                 return console.error(`🤖 chatgpt.js >> Invalid element! Received: ${element} Valid elements: ${validElements}`);
 
             const newElement = document.createElement(element);
-            const invalidAttributes = ['id', 'callback', 'items'];
+            const invalidAttributes = ['id', 'icon', 'items'];
 
             if (attrs && typeof attrs === 'object')
                 Object.entries(attrs).forEach(([key, value]) => {
@@ -1322,8 +1322,6 @@ const chatgpt = {
                     icon.width = 18;
                     newElement.insertBefore(icon, newElement.firstChild);
                 }
-                if (attrs?.callback && typeof attrs.callback === 'function') // Add a click handler if the callback is specified on a button element
-                    newElement.addEventListener('click', attrs.callback);
             }
 
             if (
