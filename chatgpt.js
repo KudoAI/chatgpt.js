@@ -179,6 +179,18 @@ const chatgpt = {
                     }));
                 });
             }
+        },
+
+        toggle: function() {
+            return new Promise((resolve) => {
+                chatgpt.getAccessToken().then(token => {
+                    chatgpt.instructions.fetchData(token).then(instructionsData => {
+                        instructionsData.enabled ?
+                            chatgpt.instructions.turnOff().then(resolve())
+                            : chatgpt.instructions.turnOn().then(resolve());
+                    });
+                });
+            });
         }
     },
 
