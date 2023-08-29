@@ -61,6 +61,7 @@ const chatgpt = {
                 });
             }
         },
+
         clear: function(target) {
             const validTargets = ['user', 'chatgpt'];
 
@@ -97,6 +98,7 @@ const chatgpt = {
                 });
             }
         },
+
         fetch: function() {
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
@@ -118,6 +120,7 @@ const chatgpt = {
                 });
             }
         },
+
         turnOff: function() {
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
@@ -147,6 +150,7 @@ const chatgpt = {
                 });
             }
         },
+
         turnOn: function() {
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
