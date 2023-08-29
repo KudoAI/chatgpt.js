@@ -21,29 +21,6 @@ localStorage.notifyQueue = JSON.stringify(notifyQueue);
 const chatgpt = {
     openAIaccessToken: {},
 
-    apiClearChats: function() {
-        return new Promise((resolve) => {
-            chatgpt.getAccessToken().then(token => {
-                sendClearRequest(token).then(() => resolve());
-            });
-        });
-
-        function sendClearRequest(token) {
-            return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
-                xhr.open('PATCH', endpoints.chats, true);
-                xhr.setRequestHeader('Content-Type', 'application/json');
-                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                xhr.onload = () => {
-                    if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot clear chats.');
-                    console.log('🤖 chatgpt.js >> Chats successfully cleared');
-                    return resolve();
-                };
-                xhr.send(JSON.stringify( { is_visible: false } ));
-            });
-        }
-    },
-
     actAs: function(persona) {
     // Prompts ChatGPT to act as a persona from https://github.com/KudoAI/chat-prompts/blob/main/personas.json
 
@@ -245,6 +222,29 @@ const chatgpt = {
         }}}}
 
         return modalContainer.id;
+    },
+
+    apiClearChats: function() {
+        return new Promise((resolve) => {
+            chatgpt.getAccessToken().then(token => {
+                sendClearRequest(token).then(() => resolve());
+            });
+        });
+
+        function sendClearRequest(token) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('PATCH', endpoints.chats, true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                xhr.onload = () => {
+                    if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot clear chats.');
+                    console.log('🤖 chatgpt.js >> Chats successfully cleared');
+                    return resolve();
+                };
+                xhr.send(JSON.stringify( { is_visible: false } ));
+            });
+        }
     },
 
     askAndGetReply: async function(query) {
