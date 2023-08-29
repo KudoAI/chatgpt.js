@@ -279,15 +279,12 @@ main pre, main code, .punctuation {
     font-family: "Roboto Mono", Monaco, courier, monospace !important ; position: relative ;
     font-size: 1.35rem !important ; color: white !important ; background: rgba(0, 0, 0, 0.35) !important ;
     margin-bottom: 1px } /* fix bottom border disappears glitch */
-
-.punctuation { background-color: rgba(0, 0, 0, 0) !important; }
-main pre code::before {
+.punctuation { background-color: rgba(0, 0, 0, 0) !important; } /* clear bg for scanlines */
+main pre code::before { /* add scanlines */
     content: "" ; display: block ; 
     position: absolute ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ;
     background: linear-gradient(to bottom, rgba(0,128,128,0) 50%, rgba(0,255,255,0.2) 50%) ;
-    background-size: 100% 5px
-}
-
+    background-size: 100% 5px }
 main pre code { border: $blue 2px solid ; border-radius: 12px !important ; padding: 26px !important }
 main p code {
     font-size: 1.3rem !important ; position: relative ; bottom: 2px ;
