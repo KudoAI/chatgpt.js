@@ -24,6 +24,15 @@ const chatgpt = {
 
     instructions: {
         add: function(instruction, target) {
+            const validTargets = ['user', 'chatgpt'];
+
+            if (!target) return console.error('Please provide a valid target!');
+            target = target.toLowerCase();
+
+            if (!validTargets.includes(target)) return console.error(`Invalid target ${target}. Valid targets are ${validTargets}`);
+
+            instruction = `\n\n${instruction}`;
+
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
                     chatgpt.instructions.fetch(token).then(instructionsData => {
