@@ -35,7 +35,7 @@ const chatgpt = {
 
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
-                    chatgpt.instructions.fetch(token).then(instructionsData => {
+                    chatgpt.instructions.fetchData(token).then(instructionsData => {
                         sendAddRequest(token, instructionsData).then(() => resolve());
                     });
                 });
@@ -72,7 +72,7 @@ const chatgpt = {
 
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
-                    chatgpt.instructions.fetch(token).then(instructionsData => {
+                    chatgpt.instructions.fetchData(token).then(instructionsData => {
                         sendClearRequest(token, instructionsData).then(() => resolve());
                     });
                 });
@@ -99,7 +99,7 @@ const chatgpt = {
             }
         },
 
-        fetch: function() {
+        fetchData: function() {
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
                     sendFetchRequest(token).then(instructionsData => resolve(instructionsData));
@@ -124,7 +124,7 @@ const chatgpt = {
         turnOff: function() {
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
-                    chatgpt.instructions.fetch(token).then(instructionsData => {
+                    chatgpt.instructions.fetchData(token).then(instructionsData => {
                         sendUpdateRequest(token, instructionsData).then(() => resolve());
                     });
                 });
@@ -154,7 +154,7 @@ const chatgpt = {
         turnOn: function() {
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
-                    chatgpt.instructions.fetch(token).then(instructionsData => {
+                    chatgpt.instructions.fetchData(token).then(instructionsData => {
                         sendUpdateRequest(token, instructionsData).then(() => resolve());
                     });
                 });
