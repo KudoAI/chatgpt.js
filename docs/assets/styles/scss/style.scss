@@ -276,9 +276,18 @@ main pre { width: 100% ; /* to avoid shrinking from adjacent left/right floats *
     margin: 65px 0 !important }
 main code { line-height: 2.1rem !important }
 main pre, main code, .punctuation {
-    font-family: "Roboto Mono", Monaco, courier, monospace !important ;
+    font-family: "Roboto Mono", Monaco, courier, monospace !important ; position: relative ;
     font-size: 1.35rem !important ; color: white !important ; background: rgba(0, 0, 0, 0.35) !important ;
     margin-bottom: 1px } /* fix bottom border disappears glitch */
+
+.punctuation { background-color: rgba(0, 0, 0, 0) !important; }
+main pre code::before {
+    content: "" ; display: block ; 
+    position: absolute ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ;
+    background: linear-gradient(to bottom, rgba(0,128,128,0) 50%, rgba(0,255,255,0.2) 50%) ;
+    background-size: 100% 5px
+}
+
 main pre code { border: $blue 2px solid ; border-radius: 12px !important ; padding: 26px !important }
 main p code {
     font-size: 1.3rem !important ; position: relative ; bottom: 2px ;
@@ -286,7 +295,7 @@ main p code {
     border: white 1px solid ; border-radius: 8px !important }
 main pre:after { display: none } /* hide lang indicator */
 .docsify-copy-code-button {    
-    font-size: 1.1rem !important ; background: black !important ; color: white !important ;
+    font-size: 1.1rem !important ; background-color: rgba(0, 0, 0, 0) !important ; color: white !important ;
     padding: 13px 18px 13px 15px !important ; right: 30px !important ; top: 2px !important }
 .success, .error { font-size: 1.1rem !important }
 main li pre { margin: 65px 0 !important }
