@@ -56,7 +56,7 @@ const chatgpt = {
                     xhr.send(JSON.stringify({
                         about_user_message: `${instructionsData.about_user_message}${target === 'user' ? instruction : ''}`,
                         about_model_message: `${instructionsData.about_model_message}${target === 'chatgpt' ? instruction : ''}`,
-                        enabled: true
+                        enabled: instructionsData.enabled
                     }));
                 });
             }
@@ -93,7 +93,7 @@ const chatgpt = {
                     xhr.send(JSON.stringify({
                         about_user_message: target === 'user' ? '' : instructionsData.about_user_message,
                         about_model_message: target === 'chatgpt' ? '' : instructionsData.about_model_message,
-                        enabled: true
+                        enabled: instructionsData.enabled
                     }));
                 });
             }
