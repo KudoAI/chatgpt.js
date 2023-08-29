@@ -224,6 +224,29 @@ const chatgpt = {
         return modalContainer.id;
     },
 
+    apiClearChats: function() {
+        return new Promise((resolve) => {
+            chatgpt.getAccessToken().then(token => {
+                sendClearRequest(token).then(() => resolve());
+            });
+        });
+
+        function sendClearRequest(token) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('PATCH', endpoints.chats, true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                xhr.onload = () => {
+                    if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot clear chats.');
+                    console.info('Chats successfully cleared');
+                    return resolve();
+                };
+                xhr.send(JSON.stringify( { is_visible: false } ));
+            });
+        }
+    },
+
     askAndGetReply: async function(query) {
         chatgpt.send(query); await chatgpt.isIdle();
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
