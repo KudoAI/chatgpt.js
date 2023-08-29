@@ -36,12 +36,12 @@ const chatgpt = {
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
                     chatgpt.instructions.fetch(token).then(instructionsData => {
-                        sendClearRequest(token, instructionsData).then(() => resolve());
+                        sendAddRequest(token, instructionsData).then(() => resolve());
                     });
                 });
             });
 
-            function sendClearRequest(token, instructionsData) {
+            function sendAddRequest(token, instructionsData) {
                 return new Promise((resolve, reject) => {
                     const xhr = new XMLHttpRequest();
                     xhr.open('POST', endpoints.instructions, true);
