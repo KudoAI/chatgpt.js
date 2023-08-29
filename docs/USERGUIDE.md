@@ -92,6 +92,7 @@
     - [toggle](#toggle)
   - [menu `obj`](#menu-obj)
     - [open](#open)
+    - [close](#close)
   - [response `obj`](#response-obj)
     - [get](#get-1)
     - [getFromAPI `async`](#getfromapi-async)
@@ -1368,6 +1369,16 @@ Example code:
 
 ```js
 chatgpt.menu.open();
+```
+
+### close
+
+Closes the menu.
+
+Example code:
+
+```js
+chatgpt.menu.close();
 ```
 
 ## response `obj`
