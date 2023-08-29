@@ -90,6 +90,9 @@
     - [activate](#activate-1)
     - [deactivate](#deactivate-1)
     - [toggle](#toggle)
+  - [menu `obj`](#menu-obj)
+    - [open](#open)
+    - [close](#close)
   - [response `obj`](#response-obj)
     - [get](#get-1)
     - [getFromAPI `async`](#getfromapi-async)
@@ -102,6 +105,7 @@
     - [isLight](#islight)
     - [toggle](#toggle-1)
   - [sidebar `obj`](#sidebar-obj)
+    - [append](#append)
     - [isOn](#ison-1)
     - [isOff](#isoff-1)
     - [hide](#hide)
@@ -1354,6 +1358,30 @@ Example code:
 chatgpt.history.toggle();
 ```
 
+## menu `obj`
+
+The small menu that shows up when clicking on the account button.
+
+### open
+
+Opens the menu.
+
+Example code:
+
+```js
+chatgpt.menu.open();
+```
+
+### close
+
+Closes the menu.
+
+Example code:
+
+```js
+chatgpt.menu.close();
+```
+
 ## response `obj`
 
 Object related to ChatGPT's responses.
@@ -1403,6 +1431,56 @@ Read [chatgpt.toggleScheme](#togglescheme)
 ## sidebar `obj`
 
 Object related to the sidebar's behavior.
+
+### append
+
+Appends a new element to the sidebar. Returns the `id` property of the element.
+
+**Parameters**:
+
+`element`: A string being the name of the element to append.
+
+Currently supported elements are [`button`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) and [`select`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
+
+`attrs`: An object which can contain all the common attributes of an HTML element, plus some custom ones.
+
+_**Custom attributes for `button`**_
+
+`icon`: A string being either a url to an image or a base64 encoded string of the image data.
+
+_**Custom attributes for `select`**_
+
+`items`: An array of objects where the `text` key is the displayed text of the option, and the `value` key is the value of the option.
+
+Example item object:
+
+```js
+{
+    text: 'The text to display in the option',
+    value: 'The value of the option'
+}
+```
+
+Example code:
+
+```js
+const buttonId = chatgpt.sidebar.append('button', {
+    textContent: 'I am a button!',
+    icon: 'https://chat.openai.com/favicon-32x32.png',
+    onclick: function() {
+        console.log('Clicked!');
+    }
+});
+console.log(buttonId); // Example output: 1693295258727
+
+const selectId = chatgpt.sidebar.append('select', {
+    items: [
+        { text: 'Hello world', value: 'helloworld' },
+        { text: 'Hello there', value: 'hellothere' }
+    ]
+});
+console.log(selectId); // Example output: 1693294795240
+```
 
 ### isOn
 
