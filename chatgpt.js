@@ -239,7 +239,7 @@ const chatgpt = {
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                 xhr.onload = () => {
                     if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot clear chats.');
-                    console.log('🤖 chatgpt.js >> Chats successfully cleared');
+                    console.info('Chats successfully cleared');
                     return resolve();
                 };
                 xhr.send(JSON.stringify( { is_visible: false } ));
