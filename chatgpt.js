@@ -100,7 +100,7 @@ const chatgpt = {
         fetch: function() {
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
-                    sendFetchRequest(token).then(instructions => resolve(instructions));
+                    sendFetchRequest(token).then(instructionsData => resolve(instructionsData));
                 });
             });
 
@@ -118,8 +118,10 @@ const chatgpt = {
                 });
             }
         },
-        turnOn: function() {},
-        turnOff: function() {}
+        turnOn: function() {
+        },
+        turnOff: function() {
+        }
     },
 
     actAs: function(persona) {
