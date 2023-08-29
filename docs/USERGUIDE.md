@@ -90,6 +90,7 @@
     - [activate](#activate-1)
     - [deactivate](#deactivate-1)
     - [toggle](#toggle)
+  - [menu `obj`](#menu-obj)
   - [response `obj`](#response-obj)
     - [get](#get-1)
     - [getFromAPI `async`](#getfromapi-async)
@@ -1353,6 +1354,10 @@ Example code:
 ```js
 chatgpt.history.toggle();
 ```
+
+## menu `obj`
+
+The small menu that shows up when clicking on the account button.
 
 ## response `obj`
 
