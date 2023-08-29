@@ -36,7 +36,7 @@ const chatgpt = {
 
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
-                    chatgpt.instructions.fetchData(token).then(instructionsData => {
+                    this.fetchData(token).then(instructionsData => {
                         sendAddRequest(token, instructionsData).then(() => resolve());
                     });
                 });
@@ -76,7 +76,7 @@ const chatgpt = {
 
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
-                    chatgpt.instructions.fetchData(token).then(instructionsData => {
+                    this.fetchData(token).then(instructionsData => {
                         sendClearRequest(token, instructionsData).then(() => resolve());
                     });
                 });
@@ -130,7 +130,7 @@ const chatgpt = {
         turnOff: function() {
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
-                    chatgpt.instructions.fetchData(token).then(instructionsData => {
+                    this.fetchData(token).then(instructionsData => {
                         sendUpdateRequest(token, instructionsData).then(() => resolve());
                     });
                 });
@@ -160,7 +160,7 @@ const chatgpt = {
         turnOn: function() {
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
-                    chatgpt.instructions.fetchData(token).then(instructionsData => {
+                    this.fetchData(token).then(instructionsData => {
                         sendUpdateRequest(token, instructionsData).then(() => resolve());
                     });
                 });
@@ -190,10 +190,10 @@ const chatgpt = {
         toggle: function() {
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
-                    chatgpt.instructions.fetchData(token).then(instructionsData => {
+                    this.fetchData(token).then(instructionsData => {
                         instructionsData.enabled ? // Are custom instructions enabled?
-                            chatgpt.instructions.turnOff().then(resolve()) : // YES: disable them
-                            chatgpt.instructions.turnOn().then(resolve()); // NO: enable them
+                            this.turnOff().then(resolve()) : // YES: disable them
+                            this.turnOn().then(resolve()); // NO: enable them
                     });
                 });
             });
