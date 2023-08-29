@@ -1579,8 +1579,14 @@ for (const prop in chatgpt) {
 
 // Prefix console logs w/ '🤖 chatgpt.js >> '
 const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info;
-console.error = (...args) => { ogError(consolePrefix + args[0], ...args.slice(1)); };
-console.info = (msg) => { ogInfo(consolePrefix + msg); };
+console.error = (...args) => {
+    if (!args[0].startsWith(consolePrefix)) ogError(consolePrefix + args[0], ...args.slice(1)); 
+    else ogError(...args);
+};
+console.info = (msg) => {
+    if (!msg.startsWith(consolePrefix)) ogInfo(consolePrefix + msg);
+    else ogInfo(msg);
+};
 
 // Export chatgpt object
 try { window.chatgpt = chatgpt; } catch (err) {} // for Greasemonkey
