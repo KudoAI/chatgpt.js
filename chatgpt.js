@@ -1315,13 +1315,11 @@ const chatgpt = {
 
             newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // Add random id to the element
 
-            if (element === 'button') {
-                if (attrs?.icon && typeof attrs.icon === 'string') { // Add icon to button element if given
-                    const icon = document.createElement('img');
-                    icon.src = attrs.icon; // Can also be base64 encoded image string
-                    icon.width = 18;
-                    newElement.insertBefore(icon, newElement.firstChild);
-                }
+            if (element === 'button' && attrs?.icon && typeof attrs.icon === 'string') { // Add icon to button element if given
+                const icon = document.createElement('img');
+                icon.src = attrs.icon; // Can also be base64 encoded image string
+                icon.width = 18;
+                newElement.insertBefore(icon, newElement.firstChild);
             }
 
             if (
