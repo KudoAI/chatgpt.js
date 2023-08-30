@@ -834,20 +834,21 @@ const chatgpt = {
     // NOTE: DOM is not updated to reflect new instructions added/removed or toggle state (until session refresh)
 
         add: function(instruction, target) {
-            const validTargets = ['user', 'chatgpt']; // Valid targets
+            const validTargets = ['user', 'chatgpt']; // valid targets
 
             if (!target) return console.error('Please provide a valid target!');
-            target = target.toLowerCase(); // Lowercase target
+            target = target.toLowerCase(); // lowercase target
 
             if (!validTargets.includes(target))
                 return console.error(`Invalid target ${target}. Valid targets are ${validTargets}`);
 
-            instruction = `\n\n${instruction}`; // Add 2 newlines to the new instruction
+            instruction = `\n\n${instruction}`; // add 2 newlines to the new instruction
 
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(async token => {
                     const instructionsData = await this.fetchData();
 
+                    // Concatenate old instructions with new instruction
                     if (target === 'user') instructionsData.about_user_message += instruction;
                     else if (target === 'chatgpt') instructionsData.about_model_message += instruction;
 
@@ -889,11 +890,13 @@ const chatgpt = {
         sendRequest: function(method, token, body) {
         // INTERNAL METHOD
             // Validate args
+            for (let i = 0; i < arguments.length - 1; i++) if (typeof arguments[i] !== 'string')
+                return console.error(`Argument ${ i + 1 } must be a string`);
             const validMethods = ['POST', 'GET'];
             method = (method || '').trim().toUpperCase();
             if (!method || !validMethods.includes(method)) // reject if not valid method
                 return console.error(`Valid methods are ${ validMethods }`);
-            if (!token || typeof token !== 'string') return console.error('Please provide a valid access token!');
+            if (!token) return console.error('Please provide a valid access token!');
             if (body && typeof body !== 'object') // reject if body is passed but not an object
                 return console.error(`Invalid body data type. Got ${ typeof body }, expected object`);
 
