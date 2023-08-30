@@ -189,15 +189,11 @@ const chatgpt = {
 
         toggle: function() {
             return new Promise((resolve) => {
-                chatgpt.getAccessToken().then(token => {
-                    this.fetchData(token).then(instructionsData => {
-                        instructionsData.enabled ? // Are custom instructions enabled?
-                            this.turnOff().then(resolve()) : // YES: disable them
-                            this.turnOn().then(resolve()); // NO: enable them
-                    });
-                });
-            });
-        }
+                chatgpt.getAccessToken().then(async token => {
+                    const instructionsData = await this.fetchData(token);
+                    await (instructionsData.enabled ? this.turnOff() : this.turnOn());
+                    return resolve();
+        });});}
     },
 
     actAs: function(persona) {
