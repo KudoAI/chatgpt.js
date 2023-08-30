@@ -834,45 +834,28 @@ const chatgpt = {
     // NOTE: DOM is not updated to reflect new instructions added/removed or toggle state (until session refresh)
 
         add: function(instruction, target) {
-            const validTargets = ['user', 'chatgpt']; // Valid targets
+            const validTargets = ['user', 'chatgpt']; // valid targets
 
             if (!target) return console.error('Please provide a valid target!');
-            target = target.toLowerCase(); // Lowercase target
+            target = target.toLowerCase(); // lowercase target
 
             if (!validTargets.includes(target))
                 return console.error(`Invalid target ${target}. Valid targets are ${validTargets}`);
 
-            instruction = `\n\n${instruction}`; // Add 2 newlines to the new instruction
+            instruction = `\n\n${instruction}`; // add 2 newlines to the new instruction
 
             return new Promise((resolve) => {
-                chatgpt.getAccessToken().then(token => {
-                    this.fetchData(token).then(instructionsData => {
-                        sendAddRequest(token, instructionsData).then(() => resolve());
-                    });
+                chatgpt.getAccessToken().then(async token => {
+                    const instructionsData = await this.fetchData();
+
+                    // Concatenate old instructions with new instruction
+                    if (target === 'user') instructionsData.about_user_message += instruction;
+                    else if (target === 'chatgpt') instructionsData.about_model_message += instruction;
+
+                    await this.sendRequest('POST', token, instructionsData);
+                    return resolve();
                 });
             });
-
-            function sendAddRequest(token, instructionsData) {
-                return new Promise((resolve, reject) => {
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('POST', endpoints.instructions, true);
-                    xhr.setRequestHeader('Accept-Language', 'en-US');
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                    xhr.onload = () => {
-                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot add custom instruction.');
-                        console.info('Custom instruction added.');
-                        return resolve();
-                    };
-                    xhr.send(JSON.stringify({
-                        // Previous user instructions + new instruction if the target is 'user'
-                        about_user_message: `${instructionsData.about_user_message}${target === 'user' ? instruction : ''}`,
-                        // Previous chatgpt instructions + new instruction if the target is 'chatgpt'
-                        about_model_message: `${instructionsData.about_model_message}${target === 'chatgpt' ? instruction : ''}`,
-                        enabled: instructionsData.enabled // Keep the previous 'enabled' value
-                    }));
-                });
-            }
         },
 
         clear: function(target) {
@@ -885,125 +868,85 @@ const chatgpt = {
                 return console.error(`Invalid target ${target}. Valid targets are ${validTargets}`);
 
             return new Promise((resolve) => {
-                chatgpt.getAccessToken().then(token => {
-                    this.fetchData(token).then(instructionsData => {
-                        sendClearRequest(token, instructionsData).then(() => resolve());
-                    });
-                });
-            });
+                chatgpt.getAccessToken().then(async token => {
+                    const instructionsData = await this.fetchData();
 
-            function sendClearRequest(token, instructionsData) {
-                return new Promise((resolve, reject) => {
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('POST', endpoints.instructions, true);
-                    xhr.setRequestHeader('Accept-Language', 'en-US');
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                    xhr.onload = () => {
-                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot clear custom instructions.');
-                        console.info('Custom instructions cleared.');
-                        return resolve();
-                    };
-                    xhr.send(JSON.stringify({
-                        // Send empty string to clear the user instructions if the target is 'user', else send previous instructions
-                        about_user_message: target === 'user' ? '' : instructionsData.about_user_message,
-                        // Send empty string to clear the chatgpt instructions if the target is 'chatgpt', else send previous instructions
-                        about_model_message: target === 'chatgpt' ? '' : instructionsData.about_model_message,
-                        enabled: instructionsData.enabled // Keep the previous 'enabled' value
-                    }));
-                });
-            }
+                    if (target === 'user') instructionsData.about_user_message = '';
+                    else if (target === 'chatgpt') instructionsData.about_model_message = '';
+
+                    await this.sendRequest('POST', token, instructionsData);
+                    return resolve();
+                });});
         },
 
         fetchData: function() {
+        // INTERNAL METHOD
             return new Promise((resolve) => {
-                chatgpt.getAccessToken().then(token => {
-                    sendFetchRequest(token).then(instructionsData => resolve(instructionsData));
-                });
-            });
+                chatgpt.getAccessToken().then(async token => {
+                    return resolve(await this.sendRequest('GET', token));
+                });});
+        },
 
-            function sendFetchRequest(token) {
-                return new Promise((resolve, reject) => {
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('GET', endpoints.instructions, true);
-                    xhr.setRequestHeader('Accept-Language', 'en-US');
-                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                    xhr.onload = () => {
-                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot fetch custom instructions.');
-                        return resolve(JSON.parse(xhr.responseText)); // Return the response JSON
-                    };
-                    xhr.send();
-                });
-            }
+        sendRequest: function(method, token, body) {
+        // INTERNAL METHOD
+            // Validate args
+            for (let i = 0; i < arguments.length - 1; i++) if (typeof arguments[i] !== 'string')
+                return console.error(`Argument ${ i + 1 } must be a string`);
+            const validMethods = ['POST', 'GET'];
+            method = (method || '').trim().toUpperCase();
+            if (!method || !validMethods.includes(method)) // reject if not valid method
+                return console.error(`Valid methods are ${ validMethods }`);
+            if (!token) return console.error('Please provide a valid access token!');
+            if (body && typeof body !== 'object') // reject if body is passed but not an object
+                return console.error(`Invalid body data type. Got ${ typeof body }, expected object`);
+
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open(method, endpoints.instructions, true);
+                // Set headers
+                xhr.setRequestHeader('Accept-Language', 'en-US');
+                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                if (method === 'POST') xhr.setRequestHeader('Content-Type', 'application/json');
+
+                xhr.onload = () => {
+                    if (xhr.status !== 200)
+                        return reject('🤖 chatgpt.js >> Request failed. Cannot contact custom instructions endpoint.');
+                    console.info(`Custom instructions successfully contacted with method ${ method }`);
+                    return resolve(JSON.parse(xhr.responseText || '{}')); // return response data no matter what the method is
+                };
+                xhr.send(JSON.stringify(body) || ''); // if body is passed send it, else just send the request
+            });
         },
 
         turnOff: function() {
             return new Promise((resolve) => {
-                chatgpt.getAccessToken().then(token => {
-                    this.fetchData(token).then(instructionsData => {
-                        sendUpdateRequest(token, instructionsData).then(() => resolve());
-                    });
+                chatgpt.getAccessToken().then(async token => {
+                    const instructionsData = await this.fetchData();
+                    instructionsData.enabled = false;
+                    await this.sendRequest('POST', token, instructionsData);
+                    return resolve();
                 });
             });
-
-            function sendUpdateRequest(token, instructionsData) {
-                return new Promise((resolve, reject) => {
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('POST', endpoints.instructions, true);
-                    xhr.setRequestHeader('Accept-Language', 'en-US');
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                    xhr.onload = () => {
-                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot disable custom instructions.');
-                        console.info('Custom instructions disabled.');
-                        return resolve();
-                    };
-                    xhr.send(JSON.stringify({
-                        about_user_message: instructionsData.about_user_message, // Keep the previous value
-                        about_model_message: instructionsData.about_model_message, // Keep the previous value
-                        enabled: false // Set 'enabled' to false to disable custom instructions
-                    }));
-                });
-            }
         },
 
         turnOn: function() {
             return new Promise((resolve) => {
-                chatgpt.getAccessToken().then(token => {
-                    this.fetchData(token).then(instructionsData => {
-                        sendUpdateRequest(token, instructionsData).then(() => resolve());
-                    });
+                chatgpt.getAccessToken().then(async token => {
+                    const instructionsData = await this.fetchData();
+                    instructionsData.enabled = true;
+                    await this.sendRequest('POST', token, instructionsData);
+                    return resolve();
                 });
             });
-
-            function sendUpdateRequest(token, instructionsData) {
-                return new Promise((resolve, reject) => {
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('POST', endpoints.instructions, true);
-                    xhr.setRequestHeader('Accept-Language', 'en-US');
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                    xhr.onload = () => {
-                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot enable custom instructions.');
-                        console.info('Custom instructions enabled.');
-                        return resolve();
-                    };
-                    xhr.send(JSON.stringify({
-                        about_user_message: instructionsData.about_user_message, // Keep the previous 'enabled' value
-                        about_model_message: instructionsData.about_model_message, // Keep the previous 'enabled' value
-                        enabled: true // Set 'enabled' to true to enable custom instructions
-                    }));
-                });
-            }
         },
 
         toggle: function() {
             return new Promise((resolve) => {
-                chatgpt.getAccessToken().then(async token => {
-                    const instructionsData = await this.fetchData(token);
+                this.fetchData().then(async instructionsData => {
                     await (instructionsData.enabled ? this.turnOff() : this.turnOn());
                     return resolve();
-        });});}
+                });});
+        }
     },
 
     isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
