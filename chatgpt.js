@@ -944,16 +944,15 @@ const chatgpt = {
         fetchData: function() {
         // INTERNAL METHOD
             return new Promise((resolve) => {
-                chatgpt.getAccessToken().then(token => {
-                    this.sendRequest('GET', token).then(instructionsData => resolve(instructionsData));
-                });
-            });
+                chatgpt.getAccessToken().then(async token => {
+                    return resolve(await this.sendRequest('GET', token));
+                });});
         },
 
         turnOff: function() {
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(async token => {
-                    const instructionsData = await this.fetchData('GET', token);
+                    const instructionsData = await this.fetchData();
                     instructionsData.enabled = false;
                     await this.sendRequest('POST', token, instructionsData);
                     resolve();
@@ -964,7 +963,7 @@ const chatgpt = {
         turnOn: function() {
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(async token => {
-                    const instructionsData = await this.fetchData('GET', token);
+                    const instructionsData = await this.fetchData();
                     instructionsData.enabled = true;
                     await this.sendRequest('POST', token, instructionsData);
                     resolve();
