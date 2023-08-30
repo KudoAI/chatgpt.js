@@ -974,11 +974,10 @@ const chatgpt = {
 
         toggle: function() {
             return new Promise((resolve) => {
-                chatgpt.getAccessToken().then(async token => {
-                    const instructionsData = await this.fetchData(token);
+                this.fetchData().then(async instructionsData => {
                     await (instructionsData.enabled ? this.turnOff() : this.turnOn());
                     return resolve();
-        });});}
+                });});}
     },
 
     isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
