@@ -40,7 +40,7 @@
 
 <br>
 
-📣 _Sind Sie ein OSS-Unterstützer? Liebst du JavaScript? Warum tragen Sie dann nicht zur Zukunft der AI-App-Entwicklung bei? **chatgpt.js** sucht Mitarbeiter für genau diesen Zweck! Öffnen Sie einfach eine [Diskussion](https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas) oder eine [Pull-Anfrage](https://github.com/KudoAI/chatgpt.js/pulls) (ideen jeder Größe sind willkommen) oder schauen Sie sich unsere [Roadmap](https://github.com/orgs/KudoAI/projects/1) an, um etwas zu finden, zu dem Sie beitragen können!_
+📣 _Sind Sie ein OSS-Unterstützer? Liebst du JavaScript? Warum tragen Sie dann nicht zur Zukunft der AI-App-Entwicklung bei? **chatgpt.js** sucht Mitarbeiter für genau diesen Zweck! Öffnen Sie einfach eine [Diskussion](https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas) oder eine [Pull-Anfrage](https://github.com/KudoAI/chatgpt.js/pulls) (ideen jeder Größe sind willkommen!)_
     
 </div>
 
