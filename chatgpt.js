@@ -963,32 +963,13 @@ const chatgpt = {
 
         turnOn: function() {
             return new Promise((resolve) => {
-                chatgpt.getAccessToken().then(token => {
-                    this.fetchData(token).then(instructionsData => {
-                        sendUpdateRequest(token, instructionsData).then(() => resolve());
-                    });
+                chatgpt.getAccessToken().then(async token => {
+                    const instructionsData = await this.fetchData('GET', token);
+                    instructionsData.enabled = true;
+                    await this.sendRequest('POST', token, instructionsData);
+                    resolve();
                 });
             });
-
-            function sendUpdateRequest(token, instructionsData) {
-                return new Promise((resolve, reject) => {
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('POST', endpoints.instructions, true);
-                    xhr.setRequestHeader('Accept-Language', 'en-US');
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                    xhr.onload = () => {
-                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot enable custom instructions.');
-                        console.info('Custom instructions enabled.');
-                        return resolve();
-                    };
-                    xhr.send(JSON.stringify({
-                        about_user_message: instructionsData.about_user_message, // Keep the previous 'enabled' value
-                        about_model_message: instructionsData.about_model_message, // Keep the previous 'enabled' value
-                        enabled: true // Set 'enabled' to true to enable custom instructions
-                    }));
-                });
-            }
         },
 
         toggle: function() {
