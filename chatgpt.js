@@ -955,7 +955,7 @@ const chatgpt = {
                     const instructionsData = await this.fetchData();
                     instructionsData.enabled = false;
                     await this.sendRequest('POST', token, instructionsData);
-                    resolve();
+                    return resolve();
                 });
             });
         },
@@ -966,7 +966,7 @@ const chatgpt = {
                     const instructionsData = await this.fetchData();
                     instructionsData.enabled = true;
                     await this.sendRequest('POST', token, instructionsData);
-                    resolve();
+                    return resolve();
                 });
             });
         },
