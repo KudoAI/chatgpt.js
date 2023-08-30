@@ -834,13 +834,14 @@ const chatgpt = {
     // NOTE: DOM is not updated to reflect new instructions added/removed or toggle state (until session refresh)
 
         add: function(instruction, target) {
+            if (!instruction) return console.error('Please provide an instruction');
+            if (typeof instruction !== 'string') return console.error('Instruction must be a string');
             const validTargets = ['user', 'chatgpt']; // valid targets
-
             if (!target) return console.error('Please provide a valid target!');
+            if (typeof target !== 'string') return console.error('Target must be a string');
             target = target.toLowerCase(); // lowercase target
-
             if (!validTargets.includes(target))
-                return console.error(`Invalid target ${target}. Valid targets are ${validTargets}`);
+                return console.error(`Invalid target ${target}. Valid targets are [${validTargets}]`);
 
             instruction = `\n\n${instruction}`; // add 2 newlines to the new instruction
 
@@ -859,18 +860,18 @@ const chatgpt = {
         },
 
         clear: function(target) {
-            const validTargets = ['user', 'chatgpt']; // Valid targets
-
+            const validTargets = ['user', 'chatgpt']; // valid targets
             if (!target) return console.error('Please provide a valid target!');
-            target = target.toLowerCase(); // Lowercase target
-
+            if (typeof target !== 'string') return console.error('Target must be a string');
+            target = target.toLowerCase(); // lowercase target
             if (!validTargets.includes(target))
-                return console.error(`Invalid target ${target}. Valid targets are ${validTargets}`);
+                return console.error(`Invalid target ${target}. Valid targets are [${validTargets}]`);
 
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(async token => {
                     const instructionsData = await this.fetchData();
 
+                    // Clear target's instructions
                     if (target === 'user') instructionsData.about_user_message = '';
                     else if (target === 'chatgpt') instructionsData.about_model_message = '';
 
@@ -883,7 +884,7 @@ const chatgpt = {
         // INTERNAL METHOD
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(async token => {
-                    return resolve(await this.sendRequest('GET', token));
+                    return resolve(await this.sendRequest('GET', token)); // Return API data
                 });});
         },
 
@@ -909,7 +910,9 @@ const chatgpt = {
                 if (method === 'POST') xhr.setRequestHeader('Content-Type', 'application/json');
 
                 xhr.onload = () => {
-                    if (xhr.status !== 200)
+                    if (xhr.status === 422)
+                        return reject('🤖 chatgpt.js >> Character limit exceeded. Custom instructions can have a maximum length of 1500 characters.');
+                    else if (xhr.status !== 200)
                         return reject('🤖 chatgpt.js >> Request failed. Cannot contact custom instructions endpoint.');
                     console.info(`Custom instructions successfully contacted with method ${ method }`);
                     return resolve(JSON.parse(xhr.responseText || '{}')); // return response data no matter what the method is
@@ -1446,6 +1449,12 @@ const chatgpt = {
         },
 
         append: function(element, attrs = {}) {
+        // element = 'button' | 'select' REQUIRED (no default value)
+        // attrs = { ... } (defaults to empty) uses default HTML attributes (reference below)
+        // https://developer.mozilla.org/en-US/docs/Web/API/Element
+        // https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
+        // https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
+        // + custom attributes: 'icon' for 'button' | 'items' for 'select'
             const validElements = ['button', 'select'];
 
             if (!element || typeof element !== 'string') // Element not passed or invalid type
