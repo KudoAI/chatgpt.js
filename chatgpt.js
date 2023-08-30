@@ -841,7 +841,7 @@ const chatgpt = {
             return new Promise((resolve, reject) => {
                 if (!validMethods.includes(method)) // reject if not valid method
                     return reject(`🤖 chatgpt.js >> Invalid method ${method}. Valid methods are ${validMethods}`);
-                else if (typeof body !== 'object') // reject if body is not an object
+                else if (body && typeof body !== 'object') // reject if body is not an object
                     return reject(`🤖 chatgpt.js >> Invalid body data type. Got ${typeof body}, expected object`);
 
                 const xhr = new XMLHttpRequest();
