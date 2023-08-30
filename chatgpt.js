@@ -886,7 +886,7 @@ const chatgpt = {
                 });});
         },
 
-        sendRequest: function(method, token, body) {
+        sendRequest: function(method, body) {
         // INTERNAL METHOD
             // Validate args
             const validMethods = ['POST', 'GET'];
@@ -895,22 +895,24 @@ const chatgpt = {
                 return console.error(`Valid methods are ${ validMethods }`);
             else if (body && typeof body !== 'object') // reject if body is passed but not an object
                 return console.error(`Invalid body data type. Got ${ typeof body }, expected object`);
-    
-            return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
-                xhr.open(method, endpoints.instructions, true);
-                // Set headers
-                xhr.setRequestHeader('Accept-Language', 'en-US');
-                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                if (method === 'POST') xhr.setRequestHeader('Content-Type', 'application/json');
 
-                xhr.onload = () => {
-                    if (xhr.status !== 200)
-                        return reject('🤖 chatgpt.js >> Request failed. Cannot contact custom instructions endpoint.');
-                    console.info(`Custom instructions successfully contacted with method ${ method }`);
-                    return resolve(JSON.parse(xhr.responseText || '{}')); // return response data no matter what the method is
-                };
-                xhr.send(JSON.stringify(body) || ''); // if body is passed send it, else just send the request
+            return new Promise((resolve, reject) => {
+                chatgpt.getAccessToken().then(token => {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open(method, endpoints.instructions, true);
+                    // Set headers
+                    xhr.setRequestHeader('Accept-Language', 'en-US');
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                    if (method === 'POST') xhr.setRequestHeader('Content-Type', 'application/json');
+
+                    xhr.onload = () => {
+                        if (xhr.status !== 200)
+                            return reject('🤖 chatgpt.js >> Request failed. Cannot contact custom instructions endpoint.');
+                        console.info(`Custom instructions successfully contacted with method ${ method }`);
+                        return resolve(JSON.parse(xhr.responseText || '{}')); // return response data no matter what the method is
+                    };
+                    xhr.send(JSON.stringify(body) || ''); // if body is passed send it, else just send the request
+                });
             });
         },
 
