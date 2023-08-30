@@ -306,9 +306,9 @@ const chatgpt = {
 
         // Validate method arg
         const validMethods = ['api', 'dom'];
-        if (method && !validMethods.includes(method.trim().toLowerCase()))
+        method = (method || 'dom').trim().toLowerCase(); // set to 'dom' by default
+        if (method && !validMethods.includes(method))
             return console.log(`Method argument must be one of: [${ validMethods }]`);
-        method = method?.toLowerCase() || 'dom'; // set to 'dom' by default
 
         if (method === 'dom') {
             try { await chatgpt.getChatData(); } catch { return; } // check if chat history exists
