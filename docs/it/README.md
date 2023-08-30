@@ -57,7 +57,7 @@
 - Facile da usare
 - Leggero (ma molto performante)
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
 ## ⚡ Importazione della libreria
 
@@ -136,7 +136,7 @@ export { chatgpt }
 })();
 ```
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
 <div id="usage">
 
@@ -159,7 +159,7 @@ Ogni chiamata ritorna ugualmente l'ultima risposta di ChatGPT. Se pensi che funz
 
 In caso contrario, consulta la [guida per l'utente](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) estesa o invia semplicemente un [problema](https://github.com/kudoai/chatgpt.js/issues) o [PR](https://github.com/kudoai/chatgpt.js/pulls) e sarà integrato, facile!
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
 <div id="showcase">
 
@@ -227,7 +227,7 @@ Visualizza le risposte di ChatGPT nella barra laterale di DuckDuckGo (basato su 
 Se hai creato qualcosa con chatgpt.js che desideri condividere, invia un'email a <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> o semplicemente apri una <a href="https://github.com/kudoai/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>!
 </p>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
 <div id="contributors">
 
@@ -256,7 +256,7 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 [![](https://images.weserv.nl/?url=https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/icons/poe-icon128.svg?first-contrib=2023.07.27-getandshowreply-method&h=41&w=41&mask=circle&maxage=7d 'Poe')](https://poe.com)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=41&w=41&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
 <div id="partners">
 
@@ -277,7 +277,7 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 
 <br>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
 <div id="star-history" align="center">
 

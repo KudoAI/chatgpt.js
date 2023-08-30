@@ -57,7 +57,7 @@
 - 使いやすい
 - 軽量 (それでも最適なパフォーマンス)
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
 ## ⚡ ライブラリのインポート
 
@@ -136,7 +136,7 @@ export { chatgpt }
 })();
 ```
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
 <div id="usage">
 
@@ -159,7 +159,7 @@ chatgpt.get('reply', 'last')
 
 そうでない場合は、拡張された [ユーザーガイド](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) を確認するか、単に [問題](https://github.com/kudoai/chatgpt.js/issues) または [PR](https://github.com/kudoai/chatgpt.js/pulls) と統合されるので、簡単です!
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
 <div id="showcase">
 
@@ -227,7 +227,7 @@ DuckDuckGo サイドバーに ChatGPT の回答を表示 (GPT-4 を搭載!)
 chatgpt.js で何かを作成して共有したい場合は、<a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> にメールするか、<a href="https://github.com/kudoai/chatgpt.js/pulls" target="_blank" rel="noopener">プル リクエスト</a>!
 </p>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
 <div id="contributors">
 
@@ -256,7 +256,7 @@ chatgpt.js で何かを作成して共有したい場合は、<a href="mailto:sh
 [![](https://images.weserv.nl/?url=https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/icons/poe-icon128.svg?first-contrib=2023.07.27-getandshowreply-method&h=41&w=41&mask=circle&maxage=7d 'Poe')](https://poe.com)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=41&w=41&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
 <div id="partners">
 
@@ -277,7 +277,7 @@ chatgpt.js で何かを作成して共有したい場合は、<a href="mailto:sh
 
 <br>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
 <div id="star-history" align="center">
 
