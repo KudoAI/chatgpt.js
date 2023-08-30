@@ -597,15 +597,9 @@ Example code:
 
 ### clearChats `async`
 
-Clears the user's chat history.
+`method` (optional): The string `'api'` or `'dom'` representing the method to use.
 
-Example code:
-
-```js
-(async () => {
-    await chatgpt.clearChats();
-})();
-```
+> **Note** _The API method does not update DOM chat list (until session refresh)_
 
 ### exportChat `async`
 
