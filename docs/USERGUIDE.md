@@ -319,7 +319,7 @@ Asks ChatGPT to analyze sentiment from a given text.
 
 `text`: A string being the text to be analyzed.
 
-`entity`: A string being the entity to analyze sentiment towards.
+`entity` (optional): A string being the entity to analyze sentiment towards.
 
 Example code:
 
@@ -346,7 +346,7 @@ Asks ChatGPT to suggest ideas.
 
 `ideaType`: A string being the type of idea to suggest.
 
-`details`: A string being details to fine-tune the suggestion.
+`details` (optional): A string being details to fine-tune the suggestion.
 
 Example code:
 
@@ -488,15 +488,15 @@ Creates a static alert box which displays a message. Only a user interaction can
 
 **Parameters**:
 
-`title`: A string which is the title of the alert.
+`title` (optional): A string which is the title of the alert.
 
-`msg`: A string which is the message to be displayed.
+`msg` (optional): A string which is the message to be displayed.
 
-`btns`: An array of functions which will be rendered as clickable buttons.
+`btns` (optional): An array of functions which will be rendered as clickable buttons.
 
-`checkbox`: A function which will be rendered as a checkbox.
+`checkbox` (optional): A function which will be rendered as a checkbox.
 
-`width`: An integer representing the width of the alert box in `px`.
+`width` (optional): An integer representing the width of the alert box in `px`.
 
 Example code:
 
@@ -519,11 +519,11 @@ Displays a temporary notification at a specified position in the website.
 
 `msg`: A string which is the message to be displayed.
 
-`position`: A string specifying the position of the notification.
+`position` (optional): A string specifying the position of the notification.
 
-`notifDuration`: A float specifying the duration of the notification before it fades out.
+`notifDuration` (optional): A float specifying the duration of the notification before it fades out.
 
-`shadow`: A string specifying if the `box-shadow` CSS property should be used.
+`shadow` (optional): A string specifying if the `box-shadow` CSS property should be used.
 
 Example code:
 
@@ -607,11 +607,11 @@ Exports a given chat as a file.
 
 **Parameters**:
 
-`chatToGet`: A string representing the chat to get the data from.
+`chatToGet` (optional): A string representing the chat to get the data from.
 
 Can be the following: `active`, the current chat, `latest`, the latest chat in the list, else the `index`, `title` or `id` of the chat to get. Default is `active` if in a chat, else `latest`.
 
-`format`: A string representing the format of the export file.
+`format` (optional): A string representing the format of the export file.
 
 Can be the following: `html`, `md`, `pdf` or `text`. Defaults to `html`.
 
@@ -629,21 +629,21 @@ Returns the requested chat data.
 
 **Parameters**:
 
-`chatToGet`: A string representing the chat to get the data from.
+`chatToGet` (optional): A string representing the chat to get the data from.
 
 Can be the following: `active`, the current chat, `latest`, the latest chat in the list, else the `index`, `title` or `id` of the chat to get. Default is `active` if in a chat, else `latest`.
 
-`detailsToGet`: A string representing the chat data to retrieve.
+`detailsToGet` (optional): A string representing the chat data to retrieve.
 
 Can be the following: `all` to get all details, `id`, `title`, `create_time`, `update_time` or `msg`. To get a single detail, just use a string, to get multiple use an array of strings instead. Default is `all`.
 
 _**If `msg` is the requested detail, the following parameters can be used**_:
 
-`sender`: A string representing the chat member to get the message(s) from.
+`sender` (optional): A string representing the chat member to get the message(s) from.
 
 Can be the following: `user` to get the user message(s), `chatgpt` to get ChatGPT's response(s), `all`/`both` to get both of them. Default is `all`.
 
-`msgToGet`: A string/number representing the chat message to retrieve.
+`msgToGet` (optional): A string/number representing the chat message to retrieve.
 
 Can be the following: `all` to get all the messages in the chat, `latest` to get the latest message/response, or the `index` of the message. Default is `all`.
 
@@ -825,9 +825,9 @@ Returns the Nth response ChatGPT has written in a Nth chat as a string.
 
 **Parameters**:
 
-`chatToGet`: A number representing the index of the chat to get the response from. Defaults to `latest`.
+`chatToGet` (optional): A number representing the index of the chat to get the response from. Defaults to `latest`.
 
-`responseToGet`: A number representing the index of the response to get. Defaults to `latest`.
+`responseToGet` (optional): A number representing the index of the response to get. Defaults to `latest`.
 
 Example code:
 
@@ -910,7 +910,7 @@ Sends a message into the chat.
 
 `msg`: A string representing the message to send.
 
-`method`: A string representing the method to send the message with, can only be `click`. Usually needed for mobile devices compatibility.
+`method` (optional): A string representing the method to send the message with, can only be `click`. Usually needed for mobile devices compatibility.
 
 Example code:
 
@@ -939,9 +939,9 @@ Makes the selected chat available to others. Returns the URL of the chat as a st
 
 **Parameters**:
 
-`chatToGet`: A number or string representing the `index`, `title` or `id` of the chat to share.
+`chatToGet` (optional): A number or string representing the `index`, `title` or `id` of the chat to share.
 
-`method`: A string representing the method to share the chat with. Defaults to `clipboard`.
+`method` (optional): A string representing the method to share the chat with. Defaults to `clipboard`.
 
 Can be the following: `copy` or `clipboard` to copy the chat URL to clipboard, `alert`, `notify` or `notification` to create an [alert message](#alert) with the details about the shared chat in the website.
 
@@ -959,7 +959,7 @@ Text To Speech (TTS) conversion of a given message.
 
 `msg`: A string representing the message to TTS.
 
-`options`: An object containing the options for the vocal synthesizer.
+`options` (optional): An object containing the options for the vocal synthesizer.
 
 Available options:
 
@@ -1075,7 +1075,7 @@ Activates the auto-refresh functionality.
 
 **Parameters**:
 
-`interval`: A number representing the interval in seconds between sessions refreshes. Defaults to `30`.
+`interval` (optional): A number representing the interval in seconds between sessions refreshes. Defaults to `30`.
 
 Example code:
 
@@ -1177,7 +1177,7 @@ Asks ChatGPT to obfuscate the given code.
 
 **Parameters**:
 
-`code`: A string being the code to be refactored.
+`code`: A string being the code to be obfuscated.
 
 Example code:
 
@@ -1200,7 +1200,7 @@ Asks ChatGPT to refactor the given code.
 
 `code`: A string being the code to be refactored.
 
-`objective`: A string reprenting the objective of the refactoring. Defaults to `brevity`.
+`objective` (optional): A string reprenting the objective of the refactoring. Defaults to `brevity`.
 
 Example code:
 
