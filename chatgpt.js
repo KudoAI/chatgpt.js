@@ -835,10 +835,9 @@ const chatgpt = {
 
         add: function(instruction, target) {
             const validTargets = ['user', 'chatgpt']; // valid targets
-
             if (!target) return console.error('Please provide a valid target!');
+            if (typeof target !== 'string') return console.error('Target must be a string');
             target = target.toLowerCase(); // lowercase target
-
             if (!validTargets.includes(target))
                 return console.error(`Invalid target ${target}. Valid targets are ${validTargets}`);
 
@@ -859,11 +858,10 @@ const chatgpt = {
         },
 
         clear: function(target) {
-            const validTargets = ['user', 'chatgpt']; // Valid targets
-
+            const validTargets = ['user', 'chatgpt']; // valid targets
             if (!target) return console.error('Please provide a valid target!');
-            target = target.toLowerCase(); // Lowercase target
-
+            if (typeof target !== 'string') return console.error('Target must be a string');
+            target = target.toLowerCase(); // lowercase target
             if (!validTargets.includes(target))
                 return console.error(`Invalid target ${target}. Valid targets are ${validTargets}`);
 
@@ -871,6 +869,7 @@ const chatgpt = {
                 chatgpt.getAccessToken().then(async token => {
                     const instructionsData = await this.fetchData();
 
+                    // Clear target's instructions
                     if (target === 'user') instructionsData.about_user_message = '';
                     else if (target === 'chatgpt') instructionsData.about_model_message = '';
 
@@ -883,7 +882,7 @@ const chatgpt = {
         // INTERNAL METHOD
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(async token => {
-                    return resolve(await this.sendRequest('GET', token));
+                    return resolve(await this.sendRequest('GET', token)); // Return API data
                 });});
         },
 
