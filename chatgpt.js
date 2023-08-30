@@ -896,7 +896,7 @@ const chatgpt = {
             if (!token || typeof token !== 'string') return console.error('Please provide a valid access token!');
             if (body && typeof body !== 'object') // reject if body is passed but not an object
                 return console.error(`Invalid body data type. Got ${ typeof body }, expected object`);
-    
+
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
                 xhr.open(method, endpoints.instructions, true);
