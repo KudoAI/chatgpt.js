@@ -834,12 +834,14 @@ const chatgpt = {
     // NOTE: DOM is not updated to reflect new instructions added/removed or toggle state (until session refresh)
 
         add: function(instruction, target) {
+            if (!instruction) return console.error('Please provide an instruction');
+            if (typeof instruction !== 'string') return console.error('Instruction must be a string');
             const validTargets = ['user', 'chatgpt']; // valid targets
             if (!target) return console.error('Please provide a valid target!');
             if (typeof target !== 'string') return console.error('Target must be a string');
             target = target.toLowerCase(); // lowercase target
             if (!validTargets.includes(target))
-                return console.error(`Invalid target ${target}. Valid targets are ${validTargets}`);
+                return console.error(`Invalid target ${target}. Valid targets are [${validTargets}]`);
 
             instruction = `\n\n${instruction}`; // add 2 newlines to the new instruction
 
@@ -863,7 +865,7 @@ const chatgpt = {
             if (typeof target !== 'string') return console.error('Target must be a string');
             target = target.toLowerCase(); // lowercase target
             if (!validTargets.includes(target))
-                return console.error(`Invalid target ${target}. Valid targets are ${validTargets}`);
+                return console.error(`Invalid target ${target}. Valid targets are [${validTargets}]`);
 
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(async token => {
