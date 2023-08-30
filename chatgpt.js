@@ -893,7 +893,8 @@ const chatgpt = {
             method = (method || '').trim().toUpperCase();
             if (!method || !validMethods.includes(method)) // reject if not valid method
                 return console.error(`Valid methods are ${ validMethods }`);
-            else if (body && typeof body !== 'object') // reject if body is passed but not an object
+            if (!token || typeof token !== 'string') return console.error('Please provide a valid access token!');
+            if (body && typeof body !== 'object') // reject if body is passed but not an object
                 return console.error(`Invalid body data type. Got ${ typeof body }, expected object`);
     
             return new Promise((resolve, reject) => {
