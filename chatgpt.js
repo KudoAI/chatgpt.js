@@ -1447,6 +1447,12 @@ const chatgpt = {
         },
 
         append: function(element, attrs = {}) {
+        // element = 'button' | 'select' REQUIRED (no default value)
+        // attrs = { ... } (defaults to empty) uses default HTML attributes (reference below)
+        // https://developer.mozilla.org/en-US/docs/Web/API/Element
+        // https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
+        // https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
+        // + custom attributes: 'icon' for 'button' | 'items' for 'select'
             const validElements = ['button', 'select'];
 
             if (!element || typeof element !== 'string') // Element not passed or invalid type
