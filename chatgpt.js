@@ -833,6 +833,32 @@ const chatgpt = {
     instructions: {
     // NOTE: DOM is not updated to reflect new instructions added/removed or toggle state (until session refresh)
 
+        sendRequest: function(method, token, body) {
+        // INTERNAL METHOD
+            const validMethods = ['POST', 'GET']; // methods validation
+            method = method.toUpperCase();
+
+            return new Promise((resolve, reject) => {
+                if (!validMethods.includes(method)) // reject if not valid method
+                    return reject(`🤖 chatgpt.js >> Invalid method ${method}. Valid methods are ${validMethods}`);
+                else if (typeof body !== 'object') // reject if body is not an object
+                    return reject(`🤖 chatgpt.js >> Invalid body data type. Got ${typeof body}, expected object`);
+
+                const xhr = new XMLHttpRequest();
+                xhr.open(method, endpoints.instructions, true);
+                xhr.setRequestHeader('Accept-Language', 'en-US');
+                if (method === 'POST') xhr.setRequestHeader('Content-Type', 'application/json'); // add header if method is 'POST'
+                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                xhr.onload = () => {
+                    if (xhr.status !== 200)
+                        return reject('🤖 chatgpt.js >> Request failed. Cannot contact custom instructions endpoint.');
+                    console.info(`Custom instruction successfully contacted with method ${method}`);
+                    return resolve(JSON.parse(xhr.responseText || '{}')); // return response data no matter what the method is
+                };
+                xhr.send(JSON.stringify(body) || ''); // if body is passed send it, else nothing
+            });
+        },
+
         add: function(instruction, target) {
             const validTargets = ['user', 'chatgpt']; // Valid targets
 
@@ -916,25 +942,12 @@ const chatgpt = {
         },
 
         fetchData: function() {
+        // INTERNAL METHOD
             return new Promise((resolve) => {
                 chatgpt.getAccessToken().then(token => {
-                    sendFetchRequest(token).then(instructionsData => resolve(instructionsData));
+                    this.sendRequest('GET', token).then(instructionsData => resolve(instructionsData));
                 });
             });
-
-            function sendFetchRequest(token) {
-                return new Promise((resolve, reject) => {
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('GET', endpoints.instructions, true);
-                    xhr.setRequestHeader('Accept-Language', 'en-US');
-                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                    xhr.onload = () => {
-                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot fetch custom instructions.');
-                        return resolve(JSON.parse(xhr.responseText)); // Return the response JSON
-                    };
-                    xhr.send();
-                });
-            }
         },
 
         turnOff: function() {
