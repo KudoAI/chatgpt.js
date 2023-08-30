@@ -885,34 +885,15 @@ const chatgpt = {
                 return console.error(`Invalid target ${target}. Valid targets are ${validTargets}`);
 
             return new Promise((resolve) => {
-                chatgpt.getAccessToken().then(token => {
-                    this.fetchData(token).then(instructionsData => {
-                        sendClearRequest(token, instructionsData).then(() => resolve());
-                    });
-                });
-            });
+                chatgpt.getAccessToken().then(async token => {
+                    const instructionsData = await this.fetchData();
 
-            function sendClearRequest(token, instructionsData) {
-                return new Promise((resolve, reject) => {
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('POST', endpoints.instructions, true);
-                    xhr.setRequestHeader('Accept-Language', 'en-US');
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                    xhr.onload = () => {
-                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot clear custom instructions.');
-                        console.info('Custom instructions cleared.');
-                        return resolve();
-                    };
-                    xhr.send(JSON.stringify({
-                        // Send empty string to clear the user instructions if the target is 'user', else send previous instructions
-                        about_user_message: target === 'user' ? '' : instructionsData.about_user_message,
-                        // Send empty string to clear the chatgpt instructions if the target is 'chatgpt', else send previous instructions
-                        about_model_message: target === 'chatgpt' ? '' : instructionsData.about_model_message,
-                        enabled: instructionsData.enabled // Keep the previous 'enabled' value
-                    }));
-                });
-            }
+                    if (target === 'user') instructionsData.about_user_message = '';
+                    else if (target === 'chatgpt') instructionsData.about_model_message = '';
+
+                    await this.sendRequest('POST', token, instructionsData);
+                    return resolve();
+                });});
         },
 
         fetchData: function() {
