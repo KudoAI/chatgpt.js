@@ -845,34 +845,16 @@ const chatgpt = {
             instruction = `\n\n${instruction}`; // Add 2 newlines to the new instruction
 
             return new Promise((resolve) => {
-                chatgpt.getAccessToken().then(token => {
-                    this.fetchData(token).then(instructionsData => {
-                        sendAddRequest(token, instructionsData).then(() => resolve());
-                    });
+                chatgpt.getAccessToken().then(async token => {
+                    const instructionsData = await this.fetchData();
+
+                    if (target === 'user') instructionsData.about_user_message += instruction;
+                    else if (target === 'chatgpt') instructionsData.about_model_message += instruction;
+
+                    await this.sendRequest('POST', token, instructionsData);
+                    return resolve();
                 });
             });
-
-            function sendAddRequest(token, instructionsData) {
-                return new Promise((resolve, reject) => {
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('POST', endpoints.instructions, true);
-                    xhr.setRequestHeader('Accept-Language', 'en-US');
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                    xhr.onload = () => {
-                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot add custom instruction.');
-                        console.info('Custom instruction added.');
-                        return resolve();
-                    };
-                    xhr.send(JSON.stringify({
-                        // Previous user instructions + new instruction if the target is 'user'
-                        about_user_message: `${instructionsData.about_user_message}${target === 'user' ? instruction : ''}`,
-                        // Previous chatgpt instructions + new instruction if the target is 'chatgpt'
-                        about_model_message: `${instructionsData.about_model_message}${target === 'chatgpt' ? instruction : ''}`,
-                        enabled: instructionsData.enabled // Keep the previous 'enabled' value
-                    }));
-                });
-            }
         },
 
         clear: function(target) {
@@ -957,7 +939,8 @@ const chatgpt = {
                 this.fetchData().then(async instructionsData => {
                     await (instructionsData.enabled ? this.turnOff() : this.turnOn());
                     return resolve();
-                });});}
+                });});
+        }
     },
 
     isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
