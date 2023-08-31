@@ -910,12 +910,15 @@ const chatgpt = {
                 if (method === 'POST') xhr.setRequestHeader('Content-Type', 'application/json');
 
                 xhr.onload = () => {
+                    const responseData = JSON.parse(xhr.responseText);
                     if (xhr.status === 422)
                         return reject('🤖 chatgpt.js >> Character limit exceeded. Custom instructions can have a maximum length of 1500 characters.');
+                    else if (xhr.status === 403 && responseData.detail.reason === 'content_policy')
+                        return reject('🤖 chatgpt.js >> ' + responseData.detail.description);
                     else if (xhr.status !== 200)
                         return reject('🤖 chatgpt.js >> Request failed. Cannot contact custom instructions endpoint.');
                     console.info(`Custom instructions successfully contacted with method ${ method }`);
-                    return resolve(JSON.parse(xhr.responseText || '{}')); // return response data no matter what the method is
+                    return resolve(responseData || {}); // return response data no matter what the method is
                 };
                 xhr.send(JSON.stringify(body) || ''); // if body is passed send it, else just send the request
             });
