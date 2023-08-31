@@ -1453,8 +1453,7 @@ const chatgpt = {
 
         append: function(element, attrs = {}) {
         // element = 'button' | 'select' REQUIRED (no default value)
-        // attrs = { ... } (defaults to empty)
-        // + custom attributes: 'icon' for 'button' | 'items' for 'select'
+        // attrs = { ... } 'icon', 'label', 'onclick' for 'button' | 'items[]' for 'select' (defaults to empty)
             const validElements = ['button', 'select'];
             if (!element || typeof element !== 'string') // Element not passed or invalid type
                 return console.error('🤖 chatgpt.js >> Please supply a valid string element name!');
