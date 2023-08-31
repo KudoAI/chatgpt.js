@@ -1453,35 +1453,32 @@ const chatgpt = {
 
         append: function(element, attrs = {}) {
         // element = 'button' | 'select' REQUIRED (no default value)
-        // attrs = { ... } (defaults to empty) uses default HTML attributes (reference below)
-        // https://developer.mozilla.org/en-US/docs/Web/API/Element
-        // https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
-        // https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
-        // + custom attributes: 'icon' for 'button' | 'items' for 'select'
+        // attrs = { ... } 'icon', 'label', 'onclick' for 'button' | 'items[]' for 'select' (defaults to empty)
             const validElements = ['button', 'select'];
-
             if (!element || typeof element !== 'string') // Element not passed or invalid type
                 return console.error('🤖 chatgpt.js >> Please supply a valid string element name!');
             element = element.toLowerCase();
-
             if (!validElements.includes(element)) // Element not in list
                 return console.error(`🤖 chatgpt.js >> Invalid element! Received: ${element} Valid elements: ${validElements}`);
-
             const newElement = document.createElement(element);
-            const invalidAttributes = ['id', 'icon', 'items'];
-
-            if (attrs && typeof attrs === 'object')
-                Object.entries(attrs).forEach(([key, value]) => {
-                    if (!invalidAttributes.includes(key)) newElement[key] = value;
-                });
 
             newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // Add random id to the element
 
-            if (element === 'button' && attrs?.icon && typeof attrs.icon === 'string') { // Add icon to button element if given
+            if (element === 'button') {
+                newElement.textContent = attrs?.label && typeof attrs.label === 'string'
+                    ? attrs.label
+                    : 'chatgpt.js button';
+
                 const icon = document.createElement('img');
-                icon.src = attrs.icon; // Can also be base64 encoded image string
+                icon.src = attrs?.icon && typeof attrs.icon === 'string' // Can also be base64 encoded image string
+                    ? attrs.icon // Add icon to button element if given, else default one
+                    : 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/starters/chrome/extension/icons/icon128.png';
                 icon.width = 18;
                 newElement.insertBefore(icon, newElement.firstChild);
+
+                newElement.onclick = attrs?.onclick && typeof attrs.onclick === 'function'
+                    ? attrs.onclick
+                    : function() {};
             }
 
             else if (
