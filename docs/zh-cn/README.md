@@ -59,7 +59,11 @@
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
+<div id="importing">
+
 ## ⚡ 导入库
+
+</div>
 
 ### ES6:
 
