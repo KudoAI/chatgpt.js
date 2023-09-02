@@ -1646,6 +1646,7 @@ const functionAliases = [
         'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
     ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
     ['detectLanguage', 'getLanguage'],
+    ['executeCode', 'codeExecute'],
     ['exportChat', 'chatExport', 'export'],
     ['getLastPrompt', 'getLastQuery', 'getMyLastMsg', 'getMyLastQuery'],
     ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
