@@ -78,6 +78,7 @@
       - [nowTimeStamp](#nowtimestamp)
   - [code `obj`](#code-obj)
     - [minify `async`](#minify-async)
+    - [execute](#execute)
     - [extract](#extract)
     - [obfuscate `async`](#obfuscate-async)
     - [refactor `async`](#refactor-async)
@@ -1136,6 +1137,22 @@ Example code:
 })();
 ```
 
+### execute
+
+Asks ChatGPT to execute the given code.
+
+**Parameters**:
+
+`code`: A string being the code to execute.
+
+Example code:
+
+```js
+(async () => {
+    console.log(await chatgpt.code.execute('return 6 + 5')); // Logs '11'
+})();
+```
+
 ### extract
 
 Extracts pure code from response.
@@ -1177,7 +1194,7 @@ Asks ChatGPT to obfuscate the given code.
 
 **Parameters**:
 
-`code`: A string being the code to be obfuscated.
+`code`: A string being the code to obfuscate.
 
 Example code:
 
@@ -1198,7 +1215,7 @@ Asks ChatGPT to refactor the given code.
 
 **Parameters**:
 
-`code`: A string being the code to be refactored.
+`code`: A string being the code to refactor.
 
 `objective` (optional): A string reprenting the objective of the refactoring. Defaults to `brevity`.
 
@@ -1226,7 +1243,7 @@ Asks ChatGPT to review given code.
 
 **Parameters**:
 
-`code`: A string being the code to be reviewed.
+`code`: A string being the code to review.
 
 Example code:
 
@@ -1245,7 +1262,7 @@ Asks ChatGPT to unminify the given code.
 
 **Parameters**:
 
-`code`: A string being the code to be unminify.
+`code`: A string being the code to unminify.
 
 Example code:
 
@@ -1276,7 +1293,7 @@ Asks ChatGPT to write code given a prompt.
 
 **Parameters**:
 
-`prompt`: A string describing the code to be generated.
+`prompt`: A string describing the code to generate.
 
 `outputLang`: A string representing the code language to generate the prompt with.
 
