@@ -354,9 +354,9 @@ const chatgpt = {
     code: {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
-        extract: function(msg) { // extract pure code from response
-            const match = /```.*\n([\s\S]*)```/.exec(msg);
-            return match ? match[1] : msg;
+        extract: function(msg) { // extract pure code from response (targets last block)
+            const codeBlocks = msg.match(/(?<=```.*\n)[\s\S]*?(?=```)/g);
+            return codeBlocks ? codeBlocks[codeBlocks.length - 1] : msg;
         },
 
         minify: async function(code) {
