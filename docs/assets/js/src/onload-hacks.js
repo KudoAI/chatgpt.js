@@ -324,7 +324,7 @@ const onLoadObserver = new MutationObserver(() => {
                                 const topGap = trigger.y - window.scrollY,
                                       newOpacity = 1 - Math.abs(topGap) / window.innerHeight,
                                       parallaxOffset = topGap * -0.35;
-                                try { elem.classList.remove('content-fadeup') } catch (err) {};
+                                try { elem.classList.remove('content-fadeup'); } catch (err) {}
                                 elem.style.opacity = newOpacity;
                                 elem.style.transform = `translateY(${ parallaxOffset }px)`;
                             });
