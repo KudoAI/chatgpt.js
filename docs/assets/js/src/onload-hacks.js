@@ -294,8 +294,9 @@ const onLoadObserver = new MutationObserver(() => {
                 // Target TRIGGERS
                 const parallaxTriggers = [];
                 document.querySelectorAll('#main, h2').forEach(trigger => {
-                    const y = trigger.getBoundingClientRect().top - window.innerHeight / 4,
-                          triggerElem = trigger.tagName === 'H2' ? trigger.parentElement : trigger;
+                    const y = trigger.getBoundingClientRect().top - window.innerHeight
+                            / ( navigator.userAgent.includes('Chrome') ? 4 : 2 );
+                    const triggerElem = trigger.tagName === 'H2' ? trigger.parentElement : trigger;
                     parallaxTriggers.push({ element: triggerElem, y });
                 });
 
