@@ -20,7 +20,7 @@ const iniStarZvelocity = window.starVelocity.z,
 
 const mdLoaded = new Promise((resolve) => {
     const mdObserver = new MutationObserver((mutationsList, observer) => {
-        if (document.querySelector('article div')) { observer.disconnect(); resolve(); }});
+        if (document.querySelector('#shields')) { observer.disconnect(); resolve(); }});
     mdObserver.observe(document.body, { childList: true, subtree: true });
 });
 
@@ -108,17 +108,6 @@ const onLoadObserver = new MutationObserver(() => {
         function updateTGvisibility() {
             topGradient.style.display = ( // hide/show when fold is 85% at top
                 window.scrollY > 0.85 * cover.offsetHeight ? '' : 'none' ); }
-
-        // Add PARALLAX to scroll
-        const coverMain = document.querySelector('.cover-main');
-        window.addEventListener('scroll', () => {
-            updateTGvisibility();
-            const coverRect = cover.getBoundingClientRect(),
-                  newOpacity = 1 - Math.abs(coverRect.top) / cover.offsetHeight,
-                  parallaxOffset = coverRect.top * -0.35;
-            cover.style.opacity = newOpacity;
-            coverMain.style.transform = `translateY(${ parallaxOffset }px)`;
-        });
        
         mdLoaded.then(() => {
 
@@ -299,6 +288,48 @@ const onLoadObserver = new MutationObserver(() => {
             // Remove readme's BACK-TO-TOP link
             const readmeBTTlink = document.querySelector('p a[href="#"]');
             readmeBTTlink.previousSibling.remove(); readmeBTTlink.remove();
+
+            setTimeout(() => { // Add PARALLAX
+
+                // Target TRIGGERS
+                const parallaxTriggers = [];
+                document.querySelectorAll('#main, h2').forEach(trigger => {
+                    const y = trigger.getBoundingClientRect().top - window.innerHeight / 4,
+                          triggerElem = trigger.tagName === 'H2' ? trigger.parentElement : trigger;
+                    parallaxTriggers.push({ element: triggerElem, y });
+                });
+
+                // Add SCROLL listener
+                window.addEventListener('scroll', () => {
+                    updateTGvisibility();
+                    parallaxTriggers.forEach(trigger => {
+                        if (window.scrollY >= trigger.y && window.scrollY < trigger.y + window.innerHeight) {
+
+                            // Target previous elements to hack
+                            const prevElems = [];
+                            if (trigger.element.id === 'main')
+                                prevElems.push(document.querySelector('.cover-main'));
+                            else { // target previous 6 siblings
+                                let currentElem = trigger.element.previousElementSibling;
+                                for (let i = 0; i < 6; i++) {
+                                    if (currentElem) {
+                                        prevElems.push(currentElem);
+                                        currentElem = currentElem.previousElementSibling;
+                                    } else break;
+                                }
+                            }
+
+                            // Apply transparency + translate to siblings
+                            prevElems.forEach(elem => {
+                                const topGap = trigger.y - window.scrollY,
+                                      newOpacity = 1 - Math.abs(topGap) / window.innerHeight,
+                                      parallaxOffset = topGap * -0.35;
+                                try { elem.classList.remove('content-fadeup') } catch (err) {};
+                                elem.style.opacity = newOpacity;
+                                elem.style.transform = `translateY(${ parallaxOffset }px)`;
+                            });
+
+            }});});}, 1500);
         });
 
     // Hide SITE LANG SELECTOR from NON-HOME pages
