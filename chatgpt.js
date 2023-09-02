@@ -1446,7 +1446,7 @@ const chatgpt = {
             this.observer = new MutationObserver(mutations => {
                 mutations.forEach(mutation => {
                     if ((mutation.type === 'childList' && mutation.addedNodes.length) ||
-                        (mutation.type === 'attributes' && mutation.attributeName === 'data-chatgptjs'))
+                        (mutation.type === 'attributes' && mutation.attributeName === 'data-chatgptjs')) // check for trigger
                         // Try to insert each element...
                         this.elements.forEach(element => {
                             // ...if it's not already present...
