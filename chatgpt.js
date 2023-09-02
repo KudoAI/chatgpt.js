@@ -354,6 +354,15 @@ const chatgpt = {
     code: {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
+        execute: async function(code) {
+            if (!code) return console.error('Code argument not supplied. Pass some code!');
+            if (typeof code !== 'string') return console.error('Code argument must be a string!');
+            chatgpt.send('Display the output as if you were terminal:\n\n' + code);
+            console.info('Executing code...');
+            await chatgpt.isIdle();
+            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
+        },
+
         extract: function(msg) { // extract pure code from response (targets last block)
             const codeBlocks = msg.match(/(?<=```.*\n)[\s\S]*?(?=```)/g);
             return codeBlocks ? codeBlocks[codeBlocks.length - 1] : msg;
@@ -426,6 +435,8 @@ const chatgpt = {
         await chatgpt.isIdle();
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
+
+    executeCode: function() { chatgpt.code.execute(); },
 
     exportChat: async function(chatToGet, format) {
     // chatToGet = 'active' (default) | 'latest' | index|title|id of chat to get
@@ -1668,6 +1679,7 @@ const synonyms = [
     ['chat', 'conversation', 'convo'],
     ['data', 'details'],
     ['deactivate', 'deActivate', 'turnOff'],
+    ['execute', 'run'],
     ['generating', 'generation'],
     ['minify', 'uglify'],
     ['refactor', 'rewrite'],
