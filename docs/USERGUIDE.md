@@ -1419,6 +1419,14 @@ Example code:
 
 ### turnOn `async`
 
+Turns on custom instructions.
+
+Example code:
+
+```js
+
+```
+
 ### toggle `async`
 
 ## menu `obj`
