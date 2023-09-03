@@ -1429,6 +1429,14 @@ Example code:
 
 ### toggle `async`
 
+Toggles on/off custom instructions.
+
+Example code:
+
+```js
+
+```
+
 ## menu `obj`
 
 The small menu that shows up when clicking on the account button.
