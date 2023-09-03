@@ -1395,6 +1395,18 @@ Example code:
 
 ### clear `async`
 
+Clears the custom instructions of either the user or ChatGPT.
+
+**Parameters**:
+
+`target`: A string representing the target of the instruction. Can be either `user` or `chatgpt`.
+
+Example code:
+
+```js
+
+```
+
 ### turnOff `async`
 
 ### turnOn `async`
