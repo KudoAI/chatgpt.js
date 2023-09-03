@@ -1554,7 +1554,7 @@ Example code:
 
 ```js
 const buttonId = chatgpt.sidebar.append('button', {
-    textContent: 'I am a button!',
+    label: 'I am a button!',
     icon: 'https://chat.openai.com/favicon-32x32.png',
     onclick: function() {
         console.log('Clicked!');
