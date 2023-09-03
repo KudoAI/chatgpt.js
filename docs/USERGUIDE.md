@@ -1390,7 +1390,9 @@ Adds a custom instruction for either the user or ChatGPT.
 Example code:
 
 ```js
-
+(async () => {
+    await chatgpt.instructions.add('Detailed and well-explained answers', 'chatgpt');
+})();
 ```
 
 ### clear `async`
@@ -1404,7 +1406,9 @@ Clears the custom instructions of either the user or ChatGPT.
 Example code:
 
 ```js
-
+(async () => {
+    await chatgpt.instructions.clear('user');
+})();
 ```
 
 ### turnOff `async`
@@ -1414,7 +1418,9 @@ Turns off custom instructions.
 Example code:
 
 ```js
-
+(async () => {
+    await chatgpt.instructions.turnOff();
+})();
 ```
 
 ### turnOn `async`
@@ -1424,7 +1430,9 @@ Turns on custom instructions.
 Example code:
 
 ```js
-
+(async () => {
+    await chatgpt.instructions.turnOn();
+})();
 ```
 
 ### toggle `async`
@@ -1434,7 +1442,9 @@ Toggles on/off custom instructions.
 Example code:
 
 ```js
-
+(async () => {
+    await chatgpt.instructions.toggle();
+})();
 ```
 
 ## menu `obj`
