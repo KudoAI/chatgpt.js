@@ -1409,6 +1409,14 @@ Example code:
 
 ### turnOff `async`
 
+Turns off custom instructions.
+
+Example code:
+
+```js
+
+```
+
 ### turnOn `async`
 
 ### toggle `async`
