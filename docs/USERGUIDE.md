@@ -1531,13 +1531,17 @@ Appends a new element to the sidebar. Returns the `id` property of the element.
 
 Currently supported elements are [`button`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) and [`select`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
 
-`attrs`: An object which can contain all the common attributes of an HTML element, plus some custom ones.
+`attrs`: An object which contains the attributes of the element to append.
 
-_**Custom attributes for `button`**_
+_**Attributes for `button`**_
+
+`label`: A string being the label (displayed text) of the button.
 
 `icon`: A string being either a url to an image or a base64 encoded string of the image data.
 
-_**Custom attributes for `select`**_
+`onclick`: A function which is called when the button is clicked.
+
+_**Attributes for `select`**_
 
 `items`: An array of objects where the `text` key is the displayed text of the option, and the `value` key is the value of the option.
 
