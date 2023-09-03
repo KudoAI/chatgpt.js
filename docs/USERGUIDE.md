@@ -1535,11 +1535,11 @@ Currently supported elements are [`button`](https://developer.mozilla.org/en-US/
 
 _**Attributes for `button`**_
 
-`label`: A string being the label (displayed text) of the button.
+`label`: A string being the label (displayed text) of the button. Defaults to `chatgpt.js button`.
 
-`icon`: A string being either a url to an image or a base64 encoded string of the image data.
+`icon`: A string being either a url to an image or a base64 encoded string of the image data. Defaults to [this icon](https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/starters/chrome/extension/icons/icon128.png).
 
-`onclick`: A function which is called when the button is clicked.
+`onclick`: A function which is called when the button is clicked. Defaults to `function() {}`.
 
 _**Attributes for `select`**_
 
