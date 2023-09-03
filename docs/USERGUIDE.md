@@ -1379,6 +1379,20 @@ chatgpt.history.toggle();
 
 ### add `async`
 
+Adds a custom instruction for either the user or ChatGPT.
+
+**Parameters**:
+
+`instruction`: A string being the instruction to be added.
+
+`target`: A string representing the target of the instruction. Can be either `user` or `chatgpt`.
+
+Example code:
+
+```js
+
+```
+
 ### clear `async`
 
 ### turnOff `async`
