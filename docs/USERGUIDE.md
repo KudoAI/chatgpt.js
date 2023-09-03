@@ -91,6 +91,12 @@
     - [activate](#activate-1)
     - [deactivate](#deactivate-1)
     - [toggle](#toggle)
+  - [instructions `obj`](#instructions-obj)
+    - [add `async`](#add-async)
+    - [clear `async`](#clear-async)
+    - [turnOff `async`](#turnoff-async)
+    - [turnOn `async`](#turnon-async)
+    - [toggle `async`](#toggle-async)
   - [menu `obj`](#menu-obj)
     - [open](#open)
     - [close](#close)
@@ -1368,6 +1374,18 @@ Example code:
 ```js
 chatgpt.history.toggle();
 ```
+
+## instructions `obj`
+
+### add `async`
+
+### clear `async`
+
+### turnOff `async`
+
+### turnOn `async`
+
+### toggle `async`
 
 ## menu `obj`
 
