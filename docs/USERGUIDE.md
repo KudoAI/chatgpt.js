@@ -91,6 +91,12 @@
     - [activate](#activate-1)
     - [deactivate](#deactivate-1)
     - [toggle](#toggle)
+  - [instructions `obj`](#instructions-obj)
+    - [add `async`](#add-async)
+    - [clear `async`](#clear-async)
+    - [turnOff `async`](#turnoff-async)
+    - [turnOn `async`](#turnon-async)
+    - [toggle `async`](#toggle-async)
   - [menu `obj`](#menu-obj)
     - [open](#open)
     - [close](#close)
@@ -1369,6 +1375,78 @@ Example code:
 chatgpt.history.toggle();
 ```
 
+## instructions `obj`
+
+### add `async`
+
+Adds a custom instruction for either the user or ChatGPT.
+
+**Parameters**:
+
+`instruction`: A string being the instruction to be added.
+
+`target`: A string representing the target of the instruction. Can be either `user` or `chatgpt`.
+
+Example code:
+
+```js
+(async () => {
+    await chatgpt.instructions.add('Detailed and well-explained answers', 'chatgpt');
+})();
+```
+
+### clear `async`
+
+Clears the custom instructions of either the user or ChatGPT.
+
+**Parameters**:
+
+`target`: A string representing the target of the instruction. Can be either `user` or `chatgpt`.
+
+Example code:
+
+```js
+(async () => {
+    await chatgpt.instructions.clear('user');
+})();
+```
+
+### turnOff `async`
+
+Turns off custom instructions.
+
+Example code:
+
+```js
+(async () => {
+    await chatgpt.instructions.turnOff();
+})();
+```
+
+### turnOn `async`
+
+Turns on custom instructions.
+
+Example code:
+
+```js
+(async () => {
+    await chatgpt.instructions.turnOn();
+})();
+```
+
+### toggle `async`
+
+Toggles on/off custom instructions.
+
+Example code:
+
+```js
+(async () => {
+    await chatgpt.instructions.toggle();
+})();
+```
+
 ## menu `obj`
 
 The small menu that shows up when clicking on the account button.
@@ -1453,13 +1531,17 @@ Appends a new element to the sidebar. Returns the `id` property of the element.
 
 Currently supported elements are [`button`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) and [`select`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
 
-`attrs`: An object which can contain all the common attributes of an HTML element, plus some custom ones.
+`attrs`: An object which contains the attributes of the element to append.
 
-_**Custom attributes for `button`**_
+_**Attributes for `button`**_
 
-`icon`: A string being either a url to an image or a base64 encoded string of the image data.
+`label`: A string being the label (displayed text) of the button. Defaults to `chatgpt.js button`.
 
-_**Custom attributes for `select`**_
+`icon`: A string being either a url to an image or a base64 encoded string of the image data. Defaults to [this icon](https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/starters/chrome/extension/icons/icon128.png).
+
+`onclick`: A function which is called when the button is clicked. Defaults to `function() {}`.
+
+_**Attributes for `select`**_
 
 `items`: An array of objects where the `text` key is the displayed text of the option, and the `value` key is the value of the option.
 
@@ -1476,7 +1558,7 @@ Example code:
 
 ```js
 const buttonId = chatgpt.sidebar.append('button', {
-    textContent: 'I am a button!',
+    label: 'I am a button!',
     icon: 'https://chat.openai.com/favicon-32x32.png',
     onclick: function() {
         console.log('Clicked!');
