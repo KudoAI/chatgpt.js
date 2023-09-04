@@ -1529,7 +1529,7 @@ Appends a new element to the sidebar. Returns the `id` property of the element.
 
 `element`: A string being the name of the element to append.
 
-Currently supported elements are [`button`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) and [`select`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
+Currently supported elements are [`button`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) and [`dropdown`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
 
 `attrs`: An object which contains the attributes of the element to append.
 
@@ -1541,7 +1541,7 @@ _**Attributes for `button`**_
 
 `onclick`: A function which is called when the button is clicked. Defaults to `function() {}`.
 
-_**Attributes for `select`**_
+_**Attributes for `dropdown`**_
 
 `items`: An array of objects where the `text` key is the displayed text of the option, and the `value` key is the value of the option.
 
@@ -1566,13 +1566,13 @@ const buttonId = chatgpt.sidebar.append('button', {
 });
 console.log(buttonId); // Example output: 1693295258727
 
-const selectId = chatgpt.sidebar.append('select', {
+const dropdownId = chatgpt.sidebar.append('dropdown', {
     items: [
         { text: 'Hello world', value: 'helloworld' },
         { text: 'Hello there', value: 'hellothere' }
     ]
 });
-console.log(selectId); // Example output: 1693294795240
+console.log(dropdownId); // Example output: 1693294795240
 ```
 
 ### isOn
