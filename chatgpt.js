@@ -1439,6 +1439,7 @@ const chatgpt = {
             this.elements.forEach(element => {
                 element.setAttribute('class', cssClasses);
                 element.style.maxHeight = element.style.minHeight = '44px'; // Fix the height of the element
+                element.style.margin = '2px 0';
             });
     
             const navBar = document.querySelector('nav[aria-label="Chat history"]');
