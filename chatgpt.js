@@ -1473,8 +1473,8 @@ const chatgpt = {
             element = element.toLowerCase();
             if (!validElements.includes(element)) // Element not in list
                 return console.error(`🤖 chatgpt.js >> Invalid element! Valid elements are [${validElements}]`);
-            const newElement = document.createElement(element);
 
+            const newElement = document.createElement(element === 'dropdown' ? 'select' : element);
             newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // Add random id to the element
 
             if (element === 'button') {
@@ -1494,19 +1494,23 @@ const chatgpt = {
                     : function() {};
             }
 
-            else if (
-                element === 'dropdown' &&
-                attrs?.items && // There are options to add 
-                Array.isArray(attrs.items) && // It's an array of options
-                attrs.items.length && // The array is not empty
-                attrs.items.every(el => typeof el === 'object') // The entries of the array are all objects
-            )
-                    attrs.items.forEach(item => {
-                        const optionElement = document.createElement('option');
-                        optionElement.textContent = item?.text;
-                        optionElement.value = item?.value;
-                        newElement.add(optionElement);
-                    });
+            else if (element === 'dropdown') {
+                if (!attrs?.items || // There no are options to add 
+                    !Array.isArray(attrs.items) || // It's not an array
+                    !attrs.items.length) // The array is empty
+                        attrs.items = [{ text: '🤖 chatgpt.js option', value: 'chatgpt.js option value' }]; // Set default dropdown entry
+
+                if (!attrs.items.every(el => typeof el === 'object')) // The entries of the array are not objects
+                    return console.error('\'items\' must be an array of objects!');
+
+                attrs.items.forEach(item => {
+                    const optionElement = document.createElement('option');
+                    optionElement.textContent = item?.text;
+                    optionElement.value = item?.value;
+                    newElement.add(optionElement);
+                });
+            }
+                        
 
             // Fix for blank background on dropdown elements
             if (element === 'dropdown') newElement.style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))';
