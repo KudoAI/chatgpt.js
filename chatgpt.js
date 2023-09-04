@@ -1445,7 +1445,8 @@ const chatgpt = {
             // Create MutationObserver instance
             this.observer = new MutationObserver(mutations => {
                 mutations.forEach(mutation => {
-                    if (mutation.type === 'childList' && mutation.addedNodes.length)
+                    if ((mutation.type === 'childList' && mutation.addedNodes.length) ||
+                        (mutation.type === 'attributes' && mutation.attributeName === 'data-chatgptjs')) // check for trigger
                         // Try to insert each element...
                         this.elements.forEach(element => {
                             // ...if it's not already present...
@@ -1458,8 +1459,8 @@ const chatgpt = {
                             }});
                 });
             });
-    
-            this.observer.observe(document.documentElement, { childList: true, subtree: true });
+
+            this.observer.observe(document.documentElement, { childList: true, subtree: true, attributes: true });
         },
 
         append: function(element, attrs = {}) {
@@ -1511,6 +1512,7 @@ const chatgpt = {
 
             this.elements.push(newElement);
             this.activateObserver();
+            document.body.setAttribute('data-chatgptjs', 'observer-trigger'); // add attribute to trigger the observer
 
             return newElement.id; // Return the element id
         },
