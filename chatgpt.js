@@ -1464,14 +1464,14 @@ const chatgpt = {
         },
 
         append: function(element, attrs = {}) {
-        // element = 'button' | 'select' REQUIRED (no default value)
-        // attrs = { ... } 'icon', 'label', 'onclick' for 'button' | 'items[]' for 'select' (defaults to empty)
-            const validElements = ['button', 'select'];
+        // element = 'button' | 'dropdown' REQUIRED (no default value)
+        // attrs = { ... } 'icon', 'label', 'onclick' for 'button' | 'items[]' for 'dropdown' (defaults to empty)
+            const validElements = ['button', 'dropdown'];
             if (!element || typeof element !== 'string') // Element not passed or invalid type
                 return console.error('🤖 chatgpt.js >> Please supply a valid string element name!');
             element = element.toLowerCase();
             if (!validElements.includes(element)) // Element not in list
-                return console.error(`🤖 chatgpt.js >> Invalid element! Received: ${element} Valid elements: ${validElements}`);
+                return console.error(`🤖 chatgpt.js >> Invalid element! Valid elements are [${validElements}]`);
             const newElement = document.createElement(element);
 
             newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // Add random id to the element
@@ -1494,7 +1494,7 @@ const chatgpt = {
             }
 
             else if (
-                element === 'select' &&
+                element === 'dropdown' &&
                 attrs?.items && // There are options to add 
                 Array.isArray(attrs.items) && // It's an array of options
                 attrs.items.length && // The array is not empty
@@ -1507,8 +1507,8 @@ const chatgpt = {
                         newElement.add(optionElement);
                     });
 
-            // Fix for blank background on select elements
-            if (element === 'select') newElement.style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))';
+            // Fix for blank background on dropdown elements
+            if (element === 'dropdown') newElement.style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))';
 
             this.elements.push(newElement);
             this.activateObserver();
