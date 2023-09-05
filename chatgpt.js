@@ -1006,7 +1006,7 @@ const chatgpt = {
                 element = element.toLowerCase();
                 if (!validElements.includes(element)) // Element not in list
                     return console.error(`🤖 chatgpt.js >> Invalid element! Valid elements are [${validElements}]`);
-
+    
                 const newElement = document.createElement(
                     element === 'dropdown' ? 'select' :
                     element === 'button' ? 'a' : element
@@ -1048,6 +1048,24 @@ const chatgpt = {
                         newElement.add(optionElement);
                     });
                 }
+
+                function addElementsToMenu() {
+                    const optionButtons = document.querySelectorAll('a[role="menuitem"]');
+                    let cssClasses;
+            
+                    for (let navLink of optionButtons)
+                        if (navLink.textContent.match(/.*Settings/)) {
+                            cssClasses = navLink.classList;
+                            break; }
+            
+                    const headlessNav = optionButtons[0].parentNode;
+
+                    chatgpt.menu.elements.forEach(element => {
+                        element.setAttribute('class', cssClasses);
+                        if (!headlessNav.contains(element))
+                            try { headlessNav.insertBefore(element, headlessNav.firstChild); }
+                            catch (error) { console.error(error); }
+                    });}
 
                 this.elements.push(newElement);
 
