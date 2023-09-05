@@ -1319,6 +1319,8 @@ const chatgpt = {
         }} setTimeout(() => { chatgpt.send(msg); }, 500);
     },
 
+    settings: {},
+
     sentiment: async function(text, entity) {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return console.error(`Argument ${ i + 1 } must be a string.`);
@@ -1627,6 +1629,8 @@ const chatgpt = {
 
     writeCode: function() { chatgpt.code.write(); }
 };
+
+chatgpt.settings.scheme = { ...chatgpt.scheme };
 
 // Create chatgpt.[actions]Button(identifier) functions
 const buttonActions = ['click', 'get'], targetTypes = [ 'button', 'link', 'div', 'response' ];
