@@ -1630,7 +1630,7 @@ const chatgpt = {
     writeCode: function() { chatgpt.code.write(); }
 };
 
-chatgpt.settings.scheme = { ...chatgpt.scheme };
+chatgpt.settings.scheme = { ...chatgpt.scheme }; // copy 'chatgpt.scheme' into 'chatgpt.settings'
 
 // Create chatgpt.[actions]Button(identifier) functions
 const buttonActions = ['click', 'get'], targetTypes = [ 'button', 'link', 'div', 'response' ];
