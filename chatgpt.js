@@ -1006,30 +1006,30 @@ const chatgpt = {
                 element = element.toLowerCase();
                 if (!validElements.includes(element)) // Element not in list
                     return console.error(`🤖 chatgpt.js >> Invalid element! Valid elements are [${validElements}]`);
-    
+
                 const newElement = document.createElement(
                     element === 'dropdown' ? 'select' :
                     element === 'button' ? 'a' : element
                 );
                 newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // Add random id to the element
-    
+
                 if (element === 'button') {
                     newElement.textContent = attrs?.label && typeof attrs.label === 'string'
                         ? attrs.label
                         : 'chatgpt.js button';
-    
+
                     const icon = document.createElement('img');
                     icon.src = attrs?.icon && typeof attrs.icon === 'string' // Can also be base64 encoded image string
                         ? attrs.icon // Add icon to button element if given, else default one
                         : 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/starters/chrome/extension/icons/icon128.png';
                     icon.width = 18;
                     newElement.insertBefore(icon, newElement.firstChild);
-    
+
                     newElement.onclick = attrs?.onclick && typeof attrs.onclick === 'function'
                         ? attrs.onclick
                         : function() {};
                 }
-    
+
                 else if (element === 'dropdown') {
                     if (!attrs?.items || // There no are options to add 
                         !Array.isArray(attrs.items) || // It's not an array
@@ -1040,7 +1040,7 @@ const chatgpt = {
                         return console.error('\'items\' must be an array of objects!');
 
                     newElement.style = 'background-color: #000; width: 100%; border: none;';
-    
+
                     attrs.items.forEach(item => {
                         const optionElement = document.createElement('option');
                         optionElement.textContent = item?.text;
@@ -1057,7 +1057,7 @@ const chatgpt = {
                         if (navLink.textContent.match(/.*Settings/)) {
                             cssClasses = navLink.classList;
                             break; }
-            
+
                     const headlessNav = optionButtons[0].parentNode;
 
                     chatgpt.menu.elements.forEach(element => {
