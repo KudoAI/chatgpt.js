@@ -1038,6 +1038,8 @@ const chatgpt = {
     
                     if (!attrs.items.every(el => typeof el === 'object')) // The entries of the array are not objects
                         return console.error('\'items\' must be an array of objects!');
+
+                    newElement.style = 'background-color: #000; width: 100%; border: none;';
     
                     attrs.items.forEach(item => {
                         const optionElement = document.createElement('option');
