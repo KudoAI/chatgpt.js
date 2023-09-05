@@ -1068,6 +1068,8 @@ const chatgpt = {
                     });}
 
                 this.elements.push(newElement);
+                const menuBtn = document.querySelector('nav button[id*="headless"]');
+                menuBtn.addEventListener('click', () => { setTimeout(addElementsToMenu, 25); });
 
                 return newElement.id; // Return the element id
             },
