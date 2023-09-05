@@ -996,14 +996,14 @@ const chatgpt = {
     menu: {
         elements: [],
 
-        open: function() {
-            if (document.querySelector('[role="menu"]')) { console.error('Menu already open!'); throw new Error(); }
+        close: function() {
+            if (!document.querySelector('[role="menu"]')) { console.error('Menu already hidden!'); throw new Error(); }
             const menuBtn = document.querySelector('nav button[id*="headless"]');
             try { menuBtn.click(); } catch (err) { console.error('Headless menu not found'); throw new Error(); }
         },
 
-        close: function() {
-            if (!document.querySelector('[role="menu"]')) { console.error('Menu already hidden!'); throw new Error(); }
+        open: function() {
+            if (document.querySelector('[role="menu"]')) { console.error('Menu already open!'); throw new Error(); }
             const menuBtn = document.querySelector('nav button[id*="headless"]');
             try { menuBtn.click(); } catch (err) { console.error('Headless menu not found'); throw new Error(); }
         }
