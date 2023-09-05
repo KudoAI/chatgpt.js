@@ -995,6 +995,62 @@ const chatgpt = {
 
     menu: {
         elements: [],
+        addedEvent: false,
+
+        append: function(element, attrs = {}) {
+            // element = 'button' | 'dropdown' REQUIRED (no default value)
+            // attrs = { ... } 'icon', 'label', 'onclick' for 'button' | 'items[]' for 'dropdown' (defaults to empty)
+                const validElements = ['button', 'dropdown'];
+                if (!element || typeof element !== 'string') // Element not passed or invalid type
+                    return console.error('🤖 chatgpt.js >> Please supply a valid string element name!');
+                element = element.toLowerCase();
+                if (!validElements.includes(element)) // Element not in list
+                    return console.error(`🤖 chatgpt.js >> Invalid element! Valid elements are [${validElements}]`);
+
+                const newElement = document.createElement(
+                    element === 'dropdown' ? 'select' :
+                    element === 'button' ? 'a' : element
+                );
+                newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // Add random id to the element
+    
+                if (element === 'button') {
+                    newElement.textContent = attrs?.label && typeof attrs.label === 'string'
+                        ? attrs.label
+                        : 'chatgpt.js button';
+    
+                    const icon = document.createElement('img');
+                    icon.src = attrs?.icon && typeof attrs.icon === 'string' // Can also be base64 encoded image string
+                        ? attrs.icon // Add icon to button element if given, else default one
+                        : 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/starters/chrome/extension/icons/icon128.png';
+                    icon.width = 18;
+                    newElement.insertBefore(icon, newElement.firstChild);
+    
+                    newElement.onclick = attrs?.onclick && typeof attrs.onclick === 'function'
+                        ? attrs.onclick
+                        : function() {};
+                }
+    
+                else if (element === 'dropdown') {
+                    if (!attrs?.items || // There no are options to add 
+                        !Array.isArray(attrs.items) || // It's not an array
+                        !attrs.items.length) // The array is empty
+                            attrs.items = [{ text: '🤖 chatgpt.js option', value: 'chatgpt.js option value' }]; // Set default dropdown entry
+    
+                    if (!attrs.items.every(el => typeof el === 'object')) // The entries of the array are not objects
+                        return console.error('\'items\' must be an array of objects!');
+    
+                    attrs.items.forEach(item => {
+                        const optionElement = document.createElement('option');
+                        optionElement.textContent = item?.text;
+                        optionElement.value = item?.value;
+                        newElement.add(optionElement);
+                    });
+                }
+
+                this.elements.push(newElement);
+
+                return newElement.id; // Return the element id
+            },
 
         close: function() {
             if (!document.querySelector('[role="menu"]')) { console.error('Menu already hidden!'); throw new Error(); }
