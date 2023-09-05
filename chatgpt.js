@@ -994,6 +994,8 @@ const chatgpt = {
     logout: function() { window.location.href = 'https://chat.openai.com/auth/logout'; },
 
     menu: {
+        elements: [],
+
         open: function() {
             if (document.querySelector('[role="menu"]')) { console.error('Menu already open!'); throw new Error(); }
             const menuBtn = document.querySelector('nav button[id*="headless"]');
