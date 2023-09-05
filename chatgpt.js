@@ -1069,7 +1069,9 @@ const chatgpt = {
 
                 this.elements.push(newElement);
                 const menuBtn = document.querySelector('nav button[id*="headless"]');
-                menuBtn.addEventListener('click', () => { setTimeout(addElementsToMenu, 25); });
+                if (!this.addedEvent) { // To prevent adding more than one event
+                    menuBtn.addEventListener('click', () => { setTimeout(addElementsToMenu, 25); });
+                    this.addedEvent = true; }
 
                 return newElement.id; // Return the element id
             },
