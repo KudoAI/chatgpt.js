@@ -53,11 +53,13 @@ const chatgpt = {
     activateDarkMode: function() {
         document.documentElement.classList.replace('light', 'dark');
         document.documentElement.style.colorScheme = 'dark';
+        localStorage.setItem('theme', 'dark');
     },
 
     activateLightMode: function() {
         document.documentElement.classList.replace('dark', 'light');
         document.documentElement.style.colorScheme = 'light';
+        localStorage.setItem('theme', 'light');
     },
 
     alert: function(title, msg, btns, checkbox, width) {
@@ -1287,6 +1289,7 @@ const chatgpt = {
             const [schemeToRemove, schemeToAdd] = this.isDark() ? ['dark', 'light'] : ['light', 'dark'];
             document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
             document.documentElement.style.colorScheme = schemeToAdd;
+            localStorage.setItem('theme', schemeToAdd);
         }
     },
 
@@ -1600,6 +1603,7 @@ const chatgpt = {
                ['dark', 'light'] : ['light', 'dark'] );
         document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
         document.documentElement.style.colorScheme = schemeToAdd;
+        localStorage.setItem('theme', schemeToAdd);
     },
 
     translate: async function(text, outputLang) {
