@@ -1285,6 +1285,13 @@ const chatgpt = {
     scheme: {
         isDark: function() { return document.documentElement.classList.contains('dark'); },
         isLight: function() { return document.documentElement.classList.contains('light'); },
+        set: function(value) {
+            const validValues = ['dark', 'light', 'system'];
+            if (!validValues.includes(value)) return console.error(`Invalid scheme value. Valid values are [${validValues}]`);
+
+            if (value === 'dark') chatgpt.activateDarkMode();
+            else if (value === 'light') chatgpt.activateLightMode();
+        },
         toggle: function() {
             const [schemeToRemove, schemeToAdd] = this.isDark() ? ['dark', 'light'] : ['light', 'dark'];
             document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
