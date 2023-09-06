@@ -1295,10 +1295,10 @@ const chatgpt = {
 
             const isPreferredDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-            if (value === 'dark') chatgpt.activateDarkMode();
-            else if (value === 'light') chatgpt.activateLightMode();
-            else if (value === 'system' && isPreferredDarkMode) chatgpt.activateDarkMode();
-            else chatgpt.activateLightMode();
+            if (value === 'dark') chatgpt.activateDarkMode(); // if 'dark'
+            else if (value === 'light') chatgpt.activateLightMode(); // if 'light'
+            else if (isPreferredDarkMode) chatgpt.activateDarkMode(); // if 'system' and system preference is dark
+            else chatgpt.activateLightMode(); // if 'system' and system preference is light
         },
         toggle: function() {
             const [schemeToRemove, schemeToAdd] = this.isDark() ? ['dark', 'light'] : ['light', 'dark'];
