@@ -1116,15 +1116,18 @@ const chatgpt = {
               baseFontStyles = 'font-family: monospace ; font-size: larger ; ';
         console.log('\n%c🤖 chatgpt.js methods\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
         for (const functionName of functionNames) {
-            const isChatGptObjParent = /chatgpt|other/.test(functionName[0]);
-            console.log('%c>> %c' + ( isChatGptObjParent ? '' : `${ functionName[0] }.%c`) + functionName[1] + '\n\n%c[%c'
+            const isChatGptObjParent = /chatgpt|other/.test(functionName[0]),
+                  rootFunction = ( functionName[0] === 'chatgpt' ? this[functionName[1]].name
+                    : functionName[0] !== 'other' ? functionName[0] + '.' + functionName[1]
+                    : (( Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[functionName[1]].name)) + '.' )
+                        + this[functionName[1]].name )),
+                  isAsync = this[functionName[1]]?.constructor.name === 'AsyncFunction';
+            console.log('%c>> %c' + ( isChatGptObjParent ? '' : `${ functionName[0] }.%c`) + functionName[1]
+                    + ' - https://chatgptjs.org/userguide/' + /(?:.*\.)?(.*)/.exec(rootFunction)[1].toLowerCase() + ( isAsync ? '-async' : '' ) + '\n%c[%c'
                 + ((( functionName[0] === 'chatgpt' && functionName[1] === this[functionName[1]].name ) || // parent is chatgpt + names match or
                     !isChatGptObjParent) // parent is chatgpt.obj
                         ? 'Function' : 'Alias of' ) + '%c: %c'
-                + ( functionName[0] === 'chatgpt' ? this[functionName[1]].name
-                    : functionName[0] !== 'other' ? functionName[0] + '.' + functionName[1]
-                    : (( Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[functionName[1]].name)) + '.' )
-                        + this[functionName[1]].name )) + '%c]',
+                + rootFunction + '%c]',
 
                 // Styles
                 baseFontStyles + 'font-weight: bold ; color:' + colors.cmdPrompt[+isDarkMode],
