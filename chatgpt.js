@@ -1056,7 +1056,7 @@ const chatgpt = {
                     let cssClasses;
             
                     for (let navLink of optionButtons)
-                        if (navLink.textContent.match(/.*Settings/)) {
+                        if (navLink.textContent === 'Settings') {
                             cssClasses = navLink.classList;
                             break; }
 
