@@ -1287,10 +1287,15 @@ const chatgpt = {
         isLight: function() { return document.documentElement.classList.contains('light'); },
         set: function(value) {
             const validValues = ['dark', 'light', 'system'];
+            if (!value) return console.error('Please specify a scheme value!');
             if (!validValues.includes(value)) return console.error(`Invalid scheme value. Valid values are [${validValues}]`);
+
+            const isPreferredDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
             if (value === 'dark') chatgpt.activateDarkMode();
             else if (value === 'light') chatgpt.activateLightMode();
+            else if (value === 'system' && isPreferredDarkMode) chatgpt.activateDarkMode();
+            else chatgpt.activateLightMode();
         },
         toggle: function() {
             const [schemeToRemove, schemeToAdd] = this.isDark() ? ['dark', 'light'] : ['light', 'dark'];
