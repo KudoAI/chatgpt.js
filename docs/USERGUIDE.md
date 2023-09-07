@@ -107,10 +107,12 @@
     - [getLast `async`](#getlast-async)
     - [regenerate](#regenerate-1)
     - [stopGenerating](#stopgenerating)
-  - [scheme `obj`](#scheme-obj)
-    - [isDark](#isdark)
-    - [isLight](#islight)
-    - [toggle](#toggle-1)
+  - [settings `api`](#settings-api)
+    - [scheme `api subset`](#scheme-api-subset)
+      - [isDark](#isdark)
+      - [isLight](#islight)
+      - [set](#set)
+      - [toggle](#toggle-1)
   - [sidebar `obj`](#sidebar-obj)
     - [append](#append)
     - [isOn](#ison-1)
@@ -1155,7 +1157,7 @@ Example code:
 
 ```js
 (async () => {
-    console.log(await chatgpt.code.execute('return 6 + 5')); // Logs '11'
+    console.log(await chatgpt.code.execute('return 6 + 5')); // logs '11'
 })();
 ```
 
@@ -1501,21 +1503,55 @@ Read [chatgpt.regenerate](#regenerate)
 
 Read [chatgpt.stop](#stop)
 
-## scheme `obj`
+## settings `api`
 
-Object related to the website's theme.
+API for interfacing with ChatGPT user settings.
 
-### isDark
+### scheme `api subset`
 
-Read [chatgpt.isDarkMode](#isdarkmode)
+#### isDark
 
-### isLight
+Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
 
-Read [chatgpt.isLightMode](#islightmode)
+Example code:
 
-### toggle
+```js
+console.log(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
+````
 
-Read [chatgpt.toggleScheme](#togglescheme)
+#### isLight
+
+Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
+
+Example code:
+
+```js
+console.log(chatgpt.settings.scheme.isLight()); // logs `true` or `false`
+````
+
+#### set
+
+Sets the theme to `light`, `dark` or `system`.
+
+**Paremeters**:
+
+`value`: A string being the value to set the theme to.
+
+Example code:
+
+```js
+chatgpt.settings.scheme.set('dark');
+```
+
+#### toggle
+
+Toggles the theme between light and dark mode.
+
+Example code:
+
+```js
+chatgpt.settings.scheme.toggle();
+```
 
 ## sidebar `obj`
 
