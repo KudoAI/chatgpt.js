@@ -72,11 +72,11 @@
     - [getSendButton](#getsendbutton)
     - [getStopGeneratingButton](#getstopgeneratingbutton)
 - [Library objects](#library-objects)
-  - [autoRefresh `obj`](#autorefresh-obj)
+  - [autoRefresh `api`](#autorefresh-api)
       - [activate](#activate)
       - [deactivate](#deactivate)
       - [nowTimeStamp](#nowtimestamp)
-  - [code `obj`](#code-obj)
+  - [code `api`](#code-api)
     - [minify `async`](#minify-async)
     - [execute](#execute)
     - [extract](#extract)
@@ -85,22 +85,22 @@
     - [review `async`](#review-async)
     - [unminify `async`](#unminify-async)
     - [write `async`](#write-async)
-  - [history `obj`](#history-obj)
+  - [history `api`](#history-api)
     - [isOn](#ison)
     - [isOff](#isoff)
     - [activate](#activate-1)
     - [deactivate](#deactivate-1)
     - [toggle](#toggle)
-  - [instructions `obj`](#instructions-obj)
+  - [instructions `api`](#instructions-api)
     - [add `async`](#add-async)
     - [clear `async`](#clear-async)
     - [turnOff `async`](#turnoff-async)
     - [turnOn `async`](#turnon-async)
     - [toggle `async`](#toggle-async)
-  - [menu `obj`](#menu-obj)
+  - [menu `api`](#menu-api)
     - [open](#open)
     - [close](#close)
-  - [response `obj`](#response-obj)
+  - [response `api`](#response-api)
     - [get](#get-1)
     - [getFromAPI `async`](#getfromapi-async)
     - [getFromDOM](#getfromdom)
@@ -113,7 +113,7 @@
       - [isLight](#islight)
       - [set](#set)
       - [toggle](#toggle-1)
-  - [sidebar `obj`](#sidebar-obj)
+  - [sidebar `api`](#sidebar-api)
     - [append](#append)
     - [isOn](#ison-1)
     - [isOff](#isoff-1)
@@ -1074,9 +1074,9 @@ stopButton.click();
 
 # Library objects
 
-## autoRefresh `obj`
+## autoRefresh `api`
 
-Object related to keeping the user's session alive and fresh.
+API related to keeping the user's session alive and fresh.
 
 #### activate
 
@@ -1113,7 +1113,7 @@ const timeStamp = chatgpt.autoRefresh.nowTimeStamp();
 console.log(timeStamp); // Example output: '1:56:25 PM'
 ```
 
-## code `obj`
+## code `api`
 
 ### minify `async`
 
@@ -1319,9 +1319,9 @@ Example code:
 })();
 ```
 
-## history `obj`
+## history `api`
 
-Object related to the chat history.
+API related to the chat history.
 
 ### isOn
 
@@ -1377,7 +1377,7 @@ Example code:
 chatgpt.history.toggle();
 ```
 
-## instructions `obj`
+## instructions `api`
 
 ### add `async`
 
@@ -1449,7 +1449,7 @@ Example code:
 })();
 ```
 
-## menu `obj`
+## menu `api`
 
 The small menu that shows up when clicking on the account button.
 
@@ -1473,9 +1473,9 @@ Example code:
 chatgpt.menu.close();
 ```
 
-## response `obj`
+## response `api`
 
-Object related to ChatGPT's responses.
+API related to ChatGPT's responses.
 
 ### get
 
@@ -1553,9 +1553,9 @@ Example code:
 chatgpt.settings.scheme.toggle();
 ```
 
-## sidebar `obj`
+## sidebar `api`
 
-Object related to the sidebar's behavior.
+API related to the sidebar's behavior.
 
 ### append
 
