@@ -998,10 +998,10 @@ const chatgpt = {
         addedEvent: false,
 
         append: function(element, attrs = {}) {
-            // element = 'button' | 'dropdown' REQUIRED (no default value)
-            // attrs = { ... }
-            // 'icon' = string, 'label' = string, 'onclick' = function -> for 'button'
-            // 'items' = array or objects -> for 'dropdown'
+        // element = 'button' | 'dropdown' REQUIRED (no default value)
+        // attrs = { ... }
+        // attrs for 'button': 'icon' = src string, 'label' = string, 'onclick' = function
+        // attrs for 'dropdown': 'items' = array of objects { text: string, value: string }
                 const validElements = ['button', 'dropdown'];
                 if (!element || typeof element !== 'string') // Element not passed or invalid type
                     return console.error('🤖 chatgpt.js >> Please supply a valid string element name!');
@@ -1552,10 +1552,10 @@ const chatgpt = {
         },
 
         append: function(element, attrs = {}) {
-            // element = 'button' | 'dropdown' REQUIRED (no default value)
-            // attrs = { ... }
-            // 'icon' = string, 'label' = string, 'onclick' = function -> for 'button'
-            // 'items' = array or objects -> for 'dropdown'
+        // element = 'button' | 'dropdown' REQUIRED (no default value)
+        // attrs = { ... }
+        // attrs for 'button': 'icon' = src string, 'label' = string, 'onclick' = function
+        // attrs for 'dropdown': 'items' = array of objects { text: string, value: string }
             const validElements = ['button', 'dropdown'];
             if (!element || typeof element !== 'string') // Element not passed or invalid type
                 return console.error('🤖 chatgpt.js >> Please supply a valid string element name!');
