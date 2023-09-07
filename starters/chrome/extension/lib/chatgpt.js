@@ -1285,29 +1285,6 @@ const chatgpt = {
 
     reviewCode: function() { chatgpt.code.review(); },
 
-    scheme: {
-        isDark: function() { return document.documentElement.classList.contains('dark'); },
-        isLight: function() { return document.documentElement.classList.contains('light'); },
-        set: function(value) {
-            const validValues = ['dark', 'light', 'system'];
-            if (!value) return console.error('Please specify a scheme value!');
-            if (!validValues.includes(value)) return console.error(`Invalid scheme value. Valid values are [${validValues}]`);
-
-            const isPreferredDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-            if (value === 'dark') chatgpt.activateDarkMode(); // if 'dark'
-            else if (value === 'light') chatgpt.activateLightMode(); // if 'light'
-            else if (isPreferredDarkMode) chatgpt.activateDarkMode(); // if 'system' and system preference is dark
-            else chatgpt.activateLightMode(); // if 'system' and system preference is light
-        },
-        toggle: function() {
-            const [schemeToRemove, schemeToAdd] = this.isDark() ? ['dark', 'light'] : ['light', 'dark'];
-            document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
-            document.documentElement.style.colorScheme = schemeToAdd;
-            localStorage.setItem('theme', schemeToAdd);
-        }
-    },
-
     scrollToBottom: function() {
         try { document.querySelector('button[class*="cursor"][class*="bottom"]').click(); }
         catch (err) { console.error('', err); }
@@ -1337,7 +1314,34 @@ const chatgpt = {
         }} setTimeout(() => { chatgpt.send(msg); }, 500);
     },
 
-    settings: {},
+    settings: {
+        scheme: {
+            isDark: function() { return document.documentElement.classList.contains('dark'); },
+            isLight: function() { return document.documentElement.classList.contains('light'); },
+            set: function(value) {
+
+                // Validate value
+                const validValues = ['dark', 'light', 'system'];
+                if (!value) return console.error('Please specify a scheme value!');
+                if (!validValues.includes(value)) return console.error(`Invalid scheme value. Valid values are [${ validValues }]`);
+
+                // Determine scheme to set
+                let schemeToSet = value;
+                if (value === 'system') schemeToSet = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                localStorage.setItem('theme', value);
+                console.info(`Scheme set to ${ value.toUpperCase() }.`)
+
+                // Toggle scheme if necessary
+                if (!document.documentElement.classList.contains(schemeToSet)) this.toggle();
+            },
+            toggle: function() {
+                const [schemeToRemove, schemeToAdd] = this.isDark() ? ['dark', 'light'] : ['light', 'dark'];
+                document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
+                document.documentElement.style.colorScheme = schemeToAdd;
+                localStorage.setItem('theme', schemeToAdd);
+            }
+        }
+    },
 
     sentiment: async function(text, entity) {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
@@ -1649,7 +1653,7 @@ const chatgpt = {
     writeCode: function() { chatgpt.code.write(); }
 };
 
-chatgpt.settings.scheme = { ...chatgpt.scheme }; // copy 'chatgpt.scheme' into 'chatgpt.settings'
+chatgpt.scheme = { ...chatgpt.settings.scheme } // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
 
 // Create chatgpt.[actions]Button(identifier) functions
 const buttonActions = ['click', 'get'], targetTypes = [ 'button', 'link', 'div', 'response' ];
