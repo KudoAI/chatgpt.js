@@ -1354,6 +1354,8 @@ const chatgpt = {
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
 
+    setScheme: function(value) { chatgpt.settings.scheme.set(value); },
+
     shareChat: function(chatToGet, method = 'clipboard') {
     // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
     // method = [ 'alert'|'clipboard' ] (defaults to 'clipboard' if '' or unpassed)
@@ -1616,14 +1618,7 @@ const chatgpt = {
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
 
-    toggleScheme: function() {
-        const [schemeToRemove, schemeToAdd] = (
-            document.documentElement.classList.contains('dark') ?
-               ['dark', 'light'] : ['light', 'dark'] );
-        document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
-        document.documentElement.style.colorScheme = schemeToAdd;
-        localStorage.setItem('theme', schemeToAdd);
-    },
+    toggleScheme: function() { chatgpt.settings.scheme.toggle(); },
 
     translate: async function(text, outputLang) {
         if (!text) return console.error('Text (1st) argument not supplied. Pass some text!');
