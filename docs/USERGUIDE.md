@@ -462,9 +462,7 @@ Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
 Example code:
 
 ```js
-if (chatgpt.isDarkMode()) {
-    // Do something
-}
+console.log(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
 ```
 
 ### isLightMode
@@ -474,9 +472,7 @@ Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
 Example code:
 
 ```js
-if (chatgpt.isLightMode()) {
-    // Do something
-}
+console.log(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
 ```
 
 ### toggleScheme
