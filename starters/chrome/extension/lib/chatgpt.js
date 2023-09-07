@@ -1329,7 +1329,7 @@ const chatgpt = {
                 let schemeToSet = value;
                 if (value === 'system') schemeToSet = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                 localStorage.setItem('theme', value);
-                console.info(`Scheme set to ${ value.toUpperCase() }.`)
+                console.info(`Scheme set to ${ value.toUpperCase() }.`);
 
                 // Toggle scheme if necessary
                 if (!document.documentElement.classList.contains(schemeToSet)) this.toggle();
@@ -1653,7 +1653,7 @@ const chatgpt = {
     writeCode: function() { chatgpt.code.write(); }
 };
 
-chatgpt.scheme = { ...chatgpt.settings.scheme } // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
+chatgpt.scheme = { ...chatgpt.settings.scheme }; // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
 
 // Create chatgpt.[actions]Button(identifier) functions
 const buttonActions = ['click', 'get'], targetTypes = [ 'button', 'link', 'div', 'response' ];
