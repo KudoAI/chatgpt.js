@@ -72,11 +72,11 @@
     - [getSendButton](#getsendbutton)
     - [getStopGeneratingButton](#getstopgeneratingbutton)
 - [Library objects](#library-objects)
-  - [autoRefresh `obj`](#autorefresh-obj)
+  - [autoRefresh `api`](#autorefresh-api)
       - [activate](#activate)
       - [deactivate](#deactivate)
       - [nowTimeStamp](#nowtimestamp)
-  - [code `obj`](#code-obj)
+  - [code `api`](#code-api)
     - [minify `async`](#minify-async)
     - [execute](#execute)
     - [extract](#extract)
@@ -85,33 +85,35 @@
     - [review `async`](#review-async)
     - [unminify `async`](#unminify-async)
     - [write `async`](#write-async)
-  - [history `obj`](#history-obj)
+  - [history `api`](#history-api)
     - [isOn](#ison)
     - [isOff](#isoff)
     - [activate](#activate-1)
     - [deactivate](#deactivate-1)
     - [toggle](#toggle)
-  - [instructions `obj`](#instructions-obj)
+  - [instructions `api`](#instructions-api)
     - [add `async`](#add-async)
     - [clear `async`](#clear-async)
     - [turnOff `async`](#turnoff-async)
     - [turnOn `async`](#turnon-async)
     - [toggle `async`](#toggle-async)
-  - [menu `obj`](#menu-obj)
+  - [menu `api`](#menu-api)
     - [open](#open)
     - [close](#close)
-  - [response `obj`](#response-obj)
+  - [response `api`](#response-api)
     - [get](#get-1)
     - [getFromAPI `async`](#getfromapi-async)
     - [getFromDOM](#getfromdom)
     - [getLast `async`](#getlast-async)
     - [regenerate](#regenerate-1)
     - [stopGenerating](#stopgenerating)
-  - [scheme `obj`](#scheme-obj)
-    - [isDark](#isdark)
-    - [isLight](#islight)
-    - [toggle](#toggle-1)
-  - [sidebar `obj`](#sidebar-obj)
+  - [settings `api`](#settings-api)
+    - [scheme `api subset`](#scheme-api-subset)
+      - [isDark](#isdark)
+      - [isLight](#islight)
+      - [set](#set)
+      - [toggle](#toggle-1)
+  - [sidebar `api`](#sidebar-api)
     - [append](#append)
     - [isOn](#ison-1)
     - [isOff](#isoff-1)
@@ -460,9 +462,7 @@ Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
 Example code:
 
 ```js
-if (chatgpt.isDarkMode()) {
-    // Do something
-}
+console.log(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
 ```
 
 ### isLightMode
@@ -472,9 +472,7 @@ Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
 Example code:
 
 ```js
-if (chatgpt.isLightMode()) {
-    // Do something
-}
+console.log(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
 ```
 
 ### toggleScheme
@@ -1072,9 +1070,9 @@ stopButton.click();
 
 # Library objects
 
-## autoRefresh `obj`
+## autoRefresh `api`
 
-Object related to keeping the user's session alive and fresh.
+API related to keeping the user's session alive and fresh.
 
 #### activate
 
@@ -1111,7 +1109,7 @@ const timeStamp = chatgpt.autoRefresh.nowTimeStamp();
 console.log(timeStamp); // Example output: '1:56:25 PM'
 ```
 
-## code `obj`
+## code `api`
 
 ### minify `async`
 
@@ -1155,7 +1153,7 @@ Example code:
 
 ```js
 (async () => {
-    console.log(await chatgpt.code.execute('return 6 + 5')); // Logs '11'
+    console.log(await chatgpt.code.execute('return 6 + 5')); // logs '11'
 })();
 ```
 
@@ -1317,9 +1315,9 @@ Example code:
 })();
 ```
 
-## history `obj`
+## history `api`
 
-Object related to the chat history.
+API related to the chat history.
 
 ### isOn
 
@@ -1375,7 +1373,7 @@ Example code:
 chatgpt.history.toggle();
 ```
 
-## instructions `obj`
+## instructions `api`
 
 ### add `async`
 
@@ -1447,7 +1445,7 @@ Example code:
 })();
 ```
 
-## menu `obj`
+## menu `api`
 
 The small menu that shows up when clicking on the account button.
 
@@ -1471,9 +1469,9 @@ Example code:
 chatgpt.menu.close();
 ```
 
-## response `obj`
+## response `api`
 
-Object related to ChatGPT's responses.
+API related to ChatGPT's responses.
 
 ### get
 
@@ -1501,25 +1499,59 @@ Read [chatgpt.regenerate](#regenerate)
 
 Read [chatgpt.stop](#stop)
 
-## scheme `obj`
+## settings `api`
 
-Object related to the website's theme.
+API for interfacing with ChatGPT user settings.
 
-### isDark
+### scheme `api subset`
 
-Read [chatgpt.isDarkMode](#isdarkmode)
+#### isDark
 
-### isLight
+Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
 
-Read [chatgpt.isLightMode](#islightmode)
+Example code:
 
-### toggle
+```js
+console.log(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
+````
 
-Read [chatgpt.toggleScheme](#togglescheme)
+#### isLight
 
-## sidebar `obj`
+Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
 
-Object related to the sidebar's behavior.
+Example code:
+
+```js
+console.log(chatgpt.settings.scheme.isLight()); // logs `true` or `false`
+````
+
+#### set
+
+Sets the theme to `light`, `dark` or `system`.
+
+**Paremeters**:
+
+`value`: A string being the value to set the theme to.
+
+Example code:
+
+```js
+chatgpt.settings.scheme.set('dark');
+```
+
+#### toggle
+
+Toggles the theme between light and dark mode.
+
+Example code:
+
+```js
+chatgpt.settings.scheme.toggle();
+```
+
+## sidebar `api`
+
+API related to the sidebar's behavior.
 
 ### append
 

@@ -53,11 +53,13 @@ const chatgpt = {
     activateDarkMode: function() {
         document.documentElement.classList.replace('light', 'dark');
         document.documentElement.style.colorScheme = 'dark';
+        localStorage.setItem('theme', 'dark');
     },
 
     activateLightMode: function() {
         document.documentElement.classList.replace('dark', 'light');
         document.documentElement.style.colorScheme = 'light';
+        localStorage.setItem('theme', 'light');
     },
 
     alert: function(title, msg, btns, checkbox, width) {
@@ -1283,16 +1285,6 @@ const chatgpt = {
 
     reviewCode: function() { chatgpt.code.review(); },
 
-    scheme: {
-        isDark: function() { return document.documentElement.classList.contains('dark'); },
-        isLight: function() { return document.documentElement.classList.contains('light'); },
-        toggle: function() {
-            const [schemeToRemove, schemeToAdd] = this.isDark() ? ['dark', 'light'] : ['light', 'dark'];
-            document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
-            document.documentElement.style.colorScheme = schemeToAdd;
-        }
-    },
-
     scrollToBottom: function() {
         try { document.querySelector('button[class*="cursor"][class*="bottom"]').click(); }
         catch (err) { console.error('', err); }
@@ -1322,6 +1314,35 @@ const chatgpt = {
         }} setTimeout(() => { chatgpt.send(msg); }, 500);
     },
 
+    settings: {
+        scheme: {
+            isDark: function() { return document.documentElement.classList.contains('dark'); },
+            isLight: function() { return document.documentElement.classList.contains('light'); },
+            set: function(value) {
+
+                // Validate value
+                const validValues = ['dark', 'light', 'system'];
+                if (!value) return console.error('Please specify a scheme value!');
+                if (!validValues.includes(value)) return console.error(`Invalid scheme value. Valid values are [${ validValues }]`);
+
+                // Determine scheme to set
+                let schemeToSet = value;
+                if (value === 'system') schemeToSet = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                localStorage.setItem('theme', value);
+                console.info(`Scheme set to ${ value.toUpperCase() }.`);
+
+                // Toggle scheme if necessary
+                if (!document.documentElement.classList.contains(schemeToSet)) this.toggle();
+            },
+            toggle: function() {
+                const [schemeToRemove, schemeToAdd] = this.isDark() ? ['dark', 'light'] : ['light', 'dark'];
+                document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
+                document.documentElement.style.colorScheme = schemeToAdd;
+                localStorage.setItem('theme', schemeToAdd);
+            }
+        }
+    },
+
     sentiment: async function(text, entity) {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return console.error(`Argument ${ i + 1 } must be a string.`);
@@ -1332,6 +1353,8 @@ const chatgpt = {
         await chatgpt.isIdle();
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
+
+    setScheme: function(value) { chatgpt.settings.scheme.set(value); },
 
     shareChat: function(chatToGet, method = 'clipboard') {
     // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
@@ -1595,13 +1618,7 @@ const chatgpt = {
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
 
-    toggleScheme: function() {
-        const [schemeToRemove, schemeToAdd] = (
-            document.documentElement.classList.contains('dark') ?
-               ['dark', 'light'] : ['light', 'dark'] );
-        document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
-        document.documentElement.style.colorScheme = schemeToAdd;
-    },
+    toggleScheme: function() { chatgpt.settings.scheme.toggle(); },
 
     translate: async function(text, outputLang) {
         if (!text) return console.error('Text (1st) argument not supplied. Pass some text!');
@@ -1630,6 +1647,8 @@ const chatgpt = {
 
     writeCode: function() { chatgpt.code.write(); }
 };
+
+chatgpt.scheme = { ...chatgpt.settings.scheme }; // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
 
 // Create chatgpt.[actions]Button(identifier) functions
 const buttonActions = ['click', 'get'], targetTypes = [ 'button', 'link', 'div', 'response' ];
