@@ -37,14 +37,6 @@
 
 </div>
 
-<div id="bat-signal" align="center">
-
-<br>
-
-📣 _OSS 서포터입니까? 자바스크립트를 좋아하시나요? 그렇다면 AI 앱 개발의 미래에 기여하지 않으시겠습니까? **chatgpt.js** 는 바로 이러한 목적을 위해 협력자를 찾고 있습니다! [토론](https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas) 또는 [풀 요청](https://github.com/KudoAI/chatgpt.js/pulls)을 열기만 하면 됩니다 (**어떤** 크기의 아이디어도 환영합니다!)_
-    
-</div>
-
 <div id="intro">
 
 ## 개요

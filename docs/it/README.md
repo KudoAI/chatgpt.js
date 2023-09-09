@@ -34,17 +34,9 @@
 [![](https://img.shields.io/badge/Incubato_da-100.builders-9146ff?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://100.builders)
 ![](https://img.shields.io/jsdelivr/gh/hm/kudoai/chatgpt.js?label=Richieste+a+jsDelivr&logo=jsdelivr&logoColor=white&labelColor=464646&color=gold&style=for-the-badge)
 
-<div id="bat-signal" align="center">
 
-<br>
 
-📣 _Ti piace l'OSS? JavaScript è la tua passione? Allora perché non contribuire al futuro dello sviluppo della tecnologia AI? **chatgpt.js** cerca collaboratori proprio per questo! Basta iniziare una [discussione](https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas) o aprire una [pull request](https://github.com/KudoAI/chatgpt.js/pulls) (sono benvenute idee di **qualsiasi** grandezza!)_
-
-</div>
-
-</div>
-
-<div id="intro">
+</div><div id="intro">
 
 ## Informazioni
 

@@ -36,14 +36,6 @@
 
 </div>
 
-<div id="bat-signal" align="center">
-
-<br>
-
-📣 _あなたは OSS サポーターですか? JavaScript は好きですか? それなら、AI アプリ開発の将来に貢献してみませんか? **chatgpt.js** はまさにこの目的のために協力者を募集しています。 [ディスカッション](https://github.com/KudoAI/chatgpt.js/Discussions/new?category=ideas) または [プル リクエスト](https://github.com/KudoAI/chatgpt.js/pulls) を開くだけです (**任意**のサイズのアイデアは大歓迎です!)_
-
-</div>
-
 <div id="intro">
 
 ## アバウト
