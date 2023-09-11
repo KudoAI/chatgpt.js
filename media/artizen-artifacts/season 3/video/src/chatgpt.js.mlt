@@ -1,0 +1,132 @@
+<?xml version="1.0" standalone="no"?>
+<mlt LC_NUMERIC="C" version="7.13.0" title="Shotcut version 22.12.21" producer="main_bin">
+  <profile description="PAL 4:3 DV or DVD" width="2160" height="2160" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="1" display_aspect_den="1" frame_rate_num="30000000" frame_rate_den="1000000" colorspace="709"/>
+  <chain id="chain0" out="00:00:38.400">
+    <property name="length">00:00:38.433</property>
+    <property name="eof">pause</property>
+    <property name="resource">E:/js/lib/chatgpt.js/chatgpt.js/media/artizen-artifacts/season 3/audio/Adam Lui - Imagine (Artizen Artifact Edit).wav</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-11T08:04:09</property>
+    <property name="shotcut:hash">66a64a5175b04babb5bac3e0da80b071</property>
+    <property name="ignore_points">0</property>
+    <property name="xml">was here</property>
+  </chain>
+  <chain id="chain1" out="00:00:38.433">
+    <property name="length">00:00:38.467</property>
+    <property name="eof">pause</property>
+    <property name="resource">chatgpt.js-unlimited-uncropped.mp4</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-11T07:58:26</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">4b374bb52f9e8697c21f68cac3550544</property>
+  </chain>
+  <playlist id="main_bin" title="Shotcut version 22.12.21">
+    <property name="shotcut:projectAudioChannels">2</property>
+    <property name="shotcut:projectFolder">0</property>
+    <property name="xml_retain">1</property>
+    <entry producer="chain0" in="00:00:00.000" out="00:00:38.400"/>
+    <entry producer="chain1" in="00:00:00.000" out="00:00:38.433"/>
+  </playlist>
+  <producer id="black" in="00:00:00.000" out="00:00:38.433">
+    <property name="length">00:00:38.467</property>
+    <property name="eof">pause</property>
+    <property name="resource">0</property>
+    <property name="aspect_ratio">1</property>
+    <property name="mlt_service">color</property>
+    <property name="mlt_image_format">rgba</property>
+    <property name="set.test_audio">0</property>
+  </producer>
+  <playlist id="background">
+    <entry producer="black" in="00:00:00.000" out="00:00:38.433"/>
+  </playlist>
+  <chain id="chain2" out="00:00:38.400">
+    <property name="length">00:00:38.433</property>
+    <property name="eof">pause</property>
+    <property name="resource">E:/js/lib/chatgpt.js/chatgpt.js/media/artizen-artifacts/season 3/audio/Adam Lui - Imagine (Artizen Artifact Edit).wav</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-11T08:04:09</property>
+    <property name="shotcut:hash">66a64a5175b04babb5bac3e0da80b071</property>
+    <property name="ignore_points">0</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:caption">Adam Lui - Imagine (Artizen Artifact Edit).wav</property>
+  </chain>
+  <playlist id="playlist0">
+    <property name="shotcut:audio">1</property>
+    <property name="shotcut:name">A1</property>
+    <entry producer="chain2" in="00:00:00.000" out="00:00:38.400"/>
+  </playlist>
+  <chain id="chain3" out="00:00:38.433">
+    <property name="length">00:00:38.467</property>
+    <property name="eof">pause</property>
+    <property name="resource">chatgpt.js-unlimited-uncropped.mp4</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-11T07:58:26</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">4b374bb52f9e8697c21f68cac3550544</property>
+    <property name="shotcut:caption">chatgpt.js-unlimited-uncropped.mp4</property>
+    <filter id="filter0" out="00:00:38.433">
+      <property name="background">color:#00000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">-253.333 330.5 2666.67 1500 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </chain>
+  <playlist id="playlist1">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V1</property>
+    <entry producer="chain3" in="00:00:00.000" out="00:00:38.433"/>
+  </playlist>
+  <tractor id="tractor0" title="Shotcut version 22.12.21" in="00:00:00.000" out="00:00:38.433">
+    <property name="shotcut">1</property>
+    <property name="shotcut:projectAudioChannels">2</property>
+    <property name="shotcut:projectFolder">0</property>
+    <track producer="background"/>
+    <track producer="playlist0" hide="video"/>
+    <track producer="playlist1" hide="audio"/>
+    <transition id="transition0">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition1">
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition2">
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+      <property name="version">0.1</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="threads">0</property>
+      <property name="disable">1</property>
+    </transition>
+  </tractor>
+</mlt>
