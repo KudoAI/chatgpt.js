@@ -1,0 +1,989 @@
+<?xml version="1.0" standalone="no"?>
+<mlt LC_NUMERIC="C" version="7.13.0" title="Shotcut version 22.12.21" producer="main_bin">
+  <profile description="automatic" width="1920" height="1074" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="320" display_aspect_den="179" frame_rate_num="24" frame_rate_den="1" colorspace="709"/>
+  <chain id="chain0" out="00:01:50.042">
+    <property name="length">00:01:50.083</property>
+    <property name="eof">pause</property>
+    <property name="resource">audio/Dombrance - Taubira (Prins Thomas &amp; Adam Lui Remix) (chatgpt.js Edit).wav</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T05:18:58</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">60508b6ee142c68cc5abe0f529bd287b</property>
+  </chain>
+  <chain id="chain1" out="00:00:22.333">
+    <property name="length">00:00:22.375</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt.js-landing-zoomed.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T03:44:02</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">c2d25478cf84cb7b4713d2337a9295cf</property>
+  </chain>
+  <chain id="chain2" out="00:00:10.708">
+    <property name="length">00:00:10.750</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/type-import-code.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T03:15:11</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">386ab915781b2b59126281cd70234d67</property>
+  </chain>
+  <chain id="chain3" out="00:00:05.542">
+    <property name="length">00:00:05.583</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/kudoai-logo.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T04:28:06</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">db9f5404cbd66ecdd8ab04688f343a40</property>
+  </chain>
+  <chain id="chain4" out="00:00:18.250">
+    <property name="length">00:00:18.292</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/made-with-chatgpt.js.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T03:21:46</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">91c9bebf8207f31c74d0c59a3dce739b</property>
+  </chain>
+  <chain id="chain5" out="00:00:06.000">
+    <property name="length">00:00:06.042</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt-widescreen-landing.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-04-16T14:26:17</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">533fdfc4dc2d264d0ecf5b7eb281ed63</property>
+  </chain>
+  <chain id="chain6" out="00:00:19.958">
+    <property name="length">00:00:20.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt-widescreen-demo-final.mp4</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-05-24T14:40:06</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">08bdc84c5092ea1cc304a99bb229d568</property>
+  </chain>
+  <chain id="chain7" out="00:00:05.542">
+    <property name="length">00:00:05.583</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/kudoai-logo.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T04:28:06</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">db9f5404cbd66ecdd8ab04688f343a40</property>
+  </chain>
+  <producer id="producer0" in="00:00:00.000" out="03:59:59.958">
+    <property name="length">04:00:00.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">images/100.builders-logo.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="format">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2023-09-14T04:35:13</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">ceeda564fa3d20c07a6b37efd119554a</property>
+  </producer>
+  <chain id="chain8" out="00:00:20.875">
+    <property name="length">00:00:20.917</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/ddgpt-demo-mastodon-final.mp4</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-02-18T09:59:57</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">707711a170af001a6fc4360f70341b3b</property>
+  </chain>
+  <chain id="chain9" out="00:00:18.000">
+    <property name="length">00:00:18.042</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/duckduckgpt-title.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T03:25:07</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">639692d5c82a5191a7aca4e56042254f</property>
+  </chain>
+  <chain id="chain10" out="00:00:07.417">
+    <property name="length">00:00:07.458</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt-infinity-title.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T03:26:47</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">a4bc385dd8bbacf8f544a22799a04bf6</property>
+  </chain>
+  <chain id="chain11" out="00:00:57.333">
+    <property name="length">00:00:57.375</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt-infinity-programming-demo.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T02:35:19</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">0a5fd6dfe56e57a3ef9c01035eaa51e4</property>
+  </chain>
+  <chain id="chain12" out="00:00:05.875">
+    <property name="length">00:00:05.917</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt.js-glitched.mp4</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-08-12T07:28:31</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">027b96aecd3580fd1631ea7b87e6d084</property>
+  </chain>
+  <playlist id="main_bin" title="Shotcut version 22.12.21">
+    <property name="shotcut:projectAudioChannels">2</property>
+    <property name="shotcut:projectFolder">0</property>
+    <property name="xml_retain">1</property>
+    <entry producer="chain0" in="00:00:00.000" out="00:01:50.042"/>
+    <entry producer="chain1" in="00:00:00.000" out="00:00:22.333"/>
+    <entry producer="chain2" in="00:00:00.000" out="00:00:10.708"/>
+    <entry producer="chain3" in="00:00:00.000" out="00:00:05.542"/>
+    <entry producer="chain4" in="00:00:00.000" out="00:00:18.250"/>
+    <entry producer="chain5" in="00:00:00.000" out="00:00:06.000"/>
+    <entry producer="chain6" in="00:00:00.000" out="00:00:19.958"/>
+    <entry producer="chain7" in="00:00:00.000" out="00:00:05.542"/>
+    <entry producer="producer0" in="00:00:00.000" out="00:00:03.958"/>
+    <entry producer="chain8" in="00:00:00.000" out="00:00:20.875"/>
+    <entry producer="chain9" in="00:00:00.000" out="00:00:18.000"/>
+    <entry producer="chain10" in="00:00:00.000" out="00:00:07.417"/>
+    <entry producer="chain11" in="00:00:00.000" out="00:00:57.333"/>
+    <entry producer="chain12" in="00:00:00.000" out="00:00:05.875"/>
+  </playlist>
+  <producer id="black" in="00:00:00.000" out="00:01:18.333">
+    <property name="length">00:01:18.375</property>
+    <property name="eof">pause</property>
+    <property name="resource">0</property>
+    <property name="aspect_ratio">1</property>
+    <property name="mlt_service">color</property>
+    <property name="mlt_image_format">rgba</property>
+    <property name="set.test_audio">0</property>
+  </producer>
+  <playlist id="background">
+    <entry producer="black" in="00:00:00.000" out="00:01:18.333"/>
+  </playlist>
+  <chain id="chain13" out="00:01:50.042">
+    <property name="length">00:01:50.083</property>
+    <property name="eof">pause</property>
+    <property name="resource">audio/Dombrance - Taubira (Prins Thomas &amp; Adam Lui Remix) (chatgpt.js Edit).wav</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T05:18:58</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">60508b6ee142c68cc5abe0f529bd287b</property>
+    <property name="shotcut:caption">Dombrance - Taubira (Prins Thomas &amp; Adam Lui Remix) (chatgpt.js Edit).wav</property>
+    <filter id="filter0" out="00:01:18.333">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:01:17.125=0;00:01:18.333=-60</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeOutVolume</property>
+      <property name="shotcut:animOut">30</property>
+    </filter>
+  </chain>
+  <playlist id="playlist0">
+    <property name="shotcut:audio">1</property>
+    <property name="shotcut:name">A1</property>
+    <entry producer="chain13" in="00:00:00.000" out="00:01:18.333"/>
+  </playlist>
+  <chain id="chain14" out="00:00:22.333">
+    <property name="length">00:00:22.375</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt.js-landing-zoomed.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T03:44:02</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">c2d25478cf84cb7b4713d2337a9295cf</property>
+    <property name="shotcut:caption">chatgpt.js-landing-zoomed.wmv</property>
+    <filter id="filter1" in="00:00:03.542" out="00:00:13.958">
+      <property name="version">1.1</property>
+      <property name="mlt_service">frei0r.rgbsplit0r</property>
+      <property name="0">0.511</property>
+      <property name="1">0.511</property>
+    </filter>
+    <filter id="filter2" in="00:00:03.542" out="00:00:13.958">
+      <property name="noise">96</property>
+      <property name="contrast">100</property>
+      <property name="brightness">83</property>
+      <property name="mlt_service">grain</property>
+    </filter>
+    <filter id="filter3" in="00:00:03.542" out="00:00:13.958">
+      <property name="delta">3</property>
+      <property name="every">5</property>
+      <property name="brightnessdelta_up">20</property>
+      <property name="brightnessdelta_down">30</property>
+      <property name="brightnessdelta_every">70</property>
+      <property name="unevendevelop_up">60</property>
+      <property name="unevendevelop_down">20</property>
+      <property name="unevendevelop_duration">70</property>
+      <property name="mlt_service">oldfilm</property>
+    </filter>
+    <filter id="filter4" in="00:00:03.542" out="00:00:13.958">
+      <property name="line_width">2</property>
+      <property name="num">5</property>
+      <property name="darker">40</property>
+      <property name="lighter">40</property>
+      <property name="mlt_service">lines</property>
+      <property name="line4">64</property>
+      <property name="typeline4">1</property>
+      <property name="line3">1739</property>
+      <property name="typeline3">1</property>
+      <property name="line2">493</property>
+      <property name="typeline2">1</property>
+      <property name="line1">1149</property>
+      <property name="typeline1">1</property>
+      <property name="line0">1188</property>
+      <property name="typeline0">1</property>
+      <property name="last_oldfilm_line_pos">0.068</property>
+    </filter>
+    <filter id="filter5" in="00:00:03.542" out="00:00:13.958">
+      <property name="version">0.3</property>
+      <property name="mlt_service">frei0r.scanline0r</property>
+      <property name="shotcut:filter">scanlines</property>
+      <property name="disable">1</property>
+    </filter>
+  </chain>
+  <chain id="chain15" out="00:00:10.708">
+    <property name="length">00:00:10.750</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/type-import-code.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T03:15:11</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">386ab915781b2b59126281cd70234d67</property>
+    <property name="shotcut:caption">type-import-code.wmv</property>
+    <filter id="filter6" in="00:00:00.083" out="00:00:07.583">
+      <property name="background">color:#000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">-2.01501 331.156 1920 722.087 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+    <filter id="filter7" in="00:00:00.083" out="00:00:07.583">
+      <property name="delta">3</property>
+      <property name="every">11</property>
+      <property name="brightnessdelta_up">11</property>
+      <property name="brightnessdelta_down">11</property>
+      <property name="brightnessdelta_every">11</property>
+      <property name="unevendevelop_up">60</property>
+      <property name="unevendevelop_down">20</property>
+      <property name="unevendevelop_duration">70</property>
+      <property name="mlt_service">oldfilm</property>
+    </filter>
+    <filter id="filter8" in="00:00:00.083" out="00:00:07.583">
+      <property name="noise">40</property>
+      <property name="contrast">100</property>
+      <property name="brightness">83</property>
+      <property name="mlt_service">grain</property>
+    </filter>
+    <filter id="filter9" in="00:00:00.083" out="00:00:07.583">
+      <property name="version">0.3</property>
+      <property name="mlt_service">frei0r.scanline0r</property>
+      <property name="shotcut:filter">scanlines</property>
+      <property name="disable">1</property>
+    </filter>
+  </chain>
+  <tractor id="tractor0" in="00:00:00.000" out="00:00:00.625">
+    <property name="shotcut:transition">lumaMix</property>
+    <track producer="chain14" in="00:00:13.333" out="00:00:13.958"/>
+    <track producer="chain15" in="00:00:00.083" out="00:00:00.708"/>
+    <transition id="transition0" out="00:00:00.625">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="factory">loader</property>
+      <property name="mlt_service">luma</property>
+      <property name="alpha_over">1</property>
+    </transition>
+    <transition id="transition1" out="00:00:00.625">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="mlt_service">mix</property>
+      <property name="start">-1</property>
+      <property name="accepts_blanks">1</property>
+    </transition>
+  </tractor>
+  <chain id="chain16" out="00:00:18.250">
+    <property name="length">00:00:18.292</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/made-with-chatgpt.js.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T03:21:46</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">91c9bebf8207f31c74d0c59a3dce739b</property>
+    <property name="shotcut:caption">made-with-chatgpt.js.wmv</property>
+    <filter id="filter10" in="00:00:10.667" out="00:00:14.250">
+      <property name="background">color:#00000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">-187.66 -105.06 2267.52 1268 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+      <property name="transition.fix_rotate_x">0</property>
+    </filter>
+    <filter id="filter11" in="00:00:10.667" out="00:00:14.250">
+      <property name="start">1</property>
+      <property name="level">00:00:02.625=1;00:00:03.583=0</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeOutBrightness</property>
+      <property name="alpha">1</property>
+      <property name="shotcut:animOut">24</property>
+    </filter>
+    <filter id="filter12" in="00:00:10.667" out="00:00:14.250">
+      <property name="noise">40</property>
+      <property name="contrast">100</property>
+      <property name="brightness">83</property>
+      <property name="mlt_service">grain</property>
+    </filter>
+    <filter id="filter13" in="00:00:10.667" out="00:00:14.250">
+      <property name="delta">3</property>
+      <property name="every">11</property>
+      <property name="brightnessdelta_up">20</property>
+      <property name="brightnessdelta_down">30</property>
+      <property name="brightnessdelta_every">11</property>
+      <property name="unevendevelop_up">60</property>
+      <property name="unevendevelop_down">20</property>
+      <property name="unevendevelop_duration">70</property>
+      <property name="mlt_service">oldfilm</property>
+    </filter>
+    <filter id="filter14" in="00:00:10.667" out="00:00:14.250">
+      <property name="version">1.1</property>
+      <property name="mlt_service">frei0r.rgbsplit0r</property>
+      <property name="0">0.51</property>
+      <property name="1">0.51</property>
+    </filter>
+    <filter id="filter15" in="00:00:10.667" out="00:00:14.250">
+      <property name="version">0.3</property>
+      <property name="mlt_service">frei0r.scanline0r</property>
+      <property name="shotcut:filter">scanlines</property>
+    </filter>
+    <filter id="filter16" in="00:00:10.667" out="00:00:14.250">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:02.625=0;00:00:03.583=-60</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeOutVolume</property>
+      <property name="shotcut:animOut">24</property>
+    </filter>
+  </chain>
+  <tractor id="tractor1" in="00:00:00.000" out="00:00:01.125">
+    <property name="shotcut:transition">lumaMix</property>
+    <track producer="chain15" in="00:00:06.458" out="00:00:07.583"/>
+    <track producer="chain16" in="00:00:10.667" out="00:00:11.792"/>
+    <transition id="transition2" out="00:00:01.125">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="factory">loader</property>
+      <property name="mlt_service">luma</property>
+      <property name="alpha_over">1</property>
+    </transition>
+    <transition id="transition3" out="00:00:01.125">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="mlt_service">mix</property>
+      <property name="start">-1</property>
+      <property name="accepts_blanks">1</property>
+    </transition>
+  </tractor>
+  <chain id="chain17" out="00:00:06.000">
+    <property name="length">00:00:06.042</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt-widescreen-landing.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-04-16T14:26:17</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">533fdfc4dc2d264d0ecf5b7eb281ed63</property>
+    <property name="shotcut:caption">chatgpt-widescreen-landing.wmv</property>
+    <filter id="filter17" out="00:00:02.417">
+      <property name="background">color:#00000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">-94.0564 -118.435 2123.18 1194.29 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+      <property name="transition.fix_rotate_x">0</property>
+    </filter>
+    <filter id="filter18" out="00:00:02.167">
+      <property name="start">1</property>
+      <property name="level">0.95</property>
+      <property name="mlt_service">brightness</property>
+    </filter>
+  </chain>
+  <chain id="chain18" out="00:00:19.958">
+    <property name="length">00:00:20.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt-widescreen-demo-final.mp4</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-05-24T14:40:06</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">08bdc84c5092ea1cc304a99bb229d568</property>
+    <property name="shotcut:caption">chatgpt-widescreen-demo-final.mp4</property>
+    <filter id="filter19" in="00:00:01.375" out="00:00:07.333">
+      <property name="start">1</property>
+      <property name="level">00:00:05.458=1;00:00:05.958=0</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeOutBrightness</property>
+      <property name="alpha">1</property>
+      <property name="shotcut:animOut">13</property>
+    </filter>
+    <filter id="filter20" in="00:00:01.708" out="00:00:07.333">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:05.125=0;00:00:05.625=-60</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeOutVolume</property>
+      <property name="shotcut:animOut">13</property>
+    </filter>
+  </chain>
+  <tractor id="tractor2" in="00:00:00.000" out="00:00:00.292">
+    <property name="shotcut:transition">lumaMix</property>
+    <track producer="chain17" in="00:00:01.875" out="00:00:02.167"/>
+    <track producer="chain18" in="00:00:01.375" out="00:00:01.667"/>
+    <transition id="transition4" out="00:00:00.292">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="factory">loader</property>
+      <property name="mlt_service">luma</property>
+      <property name="alpha_over">1</property>
+    </transition>
+    <transition id="transition5" out="00:00:00.292">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="mlt_service">mix</property>
+      <property name="start">-1</property>
+      <property name="accepts_blanks">1</property>
+    </transition>
+  </tractor>
+  <chain id="chain19" out="00:00:18.000">
+    <property name="length">00:00:18.042</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/duckduckgpt-title.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T03:25:07</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">639692d5c82a5191a7aca4e56042254f</property>
+    <property name="shotcut:caption">duckduckgpt-title.wmv</property>
+    <filter id="filter21" in="00:00:13.458" out="00:00:15.625">
+      <property name="background">color:#00000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">-269.46 -86.1242 2496 1396.2 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </chain>
+  <chain id="chain20" out="00:00:20.875">
+    <property name="length">00:00:20.917</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/ddgpt-demo-mastodon-final.mp4</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-02-18T09:59:57</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">707711a170af001a6fc4360f70341b3b</property>
+    <property name="shotcut:caption">ddgpt-demo-mastodon-final.mp4</property>
+    <filter id="filter22" in="00:00:01.000" out="00:00:14.750">
+      <property name="start">1</property>
+      <property name="level">00:00:13.125=1;00:00:13.750=0</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeOutBrightness</property>
+      <property name="alpha">1</property>
+      <property name="shotcut:animOut">16</property>
+    </filter>
+    <filter id="filter23" in="00:00:01.000" out="00:00:14.750">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:13.125=0;00:00:13.750=-60</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeOutVolume</property>
+      <property name="shotcut:animOut">16</property>
+    </filter>
+  </chain>
+  <chain id="chain21" out="00:00:07.417">
+    <property name="length">00:00:07.458</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt-infinity-title.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T03:26:47</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">a4bc385dd8bbacf8f544a22799a04bf6</property>
+    <property name="shotcut:caption">chatgpt-infinity-title.wmv</property>
+    <filter id="filter24" in="00:00:04.708" out="00:00:06.667">
+      <property name="background">color:#00000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">-288.894 -161 2496 1396 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </chain>
+  <chain id="chain22" out="00:00:57.333">
+    <property name="length">00:00:57.375</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt-infinity-programming-demo.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T02:35:19</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">0a5fd6dfe56e57a3ef9c01035eaa51e4</property>
+    <property name="shotcut:caption">chatgpt-infinity-programming-demo.wmv</property>
+  </chain>
+  <chain id="chain23" out="00:00:57.333">
+    <property name="length">00:00:57.375</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt-infinity-programming-demo.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T02:35:19</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">0a5fd6dfe56e57a3ef9c01035eaa51e4</property>
+    <property name="shotcut:caption">chatgpt-infinity-programming-demo.wmv</property>
+  </chain>
+  <chain id="chain24" out="00:00:57.333">
+    <property name="length">00:00:57.375</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt-infinity-programming-demo.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T02:35:19</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">0a5fd6dfe56e57a3ef9c01035eaa51e4</property>
+    <property name="shotcut:caption">chatgpt-infinity-programming-demo.wmv</property>
+  </chain>
+  <chain id="chain25" out="00:00:57.333">
+    <property name="length">00:00:57.375</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt-infinity-programming-demo.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T02:35:19</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">0a5fd6dfe56e57a3ef9c01035eaa51e4</property>
+    <property name="shotcut:caption">chatgpt-infinity-programming-demo.wmv</property>
+    <filter id="filter25" in="00:00:19.750" out="00:00:27.333">
+      <property name="start">1</property>
+      <property name="level">00:00:06.625=1;00:00:07.583=0</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeOutBrightness</property>
+      <property name="alpha">1</property>
+      <property name="shotcut:animOut">00:00:01.000</property>
+    </filter>
+  </chain>
+  <chain id="chain26" out="00:00:05.875">
+    <property name="length">00:00:05.917</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt.js-glitched.mp4</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-08-12T07:28:31</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">027b96aecd3580fd1631ea7b87e6d084</property>
+    <property name="shotcut:caption">chatgpt.js-glitched.mp4</property>
+    <filter id="filter26" out="00:00:04.875">
+      <property name="start">1</property>
+      <property name="level">00:00:04.000=1;00:00:04.875=0</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeOutBrightness</property>
+      <property name="alpha">1</property>
+      <property name="shotcut:animOut">22</property>
+    </filter>
+    <filter id="filter27" out="00:00:04.875">
+      <property name="delta">3</property>
+      <property name="every">5</property>
+      <property name="brightnessdelta_up">20</property>
+      <property name="brightnessdelta_down">30</property>
+      <property name="brightnessdelta_every">70</property>
+      <property name="unevendevelop_up">60</property>
+      <property name="unevendevelop_down">20</property>
+      <property name="unevendevelop_duration">70</property>
+      <property name="mlt_service">oldfilm</property>
+    </filter>
+    <filter id="filter28" out="00:00:04.875">
+      <property name="noise">40</property>
+      <property name="contrast">100</property>
+      <property name="brightness">83</property>
+      <property name="mlt_service">grain</property>
+    </filter>
+    <filter id="filter29" out="00:00:04.875">
+      <property name="version">1.1</property>
+      <property name="mlt_service">frei0r.rgbsplit0r</property>
+      <property name="0">0.511</property>
+      <property name="1">0.511</property>
+    </filter>
+    <filter id="filter30" out="00:00:04.875">
+      <property name="start">1</property>
+      <property name="level">1.107</property>
+      <property name="mlt_service">brightness</property>
+    </filter>
+    <filter id="filter31" out="00:00:04.875">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:04.000=0;00:00:04.875=-60</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeOutVolume</property>
+      <property name="shotcut:animOut">22</property>
+    </filter>
+  </chain>
+  <playlist id="playlist1">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">intro + import</property>
+    <blank length="00:00:04.208"/>
+    <entry producer="chain14" in="00:00:03.542" out="00:00:13.292"/>
+    <entry producer="tractor0" in="00:00:00.000" out="00:00:00.625"/>
+    <entry producer="chain15" in="00:00:00.750" out="00:00:06.417"/>
+    <entry producer="tractor1" in="00:00:00.000" out="00:00:01.125"/>
+    <entry producer="chain16" in="00:00:11.833" out="00:00:14.250"/>
+    <blank length="00:00:00.625"/>
+    <entry producer="chain17" in="00:00:00.000" out="00:00:01.833"/>
+    <entry producer="tractor2" in="00:00:00.000" out="00:00:00.292"/>
+    <entry producer="chain18" in="00:00:01.708" out="00:00:07.333"/>
+    <blank length="00:00:00.083"/>
+    <entry producer="chain19" in="00:00:13.458" out="00:00:15.625"/>
+    <entry producer="chain20" in="00:00:01.000" out="00:00:14.750"/>
+    <blank length="00:00:00.375"/>
+    <entry producer="chain21" in="00:00:04.708" out="00:00:06.667"/>
+    <entry producer="chain22" in="00:00:00.000" out="00:00:01.208"/>
+    <blank length="00:00:06.333"/>
+    <entry producer="chain23" in="00:00:07.583" out="00:00:09.958"/>
+    <entry producer="chain24" in="00:00:12.333" out="00:00:16.750"/>
+    <entry producer="chain25" in="00:00:19.750" out="00:00:27.333"/>
+    <blank length="00:00:00.417"/>
+    <entry producer="chain26" in="00:00:00.000" out="00:00:04.875"/>
+  </playlist>
+  <chain id="chain27" out="00:00:05.542">
+    <property name="length">00:00:05.583</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/kudoai-logo.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T04:28:06</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">db9f5404cbd66ecdd8ab04688f343a40</property>
+    <property name="shotcut:caption">kudoai-logo.wmv</property>
+    <filter id="filter32" out="00:00:01.042">
+      <property name="background">color:#000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">293.8 161 1336.53 752 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+    <filter id="filter33" out="00:00:01.042">
+      <property name="version">1.1</property>
+      <property name="mlt_service">frei0r.rgbsplit0r</property>
+      <property name="0">0.483</property>
+      <property name="1">0.483</property>
+    </filter>
+    <filter id="filter34" out="00:00:01.042">
+      <property name="delta">3</property>
+      <property name="every">11</property>
+      <property name="brightnessdelta_up">20</property>
+      <property name="brightnessdelta_down">30</property>
+      <property name="brightnessdelta_every">70</property>
+      <property name="unevendevelop_up">60</property>
+      <property name="unevendevelop_down">20</property>
+      <property name="unevendevelop_duration">70</property>
+      <property name="mlt_service">oldfilm</property>
+    </filter>
+  </chain>
+  <producer id="producer1" in="00:00:00.000" out="03:59:59.958">
+    <property name="length">04:00:00.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">images/100.builders-logo.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="format">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2023-09-14T04:35:13</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">ceeda564fa3d20c07a6b37efd119554a</property>
+    <property name="shotcut:caption">100.builders-logo.png</property>
+    <filter id="filter35" out="00:00:02.000">
+      <property name="start">1</property>
+      <property name="level">00:00:01.250=1;00:00:02.000=0</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeOutBrightness</property>
+      <property name="alpha">1</property>
+      <property name="shotcut:animOut">19</property>
+    </filter>
+    <filter id="filter36" out="00:00:02.000">
+      <property name="background">color:#000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">405.16 225.5 1107.41 623 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+    <filter id="filter37" out="00:00:02.000">
+      <property name="version">1.1</property>
+      <property name="mlt_service">frei0r.rgbsplit0r</property>
+      <property name="0">0.483</property>
+      <property name="1">0.483</property>
+    </filter>
+    <filter id="filter38" out="00:00:02.000">
+      <property name="delta">3</property>
+      <property name="every">11</property>
+      <property name="brightnessdelta_up">20</property>
+      <property name="brightnessdelta_down">30</property>
+      <property name="brightnessdelta_every">11</property>
+      <property name="unevendevelop_up">60</property>
+      <property name="unevendevelop_down">20</property>
+      <property name="unevendevelop_duration">70</property>
+      <property name="mlt_service">oldfilm</property>
+    </filter>
+    <filter id="filter39" out="00:00:02.000">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:01.250=0;00:00:02.000=-60</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeOutVolume</property>
+      <property name="shotcut:animOut">19</property>
+    </filter>
+  </producer>
+  <chain id="chain28" out="00:00:57.333">
+    <property name="length">00:00:57.375</property>
+    <property name="eof">pause</property>
+    <property name="resource">videos/chatgpt-infinity-programming-demo.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-09-14T02:35:19</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">0a5fd6dfe56e57a3ef9c01035eaa51e4</property>
+    <property name="shotcut:caption">chatgpt-infinity-programming-demo.wmv</property>
+    <filter id="filter40" in="00:00:01.250" out="00:00:07.542">
+      <property name="background">color:#00000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">-4210.59 -1.54575 6134.4 3431.43 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </chain>
+  <playlist id="playlist2">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">Zooms</property>
+    <blank length="00:00:00.167"/>
+    <entry producer="chain27" in="00:00:00.000" out="00:00:01.042"/>
+    <entry producer="producer1" in="00:00:00.000" out="00:00:02.000"/>
+    <blank length="00:00:48.917"/>
+    <entry producer="chain28" in="00:00:01.250" out="00:00:07.542"/>
+  </playlist>
+  <playlist id="playlist3">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">Logos</property>
+    <blank length="00:00:00.042"/>
+  </playlist>
+  <tractor id="tractor3" title="Shotcut version 22.12.21" in="00:00:00.000" out="00:01:18.333">
+    <property name="shotcut">1</property>
+    <property name="shotcut:projectAudioChannels">2</property>
+    <property name="shotcut:projectFolder">0</property>
+    <property name="shotcut:scaleFactor">7.77239</property>
+    <track producer="background"/>
+    <track producer="playlist0" hide="video"/>
+    <track producer="playlist1" hide="audio"/>
+    <track producer="playlist2" hide="audio"/>
+    <track producer="playlist3" hide="audio"/>
+    <transition id="transition6">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition7">
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition8">
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+      <property name="version">0.1</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="threads">0</property>
+      <property name="disable">1</property>
+    </transition>
+    <transition id="transition9">
+      <property name="a_track">0</property>
+      <property name="b_track">3</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition10">
+      <property name="a_track">2</property>
+      <property name="b_track">3</property>
+      <property name="version">0.1</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="threads">0</property>
+      <property name="disable">0</property>
+    </transition>
+    <transition id="transition11">
+      <property name="a_track">0</property>
+      <property name="b_track">4</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition12">
+      <property name="a_track">2</property>
+      <property name="b_track">4</property>
+      <property name="version">0.1</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="threads">0</property>
+      <property name="disable">0</property>
+    </transition>
+  </tractor>
+</mlt>
