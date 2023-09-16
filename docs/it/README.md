@@ -260,7 +260,7 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 
 </div>
 
-**chatgpt.js** fa parte di [100.builders](https://100.builders), un incubatore di intelligenza artificiale finanziato da:
+**chatgpt.js** è parzialmente finanziato da:
 
 <div id="partners-collage" align="center">
 

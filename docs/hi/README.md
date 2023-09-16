@@ -261,7 +261,7 @@ chatgpt.get('reply', 'last')
 
 </div>
 
-**chatgpt.js** [100.builders](https://100.builders) का हिस्सा है, जो एक एआई इनक्यूबेटर है जिसे वित्त पोषित किया गया है:
+**chatgpt.js** को आंशिक रूप से वित्त पोषित किया जाता है:
 
 <div id="partners-collage" align="center">
 

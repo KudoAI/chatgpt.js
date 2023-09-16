@@ -260,7 +260,7 @@ chatgpt.js で何かを作成して共有したい場合は、<a href="mailto:sh
 
 </div>
 
-**chatgpt.js** は、以下から資金提供されている AI インキュベーターである [100.builders](https://100.builders) の一部です:
+**chatgpt.js** の資金の一部は次のとおりです:
 
 <div id="partners-collage" align="center">
 

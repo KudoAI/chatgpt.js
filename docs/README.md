@@ -260,7 +260,7 @@ This library exists thanks to code, translations, issues & ideas from the follow
 
 </div>
 
-**chatgpt.js** is part of [100.builders](https://100.builders), an AI incubator funded by:
+**chatgpt.js** is partially funded by:
 
 <div id="partners-collage" align="center">
 

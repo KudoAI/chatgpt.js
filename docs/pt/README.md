@@ -260,7 +260,7 @@ Esta biblioteca existe graças ao código, traduções, problemas e ideias dos s
 
 </div>
 
-**chatgpt.js** faz parte da [100.builders](https://100.builders), uma incubadora de IA financiada por:
+**chatgpt.js** é parcialmente financiado por:
 
 <div id="partners-collage" align="center">
 

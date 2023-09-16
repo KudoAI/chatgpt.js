@@ -260,7 +260,7 @@ chatgpt.get('reply', 'last');
 
 </div>
 
-**chatgpt.js** 是 [100.builders](https://100.builders) 的一部分，这是一个 AI 孵化器，由以下机构资助：
+**chatgpt.js** 的部分資金來自:
 
 <div id="partners-collage" align="center">
 

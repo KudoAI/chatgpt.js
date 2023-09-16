@@ -260,7 +260,7 @@ Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng 
 
 </div>
 
-**chatgpt.js** là một phần của [100.builders](https://100.builders), một vườn ươm AI được tài trợ bởi:
+**chatgpt.js** được tài trợ một phần bởi:
 
 <div id="partners-collage" align="center">
 

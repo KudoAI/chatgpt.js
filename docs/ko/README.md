@@ -266,7 +266,7 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href=
 
 </div>
 
-**chatgpt.js** 는 다음에서 자금을 지원하는 AI 인큐베이터인 [100.builders](https://100.builders) 의 일부입니다:
+**chatgpt.js**는 다음에서 부분적으로 자금을 지원받습니다:
 
 <div id="partners-collage" align="center">
 
