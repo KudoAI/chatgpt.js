@@ -1,9 +1,6 @@
 <!-- _coverpage.md -->
 
-<picture>
-    <source type="image/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-padded-7000x777.webp">
-    <img class="logo" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-padded-7000x777.png">
-</picture>
+<img class="logo" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-padded-7000x777.png">
 
 > 🤖 ChatGPT를 위한 강력한 클라이언트 사이드 자바스크립트 라이브러리
 
