@@ -1800,7 +1800,7 @@ const synonyms = [
     ['chat', 'conversation', 'convo'],
     ['data', 'details'],
     ['deactivate', 'deActivate', 'turnOff'],
-    ['execute', 'run'],
+    ['execute', 'interpret', 'interpreter', 'run'],
     ['generating', 'generation'],
     ['minify', 'uglify'],
     ['refactor', 'rewrite'],

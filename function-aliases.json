@@ -38,7 +38,7 @@
     ["ask", "send", "submit"],
     ["chat", "conversation", "convo"],
     ["data", "details"],
-    ["execute", "run"],
+    ["execute", "interpret", "interpreter", "run"],
     ["deactivate", "deActivate", "turnOff"],
     ["generating", "generation"],
     ["minify", "uglify"],
