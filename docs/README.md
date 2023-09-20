@@ -260,7 +260,7 @@ This library exists thanks to code, translations, issues & ideas from the follow
 
 </div>
 
-**chatgpt.js** is partially funded by:
+**chatgpt.js** is funded in part by:
 
 <div id="partners-collage" align="center">
 
