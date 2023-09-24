@@ -11,8 +11,8 @@
         });
 
     // Add main toggle click-listener
-    const toggles = document.querySelectorAll('input');
-    const mainToggle = toggles[0];
+    const toggles = document.querySelectorAll('input'),
+          mainToggle = toggles[0];
     mainToggle.addEventListener('change', function() {    
         settings.save('extensionDisabled', !this.checked);
         syncExtension() ; updateGreyness();
@@ -28,22 +28,22 @@
     });});
 
     // Add Support span click-listener
-    const supportLink = document.querySelector('a[title*="support" i]');
-    const supportSpan = supportLink.parentNode ;
+    const supportLink = document.querySelector('a[title*="support" i]'),
+          supportSpan = supportLink.parentNode;
     supportSpan.addEventListener('click', (event) => {
         if (event.target == supportSpan) supportLink.click(); // to avoid double-toggle
     });
 
     // Add More Add-ons span click-listener
-    const moreAddOnsLink = document.querySelector('a[title*="more" i]');
-    const moreAddOnsSpan = moreAddOnsLink.parentNode ;
+    const moreAddOnsLink = document.querySelector('a[title*="more" i]'),
+          moreAddOnsSpan = moreAddOnsLink.parentNode;
     moreAddOnsSpan.addEventListener('click', (event) => {
         if (event.target == moreAddOnsSpan) moreAddOnsLink.click(); // to avoid double-toggle
     });
 
     // Add Powered by chatgpt.js hover-listener
-    const chatGPTjsHostPath = 'https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/badges/';
-    const chatGPTjsImg = document.querySelector('.chatgpt-js img');
+    const chatGPTjsHostPath = 'https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/badges/',
+          chatGPTjsImg = document.querySelector('.chatgpt-js img');
     chatGPTjsImg.addEventListener('mouseover', () => {
         chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png'; });
     chatGPTjsImg.addEventListener('mouseout', () => {
