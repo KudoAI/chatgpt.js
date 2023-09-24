@@ -147,7 +147,7 @@ const onLoadObserver = new MutationObserver(() => {
             ytDemo.setAttribute('allow',
                 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
             ytDemo.setAttribute('allowfullscreen', '');
-            ytDemo.style.minWidth = 'fit-content'; ytDemo.style.width = '855px';
+            ytDemo.style.minWidth = 'fit-content'; ytDemo.style.width = '855px'; ytDemo.style.marginBottom = '30px';
             ghDemo.parentNode.replaceChild(ytDemo, ghDemo);
             ytDemo.parentNode.style.textAlign = 'center';
 
