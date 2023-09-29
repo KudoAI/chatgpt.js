@@ -70,9 +70,9 @@ const chatgpt = {
         const modalContainer = document.createElement('div');
         modalContainer.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
         modalContainer.classList.add('chatgpt-modal'); // add class to main div
-        const modal = document.createElement('div');
-        const modalTitle = document.createElement('h2');
-        const modalMessage = document.createElement('p');
+        const modal = document.createElement('div'),
+              modalTitle = document.createElement('h2'),
+              modalMessage = document.createElement('p');
 
         // Select or crate/append style
         let modalStyle;
@@ -94,11 +94,14 @@ const chatgpt = {
 
             // Alert styles
             + '.chatgpt-modal > div {'
+                + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ;'
+                + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.2s cubic-bezier(.165,.84,.44,1) ;'
                 + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
                 + ( width ? `width: ${ width }px` : 'max-width: 458px ') + ' ;'
                 + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) }'
             + '.chatgpt-modal h2 { margin-bottom: 9px }'
             + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
+            + '.chatgpt-modal.animated > div { opacity: 1 ; transform: translateX(0) translateY(0) }'
 
             // Button styles
             + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 }'
@@ -157,8 +160,8 @@ const chatgpt = {
         const checkboxDiv = document.createElement('div');
         if (checkbox) { // is supplied
             checkboxDiv.classList.add('checkbox-group');
-            const checkboxFn = checkbox; // assign the named function to checkboxFn
-            const checkboxInput = document.createElement('input');
+            const checkboxFn = checkbox, // assign the named function to checkboxFn
+                  checkboxInput = document.createElement('input');
             checkboxInput.type = 'checkbox';
             checkboxInput.addEventListener('change', checkboxFn);
 
@@ -191,7 +194,11 @@ const chatgpt = {
             if (event.target === modalContainer) destroyAlert(); });
 
         // Show alert if none active
-        modalContainer.style.display = (alertQueue.length === 1) ? '' : 'none';
+        modalContainer.style.display = 'none';
+        if (alertQueue.length === 1) {
+            modalContainer.style.display = '';
+            setTimeout(() => { modalContainer.classList.add('animated'); }, 100);
+        }
 
         function destroyAlert() {
             modalContainer.remove(); // remove from DOM
@@ -207,7 +214,10 @@ const chatgpt = {
             // Check for pending alerts in queue
             if (alertQueue.length > 0) {
                 const nextAlert = document.getElementById(alertQueue[0]);
-                setTimeout(() => { nextAlert.style.display = 'flex'; }, 500 );
+                setTimeout(() => {
+                    nextAlert.style.display = '';
+                    setTimeout(() => { nextAlert.classList.add('animated'); }, 100);
+                }, 500 );
             }
         }
 
