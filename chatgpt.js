@@ -1656,7 +1656,7 @@ const chatgpt = {
         toggle: function() {
             for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
                 if (/close sidebar/i.test(navLink.text)) {
-                    navLink.click(); return;                
+                    navLink.click(); return;
         }}}
     },
 
