@@ -233,8 +233,9 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href=
 
 </div>
 
-이 라이브러리는 다음 기여자들의 코드, 번역, 이슈 및 아이디어 덕분에 존재합니다.
+이 라이브러리는 다음 기여자들의 코드, 번역, 이슈 및 아이디어 덕분에 존재합니다:
 
+<div align="center"><br>
 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.15&h=51&w=51&mask=circle&maxage=7d '@adamlui')](https://github.com/adamlui)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?first-contrib=2023.03.16-get-functions&h=51&w=51&mask=circle&maxage=7d '@mefengl')](https://github.com/mefengl)
@@ -255,6 +256,8 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href=
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=51&w=51&mask=circle&maxage=7d 'ChatGPT')](https://chat.openai.com)
 [![](https://images.weserv.nl/?url=https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/icons/poe-icon128.svg?first-contrib=2023.07.27-getandshowreply-method&h=51&w=51&mask=circle&maxage=7d 'Poe')](https://poe.com)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=51&w=51&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
+
+</div><br>
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
