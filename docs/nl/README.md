@@ -22,7 +22,7 @@
 
 [![](https://img.shields.io/badge/Licentie-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=Begaat&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js/commits/main)
-![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/2535c87dc1204a4dbe464b69450bfff6197d3d99chatgpt-2.3.5.min.js?label=Verkleinde+Grootte&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
+![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-2.3.5.min.js?label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
 [![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Codekwaliteit&logo=codefactor&logoColor=white&labelColor=464646&color=29c3c5&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
 [![](https://img.shields.io/badge/Vermeld_in-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
 [![](https://img.shields.io/badge/Uitgelicht_op-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.producthunt.com/posts/chatgpt-js)
