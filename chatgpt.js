@@ -336,7 +336,7 @@ const chatgpt = {
                     setTimeout(() => { // confirm clear
                         document.querySelector('[id*=radix] button').click();
                         setTimeout(exitMenu, 10);
-            }, 10); }, 10); }, 10);
+            }, 10); }, 222); }, 10);
             function exitMenu() { document.querySelector('div[id*=radix] button').click(); }
 
         } else { // API method
