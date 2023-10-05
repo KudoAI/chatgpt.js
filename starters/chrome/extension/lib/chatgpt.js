@@ -1787,8 +1787,8 @@ const functionAliases = [
     ['obfuscate', 'codeObfuscate', 'obfuscateCode'],
     ['printAllFunctions', 'showAllFunctions'],
     ['refactor', 'codeRefactor', 'refactorCode'],
-    ['refreshSession', 'sessionRefresh'],
     ['refreshReply', 'regenerate', 'regenerateReply'],
+    ['refreshSession', 'sessionRefresh'],
     ['renderHTML', 'renderHtml', 'renderLinks', 'renderTags'],
     ['reviewCode', 'codeReview'],
     ['send', 'sendChat', 'sendMsg'],
@@ -1796,15 +1796,15 @@ const functionAliases = [
     ['sentiment', 'analyzeSentiment', 'sentimentAnalysis'],
     ['stop', 'stopGenerating'],
     ['suggest', 'suggestion', 'recommend'],
-    ['toggleScheme', 'toggleMode'],
     ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher'],
+    ['toggleScheme', 'toggleMode'],
     ['translate', 'translation', 'translator'],
     ['unminify', 'unminifyCode', 'codeUnminify'],
     ['writeCode', 'codeWrite']
 ];
 const synonyms = [
-    ['activate', 'turnOn'],
     ['account', 'acct'],
+    ['activate', 'turnOn'],
     ['analyze', 'check', 'evaluate', 'review'],
     ['ask', 'send', 'submit'],
     ['chat', 'conversation', 'convo'],
@@ -1817,8 +1817,8 @@ const synonyms = [
     ['render', 'parse'],
     ['reply', 'response'],
     ['sentiment', 'attitude', 'emotion', 'feeling', 'opinion', 'perception'],
-    ['summarize', 'tldr'],
     ['speak', 'say', 'speech', 'talk', 'tts'],
+    ['summarize', 'tldr'],
     ['unminify', 'beautify', 'prettify', 'prettyPrint']
 ];
 const camelCaser = (words) => {
