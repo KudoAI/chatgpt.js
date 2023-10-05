@@ -1817,6 +1817,7 @@ const synonyms = [
     ['render', 'parse'],
     ['reply', 'response'],
     ['sentiment', 'attitude', 'emotion', 'feeling', 'opinion', 'perception'],
+    ['summarize', 'tldr'],
     ['speak', 'say', 'speech', 'talk', 'tts'],
     ['unminify', 'beautify', 'prettify', 'prettyPrint']
 ];
