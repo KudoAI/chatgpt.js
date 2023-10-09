@@ -190,7 +190,7 @@ Ga automatisch door met het genereren van meerdere ChatGPT-reacties.
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Automatische Vernieuwing ↻](https://chatgptautorefresh.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-Houdt ChatGPT-sessies up-to-date om netwerkfouten te elimineren + Cloudflare-controles.
+Houdt ChatGPT-sessies actueel en elimineert chattijdlimieten + netwerkfouten + Cloudflare-controles.
 <br>[Installeren](https://github.com/adamlui/chatgpt-auto-refresh#installation) /
 [Leesmij](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
 [Bespreken](https://chatgptautorefresh.com/discuss)

@@ -190,7 +190,7 @@ ChatGPTの複数の応答を自動的に継続的に生成し続ける。<br>
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自動更新 ↻](https://chatgptautorefresh.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-ChatGPTセッションを最新の状態に保ち、ネットワークエラーとCloudflareチェックを排除します。
+ChatGPTセッションを最新の状態に保ち、チャット時間制限、ネットワークエラー、Cloudflareチェックを排除します。
 <br>[インストール](https://github.com/adamlui/chatgpt-auto-refresh#installation) / 
 [お読みください](https://github.com/adamlui/chatgpt-auto-refresh#readme) / 
 [議論](https://chatgptautorefresh.com/discuss)

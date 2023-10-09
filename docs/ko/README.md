@@ -195,7 +195,7 @@ Brave Search 사이드바에 ChatGPT의 답변을 표시해주는 기능입니�
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 자동 새로고침 ↻](https://chatgptautorefresh.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-Cloudflare확인과 네트워크 오류를 제거 하기 위해 ChatGPT세션을 유지하는 기능입니다.
+ChatGPT 세션을 최신 상태로 유지하여 채팅 시간 제한 + 네트워크 오류 + Cloudflare 검사를 제거합니다..
 <br>[설치](https://github.com/adamlui/chatgpt-auto-refresh#installation) /
 [리드미](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
 [토론](https://chatgptautorefresh.com/discuss)

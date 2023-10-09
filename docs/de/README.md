@@ -190,7 +190,7 @@ Generieren Sie automatisch mehrere ChatGPT-Antworten weiterhin.<br>
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Automatisches Aktualisieren ↻](https://chatgptautorefresh.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-Hält ChatGPT-Sitzungen aktuell, um Netzwerkfehler zu vermeiden + Cloudflare-Prüfungen.
+Hält ChatGPT-Sitzungen aktuell und eliminiert Chat-Zeitlimits, Netzwerkfehler und Cloudflare-Prüfungen.
 <br>[Installieren](https://github.com/adamlui/chatgpt-auto-refresh#installation) /
 [Liesmich](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
 [Diskutieren](https://chatgptautorefresh.com/discuss)

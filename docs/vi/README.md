@@ -190,7 +190,7 @@ Tiếp tục tạo ra nhiều câu trả lời ChatGPT một cách tự động.
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Tự động Cập nhật ↻](https://chatgptautorefresh.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-Giữ cho các phiên ChatGPT luôn mới để loại bỏ lỗi mạng + kiểm tra Cloudflare.
+Giữ cho các phiên ChatGPT luôn mới, loại bỏ giới hạn thời gian trò chuyện + lỗi mạng + kiểm tra Cloudflare.
 <br>[Cài đặt](https://github.com/adamlui/chatgpt-auto-refresh#installation) /
 [Đọc tôi](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
 [Bàn luận](https://chatgptautorefresh.com/discuss)

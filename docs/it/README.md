@@ -190,7 +190,7 @@ Continua automaticamente a generare più risposte di ChatGPT.<br>
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Aggiornamento Automatico ↻](https://chatgptautorefresh.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-Mantieni aggiornate le sessioni ChatGPT per prevenire errori di rete + controlli Cloudflare.
+Mantiene aggiornate le sessioni ChatGPT, eliminando limiti di tempo di chat + errori di rete + controlli Cloudflare.
 <br>[Installa](https://github.com/adamlui/chatgpt-auto-refresh#installation) /
 [Readme](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
 [Discutere](https://chatgptautorefresh.com/discuss)
