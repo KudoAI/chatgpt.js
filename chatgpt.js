@@ -1118,7 +1118,7 @@ const chatgpt = {
         const notificationDiv = document.createElement('div'); // make div
         notificationDiv.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
         notificationDiv.style.cssText = ( // stylize it
-              ' background-color: black ; padding: 10px ; border-radius: 8px ; ' // box style
+              ' background-color: black ; padding: 10px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
             + ' opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; ' // visibility
             + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; ' // disable selection
             + ' transform: translateX(35px) ; ' // init off-screen for transition fx
