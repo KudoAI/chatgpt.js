@@ -206,7 +206,7 @@ const chatgpt = {
         // Add listeners
         const dismissElems = [modalContainer, closeSVG, dismissBtn];
         dismissElems.forEach(elem => {
-            elem.addEventListener('click', listenerToDestroyAlert); });
+            elem.addEventListener('click', clickHandler); });
         document.addEventListener('keydown', keyHandler);
 
         // Show alert if none active
@@ -224,7 +224,7 @@ const chatgpt = {
 
             // Remove all listeners to prevent memory leaks
             dismissElems.forEach(elem => {
-                elem.removeEventListener('click', listenerToDestroyAlert); });
+                elem.removeEventListener('click', clickHandler); });
             document.removeEventListener('keydown', keyHandler);
 
             // Check for pending alerts in queue
@@ -237,7 +237,7 @@ const chatgpt = {
             }
         }
 
-        function listenerToDestroyAlert(event) { // explicitly defined to support removal post-dismissal
+        function clickHandler(event) { // explicitly defined to support removal post-dismissal
             if (event.target === event.currentTarget || event.target instanceof SVGPathElement) destroyAlert(); }
 
         function keyHandler(event) { // to dismiss active alert
