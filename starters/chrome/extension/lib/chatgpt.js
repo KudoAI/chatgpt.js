@@ -168,7 +168,7 @@ const chatgpt = {
 
             // Create/show label
             const checkboxLabel = document.createElement('label');
-            checkboxLabel.addEventListener('click', function() {
+            checkboxLabel.addEventListener('click', () => {
                 checkboxInput.checked = !checkboxInput.checked; checkboxFn(); });
             checkboxLabel.textContent = checkboxFn.name.charAt(0).toUpperCase() // capitalize first char
                 + checkboxFn.name.slice(1) // format remaining chars
@@ -271,14 +271,7 @@ const chatgpt = {
 
             // Run main activate routine
             this.toggle.refreshFrame();
-            scheduleRefreshes( interval ? parseInt(interval, 10) : 30 );
-            console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh activated');
-
-            // Add listener to send beacons in Chromium to thwart auto-discards if Page Visibility API supported
-            if (navigator.userAgent.includes('Chrome') && typeof document.hidden !== 'undefined') {
-                document.addEventListener('visibilitychange', this.toggle.beacons); }
-
-            function scheduleRefreshes(interval) {
+            const scheduleRefreshes = interval => {
                 const randomDelay = Math.max(2, Math.floor(chatgpt.randomFloat() * 21 - 10)); // set random delay up to ±10 secs
                 autoRefresh.isActive = setTimeout(() => {
                     const manifestScript = document.querySelector('script[src*="_ssgManifest.js"]');
@@ -286,7 +279,13 @@ const chatgpt = {
                     console.log('↻ ChatGPT >> [' + autoRefresh.nowTimeStamp() + '] ChatGPT session refreshed');
                     scheduleRefreshes(interval);
                 }, (interval + randomDelay) * 1000);
-            }
+            };
+            scheduleRefreshes( interval ? parseInt(interval, 10) : 30 );
+            console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh activated');
+
+            // Add listener to send beacons in Chromium to thwart auto-discards if Page Visibility API supported
+            if (navigator.userAgent.includes('Chrome') && typeof document.hidden !== 'undefined') {
+                document.addEventListener('visibilitychange', this.toggle.beacons); }
         },
 
         deactivate: function() {
@@ -314,7 +313,7 @@ const chatgpt = {
                     clearInterval(chatgpt.autoRefresh.beaconID); chatgpt.autoRefresh.beaconID = null;
                     console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons de-activated');
                 } else {
-                    chatgpt.autoRefresh.beaconID = setInterval(function() {
+                    chatgpt.autoRefresh.beaconID = setInterval(() => {
                         navigator.sendBeacon('https://httpbin.org/post', new Uint8Array());
                         console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacon sent');
                     }, 90000);
@@ -356,30 +355,25 @@ const chatgpt = {
                     setTimeout(() => { // confirm clear
                         document.querySelector('[id*=radix] button').click();
                         setTimeout(exitMenu, 10);
-            }, 10); }, 222); }, 10);
-            function exitMenu() { document.querySelector('div[id*=radix] button').click(); }
+            }, 10); }, 333); }, 10);
+            const exitMenu = () => { document.querySelector('div[id*=radix] button').click(); };
 
         } else { // API method
         // NOTE: DOM is not updated to reflect new empty chat list (until session refresh)
 
-            return new Promise((resolve) => {
+            return new Promise((resolve, reject) => {
                 chatgpt.getAccessToken().then(token => {
-                    sendClearRequest(token).then(() => resolve());
-            });});
-
-            function sendClearRequest(token) {
-                return new Promise((resolve, reject) => {
                     const xhr = new XMLHttpRequest();
                     xhr.open('PATCH', endpoints.chats, true);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
                         if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot clear chats.');
-                        console.info('Chats successfully cleared');
-                        return resolve();
+                        console.info('Chats successfully cleared'); resolve();
                     };
-                    xhr.send(JSON.stringify( { is_visible: false } ));
-            });}
+                    xhr.send(JSON.stringify({ is_visible: false }));
+                }).catch(reject);
+            });
         }
     },
 
