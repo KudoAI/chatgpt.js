@@ -195,8 +195,8 @@ const chatgpt = {
         closeSVG.appendChild(closeSVGpath); closeBtn.appendChild(closeSVG);
 
         // Assemble/append div
-        const elements = [closeBtn, modalTitle, modalMessage, modalButtons, checkboxDiv];
-        elements.forEach((element) => { modal.appendChild(element); });
+        const modalElems = [closeBtn, modalTitle, modalMessage, modalButtons, checkboxDiv];
+        modalElems.forEach((element) => { modal.appendChild(element); });
         modalContainer.appendChild(modal); document.body.appendChild(modalContainer); 
 
         // Enqueue alert
