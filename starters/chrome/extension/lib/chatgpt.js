@@ -205,7 +205,7 @@ const chatgpt = {
 
         // Define handlers
         const clickHandler = event => { // explicitly defined to support removal post-dismissal
-            if (event.target === event.currentTarget || event.target instanceof SVGPathElement) dismissAlert(); }
+            if (event.target === event.currentTarget || event.target instanceof SVGPathElement) dismissAlert(); };
         const keyHandler = event => { // to dismiss active alert
             const dismissKeys = [13, 27]; // enter/esc
             if (dismissKeys.includes(event.keyCode)) {
@@ -217,7 +217,7 @@ const chatgpt = {
                             const mainButton = alert.querySelector('.modal-buttons').lastChild; // look for main button
                             if (mainButton) { mainButton.click(); event.preventDefault(); } // click if found
                         } return;
-        }}}}
+        }}}};
 
         // Define alert dismisser
         const dismissAlert = () => {
@@ -239,7 +239,7 @@ const chatgpt = {
                     setTimeout(() => { nextAlert.classList.add('animated'); }, 100);
                 }, 500 );
             }
-        }
+        };
 
         // Add listeners to dismiss alert
         const dismissElems = [modalContainer, closeSVG, dismissBtn];
