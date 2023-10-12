@@ -74,7 +74,7 @@ const chatgpt = {
               modalTitle = document.createElement('h2'),
               modalMessage = document.createElement('p');
 
-        // Select or crate/append style
+        // Select or create/append style
         let modalStyle;
         if (!document.querySelector('#chatgpt-alert-style')) {
             modalStyle = document.createElement('style');
@@ -151,7 +151,6 @@ const chatgpt = {
         // Create/append OK/dismiss button to buttons div
         const dismissBtn = document.createElement('button');
         dismissBtn.textContent = btns ? 'Dismiss' : 'OK';
-        dismissBtn.addEventListener('click', destroyAlert);
         modalButtons.insertBefore(dismissBtn, modalButtons.firstChild);
 
         // Highlight primary button
@@ -179,8 +178,24 @@ const chatgpt = {
             checkboxDiv.appendChild(checkboxInput); checkboxDiv.appendChild(checkboxLabel);
         }
 
+        // Create close button
+        const closeBtn = document.createElement('div');
+        closeBtn.style.cursor = 'pointer'; // add finger cursor
+        closeBtn.style.float = 'right';
+        closeBtn.style.position = 'relative'; closeBtn.style.right = '-2px'; // nudge rightward slightly
+        const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        closeSVG.setAttribute('height', '10px');
+        closeSVG.setAttribute('viewBox', '0 0 14 14');
+        closeSVG.setAttribute('fill', 'none');
+        const closeSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        closeSVGpath.setAttribute('fill-rule', 'evenodd');
+        closeSVGpath.setAttribute('clip-rule', 'evenodd');
+        closeSVGpath.setAttribute('fill', 'black');
+        closeSVGpath.setAttribute('d', 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z');
+        closeSVG.appendChild(closeSVGpath); closeBtn.appendChild(closeSVG);
+
         // Assemble/append div
-        const elements = [modalTitle, modalMessage, modalButtons, checkboxDiv];
+        const elements = [closeBtn, modalTitle, modalMessage, modalButtons, checkboxDiv];
         elements.forEach((element) => { modal.appendChild(element); });
         modalContainer.appendChild(modal); document.body.appendChild(modalContainer); 
 
@@ -190,9 +205,10 @@ const chatgpt = {
         localStorage.alertQueue = JSON.stringify(alertQueue);
 
         // Add listeners
+        const dismissElems = [modalContainer, closeSVG, dismissBtn]
+        dismissElems.forEach(elem => {
+            elem.addEventListener('click', listenerToDestroyAlert); });
         document.addEventListener('keydown', keyHandler);
-        modalContainer.addEventListener('click', (event) => {
-            if (event.target === modalContainer) destroyAlert(); });
 
         // Show alert if none active
         modalContainer.style.display = 'none';
@@ -207,10 +223,10 @@ const chatgpt = {
             alertQueue.shift(); // + memory
             localStorage.alertQueue = JSON.stringify(alertQueue); // + storage
 
-            // Prevent memory leaks
-            modalContainer.removeEventListener('click', destroyAlert);
+            // Remove all listeners to prevent memory leaks
+            dismissElems.forEach(elem => {
+                elem.removeEventListener('click', listenerToDestroyAlert); });
             document.removeEventListener('keydown', keyHandler);
-            dismissBtn.removeEventListener('click', destroyAlert);
 
             // Check for pending alerts in queue
             if (alertQueue.length > 0) {
@@ -222,7 +238,10 @@ const chatgpt = {
             }
         }
 
-        function keyHandler(event) {
+        function listenerToDestroyAlert(event) { // explicitly defined to support removal
+            if (event.target === event.currentTarget || event.target instanceof SVGPathElement) destroyAlert(); }
+
+        function keyHandler(event) { // to dismiss active alert
             const dismissKeys = [13, 27]; // enter/esc
             if (dismissKeys.includes(event.keyCode)) {
                 for (const alertId of alertQueue) { // look to handle only if triggering alert is active
