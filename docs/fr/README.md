@@ -89,7 +89,7 @@ Les référentiels de scripts utilisateur comme Greasy Fork maintiennent une lis
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@023d0bde2761ae57d2fd6ef485e8add560155c61/dist/chatgpt-2.3.6.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@9640b2352009d5f04344eb515780414b7b1ec2b2/dist/chatgpt-2.3.6.min.js
 // ==/UserScript==
 
 // Votre code ici...
