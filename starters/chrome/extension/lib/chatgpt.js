@@ -144,7 +144,7 @@ const chatgpt = {
                     .replace(/[_-]\w/g, match => match.slice(1).toUpperCase()) // convert snake/kebab to camel case
                     .replace(/([A-Z])/g, ' $1') // insert spaces
                     .replace(/^\w/, firstChar => firstChar.toUpperCase()); // capitalize first letter
-                button.addEventListener('click', () => { destroyAlert(); buttonFn(); });
+                button.addEventListener('click', () => { dismissAlert(); buttonFn(); });
                 modalButtons.insertBefore(button, modalButtons.firstChild); // insert button to left
             });
         }
@@ -203,20 +203,24 @@ const chatgpt = {
         alertQueue.push(modalContainer.id);
         localStorage.alertQueue = JSON.stringify(alertQueue);
 
-        // Add listeners
-        const dismissElems = [modalContainer, closeSVG, dismissBtn];
-        dismissElems.forEach(elem => {
-            elem.addEventListener('click', clickHandler); });
-        document.addEventListener('keydown', keyHandler);
+        // Define handlers
+        const clickHandler = event => { // explicitly defined to support removal post-dismissal
+            if (event.target === event.currentTarget || event.target instanceof SVGPathElement) dismissAlert(); }
+        const keyHandler = event => { // to dismiss active alert
+            const dismissKeys = [13, 27]; // enter/esc
+            if (dismissKeys.includes(event.keyCode)) {
+                for (const alertId of alertQueue) { // look to handle only if triggering alert is active
+                    const alert = document.getElementById(alertId);
+                    if (alert && alert.style.display !== 'none') { // active alert found
+                        if (event.keyCode === 27) dismissAlert(); // if esc pressed, dismiss alert & do nothing
+                        else if (event.keyCode === 13) { // else if enter pressed
+                            const mainButton = alert.querySelector('.modal-buttons').lastChild; // look for main button
+                            if (mainButton) { mainButton.click(); event.preventDefault(); } // click if found
+                        } return;
+        }}}}
 
-        // Show alert if none active
-        modalContainer.style.display = 'none';
-        if (alertQueue.length === 1) {
-            modalContainer.style.display = '';
-            setTimeout(() => { modalContainer.classList.add('animated'); }, 100);
-        }
-
-        function destroyAlert() {
+        // Define alert dismisser
+        const dismissAlert = () => {
             modalContainer.remove(); // remove from DOM
             alertQueue = JSON.parse(localStorage.alertQueue);
             alertQueue.shift(); // + memory
@@ -237,23 +241,20 @@ const chatgpt = {
             }
         }
 
-        function clickHandler(event) { // explicitly defined to support removal post-dismissal
-            if (event.target === event.currentTarget || event.target instanceof SVGPathElement) destroyAlert(); }
+        // Add listeners to dismiss alert
+        const dismissElems = [modalContainer, closeSVG, dismissBtn];
+        dismissElems.forEach(elem => {
+            elem.addEventListener('click', clickHandler); });
+        document.addEventListener('keydown', keyHandler);
 
-        function keyHandler(event) { // to dismiss active alert
-            const dismissKeys = [13, 27]; // enter/esc
-            if (dismissKeys.includes(event.keyCode)) {
-                for (const alertId of alertQueue) { // look to handle only if triggering alert is active
-                    const alert = document.getElementById(alertId);
-                    if (alert && alert.style.display !== 'none') { // active alert found
-                        if (event.keyCode === 27) destroyAlert(); // if esc pressed, dismiss alert & do nothing
-                        else if (event.keyCode === 13) { // else if enter pressed
-                            const mainButton = alert.querySelector('.modal-buttons').lastChild; // look for main button
-                            if (mainButton) { mainButton.click(); event.preventDefault(); } // click if found
-                        } return;
-        }}}}
+        // Show alert if none active
+        modalContainer.style.display = 'none';
+        if (alertQueue.length === 1) {
+            modalContainer.style.display = '';
+            setTimeout(() => { modalContainer.classList.add('animated'); }, 100);
+        }
 
-        return modalContainer.id;
+        return modalContainer.id; // if assignment used
     },
 
     askAndGetReply: async function(query) {
