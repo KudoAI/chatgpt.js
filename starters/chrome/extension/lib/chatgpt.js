@@ -1081,7 +1081,7 @@ const chatgpt = {
                 });
             }
 
-            function addElementsToMenu() {
+            const addElementsToMenu = () => {
                 const optionButtons = document.querySelectorAll('a[role="menuitem"]');
                 let cssClasses;
         
@@ -1097,7 +1097,8 @@ const chatgpt = {
                     if (!headlessNav.contains(element))
                         try { headlessNav.insertBefore(element, headlessNav.firstChild); }
                         catch (error) { console.error(error); }
-                });}
+                });
+            };
 
             this.elements.push(newElement);
             const menuBtn = document.querySelector('nav button[id*="headless"]');
@@ -1229,7 +1230,7 @@ const chatgpt = {
                     if (typeof this[prop][nestedProp] === 'function') {
                         functionNames.push([prop, nestedProp]);
         }}}}
-        functionNames.sort(function(a, b) { return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]); });
+        functionNames.sort((a, b) => { return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]); });
 
         // Print methods
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches,
@@ -1482,21 +1483,7 @@ const chatgpt = {
         if (!validMethods.includes(method)) return console.error(
             'Invalid method \'' + method + '\' passed. Valid methods are [' + validMethods + '].');
 
-        return new Promise((resolve) => {
-            chatgpt.getAccessToken().then(token => { // get access token
-                getChatNode(token).then(node => { // get chat node
-                    makeChatToShare(token, node).then(data => {
-                        confirmShareChat(token, data).then(() => {
-                            if (['copy', 'clipboard'].includes(method)) navigator.clipboard.writeText(data.share_url);
-                            else chatgpt.alert('🚀 Share link created!',
-                                '"' + data.title + '" is available at: <a target="blank" rel="noopener" href="'
-                                    + data.share_url + '" >' + data.share_url + '</a>',
-                                [ function openLink() { window.open(data.share_url, '_blank', 'noopener'); },
-                                    function copyLink() { navigator.clipboard.writeText(data.share_url); }]);
-                            resolve(data.share_url);
-        });});});});});
-
-        function getChatNode(token) {
+        const getChatNode = token => {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
                 chatgpt.getChatData(chatToGet).then(chat => {
@@ -1509,9 +1496,9 @@ const chatgpt = {
                         return resolve(JSON.parse(xhr.responseText).current_node); // chat messages until now
                     };
                     xhr.send();
-        });});}
+        });});};
 
-        function makeChatToShare(token, node) {
+        const makeChatToShare = (token, node) => {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
                 chatgpt.getChatData(chatToGet).then(chat => {
@@ -1528,9 +1515,9 @@ const chatgpt = {
                         conversation_id: chat.id, // current chat id
                         is_anonymous: true // show user name in the conversation or not
                     }));
-        });});}
+        });});};
 
-        function confirmShareChat(token, data) {
+        const confirmShareChat = (token, data) => {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
                 xhr.open('PATCH', `${ endpoints.share }/${ data.share_id }`, true);
@@ -1550,7 +1537,21 @@ const chatgpt = {
                     is_visible: data.is_visible,
                     is_anonymous: data.is_anonymous
                 }));
-        });}
+        });};
+
+        return new Promise((resolve) => {
+            chatgpt.getAccessToken().then(token => { // get access token
+                getChatNode(token).then(node => { // get chat node
+                    makeChatToShare(token, node).then(data => {
+                        confirmShareChat(token, data).then(() => {
+                            if (['copy', 'clipboard'].includes(method)) navigator.clipboard.writeText(data.share_url);
+                            else chatgpt.alert('🚀 Share link created!',
+                                '"' + data.title + '" is available at: <a target="blank" rel="noopener" href="'
+                                    + data.share_url + '" >' + data.share_url + '</a>',
+                                [ function openLink() { window.open(data.share_url, '_blank', 'noopener'); },
+                                    function copyLink() { navigator.clipboard.writeText(data.share_url); }]);
+                            resolve(data.share_url);
+        });});});});});
     },
 
     sidebar: {
