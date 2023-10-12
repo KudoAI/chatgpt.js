@@ -205,7 +205,7 @@ const chatgpt = {
         localStorage.alertQueue = JSON.stringify(alertQueue);
 
         // Add listeners
-        const dismissElems = [modalContainer, closeSVG, dismissBtn]
+        const dismissElems = [modalContainer, closeSVG, dismissBtn];
         dismissElems.forEach(elem => {
             elem.addEventListener('click', listenerToDestroyAlert); });
         document.addEventListener('keydown', keyHandler);
