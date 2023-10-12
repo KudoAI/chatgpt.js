@@ -733,7 +733,7 @@ const chatgpt = {
 
                 };
                 xhr.send();
-        });}
+        });};
 
         const getChatMsgs = token => {
             return new Promise((resolve, reject) => {
@@ -794,7 +794,7 @@ const chatgpt = {
                                      : msgsToReturn[msgToGet] ); // else return element of array
                     };
                     xhr.send();
-        });});}
+        });});};
 
         // Return chat data
         return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
