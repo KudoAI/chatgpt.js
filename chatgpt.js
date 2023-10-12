@@ -598,7 +598,7 @@ const chatgpt = {
         // Call target function using pre-validated name components
         const targetFuncNameLower = ('get' + targetName + targetType).toLowerCase();
         const targetFuncName = Object.keys(this).find( // find originally cased target function name
-            function(name) { return name.toLowerCase() === targetFuncNameLower; }); // test for match
+            (name) => { return name.toLowerCase() === targetFuncNameLower; }); // test for match
         return this[targetFuncName](); // call found function
     },
 
@@ -693,15 +693,7 @@ const chatgpt = {
             'Invalid msgToGet arg passed. Valid msg\'s to get are:\n'
           + '                    [ \'all\' | \'latest\' | index of msg to get ]'); }
 
-        // Return chat data
-        return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
-            if (!detailsToGet.includes('msg')) getChatDetails(token, detailsToGet).then(data => {
-                return resolve(data); // get just the chat details
-            });
-            else getChatMsgs(token).then(messages => { return resolve(messages); }); // otherwise get specific msg's
-        });});
-
-        function getChatDetails(token, detailsToGet) {
+        const getChatDetails = (token, detailsToGet) => {
             const re_chatID = /\w{8}-(\w{4}-){3}\w{12}/;
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
@@ -722,7 +714,8 @@ const chatgpt = {
                             return reject('🤖 chatgpt.js >> Chat with index ' + ( chatToGet + 1 )
                                 + ' is out of bounds. Only ' + data.length + ' chats exist!'); }
                         for (const detail of detailsToGet) detailsToReturn[detail] = data[chatToGet][detail];
-                        return resolve(detailsToReturn);
+                        return resolve(detailsToGet.length === 1 ? detailsToReturn[detailsToGet[0]] : detailsToReturn);
+
                     }
 
                     // Return by title, ID or active chat
@@ -736,12 +729,13 @@ const chatgpt = {
                     if (!chatFound) // exit
                         return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatToGet + ' found.');
                     for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail];
-                    return resolve(detailsToReturn);
+                    return resolve(detailsToGet.length === 1 ? detailsToReturn[detailsToGet[0]] : detailsToReturn);
+
                 };
                 xhr.send();
         });}
 
-        function getChatMsgs(token) {
+        const getChatMsgs = token => {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
                 getChatDetails(token, ['id']).then(chat => {
@@ -801,6 +795,14 @@ const chatgpt = {
                     };
                     xhr.send();
         });});}
+
+        // Return chat data
+        return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
+            if (!detailsToGet.includes('msg')) getChatDetails(token, detailsToGet).then(data => {
+                return resolve(data); // get just the chat details
+            });
+            else getChatMsgs(token).then(messages => { return resolve(messages); }); // otherwise get specific msg's
+        });});
     },
 
     getChatInput: function() { return chatgpt.getChatBox().value; },
