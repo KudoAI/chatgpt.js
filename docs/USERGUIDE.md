@@ -630,7 +630,7 @@ Example code:
 
 ### getChatData `async`
 
-Returns the requested chat data.
+Returns the requested chat data as a string (if single detail requested) or object of key-value pairs (if multiple details requested).
 
 **Parameters**:
 
@@ -638,7 +638,7 @@ Returns the requested chat data.
 
 Can be the following: `active`, the current chat, `latest`, the latest chat in the list, else the `index`, `title` or `id` of the chat to get. Default is `active` if in a chat, else `latest`.
 
-`detailsToGet` (optional): A string representing the chat data to retrieve.
+`detailsToGet` (optional): A string or array of strings representing the chat data to retrieve.
 
 Can be the following: `all` to get all details, `id`, `title`, `create_time`, `update_time` or `msg`. To get a single detail, just use a string, to get multiple use an array of strings instead. Default is `all`.
 
