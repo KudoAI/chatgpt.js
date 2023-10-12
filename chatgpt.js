@@ -114,6 +114,7 @@ const chatgpt = {
                 + `background: ${ scheme == 'dark' ? 'white' : 'black' } ;`
                 + `color: ${ scheme == 'dark' ? 'black' : 'white' }}`
             + '.chatgpt-modal button:hover { background-color: #42B4BF ; border-color: #42B4BF ; color: black }'
+            + '.modal-close-btn { cursor: pointer ; float: right ; position: relative ; right: -2px }'
 
             /* Checkbox styles */
             + '.chatgpt-modal .checkbox-group { display: flex ; margin-top: -18px }'
@@ -180,9 +181,7 @@ const chatgpt = {
 
         // Create close button
         const closeBtn = document.createElement('div');
-        closeBtn.style.cursor = 'pointer'; // add finger cursor
-        closeBtn.style.float = 'right';
-        closeBtn.style.position = 'relative'; closeBtn.style.right = '-2px'; // nudge rightward slightly
+        closeBtn.classList.add('modal-close-btn');
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         closeSVG.setAttribute('height', '10px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
@@ -196,7 +195,7 @@ const chatgpt = {
 
         // Assemble/append div
         const modalElems = [closeBtn, modalTitle, modalMessage, modalButtons, checkboxDiv];
-        modalElems.forEach((element) => { modal.appendChild(element); });
+        modalElems.forEach((elem) => { modal.appendChild(elem); });
         modalContainer.appendChild(modal); document.body.appendChild(modalContainer); 
 
         // Enqueue alert
@@ -238,7 +237,7 @@ const chatgpt = {
             }
         }
 
-        function listenerToDestroyAlert(event) { // explicitly defined to support removal
+        function listenerToDestroyAlert(event) { // explicitly defined to support removal post-dismissal
             if (event.target === event.currentTarget || event.target instanceof SVGPathElement) destroyAlert(); }
 
         function keyHandler(event) { // to dismiss active alert
