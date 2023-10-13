@@ -1,5 +1,5 @@
 <div align="center">
-<h6> 
+<h6>
 <a href="../"><img height=15 style="margin: 0 3px -2px" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/6fa1659feadaf70853996dc7d7f6e1ab5a1e6301/media/images/icons/earth-americas.svg"></a>
 Italiano |
 <a href="../../LICENSE.md">English</a> |
