@@ -12,11 +12,10 @@ const endpoints = {
     instructions: 'https://chat.openai.com/backend-api/user_system_messages'
 };
 
-// Init queues for feedback methods
-var alertQueue = [],
-    notifyQueue = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
-localStorage.alertQueue = JSON.stringify(alertQueue);
-localStorage.notifyQueue = JSON.stringify(notifyQueue);
+// Init feedback queues
+localStorage.alertQueue = JSON.stringify([]);
+localStorage.notifyQueue = JSON.stringify(
+    { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }});
 
 // Define chatgpt.methods
 const chatgpt = {
@@ -199,7 +198,7 @@ const chatgpt = {
         modalContainer.appendChild(modal); document.body.appendChild(modalContainer); 
 
         // Enqueue alert
-        alertQueue = JSON.parse(localStorage.alertQueue);
+        let alertQueue = JSON.parse(localStorage.alertQueue);
         alertQueue.push(modalContainer.id);
         localStorage.alertQueue = JSON.stringify(alertQueue);
 
@@ -1149,7 +1148,7 @@ const chatgpt = {
             + (notificationDiv.isRight ? 'Right' : 'Left');
 
         // Store div
-        notifyQueue = JSON.parse(localStorage.notifyQueue);
+        let notifyQueue = JSON.parse(localStorage.notifyQueue);
         notifyQueue.quadrants[notificationDiv.quadrant].push(notificationDiv.id);
         localStorage.notifyQueue = JSON.stringify(notifyQueue);
 
