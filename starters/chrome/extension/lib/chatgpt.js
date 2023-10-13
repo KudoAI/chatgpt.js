@@ -102,6 +102,9 @@ const chatgpt = {
             + '.chatgpt-modal h2 { margin-bottom: 9px }'
             + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
             + '.chatgpt-modal.animated > div { opacity: 1 ; transform: translateX(0) translateY(0) }'
+            + '@keyframes zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
+                + '50% { opacity: 0.25 ; transform: scale(1.35) }'
+                + '100% { opacity: 0 ; transform: scale(2) }}'
 
             // Button styles
             + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 }'
@@ -220,24 +223,30 @@ const chatgpt = {
 
         // Define alert dismisser
         const dismissAlert = () => {
-            modalContainer.remove(); // remove from DOM
-            alertQueue = JSON.parse(localStorage.alertQueue);
-            alertQueue.shift(); // + memory
-            localStorage.alertQueue = JSON.stringify(alertQueue); // + storage
+            modalContainer.style.backgroundColor = 'transparent';
+            modal.style.animation = 'zoom-fade-out 0.075s ease-out';
+            setTimeout(() => { // delay removal for fade-out
 
-            // Remove all listeners to prevent memory leaks
-            dismissElems.forEach(elem => {
-                elem.removeEventListener('click', clickHandler); });
-            document.removeEventListener('keydown', keyHandler);
+                // Remove alert
+                modalContainer.remove(); // ...from DOM
+                alertQueue = JSON.parse(localStorage.alertQueue);
+                alertQueue.shift(); // + memory
+                localStorage.alertQueue = JSON.stringify(alertQueue); // + storage
 
-            // Check for pending alerts in queue
-            if (alertQueue.length > 0) {
-                const nextAlert = document.getElementById(alertQueue[0]);
-                setTimeout(() => {
-                    nextAlert.style.display = '';
-                    setTimeout(() => { nextAlert.classList.add('animated'); }, 100);
-                }, 500 );
-            }
+                // Remove all listeners to prevent memory leaks
+                dismissElems.forEach(elem => { elem.removeEventListener('click', clickHandler); });
+                document.removeEventListener('keydown', keyHandler);
+
+                // Check for pending alerts in queue
+                if (alertQueue.length > 0) {
+                    const nextAlert = document.getElementById(alertQueue[0]);
+                    setTimeout(() => {
+                        nextAlert.style.display = '';
+                        setTimeout(() => { nextAlert.classList.add('animated'); }, 100);
+                    }, 500);
+                }
+
+            }, 50);
         };
 
         // Add listeners to dismiss alert
