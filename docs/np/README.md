@@ -2,7 +2,7 @@
 
 <div align="center">
 
-###### <a href="https://github.com/kudoai/chatgpt.js/tree/main/docs"><img height=15 style="margin: 0 3px -2px" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/0fc3060273fcff77d3e2ff968d5c74acdab62beb/media/images/icons/earth-americas-icon32.svg"></a> हिंदी | <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../zh-tw#readme">繁體中文</a> | <a href="../ja#readme">日本</a> | <a href="../ko#readme">한국인</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../it#readme">Italiano</a> | <a href="../nl#readme">Nederlands</a> | <a href="../pt#readme">Português</a> | <a href="../vi#readme">Việt</a> | <a href="../np#readme">नेपाली</a>
+###### <a href="https://github.com/kudoai/chatgpt.js/tree/main/docs"><img height=15 style="margin: 0 3px -2px" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/0fc3060273fcff77d3e2ff968d5c74acdab62beb/media/images/icons/earth-americas-icon32.svg"></a> नेपाली |<a href="../hi#readme"> हिंदी </a>| <a href="../..#readme">English</a> | <a href="../zh-cn#readme">简体中文</a> | <a href="../zh-tw#readme">繁體中文</a> | <a href="../ja#readme">日本</a> | <a href="../ko#readme">한국인</a> | <a href="../de#readme">Deutsch</a> | <a href="../es#readme">Español</a> | <a href="../fr#readme">Français</a> | <a href="../it#readme">Italiano</a> | <a href="../nl#readme">Nederlands</a> | <a href="../pt#readme">Português</a> | <a href="../vi#readme">Việt</a>
     
 </div>
 <br><br>
@@ -13,7 +13,7 @@
 </picture>
 <br>
 
-### 🤖 चैटजीपीटी के लिए एक शक्तिशाली क्लाइंट-साइड जावास्क्रिप्ट लाइब्रेरी
+### 🤖 ChatGPT को लागि एक शक्तिशाली क्लाइन्ट-साइड जावास्क्रिप्ट लाइब्रेरी
 
 </div>
 <br><br>
@@ -22,7 +22,7 @@
 
 [![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=Commits&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js/commits/main)
-![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-2.3.8.min.js?label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
+![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt-2.3.7.min.js?label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
 [![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=29c3c5&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
 [![](https://img.shields.io/badge/Mentioned_in-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
 [![](https://img.shields.io/badge/Featured_on-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.producthunt.com/posts/chatgpt-js)
@@ -37,18 +37,18 @@
 
 </div>
 
-<span style="color: white">chatgpt.js</span> एक <span style="color: white">शक्तिशाली</span> जावास्क्रिप्ट लाइब्रेरी है जो ChatGPT DOM के साथ <span style="color: white">बेहद आसान</span> इंटरैक्शन की अनुमति देती है।
+<span style="color: white">chatgpt.js</span> एक <span style="color: white">शक्तिशाली</span> जावास्क्रिप्ट लाइब्रेरी हो जसले ChatGPT DOM सँग<span style="color: white"> धेरै सजीलो</span> अन्तरक्रियाको लागि अनुमति दिन्छ।
 
 - सुविधा संपन्न
 - ऑब्जेक्ट-ओरिएन्टेड
-- प्रयोग करने में आसान
-- लाइटवेट (फिर भी सर्वोत्तम प्रदर्शन करने वाला)
+- प्रयोग गर्न सजिलो
+- लाइटवेट (तरपनी राम्रो प्रदर्शन गर्ने)
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
 <div id="importing">
 
-## ⚡ लाइब्रेरी इम्पोर्ट करने के तरीके
+## ⚡ लाइब्रेरी इम्पोर्ट गर्ने तरिकाहरू
 
 </div>
 
@@ -57,7 +57,7 @@
 ```js
 (async () => {
     await import('https://code.chatgptjs.org/chatgpt-latest.min.js');    
-    // आपका कोड यहां लिखें...
+    // आफ्नो कोड यहाँ लेख्नुहोस्...
 })();
 ```
 
@@ -71,48 +71,49 @@ xhr.onload = function() {
         var chatgptJS = document.createElement('script')
         chatgptJS.textContent = xhr.responseText
         document.head.appendChild(chatgptJS)
-        yourCode() // आपका कोड ये फंक्शन चलाएगा
+        yourCode() // तपाईंको कोड यो फंक्शनले चलाउनेछ
     }
 }
 xhr.send()
 
 function yourCode() {
-    // आपका कोड यहां लिखें...
+    // आफ्नो कोड यहाँ लेख्नुहोस्...
 }
 ```
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/tampermonkey-icon28.png"></picture><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/violentmonkey-icon100.png"> Greasemonkey:
 
-> **टिप्पणी** _स्टार्टर टेम्पलेट का उपयोग करने के लिए: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
+> **टिप्पणी** _स्टार्टर टेम्प्लेट प्रयोग गर्न: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
 
-यूजरस्क्रिप्ट जैसे ग्रेसी फोर्क मेंटेन करते है व्हाइटलिस्ट प्री-अप्रूव्ड CDN (जैसे `cdn.jsdelivr.net` मेसे कमिट स्पेसिफिक रेफरेंस) की एक श्वेतसूची बनाए रखते हैं, इसलिए इन साइटों पर पब्लिश करने की क्षमता बनाए रखने के लिए इम्पोर्ट URL काफी लंबा है:
+यूजरस्क्रिप्ट जस्तै ग्रेसी फोर्क रिपोजिटरीहरूले पूर्व-अनुमोदित CDN हरू (जस्तै `cdn.jsdelivr.net` बाट कमिट स्पेसिफिक रेफरेंस) को श्वेतसूची कायम राख्छन् त्यसैले यी साइटहरूमा प्रकाशनयोग्यता जोगाउन इम्पोर्ट URL पर्याप्त रूपमा लामो हुन्छ:
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@cb67ca66d0d179894df40cb30a2e16bbba12f273/dist/chatgpt-2.3.8.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@9640b2352009d5f04344eb515780414b7b1ec2b2/dist/chatgpt-2.3.7.min.js
 // ==/UserScript==
 
-// आपका कोड यहां लिखें...
+// आफ्नो कोड यहाँ लेख्नुहोस्...
 ```
 
-यदि आप इन रिपोजिटरी पर पब्लिश करने की योजना नहीं बनाते हैं, इसी कितरा ये  `https://code.chatgptjs.org/chatgpt-latest.min.js` यूज़ करसकते है।
+यदि तपाइँ यी रिपोहरूमा प्रकाशन गर्ने योजना बनाउनुहुन्न भने, सबैभन्दा सरल लेटेस्‍ट मिनिफाइड रिलिज आयात गर्नको लागि `https://code.chatgptjs.org/chatgpt-latest.min.js` प्रयोग गर्न सकिन्छ।
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
-चूंकि Google [अंततः चरणबद्ध तरीके से समाप्त](https://developer.chrome.com/docs/extensions/migrate/mv2-sunset/) मेनिफेस्ट V2, रिमोट कोड की अनुमति नहीं दी जाएगी, इसलिए स्थानीय रूप से चैटजीपीटी.जेएस इम्पोर्ट करना सहिहै है:
+> **टिप्पणी** _स्टार्टर टेम्प्लेट प्रयोग गर्न: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
-> **टिप्पणी** _स्टार्टर टेम्पलेट का उपयोग करने के लिए: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
+Google ले [अंततः चरणबद्ध तरीकाले](https://developer.chrome.com/docs/extensions/migrate/mv2-sunset/) मेनिफेस्ट V2 लाई फेजआउट गर्ने भएकोले, रिमोट कोडलाई अब अनुमति दिइने छैन, त्यसैले स्थानीय रूपमा chatgpt.js इम्पोर्ट गर्नु उपयुक्त छ:
 
-1. https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js ये लिंक को अपने सब डायरेक्टरी में सेव करे (इस उदाहरण में यह `lib` है)
 
-2. ES6 का एक्सपोर्ट स्टेटमेंट `lib/chatgpt.js` के अंत में रखे
+1. https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js यो लिङ्क तपाईंको आफ्‍नो सब डायरेक्टरी मा सेव गर्नुहोस् (यो उदाहरण मा `lib` हो)
+
+2. ES6 को एक्सपोर्ट स्टेटमेंट `lib/chatgpt.js` को अन्‍त्‍यमा राख्‍नुहोस् |
 
 ```js
 ...
 export { chatgpt }
 ```
 
-3. प्रोजेक्ट(V3) `manifest.json` में, `lib/chatgpt.js` को वेब एक्सेसिबल रिसोर्स के रूप में जोड़ें
+3. प्रोजेक्ट(V3) `manifest.json` मा, `lib/chatgpt.js` लाई वेब एक्सेसिबल रिसोर्स को रूप मा जोडनुहोस्‌ |
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
@@ -120,11 +121,11 @@ export { chatgpt }
     }],
 ```
 
-4. उन स्क्रिप्ट्स में जिन्हें `chatgpt.js` (फॉरेग्राउंड बैकग्राउंड जैसे) की आवश्यकता है, इसे इस प्रकार इम्पोर्ट करें:
+4. स्क्रिप्टहरूमा जसलाई `chatgpt.js` (फॉरेग्राउंड बैकग्राउंड समान) चाहिन्छ, यसलाई यसरी इम्पोर्ट गर्नुहोस्:
 ```js
 (async () => {
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
-    // आपका कोड यहां लिखें...
+    // आफ्नो कोड यहाँ लेख्नुहोस्...
 })();
 ```
 
@@ -136,9 +137,9 @@ export { chatgpt }
 
 </div>
 
-**chatgpt.js** को लिखते समय उसके फ्लेक्सिबिलिटी को ध्यान में रखकर लिखा गया है।
+**chatgpt.js** अति लचिलोपनलाई ध्यानमा राखेर लेखिएको छ।
 
-उदाहरण के लिए:
+उदाहरणका लागि:
 
 ```js
 chatgpt.getLastResponse()
@@ -147,61 +148,61 @@ chatgpt.response.getLast()
 chatgpt.get('reply', 'last')
 ```
 
-यह सभी समान रिजल्ट देते है, जैसे की लास्ट रिस्पॉन्स। अगर आपको लगता है कि जो आप लिख रहे है वो काम करेगा..., तो यह संभव है की वो काम करेगा तो बस लिख के देखें।
+माथिको प्रत्येक कलले समान रूपमा अन्तिम प्रतिक्रिया ल्याउँछ। यदि तपाइँले सोच्नुहुन्छ कि तपाइँले लेखेको काम गर्छ वा गर्दैन..., संभावना छ कि त्‍यो काम गर्नेछ, त्यसैले त्‍यसलाई लेख्नुहोस् र हेर्नुहोस्।
 
-यदि ऐसा नहीं हुआ, तो विस्तारित [यूजरगाइड](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) देखें, या बस एक [इश्यू](https://github.com/kudoai/chatgpt.js/issues) सबमिट करें या [PR](https://github.com/kudoai/chatgpt.js/pulls) और इसे एकीकृत किया जाएगा, आसान!
+यदि त्यसो भएन भने, यो विस्तारित [यूजरगाइड](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) हेर्नुहोस्, अथवा एउटा [इश्यू](https://github.com/kudoai/chatgpt.js/issues) सबमिट गर्नुहोस् अथवा [PR](https://github.com/kudoai/chatgpt.js/pulls) अनि यस्‍लाई समावेश गरिनेछ, निकै सजिलो!
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
 <div id="showcase">
 
-## 🤖 chatgpt.js के साथ बनाया गया
+## 🤖 chatgpt.js सँग बनाइएको
 
 </div>
 
 https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3140b0f8a4
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ऑटोक्लियर चैटजीपीटी हिस्ट्री](https://autoclearchatgpt.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ऑटोक्लियर ChatGPT हिस्ट्री](https://autoclearchatgpt.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-यह ऑटो क्लियर एक्सटेंशन आपकी हिस्ट्री को मिटाता है अधिकतम प्राइवेसी के लिए।
+यो ऑटो क्लियर एक्सटेंशनले अधिकतम गोपनीयताको लागि तपाईँको ChatGPT हिस्ट्री स्वतः मेटाउनेछ।
 <br>[इंस्टॉल](https://github.com/adamlui/autoclear-chatgpt-history#installation) / 
 [रीडमी](https://github.com/adamlui/autoclear-chatgpt-history#readme) / 
-[चर्चा करना](https://autoclearchatgpt.com/discuss)
+[चर्चा](https://autoclearchatgpt.com/discuss)
 
-### <img width=16 src="https://i.imgur.com/1yjmK3W.png"> [Automatic ChatGPT DAN](https://github.com/madkarmaa/automatic-chatgpt-dan)
+### <img width=16 src="https://i.imgur.com/1yjmK3W.png"> [ऑटोमैटिक ChatGPT DAN](https://github.com/madkarmaa/automatic-chatgpt-dan)
 
-चैटजीपीटी को ऑटोमैटिक रूप से DAN संकेत भेजें।
+ChatGPTलाई ऑटोमैटिक रूपमा DAN संकेत पठाउनुहोस्।
 <br>[इंस्टॉल](https://github.com/madkarmaa/automatic-chatgpt-dan#%EF%B8%8F-installation) / 
 [रीडमी](https://github.com/madkarmaa/automatic-chatgpt-dan#readme) / 
-[चर्चा करना](https://github.com/madkarmaa/automatic-chatgpt-dan/issues)
+[चर्चा](https://github.com/madkarmaa/automatic-chatgpt-dan/issues)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-ब्रेव सर्च साइडबार में चैटजीपीटी उत्तर प्रदर्शित करें (GPT-4 द्वारा संचालित!)
+Brave सर्च साइडबार मा ChatGPT जवाफहरू प्रदर्शन गर्नुहोस् (GPT-4 द्वारा संचालित!)
 <br>[इंस्टॉल](https://greasyfork.org/scripts/462440-bravegpt) / 
 [रीडमी](https://github.bravegpt.com/#installation) / 
-[चर्चा करना](https://github.bravegpt.com/discussions)
+[चर्चा](https://github.bravegpt.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [चैटजीपीटी ऑटो-कंटिन्यू ⏩](https://chatgptautocontinue.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT ऑटो-कंटिन्यू ⏩](https://chatgptautocontinue.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
-ऑटोमैटिक रूप से एकाधिक चैटजीपीटी प्रतिक्रियाएँ उत्पन्न करना जारी रखें।<br>
+ऑटोमैटिक रूपमा ChatGPT प्रतिक्रियाहरू उत्पन्न गर्न जारी राख्नुहोस् ।<br>
 [इंस्टॉल](https://github.com/adamlui/chatgpt-auto-continue#installation) / 
 [रीडमी](https://github.com/adamlui/chatgpt-auto-continue#readme) / 
-[चर्चा करना](https://chatgptautocontinue.com/discuss)
+[चर्चा](https://chatgptautocontinue.com/discuss)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [चैटजीपीटी ऑटो रिफ्रेश ↻](https://chatgptautorefresh.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT ऑटो रिफ्रेश ↻](https://chatgptautorefresh.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-चैटजीपीटी सत्रों को ताज़ा रखता है, चैट समय सीमा + नेटवर्क त्रुटियों + क्लाउडफ्लेयर जांच को समाप्त करता है।
+Cloudflare जाँचहरू नेटवर्क त्रुटिहरू हटाउन ChatGPT सत्रहरू ताजा राख्नुहोस्।
 <br>[इंस्टॉल](https://github.com/adamlui/chatgpt-auto-refresh#installation) / 
 [रीडमी](https://github.com/adamlui/chatgpt-auto-refresh#readme) / 
-[चर्चा करना](https://chatgptautorefresh.com/discuss)
+[चर्चा](https://chatgptautorefresh.com/discuss)
 
 ### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-डकडकगो साइडबार में चैटजीपीटी उत्तर प्रदर्शित करें (GPT-4 द्वारा संचालित!)
+DuckDuckGo साइडबार मा ChatGPT जवाफहरू प्रदर्शन गर्नुहोस् (GPT-4 द्वारा संचालित!)
 <br>[इंस्टॉल](https://github.duckduckgpt.com/#installation) / 
 [रीडमी](https://github.duckduckgpt.com/#readme) / 
-[चर्चा करना](https://github.duckduckgpt.com/discussions)
+[चर्चा](https://github.duckduckgpt.com/discussions)
 
 <p><br>
 
@@ -218,7 +219,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 <p><br>
 
 <p id="showcase-cta">
-यदि आपने chatgpt.js के साथ कुछ बनाया है जिसे आप साझा करना चाहते हैं, तो ईमेल करें <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> या बस एक <a href="https://github.com/kudoai/chatgpt.js/pulls" target="_blank" rel="noopener">पुल अनुरोध</a>!
+यदि तपाईंले साझा गर्न चाहनुभएको chatgpt.js सँग केही बनाउनु भएको छ भने, इमेल गर्नुहोस्<a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> या एक <a href="https://github.com/kudoai/chatgpt.js/pulls" target="_blank" rel="noopener">पुल अनुरोध</a>!
 </p>
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
@@ -229,7 +230,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 </div>
 
-यह लाइब्रेरी निम्नलिखित योगदानकर्ताओं के कोड, अनुवाद, मुद्दों और विचारों की बदौलत मौजूद है:
+यो लाइब्रेरी निम्नलिखित योगदानकर्ताको कोड, अनुवाद, मुद्दा र विचार को कारणले अवस्थित छ:
 
 <div align="center"><br>
 
@@ -259,11 +260,11 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 <div id="partners">
 
-## 🤝 भागीदारों
+## 🤝 साझेदारहरू
 
 </div>
 
-**chatgpt.js** को आंशिक रूप से वित्त पोषित किया जाता है:
+**chatgpt.js** लाई आंशिक रूपमा वित्त पोषित गरिएको छ:
 
 <div id="partners-collage" align="center">
 
@@ -289,7 +290,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
   </picture>
 </a>
 
-<br>*अगर इससे आपको मदद मिली तो इस रेपो को ⭐ देने पर विचार करें!*
+<br>*यदि यस  रिपोले तपाईंलाई मद्दत गर्यो भने ⭐ दिने विचार गर्नुहोस्!*
 
 </div>
 
@@ -299,7 +300,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 **[विज्ञप्ति](https://github.com/kudoai/chatgpt.js/tree/main/dist)** /
 [यूजरगाइड](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) / 
-[चर्चा करना](https://github.com/kudoai/chatgpt.js/discussions) / 
-<a href="#">वापस शीर्ष पर ↑</a>
+[चर्चा](https://github.com/kudoai/chatgpt.js/discussions) / 
+<a href="#">शीर्षमा जाऔं ↑</a>
 
 </div>
