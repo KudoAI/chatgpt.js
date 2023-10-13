@@ -16,7 +16,7 @@ Việt |
 <a href="../fr#readme">Français</a> |
 <a href="../it#readme">Italiano</a> |
 <a href="../nl#readme">Nederlands</a> |
-<a href="../pt#readme">Português</a> |
+<a href="../pt#readme">Português</a>
 </h6>
 </div>
 <br><br>
