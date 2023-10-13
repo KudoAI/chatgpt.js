@@ -7,14 +7,14 @@
 <a href="../zh-tw/LICENSE.md">繁體中文</a> |
 <a href="../ja/LICENSE.md">日本</a> |
 <a href="../hi/LICENSE.md">हिंदी</a> |
+<a href="../ne/LICENSE.md">नेपाली</a> |
 <a href="../de/LICENSE.md">Deutsch</a> |
 <a href="../es/LICENSE.md">Español</a> |
 <a href="../fr/LICENSE.md">Français</a> |
 <a href="../it/LICENSE.md">Italiano</a> |
 <a href="../nl/LICENSE.md">Nederlands</a> |
 <a href="../pt/LICENSE.md">Português</a> |
-<a href="../vi/LICENSE.md">Việt</a> |
-<a href="../ne/LICENSE.md">नेपाली</a>
+<a href="../vi/LICENSE.md">Việt</a>
 </h6>
 </div>
 

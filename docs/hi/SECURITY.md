@@ -7,14 +7,14 @@
 <a href="../zh-tw/SECURITY.md">繁體中文</a> |
 <a href="../ja/SECURITY.md">日本</a> |
 <a href="../ko/SECURITY.md">한국인</a> |
+<a href="../ne/SECURITY.md">नेपाली</a> |
 <a href="../de/SECURITY.md">Deutsch</a> |
 <a href="../es/SECURITY.md">Español</a> |
 <a href="../fr/SECURITY.md">Français</a> |
 <a href="../it/SECURITY.md">Italiano</a> |
 <a href="../nl/SECURITY.md">Nederlands</a> |
 <a href="../pt/SECURITY.md">Português</a> |
-<a href="../vi/SECURITY.md">Việt</a> |
-<a href="../ne/SECURITY.md">नेपाली</a>
+<a href="../vi/SECURITY.md">Việt</a>
 </h6>
 </div>
 
