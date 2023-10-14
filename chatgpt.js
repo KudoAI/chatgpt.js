@@ -18,7 +18,9 @@ const endpoints = {
 // Init feedback properties
 localStorage.alertQueue = JSON.stringify([]);
 localStorage.notifyProps = JSON.stringify({
-    queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }
+    queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] },
+    lastNthAudio: 0, // to prevent immediate repetition of base sound
+    lastAudioDirection: '' // to alternate between left/right
 });
 
 // Define chatgpt.methods
@@ -1178,7 +1180,6 @@ const chatgpt = {
         // Enqueue notification
         let notifyProps = JSON.parse(localStorage.notifyProps);
         notifyProps.queue[notificationDiv.quadrant].push(notificationDiv.id);
-        localStorage.notifyProps = JSON.stringify(notifyProps);
 
         // Position notification (defaults to top-right)
         notificationDiv.style.top = notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
@@ -1207,20 +1208,28 @@ const chatgpt = {
             notificationDiv.style.transition = 'transform 0.15s ease, opacity 0.15s ease';
         }, 10);
 
-        // Preload audio feedback
+        // Init audio feedback
+        let randomN; // to pick index of base sound
+        do randomN = Math.floor(Math.random() * 3) + 1; // randomize between 1-3...
+        while (randomN === notifyProps.lastNthAudio); // ...until different from prev base sound index
+        let randomDirection; // to alternate L/R of audio src
+        do randomDirection = Math.random() < 0.5 ? 'left' : 'right'; // randomize between L/R...
+        while (randomDirection === notifyProps.lastAudioDirection); // ...until different from prev direction src
+        notifyProps.lastNthAudio = randomN; notifyProps.lastAudioDirection = randomDirection;
         const fadeOutAudio = new Audio();
-        fadeOutAudio.src = 'data:audio/mp3;base64,'
-                         + await fetch(endpoints.assets + '/media/audio/notifications/bubble-pop/bubble-pop-base64.txt')
-                                 .then(res => res.text());
+        fadeOutAudio.src = endpoints.assets + '/media/audio/notifications/bubble-pop/'
+                         + `${ randomN }-${ randomDirection }.wav`
+
+        // Store updated queue + sound props for global access
+        localStorage.notifyProps = JSON.stringify(notifyProps);
+
         // Hide notification
         const hideDelay = ( // set delay before fading
             fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
                 : notifDuration - fadeDuration); // otherwise delay for difference
-        setTimeout(() => { // maintain notification visibility, then fade out
-            notificationDiv.style.animation = `zoom-fade-out ${ fadeDuration }s ease-out`; },
-        hideDelay * 1000); // ...after pre-set duration
-        setTimeout(() => { // play audio feedback at fade-out start
-            fadeOutAudio.play(); }, hideDelay * 1000 - 700);
+        setTimeout(() => { // maintain notification visibility, then transition out...
+            notificationDiv.style.animation = `zoom-fade-out ${ fadeDuration }s ease-out`;
+            fadeOutAudio.play(); }, hideDelay * 1000); // ...after pre-set duration
 
         // Destroy notification
         notificationDiv.addEventListener('animationend', event => {
