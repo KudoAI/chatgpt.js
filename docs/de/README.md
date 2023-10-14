@@ -197,8 +197,8 @@ ChatGPT-Antworten in der Brave Search-Seitenleiste anzeigen (unterstützt von GP
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Automatisches Fortfahren ⏩](https://chatgptautocontinue.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
-Generieren Sie automatisch mehrere ChatGPT-Antworten weiterhin.<br>
-[Installieren](https://github.com/adamlui/chatgpt-auto-continue#installation) /
+Generieren Sie automatisch mehrere ChatGPT-Antworten weiterhin.
+<br>[Installieren](https://github.com/adamlui/chatgpt-auto-continue#installation) /
 [Liesmich](https://github.com/adamlui/chatgpt-auto-continue#readme) /
 [Diskutieren](https://chatgptautocontinue.com/discuss)
 

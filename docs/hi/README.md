@@ -198,8 +198,8 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [चैटजीपीटी ऑटो-कंटिन्यू ⏩](https://chatgptautocontinue.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
-ऑटोमैटिक रूप से एकाधिक चैटजीपीटी प्रतिक्रियाएँ उत्पन्न करना जारी रखें।<br>
-[इंस्टॉल](https://github.com/adamlui/chatgpt-auto-continue#installation) / 
+ऑटोमैटिक रूप से एकाधिक चैटजीपीटी प्रतिक्रियाएँ उत्पन्न करना जारी रखें।
+<br>[इंस्टॉल](https://github.com/adamlui/chatgpt-auto-continue#installation) / 
 [रीडमी](https://github.com/adamlui/chatgpt-auto-continue#readme) / 
 [चर्चा करना](https://chatgptautocontinue.com/discuss)
 

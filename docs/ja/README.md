@@ -197,8 +197,8 @@ Brave Search サイドバーに ChatGPT の回答を表示 (GPT-4 を搭載!)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自動継続 ⏩](https://chatgptautocontinue.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
-ChatGPTの複数の応答を自動的に継続的に生成し続ける。<br>
-[インストール](https://github.com/adamlui/chatgpt-auto-continue#installation) / 
+ChatGPTの複数の応答を自動的に継続的に生成し続ける。
+<br>[インストール](https://github.com/adamlui/chatgpt-auto-continue#installation) / 
 [お読みください](https://github.com/adamlui/chatgpt-auto-continue#readme) / 
 [議論](https://chatgptautocontinue.com/discuss)
 

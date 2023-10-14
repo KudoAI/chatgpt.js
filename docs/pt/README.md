@@ -196,8 +196,8 @@ Exiba as respostas do ChatGPT na barra lateral do Brave Search (com tecnologia G
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto-Continuar ⏩](https://chatgptautocontinue.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
-Continue gerando automaticamente várias respostas do ChatGPT.<br>
-[Instalar](https://github.com/adamlui/chatgpt-auto-continue#installation) /
+Continue gerando automaticamente várias respostas do ChatGPT.
+<br>[Instalar](https://github.com/adamlui/chatgpt-auto-continue#installation) /
 [Leia-me](https://github.com/adamlui/chatgpt-auto-continue#readme) /
 [Discutir](https://chatgptautocontinue.com/discuss)
 

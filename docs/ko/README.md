@@ -202,8 +202,8 @@ Brave Search 사이드바에 ChatGPT의 답변을 표시해주는 기능입니�
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 자동 진행 ⏩](https://chatgptautocontinue.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
-자동으로 여러 개의 ChatGPT 응답을 계속해서 생성하는 기능입니다.<br>
-[설치](https://github.com/adamlui/chatgpt-auto-continue#installation) /
+자동으로 여러 개의 ChatGPT 응답을 계속해서 생성하는 기능입니다.
+<br>[설치](https://github.com/adamlui/chatgpt-auto-continue#installation) /
 [리드미](https://github.com/adamlui/chatgpt-auto-continue#readme) /
 [토론](https://chatgptautocontinue.com/discuss)
 

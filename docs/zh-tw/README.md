@@ -196,8 +196,8 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自動繼續 ⏩](https://chatgptautocontinue.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
-自動繼續生成多個 ChatGPT 響應。<br>
-[安裝](https://github.com/adamlui/chatgpt-auto-continue#installation) /
+自動繼續生成多個 ChatGPT 響應。
+<br>[安裝](https://github.com/adamlui/chatgpt-auto-continue#installation) /
 [自述文件](https://github.com/adamlui/chatgpt-auto-continue#readme) /
 [討論](https://chatgptautocontinue.com/discuss)
 

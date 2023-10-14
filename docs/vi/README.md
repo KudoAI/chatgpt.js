@@ -197,8 +197,8 @@ Hiển thị câu trả lời ChatGPT trong thanh bên Brave Search (được cu
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Tự Động Tiếp Tục ⏩](https://chatgptautocontinue.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
-Tiếp tục tạo ra nhiều câu trả lời ChatGPT một cách tự động.<br>
-[Cài đặt](https://github.com/adamlui/chatgpt-auto-continue#installation) /
+Tiếp tục tạo ra nhiều câu trả lời ChatGPT một cách tự động.
+<br>[Cài đặt](https://github.com/adamlui/chatgpt-auto-continue#installation) /
 [Đọc tôi](https://github.com/adamlui/chatgpt-auto-continue#readme) /
 [Bàn luận](https://chatgptautocontinue.com/discuss)
 

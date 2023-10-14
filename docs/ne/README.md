@@ -199,8 +199,8 @@ Brave सर्च साइडबार मा ChatGPT जवाफहरू �
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT ऑटो-कंटिन्यू ⏩](https://chatgptautocontinue.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
-ऑटोमैटिक रूपमा ChatGPT प्रतिक्रियाहरू उत्पन्न गर्न जारी राख्नुहोस् ।<br>
-[इंस्टॉल](https://github.com/adamlui/chatgpt-auto-continue#installation) / 
+ऑटोमैटिक रूपमा ChatGPT प्रतिक्रियाहरू उत्पन्न गर्न जारी राख्नुहोस् ।
+<br>[इंस्टॉल](https://github.com/adamlui/chatgpt-auto-continue#installation) / 
 [रीडमी](https://github.com/adamlui/chatgpt-auto-continue#readme) / 
 [चर्चा](https://chatgptautocontinue.com/discuss)
 
