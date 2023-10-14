@@ -9,7 +9,7 @@
         <a href="../zh-tw#readme">繁體中文</a> |
         <a href="../ja#readme">日本</a> |
         <a href="../hi#readme">हिंदी</a> |
-        <a href="../np#readme">नेपाली</a> |
+        <a href="../ne#readme">नेपाली</a> |
         <a href="../de#readme">Deutsch</a> |
         <a href="../es#readme">Español</a> |
         <a href="../fr#readme">Français</a> |
