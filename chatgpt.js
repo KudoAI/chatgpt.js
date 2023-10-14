@@ -1136,26 +1136,40 @@ const chatgpt = {
 
     notify: function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
-        const fadeDuration = 0.6, // sec duration of fade-out
+        const fadeDuration = 0.1, // sec duration of fade-out
               vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
 
-        // Make/id div
+        // Create/append notification div
         const notificationDiv = document.createElement('div'); // make div
         notificationDiv.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
+        notificationDiv.classList.add('chatgpt-notif');
+        document.body.appendChild(notificationDiv); // insert into DOM
 
         // Determine div position/quadrant
         notificationDiv.isTop = !position || !/low|bottom/i.test(position);
         notificationDiv.isRight = !position || !/left/i.test(position);
         notificationDiv.quadrant = (notificationDiv.isTop ? 'top' : 'bottom')
                                  + (notificationDiv.isRight ? 'Right' : 'Left');
-        // Stylize/append div
-        notificationDiv.style.cssText = ( // stylize it
-              ' background-color: black ; padding: 10px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
-            + ' opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; ' // visibility
-            + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; ' // disable selection
-            + ` transform: translateX(${ !notificationDiv.isRight ? '-' : '' }35px) ; ` // init off-screen for transition fx
-            + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ));
-        document.body.appendChild(notificationDiv); // insert into DOM
+
+        // Select or create/append notification style
+        let notifStyle;
+        if (document.querySelector('#chatgpt-notif-style'))
+            notifStyle = document.querySelector('#chatgpt-notif-style');
+        else {
+            notifStyle = document.createElement('style');
+            notifStyle.id = 'chatgpt-notif-style';
+            notifStyle.innerText = '.chatgpt-notif {'
+                + 'background-color: black ; padding: 10px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
+                + 'opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ;' // visibility
+                + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;' // disable selection
+                + `transform: translateX(${ !notificationDiv.isRight ? '-' : '' }35px) ;` // init off-screen for transition fx
+                + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ) + '}'
+            + '@keyframes zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }' // transition out keyframes
+                + '15% { opacity: 0.15 ; transform: scale(1.05) }'
+                + '45% { opacity: 0.05 ; transform: scale(1.15) }'
+                + '100% { opacity: 0 ; transform: scale(1.35) }}';
+            document.head.appendChild(notifStyle);
+        } 
 
         // Enqueue notification
         let notifyQueue = JSON.parse(localStorage.notifyQueue);
@@ -1194,19 +1208,19 @@ const chatgpt = {
             fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
             : notifDuration - fadeDuration); // otherwise delay for difference
         notificationDiv.hideTimer = setTimeout(() => { // maintain notification visibility, then fade out
-            notificationDiv.style.transition = 'opacity ' + fadeDuration.toString() + 's'; // add fade effect
-            notificationDiv.style.opacity = 0; // hide notification
+            notificationDiv.style.animation = `zoom-fade-out ${ fadeDuration }s ease-out`;
             notificationDiv.hideTimer = null; // prevent memory leaks
         }, hideDelay * 1000); // ...after pre-set duration
 
         // Destroy notification
-        notificationDiv.destroyTimer = setTimeout(() => {
-            notificationDiv.remove(); // remove from DOM
-            notifyQueue = JSON.parse(localStorage.notifyQueue);
-            notifyQueue.quadrants[notificationDiv.quadrant].shift(); // + memory
-            localStorage.notifyQueue = JSON.stringify(notifyQueue); // + storage
-            notificationDiv.destroyTimer = null; // prevent memory leaks
-        }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
+        notificationDiv.addEventListener('animationend', event => {
+            if (event.animationName === 'zoom-fade-out') {
+                notificationDiv.remove(); // remove from DOM
+                notifyQueue = JSON.parse(localStorage.notifyQueue);
+                notifyQueue.quadrants[notificationDiv.quadrant].shift(); // + memory
+                localStorage.notifyQueue = JSON.stringify(notifyQueue); // + storage
+            }
+        }, { once: true });
     },
 
     obfuscate: function() { chatgpt.code.obfuscate(); },
