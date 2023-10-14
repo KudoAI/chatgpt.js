@@ -151,6 +151,12 @@ const onLoadObserver = new MutationObserver(() => {
             ghDemo.parentNode.replaceChild(ytDemo, ghDemo);
             ytDemo.parentNode.style.textAlign = 'center';
 
+            // Strip blockquote wrappers from showcase app descriptions    
+            document.querySelectorAll('blockquote').forEach(blockquote => {
+                const parent = blockquote.parentNode, content = blockquote.innerHTML;
+                parent.replaceChild(document.createRange().createContextualFragment(content), blockquote);
+            });
+
             // Add FADE classes to elements
             const fadeUpElements = [], fadeRightElements = [], fadeLeftElements = [];
             fadeUpElements.push(...document.querySelectorAll(
