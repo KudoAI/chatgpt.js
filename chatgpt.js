@@ -15,10 +15,11 @@ const endpoints = {
     }
 };
 
-// Init feedback queues
+// Init feedback properties
 localStorage.alertQueue = JSON.stringify([]);
-localStorage.notifyQueue = JSON.stringify(
-    { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }});
+localStorage.notifyProps = JSON.stringify({
+    queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }
+});
 
 // Define chatgpt.methods
 const chatgpt = {
@@ -1175,9 +1176,9 @@ const chatgpt = {
         } 
 
         // Enqueue notification
-        let notifyQueue = JSON.parse(localStorage.notifyQueue);
-        notifyQueue.quadrants[notificationDiv.quadrant].push(notificationDiv.id);
-        localStorage.notifyQueue = JSON.stringify(notifyQueue);
+        let notifyProps = JSON.parse(localStorage.notifyProps);
+        notifyProps.queue[notificationDiv.quadrant].push(notificationDiv.id);
+        localStorage.notifyProps = JSON.stringify(notifyProps);
 
         // Position notification (defaults to top-right)
         notificationDiv.style.top = notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
@@ -1186,10 +1187,10 @@ const chatgpt = {
         notificationDiv.style.left = !notificationDiv.isRight ? vpXoffset.toString() + 'px' : '';
 
         // Reposition old notifications
-        const thisQuadrantDivIDs = notifyQueue.quadrants[notificationDiv.quadrant];
-        if (thisQuadrantDivIDs.length > 1) {
+        const thisQuadrantQueue = notifyProps.queue[notificationDiv.quadrant];
+        if (thisQuadrantQueue.length > 1) {
             try { // to move old notifications
-                for (const divId of thisQuadrantDivIDs.slice(0, -1)) { // exclude new div
+                for (const divId of thisQuadrantQueue.slice(0, -1)) { // exclude new div
                     const oldDiv = document.getElementById(divId),
                           offsetProp = oldDiv.style.top ? 'top' : 'bottom', // pick property to change
                           vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
@@ -1225,9 +1226,9 @@ const chatgpt = {
         notificationDiv.addEventListener('animationend', event => {
             if (event.animationName === 'zoom-fade-out') {
                 notificationDiv.remove(); // remove from DOM
-                notifyQueue = JSON.parse(localStorage.notifyQueue);
-                notifyQueue.quadrants[notificationDiv.quadrant].shift(); // + memory
-                localStorage.notifyQueue = JSON.stringify(notifyQueue); // + storage
+                notifyProps = JSON.parse(localStorage.notifyProps);
+                notifyProps.queue[notificationDiv.quadrant].shift(); // + memory
+                localStorage.notifyProps = JSON.stringify(notifyProps); // + storage
             }
         }, { once: true });
     },
