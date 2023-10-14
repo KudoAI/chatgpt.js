@@ -333,7 +333,7 @@ main ol { margin-top: 95px ; padding: 0 9vw 0 12vw !important }
 
 /* Showcase */
 #showcase ~ h3:nth-of-type(even):not(#contributors ~ *),
-#showcase ~ h3 + p:nth-of-type(even):not(#contributors ~ *) { text-align: right }
+#showcase ~ h3 + p:nth-of-type(odd):not(#contributors ~ *) { text-align: right }
 #showcase ~ h3 + p + p:not(#contributors ~ *), /* 1st showcase tile */
 #showcase ~ h3 + p + p ~ p:not(#contributors ~ *) { /* 2nd+ showcase tiles + CTA */
     text-align: center !important }
