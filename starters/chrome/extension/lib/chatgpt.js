@@ -1228,7 +1228,7 @@ const chatgpt = {
                              + `${ randomN }-${ randomDirection }.mp3`;
 
             // Schedule playback
-            setTimeout(() => { fadeOutAudio.play().catch((err) => {}) }, hideDelay * 1000);
+            setTimeout(() => { fadeOutAudio.play().catch(() => {}); }, hideDelay * 1000);
         }
 
         // Hide notification
