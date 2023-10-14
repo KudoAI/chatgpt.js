@@ -1210,17 +1210,16 @@ const chatgpt = {
         const fadeOutAudio = new Audio();
         fadeOutAudio.src = 'data:audio/mp3;base64,'
                          + await fetch(endpoints.assets + '/media/audio/notifications/bubble-pop/bubble-pop-base64.txt')
-                             .then(res => res.text());
-
+                                 .then(res => res.text());
         // Hide notification
         const hideDelay = ( // set delay before fading
             fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
                 : notifDuration - fadeDuration); // otherwise delay for difference
-        setTimeout(() => { fadeOutAudio.play(); }, hideDelay * 1000 - 700)
-        notificationDiv.hideTimer = setTimeout(() => { // maintain notification visibility, then fade out
-            notificationDiv.style.animation = `zoom-fade-out ${ fadeDuration }s ease-out`;
-            notificationDiv.hideTimer = null; // prevent memory leaks
-        }, hideDelay * 1000); // ...after pre-set duration
+        setTimeout(() => { // maintain notification visibility, then fade out
+            notificationDiv.style.animation = `zoom-fade-out ${ fadeDuration }s ease-out`; },
+        hideDelay * 1000); // ...after pre-set duration
+        setTimeout(() => { // play audio feedback at fade-out start
+            fadeOutAudio.play(); }, hideDelay * 1000 - 700);
 
         // Destroy notification
         notificationDiv.addEventListener('animationend', event => {
