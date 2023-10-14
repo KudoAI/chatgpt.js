@@ -4,6 +4,7 @@
 
 // Init OpenAI endpoints
 const endpoints = {
+    assets: 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main',
     openAI: {
         session: 'https://chat.openai.com/api/auth/session',
         chats: 'https://chat.openai.com/backend-api/conversations',
@@ -1043,17 +1044,17 @@ const chatgpt = {
         // where 'text' is the displayed text of the option and 'value' is the value of the option
 
             const validElements = ['button', 'dropdown'];
-            if (!element || typeof element !== 'string') // Element not passed or invalid type
+            if (!element || typeof element !== 'string') // element not passed or invalid type
                 return console.error('🤖 chatgpt.js >> Please supply a valid string element name!');
             element = element.toLowerCase();
-            if (!validElements.includes(element)) // Element not in list
+            if (!validElements.includes(element)) // element not in list
                 return console.error(`🤖 chatgpt.js >> Invalid element! Valid elements are [${validElements}]`);
 
             const newElement = document.createElement(
                 element === 'dropdown' ? 'select' :
                 element === 'button' ? 'a' : element
             );
-            newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // Add random id to the element
+            newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // add random id to the element
 
             if (element === 'button') {
                 newElement.textContent = attrs?.label && typeof attrs.label === 'string'
@@ -1061,9 +1062,9 @@ const chatgpt = {
                     : 'chatgpt.js button';
 
                 const icon = document.createElement('img');
-                icon.src = attrs?.icon && typeof attrs.icon === 'string' // Can also be base64 encoded image string
-                    ? attrs.icon // Add icon to button element if given, else default one
-                    : 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/starters/chrome/extension/icons/icon128.png';
+                icon.src = attrs?.icon && typeof attrs.icon === 'string' // can also be base64 encoded image string
+                    ? attrs.icon // add icon to button element if given, else default one
+                    : ( endpoints.assets + '/starters/chrome/extension/icons/icon128.png' );
                 icon.width = 18;
                 newElement.insertBefore(icon, newElement.firstChild);
 
@@ -1073,12 +1074,12 @@ const chatgpt = {
             }
 
             else if (element === 'dropdown') {
-                if (!attrs?.items || // There no are options to add 
-                    !Array.isArray(attrs.items) || // It's not an array
-                    !attrs.items.length) // The array is empty
-                        attrs.items = [{ text: '🤖 chatgpt.js option', value: 'chatgpt.js option value' }]; // Set default dropdown entry
+                if (!attrs?.items || // there no are options to add 
+                    !Array.isArray(attrs.items) || // it's not an array
+                    !attrs.items.length) // the array is empty
+                        attrs.items = [{ text: '🤖 chatgpt.js option', value: 'chatgpt.js option value' }]; // set default dropdown entry
 
-                if (!attrs.items.every(el => typeof el === 'object')) // The entries of the array are not objects
+                if (!attrs.items.every(el => typeof el === 'object')) // the entries of the array are not objects
                     return console.error('\'items\' must be an array of objects!');
 
                 newElement.style = 'background-color: #000; width: 100%; border: none;';
@@ -1112,7 +1113,7 @@ const chatgpt = {
 
             this.elements.push(newElement);
             const menuBtn = document.querySelector('nav button[id*="headless"]');
-            if (!this.addedEvent) { // To prevent adding more than one event
+            if (!this.addedEvent) { // to prevent adding more than one event
                 menuBtn.addEventListener('click', () => { setTimeout(addElementsToMenu, 25); });
                 this.addedEvent = true; }
 
@@ -1658,7 +1659,7 @@ const chatgpt = {
                 const icon = document.createElement('img');
                 icon.src = attrs?.icon && typeof attrs.icon === 'string' // Can also be base64 encoded image string
                     ? attrs.icon // Add icon to button element if given, else default one
-                    : 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/starters/chrome/extension/icons/icon128.png';
+                    : ( endpoints.assets + '/starters/chrome/extension/icons/icon128.png' );
                 icon.width = 18;
                 newElement.insertBefore(icon, newElement.firstChild);
 
