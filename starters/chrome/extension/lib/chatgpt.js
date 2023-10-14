@@ -2,7 +2,7 @@
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest-min.js
 
-// Init OpenAI endpoints
+// Init data endpoints
 const endpoints = {
     assets: 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main',
     openAI: {
@@ -1139,7 +1139,7 @@ const chatgpt = {
 
     notify: async function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
-        const fadeDuration = 0.1, // sec duration of fade-out
+        const fadeDuration = 0.2, // sec duration of fade-out
               vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
 
         // Create/append notification div
@@ -1174,6 +1174,7 @@ const chatgpt = {
         // Enqueue notification
         let notifyProps = JSON.parse(localStorage.notifyProps);
         notifyProps.queue[notificationDiv.quadrant].push(notificationDiv.id);
+        localStorage.notifyProps = JSON.stringify(notifyProps);
 
         // Position notification (defaults to top-right)
         notificationDiv.style.top = notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
@@ -1202,28 +1203,37 @@ const chatgpt = {
             notificationDiv.style.transition = 'transform 0.15s ease, opacity 0.15s ease';
         }, 10);
 
-        // Init audio feedback
-        let randomN; // to pick index of base sound
-        do randomN = Math.floor(Math.random() * 3) + 1; // randomize between 1-3...
-        while (randomN === notifyProps.lastNthAudio); // ...until different from prev base sound index
-        let randomDirection; // to alternate L/R of audio src
-        do randomDirection = Math.random() < 0.5 ? 'left' : 'right'; // randomize between L/R...
-        while (randomDirection === notifyProps.lastAudioDirection); // ...until different from prev direction src
-        notifyProps.lastNthAudio = randomN; notifyProps.lastAudioDirection = randomDirection;
-        const fadeOutAudio = new Audio();
-        fadeOutAudio.src = endpoints.assets + '/media/audio/notifications/bubble-pop/'
-                         + `${ randomN }-${ randomDirection }.wav`;
+        // Init delay before hiding        
+        const hideDelay = fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
+                        : notifDuration - fadeDuration; // otherwise delay for difference
 
-        // Store updated queue + sound props for global access
-        localStorage.notifyProps = JSON.stringify(notifyProps);
+        // Init/schedule audio feedback
+        if (!/Chrome/.test(navigator.userAgent)) { // ...if not Chromium due to Google's hardcore stance on CSP + autoplay
+
+            // Init base audio index
+            let randomN; do randomN = Math.floor(Math.random() * 3) + 1; // randomize between 1-3...
+            while (randomN === notifyProps.lastNthAudio); // ...until distinct from prev index (for variety)
+
+            // Init audio direction
+            let randomDirection; do randomDirection = Math.random() < 0.5 ? 'left' : 'right'; // randomize between L/R...
+            while (randomDirection === notifyProps.lastAudioDirection); // ...until distinct from prev direction (for spatialization)
+
+            // Store updated sound props locally for global access
+            notifyProps.lastNthAudio = randomN; notifyProps.lastAudioDirection = randomDirection;
+            localStorage.notifyProps = JSON.stringify(notifyProps);
+
+            // Build audio element + src URL
+            const fadeOutAudio = new Audio();
+            fadeOutAudio.src = endpoints.assets + '/media/audio/notifications/bubble-pop/'
+                             + `${ randomN }-${ randomDirection }.mp3`;
+
+            // Schedule playback
+            setTimeout(() => { fadeOutAudio.play().catch((err) => {}) }, hideDelay * 1000);
+        }
 
         // Hide notification
-        const hideDelay = ( // set delay before fading
-            fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
-                : notifDuration - fadeDuration); // otherwise delay for difference
-        setTimeout(() => { // maintain notification visibility, then transition out...
-            notificationDiv.style.animation = `zoom-fade-out ${ fadeDuration }s ease-out`;
-            fadeOutAudio.play(); }, hideDelay * 1000); // ...after pre-set duration
+        setTimeout(() => { // maintain visibility for `fadeDuration`, then transition out
+            notificationDiv.style.animation = `zoom-fade-out ${ fadeDuration }s ease-out`; }, hideDelay * 1000);
 
         // Destroy notification
         notificationDiv.addEventListener('animationend', event => {
