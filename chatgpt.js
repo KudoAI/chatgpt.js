@@ -1218,7 +1218,7 @@ const chatgpt = {
         notifyProps.lastNthAudio = randomN; notifyProps.lastAudioDirection = randomDirection;
         const fadeOutAudio = new Audio();
         fadeOutAudio.src = endpoints.assets + '/media/audio/notifications/bubble-pop/'
-                         + `${ randomN }-${ randomDirection }.wav`
+                         + `${ randomN }-${ randomDirection }.wav`;
 
         // Store updated queue + sound props for global access
         localStorage.notifyProps = JSON.stringify(notifyProps);
