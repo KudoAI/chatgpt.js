@@ -79,13 +79,10 @@ const chatgpt = {
               modalTitle = document.createElement('h2'),
               modalMessage = document.createElement('p');
 
-        // Select or create/append style
-        let modalStyle;
-        if (document.querySelector('#chatgpt-alert-style'))
-            modalStyle = document.querySelector('#chatgpt-alert-style');
-        else {
-            const scheme = chatgpt.isDarkMode() ? 'dark' : 'light';
-            modalStyle = document.createElement('style');
+        // Create/append modal style (if missing)
+        if (!document.querySelector('#chatgpt-alert-style')) {
+            const modalStyle = document.createElement('style'),
+                  scheme = chatgpt.isDarkMode() ? 'dark' : 'light';                  
             modalStyle.id = 'chatgpt-alert-style';
             modalStyle.innerText = (
 
@@ -1157,12 +1154,9 @@ const chatgpt = {
         notificationDiv.quadrant = (notificationDiv.isTop ? 'top' : 'bottom')
                                  + (notificationDiv.isRight ? 'Right' : 'Left');
 
-        // Select or create/append notification style
-        let notifStyle;
-        if (document.querySelector('#chatgpt-notif-style'))
-            notifStyle = document.querySelector('#chatgpt-notif-style');
-        else {
-            notifStyle = document.createElement('style');
+        // Create/append notification style (if missing)
+        if (!document.querySelector('#chatgpt-notif-style')) {
+            const notifStyle = document.createElement('style');
             notifStyle.id = 'chatgpt-notif-style';
             notifStyle.innerText = '.chatgpt-notif {'
                 + 'background-color: black ; padding: 10px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
