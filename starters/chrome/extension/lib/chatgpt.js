@@ -1137,7 +1137,7 @@ const chatgpt = {
 
     minify: function() { chatgpt.code.minify(); },
 
-    notify: function(msg, position, notifDuration, shadow) {
+    notify: async function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
         const fadeDuration = 0.1, // sec duration of fade-out
               vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
@@ -1206,10 +1206,17 @@ const chatgpt = {
             notificationDiv.style.transition = 'transform 0.15s ease, opacity 0.15s ease';
         }, 10);
 
+        // Preload audio feedback
+        const fadeOutAudio = new Audio();
+        fadeOutAudio.src = 'data:audio/mp3;base64,'
+                         + await fetch(endpoints.assets + '/media/audio/notifications/bubble-pop/bubble-pop-base64.txt')
+                             .then(res => res.text());
+
         // Hide notification
         const hideDelay = ( // set delay before fading
             fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
-            : notifDuration - fadeDuration); // otherwise delay for difference
+                : notifDuration - fadeDuration); // otherwise delay for difference
+        setTimeout(() => { fadeOutAudio.play(); }, hideDelay * 1000 - 700)
         notificationDiv.hideTimer = setTimeout(() => { // maintain notification visibility, then fade out
             notificationDiv.style.animation = `zoom-fade-out ${ fadeDuration }s ease-out`;
             notificationDiv.hideTimer = null; // prevent memory leaks
