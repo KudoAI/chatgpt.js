@@ -177,7 +177,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT の履歴を削除する](https://autoclearchatgpt.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > プライバシーを最大限に高めるために、ChatGPT クエリ履歴を自動消去します。
-<br>[インストール](https://github.com/adamlui/autoclear-chatgpt-history#installation) / 
+<br>[インストール](https://github.com/adamlui/autoclear-chatgpt-history#-installation) / 
 [お読みください](https://github.com/adamlui/autoclear-chatgpt-history#readme) / 
 [議論](https://autoclearchatgpt.com/discuss)
 
@@ -191,28 +191,28 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Brave Search サイドバーに ChatGPT の回答を表示 (GPT-4 を搭載!)
-<br>[インストール](https://github.bravegpt.com/#installation) / 
+<br>[インストール](https://github.bravegpt.com/#-installation) / 
 [お読みください](https://github.bravegpt.com/#readme) / 
 [議論](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自動継続 ⏩](https://chatgptautocontinue.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
 > ChatGPTの複数の応答を自動的に継続的に生成し続ける。
-<br>[インストール](https://github.com/adamlui/chatgpt-auto-continue#installation) / 
+<br>[インストール](https://github.com/adamlui/chatgpt-auto-continue#-installation) / 
 [お読みください](https://github.com/adamlui/chatgpt-auto-continue#readme) / 
 [議論](https://chatgptautocontinue.com/discuss)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自動更新 ↻](https://chatgptautorefresh.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > ChatGPTセッションを最新の状態に保ち、チャット時間制限、ネットワークエラー、Cloudflareチェックを排除します。
-<br>[インストール](https://github.com/adamlui/chatgpt-auto-refresh#installation) / 
+<br>[インストール](https://github.com/adamlui/chatgpt-auto-refresh#-installation) / 
 [お読みください](https://github.com/adamlui/chatgpt-auto-refresh#readme) / 
 [議論](https://chatgptautorefresh.com/discuss)
 
 ### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > DuckDuckGo サイドバーに ChatGPT の回答を表示 (GPT-4 を搭載!)
-<br>[インストール](https://github.duckduckgpt.com/#installation) / 
+<br>[インストール](https://github.duckduckgpt.com/#-installation) / 
 [お読みください](https://github.duckduckgpt.com/#readme) / 
 [議論](https://github.duckduckgpt.com/discussions)
 

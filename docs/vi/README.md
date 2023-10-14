@@ -177,7 +177,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Xóa Lịch Sử ChatGPT](https://autoclearchatgpt.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > Tự động xóa lịch sử truy vấn ChatGPT của bạn để có quyền riêng tư tối đa.
-<br>[Cài đặt](https://github.com/adamlui/autoclear-chatgpt-history#installation) /
+<br>[Cài đặt](https://github.com/adamlui/autoclear-chatgpt-history#-installation) /
 [Đọc tôi](https://github.com/adamlui/autoclear-chatgpt-history#readme) /
 [Bàn luận](https://autoclearchatgpt.com/discuss)
 
@@ -191,28 +191,28 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Hiển thị câu trả lời ChatGPT trong thanh bên Brave Search (được cung cấp bởi GPT-4!)
-<br>[Cài đặt](https://github.bravegpt.com/#installation) /
+<br>[Cài đặt](https://github.bravegpt.com/#-installation) /
 [Đọc tôi](https://github.bravegpt.com/#readme) /
 [Bàn luận](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Tự Động Tiếp Tục ⏩](https://chatgptautocontinue.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
 > Tiếp tục tạo ra nhiều câu trả lời ChatGPT một cách tự động.
-<br>[Cài đặt](https://github.com/adamlui/chatgpt-auto-continue#installation) /
+<br>[Cài đặt](https://github.com/adamlui/chatgpt-auto-continue#-installation) /
 [Đọc tôi](https://github.com/adamlui/chatgpt-auto-continue#readme) /
 [Bàn luận](https://chatgptautocontinue.com/discuss)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Tự động Cập nhật ↻](https://chatgptautorefresh.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > Giữ cho các phiên ChatGPT luôn mới, loại bỏ giới hạn thời gian trò chuyện + lỗi mạng + kiểm tra Cloudflare.
-<br>[Cài đặt](https://github.com/adamlui/chatgpt-auto-refresh#installation) /
+<br>[Cài đặt](https://github.com/adamlui/chatgpt-auto-refresh#-installation) /
 [Đọc tôi](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
 [Bàn luận](https://chatgptautorefresh.com/discuss)
 
 ### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Hiển thị câu trả lời ChatGPT trong thanh bên DuckDuckGo (do GPT-4 cung cấp!)
-<br>[Cài đặt](https://github.duckduckgpt.com/#installation) /
+<br>[Cài đặt](https://github.duckduckgpt.com/#-installation) /
 [Đọc tôi](https://github.duckduckgpt.com/#readme) /
 [Bàn luận](https://github.duckduckgpt.com/discussions)
 
