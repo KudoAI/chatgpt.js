@@ -19,7 +19,7 @@ const endpoints = {
 localStorage.alertQueue = JSON.stringify([]);
 localStorage.notifyProps = JSON.stringify({
     queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] },
-    lastNthAudio: 0, // to prevent immediate repetition of base sound
+    lastNthAudio: 0 // to prevent immediate repetition of base sound
 });
 
 // Define chatgpt.methods
