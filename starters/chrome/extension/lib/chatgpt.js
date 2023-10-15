@@ -1235,7 +1235,7 @@ const chatgpt = {
             notificationDiv.style.animation = `notif-zoom-fade-out ${ fadeDuration }s ease-out`; }, hideDelay * 1000);
 
         // Destroy notification
-        notificationDiv.addEventListener('animationend', event => {
+        notificationDiv.addEventListener('animationend', () => {
             notificationDiv.remove(); // remove from DOM
             notifyProps = JSON.parse(localStorage.notifyProps);
             notifyProps.queue[notificationDiv.quadrant].shift(); // + memory
