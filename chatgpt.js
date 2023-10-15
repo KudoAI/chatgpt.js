@@ -1210,16 +1210,12 @@ const chatgpt = {
         // Init/schedule audio feedback
         if (!/Chrome/.test(navigator.userAgent)) { // ...if not Chromium due to Google's hardcore stance on CSP + autoplay
 
-            // Init base audio index
-            let nthAudio; do nthAudio = Math.floor(Math.random() * 3) + 1; // randomize between 1-3...
+            // Init audio props
+            let nthAudio; do nthAudio = Math.floor(Math.random() * 3) + 1; // randomize base audio index between 1-3...
             while (nthAudio === notifyProps.lastNthAudio); // ...until distinct from prev index (for variety)
-
-            // Init audio direction as the opposite of notifyProps.lastAudioDirection
             const audioDirection = notifyProps.lastAudioDirection === 'left' ? 'right' : 'left';
-
-            // Store updated sound props locally for global access
             notifyProps.lastNthAudio = nthAudio; notifyProps.lastAudioDirection = audioDirection;
-            localStorage.notifyProps = JSON.stringify(notifyProps);
+            localStorage.notifyProps = JSON.stringify(notifyProps); // store locally for global access
 
             // Build audio element + src URL
             const fadeOutAudio = new Audio();
