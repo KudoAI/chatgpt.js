@@ -1155,9 +1155,9 @@ const chatgpt = {
                                  + (notificationDiv.isRight ? 'Right' : 'Left');
 
         // Create/append notification style (if missing)
-        if (!document.querySelector('#chatgpt-notif-style')) {
+        if (!document.querySelector('#chatgpt-notif-style-20231014')) {
             const notifStyle = document.createElement('style');
-            notifStyle.id = 'chatgpt-notif-style';
+            notifStyle.id = 'chatgpt-notif-style-20231014';
             notifStyle.innerText = '.chatgpt-notif {'
                 + 'background-color: black ; padding: 10px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
                 + 'opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ;' // visibility
@@ -1190,7 +1190,7 @@ const chatgpt = {
                     const oldDiv = document.getElementById(divId),
                           offsetProp = oldDiv.style.top ? 'top' : 'bottom', // pick property to change
                           vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
-                    oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
+                    oldDiv.style[offsetProp] = `${ vOffset }px`; // change prop
                 }
             } catch (err) {}
         }
@@ -1211,38 +1211,35 @@ const chatgpt = {
         if (!/Chrome/.test(navigator.userAgent)) { // ...if not Chromium due to Google's hardcore stance on CSP + autoplay
 
             // Init base audio index
-            let randomN; do randomN = Math.floor(Math.random() * 3) + 1; // randomize between 1-3...
-            while (randomN === notifyProps.lastNthAudio); // ...until distinct from prev index (for variety)
+            let nthAudio; do nthAudio = Math.floor(Math.random() * 3) + 1; // randomize between 1-3...
+            while (nthAudio === notifyProps.lastNthAudio); // ...until distinct from prev index (for variety)
 
-            // Init audio direction
-            let randomDirection; do randomDirection = Math.random() < 0.5 ? 'left' : 'right'; // randomize between L/R...
-            while (randomDirection === notifyProps.lastAudioDirection); // ...until distinct from prev direction (for spatialization)
+            // Init audio direction as the opposite of notifyProps.lastAudioDirection
+            const audioDirection = notifyProps.lastAudioDirection === 'left' ? 'right' : 'left';
 
             // Store updated sound props locally for global access
-            notifyProps.lastNthAudio = randomN; notifyProps.lastAudioDirection = randomDirection;
+            notifyProps.lastNthAudio = nthAudio; notifyProps.lastAudioDirection = audioDirection;
             localStorage.notifyProps = JSON.stringify(notifyProps);
 
             // Build audio element + src URL
             const fadeOutAudio = new Audio();
             fadeOutAudio.src = endpoints.assets + '/media/audio/notifications/bubble-pop/'
-                             + `${ randomN }-${ randomDirection }.mp3`;
+                             + `${ nthAudio }-${ audioDirection }.mp3`;
 
             // Schedule playback
             setTimeout(() => { fadeOutAudio.play().catch(() => {}); }, hideDelay * 1000);
         }
 
         // Hide notification
-        setTimeout(() => { // maintain visibility for `fadeDuration`, then transition out
+        setTimeout(() => { // maintain visibility for `hideDelay` secs, then transition out
             notificationDiv.style.animation = `notif-zoom-fade-out ${ fadeDuration }s ease-out`; }, hideDelay * 1000);
 
         // Destroy notification
         notificationDiv.addEventListener('animationend', event => {
-            if (event.animationName === 'notif-zoom-fade-out') {
-                notificationDiv.remove(); // remove from DOM
-                notifyProps = JSON.parse(localStorage.notifyProps);
-                notifyProps.queue[notificationDiv.quadrant].shift(); // + memory
-                localStorage.notifyProps = JSON.stringify(notifyProps); // + storage
-            }
+            notificationDiv.remove(); // remove from DOM
+            notifyProps = JSON.parse(localStorage.notifyProps);
+            notifyProps.queue[notificationDiv.quadrant].shift(); // + memory
+            localStorage.notifyProps = JSON.stringify(notifyProps); // + storage
         }, { once: true });
     },
 
