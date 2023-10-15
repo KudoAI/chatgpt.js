@@ -103,7 +103,7 @@ const chatgpt = {
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
                 + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
                 + '.chatgpt-modal.animated > div { opacity: 1 ; transform: translateX(0) translateY(0) }'
-                + '@keyframes zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
+                + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
                     + '50% { opacity: 0.25 ; transform: scale(1.35) }'
                     + '100% { opacity: 0 ; transform: scale(2) }}'
 
@@ -227,7 +227,7 @@ const chatgpt = {
         // Define alert dismisser
         const dismissAlert = () => {
             modalContainer.style.backgroundColor = 'transparent';
-            modal.style.animation = 'zoom-fade-out 0.075s ease-out';
+            modal.style.animation = 'alert-zoom-fade-out 0.075s ease-out';
             setTimeout(() => { // delay removal for fade-out
 
                 // Remove alert
@@ -1164,7 +1164,7 @@ const chatgpt = {
                 + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;' // disable selection
                 + `transform: translateX(${ !notificationDiv.isRight ? '-' : '' }35px) ;` // init off-screen for transition fx
                 + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ) + '}'
-            + '@keyframes zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }' // transition out keyframes
+            + '@keyframes notif-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }' // transition out keyframes
                 + '15% { opacity: 0.15 ; transform: scale(1.05) }'
                 + '45% { opacity: 0.05 ; transform: scale(1.15) }'
                 + '100% { opacity: 0 ; transform: scale(1.35) }}';
@@ -1233,11 +1233,11 @@ const chatgpt = {
 
         // Hide notification
         setTimeout(() => { // maintain visibility for `fadeDuration`, then transition out
-            notificationDiv.style.animation = `zoom-fade-out ${ fadeDuration }s ease-out`; }, hideDelay * 1000);
+            notificationDiv.style.animation = `notif-zoom-fade-out ${ fadeDuration }s ease-out`; }, hideDelay * 1000);
 
         // Destroy notification
         notificationDiv.addEventListener('animationend', event => {
-            if (event.animationName === 'zoom-fade-out') {
+            if (event.animationName === 'notif-zoom-fade-out') {
                 notificationDiv.remove(); // remove from DOM
                 notifyProps = JSON.parse(localStorage.notifyProps);
                 notifyProps.queue[notificationDiv.quadrant].shift(); // + memory
