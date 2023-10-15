@@ -20,7 +20,6 @@ localStorage.alertQueue = JSON.stringify([]);
 localStorage.notifyProps = JSON.stringify({
     queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] },
     lastNthAudio: 0, // to prevent immediate repetition of base sound
-    lastAudioDirection: '' // to alternate between left/right
 });
 
 // Define chatgpt.methods
@@ -1210,17 +1209,15 @@ const chatgpt = {
         // Init/schedule audio feedback
         if (!/Chrome/.test(navigator.userAgent)) { // ...if not Chromium due to Google's hardcore stance on CSP + autoplay
 
-            // Init audio props
-            let nthAudio; do nthAudio = Math.floor(Math.random() * 3) + 1; // randomize base audio index between 1-3...
+            // Init base audio index
+            let nthAudio; do nthAudio = Math.floor(Math.random() * 3) + 1; // randomize  between 1-3...
             while (nthAudio === notifyProps.lastNthAudio); // ...until distinct from prev index (for variety)
-            const audioDirection = notifyProps.lastAudioDirection === 'left' ? 'right' : 'left';
-            notifyProps.lastNthAudio = nthAudio; notifyProps.lastAudioDirection = audioDirection;
-            localStorage.notifyProps = JSON.stringify(notifyProps); // store locally for global access
+            notifyProps.lastNthAudio = nthAudio; localStorage.notifyProps = JSON.stringify(notifyProps);
 
             // Build audio element + src URL
             const fadeOutAudio = new Audio();
             fadeOutAudio.src = endpoints.assets + '/media/audio/notifications/bubble-pop/'
-                             + `${ nthAudio }-${ audioDirection }.mp3`;
+                             + `${ nthAudio }-${ notificationDiv.isRight ? 'right' : 'left' }.mp3`;
 
             // Schedule playback
             setTimeout(() => { fadeOutAudio.play().catch(() => {}); }, hideDelay * 1000);
