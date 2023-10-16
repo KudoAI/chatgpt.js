@@ -2,7 +2,7 @@
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest-min.js
 
-// Init data endpoints
+// Init endpoints
 const endpoints = {
     assets: 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main',
     openAI: {
@@ -185,7 +185,7 @@ const chatgpt = {
 
         // Create close button
         const closeBtn = document.createElement('div');
-        closeBtn.classList.add('modal-close-btn');
+        closeBtn.title = 'Close'; closeBtn.classList.add('modal-close-btn');        
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         closeSVG.setAttribute('height', '10px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
