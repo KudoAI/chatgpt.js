@@ -1138,7 +1138,7 @@ const chatgpt = {
 
     notify: async function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
-        const fadeDuration = 0.2, // sec duration of fade-out
+        const fadeDuration = 0.3, // sec duration of fade-out
               vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
 
         // Create/append notification div
@@ -1154,19 +1154,20 @@ const chatgpt = {
                                  + (notificationDiv.isRight ? 'Right' : 'Left');
 
         // Create/append notification style (if missing)
-        if (!document.querySelector('#chatgpt-notif-style-20231014')) {
+        const lastEditDate = 20231015;
+        if (!document.querySelector(`#chatgpt-notif-style-${ lastEditDate }`)) {
             const notifStyle = document.createElement('style');
-            notifStyle.id = 'chatgpt-notif-style-20231014';
+            notifStyle.id = `chatgpt-notif-style-${ lastEditDate }`;
             notifStyle.innerText = '.chatgpt-notif {'
-                + 'background-color: black ; padding: 10px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
+                + 'background-color: black ; padding: 10px 13px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
                 + 'opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ;' // visibility
                 + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;' // disable selection
                 + `transform: translateX(${ !notificationDiv.isRight ? '-' : '' }35px) ;` // init off-screen for transition fx
                 + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ) + '}'
             + '@keyframes notif-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }' // transition out keyframes
-                + '15% { opacity: 0.15 ; transform: scale(1.05) }'
-                + '45% { opacity: 0.05 ; transform: scale(1.15) }'
-                + '100% { opacity: 0 ; transform: scale(1.35) }}';
+                + '15% { opacity: 0.35 ; transform: rotateX(-27deg) scale(1.05) }'
+                + '45% { opacity: 0.05 ; transform: rotateX(-81deg) }'
+                + '100% { opacity: 0 ; transform: rotateX(-180deg) scale(1.15) }}';
             document.head.appendChild(notifStyle);
         } 
 
