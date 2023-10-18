@@ -51,7 +51,7 @@
 
 📣 _**chatgpt.js** 现已在 Artizen 上推出第 3 季！ 为了支持人工智能应用程序开发的未来，请访问 **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** 购买一款或多款限量版 文物（每件仅约 10 美元）_
 
-[![](https://github.com/KudoAI/chatgpt.js/assets/10906554/b52cf914-929e-4018-adc2-2a47debf24a0)](https://www.artizen.fund/project/chatgpt.js)
+[![](https://github-production-user-asset-6210df.s3.amazonaws.com/10906554/276135876-b52cf914-929e-4018-adc2-2a47debf24a0.gif)](https://www.artizen.fund/project/chatgpt.js)
 
 </div>
 

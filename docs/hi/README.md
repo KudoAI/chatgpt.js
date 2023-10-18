@@ -51,7 +51,7 @@
 
 📣 _**chatgpt.js** अब सीजन 3 के लिए Artizen पर लाइव है! एआई ऐप विकास के भविष्य का समर्थन करने के लिए, एक या अधिक सीमित खरीदने के लिए **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** पर जाएं। कलाकृतियाँ (केवल ~$10 प्रत्येक)_
 
-[![](https://github.com/KudoAI/chatgpt.js/assets/10906554/b52cf914-929e-4018-adc2-2a47debf24a0)](https://www.artizen.fund/project/chatgpt.js)
+[![](https://github-production-user-asset-6210df.s3.amazonaws.com/10906554/276135876-b52cf914-929e-4018-adc2-2a47debf24a0.gif)](https://www.artizen.fund/project/chatgpt.js)
 
 </div>
 
