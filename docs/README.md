@@ -47,7 +47,7 @@
 
 <div id="announcement" align="center">
 
-<br>
+#
 
 📣 _**chatgpt.js** is now live on Artizen for Season 3! To support the future of AI app development, visit [https://www.artizen.fund/project/chatgpt.js](https://www.artizen.fund/project/chatgpt.js) to purchase one or more limited Artifacts (only ~$10 each)_
 

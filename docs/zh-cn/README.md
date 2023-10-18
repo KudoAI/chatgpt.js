@@ -47,7 +47,7 @@
 
 <div id="announcement" align="center">
 
-<br>
+#
 
 📣 _**chatgpt.js** 现已在 Artizen 上推出第 3 季！ 为了支持人工智能应用程序开发的未来，请访问 [https://www.artizen.fund/project/chatgpt.js](https://www.artizen.fund/project/chatgpt.js) 购买一款或多款限量版 文物（每件仅约 10 美元）_
 
