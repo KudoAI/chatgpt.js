@@ -46,6 +46,14 @@
 
 </div>
 
+<div id="announcement" align="center">
+
+<br>
+
+📣 _**chatgpt.js**가 이제 Artizen 에서 시즌 3 을 시작합니다! AI 앱 개발의 미래를 지원하려면 [https://www.artizen.fund/project/chatgpt.js](https://www.artizen.fund/project/chatgpt.js)를 방문하여 하나 이상의 한정판을 구매하세요. 유물(개당 ~$10)_
+
+</div>
+
 <div id="intro">
 
 ## 개요

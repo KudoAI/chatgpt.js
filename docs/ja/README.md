@@ -45,6 +45,14 @@
 
 </div>
 
+<div id="announcement" align="center">
+
+<br>
+
+📣 _**chatgpt.js** はシーズン 3 の Artizen で公開中です! AI アプリ開発の将来をサポートするには、[https://www.artizen.fund/project/chatgpt.js](https://www.artizen.fund/project/chatgpt.js) にアクセスして、限定版を 1 つ以上購入してください。 アーティファクト (各 $10 のみ)_
+
+</div>
+
 <div id="intro">
 
 ## アバウト

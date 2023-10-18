@@ -45,6 +45,14 @@
 
 </div>
 
+<div id="announcement" align="center">
+
+<br>
+
+📣 _**chatgpt.js** is nu live op Artizen voor seizoen 3! Om de toekomst van de ontwikkeling van AI-apps te ondersteunen, gaat u naar [https://www.artizen.fund/project/chatgpt.js](https://www.artizen.fund/project/chatgpt.js) om een of meer beperkte Artefacten (slechts ~$10 per stuk)_
+
+</div>
+
 <div id="intro">
 
 ## Over

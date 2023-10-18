@@ -45,6 +45,14 @@
 
 </div>
 
+<div id="announcement" align="center">
+
+<br>
+
+📣 _**chatgpt.js** hiện đã có mặt trên Artizen cho Phần 3! Để hỗ trợ việc phát triển ứng dụng AI trong tương lai, hãy truy cập [https://www.artizen.fund/project/chatgpt.js](https://www.artizen.fund/project/chatgpt.js) để mua một hoặc nhiều phiên bản giới hạn Hiện vật (chỉ ~$10 mỗi cái)_
+
+</div>
+
 <div id="intro">
 
 ## Về
