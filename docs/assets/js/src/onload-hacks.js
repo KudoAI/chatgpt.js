@@ -341,8 +341,8 @@ const onLoadObserver = new MutationObserver(() => {
                             // Apply transparency + translate to siblings
                             prevElems.forEach(elem => {
                                 const topGap = trigger.y - window.scrollY,
-                                      newOpacity = 1 - Math.abs(topGap) / window.innerHeight,
-                                      parallaxOffset = topGap * -0.35;
+                                      newOpacity = 1 - Math.abs(topGap) / ( window.innerHeight - 5),
+                                      parallaxOffset = topGap * -0.45;
                                 try { elem.classList.remove('content-fadeup'); } catch (err) {}
                                 elem.style.opacity = newOpacity;
                                 elem.style.transform = `translateY(${ parallaxOffset }px)`;
