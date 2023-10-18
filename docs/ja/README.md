@@ -51,6 +51,8 @@
 
 📣 _**chatgpt.js** はシーズン 3 の Artizen で公開中です! AI アプリ開発の将来をサポートするには、**[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** にアクセスして、限定版を 1 つ以上購入してください。 アーティファクト (各 $10 のみ)_
 
+![](https://github.com/KudoAI/chatgpt.js/assets/10906554/f7956543-8734-4fd8-aec3-e6c8e2af1b5b)
+
 </div>
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">

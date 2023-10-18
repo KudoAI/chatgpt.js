@@ -51,6 +51,8 @@
 
 📣 _**chatgpt.js** hiện đã có mặt trên Artizen cho Phần 3! Để hỗ trợ việc phát triển ứng dụng AI trong tương lai, hãy truy cập **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** để mua một hoặc nhiều phiên bản giới hạn Hiện vật (chỉ ~$10 mỗi cái)_
 
+![](https://github.com/KudoAI/chatgpt.js/assets/10906554/f7956543-8734-4fd8-aec3-e6c8e2af1b5b)
+
 </div>
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">

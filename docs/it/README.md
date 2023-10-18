@@ -51,6 +51,8 @@
 
 📣 _**chatgpt.js** è ora disponibile su Artizen per la stagione 3! Per supportare il futuro dello sviluppo di app AI, visita **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** per acquistare uno o più prodotti in edizione limitata Manufatti (solo ~$10 ciascuno)_
 
+![](https://github.com/KudoAI/chatgpt.js/assets/10906554/f7956543-8734-4fd8-aec3-e6c8e2af1b5b)
+
 </div>
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">

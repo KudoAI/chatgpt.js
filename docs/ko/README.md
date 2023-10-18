@@ -52,6 +52,8 @@
 
 📣 _**chatgpt.js**가 이제 Artizen 에서 시즌 3 을 시작합니다! AI 앱 개발의 미래를 지원하려면 **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)**를 방문하여 하나 이상의 한정판을 구매하세요. 유물(개당 ~$10)_
 
+![](https://github.com/KudoAI/chatgpt.js/assets/10906554/f7956543-8734-4fd8-aec3-e6c8e2af1b5b)
+
 </div>
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">

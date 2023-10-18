@@ -51,6 +51,8 @@
 
 📣 _**chatgpt.js** is nu live op Artizen voor seizoen 3! Om de toekomst van de ontwikkeling van AI-apps te ondersteunen, gaat u naar **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** om een of meer beperkte Artefacten (slechts ~$10 per stuk)_
 
+![](https://github.com/KudoAI/chatgpt.js/assets/10906554/f7956543-8734-4fd8-aec3-e6c8e2af1b5b)
+
 </div>
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">

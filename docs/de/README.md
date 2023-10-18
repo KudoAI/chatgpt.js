@@ -51,6 +51,8 @@
 
 📣 _**chatgpt.js** ist jetzt für Staffel 3 live auf Artizen! Um die Zukunft der KI-App-Entwicklung zu unterstützen, besuchen Sie **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** und erwerben Sie eine oder mehrere limitierte Versionen Artefakte (jeweils nur ca. 10 $)_
 
+![](https://github.com/KudoAI/chatgpt.js/assets/10906554/f7956543-8734-4fd8-aec3-e6c8e2af1b5b)
+
 </div>
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
