@@ -49,7 +49,7 @@
 
 #
 
-📣 _**chatgpt.js** est désormais en ligne sur Artizen pour la saison 3 ! Pour soutenir l'avenir du développement d'applications d'IA, visitez [artizen.chatgptjs.org](https://artizen.chatgptjs.org) pour acheter un ou plusieurs Artefacts (seulement ~ 10 $ chacun)_
+📣 _**chatgpt.js** est désormais en ligne sur Artizen pour la saison 3 ! Pour soutenir l'avenir du développement d'applications d'IA, visitez **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** pour acheter un ou plusieurs Artefacts (seulement ~ 10 $ chacun)_
 
 </div>
 

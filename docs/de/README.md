@@ -49,7 +49,7 @@
 
 #
 
-📣 _**chatgpt.js** ist jetzt für Staffel 3 live auf Artizen! Um die Zukunft der KI-App-Entwicklung zu unterstützen, besuchen Sie [artizen.chatgptjs.org](https://artizen.chatgptjs.org) und erwerben Sie eine oder mehrere limitierte Versionen Artefakte (jeweils nur ca. 10 $)_
+📣 _**chatgpt.js** ist jetzt für Staffel 3 live auf Artizen! Um die Zukunft der KI-App-Entwicklung zu unterstützen, besuchen Sie **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** und erwerben Sie eine oder mehrere limitierte Versionen Artefakte (jeweils nur ca. 10 $)_
 
 </div>
 

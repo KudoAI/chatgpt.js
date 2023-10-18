@@ -49,7 +49,7 @@
 
 #
 
-📣 _**chatgpt.js** hiện đã có mặt trên Artizen cho Phần 3! Để hỗ trợ việc phát triển ứng dụng AI trong tương lai, hãy truy cập [artizen.chatgptjs.org](https://artizen.chatgptjs.org) để mua một hoặc nhiều phiên bản giới hạn Hiện vật (chỉ ~$10 mỗi cái)_
+📣 _**chatgpt.js** hiện đã có mặt trên Artizen cho Phần 3! Để hỗ trợ việc phát triển ứng dụng AI trong tương lai, hãy truy cập **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** để mua một hoặc nhiều phiên bản giới hạn Hiện vật (chỉ ~$10 mỗi cái)_
 
 </div>
 
