@@ -3,7 +3,7 @@
 const fs = require('fs'), { execSync } = require('child_process');
 
 // Prepend aliases
-const jsonContent = JSON.parse(fs.readFileSync('function-aliases.json', 'utf8'));
+const jsonContent = JSON.parse(fs.readFileSync('data/function-aliases.json', 'utf8'));
 const newCJScontent = fs.readFileSync('chatgpt.js', 'utf8').replace(
     /^(\/\/[^\n]*\n)+/, // copyright notice
     `$&\nconst functionAliases = ${ JSON.stringify(jsonContent.functionAliases) };\n`
