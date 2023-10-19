@@ -49,7 +49,7 @@
 
 #
 
-📣 _**chatgpt.js** is now live on Artizen for Season 3! To support the future of AI app development, visit **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** to purchase one or more limited Artifacts (only ~$10 each)_
+📣 _**chatgpt.js** is now live on Artizen for Season 3! To support the future of AI app development, visit **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** to purchase one or more limited Artifacts:_
 
 [![](https://github-production-user-asset-6210df.s3.amazonaws.com/10906554/276135876-b52cf914-929e-4018-adc2-2a47debf24a0.gif)](https://www.artizen.fund/project/chatgpt.js)
 

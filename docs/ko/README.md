@@ -50,7 +50,7 @@
 
 #
 
-📣 _**chatgpt.js**가 이제 Artizen 에서 시즌 3 을 시작합니다! AI 앱 개발의 미래를 지원하려면 **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)**를 방문하여 하나 이상의 한정판을 구매하세요. 유물(개당 ~$10)_
+📣 _**chatgpt.js**가 이제 Artizen 에서 시즌 3 을 시작합니다! AI 앱 개발의 미래를 지원하려면 **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)**를 방문하여 하나 이상의 한정판을 구매하세요 유물:_
 
 [![](https://github-production-user-asset-6210df.s3.amazonaws.com/10906554/276135876-b52cf914-929e-4018-adc2-2a47debf24a0.gif)](https://www.artizen.fund/project/chatgpt.js)
 

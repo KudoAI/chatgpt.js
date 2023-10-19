@@ -49,7 +49,7 @@
 
 #
 
-📣 _**chatgpt.js** はシーズン 3 の Artizen で公開中です! AI アプリ開発の将来をサポートするには、**[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** にアクセスして、限定版を 1 つ以上購入してください。 アーティファクト (各 $10 のみ)_
+📣 _**chatgpt.js** はシーズン 3 の Artizen で公開中です! AI アプリ開発の将来をサポートするには、**[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** にアクセスして、限定版を 1 つ以上購入してください。 アーティファクト:_
 
 [![](https://github-production-user-asset-6210df.s3.amazonaws.com/10906554/276135876-b52cf914-929e-4018-adc2-2a47debf24a0.gif)](https://www.artizen.fund/project/chatgpt.js)
 

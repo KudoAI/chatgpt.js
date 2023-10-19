@@ -49,7 +49,7 @@
 
 #
 
-📣 _**chatgpt.js** è ora disponibile su Artizen per la stagione 3! Per supportare il futuro dello sviluppo di app AI, visita **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** per acquistare uno o più prodotti in edizione limitata Manufatti (solo ~$10 ciascuno)_
+📣 _**chatgpt.js** è ora disponibile su Artizen per la stagione 3! Per supportare il futuro dello sviluppo di app AI, visita **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** per acquistare uno o più prodotti in edizione limitata Manufatti:_
 
 [![](https://github-production-user-asset-6210df.s3.amazonaws.com/10906554/276135876-b52cf914-929e-4018-adc2-2a47debf24a0.gif)](https://www.artizen.fund/project/chatgpt.js)
 
