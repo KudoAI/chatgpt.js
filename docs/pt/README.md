@@ -50,7 +50,7 @@
 
 📣 _**chatgpt.js** já está disponível no Artizen para a 3ª temporada! Para apoiar o futuro do desenvolvimento de aplicativos de IA, visite **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** para comprar um ou mais limitados Artefatos:_
 
-[![](https://github-production-user-asset-6210df.s3.amazonaws.com/10906554/276135876-b52cf914-929e-4018-adc2-2a47debf24a0.gif)](https://www.artizen.fund/project/chatgpt.js)
+[![](https://user-images.githubusercontent.com/10906554/276481345-f05f789a-7f17-439e-b0a2-8e05d61286aa.gif)](https://www.artizen.fund/project/chatgpt.js)
 
 </div>
 
