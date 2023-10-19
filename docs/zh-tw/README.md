@@ -48,9 +48,11 @@
 
 #
 
-📣 _**chatgpt.js** 現已在 Artizen 上推出第 3 季！ 為了支援人工智慧應用程式開發的未來，請造訪**[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** 購買一款或多款限量版文物:_
+📣 _**chatgpt.js** 現已在 Artizen 上推出第 3 季！_
 
 [![](https://user-images.githubusercontent.com/10906554/276481345-f05f789a-7f17-439e-b0a2-8e05d61286aa.gif)](https://www.artizen.fund/project/chatgpt.js)
+
+_為了支援人工智慧應用程式開發的未來，請造訪**[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** 購買一款或多款限量版文物。_
 
 </div>
 

@@ -49,9 +49,11 @@
 
 #
 
-📣 _**chatgpt.js** is nu live op Artizen voor seizoen 3! Om de toekomst van de ontwikkeling van AI-apps te ondersteunen, gaat u naar **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** om een of meer beperkte Artefacten:_
+📣 _**chatgpt.js** is nu live op Artizen voor seizoen 3!_
 
 [![](https://user-images.githubusercontent.com/10906554/276481345-f05f789a-7f17-439e-b0a2-8e05d61286aa.gif)](https://www.artizen.fund/project/chatgpt.js)
+
+_Om de toekomst van de ontwikkeling van AI-apps te ondersteunen, gaat u naar **[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** om een of meer beperkte Artefacten._
 
 </div>
 
