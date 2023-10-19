@@ -51,7 +51,7 @@
 
 📣 _**chatgpt.js** はシーズン 3 の Artizen で公開中です!_
 
-[![](https://github-production-user-asset-6210df.s3.amazonaws.com/10906554/276486208-02885093-4903-4c08-b4bd-a2baf0c00a59.gif)](https://www.artizen.fund/project/chatgpt.js)
+[![](https://user-images.githubusercontent.com/10906554/276481345-f05f789a-7f17-439e-b0a2-8e05d61286aa.gif)](https://www.artizen.fund/project/chatgpt.js)
 
 _AI アプリ開発の将来をサポートするには、**[artizen.chatgptjs.org](https://artizen.chatgptjs.org)** にアクセスして、限定版を 1 つ以上購入してください。 アーティファクト._
 
