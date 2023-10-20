@@ -95,12 +95,12 @@ const chatgpt = {
                 + '.chatgpt-modal > div {'
                     + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ;'
                     + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.2s cubic-bezier(.165,.84,.44,1) ;'
-                    + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
+                    + `background-color: ${ scheme === 'dark' ? 'black' : 'white' } ;`
                     + ( width ? `width: ${ width }px` : 'max-width: 458px ') + ' ;'
                     + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) ;'
                     + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; }' // disable selection
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
-                + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
+                + `.chatgpt-modal a { color: ${ scheme === 'dark' ? '#00cfff' : '#1e9ebb' }}`
                 + '.chatgpt-modal.animated > div { opacity: 1 ; transform: translateX(0) translateY(0) }'
                 + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
                     + '50% { opacity: 0.25 ; transform: scale(1.35) }'
@@ -110,23 +110,25 @@ const chatgpt = {
                 + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 }'
                 + '.chatgpt-modal button {'
                     + 'margin-left: 10px ; padding: 4px 18px ; border-radius: 15px ;'
-                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
+                    + `border: 1px solid ${ scheme === 'dark' ? 'white' : 'black' }}`
                 + '.primary-modal-btn {'
-                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
-                    + `background: ${ scheme == 'dark' ? 'white' : 'black' } ;`
-                    + `color: ${ scheme == 'dark' ? 'black' : 'white' }}`
-                + '.chatgpt-modal button:hover { background-color: #42B4BF ; border-color: #42B4BF ; color: black }'
+                    + `border: 1px solid ${ scheme === 'dark' ? 'white' : 'black' } ;`
+                    + `background: ${ scheme === 'dark' ? 'white' : 'black' } ;`
+                    + `color: ${ scheme === 'dark' ? 'black' : 'white' }}`
+                + '.chatgpt-modal button:hover { color: #3d5d71 ; border-color: #6d9cb9 ;'
+                    + 'background-color: ' + ( scheme === 'dark' ? '#00cfff' : '#9cdaff' ) + ';'
+                    + 'box-shadow: 2px 1px 54px ' + ( scheme === 'dark' ? '#00cfff' : '#9cdaff' ) + '}'
                 + '.modal-close-btn { cursor: pointer ; float: right ; position: relative ; right: -2px }'
 
                 /* Checkbox styles */
                 + '.chatgpt-modal .checkbox-group { display: flex ; margin-top: -18px }'
                 + '.chatgpt-modal .checkbox-group label {'
                     + 'font-size: .7rem ; margin: -.04rem 0 0px .3rem ;'
-                    + `color: ${ scheme == 'dark' ? '#e1e1e1' : '#1e1e1e' }}`
+                    + `color: ${ scheme === 'dark' ? '#e1e1e1' : '#1e1e1e' }}`
                 + '.chatgpt-modal input[type="checkbox"] { transform: scale(0.7) ;'
-                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
+                    + `border: 1px solid ${ scheme === 'dark' ? 'white' : 'black' }}`
                 + '.chatgpt-modal input[type="checkbox"]:checked {'
-                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
+                    + `border: 1px solid ${ scheme === 'dark' ? 'white' : 'black' } ;`
                     + 'background-color: black ; position: inherit }'
                 + '.chatgpt-modal input[type="checkbox"]:focus { outline: none ; box-shadow: none }'
             );
@@ -185,7 +187,7 @@ const chatgpt = {
 
         // Create close button
         const closeBtn = document.createElement('div');
-        closeBtn.title = 'Close'; closeBtn.classList.add('modal-close-btn');        
+        closeBtn.title = 'Close'; closeBtn.classList.add('modal-close-btn');
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         closeSVG.setAttribute('height', '10px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
