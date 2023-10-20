@@ -206,6 +206,11 @@ const onLoadObserver = new MutationObserver(() => {
                 });}, { root: null, threshold: 0.02 });
             fadeElements.forEach((element) => { fadeObserver.observe(element); });
 
+            // Change stars shield link to repo
+            const starsShieldLink = document.querySelector('a[href$="stargazers"]'),
+                  href = starsShieldLink.getAttribute('href');
+            starsShieldLink.setAttribute('href', href.replace('/stargazers', ''));
+
             // Establish TRIGGER POINTS for scroll FX
             const triggerElements = [], triggerPoints = [];
             triggerElements.push(...document.querySelectorAll('h2'));
