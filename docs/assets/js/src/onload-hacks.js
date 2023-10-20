@@ -112,10 +112,8 @@ const onLoadObserver = new MutationObserver(() => {
         mdLoaded.then(() => {
 
             // Scroll slightly to overcome Chromium bug preventing parallax
-            if (navigator.userAgent.includes('Chrome')) {
-                window.scrollBy(0, 200)
-                setTimeout(() => window.scrollBy(0, -200), 600)
-            }
+            if (navigator.userAgent.includes('Chrome'))
+                window.scrollBy(0, 200); setTimeout(() => window.scrollBy(0, -200), 600);
 
             // Disable SEARCH
             document.querySelector('.search').style.display = 'none';
