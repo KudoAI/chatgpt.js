@@ -303,11 +303,11 @@ main li pre { margin: 65px 0 !important }
 .token.function, .token.keyword, .token.boolean, .token.number { color: #ffcb00 }
 
 /* Shields */
-#shields { margin: -105px 0 255px }
+#shields { margin: 125px 0 305px }
 #shields img { height: 48px ; margin: 4px -2px }
 
 /* Announcement */
-#announcement { margin-bottom: 424px }
+#announcement { margin-bottom: 474px }
 #announcement > p:nth-of-type(1) em { font-size: 2.4vw }
 #announcement > p:nth-of-type(3) em { font-size: 2vw }
 
@@ -320,7 +320,7 @@ main li pre { margin: 65px 0 !important }
 #feature-list { /* generated in `../../js/src/online-modifier.js` */
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
     font-size: 1.4rem ; color: $green ; position: relative ; float: right ;
-    height: 100px ; top: -311px ; right: -90px ; width: 41% }
+    height: 100px ; top: -311px ; right: -90px ; width: 41% ; margin-bottom: 365px }
 
 /* Headings */
 h2 { padding-top: 211px } /* add gaps for prettier parallax */
