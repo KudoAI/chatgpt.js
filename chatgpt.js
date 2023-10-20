@@ -117,7 +117,7 @@ const chatgpt = {
                     + `color: ${ scheme === 'dark' ? 'black' : 'white' }}`
                 + '.chatgpt-modal button:hover { color: #3d5d71 ; border-color: #6d9cb9 ;'
                     + 'background-color: ' + ( scheme === 'dark' ? '#00cfff' : '#9cdaff' ) + ';'
-                    + 'box-shadow: 2px 1px 54px ' + ( scheme === 'dark' ? '#00cfff' : '#9cdaff' ) + '}'
+                    + 'box-shadow: 2px 1px ' + ( scheme === 'dark' ? '54px #00cfff' : '30px #9cdaff' ) + '}'
                 + '.modal-close-btn { cursor: pointer ; float: right ; position: relative ; right: -2px }'
 
                 /* Checkbox styles */
