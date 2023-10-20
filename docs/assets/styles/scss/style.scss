@@ -303,11 +303,13 @@ main li pre { margin: 65px 0 !important }
 .token.function, .token.keyword, .token.boolean, .token.number { color: #ffcb00 }
 
 /* Shields */
-#shields { margin: -105px 0 433px }
+#shields { margin: -105px 0 255px }
 #shields img { height: 48px ; margin: 4px -2px }
 
-/* Announcements */
-#announcement { display: none }
+/* Announcement */
+#announcement { margin-bottom: 424px }
+#announcement > p:nth-of-type(1) em { font-size: 2.4vw }
+#announcement > p:nth-of-type(3) em { font-size: 2vw }
 
 /* About section */
 #intro + p { /* ABOUT description */
@@ -319,6 +321,9 @@ main li pre { margin: 65px 0 !important }
     font-family: "IBM Plex Mono", "Roboto Mono", Monaco, courier, monospace !important ;
     font-size: 1.4rem ; color: $green ; position: relative ; float: right ;
     height: 100px ; top: -311px ; right: -90px ; width: 41% }
+
+/* Headings */
+h2 { padding-top: 211px } /* add gaps for prettier parallax */
 
 /* Greasemonkey/Chrome sections */
 #-greasemonkey, #-chrome { text-align: center ; margin-bottom: 55px !important }
@@ -364,7 +369,7 @@ a[href="https://chat.openai.com"] img { /* outline ChatGPT's avatar */
 #partners + p { font-size: 2rem !important ; padding: 0 } /* Partners sentence */
 #partners-collage img { margin-top: 8px ; width: 58% ; opacity: .6 }
 #star-history { display: none } /* hide Star History section */
-#footer { text-align: center ; margin: 115px 0 -105px } /* general position */
+#footer { text-align: center ; margin: -96px 0 -105px } /* general position */
 #mc_embed_signup h2 { /* 1st CTA */
     margin: 3rem 0 3.5rem !important ;
     font-size: 2.68rem !important ; color: white ; -webkit-text-stroke: 1px black }
