@@ -321,7 +321,7 @@ const onLoadObserver = new MutationObserver(() => {
                 // Target TRIGGERS
                 const parallaxTriggers = [];
                 document.querySelectorAll('#main, h2, #announcement, #intro + p').forEach(trigger => {
-                    const y = trigger.getBoundingClientRect().top - window.innerHeight / 1.5;
+                    const y = trigger.getBoundingClientRect().top - window.innerHeight / 1.2;
                     const triggerElem = trigger.tagName === 'H2' ? trigger.parentElement : trigger;
                     parallaxTriggers.push({ element: triggerElem, y });
                 });
@@ -350,7 +350,7 @@ const onLoadObserver = new MutationObserver(() => {
                             prevElems.forEach(elem => {
                                 const topGap = trigger.y - window.scrollY,
                                       newOpacity = 1 - Math.abs(topGap) / ( window.innerHeight - 5),
-                                      parallaxOffset = topGap * -0.45;
+                                      parallaxOffset = topGap * -0.55;
                                 try { elem.classList.remove('content-fadeup'); } catch (err) {}
                                 elem.style.opacity = newOpacity;
                                 elem.style.transform = `translateY(${ parallaxOffset }px)`;
