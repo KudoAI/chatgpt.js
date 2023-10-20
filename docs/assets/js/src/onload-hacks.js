@@ -111,6 +111,12 @@ const onLoadObserver = new MutationObserver(() => {
        
         mdLoaded.then(() => {
 
+            // Scroll slightly to overcome Chromium bug preventing parallax
+            if (navigator.userAgent.includes('Chrome')) {
+                window.scrollBy(0, 200)
+                setTimeout(() => window.scrollBy(0, -200), 600)
+            }
+
             // Disable SEARCH
             document.querySelector('.search').style.display = 'none';
             document.querySelector('.sidebar-nav').style.paddingTop = '102px';
@@ -311,9 +317,8 @@ const onLoadObserver = new MutationObserver(() => {
 
                 // Target TRIGGERS
                 const parallaxTriggers = [];
-                document.querySelectorAll('#main, h2').forEach(trigger => {
-                    const y = trigger.getBoundingClientRect().top - window.innerHeight
-                            / ( navigator.userAgent.includes('Chrome') ? 4 : 2 );
+                document.querySelectorAll('#main, h2, #announcement, #intro + p').forEach(trigger => {
+                    const y = trigger.getBoundingClientRect().top - window.innerHeight / 1.5;
                     const triggerElem = trigger.tagName === 'H2' ? trigger.parentElement : trigger;
                     parallaxTriggers.push({ element: triggerElem, y });
                 });
@@ -348,7 +353,7 @@ const onLoadObserver = new MutationObserver(() => {
                                 elem.style.transform = `translateY(${ parallaxOffset }px)`;
                             });
 
-            }});});}, 1500);
+            }});});}, 100);
         });
 
     // Hide SITE LANG SELECTOR from NON-HOME pages
