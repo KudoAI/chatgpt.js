@@ -351,11 +351,12 @@ const onLoadObserver = new MutationObserver(() => {
                                 const topGap = trigger.y - window.scrollY,
                                       newOpacity = 1 - Math.abs(topGap) / ( window.innerHeight - 5),
                                       parallaxOffset = topGap * -0.55,
-                                      scaleDelay = 265, // px from trigger.y to delay scaling
-                                      scale = topGap <= -scaleDelay ? 1 - Math.abs(topGap + scaleDelay) / 5 / window.innerHeight : 1;
+                                      scaleDelay = 285, // px from trigger.y to delay scaling
+                                      scaleFactor = topGap > -scaleDelay ? 1
+                                                  : 1 - Math.abs(topGap + scaleDelay) / 5 / window.innerHeight;
                                 try { elem.classList.remove('content-fadeup'); } catch (err) {}
                                 elem.style.opacity = newOpacity;
-                                elem.style.transform = `translateY(${ parallaxOffset }px) scale(${ scale })`;
+                                elem.style.transform = `translateY(${ parallaxOffset }px) scale(${ scaleFactor })`;
                             });
 
             }});});}, 100);
