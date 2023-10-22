@@ -231,6 +231,7 @@ section.cover p { /* cover tagline size / weight / position */
 .sidebar { background-color: transparent ; padding-right: 5px !important }
 .app-name { display: none }
 .sidebar-nav { padding-top: 20px }
+.sidebar-nav > ul:first-of-type { margin-top: 5vh } /* add gap between logo and links */
 .sidebar a { font-size: 2.1rem !important ; line-height: 3.8rem ; color: white !important }
 .sidebar li.active > a { border-right: 0 !important } /* move line indicator from active links... */
 .sidebar li.nav-active { border-right: 4px solid $green ;  /* ...to active li's */
@@ -242,7 +243,9 @@ section.cover p { /* cover tagline size / weight / position */
 .search { background-color: white ; font-size: 1.3rem }
 .matching-post { transform: scale(.7) ; margin: -31px }
 .app-name-link img { padding: 0 2px }
-.sidebar ul > ul:nth-of-type(2) { display: none } /* hide showcase apps */
+.sidebar-nav > ul > li:first-of-type, /* hide description */
+.sidebar-nav > ul > ul > ul:nth-of-type(2), /* hide showcase apps */
+.sidebar-nav > ul > ul:first-of-type + li { display: none } /* hide mystery <li> before contributors */
 
 /* MAIN */
 
