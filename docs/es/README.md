@@ -49,7 +49,7 @@
 
 <div id="intro">
 
-## Acerca de
+## 💡 Acerca de
 
 </div>
 

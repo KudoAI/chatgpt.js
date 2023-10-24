@@ -49,7 +49,7 @@
 
 <div id="intro">
 
-## About
+## 💡 About
 
 </div>
 
