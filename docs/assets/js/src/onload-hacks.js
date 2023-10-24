@@ -320,7 +320,7 @@ const onLoadObserver = new MutationObserver(() => {
 
                 // Target TRIGGERS
                 const parallaxTriggers = [];
-                document.querySelectorAll('#main, h2, #announcement, #intro + p').forEach(trigger => {
+                document.querySelectorAll('#main, h2:not([id="about"])').forEach(trigger => {
                     const y = trigger.getBoundingClientRect().top - window.innerHeight / 1.2;
                     const triggerElem = trigger.tagName === 'H2' ? trigger.parentElement : trigger;
                     parallaxTriggers.push({ element: triggerElem, y });
@@ -338,7 +338,7 @@ const onLoadObserver = new MutationObserver(() => {
                                 prevElems.push(document.querySelector('.cover-main'));
                             else { // target previous 6 siblings
                                 let currentElem = trigger.element.previousElementSibling;
-                                for (let i = 0; i < 6; i++) {
+                                for (let i = 0; i < 7; i++) {
                                     if (currentElem) {
                                         prevElems.push(currentElem);
                                         currentElem = currentElem.previousElementSibling;
