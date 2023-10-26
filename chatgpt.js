@@ -1147,7 +1147,22 @@ const chatgpt = {
         const notificationDiv = document.createElement('div'); // make div
         notificationDiv.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
         notificationDiv.classList.add('chatgpt-notif');
+        notificationDiv.innerText = msg; // insert msg
         document.body.appendChild(notificationDiv); // insert into DOM
+
+        // Create/append close button
+        const closeBtn = document.createElement('div');
+        closeBtn.title = 'Dismiss'; closeBtn.classList.add('notif-close-btn');
+        const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        closeSVG.setAttribute('height', '7px');
+        closeSVG.setAttribute('viewBox', '0 0 14 14');
+        closeSVG.setAttribute('fill', 'none');
+        const closeSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        closeSVGpath.setAttribute('fill-rule', 'evenodd');
+        closeSVGpath.setAttribute('clip-rule', 'evenodd');
+        closeSVGpath.setAttribute('fill', 'white');
+        closeSVGpath.setAttribute('d', 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z');
+        closeSVG.appendChild(closeSVGpath); closeBtn.appendChild(closeSVG); notificationDiv.appendChild(closeBtn);
 
         // Determine div position/quadrant
         notificationDiv.isTop = !position || !/low|bottom/i.test(position);
@@ -1156,16 +1171,18 @@ const chatgpt = {
                                  + (notificationDiv.isRight ? 'Right' : 'Left');
 
         // Create/append notification style (if missing)
-        const lastEditDate = 20231015;
+        const lastEditDate = 20231025;
         if (!document.querySelector(`#chatgpt-notif-style-${ lastEditDate }`)) {
             const notifStyle = document.createElement('style');
             notifStyle.id = `chatgpt-notif-style-${ lastEditDate }`;
             notifStyle.innerText = '.chatgpt-notif {'
-                + 'background-color: black ; padding: 10px 13px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
+                + 'background-color: black ; padding: 10px 13px 10px 18px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
                 + 'opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ;' // visibility
                 + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;' // disable selection
                 + `transform: translateX(${ !notificationDiv.isRight ? '-' : '' }35px) ;` // init off-screen for transition fx
                 + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ) + '}'
+            + '.notif-close-btn { cursor: pointer ; float: right ; position: relative ; right: -7px ; margin-left: -3px ;'
+                + 'display: grid }' // top-align for non-OpenAI sites
             + '@keyframes notif-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }' // transition out keyframes
                 + '15% { opacity: 0.35 ; transform: rotateX(-27deg) scale(1.05) }'
                 + '45% { opacity: 0.05 ; transform: rotateX(-81deg) }'
@@ -1198,7 +1215,6 @@ const chatgpt = {
         }
 
         // Show notification
-        notificationDiv.innerText = msg; // insert msg
         setTimeout(() => {
             notificationDiv.style.opacity = 1; // show msg
             notificationDiv.style.transform = 'translateX(0)'; // bring from off-screen
@@ -1210,7 +1226,8 @@ const chatgpt = {
                         : notifDuration - fadeDuration; // otherwise delay for difference
 
         // Init/schedule audio feedback
-        if (!/Chrome/.test(navigator.userAgent)) { // ...if not Chromium due to Google's hardcore stance on CSP + autoplay
+        let dismissAudio, dismissAudioTID; // be accessible to `dismissNotif()`
+        if (!/Chrome/.test(navigator.userAgent)) { // if not Chromium due to Google's hardcore stance on CSP + autoplay
 
             // Init base audio index
             let nthAudio; do nthAudio = Math.floor(Math.random() * 3) + 1; // randomize  between 1-3...
@@ -1218,17 +1235,22 @@ const chatgpt = {
             notifyProps.lastNthAudio = nthAudio; localStorage.notifyProps = JSON.stringify(notifyProps);
 
             // Build audio element + src URL
-            const fadeOutAudio = new Audio();
-            fadeOutAudio.src = endpoints.assets + '/media/audio/notifications/bubble-pop/'
+            dismissAudio = new Audio();
+            dismissAudio.src = endpoints.assets + '/media/audio/notifications/bubble-pop/'
                              + `${ nthAudio }-${ notificationDiv.isRight ? 'right' : 'left' }.mp3`;
 
             // Schedule playback
-            setTimeout(() => { fadeOutAudio.play().catch(() => {}); }, hideDelay * 1000);
+            dismissAudioTID = setTimeout(() => dismissAudio.play().catch(() => {}), hideDelay * 1000);
         }
 
-        // Hide notification
-        setTimeout(() => { // maintain visibility for `hideDelay` secs, then transition out
-            notificationDiv.style.animation = `notif-zoom-fade-out ${ fadeDuration }s ease-out`; }, hideDelay * 1000);
+        // Add notification dismissal to timeout schedule + button clicks
+        const dismissNotif = () => {
+            notificationDiv.style.animation = `notif-zoom-fade-out ${ fadeDuration }s ease-out`;
+            if (!/Chrome/.test(navigator.userAgent)) dismissAudio.play().catch(() => {});
+            clearTimeout(dismissFuncTID); clearTimeout(dismissAudioTID);
+        };
+        const dismissFuncTID = setTimeout(dismissNotif, hideDelay * 1000); // maintain visibility for `hideDelay` secs, then dismiss     
+        closeSVG.addEventListener('click', dismissNotif, { once: true }); // add to close button clicks
 
         // Destroy notification
         notificationDiv.addEventListener('animationend', () => {
