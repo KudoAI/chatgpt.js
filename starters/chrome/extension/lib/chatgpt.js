@@ -1154,7 +1154,7 @@ const chatgpt = {
         const closeBtn = document.createElement('div');
         closeBtn.title = 'Dismiss'; closeBtn.classList.add('notif-close-btn');
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        closeSVG.setAttribute('height', '7px');
+        closeSVG.setAttribute('height', '8px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
         closeSVG.setAttribute('fill', 'none');
         const closeSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -1181,7 +1181,7 @@ const chatgpt = {
                 + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;' // disable selection
                 + `transform: translateX(${ !notificationDiv.isRight ? '-' : '' }35px) ;` // init off-screen for transition fx
                 + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ) + '}'
-            + '.notif-close-btn { cursor: pointer ; float: right ; position: relative ; right: -7px ; margin-left: -3px ;'
+            + '.notif-close-btn { cursor: pointer ; float: right ; position: relative ; right: -4px ; margin-left: -3px ;'
                 + 'display: grid }' // top-align for non-OpenAI sites
             + '@keyframes notif-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }' // transition out keyframes
                 + '15% { opacity: 0.35 ; transform: rotateX(-27deg) scale(1.05) }'
