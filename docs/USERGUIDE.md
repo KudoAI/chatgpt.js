@@ -189,7 +189,6 @@ export { chatgpt }
 ```
 
 4. In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
->>>>>>> Stashed changes
 ```js
 (async () => {
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
