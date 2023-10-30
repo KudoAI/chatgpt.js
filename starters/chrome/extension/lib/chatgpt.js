@@ -24,8 +24,8 @@ localStorage.notifyProps = JSON.stringify({
 
 // Define messages
 let cjsMessages;
-const isFFtmScript = navigator.userAgent.includes('Firefox') && typeof GM_info !== 'undefined' && GM_info.scriptHandler === 'Tampermonkey',
-      isChromeExt = navigator.userAgent.includes('Chrome') && typeof unsafeWindow === 'undefined';
+const isFFtmScript = navigator.userAgent.includes('Firefox') && typeof GM_info !== 'undefined' && GM_info.scriptHandler == 'Tampermonkey',
+      isChromeExt = navigator.userAgent.includes('Chrome') && typeof unsafeWindow == 'undefined';
 if (isChromeExt || isFFtmScript) { (async () => {
     const cjsMsgsLoaded = new Promise(resolve => {
         const userLanguage = navigator.languages[0] || navigator.language || navigator.browserLanguage ||
@@ -40,12 +40,12 @@ if (isChromeExt || isFFtmScript) { (async () => {
                 try { // to return localized messages.json
                     const messages = new Proxy(JSON.parse(xhr.responseText), {
                         get(target, prop) { // remove need to ref nested keys
-                            if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
+                            if (typeof target[prop] == 'object' && target[prop] !== null && 'message' in target[prop]) {
                                 return target[prop].message;
                     }}}); resolve(messages);
                 } catch (err) {
                     msgXHRtries++; if (msgXHRtries === 3) resolve({}); // try up to 3X (original/region-stripped/EN) only
-                    msgHref = userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                    msgHref = userLanguage.includes('-') && msgXHRtries === 1 ? // if regional lang on 1st try...
                         msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
                             : ( msgHostDir + 'en/messages.json' ); // else use default English messages
                     loadMsgs();
@@ -77,7 +77,7 @@ const chatgpt = {
                         console.log(`%c${ prompt.title }`, 'font-family: monospace ; font-size: larger ;');
                     return resolve();
                 }
-                const selectedPrompt = data.find(obj => obj.title.toLowerCase() === persona.toLowerCase());
+                const selectedPrompt = data.find(obj => obj.title.toLowerCase() == persona.toLowerCase());
                 if (!selectedPrompt)
                     return reject(`🤖 chatgpt.js >> Persona '${ persona }' was not found!`);
                 chatgpt.send(selectedPrompt.prompt, 'click');
@@ -129,11 +129,11 @@ const chatgpt = {
                 + '.chatgpt-modal > div {'
                     + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ;'
                     + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.2s cubic-bezier(.165,.84,.44,1) ;'
-                    + `background-color: ${ scheme === 'dark' ? 'black' : 'white' } ;`
+                    + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
                     + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) ;'
                     + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; }' // disable selection
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
-                + `.chatgpt-modal a { color: ${ scheme === 'dark' ? '#00cfff' : '#1e9ebb' }}`
+                + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
                 + '.chatgpt-modal.animated > div { opacity: 1 ; transform: translateX(0) translateY(0) }'
                 + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
                     + '50% { opacity: 0.25 ; transform: scale(1.35) }'
@@ -143,25 +143,25 @@ const chatgpt = {
                 + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 }'
                 + '.chatgpt-modal button {'
                     + 'margin-left: 10px ; padding: 4px 18px ; border-radius: 15px ;'
-                    + `border: 1px solid ${ scheme === 'dark' ? 'white' : 'black' }}`
+                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
                 + '.primary-modal-btn {'
-                    + `border: 1px solid ${ scheme === 'dark' ? 'white' : 'black' } ;`
-                    + `background: ${ scheme === 'dark' ? 'white' : 'black' } ;`
-                    + `color: ${ scheme === 'dark' ? 'black' : 'white' }}`
+                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
+                    + `background: ${ scheme == 'dark' ? 'white' : 'black' } ;`
+                    + `color: ${ scheme == 'dark' ? 'black' : 'white' }}`
                 + '.chatgpt-modal button:hover { color: #3d5d71 ; border-color: #6d9cb9 ;'
-                    + 'background-color: ' + ( scheme === 'dark' ? '#00cfff' : '#9cdaff' ) + ';'
-                    + 'box-shadow: 2px 1px ' + ( scheme === 'dark' ? '54px #00cfff' : '30px #9cdaff' ) + '}'
+                    + 'background-color: ' + ( scheme == 'dark' ? '#00cfff' : '#9cdaff' ) + ';'
+                    + 'box-shadow: 2px 1px ' + ( scheme == 'dark' ? '54px #00cfff' : '30px #9cdaff' ) + '}'
                 + '.modal-close-btn { cursor: pointer ; float: right ; position: relative ; right: -2px }'
 
                 /* Checkbox styles */
                 + '.chatgpt-modal .checkbox-group { display: flex ; margin-top: -18px }'
                 + '.chatgpt-modal .checkbox-group label {'
                     + 'font-size: .7rem ; margin: -.04rem 0 0px .3rem ;'
-                    + `color: ${ scheme === 'dark' ? '#e1e1e1' : '#1e1e1e' }}`
+                    + `color: ${ scheme == 'dark' ? '#e1e1e1' : '#1e1e1e' }}`
                 + '.chatgpt-modal input[type="checkbox"] { transform: scale(0.7) ;'
-                    + `border: 1px solid ${ scheme === 'dark' ? 'white' : 'black' }}`
+                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
                 + '.chatgpt-modal input[type="checkbox"]:checked {'
-                    + `border: 1px solid ${ scheme === 'dark' ? 'white' : 'black' } ;`
+                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
                     + 'background-color: black ; position: inherit }'
                 + '.chatgpt-modal input[type="checkbox"]:focus { outline: none ; box-shadow: none }'
             );
@@ -245,7 +245,7 @@ const chatgpt = {
 
         // Define handlers
         const clickHandler = event => { // explicitly defined to support removal post-dismissal
-            if (event.target === event.currentTarget || event.target instanceof SVGPathElement) dismissAlert(); };
+            if (event.target == event.currentTarget || event.target instanceof SVGPathElement) dismissAlert(); };
         const keyHandler = event => { // to dismiss active alert
             const dismissKeys = [13, 27]; // enter/esc
             if (dismissKeys.includes(event.keyCode)) {
@@ -387,7 +387,7 @@ const chatgpt = {
         if (method && !validMethods.includes(method))
             return console.log(`Method argument must be one of: [${ validMethods }]`);
 
-        if (method === 'dom') {
+        if (method == 'dom') {
             try { await chatgpt.getChatData(); } catch { return; } // check if chat history exists
             chatgpt.menu.open();
             setTimeout(() => {
@@ -631,7 +631,7 @@ const chatgpt = {
         // Validate targetName scoped to pre-validated targetType
         const targetNames = [], reTargetName = new RegExp('^get(.*)' + targetType + '$', 'i');
         for (const prop in chatgpt) {
-            if (typeof chatgpt[prop] === 'function' && reTargetName.test(prop)) {
+            if (typeof chatgpt[prop] == 'function' && reTargetName.test(prop)) {
                 targetNames.push( // add found targetName to valid array
                     prop.replace(reTargetName, '$1').toLowerCase());
         }}
@@ -644,7 +644,7 @@ const chatgpt = {
         // Call target function using pre-validated name components
         const targetFuncNameLower = ('get' + targetName + targetType).toLowerCase();
         const targetFuncName = Object.keys(this).find( // find originally cased target function name
-            (name) => { return name.toLowerCase() === targetFuncNameLower; }); // test for match
+            (name) => { return name.toLowerCase() == targetFuncNameLower; }); // test for match
         return this[targetFuncName](); // call found function
     },
 
@@ -732,10 +732,10 @@ const chatgpt = {
             if (!validDetails.includes(detail)) { return console.error(
                 'Invalid detail arg \'' + detail + '\' passed. Valid details are:\n'
               + '                    [' + validDetails + ']'); }}
-        if (sender === 'invalid') { return console.error(
+        if (sender == 'invalid') { return console.error(
             'Invalid sender arg passed. Valid senders are:\n'
           + '                    [' + validSenders + ']'); }
-        if (msgToGet === 'invalid') { return console.error(
+        if (msgToGet == 'invalid') { return console.error(
             'Invalid msgToGet arg passed. Valid msg\'s to get are:\n'
           + '                    [ \'all\' | \'latest\' | index of msg to get ]'); }
 
@@ -771,7 +771,7 @@ const chatgpt = {
                         chatToGet = re_chatID.exec(window.location.href)[0];
                     let idx, chatFound; // index of potentially found chat, flag if found
                     for (idx = 0; idx < data.length; idx++) { // search for id/title to set chatFound flag
-                        if (data[idx][chatIdentifier] === chatToGet) { chatFound = true; break; }}
+                        if (data[idx][chatIdentifier] == chatToGet) { chatFound = true; break; }}
                     if (!chatFound) // exit
                         return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatToGet + ' found.');
                     for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail];
@@ -797,7 +797,7 @@ const chatgpt = {
 
                         // Fill [userMessages]
                         for (const key in data)
-                            if ('message' in data[key] && data[key].message.author.role === 'user')
+                            if ('message' in data[key] && data[key].message.author.role == 'user')
                                 userMessages.push({ id: data[key].id, msg: data[key].message });
                         userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time); // sort in chronological order
 
@@ -809,7 +809,7 @@ const chatgpt = {
                         for (const userMessage of userMessages) {
                             let sub = [];
                             for (const key in data) {
-                                if ('message' in data[key] && data[key].message.author.role === 'assistant' && data[key].parent === userMessage.id) {
+                                if ('message' in data[key] && data[key].message.author.role == 'assistant' && data[key].parent == userMessage.id) {
                                     sub.push(data[key].message);
                                 }
                             }
@@ -819,24 +819,24 @@ const chatgpt = {
                             chatGPTMessages.push(sub); // array of arrays (length > 1 = regenerated responses)
                         }
 
-                        if (sender === 'user') // Fill [msgsToReturn] with user messages
+                        if (sender == 'user') // Fill [msgsToReturn] with user messages
                             for (const userMessage in userMessages)
                                 msgsToReturn.push(userMessages[userMessage].msg.content.parts[0]);
-                        else if (sender === 'chatgpt') // Fill [msgsToReturn] with ChatGPT responses
+                        else if (sender == 'chatgpt') // Fill [msgsToReturn] with ChatGPT responses
                             for (const chatGPTMessage of chatGPTMessages)
-                                msgsToReturn.push(msgToGet === 'latest' ? chatGPTMessages[chatGPTMessages.length - 1] : chatGPTMessage );
+                                msgsToReturn.push(msgToGet == 'latest' ? chatGPTMessages[chatGPTMessages.length - 1] : chatGPTMessage );
                         else { // Fill [msgsToReturn] with objects of user messages and chatgpt response(s)
                             let i = 0;
                             for (const message in userMessages) {
                                 msgsToReturn.push({
                                     user: userMessages[message].msg.content.parts[0],
-                                    chatgpt: msgToGet === 'latest' ? chatGPTMessages[i][chatGPTMessages[i].length - 1] : chatGPTMessages[i]
+                                    chatgpt: msgToGet == 'latest' ? chatGPTMessages[i][chatGPTMessages[i].length - 1] : chatGPTMessages[i]
                                 });
                                 i++;
                             }
                         }
-                        return resolve(msgToGet === 'all' ? msgsToReturn // if 'all' passed, return array
-                                     : msgToGet === 'latest' ? msgsToReturn[msgsToReturn.length - 1] // else if 'latest' passed, return latest
+                        return resolve(msgToGet == 'all' ? msgsToReturn // if 'all' passed, return array
+                                     : msgToGet == 'latest' ? msgsToReturn[msgsToReturn.length - 1] // else if 'latest' passed, return latest
                                      : msgsToReturn[msgToGet] ); // else return element of array
                     };
                     xhr.send();
@@ -935,8 +935,8 @@ const chatgpt = {
                     const instructionsData = await this.fetchData();
 
                     // Concatenate old instructions with new instruction
-                    if (target === 'user') instructionsData.about_user_message += instruction;
-                    else if (target === 'chatgpt') instructionsData.about_model_message += instruction;
+                    if (target == 'user') instructionsData.about_user_message += instruction;
+                    else if (target == 'chatgpt') instructionsData.about_model_message += instruction;
 
                     await this.sendRequest('POST', token, instructionsData);
                     return resolve();
@@ -957,8 +957,8 @@ const chatgpt = {
                     const instructionsData = await this.fetchData();
 
                     // Clear target's instructions
-                    if (target === 'user') instructionsData.about_user_message = '';
-                    else if (target === 'chatgpt') instructionsData.about_model_message = '';
+                    if (target == 'user') instructionsData.about_user_message = '';
+                    else if (target == 'chatgpt') instructionsData.about_model_message = '';
 
                     await this.sendRequest('POST', token, instructionsData);
                     return resolve();
@@ -992,13 +992,13 @@ const chatgpt = {
                 // Set headers
                 xhr.setRequestHeader('Accept-Language', 'en-US');
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                if (method === 'POST') xhr.setRequestHeader('Content-Type', 'application/json');
+                if (method == 'POST') xhr.setRequestHeader('Content-Type', 'application/json');
 
                 xhr.onload = () => {
                     const responseData = JSON.parse(xhr.responseText);
                     if (xhr.status === 422)
                         return reject('🤖 chatgpt.js >> Character limit exceeded. Custom instructions can have a maximum length of 1500 characters.');
-                    else if (xhr.status === 403 && responseData.detail.reason === 'content_policy')
+                    else if (xhr.status === 403 && responseData.detail.reason == 'content_policy')
                         return reject('🤖 chatgpt.js >> ' + responseData.detail.description);
                     else if (xhr.status !== 200)
                         return reject('🤖 chatgpt.js >> Request failed. Cannot contact custom instructions endpoint.');
@@ -1086,35 +1086,35 @@ const chatgpt = {
                 return console.error(`🤖 chatgpt.js >> Invalid element! Valid elements are [${validElements}]`);
 
             const newElement = document.createElement(
-                element === 'dropdown' ? 'select' :
-                element === 'button' ? 'a' : element
+                element == 'dropdown' ? 'select' :
+                element == 'button' ? 'a' : element
             );
             newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // add random id to the element
 
-            if (element === 'button') {
-                newElement.textContent = attrs?.label && typeof attrs.label === 'string'
+            if (element == 'button') {
+                newElement.textContent = attrs?.label && typeof attrs.label == 'string'
                     ? attrs.label
                     : 'chatgpt.js button';
 
                 const icon = document.createElement('img');
-                icon.src = attrs?.icon && typeof attrs.icon === 'string' // can also be base64 encoded image string
+                icon.src = attrs?.icon && typeof attrs.icon == 'string' // can also be base64 encoded image string
                     ? attrs.icon // add icon to button element if given, else default one
                     : ( endpoints.assets + '/starters/chrome/extension/icons/icon128.png' );
                 icon.width = 18;
                 newElement.insertBefore(icon, newElement.firstChild);
 
-                newElement.onclick = attrs?.onclick && typeof attrs.onclick === 'function'
+                newElement.onclick = attrs?.onclick && typeof attrs.onclick == 'function'
                     ? attrs.onclick
                     : function() {};
             }
 
-            else if (element === 'dropdown') {
+            else if (element == 'dropdown') {
                 if (!attrs?.items || // there no are options to add 
                     !Array.isArray(attrs.items) || // it's not an array
                     !attrs.items.length) // the array is empty
                         attrs.items = [{ text: '🤖 chatgpt.js option', value: 'chatgpt.js option value' }]; // set default dropdown entry
 
-                if (!attrs.items.every(el => typeof el === 'object')) // the entries of the array are not objects
+                if (!attrs.items.every(el => typeof el == 'object')) // the entries of the array are not objects
                     return console.error('\'items\' must be an array of objects!');
 
                 newElement.style = 'background-color: #000; width: 100%; border: none;';
@@ -1132,7 +1132,7 @@ const chatgpt = {
                 let cssClasses;
         
                 for (let navLink of optionButtons)
-                    if (navLink.textContent === 'Settings') {
+                    if (navLink.textContent == 'Settings') {
                         cssClasses = navLink.classList;
                         break; }
 
@@ -1279,7 +1279,7 @@ const chatgpt = {
         // Add notification dismissal to timeout schedule + button clicks
         const dismissNotif = () => {
             notificationDiv.style.animation = `notif-zoom-fade-out ${ fadeDuration }s ease-out`;
-            if (!/Chrome/.test(navigator.userAgent)) dismissAudio.play().catch(() => {});
+            if (isFFtmScript) dismissAudio?.play().catch(() => {});
             clearTimeout(dismissFuncTID); clearTimeout(dismissAudioTID);
         };
         const dismissFuncTID = setTimeout(dismissNotif, hideDelay * 1000); // maintain visibility for `hideDelay` secs, then dismiss     
@@ -1315,13 +1315,13 @@ const chatgpt = {
         // Create [functionNames]
         const functionNames = [];
         for (const prop in this) {
-            if (typeof this[prop] === 'function') {
+            if (typeof this[prop] == 'function') {
                 const chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name)),
                       functionParent = chatgptIsParent ? 'chatgpt' : 'other';
                 functionNames.push([functionParent, prop]);
-            } else if (typeof this[prop] === 'object') {
+            } else if (typeof this[prop] == 'object') {
                 for (const nestedProp in this[prop]) {
-                    if (typeof this[prop][nestedProp] === 'function') {
+                    if (typeof this[prop][nestedProp] == 'function') {
                         functionNames.push([prop, nestedProp]);
         }}}}
         functionNames.sort((a, b) => { return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]); });
@@ -1332,14 +1332,14 @@ const chatgpt = {
         console.log('\n%c🤖 chatgpt.js methods\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
         for (const functionName of functionNames) {
             const isChatGptObjParent = /chatgpt|other/.test(functionName[0]),
-                  rootFunction = ( functionName[0] === 'chatgpt' ? this[functionName[1]].name
+                  rootFunction = ( functionName[0] == 'chatgpt' ? this[functionName[1]].name
                     : functionName[0] !== 'other' ? functionName[0] + '.' + functionName[1]
                     : (( Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[functionName[1]].name)) + '.' )
                         + this[functionName[1]].name )),
-                  isAsync = this[functionName[1]]?.constructor.name === 'AsyncFunction';
+                  isAsync = this[functionName[1]]?.constructor.name == 'AsyncFunction';
             console.log('%c>> %c' + ( isChatGptObjParent ? '' : `${ functionName[0] }.%c`) + functionName[1]
                     + ' - https://chatgptjs.org/userguide/' + /(?:.*\.)?(.*)/.exec(rootFunction)[1].toLowerCase() + ( isAsync ? '-async' : '' ) + '\n%c[%c'
-                + ((( functionName[0] === 'chatgpt' && functionName[1] === this[functionName[1]].name ) || // parent is chatgpt + names match or
+                + ((( functionName[0] == 'chatgpt' && functionName[1] == this[functionName[1]].name ) || // parent is chatgpt + names match or
                     !isChatGptObjParent) // parent is chatgpt.obj
                         ? 'Function' : 'Alias of' ) + '%c: %c'
                 + rootFunction + '%c]',
@@ -1391,7 +1391,7 @@ const chatgpt = {
         for (const childNode of nodeContent) {
 
             // Process text node
-            if (childNode.nodeType === Node.TEXT_NODE) {
+            if (childNode.nodeType == Node.TEXT_NODE) {
                 const text = childNode.nodeValue,
                       elems = Array.from(text.matchAll(reTags));
 
@@ -1421,7 +1421,7 @@ const chatgpt = {
                 }
 
             // Process element nodes recursively
-            } else if (childNode.nodeType === Node.ELEMENT_NODE) this.renderHTML(childNode);
+            } else if (childNode.nodeType == Node.ELEMENT_NODE) this.renderHTML(childNode);
         }
 
         return node; // if assignment used
@@ -1540,7 +1540,7 @@ const chatgpt = {
 
                 // Determine scheme to set
                 let schemeToSet = value;
-                if (value === 'system') schemeToSet = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                if (value == 'system') schemeToSet = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                 localStorage.setItem('theme', value);
                 console.info(`Scheme set to ${ value.toUpperCase() }.`);
 
@@ -1685,8 +1685,8 @@ const chatgpt = {
             // Create MutationObserver instance
             this.observer = new MutationObserver(mutations => {
                 mutations.forEach(mutation => {
-                    if ((mutation.type === 'childList' && mutation.addedNodes.length) ||
-                        (mutation.type === 'attributes' && mutation.attributeName === 'data-chatgptjs')) // check for trigger
+                    if ((mutation.type == 'childList' && mutation.addedNodes.length) ||
+                        (mutation.type == 'attributes' && mutation.attributeName == 'data-chatgptjs')) // check for trigger
                         // Try to insert each element...
                         this.elements.forEach(element => {
                             // ...if it's not already present...
@@ -1716,33 +1716,33 @@ const chatgpt = {
             if (!validElements.includes(element)) // Element not in list
                 return console.error(`🤖 chatgpt.js >> Invalid element! Valid elements are [${validElements}]`);
 
-            const newElement = document.createElement(element === 'dropdown' ? 'select' : element);
+            const newElement = document.createElement(element == 'dropdown' ? 'select' : element);
             newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // Add random id to the element
 
-            if (element === 'button') {
-                newElement.textContent = attrs?.label && typeof attrs.label === 'string'
+            if (element == 'button') {
+                newElement.textContent = attrs?.label && typeof attrs.label == 'string'
                     ? attrs.label
                     : 'chatgpt.js button';
 
                 const icon = document.createElement('img');
-                icon.src = attrs?.icon && typeof attrs.icon === 'string' // Can also be base64 encoded image string
+                icon.src = attrs?.icon && typeof attrs.icon == 'string' // Can also be base64 encoded image string
                     ? attrs.icon // Add icon to button element if given, else default one
                     : ( endpoints.assets + '/starters/chrome/extension/icons/icon128.png' );
                 icon.width = 18;
                 newElement.insertBefore(icon, newElement.firstChild);
 
-                newElement.onclick = attrs?.onclick && typeof attrs.onclick === 'function'
+                newElement.onclick = attrs?.onclick && typeof attrs.onclick == 'function'
                     ? attrs.onclick
                     : function() {};
             }
 
-            else if (element === 'dropdown') {
+            else if (element == 'dropdown') {
                 if (!attrs?.items || // There no are options to add 
                     !Array.isArray(attrs.items) || // It's not an array
                     !attrs.items.length) // The array is empty
                         attrs.items = [{ text: '🤖 chatgpt.js option', value: 'chatgpt.js option value' }]; // Set default dropdown entry
 
-                if (!attrs.items.every(el => typeof el === 'object')) // The entries of the array are not objects
+                if (!attrs.items.every(el => typeof el == 'object')) // The entries of the array are not objects
                     return console.error('\'items\' must be an array of objects!');
 
                 attrs.items.forEach(item => {
@@ -1755,7 +1755,7 @@ const chatgpt = {
                         
 
             // Fix for blank background on dropdown elements
-            if (element === 'dropdown') newElement.style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))';
+            if (element == 'dropdown') newElement.style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))';
 
             this.elements.push(newElement);
             this.activateObserver();
@@ -1880,7 +1880,7 @@ for (const buttonAction of buttonActions) {
                 for (const navLink of document.querySelectorAll('nav a')) { // try nav links if no button
                     if (navLink.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
                         return navLink; }}})();
-        if (buttonAction === 'click') { button.click(); } else { return button; }
+        if (buttonAction == 'click') { button.click(); } else { return button; }
     };
 }
 
@@ -1937,7 +1937,7 @@ const synonyms = [
     ['unminify', 'beautify', 'prettify', 'prettyPrint']
 ];
 const camelCaser = (words) => {
-    return words.map((word, index) => index === 0 || word === 's' ? word : word.charAt(0).toUpperCase() + word.slice(1)).join(''); };
+    return words.map((word, index) => index === 0 || word == 's' ? word : word.charAt(0).toUpperCase() + word.slice(1)).join(''); };
 for (const prop in chatgpt) {
 
     // Create new function for each alias
@@ -1958,14 +1958,14 @@ for (const prop in chatgpt) {
     do { // create new function per synonym per word per function
         var newFunctionsCreated = false;
         for (const funcName in chatgpt) {
-            if (typeof chatgpt[funcName] === 'function') {
+            if (typeof chatgpt[funcName] == 'function') {
                 const funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
                 for (const funcWord of funcWords) {
                     const synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
                         .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
                         .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
                     for (const synonym of synonymValues) { // create function per synonym
-                        const newFuncName = camelCaser(funcWords.map(word => (word === funcWord ? synonym : word)));
+                        const newFuncName = camelCaser(funcWords.map(word => (word == funcWord ? synonym : word)));
                         if (!chatgpt[newFuncName]) { // don't alias existing functions
                             chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
                             newFunctionsCreated = true;
