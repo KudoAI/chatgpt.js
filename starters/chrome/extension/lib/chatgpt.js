@@ -22,11 +22,14 @@ localStorage.notifyProps = JSON.stringify({
     lastNthAudio: 0 // to prevent immediate repetition of base sound
 });
 
+// Init GM environment flags
+const isChromeUserScript = navigator.userAgent.includes('Chrome') && typeof unsafeWindow != 'undefined',
+      isFFuserScript = navigator.userAgent.includes('Firefox') && typeof GM_info != 'undefined',
+      isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
+
 // Define messages
 let cjsMessages;
-const isFFtmScript = navigator.userAgent.includes('Firefox') && typeof GM_info !== 'undefined' && GM_info.scriptHandler == 'Tampermonkey',
-      isChromeExt = navigator.userAgent.includes('Chrome') && typeof unsafeWindow == 'undefined';
-if (isChromeExt || isFFtmScript) { (async () => {
+if (!isChromeUserScript && !(isFFuserScript && !isFFtmScript)) { (async () => {
     const cjsMsgsLoaded = new Promise(resolve => {
         const userLanguage = navigator.languages[0] || navigator.language || navigator.browserLanguage ||
                              navigator.systemLanguage || navigator.userLanguage || '',
