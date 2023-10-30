@@ -115,8 +115,6 @@ Greasy Fork のようなユーザースクリプト リポジトリは、事前�
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
-Google は [最終的に段階的に廃止](https://developer.chrome.com/docs/extensions/migating/mv2-sunset/) Manifest V2 を行うため、リモート コードは許可されなくなります。そのため、chatgpt.js をローカルにインポートすることが理想的です:
-
 > **ノート** _スターター テンプレートを使用するには: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
 1. https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js をサブディレクトリ (この例では `lib`) に保存します

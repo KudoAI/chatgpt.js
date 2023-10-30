@@ -115,8 +115,6 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
-चूंकि Google [अंततः चरणबद्ध तरीके से समाप्त](https://developer.chrome.com/docs/extensions/migrate/mv2-sunset/) मेनिफेस्ट V2, रिमोट कोड की अनुमति नहीं दी जाएगी, इसलिए स्थानीय रूप से चैटजीपीटी.जेएस इम्पोर्ट करना सहिहै है:
-
 > **टिप्पणी** _स्टार्टर टेम्पलेट का उपयोग करने के लिए: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
 1. https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js ये लिंक को अपने सब डायरेक्टरी में सेव करे (इस उदाहरण में यह `lib` है)

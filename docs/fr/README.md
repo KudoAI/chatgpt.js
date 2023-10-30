@@ -117,8 +117,6 @@ Si vous ne prévoyez pas de publier sur ces dépôts, le plus simple `https://co
 
 > **Remarque** _Pour utiliser un modèle de démarrage: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
-Étant donné que Google va [éventuellement supprimer](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/) Manifest V2, le code distant ne sera plus autorisé, donc l'idéal est d'importer localement chatgpt.js:
-
 1. Enregistrez https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js dans un sous-répertoire (`lib` dans cet exemple)
 
 2. Ajouter l'instruction d'exportation ES6 à la fin de `lib/chatgpt.js`

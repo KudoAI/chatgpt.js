@@ -117,9 +117,6 @@ function yourCode() {
 
 > **टिप्पणी** _स्टार्टर टेम्प्लेट प्रयोग गर्न: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
-Google ले [अंततः चरणबद्ध तरीकाले](https://developer.chrome.com/docs/extensions/migrate/mv2-sunset/) मेनिफेस्ट V2 लाई फेजआउट गर्ने भएकोले, रिमोट कोडलाई अब अनुमति दिइने छैन, त्यसैले स्थानीय रूपमा chatgpt.js इम्पोर्ट गर्नु उपयुक्त छ:
-
-
 1. https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js यो लिङ्क तपाईंको आफ्‍नो सब डायरेक्टरी मा सेव गर्नुहोस् (यो उदाहरण मा `lib` हो)
 
 2. ES6 को एक्सपोर्ट स्टेटमेंट `lib/chatgpt.js` को अन्‍त्‍यमा राख्‍नुहोस् |
