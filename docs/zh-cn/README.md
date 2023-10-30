@@ -117,25 +117,7 @@ function yourCode() {
 
 > **笔记** _使用入门模板: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
-由于 Google [最终将逐步淘汰](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/) Manifest V2，远程代码将不再被允许，因此在本地导入 chatgpt.js 是理想的:
-
-1. 将 https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js 保存到子目录 (本例中为 `lib`)
-
-2. 将 ES6 导出语句添加到 `lib/chatgpt.js` 的末尾
-```js
-...
-export { chatgpt }
-```
-
-3. 在项目的 (V3) `manifest.json` 中，添加 `lib/chatgpt.js` 作为 Web 可访问资源
-```json
-    "web_accessible_resources": [{
-        "matches": ["<all_urls>"],
-        "resources": ["lib/chatgpt.js"]
-    }],
-```
-
-4. 在需要 `chatgpt.js` (前景/背景相似) 的脚本中, 像这样导入它:
+在需要 `chatgpt.js` (前景/背景相似) 的脚本中, 像这样导入它:
 ```js
 (async () => {
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));

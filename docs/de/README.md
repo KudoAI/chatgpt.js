@@ -117,25 +117,7 @@ Wenn Sie nicht vorhaben, in diesen Repos zu veröffentlichen, kann stattdessen d
 
 > **Hinweis** _Um eine Starter-Vorlage zu verwenden: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
-Da Google Manifest V2 [irgendwann auslaufen lässt](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/), ist Remote-Code nicht mehr zulässig, daher ist der lokale Import von chatgpt.js ideal:
-
-1. Speichern Sie https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js in einem Unterverzeichnis (in diesem Beispiel `lib`).
-
-2. Fügen Sie die ES6-Exportanweisung am Ende von `lib/chatgpt.js` hinzu
-```js
-...
-export { chatgpt }
-```
-
-3. Fügen Sie in `manifest.json` des Projekts (V3) `lib/chatgpt.js` als über das Internet zugängliche Ressource hinzu
-```json
-    "web_accessible_resources": [{
-        "matches": ["<all_urls>"],
-        "resources": ["lib/chatgpt.js"]
-    }],
-```
-
-4. In Skripten, die `chatgpt.js` benötigen (Vordergrund/Hintergrund gleichermaßen), importieren Sie es wie folgt:
+In Skripten, die `chatgpt.js` benötigen (Vordergrund/Hintergrund gleichermaßen), importieren Sie es wie folgt:
 ```js
 (async () => {
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));

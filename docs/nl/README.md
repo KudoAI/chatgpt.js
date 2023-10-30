@@ -117,25 +117,7 @@ Als u niet van plan bent om naar deze repo's te publiceren, kunt u in plaats daa
 
 > **Nota** _Een startsjabloon gebruiken: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
-Aangezien Google [uiteindelijk uitfaseert](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/) Manifest V2, is externe code niet langer toegestaan, dus het lokaal importeren van chatgpt.js is ideaal:
-
-1. Sla https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js op in een subdirectory (`lib` in dit voorbeeld)
-
-2. ES6-exportinstructie toevoegen aan het einde van `lib/chatgpt.js`
-```js
-...
-export { chatgpt }
-```
-
-3. Voeg in project's (V3) `manifest.json` `lib/chatgpt.js` toe als een webtoegankelijke bron
-```json
-    "web_accessible_resources": [{
-        "matches": ["<all_urls>"],
-        "resources": ["lib/chatgpt.js"]
-    }],
-```
-
-4. In scripts die `chatgpt.js` nodig hebben (zowel voorgrond als achtergrond), importeer je het als volgt:
+In scripts die `chatgpt.js` nodig hebben (zowel voorgrond als achtergrond), importeer je het als volgt:
 ```js
 (async () => {
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));

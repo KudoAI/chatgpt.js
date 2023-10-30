@@ -117,25 +117,7 @@ Nếu bạn không có kế hoạch xuất bản lên các kho lưu trữ này, 
 
 > **Ghi** _Để sử dụng một mẫu bắt đầu: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
-Vì Google sẽ [cuối cùng loại bỏ](https://developer.chrome.com/docs/extensions/migrating/mv2-sunset/) Manifest V2, mã từ xa sẽ không còn được phép, vì vậy, lý tưởng nhất là nhập chatgpt.js cục bộ:
-
-1. Lưu https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js vào thư mục con (`lib` trong ví dụ này)
-
-2. Thêm câu lệnh xuất ES6 vào cuối `lib/chatgpt.js`
-```js
-...
-export { chatgpt }
-```
-
-3. Trong `manifest.json` của dự án (V3), hãy thêm `lib/chatgpt.js` làm tài nguyên có thể truy cập web
-```json
-    "web_accessible_resources": [{
-        "matches": ["<all_urls>"],
-        "resources": ["lib/chatgpt.js"]
-    }],
-```
-
-4. Trong các tập lệnh cần `chatgpt.js` (tiền cảnh/nền giống nhau), hãy nhập nó như sau:
+Trong các tập lệnh cần `chatgpt.js` (tiền cảnh/nền giống nhau), hãy nhập nó như sau:
 ```js
 (async () => {
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
