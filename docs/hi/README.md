@@ -117,7 +117,24 @@ function yourCode() {
 
 > **टिप्पणी** _स्टार्टर टेम्पलेट का उपयोग करने के लिए: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
-उन स्क्रिप्ट्स में जिन्हें `chatgpt.js` (फॉरेग्राउंड बैकग्राउंड जैसे) की आवश्यकता है, इसे इस प्रकार इम्पोर्ट करें:
+1. https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js ये लिंक को अपने सब डायरेक्टरी में सेव करे (इस उदाहरण में यह `lib` है)
+
+2. ES6 का एक्सपोर्ट स्टेटमेंट `lib/chatgpt.js` के अंत में रखे
+
+```js
+...
+export { chatgpt }
+```
+
+3. प्रोजेक्ट(V3) `manifest.json` में, `lib/chatgpt.js` को वेब एक्सेसिबल रिसोर्स के रूप में जोड़ें
+```json
+    "web_accessible_resources": [{
+        "matches": ["<all_urls>"],
+        "resources": ["lib/chatgpt.js"]
+    }],
+```
+
+4. उन स्क्रिप्ट्स में जिन्हें `chatgpt.js` (फॉरेग्राउंड बैकग्राउंड जैसे) की आवश्यकता है, इसे इस प्रकार इम्पोर्ट करें:
 ```js
 (async () => {
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));

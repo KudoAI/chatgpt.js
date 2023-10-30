@@ -121,7 +121,24 @@ Greasy Fork와 같은 사용자 스크립트 저장소는 미리 승인된 CDN(�
 
 > **참고** _스타터 템플릿을 사용하시려면: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
-`chatgpt.js` 를 필요로하는 스크립트 (전경/배경 같은) 에서는 다음과 같이 가져옵니다.
+1. https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js 를 하위 디렉토리에 저장합니다. (`lib` 이라고 가정)
+
+2. `lib/chatgpt.js` 의 끝에 ES6 export 문을 추가합니다.
+
+```js
+...
+export { chatgpt }
+```
+
+3. 프로젝트(V3)의 `manifest.json` 파일에, `lib/chatgpt.js`를 웹에서 접근가능한 리소스로 추가합니다.
+```json
+    "web_accessible_resources": [{
+        "matches": ["<all_urls>"],
+        "resources": ["lib/chatgpt.js"]
+    }],
+```
+
+4. `chatgpt.js` 를 필요로하는 스크립트 (전경/배경 같은) 에서는 다음과 같이 가져옵니다.
 ```js
 (async () => {
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));

@@ -117,7 +117,23 @@ Greasy Fork のようなユーザースクリプト リポジトリは、事前�
 
 > **ノート** _スターター テンプレートを使用するには: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
-`chatgpt.js` (フォアグラウンド/バックグラウンド同様) を必要とするスクリプトでは、次のようにインポートします:
+1. https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js をサブディレクトリ (この例では `lib`) に保存します
+
+2. ES6 のエクスポート ステートメントを `lib/chatgpt.js` の末尾に追加します
+```js
+...
+export { chatgpt }
+```
+
+3. プロジェクト (V3) の `manifest.json` に、Web アクセス可能なリソースとして `lib/chatgpt.js` を追加します
+```json
+    "web_accessible_resources": [{
+        "matches": ["<all_urls>"],
+        "resources": ["lib/chatgpt.js"]
+    }],
+```
+
+4. `chatgpt.js` (フォアグラウンド/バックグラウンド同様) を必要とするスクリプトでは、次のようにインポートします:
 ```js
 (async () => {
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
