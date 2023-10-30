@@ -22,6 +22,40 @@ localStorage.notifyProps = JSON.stringify({
     lastNthAudio: 0 // to prevent immediate repetition of base sound
 });
 
+// Define messages
+let cjsMessages;
+const isFFtmScript = navigator.userAgent.includes('Firefox') && typeof GM_info !== 'undefined' && GM_info.scriptHandler === 'Tampermonkey',
+      isChromeExt = navigator.userAgent.includes('Chrome') && typeof unsafeWindow === 'undefined';
+if (isChromeExt || isFFtmScript) { (async () => {
+    const cjsMsgsLoaded = new Promise(resolve => {
+        const userLanguage = navigator.languages[0] || navigator.language || navigator.browserLanguage ||
+                             navigator.systemLanguage || navigator.userLanguage || '',
+              msgHostDir = endpoints.assets + '/data/_locales/',
+              msgLocaleDir = ( userLanguage ? userLanguage.replace('-', '_') : 'en' ) + '/';
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0;
+        (function loadMsgs() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', msgHref); xhr.send();
+            xhr.onload = () => {
+                try { // to return localized messages.json
+                    const messages = new Proxy(JSON.parse(xhr.responseText), {
+                        get(target, prop) { // remove need to ref nested keys
+                            if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
+                                return target[prop].message;
+                    }}}); resolve(messages);
+                } catch (err) {
+                    msgXHRtries++; if (msgXHRtries === 3) resolve({}); // try up to 3X (original/region-stripped/EN) only
+                    msgHref = userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                        msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
+                            : ( msgHostDir + 'en/messages.json' ); // else use default English messages
+                    loadMsgs();
+                }
+            };
+            xhr.onerror = () => { resolve({}); };
+        })();
+    }); cjsMessages = await cjsMsgsLoaded;
+})();}
+
 // Define chatgpt.methods
 const chatgpt = {
     openAIaccessToken: {},
@@ -186,7 +220,7 @@ const chatgpt = {
 
         // Create close button
         const closeBtn = document.createElement('div');
-        closeBtn.title = 'Close'; closeBtn.classList.add('modal-close-btn');
+        closeBtn.title = cjsMessages?.tooltip_close || 'Close'; closeBtn.classList.add('modal-close-btn');
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         closeSVG.setAttribute('height', '10px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
@@ -1152,7 +1186,7 @@ const chatgpt = {
 
         // Create/append close button
         const closeBtn = document.createElement('div');
-        closeBtn.title = 'Dismiss'; closeBtn.classList.add('notif-close-btn');
+        closeBtn.title = cjsMessages?.tooltip_dismiss || 'Dismiss'; closeBtn.classList.add('notif-close-btn');
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         closeSVG.setAttribute('height', '8px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
@@ -1227,8 +1261,7 @@ const chatgpt = {
 
         // Init/schedule audio feedback
         let dismissAudio, dismissAudioTID; // be accessible to `dismissNotif()`
-        if (!/Chrome/.test(navigator.userAgent)) { // if not Chromium due to Google's hardcore stance on CSP + autoplay
-
+        if (isFFtmScript) {
             // Init base audio index
             let nthAudio; do nthAudio = Math.floor(Math.random() * 3) + 1; // randomize  between 1-3...
             while (nthAudio === notifyProps.lastNthAudio); // ...until distinct from prev index (for variety)
