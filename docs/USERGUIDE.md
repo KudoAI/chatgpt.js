@@ -866,7 +866,7 @@ Regenerates ChatGPT's response.
 Example code:
 
 ```js
-chagpt.regenerate();
+chatgpt.regenerate();
 ```
 
 ### resend `async`
