@@ -96,7 +96,6 @@ const chatgpt = {
                     + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ;'
                     + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.2s cubic-bezier(.165,.84,.44,1) ;'
                     + `background-color: ${ scheme === 'dark' ? 'black' : 'white' } ;`
-                    + ( width ? `width: ${ width }px` : 'max-width: 458px ') + ' ;'
                     + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) ;'
                     + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; }' // disable selection
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
@@ -202,6 +201,7 @@ const chatgpt = {
         // Assemble/append div
         const modalElems = [closeBtn, modalTitle, modalMessage, modalButtons, checkboxDiv];
         modalElems.forEach((elem) => { modal.appendChild(elem); });
+        modal.style.width = `${ width || 458 }px`;
         modalContainer.appendChild(modal); document.body.appendChild(modalContainer); 
 
         // Enqueue alert
