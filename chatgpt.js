@@ -154,9 +154,12 @@ const chatgpt = {
                 + '.chatgpt-modal button:hover { color: #3d5d71 ; border-color: #6d9cb9 ;'
                     + 'background-color: ' + ( scheme == 'dark' ? '#00cfff' : '#9cdaff' ) + ';'
                     + 'box-shadow: 2px 1px ' + ( scheme == 'dark' ? '54px #00cfff' : '30px #9cdaff' ) + '}'
-                + '.modal-close-btn { cursor: pointer ; float: right ; position: relative ; right: -2px }'
+                + '.modal-close-btn {'
+                    + 'cursor: pointer ; width: 20px ; height: 20px ; float: right ; position: relative ; right: -2px }'
+                + '.modal-close-btn svg { margin: 5px 5px }' // center SVG for hover overlay
+                + '.modal-close-btn:hover { background-color: #dfdfdf }'
 
-                /* Checkbox styles */
+                // Checkbox styles
                 + '.chatgpt-modal .checkbox-group { display: flex ; margin-top: -18px }'
                 + '.chatgpt-modal .checkbox-group label {'
                     + 'font-size: .7rem ; margin: -.04rem 0 0px .3rem ;'
