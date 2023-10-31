@@ -294,7 +294,7 @@ const chatgpt = {
         };
 
         // Add listeners to dismiss alert
-        const dismissElems = [modalContainer, closeSVG, dismissBtn];
+        const dismissElems = [modalContainer, closeBtn, closeSVG, dismissBtn];
         dismissElems.forEach(elem => {
             elem.addEventListener('click', clickHandler); });
         document.addEventListener('keydown', keyHandler);
