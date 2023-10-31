@@ -117,6 +117,8 @@ Nếu bạn không có kế hoạch xuất bản lên các kho lưu trữ này, 
 
 > **Ghi** _Để sử dụng một mẫu bắt đầu: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
+Vì Google không cho phép mã từ xa nên việc nhập chatgpt.js cục bộ là bắt buộc:
+
 1. Lưu https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js vào thư mục con (`lib` trong ví dụ này)
 
 2. Thêm câu lệnh xuất ES6 vào cuối `lib/chatgpt.js`

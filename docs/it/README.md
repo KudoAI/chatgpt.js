@@ -117,6 +117,8 @@ Se non hai intenzione di pubblicare su questi siti, puoi utilizzare il più semp
 
 > **Nota** _Per utilizzare un modello iniziale: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
+Poiché Google non consente il codice remoto, è richiesta l'importazione di chatgpt.js localmente:
+
 1. Salva https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js in una sottocartella (`lib` in questo esempio)
 
 2. Aggiungi la dichiarazione di esportazione ES6 alla fine di `lib/chatgpt.js`

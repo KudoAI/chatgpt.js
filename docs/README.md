@@ -117,6 +117,8 @@ If you don't plan on publishing to these repos, the simpler `https://code.chatgp
 
 > **Note** _To use a starter template: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
+Since Google does not allow remote code, importing chatgpt.js locally is required:
+
 1. Save https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js to a subdirectory (`lib` in this example)
 
 2. Add ES6 export statement to end of `lib/chatgpt.js`

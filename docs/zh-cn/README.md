@@ -117,6 +117,8 @@ function yourCode() {
 
 > **笔记** _使用入门模板: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
+由于 Google 不允许远程代码，因此需要在本地导入 chatgpt.js:
+
 1. 将 https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js 保存到子目录 (本例中为 `lib`)
 
 2. 将 ES6 导出语句添加到 `lib/chatgpt.js` 的末尾

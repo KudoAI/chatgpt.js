@@ -121,6 +121,8 @@ Greasy Fork와 같은 사용자 스크립트 저장소는 미리 승인된 CDN(�
 
 > **참고** _스타터 템플릿을 사용하시려면: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
 
+Google은 원격 코드를 허용하지 않으므로 chatgpt.js를 로컬로 가져와야 합니다:
+
 1. https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js 를 하위 디렉토리에 저장합니다. (`lib` 이라고 가정)
 
 2. `lib/chatgpt.js` 의 끝에 ES6 export 문을 추가합니다.
