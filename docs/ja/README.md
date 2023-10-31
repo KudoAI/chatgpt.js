@@ -220,6 +220,13 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [お読みください](https://github.duckduckgpt.com/#readme) / 
 [議論](https://github.duckduckgpt.com/discussions)
 
+### <img src="https://www.google.com/s2/favicons?sz=64&domain=google.com" width=19> [GoogleGPT](https://googlegpt.kudoai.com)
+
+> Google Search サイドバーに ChatGPT の回答を表示 (GPT-4 を搭載!)
+<br>[インストール](https://greasyfork.org/scripts/478597-googlegpt) /
+[お読みください](https://github.com/KudoAI/googlegpt#readme) /
+[議論 करना](https://github.com/KudoAI/googlegpt/discussions)
+
 <p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">

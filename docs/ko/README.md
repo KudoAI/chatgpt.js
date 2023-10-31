@@ -225,6 +225,13 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [리드미](https://github.duckduckgpt.com/#readme) /
 [토론](https://github.duckduckgpt.com/discussions)
 
+### <img src="https://www.google.com/s2/favicons?sz=64&domain=google.com" width=19> [GoogleGPT](https://googlegpt.kudoai.com)
+
+> Google Search 사이드바에 ChatGPT의 답변을 표시해주는 기능입니다. (GPT-4 기반)
+<br>[설치](https://greasyfork.org/scripts/478597-googlegpt) /
+[리드미](https://github.com/KudoAI/googlegpt#readme) /
+[토론 करना](https://github.com/KudoAI/googlegpt/discussions)
+
 <p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">

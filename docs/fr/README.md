@@ -220,6 +220,13 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [Lisez-moi](https://github.duckduckgpt.com/#readme) /
 [Discuter](https://github.duckduckgpt.com/discussions)
 
+### <img src="https://www.google.com/s2/favicons?sz=64&domain=google.com" width=19> [GoogleGPT](https://googlegpt.kudoai.com)
+
+> Affichez les réponses ChatGPT dans la barre latérale Google Search (propulsé par GPT-4 !)
+<br>[Installer](https://greasyfork.org/scripts/478597-googlegpt) /
+[Lisez-moi](https://github.com/KudoAI/googlegpt#readme) /
+[Discuter](https://github.com/KudoAI/googlegpt/discussions)
+
 <p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">

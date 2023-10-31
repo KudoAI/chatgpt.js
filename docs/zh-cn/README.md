@@ -220,6 +220,13 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [自述文件](https://github.duckduckgpt.com/#readme) / 
 [讨论](https://github.duckduckgpt.com/discussions)
 
+### <img src="https://www.google.com/s2/favicons?sz=64&domain=google.com" width=19> [GoogleGPT](https://googlegpt.kudoai.com)
+
+> 在 Google Search 侧边栏中显示 ChatGPT 答案 (由 GPT-4 驱动!)
+<br>[安装](https://greasyfork.org/scripts/478597-googlegpt) /
+[自述文件](https://github.com/KudoAI/googlegpt#readme) /
+[讨论](https://github.com/KudoAI/googlegpt/discussions)
+
 <p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">

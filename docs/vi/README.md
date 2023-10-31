@@ -220,6 +220,13 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [Đọc tôi](https://github.duckduckgpt.com/#readme) /
 [Bàn luận](https://github.duckduckgpt.com/discussions)
 
+### <img src="https://www.google.com/s2/favicons?sz=64&domain=google.com" width=19> [GoogleGPT](https://googlegpt.kudoai.com)
+
+> ển thị câu trả lời ChatGPT trong thanh bên Google Search (do GPT-4 cung cấp!)
+<br>[Cài đặt](https://greasyfork.org/scripts/478597-googlegpt) /
+[Đọc tôi](https://github.com/KudoAI/googlegpt#readme) /
+[Bàn luận](https://github.com/KudoAI/googlegpt/discussions)
+
 <p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">
