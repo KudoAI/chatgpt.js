@@ -216,10 +216,17 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-> डकडकगो साइडबार में चैटजीपीटी उत्तर प्रदर्शित करें (GPT-4 द्वारा संचालित!)
+> DuckDuckGo साइडबार में ChatGPT उत्तर प्रदर्शित करें (GPT-4 द्वारा संचालित!)
 <br>[इंस्टॉल](https://github.duckduckgpt.com/#-installation) / 
 [रीडमी](https://github.duckduckgpt.com/#readme) / 
 [चर्चा करना](https://github.duckduckgpt.com/discussions)
+
+### <img src="https://www.google.com/s2/favicons?sz=64&domain=google.com" width=19> [GoogleGPT](https://googlegpt.kudoai.com)
+
+> Google खोज साइडबार में ChatGPT उत्तर प्रदर्शित करें (GPT-4 द्वारा संचालित!)
+<br>[इंस्टॉल](https://greasyfork.org/scripts/478597-googlegpt) /
+[रीडमी](https://github.com/KudoAI/googlegpt#readme) /
+[चर्चा करना](https://github.com/KudoAI/googlegpt/discussions)
 
 <p><br>
 
