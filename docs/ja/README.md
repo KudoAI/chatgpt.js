@@ -110,7 +110,7 @@ Greasy Fork のようなユーザースクリプト リポジトリは、事前�
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@516ad148b02335b98db82c89dec02e5fa28c7d56/dist/chatgpt-2.3.13.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@54bbbf01c1ea38d49fe4de504b868373fd29907e/dist/chatgpt-2.3.13.min.js
 // ==/UserScript==
 
 // コードはここにあります...
