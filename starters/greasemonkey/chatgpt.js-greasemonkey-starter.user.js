@@ -3,12 +3,12 @@
 // @description   A Greasemonkey template to start using chatgpt.js like a boss
 // @author        chatgpt.js
 // @namespace     https://chatgpt.js.org
-// @version       2023.10.30
+// @version       2023.11.3
 // @license       MIT
 // @match         https://chat.openai.com/*
 // @icon          https://raw.githubusercontent.com/kudoai/chatgpt.js-greasemonkey-starter/main/media/images/icons/robot/icon48.png
 // @icon64        https://raw.githubusercontent.com/kudoai/chatgpt.js-greasemonkey-starter/main/media/images/icons/robot/icon64.png
-// @require       https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@516ad148b02335b98db82c89dec02e5fa28c7d56/dist/chatgpt-2.3.13.min.js
+// @require       https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@54bbbf01c1ea38d49fe4de504b868373fd29907e/dist/chatgpt-2.3.14.min.js
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @noframes
