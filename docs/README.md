@@ -2,7 +2,12 @@
 
 <div align="center">
     <h6>
-        <a href="https://github.com/kudoai/chatgpt.js/tree/main/docs"><img height=15 style="margin: 0 3px -2px" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/0fc3060273fcff77d3e2ff968d5c74acdab62beb/media/images/icons/earth-americas-icon32.svg"></a>
+        <a href="https://github.com/kudoai/chatgpt.js/tree/main/docs">
+            <picture>
+                <source type="image/svg" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-white-padded-icon17x15.svg">
+                <img src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-padded-icon17x15.svg">
+            </picture>
+        </a>
         English |
         <a href="zh-cn#readme">简体中文</a> |
         <a href="zh-tw#readme">繁體中文</a> |
