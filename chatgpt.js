@@ -24,7 +24,7 @@ localStorage.notifyProps = JSON.stringify({
 
 // Init GM environment flags
 const isChromeUserScript = navigator.userAgent.includes('Chrome') && typeof unsafeWindow != 'undefined',
-      isFFuserScript = navigator.userAgent.includes('Firefox') && typeof GM_info != 'undefined',
+      isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
       isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
 
 // Define messages
