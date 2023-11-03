@@ -316,8 +316,7 @@ const onLoadObserver = new MutationObserver(() => {
             const readmeBTTlink = document.querySelector('p a[href="#"]');
             readmeBTTlink.previousSibling.remove(); readmeBTTlink.remove();
 
-            // Add PARALLAX
-            if (!isMobileDevice()) { setTimeout(() => {
+            setTimeout(() => { // Add PARALLAX
 
                 // Target TRIGGERS
                 const parallaxTriggers = [];
@@ -360,7 +359,7 @@ const onLoadObserver = new MutationObserver(() => {
                                 elem.style.transform = `translateY(${ parallaxOffset }px) scale(${ scaleFactor })`;
                             });
 
-            }});});}, 100);}
+            }});});}, 100);
         });
 
     // Hide SITE LANG SELECTOR from NON-HOME pages
