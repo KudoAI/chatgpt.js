@@ -309,23 +309,6 @@ Deze bibliotheek bestaat dankzij code, vertalingen, problemen en ideeën van de 
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
-<div id="star-history" align="center">
-
-<br>
-
-<a href="https://star-history.com/blog/chatgpt-js" target="_blank" rel="noopener">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline&theme=dark" />
-    <img width=665 src="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
-  </picture>
-</a>
-
-<br>_Overweeg om deze repo een ⭐ te geven als het je heeft geholpen!_
-
-</div>
-
-#
-
 <div align="center">
 
 **[Uitgaven](https://github.com/kudoai/chatgpt.js/tree/main/dist)** /

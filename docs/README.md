@@ -309,23 +309,6 @@ This library exists thanks to code, translations, issues & ideas from the follow
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
-<div id="star-history" align="center">
-
-<br>
-
-<a href="https://star-history.com/blog/chatgpt-js" target="_blank" rel="noopener">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline&theme=dark" />
-    <img width=665 src="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
-  </picture>
-</a>
-
-<br>_Consider giving this repo a ⭐ if it helped you!_
-
-</div>
-
-#
-
 <div align="center">
 
 **[Releases](https://github.com/kudoai/chatgpt.js/tree/main/dist)** /

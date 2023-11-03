@@ -310,23 +310,6 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
-<div id="star-history" align="center">
-
-<br>
-
-<a href="https://star-history.com/blog/chatgpt-js" target="_blank" rel="noopener">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline&theme=dark" />
-    <img width=665 src="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
-  </picture>
-</a>
-
-<br>*यदि यस  रिपोले तपाईंलाई मद्दत गर्यो भने ⭐ दिने विचार गर्नुहोस्!*
-
-</div>
-
-#
-
 <div align="center">
 
 **[विज्ञप्ति](https://github.com/kudoai/chatgpt.js/tree/main/dist)** /

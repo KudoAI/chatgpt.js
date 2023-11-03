@@ -309,23 +309,6 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
-<div id="star-history" align="center">
-
-<br>
-
-<a href="https://star-history.com/blog/chatgpt-js" target="_blank" rel="noopener">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline&theme=dark" />
-    <img width=665 src="https://api.star-history.com/svg?repos=kudoai/chatgpt.js&type=Timeline" />
-  </picture>
-</a>
-
-<br>_Considera di dare a questa repository una ⭐ se ti ha aiutato!_
-
-</div>
-
-#
-
 <div align="center">
 
 **[Versioni](https://github.com/kudoai/chatgpt.js/tree/main/dist)** /
