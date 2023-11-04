@@ -109,7 +109,7 @@ Repositórios de script de usuário como o Greasy Fork mantêm uma lista branca 
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@54bbbf01c1ea38d49fe4de504b868373fd29907e/dist/chatgpt-2.3.14.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@3817f0a0163280b9bf3a32b96bbe6183555830ed/dist/chatgpt-2.3.14.min.js
 // ==/UserScript==
 
 // Seu código aqui...
