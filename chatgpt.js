@@ -766,8 +766,7 @@ const chatgpt = {
                             return reject('🤖 chatgpt.js >> Chat with index ' + ( chatToGet + 1 )
                                 + ' is out of bounds. Only ' + data.length + ' chats exist!'); }
                         for (const detail of detailsToGet) detailsToReturn[detail] = data[chatToGet][detail];
-                        return resolve(detailsToGet.length === 1 ? detailsToReturn[detailsToGet[0]] : detailsToReturn);
-
+                        return resolve(detailsToReturn);
                     }
 
                     // Return by title, ID or active chat
@@ -781,8 +780,7 @@ const chatgpt = {
                     if (!chatFound) // exit
                         return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatToGet + ' found.');
                     for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail];
-                    return resolve(detailsToGet.length === 1 ? detailsToReturn[detailsToGet[0]] : detailsToReturn);
-
+                    return resolve(detailsToReturn);
                 };
                 xhr.send();
         });};
