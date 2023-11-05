@@ -1254,7 +1254,7 @@ const chatgpt = {
 
         // Show notification
         setTimeout(() => {
-            notificationDiv.style.opacity = 1; // show msg
+            notificationDiv.style.opacity = 0.8; // show msg
             notificationDiv.style.transform = 'translateX(0)'; // bring from off-screen
             notificationDiv.style.transition = 'transform 0.15s ease, opacity 0.15s ease';
         }, 10);
