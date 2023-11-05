@@ -1195,6 +1195,7 @@ const chatgpt = {
         closeSVG.setAttribute('height', '8px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
         closeSVG.setAttribute('fill', 'none');
+        closeSVG.style.height = closeSVG.style.width = '8px'; // override SVG styles on non-OpenAI sites
         const closeSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         closeSVGpath.setAttribute('fill-rule', 'evenodd');
         closeSVGpath.setAttribute('clip-rule', 'evenodd');
