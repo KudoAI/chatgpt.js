@@ -125,7 +125,7 @@ const chatgpt = {
                 // Background styles
                 '.chatgpt-modal {' 
                     + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
-                    + `background-color: rgba(67, 70, 72, ${ chatgpt.isDarkMode() ? 0.62 : 0.18 }) ;` // dim bg
+                    + `background-color: rgba(67, 70, 72, ${ scheme == 'dark' ? 0.62 : 0.18 }) ;` // dim bg
                     + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
 
                 // Alert styles
@@ -133,6 +133,7 @@ const chatgpt = {
                     + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ;'
                     + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.2s cubic-bezier(.165,.84,.44,1) ;'
                     + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
+                    + ( scheme != 'dark' ? 'border: 1px solid rgba(0, 0, 0, 0.3) ;' : '' )
                     + 'padding: 20px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0,0,0,.12) ;'
                     + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; }' // disable selection
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
@@ -157,7 +158,7 @@ const chatgpt = {
                 + '.modal-close-btn {'
                     + 'cursor: pointer ; width: 20px ; height: 20px ; float: right ; position: relative ; right: -2px }'
                 + '.modal-close-btn svg { margin: 5px 5px }' // center SVG for hover overlay
-                + `.modal-close-btn:hover { background-color: #f2f2f2${ chatgpt.isDarkMode() ? '00' : '' }}`
+                + `.modal-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
 
                 // Checkbox styles
                 + '.chatgpt-modal .checkbox-group { display: flex ; margin-top: -18px }'
