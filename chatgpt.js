@@ -1044,7 +1044,10 @@ const chatgpt = {
         }
     },
 
-    isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
+    isDarkMode: function() {
+        return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
+            || document.documentElement.classList.contains('dark'); 
+    },
 
     isFullScreen: function() {
         const userAgentStr = navigator.userAgent;
