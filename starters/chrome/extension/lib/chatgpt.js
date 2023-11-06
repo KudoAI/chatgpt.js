@@ -1067,7 +1067,7 @@ const chatgpt = {
         return new Promise(resolve => {
             const intervalId = setInterval(() => {
                 if (document.querySelector('nav button[id*="menu"]')) {
-                    clearInterval(intervalId); resolve();
+                    clearInterval(intervalId); setTimeout(() => { resolve(); }, 500);
     }}, 100);});},
 
     isLightMode: function() { return document.documentElement.classList.contains('light'); },
