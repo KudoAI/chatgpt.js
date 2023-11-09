@@ -118,9 +118,10 @@ const chatgpt = {
               modalMessage = document.createElement('p');
 
         // Create/append modal style (if missing)
-        if (!document.querySelector('#chatgpt-alert-style')) {
-            const modalStyle = document.createElement('style');                                 
-            modalStyle.id = 'chatgpt-alert-style';
+        const lastUpdated = 20231118;
+        if (!document.querySelector(`#chatgpt-alert-style-${ lastUpdated }`)) {
+            const modalStyle = document.createElement('style');
+            modalStyle.id = `chatgpt-modal-style-${ lastUpdated }`;
             modalStyle.innerText = (
 
                 // Background styles
@@ -1219,10 +1220,10 @@ const chatgpt = {
                                  + (notificationDiv.isRight ? 'Right' : 'Left');
 
         // Create/append notification style (if missing)
-        const lastEditDate = 20231025;
-        if (!document.querySelector(`#chatgpt-notif-style-${ lastEditDate }`)) {
+        const lastUpdated = 20231025;
+        if (!document.querySelector(`#chatgpt-notif-style-${ lastUpdated }`)) {
             const notifStyle = document.createElement('style');
-            notifStyle.id = `chatgpt-notif-style-${ lastEditDate }`;
+            notifStyle.id = `chatgpt-notif-style-${ lastUpdated }`;
             notifStyle.innerText = '.chatgpt-notif {'
                 + 'background-color: black ; padding: 10px 13px 10px 18px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
                 + 'opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ;' // visibility
