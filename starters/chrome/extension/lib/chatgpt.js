@@ -413,7 +413,10 @@ const chatgpt = {
                         if (/^clear/i.test(settingsBtn.textContent)) { settingsBtn.click(); break; }
                     setTimeout(() => { // confirm clear
                         document.querySelector('[id*=radix] button').click();
-                        setTimeout(exitMenu, 10);
+                        setTimeout(() => {
+                            exitMenu();
+                            try { document.querySelector('#prompt-textarea').focus(); } catch (err) {}
+                        }, 10);
             }, 10); }, 333); }, 10);
             const exitMenu = () => { document.querySelector('div[id*=radix] button').click(); };
 
