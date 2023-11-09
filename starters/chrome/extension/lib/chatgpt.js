@@ -107,6 +107,8 @@ const chatgpt = {
     // [ title/msg = strings, btns = [named functions], checkbox = named function, width (px) = int ] = optional
     // * Spaces are inserted into button labels by parsing function names in camel/kebab/snake case
 
+        const scheme = chatgpt.isDarkMode() ? 'dark' : 'light';   
+
         // Create modal parent/children elements
         const modalContainer = document.createElement('div');
         modalContainer.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
@@ -117,15 +119,15 @@ const chatgpt = {
 
         // Create/append modal style (if missing)
         if (!document.querySelector('#chatgpt-alert-style')) {
-            const modalStyle = document.createElement('style'),
-                  scheme = chatgpt.isDarkMode() ? 'dark' : 'light';                  
+            const modalStyle = document.createElement('style');                                 
             modalStyle.id = 'chatgpt-alert-style';
             modalStyle.innerText = (
 
                 // Background styles
                 '.chatgpt-modal {' 
                     + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
-                    + `background-color: rgba(67, 70, 72, ${ scheme == 'dark' ? 0.62 : 0.18 }) ;` // dim bg
+                    + 'background-color: rgba(67, 70, 72, 0) ;' // init dim bg but no opacity
+                    + 'transition: background-color 0.05s ease ;' // speed to transition in show alert routine
                     + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
 
                 // Alert styles
@@ -135,7 +137,7 @@ const chatgpt = {
                     + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
                     + ( scheme != 'dark' ? 'border: 1px solid rgba(0, 0, 0, 0.3) ;' : '' )
                     + 'padding: 20px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0,0,0,.12) ;'
-                    + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; }' // disable selection
+                    + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; }'
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
                 + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
                 + '.chatgpt-modal.animated > div { opacity: 1 ; transform: translateX(0) translateY(0) }'
@@ -250,7 +252,17 @@ const chatgpt = {
         alertQueue.push(modalContainer.id);
         localStorage.alertQueue = JSON.stringify(alertQueue);
 
-        // Define handlers
+        // Show alert if none active
+        modalContainer.style.display = 'none';
+        if (alertQueue.length === 1) {
+            modalContainer.style.display = '';
+            setTimeout(() => { // delay non-0 opacity's for transition fx
+                modalContainer.style.backgroundColor = ( 
+                    `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.18 })`);
+                modalContainer.classList.add('animated'); }, 100);
+        }
+
+        // Define click/key handlers
         const clickHandler = event => { // explicitly defined to support removal post-dismissal
             if (event.target == event.currentTarget || event.target instanceof SVGPathElement) dismissAlert(); };
         const keyHandler = event => { // to dismiss active alert
@@ -265,6 +277,12 @@ const chatgpt = {
                             if (mainButton) { mainButton.click(); event.preventDefault(); } // click if found
                         } return;
         }}}};
+
+        // Add listeners to dismiss alert
+        const dismissElems = [modalContainer, closeBtn, closeSVG, dismissBtn];
+        dismissElems.forEach(elem => {
+            elem.addEventListener('click', clickHandler); });
+        document.addEventListener('keydown', keyHandler);
 
         // Define alert dismisser
         const dismissAlert = () => {
@@ -293,19 +311,6 @@ const chatgpt = {
 
             }, 50);
         };
-
-        // Add listeners to dismiss alert
-        const dismissElems = [modalContainer, closeBtn, closeSVG, dismissBtn];
-        dismissElems.forEach(elem => {
-            elem.addEventListener('click', clickHandler); });
-        document.addEventListener('keydown', keyHandler);
-
-        // Show alert if none active
-        modalContainer.style.display = 'none';
-        if (alertQueue.length === 1) {
-            modalContainer.style.display = '';
-            setTimeout(() => { modalContainer.classList.add('animated'); }, 100);
-        }
 
         return modalContainer.id; // if assignment used
     },
@@ -1221,7 +1226,7 @@ const chatgpt = {
             notifStyle.innerText = '.chatgpt-notif {'
                 + 'background-color: black ; padding: 10px 13px 10px 18px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
                 + 'opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ;' // visibility
-                + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;' // disable selection
+                + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;'
                 + `transform: translateX(${ !notificationDiv.isRight ? '-' : '' }35px) ;` // init off-screen for transition fx
                 + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ) + '}'
             + '.notif-close-btn { cursor: pointer ; float: right ; position: relative ; right: -4px ; margin-left: -3px ;'
