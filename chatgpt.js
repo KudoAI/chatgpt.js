@@ -1053,7 +1053,7 @@ const chatgpt = {
 
     isDarkMode: function() {
         return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
-            || document.documentElement.classList.contains('dark'); 
+            || document.documentElement.classList.toString().includes('dark');
     },
 
     isFullScreen: function() {
@@ -1265,7 +1265,7 @@ const chatgpt = {
 
         // Show notification
         setTimeout(() => {
-            notificationDiv.style.opacity = 0.67; // show msg
+            notificationDiv.style.opacity = chatgpt.isDarkMode() ? 0.8 : 0.67; // show msg
             notificationDiv.style.transform = 'translateX(0)'; // bring from off-screen
             notificationDiv.style.transition = 'transform 0.15s ease, opacity 0.15s ease';
         }, 10);
