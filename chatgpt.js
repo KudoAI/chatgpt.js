@@ -119,7 +119,7 @@ const chatgpt = {
 
         // Create/append modal style (if missing)
         const lastUpdated = 20231118;
-        if (!document.querySelector(`#chatgpt-alert-style-${ lastUpdated }`)) {
+        if (!document.querySelector(`#chatgpt-modal-style-${ lastUpdated }`)) {
             const modalStyle = document.createElement('style');
             modalStyle.id = `chatgpt-modal-style-${ lastUpdated }`;
             modalStyle.innerText = (
