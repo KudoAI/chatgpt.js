@@ -110,7 +110,7 @@ Userscript-repository's zoals Greasy Fork houden een witte lijst bij van vooraf 
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@34477ee6cda0369652d1588e4132dba6d6f6112f/dist/chatgpt-2.3.16.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@885b9df31d60995d35fefa6692d65c3d3354fdf2/dist/chatgpt-2.3.16.min.js
 // ==/UserScript==
 
 // Uw code hier...
