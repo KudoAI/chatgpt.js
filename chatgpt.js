@@ -891,6 +891,17 @@ const chatgpt = {
                 return formButton;
     }}},
 
+    getRegenerateButton: function() {
+        if (chatgpt.isGizmoUI()) {        
+            for (const mainSVG of document.querySelectorAll('main svg')) {
+                if (mainSVG.querySelector('path[d*="10.8763C3.62354"]')) // regen icon found
+                    return mainSVG.parentNode.parentNode;
+        }} else {
+            for (const formButton of document.querySelectorAll('form button')) {
+                if (formButton.textContent.toLowerCase().includes('regenerate'))
+                    return formButton;
+    }}},
+
     getResponse: function() {
     // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:        
     // chatToGet = index|title|id of chat to get (defaults to latest if '' unpassed)
@@ -1983,6 +1994,7 @@ const synonyms = [
     ['generating', 'generation'],
     ['minify', 'uglify'],
     ['refactor', 'rewrite'],
+    ['regenerate', 'regen'],
     ['render', 'parse'],
     ['reply', 'response'],
     ['sentiment', 'attitude', 'emotion', 'feeling', 'opinion', 'perception'],
