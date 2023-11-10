@@ -22,10 +22,11 @@ localStorage.notifyProps = JSON.stringify({
     lastNthAudio: 0 // to prevent immediate repetition of base sound
 });
 
-// Init GM environment flags
+// Init environment flags
 const isChromeUserScript = navigator.userAgent.includes('Chrome') && typeof unsafeWindow != 'undefined',
       isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
-      isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
+      isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey',
+      is202311ui = document.documentElement.classList.toString().includes('gizmo');
 
 // Define messages
 let cjsMessages;
@@ -915,18 +916,24 @@ const chatgpt = {
 
     history: {
         isOn: function() {
-            for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-                if (/clear chat/i.test(navLink.text)) return false;
-            } return true;
+            if (is202311ui) {
+                const navDivs = document.querySelectorAll('nav[aria-label="Chat history"] div'),
+                offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
+                return offDiv.classList.toString().includes('invisible');
+            } else {
+                for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+                    if (/clear chat/i.test(navLink.text)) return false;
+                } return true;
+            }
         },
         isOff: function() { return !this.isOn(); },
         activate: function() { this.isOff() ? this.toggle() : console.info('Chat history is already enabled!'); },
         deactivate: function() { this.isOn() ? this.toggle() : console.info('Chat history is already disabled!'); },
-        toggle: function() {                
+        toggle: function() {
             for (const navBtn of document.querySelectorAll('nav[aria-label="Chat history"] button')) {
-                if (/chat history/i.test(navBtn.textContent))
+                if (/chat history/i.test(navBtn.textContent)) {
                     navBtn.click(); return;
-        }}
+        }}}
     },
 
     instructions: {
