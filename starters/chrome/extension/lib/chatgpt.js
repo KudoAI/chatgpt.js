@@ -26,7 +26,7 @@ localStorage.notifyProps = JSON.stringify({
 const isChromeUserScript = navigator.userAgent.includes('Chrome') && typeof unsafeWindow != 'undefined',
       isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
       isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey',
-      is202311ui = document.documentElement.classList.toString().includes('gizmo');
+      isGizmoUI = document.documentElement.classList.toString().includes('gizmo');
 
 // Define messages
 let cjsMessages;
@@ -916,7 +916,7 @@ const chatgpt = {
 
     history: {
         isOn: function() {
-            if (is202311ui) {
+            if (isGizmoUI) {
                 const navDivs = document.querySelectorAll('nav[aria-label="Chat history"] div'),
                 offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
                 return offDiv.classList.toString().includes('invisible');
