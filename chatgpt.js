@@ -914,6 +914,18 @@ const chatgpt = {
             navigator.systemLanguage || navigator.userLanguage || ''; },
 
     history: {
+        isLoaded: function() {
+            return new Promise(resolve => {
+                const checkChatHistory = () => {
+                    if (document.querySelector('nav[aria-label="Chat history"]')) resolve();
+                    else setTimeout(checkChatHistory, 100);
+                };
+                checkChatHistory();
+        });},
+
+        activate: function() { this.isOff() ? this.toggle() : console.info('Chat history is already enabled!'); },
+        deactivate: function() { this.isOn() ? this.toggle() : console.info('Chat history is already disabled!'); },
+
         isOn: function() {
             if (chatgpt.isGizmoUI()) {
                 const navDivs = document.querySelectorAll('nav[aria-label="Chat history"] div'),
@@ -925,9 +937,9 @@ const chatgpt = {
                 } return true;
             }
         },
+
         isOff: function() { return !this.isOn(); },
-        activate: function() { this.isOff() ? this.toggle() : console.info('Chat history is already enabled!'); },
-        deactivate: function() { this.isOn() ? this.toggle() : console.info('Chat history is already disabled!'); },
+
         toggle: function() {
             for (const navBtn of document.querySelectorAll('nav[aria-label="Chat history"] button')) {
                 if (/chat history/i.test(navBtn.textContent)) {
