@@ -886,12 +886,6 @@ const chatgpt = {
     }}},
 
     getRegenerateButton: function() {
-        for (const formButton of document.querySelectorAll('form button')) {
-            if (formButton.textContent.toLowerCase().includes('regenerate')) {
-                return formButton;
-    }}},
-
-    getRegenerateButton: function() {
         if (chatgpt.isGizmoUI()) {        
             for (const mainSVG of document.querySelectorAll('main svg')) {
                 if (mainSVG.querySelector('path[d*="10.8763C3.62354"]')) // regen icon found
