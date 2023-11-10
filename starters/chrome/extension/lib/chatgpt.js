@@ -25,8 +25,7 @@ localStorage.notifyProps = JSON.stringify({
 // Init environment flags & functions
 const isChromeUserScript = navigator.userAgent.includes('Chrome') && typeof unsafeWindow != 'undefined',
       isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
-      isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey',
-      isGizmoUI = () => { return document.documentElement.classList.toString().includes('gizmo'); }
+      isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
 
 // Define messages
 let cjsMessages;
@@ -916,7 +915,7 @@ const chatgpt = {
 
     history: {
         isOn: function() {
-            if (isGizmoUI()) {
+            if (chatgpt.isGizmoUI()) {
                 const navDivs = document.querySelectorAll('nav[aria-label="Chat history"] div'),
                 offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
                 return offDiv.classList.toString().includes('invisible');
@@ -1072,6 +1071,8 @@ const chatgpt = {
              : userAgentStr.includes('Firefox') ? window.fullScreen
              : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen;
     },
+
+    isGizmoUI: function () { return document.documentElement.classList.toString().includes('gizmo'); },
 
     isIdle: function() {
         return new Promise(resolve => {
