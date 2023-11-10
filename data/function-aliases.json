@@ -43,6 +43,7 @@
     ["generating", "generation"],
     ["minify", "uglify"],
     ["refactor", "rewrite"],
+    ["regenerate", "regen"],
     ["render", "parse"],
     ["reply", "response"],
     ["sentiment", "attitude", "emotion", "feeling", "opinion", "perception"],
