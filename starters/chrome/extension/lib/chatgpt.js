@@ -117,7 +117,7 @@ const chatgpt = {
               modalTitle = document.createElement('h2'),
               modalMessage = document.createElement('p');
 
-        // Create/append modal style (if missing or outdated)
+        // Create/append/update modal style (if missing or outdated)
         const thisUpdated = 20231110; // datestamp of last edit for this file's `modalStyle` 
         let modalStyle = document.querySelector('#chatgpt-modal-style'); // try to select existing style
         if (!modalStyle || parseInt(modalStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
@@ -1250,7 +1250,7 @@ const chatgpt = {
         notificationDiv.quadrant = (notificationDiv.isTop ? 'top' : 'bottom')
                                  + (notificationDiv.isRight ? 'Right' : 'Left');
 
-        // Create/append notification style (if missing or outdated)
+        // Create/append/update notification style (if missing or outdated)
         const thisUpdated = 20231110; // datestamp of last edit for this file's `notifStyle` 
         let notifStyle = document.querySelector('#chatgpt-notif-style'); // try to select existing style
         if (!notifStyle || parseInt(notifStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
