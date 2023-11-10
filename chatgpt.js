@@ -22,11 +22,11 @@ localStorage.notifyProps = JSON.stringify({
     lastNthAudio: 0 // to prevent immediate repetition of base sound
 });
 
-// Init environment flags
+// Init environment flags & functions
 const isChromeUserScript = navigator.userAgent.includes('Chrome') && typeof unsafeWindow != 'undefined',
       isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
       isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey',
-      isGizmoUI = document.documentElement.classList.toString().includes('gizmo');
+      isGizmoUI = () => { return document.documentElement.classList.toString().includes('gizmo'); }
 
 // Define messages
 let cjsMessages;
@@ -916,7 +916,7 @@ const chatgpt = {
 
     history: {
         isOn: function() {
-            if (isGizmoUI) {
+            if (isGizmoUI()) {
                 const navDivs = document.querySelectorAll('nav[aria-label="Chat history"] div'),
                 offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
                 return offDiv.classList.toString().includes('invisible');
