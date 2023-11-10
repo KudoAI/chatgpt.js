@@ -1675,8 +1675,7 @@ const chatgpt = {
     },
 
     sidebar: {
-        elements: [],
-        observer: {},
+        elements: [], observer: {},
 
         activateObserver: function() {
             const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]'),
@@ -1790,15 +1789,24 @@ const chatgpt = {
             return newElement.id; // Return the element id
         },
 
-        isOn: function() { return !document.querySelector('button[aria-label*="Open sidebar"]'); },
-        isOff: function() { return !!document.querySelector('button[aria-label*="Open sidebar"]'); },
         hide: function() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
         show: function() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
+        isOff: function() { return !this.isOn(); },
+        isOn: function() {
+            return chatgpt.isGizmoUI()
+              ? document.querySelector('#__next > div > div').style.visibility != 'hidden'
+              : !document.querySelector('button[aria-label*="Open sidebar"]');
+        },
+
         toggle: function() {
-            for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-                if (/close sidebar/i.test(navLink.text)) {
-                    navLink.click(); return;
-        }}}
+            const isGizmoUI = chatgpt.isGizmoUI(),
+                  navBtnSelector = isGizmoUI ? 'main button' : 'nav[aria-label="Chat history"] a',
+                  isToggleBtn = isGizmoUI
+                    ? btn => Array.from(btn.querySelectorAll('*')).some(child => child.style.transform.includes('translateY'))
+                    : btn => /close sidebar/i.test(btn.text);
+            for (const btn of document.querySelectorAll(navBtnSelector))
+                if (isToggleBtn(btn)) { btn.click(); return; }
+        }
     },
 
     startNewChat: function() {
