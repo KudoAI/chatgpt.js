@@ -110,7 +110,7 @@ I siti di Userscript come Greasy Fork mantengono una whitelist di CDN pre-approv
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@6a3270f61b12d1e66a8a058ac394f0876a2c17f6/dist/chatgpt-2.4.0.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@82fb4d225ad8bfaf5ed3fd7de57cc6cc69bb47bb/dist/chatgpt-2.4.0.min.js
 // ==/UserScript==
 
 // Il tuo codice qui...
