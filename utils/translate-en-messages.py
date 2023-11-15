@@ -1,6 +1,6 @@
 '''
 Script:       translate-en-messages.py
-Version:      2023.9.29
+Version:      2023.11.14
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
 URL:          https://github.com/adamlui/python-utils
@@ -69,8 +69,8 @@ for lang_code in output_langs:
     lang_added, lang_skipped, lang_translated = False, False, False
     folder = lang_code.replace('-', '_') ; translated_msgs = {}
     if '-' in lang_code: # cap suffix
-        sepIndex = folder.index('_')
-        folder = folder[:sepIndex] + '_' + folder[sepIndex+1:].upper()
+        sep_index = folder.index('_')
+        folder = folder[:sep_index] + '_' + folder[sep_index+1:].upper()
 
     # Skip English locales
     if lang_code.startswith('en'):
