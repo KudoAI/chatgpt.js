@@ -26,7 +26,7 @@ a:focus, a:hover { text-decoration: underline ; color: inherit }
 }
 .menu-icon { padding: 8px }
 .menu-area:focus, .menu-area:hover { /* add hover color/cursor */
-    color: var(--bg) ; background: rgb(100 149 237) ; cursor: pointer }
+    color: var(--bg) ; background: rgb(100, 149, 237) ; cursor: pointer }
 .menu-item:hover .toggle-switch .slider, .menu-item:hover span { filter: invert(1) } /* invert toggle switch + label */
 .menu-item:hover .menu-icon { filter: none } /* ...but not non-toggle icons */
 .menu-item > label > .slider { transform: scale(0.95) ; top: 1px } /* make child toggles smaller */
