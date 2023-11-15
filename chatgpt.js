@@ -131,7 +131,7 @@ const chatgpt = {
                 // Background styles
                 '.chatgpt-modal {' 
                     + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
-                    + 'background-color: rgba(67 70 72 / 0) ;' // init dim bg but no opacity
+                    + 'background-color: rgba(67, 70, 72, 0) ;' // init dim bg but no opacity
                     + 'transition: background-color 0.05s ease ;' // speed to transition in show alert routine
                     + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
 
@@ -140,8 +140,8 @@ const chatgpt = {
                     + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ;'
                     + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.2s cubic-bezier(.165,.84,.44,1) ;'
                     + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
-                    + ( scheme != 'dark' ? 'border: 1px solid rgba(0 0 0 / 0.3) ;' : '' )
-                    + 'padding: 20px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0 0 0 / .12) ;'
+                    + ( scheme != 'dark' ? 'border: 1px solid rgba(0, 0, 0, 0.3) ;' : '' )
+                    + 'padding: 20px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                     + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; }'
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
                 + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
@@ -262,7 +262,7 @@ const chatgpt = {
             modalContainer.style.display = '';
             setTimeout(() => { // delay non-0 opacity's for transition fx
                 modalContainer.style.backgroundColor = ( 
-                    `rgba(67 70 72 / ${ scheme === 'dark' ? 0.62 : 0 })`);
+                    `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0 })`);
                 modalContainer.classList.add('animated'); }, 100);
         }
 
@@ -1804,7 +1804,7 @@ const chatgpt = {
                         
 
             // Fix for blank background on dropdown elements
-            if (element == 'dropdown') newElement.style.backgroundColor = 'var(--gray-900, rgb(32 33 35))';
+            if (element == 'dropdown') newElement.style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))';
 
             this.elements.push(newElement);
             this.activateObserver();
