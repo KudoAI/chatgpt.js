@@ -555,7 +555,7 @@ const chatgpt = {
             filename = `ChatGPT_${ day }-${ month }-${ year }_${ hour }-${ minute }.txt`;
 
             // Create transcript from active chat
-            if (chatToGet == 'active' && /\/\w{8}-(\w{4}-){3}\w{12}$/.test(window.location.href)) {
+            if (chatToGet == 'active' && /\/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$/.test(window.location.href)) {
                 const chatDivs = document.querySelectorAll('main > div > div > div > div > div > div[class*=group]');
                 if (chatDivs.length === 0) return console.error('Chat is empty!');
                 const msgs = []; let isUserMsg = true;
