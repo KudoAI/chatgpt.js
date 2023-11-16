@@ -114,7 +114,7 @@ Greasy Fork와 같은 사용자 스크립트 저장소는 미리 승인된 CDN(�
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@d1d98153bdf603712ea25bfbe41bc926149336a8/dist/chatgpt-2.4.2.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@a7ee1c09e651ee4c4f43d647698cc7d6b6eeaf8f/dist/chatgpt-2.4.2.min.js
 // ==/UserScript==
 
 // 코드를 여기에 작성해 주세요...
