@@ -759,7 +759,7 @@ const chatgpt = {
           + '                    [ \'all\' | \'latest\' | index of msg to get ]'); }
 
         const getChatDetails = (token, detailsToGet) => {
-            const re_chatID = /\w{8}-(\w{4}-){3}\w{12}/;
+            const re_chatID = /\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/;
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
                 xhr.open('GET', endpoints.openAI.chats, true);
