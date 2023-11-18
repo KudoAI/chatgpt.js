@@ -1107,6 +1107,9 @@ const chatgpt = {
 
     isLightMode: function() { return document.documentElement.classList.contains('light'); },
 
+    isMobileDevice: function() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); },
+
     logout: function() { window.location.href = 'https://chat.openai.com/auth/logout'; },
 
     menu: {
