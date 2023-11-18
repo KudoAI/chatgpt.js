@@ -109,7 +109,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@a7ee1c09e651ee4c4f43d647698cc7d6b6eeaf8f/dist/chatgpt-2.4.3.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@70905dcc82868c9043ae9f83fd5882dc543eebb8/dist/chatgpt-2.4.3.min.js
 // ==/UserScript==
 
 // 你的代碼在這裡...
