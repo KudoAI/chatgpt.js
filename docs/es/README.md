@@ -110,7 +110,7 @@ Los repositorios de scripts de usuario como Greasy Fork mantienen una lista blan
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@70905dcc82868c9043ae9f83fd5882dc543eebb8/dist/chatgpt-2.5.0.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@20e555cd51b70f4d9429f73e7ddddaa37ca0bda4/dist/chatgpt-2.5.0.min.js
 // ==/UserScript==
 
 // Tu código aquí...
