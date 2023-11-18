@@ -1840,7 +1840,7 @@ const chatgpt = {
                   navBtnSelector = isMobileDevice ? '#__next button'
                                  : isGizmoUI ? 'main button' 
                                              : 'nav[aria-label="Chat history"] a',
-                  isToggleBtn = isMobileDevice ? btn => true // since 1st one is toggle
+                  isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
                               : isGizmoUI ? btn => Array.from(btn.querySelectorAll('*'))
                                                         .some(child => child.style.transform.includes('translateY'))
                                           : btn => /close sidebar/i.test(btn.text);
