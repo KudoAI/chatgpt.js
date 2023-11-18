@@ -1829,16 +1829,21 @@ const chatgpt = {
         isOff: function() { return !this.isOn(); },
         isOn: function() {
             return chatgpt.isGizmoUI()
-              ? document.querySelector('#__next > div > div').style.visibility != 'hidden'
+              ? ( chatgpt.browser.isMobile() ? document.documentElement.style.overflow == 'hidden'
+                                             : document.querySelector('#__next > div > div').style.visibility != 'hidden' )
               : !document.querySelector('button[aria-label*="Open sidebar"]');
         },
 
         toggle: function() {
             const isGizmoUI = chatgpt.isGizmoUI(),
-                  navBtnSelector = isGizmoUI ? 'main button' : 'nav[aria-label="Chat history"] a',
-                  isToggleBtn = isGizmoUI
-                    ? btn => Array.from(btn.querySelectorAll('*')).some(child => child.style.transform.includes('translateY'))
-                    : btn => /close sidebar/i.test(btn.text);
+                  isMobileDevice = chatgpt.browser.isMobile(),
+                  navBtnSelector = isMobileDevice ? '#__next button'
+                                 : isGizmoUI ? 'main button' 
+                                             : 'nav[aria-label="Chat history"] a',
+                  isToggleBtn = isMobileDevice ? btn => true // since 1st one is toggle
+                              : isGizmoUI ? btn => Array.from(btn.querySelectorAll('*'))
+                                                        .some(child => child.style.transform.includes('translateY'))
+                                          : btn => /close sidebar/i.test(btn.text);
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
         }
