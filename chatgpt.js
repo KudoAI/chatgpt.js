@@ -396,6 +396,10 @@ const chatgpt = {
     },
 
     browser: {
+
+        isLightMode: function() { return document.documentElement.classList.contains('light'); },
+        isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
+
         isMobileDevice: function() {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
     },
@@ -1085,7 +1089,7 @@ const chatgpt = {
         }
     },
 
-    isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
+    isDarkMode: function() { chatgpt.browser.isDarkMode(); },
 
     isFullScreen: function() {
         const userAgentStr = navigator.userAgent;
@@ -1110,7 +1114,7 @@ const chatgpt = {
                     clearInterval(intervalId); setTimeout(() => { resolve(); }, 500);
     }}, 100);});},
 
-    isLightMode: function() { return document.documentElement.classList.contains('light'); },
+    isLightMode: function() { chatgpt.browser.isLightMode(); },
     isMobileDevice: function() { chatgpt.browser.isMobileDevice(); },
 
     logout: function() { window.location.href = 'https://chat.openai.com/auth/logout'; },
