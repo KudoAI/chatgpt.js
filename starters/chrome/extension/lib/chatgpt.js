@@ -399,6 +399,8 @@ const chatgpt = {
 
         isLightMode: function() { return document.documentElement.classList.contains('light'); },
         isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
+        isChromium: function() { return navigator.userAgent.includes('Chrome'); },
+        isFirefox: function() { return navigator.userAgent.includes('Firefox'); },
 
         isFullScreen: function() {
             const userAgentStr = navigator.userAgent;
@@ -1096,7 +1098,9 @@ const chatgpt = {
         }
     },
 
+    isChromium: function() { chatgpt.browser.isChromium(); },
     isDarkMode: function() { chatgpt.browser.isDarkMode(); },
+    isFirefox: function() { chatgpt.browser.isFirefox(); },
     isFullScreen: function() { chatgpt.browser.isFullScreen(); },
     isGizmoUI: function () { return document.documentElement.classList.toString().includes('gizmo'); },
 
