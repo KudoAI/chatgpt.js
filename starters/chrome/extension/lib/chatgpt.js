@@ -395,6 +395,11 @@ const chatgpt = {
         }
     },
 
+    browser: {
+        isMobileDevice: function() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
+    },
+
     clearChats: async function(method) {
 
         // Validate method arg
@@ -1106,9 +1111,7 @@ const chatgpt = {
     }}, 100);});},
 
     isLightMode: function() { return document.documentElement.classList.contains('light'); },
-
-    isMobileDevice: function() {
-        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); },
+    isMobileDevice: function() { chatgpt.browser.isMobileDevice(); },
 
     logout: function() { window.location.href = 'https://chat.openai.com/auth/logout'; },
 
@@ -1563,7 +1566,7 @@ const chatgpt = {
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
         const delaySend = setInterval(() => {
             if (!sendButton.hasAttribute('disabled')) { // send msg
-                method.toLowerCase() == 'click' || chatgpt.isMobileDevice() ? sendButton.click()
+                method.toLowerCase() == 'click' || chatgpt.browser.isMobileDevice() ? sendButton.click()
                     : textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }));
                 clearInterval(delaySend);
             }
