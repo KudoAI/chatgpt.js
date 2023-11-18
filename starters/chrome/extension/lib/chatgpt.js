@@ -1098,10 +1098,10 @@ const chatgpt = {
         }
     },
 
-    isChromium: function() { chatgpt.browser.isChromium(); },
-    isDarkMode: function() { chatgpt.browser.isDarkMode(); },
-    isFirefox: function() { chatgpt.browser.isFirefox(); },
-    isFullScreen: function() { chatgpt.browser.isFullScreen(); },
+    isChromium: function() { return chatgpt.browser.isChromium(); },
+    isDarkMode: function() { return chatgpt.browser.isDarkMode(); },
+    isFirefox: function() { return chatgpt.browser.isFirefox(); },
+    isFullScreen: function() { return chatgpt.browser.isFullScreen(); },
     isGizmoUI: function () { return document.documentElement.classList.toString().includes('gizmo'); },
 
     isIdle: function() {
@@ -1118,8 +1118,8 @@ const chatgpt = {
                     clearInterval(intervalId); setTimeout(() => { resolve(); }, 500);
     }}, 100);});},
 
-    isLightMode: function() { chatgpt.browser.isLightMode(); },
-    isMobileDevice: function() { chatgpt.browser.isMobile(); },
+    isLightMode: function() { return chatgpt.browser.isLightMode(); },
+    isMobileDevice: function() { return chatgpt.browser.isMobile(); },
 
     logout: function() { window.location.href = 'https://chat.openai.com/auth/logout'; },
 
