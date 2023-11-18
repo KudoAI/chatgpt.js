@@ -1563,7 +1563,7 @@ const chatgpt = {
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
         const delaySend = setInterval(() => {
             if (!sendButton.hasAttribute('disabled')) { // send msg
-                method.toLowerCase() == 'click' ? sendButton.click()
+                method.toLowerCase() == 'click' || chatgpt.isMobileDevice() ? sendButton.click()
                     : textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }));
                 clearInterval(delaySend);
             }
