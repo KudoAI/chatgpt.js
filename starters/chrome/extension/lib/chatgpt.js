@@ -1080,10 +1080,7 @@ const chatgpt = {
         }
     },
 
-    isDarkMode: function() {
-        return !document.documentElement.classList.toString().includes('dark') ? false
-             : window.matchMedia?.('(prefers-color-scheme: dark)')?.matches;
-    },
+    isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
 
     isFullScreen: function() {
         const userAgentStr = navigator.userAgent;
