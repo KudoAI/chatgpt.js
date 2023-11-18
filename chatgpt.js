@@ -409,7 +409,7 @@ const chatgpt = {
                  : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen;
         },
 
-        isMobileDevice: function() {
+        isMobile: function() {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
     },
 
@@ -1119,7 +1119,7 @@ const chatgpt = {
     }}, 100);});},
 
     isLightMode: function() { chatgpt.browser.isLightMode(); },
-    isMobileDevice: function() { chatgpt.browser.isMobileDevice(); },
+    isMobileDevice: function() { chatgpt.browser.isMobile(); },
 
     logout: function() { window.location.href = 'https://chat.openai.com/auth/logout'; },
 
