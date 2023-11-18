@@ -400,6 +400,13 @@ const chatgpt = {
         isLightMode: function() { return document.documentElement.classList.contains('light'); },
         isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
 
+        isFullScreen: function() {
+            const userAgentStr = navigator.userAgent;
+            return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
+                 : userAgentStr.includes('Firefox') ? window.fullScreen
+                 : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen;
+        },
+
         isMobileDevice: function() {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
     },
@@ -1090,14 +1097,7 @@ const chatgpt = {
     },
 
     isDarkMode: function() { chatgpt.browser.isDarkMode(); },
-
-    isFullScreen: function() {
-        const userAgentStr = navigator.userAgent;
-        return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
-             : userAgentStr.includes('Firefox') ? window.fullScreen
-             : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen;
-    },
-
+    isFullScreen: function() { chatgpt.browser.isFullScreen(); },
     isGizmoUI: function () { return document.documentElement.classList.toString().includes('gizmo'); },
 
     isIdle: function() {
