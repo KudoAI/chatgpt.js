@@ -397,8 +397,8 @@ const chatgpt = {
 
     browser: {
 
-        isLightMode: function() { return document.documentElement.classList.contains('light'); },
-        isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
+        isLightMode: function() { return window.matchMedia?.('(prefers-color-scheme: light)')?.matches; },
+        isDarkMode: function() { return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches; },
         isChromium: function() { return navigator.userAgent.includes('Chrome'); },
         isFirefox: function() { return navigator.userAgent.includes('Firefox'); },
 
@@ -1099,7 +1099,7 @@ const chatgpt = {
     },
 
     isChromium: function() { return chatgpt.browser.isChromium(); },
-    isDarkMode: function() { return chatgpt.browser.isDarkMode(); },
+    isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
     isFirefox: function() { return chatgpt.browser.isFirefox(); },
     isFullScreen: function() { return chatgpt.browser.isFullScreen(); },
     isGizmoUI: function () { return document.documentElement.classList.toString().includes('gizmo'); },
@@ -1118,7 +1118,7 @@ const chatgpt = {
                     clearInterval(intervalId); setTimeout(() => { resolve(); }, 500);
     }}, 100);});},
 
-    isLightMode: function() { return chatgpt.browser.isLightMode(); },
+    isLightMode: function() { return document.documentElement.classList.toString().includes('light'); },
     isMobileDevice: function() { return chatgpt.browser.isMobile(); },
 
     logout: function() { window.location.href = 'https://chat.openai.com/auth/logout'; },
