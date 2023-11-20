@@ -6,14 +6,14 @@
     // Initialize popup toggles
     settings.load('extensionDisabled')
         .then(function() { // restore extension/toggle states
-            mainToggle.checked = !config.extensionDisabled;
+            masterToggle.checked = !config.extensionDisabled;
             updateGreyness();
         });
 
     // Add main toggle click-listener
     const toggles = document.querySelectorAll('input'),
-          mainToggle = toggles[0];
-    mainToggle.addEventListener('change', function() {    
+          masterToggle = toggles[0];
+    masterToggle.addEventListener('change', function() {    
         settings.save('extensionDisabled', !this.checked);
         syncExtension() ; updateGreyness();
         notify(config.appName + ( this.checked ? ' ON' : ' OFF' ));
@@ -84,8 +84,8 @@
         // Update menu contents
         document.querySelectorAll('div.logo, div.menu-title, div.menu')
             .forEach((elem) => {
-                elem.classList.remove(mainToggle.checked ? 'disabled' : 'enabled');
-                elem.classList.add(mainToggle.checked ? 'enabled' : 'disabled');
+                elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled');
+                elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled');
             });
     }
 
