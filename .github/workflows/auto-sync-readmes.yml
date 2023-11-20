@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    if: contains(github.event.commits[0].message, 'buil')
+    if: (github.repository == 'KudoAI/chatgpt.js') && (github.event.commits[0].committer.username != 'kudo-sync-bot') && (contains(github.event.commits[0].message, 'buil'))
     runs-on: ubuntu-latest
     steps:
       - name: Checkout kudoai/chatgpt.js
