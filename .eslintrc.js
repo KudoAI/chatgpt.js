@@ -1,4 +1,4 @@
-module.exports  = {
+module.exports = {
     'extends': ['eslint:recommended'],
     'ignorePatterns': ['**/*.md', '**/*.min.js'],
     'rules': {
