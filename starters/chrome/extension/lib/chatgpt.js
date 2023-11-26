@@ -107,7 +107,8 @@ const chatgpt = {
     // [ title/msg = strings, btns = [named functions], checkbox = named function, width (px) = int ] = optional
     // * Spaces are inserted into button labels by parsing function names in camel/kebab/snake case
 
-        const scheme = chatgpt.isDarkMode() ? 'dark' : 'light';   
+        const scheme = chatgpt.isDarkMode() ? 'dark' : 'light',
+              isMobile = chatgpt.browser.isMobile();
 
         // Create modal parent/children elements
         const modalContainer = document.createElement('div');
@@ -118,7 +119,7 @@ const chatgpt = {
               modalMessage = document.createElement('p');
 
         // Create/append/update modal style (if missing or outdated)
-        const thisUpdated = 20231110; // datestamp of last edit for this file's `modalStyle` 
+        const thisUpdated = 20231126; // datestamp of last edit for this file's `modalStyle` 
         let modalStyle = document.querySelector('#chatgpt-modal-style'); // try to select existing style
         if (!modalStyle || parseInt(modalStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
             if (!modalStyle) { // outright missing, create/id/attr/append it first
@@ -137,7 +138,7 @@ const chatgpt = {
 
                 // Alert styles
                 + '.chatgpt-modal > div {'
-                    + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ;'
+                    + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ; max-width: 75vw ;'
                     + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.2s cubic-bezier(.165,.84,.44,1) ;'
                     + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
                     + ( scheme != 'dark' ? 'border: 1px solid rgba(0, 0, 0, 0.3) ;' : '' )
@@ -151,9 +152,11 @@ const chatgpt = {
                     + '100% { opacity: 0 ; transform: scale(2) }}'
 
                 // Button styles
-                + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 }'
+                + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 ;'
+                    + ( isMobile ? 'flex-direction: column-reverse' : '' ) + '}'
                 + '.chatgpt-modal button {'
                     + 'margin-left: 10px ; padding: 4px 18px ; border-radius: 15px ;'
+                    + ( isMobile ? 'margin-top: 11px ; margin-bottom: 3px ;' : '')
                     + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
                 + '.primary-modal-btn {'
                     + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
