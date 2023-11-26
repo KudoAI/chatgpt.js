@@ -1,6 +1,6 @@
 {
   "name": "chatgpt",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "description": "Client-side JavaScript library for ChatGPT",
   "main": "chatgpt.js",
   "scripts": {
