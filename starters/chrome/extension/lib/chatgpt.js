@@ -148,8 +148,8 @@ const chatgpt = {
                 + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
                 + '.chatgpt-modal.animated > div { opacity: 1 ; transform: translateX(0) translateY(0) }'
                 + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
-                    + '50% { opacity: 0.25 ; transform: scale(1.35) }'
-                    + '100% { opacity: 0 ; transform: scale(2) }}'
+                    + '50% { opacity: 0.25 ; transform: scale(1.05) }'
+                    + '100% { opacity: 0 ; transform: scale(1.35) }}'
 
                 // Button styles
                 + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 ;'
