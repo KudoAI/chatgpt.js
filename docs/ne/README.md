@@ -110,7 +110,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@4d8cba38add56c4885aced685d93754f60e69d73/dist/chatgpt-2.5.1.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@06d15c2e7421874a6c8743e51116872417af5e85/dist/chatgpt-2.5.1.min.js
 // ==/UserScript==
 
 // आफ्नो कोड यहाँ लेख्नुहोस्...
