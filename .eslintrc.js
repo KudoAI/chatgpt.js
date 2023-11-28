@@ -2,7 +2,7 @@ module.exports = {
     'extends': ['eslint:recommended'],
     'ignorePatterns': ['**/*.md', '**/*.min.js'],
     'rules': {
-        'indent': 'off',
+        'indent': 'off', 'no-unexpected-multiline': 'off', // allow whitespace anywhere
         'semi': ['error', 'always'], // enforce semicolons at end of statement
         'quotes': ['error', 'single'], // enforce single quotes for string literals
         'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }], // enforce spacing in object properties
