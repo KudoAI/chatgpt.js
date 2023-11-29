@@ -952,7 +952,7 @@ const chatgpt = {
 
         isOn: function() {
             const navDivs = document.querySelectorAll('nav[aria-label="Chat history"] div'),
-            offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
+                  offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
             return offDiv.classList.toString().includes('invisible');
         },
 
