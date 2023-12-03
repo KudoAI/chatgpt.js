@@ -23,13 +23,12 @@
         <a href="../nl#readme">Nederlands</a> |
         <a href="../vi#readme">Việt</a>
     </h6>
-<br>
+</div>
 
 <picture>
     <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/logos/chatgpt.js/with-reflection/darkmode.png">
     <img width=700 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/logos/chatgpt.js/with-reflection/lightmode.png">
 </picture>
-<br>
 
 ### 🤖 Uma poderosa biblioteca JavaScript do lado do cliente para ChatGPT
 
