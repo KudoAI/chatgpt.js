@@ -33,7 +33,8 @@
 ### 🤖 ChatGPT 用の強力なクライアント側 JavaScript ライブラリ
 
 </div>
-<br><br>
+
+<br>
 
 <div id="shields" align="center">
 

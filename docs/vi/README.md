@@ -33,7 +33,8 @@
 ### 🤖 Thư viện JavaScript phía máy khách mạnh mẽ cho ChatGPT
 
 </div>
-<br><br>
+
+<br>
 
 <div id="shields" align="center">
 

@@ -33,7 +33,8 @@
 ### 🤖 適用於 ChatGPT 的強大客戶端 JavaScript 庫
 
 </div>
-<br><br>
+
+<br>
 
 <div id="shields" align="center">
 [![](https://img.shields.io/github/stars/KudoAI/chatgpt.js?label=星星&color=gold&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/stargazers)

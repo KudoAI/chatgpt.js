@@ -33,7 +33,8 @@
 ### 🤖 Une puissante bibliothèque JavaScript côté client pour ChatGPT
 
 </div>
-<br><br>
+
+<br>
 
 <div id="shields" align="center">
 
