@@ -24,13 +24,11 @@
         <a href="../vi#readme">Việt</a>
     </h6>
 </div>
-<br>
 
 <picture>
     <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/logos/chatgpt.js/with-reflection/darkmode.png">
     <img width=700 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/logos/chatgpt.js/with-reflection/lightmode.png">
 </picture>
-<br>
 
 ### 🤖 ChatGPT को लागि एक शक्तिशाली क्लाइन्ट-साइड जावास्क्रिप्ट लाइब्रेरी
 
