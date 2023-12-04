@@ -119,7 +119,7 @@ const chatgpt = {
               modalMessage = document.createElement('p');
 
         // Create/append/update modal style (if missing or outdated)
-        const thisUpdated = 20231126; // datestamp of last edit for this file's `modalStyle` 
+        const thisUpdated = 20231203; // datestamp of last edit for this file's `modalStyle` 
         let modalStyle = document.querySelector('#chatgpt-modal-style'); // try to select existing style
         if (!modalStyle || parseInt(modalStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
             if (!modalStyle) { // outright missing, create/id/attr/append it first
@@ -155,8 +155,8 @@ const chatgpt = {
                 + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 ;'
                     + ( isMobile ? 'flex-direction: column-reverse' : '' ) + '}'
                 + '.chatgpt-modal button {'
-                    + 'margin-left: 10px ; padding: 4px 18px ; border-radius: 15px ;'
-                    + ( isMobile ? 'margin-top: 11px ; margin-bottom: 3px ;' : '')
+                    + `margin-left: ${ isMobile ? 0 : 10}px ; padding: ${ isMobile ? 15 : 4}px 18px ; border-radius: 15px ;`
+                    + ( isMobile ? 'margin-top: 5px ; margin-bottom: 3px ;' : '')
                     + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
                 + '.primary-modal-btn {'
                     + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
