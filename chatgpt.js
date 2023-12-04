@@ -138,7 +138,7 @@ const chatgpt = {
 
                 // Alert styles
                 + '.chatgpt-modal > div {'
-                    + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ; max-width: 75vw ;'
+                    + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ; max-width: 75vw ; word-wrap: break-word ;'
                     + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.2s cubic-bezier(.165,.84,.44,1) ;'
                     + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
                     + ( scheme != 'dark' ? 'border: 1px solid rgba(0, 0, 0, 0.3) ;' : '' )
