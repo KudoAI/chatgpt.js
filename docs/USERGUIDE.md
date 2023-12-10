@@ -141,7 +141,7 @@ xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
         chatgptJS.textContent = xhr.responseText;
-        document.head.appendChild(chatgptJS);
+        document.head.append(chatgptJS);
         yourCode(); // runs your code
     }
 };
@@ -313,7 +313,7 @@ Cleans and renders given HTML code.
 Example code:
 
 ```js
-document.body.appendChild(
+document.body.append(
     chatgpt.renderHTML('<div>Hello World!</div>');
 );
 ```

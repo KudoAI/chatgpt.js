@@ -103,7 +103,7 @@ const onLoadObserver = new MutationObserver(() => {
         const cover = document.querySelector('.cover'),
               topGradient = document.createElement('div');
         topGradient.classList.add('top-gradient');
-        document.body.appendChild(topGradient);
+        document.body.append(topGradient);
         updateTGvisibility(); // since page load can be below fold
         function updateTGvisibility() {
             topGradient.style.display = ( // hide/show when fold is 85% at top
@@ -141,7 +141,7 @@ const onLoadObserver = new MutationObserver(() => {
                 + 'Designed by <a href="https://adamlui.com" target="_blank" rel="noopener">Adam Lui</a> / '
                 + 'Powered by <a href="https://docsify.js.org" target="_blank" rel="noopener">Docsify</a> / '
                 + 'Hosted by <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>';
-            article.appendChild(copyrightFooter);
+            article.append(copyrightFooter);
 
             // Replace GitHub demo embed w/ YouTube one
             const ghDemo = document.querySelector('a[href*="/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3140b0f8a4"]'),
@@ -273,7 +273,7 @@ const onLoadObserver = new MutationObserver(() => {
                                            document.createElement('style'); // ...or create it
                     if (!scrollbarStyle.parentElement) { // append created div if not in DOM
                         scrollbarStyle.setAttribute('id', 'scrollbar-style');
-                        document.head.appendChild(scrollbarStyle);
+                        document.head.append(scrollbarStyle);
                     }
                     scrollbarStyle.innerText = (
                         `:root { scrollbar-color: ${ sectionColor } #1a1a1a }`

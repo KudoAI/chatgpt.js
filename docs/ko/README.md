@@ -94,7 +94,7 @@ xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
         chatgptJS.textContent = xhr.responseText;
-        document.head.appendChild(chatgptJS);
+        document.head.append(chatgptJS);
         yourCode(); // 당신의 코드를 작성해주세요 
 
     }

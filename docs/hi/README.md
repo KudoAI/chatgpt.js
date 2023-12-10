@@ -92,7 +92,7 @@ xhr.onload = function() {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script')
         chatgptJS.textContent = xhr.responseText
-        document.head.appendChild(chatgptJS)
+        document.head.append(chatgptJS)
         yourCode() // आपका कोड ये फंक्शन चलाएगा
     }
 }

@@ -17,7 +17,7 @@
         if (o && "undefined" != typeof document) {
             var n = document.head || document.getElementsByTagName("head")[0],
                 c = document.createElement("style");
-            (c.type = "text/css"), "top" === t && n.firstChild ? n.insertBefore(c, n.firstChild) : n.appendChild(c), c.styleSheet ? (c.styleSheet.cssText = o) : c.appendChild(document.createTextNode(o));
+            (c.type = "text/css"), "top" === t && n.firstChild ? n.insertBefore(c, n.firstChild) : n.append(c), c.styleSheet ? (c.styleSheet.cssText = o) : c.append(document.createTextNode(o));
         }
     })(
         ".docsify-copy-code-button,.docsify-copy-code-button span{cursor:pointer}.docsify-copy-code-button{position:absolute;z-index:1;top:0;right:0;overflow:visible;padding:.65em .8em;border:0;border-radius:0;outline:0;font-size:1em;background:grey;background:var(--theme-color,grey);color:#fff;opacity:1}.docsify-copy-code-button span{border-radius:3px;background:inherit;pointer-events:none}.docsify-copy-code-button .error,.docsify-copy-code-button .success{position:absolute;z-index:1000;top:24px;left:12px;padding:.5em .65em;font-size:.825em;opacity:0;transform:translateX(-88%)translateY(-50%)}.docsify-copy-code-button.error .error,.docsify-copy-code-button.success .success{left:12px;top:24px;opacity:1;,pre:hover .docsify-copy-code-button{opacity:1}"
