@@ -10,32 +10,32 @@ jobs:
     if: (github.repository == 'KudoAI/chatgpt.js') && (github.event.commits[0].committer.username != 'kudo-sync-bot') && (contains(github.event.commits[0].message, 'buil'))
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout kudoai/chatgpt.js
+      - name: Checkout KudoAI/chatgpt.js
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: kudoai/chatgpt.js
-          path: kudoai/chatgpt.js
+          repository: KudoAI/chatgpt.js
+          path: KudoAI/chatgpt.js
           fetch-depth: 2
 
       - name: Find/replace latest version in READMEs
         env:
           COMMIT_MSG: ${{ github.event.commits[0].message }}
         run: |
-          cd $GITHUB_WORKSPACE/kudoai/chatgpt.js
+          cd $GITHUB_WORKSPACE/KudoAI/chatgpt.js
           version=$(echo "$COMMIT_MSG" | grep -oE 'chatgpt-(\d+\.){2}\d+\.min\.js' | awk -F '[-.]' '{print $2"."$3"."$4}')
           echo "Extracted version: $version"
           sed -i "s/chatgpt-(\d+\.?){3}\.min\.js/chatgpt-$version\.min\.js/g" $(find docs -name "README.md")
 
       - name: Find/replace latest commit hash in READMEs
         run: |
-          cd $GITHUB_WORKSPACE/kudoai/chatgpt.js
+          cd $GITHUB_WORKSPACE/KudoAI/chatgpt.js
           commit_hash=$(git rev-parse HEAD)
           sed -i "s/chatgpt.js@[a-f0-9]\+\//chatgpt.js@$commit_hash\//g" $(find docs -name "README.md")
 
       - name: Commit and push changes
         run: |
-          cd $GITHUB_WORKSPACE/kudoai/chatgpt.js
+          cd $GITHUB_WORKSPACE/KudoAI/chatgpt.js
           git config user.name "kudo-sync-bot"
           git config user.email "auto-sync@kudoai.com"
           git add .
