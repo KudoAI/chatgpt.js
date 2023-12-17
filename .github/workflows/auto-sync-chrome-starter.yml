@@ -1,4 +1,4 @@
-name: Sync /starters/chrome/ to kudoai/chatgpt.js-chrome-starter/
+name: Sync /starters/chrome/ to KudoAI/chatgpt.js-chrome-starter/
 
 on:
   push:
@@ -12,32 +12,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Checkout kudoai/chatgpt.js
+      - name: Checkout KudoAI/chatgpt.js
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: kudoai/chatgpt.js
-          path: kudoai/chatgpt.js
+          repository: KudoAI/chatgpt.js
+          path: KudoAI/chatgpt.js
 
-      - name: Checkout kudoai/chatgpt.js-chrome-starter
+      - name: Checkout KudoAI/chatgpt.js-chrome-starter
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: kudoai/chatgpt.js-chrome-starter
-          path: kudoai/chatgpt.js-chrome-starter
+          repository: KudoAI/chatgpt.js-chrome-starter
+          path: KudoAI/chatgpt.js-chrome-starter
 
-      - name: Sync /starters/chrome/ to kudoai/chatgpt.js-chrome-starter/
+      - name: Sync /starters/chrome/ to KudoAI/chatgpt.js-chrome-starter/
         run: |
           rsync -avhr \
-            "${{ github.workspace }}/kudoai/chatgpt.js/starters/chrome/" \
-            "${{ github.workspace }}/kudoai/chatgpt.js-chrome-starter/"
+            "${{ github.workspace }}/KudoAI/chatgpt.js/starters/chrome/" \
+            "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/"
 
-      - name: Push to kudoai/chatgpt.js-chrome-starter
+      - name: Push to KudoAI/chatgpt.js-chrome-starter
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           push_options: '--force'
           add_options: '--all'
           commit_user_email: auto-sync@kudoai.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `kudoai/chatgpt.js`]'
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `KudoAI/chatgpt.js`]'
           file_pattern: '**'
-          repository: kudoai/chatgpt.js-chrome-starter
+          repository: KudoAI/chatgpt.js-chrome-starter
