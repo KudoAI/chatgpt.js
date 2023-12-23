@@ -1503,35 +1503,40 @@ const chatgpt = {
         },
 
         getFromDOM: function(pos) {
-            const responseDivs = document.querySelectorAll('main > div > div > div > div > div[class*=group]'),
+            const responseDivs = document.querySelectorAll('div[data-testid*="conversation-turn"]:nth-child(odd)'),
                   strPos = pos.toString().toLowerCase();
-            if (/last|final/.test(strPos)) { // get last response
-                return responseDivs.length ? responseDivs[responseDivs.length - 1].textContent : '';
-            } else { // get nth response
-                const nthOfResponse = (
+            let response = '';
+            if (responseDivs.length) {
+                if (/last|final/.test(strPos)) // get last response
+                    response = responseDivs[responseDivs.length - 1].textContent;
+                else { // get nth response
+                    const nthOfResponse = (
 
-                    // Calculate base number
-                    Number.isInteger(pos) ? pos : // do nothing for integers
-                    /^\d+/.test(strPos) ? /^\d+/.exec(strPos)[0] : // extract first digits for strings w/ them
-                    ( // convert words to integers for digitless strings
-                        /^(?:1|one|fir)(?:st)?$/.test(strPos) ? 1
-                        : /^(?:2|tw(?:o|en|el(?:ve|f))|seco)(?:nd|t[yi])?(?:e?th)?$/.test(strPos) ? 2
-                        : /^(?:3|th(?:ree|ir?))(?:rd|teen|t[yi])?(?:e?th)?$/.test(strPos) ? 3
-                        : /^(?:4|fou?r)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 4
-                        : /^(?:5|fi(?:ve|f))(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 5
-                        : /^(?:6|six)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 6
-                        : /^(?:7|seven)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 7
-                        : /^(?:8|eight?)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 8
-                        : /^(?:9|nine?)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 9
-                        : /^(?:10|ten)(?:th)?$/.test(strPos) ? 10 : 1 )
+                        // Calculate base number
+                        Number.isInteger(pos) ? pos : // do nothing for integers
+                        /^\d+/.test(strPos) ? /^\d+/.exec(strPos)[0] : // extract first digits for strings w/ them
+                        ( // convert words to integers for digitless strings
+                            /^(?:1|one|fir)(?:st)?$/.test(strPos) ? 1
+                            : /^(?:2|tw(?:o|en|el(?:ve|f))|seco)(?:nd|t[yi])?(?:e?th)?$/.test(strPos) ? 2
+                            : /^(?:3|th(?:ree|ir?))(?:rd|teen|t[yi])?(?:e?th)?$/.test(strPos) ? 3
+                            : /^(?:4|fou?r)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 4
+                            : /^(?:5|fi(?:ve|f))(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 5
+                            : /^(?:6|six)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 6
+                            : /^(?:7|seven)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 7
+                            : /^(?:8|eight?)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 8
+                            : /^(?:9|nine?)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 9
+                            : /^(?:10|ten)(?:th)?$/.test(strPos) ? 10 : 1 )
 
-                    // Transform base number if suffixed
-                    * ( /(ty|ieth)$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
-                    + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
+                        // Transform base number if suffixed
+                        * ( /(ty|ieth)$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
+                        + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
 
-                );
-                return responseDivs.length ? responseDivs[nthOfResponse - 1].textContent : '';
+                    );
+                    response = responseDivs[nthOfResponse - 1].textContent;
+                }
+                response = response.replace(/^ChatGPTChatGPT/, ''); // strip sender name
             }
+            return response;
         },
 
         getLast: function() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
