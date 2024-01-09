@@ -136,8 +136,8 @@ const onLoadObserver = new MutationObserver(() => {
             const article = document.querySelector('article'), // to insert at end of
                   copyrightFooter = document.createElement('div');
             copyrightFooter.id = 'copyright-footer';
-            copyrightFooter.innerHTML = '<span style="font-size: 115%">Copyright © 2023–2024 '
-                + '<a href="https://kudoai.com" target="_blank" rel="noopener">KudoAI</a>.</span><br>'
+            copyrightFooter.innerHTML = '<span style="font-size: 115%">Copyright © 2023–' + new Date().getFullYear()
+                + ' <a href="https://kudoai.com" target="_blank" rel="noopener">KudoAI</a>.</span><br>'
                 + 'Designed by <a href="https://adamlui.com" target="_blank" rel="noopener">Adam Lui</a> / '
                 + 'Powered by <a href="https://docsify.js.org" target="_blank" rel="noopener">Docsify</a> / '
                 + 'Hosted by <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>';
