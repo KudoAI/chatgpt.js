@@ -28,7 +28,7 @@ jobs:
 
       - name: Sync /starters/chrome/ to KudoAI/chatgpt.js-chrome-starter/
         run: |
-          rsync -avhr \
+          rsync -avhr --delete \
             "${{ github.workspace }}/KudoAI/chatgpt.js/starters/chrome/" \
             "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/"
 
