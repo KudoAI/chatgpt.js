@@ -27,7 +27,7 @@ jobs:
 
       - name: Sync chatgpt.js to /starters/chrome/extension/lib/chatgpt.js + update version in manifest.json
         run: |
-          cp -f \
+          rsync -avhr --delete \
             "${{ github.workspace }}/KudoAI/chatgpt.js/chatgpt.js" \
             "${{ github.workspace }}/KudoAI/chatgpt.js/starters/chrome/extension/lib/chatgpt.js"
           echo "export { chatgpt };" >> "${{ github.workspace }}/KudoAI/chatgpt.js/starters/chrome/extension/lib/chatgpt.js"
@@ -40,7 +40,7 @@ jobs:
 
       - name: Sync chatgpt.js to KudoAI/chatgpt.js-chrome-starter/extension/lib/chatgpt.js + update version in manifest.json
         run: |
-          cp -f \
+          rsync -avhr --delete \
             "${{ github.workspace }}/KudoAI/chatgpt.js/chatgpt.js" \
             "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/extension/lib/chatgpt.js"
           echo "export { chatgpt };" >> "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/extension/lib/chatgpt.js"
