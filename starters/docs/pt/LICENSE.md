@@ -4,7 +4,7 @@
 
 # Licença MIT
 
-Direitos autorais (c) 2023 [KudoAI](https://github.com/kudoai) e colaboradores
+Direitos autorais (c) 2023–2024 [KudoAI](https://github.com/kudoai) e colaboradores
 
 A permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia deste software e arquivos de documentação associados (o "Software"), para lidar no Software sem restrições, incluindo, sem limitação, os direitos usar, copiar, modificar, fundir, publicar, distribuir, sublicenciar e/ou vender cópias do Software e para permitir que as pessoas a quem o Software é munidos para o efeito, nas seguintes condições:
 
