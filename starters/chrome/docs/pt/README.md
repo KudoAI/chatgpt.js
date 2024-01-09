@@ -10,10 +10,7 @@
 
 <br>
 
-<picture>
-    <source type="image/webp" srcset="../../media/images/screenshots/extension-loaded.webp">
-    <img src="../../media/images/screenshots/extension-loaded.png">
-</picture>
+<img src="../../media/images/screenshots/extension-loaded.png">
 
 ## ⚡ Instalação
 
