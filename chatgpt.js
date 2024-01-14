@@ -881,7 +881,7 @@ const chatgpt = {
         });});};
 
         // Return chat data
-        return new Promise((resolve) => { chatgpt.getAccessToken().then(token => {
+        return new Promise(resolve => { chatgpt.getAccessToken().then(token => {
             if (!detailsToGet.includes('msg')) getChatDetails(token, detailsToGet).then(data => {
                 return resolve(data); // get just the chat details
             });
@@ -980,7 +980,7 @@ const chatgpt = {
 
             instruction = `\n\n${instruction}`; // add 2 newlines to the new instruction
 
-            return new Promise((resolve) => {
+            return new Promise(resolve => {
                 chatgpt.getAccessToken().then(async token => {
                     const instructionsData = await this.fetchData();
 
@@ -1002,7 +1002,7 @@ const chatgpt = {
             if (!validTargets.includes(target))
                 return console.error(`Invalid target ${target}. Valid targets are [${validTargets}]`);
 
-            return new Promise((resolve) => {
+            return new Promise(resolve => {
                 chatgpt.getAccessToken().then(async token => {
                     const instructionsData = await this.fetchData();
 
@@ -1017,7 +1017,7 @@ const chatgpt = {
 
         fetchData: function() {
         // INTERNAL METHOD
-            return new Promise((resolve) => {
+            return new Promise(resolve => {
                 chatgpt.getAccessToken().then(async token => {
                     return resolve(await this.sendRequest('GET', token)); // Return API data
                 });});
@@ -1060,7 +1060,7 @@ const chatgpt = {
         },
 
         turnOff: function() {
-            return new Promise((resolve) => {
+            return new Promise(resolve => {
                 chatgpt.getAccessToken().then(async token => {
                     const instructionsData = await this.fetchData();
                     instructionsData.enabled = false;
@@ -1071,7 +1071,7 @@ const chatgpt = {
         },
 
         turnOn: function() {
-            return new Promise((resolve) => {
+            return new Promise(resolve => {
                 chatgpt.getAccessToken().then(async token => {
                     const instructionsData = await this.fetchData();
                     instructionsData.enabled = true;
@@ -1082,7 +1082,7 @@ const chatgpt = {
         },
 
         toggle: function() {
-            return new Promise((resolve) => {
+            return new Promise(resolve => {
                 this.fetchData().then(async instructionsData => {
                     await (instructionsData.enabled ? this.turnOff() : this.turnOn());
                     return resolve();
@@ -1691,7 +1691,7 @@ const chatgpt = {
                 }));
         });};
 
-        return new Promise((resolve) => {
+        return new Promise(resolve => {
             chatgpt.getAccessToken().then(token => { // get access token
                 getChatNode(token).then(node => { // get chat node
                     makeChatToShare(token, node).then(data => {
