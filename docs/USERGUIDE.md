@@ -26,6 +26,7 @@
     - [isFirefox](#isfirefox)
     - [isFullScreen](#isfullscreen)
     - [isLoaded `async`](#isloaded-async)
+    - [isMobileDevice](#ismobiledevice)
     - [printAllFunctions](#printallfunctions)
     - [randomFloat](#randomfloat)
     - [renderHTML](#renderhtml)
@@ -307,6 +308,18 @@ Example code:
     await chatgpt.isLoaded();
     console.log('ChatGPT has finished loading.');
 })();
+```
+
+### isMobileDevice
+
+Returns a boolean value. `true` if the user device is mobile and `false` otherwise.
+
+Example code:
+
+```js
+if (chatgpt.isMobileDevice()) {
+    // Do something
+}
 ```
 
 ### printAllFunctions
