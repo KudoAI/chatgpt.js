@@ -1371,7 +1371,7 @@ Example code:
 
 ```js
 (async () => {
-    await chatgpt.hishtory.isLoaded();
+    await chatgpt.history.isLoaded();
     console.log('ChatGPT history has finished loading.');
 })();
 ```
