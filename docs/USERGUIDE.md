@@ -19,6 +19,7 @@
 - [Library methods](#library-methods)
   - [General](#general)
     - [detectLanguage `async`](#detectlanguage-async)
+    - [executeCode `async`](#executecode-async)
     - [generateRandomIP](#generaterandomip)
     - [get](#get)
     - [getUserLanguage](#getuserlanguage)
@@ -231,6 +232,22 @@ Example code:
     console.log(language);
     /* Logs:
     Chinese (Traditional) */
+})();
+```
+
+### executeCode `async`
+
+Asks ChatGPT to execute the given code.
+
+**Parameters**:
+
+`code`: A string being the code to execute.
+
+Example code:
+
+```js
+(async () => {
+    console.log(await chatgpt.executeCode('return 6 + 5')); // logs '11'
 })();
 ```
 
