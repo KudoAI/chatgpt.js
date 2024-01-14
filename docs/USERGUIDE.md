@@ -81,6 +81,13 @@
       - [activate](#activate)
       - [deactivate](#deactivate)
       - [nowTimeStamp](#nowtimestamp)
+  - [browser `api`](#browser-api)
+      - [isLightMode](#islightmode-1)
+      - [isDarkMode](#isdarkmode-1)
+      - [isChromium](#ischromium-1)
+      - [isFirefox](#isfirefox-1)
+      - [isFullScreen](#isfullscreen-1)
+      - [isMobile](#ismobile)
   - [code `api`](#code-api)
     - [minify `async`](#minify-async)
     - [execute](#execute)
@@ -1146,6 +1153,76 @@ Example code:
 ```js
 const timeStamp = chatgpt.autoRefresh.nowTimeStamp();
 console.log(timeStamp); // Example output: '1:56:25 PM'
+```
+
+## browser `api`
+
+### isLightMode
+
+Returns a boolean value. `true` if system/browser scheme preference is set to light, `false` otherwise.
+
+Example code:
+
+```js
+console.log(chatgpt.browser.isLightMode()); // logs `true` or `false`
+```
+
+### isDarkMode
+
+Returns a boolean value. `true` if system/browser scheme preference is set to dark, `false` otherwise.
+
+Example code:
+
+```js
+console.log(chatgpt.browser.isDarkMode()); // logs `true` or `false`
+```
+
+### isChromium
+
+Returns a boolean value. `true` if the browser is Chromium and `false` otherwise.
+
+Example code:
+
+```js
+if (chatgpt.browser.isChromium()) {
+    // Do something
+}
+```
+
+### isFirefox
+
+Returns a boolean value. `true` if the browser is Firefox and `false` otherwise.
+
+Example code:
+
+```js
+if (chatgpt.browser.isFirefox()) {
+    // Do something
+}
+```
+
+### isFullScreen
+
+Returns a boolean value. `true` if the browser is fullscreen and `false` otherwise.
+
+Example code:
+
+```js
+if (chatgpt.browser.isFullScreen()) {
+    // Do something
+}
+```
+
+### isMobile
+
+Returns a boolean value. `true` if the browser is mobile and `false` otherwise.
+
+Example code:
+
+```js
+if (chatgpt.browser.isMobile()) {
+    // Do something
+}
 ```
 
 ## code `api`
