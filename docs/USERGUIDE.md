@@ -269,15 +269,14 @@ if (chatgpt.isFullScreen()) {
 
 ### isLoaded `async`
 
-Returns a boolean value. `true` if the website has finished loading, `false` otherwise.
+Resolves a promise when ChatGPT has finished loading.
 
 Example code:
 
 ```js
 (async () => {
-    if (await chatgpt.isLoaded()) {
-        // Do something
-    }
+    await chatgpt.isLoaded();
+    console.log("ChatGPT has finished loading.");
 })();
 ```
 
