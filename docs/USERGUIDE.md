@@ -92,7 +92,7 @@
     - [isOff](#isoff)
     - [activate](#activate-1)
     - [deactivate](#deactivate-1)
-    - [isLoaded](#isloaded-1)
+    - [isLoaded](#isloaded-async-1)
     - [toggle](#toggle)
   - [instructions `api`](#instructions-api)
     - [add `async`](#add-async)
