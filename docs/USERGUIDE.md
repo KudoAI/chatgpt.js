@@ -90,6 +90,7 @@
     - [isOff](#isoff)
     - [activate](#activate-1)
     - [deactivate](#deactivate-1)
+    - [isLoaded](#isloaded-1)
     - [toggle](#toggle)
   - [instructions `api`](#instructions-api)
     - [add `async`](#add-async)
@@ -1358,6 +1359,19 @@ Example code:
 
 ```js
 chatgpt.history.deactivate();
+```
+
+### isLoaded `async`
+
+Resolves a promise when chat history has finished loading.
+
+Example code:
+
+```js
+(async () => {
+    await chatgpt.hishtory.isLoaded();
+    console.log("ChatGPT history has finished loading.");
+})();
 ```
 
 ### toggle
