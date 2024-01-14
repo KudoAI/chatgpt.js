@@ -22,6 +22,8 @@
     - [generateRandomIP](#generaterandomip)
     - [get](#get)
     - [getUserLanguage](#getuserlanguage)
+    - [isChromium](#ischromium)
+    - [isFirefox](#isfirefox)
     - [isFullScreen](#isfullscreen)
     - [isLoaded `async`](#isloaded-async)
     - [printAllFunctions](#printallfunctions)
@@ -256,6 +258,30 @@ Example code:
 ```js
 const userLanguage = chatgpt.getUserLanguage();
 console.log(userLanguage); // Example output: 'en-US'
+```
+
+### isChromium
+
+Returns a boolean value. `true` if the browser is Chromium and `false` otherwise.
+
+Example code:
+
+```js
+if (chatgpt.isChromium()) {
+    // Do something
+}
+```
+
+### isFirefox
+
+Returns a boolean value. `true` if the browser is Firefox and `false` otherwise.
+
+Example code:
+
+```js
+if (chatgpt.isFirefox()) {
+    // Do something
+}
 ```
 
 ### isFullScreen
