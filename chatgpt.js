@@ -952,7 +952,7 @@ const chatgpt = {
         isLoaded: function() {
             return new Promise(resolve => {
                 const checkChatHistory = () => {
-                    if (document.querySelector('nav[aria-label="Chat history"]')) resolve();
+                    if (document.querySelector('nav[aria-label="Chat history"]')) resolve(true);
                     else setTimeout(checkChatHistory, 100);
                 };
                 checkChatHistory();
@@ -1099,14 +1099,14 @@ const chatgpt = {
         return new Promise(resolve => {
             const intervalId = setInterval(() => {
                 if (chatgpt.getRegenerateButton()) {
-                    clearInterval(intervalId); resolve();
+                    clearInterval(intervalId); resolve(true);
     }}, 100);});},
 
     isLoaded: function() {
         return new Promise(resolve => {
             const intervalId = setInterval(() => {
                 if (document.querySelector('nav button[id*="menu"]')) {
-                    clearInterval(intervalId); setTimeout(() => { resolve(); }, 500);
+                    clearInterval(intervalId); setTimeout(() => { resolve(true); }, 500);
     }}, 100);});},
 
     isLightMode: function() { return document.documentElement.classList.toString().includes('light'); },
