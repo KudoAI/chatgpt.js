@@ -76,7 +76,7 @@
     - [getRegenerateButton](#getregeneratebutton)
     - [getSendButton](#getsendbutton)
     - [getStopGeneratingButton](#getstopgeneratingbutton)
-- [Library objects](#library-objects)
+- [Library APIs](#library-apis)
   - [autoRefresh `api`](#autorefresh-api)
       - [activate](#activate)
       - [deactivate](#deactivate)
@@ -1114,7 +1114,7 @@ const stopButton = chatgpt.getStopGeneratingButton();
 stopButton.click();
 ```
 
-# Library objects
+# Library APIs
 
 ## autoRefresh `api`
 
