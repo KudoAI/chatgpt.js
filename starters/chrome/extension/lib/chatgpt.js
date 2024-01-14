@@ -938,15 +938,6 @@ const chatgpt = {
             navigator.systemLanguage || navigator.userLanguage || ''; },
 
     history: {
-        isLoaded: function() {
-            return new Promise(resolve => {
-                const checkChatHistory = () => {
-                    if (document.querySelector('nav[aria-label="Chat history"]')) resolve();
-                    else setTimeout(checkChatHistory, 100);
-                };
-                checkChatHistory();
-        });},
-
         activate: function() { this.isOff() ? this.toggle() : console.info('Chat history is already enabled!'); },
         deactivate: function() { this.isOn() ? this.toggle() : console.info('Chat history is already disabled!'); },
 
@@ -957,6 +948,15 @@ const chatgpt = {
         },
 
         isOff: function() { return !this.isOn(); },
+
+        isLoaded: function() {
+            return new Promise(resolve => {
+                const checkChatHistory = () => {
+                    if (document.querySelector('nav[aria-label="Chat history"]')) resolve();
+                    else setTimeout(checkChatHistory, 100);
+                };
+                checkChatHistory();
+        });},
 
         toggle: function() {
             for (const navBtn of document.querySelectorAll('nav[aria-label="Chat history"] button')) {
