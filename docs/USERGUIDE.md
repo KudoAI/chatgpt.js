@@ -90,7 +90,7 @@
       - [isMobile](#ismobile)
   - [code `api`](#code-api)
     - [minify `async`](#minify-async)
-    - [execute](#execute)
+    - [execute `async`](#execute-async)
     - [extract](#extract)
     - [obfuscate `async`](#obfuscate-async)
     - [refactor `async`](#refactor-async)
@@ -1257,7 +1257,7 @@ Example code:
 })();
 ```
 
-### execute
+### execute `async`
 
 Asks ChatGPT to execute the given code.
 
