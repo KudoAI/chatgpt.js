@@ -852,15 +852,11 @@ const chatgpt = {
                                 }
                             }
                             sub.sort((a, b) => a.create_time - b.create_time); // sort in chronological order
-                            // pull out the messages after sorting
-                            sub = sub.map((x) => { 
+                            sub = sub.map(x => { // pull out msgs after sorting
                                 switch(x.content.content_type) {
-                                    case 'code':
-                                        return x.content.text;
-                                    case 'text':
-                                        return x.content.parts[0];
-                                    default:
-                                        return;
+                                    case 'code': return x.content.text;
+                                    case 'text': return x.content.parts[0];
+                                    default: return;
                                 }
                             });
                             sub = sub.length === 1 ? sub[0] : sub; // convert not regenerated responses to strings
