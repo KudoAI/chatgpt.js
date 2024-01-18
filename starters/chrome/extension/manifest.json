@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "ChatGPT Extension",
     "description": "A Chrome template to start using chatgpt.js like a boss!",
-    "version": "2024.1.14",
+    "version": "2024.1.18",
     "author": "chatgpt.js",
     "icons": {
         "16": "icons/icon16.png",
