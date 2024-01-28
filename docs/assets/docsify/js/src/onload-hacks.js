@@ -306,7 +306,7 @@ const onLoadObserver = new MutationObserver(() => {
             // Append EMAIL SIGNUP footer
             const partnersCollage = document.getElementById('partners-collage'), // to insert after
                   emailFooter = document.createElement('div');
-            fetch('assets/html/footer.html')
+            fetch('assets/docsify/html/footer.html')
                 .then(response => response.text()).then(html => {
                     emailFooter.innerHTML = html;
                     partnersCollage.insertAdjacentElement('afterend', emailFooter);

@@ -12,8 +12,8 @@ const fs = require('fs'),
       uglifyJS = require('uglify-js');
 
 // Init config
-const inputDir = path.join(__dirname, '../assets/js/src'),
-      outputDir = path.join(__dirname, '../assets/js/min');
+const inputDir = path.join(__dirname, '../assets/docsify/js/src'),
+      outputDir = path.join(__dirname, '../assets/docsify/js/min');
 
 try { // to minify `inputDir` contents
     if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
