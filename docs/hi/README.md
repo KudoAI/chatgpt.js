@@ -152,6 +152,24 @@ export { chatgpt }
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
+<div id="npm">
+
+## 💾 npm के माध्यम से डाउनलोड करना:
+
+</div>
+
+स्थानीय अनुकूलन के लिए `chatgpt.js` डाउनलोड करने के लिए, अपने प्रोजेक्ट के रूट में निम्नलिखित कमांड चलाएँ:
+
+```bash
+npm install @kudoai/chatgpt.js
+```
+
+इंस्टालेशन के बाद, लाइब्रेरी स्रोत (`dist/` में छोटा संस्करण) खोजने के लिए `node_modules/@kudoai/chatgpt.js` पर नेविगेट करें।
+
+</div>
+
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
+
 <div id="usage">
 
 ## 💻 प्रयोग

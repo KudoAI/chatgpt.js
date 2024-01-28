@@ -47,7 +47,7 @@
 [![](https://img.shields.io/codacy/grade/696917c8e5a949c49edb89ed2f43d5ba?label=代码质量&logo=codacy&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge)](https://app.codacy.com/gh/KudoAI/chatgpt.js/commits?utm_source=chatgpt%2Ejs&utm_content=github_shield)
 [![](https://img.shields.io/badge/中提到-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
 [![](https://img.shields.io/badge/精选于-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.producthunt.com/posts/chatgpt-js)
-
+![](https://img.shields.io/jsdelivr/gh/hm/kudoai/chatgpt.js?label=jsDelivr+点击数&logo=jsdelivr&logoColor=white&labelColor=464646&color=9146ff&style=for-the-badge)
 
 </div>
 
@@ -78,7 +78,7 @@
 
 ```js
 (async () => {
-    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js');    
+    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');    
     // 这里是您的代码
 })();
 ```
@@ -87,7 +87,7 @@
 
 ```js
 var xhr = new XMLHttpRequest()
-xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js')
+xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js')
 xhr.onload = function() {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script')
@@ -111,13 +111,13 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.6.4/dist/chatgpt-2.6.4.min.js
+// @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@fb4b04a5956a693726b80325b609cb98be3864d5/dist/chatgpt-2.6.4.min.js
 // ==/UserScript==
 
 // 这里是您的代码
 ```
 
-如果您不打算发布到这些存储库，则可以使用更简单的 `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js` 来导入最新的缩小版本。
+如果您不打算发布到这些存储库，则可以使用更简单的 `https://code.chatgptjs.org/chatgpt-latest.min.js` 来导入最新的缩小版本。
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
@@ -148,6 +148,24 @@ export { chatgpt }
     // 这里是您的代码
 })();
 ```
+
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
+
+<div id="npm">
+
+## 💾 通过 npm 下载:
+
+</div>
+
+要下载 `chatgpt.js` 进行本地自定义，请在项目的根目录中运行以下命令:
+
+```bash
+npm install @kudoai/chatgpt.js
+```
+
+安装后，导航到 `node_modules/@kudoai/chatgpt.js` 以查找库源 (`dist/` 中的缩小版本)。
+
+</div>
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 

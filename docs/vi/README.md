@@ -151,6 +151,24 @@ export { chatgpt }
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
+<div id="npm">
+
+## 💾 Tải xuống qua npm:
+
+</div>
+
+Để tải xuống `chatgpt.js` để tùy chỉnh cục bộ, hãy chạy lệnh sau trong thư mục gốc của dự án của bạn:
+
+```bash
+npm install @kudoai/chatgpt.js
+```
+
+Sau khi cài đặt, hãy điều hướng đến `node_modules/@kudoai/chatgpt.js` để tìm nguồn thư viện (phiên bản rút gọn trong `dist/`).
+
+</div>
+
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
+
 <div id="usage">
 
 ## 💻 Cách sử dụng

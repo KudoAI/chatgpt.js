@@ -150,6 +150,24 @@ export { chatgpt }
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
 
+<div id="npm">
+
+## 💾 透過 npm 下載:
+
+</div>
+
+若要下載 `chatgpt.js` 進行本機自訂，請在專案的根目錄中執行以下命令:
+
+```bash
+npm install @kudoai/chatgpt.js
+```
+
+安裝後，導覽至 `node_modules/@kudoai/chatgpt.js` 以尋找庫來源 (`dist/` 中的縮小版本)。
+
+</div>
+
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
+
 <div id="usage">
 
 ## 💻 用法
