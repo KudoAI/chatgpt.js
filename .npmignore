@@ -1,6 +1,6 @@
 # docsify files/folders
 docs/*utils/
-docs/docsify/
+docs/assets/docsify/
 docs/.nojekyll
 docs/_coverpage.md
 docs/CNAME
