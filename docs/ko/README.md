@@ -79,7 +79,7 @@
 
 ```js
 (async () => {
-    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js');
     // 코드를 여기에 작성해 주세요...
 
 })();
@@ -89,7 +89,7 @@
 
 ```js
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js');
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js');
 xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
@@ -121,7 +121,7 @@ Greasy Fork와 같은 사용자 스크립트 저장소는 미리 승인된 CDN(�
 // 코드를 여기에 작성해 주세요...
 ```
 
-만약 이러한 저장소(repo)에 게시하지 않으신다면, 더 간단한 `https://code.chatgptjs.org/chatgpt-latest.min.js` 를 대신 사용하여 가장 최근에 압축된 버전을 가져 올 수 있습니다.
+만약 이러한 저장소(repo)에 게시하지 않으신다면, 더 간단한 `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js` 를 대신 사용하여 가장 최근에 압축된 버전을 가져 올 수 있습니다.
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 

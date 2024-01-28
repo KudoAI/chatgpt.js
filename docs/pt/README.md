@@ -78,7 +78,7 @@
 
 ```js
 (async () => {
-    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js');
     // Seu código aqui...
 })();
 ```
@@ -87,7 +87,7 @@
 
 ```js
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js');
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js');
 xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
@@ -117,7 +117,7 @@ Repositórios de script de usuário como o Greasy Fork mantêm uma lista branca 
 // Seu código aqui...
 ```
 
-Se você não planeja publicar nesses repositórios, o `https://code.chatgptjs.org/chatgpt-latest.min.js` mais simples pode ser usado para importar a versão minificada mais recente.
+Se você não planeja publicar nesses repositórios, o `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js` mais simples pode ser usado para importar a versão minificada mais recente.
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 

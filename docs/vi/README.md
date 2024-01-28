@@ -78,7 +78,7 @@
 
 ```js
 (async () => {
-    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js');
     // Mã của bạn ở đây ...
 })();
 ```
@@ -87,7 +87,7 @@
 
 ```js
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js');
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js');
 xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
@@ -117,7 +117,7 @@ Userscript repositories like Greasy Fork maintain a whitelist of pre-approved CD
 // Mã của bạn ở đây ...
 ```
 
-Nếu bạn không có kế hoạch xuất bản lên các kho lưu trữ này, thì có thể sử dụng `https://code.chatgptjs.org/chatgpt-latest.min.js` đơn giản hơn để nhập bản phát hành rút gọn mới nhất.
+Nếu bạn không có kế hoạch xuất bản lên các kho lưu trữ này, thì có thể sử dụng `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js` đơn giản hơn để nhập bản phát hành rút gọn mới nhất.
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 

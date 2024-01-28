@@ -78,7 +78,7 @@
 
 ```js
 (async () => {
-    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js');
     // Uw code hier...
 })();
 ```
@@ -87,7 +87,7 @@
 
 ```js
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js');
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js');
 xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
@@ -117,7 +117,7 @@ Userscript-repository's zoals Greasy Fork houden een witte lijst bij van vooraf 
 // Uw code hier...
 ```
 
-Als u niet van plan bent om naar deze repo's te publiceren, kunt u in plaats daarvan de eenvoudigere `https://code.chatgptjs.org/chatgpt-latest.min.js` gebruiken om de nieuwste verkleinde release te importeren.
+Als u niet van plan bent om naar deze repo's te publiceren, kunt u in plaats daarvan de eenvoudigere `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js` gebruiken om de nieuwste verkleinde release te importeren.
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 

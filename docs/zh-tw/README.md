@@ -77,7 +77,7 @@
 
 ```js
 (async () => {
-    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js');
     // 你的代碼在這裡...
 })();
 ```
@@ -86,7 +86,7 @@
 
 ```js
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js');
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js');
 xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
@@ -116,7 +116,7 @@ function yourCode() {
 // 你的代碼在這裡...
 ```
 
-如果您不打算發佈到這些存儲庫，則可以使用更簡單的 `https://code.chatgptjs.org/chatgpt-latest.min.js` 來導入最新的縮小版本。
+如果您不打算發佈到這些存儲庫，則可以使用更簡單的 `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js` 來導入最新的縮小版本。
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 

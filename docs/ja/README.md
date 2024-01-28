@@ -78,7 +78,7 @@
 
 ```js
 (async () => {
-    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');    
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js');    
     // コードはここにあります...
 })();
 ```
@@ -87,7 +87,7 @@
 
 ```js
 var xhr = new XMLHttpRequest()
-xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js')
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js')
 xhr.onload = function() {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script')
@@ -117,7 +117,7 @@ Greasy Fork のようなユーザースクリプト リポジトリは、事前�
 // コードはここにあります...
 ```
 
-これらのリポジトリに公開する予定がない場合は、より単純な `https://code.chatgptjs.org/chatgpt-latest.min.js` を代わりに使用して、最新の縮小リリースをインポートできます。
+これらのリポジトリに公開する予定がない場合は、より単純な `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js` を代わりに使用して、最新の縮小リリースをインポートできます。
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 

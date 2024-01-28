@@ -78,7 +78,7 @@
 
 ```js
 (async () => {
-    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');    
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js');    
     // आफ्नो कोड यहाँ लेख्नुहोस्...
 })();
 ```
@@ -87,7 +87,7 @@
 
 ```js
 var xhr = new XMLHttpRequest()
-xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js')
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js')
 xhr.onload = function() {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script')
@@ -117,7 +117,7 @@ function yourCode() {
 // आफ्नो कोड यहाँ लेख्नुहोस्...
 ```
 
-यदि तपाइँ यी रिपोहरूमा प्रकाशन गर्ने योजना बनाउनुहुन्न भने, सबैभन्दा सरल लेटेस्‍ट मिनिफाइड रिलिज आयात गर्नको लागि `https://code.chatgptjs.org/chatgpt-latest.min.js` प्रयोग गर्न सकिन्छ।
+यदि तपाइँ यी रिपोहरूमा प्रकाशन गर्ने योजना बनाउनुहुन्न भने, सबैभन्दा सरल लेटेस्‍ट मिनिफाइड रिलिज आयात गर्नको लागि `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js` प्रयोग गर्न सकिन्छ।
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 

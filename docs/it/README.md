@@ -78,7 +78,7 @@
 
 ```js
 (async () => {
-    await import('https://code.chatgptjs.org/chatgpt-latest.min.js');
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js');
     // Il tuo codice qui...
 })();
 ```
@@ -87,7 +87,7 @@
 
 ```js
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://code.chatgptjs.org/chatgpt-latest.min.js');
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js');
 xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
@@ -117,7 +117,7 @@ I siti di Userscript come Greasy Fork mantengono una whitelist di CDN pre-approv
 // Il tuo codice qui...
 ```
 
-Se non hai intenzione di pubblicare su questi siti, puoi utilizzare il più semplice URL `https://code.chatgptjs.org/chatgpt-latest.min.js` per importare l'ultima versione minimizzata.
+Se non hai intenzione di pubblicare su questi siti, puoi utilizzare il più semplice URL `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js` per importare l'ultima versione minimizzata.
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
