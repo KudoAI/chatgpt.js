@@ -1,8 +1,9 @@
 {
-  "name": "chatgpt",
+  "name": "@kudoai/chatgpt.js",
   "version": "2.6.3",
   "description": "Client-side JavaScript library for ChatGPT",
   "main": "chatgpt.js",
+  "files": [ "chatgpt.js", "dist/chatgpt-2.6.3.min.js", "docs/", "starters/" ],
   "scripts": {
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --ext .js --fix",
