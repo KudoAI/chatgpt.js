@@ -1,7 +1,7 @@
 # docsify files/folders
-*utils/
-docsify/
-.nojekyll
-_coverpage.md
-CNAME
-index.html
+docs/*utils/
+docs/docsify/
+docs/.nojekyll
+docs/_coverpage.md
+docs/CNAME
+docs/index.html
