@@ -9,19 +9,19 @@
             </picture>
         </a>
         English |
-        <a href="zh-cn#readme">简体中文</a> |
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/zh-cn#readme">简体中文</a> |
         <a href="zh-tw#readme">繁體中文</a> |
-        <a href="ja#readme">日本</a> |
-        <a href="ko#readme">한국인</a> |
-        <a href="hi#readme">हिंदी</a> |
-        <a href="np#readme">नेपाली</a> |
-        <a href="de#readme">Deutsch</a> |
-        <a href="es#readme">Español</a> |
-        <a href="fr#readme">Français</a> |
-        <a href="it#readme">Italiano</a> |
-        <a href="nl#readme">Nederlands</a> |
-        <a href="pt#readme">Português</a> |
-        <a href="vi#readme">Việt</a>
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/ja#readme">日本</a> |
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/ko#readme">한국인</a> |
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/hi#readme">हिंदी</a> |
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/np#readme">नेपाली</a> |
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/de#readme">Deutsch</a> |
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/es#readme">Español</a> |
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/fr#readme">Français</a> |
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/it#readme">Italiano</a> |
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/nl#readme">Nederlands</a> |
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/pt#readme">Português</a> |
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/vi#readme">Việt</a>
     </h6>
 </div>
 
