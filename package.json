@@ -3,6 +3,7 @@
   "version": "2.6.3",
   "description": "Client-side JavaScript library for ChatGPT",
   "main": "chatgpt.js",
+  "readme": "docs/README.md",
   "files": [ "chatgpt.js", "dist/chatgpt-2.6.3.min.js", "docs/", "starters/" ],
   "scripts": {
     "lint": "eslint . --ext .js",
