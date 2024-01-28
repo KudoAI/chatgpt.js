@@ -27,12 +27,6 @@ jobs:
           echo "Extracted version: $version"
           sed -i "s/chatgpt-(\d+\.?){3}\.min\.js/chatgpt-$version\.min\.js/g" $(find docs -name "README.md")
 
-      - name: Find/replace latest commit hash in READMEs
-        run: |
-          cd $GITHUB_WORKSPACE/KudoAI/chatgpt.js
-          commit_hash=$(git rev-parse HEAD)
-          sed -i "s/chatgpt.js@[a-f0-9]\+\//chatgpt.js@$commit_hash\//g" $(find docs -name "README.md")
-
       - name: Commit and push changes
         run: |
           cd $GITHUB_WORKSPACE/KudoAI/chatgpt.js
