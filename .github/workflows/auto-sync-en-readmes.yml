@@ -22,11 +22,11 @@ jobs:
 
       - name: Sync README.md between root & docs/
         run: |
-          rootReadme="${{ github.workspace }}/KudoAI/chatgpt.js/README.md" ; rootTimestamp=$( stat -c %y "$rootReadme" )
-          docsReadme="${{ github.workspace }}/KudoAI/chatgpt.js/docs/README.md" ; docsTimestamp=$( stat -c %y "$docsReadme" )          
-          if [ "$rootTimestamp" > "$docsTimestamp" ] ; then cp -f "$rootReadme" "$docsReadme"            
-          elif [ "$docsTimestamp" > "$rootTimestamp" ] ; then cp -f "$docsReadme" "$rootReadme"
-          fi
+          cd "${{ github.workspace }}/KudoAI/chatgpt.js"
+          rootTimestamp=$(git log -1 --format="%at" -- "README.md")
+          docsTimestamp=$(git log -1 --format="%at" -- "docs/README.md")  
+          if [ "$rootTimestamp" -gt "$docsTimestamp" ] ; then cp -f "README.md" "docs/README.md"
+          elif [ "$docsTimestamp" -gt "$rootTimestamp" ] ; then cp -f "docs/README.md" "README.md" ; fi
 
       - name: Push to KudoAI/chatgpt.js
         uses: stefanzweifel/git-auto-commit-action@v4
