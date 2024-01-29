@@ -76,6 +76,8 @@
 
 ### ES6:
 
+> **Opmerking** _Om altijd de nieuwste versie te importeren (NIET aanbevolen in productie!) Vervang de jsDelivr-URL met versiebeheer door: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
+
 ```js
 (async () => {
     await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.6.4/dist/chatgpt-2.6.4.min.js');

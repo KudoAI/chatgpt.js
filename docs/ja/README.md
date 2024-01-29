@@ -74,6 +74,8 @@
 
 </div>
 
+> **注意** _常に最新バージョンをインポートするには (運用環境では推奨されません!)、バージョン管理された jsDelivr URL を `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js` に置き換えます_
+
 ### ES6:
 
 ```js

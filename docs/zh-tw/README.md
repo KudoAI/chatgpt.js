@@ -73,6 +73,8 @@
 
 </div>
 
+> **注意** _要始終導入最新版本（不建議在生產中使用！）將版本化的 jsDelivr URL 替換為：`https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
+
 ### ES6:
 
 ```js
