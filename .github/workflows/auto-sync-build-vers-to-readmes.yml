@@ -22,14 +22,14 @@ jobs:
         env:
           COMMIT_MSG: ${{ github.event.commits[0].message }}
         run: |
-          cd $GITHUB_WORKSPACE/KudoAI/chatgpt.js
+          cd "${{ github.workspace }}/KudoAI/chatgpt.js"
           version=$(echo "$COMMIT_MSG" | grep -oE 'chatgpt-(\d+\.){2}\d+\.min\.js' | awk -F '[-.]' '{print $2"."$3"."$4}')
           echo "Extracted version: $version"
           sed -i "s/chatgpt-(\d+\.?){3}\.min\.js/chatgpt-$version\.min\.js/g" $(find docs -name "README.md")
 
       - name: Commit and push changes
         run: |
-          cd $GITHUB_WORKSPACE/KudoAI/chatgpt.js
+          cd "${{ github.workspace }}/KudoAI/chatgpt.js"
           git config user.name "kudo-sync-bot"
           git config user.email "auto-sync@kudoai.com"
           git add .
