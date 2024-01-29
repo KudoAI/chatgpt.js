@@ -332,7 +332,7 @@ Cette bibliothèque existe grâce au code, aux traductions, aux problèmes et au
 
 <div align="center">
 
-**[Communiqués](https://github.com/kudoai/chatgpt.js/tree/main/dist)** /
+**[Communiqués]((https://www.npmjs.com/package/@kudoai/chatgpt.js?activeTab=versions))** /
 [Guide de l'utilisateur](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) /
 [Discuter](https://github.com/kudoai/chatgpt.js/discussions) /
 <a href="#">Retour au sommet ↑</a>

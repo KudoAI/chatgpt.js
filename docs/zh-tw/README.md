@@ -331,7 +331,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 <div align="center">
 
-**[發布](https://github.com/kudoai/chatgpt.js/tree/main/dist)** /
+**[發布]((https://www.npmjs.com/package/@kudoai/chatgpt.js?activeTab=versions))** /
 [用戶指南](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) /
 [討論](https://github.com/kudoai/chatgpt.js/discussions) /
 <a href="#">回到頂部 ↑</a>

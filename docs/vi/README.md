@@ -332,7 +332,7 @@ Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng 
 
 <div align="center">
 
-**[Phát hành](https://github.com/kudoai/chatgpt.js/tree/main/dist)** /
+**[Phát hành]((https://www.npmjs.com/package/@kudoai/chatgpt.js?activeTab=versions))** /
 [Hướng dẫn sử dụng](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) /
 [Bàn luận](https://github.com/kudoai/chatgpt.js/discussions) /
 <a href="#">Trở lại đầu trang ↑</a>

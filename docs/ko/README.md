@@ -337,7 +337,7 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href=
 
 <div align="center">
 
-**[릴리스](https://github.com/kudoai/chatgpt.js/tree/main/dist)** /
+**[릴리스]((https://www.npmjs.com/package/@kudoai/chatgpt.js?activeTab=versions))** /
 [사용자 가이드](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) /
 [토론](https://github.com/kudoai/chatgpt.js/discussions) /
 <a href="#">상단으로 ↑</a>
