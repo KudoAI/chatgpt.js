@@ -23,8 +23,8 @@ jobs:
       - name: Sync README.md between root & docs/
         run: |
           cd "${{ github.workspace }}/KudoAI/chatgpt.js"
-          rootTimestamp=$(git log -1 --format="%at" -- "README.md")
-          docsTimestamp=$(git log -1 --format="%at" -- "docs/README.md")  
+          rootTimestamp=$(git log -1 --format="%ct" -- "README.md")
+          docsTimestamp=$(git log -1 --format="%ct" -- "docs/README.md")  
           if [ "$rootTimestamp" -gt "$docsTimestamp" ] ; then cp -f "README.md" "docs/README.md"
           elif [ "$docsTimestamp" -gt "$rootTimestamp" ] ; then cp -f "docs/README.md" "README.md" ; fi
 
