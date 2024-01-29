@@ -332,7 +332,7 @@ This library exists thanks to code, translations, issues & ideas from the follow
 
 <div align="center">
 
-**[Releases]((https://www.npmjs.com/package/@kudoai/chatgpt.js?activeTab=versions))** /
+**[Releases](https://www.npmjs.com/package/@kudoai/chatgpt.js?activeTab=versions)** /
 [Userguide](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) /
 [Discuss](https://github.com/kudoai/chatgpt.js/discussions) /
 <a href="#">Back to top ↑</a>

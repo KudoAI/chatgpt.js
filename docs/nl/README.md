@@ -332,7 +332,7 @@ Deze bibliotheek bestaat dankzij code, vertalingen, problemen en ideeën van de 
 
 <div align="center">
 
-**[Uitgaven]((https://www.npmjs.com/package/@kudoai/chatgpt.js?activeTab=versions))** /
+**[Uitgaven](https://www.npmjs.com/package/@kudoai/chatgpt.js?activeTab=versions)** /
 [gebruikershandleiding](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) /
 [Bespreken](https://github.com/kudoai/chatgpt.js/discussions) /
 <a href="#">Terug naar boven ↑</a>
