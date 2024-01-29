@@ -153,7 +153,7 @@ export { chatgpt }
 
 </div>
 
-Um `chatgpt.js` zur lokalen anpassung herunterzuladen, führen sie den folgenden befehl im stammverzeichnis ihres projekts aus:
+Um **chatgpt.js** zur lokalen anpassung herunterzuladen, führen sie den folgenden befehl im stammverzeichnis ihres projekts aus:
 
 ```bash
 npm install @kudoai/chatgpt.js

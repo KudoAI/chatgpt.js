@@ -153,7 +153,7 @@ export { chatgpt }
 
 </div>
 
-Om `chatgpt.js` te downloaden voor lokale aanpassingen, voert u de volgende opdracht uit in de hoofdmap van uw project:
+Om **chatgpt.js** te downloaden voor lokale aanpassingen, voert u de volgende opdracht uit in de hoofdmap van uw project:
 
 ```bash
 npm install @kudoai/chatgpt.js

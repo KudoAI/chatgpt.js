@@ -153,7 +153,7 @@ export { chatgpt }
 
 </div>
 
-ローカルカスタマイズ用に `chatgpt.js` をダウンロードするには、プロジェクトのルートで次のコマンドを実行します:
+ローカルカスタマイズ用に **chatgpt.js** をダウンロードするには、プロジェクトのルートで次のコマンドを実行します:
 
 ```bash
 npm install @kudoai/chatgpt.js

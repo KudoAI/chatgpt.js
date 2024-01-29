@@ -158,7 +158,7 @@ export { chatgpt }
 
 </div>
 
-로컬 사용자 지정을 위해 `chatgpt.js` 를 다운로드하려면 프로젝트 루트에서 다음 명령을 실행하세요:
+로컬 사용자 지정을 위해 **chatgpt.js** 를 다운로드하려면 프로젝트 루트에서 다음 명령을 실행하세요:
 
 ```bash
 npm install @kudoai/chatgpt.js

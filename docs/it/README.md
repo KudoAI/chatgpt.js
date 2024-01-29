@@ -153,7 +153,7 @@ export { chatgpt }
 
 </div>
 
-Per scaricare `chatgpt.js` per la personalizzazione locale, esegui il seguente comando nella root del tuo progetto:
+Per scaricare **chatgpt.js** per la personalizzazione locale, esegui il seguente comando nella root del tuo progetto:
 
 ```bash
 npm install @kudoai/chatgpt.js

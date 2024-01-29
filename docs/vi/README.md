@@ -153,7 +153,7 @@ export { chatgpt }
 
 </div>
 
-Để tải xuống `chatgpt.js` để tùy chỉnh cục bộ, hãy chạy lệnh sau trong thư mục gốc của dự án của bạn:
+Để tải xuống **chatgpt.js** để tùy chỉnh cục bộ, hãy chạy lệnh sau trong thư mục gốc của dự án của bạn:
 
 ```bash
 npm install @kudoai/chatgpt.js

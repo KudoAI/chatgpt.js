@@ -152,7 +152,7 @@ export { chatgpt }
 
 </div>
 
-若要下載 `chatgpt.js` 進行本機自訂，請在專案的根目錄中執行以下命令:
+若要下載 **chatgpt.js** 進行本機自訂，請在專案的根目錄中執行以下命令:
 
 ```bash
 npm install @kudoai/chatgpt.js
