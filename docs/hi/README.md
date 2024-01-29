@@ -107,8 +107,6 @@ function yourCode() {
 
 > **टिप्पणी** _स्टार्टर टेम्पलेट का उपयोग करने के लिए: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
 
-यूजरस्क्रिप्ट जैसे ग्रेसी फोर्क मेंटेन करते है व्हाइटलिस्ट प्री-अप्रूव्ड CDN (जैसे `cdn.jsdelivr.net` मेसे कमिट स्पेसिफिक रेफरेंस) की एक श्वेतसूची बनाए रखते हैं, इसलिए इन साइटों पर पब्लिश करने की क्षमता बनाए रखने के लिए इम्पोर्ट URL काफी लंबा है:
-
 ```js
 ...
 // @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.6.4/dist/chatgpt-2.6.4.min.js
@@ -116,8 +114,6 @@ function yourCode() {
 
 // आपका कोड यहां लिखें...
 ```
-
-यदि आप इन रिपोजिटरी पर पब्लिश करने की योजना नहीं बनाते हैं, इसी कितरा ये  `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js` यूज़ करसकते है।
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 

@@ -107,8 +107,6 @@ function yourCode() {
 
 > **笔记** _使用入门模板: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
 
-诸如 Greasy Fork 之类的用户脚本存储库维护着预先批准的 CDN 的白名单（例如来自 `cdn.jsdelivr.net` 的特定于提交的引用），因此导入 URL 相当长以保持对这些站点的可发布性：
-
 ```js
 ...
 // @require https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@fb4b04a5956a693726b80325b609cb98be3864d5/dist/chatgpt-2.6.4.min.js
@@ -116,8 +114,6 @@ function yourCode() {
 
 // 这里是您的代码
 ```
-
-如果您不打算发布到这些存储库，则可以使用更简单的 `https://code.chatgptjs.org/chatgpt-latest.min.js` 来导入最新的缩小版本。
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 

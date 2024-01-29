@@ -111,8 +111,6 @@ function yourCode() {
 
 > **참고** _스타터 템플릿을 사용하시려면: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
 
-Greasy Fork와 같은 사용자 스크립트 저장소는 미리 승인된 CDN(예: cdn.jsdelivr.net에서의 커밋별 참조)의 화이트리스트를 유지합니다. 따라서, 삽입된(import) URL은 길이가 상당히 길어지게 되는데, 이는 이러한 사이트의 게시를 보존하기 위함입니다.
-
 ```js
 ...
 // @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.6.4/dist/chatgpt-2.6.4.min.js
@@ -120,8 +118,6 @@ Greasy Fork와 같은 사용자 스크립트 저장소는 미리 승인된 CDN(�
 
 // 코드를 여기에 작성해 주세요...
 ```
-
-만약 이러한 저장소(repo)에 게시하지 않으신다면, 더 간단한 `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js` 를 대신 사용하여 가장 최근에 압축된 버전을 가져 올 수 있습니다.
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 

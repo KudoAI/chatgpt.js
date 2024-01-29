@@ -107,8 +107,6 @@ function yourCode() {
 
 > **टिप्पणी** _स्टार्टर टेम्प्लेट प्रयोग गर्न: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
 
-यूजरस्क्रिप्ट जस्तै ग्रेसी फोर्क रिपोजिटरीहरूले पूर्व-अनुमोदित CDN हरू (जस्तै `cdn.jsdelivr.net` बाट कमिट स्पेसिफिक रेफरेंस) को श्वेतसूची कायम राख्छन् त्यसैले यी साइटहरूमा प्रकाशनयोग्यता जोगाउन इम्पोर्ट URL पर्याप्त रूपमा लामो हुन्छ:
-
 ```js
 ...
 // @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.6.4/dist/chatgpt-2.6.4.min.js
@@ -116,8 +114,6 @@ function yourCode() {
 
 // आफ्नो कोड यहाँ लेख्नुहोस्...
 ```
-
-यदि तपाइँ यी रिपोहरूमा प्रकाशन गर्ने योजना बनाउनुहुन्न भने, सबैभन्दा सरल लेटेस्‍ट मिनिफाइड रिलिज आयात गर्नको लागि `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js` प्रयोग गर्न सकिन्छ।
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 

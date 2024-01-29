@@ -107,8 +107,6 @@ function yourCode() {
 
 > **Nota** _Per utilizzare un modello iniziale: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
 
-I siti di Userscript come Greasy Fork mantengono una whitelist di CDN pre-approvati (come i riferimenti specifici del commit da `cdn.jsdelivr.net`) quindi l'URL di importazione è sostanzialmente più lungo per preservare la pubblicabilità su questi siti:
-
 ```js
 ...
 // @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.6.4/dist/chatgpt-2.6.4.min.js
@@ -116,8 +114,6 @@ I siti di Userscript come Greasy Fork mantengono una whitelist di CDN pre-approv
 
 // Il tuo codice qui...
 ```
-
-Se non hai intenzione di pubblicare su questi siti, puoi utilizzare il più semplice URL `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js` per importare l'ultima versione minimizzata.
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
