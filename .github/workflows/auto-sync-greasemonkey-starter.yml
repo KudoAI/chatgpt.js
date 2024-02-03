@@ -2,9 +2,8 @@ name: Sync /starters/greasemonkey/ to KudoAI/chatgpt.js-greasemonkey-starter/
 
 on:
   push:
-    branches: [ master, main ]
-    paths:
-      - 'starters/greasemonkey/**'
+    branches: main
+    paths: starters/greasemonkey/**
 
 jobs:
   build:
@@ -28,7 +27,7 @@ jobs:
 
       - name: Sync /starters/greasemonkey/ to KudoAI/chatgpt.js-greasemonkey-starter/
         run: |
-          rsync -avhr --delete --filter='P /.*' \
+          rsync -avhr --delete --filter={'P /.*','P /package*.json'} \
             "${{ github.workspace }}/KudoAI/chatgpt.js/starters/greasemonkey/" \
             "${{ github.workspace }}/KudoAI/chatgpt.js-greasemonkey-starter/"
 
