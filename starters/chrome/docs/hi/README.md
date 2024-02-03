@@ -17,7 +17,6 @@
         <a href="../nl#readme">Nederlands</a> |
         <a href="../pt#readme">Português</a> |
         <a href="../vi#readme">Việt</a>
-    
     </h6>
 </div>
 
