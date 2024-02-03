@@ -20,7 +20,7 @@
     </h6>
 </div>
 
-# Giấy phép MIT
+# 🏛️ Giấy phép MIT
 
 Bản quyền (c) 2023–2024 [KudoAI](https://github.com/kudoai) & người đóng góp
 

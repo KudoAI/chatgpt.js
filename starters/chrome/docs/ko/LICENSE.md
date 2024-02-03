@@ -20,7 +20,7 @@
     </h6>
 </div>
 
-# MIT License
+# 🏛️ MIT License
 
 저작권 (c) 2023–2024 [KudoAI](https://github.com/kudoai) & 기여자
 

@@ -20,7 +20,7 @@
     </h6>
 </div>
 
-# MIT-Lizenz
+# 🏛️ MIT-Lizenz
 
 Urheberrechte (c) 2023–2024 [KudoAI](https://github.com/kudoai) & mitwirkende
 
