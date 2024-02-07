@@ -3,14 +3,19 @@
   "version": "2.6.4",
   "description": "Client-side JavaScript library for ChatGPT",
   "author": {
-      "name": "KudoAI & contributors",
-      "email": "contact@kudoai.com",
-      "url": "https://www.kudoai.com"
+    "name": "KudoAI & contributors",
+    "email": "contact@kudoai.com",
+    "url": "https://www.kudoai.com"
   },
   "homepage": "https://chatgpt.js.org",
   "license": "MIT",
   "browser": "chatgpt.js",
-  "files": [ "chatgpt.js", "dist/chatgpt-2.6.4.min.js", "docs/", "starters/" ],
+  "files": [
+    "chatgpt.js",
+    "dist/chatgpt-2.6.4.min.js",
+    "docs/",
+    "starters/"
+  ],
   "scripts": {
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --ext .js --fix",
@@ -21,11 +26,34 @@
     "type": "git",
     "url": "git+https://github.com/KudoAI/chatgpt.js.git"
   },
-  "keywords": [ "chatgpt", "artificial intelligence", "nlp", "javascript",
-    "library", "frontend", "clientside", "chatbot", "openai", "ai", "chat",
-    "gpt", "gpt3", "gpt4", "machine learning", "conversational ai", "ml", "bot"
+  "keywords": [
+    "chatgpt",
+    "artificial intelligence",
+    "nlp",
+    "javascript",
+    "library",
+    "frontend",
+    "clientside",
+    "chatbot",
+    "openai",
+    "ai",
+    "chat",
+    "gpt",
+    "gpt3",
+    "gpt4",
+    "machine learning",
+    "conversational ai",
+    "ml",
+    "bot"
   ],
   "bugs": "https://github.com/KudoAI/chatgpt.js/issues",
-  "funding": { "type": "github", "url": "https://github.com/sponsors/KudoAI"},
-  "devDependencies": { "eslint": "^8.56.0", "uglify-js": "^3.17.4" }
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/KudoAI"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "husky": "^9.0.10",
+    "uglify-js": "^3.17.4"
+  }
 }

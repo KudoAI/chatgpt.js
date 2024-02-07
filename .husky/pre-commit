@@ -1,0 +1,15 @@
+#!/bin/bash
+
+RED="\033[1;31m" ; NC="\033[0m"
+
+if npm ls -g eslint &> /dev/null || npm ls eslint &> /dev/null ; then
+    npm run lint
+else
+    PROJECT_ROOT=$(
+        cd "$(dirname "$0")/.." && # nav to root
+        [ "$OSTYPE" == "msys" ] && pwd -W || pwd # get absolute path
+    )
+    echo -e "\n${RED}Warning: eslint not installed${NC}"
+    echo -e " To add missing dependencies, run 'npm install' from"
+    echo -e " $PROJECT_ROOT\n"
+fi
