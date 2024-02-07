@@ -17,8 +17,8 @@
     "starters/"
   ],
   "scripts": {
-    "lint": "eslint . --ext .js",
-    "lint:fix": "eslint . --ext .js --fix",
+    "lint": "eslint . --ext .js,.json",
+    "lint:fix": "eslint . --ext .js,.json --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node utils\\build-minified-chatgpt.js"
   },
@@ -53,6 +53,7 @@
   },
   "devDependencies": {
     "eslint": "^8.56.0",
+    "eslint-plugin-json-schema-validator": "^4.8.3",
     "husky": "^9.0.10",
     "uglify-js": "^3.17.4"
   }

@@ -1,5 +1,5 @@
 module.exports = {
-    'extends': ['eslint:recommended'],
+    'extends': ['eslint:recommended', 'plugin:json-schema-validator/recommended'],
     'ignorePatterns': ['**/*.min.js'],
     'rules': {
         'indent': 'off', 'no-unexpected-multiline': 'off', // allow whitespace anywhere
