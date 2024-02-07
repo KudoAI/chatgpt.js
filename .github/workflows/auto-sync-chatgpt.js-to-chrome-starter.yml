@@ -57,8 +57,8 @@ jobs:
           push_options: --force
           add_options: --all
           commit_user_email: auto-sync@kudoai.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `KudoAI/chatgpt.js`]'
-          file_pattern: 'starters/chrome/extension/**'
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `KudoAI/chatgpt.js`]"
+          file_pattern: "starters/chrome/extension/**"
           repository: KudoAI/chatgpt.js
 
       - name: Push to KudoAI/chatgpt.js-chrome-starter
@@ -67,6 +67,6 @@ jobs:
           push_options: --force
           add_options: --all
           commit_user_email: auto-sync@kudoai.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `KudoAI/chatgpt.js`]'
-          file_pattern: 'extension/**'
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `KudoAI/chatgpt.js`]"
+          file_pattern: "extension/**"
           repository: KudoAI/chatgpt.js-chrome-starter

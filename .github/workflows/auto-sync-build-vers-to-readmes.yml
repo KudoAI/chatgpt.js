@@ -3,7 +3,7 @@ name: Sync latest build version to readme (filesize shield + GM import URL)
 on:
   push:
     branches: [ master, main ]
-    paths: 'dist/**'
+    paths: "dist/**"
 
 jobs:
   build:
