@@ -12,7 +12,7 @@ module.exports = {
         'no-inner-declarations': 'off'
     },
     'globals': { 'chatgpt': 'readonly', 'chrome': 'readonly', 'functionAliases': 'readonly',
-        'syncExtension': 'writable', 'synonyms': 'readonly', 'Uint8Array': 'readonly' },
+                 'syncExtension': 'writable', 'synonyms': 'readonly', 'Uint8Array': 'readonly' },
     'parserOptions': { 'ecmaVersion': 2022, 'sourceType': 'script' },
     'overrides': [{ 'files': ['**/lib*/**.js'], 'parserOptions': { 'sourceType': 'module' }}],
     'env': { 'browser': true, 'node': true, 'es6': true, 'greasemonkey': true }
