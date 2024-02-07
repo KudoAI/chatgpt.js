@@ -2,6 +2,11 @@
   "name": "@kudoai/chatgpt.js",
   "version": "2.6.4",
   "description": "Client-side JavaScript library for ChatGPT",
+  "author": {
+      "name": "KudoAI & contributors",
+      "email": "contact@kudoai.com",
+      "url": "https://www.kudoai.com"
+  },
   "homepage": "https://chatgpt.js.org",
   "license": "MIT",
   "browser": "chatgpt.js",
@@ -20,11 +25,6 @@
     "library", "frontend", "clientside", "chatbot", "openai", "ai", "chat",
     "gpt", "gpt3", "gpt4", "machine learning", "conversational ai", "ml", "bot"
   ],
-  "author": {
-      "name": "KudoAI & contributors",
-      "email": "contact@kudoai.com",
-      "url": "https://www.kudoai.com"
-  },
   "bugs": "https://github.com/KudoAI/chatgpt.js/issues",
   "funding": { "type": "github", "url": "https://github.com/sponsors/KudoAI"},
   "devDependencies": { "eslint": "^8.56.0", "uglify-js": "^3.17.4" }
