@@ -1,6 +1,6 @@
 module.exports = {
     'extends': ['eslint:recommended', 'plugin:json-schema-validator/recommended', 'plugin:yml/standard'],
-    'ignorePatterns': ['**/*.min.js'],
+    'ignorePatterns': ['**/*.min.js', '!/.github'],
     'rules': {
         'indent': 'off', 'no-unexpected-multiline': 'off', // allow whitespace anywhere
         'semi': ['error', 'always'], // enforce semicolons at end of statement
