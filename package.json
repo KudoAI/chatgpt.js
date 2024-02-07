@@ -18,7 +18,9 @@
   ],
   "scripts": {
     "lint": "eslint . --ext js,json,yml --cache",
+    "lint:all": "eslint . --ext js,json,yml",
     "lint:fix": "eslint . --ext js,json,yml --fix --cache",
+    "lint:fix-all": "eslint . --ext js,json,yml --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node utils\\build-minified-chatgpt.js"
   },
