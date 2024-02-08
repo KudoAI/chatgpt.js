@@ -20,12 +20,3 @@ jobs:
 
       - name: Run ESLint
         run: npm run lint
-
-      - name: Cache node modules and .eslintrc.js
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-            .eslintrc.js
-          # Modify cache keys for restoration
-          key: ${{ runner.os }}-eslintrc-${{ hashFiles('.eslintrc.js') }}-node-modules-${{ hashFiles('package-lock.json') }}
