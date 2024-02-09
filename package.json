@@ -22,7 +22,8 @@
     "lint:fix": "eslint . --ext js,json,yml --fix --cache",
     "lint:fix-all": "eslint . --ext js,json,yml --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node utils\\build-minified-chatgpt.js"
+    "build:js": "node utils\\build-minified-chatgpt.js",
+    "build:css": "scss-to-css"
   },
   "repository": {
     "type": "git",
