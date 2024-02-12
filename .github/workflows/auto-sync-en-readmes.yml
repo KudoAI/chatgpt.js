@@ -21,12 +21,13 @@ jobs:
           fetch-depth: 2
 
       - name: Sync README.md between root & docs/
+        id: sync_readme
         run: |
           cd "${{ github.workspace }}/KudoAI/chatgpt.js"
           root_readme_modified=$(git log -1 --format="%ct" -- "README.md")
           docs_readme_modified=$(git log -1 --format="%ct" -- "docs/README.md")  
-          if [ "$root_readme_modified" -gt "$docs_readme_modified" ] ; then cp -f "README.md" "docs/README.md"
-          elif [ "$docs_readme_modified" -gt "$root_readme_modified" ] ; then cp -f "docs/README.md" "README.md" ; fi
+          if [ "$root_readme_modified" -gt "$docs_readme_modified" ] ; then cp -f "README.md" "docs/README.md" ; sync_src="root"
+          elif [ "$docs_readme_modified" -gt "$root_readme_modified" ] ; then cp -f "docs/README.md" "README.md" ; sync_src="docs" ; fi
 
       - name: Push to KudoAI/chatgpt.js
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -34,6 +35,6 @@ jobs:
           push_options: --force
           add_options: --all
           commit_user_email: auto-sync@kudoai.com
-          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `KudoAI/chatgpt.js`]"
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `${{ steps.sync_readme.outputs.sync_src }}`]"
           file_pattern: "**"
           repository: KudoAI/chatgpt.js
