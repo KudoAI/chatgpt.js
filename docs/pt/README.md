@@ -51,7 +51,7 @@
 
 </div>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/images/aqua-separator.png">
 
 <div id="intro">
 
@@ -66,7 +66,7 @@
 - Fácil de usar
 - Leve (ainda com ótimo desempenho)
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/images/aqua-separator.png">
 
 <div id="importing">
 
@@ -147,7 +147,7 @@ export { chatgpt }
 })();
 ```
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/images/aqua-separator.png">
 
 <div id="npm">
 
@@ -165,7 +165,7 @@ Após a instalação, navegue até `node_modules/@kudoai/chatgpt.js` para encont
 
 </div>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/images/aqua-separator.png">
 
 <div id="usage">
 
@@ -188,7 +188,7 @@ Cada chamada busca igualmente a última resposta. Se você acha que funciona, pr
 
 Caso contrário, verifique o [guia do usuário](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) estendido  ou simplesmente envie um [problema](https://github.com/kudoai/chatgpt.js/issues) ou [PR](https://github.com/kudoai/chatgpt.js/pulls) e será integrado, mole-mole!
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/images/aqua-separator.png">
 
 <div id="showcase">
 
@@ -267,7 +267,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 Se você fez algo com chatgpt.js que deseja compartilhar, envie um e-mail para <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> ou apenas abra um <a href="https://github.com/kudoai/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>!
 </p>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/images/aqua-separator.png">
 
 <div id="contributors">
 
@@ -308,7 +308,7 @@ Esta biblioteca existe graças ao código, traduções, problemas e ideias dos s
 
 </div><br>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/images/aqua-separator.png">
 
 <div id="partners">
 
@@ -329,7 +329,7 @@ Esta biblioteca existe graças ao código, traduções, problemas e ideias dos s
 
 <br>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/separators/aqua.png">
+<img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/images/aqua-separator.png">
 
 <div align="center">
 
