@@ -12,7 +12,7 @@
   "browser": "chatgpt.js",
   "files": [
     "chatgpt.js",
-    "dist/chatgpt-2.6.4.min.js",
+    "dist/chatgpt.min.js",
     "docs/",
     "starters/"
   ],
