@@ -935,9 +935,10 @@ const chatgpt = {
 
     getStopGeneratingButton: function() {
         for (const formButton of document.querySelectorAll('form button')) {
-            if (formButton.textContent.toLowerCase().includes('stop')) {
+            const ariaLabel = formButton.getAttribute('aria-label');
+            if (ariaLabel && ariaLabel.toLowerCase().includes('stop'))
                 return formButton;
-    }}},
+    }},
 
     getUserLanguage: function() {
         return navigator.languages[0] || navigator.language || navigator.browserLanguage ||
@@ -1555,7 +1556,8 @@ const chatgpt = {
 
         stopGenerating: function() {
             for (const formButton of document.querySelectorAll('form button')) {
-                if (formButton.textContent.toLowerCase().includes('stop')) {
+                const ariaLabel = formButton.getAttribute('aria-label');
+                if (ariaLabel && ariaLabel.toLowerCase().includes('stop')) {
                     formButton.click(); return;
         }}}
     },
