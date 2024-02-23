@@ -24,7 +24,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "preview:docs": "docsify serve docs",
     "build:js": "minify-js chatgpt.js dist/chatgpt.min.js",
-    "build:css": "scss-to-css"
+    "build:css": "scss-to-css",
+    "bump:patch": "bash utils/bump.sh patch",
+    "bump:minor": "bash utils/bump.sh minor",
+    "bump:major": "bash utils/bump.sh major",
+    "publish:patch": "bash utils/bump.sh patch --publish",
+    "publish:minor": "bash utils/bump.sh minor --publish",
+    "publish:major": "bash utils/bump.sh major --publish"
   },
   "repository": {
     "type": "git",
