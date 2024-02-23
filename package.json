@@ -23,7 +23,7 @@
     "lint:fix-all": "eslint . --ext js,json,yml --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
     "preview:docs": "docsify serve docs",
-    "build:js": "node utils\\build-minified-chatgpt.js",
+    "build:js": "minify-js chatgpt.js dist/chatgpt.min.js",
     "build:css": "scss-to-css"
   },
   "repository": {
