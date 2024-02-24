@@ -36,7 +36,7 @@ echo "v$new_version"
 
 # Bump chatgpt.js version in Greasemonkey starter
 echo -e "\nBumping versions in Greasemonkey starter..."
-sed -i "s|[0-9.]\+\.min\.js|$new_version.min.js|g" starters/greasemonkey/*.user.js
+sed -i "s|\(chatgpt\.js@\)[0-9.]\+|\1$new_version|g" starters/greasemonkey/*.user.js
 echo "chatgpt.js v$new_version"
 
 # Bump userscript version in Greasemonkey starter
