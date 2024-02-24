@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# This script automates: build chatgpt.min.js >>> bump versions in manifests + READMEs
+# + Greasemonkey starter script >>> commit changes to Git >>> push changes to GitHub
+# >>> publish to npm (optional)
+
 # Init UI colors
 nc="\033[0m" # no color
 bg="\033[1;92m" # bright green
@@ -61,8 +65,6 @@ git commit -n -m "Built chatgpt.js $new_version"
 git add package*.json
 git commit -n -m "Bumped version to $new_version"
 git add ./*greasemonkey-starter.user.js
-
-exit 
 git commit -n -m "Bumped chatgpt.js to $new_version"
 git add '**/README.md' '**/USERGUIDE.md'
 git commit -n -m "Bumped versions in jsDelivr URLs to $new_version"
