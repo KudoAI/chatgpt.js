@@ -936,7 +936,7 @@ const chatgpt = {
     getStopGeneratingButton: function() {
         for (const formButton of document.querySelectorAll('form button')) {
             const ariaLabel = formButton.getAttribute('aria-label');
-            if (ariaLabel && ariaLabel.toLowerCase().includes('stop'))
+            if (ariaLabel?.toLowerCase().includes('stop'))
                 return formButton;
     }},
 
@@ -1557,7 +1557,7 @@ const chatgpt = {
         stopGenerating: function() {
             for (const formButton of document.querySelectorAll('form button')) {
                 const ariaLabel = formButton.getAttribute('aria-label');
-                if (ariaLabel && ariaLabel.toLowerCase().includes('stop')) {
+                if (ariaLabel?.toLowerCase().includes('stop')) {
                     formButton.click(); return;
         }}}
     },
