@@ -65,7 +65,7 @@ git commit -n -m "Built chatgpt.js $new_version"
 git add package*.json
 git commit -n -m "Bumped versions in manifests to $new_version"
 git add '**/README.md' '**/USERGUIDE.md'
-git commit -n -m "Bumped versions in jsDelivr URLs to $new_version"
+git commit -n -m "Bumped versions in shields.io + jsDelivr URLs to $new_version"
 git add ./*greasemonkey-starter.user.js
 git commit -n -m "Bumped chatgpt.js to $new_version"
 
