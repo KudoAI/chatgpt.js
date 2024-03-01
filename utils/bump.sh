@@ -63,11 +63,11 @@ echo -e "\nCommitting changes...\n"
 git add **/chatgpt.min.js
 git commit -n -m "Built chatgpt.js $new_version"
 git add package*.json
-git commit -n -m "Bumped version to $new_version"
-git add ./*greasemonkey-starter.user.js
-git commit -n -m "Bumped chatgpt.js to $new_version"
+git commit -n -m "Bumped versions in manifests to $new_version"
 git add '**/README.md' '**/USERGUIDE.md'
 git commit -n -m "Bumped versions in jsDelivr URLs to $new_version"
+git add ./*greasemonkey-starter.user.js
+git commit -n -m "Bumped chatgpt.js to $new_version"
 
 # Push to GiHub
 echo -e "\nPushing to GitHub...\n"
