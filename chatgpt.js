@@ -1,4 +1,4 @@
-// (c) 2023–2024 KudoAI & contributors under the MIT license
+// (c) 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
 
