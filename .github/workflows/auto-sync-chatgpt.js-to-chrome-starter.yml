@@ -31,7 +31,7 @@ jobs:
             "${{ github.workspace }}/KudoAI/chatgpt.js/starters/chrome/extension/lib/chatgpt.js"
           echo "export { chatgpt };" >> "${{ github.workspace }}/KudoAI/chatgpt.js/starters/chrome/extension/lib/chatgpt.js"
           cd "${{ github.workspace }}/KudoAI/chatgpt.js/starters/chrome/extension"
-          sed -i -E 's/"version": "([0-9]+\.[0-9]+\.[0-9]+)\.*([0-9]*)"/"version": "$(date +'%Y.%-m.%-d')"/g' manifest.json
+          sed -i -E "s/\"version\": \"([0-9]+\.[0-9]+\.[0-9]+)\.*([0-9]*)\"/\"version\": \"$(date +'%Y.%-m.%-d')\"/g" manifest.json
 
       - name: Sync chatgpt.js to KudoAI/chatgpt.js-chrome-starter/extension/lib/chatgpt.js + update version in manifest.json
         run: |
@@ -40,8 +40,7 @@ jobs:
             "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/extension/lib/chatgpt.js"
           echo "export { chatgpt };" >> "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/extension/lib/chatgpt.js"
           cd "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/extension"
-          sed -i -E 's/"version": "([0-9]+\.[0-9]+\.[0-9]+)\.*([0-9]*)"/"version": "$(date +'%Y.%-m.%-d')"/g' manifest.json
-
+          sed -i -E "s/\"version\": \"([0-9]+\.[0-9]+\.[0-9]+)\.*([0-9]*)\"/\"version\": \"$(date +'%Y.%-m.%-d')\"/g" manifest.json
       - name: Push to KudoAI/chatgpt.js
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
