@@ -2,7 +2,7 @@
 
 <div align="center">
     <h6>
-        <a href="https://github.com/kudoai/chatgpt.js/tree/main/docs">
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs">
             <picture>
                 <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-white-padded-icon17x15.svg">
                 <img src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-padded-icon17x15.svg">
@@ -43,7 +43,7 @@
 
 [![](https://img.shields.io/github/stars/KudoAI/chatgpt.js?label=별&color=gold&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/stargazers)
 [![](https://img.shields.io/badge/라이센스-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
-[![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=커밋&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js/commits/main)
+[![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=커밋&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/commits/main)
 ![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt.min.js?label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
 [![](https://img.shields.io/codacy/grade/696917c8e5a949c49edb89ed2f43d5ba?label=코드+품질&logo=codacy&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge)](https://app.codacy.com/gh/KudoAI/chatgpt.js/commits?utm_source=chatgpt%2Ejs&utm_content=github_shield)
 [![](https://img.shields.io/badge/언급됨-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
@@ -111,7 +111,7 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/tampermonkey-icon28.png"></picture><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/violentmonkey-icon100.png"> Greasemonkey:
 
-> **참고** _스타터 템플릿을 사용하시려면: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
+> **참고** _스타터 템플릿을 사용하시려면: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
 ```js
 ...
@@ -123,7 +123,7 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
-> **참고** _스타터 템플릿을 사용하시려면: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
+> **참고** _스타터 템플릿을 사용하시려면: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
 Google은 원격 코드를 허용하지 않으므로 chatgpt.js를 로컬로 가져와야 합니다:
 
@@ -191,7 +191,7 @@ chatgpt.get('reply', 'last');
 
 각 호출은 동일한 방식으로 최신 응답을 가져옵니다. 만약 잘 작동한다고 생각하신다면, 그렇게 하시면 될겁니다... 그러니 그냥 입력하세요!
 
-그렇지 않은 경우 확장된 [사용자 가이드](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md)를 확인하거나 간단히 [문제](https://github.com/kudoai/chatgpt.js/issues) 또는 [PR](https://github.com/kudoai/chatgpt.js/pulls)을 주시면 통합될 것 입니다, 참 쉽죠!
+그렇지 않은 경우 확장된 [사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md)를 확인하거나 간단히 [문제](https://github.com/KudoAI/chatgpt.js/issues) 또는 [PR](https://github.com/KudoAI/chatgpt.js/pulls)을 주시면 통합될 것 입니다, 참 쉽죠!
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/images/aqua-separator.png">
 
@@ -269,7 +269,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 <p><br>
 
 <p id="showcase-cta">
-chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> 로 이메일을 보내시거나 <a href="https://github.com/kudoai/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>를 열어주세요!
+chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> 로 이메일을 보내시거나 <a href="https://github.com/KudoAI/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>를 열어주세요!
 </p>
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/images/aqua-separator.png">
@@ -340,8 +340,8 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href=
 <div align="center">
 
 **[릴리스](https://www.npmjs.com/package/@kudoai/chatgpt.js?activeTab=versions)** /
-[사용자 가이드](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) /
-[토론](https://github.com/kudoai/chatgpt.js/discussions) /
+[사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) /
+[토론](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#">상단으로 ↑</a>
 
 </div>

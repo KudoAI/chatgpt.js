@@ -22,7 +22,7 @@
 
 # <img height=21 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> chatgpt.js-chrome-starter
 
-<h3><a href="https://github.com/kudoai/chatgpt.js">chatgpt.js</a> 를 사용하여 나만의 Chrome 확장 프로그램을 개발하기 위한 출발점</h3>
+<h3><a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a> 를 사용하여 나만의 Chrome 확장 프로그램을 개발하기 위한 출발점</h3>
 
 <br>
 
@@ -30,7 +30,7 @@
 
 ## ⚡ 설치
 
-1. 딸깍 하는 소리 **Fork** -또는- **Use this template** > **Create a new repository** ~에 https://github.com/kudoai/chatgpt.js-chrome-starter
+1. 딸깍 하는 소리 **Fork** -또는- **Use this template** > **Create a new repository** ~에 https://github.com/KudoAI/chatgpt.js-chrome-starter
 
 2. **Clone** 로컬에서 새로 생성된 저장소
 
@@ -90,4 +90,4 @@
 
 #
 
-<a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">도움 받기</a> / <a href="#">맨 위로 ↑</a>
+<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">도움 받기</a> / <a href="#">맨 위로 ↑</a>

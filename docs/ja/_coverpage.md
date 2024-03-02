@@ -4,7 +4,7 @@
 
 > 🤖 ChatGPT 用の強力なクライアント側 JavaScript ライブラリ
 
-[GitHub](https://github.com/kudoai/chatgpt.js)
+[GitHub](https://github.com/KudoAI/chatgpt.js)
 [始めましょう](#⚡-ライブラリのインポート)
 
 <!-- background color -->

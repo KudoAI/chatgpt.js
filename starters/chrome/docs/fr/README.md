@@ -22,7 +22,7 @@
 
 # <img height=21 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> chatgpt.js-chrome-starter
 
-<h3>Un point de départ pour développer votre propre extension Chrome en utilisant <a href="https://github.com/kudoai/chatgpt.js">chatgpt.js</a></h3>
+<h3>Un point de départ pour développer votre propre extension Chrome en utilisant <a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a></h3>
 
 <br>
 
@@ -30,7 +30,7 @@
 
 ## ⚡ Installation
 
-1. Cliquez sur **Fork** -ou- **Use this template** > **Create a new repository** sur https://github.com/kudoai/chatgpt.js-chrome-starter
+1. Cliquez sur **Fork** -ou- **Use this template** > **Create a new repository** sur https://github.com/KudoAI/chatgpt.js-chrome-starter
 
 2. **Clone** votre dépôt nouvellement créé localement
 
@@ -90,4 +90,4 @@ Voici quelques-unes des extensions proposées par Google qui utilisent chatgpt.j
 
 #
 
-<a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">Obtenir de l'aide</a> / <a href="#">Retour au sommet ↑</a>
+<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">Obtenir de l'aide</a> / <a href="#">Retour au sommet ↑</a>

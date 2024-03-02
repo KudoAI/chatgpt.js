@@ -22,7 +22,7 @@
 
 # <img height=21 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> chatgpt.js-chrome-starter
 
-<h3><a href="https://github.com/kudoai/chatgpt.js">chatgpt.js</a> का उपयोग करके अपना स्वयं का Chrome एक्सटेंशन विकसित करने का प्रारंभिक बिंदु</h3>
+<h3><a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a> का उपयोग करके अपना स्वयं का Chrome एक्सटेंशन विकसित करने का प्रारंभिक बिंदु</h3>
 
 <br>
 
@@ -30,7 +30,7 @@
 
 ## ⚡ इंस्टालेशन
 
-1. クリック **Fork** -या- **Use this template** > **Create a new repository** पर https://github.com/kudoai/chatgpt.js-chrome-starter
+1. クリック **Fork** -या- **Use this template** > **Create a new repository** पर https://github.com/KudoAI/chatgpt.js-chrome-starter
 
 2. **Clone** आपका नव निर्मित रेपो स्थानीय स्तर पर
 
@@ -90,4 +90,4 @@
 
 #
 
-<a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">मदद लें</a> / <a href="#">वापस शीर्ष पर ↑</a>
+<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">मदद लें</a> / <a href="#">वापस शीर्ष पर ↑</a>

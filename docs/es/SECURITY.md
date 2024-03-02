@@ -20,6 +20,6 @@
 
 # Politica de seguridad
 
-Si encuentra una vulnerabilidad, abra un [borrador de aviso de seguridad](https://github.com/kudoai/chatgpt.js/security/advisories/new).
+Si encuentra una vulnerabilidad, abra un [borrador de aviso de seguridad](https://github.com/KudoAI/chatgpt.js/security/advisories/new).
 
 Las solicitudes de extracción también son bienvenidas, pero por razones de seguridad, envíe un correo electrónico a security@chatgptjs.org y espere una respuesta antes de hacerlo público.

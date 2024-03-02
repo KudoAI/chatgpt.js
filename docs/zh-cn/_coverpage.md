@@ -4,7 +4,7 @@
 
 > 🤖 ChatGPT 的强大客户端 JavaScript 库
 
-[GitHub](https://github.com/kudoai/chatgpt.js)
+[GitHub](https://github.com/KudoAI/chatgpt.js)
 [开始吧](#⚡-导入库)
 
 <!-- background color -->

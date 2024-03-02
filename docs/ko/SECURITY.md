@@ -20,6 +20,6 @@
 
 # 보안 정책
 
-취약점을 발견하신 경우에, [보안 안내서 초안](https://github.com/kudoai/chatgpt.js/security/advisories/new)을 확인해주세요.
+취약점을 발견하신 경우에, [보안 안내서 초안](https://github.com/KudoAI/chatgpt.js/security/advisories/new)을 확인해주세요.
 
 풀 리퀘스트는 누구에게나 열려있습니다! 하지만 보안을 위해, security@chatgptjs.org에 메일을 보내시고 답변을 기다린 뒤에 퍼블릭(Public)으로 해주십시오.

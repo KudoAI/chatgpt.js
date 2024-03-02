@@ -12,8 +12,8 @@
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @noframes
-// @homepageURL   https://github.com/kudoai/chatgpt.js-greasemonkey-starter
-// @supportURL    https://github.com/kudoai/chatgpt.js-greasemonkey-starter/issues
+// @homepageURL   https://github.com/KudoAI/chatgpt.js-greasemonkey-starter
+// @supportURL    https://github.com/KudoAI/chatgpt.js-greasemonkey-starter/issues
 // ==/UserScript==
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023–2024 KudoAI & contributors under the MIT license

@@ -2,7 +2,7 @@
 
 <div align="center">
     <h6>
-        <a href="https://github.com/kudoai/chatgpt.js/tree/main/docs">
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs">
             <picture>
                 <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-white-padded-icon17x15.svg">
                 <img src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-padded-icon17x15.svg">
@@ -42,7 +42,7 @@
 
 [![](https://img.shields.io/github/stars/KudoAI/chatgpt.js?label=Sterne&color=gold&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/stargazers)
 [![](https://img.shields.io/badge/Lizenz-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
-[![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=Commits&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js/commits/main)
+[![](https://img.shields.io/github/commit-activity/m/kudoai/chatgpt.js?label=Commits&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/commits/main)
 ![](https://img.shields.io/github/size/kudoai/chatgpt.js/dist/chatgpt.min.js?label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)
 [![](https://img.shields.io/codacy/grade/696917c8e5a949c49edb89ed2f43d5ba?label=Codequalität&logo=codacy&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge)](https://app.codacy.com/gh/KudoAI/chatgpt.js/commits?utm_source=chatgpt%2Ejs&utm_content=github_shield)
 [![](https://img.shields.io/badge/Erwähnt_in-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
@@ -107,7 +107,7 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/tampermonkey-icon28.png"></picture><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/starters/media/images/icons/violentmonkey-icon100.png"> Greasemonkey:
 
-> **Hinweis** _Um eine Starter-Vorlage zu verwenden: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
+> **Hinweis** _Um eine Starter-Vorlage zu verwenden: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
 ```js
 ...
@@ -119,7 +119,7 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome:
 
-> **Hinweis** _Um eine Starter-Vorlage zu verwenden: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
+> **Hinweis** _Um eine Starter-Vorlage zu verwenden: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
 Da Google keinen Remote-Code zulässt, ist der lokale Import von chatgpt.js erforderlich:
 
@@ -186,7 +186,7 @@ chatgpt.get('reply', 'last');
 
 Jeder Aufruf ruft gleichermaßen die letzte Antwort ab. Wenn Sie glauben, dass es funktioniert, wird es wahrscheinlich auch funktionieren ... also geben Sie es einfach ein! (Wer hat Zeit für Dokumente?)
 
-Wenn dies nicht der Fall ist, schauen Sie sich den erweiterten [benutzerleitfaden](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) an oder reichen Sie einfach ein [Problem](https://github.com/kudoai/chatgpt.js/issues) ein oder [PR](https://github.com/kudoai/chatgpt.js/pulls) und es wird integriert, ganz einfach!
+Wenn dies nicht der Fall ist, schauen Sie sich den erweiterten [benutzerleitfaden](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) an oder reichen Sie einfach ein [Problem](https://github.com/KudoAI/chatgpt.js/issues) ein oder [PR](https://github.com/KudoAI/chatgpt.js/pulls) und es wird integriert, ganz einfach!
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/images/aqua-separator.png">
 
@@ -264,7 +264,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 <p><br>
 
 <p id="showcase-cta">
-Wenn Sie etwas mit chatgpt.js erstellt haben, das Sie teilen möchten, senden Sie eine E-Mail an <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> oder öffnen Sie einfach eine <a href="https://github.com/kudoai/chatgpt.js/pulls" target="_blank" rel="noopener">Pull-Anfrage</a>!
+Wenn Sie etwas mit chatgpt.js erstellt haben, das Sie teilen möchten, senden Sie eine E-Mail an <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> oder öffnen Sie einfach eine <a href="https://github.com/KudoAI/chatgpt.js/pulls" target="_blank" rel="noopener">Pull-Anfrage</a>!
 </p>
 
 <img height=8px width="100%" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/docs/assets/images/aqua-separator.png">
@@ -335,8 +335,8 @@ Diese Bibliothek existiert dank Code, Übersetzungen, Problemen und Ideen der fo
 <div align="center">
 
 **[Veröffentlichungen](https://www.npmjs.com/package/@kudoai/chatgpt.js?activeTab=versions)** /
-[Benutzerhandbuch](https://github.com/kudoai/chatgpt.js/blob/main/docs/USERGUIDE.md) /
-[Diskutieren](https://github.com/kudoai/chatgpt.js/discussions) /
+[Benutzerhandbuch](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) /
+[Diskutieren](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#">Zurück nach oben ↑</a>
 
 </div>

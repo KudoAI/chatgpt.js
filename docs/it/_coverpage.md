@@ -4,7 +4,7 @@
 
 > 🤖 Una potente libreria JavaScript lato client per ChatGPT
 
-[GitHub](https://github.com/kudoai/chatgpt.js)
+[GitHub](https://github.com/KudoAI/chatgpt.js)
 [Come iniziare](#⚡-importazione-della-libreria)
 
 <!-- background color -->

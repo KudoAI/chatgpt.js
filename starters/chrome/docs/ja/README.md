@@ -22,7 +22,7 @@
 
 # <img height=21 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> chatgpt.js-chrome-starter
 
-<h3><a href="https://github.com/kudoai/chatgpt.js">chatgpt.js</a> を使用して独自の Chrome 拡張機能を開発するための出発点</h3>
+<h3><a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a> を使用して独自の Chrome 拡張機能を開発するための出発点</h3>
 
 <br>
 
@@ -30,7 +30,7 @@
 
 ## ⚡ インストール
 
-1. クリック **Fork** -また- **Use this template** > **Create a new repository** の上 https://github.com/kudoai/chatgpt.js-chrome-starter
+1. クリック **Fork** -また- **Use this template** > **Create a new repository** の上 https://github.com/KudoAI/chatgpt.js-chrome-starter
 
 2. **Clone** 新しくローカルに作成されたリポジトリ
 
@@ -90,4 +90,4 @@
 
 #
 
-<a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">助けを得ます</a> / <a href="#">トップに戻る ↑</a>
+<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">助けを得ます</a> / <a href="#">トップに戻る ↑</a>

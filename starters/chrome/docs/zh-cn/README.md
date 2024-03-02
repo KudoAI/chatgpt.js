@@ -22,7 +22,7 @@
 
 # <img height=21 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> chatgpt.js-chrome-starter
 
-<h3>使用 <a href="https://github.com/kudoai/chatgpt.js">chatgpt.js</a> 开发自己的 Chrome 扩展程序的起点</h3>
+<h3>使用 <a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a> 开发自己的 Chrome 扩展程序的起点</h3>
 
 <br>
 
@@ -30,7 +30,7 @@
 
 ## ⚡ 安装
 
-1. 点击 **Fork** -或者- **Use this template** > **Create a new repository** 在 https://github.com/kudoai/chatgpt.js-chrome-starter
+1. 点击 **Fork** -或者- **Use this template** > **Create a new repository** 在 https://github.com/KudoAI/chatgpt.js-chrome-starter
 
 2. **Clone** 您在本地新创建的存储库
 
@@ -90,4 +90,4 @@
 
 #
 
-<a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">得到帮助</a> / <a href="#">回到顶部 ↑</a>
+<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">得到帮助</a> / <a href="#">回到顶部 ↑</a>

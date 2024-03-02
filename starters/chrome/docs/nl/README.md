@@ -22,7 +22,7 @@
 
 # <img height=21 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> chatgpt.js-chrome-starter
 
-<h3>Een startpunt voor het ontwikkelen van uw eigen Chrome-extensie met behulp van <a href="https://github.com/kudoai/chatgpt.js">chatgpt.js</a></h3>
+<h3>Een startpunt voor het ontwikkelen van uw eigen Chrome-extensie met behulp van <a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a></h3>
 
 <br>
 
@@ -30,7 +30,7 @@
 
 ## ⚡ Installatie
 
-1. Klik **Fork** -of- **Use this template** > **Create a new repository** op https://github.com/kudoai/chatgpt.js-chrome-starter
+1. Klik **Fork** -of- **Use this template** > **Create a new repository** op https://github.com/KudoAI/chatgpt.js-chrome-starter
 
 2. **Clone** uw nieuw gemaakte repo lokaal
 
@@ -90,4 +90,4 @@ Dit zijn enkele van de extensies van Google die chatgpt.js gebruiken:
 
 #
 
-<a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">Hulp krijgen</a> / <a href="#">Terug naar boven ↑</a>
+<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">Hulp krijgen</a> / <a href="#">Terug naar boven ↑</a>

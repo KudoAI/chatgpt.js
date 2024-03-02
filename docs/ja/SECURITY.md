@@ -20,6 +20,6 @@
 
 # セキュリティポリシー
 
-脆弱性を見つけた場合は、[セキュリティ勧告草案](https://github.com/kudoai/chatgpt.js/security/advisories/new) を開いてください。
+脆弱性を見つけた場合は、[セキュリティ勧告草案](https://github.com/KudoAI/chatgpt.js/security/advisories/new) を開いてください。
 
 プル リクエストも歓迎しますが、安全上の理由から、公開する前に security@chatgptjs.org に電子メールを送信し、応答を待ってください。

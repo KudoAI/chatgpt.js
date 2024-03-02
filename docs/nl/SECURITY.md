@@ -20,6 +20,6 @@
 
 # Veiligheidsbeleid
 
-Als u een kwetsbaarheid vindt, open dan een [conceptbeveiligingsadvies](https://github.com/kudoai/chatgpt.js/security/advisories/new).
+Als u een kwetsbaarheid vindt, open dan een [conceptbeveiligingsadvies](https://github.com/KudoAI/chatgpt.js/security/advisories/new).
 
 Pull-verzoeken zijn ook welkom, maar stuur om veiligheidsredenen een e-mail naar security@chatgptjs.org en wacht op een reactie voordat je het openbaar maakt.

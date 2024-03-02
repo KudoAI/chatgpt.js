@@ -170,7 +170,7 @@ function yourCode() {
 
 ## Greasemonkey
 
-> **Note** _To use a starter template: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/kudoai/chatgpt.js-greasemonkey-starter)_
+> **Note** _To use a starter template: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
 ```js
 ...
@@ -182,7 +182,7 @@ function yourCode() {
 
 ## Chrome
 
-> **Note** _To use a starter template: [kudoai/chatgpt.js-chrome-starter](https://github.com/kudoai/chatgpt.js-chrome-starter)_
+> **Note** _To use a starter template: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
 1. Save https://raw.githubusercontent.com/kudoai/chatgpt.js/main/chatgpt.js to a subdirectory (`lib` in this example)
 
@@ -1808,5 +1808,5 @@ chatgpt.sidebar.toggle();
 <br>
 <br>
 
-[Discuss](https://github.com/kudoai/chatgpt.js/discussions) /
+[Discuss](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#">Back to top ↑</a>

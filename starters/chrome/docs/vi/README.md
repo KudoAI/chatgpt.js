@@ -22,7 +22,7 @@
 
 # <img height=21 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> chatgpt.js-chrome-starter
 
-<h3>Điểm khởi đầu để phát triển tiện ích mở rộng Chrome của riêng bạn bằng <a href="https://github.com/kudoai/chatgpt.js">chatgpt.js</a></h3>
+<h3>Điểm khởi đầu để phát triển tiện ích mở rộng Chrome của riêng bạn bằng <a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a></h3>
 
 <br>
 
@@ -30,7 +30,7 @@
 
 ## ⚡ Cài đặt
 
-1. Nhấp chuột **Fork** -hoặc- **Use this template** > **Create a new repository** trên https://github.com/kudoai/chatgpt.js-chrome-starter
+1. Nhấp chuột **Fork** -hoặc- **Use this template** > **Create a new repository** trên https://github.com/KudoAI/chatgpt.js-chrome-starter
 
 2. **Clone** repo mới được tạo của bạn tại địa phương
 
@@ -90,4 +90,4 @@
 
 #
 
-<a href="https://github.com/kudoai/chatgpt.js-chrome-starter/issues">Được giúp đỡ</a> / <a href="#">Trở lại đầu trang ↑</a>
+<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">Được giúp đỡ</a> / <a href="#">Trở lại đầu trang ↑</a>

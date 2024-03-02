@@ -20,6 +20,6 @@
 
 # Sicherheitsrichtlinie
 
-Wenn Sie eine Sicherheitslücke finden, öffnen Sie bitte einen [Entwurf einer Sicherheitswarnung](https://github.com/kudoai/chatgpt.js/security/advisories/new).
+Wenn Sie eine Sicherheitslücke finden, öffnen Sie bitte einen [Entwurf einer Sicherheitswarnung](https://github.com/KudoAI/chatgpt.js/security/advisories/new).
 
 Pull-Anfragen sind ebenfalls willkommen, aber aus Sicherheitsgründen senden Sie eine E-Mail an security@chatgptjs.org und warten Sie auf eine Antwort, bevor Sie sie veröffentlichen.

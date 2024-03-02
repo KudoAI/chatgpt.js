@@ -8,7 +8,7 @@
 </p>
 </blockquote>
 
-[GitHub](https://github.com/kudoai/chatgpt.js)
+[GitHub](https://github.com/KudoAI/chatgpt.js)
 [Get Started](#⚡-importing-the-library)
 
 <!-- background color -->
