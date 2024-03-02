@@ -898,7 +898,7 @@ const chatgpt = {
     getChatInput: function() { return chatgpt.getChatBox().value; },
 
     getContinueGeneratingButton: function() {
-        document.querySelectorAll('button svg').forEach(svg => {
+        document.querySelectorAll('form button svg').forEach(svg => {
             if (svg.querySelector('polygon[points*="11 19 2 12 11 5 11 19"]')) {
                 return svg.parentNode.parentNode;
     }});},
