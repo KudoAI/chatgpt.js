@@ -35,7 +35,7 @@ npm version --no-git-tag-version "$new_version"
 # Bump versions in READMEs
 echo -e "\nBumping versions in READMEs..."
 sed -i "s/\(chatgpt\(-\|\.js@\)\)[0-9]\+\(\.[0-9]\+\)\{2\}/\1$new_version/g" \
-    $(find docs -regex ".*/\(README\|USERGUIDE\)\.md")
+    $(find docs -regex ".*/\(README\|USERGUIDE\)\.md") ./README.md
 echo "v$new_version"
 
 # Bump chatgpt.js version in Greasemonkey starter
