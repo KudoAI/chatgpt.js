@@ -149,7 +149,7 @@ a { word-break: break-word }
 /* KudoAI logo */
 #kudoai {
     position: fixed ; top: 15px ; left: 35px ;
-    font-family: Major Mono Display ; font-size: 2.25vw ; z-index: 500 ;
+    font-family: 'Major Mono Display' ; font-size: 2.25vw ; z-index: 500 ;
     @each $property, $value in $no-select { #{$property}: #{$value}; }}
 #kudoai a { color: white ; text-decoration: none }
 .kudo { font-size: 135% ; text-shadow: $kudo-depth $kudo-depth white ; padding-right: 4px }
