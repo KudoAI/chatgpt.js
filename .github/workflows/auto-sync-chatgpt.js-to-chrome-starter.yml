@@ -33,7 +33,7 @@ jobs:
           cd "${{ github.workspace }}/KudoAI/chatgpt.js/starters/chrome/extension"
           echo "Contents of manifest.json before substitution:"
           cat manifest.json
-          sed -i -E 's/"version": "(\d+\.\d+\.\d+)\.*(\d*)"/"version": "test"/g' manifest.json
+          sed -i -E 's/"version": "([0-9]+\.[0-9]+\.[0-9]+)\.*([0-9]*)"/"version": "test"/g' manifest.json
           echo "Contents of manifest.json after substitution:"
           cat manifest.json
 
@@ -46,7 +46,7 @@ jobs:
           cd "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/extension"
           echo "Contents of manifest.json before substitution:"
           cat manifest.json
-          sed -i -E 's/"version": "(\d+\.\d+\.\d+)\.*(\d*)"/"version": "test"/g' manifest.json
+          sed -i -E 's/"version": "([0-9]+\.[0-9]+\.[0-9]+)\.*([0-9]*)"/"version": "test"/g' manifest.json
           echo "Contents of manifest.json after substitution:"
           cat manifest.json
 
