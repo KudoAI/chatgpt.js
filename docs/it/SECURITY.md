@@ -22,4 +22,4 @@
 
 Se trovi una vulnerabilità, apri una [bozza di avviso di sicurezza](https://github.com/KudoAI/chatgpt.js/security/advisories/new).
 
-Anche le pull request sono benvenute, ma per motivi di sicurezza, invia un'e-mail a security@chatgptjs.org e attendi una risposta prima di renderla pubblica.
+Anche le pull request sono benvenute, ma per motivi di sicurezza, invia un'e-mail a <security@kudoai.com> e attendi una risposta prima di renderla pubblica.

@@ -22,4 +22,4 @@
 
 Nếu bạn tìm thấy lỗ hổng bảo mật, vui lòng mở [dự thảo tư vấn bảo mật](https://github.com/KudoAI/chatgpt.js/security/advisories/new).
 
-Yêu cầu kéo cũng được hoan nghênh, nhưng vì lý do an toàn, hãy gửi email đến security@chatgptjs.org và đợi phản hồi trước khi công khai.
+Yêu cầu kéo cũng được hoan nghênh, nhưng vì lý do an toàn, hãy gửi email đến <security@kudoai.com> và đợi phản hồi trước khi công khai.
