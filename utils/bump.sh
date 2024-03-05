@@ -60,7 +60,7 @@ echo "chatgpt.js-greasemonkey-starter.user.js v$new_gm_version"
 
 # Commit changes to Git
 echo -e "\nCommitting changes...\n"
-git add **/chatgpt.min.js
+git add ./**/chatgpt.min.js
 git commit -n -m "Built chatgpt.js $new_version"
 git add package*.json
 git commit -n -m "Bumped versions in manifests to $new_version"
