@@ -636,7 +636,7 @@ const chatgpt = {
         } else { // auto-save to file
 
             if (format == 'md') { // remove extraneous HTML + fix file extension
-                const mdMatch = /<!?.*(?:<h1(.|\n)*?href=".*?continue[^"]*?".*?\/a>.*?)<[^/]/.exec(transcript)[1];
+                const mdMatch = /<.*(?:<h1(.|\n)*?href=".*?continue[^"]*".*?\/a>.*?)<[^/]/.exec(transcript)[1];
                 transcript = mdMatch || transcript; filename = filename.replace('.html', '.md');
             }
             const blob = new Blob([transcript],
