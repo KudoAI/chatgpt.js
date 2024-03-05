@@ -898,10 +898,10 @@ const chatgpt = {
     getChatInput: function() { return chatgpt.getChatBox().value; },
 
     getContinueGeneratingButton: function() {
-        document.querySelectorAll('form button svg').forEach(svg => {
-            if (svg.querySelector('polygon[points*="11 19 2 12 11 5 11 19"]')) {
+        for (const svg of document.querySelectorAll('form button svg')) {
+            if (svg.querySelector('polygon[points*="11 19 2 12 11 5 11 19"]'))
                 return svg.parentNode.parentNode;
-    }});},
+    }},
 
     getLastPrompt: function() { return chatgpt.getChatData('active', 'msg', 'user', 'latest'); },
     getLastResponse: function() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
@@ -934,10 +934,10 @@ const chatgpt = {
     getSendButton: function() { return document.querySelector('form button[class*="bottom"]'); },
 
     getStopGeneratingButton: function() {
-        document.querySelectorAll('form button svg').forEach(svg => {
+        for (const svg of document.querySelectorAll('form button svg')) {
             if (svg.querySelector('path[d*="2 0 0 1 2"]'))
                 return svg.parentNode;
-    });},
+    }},
 
     getUserLanguage: function() {
         return navigator.languages[0] || navigator.language || navigator.browserLanguage ||
@@ -1554,10 +1554,10 @@ const chatgpt = {
         }}},
 
         stopGenerating: function() {
-            document.querySelectorAll('form button svg').forEach(svg => {
+            for (const svg of document.querySelectorAll('form button svg')) {
                 if (svg.querySelector('path[d*="2 0 0 1 2"]')) {
                     svg.parentNode.click(); return;
-        }});}
+        }}}
     },
 
     reviewCode: function() { chatgpt.code.review(); },
