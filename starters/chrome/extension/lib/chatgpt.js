@@ -636,7 +636,7 @@ const chatgpt = {
         } else { // auto-save to file
 
             if (format == 'md') { // remove extraneous HTML + fix file extension
-                const mdMatch = /<!?.*(<h1(.|\n)*?href=".*?continue.*?".*?\/a>.*?)<[^/]/.exec(transcript)[1];
+                const mdMatch = /<!?.*(?:<h1(.|\n)*?href=".*?continue.*?".*?\/a>.*?)<[^/]/.exec(transcript)[1];
                 transcript = mdMatch || transcript; filename = filename.replace('.html', '.md');
             }
             const blob = new Blob([transcript],
@@ -1437,7 +1437,7 @@ const chatgpt = {
 
     renderHTML: function(node) {
         const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
-              reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+(?:\S+)=|[>']))+.)['"]?/g,
+              reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+\S+=|[>']))+.)['"]?/g,
               nodeContent = node.childNodes;
 
         // Preserve consecutive spaces + line breaks
