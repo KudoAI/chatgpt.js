@@ -49,7 +49,7 @@ if (!isChromeUserScript && !(isFFuserScript && !isFFtmScript)) { (async () => {
                 } catch (err) {
                     msgXHRtries++; if (msgXHRtries === 3) resolve({}); // try up to 3X (original/region-stripped/EN) only
                     msgHref = userLanguage.includes('-') && msgXHRtries === 1 ? // if regional lang on 1st try...
-                        msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
+                        msgHref.replace(/([^_]*)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
                             : ( msgHostDir + 'en/messages.json' ); // else use default English messages
                     loadMsgs();
                 }
@@ -636,7 +636,7 @@ const chatgpt = {
         } else { // auto-save to file
 
             if (format == 'md') { // remove extraneous HTML + fix file extension
-                const mdMatch = /<!?.*(?:<h1(.|\n)*?href=".*?continue.*?".*?\/a>.*?)<[^/]/.exec(transcript)[1];
+                const mdMatch = /<!?.*(?:<h1(.|\n)*?href=".*?continue[^"]*?".*?\/a>.*?)<[^/]/.exec(transcript)[1];
                 transcript = mdMatch || transcript; filename = filename.replace('.html', '.md');
             }
             const blob = new Blob([transcript],
