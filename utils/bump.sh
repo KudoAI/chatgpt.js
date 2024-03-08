@@ -50,7 +50,7 @@ if grep -q "@version\s*${today}$" starters/greasemonkey/*.user.js # exact match 
         sed -i "s|\(@version\s*\).*$|\1$today.1|" starters/greasemonkey/*.user.js
 elif grep -q "@version\s*${today}" starters/greasemonkey/*.user.js # partial match for $today
     then # bump to $today.n+1
-        last_ver=$(echo "$(sed -n "/@version\s*${today%.*}/{p;q}" starters/greasemonkey/*.user.js)" | grep -o '.$')
+        last_ver=$(sed -n "/@version\s*${today%.*}/{p;q}" starters/greasemonkey/*.user.js | grep -o '.$')
         sed -i "s|\(@version\s*\).*$|\1$today.$((last_ver + 1))|" starters/greasemonkey/*.user.js
 else # no match for $today
     # bump to $today
