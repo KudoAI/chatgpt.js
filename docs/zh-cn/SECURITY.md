@@ -1,6 +1,6 @@
 <div align="center">
     <h6>
-        <a href="../"><img height=15 style="margin: 0 3px -2px" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/6fa1659feadaf70853996dc7d7f6e1ab5a1e6301/media/images/icons/earth-americas.svg"></a>
+        <a href="../"><img height=15 style="margin: 0 3px -2px" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/6fa1659feadaf70853996dc7d7f6e1ab5a1e6301/media/images/icons/earth-americas.svg"></a>
         简体中文 |
         <a href="../SECURITY.md">English</a> |
         <a href="../zh-tw/SECURITY.md">繁體中文</a> |
