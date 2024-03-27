@@ -27,10 +27,12 @@
 
 <br>
 
-<picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/logos/chatgpt.js/with-reflection/darkmode.png">
-    <img width=800 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/logos/chatgpt.js/with-reflection/lightmode.png">
-</picture>
+<a href="https://chatgpt.js.org">
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/logos/chatgpt.js/with-reflection/darkmode.png">
+        <img width=800 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/logos/chatgpt.js/with-reflection/lightmode.png">
+    </picture>
+</a>
 
 ### 🤖 A powerful client-side JavaScript library for ChatGPT
 
