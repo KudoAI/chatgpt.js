@@ -1852,11 +1852,7 @@ const chatgpt = {
                 navLink.click(); return;
     }}},
 
-    stop: function() {
-        for (const formButton of document.querySelectorAll('form button')) {
-            if (formButton.textContent.toLowerCase().includes('stop')) {
-                formButton.click(); return;
-    }}},
+    stop: function() { this.response.stopGenerating(); },
 
     suggest: async function(ideaType, details) {
         if (!ideaType) return console.error('ideaType (1st argument) not supplied'
