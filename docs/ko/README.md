@@ -215,13 +215,6 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [리드미](https://github.com/adamlui/autoclear-chatgpt-history#readme) /
 [토론](https://autoclearchatgpt.com/discuss)
 
-### <img width=16 src="https://i.imgur.com/1yjmK3W.png"> [ChatGPT DAN 자동화](https://github.com/madkarmaa/automatic-chatgpt-dan)
-
-> ChatGPT에 자동으로 DAN 프롬프트를 전송하는 기능입니다.
-<br>[설치](https://github.com/madkarmaa/automatic-chatgpt-dan#%EF%B8%8F-installation) /
-[리드미](https://github.com/madkarmaa/automatic-chatgpt-dan#readme) /
-[토론](https://github.com/madkarmaa/automatic-chatgpt-dan/issues)
-
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Brave Search 사이드바에 ChatGPT의 답변을 표시해주는 기능입니다. (GPT-4 기반)

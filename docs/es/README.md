@@ -210,13 +210,6 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [Léame](https://github.com/adamlui/autoclear-chatgpt-history#readme) /
 [Conversar](https://autoclearchatgpt.com/discuss)
 
-### <img width=16 src="https://i.imgur.com/1yjmK3W.png"> [Automatic ChatGPT DAN](https://github.com/madkarmaa/automatic-chatgpt-dan)
-
-> Envía automáticamente avisos de DAN a ChatGPT.
-<br>[Instalar](https://github.com/madkarmaa/automatic-chatgpt-dan#%EF%B8%8F-installation) /
-[Léame](https://github.com/madkarmaa/automatic-chatgpt-dan#readme) /
-[Conversar](https://github.com/madkarmaa/automatic-chatgpt-dan/issues)
-
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Muestre las respuestas de ChatGPT en la barra lateral de Brave Search (¡con tecnología de GPT-4!)

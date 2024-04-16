@@ -211,13 +211,6 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [रीडमी](https://github.com/adamlui/autoclear-chatgpt-history#readme) / 
 [चर्चा](https://autoclearchatgpt.com/discuss)
 
-### <img width=16 src="https://i.imgur.com/1yjmK3W.png"> [ऑटोमैटिक ChatGPT DAN](https://github.com/madkarmaa/automatic-chatgpt-dan)
-
-> ChatGPTलाई ऑटोमैटिक रूपमा DAN संकेत पठाउनुहोस्।
-<br>[इंस्टॉल](https://github.com/madkarmaa/automatic-chatgpt-dan#%EF%B8%8F-installation) / 
-[रीडमी](https://github.com/madkarmaa/automatic-chatgpt-dan#readme) / 
-[चर्चा](https://github.com/madkarmaa/automatic-chatgpt-dan/issues)
-
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Brave सर्च साइडबार मा ChatGPT जवाफहरू प्रदर्शन गर्नुहोस् (GPT-4 द्वारा संचालित!)
