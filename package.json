@@ -65,7 +65,7 @@
     "@adamlui/minify.js": "^1.5.3",
     "@adamlui/scss-to-css": "^1.7.12",
     "docsify-cli": "^4.4.4",
-    "eslint": "^9.0.0",
+    "eslint": "^9.1.0",
     "eslint-plugin-json-schema-validator": "^5.1.0",
     "husky": "^9.0.11"
   }
