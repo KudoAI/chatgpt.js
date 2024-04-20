@@ -17,10 +17,10 @@
     "starters/"
   ],
   "scripts": {
-    "lint": "eslint . --ext js,json,yml --cache",
-    "lint:all": "eslint . --ext js,json,yml",
-    "lint:fix": "eslint . --ext js,json,yml --fix --cache",
-    "lint:fix-all": "eslint . --ext js,json,yml --fix",
+    "lint": "eslint . --cache",
+    "lint:all": "eslint .",
+    "lint:fix": "eslint . --fix --cache",
+    "lint:fix-all": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
     "preview:docs": "docsify serve docs",
     "build:js": "minify-js chatgpt.js dist/chatgpt.min.js",
