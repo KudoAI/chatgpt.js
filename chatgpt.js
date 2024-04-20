@@ -60,7 +60,7 @@ if (!isChromeUserScript && !(isFFuserScript && !isFFtmScript)) { (async () => {
 })();}
 
 // Define chatgpt.methods
-const chatgpt = {
+const chatgpt = { // eslint-disable-line no-redeclare
     openAIaccessToken: {},
 
     actAs: function(persona) {
