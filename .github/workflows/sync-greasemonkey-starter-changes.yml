@@ -2,8 +2,8 @@ name: Sync /starters/greasemonkey/ to KudoAI/chatgpt.js-greasemonkey-starter/
 
 on:
   push:
-    branches: main
-    paths: starters/greasemonkey/**
+    branches: [main]
+    paths: [starters/greasemonkey/**]
 
 jobs:
   build:

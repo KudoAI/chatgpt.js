@@ -3,7 +3,7 @@ name: Sync chatgpt.js to (/starters/chrome && KudoAI/chatgpt.js-chrome-starter)/
 on:
   push:
     branches: [master, main]
-    paths: chatgpt.js
+    paths: [chatgpt.js]
 
 jobs:
   build:

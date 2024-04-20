@@ -2,7 +2,7 @@ name: Sync changes between English readmes in root + docs/
 
 on:
   push:
-    branches: main
+    branches: [main]
     paths:
       - README.md
       - docs/README.md
