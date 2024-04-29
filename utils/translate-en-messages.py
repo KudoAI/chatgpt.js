@@ -1,13 +1,12 @@
 '''
 Script:       translate-en-messages.py
-Version:      2024.4.29
+Version:      2024.4.29.1
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
 URL:          https://github.com/adamlui/python-utils
 '''
 
 import os, json
-from sys import stdout # for dynamic prints
 from translate import Translator
 
 locales_folder = '_locales' ; provider = ''
@@ -88,8 +87,7 @@ for lang_code in output_langs:
     else : messages = {}
 
     # Attempt translations
-    stdout.write(f"{ 'Adding' if not messages else 'Updating' } { folder }/messages.json...\r")
-    stdout.flush()
+    print(f"{ 'Adding' if not messages else 'Updating' } { folder }/messages.json...", end='\r')
     en_keys = list(en_messages.keys())
     fail_flags = ['INVALID TARGET LANGUAGE', 'TOO MANY REQUESTS', 'MYMEMORY']
     for key in en_keys:
@@ -124,9 +122,7 @@ for lang_code in output_langs:
     if translated_msgs == messages : langs_skipped.append(lang_code) ; lang_skipped = True
     elif translated_msgs != messages : langs_translated.append(lang_code) ; lang_translated = True
     if not lang_translated : langs_not_translated.append(lang_code)
-    stdout.write(' ' * terminal_width + '\r') # erase prev line
-    stdout.write(f"{ 'Added' if lang_added else 'Skipped' if lang_skipped else 'Updated' } { folder }/messages.json\n")
-    stdout.flush()
+    print(f"{ 'Added' if lang_added else 'Skipped' if lang_skipped else 'Updated' } { folder }/messages.json")
 
 # Print final summary
 print_trunc('\nAll messages.json files updated successfully!\n')
