@@ -1,12 +1,13 @@
 '''
 Script:       translate-en-messages.py
-Version:      2024.4.29.1
+Version:      2024.4.29.4
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
-URL:          https://github.com/adamlui/python-utils
+Homepage:     https://github.com/adamlui/python-utils
 '''
 
 import os, json
+from sys import stdout # for dynamic prints
 from translate import Translator
 
 locales_folder = '_locales' ; provider = ''
@@ -14,7 +15,8 @@ target_langs = ['af', 'am', 'ar', 'az', 'be', 'bem', 'bg', 'bn', 'bo', 'bs', 'ca
 
 # UI initializations
 terminal_width = os.get_terminal_size()[0]
-def print_trunc(msg) : print(msg if len(msg) < terminal_width else msg[0:terminal_width-4] + '...')
+def print_trunc(msg, end='\n') : print(msg if len(msg) < terminal_width else msg[0:terminal_width-4] + '...', end=end)
+def overwrite_print(msg) : stdout.write('\r' + msg.ljust(terminal_width)[:terminal_width])
 
 print('')
 
@@ -87,7 +89,8 @@ for lang_code in output_langs:
     else : messages = {}
 
     # Attempt translations
-    print(f"{ 'Adding' if not messages else 'Updating' } { folder }/messages.json...", end='\r')
+    print_trunc(f"{ 'Adding' if not messages else 'Updating' } { folder }/messages.json...", end='')
+    stdout.flush()
     en_keys = list(en_messages.keys())
     fail_flags = ['INVALID TARGET LANGUAGE', 'TOO MANY REQUESTS', 'MYMEMORY']
     for key in en_keys:
@@ -122,7 +125,7 @@ for lang_code in output_langs:
     if translated_msgs == messages : langs_skipped.append(lang_code) ; lang_skipped = True
     elif translated_msgs != messages : langs_translated.append(lang_code) ; lang_translated = True
     if not lang_translated : langs_not_translated.append(lang_code)
-    print(f"{ 'Added' if lang_added else 'Skipped' if lang_skipped else 'Updated' } { folder }/messages.json")
+    overwrite_print(f"{ 'Added' if lang_added else 'Skipped' if lang_skipped else 'Updated' } { folder }/messages.json")
 
 # Print final summary
 print_trunc('\nAll messages.json files updated successfully!\n')
