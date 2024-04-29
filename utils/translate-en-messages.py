@@ -1,6 +1,6 @@
 '''
 Script:       translate-en-messages.py
-Version:      2024.4.28
+Version:      2024.4.29
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
 URL:          https://github.com/adamlui/python-utils
@@ -118,7 +118,7 @@ for lang_code in output_langs:
         formatted_msgs += ( f'  "{key}": {formatted_msg}'
                         + ( ',\n' if index < len(translated_msgs) - 1 else '\n' )) # terminate line
     formatted_msgs += '}'
-    with open(msgs_path, 'w', encoding='utf-8') as output_file : output_file.write(formatted_msgs)
+    with open(msgs_path, 'w', encoding='utf-8') as output_file : output_file.write(formatted_msgs + '\n')
 
     # Print file summary
     if translated_msgs == messages : langs_skipped.append(lang_code) ; lang_skipped = True
