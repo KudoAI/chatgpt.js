@@ -5,7 +5,7 @@
 
 // Init endpoints
 const endpoints = {
-    assets: 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main',
+    assets: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js',
     openAI: {
         session: 'https://chat.openai.com/api/auth/session',
         chats: 'https://chat.openai.com/backend-api/conversations',
