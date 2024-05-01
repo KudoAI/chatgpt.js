@@ -22,10 +22,8 @@ localStorage.notifyProps = JSON.stringify({
     lastNthAudio: 0 // to prevent immediate repetition of base sound
 });
 
-// Init environment flags & functions
-const isChromeUserScript = navigator.userAgent.includes('Chrome') && typeof unsafeWindow != 'undefined',
-      isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
-      isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
+// Init environment flags
+const isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
 
 // Define chatgpt.methods
 const chatgpt = { // eslint-disable-line no-redeclare
