@@ -938,17 +938,6 @@ const chatgpt = { // eslint-disable-line no-redeclare
             navigator.systemLanguage || navigator.userLanguage || ''; },
 
     history: {
-        activate: function() { this.isOff() ? this.toggle() : console.info('Chat history is already enabled!'); },
-        deactivate: function() { this.isOn() ? this.toggle() : console.info('Chat history is already disabled!'); },
-
-        isOn: function() {
-            const navDivs = document.querySelectorAll('nav div'),
-                  offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
-            return offDiv.classList.toString().includes('invisible');
-        },
-
-        isOff: function() { return !this.isOn(); },
-
         isLoaded: function() {
             return new Promise(resolve => {
                 const checkChatHistory = () => {
@@ -956,13 +945,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                     else setTimeout(checkChatHistory, 100);
                 };
                 checkChatHistory();
-        });},
-
-        toggle: function() {
-            for (const navBtn of document.querySelectorAll('nav button')) {
-                if (/chat history/i.test(navBtn.textContent)) {
-                    navBtn.click(); return;
-        }}}
+        });}
     },
 
     instructions: {
