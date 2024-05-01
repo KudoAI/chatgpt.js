@@ -296,7 +296,7 @@ Esta biblioteca existe graças ao código, traduções, problemas e ideias dos s
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/150537240?first-contrib=2023.11.15-regenerate-btn-changed-bug-email&h=51&w=51&mask=circle&maxage=7d "@philly88r")](https://github.com/philly88r)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/9730392?first-contrib=2023.12.18-get-response-from-dom-request&h=51&w=51&mask=circle&maxage=7d "@thomasgauthier")](https://github.com/thomasgauthier)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/42911524?first-contrib=2024.1.17-add-custom-gpt-support&h=51&w=51&mask=circle&maxage=7d "@pranav-bhatt")](https://github.com/pranav-bhatt)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13976824?first-contrib=2021.01.31-aria-labels-unreliable-bug-report&h=50&w=50&mask=circle&maxage=7d "@hopana")](https://github.com/hopana)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13976824?first-contrib=2024.01.31-aria-labels-unreliable-bug-report&h=50&w=50&mask=circle&maxage=7d "@hopana")](https://github.com/hopana)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/26219737?first-contrib=2024.2.2-data-key-message-bug-fix&h=50&w=50&mask=circle&maxage=7d "@emtry")](https://github.com/emtry)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/111466842?first-contrib=2024.2.15-add-en-gb-locale&h=51&w=51&mask=circle&maxage=7d "@Luwa-Tech")](https://github.com/Luwa-Tech)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=51&w=51&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
