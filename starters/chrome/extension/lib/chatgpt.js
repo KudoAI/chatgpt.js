@@ -426,15 +426,14 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
         if (method == 'dom') {
             try { await chatgpt.getChatData(); } catch { return; } // check if chat history exists
-            chatgpt.menu.open();
-            setTimeout(() => {
+            chatgpt.menu.open(); setTimeout(() => { // open settings
                 const settingsBtn = document.querySelector(
-                    'a[role="menuitem"] svg path[d*="M11.6439 3C10.9352"]').parentNode.parentNode
-                if (settingsBtn) settingsBtn.click()
+                    'a[role="menuitem"] svg path[d*="M11.6439 3C10.9352"]').parentNode.parentNode;
+                if (settingsBtn) settingsBtn.click();
                 setTimeout(() => { // clear chats
                     const settingsBtns = document.querySelectorAll('[id*=radix] button'),
                           deleteBtn = settingsBtns[settingsBtns.length - 1];
-                    if (deleteBtn) deleteBtn.click()
+                    if (deleteBtn) deleteBtn.click();
                     setTimeout(() => { // confirm clear
                         document.querySelector('button[class*="danger"').click();
             }, 10); }, 333); }, 10);
