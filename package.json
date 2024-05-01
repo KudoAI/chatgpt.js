@@ -13,8 +13,9 @@
   "files": [
     "chatgpt.js",
     "dist/chatgpt.min.js",
-    "docs/",
-    "starters/"
+    "docs/*.md",
+    "starters/",
+    "!starters/**/docs/*/"
   ],
   "scripts": {
     "lint": "eslint . --cache",
