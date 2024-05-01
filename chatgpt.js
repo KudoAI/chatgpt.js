@@ -23,7 +23,8 @@ localStorage.notifyProps = JSON.stringify({
 });
 
 // Init environment flags
-const isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
+const isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
+      isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
 
 // Define chatgpt.methods
 const chatgpt = { // eslint-disable-line no-redeclare
