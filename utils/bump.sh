@@ -26,7 +26,7 @@ esac
 new_version=$(printf "%s.%s.%s" "${subvers[@]}")
 
 # Build chatgpt.min.js
-npm run build:js
+bash utils/build.sh
 
 # Bump version in package.json + package-lock.json
 echo -e "\nBumping versions in package manifests..."
