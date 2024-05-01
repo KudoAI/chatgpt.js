@@ -34,7 +34,9 @@ npm version --no-git-tag-version "$new_version"
 
 # Bump versions in READMEs
 echo -e "\nBumping versions in READMEs..."
-sed -i "s/\(chatgpt\(-\|\.js@\)\)[0-9]\+\(\.[0-9]\+\)\{2\}/\1$new_version/g" \
+sed -i \
+    -e "s/\(chatgpt\(-\|\.js@\)\)[0-9]\+\(\.[0-9]\+\)\{2\}/\1$new_version/g" `# jsDelivr URLs` \
+    -e "s|v[0-9]\+\.[0-9]\+\.[0-9]\+|v$new_version|g" `# Minified Size shield link/src` \
     $(find docs -regex ".*/\(README\|USERGUIDE\)\.md") ./README.md
 echo "v$new_version"
 
@@ -60,14 +62,14 @@ echo "chatgpt.js-greasemonkey-starter.user.js v$new_gm_version"
 
 # Commit changes to Git
 echo -e "\nCommitting changes...\n"
-git add ./**/chatgpt.min.js
-git commit -n -m "Built chatgpt.js $new_version"
 git add package*.json
 git commit -n -m "Bumped versions in manifests to $new_version"
 git add "README.md" "./**/README.md" "./**/USERGUIDE.md"
 git commit -n -m "Bumped versions in jsDelivr URLs to $new_version"
 git add ./*greasemonkey-starter.user.js
 git commit -n -m "Bumped chatgpt.js to $new_version"
+git add ./**/chatgpt.min.js
+git commit -n -m "Built chatgpt.js $new_version"
 
 # Push to GiHub
 echo -e "\nPushing to GitHub...\n"
