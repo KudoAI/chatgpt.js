@@ -796,7 +796,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
                         // Fill [userMessages]
                         for (const key in data)
-                            if ('message' in data[key] && data[key].message.author.role == 'user')
+                            if (data[key].message != null && data[key].message.author.role == 'user')
                                 userMessages.push({ id: data[key].id, msg: data[key].message });
                         userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time); // sort in chronological order
 
@@ -808,7 +808,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                         for (const userMessage of userMessages) {
                             let sub = [];
                             for (const key in data) {
-                                if ('message' in data[key] && data[key].message.author.role == 'assistant' && data[key].parent == userMessage.id) {
+                                if (data[key].message != null && data[key].message.author.role == 'assistant' && data[key].parent == userMessage.id) {
                                     sub.push(data[key].message);
                                 }
                             }
