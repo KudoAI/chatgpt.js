@@ -298,6 +298,7 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/42911524?first-contrib=2024.1.17-add-custom-gpt-support&h=51&w=51&mask=circle&maxage=7d "@pranav-bhatt")](https://github.com/pranav-bhatt)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13976824?first-contrib=2024.01.31-aria-labels-unreliable-bug-report&h=50&w=50&mask=circle&maxage=7d "@hopana")](https://github.com/hopana)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/26219737?first-contrib=2024.2.2-data-key-message-bug-fix&h=50&w=50&mask=circle&maxage=7d "@emtry")](https://github.com/emtry)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/44357327?first-contrib=2024.2.14-msg-fetching-for-localization-fails-report&h=51&w=51&mask=circle&maxage=7d "@thedayofcondor")](https://github.com/thedayofcondor)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/111466842?first-contrib=2024.2.15-add-en-gb-locale&h=51&w=51&mask=circle&maxage=7d "@Luwa-Tech")](https://github.com/Luwa-Tech)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=51&w=51&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=51&w=51&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
