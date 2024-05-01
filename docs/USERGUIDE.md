@@ -99,12 +99,7 @@
     - [unminify `async`](#unminify-async)
     - [write `async`](#write-async)
   - [history `api`](#history-api)
-    - [isOn](#ison)
-    - [isOff](#isoff)
-    - [activate](#activate-1)
-    - [deactivate](#deactivate-1)
     - [isLoaded](#isloaded-async-1)
-    - [toggle](#toggle)
   - [instructions `api`](#instructions-api)
     - [add `async`](#add-async)
     - [clear `async`](#clear-async)
@@ -1450,50 +1445,6 @@ Example code:
 
 API related to the chat history.
 
-### isOn
-
-Returns a boolean value. `true` if the chat history is enabled, `false` otherwise.
-
-Example code:
-
-```js
-if (chatgpt.history.isOn()) {
-    // Do something
-}
-```
-
-### isOff
-
-Returns a boolean value. `true` if the chat history is disabled, `false` otherwise.
-
-Example code:
-
-```js
-if (chatgpt.history.isOff()) {
-    // Do something
-}
-```
-
-### activate
-
-Activates the chat history.
-
-Example code:
-
-```js
-chatgpt.history.activate();
-```
-
-### deactivate
-
-Deactivates the chat history.
-
-Example code:
-
-```js
-chatgpt.history.deactivate();
-```
-
 ### isLoaded `async`
 
 Resolves a promise when chat history has finished loading.
@@ -1505,16 +1456,6 @@ Example code:
     await chatgpt.history.isLoaded();
     console.log('ChatGPT history has finished loading.');
 })();
-```
-
-### toggle
-
-Toggles the chat history.
-
-Example code:
-
-```js
-chatgpt.history.toggle();
 ```
 
 ## instructions `api`
