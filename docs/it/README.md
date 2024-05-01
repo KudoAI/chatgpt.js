@@ -331,7 +331,7 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 
 <div align="center">
 
-**[Versioni](https://www.npmjs.com/package/@kudoai/chatgpt.js?activeTab=versions)** /
+**[Versioni](https://github.com/KudoAI/chatgpt.js/releases)** /
 [Guida per l'utente](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) /
 [Discutere](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#">Torna all'inizio ↑</a>

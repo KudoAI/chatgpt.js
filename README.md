@@ -331,7 +331,7 @@ This library exists thanks to code, translations, issues & ideas from the follow
 
 <div align="center">
 
-**[Releases](https://www.npmjs.com/package/@kudoai/chatgpt.js?activeTab=versions)** /
+**[Releases](https://github.com/KudoAI/chatgpt.js/releases)** /
 [Userguide](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) /
 [Discuss](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#--------------------------------------------------------------------------------english---------简体中文---------繁體中文---------日本---------한국인---------हिंदी---------नेपाली---------deutsch---------español---------français---------italiano---------nederlands---------português---------việt----">Back to top ↑</a>

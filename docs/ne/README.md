@@ -332,7 +332,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 <div align="center">
 
-**[विज्ञप्ति](https://www.npmjs.com/package/@kudoai/chatgpt.js?activeTab=versions)** /
+**[विज्ञप्ति](https://github.com/KudoAI/chatgpt.js/releases)** /
 [यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) / 
 [चर्चा](https://github.com/KudoAI/chatgpt.js/discussions) / 
 <a href="#">शीर्षमा जाऔं ↑</a>

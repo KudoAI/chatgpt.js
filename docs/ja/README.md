@@ -331,7 +331,7 @@ chatgpt.js で何かを作成して共有したい場合は、<a href="mailto:sh
 
 <div align="center">
 
-**[リリース](https://www.npmjs.com/package/@kudoai/chatgpt.js?activeTab=versions)** /
+**[リリース](https://github.com/KudoAI/chatgpt.js/releases)** /
 [ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) / 
 [議論](https://github.com/KudoAI/chatgpt.js/discussions) / 
 <a href="#">トップに戻る ↑</a>

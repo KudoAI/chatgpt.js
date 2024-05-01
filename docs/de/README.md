@@ -331,7 +331,7 @@ Diese Bibliothek existiert dank Code, Übersetzungen, Problemen und Ideen der fo
 
 <div align="center">
 
-**[Veröffentlichungen](https://www.npmjs.com/package/@kudoai/chatgpt.js?activeTab=versions)** /
+**[Veröffentlichungen](https://github.com/KudoAI/chatgpt.js/releases)** /
 [Benutzerhandbuch](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) /
 [Diskutieren](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#">Zurück nach oben ↑</a>
