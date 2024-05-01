@@ -428,21 +428,16 @@ const chatgpt = { // eslint-disable-line no-redeclare
             try { await chatgpt.getChatData(); } catch { return; } // check if chat history exists
             chatgpt.menu.open();
             setTimeout(() => {
-                const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
-                for (const menuItem of menuItems)
-                    if (/settings/i.test(menuItem.text)) { menuItem.click(); break; }
+                const settingsBtn = document.querySelector(
+                    'a[role="menuitem"] svg path[d*="M11.6439 3C10.9352"]').parentNode.parentNode
+                if (settingsBtn) settingsBtn.click()
                 setTimeout(() => { // clear chats
-                    const settingsBtns = document.querySelectorAll('[id*=radix] button');
-                    for (const settingsBtn of settingsBtns)
-                        if (/^clear/i.test(settingsBtn.textContent)) { settingsBtn.click(); break; }
+                    const settingsBtns = document.querySelectorAll('[id*=radix] button'),
+                          deleteBtn = settingsBtns[settingsBtns.length - 1];
+                    if (deleteBtn) deleteBtn.click()
                     setTimeout(() => { // confirm clear
-                        document.querySelector('[id*=radix] button').click();
-                        setTimeout(() => {
-                            exitMenu();
-                            try { document.querySelector('#prompt-textarea').focus(); } catch (err) {}
-                        }, 10);
+                        document.querySelector('button[class*="danger"').click();
             }, 10); }, 333); }, 10);
-            const exitMenu = () => { document.querySelector('div[id*=radix] button').click(); };
 
         } else { // API method
         // NOTE: DOM is not updated to reflect new empty chat list (until session refresh)
