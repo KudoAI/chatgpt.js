@@ -22,42 +22,9 @@ localStorage.notifyProps = JSON.stringify({
     lastNthAudio: 0 // to prevent immediate repetition of base sound
 });
 
-// Init environment flags & functions
-const isChromeUserScript = navigator.userAgent.includes('Chrome') && typeof unsafeWindow != 'undefined',
-      isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
+// Init environment flags
+const isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
       isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
-
-// Define messages
-let cjsMessages;
-if (!isChromeUserScript && !(isFFuserScript && !isFFtmScript)) { (async () => {
-    const cjsMsgsLoaded = new Promise(resolve => {
-        const userLanguage = navigator.languages[0] || navigator.language || navigator.browserLanguage ||
-                             navigator.systemLanguage || navigator.userLanguage || '',
-              msgHostDir = endpoints.assets + '/data/_locales/',
-              msgLocaleDir = ( userLanguage ? userLanguage.replace('-', '_') : 'en' ) + '/';
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0;
-        (function loadMsgs() {
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', msgHref); xhr.send();
-            xhr.onload = () => {
-                try { // to return localized messages.json
-                    const messages = new Proxy(JSON.parse(xhr.responseText), {
-                        get(target, prop) { // remove need to ref nested keys
-                            if (typeof target[prop] == 'object' && target[prop] !== null && 'message' in target[prop]) {
-                                return target[prop].message;
-                    }}}); resolve(messages);
-                } catch (err) {
-                    msgXHRtries++; if (msgXHRtries === 3) resolve({}); // try up to 3X (original/region-stripped/EN) only
-                    msgHref = userLanguage.includes('-') && msgXHRtries === 1 ? // if regional lang on 1st try...
-                        msgHref.replace(/([^_]*)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
-                            : ( msgHostDir + 'en/messages.json' ); // else use default English messages
-                    loadMsgs();
-                }
-            };
-            xhr.onerror = () => { resolve({}); };
-        })();
-    }); cjsMessages = await cjsMsgsLoaded;
-})();}
 
 // Define chatgpt.methods
 const chatgpt = { // eslint-disable-line no-redeclare
@@ -236,7 +203,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
         // Create close button
         const closeBtn = document.createElement('div');
-        closeBtn.title = cjsMessages?.tooltip_close || 'Close'; closeBtn.classList.add('modal-close-btn');
+        closeBtn.title = 'Close'; closeBtn.classList.add('modal-close-btn');
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         closeSVG.setAttribute('height', '10px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
@@ -426,23 +393,17 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
         if (method == 'dom') {
             try { await chatgpt.getChatData(); } catch { return; } // check if chat history exists
-            chatgpt.menu.open();
-            setTimeout(() => {
-                const menuItems = document.querySelectorAll('a[role="menuitem"]') || [];
-                for (const menuItem of menuItems)
-                    if (/settings/i.test(menuItem.text)) { menuItem.click(); break; }
+            chatgpt.menu.open(); setTimeout(() => { // open settings
+                const settingsBtn = document.querySelector(
+                    'a[role="menuitem"] svg path[d*="M11.6439 3C10.9352"]').parentNode.parentNode;
+                if (settingsBtn) settingsBtn.click();
                 setTimeout(() => { // clear chats
-                    const settingsBtns = document.querySelectorAll('[id*=radix] button');
-                    for (const settingsBtn of settingsBtns)
-                        if (/^clear/i.test(settingsBtn.textContent)) { settingsBtn.click(); break; }
+                    const settingsBtns = document.querySelectorAll('[id*=radix] button'),
+                          deleteBtn = settingsBtns[settingsBtns.length - 1];
+                    if (deleteBtn) deleteBtn.click();
                     setTimeout(() => { // confirm clear
-                        document.querySelector('[id*=radix] button').click();
-                        setTimeout(() => {
-                            exitMenu();
-                            try { document.querySelector('#prompt-textarea').focus(); } catch (err) {}
-                        }, 10);
+                        document.querySelector('button[class*="danger"').click();
             }, 10); }, 333); }, 10);
-            const exitMenu = () => { document.querySelector('div[id*=radix] button').click(); };
 
         } else { // API method
         // NOTE: DOM is not updated to reflect new empty chat list (until session refresh)
@@ -944,17 +905,6 @@ const chatgpt = { // eslint-disable-line no-redeclare
             navigator.systemLanguage || navigator.userLanguage || ''; },
 
     history: {
-        activate: function() { this.isOff() ? this.toggle() : console.info('Chat history is already enabled!'); },
-        deactivate: function() { this.isOn() ? this.toggle() : console.info('Chat history is already disabled!'); },
-
-        isOn: function() {
-            const navDivs = document.querySelectorAll('nav div'),
-                  offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
-            return offDiv.classList.toString().includes('invisible');
-        },
-
-        isOff: function() { return !this.isOn(); },
-
         isLoaded: function() {
             return new Promise(resolve => {
                 const checkChatHistory = () => {
@@ -962,13 +912,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                     else setTimeout(checkChatHistory, 100);
                 };
                 checkChatHistory();
-        });},
-
-        toggle: function() {
-            for (const navBtn of document.querySelectorAll('nav button')) {
-                if (/chat history/i.test(navBtn.textContent)) {
-                    navBtn.click(); return;
-        }}}
+        });}
     },
 
     instructions: {
@@ -1239,7 +1183,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
         // Create/append close button
         const closeBtn = document.createElement('div');
-        closeBtn.title = cjsMessages?.tooltip_dismiss || 'Dismiss'; closeBtn.classList.add('notif-close-btn');
+        closeBtn.title = 'Dismiss'; closeBtn.classList.add('notif-close-btn');
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         closeSVG.setAttribute('height', '8px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');

@@ -1,9 +1,9 @@
 '''
 Script:       translate-en-messages.py
-Version:      2023.11.14
+Version:      2024.4.29.4
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
-URL:          https://github.com/adamlui/python-utils
+Homepage:     https://github.com/adamlui/python-utils
 '''
 
 import os, json
@@ -14,9 +14,9 @@ locales_folder = '_locales' ; provider = ''
 target_langs = ['af', 'am', 'ar', 'az', 'be', 'bem', 'bg', 'bn', 'bo', 'bs', 'ca', 'ceb', 'ckb', 'cs', 'cy', 'da', 'de', 'dv', 'dz', 'el', 'en', 'en-GB', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fo', 'fr', 'gd', 'gl', 'gu', 'haw', 'he', 'hi', 'hr', 'ht', 'hu', 'hy', 'id', 'is', 'it', 'ja', 'ka', 'kab', 'kk', 'km', 'kn', 'ko', 'ku', 'ky', 'la', 'lb', 'lo', 'lt', 'lv', 'mg', 'mi', 'mk', 'ml', 'mn', 'ms', 'mt', 'my', 'ne', 'nl', 'no', 'ny', 'pa', 'pap', 'pl', 'ps', 'pt', 'ro', 'ru', 'rw', 'sg', 'si', 'sk', 'sl', 'sm', 'sn', 'so', 'sr', 'sv', 'sw', 'ta', 'te', 'tg', 'th', 'ti', 'tk', 'tn', 'to', 'tpi', 'tr', 'uk', 'ur', 'uz', 'vi', 'xh', 'yi', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW', 'zu']
 
 # UI initializations
-os.system('color') ; print('\033[0;92m') # set font to bright green
 terminal_width = os.get_terminal_size()[0]
-def print_trunc(msg) : print(msg if len(msg) < terminal_width else msg[0:terminal_width-4] + '...')
+def print_trunc(msg, end='\n') : print(msg if len(msg) < terminal_width else msg[0:terminal_width-4] + '...', end=end)
+def overwrite_print(msg) : stdout.write('\r' + msg.ljust(terminal_width)[:terminal_width])
 
 print('')
 
@@ -89,7 +89,7 @@ for lang_code in output_langs:
     else : messages = {}
 
     # Attempt translations
-    stdout.write(f"{ 'Adding' if not messages else 'Updating' } { folder }/messages.json...\r")
+    print_trunc(f"{ 'Adding' if not messages else 'Updating' } { folder }/messages.json...", end='')
     stdout.flush()
     en_keys = list(en_messages.keys())
     fail_flags = ['INVALID TARGET LANGUAGE', 'TOO MANY REQUESTS', 'MYMEMORY']
@@ -119,15 +119,13 @@ for lang_code in output_langs:
         formatted_msgs += ( f'  "{key}": {formatted_msg}'
                         + ( ',\n' if index < len(translated_msgs) - 1 else '\n' )) # terminate line
     formatted_msgs += '}'
-    with open(msgs_path, 'w', encoding='utf-8') as output_file : output_file.write(formatted_msgs)
+    with open(msgs_path, 'w', encoding='utf-8') as output_file : output_file.write(formatted_msgs + '\n')
 
     # Print file summary
     if translated_msgs == messages : langs_skipped.append(lang_code) ; lang_skipped = True
     elif translated_msgs != messages : langs_translated.append(lang_code) ; lang_translated = True
     if not lang_translated : langs_not_translated.append(lang_code)
-    stdout.write(' ' * terminal_width + '\r') # erase prev line
-    stdout.write(f"{ 'Added' if lang_added else 'Skipped' if lang_skipped else 'Updated' } { folder }/messages.json\n")
-    stdout.flush()
+    overwrite_print(f"{ 'Added' if lang_added else 'Skipped' if lang_skipped else 'Updated' } { folder }/messages.json")
 
 # Print final summary
 print_trunc('\nAll messages.json files updated successfully!\n')
