@@ -23,10 +23,6 @@ localStorage.notifyProps = JSON.stringify({
     lastNthAudio: 0 // to prevent immediate repetition of base sound
 });
 
-// Init environment flags
-const isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
-      isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
-
 // Define chatgpt.methods
 const chatgpt = { // eslint-disable-line no-redeclare
     openAIaccessToken: {},
@@ -1263,28 +1259,10 @@ const chatgpt = { // eslint-disable-line no-redeclare
         const hideDelay = fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
                         : notifDuration - fadeDuration; // otherwise delay for difference
 
-        // Init/schedule audio feedback
-        let dismissAudio, dismissAudioTID; // be accessible to `dismissNotif()`
-        if (isFFtmScript) {
-            // Init base audio index
-            let nthAudio; do nthAudio = Math.floor(Math.random() * 3) + 1; // randomize  between 1-3...
-            while (nthAudio === notifyProps.lastNthAudio); // ...until distinct from prev index (for variety)
-            notifyProps.lastNthAudio = nthAudio; localStorage.notifyProps = JSON.stringify(notifyProps);
-
-            // Build audio element + src URL
-            dismissAudio = new Audio();
-            dismissAudio.src = endpoints.assets + '/media/audio/notifications/bubble-pop/'
-                             + `${ nthAudio }-${ notificationDiv.isRight ? 'right' : 'left' }.mp3`;
-
-            // Schedule playback
-            dismissAudioTID = setTimeout(() => dismissAudio.play().catch(() => {}), hideDelay * 1000);
-        }
-
         // Add notification dismissal to timeout schedule + button clicks
         const dismissNotif = () => {
             notificationDiv.style.animation = `notif-zoom-fade-out ${ fadeDuration }s ease-out`;
-            if (isFFtmScript) dismissAudio?.play().catch(() => {});
-            clearTimeout(dismissFuncTID); clearTimeout(dismissAudioTID);
+            clearTimeout(dismissFuncTID);
         };
         const dismissFuncTID = setTimeout(dismissNotif, hideDelay * 1000); // maintain visibility for `hideDelay` secs, then dismiss     
         closeSVG.addEventListener('click', dismissNotif, { once: true }); // add to close button clicks
