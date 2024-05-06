@@ -18,10 +18,7 @@ const endpoints = {
 
 // Init feedback properties
 localStorage.alertQueue = JSON.stringify([]);
-localStorage.notifyProps = JSON.stringify({
-    queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] },
-    lastNthAudio: 0 // to prevent immediate repetition of base sound
-});
+localStorage.notifyProps = JSON.stringify({ queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }});
 
 // Define chatgpt.methods
 const chatgpt = { // eslint-disable-line no-redeclare
