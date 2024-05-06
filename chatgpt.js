@@ -7,7 +7,7 @@
 const endpoints = {
     assets: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js',
     openAI: {
-        session: 'https://chat.openai.com/api/auth/session',
+        session: 'https://chatgpt.com/api/auth/session',
         chats: 'https://chat.openai.com/backend-api/conversations',
         chat: 'https://chat.openai.com/backend-api/conversation',
         share_create: 'https://chat.openai.com/backend-api/share/create',
