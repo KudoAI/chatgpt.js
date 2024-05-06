@@ -169,7 +169,7 @@ export { chatgpt }
 npm install @kudoai/chatgpt.js
 ```
 
-설치 후 `node_modules/@kudoai/chatgpt.js` 로 이동하여 라이브러리 소스(`dist/` 의 축소 버전)를 찾으세요.
+설치 후 `node_modules/@kudoai/chatgpt.js` 로 이동하여 라이브러리 소스를 찾으세요.
 
 </div>
 

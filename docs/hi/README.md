@@ -165,7 +165,7 @@ export { chatgpt }
 npm install @kudoai/chatgpt.js
 ```
 
-इंस्टालेशन के बाद, लाइब्रेरी स्रोत (`dist/` में छोटा संस्करण) खोजने के लिए `node_modules/@kudoai/chatgpt.js` पर नेविगेट करें।
+इंस्टालेशन के बाद, लाइब्रेरी स्रोत खोजने के लिए `node_modules/@kudoai/chatgpt.js` पर नेविगेट करें।
 
 </div>
 

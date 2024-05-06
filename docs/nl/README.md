@@ -164,7 +164,7 @@ Om **chatgpt.js** te downloaden voor lokale aanpassingen, voert u de volgende op
 npm install @kudoai/chatgpt.js
 ```
 
-Na de installatie navigeert u naar `node_modules/@kudoai/chatgpt.js` om de bibliotheekbron te vinden (verkleinde versie in `dist/`).
+Na de installatie navigeert u naar `node_modules/@kudoai/chatgpt.js` om de bibliotheekbron te vinden.
 
 </div>
 

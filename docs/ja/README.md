@@ -164,7 +164,7 @@ export { chatgpt }
 npm install @kudoai/chatgpt.js
 ```
 
-インストール後、`node_modules/@kudoai/chatgpt.js` に移動してライブラリ ソース (`dist/` 内の縮小バージョン) を見つけます。
+インストール後、 `node_modules/@kudoai/chatgpt.js` に移動してライブラリ ソースを見つけます。
 
 </div>
 

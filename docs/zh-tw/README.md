@@ -163,7 +163,7 @@ export { chatgpt }
 npm install @kudoai/chatgpt.js
 ```
 
-安裝後，導覽至 `node_modules/@kudoai/chatgpt.js` 以尋找庫來源 (`dist/` 中的縮小版本)。
+安裝後，導覽至 `node_modules/@kudoai/chatgpt.js` 以尋找庫來源。
 
 </div>
 

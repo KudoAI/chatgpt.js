@@ -164,7 +164,7 @@ Para descargar **chatgpt.js** para personalización local, ejecute el siguiente 
 npm install @kudoai/chatgpt.js
 ```
 
-Después de la instalación, navegue hasta `node_modules/@kudoai/chatgpt.js` para encontrar la fuente de la biblioteca (versión minimizada en `dist/`).
+Después de la instalación, navegue hasta `node_modules/@kudoai/chatgpt.js` para encontrar la fuente de la biblioteca.
 
 </div>
 
