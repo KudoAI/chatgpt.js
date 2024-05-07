@@ -1,6 +1,6 @@
 <!-- _coverpage.md -->
 
-<img class="logo" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-padded-7000x777.png">
+<img class="logo" src="https://media.chatgptjs.org/images/chatgpt.js-logo-dark-mode-padded-7000x777.png">
 
 > 🤖 Thư viện JavaScript phía máy khách mạnh mẽ cho ChatGPT
 
