@@ -3,7 +3,6 @@
 # This script automates: build chatgpt.min.js >>> bump versions in manifests + READMEs
 # + Greasemonkey starter script >>> commit changes to Git >>> push changes to GitHub
 # >>> publish to npm (optional)
-# >>> publish to npm (optional)
 
 # Init UI colors
 nc="\033[0m"    # no color
@@ -28,15 +27,16 @@ case $1 in # edit SUBVERS based on version type
 esac
 NEW_VERSION=$(printf "%s.%s.%s" "${SUBVERS[@]}")
 
-# Build chatgpt.min.js
+# Build minified JS to dist/
+echo -e "${by}\nBuilding minified JS...\n${nc}"
 bash utils/build.sh
 
 # Bump version in package.json + package-lock.json
-echo -e "\nBumping versions in package manifests..."
+echo -e "${by}Bumping versions in package manifests...${bw}"
 npm version --no-git-tag-version "$NEW_VERSION"
 
 # Bump versions in READMEs
-echo -e "\nBumping versions in READMEs..."
+echo -e "${by}\nBumping versions in READMEs...${bw}"
 sed -i \
     -e "s/\(chatgpt\(-\|\.js@\)\)[0-9]\+\(\.[0-9]\+\)\{2\}/\1$NEW_VERSION/g" `# jsDelivr URLs` \
     -e "s|v[0-9]\+\.[0-9]\+\.[0-9]\+|v$NEW_VERSION|g" `# Minified Size shield link/src` \
@@ -44,7 +44,7 @@ sed -i \
 echo "v$NEW_VERSION"
 
 # Bump chatgpt.js version in Greasemonkey starter
-echo -e "\nBumping versions in Greasemonkey starter..."
+echo -e "${by}\nBumping versions in Greasemonkey starter...${bw}"
 sed -i "s|\(chatgpt\.js@\)[0-9.]\+|\1$NEW_VERSION|g" starters/greasemonkey/*.user.js
 echo "chatgpt.js v$NEW_VERSION"
 
@@ -64,7 +64,7 @@ NEW_GM_VERSION=$(sed -n "s/.*@version\s*\(.*\)/\1/p" starters/greasemonkey/*.use
 echo "chatgpt.js-greasemonkey-starter.user.js v$NEW_GM_VERSION"
 
 # Commit changes to Git
-echo -e "\nCommitting changes...\n"
+echo -e "${by}\nCommitting changes...\n${nc}"
 git add package*.json
 git commit -n -m "Bumped versions in manifests to $NEW_VERSION"
 git add "README.md" "./**/README.md" "./**/USERGUIDE.md"
@@ -75,12 +75,12 @@ git add ./**/chatgpt.min.js
 git commit -n -m "Built chatgpt.js $NEW_VERSION"
 
 # Push to GiHub
-echo -e "\nPushing to GitHub...\n"
+echo -e "${by}\nPushing to GitHub...\n${nc}"
 git push
 
 # Publish to NPM
 if [[ "$*" == *"--publish"* ]] ; then
-    echo -e "\nPublishing to npm...\n"
+    echo -e "${by}\nPublishing to npm...\n${nc}"
     npm publish ; fi
 
 # Print final summary
