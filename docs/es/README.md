@@ -77,7 +77,7 @@
 
 </div>
 
-> **Nota** _Para importar siempre la última versión (¡NO se recomienda en producción!), reemplace la URL de jsDelivr versionada con: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
+> **Nota** _Para importar siempre la última versión (¡no se recomienda en producción!), reemplace la URL de jsDelivr versionada con: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
 
 ### ES6:
 

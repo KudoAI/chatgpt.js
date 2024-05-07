@@ -73,7 +73,7 @@
 
 <div id="importing">
 
-> **Hinweis** _Um immer die neueste version zu importieren (NICHT in der produktion empfohlen!), ersetzen sie die versionierte jsDelivr-URL durch: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
+> **Hinweis** _Um immer die neueste version zu importieren (nicht in der produktion empfohlen!), ersetzen sie die versionierte jsDelivr-URL durch: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
 
 ## ⚡ Importieren der Bibliothek
 

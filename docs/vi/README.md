@@ -77,7 +77,7 @@
 
 </div>
 
-> **Lưu ý** _Để luôn nhập phiên bản mới nhất (KHÔNG khuyến nghị trong phiên bản chính thức!) hãy thay thế URL jsDelivr đã được phiên bản bằng: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
+> **Lưu ý** _Để luôn nhập phiên bản mới nhất (không khuyến nghị trong phiên bản chính thức!) hãy thay thế URL jsDelivr đã được phiên bản bằng: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
 
 ### ES6:
 

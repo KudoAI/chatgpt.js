@@ -79,7 +79,7 @@
 
 ### ES6:
 
-> **Opmerking** _Om altijd de nieuwste versie te importeren (NIET aanbevolen in productie!) Vervang de jsDelivr-URL met versiebeheer door: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
+> **Opmerking** _Om altijd de nieuwste versie te importeren (niet aanbevolen in productie!) Vervang de jsDelivr-URL met versiebeheer door: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
 
 ```js
 (async () => {
