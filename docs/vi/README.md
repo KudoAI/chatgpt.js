@@ -54,7 +54,7 @@
 
 </div>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="intro">
 
@@ -69,7 +69,7 @@
 - Dễ sử dụng
 - Nhẹ (chưa tối ưu hiệu suất)
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="importing">
 
@@ -108,7 +108,7 @@ function yourCode() {
 }
 ```
 
-### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/starters/media/images/icons/tampermonkey-icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/starters/media/images/icons/violentmonkey-icon100.png"> Greasemonkey:
+### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e26f2cf/starters/media/images/icons/tampermonkey-icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@0c37090/starters/media/images/icons/violentmonkey-icon100.png"> Greasemonkey:
 
 > **Ghi** _Để sử dụng một mẫu bắt đầu: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
@@ -150,7 +150,7 @@ export { chatgpt }
 })();
 ```
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="npm">
 
@@ -168,7 +168,7 @@ Sau khi cài đặt, hãy điều hướng đến `node_modules/@kudoai/chatgpt.
 
 </div>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="usage">
 
@@ -191,7 +191,7 @@ Mỗi cuộc gọi đều tìm nạp phản hồi cuối cùng. Nếu bạn ngh�
 
 Nếu không, hãy xem [hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) mở rộng hoặc chỉ cần gửi [vấn đề](https://github.com/KudoAI/chatgpt.js/issues) hoặc [PR](https://github.com/KudoAI/chatgpt.js/pulls) và nó sẽ được tích hợp, thật dễ dàng!
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="showcase">
 
@@ -270,7 +270,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 Nếu bạn đã tạo nội dung nào đó với chatgpt.js mà bạn muốn chia sẻ, hãy gửi email đến <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> hoặc chỉ cần mở một <a href="https://github.com/KudoAI/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>!
 </p>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="contributors">
 
@@ -314,7 +314,7 @@ Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng 
 
 </div><br>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="partners">
 
@@ -335,7 +335,7 @@ Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng 
 
 <br>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div align="center">
 

@@ -54,7 +54,7 @@
 
 </div>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="intro">
 
@@ -69,7 +69,7 @@
 - Facile da usare
 - Leggero (ma molto performante)
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="importing">
 
@@ -108,7 +108,7 @@ function yourCode() {
 }
 ```
 
-### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/starters/media/images/icons/tampermonkey-icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/starters/media/images/icons/violentmonkey-icon100.png"> Greasemonkey:
+### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e26f2cf/starters/media/images/icons/tampermonkey-icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@0c37090/starters/media/images/icons/violentmonkey-icon100.png"> Greasemonkey:
 
 > **Nota** _Per utilizzare un modello iniziale: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
@@ -150,7 +150,7 @@ export { chatgpt }
 })();
 ```
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="npm">
 
@@ -168,7 +168,7 @@ Dopo l'installazione, vai a `node_modules/@kudoai/chatgpt.js` per trovare il sor
 
 </div>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="usage">
 
@@ -191,7 +191,7 @@ Ogni chiamata ritorna ugualmente l'ultima risposta di ChatGPT. Se pensi che funz
 
 In caso contrario, consulta la [guida per l'utente](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) estesa o invia semplicemente un [problema](https://github.com/KudoAI/chatgpt.js/issues) o [PR](https://github.com/KudoAI/chatgpt.js/pulls) e sarà integrato, facile!
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="showcase">
 
@@ -263,7 +263,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 Se hai creato qualcosa con chatgpt.js che desideri condividere, invia un'email a <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> o semplicemente apri una <a href="https://github.com/KudoAI/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>!
 </p>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="contributors">
 
@@ -307,7 +307,7 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 
 </div><br>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="partners">
 
@@ -328,7 +328,7 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 
 <br>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div align="center">
 

@@ -54,7 +54,7 @@
 
 </div>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="intro">
 
@@ -69,7 +69,7 @@
 - Easy-to-use
 - Lightweight (yet optimally performant)
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="importing">
 
@@ -108,7 +108,7 @@ function yourCode() {
 }
 ```
 
-### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/starters/media/images/icons/tampermonkey-icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/starters/media/images/icons/violentmonkey-icon100.png"> Greasemonkey:
+### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e26f2cf/starters/media/images/icons/tampermonkey-icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@0c37090/starters/media/images/icons/violentmonkey-icon100.png"> Greasemonkey:
 
 > **Note** _To use a starter template: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
@@ -150,7 +150,7 @@ export { chatgpt }
 })();
 ```
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="npm">
 
@@ -168,7 +168,7 @@ After installation, navigate to `node_modules/@kudoai/chatgpt.js` to find the li
 
 </div>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="usage">
 
@@ -191,7 +191,7 @@ Each call equally fetches the last response. If you think it works, it probably 
 
 If it didn't, check out the extended [userguide](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md), or simply submit an [issue](https://github.com/KudoAI/chatgpt.js/issues) or [PR](https://github.com/KudoAI/chatgpt.js/pulls) and it will be integrated, ezpz!
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="showcase">
 
@@ -263,7 +263,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 If you've made something w/ chatgpt.js you want to share, email <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> or just open a <a href="https://github.com/KudoAI/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>!
 </p>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="contributors">
 
@@ -307,7 +307,7 @@ This library exists thanks to code, translations, issues & ideas from the follow
 
 </div><br>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div id="partners">
 
@@ -328,7 +328,7 @@ This library exists thanks to code, translations, issues & ideas from the follow
 
 <br>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/docs/assets/images/aqua-separator.png">
+<img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
 <div align="center">
 
