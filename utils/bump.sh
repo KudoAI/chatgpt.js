@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# This script automates: build chatgpt.min.js >>> bump versions in manifests + READMEs
-# + Greasemonkey starter script >>> commit changes to Git >>> push changes to GitHub
+# This script automates:
+# >>> bump versions in manifests + READMEs + Greasemonkey starter script >>> commit bumps to Git
+# >>> build chatgpt.min.js to dist/ >>> update jsDelivr URLs for GH assets >>> commit build to Git
 # >>> publish to npm (optional)
 
 # Init UI colors
@@ -26,10 +27,6 @@ case $1 in # edit SUBVERS based on version type
     "major") SUBVERS[0]=$((SUBVERS[0] + 1)) ; SUBVERS[1]=0 ; SUBVERS[2]=0 ;;
 esac
 NEW_VERSION=$(printf "%s.%s.%s" "${SUBVERS[@]}")
-
-# Build minified JS to dist/
-echo -e "${by}\nBuilding minified JS...\n${nc}"
-bash utils/build.sh
 
 # Bump version in package.json + package-lock.json
 echo -e "${by}Bumping versions in package manifests...${bw}"
@@ -63,14 +60,32 @@ else # no match for $TODAY
 NEW_GM_VERSION=$(sed -n "s/.*@version\s*\(.*\)/\1/p" starters/greasemonkey/*.user.js)
 echo "chatgpt.js-greasemonkey-starter.user.js v$NEW_GM_VERSION"
 
-# Commit changes to Git
-echo -e "${by}\nCommitting changes...\n${nc}"
+# Commit bumps to Git
+echo -e "${by}\nCommitting bumps to Git...\n${nc}"
 git add package*.json
 git commit -n -m "Bumped versions in manifests to $NEW_VERSION"
 git add "README.md" "./**/README.md" "./**/USERGUIDE.md"
 git commit -n -m "Bumped versions in jsDelivr URLs to $NEW_VERSION"
 git add ./*greasemonkey-starter.user.js
 git commit -n -m "Bumped chatgpt.js to $NEW_VERSION"
+
+# Build chatgpt.min.js to dist/
+echo -e "${by}\nBuilding chatgpt.min.js...\n${nc}"
+bash utils/build.sh
+
+# Update jsDelivr URLs for GitHub assets w/ commit hash
+echo -e "${by}\nUpdating jsDelivr URLs for GitHub assets w/ commit hash...${nc}"
+BUMP_HASH=$(git rev-parse HEAD)
+OLD_FILE=$(<dist/chatgpt.min.js)
+sed -i -E "s|(cdn\.jsdelivr\.net\/gh\/[^/]+\/[^@/\"']+)[^/\"']*|\1@$BUMP_HASH|g" dist/chatgpt.min.js
+NEW_FILE=$(<dist/chatgpt.min.js)
+if [[ "$OLD_FILE" != "$NEW_FILE" ]]
+    then echo -e "${bw}$BUMP_HASH${nc}"
+    else echo "No jsDelivr URLs for GH assets found in built files"
+fi
+
+# Commit build to Git
+echo -e "${by}\nCommitting build to Git...\n${nc}"
 git add ./**/chatgpt.min.js
 git commit -n -m "Built chatgpt.js $NEW_VERSION"
 
