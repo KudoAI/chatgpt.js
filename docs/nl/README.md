@@ -4,8 +4,8 @@
     <h6>
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs">
             <picture>
-                <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/icons/earth-americas-white-padded-icon17x15.svg">
-                <img src="https://media.chatgptjs.org/images/icons/earth-americas-padded-icon17x15.svg">
+                <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/icons/earth-americas-white-padded-icon17x15.svg?714b6a1">
+                <img src="https://media.chatgptjs.org/images/icons/earth-americas-padded-icon17x15.svg?714b6a1">
             </picture>
         </a>
         Nederlands |
@@ -29,8 +29,8 @@
 
 <a href="https://chatgpt.js.org">
     <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/chatgpt.js/with-reflection/darkmode.png">
-        <img width=800 src="https://media.chatgptjs.org/images/logos/chatgpt.js/with-reflection/lightmode.png">
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/chatgpt.js/with-reflection/darkmode.png?bc68d0c">
+        <img width=800 src="https://media.chatgptjs.org/images/logos/chatgpt.js/with-reflection/lightmode.png?bc68d0c">
     </picture>
 </a>
 
@@ -302,7 +302,7 @@ Deze bibliotheek bestaat dankzij code, vertalingen, problemen en ideeën van de 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/111466842?first-contrib=2024.2.15-add-en-gb-locale&h=51&w=51&mask=circle&maxage=7d "@Luwa-Tech")](https://github.com/Luwa-Tech)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=51&w=51&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=51&w=51&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
-[![](https://images.weserv.nl/?url=https://media.chatgptjs.org/images/icons/poe-icon128.svg?first-contrib=2023.07.27-getandshowreply-method&h=51&w=51&mask=circle&maxage=7d "Poe")](https://poe.com)
+[![](https://images.weserv.nl/?url=https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e26f2cf/media/images/icons/poe-icon128.svg?first-contrib=2023.07.27-getandshowreply-method&h=51&w=51&mask=circle&maxage=7d "Poe")](https://poe.com)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=51&w=51&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 
 </div><br>
@@ -320,8 +320,8 @@ Deze bibliotheek bestaat dankzij code, vertalingen, problemen en ideeën van de 
 <div id="partners-collage" align="center">
 
 <picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/partners/collage/white.png">
-    <img width=888 src="https://media.chatgptjs.org/images/logos/partners/collage/black.png">
+    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/partners/collage/white.png?3109608">
+    <img width=888 src="https://media.chatgptjs.org/images/logos/partners/collage/black.png?3109608">
 </picture>
 
 </div>
