@@ -189,7 +189,7 @@ chatgpt.get('reply', 'last');
 
 Mỗi cuộc gọi đều tìm nạp phản hồi cuối cùng. Nếu bạn nghĩ rằng nó hoạt động, nó có thể sẽ... vì vậy hãy gõ nó!
 
-Nếu không, hãy xem [hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) mở rộng hoặc chỉ cần gửi [vấn đề](https://github.com/KudoAI/chatgpt.js/issues) hoặc [PR](https://github.com/KudoAI/chatgpt.js/pulls) và nó sẽ được tích hợp, thật dễ dàng!
+Nếu không, hãy xem [hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md) mở rộng hoặc chỉ cần gửi [vấn đề](https://github.com/KudoAI/chatgpt.js/issues) hoặc [PR](https://github.com/KudoAI/chatgpt.js/pulls) và nó sẽ được tích hợp, thật dễ dàng!
 
 <img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
@@ -340,7 +340,7 @@ Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng 
 <div align="center">
 
 **[Phát hành](https://github.com/KudoAI/chatgpt.js/releases)** /
-[Hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) /
+[Hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md) /
 [Bàn luận](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#">Trở lại đầu trang ↑</a>
 

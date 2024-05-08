@@ -189,7 +189,7 @@ chatgpt.get('reply', 'last');
 
 Chaque appel récupère également la dernière réponse. Si vous pensez que cela fonctionne, cela fonctionnera probablement... alors tapez-le simplement!
 
-Si ce n'est pas le cas, consultez le [guide de l'utilisateur](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) étendu, ou soumettez simplement un [problème](https://github.com/KudoAI/chatgpt.js/issues) ou [PR](https://github.com/KudoAI/chatgpt.js/pulls) et il sera intégré, très facile!
+Si ce n'est pas le cas, consultez le [guide de l'utilisateur](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md) étendu, ou soumettez simplement un [problème](https://github.com/KudoAI/chatgpt.js/issues) ou [PR](https://github.com/KudoAI/chatgpt.js/pulls) et il sera intégré, très facile!
 
 <img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
@@ -333,7 +333,7 @@ Cette bibliothèque existe grâce au code, aux traductions, aux problèmes et au
 <div align="center">
 
 **[Communiqués](https://github.com/KudoAI/chatgpt.js/releases)** /
-[Guide de l'utilisateur](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) /
+[Guide de l'utilisateur](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md) /
 [Discuter](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#">Retour au sommet ↑</a>
 

@@ -190,7 +190,7 @@ chatgpt.get('reply', 'last')
 
 माथिको प्रत्येक कलले समान रूपमा अन्तिम प्रतिक्रिया ल्याउँछ। यदि तपाइँले सोच्नुहुन्छ कि तपाइँले लेखेको काम गर्छ वा गर्दैन..., संभावना छ कि त्‍यो काम गर्नेछ, त्यसैले त्‍यसलाई लेख्नुहोस् र हेर्नुहोस्।
 
-यदि त्यसो भएन भने, यो विस्तारित [यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) हेर्नुहोस्, अथवा एउटा [इश्यू](https://github.com/KudoAI/chatgpt.js/issues) सबमिट गर्नुहोस् अथवा [PR](https://github.com/KudoAI/chatgpt.js/pulls) अनि यस्‍लाई समावेश गरिनेछ, निकै सजिलो!
+यदि त्यसो भएन भने, यो विस्तारित [यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md) हेर्नुहोस्, अथवा एउटा [इश्यू](https://github.com/KudoAI/chatgpt.js/issues) सबमिट गर्नुहोस् अथवा [PR](https://github.com/KudoAI/chatgpt.js/pulls) अनि यस्‍लाई समावेश गरिनेछ, निकै सजिलो!
 
 <img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
@@ -334,7 +334,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 <div align="center">
 
 **[विज्ञप्ति](https://github.com/KudoAI/chatgpt.js/releases)** /
-[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) / 
+[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md) / 
 [चर्चा](https://github.com/KudoAI/chatgpt.js/discussions) / 
 <a href="#">शीर्षमा जाऔं ↑</a>
 

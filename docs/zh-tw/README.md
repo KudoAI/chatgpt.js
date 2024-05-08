@@ -188,7 +188,7 @@ chatgpt.get('reply', 'last');
 
 每個調用都會同等地獲取最後一個響應。 如果您認為它有效，它可能會......所以只需輸入它即可！
 
-如果沒有，請查看擴展的[用戶指南](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md)，或者只需提交一個[問題](https://github.com/KudoAI/chatgpt.js/issues) 或 [PR](https://github.com/KudoAI/chatgpt.js/pulls) 它將被集成，簡單易行！
+如果沒有，請查看擴展的[用戶指南](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md)，或者只需提交一個[問題](https://github.com/KudoAI/chatgpt.js/issues) 或 [PR](https://github.com/KudoAI/chatgpt.js/pulls) 它將被集成，簡單易行！
 
 <img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
@@ -332,7 +332,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 <div align="center">
 
 **[發布](https://github.com/KudoAI/chatgpt.js/releases)** /
-[用戶指南](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) /
+[用戶指南](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md) /
 [討論](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#">回到頂部 ↑</a>
 

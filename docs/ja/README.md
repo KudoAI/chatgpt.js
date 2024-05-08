@@ -189,7 +189,7 @@ chatgpt.get('reply', 'last')
 
 各呼び出しは同様に最後の応答を取得します。 うまくいくと思うなら、おそらくうまくいきます...だから、それを入力してください! (資料を読む時間が誰にありますか?)
 
-そうでない場合は、拡張された [ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) を確認するか、単に [問題](https://github.com/KudoAI/chatgpt.js/issues) または [PR](https://github.com/KudoAI/chatgpt.js/pulls) と統合されるので、簡単です!
+そうでない場合は、拡張された [ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md) を確認するか、単に [問題](https://github.com/KudoAI/chatgpt.js/issues) または [PR](https://github.com/KudoAI/chatgpt.js/pulls) と統合されるので、簡単です!
 
 <img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
@@ -333,7 +333,7 @@ chatgpt.js で何かを作成して共有したい場合は、<a href="mailto:sh
 <div align="center">
 
 **[リリース](https://github.com/KudoAI/chatgpt.js/releases)** /
-[ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) / 
+[ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md) / 
 [議論](https://github.com/KudoAI/chatgpt.js/discussions) / 
 <a href="#">トップに戻る ↑</a>
 

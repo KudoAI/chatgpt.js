@@ -194,7 +194,7 @@ chatgpt.get('reply', 'last');
 
 각 호출은 동일한 방식으로 최신 응답을 가져옵니다. 만약 잘 작동한다고 생각하신다면, 그렇게 하시면 될겁니다... 그러니 그냥 입력하세요!
 
-그렇지 않은 경우 확장된 [사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md)를 확인하거나 간단히 [문제](https://github.com/KudoAI/chatgpt.js/issues) 또는 [PR](https://github.com/KudoAI/chatgpt.js/pulls)을 주시면 통합될 것 입니다, 참 쉽죠!
+그렇지 않은 경우 확장된 [사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md)를 확인하거나 간단히 [문제](https://github.com/KudoAI/chatgpt.js/issues) 또는 [PR](https://github.com/KudoAI/chatgpt.js/pulls)을 주시면 통합될 것 입니다, 참 쉽죠!
 
 <img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
@@ -338,7 +338,7 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href=
 <div align="center">
 
 **[릴리스](https://github.com/KudoAI/chatgpt.js/releases)** /
-[사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) /
+[사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md) /
 [토론](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#">상단으로 ↑</a>
 

@@ -189,7 +189,7 @@ chatgpt.get('reply', 'last');
 
 Each call equally fetches the last response. If you think it works, it probably will... so just type it!
 
-If it didn't, check out the extended [userguide](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md), or simply submit an [issue](https://github.com/KudoAI/chatgpt.js/issues) or [PR](https://github.com/KudoAI/chatgpt.js/pulls) and it will be integrated, ezpz!
+If it didn't, check out the extended [userguide](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md), or simply submit an [issue](https://github.com/KudoAI/chatgpt.js/issues) or [PR](https://github.com/KudoAI/chatgpt.js/pulls) and it will be integrated, ezpz!
 
 <img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
@@ -333,7 +333,7 @@ This library exists thanks to code, translations, issues & ideas from the follow
 <div align="center">
 
 **[Releases](https://github.com/KudoAI/chatgpt.js/releases)** /
-[Userguide](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) /
+[Userguide](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md) /
 [Discuss](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#--------------------------------------------------------------------------------english---------简体中文---------繁體中文---------日本---------한국인---------हिंदी---------नेपाली---------deutsch---------español---------français---------italiano---------nederlands---------português---------việt----">Back to top ↑</a>
 

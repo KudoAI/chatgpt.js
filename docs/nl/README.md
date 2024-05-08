@@ -189,7 +189,7 @@ chatgpt.get('reply', 'last');
 
 Elke oproep haalt gelijkelijk het laatste antwoord op. Als je denkt dat het werkt, zal het waarschijnlijk... dus typ het gewoon!
 
-Als dit niet het geval is, bekijk dan de uitgebreide [gebruikershandleiding](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md), of dien gewoon een [probleem](https://github.com/KudoAI/chatgpt.js/issues) in of [PR](https://github.com/KudoAI/chatgpt.js/pulls) en het wordt geïntegreerd, makkelijk!
+Als dit niet het geval is, bekijk dan de uitgebreide [gebruikershandleiding](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md), of dien gewoon een [probleem](https://github.com/KudoAI/chatgpt.js/issues) in of [PR](https://github.com/KudoAI/chatgpt.js/pulls) en het wordt geïntegreerd, makkelijk!
 
 <img height=8px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@5e41346/docs/assets/images/aqua-separator.png">
 
@@ -333,7 +333,7 @@ Deze bibliotheek bestaat dankzij code, vertalingen, problemen en ideeën van de 
 <div align="center">
 
 **[Uitgaven](https://github.com/KudoAI/chatgpt.js/releases)** /
-[gebruikershandleiding](https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md) /
+[gebruikershandleiding](https://github.com/KudoAI/chatgpt.js/blob/v2.6.10/docs/USERGUIDE.md) /
 [Bespreken](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#">Terug naar boven ↑</a>
 
