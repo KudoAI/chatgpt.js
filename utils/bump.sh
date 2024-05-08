@@ -36,7 +36,7 @@ npm version --no-git-tag-version "$NEW_VERSION"
 echo -e "${by}\nBumping versions in READMEs...${bw}"
 sed -i \
     -e "s/\(chatgpt\(-\|\.js@\)\)[0-9]\+\(\.[0-9]\+\)\{2\}/\1$NEW_VERSION/g" `# jsDelivr URLs` \
-    -e "s|v[0-9]\+\.[0-9]\+\.[0-9]\+|v$NEW_VERSION|g" `# Minified Size shield link/src` \
+    -e "s|v[0-9]\+\.[0-9]\+\.[0-9]\+|v$NEW_VERSION|g" `# Minified Size shield link/src + userguide links` \
     $(find docs -regex ".*/\(README\|USERGUIDE\)\.md") ./README.md
 echo "v$NEW_VERSION"
 
