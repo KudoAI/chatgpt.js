@@ -1888,6 +1888,7 @@ const functionAliases = [
     ['getFooterDiv', 'getFooter'],
     ['getHeaderDiv', 'getHeader'],
     ['getLastPrompt', 'getLastQuery', 'getMyLastMsg', 'getMyLastQuery'],
+    ['getScrollToBottomButton', 'getScrollButton'],
     ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
     ['isFullScreen', 'isFullscreen'],
     ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
