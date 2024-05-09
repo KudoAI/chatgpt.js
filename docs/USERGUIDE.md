@@ -73,6 +73,7 @@
   - [DOM related](#dom-related)
     - [getChatBox](#getchatbox)
     - [getContinueGeneratingButton](#getcontinuegeneratingbutton)
+    - [getFooterDiv](#getfooterdiv)
     - [getHeaderDiv](#getheaderdiv)
     - [getNewChatLink](#getnewchatlink)
     - [getRegenerateButton](#getregeneratebutton)
@@ -1080,6 +1081,17 @@ Example code:
 ```js
 const continueBtn = chatgpt.getContinueGeneratingButton();
 continueBtn.click();
+```
+
+### getFooterDiv
+
+Returns the footer div as an HTML element.
+
+Example code:
+
+```js
+const footerDiv = chatgpt.getFooterDiv();
+footerDiv.style.padding = '15px'; // make the footer taller
 ```
 
 ### getHeaderDiv
