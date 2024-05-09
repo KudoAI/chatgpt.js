@@ -1077,8 +1077,8 @@ Returns the 'Continue generating' button as an HTML element.
 Example code:
 
 ```js
-const continueButton = chatgpt.getContinueGeneratingButton();
-continueButton.click();
+const continueBtn = chatgpt.getContinueGeneratingButton();
+continueBtn.click();
 ```
 
 ### getNewChatLink
@@ -1099,8 +1099,8 @@ Returns the button which regenerates ChatGPT's response as an HTML element.
 Example code:
 
 ```js
-const regenButton = chatgpt.getRegenerateButton();
-regenButton.click();
+const regenBtn = chatgpt.getRegenerateButton();
+regenBtn.click();
 ```
 
 ### getScrollToBottomButton
@@ -1121,8 +1121,8 @@ Returns the button which sends the message as an HTML element.
 Example code:
 
 ```js
-const sendButton = chatgpt.getSendButton();
-sendButton.click();
+const sendBtn = chatgpt.getSendButton();
+sendBtn.click();
 ```
 
 ### getStopGeneratingButton
@@ -1132,8 +1132,8 @@ Returns the button which stops the generation of ChatGPT's response as an HTML e
 Example code:
 
 ```js
-const stopButton = chatgpt.getStopGeneratingButton();
-stopButton.click();
+const stopBtn = chatgpt.getStopGeneratingButton();
+stopBtn.click();
 ```
 
 # Library APIs
