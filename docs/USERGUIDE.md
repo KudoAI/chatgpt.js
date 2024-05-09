@@ -75,6 +75,7 @@
     - [getContinueGeneratingButton](#getcontinuegeneratingbutton)
     - [getNewChatLink](#getnewchatlink)
     - [getRegenerateButton](#getregeneratebutton)
+    - [getScrollToBottomButton](#getscrolltobottombutton)
     - [getSendButton](#getsendbutton)
     - [getStopGeneratingButton](#getstopgeneratingbutton)
 - [Library APIs](#library-apis)
@@ -1100,6 +1101,17 @@ Example code:
 ```js
 const regenButton = chatgpt.getRegenerateButton();
 regenButton.click();
+```
+
+### getScrollToBottomButton
+
+Returns the button which scrolls to bottom as an HTML element.
+
+Example code:
+
+```js
+const scrollToBottomBtn = chatgpt.getScrollToBottomButton();
+scrollToBottomBtn.click();
 ```
 
 ### getSendButton
