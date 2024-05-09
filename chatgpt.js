@@ -1634,6 +1634,8 @@ const chatgpt = { // eslint-disable-line no-redeclare
         });});});});});
     },
 
+    showHeader: function() { chatgpt.getHeaderDiv().style.display = 'flex'; },
+
     sidebar: {
         elements: [], observer: {},
 

@@ -82,6 +82,7 @@
     - [getStopGeneratingButton](#getstopgeneratingbutton)
     - [hideFooter](#hidefooter)
     - [hideHeader](#hideheader)
+    - [showHeader](#showheader)
 - [Library APIs](#library-apis)
   - [autoRefresh `api`](#autorefresh-api)
       - [activate](#activate)
@@ -1180,6 +1181,16 @@ Example code:
 
 ```js
 chatgpt.hideHeader()
+```
+
+### showHeader
+
+Shows the header div if hidden.
+
+Example code:
+
+```js
+chatgpt.showHeader()
 ```
 
 # Library APIs
