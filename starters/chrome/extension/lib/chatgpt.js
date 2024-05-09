@@ -858,6 +858,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 return svg.parentNode.parentNode;
     }},
 
+    getFooterDiv: function() { return document.querySelector('main form').parentNode.parentNode.nextElementSibling; },
     getHeaderDiv: function() { return document.querySelector('main .sticky'); },
     getLastPrompt: function() { return chatgpt.getChatData('active', 'msg', 'user', 'latest'); },
     getLastResponse: function() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
@@ -1878,6 +1879,7 @@ const functionAliases = [
     ['detectLanguage', 'getLanguage'],
     ['executeCode', 'codeExecute'],
     ['exportChat', 'chatExport', 'export'],
+    ['getFooterDiv', 'getFooter'],
     ['getHeaderDiv', 'getHeader'],
     ['getLastPrompt', 'getLastQuery', 'getMyLastMsg', 'getMyLastQuery'],
     ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
