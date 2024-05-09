@@ -73,6 +73,7 @@
   - [DOM related](#dom-related)
     - [getChatBox](#getchatbox)
     - [getContinueGeneratingButton](#getcontinuegeneratingbutton)
+    - [getHeaderDiv](#getheaderdiv)
     - [getNewChatLink](#getnewchatlink)
     - [getRegenerateButton](#getregeneratebutton)
     - [getScrollToBottomButton](#getscrolltobottombutton)
@@ -1079,6 +1080,17 @@ Example code:
 ```js
 const continueBtn = chatgpt.getContinueGeneratingButton();
 continueBtn.click();
+```
+
+### getHeaderDiv
+
+Returns the header div as an HTML element.
+
+Example code:
+
+```js
+const headerDiv = chatgpt.getHeaderDiv();
+headerDiv.style.display = none; // hide the header
 ```
 
 ### getNewChatLink
