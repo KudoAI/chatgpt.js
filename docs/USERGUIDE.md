@@ -82,6 +82,7 @@
     - [getStopGeneratingButton](#getstopgeneratingbutton)
     - [hideFooter](#hidefooter)
     - [hideHeader](#hideheader)
+    - [showFooter](#showfooter)
     - [showHeader](#showheader)
 - [Library APIs](#library-apis)
   - [autoRefresh `api`](#autorefresh-api)
@@ -1181,6 +1182,16 @@ Example code:
 
 ```js
 chatgpt.hideHeader()
+```
+
+### showFooter
+
+Shows the footer div if hidden.
+
+Example code:
+
+```js
+chatgpt.showFooter()
 ```
 
 ### showHeader
