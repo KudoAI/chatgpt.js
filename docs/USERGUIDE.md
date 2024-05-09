@@ -80,6 +80,7 @@
     - [getScrollToBottomButton](#getscrolltobottombutton)
     - [getSendButton](#getsendbutton)
     - [getStopGeneratingButton](#getstopgeneratingbutton)
+    - [hideFooter](#hidefooter)
     - [hideHeader](#hideheader)
 - [Library APIs](#library-apis)
   - [autoRefresh `api`](#autorefresh-api)
@@ -1159,6 +1160,16 @@ Example code:
 ```js
 const stopBtn = chatgpt.getStopGeneratingButton();
 stopBtn.click();
+```
+
+### hideFooter
+
+Hides the footer div.
+
+Example code:
+
+```js
+chatgpt.hideFooter()
 ```
 
 ### hideHeader
