@@ -1468,10 +1468,10 @@ const chatgpt = { // eslint-disable-line no-redeclare
         getLast: function() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
 
         regenerate: function() {
-            for (const formButton of document.querySelectorAll('form button')) {
-                if (formButton.textContent.toLowerCase().includes('regenerate')) {
-                    formButton.click(); return;
-        }}},
+            const regenBtn = chatgpt.getRegenerateButton();
+            if (regenBtn) regenBtn.click();
+            else console.error('Regenerate button not found!');
+        },
 
         stopGenerating: function() {
             for (const svg of document.querySelectorAll('form button svg')) {
