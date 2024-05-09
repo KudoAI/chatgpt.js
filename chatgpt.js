@@ -1479,8 +1479,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
     reviewCode: function() { chatgpt.code.review(); },
 
     scrollToBottom: function() {
-        try { document.querySelector('button[class*="cursor"][class*="bottom"]').click(); }
-        catch (err) { console.error('', err); }
+        const scrollBtn = chatgpt.getScrollToBottomButton();
+        if (scrollBtn) scrollBtn.click();
+        else console.error('Scroll button not found!');
     },
 
     send: function(msg, method='') {
