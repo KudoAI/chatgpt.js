@@ -901,6 +901,8 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return navigator.languages[0] || navigator.language || navigator.browserLanguage ||
             navigator.systemLanguage || navigator.userLanguage || ''; },
 
+    hideHeader: function() { chatgpt.getHeaderDiv().style.display = 'none'; },
+
     history: {
         isLoaded: function() {
             return new Promise(resolve => {
