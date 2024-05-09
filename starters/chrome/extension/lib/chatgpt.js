@@ -1877,7 +1877,7 @@ for (const buttonAction of buttonActions) {
 }
 
 // Create alias functions
-const functionAliases = [
+const funcAliases = [
     ['actAs', 'actas', 'act', 'become', 'persona', 'premadePrompt', 'preMadePrompt', 'prePrompt', 'preprompt', 'roleplay', 'rolePlay', 'rp'],
     ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
         'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
@@ -1938,7 +1938,7 @@ const camelCaser = (words) => {
 for (const prop in chatgpt) {
 
     // Create new function for each alias
-    for (const subAliases of functionAliases) {
+    for (const subAliases of funcAliases) {
         if (subAliases.includes(prop)) {
             if (subAliases.some(element => element.includes('.'))) {
                 const nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
