@@ -1916,6 +1916,7 @@ const synonyms = [
     ['activate', 'turnOn'],
     ['analyze', 'check', 'evaluate', 'review'],
     ['ask', 'send', 'submit'],
+    ['button', 'btn'],
     ['chat', 'conversation', 'convo'],
     ['data', 'details'],
     ['deactivate', 'deActivate', 'turnOff'],
