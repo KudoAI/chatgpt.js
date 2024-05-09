@@ -1348,12 +1348,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
     },
 
     refactor: function() { chatgpt.code.refactor(); },
-
-    regenerate: function() {
-        for (const formButton of document.querySelectorAll('form button')) {
-            if (formButton.textContent.toLowerCase().includes('regenerate')) {
-                formButton.click(); return;
-    }}},
+    regenerate: function() { chatgpt.response.regenerate(); },
 
     renderHTML: function(node) {
         const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
