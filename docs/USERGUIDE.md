@@ -80,6 +80,7 @@
     - [getScrollToBottomButton](#getscrolltobottombutton)
     - [getSendButton](#getsendbutton)
     - [getStopGeneratingButton](#getstopgeneratingbutton)
+    - [hideHeader](#hideheader)
 - [Library APIs](#library-apis)
   - [autoRefresh `api`](#autorefresh-api)
       - [activate](#activate)
@@ -1158,6 +1159,16 @@ Example code:
 ```js
 const stopBtn = chatgpt.getStopGeneratingButton();
 stopBtn.click();
+```
+
+### hideHeader
+
+Hides the header div.
+
+Example code:
+
+```js
+chatgpt.hideHeader()
 ```
 
 # Library APIs
