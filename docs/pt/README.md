@@ -236,7 +236,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Exiba as respostas do ChatGPT na barra lateral do DuckDuckGo (com tecnologia GPT-4!)
 <br>[Instalar](https://github.duckduckgpt.com/#-installation) /
 [Leia-me](https://github.duckduckgpt.com/#readme) /
-[Discutir](https://github.duckduckgpt.com/discussions)
+[Discutir](https://github.ddgpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png"><img width=17 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.googlegpt.io/images/badges/awesome/badge.svg" style="margin:0 0 -2px 5px"></a>
 
