@@ -206,43 +206,43 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Cancella Cronologia ChatGPT](https://autoclearchatgpt.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > Cancella automaticamente la cronologia delle chat di ChatGPT per la massima privacy.
-<br>[Installa](https://github.com/adamlui/autoclear-chatgpt-history#-installation) /
-[Readme](https://github.com/adamlui/autoclear-chatgpt-history#readme) /
+<br>[Installa](https://docs.autoclearchatgpt.com/#-installation) /
+[Readme](https://docs.autoclearchatgpt.com/#readme) /
 [Discutere](https://github.autoclearchatgpt.com/discussions)
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Mostra le risposte di ChatGPT nella barra laterale di Brave Search (basato su GPT-4!)
-<br>[Installa](https://github.bravegpt.com/#-installation) /
-[Readme](https://github.bravegpt.com/#readme) /
+<br>[Installa](https://docs.bravegpt.com/#-installation) /
+[Readme](https://docs.bravegpt.com/#readme) /
 [Discutere](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto-Continua ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
 > Continua automaticamente a generare più risposte di ChatGPT.
-<br>[Installa](https://github.com/adamlui/chatgpt-auto-continue#-installation) /
-[Readme](https://github.com/adamlui/chatgpt-auto-continue#readme) /
+<br>[Installa](https://docs.chatgptautocontinue.com/#-installation) /
+[Readme](https://docs.chatgptautocontinue.com/#readme) /
 [Discutere](https://github.chatgptautocontinue.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Aggiornamento Automatico ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > Mantiene aggiornate le sessioni ChatGPT, eliminando limiti di tempo di chat + errori di rete + controlli Cloudflare.
-<br>[Installa](https://github.com/adamlui/chatgpt-auto-refresh#-installation) /
-[Readme](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
+<br>[Installa](https://docs.chatgptautorefresh.com/#-installation) /
+[Readme](https://docs.chatgptautorefresh.com/#readme) /
 [Discutere](https://github.chatgptautorefresh.com/discussions)
 
 ### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Visualizza le risposte di ChatGPT nella barra laterale di DuckDuckGo (basato su GPT-4!)
-<br>[Installa](https://github.duckduckgpt.com/#-installation) /
-[Readme](https://github.duckduckgpt.com/#readme) /
+<br>[Installa](https://docs.ddgpt.com/#-installation) /
+[Readme](https://docs.ddgpt.com/#readme) /
 [Discutere](https://github.ddgpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png"><img width=17 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.googlegpt.io/images/badges/awesome/badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > Visualizza le risposte di ChatGPT nella barra laterale di Google Search (basato su GPT-4!)
 <br>[Installa](https://greasyfork.org/scripts/478597-googlegpt) /
-[Readme](https://github.com/KudoAI/googlegpt#readme) /
+[Readme](https://docs.googlegpt.io/#readme) /
 [Discutere करना](https://github.googlegpt.io/discussions)
 
 <p><br>

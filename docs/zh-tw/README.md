@@ -205,43 +205,43 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [自動清除 ChatGPT 歷史記錄](https://autoclearchatgpt.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > 自動清除您的 ChatGPT 查詢歷史記錄，以獲得最大程度的隱私。
-<br>[安裝](https://github.com/adamlui/autoclear-chatgpt-history#-installation) /
-[自述文件](https://github.com/adamlui/autoclear-chatgpt-history#readme) /
+<br>[安裝](https://docs.autoclearchatgpt.com/#-installation) /
+[自述文件](https://docs.autoclearchatgpt.com/#readme) /
 [討論](https://github.autoclearchatgpt.com/discussions)
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > 在 Brave Search 側邊欄中顯示 ChatGPT 答案（由 GPT-4 提供支持！）
-<br>[安裝](https://github.bravegpt.com/#-installation) /
-[自述文件](https://github.bravegpt.com/#readme) /
+<br>[安裝](https://docs.bravegpt.com/#-installation) /
+[自述文件](https://docs.bravegpt.com/#readme) /
 [討論](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自動繼續 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
 > 自動繼續生成多個 ChatGPT 響應。
-<br>[安裝](https://github.com/adamlui/chatgpt-auto-continue#-installation) /
-[自述文件](https://github.com/adamlui/chatgpt-auto-continue#readme) /
+<br>[安裝](https://docs.chatgptautocontinue.com/#-installation) /
+[自述文件](https://docs.chatgptautocontinue.com/#readme) /
 [討論](https://github.chatgptautocontinue.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自動刷新 ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > 保持 ChatGPT 會話新鮮，消除聊天時間限制 + 網路錯誤 + Cloudflare 檢查。
-<br>[安裝](https://github.com/adamlui/chatgpt-auto-refresh#-installation) /
-[自述文件](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
+<br>[安裝](https://docs.chatgptautorefresh.com/#-installation) /
+[自述文件](https://docs.chatgptautorefresh.com/#readme) /
 [討論](https://github.chatgptautorefresh.com/discussions)
 
 ### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > 在 DuckDuckGo 側邊欄中顯示 ChatGPT 答案（由 GPT-4 提供支持！）
-<br>[安裝](https://github.duckduckgpt.com/#-installation) /
-[自述文件](https://github.duckduckgpt.com/#readme) /
+<br>[安裝](https://docs.ddgpt.com/#-installation) /
+[自述文件](https://docs.ddgpt.com/#readme) /
 [討論](https://github.ddgpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png"><img width=17 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.googlegpt.io/images/badges/awesome/badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > 在 Google Search 側邊欄中顯示 ChatGPT 答案（由 GPT-4 提供支持！）
 <br>[安装](https://greasyfork.org/scripts/478597-googlegpt) /
-[自述文件](https://github.com/KudoAI/googlegpt#readme) /
+[自述文件](https://docs.googlegpt.io/#readme) /
 [讨论](https://github.googlegpt.io/discussions)
 
 <p><br>
