@@ -213,7 +213,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > 최대 개인정보를 위해 ChatGPT 쿼리 히스토리를 자동으로 지는 기능입니다.
 <br>[설치](https://github.com/adamlui/autoclear-chatgpt-history#-installation) /
 [리드미](https://github.com/adamlui/autoclear-chatgpt-history#readme) /
-[토론](https://autoclearchatgpt.com/discuss)
+[토론](https://github.autoclearchatgpt.com/discussions)
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
@@ -227,14 +227,14 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > 자동으로 여러 개의 ChatGPT 응답을 계속해서 생성하는 기능입니다.
 <br>[설치](https://github.com/adamlui/chatgpt-auto-continue#-installation) /
 [리드미](https://github.com/adamlui/chatgpt-auto-continue#readme) /
-[토론](https://chatgptautocontinue.com/discuss)
+[토론](https://github.chatgptautocontinue.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 자동 새로고침 ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > ChatGPT 세션을 최신 상태로 유지하여 채팅 시간 제한 + 네트워크 오류 + Cloudflare 검사를 제거합니다..
 <br>[설치](https://github.com/adamlui/chatgpt-auto-refresh#-installation) /
 [리드미](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
-[토론](https://chatgptautorefresh.com/discuss)
+[토론](https://github.chatgptautorefresh.com/discussions)
 
 ### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
@@ -248,7 +248,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Google Search 사이드바에 ChatGPT의 답변을 표시해주는 기능입니다. (GPT-4 기반)
 <br>[설치](https://greasyfork.org/scripts/478597-googlegpt) /
 [리드미](https://github.com/KudoAI/googlegpt#readme) /
-[토론 करना](https://github.com/KudoAI/googlegpt/discussions)
+[토론 करना](https://github.googlegpt.io/discussions)
 
 <p><br>
 

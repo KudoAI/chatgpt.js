@@ -208,7 +208,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Effacez automatiquement l'historique de vos requêtes ChatGPT pour une confidentialité maximale.
 <br>[Installer](https://github.com/adamlui/autoclear-chatgpt-history#-installation) /
 [Lisez-moi](https://github.com/adamlui/autoclear-chatgpt-history#readme) /
-[Discuter](https://autoclearchatgpt.com/discuss)
+[Discuter](https://github.autoclearchatgpt.com/discussions)
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
@@ -222,14 +222,14 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Continuez automatiquement à générer plusieurs réponses ChatGPT.
 <br>[Installer](https://github.com/adamlui/chatgpt-auto-continue#-installation) /
 [Lisez-moi](https://github.com/adamlui/chatgpt-auto-continue#readme) /
-[Discuter](https://chatgptautocontinue.com/discuss)
+[Discuter](https://github.chatgptautocontinue.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Actualisation Automatique ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > Maintient les sessions ChatGPT à jour, en éliminant les limites de temps de discussion + les erreurs réseau + les contrôles Cloudflare.
 <br>[Installer](https://github.com/adamlui/chatgpt-auto-refresh#-installation) /
 [Lisez-moi](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
-[Discuter](https://chatgptautorefresh.com/discuss)
+[Discuter](https://github.chatgptautorefresh.com/discussions)
 
 ### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
@@ -243,7 +243,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Affichez les réponses ChatGPT dans la barre latérale Google Search (propulsé par GPT-4 !)
 <br>[Installer](https://greasyfork.org/scripts/478597-googlegpt) /
 [Lisez-moi](https://github.com/KudoAI/googlegpt#readme) /
-[Discuter](https://github.com/KudoAI/googlegpt/discussions)
+[Discuter](https://github.googlegpt.io/discussions)
 
 <p><br>
 

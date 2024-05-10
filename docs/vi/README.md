@@ -208,7 +208,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Tự động xóa lịch sử truy vấn ChatGPT của bạn để có quyền riêng tư tối đa.
 <br>[Cài đặt](https://github.com/adamlui/autoclear-chatgpt-history#-installation) /
 [Đọc tôi](https://github.com/adamlui/autoclear-chatgpt-history#readme) /
-[Bàn luận](https://autoclearchatgpt.com/discuss)
+[Bàn luận](https://github.autoclearchatgpt.com/discussions)
 
 ### <img width=16 src="https://i.imgur.com/1yjmK3W.png"> [Automatic ChatGPT DAN](https://github.com/madkarmaa/automatic-chatgpt-dan)
 
@@ -229,14 +229,14 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Tiếp tục tạo ra nhiều câu trả lời ChatGPT một cách tự động.
 <br>[Cài đặt](https://github.com/adamlui/chatgpt-auto-continue#-installation) /
 [Đọc tôi](https://github.com/adamlui/chatgpt-auto-continue#readme) /
-[Bàn luận](https://chatgptautocontinue.com/discuss)
+[Bàn luận](https://github.chatgptautocontinue.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Tự động Cập nhật ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > Giữ cho các phiên ChatGPT luôn mới, loại bỏ giới hạn thời gian trò chuyện + lỗi mạng + kiểm tra Cloudflare.
 <br>[Cài đặt](https://github.com/adamlui/chatgpt-auto-refresh#-installation) /
 [Đọc tôi](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
-[Bàn luận](https://chatgptautorefresh.com/discuss)
+[Bàn luận](https://github.chatgptautorefresh.com/discussions)
 
 ### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
@@ -250,7 +250,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > ển thị câu trả lời ChatGPT trong thanh bên Google Search (do GPT-4 cung cấp!)
 <br>[Cài đặt](https://greasyfork.org/scripts/478597-googlegpt) /
 [Đọc tôi](https://github.com/KudoAI/googlegpt#readme) /
-[Bàn luận](https://github.com/KudoAI/googlegpt/discussions)
+[Bàn luận](https://github.googlegpt.io/discussions)
 
 <p><br>
 
