@@ -1,6 +1,6 @@
 '''
 Script:       translate-en-messages.py
-Version:      2024.4.29.4
+Version:      2024.5.12
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
 Homepage:     https://github.com/adamlui/python-utils
@@ -30,6 +30,7 @@ while True:
 # Determine closest locales dir
 print_trunc(f'\nSearching for { locales_folder }...')
 script_dir = os.path.abspath(os.path.dirname(__file__))
+locales_dir = None
 for root, dirs, files in os.walk(script_dir): # search script dir recursively
     if locales_folder in dirs:
         locales_dir = os.path.join(root, locales_folder) ; break
