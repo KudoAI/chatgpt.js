@@ -313,7 +313,7 @@ const onLoadObserver = new MutationObserver(() => {
                 });
 
             // Remove readme's BACK-TO-TOP link
-            const readmeBTTlink = document.querySelector('p a[href="#"]');
+            const readmeBTTlink = [...document.querySelectorAll('a')].find(link => link.textContent.includes('↑'));
             readmeBTTlink?.previousSibling.remove(); readmeBTTlink?.remove();
 
             setTimeout(() => { // Add PARALLAX
