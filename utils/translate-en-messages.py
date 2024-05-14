@@ -1,6 +1,6 @@
 '''
 Script:       translate-en-messages.py
-Version:      2024.5.12
+Version:      2024.5.14.1
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
 Homepage:     https://github.com/adamlui/python-utils
@@ -103,7 +103,7 @@ for lang_code in output_langs:
             original_msg = translated_msg = en_messages[key]['message']
             try:
                 translator = Translator(provider=provider if provider else '', to_lang=lang_code)
-                translated_msg = translator.translate(original_msg)
+                translated_msg = translator.translate(original_msg).replace('&quot;', "'").replace('&#39;', "'")
                 if any(flag in translated_msg for flag in fail_flags):
                     translated_msg = original_msg
             except Exception as e:
