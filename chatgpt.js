@@ -843,11 +843,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
         // Return chat data
         return new Promise(resolve => { chatgpt.getAccessToken().then(token => {
-            if (!detailsToGet.includes('msg')) getChatDetails(token, detailsToGet).then(data => {
-                return resolve(data); // get just the chat details
-            });
-            else getChatMsgs(token).then(messages => { return resolve(messages); }); // otherwise get specific msg's
-        });});
+            if (detailsToGet.includes('msg')) return getChatMsgs(token);
+            else return getChatDetails(token, detailsToGet);
+        }).then(data => resolve(data));});
     },
 
     getChatInput: function() { return chatgpt.getChatBox().value; },
