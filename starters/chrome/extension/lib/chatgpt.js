@@ -1412,7 +1412,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             // responseToGet = index of response to get (defaults to latest if '' unpassed)
             // regenResponseToGet = index of regenerated response to get (defaults to latest if '' unpassed)
 
-                if (window.location.href.startsWith('https://chatgpt.com/'))
+                if (window.location.href.startsWith('https://chatgpt.com/c/'))
                     return this.getFromDOM.apply(null, arguments);
                 else return this.getFromAPI.apply(null, arguments);
         },
