@@ -879,9 +879,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
     // responseToGet = index of response to get (defaults to latest if '' unpassed)
     // regenResponseToGet = index of regenerated response to get (defaults to latest if '' unpassed)
 
-        if (window.location.href.startsWith('https://chat.openai.com/c/'))
-            return chatgpt.getResponseFromDOM.apply(null, arguments);
-        else return chatgpt.getResponseFromAPI.apply(null, arguments);
+        return chatgpt.response.get(...arguments);
     },
 
     getResponseFromAPI: function(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet); },
