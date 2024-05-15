@@ -885,7 +885,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
     getResponseFromAPI: function(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet); },
     getResponseFromDOM: function(pos) { return chatgpt.response.getFromDOM(pos); },
     getScrollToBottomButton: function() { return document.querySelector('button[class*="cursor"][class*="bottom"]'); },
-    getSendButton: function() { return document.querySelector('form button[class*="bottom"]'); },
+    getSendButton: function() { return document.querySelector('form button[class*="main-surface-secondary"]'); },
 
     getStopGeneratingButton: function() {
         for (const svg of document.querySelectorAll('form button svg')) {
