@@ -842,10 +842,10 @@ const chatgpt = { // eslint-disable-line no-redeclare
         });});};
 
         // Return chat data
-        return new Promise(resolve => { chatgpt.getAccessToken().then(token => {
-            if (detailsToGet.includes('msg')) return getChatMsgs(token);
-            else return getChatDetails(token, detailsToGet);
-        }).then(data => resolve(data));});
+        return new Promise(resolve => chatgpt.getAccessToken().then(token => {
+            return resolve(detailsToGet.includes('msg') ? getChatMsgs(token)
+                         : getChatDetails(token, detailsToGet));
+        }));
     },
 
     getChatInput: function() { return chatgpt.getChatBox().value; },
