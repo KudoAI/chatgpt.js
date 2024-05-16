@@ -1052,10 +1052,10 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     isLoaded: function() {
         return new Promise(resolve => {
-            const isLoadedCheckerID = setInterval(() => {
-                if (chatgpt.getNewChatButton()) {
-                    clearInterval(isLoadedCheckerID); resolve(true);
-            }}, 100);
+            (function checkIsLoaded() {
+                if (chatgpt.getNewChatButton()) resolve(true);
+                else setTimeout(checkIsLoaded, 100);
+            })();
     });},
 
     isLightMode: function() { return document.documentElement.classList.toString().includes('light'); },
