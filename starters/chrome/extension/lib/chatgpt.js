@@ -1637,10 +1637,6 @@ const chatgpt = { // eslint-disable-line no-redeclare
         elements: [], observer: {},
 
         activateObserver: function() {
-            const chatHistoryNav = document.querySelector('nav'),
-                firstButton = chatHistoryNav.querySelector('a');
-            if (chatgpt.history.isOff()) // Hide enable history spam div
-                try { firstButton.parentNode.nextElementSibling.style.display = 'none'; } catch (err) {}
 
             // Stop the previous observer to preserve resources
             if (this.observer instanceof MutationObserver)
