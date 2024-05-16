@@ -867,11 +867,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 return navBtnSVG.parentNode;
     },
 
-    getNewChatLink: function() {
-        for (const navLink of document.querySelectorAll('nav a')) {
-            if (/(new|clear) chat/i.test(navLink.text)) {
-                return navLink;
-    }}},
+    getNewChatLink: function() { return document.querySelector('nav a[href="/"]'); },
 
     getRegenerateButton: function() {   
         for (const mainSVG of document.querySelectorAll('main svg')) {
