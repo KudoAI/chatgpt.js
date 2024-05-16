@@ -1052,10 +1052,11 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     isLoaded: function() {
         return new Promise(resolve => {
-            const intervalId = setInterval(() => {
-                if (document.querySelector('nav button[id*="menu"]')) {
-                    clearInterval(intervalId); setTimeout(() => { resolve(true); }, 500);
-    }}, 100);});},
+            const isLoadedCheckerID = setInterval(() => {
+                if (chatgpt.getNewChatButton()) {
+                    clearInterval(isLoadedCheckerID); resolve(true);
+            }}, 100);
+    });},
 
     isLightMode: function() { return document.documentElement.classList.toString().includes('light'); },
     isMobileDevice: function() { return chatgpt.browser.isMobile(); },
