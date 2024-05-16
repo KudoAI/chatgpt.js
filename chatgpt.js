@@ -861,6 +861,12 @@ const chatgpt = { // eslint-disable-line no-redeclare
     getLastPrompt: function() { return chatgpt.getChatData('active', 'msg', 'user', 'latest'); },
     getLastResponse: function() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
 
+    getNewChatButton: function() {
+        for (const navBtnSVG of document.querySelectorAll('nav button svg'))
+            if (navBtnSVG.querySelector('path[d*="M15.673 3.913a3.121"]')) // new chat icon found
+                return navBtnSVG.parentNode;
+    },
+
     getNewChatLink: function() {
         for (const navLink of document.querySelectorAll('nav a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
