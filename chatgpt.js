@@ -1747,9 +1747,10 @@ const chatgpt = { // eslint-disable-line no-redeclare
         show: function() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
         isOff: function() { return !this.isOn(); },
         isOn: function() {
+            const sidebar = document.querySelector('#__next > div > div');
             return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
-              : document.querySelector('#__next > div > div').style.visibility != 'hidden';
+              : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px';
         },
 
         toggle: function() {
