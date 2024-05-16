@@ -887,7 +887,11 @@ const chatgpt = { // eslint-disable-line no-redeclare
     getResponseFromAPI: function(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet); },
     getResponseFromDOM: function(pos) { return chatgpt.response.getFromDOM(pos); },
     getScrollToBottomButton: function() { return document.querySelector('button[class*="cursor"][class*="bottom"]'); },
-    getSendButton: function() { return document.querySelector('form button[class*="bottom"]'); },
+
+    getSendButton: function() {
+        return document.querySelector('[data-testid="send-button"]') // pre-GPT-4o
+            || document.querySelector('path[d*="M15.192 8.906a1.143"]')?.parentNode.parentNode; // post-GPT-4o
+    },
 
     getStopGeneratingButton: function() {
         for (const svg of document.querySelectorAll('form button svg')) {
@@ -1457,7 +1461,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                     );
                     response = responseDivs[nthOfResponse - 1].textContent;
                 }
-                response = response.replace(/^ChatGPTChatGPT/, ''); // strip sender name
+                response = response.replace(/^ChatGPT(?:ChatGPT)?/, ''); // strip sender name
             }
             return response;
         },
