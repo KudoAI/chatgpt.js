@@ -1755,10 +1755,12 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
         toggle: function() {
             const isMobileDevice = chatgpt.browser.isMobile(),
-                  navBtnSelector = isMobileDevice ? '#__next button' : 'main button' ,
+                  isGPT4oUI = !!document.documentElement.className.includes(' '),
+                  navBtnSelector = isMobileDevice ? '#__next button' : isGPT4oUI ? 'nav button' : 'main button',
                   isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
-                              : btn => Array.from(btn.querySelectorAll('*'))
-                                            .some(child => child.style.transform.includes('translateY'));
+                              : isGPT4oUI ? btn => btn.querySelectorAll('svg path[d*="M8.857 3h6.286c1.084"]').length > 0
+                              : /* post-GPT-4o desktop */ btn => [...btn.querySelectorAll('*')]
+                                    .some(child => child.style.transform.includes('translateY'));
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
         }
