@@ -1767,12 +1767,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         }
     },
 
-    startNewChat: function() {
-        for (const navLink of document.querySelectorAll('nav a')) {
-            if (/(new|clear) chat/i.test(navLink.text)) {
-                navLink.click(); return;
-    }}},
-
+    startNewChat: function() { try { this.getNewChatButton().click(); } catch (err) { console.error(err.message); }},
     stop: function() { this.response.stopGenerating(); },
 
     suggest: async function(ideaType, details) {
