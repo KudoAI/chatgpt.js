@@ -1455,7 +1455,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                     );
                     response = responseDivs[nthOfResponse - 1].textContent;
                 }
-                response = response.replace(/^ChatGPT/, ''); // strip sender name
+                response = response.replace(/^ChatGPT(?:ChatGPT)?/, ''); // strip sender name
             }
             return response;
         },
