@@ -1895,6 +1895,7 @@ const funcAliases = [
     ['send', 'sendChat', 'sendMsg'],
     ['sendInNewChat', 'sendNewChat'],
     ['sentiment', 'analyzeSentiment', 'sentimentAnalysis'],
+    ['startNewChat', 'new', 'newChat'],
     ['stop', 'stopGenerating'],
     ['suggest', 'suggestion', 'recommend'],
     ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher'],
