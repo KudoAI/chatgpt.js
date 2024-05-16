@@ -905,11 +905,10 @@ const chatgpt = { // eslint-disable-line no-redeclare
     history: {
         isLoaded: function() {
             return new Promise(resolve => {
-                const checkChatHistory = () => {
+                (function checkChatHistory() {
                     if (document.querySelector('nav')) resolve(true);
                     else setTimeout(checkChatHistory, 100);
-                };
-                checkChatHistory();
+                })();
         });}
     },
 
