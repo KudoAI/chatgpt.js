@@ -75,6 +75,7 @@
     - [getContinueGeneratingButton](#getcontinuegeneratingbutton)
     - [getFooterDiv](#getfooterdiv)
     - [getHeaderDiv](#getheaderdiv)
+    - [getNewChatButton](#getnewchatbutton)
     - [getNewChatLink](#getnewchatlink)
     - [getRegenerateButton](#getregeneratebutton)
     - [getScrollToBottomButton](#getscrolltobottombutton)
@@ -1109,9 +1110,20 @@ const headerDiv = chatgpt.getHeaderDiv();
 headerDiv.style.display = none; // hide the header
 ```
 
+### getNewChatButton
+
+Returns the sidebar button (w/ icon) that creates a new chat as an HTML element.
+
+Example code:
+
+```js
+const newChatBtn = chatgpt.getNewChatButton();
+newChatBtn.click();
+```
+
 ### getNewChatLink
 
-Returns the button which creates a new chat as an HTML element.
+Returns the sidebar link (w/ label) that creates a new chat as an HTML element.
 
 Example code:
 
