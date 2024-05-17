@@ -383,7 +383,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         const validMethods = ['api', 'dom'];
         method = (method || 'dom').trim().toLowerCase(); // set to 'dom' by default
         if (method && !validMethods.includes(method))
-            return console.log(`Method argument must be one of: [${ validMethods }]`);
+            return console.error(`Method argument must be one of: [${validMethods}]`);
 
         if (method == 'dom') {
             const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -396,6 +396,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                       deleteBtn = settingsBtns[settingsBtns.length - 1];
                 deleteBtn.click(); await delay(10);
                 document.querySelector('button[class*="danger"').click(); // confirm clear
+                return console.info('Chats successfully cleared.');
             } catch (err) {
                 console.error(err.message); console.info('Using backend API method instead.');
                 this.clearChats('api');
@@ -415,7 +416,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                         console.info('Chats successfully cleared'); resolve();
                     };
                     xhr.send(JSON.stringify({ is_visible: false }));
-                }).catch(reject);
+                }).catch(err => reject(new Error(err.message)));
             });
         }
     },
