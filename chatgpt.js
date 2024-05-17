@@ -1891,6 +1891,7 @@ const funcAliases = [
     ['getFooterDiv', 'getFooter'],
     ['getHeaderDiv', 'getHeader'],
     ['getLastPrompt', 'getLastQuery', 'getMyLastMsg', 'getMyLastQuery'],
+    ['getContinueGeneratingButton', 'getContinueButton'],
     ['getScrollToBottomButton', 'getScrollButton'],
     ['getStopGeneratingButton', 'getStopButton'],
     ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
