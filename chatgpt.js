@@ -147,7 +147,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
         // Insert text into elements
         modalTitle.innerText = title || '';
-        modalMessage.innerText = msg || ''; this.renderHTML(modalMessage);
+        modalMessage.innerText = msg || ''; chatgpt.renderHTML(modalMessage);
 
         // Create/append buttons (if provided) to buttons div
         const modalButtons = document.createElement('div');
@@ -400,7 +400,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             } catch (err) {
                 console.error(err.message);
                 if (arguments.length == 0) {
-                    console.info('Using backend API method instead.'); this.clearChats('api'); }
+                    console.info('Using backend API method instead.'); chatgpt.clearChats('api'); }
             }
 
         } else { // API method
@@ -497,7 +497,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         }
     },
 
-    continue: function() { this.response.continue(); },
+    continue: function() { chatgpt.response.continue(); },
 
     detectLanguage: async function(text) {
         if (!text) return console.error('Text argument not supplied. Pass some text!');
@@ -1367,9 +1367,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
               nodeContent = node.childNodes;
 
         // Preserve consecutive spaces + line breaks
-        if (!this.renderHTML.preWrapSet) {
-            node.style.whiteSpace = 'pre-wrap'; this.renderHTML.preWrapSet = true;
-            setTimeout(() => { this.renderHTML.preWrapSet = false; }, 100);
+        if (!chatgpt.renderHTML.preWrapSet) {
+            node.style.whiteSpace = 'pre-wrap'; chatgpt.renderHTML.preWrapSet = true;
+            setTimeout(() => { chatgpt.renderHTML.preWrapSet = false; }, 100);
         }
 
         // Process child nodes
@@ -1393,7 +1393,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                         tagNode.setAttribute(name, value);
                     });
 
-                    const renderedNode = this.renderHTML(tagNode); // render child elements of newly created node
+                    const renderedNode = chatgpt.renderHTML(tagNode); // render child elements of newly created node
 
                     // Insert newly rendered node
                     const beforeTextNode = document.createTextNode(text.substring(0, elem.index)),
@@ -1406,7 +1406,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 }
 
             // Process element nodes recursively
-            } else if (childNode.nodeType == Node.ELEMENT_NODE) this.renderHTML(childNode);
+            } else if (childNode.nodeType == Node.ELEMENT_NODE) chatgpt.renderHTML(childNode);
         }
 
         return node; // if assignment used
@@ -1485,7 +1485,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return console.error(`Argument ${ i + 1 } must be a string!`);
         const textArea = document.querySelector('form textarea'),
-              sendBtn = this.getSendButton();
+              sendBtn = chatgpt.getSendButton();
         textArea.value = msg;
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
 
@@ -1770,8 +1770,8 @@ const chatgpt = { // eslint-disable-line no-redeclare
         });}
     },
 
-    startNewChat: function() { try { this.getNewChatBtn().click(); } catch (err) { console.error(err.message); }},
-    stop: function() { this.response.stopGenerating(); },
+    startNewChat: function() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }},
+    stop: function() { chatgpt.response.stopGenerating(); },
 
     suggest: async function(ideaType, details) {
         if (!ideaType) return console.error('ideaType (1st argument) not supplied'
