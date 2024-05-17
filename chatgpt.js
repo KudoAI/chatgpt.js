@@ -398,8 +398,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 document.querySelector('button[class*="danger"').click(); // confirm clear
                 return console.info('Chats successfully cleared.');
             } catch (err) {
-                console.error(err.message); console.info('Using backend API method instead.');
-                this.clearChats('api');
+                console.error(err.message);
+                if (arguments.length == 0) {
+                    console.info('Using backend API method instead.'); this.clearChats('api'); }
             }
 
         } else { // API method
