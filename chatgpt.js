@@ -851,9 +851,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
     getChatInput: function() { return chatgpt.getChatBox().value; },
 
     getContinueGeneratingButton: function() {
-        for (const svg of document.querySelectorAll('form button svg')) {
-            if (svg.querySelector('polygon[points*="11 19 2 12 11 5 11 19"]'))
-                return svg.parentNode.parentNode;
+        for (const formBtnSVG of document.querySelectorAll('form button svg')) {
+            if (formBtnSVG.querySelector('path[d*="M4.472 2.5a1"]'))
+                return formBtnSVG.parentNode.parentNode;
     }},
 
     getFooterDiv: function() { return document.querySelector('main form').parentNode.parentNode.nextElementSibling; },
