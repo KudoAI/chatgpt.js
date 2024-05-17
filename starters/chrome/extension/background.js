@@ -1,4 +1,4 @@
-const allowedHosts = ['chat.openai.com'];
+const allowedHosts = ['chatgpt.com', 'chat.openai.com'];
 
 // Add install/update actions
 chrome.runtime.onInstalled.addListener((details) => {
