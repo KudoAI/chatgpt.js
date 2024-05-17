@@ -387,15 +387,19 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
         if (method == 'dom') {
             const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-            try { await chatgpt.getChatData(); } catch { return; } // check if chat history exists
-            chatgpt.menu.open(); await delay(10);
-            const settingsBtn = document.querySelector(
-                'a[role="menuitem"] svg path[d*="M12.003 10.5a1.5"]')?.parentNode.parentNode;
-            settingsBtn.click(); await delay(333);
-            const settingsBtns = document.querySelectorAll('[id*=radix] button'),
-                  deleteBtn = settingsBtns[settingsBtns.length - 1];
-            deleteBtn.click(); await delay(10);
-            document.querySelector('button[class*="danger"').click(); // confirm clear
+            try {
+                chatgpt.menu.open(); await delay(10);
+                const settingsBtn = document.querySelector(
+                    'a[role="menuitem"] svg path[d*="M12.003 10.5a1.5"]').parentNode.parentNode;
+                settingsBtn.click(); await delay(333);
+                const settingsBtns = document.querySelectorAll('[id*=radix] button'),
+                      deleteBtn = settingsBtns[settingsBtns.length - 1];
+                deleteBtn.click(); await delay(10);
+                document.querySelector('button[class*="danger"').click(); // confirm clear
+            } catch (err) {
+                console.error(err.message); console.info('Using backend API method instead.');
+                this.clearChats('api');
+            }
 
         } else { // API method
         // NOTE: DOM is not updated to reflect new empty chat list (until session refresh)
