@@ -45,7 +45,7 @@
 [![](https://img.shields.io/github/stars/KudoAI/chatgpt.js?label=Estrelas&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/stargazers)
 [![](https://img.shields.io/badge/Licença-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/KudoAI/chatgpt.js?label=Confirma&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/commits/main)
-[![](https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v2.9.0&label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/tree/v2.9.0/dist/chatgpt.min.js)
+[![](https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v2.9.1&label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/tree/v2.9.1/dist/chatgpt.min.js)
 [![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Qualidade+do+Código&logo=codefactor&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
 [![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dkudoai_chatgpt.js%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=Vulnerabilidades&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=kudoai_chatgpt.js)
 [![](https://img.shields.io/badge/Mencionado_em-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
@@ -83,7 +83,7 @@
 
 ```js
 (async () => {
-    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.9.0/dist/chatgpt.min.js');
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.9.1/dist/chatgpt.min.js');
     // Seu código aqui...
 })();
 ```
@@ -92,7 +92,7 @@
 
 ```js
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.9.0/dist/chatgpt.min.js');
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.9.1/dist/chatgpt.min.js');
 xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
@@ -114,7 +114,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.9.0/dist/chatgpt.min.js
+// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.9.1/dist/chatgpt.min.js
 // ==/UserScript==
 
 // Seu código aqui...
@@ -189,7 +189,7 @@ chatgpt.get('reply', 'last');
 
 Cada chamada busca igualmente a última resposta. Se você acha que funciona, provavelmente funcionará... então apenas digite! (Quem tem tempo para documentos?)
 
-Caso contrário, verifique o [guia do usuário](https://github.com/KudoAI/chatgpt.js/blob/v2.9.0/docs/USERGUIDE.md) estendido  ou simplesmente envie um [problema](https://github.com/KudoAI/chatgpt.js/issues) ou [PR](https://github.com/KudoAI/chatgpt.js/pulls) e será integrado, mole-mole!
+Caso contrário, verifique o [guia do usuário](https://github.com/KudoAI/chatgpt.js/blob/v2.9.1/docs/USERGUIDE.md) estendido  ou simplesmente envie um [problema](https://github.com/KudoAI/chatgpt.js/issues) ou [PR](https://github.com/KudoAI/chatgpt.js/pulls) e será integrado, mole-mole!
 
 <img height=8px width="100%" src="https://media.chatgptjs.org/images/separators/gradient-aqua.png?78210a7">
 
@@ -335,7 +335,7 @@ Esta biblioteca existe graças ao código, traduções, problemas e ideias dos s
 <div align="center">
 
 **[Lançamentos](https://github.com/KudoAI/chatgpt.js/releases)** /
-[guia do usuário](https://github.com/KudoAI/chatgpt.js/blob/v2.9.0/docs/USERGUIDE.md) /
+[guia do usuário](https://github.com/KudoAI/chatgpt.js/blob/v2.9.1/docs/USERGUIDE.md) /
 [Discutir](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#">De volta ao topo ↑</a>
 
