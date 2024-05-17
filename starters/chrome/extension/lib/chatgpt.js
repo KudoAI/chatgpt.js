@@ -1415,9 +1415,8 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     response: {
         continue: function() {
-            const continueBtn = chatgpt.getContinueGeneratingButton();
-            if (continueBtn) continueBtn.click();
-            else console.error('Continue button not found!');
+            try { chatgpt.getContinueGeneratingButton().click(); }
+            catch (err) { console.error(err.message); }
         },
 
         get: function() {
@@ -1479,24 +1478,21 @@ const chatgpt = { // eslint-disable-line no-redeclare
         getLast: function() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
 
         regenerate: function() {
-            const regenBtn = chatgpt.getRegenerateButton();
-            if (regenBtn) regenBtn.click();
-            else console.error('Regenerate button not found!');
+            try { chatgpt.getRegenerateButton().click(); }
+            catch (err) { console.error(err.message); }
         },
 
         stopGenerating: function() {
-            const stopBtn = chatgpt.getStopGeneratingButton();
-            if (stopBtn) stopBtn.click();
-            else console.error('Stop button not found!');
+            try { chatgpt.getStopGeneratingButton().click(); }
+            catch (err) { console.error(err.message); }
         }
     },
 
     reviewCode: function() { chatgpt.code.review(); },
 
     scrollToBottom: function() {
-        const scrollBtn = chatgpt.getScrollToBottomButton();
-        if (scrollBtn) scrollBtn.click();
-        else console.error('Scroll button not found!');
+        try { chatgpt.getScrollToBottomButton().click(); }
+        catch (err) { console.error(err.message); }
     },
 
     send: function(msg, method='') {
