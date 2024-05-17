@@ -1161,13 +1161,13 @@ const chatgpt = { // eslint-disable-line no-redeclare
         },
 
         close: function() {
-            const menuBtn = document.querySelector('nav [id*="menu-button"][aria-expanded="true"]');
-            try { menuBtn.click(); } catch (err) { console.error(err.message); }
+            try { document.querySelector('nav [id*="menu-button"][aria-expanded="true"]').click(); }
+            catch (err) { console.error(err.message); }
         },
 
         open: function() {
-            const menuBtn = document.querySelector('nav [id*="menu-button"][aria-expanded="false"]');
-            try { menuBtn.click(); } catch (err) { console.error(err.message); }
+            try { document.querySelector('nav [id*="menu-button"][aria-expanded="false"]').click(); }
+            catch (err) { console.error(err.message); }
         }
     },
 
