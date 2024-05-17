@@ -1048,10 +1048,11 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     isIdle: function() {
         return new Promise(resolve => {
-            const intervalId = setInterval(() => {
-                if (chatgpt.getRegenerateButton()) {
-                    clearInterval(intervalId); resolve(true);
-    }}, 100);});},
+            (function checkIsIdle() {
+                if (chatgpt.getRegenerateButton()) resolve(true);
+                else setTimeout(checkIsIdle, 100);
+            })();
+    });},
 
     isLoaded: function() {
         return new Promise(resolve => {
@@ -1496,12 +1497,12 @@ const chatgpt = { // eslint-disable-line no-redeclare
               sendButton = document.querySelector('form button[class*="bottom"]');
         textArea.value = msg;
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
-        const delaySend = setInterval(() => {
+
+        setTimeout(function delaySend() {
             if (!sendButton?.hasAttribute('disabled')) { // send msg
                 method.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendButton.click()
                     : textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }));
-                clearInterval(delaySend);
-            }
+            } else setTimeout(delaySend, 25);
         }, 25);
     },
 
