@@ -668,6 +668,8 @@ Example code:
 
 ### clearChats `async`
 
+**Parameters**:
+
 `method` (optional): The string `'api'` or `'dom'` representing the method to use.
 
 > **Note** _The API method does not update DOM chat list (until session refresh)_
