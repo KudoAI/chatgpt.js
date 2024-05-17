@@ -1767,7 +1767,15 @@ const chatgpt = { // eslint-disable-line no-redeclare
                                     .some(child => child.style.transform.includes('translateY'));
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
-        }
+        },
+
+        isloaded: function() {
+            return new Promise(resolve => {
+                (function checkIsLoaded() {
+                    if (document.querySelector('nav a[href="/"]')) resolve(true);
+                    else setTimeout(checkIsLoaded, 100);
+                })();
+        });}
     },
 
     startNewChat: function() { try { this.getNewChatButton().click(); } catch (err) { console.error(err.message); }},

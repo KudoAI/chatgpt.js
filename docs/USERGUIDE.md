@@ -137,6 +137,7 @@
     - [hide](#hide)
     - [show](#show)
     - [toggle](#toggle-2)
+    - [isloaded](#isloaded-async-2)
 
 # Importing the library
 
@@ -1836,6 +1837,19 @@ Example code:
 
 ```js
 chatgpt.sidebar.toggle();
+```
+
+### isLoaded `async`
+
+Resolves a promise when the ChatGPT sidebar has finished loading.
+
+Example code:
+
+```js
+(async () => {
+    await chatgpt.sidebar.isLoaded();
+    console.log('ChatGPT sidebar has finished loading.');
+})();
 ```
 
 <br>
