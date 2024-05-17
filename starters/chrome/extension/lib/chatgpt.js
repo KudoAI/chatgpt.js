@@ -895,7 +895,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     getStopGeneratingButton: function() {
         for (const svg of document.querySelectorAll('form button svg')) {
-            if (svg.querySelector('path[d*="2 0 0 1 2"]'))
+            if (svg.querySelector('path[d*="2 0 0 1 2"], rect'))
                 return svg.parentNode;
     }},
 
