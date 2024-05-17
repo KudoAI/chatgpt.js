@@ -1476,10 +1476,10 @@ const chatgpt = { // eslint-disable-line no-redeclare
         },
 
         stopGenerating: function() {
-            for (const svg of document.querySelectorAll('form button svg')) {
-                if (svg.querySelector('path[d*="2 0 0 1 2"]')) {
-                    svg.parentNode.click(); return;
-        }}}
+            const stopBtn = chatgpt.getStopGeneratingButton();
+            if (stopBtn) stopBtn.click();
+            else console.error('Stop button not found!');
+        }
     },
 
     reviewCode: function() { chatgpt.code.review(); },
