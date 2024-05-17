@@ -1919,7 +1919,7 @@ const funcAliases = [
     ['sendInNewChat', 'sendNewChat'],
     ['sentiment', 'analyzeSentiment', 'sentimentAnalysis'],
     ['startNewChat', 'new', 'newChat'],
-    ['stop', 'stopGenerating'],
+    ['stop', 'stopChat', 'stopGenerating', 'stopResponse'],
     ['suggest', 'suggestion', 'recommend'],
     ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher'],
     ['toggleScheme', 'toggleMode'],
