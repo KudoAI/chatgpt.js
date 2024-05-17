@@ -1761,7 +1761,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 if (isToggleBtn(btn)) { btn.click(); return; }
         },
 
-        isloaded: function() {
+        isLoaded: function() {
             return new Promise(resolve => {
                 (function checkIsLoaded() {
                     if (document.querySelector('nav a[href="/"]')) resolve(true);
@@ -1888,6 +1888,7 @@ const funcAliases = [
     ['getStopGeneratingButton', 'getStopButton'],
     ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
     ['isFullScreen', 'isFullscreen'],
+    ['isLoaded', 'isloaded'],
     ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
     ['minify', 'codeMinify', 'minifyCode'],
     ['new', 'newChat', 'startNewChat'],
