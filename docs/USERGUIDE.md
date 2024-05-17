@@ -138,7 +138,7 @@
     - [hide](#hide)
     - [show](#show)
     - [toggle](#toggle-2)
-    - [isloaded](#isloaded-async-2)
+    - [isLoaded](#isloaded-async-2)
 
 # Importing the library
 
