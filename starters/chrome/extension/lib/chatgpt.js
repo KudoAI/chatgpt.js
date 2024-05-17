@@ -1414,10 +1414,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
     resend: async function() { chatgpt.send(await chatgpt.getChatData('latest', 'msg', 'user', 'latest')); },
 
     response: {
-        continue: function() {
-            try { chatgpt.getContinueGeneratingButton().click(); }
-            catch (err) { console.error(err.message); }
-        },
+        continue: function() { try { chatgpt.getContinueBtn().click(); } catch (err) { console.error(err.message); }},
 
         get: function() {
             // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:        
@@ -1476,24 +1473,12 @@ const chatgpt = { // eslint-disable-line no-redeclare
         },
 
         getLast: function() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
-
-        regenerate: function() {
-            try { chatgpt.getRegenerateButton().click(); }
-            catch (err) { console.error(err.message); }
-        },
-
-        stopGenerating: function() {
-            try { chatgpt.getStopGeneratingButton().click(); }
-            catch (err) { console.error(err.message); }
-        }
+        regenerate: function() { try { chatgpt.getRegenerateBtn().click(); } catch (err) { console.error(err.message); }},
+        stopGenerating: function() { try { chatgpt.getStopBtn().click(); } catch (err) { console.error(err.message); }}
     },
 
     reviewCode: function() { chatgpt.code.review(); },
-
-    scrollToBottom: function() {
-        try { chatgpt.getScrollToBottomButton().click(); }
-        catch (err) { console.error(err.message); }
-    },
+    scrollToBottom: function() { try { chatgpt.getScrollBtn().click(); } catch (err) { console.error(err.message); }},
 
     send: function(msg, method='') {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
@@ -1784,7 +1769,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         });}
     },
 
-    startNewChat: function() { try { this.getNewChatButton().click(); } catch (err) { console.error(err.message); }},
+    startNewChat: function() { try { this.getNewChatBtn().click(); } catch (err) { console.error(err.message); }},
     stop: function() { this.response.stopGenerating(); },
 
     suggest: async function(ideaType, details) {
