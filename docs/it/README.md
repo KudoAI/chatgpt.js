@@ -243,7 +243,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Visualizza le risposte di ChatGPT nella barra laterale di Google Search (basato su GPT-4!)
 <br>[Installa](https://greasyfork.org/scripts/478597-googlegpt) /
 [Readme](https://docs.googlegpt.io/#readme) /
-[Discutere करना](https://github.googlegpt.io/discussions)
+[Discutere](https://github.googlegpt.io/discussions)
 
 <p><br>
 
