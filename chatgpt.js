@@ -493,6 +493,8 @@ const chatgpt = { // eslint-disable-line no-redeclare
         }
     },
 
+    continueChat: function() { this.response.continue(); },
+
     detectLanguage: async function(text) {
         if (!text) return console.error('Text argument not supplied. Pass some text!');
         if (typeof text !== 'string') return console.error('Text argument must be a string!');
@@ -1411,6 +1413,12 @@ const chatgpt = { // eslint-disable-line no-redeclare
     resend: async function() { chatgpt.send(await chatgpt.getChatData('latest', 'msg', 'user', 'latest')); },
 
     response: {
+        continue: function() {
+            const continueBtn = chatgpt.getContinueGeneratingButton();
+            if (continueBtn) continueBtn.click();
+            else console.error('Continue button not found!');
+        },
+
         get: function() {
             // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:        
             // chatToGet = index|title|id of chat to get (defaults to latest if '' unpassed)
@@ -1884,6 +1892,7 @@ const funcAliases = [
     ['actAs', 'actas', 'act', 'become', 'persona', 'premadePrompt', 'preMadePrompt', 'prePrompt', 'preprompt', 'roleplay', 'rolePlay', 'rp'],
     ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
         'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
+    ['continueChat', 'continue', 'continueGenerating', 'continueResponse'],
     ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
     ['detectLanguage', 'getLanguage'],
     ['executeCode', 'codeExecute'],
@@ -1924,6 +1933,7 @@ const synonyms = [
     ['analyze', 'check', 'evaluate', 'review'],
     ['ask', 'send', 'submit'],
     ['button', 'btn'],
+    ['continue', 'resume'],
     ['chat', 'conversation', 'convo'],
     ['data', 'details'],
     ['deactivate', 'deActivate', 'turnOff'],
