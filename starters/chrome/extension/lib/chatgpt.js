@@ -493,7 +493,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         }
     },
 
-    continueChat: function() { this.response.continue(); },
+    continue: function() { this.response.continue(); },
 
     detectLanguage: async function(text) {
         if (!text) return console.error('Text argument not supplied. Pass some text!');
@@ -1892,7 +1892,7 @@ const funcAliases = [
     ['actAs', 'actas', 'act', 'become', 'persona', 'premadePrompt', 'preMadePrompt', 'prePrompt', 'preprompt', 'roleplay', 'rolePlay', 'rp'],
     ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
         'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
-    ['continueChat', 'continue', 'continueGenerating', 'continueResponse'],
+    ['continue', 'continueChat', 'continueGenerating', 'continueResponse'],
     ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
     ['detectLanguage', 'getLanguage'],
     ['executeCode', 'codeExecute'],
@@ -1919,7 +1919,7 @@ const funcAliases = [
     ['sendInNewChat', 'sendNewChat'],
     ['sentiment', 'analyzeSentiment', 'sentimentAnalysis'],
     ['startNewChat', 'new', 'newChat'],
-    ['stop', 'stopGenerating'],
+    ['stop', 'stopChat', 'stopGenerating', 'stopResponse'],
     ['suggest', 'suggestion', 'recommend'],
     ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher'],
     ['toggleScheme', 'toggleMode'],
