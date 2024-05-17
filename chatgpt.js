@@ -1887,7 +1887,7 @@ const funcAliases = [
     ['getScrollToBottomButton', 'getScrollButton'],
     ['getStopGeneratingButton', 'getStopButton'],
     ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
-    ['isFullScreen', 'isFullscreen'],
+    ['isFullScreen', 'isFullscreen', 'isfullscreen'],
     ['isLoaded', 'isloaded'],
     ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
     ['minify', 'codeMinify', 'minifyCode'],
