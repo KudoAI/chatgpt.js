@@ -1494,13 +1494,13 @@ const chatgpt = { // eslint-disable-line no-redeclare
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return console.error(`Argument ${ i + 1 } must be a string!`);
         const textArea = document.querySelector('form textarea'),
-              sendButton = document.querySelector('form button[class*="bottom"]');
+              sendBtn = this.getSendButton();
         textArea.value = msg;
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
 
         setTimeout(function delaySend() {
-            if (!sendButton?.hasAttribute('disabled')) { // send msg
-                method.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendButton.click()
+            if (!sendBtn?.hasAttribute('disabled')) { // send msg
+                method.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendBtn.click()
                     : textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }));
             } else setTimeout(delaySend, 25);
         }, 25);
