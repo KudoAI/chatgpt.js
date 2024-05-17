@@ -118,6 +118,7 @@
     - [open](#open)
     - [close](#close)
   - [response `api`](#response-api)
+    - [continue](#continue)
     - [get](#get-1)
     - [getFromAPI `async`](#getfromapi-async)
     - [getFromDOM](#getfromdom)
@@ -1650,6 +1651,16 @@ chatgpt.menu.close();
 ## response `api`
 
 API related to ChatGPT's responses.
+
+### continue
+
+Continues the generation of ChatGPT's cut-off response.
+
+Example code:
+
+```js
+chatgpt.response.continue();
+```
 
 ### get
 
