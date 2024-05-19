@@ -18,7 +18,7 @@ chatgpt.js 를 사용하여 Chrome 확장 프로그램을 만들기 위한 템�
 
 [저장소](https://github.com/KudoAI/chatgpt.js-chrome-starter) / [읽어보기](../../chrome/docs/ko#readme) / [도움 받기](https://github.com/KudoAI/chatgpt.js-chrome-starter/issues)
 
-<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e26f2cf/starters/media/images/icons/tampermonkey-icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@0c37090/starters/media/images/icons/violentmonkey-icon100.png"></a> <a href="../../greasemonkey">Greasemonkey 기동기</a></h2>
+<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://media.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?a3e53bf7"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://media.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?a3e53bf7"></a> <a href="../../greasemonkey">Greasemonkey 기동기</a></h2>
 
 chatgpt.js 를 사용하여 Greasemonkey 사용자 스크립트를 생성하기 위한 템플릿
 

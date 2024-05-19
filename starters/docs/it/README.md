@@ -18,7 +18,7 @@ Modello per la creazione di un'estensione di Chrome utilizzando chatgpt.js (incl
 
 [Depo](https://github.com/KudoAI/chatgpt.js-chrome-starter) / [Leggimi](../../chrome/docs/it#readme) / [Ottenere aiuto](https://github.com/KudoAI/chatgpt.js-chrome-starter/issues)
 
-<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e26f2cf/starters/media/images/icons/tampermonkey-icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@0c37090/starters/media/images/icons/violentmonkey-icon100.png"></a> <a href="../../greasemonkey">Greasemonkey avviamento</a></h2>
+<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://media.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?a3e53bf7"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://media.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?a3e53bf7"></a> <a href="../../greasemonkey">Greasemonkey avviamento</a></h2>
 
 Modello per la creazione di uno script utente Greasemonkey utilizzando chatgpt.js
 

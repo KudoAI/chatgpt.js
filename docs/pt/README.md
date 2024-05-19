@@ -108,7 +108,7 @@ function yourCode() {
 }
 ```
 
-### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e26f2cf/starters/media/images/icons/tampermonkey-icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@0c37090/starters/media/images/icons/violentmonkey-icon100.png"> Greasemonkey:
+### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://media.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?a3e53bf7"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://media.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?a3e53bf7"> Greasemonkey:
 
 > **Observação** _Para usar um modelo inicial: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
