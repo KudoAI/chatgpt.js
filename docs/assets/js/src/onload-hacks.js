@@ -148,8 +148,8 @@ const onLoadObserver = new MutationObserver(() => {
                   ytDemo = document.createElement('iframe');
             ytDemo.setAttribute('width', '855'); ytDemo.setAttribute('height', '455');
             ytDemo.setAttribute('src', 'https://www.youtube.com/embed/yG8DtsEo0PM?rel=0');
-            ytDemo.setAttribute('allow',
-                'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            ytDemo.allow = 'web-share' + ( !navigator.userAgent.includes('Firefox') ?
+                'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' : '' );
             ytDemo.setAttribute('allowfullscreen', '');
             ytDemo.style.minWidth = 'fit-content'; ytDemo.style.width = '855px'; ytDemo.style.marginBottom = '30px';
             ghDemo.parentNode.replaceChild(ytDemo, ghDemo);
