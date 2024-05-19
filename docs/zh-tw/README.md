@@ -223,7 +223,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [自述文件](https://docs.chatgptautocontinue.com/#readme) /
 [討論](https://github.chatgptautocontinue.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon48.png?c56f963"><img width=21 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon48.png?c56f963"></picture> e/icon48.png?0dfee32"><img width=21 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon48.png?c56f963">[ChatGPT 自動刷新 ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg?1080f44" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon48.png?c56f963"><img width=21 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon48.png?c56f963"></picture> [ChatGPT 自動刷新 ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg?1080f44" style="margin:0 0 -2px 5px"></a>
 
 > 保持 ChatGPT 會話新鮮，消除聊天時間限制 + 網路錯誤 + Cloudflare 檢查。
 <br>[安裝](https://docs.chatgptautorefresh.com/#-installation) /

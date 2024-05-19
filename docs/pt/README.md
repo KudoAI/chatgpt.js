@@ -224,7 +224,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [Leia-me](https://docs.chatgptautocontinue.com/#readme) /
 [Discutir](https://github.chatgptautocontinue.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon48.png?c56f963"><img width=21 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon48.png?c56f963"></picture> e/icon48.png?0dfee32"><img width=21 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon48.png?c56f963">[ChatGPT Atualização Automática ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg?1080f44" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon48.png?c56f963"><img width=21 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon48.png?c56f963"></picture> [ChatGPT Atualização Automática ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg?1080f44" style="margin:0 0 -2px 5px"></a>
 
 > Mantém as sessões ChatGPT atualizadas, eliminando limites de tempo de chat + erros de rede + verificações Cloudflare.
 <br>[Instalar](https://docs.chatgptautorefresh.com/#-installation) /
