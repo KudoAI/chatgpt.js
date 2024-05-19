@@ -203,7 +203,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 #
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.autoclearchatgpt.com/images/icons/openai/white/icon48.png?a8868ef"><img width=21 src="https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef"></picture> [Borrar Historial de ChatGPT](https://autoclearchatgpt.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.autoclearchatgpt.com/images/icons/openai/white/icon48.png?a8868ef"><img width=21 src="https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef"></picture> [Borrar Historial de ChatGPT](https://autoclearchatgpt.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.autoclearchatgpt.com/images/badges/awesome/badge.svg?2c0d9fc" style="margin:0 0 -2px 5px"></a>
 
 > Borre automáticamente su historial de consultas de ChatGPT para obtener la máxima privacidad.
 <br>[Instalar](https://docs.autoclearchatgpt.com/#-installation) /
@@ -217,14 +217,14 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [Léame](https://docs.bravegpt.com/#readme) /
 [Conversar](https://github.bravegpt.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon48.png?0dfee32"><img width=21 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon48.png?0dfee32"></picture> [ChatGPT Auto-Continuar ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon48.png?0dfee32"><img width=21 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon48.png?0dfee32"></picture> [ChatGPT Auto-Continuar ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg?3c80c0c" style="margin:0 0 -3px 3px"></a>
 
 > Continúa generando automáticamente múltiples respuestas de ChatGPT.
 <br>[Instalar](https://docs.chatgptautocontinue.com/#-installation) /
 [Léame](https://docs.chatgptautocontinue.com/#readme) /
 [Conversar](https://github.chatgptautocontinue.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon48.png?c56f963"><img width=21 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon48.png?c56f963"></picture> e/icon48.png?0dfee32"><img width=21 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon48.png?c56f963">[ChatGPT Actualización Automática ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon48.png?c56f963"><img width=21 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon48.png?c56f963"></picture> e/icon48.png?0dfee32"><img width=21 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon48.png?c56f963">[ChatGPT Actualización Automática ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg?1080f44" style="margin:0 0 -2px 5px"></a>
 
 > Mantiene actualizadas las sesiones de ChatGPT, eliminando límites de tiempo de chat + errores de red + comprobaciones de Cloudflare.
 <br>[Instalar](https://docs.chatgptautorefresh.com/#-installation) /
@@ -238,7 +238,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [Léame](https://docs.ddgpt.com/#readme) /
 [Conversar](https://github.ddgpt.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png?8652a6e"><img width=21 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.googlegpt.io/images/badges/awesome/badge.svg" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png?8652a6e"><img width=21 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.googlegpt.io/images/badges/awesome/badge.svg?699c63d" style="margin:0 0 -2px 5px"></a>
 
 > Muestre las respuestas de ChatGPT en la barra lateral de Google Search (¡con tecnología de GPT-4!)
 <br>[Instalar](https://greasyfork.org/scripts/478597-googlegpt) /
