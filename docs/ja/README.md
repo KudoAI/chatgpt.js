@@ -245,6 +245,13 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [お読みください](https://docs.googlegpt.io/#readme) /
 [議論 करना](https://github.googlegpt.io/discussions)
 
+### <img width=23 src="https://media.chatgptjs.org/images/icons/platforms/thunderbird/icon32.png?313a9c5"> [ThunderAI](https://micz.it/thunderdbird-addon-thunderai/)
+
+> Thunderbird で ChatGPT を使用すると、無料アカウントでもメールの機能を強化できます!
+<br>[インストール](https://addons.thunderbird.net/thunderbird/addon/thunderai/) /
+[お読みください](https://micz.it/thunderdbird-addon-thunderai/) /
+[サポート](https://github.com/micz/ThunderAI/issues)
+
 <p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">

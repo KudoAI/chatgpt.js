@@ -250,6 +250,13 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [리드미](https://docs.googlegpt.io/#readme) /
 [토론 करना](https://github.googlegpt.io/discussions)
 
+### <img width=23 src="https://media.chatgptjs.org/images/icons/platforms/thunderbird/icon32.png?313a9c5"> [ThunderAI](https://micz.it/thunderdbird-addon-thunderai/)
+
+> Thunderbird 에서 ChatGPT 를 사용하면 무료 계정으로도 이메일 기능을 향상할 수 있습니다!
+<br>[설치](https://addons.thunderbird.net/thunderbird/addon/thunderai/) /
+[리드미](https://micz.it/thunderdbird-addon-thunderai/) /
+[지원하다](https://github.com/micz/ThunderAI/issues)
+
 <p><br>
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">
