@@ -248,7 +248,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Google Search 사이드바에 ChatGPT의 답변을 표시해주는 기능입니다. (GPT-4 기반)
 <br>[설치](https://greasyfork.org/scripts/478597-googlegpt) /
 [리드미](https://docs.googlegpt.io/#readme) /
-[토론 करना](https://github.googlegpt.io/discussions)
+[토론](https://github.googlegpt.io/discussions)
 
 ### <img width=23 src="https://media.chatgptjs.org/images/icons/platforms/thunderbird/icon32.png?313a9c5"> [ThunderAI](https://micz.it/thunderdbird-addon-thunderai/)
 

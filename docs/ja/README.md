@@ -243,7 +243,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Google Search サイドバーに ChatGPT の回答を表示 (GPT-4 を搭載!)
 <br>[インストール](https://greasyfork.org/scripts/478597-googlegpt) /
 [お読みください](https://docs.googlegpt.io/#readme) /
-[議論 करना](https://github.googlegpt.io/discussions)
+[議論](https://github.googlegpt.io/discussions)
 
 ### <img width=23 src="https://media.chatgptjs.org/images/icons/platforms/thunderbird/icon32.png?313a9c5"> [ThunderAI](https://micz.it/thunderdbird-addon-thunderai/)
 
