@@ -202,7 +202,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 #
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.autoclearchatgpt.com/images/icons/openai/white/icon48.png?a8868ef"><img width=21 src="https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef"></picture> [自动清除 ChatGPT 历史记录](https://autoclearchatgpt.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://media.autoclearchatgpt.com/images/badges/awesome/badge.svg?2c0d9fc" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.autoclearchatgpt.com/images/icons/openai/white/icon48.png?a8868ef"><img width=21 src="https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef"></picture> [自动清除 ChatGPT 历史记录](https://autoclearchatgpt.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#privacy" target="_blank" rel="noopener"><img src="https://media.autoclearchatgpt.com/images/badges/awesome/badge.svg?2c0d9fc" style="margin:0 0 -2px 5px"></a>
 
 > 自动清除您的 ChatGPT 查询历史记录以获得最大的隐私。
 <br>[安装](https://docs.autoclearchatgpt.com/#-installation) / 
