@@ -13,7 +13,7 @@
 
 <img src="../../chrome/media/images/screenshots/extension-loaded.png">
 
-<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"></a> <a href="../../chrome">Chrome 起动机</a></h2>
+<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://media.chatgptjs.org/images/icons/platforms/chrome/icon32.png?8c852fa5"></a> <a href="../../chrome">Chrome 起动机</a></h2>
 
 使用 chatgpt.js 创建 Chrome 扩展程序的模 (包括弹出菜单 + 设置管理)
 

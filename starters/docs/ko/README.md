@@ -12,7 +12,7 @@
 
 <img src="../../chrome/media/images/screenshots/extension-loaded.png">
 
-<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"></a> <a href="../../chrome">Chrome 기동기</a></h2>
+<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://media.chatgptjs.org/images/icons/platforms/chrome/icon32.png?8c852fa5"></a> <a href="../../chrome">Chrome 기동기</a></h2>
 
 chatgpt.js 를 사용하여 Chrome 확장 프로그램을 만들기 위한 템플릿 (팝업 메뉴 + 설정 관리 포함)
 

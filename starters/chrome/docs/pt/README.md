@@ -20,7 +20,7 @@
     </h6>
 </div>
 
-# <img height=21 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> chatgpt.js-chrome-starter
+# <img height=21 src="https://media.chatgptjs.org/images/icons/platforms/chrome/icon32.png?8c852fa5"> chatgpt.js-chrome-starter
 
 <h3>Um ponto de partida para desenvolver sua própria extensão do Chrome usando <a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a></h3>
 

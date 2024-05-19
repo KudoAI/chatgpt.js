@@ -12,7 +12,7 @@
 
 <img src="../../chrome/media/images/screenshots/extension-loaded.png">
 
-<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"></a> <a href="../../chrome">Chrome iniciante</a></h2>
+<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://media.chatgptjs.org/images/icons/platforms/chrome/icon32.png?8c852fa5"></a> <a href="../../chrome">Chrome iniciante</a></h2>
 
 Modelo para criar uma extensão do Chrome usando chatgpt.js (incluindo menu pop-up + gerenciamento de configurações)
 
