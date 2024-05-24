@@ -918,7 +918,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return new Promise(resolve => {
                 (function checkChatHistory() {
                     if (document.querySelector('nav')) resolve(true);
-                    else setTimeout(checkChatHistory, 100);
+                    else setTimeout(checkChatHistory, 200);
                 })();
         });}
     },
@@ -1057,7 +1057,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return new Promise(resolve => {
             (function checkIsIdle() {
                 if (chatgpt.getRegenerateButton()) resolve(true);
-                else setTimeout(checkIsIdle, 100);
+                else setTimeout(checkIsIdle, 200);
             })();
     });},
 
@@ -1065,7 +1065,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return new Promise(resolve => {
             (function checkIsLoaded() {
                 if (chatgpt.getNewChatButton()) resolve(true);
-                else setTimeout(checkIsLoaded, 100);
+                else setTimeout(checkIsLoaded, 200);
             })();
     });},
 
