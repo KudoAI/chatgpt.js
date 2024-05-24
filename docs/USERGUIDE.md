@@ -1854,7 +1854,7 @@ chatgpt.sidebar.toggle();
 
 ### isLoaded `async`
 
-Resolves a promise when the ChatGPT sidebar has finished loading.
+Resolves a promise when the ChatGPT sidebar has finished loading. (Times out 5s after New Chat button loads, since New Chat link does not always appear.)
 
 Example code:
 
