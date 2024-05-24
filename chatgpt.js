@@ -1762,13 +1762,18 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 if (isToggleBtn(btn)) { btn.click(); return; }
         },
 
-        isLoaded: function() {
-            return new Promise(resolve => {
-                (function checkIsLoaded() {
-                    if (document.querySelector('nav a[href="/"]')) resolve(true);
-                    else setTimeout(checkIsLoaded, 100);
-                })();
-        });}
+        isLoaded: async function() {
+            await chatgpt.isLoaded();
+            return Promise.race([
+                new Promise(resolve => {
+                    (function checkNewChatLink() {
+                        if (chatgpt.getNewChatLink()) resolve(true);
+                        else setTimeout(checkNewChatLink, 200);
+                    })();
+                }),
+                new Promise(resolve => setTimeout(resolve, 5000)) // since New Chat link not always present
+            ]);
+        }
     },
 
     startNewChat: function() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }},
