@@ -1122,7 +1122,7 @@ Example code:
 
 ```js
 const newChatBtn = chatgpt.getNewChatButton();
-newChatBtn.click();
+newChatBtn.style.display = 'none'; // hide New Chat button
 ```
 
 ### getNewChatLink
@@ -1133,7 +1133,7 @@ Example code:
 
 ```js
 const newChatLink = chatgpt.getNewChatLink();
-newChatLink.click();
+newChatLink.style.display = 'none'; // hide New Chat link
 ```
 
 ### getRegenerateButton
