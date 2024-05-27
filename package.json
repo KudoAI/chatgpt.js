@@ -64,7 +64,7 @@
     "url": "https://github.com/sponsors/KudoAI"
   },
   "devDependencies": {
-    "@adamlui/minify.js": "^1.7.0",
+    "@adamlui/minify.js": "^1.8.0",
     "@adamlui/scss-to-css": "^1.10.1",
     "docsify-cli": "^4.4.4",
     "eslint": "^9.3.0",
