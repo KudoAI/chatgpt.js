@@ -213,7 +213,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <img width=24 src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287"> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-> Affichez les réponses ChatGPT dans la barre latérale de Brave Search (propulsé par GPT-4 !)
+> Affichez les réponses ChatGPT dans la barre latérale de Brave Search (propulsé par GPT-4o !)
 <br>[Installer](https://docs.bravegpt.com/#-installation) /
 [Lisez-moi](https://docs.bravegpt.com/#readme) /
 [Discuter](https://github.bravegpt.com/discussions)
@@ -234,14 +234,14 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <img width=23 src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302"> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-> Affichez les réponses ChatGPT dans la barre latérale DuckDuckGo (propulsé par GPT-4 !)
+> Affichez les réponses ChatGPT dans la barre latérale DuckDuckGo (propulsé par GPT-4o !)
 <br>[Installer](https://docs.ddgpt.com/#-installation) /
 [Lisez-moi](https://docs.ddgpt.com/#readme) /
 [Discuter](https://github.ddgpt.com/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png?8652a6e"><img width=21 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.googlegpt.io/images/badges/awesome/badge.svg?699c63d" style="margin:0 0 -2px 5px"></a>
 
-> Affichez les réponses ChatGPT dans la barre latérale Google Search (propulsé par GPT-4 !)
+> Affichez les réponses ChatGPT dans la barre latérale Google Search (propulsé par GPT-4o !)
 <br>[Installer](https://greasyfork.org/scripts/478597-googlegpt) /
 [Lisez-moi](https://docs.googlegpt.io/#readme) /
 [Discuter](https://github.googlegpt.io/discussions)

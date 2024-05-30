@@ -220,7 +220,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <img width=24 src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287"> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-> Hiển thị câu trả lời ChatGPT trong thanh bên Brave Search (được cung cấp bởi GPT-4!)
+> Hiển thị câu trả lời ChatGPT trong thanh bên Brave Search (được cung cấp bởi GPT-4o!)
 <br>[Cài đặt](https://docs.bravegpt.com/#-installation) /
 [Đọc tôi](https://docs.bravegpt.com/#readme) /
 [Bàn luận](https://github.bravegpt.com/discussions)
@@ -241,14 +241,14 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <img width=23 src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302"> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-> Hiển thị câu trả lời ChatGPT trong thanh bên DuckDuckGo (do GPT-4 cung cấp!)
+> Hiển thị câu trả lời ChatGPT trong thanh bên DuckDuckGo (do GPT-4o cung cấp!)
 <br>[Cài đặt](https://docs.ddgpt.com/#-installation) /
 [Đọc tôi](https://docs.ddgpt.com/#readme) /
 [Bàn luận](https://github.ddgpt.com/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png?8652a6e"><img width=21 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.googlegpt.io/images/badges/awesome/badge.svg?699c63d" style="margin:0 0 -2px 5px"></a>
 
-> ển thị câu trả lời ChatGPT trong thanh bên Google Search (do GPT-4 cung cấp!)
+> ển thị câu trả lời ChatGPT trong thanh bên Google Search (do GPT-4o cung cấp!)
 <br>[Cài đặt](https://greasyfork.org/scripts/478597-googlegpt) /
 [Đọc tôi](https://docs.googlegpt.io/#readme) /
 [Bàn luận](https://github.googlegpt.io/discussions)
