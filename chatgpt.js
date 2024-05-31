@@ -1177,7 +1177,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     notify: async function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
-        const fadeDuration = 0.3, // sec duration of fade-out
+        const fadeDuration = 0.35, // sec duration of fade-out
               vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
 
         // Create/append notification div
