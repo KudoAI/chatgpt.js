@@ -668,11 +668,13 @@ Example code:
 
 ### clearChats `async`
 
-**Parameters**:
+Clears chat history.
 
-`method` (optional): The string `'api'` or `'dom'` representing the method to use.
+Example code:
 
-> **Note** _The API method does not update DOM chat list (until session refresh)_
+```js
+chatgpt.clearChats().then(() => console.log('Chat history cleared!'));
+```
 
 ### exportChat `async`
 
