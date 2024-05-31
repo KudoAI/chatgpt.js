@@ -377,49 +377,20 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
     },
 
-    clearChats: async function(method) {
-
-        // Validate method arg
-        const validMethods = ['api', 'dom'];
-        method = (method || 'dom').trim().toLowerCase(); // set to 'dom' by default
-        if (method && !validMethods.includes(method))
-            return console.error(`Method argument must be one of: [${validMethods}]`);
-
-        if (method == 'dom') {
-            const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-            try {
-                chatgpt.menu.open(); await delay(10);
-                const settingsBtn = document.querySelector(
-                    'a[role="menuitem"] svg path[d*="M12.003 10.5a1.5"]').parentNode.parentNode;
-                settingsBtn.click(); await delay(333);
-                const settingsBtns = document.querySelectorAll('[id*=radix] button'),
-                      deleteBtn = settingsBtns[settingsBtns.length - 1];
-                deleteBtn.click(); await delay(10);
-                document.querySelector('button[class*="danger"').click(); // confirm clear
-                return console.info('Chats successfully cleared.');
-            } catch (err) {
-                console.error(err.message);
-                if (arguments.length == 0) {
-                    console.info('Using backend API method instead.'); chatgpt.clearChats('api'); }
-            }
-
-        } else { // API method
-        // NOTE: DOM is not updated to reflect new empty chat list (until session refresh)
-
-            return new Promise((resolve, reject) => {
-                chatgpt.getAccessToken().then(token => {
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('PATCH', endpoints.openAI.chats, true);
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                    xhr.onload = () => {
-                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot clear chats.');
-                        console.info('Chats successfully cleared'); resolve();
-                    };
-                    xhr.send(JSON.stringify({ is_visible: false }));
-                }).catch(err => reject(new Error(err.message)));
-            });
-        }
+    clearChats: async function() { // back-end method
+        return new Promise((resolve, reject) => {
+            chatgpt.getAccessToken().then(token => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('PATCH', endpoints.openAI.chats, true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                xhr.onload = () => {
+                    if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot clear chats.');
+                    console.info('Chats successfully cleared'); resolve();
+                };
+                xhr.send(JSON.stringify({ is_visible: false }));
+            }).catch(err => reject(new Error(err.message)));
+        });
     },
 
     code: {
