@@ -226,7 +226,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             modalContainer.style.display = '';
             setTimeout(() => { // delay non-0 opacity's for transition fx
                 modalContainer.style.backgroundColor = ( 
-                    `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0 })`);
+                    `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.1 })`);
                 modalContainer.classList.add('animated'); }, 100);
         }
 
