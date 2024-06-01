@@ -888,8 +888,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         isLoaded: function() {
             return new Promise(resolve => {
                 (function checkChatHistory() {
-                    if (document.querySelector('nav')) resolve(true);
-                    else setTimeout(checkChatHistory, 200);
+                    document.querySelector('nav') ? resolve(true) : setTimeout(checkChatHistory, 200);
                 })();
         });}
     },
@@ -1027,16 +1026,14 @@ const chatgpt = { // eslint-disable-line no-redeclare
     isIdle: function() {
         return new Promise(resolve => {
             (function checkIsIdle() {
-                if (chatgpt.getRegenerateButton()) resolve(true);
-                else setTimeout(checkIsIdle, 200);
+                chatgpt.getRegenerateButton() ? resolve(true) : setTimeout(checkIsIdle, 200);
             })();
     });},
 
     isLoaded: function() {
         return new Promise(resolve => {
             (function checkIsLoaded() {
-                if (chatgpt.getNewChatButton()) resolve(true);
-                else setTimeout(checkIsLoaded, 200);
+                chatgpt.getNewChatButton() ? resolve(true) : setTimeout(checkIsLoaded, 200);
             })();
     });},
 
@@ -1738,8 +1735,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return Promise.race([
                 new Promise(resolve => {
                     (function checkNewChatLink() {
-                        if (chatgpt.getNewChatLink()) resolve(true);
-                        else setTimeout(checkNewChatLink, 200);
+                        chatgpt.getNewChatLink() ? resolve(true) : setTimeout(checkNewChatLink, 200);
                     })();
                 }),
                 new Promise(resolve => setTimeout(resolve, 5000)) // since New Chat link not always present
