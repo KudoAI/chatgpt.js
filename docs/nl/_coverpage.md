@@ -1,6 +1,6 @@
 <!-- _coverpage.md -->
 
-<img class="logo" src="https://media.chatgptjs.org/images/chatgpt.js-logo-dark-mode-padded-7000x777.png">
+<img class="logo" src="https://media.chatgptjs.org/images/chatgpt.js-logo-dark-mode-padded-7000x777.png?latest">
 
 > 🤖 Een krachtige client-side JavaScript-bibliotheek voor ChatGPT
 
