@@ -1,6 +1,6 @@
 <!-- _coverpage.md -->
 
-<img class="logo" src="https://media.chatgptjs.org/images/chatgpt.js-logo-dark-mode-padded-7000x777.png?latest">
+<img class="logo" src="https://media.chatgptjs.org/images/chatgpt.js-logo-dark-mode-padded-7000x777.png?main">
 
 > 🤖 適用於 ChatGPT 的強大客戶端 JavaScript 庫
 
