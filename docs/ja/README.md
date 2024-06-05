@@ -241,7 +241,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png?8652a6e"><img width=21 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.googlegpt.io/images/badges/awesome/badge.svg?699c63d" style="margin:0 0 -2px 5px"></a>
 
-> Google Search サイドバーに ChatGPT の回答を表示 (GPT-4o を搭載!)
+> Google Search サイドバーに ChatGPT の回答を表示 (GPT-4o + Google Gemma を搭載!)
 <br>[インストール](https://greasyfork.org/scripts/478597-googlegpt) /
 [お読みください](https://docs.googlegpt.io/#readme) /
 [議論](https://github.googlegpt.io/discussions)
