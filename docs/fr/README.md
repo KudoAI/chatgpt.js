@@ -242,7 +242,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png?8652a6e"><img width=21 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.googlegpt.io/images/badges/awesome/badge.svg?699c63d" style="margin:0 0 -2px 5px"></a>
 
 > Affichez les réponses ChatGPT dans la barre latérale Google Search (propulsé par GPT-4o + Google Gemma!)
-<br>[Installer](https://greasyfork.org/scripts/478597-googlegpt) /
+<br>[Installer](https://greasyfork.googlegpt.io) /
 [Lisez-moi](https://docs.googlegpt.io/#readme) /
 [Discuter](https://github.googlegpt.io/discussions)
 
