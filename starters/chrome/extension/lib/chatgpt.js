@@ -234,13 +234,14 @@ const chatgpt = { // eslint-disable-line no-redeclare
         const clickHandler = event => { // explicitly defined to support removal post-dismissal
             if (event.target == event.currentTarget || event.target instanceof SVGPathElement) dismissAlert(); };
         const keyHandler = event => { // to dismiss active alert
-            const dismissKeys = [13, 27]; // enter/esc
-            if (dismissKeys.includes(event.keyCode)) {
+            const dismissKeys = ['Enter', 'Return', 'Escape', 'Esc'], dismissKeyCodes = [13, 27];
+            if (dismissKeys.includes(event.key) || dismissKeyCodes.includes(event.keyCode)) {
                 for (const alertId of alertQueue) { // look to handle only if triggering alert is active
                     const alert = document.getElementById(alertId);
                     if (alert && alert.style.display !== 'none') { // active alert found
-                        if (event.keyCode === 27) dismissAlert(); // if esc pressed, dismiss alert & do nothing
-                        else if (event.keyCode === 13) { // else if enter pressed
+                        if (event.key.includes('Esc') || event.keyCode == 27) // if esc pressed
+                            dismissAlert(); // dismiss alert & do nothing
+                        else if (['Enter', 'Return'].includes(event.key) || event.keyCode == 13) { // else if enter pressed
                             const mainButton = alert.querySelector('.modal-buttons').lastChild; // look for main button
                             if (mainButton) { mainButton.click(); event.preventDefault(); } // click if found
                         } return;
