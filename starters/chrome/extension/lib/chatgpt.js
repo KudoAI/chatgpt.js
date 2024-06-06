@@ -127,8 +127,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
                     + 'background-color: ' + ( scheme == 'dark' ? '#00cfff' : '#9cdaff' ) + ';'
                     + 'box-shadow: 2px 1px ' + ( scheme == 'dark' ? '54px #00cfff' : '30px #9cdaff' ) + '}'
                 + '.modal-close-btn {'
-                    + 'cursor: pointer ; width: 20px ; height: 20px ; float: right ; position: relative ; right: -2px }'
-                + '.modal-close-btn svg { margin: 5px 5px }' // center SVG for hover overlay
+                    + 'cursor: pointer ; width: 29px ; height: 29px ; border-radius: 17px ;'
+                    + 'float: right ; position: relative ; right: -6px ; top: -5px }'
+                + '.modal-close-btn svg { margin: 10px }' // center SVG for hover underlay
                 + `.modal-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
 
                 // Checkbox styles
