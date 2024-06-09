@@ -241,7 +241,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png?8652a6e"><img width=21 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://media.googlegpt.io/images/badges/awesome/badge.svg?699c63d" style="margin:0 0 -2px 5px"></a>
 
-> ChatGPT-Antworten in der Google Search-Seitenleiste anzeigen (unterstützt von GPT-4o + Google Gemma!)
+> KI-Antworten in der Google-Suche anzeigen (unterstützt von Google Gemma + GPT-4o!)
 <br>[Installieren](https://greasyfork.googlegpt.io) /
 [Liesmich](https://docs.googlegpt.io/#readme) /
 [Diskutieren](https://github.googlegpt.io/discussions)
