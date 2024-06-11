@@ -3,8 +3,13 @@
 // User guide: https://chatgptjs.org/userguide
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
 
-// Init endpoints
-const endpoints = {
+// Init feedback props
+localStorage.alertQueue = JSON.stringify([]);
+localStorage.notifyProps = JSON.stringify({ queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }});
+
+// Define chatgpt API
+const chatgpt = { // eslint-disable-line no-redeclare
+    openAIaccessToken: {}, endpoints: {
     assets: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js',
     openAI: {
         session: 'https://chatgpt.com/api/auth/session',
@@ -13,16 +18,7 @@ const endpoints = {
         share_create: 'https://chatgpt.com/backend-api/share/create',
         share: 'https://chatgpt.com/backend-api/share',
         instructions: 'https://chatgpt.com/backend-api/user_system_messages'
-    }
-};
-
-// Init feedback properties
-localStorage.alertQueue = JSON.stringify([]);
-localStorage.notifyProps = JSON.stringify({ queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }});
-
-// Define chatgpt.methods
-const chatgpt = { // eslint-disable-line no-redeclare
-    openAIaccessToken: {},
+    }},
 
     actAs: function(persona) {
     // Prompts ChatGPT to act as a persona from https://github.com/KudoAI/chat-prompts/blob/main/personas.json
@@ -383,7 +379,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return new Promise((resolve, reject) => {
             chatgpt.getAccessToken().then(token => {
                 const xhr = new XMLHttpRequest();
-                xhr.open('PATCH', endpoints.openAI.chats, true);
+                xhr.open('PATCH', chatgpt.endpoints.openAI.chats, true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                 xhr.onload = () => {
@@ -628,7 +624,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                     (Date.parse(chatgpt.openAIaccessToken.expireDate) - Date.parse(new Date()) >= 0)) // not expired
                 return resolve(chatgpt.openAIaccessToken.token);
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', endpoints.openAI.session, true);
+            xhr.open('GET', chatgpt.endpoints.openAI.session, true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onload = () => {
                 if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
@@ -661,7 +657,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         // Return account details
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', endpoints.openAI.session, true);
+            xhr.open('GET', chatgpt.endpoints.openAI.session, true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onload = () => {
                 if (xhr.status === 200) {
@@ -717,7 +713,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             const re_chatID = /\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/;
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                xhr.open('GET', endpoints.openAI.chats, true);
+                xhr.open('GET', chatgpt.endpoints.openAI.chats, true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                 xhr.onload = () => {
@@ -757,7 +753,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
                 getChatDetails(token, ['id']).then(chat => {
-                    xhr.open('GET', `${endpoints.openAI.chat}/${chat.id}`, true);
+                    xhr.open('GET', `${chatgpt.endpoints.openAI.chat}/${chat.id}`, true);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
@@ -968,7 +964,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                xhr.open(method, endpoints.openAI.instructions, true);
+                xhr.open(method, chatgpt.endpoints.openAI.instructions, true);
                 // Set headers
                 xhr.setRequestHeader('Accept-Language', 'en-US');
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
@@ -1076,7 +1072,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 const icon = document.createElement('img');
                 icon.src = attrs?.icon && typeof attrs.icon == 'string' // can also be base64 encoded image string
                     ? attrs.icon // add icon to button element if given, else default one
-                    : ( endpoints.assets + '/starters/chrome/extension/icons/icon128.png' );
+                    : ( chatgpt.endpoints.assets + '/starters/chrome/extension/icons/icon128.png' );
                 icon.width = 18;
                 newElement.insertBefore(icon, newElement.firstChild);
 
@@ -1530,7 +1526,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
                 chatgpt.getChatData(chatToGet).then(chat => {
-                    xhr.open('GET', `${ endpoints.openAI.chat }/${ chat.id }`, true);
+                    xhr.open('GET', `${ chatgpt.endpoints.openAI.chat }/${ chat.id }`, true);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
@@ -1545,7 +1541,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
                 chatgpt.getChatData(chatToGet).then(chat => {
-                    xhr.open('POST', endpoints.openAI.share_create, true);
+                    xhr.open('POST', chatgpt.endpoints.openAI.share_create, true);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                     xhr.onload = () => {
@@ -1563,7 +1559,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         const confirmShareChat = (token, data) => {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                xhr.open('PATCH', `${ endpoints.openAI.share }/${ data.share_id }`, true);
+                xhr.open('PATCH', `${ chatgpt.endpoints.openAI.share }/${ data.share_id }`, true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                 xhr.onload = () => {
@@ -1673,7 +1669,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 const icon = document.createElement('img');
                 icon.src = attrs?.icon && typeof attrs.icon == 'string' // Can also be base64 encoded image string
                     ? attrs.icon // Add icon to button element if given, else default one
-                    : ( endpoints.assets + '/starters/chrome/extension/icons/icon128.png' );
+                    : ( chatgpt.endpoints.assets + '/starters/chrome/extension/icons/icon128.png' );
                 icon.width = 18;
                 newElement.insertBefore(icon, newElement.firstChild);
 
