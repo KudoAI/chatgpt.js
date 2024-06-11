@@ -5,7 +5,7 @@ on:
     - cron: "37 5 * * 0,2,4" # every Sun/Tue/Thu @ 5:37a
 
 jobs:
-  update-usercount-shields:
+  update-readme-clones-shields:
     runs-on: ubuntu-latest
 
     steps:
