@@ -594,9 +594,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
             throw new TypeError('Invalid arguments. Both arguments must be strings.'); }
 
         // Validate targetType
-        if (!targetTypes.includes(targetType.toLowerCase())) {
+        if (!cjsTargetTypes.includes(targetType.toLowerCase())) {
             throw new Error('Invalid targetType: ' + targetType
-                + '. Valid values are: ' + JSON.stringify(targetTypes)); }
+                + '. Valid values are: ' + JSON.stringify(cjsTargetTypes)); }
 
         // Validate targetName scoped to pre-validated targetType
         const targetNames = [], reTargetName = new RegExp('^get(.*)' + targetType + '$', 'i');
@@ -1824,9 +1824,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
 chatgpt.scheme = { ...chatgpt.settings.scheme }; // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
 
 // Create chatgpt.[actions]Button(identifier) functions
-const buttonActions = ['click', 'get'], targetTypes = [ 'button', 'link', 'div', 'response' ];
-for (const buttonAction of buttonActions) {
-    chatgpt[buttonAction + 'Button'] = function handleButton(buttonIdentifier) {
+const cjsBtnActions = ['click', 'get'], cjsTargetTypes = [ 'button', 'link', 'div', 'response' ];
+for (const btnAction of cjsBtnActions) {
+    chatgpt[btnAction + 'Button'] = function handleButton(buttonIdentifier) {
         const button = /^[.#]/.test(buttonIdentifier) ? document.querySelector(buttonIdentifier)
             : /send/i.test(buttonIdentifier) ? document.querySelector('form button[class*="bottom"]')
             : /scroll/i.test(buttonIdentifier) ? document.querySelector('button[class*="cursor"]')
@@ -1837,12 +1837,12 @@ for (const buttonAction of buttonActions) {
                 for (const navLink of document.querySelectorAll('nav a')) { // try nav links if no button
                     if (navLink.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
                         return navLink; }}})();
-        if (buttonAction == 'click') { button.click(); } else { return button; }
+        if (btnAction == 'click') { button.click(); } else { return button; }
     };
 }
 
 // Create alias functions
-const funcAliases = [
+const cjsFuncAliases = [
     ['actAs', 'actas', 'act', 'become', 'persona', 'premadePrompt', 'preMadePrompt', 'prePrompt', 'preprompt', 'roleplay', 'rolePlay', 'rp'],
     ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
         'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
@@ -1882,7 +1882,7 @@ const funcAliases = [
     ['unminify', 'unminifyCode', 'codeUnminify'],
     ['writeCode', 'codeWrite']
 ];
-const synonyms = [
+const cjsFuncSynonyms = [
     ['account', 'acct'],
     ['activate', 'turnOn'],
     ['analyze', 'check', 'evaluate', 'review'],
@@ -1911,7 +1911,7 @@ const camelCaser = (words) => {
 for (const prop in chatgpt) {
 
     // Create new function for each alias
-    for (const subAliases of funcAliases) {
+    for (const subAliases of cjsFuncAliases) {
         if (subAliases.includes(prop)) {
             if (subAliases.some(element => element.includes('.'))) {
                 const nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
@@ -1931,7 +1931,7 @@ for (const prop in chatgpt) {
             if (typeof chatgpt[funcName] == 'function') {
                 const funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
                 for (const funcWord of funcWords) {
-                    const synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
+                    const synonymValues = [].concat(...cjsFuncSynonyms // flatten into single array w/ word's cjsFuncSynonyms
                         .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
                         .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
                     for (const synonym of synonymValues) { // create function per synonym
