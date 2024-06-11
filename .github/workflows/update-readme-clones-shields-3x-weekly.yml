@@ -19,8 +19,6 @@ jobs:
       - name: Fetch/sum git clones count
         id: get-clones
         run: |
-          LC_NUMERIC=en_US # to insert commas
-
           expand_num() { # expand nums abbreviated w/ 'k' or 'm' suffix to integers
             local num=$(echo "$1" | tr '[:upper:]' '[:lower:]') # convert to lowercase
             if [[ $num =~ k$ ]] ; then
