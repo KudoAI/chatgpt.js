@@ -24,6 +24,7 @@
     - [get](#get)
     - [getUserLanguage](#getuserlanguage)
     - [isChromium](#ischromium)
+    - [isEdge](#isedge)
     - [isFirefox](#isfirefox)
     - [isFullScreen](#isfullscreen)
     - [isLoaded `async`](#isloaded-async)
@@ -94,6 +95,7 @@
       - [isLightMode](#islightmode-1)
       - [isDarkMode](#isdarkmode-1)
       - [isChromium](#ischromium-1)
+      - [isEdge](#isedge-1)
       - [isFirefox](#isfirefox-1)
       - [isFullScreen](#isfullscreen-1)
       - [isMobile](#ismobile)
@@ -296,6 +298,18 @@ Example code:
 
 ```js
 if (chatgpt.isChromium()) {
+    // Do something
+}
+```
+
+### isEdge
+
+Returns a boolean value. `true` if the browser is Edge and `false` otherwise.
+
+Example code:
+
+```js
+if (chatgpt.isEdge()) {
     // Do something
 }
 ```
@@ -1293,6 +1307,18 @@ Example code:
 
 ```js
 if (chatgpt.browser.isChromium()) {
+    // Do something
+}
+```
+
+### isEdge
+
+Returns a boolean value. `true` if the browser is Edge and `false` otherwise.
+
+Example code:
+
+```js
+if (chatgpt.browser.isEdge()) {
     // Do something
 }
 ```
