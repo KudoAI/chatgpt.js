@@ -68,7 +68,7 @@
     "@adamlui/scss-to-css": "^1.10.2",
     "docsify-cli": "^4.4.4",
     "eslint": "^9.5.0",
-    "eslint-plugin-json-schema-validator": "^5.1.0",
+    "eslint-plugin-json-schema-validator": "^5.1.1",
     "husky": "^9.0.11"
   }
 }
