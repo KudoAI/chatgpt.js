@@ -103,6 +103,7 @@
     - [minify `async`](#minify-async)
     - [execute `async`](#execute-async)
     - [extract](#extract)
+    - [isIdle `async`](#isidle-async-1)
     - [obfuscate `async`](#obfuscate-async)
     - [refactor `async`](#refactor-async)
     - [review `async`](#review-async)
@@ -1439,6 +1440,20 @@ Example code:
             console.log('File deleted successfully');
         }
     }); */
+})();
+```
+
+### isIdle `async`
+
+Resolves a promise when code has finished generating.
+
+Example code:
+
+```js
+(async () => {
+    chatgpt.send('Type me a short code block');
+    await chatgpt.code.isIdle();
+    console.log('Code finished generating'); // non-code may still be generating
 })();
 ```
 
