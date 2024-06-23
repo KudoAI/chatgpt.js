@@ -950,15 +950,14 @@ console.log(fifthResp); // Example output: 'Hello from ChatGPT!'
 
 ### isIdle `async`
 
-Returns a boolean value. `true` if ChatGPT has finished generating a response, `false` otherwise.
+Resolves a promise when ChatGPT has finished generating a response.
 
 Example code:
 
 ```js
 (async () => {
-    if (await chatgpt.isIdle()) {
-        // Do something
-    }
+    await chatgpt.code.isIdle();
+    console.log('ChatGPT is idle');
 })();
 ```
 
