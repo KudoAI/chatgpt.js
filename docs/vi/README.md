@@ -63,7 +63,7 @@
 
 </div>
 
-<span style="color: white">chatgpt.js</span> là một thư viện JavaScript <span style="color: white">mạnh mẽ</span> cho phép tương tác <span style="color: white">siêu dễ dàng</span> với ChatGPT DOM.
+<span style="color: white"><b>chatgpt.js</b></span> là một thư viện JavaScript <span style="color: white">mạnh mẽ</span> cho phép tương tác <span style="color: white">siêu dễ dàng</span> với ChatGPT DOM.
 
 - Tính năng phong phú
 - Hướng đối tượng

@@ -63,7 +63,7 @@
 
 </div>
 
-<span style="color: white">chatgpt.js</span> è una <span style="color: white">potente</span> libreria JavaScript che consente un'interazione <span style="color: white">semplicissima</span> con il DOM di ChatGPT.
+<span style="color: white"><b>chatgpt.js</b></span> è una <span style="color: white">potente</span> libreria JavaScript che consente un'interazione <span style="color: white">semplicissima</span> con il DOM di ChatGPT.
 
 - Ricco di funzionalità
 - Orientamento ad oggetti

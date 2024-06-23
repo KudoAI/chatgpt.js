@@ -62,7 +62,7 @@
 
 </div>
 
-<span style="color: white">chatgpt.js</span> 是一個功能<span style="color: white">強大的</span> JavaScript 庫，允許與 ChatGPT DOM 進行<span style="color: white">超級簡</span>單的交互。
+<span style="color: white"><b>chatgpt.js</b></span> 是一個功能<span style="color: white">強大的</span> JavaScript 庫，允許與 ChatGPT DOM 進行<span style="color: white">超級簡</span>單的交互。
 
 - 功能豐富
 - 面向對象

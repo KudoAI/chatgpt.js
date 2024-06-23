@@ -63,7 +63,7 @@
 
 </div>
 
-<span style="color: white">chatgpt.js</span> is a <span style="color: white">powerful</span> JavaScript library that allows for <span style="color: white">super easy</span> interaction w/ the ChatGPT DOM.
+<span style="color: white"><b>chatgpt.js</b></span> is a <span style="color: white">powerful</span> JavaScript library that allows for <span style="color: white">super easy</span> interaction w/ the ChatGPT DOM.
 
 - Feature-rich
 - Object-oriented

@@ -63,7 +63,7 @@
 
 </div>
 
-<span style="color: white">chatgpt.js</span> एक <span style="color: white">शक्तिशाली</span> जावास्क्रिप्ट लाइब्रेरी हो जसले ChatGPT DOM सँग<span style="color: white"> धेरै सजीलो</span> अन्तरक्रियाको लागि अनुमति दिन्छ।
+<span style="color: white"><b>chatgpt.js</b></span> एक <span style="color: white">शक्तिशाली</span> जावास्क्रिप्ट लाइब्रेरी हो जसले ChatGPT DOM सँग<span style="color: white"> धेरै सजीलो</span> अन्तरक्रियाको लागि अनुमति दिन्छ।
 
 - सुविधा संपन्न
 - ऑब्जेक्ट-ओरिएन्टेड
