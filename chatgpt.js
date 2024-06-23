@@ -361,9 +361,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
         isLightMode: function() { return window.matchMedia?.('(prefers-color-scheme: light)')?.matches; },
         isDarkMode: function() { return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches; },
-        isChromium: function() { return navigator.userAgent.includes('Chrome'); },
+        isChromium: function() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chromium'); },
         isChrome: function() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chrome'); },
-        isEdge: function() { return navigator.userAgent.includes('Edg'); },
+        isEdge: function() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge'); },
         isBrave: function() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave'); },
         isFirefox: function() { return navigator.userAgent.includes('Firefox'); },
 
