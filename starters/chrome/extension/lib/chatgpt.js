@@ -417,7 +417,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             });
             await new Promise(resolve => { // when reply starts generating
                 (function checkReplyExists() {
-                    const msgDivs = document.querySelectorAll('div[data-message-author-role]')
+                    const msgDivs = document.querySelectorAll('div[data-message-author-role]');
                     msgDivs[msgDivs.length - 1].dataset.messageAuthorRole == 'assistant' ? resolve(true)
                         : setTimeout(checkReplyExists, 200); })();
             });
@@ -434,7 +434,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                         lastReplyDiv.querySelector('pre').nextElementSibling ? resolve(true)
                             : setTimeout(checkPreNotLast, 200); })();
                 }), chatgpt.isIdle() // ...or reply stopped generating
-            ])
+            ]);
         },
 
         minify: async function(code) {
