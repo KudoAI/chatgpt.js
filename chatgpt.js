@@ -607,7 +607,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
     },
 
     extractCode: function() { chatgpt.code.extract(); },
-    focusChatbar: function() { chatgpt.getChatBox()?.focus() },
+    focusChatbar: function() { chatgpt.getChatBox()?.focus(); },
 
     generateRandomIP: function() {
         const ip = Array.from({length: 4}, () => Math.floor(chatgpt.randomFloat() * 256)).join('.');
