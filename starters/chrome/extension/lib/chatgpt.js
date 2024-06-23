@@ -409,6 +409,34 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return codeBlocks ? codeBlocks[codeBlocks.length - 1] : msg;
         },
 
+        isIdle: async function() {
+            await new Promise(resolve => { // when in conversation page
+                (function checkConvoPage() {
+                    document.querySelector('div[data-message-author-role]') ? resolve(true)
+                        : setTimeout(checkConvoPage, 200); })();
+            });
+            await new Promise(resolve => { // when reply starts generating
+                (function checkReplyExists() {
+                    const msgDivs = document.querySelectorAll('div[data-message-author-role]')
+                    msgDivs[msgDivs.length - 1].dataset.messageAuthorRole == 'assistant' ? resolve(true)
+                        : setTimeout(checkReplyExists, 200); })();
+            });
+            const lastReplyDiv = await new Promise(resolve => { // when code starts generating
+                (function checkPreExists() {
+                    const replyDivs = document.querySelectorAll('div[data-message-author-role="assistant"]'),
+                          lastReplyDiv = replyDivs[replyDivs.length - 1];
+                    lastReplyDiv.querySelector('pre') ? resolve(lastReplyDiv)
+                        : setTimeout(checkPreExists, 200); })();
+            });
+            return Promise.race([
+                new Promise(resolve => { // when code block not last child of reply div
+                    (function checkPreNotLast() {
+                        lastReplyDiv.querySelector('pre').nextElementSibling ? resolve(true)
+                            : setTimeout(checkPreNotLast, 200); })();
+                }), chatgpt.isIdle() // ...or reply stopped generating
+            ])
+        },
+
         minify: async function(code) {
             if (!code) return console.error('Code argument not supplied. Pass some code!');
             if (typeof code !== 'string') return console.error('Code argument must be a string!');
