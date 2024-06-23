@@ -1048,9 +1048,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         }
     },
 
-    isChromium: function() { return chatgpt.browser.isChromium(); },
     isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
-    isFirefox: function() { return chatgpt.browser.isFirefox(); },
     isFullScreen: function() { return chatgpt.browser.isFullScreen(); },
 
     isIdle: function() {
@@ -1068,7 +1066,6 @@ const chatgpt = { // eslint-disable-line no-redeclare
     });},
 
     isLightMode: function() { return document.documentElement.classList.toString().includes('light'); },
-    isMobileDevice: function() { return chatgpt.browser.isMobile(); },
 
     logout: function() { window.location.href = 'https://chat.openai.com/auth/logout'; },
 

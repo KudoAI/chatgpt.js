@@ -23,12 +23,8 @@
     - [generateRandomIP](#generaterandomip)
     - [get](#get)
     - [getUserLanguage](#getuserlanguage)
-    - [isChromium](#ischromium)
-    - [isEdge](#isedge)
-    - [isFirefox](#isfirefox)
     - [isFullScreen](#isfullscreen)
     - [isLoaded `async`](#isloaded-async)
-    - [isMobileDevice](#ismobiledevice)
     - [printAllFunctions](#printallfunctions)
     - [randomFloat](#randomfloat)
     - [renderHTML](#renderhtml)
@@ -95,11 +91,11 @@
   - [browser `api`](#browser-api)
       - [isLightMode](#islightmode-1)
       - [isDarkMode](#isdarkmode-1)
-      - [isChromium](#ischromium-1)
+      - [isChromium](#ischromium)
       - [isChrome](#ischrome)
-      - [isEdge](#isedge-1)
+      - [isEdge](#isedge)
       - [isBrave](#isbrave)
-      - [isFirefox](#isfirefox-1)
+      - [isFirefox](#isfirefox)
       - [isFullScreen](#isfullscreen-1)
       - [isMobile](#ismobile)
   - [code `api`](#code-api)
@@ -294,42 +290,6 @@ const userLanguage = chatgpt.getUserLanguage();
 console.log(userLanguage); // Example output: 'en-US'
 ```
 
-### isChromium
-
-Returns a boolean value. `true` if the browser is Chromium and `false` otherwise.
-
-Example code:
-
-```js
-if (chatgpt.isChromium()) {
-    // Do something
-}
-```
-
-### isEdge
-
-Returns a boolean value. `true` if the browser is Edge and `false` otherwise.
-
-Example code:
-
-```js
-if (chatgpt.isEdge()) {
-    // Do something
-}
-```
-
-### isFirefox
-
-Returns a boolean value. `true` if the browser is Firefox and `false` otherwise.
-
-Example code:
-
-```js
-if (chatgpt.isFirefox()) {
-    // Do something
-}
-```
-
 ### isFullScreen
 
 Returns a boolean value. `true` if the website is fullscreen and `false` otherwise.
@@ -353,18 +313,6 @@ Example code:
     await chatgpt.isLoaded();
     console.log('ChatGPT has finished loading.');
 })();
-```
-
-### isMobileDevice
-
-Returns a boolean value. `true` if the user device is mobile and `false` otherwise.
-
-Example code:
-
-```js
-if (chatgpt.isMobileDevice()) {
-    // Do something
-}
 ```
 
 ### printAllFunctions
