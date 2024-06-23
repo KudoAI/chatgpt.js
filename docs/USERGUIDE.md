@@ -24,6 +24,7 @@
     - [get](#get)
     - [getUserLanguage](#getuserlanguage)
     - [isChromium](#ischromium)
+    - [isChrome](#ischrome)
     - [isEdge](#isedge)
     - [isFirefox](#isfirefox)
     - [isFullScreen](#isfullscreen)
@@ -1318,6 +1319,18 @@ Example code:
 
 ```js
 if (chatgpt.browser.isChromium()) {
+    // Do something
+}
+```
+
+### isChrome
+
+Returns a boolean value. `true` if the browser is Chrome and `false` otherwise.
+
+Example code:
+
+```js
+if (chatgpt.browser.isChrome()) {
     // Do something
 }
 ```
