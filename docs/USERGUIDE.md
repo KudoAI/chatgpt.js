@@ -98,6 +98,7 @@
       - [isDarkMode](#isdarkmode-1)
       - [isChromium](#ischromium-1)
       - [isEdge](#isedge-1)
+      - [isBrave](#isbrave)
       - [isFirefox](#isfirefox-1)
       - [isFullScreen](#isfullscreen-1)
       - [isMobile](#ismobile)
@@ -1343,6 +1344,18 @@ Example code:
 
 ```js
 if (chatgpt.browser.isEdge()) {
+    // Do something
+}
+```
+
+### isBrave
+
+Returns a boolean value. `true` if the browser is Brave and `false` otherwise.
+
+Example code:
+
+```js
+if (chatgpt.browser.isBrave()) {
     // Do something
 }
 ```

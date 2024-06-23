@@ -364,6 +364,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         isChromium: function() { return navigator.userAgent.includes('Chrome'); },
         isChrome: function() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chrome'); },
         isEdge: function() { return navigator.userAgent.includes('Edg'); },
+        isBrave: function() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave'); },
         isFirefox: function() { return navigator.userAgent.includes('Firefox'); },
 
         isFullScreen: function() {
