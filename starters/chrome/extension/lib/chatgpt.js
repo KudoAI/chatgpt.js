@@ -1924,6 +1924,7 @@ const cjsFuncSynonyms = [
     ['data', 'details'],
     ['deactivate', 'deActivate', 'turnOff'],
     ['execute', 'interpret', 'interpreter', 'run'],
+    ['firefox', 'ff'],
     ['generating', 'generation'],
     ['minify', 'uglify'],
     ['refactor', 'rewrite'],
