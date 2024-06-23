@@ -72,6 +72,7 @@
     - [startNewChat](#startnewchat)
     - [stop](#stop)
   - [DOM related](#dom-related)
+    - [focusChatbar](#focuschatbar)
     - [getChatBox](#getchatbox)
     - [getContinueGeneratingButton](#getcontinuegeneratingbutton)
     - [getFooterDiv](#getfooterdiv)
@@ -1085,6 +1086,16 @@ chatgpt.stop();
 ```
 
 ## DOM related
+
+### focusChatbar
+
+Focuses the chatbar.
+
+Example code:
+
+```js
+chatgpt.focusChatbar();
+```
 
 ### getChatBox
 
