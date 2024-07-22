@@ -204,7 +204,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 #
 
-### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png" width=20> [AmazonGPT](https://amazongpt.kudoai.com)  &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://amazongpt.kudoai.com/assets/images/badges/awesome/badge.svg"></a>
+### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png" width=20> [AmazonGPT](https://amazongpt.kudoai.com)  &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://amazongpt.kudoai.com/assets/images/badges/awesome/badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > Aggiungi l'intelligenza artificiale agli acquisti su Amazon.
 <br>[Install](https://greasyfork.org/scripts/500663-amazongpt) /
