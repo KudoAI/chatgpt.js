@@ -79,7 +79,7 @@ jobs:
           monthly_clones="${{ steps.get-clones.outputs.monthly_clones }}"
           if [ "$monthly_clones" == "0" ] ; then echo "Error getting total git clones"
           else
-            for readme in $(find / -name "README.md") ; do
+            for readme in $(find . -name "README.md") ; do
               old_readme=$(<"$readme")
               sed -i -E "s|(badge/[^-]+-)[0-9.,km+]+(/[^?]+\?logo=github)|\1$monthly_clones\2|gI" "$readme"
               new_readme=$(<"$readme")
