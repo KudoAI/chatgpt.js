@@ -340,17 +340,20 @@ const onLoadObserver = new MutationObserver(() => {
                                 }
                             }
 
-                            // Apply transparency + translate to siblings
+                            // Apply transparency + blur + translate to siblings
                             prevElems.forEach(elem => {
                                 const topGap = trigger.y - window.scrollY,
                                       newOpacity = 1 - Math.abs(topGap) / ( window.innerHeight - 5),
+                                      maxBlur = 4.5, blurAmount = Math.min(maxBlur, Math.abs(topGap) / (window.innerHeight / maxBlur)),
                                       parallaxOffset = topGap * -0.55,
                                       scaleDelay = 285, // px from trigger.y to delay scaling
                                       scaleFactor = topGap > -scaleDelay ? 1
                                                   : 1 - Math.abs(topGap + scaleDelay) / 5 / window.innerHeight;
+                                
                                 try { elem.classList.remove('content-fadeup'); } catch (err) {}
                                 elem.style.opacity = newOpacity;
-                                elem.style.transform = `translateY(${ parallaxOffset }px) scale(${ scaleFactor })`;
+                                elem.style.transform = `translateY(${parallaxOffset}px) scale(${scaleFactor})`;
+                                elem.style.filter = `blur(${blurAmount}px)`;
                             });
 
             }});});}, 100);
