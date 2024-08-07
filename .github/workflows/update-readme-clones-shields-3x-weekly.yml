@@ -97,5 +97,5 @@ jobs:
           commit_user_email: auto-sync@kudoai.com
           commit_author: kudo-sync-bot <auto-sync@kudoai.com>
           commit_message: Updated git clones shield counters
-          file_pattern: "**/README.md"
+          file_pattern: "README.md **/README.md"
           repository: KudoAI/chatgpt.js
