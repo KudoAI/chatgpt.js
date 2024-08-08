@@ -90,12 +90,10 @@ jobs:
           fi
 
       - name: Push to KudoAI/chatgpt.js
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: --force
-          add_options: --all
-          commit_user_email: auto-sync@kudoai.com
-          commit_author: kudo-sync-bot <auto-sync@kudoai.com>
-          commit_message: Updated git clones shield counters
-          file_pattern: "README.md **/README.md"
-          repository: KudoAI/chatgpt.js
+        run: |
+          cd ${{ github.workspace }}/KudoAI/chatgpt.js
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git add .
+          git commit -n -m "Updated git clones shield counters" || true
+          git push
