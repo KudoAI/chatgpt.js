@@ -41,22 +41,21 @@ jobs:
           echo "export { chatgpt };" >> "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/extension/lib/chatgpt.js"
           cd "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/extension"
           sed -i -E "s/\"version\": \"([0-9]+\.[0-9]+\.[0-9]+)\.*([0-9]*)\"/\"version\": \"$(date +'%Y.%-m.%-d')\"/g" manifest.json
-      - name: Push to KudoAI/chatgpt.js
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: --force
-          add_options: --all
-          commit_user_email: auto-sync@kudoai.com
-          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `KudoAI/chatgpt.js`]"
-          file_pattern: "starters/chrome/extension/**"
-          repository: KudoAI/chatgpt.js
 
-      - name: Push to KudoAI/chatgpt.js-chrome-starter
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: --force
-          add_options: --all
-          commit_user_email: auto-sync@kudoai.com
-          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `KudoAI/chatgpt.js`]"
-          file_pattern: "extension/**"
-          repository: KudoAI/chatgpt.js-chrome-starter
+      - name: Push changes to KudoAI/chatgpt.js
+        run: |
+          cd ${{ github.workspace }}/KudoAI/chatgpt.js
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git add .
+          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `KudoAI/chatgpt.js`]" || true
+          git push
+
+      - name: Push changes to KudoAI/chatgpt.js-chrome-starter
+        run: |
+          cd ${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git add .
+          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `KudoAI/chatgpt.js`]" || true
+          git push
