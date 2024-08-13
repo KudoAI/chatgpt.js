@@ -31,12 +31,11 @@ jobs:
             "${{ github.workspace }}/KudoAI/chatgpt.js/starters/greasemonkey/" \
             "${{ github.workspace }}/KudoAI/chatgpt.js-greasemonkey-starter/"
 
-      - name: Push to KudoAI/chatgpt.js-greasemonkey-starter
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: --force
-          add_options: --all
-          commit_user_email: auto-sync@kudoai.com
-          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `KudoAI/chatgpt.js`]"
-          file_pattern: "**"
-          repository: KudoAI/chatgpt.js-greasemonkey-starter
+      - name: Push changes to KudoAI/chatgpt.js-greasemonkey-starter
+        run: |
+          cd ${{ github.workspace }}/KudoAI/chatgpt.js-greasemonkey-starter
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git add .
+          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `KudoAI/chatgpt.js`]" || true
+          git push
