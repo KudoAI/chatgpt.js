@@ -38,5 +38,5 @@ jobs:
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
           git add .
-          git commit -n -m "${{ github.event.head_commit.message }} ↞ [auto-sync from `${{ steps.sync_readmes.outputs.sync_src }}`]" || true
+          git commit -n -m "$(echo '${{ github.event.head_commit.message }}' | sed 's/`/\`/g') ↞ [auto-sync from \`${{ steps.sync_readmes.outputs.sync_src }}\`]" || true
           git push
