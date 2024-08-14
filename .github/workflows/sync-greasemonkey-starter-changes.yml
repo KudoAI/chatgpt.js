@@ -31,11 +31,17 @@ jobs:
             "${{ github.workspace }}/KudoAI/chatgpt.js/starters/greasemonkey/" \
             "${{ github.workspace }}/KudoAI/chatgpt.js-greasemonkey-starter/"
 
+      - name: Escape backticks in commit msg
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          echo "ESCAPED_MSG=$(echo "$COMMIT_MSG" | sed 's/`/\`/g')" >> $GITHUB_ENV
+
       - name: Push changes to KudoAI/chatgpt.js-greasemonkey-starter
         run: |
           cd ${{ github.workspace }}/KudoAI/chatgpt.js-greasemonkey-starter
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
           git add .
-          git commit -n -m "$(echo '${{ github.event.head_commit.message }}' | sed 's/`/\`/g') ↞ [auto-sync from \`KudoAI/chatgpt.js\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`KudoAI/chatgpt.js\`]" || true
           git push
