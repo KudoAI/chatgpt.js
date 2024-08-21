@@ -69,6 +69,6 @@
     "docsify-cli": "^4.4.4",
     "eslint": "^9.9.0",
     "eslint-plugin-json": "^4.0.1",
-    "husky": "^9.1.4"
+    "husky": "^9.1.5"
   }
 }
