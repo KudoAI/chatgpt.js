@@ -1481,17 +1481,16 @@ const chatgpt = { // eslint-disable-line no-redeclare
     send(msg, method='') {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return console.error(`Argument ${ i + 1 } must be a string!`);
-        const textArea = document.querySelector('form textarea'),
-              sendBtn = chatgpt.getSendButton();
+        const textArea = document.querySelector('form textarea');
         textArea.value = msg;
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
-
         setTimeout(function delaySend() {
+            const sendBtn = chatgpt.getSendButton();
             if (!sendBtn?.hasAttribute('disabled')) { // send msg
                 method.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendBtn.click()
-                    : textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }));
-            } else setTimeout(delaySend, 25);
-        }, 25);
+                    : textArea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+            } else setTimeout(delaySend, 222);
+        }, 222);
     },
 
     sendInNewChat(msg) {
