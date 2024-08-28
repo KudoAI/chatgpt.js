@@ -282,7 +282,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return modalContainer.id; // if assignment used
     },
 
-    askAndGetReply: async function(query) {
+    async askAndGetReply(query) {
         chatgpt.send(query); await chatgpt.isIdle();
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
@@ -379,7 +379,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
     },
 
-    clearChats: async function() { // back-end method
+    async clearChats() { // back-end method
         return new Promise((resolve, reject) => {
             chatgpt.getAccessToken().then(token => {
                 const xhr = new XMLHttpRequest();
@@ -398,7 +398,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
     code: {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
-        execute: async function(code) {
+        async execute(code) {
             if (!code) return console.error('Code argument not supplied. Pass some code!');
             if (typeof code !== 'string') return console.error('Code argument must be a string!');
             chatgpt.send('Display the output as if you were terminal:\n\n' + code);
@@ -412,7 +412,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return codeBlocks ? codeBlocks[codeBlocks.length - 1] : msg;
         },
 
-        isIdle: async function() {
+        async isIdle() {
             await new Promise(resolve => { // when in conversation page
                 (function checkConvoPage() {
                     document.querySelector('div[data-message-author-role]') ? resolve(true)
@@ -440,7 +440,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             ]);
         },
 
-        minify: async function(code) {
+        async minify(code) {
             if (!code) return console.error('Code argument not supplied. Pass some code!');
             if (typeof code !== 'string') return console.error('Code argument must be a string!');
             chatgpt.send('Minify the following code:\n\n' + code);
@@ -449,7 +449,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
         },
 
-        obfuscate: async function(code) {
+        async obfuscate(code) {
             if (!code) return console.error('Code argument not supplied. Pass some code!');
             if (typeof code !== 'string') return console.error('Code argument must be a string!');
             chatgpt.send('Obfuscate the following code:\n\n' + code);
@@ -458,7 +458,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
         },
 
-        refactor: async function(code, objective) {
+        async refactor(code, objective) {
             if (!code) return console.error('Code (1st) argument not supplied. Pass some code!');
             for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
                 return console.error(`Argument ${ i + 1 } must be a string.`);
@@ -468,7 +468,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
         },
 
-        review: async function(code) {
+        async review(code) {
             if (!code) return console.error('Code argument not supplied. Pass some code!');
             if (typeof code !== 'string') return console.error('Code argument must be a string!');
             chatgpt.send('Review the following code for me:\n\n' + code);
@@ -477,7 +477,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
         },
 
-        unminify: async function(code) {
+        async unminify(code) {
             if (!code) return console.error('Code argument not supplied. Pass some code!');
             if (typeof code !== 'string') return console.error('Code argument must be a string!');
             chatgpt.send('Unminify the following code.:\n\n' + code);
@@ -486,7 +486,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
         },
 
-        write: async function(prompt, outputLang) {
+        async write(prompt, outputLang) {
             if (!prompt) return console.error('Prompt (1st) argument not supplied. Pass a prompt!');
             if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!');
             for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
@@ -500,7 +500,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     continue() { chatgpt.response.continue(); },
 
-    detectLanguage: async function(text) {
+    async detectLanguage(text) {
         if (!text) return console.error('Text argument not supplied. Pass some text!');
         if (typeof text !== 'string') return console.error('Text argument must be a string!');
         chatgpt.send('Detect the language of the following text:\n\n' + text
@@ -512,7 +512,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     executeCode() { chatgpt.code.execute(); },
 
-    exportChat: async function(chatToGet, format) {
+    async exportChat(chatToGet, format) {
     // chatToGet = 'active' (default) | 'latest' | index|title|id of chat to get
     // format = 'html' (default) | 'md' | 'pdf' | 'text'
 
@@ -1171,7 +1171,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     minify() { chatgpt.code.minify(); },
 
-    notify: async function(msg, position, notifDuration, shadow) {
+    async notify(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
         const fadeDuration = 0.35, // sec duration of fade-out
               vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
@@ -1409,7 +1409,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return node; // if assignment used
     },
 
-    resend: async function() { chatgpt.send(await chatgpt.getChatData('latest', 'msg', 'user', 'latest')); },
+    async resend() { chatgpt.send(await chatgpt.getChatData('latest', 'msg', 'user', 'latest')); },
 
     response: {
         continue() { try { chatgpt.getContinueBtn().click(); } catch (err) { console.error(err.message); }},
@@ -1530,7 +1530,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         }
     },
 
-    sentiment: async function(text, entity) {
+    async sentiment(text, entity) {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return console.error(`Argument ${ i + 1 } must be a string.`);
         chatgpt.send('What is the sentiment of the following text'
@@ -1754,7 +1754,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 if (isToggleBtn(btn)) { btn.click(); return; }
         },
 
-        isLoaded: async function() {
+        async isLoaded() {
             await chatgpt.isLoaded();
             return Promise.race([
                 new Promise(resolve => {
@@ -1770,7 +1770,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
     startNewChat() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }},
     stop() { chatgpt.response.stopGenerating(); },
 
-    suggest: async function(ideaType, details) {
+    async suggest(ideaType, details) {
         if (!ideaType) return console.error('ideaType (1st argument) not supplied'
             + '(e.g. \'gifts\', \'names\', \'recipes\', etc.)');
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
@@ -1808,7 +1808,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         } catch (err) { console.error( err); }
     },
 
-    summarize: async function(text) {
+    async summarize(text) {
         if (!text) return console.error('Text (1st) argument not supplied. Pass some text!');
         if (typeof text !== 'string') return console.error('Text argument must be a string!');
         chatgpt.send('Summarize the following text:\n\n' + text);
@@ -1819,7 +1819,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     toggleScheme() { chatgpt.settings.scheme.toggle(); },
 
-    translate: async function(text, outputLang) {
+    async translate(text, outputLang) {
         if (!text) return console.error('Text (1st) argument not supplied. Pass some text!');
         if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!');
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
