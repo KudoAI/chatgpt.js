@@ -1740,7 +1740,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
         isOff() { return !this.isOn(); },
         isOn() {
-            const sidebar = document.querySelector('#__next > div > div');
+            const sidebar = document.querySelector('body script + div > div');
             return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
               : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px';
@@ -1748,9 +1748,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
         toggle() {
             const isMobileDevice = chatgpt.browser.isMobile(),
-                  navBtnSelector = isMobileDevice ? '#__next button' : 'nav button',
+                  navBtnSelector = isMobileDevice ? 'button' : 'nav button',
                   isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
-                              : btn => btn.querySelectorAll('svg path[d*="M8.857 3h6.286c1.084"]').length > 0;
+                              : btn => btn.querySelector('svg path[d*="M8.857 3h6.286c1.084"]');
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
         },
