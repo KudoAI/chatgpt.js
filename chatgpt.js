@@ -20,7 +20,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         instructions: 'https://chatgpt.com/backend-api/user_system_messages'
     }},
 
-    actAs: function(persona) {
+    actAs(persona) {
     // Prompts ChatGPT to act as a persona from https://github.com/KudoAI/chat-prompts/blob/main/personas.json
 
         const promptsUrl = 'https://raw.githubusercontent.com/KudoAI/chat-prompts/main/dist/personas.min.json';
@@ -48,19 +48,19 @@ const chatgpt = { // eslint-disable-line no-redeclare
         });
     },
 
-    activateDarkMode: function() {
+    activateDarkMode() {
         document.documentElement.classList.replace('light', 'dark');
         document.documentElement.style.colorScheme = 'dark';
         localStorage.setItem('theme', 'dark');
     },
 
-    activateLightMode: function() {
+    activateLightMode() {
         document.documentElement.classList.replace('dark', 'light');
         document.documentElement.style.colorScheme = 'light';
         localStorage.setItem('theme', 'light');
     },
 
-    alert: function(title, msg, btns, checkbox, width) {
+    alert(title, msg, btns, checkbox, width) {
     // [ title/msg = strings, btns = [named functions], checkbox = named function, width (px) = int ] = optional
     // * Spaces are inserted into button labels by parsing function names in camel/kebab/snake case
 
@@ -288,7 +288,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
     },
 
     autoRefresh: {
-        activate: function(interval) {
+        activate(interval) {
             if (this.isActive) { // already running, do nothing
                 console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already active!'); return; }
 
@@ -313,7 +313,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 document.addEventListener('visibilitychange', this.toggle.beacons); }
         },
 
-        deactivate: function() {
+        deactivate() {
             if (this.isActive) {
                 this.toggle.refreshFrame();
                 document.removeEventListener('visibilitychange', this.toggle.beacons);
@@ -322,7 +322,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             } else { console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already inactive!'); }
         },
 
-        nowTimeStamp: function() {
+        nowTimeStamp() {
             const now = new Date();
             const hours = now.getHours() % 12 || 12; // Convert to 12-hour format
             let minutes = now.getMinutes(), seconds = now.getSeconds();
@@ -333,7 +333,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
         toggle: {
 
-            beacons: function() {
+            beacons() {
                 if (chatgpt.autoRefresh.beaconID) {
                     clearInterval(chatgpt.autoRefresh.beaconID); chatgpt.autoRefresh.beaconID = null;
                     console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons de-activated');
@@ -346,7 +346,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 }
             },
 
-            refreshFrame: function() {
+            refreshFrame() {
                 let refreshFrame = document.querySelector('#refresh-frame');
                 if (refreshFrame) refreshFrame.remove();
                 else {
@@ -360,22 +360,22 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     browser: {
 
-        isLightMode: function() { return window.matchMedia?.('(prefers-color-scheme: light)')?.matches; },
-        isDarkMode: function() { return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches; },
-        isChromium: function() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chromium'); },
-        isChrome: function() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chrome'); },
-        isEdge: function() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge'); },
-        isBrave: function() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave'); },
-        isFirefox: function() { return navigator.userAgent.includes('Firefox'); },
+        isLightMode() { return window.matchMedia?.('(prefers-color-scheme: light)')?.matches; },
+        isDarkMode() { return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches; },
+        isChromium() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chromium'); },
+        isChrome() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chrome'); },
+        isEdge() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge'); },
+        isBrave() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave'); },
+        isFirefox() { return navigator.userAgent.includes('Firefox'); },
 
-        isFullScreen: function() {
+        isFullScreen() {
             const userAgentStr = navigator.userAgent;
             return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
                  : userAgentStr.includes('Firefox') ? window.fullScreen
                  : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen;
         },
 
-        isMobile: function() {
+        isMobile() {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
     },
 
@@ -407,7 +407,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
         },
 
-        extract: function(msg) { // extract pure code from response (targets last block)
+        extract(msg) { // extract pure code from response (targets last block)
             const codeBlocks = msg.match(/(?<=```.*\n)[\s\S]*?(?=```)/g);
             return codeBlocks ? codeBlocks[codeBlocks.length - 1] : msg;
         },
@@ -498,7 +498,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         }
     },
 
-    continue: function() { chatgpt.response.continue(); },
+    continue() { chatgpt.response.continue(); },
 
     detectLanguage: async function(text) {
         if (!text) return console.error('Text argument not supplied. Pass some text!');
@@ -510,7 +510,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
 
-    executeCode: function() { chatgpt.code.execute(); },
+    executeCode() { chatgpt.code.execute(); },
 
     exportChat: async function(chatToGet, format) {
     // chatToGet = 'active' (default) | 'latest' | index|title|id of chat to get
@@ -609,16 +609,16 @@ const chatgpt = { // eslint-disable-line no-redeclare
         }
     },
 
-    extractCode: function() { chatgpt.code.extract(); },
-    focusChatbar: function() { chatgpt.getChatBox()?.focus(); },
+    extractCode() { chatgpt.code.extract(); },
+    focusChatbar() { chatgpt.getChatBox()?.focus(); },
 
-    generateRandomIP: function() {
+    generateRandomIP() {
         const ip = Array.from({length: 4}, () => Math.floor(chatgpt.randomFloat() * 256)).join('.');
         console.info('IP generated: ' + ip);
         return ip;
     },
 
-    get: function(targetType, targetName = '') {
+    get(targetType, targetName = '') {
     // targetType = 'button'|'link'|'div'|'response'
     // targetName = from get[targetName][targetType] methods, e.g. 'send'
 
@@ -651,7 +651,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return this[targetFuncName](); // call found function
     },
 
-    getAccessToken: function() {
+    getAccessToken() {
         return new Promise((resolve, reject) => {
             if (Object.keys(chatgpt.openAIaccessToken).length > 0 && // populated
                     (Date.parse(chatgpt.openAIaccessToken.expireDate) - Date.parse(new Date()) >= 0)) // not expired
@@ -672,7 +672,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         });
     },
 
-    getAccountDetails: function(...details) {
+    getAccountDetails(...details) {
     // details = [email|id|image|name|picture] = optional
 
         // Build details array
@@ -703,9 +703,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
         });
     },
 
-    getChatBox: function() { return document.getElementById('prompt-textarea'); },
+    getChatBox() { return document.getElementById('prompt-textarea'); },
 
-    getChatData: function(chatToGet = 1, detailsToGet = 'all', sender = 'all', msgToGet = 'all') {
+    getChatData(chatToGet = 1, detailsToGet = 'all', sender = 'all', msgToGet = 'all') {
     // chatToGet = 'active' | 'latest' | index|title|id of chat to get (defaults to active OpenAI chat > latest chat)
     // detailsToGet = 'all' | [ 'id' | 'title' | 'create_time' | 'update_time' | 'msg' ] (defaults to 'all', excludes msg's)
     // sender = ( 'all' | 'both' ) | 'user' | 'chatgpt' (defaults to 'all', requires 2nd param = 'msg')
@@ -856,35 +856,35 @@ const chatgpt = { // eslint-disable-line no-redeclare
         }));
     },
 
-    getChatInput: function() { return chatgpt.getChatBox().value; },
+    getChatInput() { return chatgpt.getChatBox().value; },
 
-    getContinueGeneratingButton: function() {
+    getContinueGeneratingButton() {
         for (const formBtnSVG of document.querySelectorAll('form button svg')) {
             if (formBtnSVG.querySelector('path[d*="M4.472 2.5a1"]'))
                 return formBtnSVG.parentNode.parentNode;
     }},
 
-    getFooterDiv: function() { return document.querySelector('main form').parentNode.parentNode.nextElementSibling; },
-    getHeaderDiv: function() { return document.querySelector('main .sticky'); },
-    getLastPrompt: function() { return chatgpt.getChatData('active', 'msg', 'user', 'latest'); },
-    getLastResponse: function() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
+    getFooterDiv() { return document.querySelector('main form').parentNode.parentNode.nextElementSibling; },
+    getHeaderDiv() { return document.querySelector('main .sticky'); },
+    getLastPrompt() { return chatgpt.getChatData('active', 'msg', 'user', 'latest'); },
+    getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
 
-    getNewChatButton: function() {
+    getNewChatButton() {
         for (const navBtnSVG of document.querySelectorAll('nav button svg'))
             if (navBtnSVG.querySelector('path[d*="M15.673 3.913a3.121"], ' // pencil-on-pad icon
                                       + 'path[d*="M3.07 10.876C3.623"]'))  // refresh icon if temp chat
                 return navBtnSVG.parentNode;
     },
 
-    getNewChatLink: function() { return document.querySelector('nav a[href="/"]'); },
+    getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
 
-    getRegenerateButton: function() {   
+    getRegenerateButton() {   
         for (const mainSVG of document.querySelectorAll('main svg')) {
             if (mainSVG.querySelector('path[d*="M3.07 10.876C3.623"]')) // regen icon found
                 return mainSVG.parentNode;
     }},
 
-    getResponse: function() {
+    getResponse() {
     // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:        
     // chatToGet = index|title|id of chat to get (defaults to latest if '' unpassed)
     // responseToGet = index of response to get (defaults to latest if '' unpassed)
@@ -893,30 +893,30 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return chatgpt.response.get(...arguments);
     },
 
-    getResponseFromAPI: function(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet); },
-    getResponseFromDOM: function(pos) { return chatgpt.response.getFromDOM(pos); },
-    getScrollToBottomButton: function() { return document.querySelector('button[class*="cursor"][class*="bottom"]'); },
+    getResponseFromAPI(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet); },
+    getResponseFromDOM(pos) { return chatgpt.response.getFromDOM(pos); },
+    getScrollToBottomButton() { return document.querySelector('button[class*="cursor"][class*="bottom"]'); },
 
-    getSendButton: function() {
+    getSendButton() {
         return document.querySelector('[data-testid="send-button"]') // pre-GPT-4o
             || document.querySelector('path[d*="M15.192 8.906a1.143"]')?.parentNode.parentNode; // post-GPT-4o
     },
 
-    getStopGeneratingButton: function() {
+    getStopGeneratingButton() {
         for (const svg of document.querySelectorAll('form button svg')) {
             if (svg.querySelector('path[d*="2 0 0 1 2"], rect'))
                 return svg.parentNode;
     }},
 
-    getUserLanguage: function() {
+    getUserLanguage() {
         return navigator.languages[0] || navigator.language || navigator.browserLanguage ||
             navigator.systemLanguage || navigator.userLanguage || ''; },
 
-    hideFooter: function() { chatgpt.getFooterDiv().style.display = 'none'; },
-    hideHeader: function() { chatgpt.getHeaderDiv().style.display = 'none'; },
+    hideFooter() { chatgpt.getFooterDiv().style.display = 'none'; },
+    hideHeader() { chatgpt.getHeaderDiv().style.display = 'none'; },
 
     history: {
-        isLoaded: function() {
+        isLoaded() {
             return new Promise(resolve => {
                 (function checkChatHistory() {
                     document.querySelector('nav') ? resolve(true) : setTimeout(checkChatHistory, 200);
@@ -927,7 +927,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
     instructions: {
     // NOTE: DOM is not updated to reflect new instructions added/removed or toggle state (until session refresh)
 
-        add: function(instruction, target) {
+        add(instruction, target) {
             if (!instruction) return console.error('Please provide an instruction');
             if (typeof instruction !== 'string') return console.error('Instruction must be a string');
             const validTargets = ['user', 'chatgpt']; // valid targets
@@ -953,7 +953,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             });
         },
 
-        clear: function(target) {
+        clear(target) {
             const validTargets = ['user', 'chatgpt']; // valid targets
             if (!target) return console.error('Please provide a valid target!');
             if (typeof target !== 'string') return console.error('Target must be a string');
@@ -974,7 +974,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 });});
         },
 
-        fetchData: function() {
+        fetchData() {
         // INTERNAL METHOD
             return new Promise(resolve => {
                 chatgpt.getAccessToken().then(async token => {
@@ -982,7 +982,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 });});
         },
 
-        sendRequest: function(method, token, body) {
+        sendRequest(method, token, body) {
         // INTERNAL METHOD
             // Validate args
             for (let i = 0; i < arguments.length - 1; i++) if (typeof arguments[i] !== 'string')
@@ -1018,7 +1018,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             });
         },
 
-        turnOff: function() {
+        turnOff() {
             return new Promise(resolve => {
                 chatgpt.getAccessToken().then(async token => {
                     const instructionsData = await this.fetchData();
@@ -1029,7 +1029,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             });
         },
 
-        turnOn: function() {
+        turnOn() {
             return new Promise(resolve => {
                 chatgpt.getAccessToken().then(async token => {
                     const instructionsData = await this.fetchData();
@@ -1040,7 +1040,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             });
         },
 
-        toggle: function() {
+        toggle() {
             return new Promise(resolve => {
                 this.fetchData().then(async instructionsData => {
                     await (instructionsData.enabled ? this.turnOff() : this.turnOn());
@@ -1049,32 +1049,32 @@ const chatgpt = { // eslint-disable-line no-redeclare
         }
     },
 
-    isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
-    isFullScreen: function() { return chatgpt.browser.isFullScreen(); },
+    isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
+    isFullScreen() { return chatgpt.browser.isFullScreen(); },
 
-    isIdle: function() {
+    isIdle() {
         return new Promise(resolve => {
             (function checkIsIdle() {
                 chatgpt.getRegenerateButton() ? resolve(true) : setTimeout(checkIsIdle, 200);
             })();
     });},
 
-    isLoaded: function() {
+    isLoaded() {
         return new Promise(resolve => {
             (function checkIsLoaded() {
                 chatgpt.getNewChatButton() ? resolve(true) : setTimeout(checkIsLoaded, 200);
             })();
     });},
 
-    isLightMode: function() { return document.documentElement.classList.toString().includes('light'); },
+    isLightMode() { return document.documentElement.classList.toString().includes('light'); },
 
-    logout: function() { window.location.href = 'https://chat.openai.com/auth/logout'; },
+    logout() { window.location.href = 'https://chat.openai.com/auth/logout'; },
 
     menu: {
         elements: [],
         addedEvent: false,
 
-        append: function(element, attrs = {}) {
+        append(element, attrs = {}) {
         // element = 'button' | 'dropdown' REQUIRED (no default value)
         // attrs = { ... }
         // attrs for 'button': 'icon' = src string, 'label' = string, 'onclick' = function
@@ -1158,18 +1158,18 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return newElement.id; // Return the element id
         },
 
-        close: function() {
+        close() {
             try { document.querySelector('nav [id*="menu-button"][aria-expanded="true"]').click(); }
             catch (err) { console.error(err.message); }
         },
 
-        open: function() {
+        open() {
             try { document.querySelector('nav [id*="menu-button"][aria-expanded="false"]').click(); }
             catch (err) { console.error(err.message); }
         }
     },
 
-    minify: function() { chatgpt.code.minify(); },
+    minify() { chatgpt.code.minify(); },
 
     notify: async function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
@@ -1281,9 +1281,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
         }, { once: true });
     },
 
-    obfuscate: function() { chatgpt.code.obfuscate(); },
+    obfuscate() { chatgpt.code.obfuscate(); },
 
-    printAllFunctions: function() {
+    printAllFunctions() {
 
         // Define colors
         const colors = { // element: [light, dark]
@@ -1349,16 +1349,16 @@ const chatgpt = { // eslint-disable-line no-redeclare
         }
     },
 
-    randomFloat: function() {
+    randomFloat() {
     // * Generates a random, cryptographically secure value between 0 (inclusive) & 1 (exclusive)
         const crypto = window.crypto || window.msCrypto;
         return crypto?.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF || Math.random();
     },
 
-    refactor: function() { chatgpt.code.refactor(); },
-    regenerate: function() { chatgpt.response.regenerate(); },
+    refactor() { chatgpt.code.refactor(); },
+    regenerate() { chatgpt.response.regenerate(); },
 
-    renderHTML: function(node) {
+    renderHTML(node) {
         const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
               reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+\S+=|[>']))+.)['"]?/g,
               nodeContent = node.childNodes;
@@ -1412,9 +1412,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
     resend: async function() { chatgpt.send(await chatgpt.getChatData('latest', 'msg', 'user', 'latest')); },
 
     response: {
-        continue: function() { try { chatgpt.getContinueBtn().click(); } catch (err) { console.error(err.message); }},
+        continue() { try { chatgpt.getContinueBtn().click(); } catch (err) { console.error(err.message); }},
 
-        get: function() {
+        get() {
             // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:        
             // chatToGet = index|title|id of chat to get (defaults to latest if '' unpassed)
             // responseToGet = index of response to get (defaults to latest if '' unpassed)
@@ -1425,7 +1425,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 else return this.getFromAPI.apply(null, arguments);
         },
 
-        getFromAPI: function(chatToGet, responseToGet) {
+        getFromAPI(chatToGet, responseToGet) {
         // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
         // responseToGet = index of response to get (defaults to latest if '' or unpassed)
 
@@ -1433,7 +1433,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return chatgpt.getChatData(chatToGet, 'msg', 'chatgpt', responseToGet);
         },
 
-        getFromDOM: function(pos) {
+        getFromDOM(pos) {
             const responseDivs = document.querySelectorAll('div[data-testid*="conversation-turn"]:nth-child(odd)'),
                   strPos = pos.toString().toLowerCase();
             let response = '';
@@ -1470,15 +1470,15 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return response;
         },
 
-        getLast: function() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
-        regenerate: function() { try { chatgpt.getRegenerateBtn().click(); } catch (err) { console.error(err.message); }},
-        stopGenerating: function() { try { chatgpt.getStopBtn().click(); } catch (err) { console.error(err.message); }}
+        getLast() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
+        regenerate() { try { chatgpt.getRegenerateBtn().click(); } catch (err) { console.error(err.message); }},
+        stopGenerating() { try { chatgpt.getStopBtn().click(); } catch (err) { console.error(err.message); }}
     },
 
-    reviewCode: function() { chatgpt.code.review(); },
-    scrollToBottom: function() { try { chatgpt.getScrollBtn().click(); } catch (err) { console.error(err.message); }},
+    reviewCode() { chatgpt.code.review(); },
+    scrollToBottom() { try { chatgpt.getScrollBtn().click(); } catch (err) { console.error(err.message); }},
 
-    send: function(msg, method='') {
+    send(msg, method='') {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return console.error(`Argument ${ i + 1 } must be a string!`);
         const textArea = document.querySelector('form textarea'),
@@ -1494,7 +1494,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         }, 25);
     },
 
-    sendInNewChat: function(msg) {
+    sendInNewChat(msg) {
         if (typeof msg !== 'string') return console.error('Message must be a string!');
         for (const navLink of document.querySelectorAll('nav a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
@@ -1504,9 +1504,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     settings: {
         scheme: {
-            isDark: function() { return document.documentElement.classList.contains('dark'); },
-            isLight: function() { return document.documentElement.classList.contains('light'); },
-            set: function(value) {
+            isDark() { return document.documentElement.classList.contains('dark'); },
+            isLight() { return document.documentElement.classList.contains('light'); },
+            set(value) {
 
                 // Validate value
                 const validValues = ['dark', 'light', 'system'];
@@ -1522,7 +1522,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 // Toggle scheme if necessary
                 if (!document.documentElement.classList.contains(schemeToSet)) this.toggle();
             },
-            toggle: function() {
+            toggle() {
                 const [schemeToRemove, schemeToAdd] = this.isDark() ? ['dark', 'light'] : ['light', 'dark'];
                 document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
                 document.documentElement.style.colorScheme = schemeToAdd;
@@ -1542,9 +1542,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
 
-    setScheme: function(value) { chatgpt.settings.scheme.set(value); },
+    setScheme(value) { chatgpt.settings.scheme.set(value); },
 
-    shareChat: function(chatToGet, method = 'clipboard') {
+    shareChat(chatToGet, method = 'clipboard') {
     // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
     // method = [ 'alert'|'clipboard' ] (defaults to 'clipboard' if '' or unpassed)
 
@@ -1623,13 +1623,13 @@ const chatgpt = { // eslint-disable-line no-redeclare
         });});});});});
     },
 
-    showFooter: function() { chatgpt.getFooterDiv().style.display = 'revert'; },
-    showHeader: function() { chatgpt.getHeaderDiv().style.display = 'flex'; },
+    showFooter() { chatgpt.getFooterDiv().style.display = 'revert'; },
+    showHeader() { chatgpt.getHeaderDiv().style.display = 'flex'; },
 
     sidebar: {
         elements: [], observer: {},
 
-        activateObserver: function() {
+        activateObserver() {
 
             // Stop the previous observer to preserve resources
             if (this.observer instanceof MutationObserver)
@@ -1675,7 +1675,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             this.observer.observe(document.documentElement, { childList: true, subtree: true, attributes: true });
         },
 
-        append: function(element, attrs = {}) {
+        append(element, attrs = {}) {
         // element = 'button' | 'dropdown' REQUIRED (no default value)
         // attrs = { ... }
         // attrs for 'button': 'icon' = src string, 'label' = string, 'onclick' = function
@@ -1736,17 +1736,17 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return newElement.id; // Return the element id
         },
 
-        hide: function() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
-        show: function() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
-        isOff: function() { return !this.isOn(); },
-        isOn: function() {
+        hide() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
+        show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
+        isOff() { return !this.isOn(); },
+        isOn() {
             const sidebar = document.querySelector('#__next > div > div');
             return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
               : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px';
         },
 
-        toggle: function() {
+        toggle() {
             const isMobileDevice = chatgpt.browser.isMobile(),
                   navBtnSelector = isMobileDevice ? '#__next button' : 'nav button',
                   isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
@@ -1768,8 +1768,8 @@ const chatgpt = { // eslint-disable-line no-redeclare
         }
     },
 
-    startNewChat: function() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }},
-    stop: function() { chatgpt.response.stopGenerating(); },
+    startNewChat() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }},
+    stop() { chatgpt.response.stopGenerating(); },
 
     suggest: async function(ideaType, details) {
         if (!ideaType) return console.error('ideaType (1st argument) not supplied'
@@ -1782,7 +1782,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
 
-    speak: function(msg, options = {}) {
+    speak(msg, options = {}) {
     // Usage example: chatgpt.speak(await chatgpt.getLastResponse(), { voice: 1, pitch: 2, speed: 3 })
     // options.voice = index of voices available on user device
     // options.pitch = float for pitch of speech from 0 to 2
@@ -1818,7 +1818,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
 
-    toggleScheme: function() { chatgpt.settings.scheme.toggle(); },
+    toggleScheme() { chatgpt.settings.scheme.toggle(); },
 
     translate: async function(text, outputLang) {
         if (!text) return console.error('Text (1st) argument not supplied. Pass some text!');
@@ -1832,9 +1832,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
 
-    unminify: function() { chatgpt.code.unminify(); },
+    unminify() { chatgpt.code.unminify(); },
 
-    uuidv4: function() {
+    uuidv4() {
         let d = new Date().getTime(); // get current timestamp in ms (to ensure UUID uniqueness)
         const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
             const r = ( // generate random nibble
@@ -1845,7 +1845,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return uuid;
     },
 
-    writeCode: function() { chatgpt.code.write(); }
+    writeCode() { chatgpt.code.write(); }
 };
 
 chatgpt.scheme = { ...chatgpt.settings.scheme }; // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
