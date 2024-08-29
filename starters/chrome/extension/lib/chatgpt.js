@@ -1482,7 +1482,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
     send(msg, method='') {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return console.error(`Argument ${ i + 1 } must be a string!`);
-        const textArea = document.querySelector('form textarea');
+        const textArea = chatgpt.getChatBox();
         if (!textArea) return console.error('Chatbar element not found!');
         textArea.value = msg;
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
