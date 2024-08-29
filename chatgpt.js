@@ -1886,7 +1886,7 @@ const cjsFuncAliases = [
     ['getContinueGeneratingButton', 'getContinueButton'],
     ['getScrollToBottomButton', 'getScrollButton'],
     ['getStopGeneratingButton', 'getStopButton'],
-    ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
+    ['getTextarea', 'getTextArea', 'getChatbar', 'getChatBar', 'getChatbox', 'getChatBox'],
     ['isFullScreen', 'isFullscreen', 'isfullscreen'],
     ['isLoaded', 'isloaded'],
     ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
