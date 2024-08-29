@@ -546,9 +546,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 const msgs = []; let isUserMsg = true;
                 chatDivs.forEach((div) => {
                     const sender = isUserMsg ? 'USER' : 'CHATGPT'; isUserMsg = !isUserMsg;
-                    let msg = Array.from(div.childNodes).map(node => node.innerText)
-                        .join('\n\n') // insert double line breaks between paragraphs
-                        .replace('Copy code', '');
+                    const msg = Array.from(div.childNodes).map(node => node.innerText)
+                              .join('\n\n') // insert double line breaks between paragraphs
+                              .replace('Copy code', '');
                     msgs.push(sender + ': ' + msg);
                 });
                 transcript = msgs.join('\n\n');                     
@@ -1136,7 +1136,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 const optionButtons = document.querySelectorAll('a[role="menuitem"]');
                 let cssClasses;
         
-                for (let navLink of optionButtons)
+                for (const navLink of optionButtons)
                     if (navLink.textContent == 'Settings') {
                         cssClasses = navLink.classList;
                         break; }
