@@ -1174,7 +1174,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     minify() { chatgpt.code.minify(); },
 
-    async notify(msg, position, notifDuration, shadow) {
+    notify(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
         const fadeDuration = 0.35, // sec duration of fade-out
               vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
@@ -1283,6 +1283,8 @@ const chatgpt = { // eslint-disable-line no-redeclare
             notifyProps.queue[notificationDiv.quadrant].shift(); // + memory
             localStorage.notifyProps = JSON.stringify(notifyProps); // + storage
         }, { once: true });
+
+        return notificationDiv;
     },
 
     obfuscate() { chatgpt.code.obfuscate(); },
