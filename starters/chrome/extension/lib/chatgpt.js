@@ -158,7 +158,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                     .replace(/[_-]\w/g, match => match.slice(1).toUpperCase()) // convert snake/kebab to camel case
                     .replace(/([A-Z])/g, ' $1') // insert spaces
                     .replace(/^\w/, firstChar => firstChar.toUpperCase()); // capitalize first letter
-                button.addEventListener('click', () => { dismissAlert(); buttonFn(); });
+                button.onclick = () => { dismissAlert(); buttonFn(); };
                 modalButtons.insertBefore(button, modalButtons.firstChild); // insert button to left
             });
         }
@@ -178,12 +178,11 @@ const chatgpt = { // eslint-disable-line no-redeclare
             const checkboxFn = checkbox, // assign the named function to checkboxFn
                   checkboxInput = document.createElement('input');
             checkboxInput.type = 'checkbox';
-            checkboxInput.addEventListener('change', checkboxFn);
+            checkboxInput.onchange = checkboxFn;
 
             // Create/show label
             const checkboxLabel = document.createElement('label');
-            checkboxLabel.addEventListener('click', () => {
-                checkboxInput.checked = !checkboxInput.checked; checkboxFn(); });
+            checkboxLabel.onclick = () => { checkboxInput.checked = !checkboxInput.checked; checkboxFn(); };
             checkboxLabel.textContent = checkboxFn.name.charAt(0).toUpperCase() // capitalize first char
                 + checkboxFn.name.slice(1) // format remaining chars
                     .replace(/([A-Z])/g, (match, letter) => ' ' + letter.toLowerCase()) // insert spaces, convert to lowercase
@@ -248,8 +247,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
         // Add listeners to dismiss alert
         const dismissElems = [modalContainer, closeBtn, closeSVG, dismissBtn];
-        dismissElems.forEach(elem => {
-            elem.addEventListener('click', clickHandler); });
+        dismissElems.forEach(elem => elem.onclick = clickHandler);
         document.addEventListener('keydown', keyHandler);
 
         // Define alert dismisser
@@ -263,10 +261,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 alertQueue = JSON.parse(localStorage.alertQueue);
                 alertQueue.shift(); // + memory
                 localStorage.alertQueue = JSON.stringify(alertQueue); // + storage
-
-                // Remove all listeners to prevent memory leaks
-                dismissElems.forEach(elem => { elem.removeEventListener('click', clickHandler); });
-                document.removeEventListener('keydown', keyHandler);
+                document.removeEventListener('keydown', keyHandler); // prevent memory leaks
 
                 // Check for pending alerts in queue
                 if (alertQueue.length > 0) {
@@ -312,8 +307,8 @@ const chatgpt = { // eslint-disable-line no-redeclare
             console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh activated');
 
             // Add listener to send beacons in Chromium to thwart auto-discards if Page Visibility API supported
-            if (navigator.userAgent.includes('Chrome') && typeof document.hidden !== 'undefined') {
-                document.addEventListener('visibilitychange', this.toggle.beacons); }
+            if (navigator.userAgent.includes('Chrome') && typeof document.hidden !== 'undefined')
+                document.addEventListener('visibilitychange', this.toggle.beacons);
         },
 
         deactivate() {
@@ -1274,15 +1269,15 @@ const chatgpt = { // eslint-disable-line no-redeclare
             clearTimeout(dismissFuncTID);
         };
         const dismissFuncTID = setTimeout(dismissNotif, hideDelay * 1000); // maintain visibility for `hideDelay` secs, then dismiss     
-        closeSVG.addEventListener('click', dismissNotif, { once: true }); // add to close button clicks
+        closeSVG.onclick = dismissNotif; // add to close button clicks
 
         // Destroy notification
-        notificationDiv.addEventListener('animationend', () => {
+        notificationDiv.onanimationend = () => {
             notificationDiv.remove(); // remove from DOM
             notifyProps = JSON.parse(localStorage.notifyProps);
             notifyProps.queue[notificationDiv.quadrant].shift(); // + memory
             localStorage.notifyProps = JSON.stringify(notifyProps); // + storage
-        }, { once: true });
+        };
 
         return notificationDiv;
     },
