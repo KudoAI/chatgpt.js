@@ -869,8 +869,8 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     getNewChatButton() {
         for (const navBtnSVG of document.querySelectorAll('nav button svg'))
-            if (navBtnSVG.querySelector('path[d*="M15.673 3.913a3.121"], ' // pencil-on-pad icon
-                                      + 'path[d*="M3.07 10.876C3.623"]'))  // refresh icon if temp chat
+            if (navBtnSVG.querySelector('path[d^="M15.6729"], '  // pencil-on-pad icon
+                                      + 'path[d^="M3.06957"]'))  // refresh icon if temp chat
                 return navBtnSVG.parentNode;
     },
 
