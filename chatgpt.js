@@ -878,7 +878,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     getRegenerateButton() {   
         for (const mainSVG of document.querySelectorAll('main svg')) {
-            if (mainSVG.querySelector('path[d*="M3.07 10.876C3.623"]')) // regen icon found
+            if (mainSVG.querySelector('path[d^="M3.06957"]')) // regen icon found
                 return mainSVG.parentNode;
     }},
 
