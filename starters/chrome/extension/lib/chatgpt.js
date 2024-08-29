@@ -300,8 +300,10 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 const randomDelay = Math.max(2, Math.floor(chatgpt.randomFloat() * 21 - 10)); // set random delay up to ±10 secs
                 autoRefresh.isActive = setTimeout(() => {
                     const manifestScript = document.querySelector('script[src*="_ssgManifest.js"]');
-                    document.querySelector('#refresh-frame').src = manifestScript.src + '?' + Date.now();
-                    console.log('↻ ChatGPT >> [' + autoRefresh.nowTimeStamp() + '] ChatGPT session refreshed');
+                    if (manifestScript) {
+                        document.querySelector('#refresh-frame').src = manifestScript.src + '?' + Date.now();
+                        console.log('↻ ChatGPT >> [' + autoRefresh.nowTimeStamp() + '] ChatGPT session refreshed');
+                    }
                     scheduleRefreshes(interval);
                 }, (interval + randomDelay) * 1000);
             };
@@ -421,20 +423,20 @@ const chatgpt = { // eslint-disable-line no-redeclare
             await new Promise(resolve => { // when reply starts generating
                 (function checkReplyExists() {
                     const msgDivs = document.querySelectorAll('div[data-message-author-role]');
-                    msgDivs[msgDivs.length - 1].dataset.messageAuthorRole == 'assistant' ? resolve(true)
+                    msgDivs[msgDivs.length - 1]?.dataset.messageAuthorRole == 'assistant' ? resolve(true)
                         : setTimeout(checkReplyExists, 200); })();
             });
             const lastReplyDiv = await new Promise(resolve => { // when code starts generating
                 (function checkPreExists() {
                     const replyDivs = document.querySelectorAll('div[data-message-author-role="assistant"]'),
                           lastReplyDiv = replyDivs[replyDivs.length - 1];
-                    lastReplyDiv.querySelector('pre') ? resolve(lastReplyDiv)
+                    lastReplyDiv?.querySelector('pre') ? resolve(lastReplyDiv)
                         : setTimeout(checkPreExists, 200); })();
             });
             return Promise.race([
                 new Promise(resolve => { // when code block not last child of reply div
                     (function checkPreNotLast() {
-                        lastReplyDiv.querySelector('pre').nextElementSibling ? resolve(true)
+                        lastReplyDiv?.querySelector('pre').nextElementSibling ? resolve(true)
                             : setTimeout(checkPreNotLast, 200); })();
                 }), chatgpt.isIdle() // ...or reply stopped generating
             ]);
@@ -567,7 +569,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             // Format filename after <title>
             const parser = new DOMParser(),
                   parsedHtml = parser.parseFromString(htmlContent, 'text/html');
-            filename = parsedHtml.querySelector('title').textContent + '.html';
+            filename = `${ parsedHtml.querySelector('title').textContent || 'ChatGPT conversation' }.html`;
 
             // Convert relative CSS paths to absolute ones
             const cssLinks = parsedHtml.querySelectorAll('link[rel="stylesheet"]');
@@ -864,7 +866,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 return formBtnSVG.parentNode.parentNode;
     }},
 
-    getFooterDiv() { return document.querySelector('main form').parentNode.parentNode.nextElementSibling; },
+    getFooterDiv() { return document.querySelector('main form')?.parentNode.parentNode.nextElementSibling; },
     getHeaderDiv() { return document.querySelector('main .sticky'); },
     getLastPrompt() { return chatgpt.getChatData('active', 'msg', 'user', 'latest'); },
     getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
@@ -1152,7 +1154,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             this.elements.push(newElement);
             const menuBtn = document.querySelector('nav button[id*="headless"]');
             if (!this.addedEvent) { // to prevent adding more than one event
-                menuBtn.addEventListener('click', () => { setTimeout(addElementsToMenu, 25); });
+                menuBtn?.addEventListener('click', () => { setTimeout(addElementsToMenu, 25); });
                 this.addedEvent = true; }
 
             return newElement.id; // Return the element id
@@ -1437,36 +1439,35 @@ const chatgpt = { // eslint-disable-line no-redeclare
             const responseDivs = document.querySelectorAll('div[data-testid*="conversation-turn"]:nth-child(odd)'),
                   strPos = pos.toString().toLowerCase();
             let response = '';
-            if (responseDivs.length) {
-                if (/last|final/.test(strPos)) // get last response
-                    response = responseDivs[responseDivs.length - 1].textContent;
-                else { // get nth response
-                    const nthOfResponse = (
+            if (!responseDivs.length) return console.error('No conversation found!');
+            if (/last|final/.test(strPos)) // get last response
+                response = responseDivs[responseDivs.length - 1].textContent;
+            else { // get nth response
+                const nthOfResponse = (
 
-                        // Calculate base number
-                        Number.isInteger(pos) ? pos : // do nothing for integers
-                        /^\d+/.test(strPos) ? /^\d+/.exec(strPos)[0] : // extract first digits for strings w/ them
-                        ( // convert words to integers for digitless strings
-                            /^(?:1|one|fir)(?:st)?$/.test(strPos) ? 1
-                            : /^(?:2|tw(?:o|en|el(?:ve|f))|seco)(?:nd|t[yi])?(?:e?th)?$/.test(strPos) ? 2
-                            : /^(?:3|th(?:ree|ir?))(?:rd|teen|t[yi])?(?:e?th)?$/.test(strPos) ? 3
-                            : /^(?:4|fou?r)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 4
-                            : /^(?:5|fi(?:ve|f))(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 5
-                            : /^(?:6|six)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 6
-                            : /^(?:7|seven)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 7
-                            : /^(?:8|eight?)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 8
-                            : /^(?:9|nine?)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 9
-                            : /^(?:10|ten)(?:th)?$/.test(strPos) ? 10 : 1 )
+                    // Calculate base number
+                    Number.isInteger(pos) ? pos : // do nothing for integers
+                    /^\d+/.test(strPos) ? /^\d+/.exec(strPos)[0] : // extract first digits for strings w/ them
+                    ( // convert words to integers for digitless strings
+                        /^(?:1|one|fir)(?:st)?$/.test(strPos) ? 1
+                        : /^(?:2|tw(?:o|en|el(?:ve|f))|seco)(?:nd|t[yi])?(?:e?th)?$/.test(strPos) ? 2
+                        : /^(?:3|th(?:ree|ir?))(?:rd|teen|t[yi])?(?:e?th)?$/.test(strPos) ? 3
+                        : /^(?:4|fou?r)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 4
+                        : /^(?:5|fi(?:ve|f))(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 5
+                        : /^(?:6|six)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 6
+                        : /^(?:7|seven)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 7
+                        : /^(?:8|eight?)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 8
+                        : /^(?:9|nine?)(?:teen|t[yi])?(?:e?th)?$/.test(strPos) ? 9
+                        : /^(?:10|ten)(?:th)?$/.test(strPos) ? 10 : 1 )
 
-                        // Transform base number if suffixed
-                        * ( /(ty|ieth)$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
-                        + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
+                    // Transform base number if suffixed
+                    * ( /(ty|ieth)$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
+                    + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
 
-                    );
-                    response = responseDivs[nthOfResponse - 1].textContent;
-                }
-                response = response.replace(/^ChatGPT(?:ChatGPT)?/, ''); // strip sender name
+                );
+                response = responseDivs[nthOfResponse - 1].textContent;
             }
+            response = response.replace(/^ChatGPT(?:ChatGPT)?/, ''); // strip sender name
             return response;
         },
 
@@ -1482,6 +1483,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return console.error(`Argument ${ i + 1 } must be a string!`);
         const textArea = document.querySelector('form textarea');
+        if (!textArea) return console.error('Chatbar element not found!');
         textArea.value = msg;
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
         setTimeout(function delaySend() {
@@ -1653,8 +1655,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 element.style.margin = '2px 0';
             });
     
-            const navBar = document.querySelector('nav');
             // Create MutationObserver instance
+            const navBar = document.querySelector('nav');
+            if (!navBar) return console.error('Sidebar element not found!');
             this.observer = new MutationObserver(mutations => {
                 mutations.forEach(mutation => {
                     if ((mutation.type == 'childList' && mutation.addedNodes.length) ||
@@ -1740,6 +1743,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         isOff() { return !this.isOn(); },
         isOn() {
             const sidebar = document.querySelector('body script + div > div');
+            if (!sidebar) return console.error('Sidebar element not found!');
             return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
               : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px';
