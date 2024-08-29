@@ -85,9 +85,10 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 document.head.append(modalStyle);
             }
             modalStyle.innerText = ( // update prev/new style contents
+                '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
 
                 // Background styles
-                '.chatgpt-modal {' 
+                + '.chatgpt-modal {' 
                     + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
                     + 'background-color: rgba(67, 70, 72, 0) ;' // init dim bg but no opacity
                     + 'transition: background-color 0.05s ease ;' // speed to transition in show alert routine
@@ -148,7 +149,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
         // Create/append buttons (if provided) to buttons div
         const modalButtons = document.createElement('div');
-        modalButtons.classList.add('modal-buttons');
+        modalButtons.classList.add('modal-buttons', 'no-mobile-tap-outline');
         if (btns) { // are supplied
             if (!Array.isArray(btns)) btns = [btns]; // convert single button to array if necessary
             btns.forEach((buttonFn) => { // create title-cased labels + attach listeners
@@ -194,7 +195,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
         // Create close button
         const closeBtn = document.createElement('div');
-        closeBtn.title = 'Close'; closeBtn.classList.add('modal-close-btn');
+        closeBtn.title = 'Close'; closeBtn.classList.add('modal-close-btn', 'no-mobile-tap-outline');
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         closeSVG.setAttribute('height', '10px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
@@ -1187,7 +1188,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
         // Create/append close button
         const closeBtn = document.createElement('div');
-        closeBtn.title = 'Dismiss'; closeBtn.classList.add('notif-close-btn');
+        closeBtn.title = 'Dismiss'; closeBtn.classList.add('notif-close-btn', 'no-mobile-tap-outline');
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         closeSVG.setAttribute('height', '8px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
@@ -1217,6 +1218,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             }
             notifStyle.innerText = ( // update prev/new style contents
                 '.chatgpt-notif {'
+                    + '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
                     + 'background-color: black ; padding: 10px 13px 10px 18px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
                     + 'opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ;' // visibility
                     + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;'
