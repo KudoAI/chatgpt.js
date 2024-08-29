@@ -1757,7 +1757,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             const isMobileDevice = chatgpt.browser.isMobile(),
                   navBtnSelector = isMobileDevice ? 'button' : 'nav button',
                   isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
-                              : btn => btn.querySelector('svg path[d*="M8.857 3h6.286c1.084"]');
+                              : btn => btn.querySelector('svg path[d^="M8.857"]');
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
         },
