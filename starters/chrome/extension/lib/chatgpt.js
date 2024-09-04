@@ -411,31 +411,35 @@ const chatgpt = { // eslint-disable-line no-redeclare
         },
 
         async isIdle() {
+            const obsConfig = { childList: true, subtree: true },
+                  selectors = { msgDiv: 'div[data-message-author-role]',
+                                replyDiv: 'div[data-message-author-role="assistant"]' };
+
             await new Promise(resolve => { // when in conversation page
-                (function checkConvoPage() {
-                    document.querySelector('div[data-message-author-role]') ? resolve(true)
-                        : setTimeout(checkConvoPage, 200); })();
+                if (document.querySelector(selectors.msgDiv)) resolve();
+                else new MutationObserver((_, obs) => {
+                    if (document.querySelector(selectors.msgDiv)) { obs.disconnect(); resolve(); }
+                }).observe(document.body, obsConfig);
             });
             await new Promise(resolve => { // when reply starts generating
-                (function checkReplyExists() {
-                    const msgDivs = document.querySelectorAll('div[data-message-author-role]');
-                    msgDivs[msgDivs.length - 1]?.dataset.messageAuthorRole == 'assistant' ? resolve(true)
-                        : setTimeout(checkReplyExists, 200); })();
+                new MutationObserver((_, obs) => {
+                    if (!chatgpt.getRegenerateBtn()) { obs.disconnect(); resolve(); }
+                }).observe(document.body, obsConfig);
             });
             const lastReplyDiv = await new Promise(resolve => { // when code starts generating
-                (function checkPreExists() {
-                    const replyDivs = document.querySelectorAll('div[data-message-author-role="assistant"]'),
+                new MutationObserver((_, obs) => {
+                    const replyDivs = document.querySelectorAll(selectors.replyDiv),
                           lastReplyDiv = replyDivs[replyDivs.length - 1];
-                    lastReplyDiv?.querySelector('pre') ? resolve(lastReplyDiv)
-                        : setTimeout(checkPreExists, 200); })();
+                    if (lastReplyDiv?.querySelector('pre')) { obs.disconnect(); resolve(lastReplyDiv); }
+                }).observe(document.body, obsConfig);
             });
-            return Promise.race([
-                new Promise(resolve => { // when code block not last child of reply div
-                    (function checkPreNotLast() {
-                        lastReplyDiv?.querySelector('pre').nextElementSibling ? resolve(true)
-                            : setTimeout(checkPreNotLast, 200); })();
-                }), chatgpt.isIdle() // ...or reply stopped generating
-            ]);
+            await new Promise(resolve => { // when code stops generating
+                new MutationObserver((_, obs) => {
+                    if (lastReplyDiv?.querySelector('pre').nextElementSibling // code block not last child of reply div
+                        || chatgpt.getRegenerateBtn() // ...or reply outright stopped generating
+                    ) { obs.disconnect(); resolve(); }
+                }).observe(document.body, obsConfig);
+            });
         },
 
         async minify(code) {
@@ -916,10 +920,12 @@ const chatgpt = { // eslint-disable-line no-redeclare
     history: {
         isLoaded() {
             return new Promise(resolve => {
-                (function checkChatHistory() {
-                    document.querySelector('nav') ? resolve(true) : setTimeout(checkChatHistory, 200);
-                })();
-        });}
+                if (document.querySelector('nav')) resolve(true);
+                else new MutationObserver((_, obs) => {
+                    if (document.querySelector('nav')) { obs.disconnect(); resolve(true); }
+                }).observe(document.body, { childList: true, subtree: true });
+            });
+        }
     },
 
     instructions: {
@@ -1052,17 +1058,21 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     isIdle() {
         return new Promise(resolve => {
-            (function checkIsIdle() {
-                chatgpt.getRegenerateButton() ? resolve(true) : setTimeout(checkIsIdle, 200);
-            })();
-    });},
+            if (chatgpt.getRegenerateBtn()) resolve(true);
+            else new MutationObserver((_, obs) => {
+                if (chatgpt.getRegenerateBtn()) { obs.disconnect(); resolve(true); }
+            }).observe(document.body, { childList: true, subtree: true });
+        });
+    },
 
     isLoaded() {
         return new Promise(resolve => {
-            (function checkIsLoaded() {
-                chatgpt.getNewChatButton() ? resolve(true) : setTimeout(checkIsLoaded, 200);
-            })();
-    });},
+            if (chatgpt.getNewChatBtn()) resolve(true);
+            else new MutationObserver((_, obs) => {
+                if (chatgpt.getNewChatBtn()) { obs.disconnect(); resolve(true); }
+            }).observe(document.body, { childList: true, subtree: true });
+        });
+    },
 
     isLightMode() { return document.documentElement.classList.toString().includes('light'); },
 
@@ -1761,9 +1771,10 @@ const chatgpt = { // eslint-disable-line no-redeclare
             await chatgpt.isLoaded();
             return Promise.race([
                 new Promise(resolve => {
-                    (function checkNewChatLink() {
-                        chatgpt.getNewChatLink() ? resolve(true) : setTimeout(checkNewChatLink, 200);
-                    })();
+                    if (chatgpt.getNewChatLink()) resolve(true);
+                    else new MutationObserver((_, obs) => {
+                        if (chatgpt.getNewChatLink()) { obs.disconnect(); resolve(true); }
+                    }).observe(document.body, { childList: true, subtree: true });
                 }),
                 new Promise(resolve => setTimeout(resolve, 5000)) // since New Chat link not always present
             ]);
