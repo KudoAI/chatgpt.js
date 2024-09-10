@@ -914,7 +914,13 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return navigator.languages[0] || navigator.language || navigator.browserLanguage ||
             navigator.systemLanguage || navigator.userLanguage || ''; },
 
-    hideFooter() { chatgpt.getFooterDiv().style.display = 'none'; },
+    hideFooter() { 
+        const footer = chatgpt.getFooterDiv();
+        if (!footer) return console.error('Footer element not found!');
+        if (footer.style.visibility == 'hidden') return console.info('Footer already hidden!');
+        footer.style.visibility = 'hidden'; footer.style.height = '3px';
+    },
+
     hideHeader() { chatgpt.getHeaderDiv().style.display = 'none'; },
 
     history: {
@@ -1633,7 +1639,13 @@ const chatgpt = { // eslint-disable-line no-redeclare
         });});});});});
     },
 
-    showFooter() { chatgpt.getFooterDiv().style.display = 'revert'; },
+    showFooter() {
+        const footer = chatgpt.getFooterDiv();
+        if (!footer) return console.error('Footer element not found!');
+        if (footer.style.visibility != 'hidden') return console.info('Footer already shown!');
+        footer.style.visibility = footer.style.height = 'inherit';
+    },
+
     showHeader() { chatgpt.getHeaderDiv().style.display = 'flex'; },
 
     sidebar: {
