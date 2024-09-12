@@ -615,15 +615,17 @@ const chatgpt = { // eslint-disable-line no-redeclare
     focusChatbar() { chatgpt.getChatBox()?.focus(); },
 
     footer: {
+        get() { return document.querySelector('main form')?.parentNode.parentNode.nextElementSibling; },
+
         hide() { 
-            const footer = chatgpt.getFooterDiv();
+            const footer = chatgpt.footer.get();
             if (!footer) return console.error('Footer element not found!');
             if (footer.style.visibility == 'hidden') return console.info('Footer already hidden!');
             footer.style.visibility = 'hidden'; footer.style.height = '3px';
         },
 
         show() {
-            const footer = chatgpt.getFooterDiv();
+            const footer = chatgpt.footer.get();
             if (!footer) return console.error('Footer element not found!');
             if (footer.style.visibility != 'hidden') return console.info('Footer already shown!');
             footer.style.visibility = footer.style.height = 'inherit';            
@@ -882,7 +884,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                 return formBtnSVG.parentNode.parentNode;
     }},
 
-    getFooterDiv() { return document.querySelector('main form')?.parentNode.parentNode.nextElementSibling; },
+    getFooterDiv() { return chatgpt.footer.get(); },
     getHeaderDiv() { return chatgpt.header.get(); },
     getLastPrompt() { return chatgpt.getChatData('active', 'msg', 'user', 'latest'); },
     getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
