@@ -1760,6 +1760,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return newElement.id; // Return the element id
         },
 
+        exists() { return !!chatgpt.getNewChatLink(); },
         hide() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
         show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
         isOff() { return !this.isOn(); },
@@ -1903,6 +1904,7 @@ const cjsFuncAliases = [
     ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
     ['detectLanguage', 'getLanguage'],
     ['executeCode', 'codeExecute'],
+    ['exists', 'isAvailable', 'isExistent', 'isPresent'],
     ['exportChat', 'chatExport', 'export'],
     ['getFooterDiv', 'getFooter'],
     ['getHeaderDiv', 'getHeader'],
