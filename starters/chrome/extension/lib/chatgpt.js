@@ -423,24 +423,25 @@ const chatgpt = { // eslint-disable-line no-redeclare
             });
             await new Promise(resolve => { // when reply starts generating
                 new MutationObserver((_, obs) => {
-                    if (!chatgpt.getRegenerateBtn()) { obs.disconnect(); resolve(); }
-                }).observe(document.body, obsConfig);
+                    if (chatgpt.getStopBtn()) { obs.disconnect(); resolve(); }
+                }).observe(document.body, { childList: true, subtree: true });
             });
-            const lastReplyDiv = await new Promise(resolve => { // when code starts generating
+            const replyDivs = document.querySelectorAll(selectors.replyDiv),
+                  lastReplyDiv = replyDivs[replyDivs.length - 1];
+            await new Promise(resolve => { // when code starts generating
                 new MutationObserver((_, obs) => {
-                    const replyDivs = document.querySelectorAll(selectors.replyDiv),
-                          lastReplyDiv = replyDivs[replyDivs.length - 1];
-                    if (lastReplyDiv?.querySelector('pre')) { obs.disconnect(); resolve(lastReplyDiv); }
+                    if (lastReplyDiv?.querySelector('pre')) { obs.disconnect(); resolve(); }
                 }).observe(document.body, obsConfig);
             });
             await new Promise(resolve => { // when code stops generating
                 new MutationObserver((_, obs) => {
                     if (lastReplyDiv?.querySelector('pre').nextElementSibling // code block not last child of reply div
-                        || chatgpt.getRegenerateBtn() // ...or reply outright stopped generating
+                        || !chatgpt.getStopBtn() // ...or reply outright stopped generating
                     ) { obs.disconnect(); resolve(); }
                 }).observe(document.body, obsConfig);
             });
         },
+
 
         async minify(code) {
             if (!code) return console.error('Code argument not supplied. Pass some code!');
@@ -1081,12 +1082,25 @@ const chatgpt = { // eslint-disable-line no-redeclare
     isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
     isFullScreen() { return chatgpt.browser.isFullScreen(); },
 
-    isIdle() {
-        return new Promise(resolve => {
-            if (chatgpt.getRegenerateBtn()) resolve(true);
+    async isIdle() {
+        const obsConfig = { childList: true, subtree: true },
+              msgDivSelector = 'div[data-message-author-role]';
+
+        await new Promise(resolve => { // when in conversation page
+            if (document.querySelector(msgDivSelector)) resolve();
             else new MutationObserver((_, obs) => {
-                if (chatgpt.getRegenerateBtn()) { obs.disconnect(); resolve(true); }
-            }).observe(document.body, { childList: true, subtree: true });
+                if (document.querySelector(msgDivSelector)) { obs.disconnect(); resolve(); }
+            }).observe(document.body, obsConfig);
+        });
+        await new Promise(resolve => { // when reply starts generating
+            new MutationObserver((_, obs) => {
+                if (chatgpt.getStopBtn()) { obs.disconnect(); resolve(); }
+            }).observe(document.body, obsConfig);
+        });
+        return new Promise(resolve => { // when reply stops generating
+            new MutationObserver((_, obs) => {
+                if (!chatgpt.getStopBtn()) { obs.disconnect(); resolve(true); }
+            }).observe(document.body, obsConfig);
         });
     },
 
