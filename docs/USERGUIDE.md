@@ -108,6 +108,14 @@
     - [review `async`](#review-async)
     - [unminify `async`](#unminify-async)
     - [write `async`](#write-async)
+  - [footer `api`](#footer-api)
+    - [get](#get)
+    - [hide](#hide)
+    - [show](#show)
+  - [header `api`](#header-api)
+    - [get](#get-1)
+    - [hide](#hide-1)
+    - [show](#show-1)
   - [history `api`](#history-api)
     - [isLoaded](#isloaded-async-1)
   - [instructions `api`](#instructions-api)
@@ -121,7 +129,7 @@
     - [close](#close)
   - [response `api`](#response-api)
     - [continue](#continue)
-    - [get](#get-1)
+    - [get](#get-2)
     - [getFromAPI `async`](#getfromapi-async)
     - [getFromDOM](#getfromdom)
     - [getLast `async`](#getlast-async)
@@ -138,8 +146,8 @@
     - [exists](#exists)
     - [isOn](#ison-1)
     - [isOff](#isoff-1)
-    - [hide](#hide)
-    - [show](#show)
+    - [hide](#hide-2)
+    - [show](#show-2)
     - [toggle](#toggle-2)
     - [isLoaded](#isloaded-async-2)
 
@@ -1563,6 +1571,76 @@ Example code:
         // Your task code here
     }, 10000); */
 })();
+```
+
+## footer `api`
+
+API related to the footer.
+
+### get
+
+Returns the footer div as an HTML element.
+
+Example code:
+
+```js
+const footerDiv = chatgpt.footer.get();
+footerDiv.style.padding = '15px'; // make the footer taller
+```
+
+### hide
+
+Hides the footer div.
+
+Example code:
+
+```js
+chatgpt.footer.hide()
+```
+
+### show
+
+Shows the footer div if hidden.
+
+Example code:
+
+```js
+chatgpt.footer.show()
+```
+
+## header `api`
+
+API related to the header.
+
+### get
+
+Returns the header div as an HTML element.
+
+Example code:
+
+```js
+const headerDiv = chatgpt.header.get();
+headerDiv.style.display = none; // hide the header
+```
+
+### hide
+
+Hides the header div.
+
+Example code:
+
+```js
+chatgpt.header.hide()
+```
+
+### show
+
+Shows the header div if hidden.
+
+Example code:
+
+```js
+chatgpt.header.show()
 ```
 
 ## history `api`
