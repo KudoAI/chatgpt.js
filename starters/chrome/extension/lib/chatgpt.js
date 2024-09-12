@@ -1499,7 +1499,8 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return console.error(`Argument ${ i + 1 } must be a string!`);
         const textArea = chatgpt.getChatBox();
         if (!textArea) return console.error('Chatbar element not found!');
-        textArea.value = msg;
+        const msgP = document.createElement('p'); msgP.textContent = msg;
+        textArea.replaceChild(msgP, textArea.querySelector('p'));
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
         setTimeout(function delaySend() {
             const sendBtn = chatgpt.getSendButton();
