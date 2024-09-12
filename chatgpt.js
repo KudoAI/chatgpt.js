@@ -1765,9 +1765,10 @@ const chatgpt = { // eslint-disable-line no-redeclare
         show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
         isOff() { return !this.isOn(); },
         isOn() {
-            const sidebar = document.querySelector('body script + div > div');
-            if (!sidebar) return console.error('Sidebar element not found!');
-            return chatgpt.browser.isMobile() ?
+            const sidebar = (() => {
+                return chatgpt.sidebar.exists() ? document.querySelector('body script + div > div') : null; })();
+            if (!sidebar) { console.error('Sidebar element not found!'); return false; }
+            else return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
               : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px';
         },
@@ -1779,6 +1780,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                               : btn => btn.querySelector('svg path[d^="M8.857"]');
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
+            console.error('Sidebar toggle not found!');
         },
 
         async isLoaded() {
