@@ -891,10 +891,8 @@ const chatgpt = { // eslint-disable-line no-redeclare
     getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
 
     getNewChatButton() {
-        for (const navBtnSVG of document.querySelectorAll('nav button svg'))
-            if (navBtnSVG.querySelector('path[d^="M15.6729"], '  // pencil-on-pad icon
-                                      + 'path[d^="M3.06957"]'))  // refresh icon if temp chat
-                return navBtnSVG.parentNode;
+        return document.querySelector('button:has([d*="M15.6729"],' // pencil-on-pad icon
+                                    + '[d^="M3.06957"])'); // refresh icon if temp chat
     },
 
     getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
