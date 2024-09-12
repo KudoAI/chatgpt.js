@@ -144,11 +144,11 @@
   - [sidebar `api`](#sidebar-api)
     - [append](#append)
     - [exists](#exists)
-    - [isOn](#ison-1)
-    - [isOff](#isoff-1)
+    - [isOn](#ison)
+    - [isOff](#isoff)
     - [hide](#hide-2)
     - [show](#show-2)
-    - [toggle](#toggle-2)
+    - [toggle](#toggle-1)
     - [isLoaded](#isloaded-async-2)
 
 # Importing the library
