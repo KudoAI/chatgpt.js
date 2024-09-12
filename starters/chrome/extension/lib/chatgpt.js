@@ -614,6 +614,22 @@ const chatgpt = { // eslint-disable-line no-redeclare
     extractCode() { chatgpt.code.extract(); },
     focusChatbar() { chatgpt.getChatBox()?.focus(); },
 
+    footer: {
+        hide() { 
+            const footer = chatgpt.getFooterDiv();
+            if (!footer) return console.error('Footer element not found!');
+            if (footer.style.visibility == 'hidden') return console.info('Footer already hidden!');
+            footer.style.visibility = 'hidden'; footer.style.height = '3px';
+        },
+
+        show() {
+            const footer = chatgpt.getFooterDiv();
+            if (!footer) return console.error('Footer element not found!');
+            if (footer.style.visibility != 'hidden') return console.info('Footer already shown!');
+            footer.style.visibility = footer.style.height = 'inherit';            
+        }
+    },
+
     generateRandomIP() {
         const ip = Array.from({length: 4}, () => Math.floor(chatgpt.randomFloat() * 256)).join('.');
         console.info('IP generated: ' + ip);
@@ -867,7 +883,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
     }},
 
     getFooterDiv() { return document.querySelector('main form')?.parentNode.parentNode.nextElementSibling; },
-    getHeaderDiv() { return document.querySelector('main .sticky'); },
+    getHeaderDiv() { return chatgpt.header.get(); },
     getLastPrompt() { return chatgpt.getChatData('active', 'msg', 'user', 'latest'); },
     getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
 
@@ -912,16 +928,17 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     getUserLanguage() {
         return navigator.languages[0] || navigator.language || navigator.browserLanguage ||
-            navigator.systemLanguage || navigator.userLanguage || ''; },
-
-    hideFooter() { 
-        const footer = chatgpt.getFooterDiv();
-        if (!footer) return console.error('Footer element not found!');
-        if (footer.style.visibility == 'hidden') return console.info('Footer already hidden!');
-        footer.style.visibility = 'hidden'; footer.style.height = '3px';
+            navigator.systemLanguage || navigator.userLanguage || '';
     },
 
-    hideHeader() { chatgpt.getHeaderDiv().style.display = 'none'; },
+    header: {
+        get() { return document.querySelector('main .sticky'); },
+        hide() { chatgpt.header.get().style.display = 'none'; },
+        show() { chatgpt.header.get().style.display = 'flex'; }
+    },
+
+    hideFooter() { chatgpt.footer.hide(); },
+    hideHeader() { chatgpt.header.hide(); },
 
     history: {
         isLoaded() {
@@ -1640,14 +1657,8 @@ const chatgpt = { // eslint-disable-line no-redeclare
         });});});});});
     },
 
-    showFooter() {
-        const footer = chatgpt.getFooterDiv();
-        if (!footer) return console.error('Footer element not found!');
-        if (footer.style.visibility != 'hidden') return console.info('Footer already shown!');
-        footer.style.visibility = footer.style.height = 'inherit';
-    },
-
-    showHeader() { chatgpt.getHeaderDiv().style.display = 'flex'; },
+    showFooter() { chatgpt.footer.show(); },
+    showHeader() { chatgpt.header.show(); },
 
     sidebar: {
         elements: [], observer: {},
