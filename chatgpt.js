@@ -410,38 +410,43 @@ const chatgpt = { // eslint-disable-line no-redeclare
             return codeBlocks ? codeBlocks[codeBlocks.length - 1] : msg;
         },
 
-        async isIdle() {
+        async isIdle(timeout = null) {
             const obsConfig = { childList: true, subtree: true },
                   selectors = { msgDiv: 'div[data-message-author-role]',
                                 replyDiv: 'div[data-message-author-role="assistant"]' };
 
-            await new Promise(resolve => { // when in conversation page
-                if (document.querySelector(selectors.msgDiv)) resolve();
-                else new MutationObserver((_, obs) => {
-                    if (document.querySelector(selectors.msgDiv)) { obs.disconnect(); resolve(); }
-                }).observe(document.body, obsConfig);
-            });
-            await new Promise(resolve => { // when reply starts generating
-                new MutationObserver((_, obs) => {
-                    if (chatgpt.getStopBtn()) { obs.disconnect(); resolve(); }
-                }).observe(document.body, { childList: true, subtree: true });
-            });
-            const replyDivs = document.querySelectorAll(selectors.replyDiv),
-                  lastReplyDiv = replyDivs[replyDivs.length - 1];
-            await new Promise(resolve => { // when code starts generating
-                new MutationObserver((_, obs) => {
-                    if (lastReplyDiv?.querySelector('pre')) { obs.disconnect(); resolve(); }
-                }).observe(document.body, obsConfig);
-            });
-            await new Promise(resolve => { // when code stops generating
-                new MutationObserver((_, obs) => {
-                    if (lastReplyDiv?.querySelector('pre').nextElementSibling // code block not last child of reply div
-                        || !chatgpt.getStopBtn() // ...or reply outright stopped generating
-                    ) { obs.disconnect(); resolve(); }
-                }).observe(document.body, obsConfig);
-            });
-        },
+            // Create promises
+            const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null;
+            const isIdlePromise = (async () => {
+                await new Promise(resolve => { // when on convo page
+                    if (document.querySelector(selectors.msgDiv)) resolve();
+                    else new MutationObserver((_, obs) => {
+                        if (document.querySelector(selectors.msgDiv)) { obs.disconnect(); resolve(); }
+                    }).observe(document.body, obsConfig);
+                });
+                await new Promise(resolve => { // when reply starts generating
+                    new MutationObserver((_, obs) => {
+                        if (chatgpt.getStopBtn()) { obs.disconnect(); resolve(); }
+                    }).observe(document.body, { childList: true, subtree: true });
+                });
+                const replyDivs = document.querySelectorAll(selectors.replyDiv),
+                      lastReplyDiv = replyDivs[replyDivs.length - 1];
+                await new Promise(resolve => { // when code starts generating
+                    new MutationObserver((_, obs) => {
+                        if (lastReplyDiv?.querySelector('pre')) { obs.disconnect(); resolve(); }
+                    }).observe(document.body, obsConfig);
+                });
+                return new Promise(resolve => { // when code stops generating
+                    new MutationObserver((_, obs) => {
+                        if (lastReplyDiv?.querySelector('pre')?.nextElementSibling // code block not last child of reply div
+                            || !chatgpt.getStopBtn() // ...or reply outright stopped generating
+                        ) { obs.disconnect(); resolve(true); }
+                    }).observe(document.body, obsConfig);
+                });
+            })();
 
+            return await (timeoutPromise ? Promise.race([isIdlePromise, timeoutPromise]) : isIdlePromise);
+        },
 
         async minify(code) {
             if (!code) return console.error('Code argument not supplied. Pass some code!');
@@ -942,13 +947,15 @@ const chatgpt = { // eslint-disable-line no-redeclare
     hideHeader() { chatgpt.header.hide(); },
 
     history: {
-        isLoaded() {
-            return new Promise(resolve => {
+        async isLoaded(timeout = null) {
+            const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null;
+            const isLoadedPromise = new Promise(resolve => {
                 if (document.querySelector('nav')) resolve(true);
                 else new MutationObserver((_, obs) => {
                     if (document.querySelector('nav')) { obs.disconnect(); resolve(true); }
                 }).observe(document.body, { childList: true, subtree: true });
             });
+            return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise );
         }
     },
 
@@ -1080,35 +1087,43 @@ const chatgpt = { // eslint-disable-line no-redeclare
     isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
     isFullScreen() { return chatgpt.browser.isFullScreen(); },
 
-    async isIdle() {
+    async isIdle(timeout = null) {
         const obsConfig = { childList: true, subtree: true },
               msgDivSelector = 'div[data-message-author-role]';
 
-        await new Promise(resolve => { // when in conversation page
-            if (document.querySelector(msgDivSelector)) resolve();
-            else new MutationObserver((_, obs) => {
-                if (document.querySelector(msgDivSelector)) { obs.disconnect(); resolve(); }
-            }).observe(document.body, obsConfig);
-        });
-        await new Promise(resolve => { // when reply starts generating
-            new MutationObserver((_, obs) => {
-                if (chatgpt.getStopBtn()) { obs.disconnect(); resolve(); }
-            }).observe(document.body, obsConfig);
-        });
-        return new Promise(resolve => { // when reply stops generating
-            new MutationObserver((_, obs) => {
-                if (!chatgpt.getStopBtn()) { obs.disconnect(); resolve(true); }
-            }).observe(document.body, obsConfig);
-        });
+        // Create promises
+        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null;
+        const isIdlePromise = (async () => {
+            await new Promise(resolve => { // when on convo page
+                if (document.querySelector(msgDivSelector)) resolve();
+                else new MutationObserver((_, obs) => {
+                    if (document.querySelector(msgDivSelector)) { obs.disconnect(); resolve(); }
+                }).observe(document.body, obsConfig);
+            });
+            await new Promise(resolve => { // when reply starts generating
+                new MutationObserver((_, obs) => {
+                    if (chatgpt.getStopBtn()) { obs.disconnect(); resolve(); }
+                }).observe(document.body, obsConfig);
+            });
+            return new Promise(resolve => { // when reply stops generating
+                new MutationObserver((_, obs) => {
+                    if (!chatgpt.getStopBtn()) { obs.disconnect(); resolve(true); }
+                }).observe(document.body, obsConfig);
+            });
+        })();
+
+        return await (timeoutPromise ? Promise.race([isIdlePromise, timeoutPromise]) : isIdlePromise);
     },
 
-    isLoaded() {
-        return new Promise(resolve => {
+    async isLoaded(timeout = null) {
+        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null;
+        const isLoadedPromise = new Promise(resolve => {
             if (chatgpt.getNewChatBtn()) resolve(true);
             else new MutationObserver((_, obs) => {
                 if (chatgpt.getNewChatBtn()) { obs.disconnect(); resolve(true); }
             }).observe(document.body, { childList: true, subtree: true });
         });
+        return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise );
     },
 
     isLightMode() { return document.documentElement.classList.toString().includes('light'); },
@@ -1806,17 +1821,16 @@ const chatgpt = { // eslint-disable-line no-redeclare
             console.error('Sidebar toggle not found!');
         },
 
-        async isLoaded() {
+        async isLoaded(timeout = 5000) {
             await chatgpt.isLoaded();
-            return Promise.race([
-                new Promise(resolve => {
-                    if (chatgpt.getNewChatLink()) resolve(true);
-                    else new MutationObserver((_, obs) => {
-                        if (chatgpt.getNewChatLink()) { obs.disconnect(); resolve(true); }
-                    }).observe(document.body, { childList: true, subtree: true });
-                }),
-                new Promise(resolve => setTimeout(resolve, 5000)) // since New Chat link not always present
-            ]);
+            const timeoutPromise = new Promise(resolve => setTimeout(() => { resolve(false); }, timeout));
+            const isLoadedPromise = new Promise(resolve => {
+                if (chatgpt.getNewChatLink()) resolve(true);
+                else new MutationObserver((_, obs) => {
+                    if (chatgpt.getNewChatLink()) { obs.disconnect(); resolve(true); }
+                }).observe(document.body, { childList: true, subtree: true });
+            });
+            return await Promise.race([isLoadedPromise, timeoutPromise]);
         }
     },
 

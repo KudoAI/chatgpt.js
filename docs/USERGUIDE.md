@@ -315,6 +315,10 @@ if (chatgpt.isFullScreen()) {
 
 Resolves a promise when ChatGPT has finished loading.
 
+**Parameters**:
+
+`timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until ChatGPT finishes loading.
+
 Example code:
 
 ```js
@@ -912,6 +916,10 @@ console.log(fifthResp); // Example output: 'Hello from ChatGPT!'
 
 Resolves a promise when ChatGPT has finished generating a response.
 
+**Parameters**:
+
+`timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until response generation finishes.
+
 Example code:
 
 ```js
@@ -1440,6 +1448,10 @@ Example code:
 
 Resolves a promise when code has finished generating.
 
+**Parameters**:
+
+`timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until code generation finishes.
+
 Example code:
 
 ```js
@@ -1650,6 +1662,10 @@ API related to the chat history.
 ### isLoaded `async`
 
 Resolves a promise when chat history has finished loading.
+
+**Parameters**:
+
+`timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until chat history finishes loading.
 
 Example code:
 
@@ -1971,7 +1987,11 @@ chatgpt.sidebar.toggle();
 
 ### isLoaded `async`
 
-Resolves a promise when the ChatGPT sidebar has finished loading. (Times out 5s after New Chat button loads, since New Chat link does not always appear.)
+Resolves a promise when the ChatGPT sidebar has finished loading.
+
+**Parameters**:
+
+`timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits 5s or until New Chat link appears (since it is not always present).
 
 Example code:
 
