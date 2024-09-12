@@ -135,6 +135,7 @@
       - [toggle](#toggle-1)
   - [sidebar `api`](#sidebar-api)
     - [append](#append)
+    - [exists](#exists)
     - [isOn](#ison-1)
     - [isOff](#isoff-1)
     - [hide](#hide)
@@ -1823,6 +1824,17 @@ const dropdownId = chatgpt.sidebar.append('dropdown', {
     ]
 });
 console.log(dropdownId); // Example output: 1693294795240
+```
+
+### exists
+
+Returns a boolean value. `true` if the sidebar exists , `false` otherwise (e.g. logged out UI).
+
+Example code:
+
+```js
+if (!chatgpt.sidebar.exists())
+    chatgpt.alert('Sidebar is missing!')
 ```
 
 ### isOn
