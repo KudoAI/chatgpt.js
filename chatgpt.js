@@ -1544,10 +1544,8 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     sendInNewChat(msg) {
         if (typeof msg !== 'string') return console.error('Message must be a string!');
-        for (const navLink of document.querySelectorAll('nav a')) {
-            if (/(new|clear) chat/i.test(navLink.text)) {
-                navLink.click(); break;
-        }} setTimeout(() => { chatgpt.send(msg); }, 500);
+        try { chatgpt.getNewChatBtn().click(); } catch (err) { return console.error(err.message); }
+        setTimeout(() => { chatgpt.send(msg); }, 500);
     },
 
     settings: {
