@@ -243,8 +243,8 @@ Example code:
 ```js
 (async () => {
     const language = await chatgpt.detectLanguage('我是一個大男孩');
-    console.log(language);
-    /* Logs:
+    chatgpt.alert(language);
+    /* Alerts:
     Chinese (Traditional) */
 })();
 ```
@@ -261,7 +261,7 @@ Example code:
 
 ```js
 (async () => {
-    console.log(await chatgpt.executeCode('return 6 + 5')); // logs '11'
+    chatgpt.alert(await chatgpt.executeCode('return 6 + 5')); // logs '11'
 })();
 ```
 
@@ -273,7 +273,7 @@ Example code:
 
 ```js
 const randomIP = chatgpt.generateRandomIP();
-console.log(randomIP); // Example output: '161.192.110.125'
+chatgpt.alert(randomIP); // Example output: '161.192.110.125'
 ```
 
 ### get
@@ -296,7 +296,7 @@ Example code:
 
 ```js
 const userLanguage = chatgpt.getUserLanguage();
-console.log(userLanguage); // Example output: 'en-US'
+chatgpt.alert(userLanguage); // Example output: 'en-US'
 ```
 
 ### isFullScreen
@@ -324,7 +324,7 @@ Example code:
 ```js
 (async () => {
     await chatgpt.isLoaded();
-    console.log('ChatGPT has finished loading.');
+    chatgpt.alert('ChatGPT has finished loading.');
 })();
 ```
 
@@ -346,7 +346,7 @@ Example code:
 
 ```js
 const randomNumber = chatgpt.randomFloat();
-console.log(randomNumber); // Example output: 0.9472113021060851
+chatgpt.alert(randomNumber); // Example output: 0.9472113021060851
 ```
 
 ### renderHTML
@@ -381,7 +381,7 @@ Example code:
 (async () => {
     const text = 'Are you an #OSS supporter? Do you love JavaScript? Then why not contribute to the future of #AI app development? https://chatgpt.js.org (a #100Builders project) is seeking collabs for exactly this! @withBackdrop';
     const sentiment = await chatgpt.sentiment(text, '100 Builders');
-    console.log(sentiment);
+    chatgpt.alert(sentiment);
 
     /* Example output:
     The sentiment of the text towards the entity "100 Builders" is strongly positive. The text encourages
@@ -407,7 +407,7 @@ Example code:
 ```js
 (async () => {
     const suggestions = await chatgpt.suggest('names', 'baby boy');
-    console.log(suggestions);
+    chatgpt.alert(suggestions);
 
     /* Example output:
     1. Liam
@@ -446,7 +446,7 @@ Example code:
 ```js
 (async () => {
     const summary = await chatgpt.summarize('A very long text...');
-    console.log(summary); // Example output: 'A very short text...'
+    chatgpt.alert(summary); // Example output: 'A very short text...'
 })();
 ```
 
@@ -465,7 +465,7 @@ Example code:
 ```js
 (async () => {
     const translation = await chatgpt.translate('Hello, how are you?', 'spanish');
-    console.log(translation); // Logs: 'Hola, ¿cómo estás?'
+    chatgpt.alert(translation); // Alerts: 'Hola, ¿cómo estás?'
 })();
 ```
 
@@ -475,7 +475,7 @@ Example code:
 
 ```js
 const randomID = chatgpt.uuidv4();
-console.log(randomID); // Example output: '239067d1-bcb8-4fd7-91eb-9ab94619b7b3'
+chatgpt.alert(randomID); // Example output: '239067d1-bcb8-4fd7-91eb-9ab94619b7b3'
 ```
 
 ## Page theme
@@ -507,7 +507,7 @@ Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
 Example code:
 
 ```js
-console.log(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
+chatgpt.alert(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
 ```
 
 ### isLightMode
@@ -517,7 +517,7 @@ Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
 Example code:
 
 ```js
-console.log(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
+chatgpt.alert(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
 ```
 
 ### toggleScheme
@@ -555,10 +555,10 @@ function doSomething() { /* Your code */ }
 
 function doSomethingElse() { /* Your code */ }
 
-function sayHello() { console.log('Hello!'); }
+function sayHello() { chatgpt.alert('Hello!'); }
 
 const alertID = chatgpt.alert('Hello, world!', 'The sky is blue.', [doSomething, doSomethingElse], sayHello, 200);
-console.log(alertID); // Example output: '1693237957878'
+chatgpt.alert(alertID); // Example output: '1693237957878'
 ```
 
 ### notify
@@ -590,7 +590,7 @@ Returns an account access token as a string.
 ```js
 (async () => {
     const token = await chatgpt.getAccessToken();
-    console.log(token); // Example output: 'abcdef[...]'
+    chatgpt.alert(token); // Example output: 'abcdef[...]'
 })();
 ```
 
@@ -607,10 +607,10 @@ Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single det
 ```js
 (async () => {
     const accountName = await chatgpt.getAccountDetails('name');
-    console.log(accountName); // Example output: 'chatgpt.js'
+    chatgpt.alert(accountName); // Example output: 'chatgpt.js'
 
     const accountData = await chatgpt.getAccountDetails('name', 'email');
-    console.log(accountData);
+    chatgpt.alert(accountData);
     /* Example output:
     {
         name: 'chatgpt.js',
@@ -641,7 +641,7 @@ Example code:
 ```js
 (async () => {
     const response = await chatgpt.askAndGetReply('Hello, ChatGPT');
-    console.log(response); // Example output: 'Hello user, I'm ChatGPT!'
+    chatgpt.alert(response); // Example output: 'Hello user, I'm ChatGPT!'
 })();
 ```
 
@@ -652,7 +652,7 @@ Clears chat history.
 Example code:
 
 ```js
-chatgpt.clearChats().then(() => console.log('Chat history cleared!'));
+chatgpt.clearChats().then(() => chatgpt.alert('Chat history cleared!'));
 ```
 
 ### exportChat `async`
@@ -842,7 +842,7 @@ Example code:
 
 ```js
 const chatInput = chatgpt.getChatInput();
-console.log(chatInput); // Example output: 'Hello from chatgpt.js!'
+chatgpt.alert(chatInput); // Example output: 'Hello from chatgpt.js!'
 ```
 
 ### getLastPrompt `async`
@@ -852,7 +852,7 @@ Returns the last message sent by the user as a string.
 ```js
 (async () => {
     const message = await chatgpt.getLastPrompt();
-    console.log(message); // Example output: 'Hello from chatgpt.js!'
+    chatgpt.alert(message); // Example output: 'Hello from chatgpt.js!'
 })();
 ```
 
@@ -863,7 +863,7 @@ Returns the last ChatGPT response as a string.
 ```js
 (async () => {
     const response = await chatgpt.getLastResponse();
-    console.log(response); // Example output: 'I am ChatGPT!'
+    chatgpt.alert(response); // Example output: 'I am ChatGPT!'
 })();
 ```
 
@@ -888,7 +888,7 @@ Example code:
 ```js
 (async () => {
     const response = chatgpt.getResponseFromAPI();
-    console.log(response); // Example output: 'Hello from ChatGPT!'
+    chatgpt.alert(response); // Example output: 'Hello from ChatGPT!'
 })();
 ```
 
@@ -909,7 +909,7 @@ fifthResp = chatgpt.getResponseFromDOM(5); // Returns the 5th response
 fifthResp = chatgpt.getResponseFromDOM('fifth'); // Also returns the 5th response
 fifthResp = chatgpt.getResponseFromDOM('five'); // Returns the 5th response too
 
-console.log(fifthResp); // Example output: 'Hello from ChatGPT!'
+chatgpt.alert(fifthResp); // Example output: 'Hello from ChatGPT!'
 ```
 
 ### isIdle `async`
@@ -925,7 +925,7 @@ Example code:
 ```js
 (async () => {
     await chatgpt.code.isIdle();
-    console.log('ChatGPT is idle');
+    chatgpt.alert('ChatGPT is idle');
 })();
 ```
 
@@ -1072,7 +1072,7 @@ Example code:
 
 ```js
 const chatbox = chatgpt.getChatBox();
-console.log(chatbox.value); // Example output: 'Hello from chatgpt.js!'
+chatgpt.alert(chatbox.value); // Example output: 'Hello from chatgpt.js!'
 ```
 
 ### getContinueGeneratingButton
@@ -1252,7 +1252,7 @@ Example code:
 
 ```js
 const timeStamp = chatgpt.autoRefresh.nowTimeStamp();
-console.log(timeStamp); // Example output: '1:56:25 PM'
+chatgpt.alert(timeStamp); // Example output: '1:56:25 PM'
 ```
 
 ## browser `api`
@@ -1264,7 +1264,7 @@ Returns a boolean value. `true` if system/browser scheme preference is set to li
 Example code:
 
 ```js
-console.log(chatgpt.browser.isLightMode()); // logs `true` or `false`
+chatgpt.alert(chatgpt.browser.isLightMode()); // logs `true` or `false`
 ```
 
 ### isDarkMode
@@ -1274,7 +1274,7 @@ Returns a boolean value. `true` if system/browser scheme preference is set to da
 Example code:
 
 ```js
-console.log(chatgpt.browser.isDarkMode()); // logs `true` or `false`
+chatgpt.alert(chatgpt.browser.isDarkMode()); // logs `true` or `false`
 ```
 
 ### isChromium
@@ -1386,9 +1386,9 @@ Example code:
             replyBox.style.height = replyBox.scrollHeight + 'px'
             prevLength = newLength
         }`);
-    console.log(minifiedCode);
+    chatgpt.alert(minifiedCode);
 
-    /* Logs:
+    /* Alerts:
     'function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}' */
 })();
 ```
@@ -1405,7 +1405,7 @@ Example code:
 
 ```js
 (async () => {
-    console.log(await chatgpt.code.execute('return 6 + 5')); // logs '11'
+    chatgpt.alert(await chatgpt.code.execute('return 6 + 5')); // logs '11'
 })();
 ```
 
@@ -1425,9 +1425,9 @@ Example code:
     await chatgpt.isIdle();
     const response = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'),
           scriptCode = chatgpt.code.extract(response);
-    console.log(scriptCode);
+    chatgpt.alert(scriptCode);
 
-    /* Logs:    
+    /* Alerts:    
     const fs = require('fs');
 
     // Specify the path of the file(s) you want to delete
@@ -1438,7 +1438,7 @@ Example code:
         if (err) {
             console.error('Error deleting file:', err);
         } else {
-            console.log('File deleted successfully');
+            chatgpt.alert('File deleted successfully');
         }
     }); */
 })();
@@ -1458,7 +1458,7 @@ Example code:
 (async () => {
     chatgpt.send('Type me a short code block');
     await chatgpt.code.isIdle();
-    console.log('Code finished generating'); // non-code may still be generating
+    chatgpt.alert('Code finished generating'); // non-code may still be generating
 })();
 ```
 
@@ -1476,9 +1476,9 @@ Example code:
 (async () => {
     const code = `window[elem].addEventListener('mouseover', toggleTooltip)`
     const obfuscatedCode = await chatgpt.code.obfuscate(code);
-    console.log(obfuscatedCode);
+    chatgpt.alert(obfuscatedCode);
 
-    /* Logs:
+    /* Alerts:
     '(window[elem])[btoa('YWxlcnRWaWV3')](btoa('bW91c2VyYm94ZXJOYW1l'), btoa('dG9nZ2VkT3V0d2FsbA==')); */
 })();
 ```
@@ -1504,9 +1504,9 @@ Example code:
             return false;
         }`;
     const refactoredCode = await chatgpt.code.refactor(code, 'brevity');
-    console.log(refactoredCode);
+    chatgpt.alert(refactoredCode);
 
-    /* Logs:
+    /* Alerts:
     return 6 > 5; */
 })();
 ```
@@ -1523,7 +1523,7 @@ Example code:
 
 ```js
 (async () => {
-    console.log(await chatgpt.code.review('btoa("Hello World")'));
+    chatgpt.alert(await chatgpt.code.review('btoa("Hello World")'));
 
     /* Example output:
     The code appears to be correct. It uses the `btoa` function to encode the string "Hello World" in base64. */
@@ -1545,9 +1545,9 @@ Example code:
     const code = `function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}`;
 
     const minifiedCode = await chatgpt.code.unminify(code);
-    console.log(minifiedCode);
+    chatgpt.alert(minifiedCode);
 
-    /* Logs:
+    /* Alerts:
     function autosizeBox() {
         const newLength = replyBox.value.length
         if (newLength < prevLength) { // if deleting txt
@@ -1576,9 +1576,9 @@ Example code:
 ```js
 (async () => {
     const code = await chatgpt.code.write('Repeat a task every 10 seconds', 'javascript');
-    console.log(code);
+    chatgpt.alert(code);
 
-    /* Logs:
+    /* Alerts:
     setInterval(function() {
         // Your task code here
     }, 10000); */
@@ -1672,7 +1672,7 @@ Example code:
 ```js
 (async () => {
     await chatgpt.history.isLoaded();
-    console.log('ChatGPT history has finished loading.');
+    chatgpt.alert('ChatGPT history has finished loading.');
 })();
 ```
 
@@ -1825,7 +1825,7 @@ Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
 Example code:
 
 ```js
-console.log(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
+chatgpt.alert(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
 ````
 
 #### isLight
@@ -1835,7 +1835,7 @@ Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
 Example code:
 
 ```js
-console.log(chatgpt.settings.scheme.isLight()); // logs `true` or `false`
+chatgpt.alert(chatgpt.settings.scheme.isLight()); // logs `true` or `false`
 ````
 
 #### set
@@ -1906,10 +1906,10 @@ const buttonId = chatgpt.sidebar.append('button', {
     label: 'I am a button!',
     icon: 'https://chat.openai.com/favicon-32x32.png',
     onclick: function() {
-        console.log('Clicked!');
+        chatgpt.alert('Clicked!');
     }
 });
-console.log(buttonId); // Example output: 1693295258727
+chatgpt.alert(buttonId); // Example output: 1693295258727
 
 const dropdownId = chatgpt.sidebar.append('dropdown', {
     items: [
@@ -1917,7 +1917,7 @@ const dropdownId = chatgpt.sidebar.append('dropdown', {
         { text: 'Hello there', value: 'hellothere' }
     ]
 });
-console.log(dropdownId); // Example output: 1693294795240
+chatgpt.alert(dropdownId); // Example output: 1693294795240
 ```
 
 ### exists
@@ -1998,7 +1998,7 @@ Example code:
 ```js
 (async () => {
     await chatgpt.sidebar.isLoaded();
-    console.log('ChatGPT sidebar has finished loading.');
+    chatgpt.alert('ChatGPT sidebar has finished loading.');
 })();
 ```
 
