@@ -1804,7 +1804,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         isOff() { return !this.isOn(); },
         isOn() {
             const sidebar = (() => {
-                return chatgpt.sidebar.exists() ? document.querySelector('body script + div > div') : null; })();
+                return chatgpt.sidebar.exists() ? document.querySelector('[class*="sidebar"]') : null; })();
             if (!sidebar) { console.error('Sidebar element not found!'); return false; }
             else return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
