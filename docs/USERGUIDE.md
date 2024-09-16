@@ -70,7 +70,7 @@
   - [DOM related](#dom-related)
     - [focusChatbar](#focuschatbar)
     - [getChatBox](#getchatbox)
-    - [getContinueGeneratingButton](#getcontinuegeneratingbutton)
+    - [getContinueButton](#getContinueButton)
     - [getFooterDiv](#getfooterdiv)
     - [getHeaderDiv](#getheaderdiv)
     - [getNewChatButton](#getnewchatbutton)
@@ -1075,14 +1075,14 @@ const chatbox = chatgpt.getChatBox();
 chatgpt.alert(chatbox.value); // Example output: 'Hello from chatgpt.js!'
 ```
 
-### getContinueGeneratingButton
+### getContinueButton
 
 Returns the 'Continue generating' button as an HTML element.
 
 Example code:
 
 ```js
-const continueBtn = chatgpt.getContinueGeneratingButton();
+const continueBtn = chatgpt.getContinueButton();
 continueBtn.click();
 ```
 
