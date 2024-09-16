@@ -883,13 +883,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
     },
 
     getChatInput() { return chatgpt.getChatBox().value; },
-
-    getContinueGeneratingButton() {
-        for (const formBtnSVG of document.querySelectorAll('form button svg')) {
-            if (formBtnSVG.querySelector('path[d*="M4.472 2.5a1"]'))
-                return formBtnSVG.parentNode.parentNode;
-    }},
-
+    getContinueButton() { return document.querySelector('button:has([d^="M4.47189"])'); },
     getFooterDiv() { return chatgpt.footer.get(); },
     getHeaderDiv() { return chatgpt.header.get(); },
     getLastPrompt() { return chatgpt.getChatData('active', 'msg', 'user', 'latest'); },
