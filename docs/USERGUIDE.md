@@ -869,9 +869,9 @@ Returns the last ChatGPT response as a string.
 
 ### getResponse
 
-If it's a previously created chat, read [chatgpt.getResponseFromDOM](#getresponsefromdom)
+If it's a previously created chat, see [chatgpt.getResponseFromDOM](#getresponsefromdom)
 
-If it's a new chat, read [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
+If it's a new chat, see [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
 
 ### getResponseFromAPI `async`
 
@@ -1788,29 +1788,29 @@ chatgpt.response.continue();
 
 ### get
 
-If it's a previously created chat, read [chatgpt.getResponseFromDOM](#getresponsefromdom)
+If it's a previously created chat, see [chatgpt.getResponseFromDOM](#getresponsefromdom)
 
-If it's a new chat, read [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
+If it's a new chat, see [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
 
 ### getFromAPI `async`
 
-Read [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
+See [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
 
 ### getFromDOM
 
-Read [chatgpt.getResponseFromDOM](#getresponsefromdom)
+See [chatgpt.getResponseFromDOM](#getresponsefromdom)
 
 ### getLast `async`
 
-Read [chatgpt.getLastResponse](#getlastresponse-async)
+See [chatgpt.getLastResponse](#getlastresponse-async)
 
 ### regenerate
 
-Read [chatgpt.regenerate](#regenerate)
+See [chatgpt.regenerate](#regenerate)
 
 ### stopGenerating
 
-Read [chatgpt.stop](#stop)
+See [chatgpt.stop](#stop)
 
 ## settings `api`
 
