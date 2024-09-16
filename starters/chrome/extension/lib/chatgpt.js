@@ -915,7 +915,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             || document.querySelector('path[d*="M15.192 8.906a1.143"]')?.parentNode.parentNode; // post-GPT-4o
     },
 
-    getStopGeneratingButton() { return document.querySelector('button:has([d*="2 0 0 1 2"], rect)'); },
+    getStopButton() { return document.querySelector('button:has([d*="2 0 0 1 2"], rect)'); },
 
     getUserLanguage() {
         return navigator.languages[0] || navigator.language || navigator.browserLanguage ||
