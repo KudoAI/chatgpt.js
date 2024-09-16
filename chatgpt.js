@@ -895,12 +895,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
     },
 
     getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
-
-    getRegenerateButton() {   
-        for (const mainSVG of document.querySelectorAll('main svg')) {
-            if (mainSVG.querySelector('path[d^="M3.06957"]')) // regen icon found
-                return mainSVG.parentNode;
-    }},
+    getRegenerateButton() { return document.querySelector('button:has([d^="M3.06957"])'); },
 
     getResponse() {
     // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:        
@@ -920,11 +915,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
             || document.querySelector('path[d*="M15.192 8.906a1.143"]')?.parentNode.parentNode; // post-GPT-4o
     },
 
-    getStopGeneratingButton() {
-        for (const svg of document.querySelectorAll('form button svg')) {
-            if (svg.querySelector('path[d*="2 0 0 1 2"], rect'))
-                return svg.parentNode;
-    }},
+    getStopGeneratingButton() { return document.querySelector('button:has([d*="2 0 0 1 2"], rect)'); },
 
     getUserLanguage() {
         return navigator.languages[0] || navigator.language || navigator.browserLanguage ||
