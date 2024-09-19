@@ -589,7 +589,7 @@ langSelector.onmouseover = langSelector.onmouseout = langMenu.onmouseover = lang
     if (event.type == 'mouseover') langMenu.style.display = 'block';
     else if (event.type == 'mouseout')
         hideTimeout = setTimeout(() => langMenu.style.display = 'none', 55);    
-}
+};
 document.querySelectorAll('#language-selector a').forEach(link => { // add listener to hide tooltips
     link.addEventListener('mouseenter', () => { link.removeAttribute('title'); });});
 document.querySelectorAll('.dropdown-link').forEach(link => { // add listener to dismisss menu
