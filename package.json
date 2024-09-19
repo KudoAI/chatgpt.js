@@ -65,7 +65,7 @@
   },
   "devDependencies": {
     "@adamlui/minify.js": "^1.8.5",
-    "@adamlui/scss-to-css": "^1.10.4",
+    "@adamlui/scss-to-css": "^1.10.6",
     "docsify-cli": "^4.4.4",
     "eslint": "^9.10.0",
     "eslint-plugin-json": "^4.0.1",
