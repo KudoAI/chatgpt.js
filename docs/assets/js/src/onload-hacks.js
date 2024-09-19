@@ -581,24 +581,19 @@ class Scramble {
 // Run MAIN routine
 
 // Add listeners to language selector
-const languageMenu = document.getElementById('language-menu'),
-      languageSelector = document.getElementById('language-selector');
-languageMenu.style.display = 'none'; // hide on page load
+const langMenu = document.getElementById('language-menu'),
+      langSelector = document.getElementById('language-selector');
 let hideTimeout; // to account for gap between button & menu
-languageSelector.addEventListener('mouseenter', () => {
-    clearTimeout(hideTimeout); languageMenu.style.display = 'block'; });
-languageSelector.addEventListener('mouseleave', () => {
-    hideTimeout = setTimeout(() => { languageMenu.style.display = 'none'; }, 55); });
-languageMenu.addEventListener('mouseenter', () => {
-    clearTimeout(hideTimeout); languageMenu.style.display = 'block'; });
-languageMenu.addEventListener('mouseleave', () => {
-    clearTimeout(hideTimeout); hideTimeout = setTimeout(() => {
-        languageMenu.style.display = 'none'; }, 55);
-});
-document.querySelectorAll('#language-selector a').forEach((link) => { // add listener to hide tooltips
+langSelector.onmouseover = langSelector.onmouseout = langMenu.onmouseover = langMenu.onmouseout = () => {
+    clearTimeout(hideTimeout);
+    if (event.type == 'mouseover') langMenu.style.display = 'block';
+    else if (event.type == 'mouseout')
+        hideTimeout = setTimeout(() => langMenu.style.display = 'none', 55);    
+}
+document.querySelectorAll('#language-selector a').forEach(link => { // add listener to hide tooltips
     link.addEventListener('mouseenter', () => { link.removeAttribute('title'); });});
-document.querySelectorAll('.dropdown-link').forEach((link) => { // add listener to dismisss menu
-    link.addEventListener('click', () => { languageMenu.style.display = 'none'; });});
+document.querySelectorAll('.dropdown-link').forEach(link => { // add listener to dismisss menu
+    link.addEventListener('click', () => langMenu.style.display = 'none');});
 
 // Observe for load + re-connect on nav to new hash
 onLoadObserver.observe(document.body, { childList: true, subtree: true });
