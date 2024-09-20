@@ -584,7 +584,7 @@ class Scramble {
 const langMenu = document.getElementById('language-menu'),
       langSelector = document.getElementById('language-selector');
 let hideTimeout; // to account for gap between button & menu
-langSelector.onmouseover = langSelector.onmouseout = langMenu.onmouseover = langMenu.onmouseout = () => {
+langSelector.onmouseover = langSelector.onmouseout = langMenu.onmouseover = langMenu.onmouseout = event => {
     clearTimeout(hideTimeout);
     if (event.type == 'mouseover') langMenu.style.display = 'block';
     else if (event.type == 'mouseout')
