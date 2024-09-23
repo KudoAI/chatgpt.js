@@ -888,12 +888,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
     getHeaderDiv() { return chatgpt.header.get(); },
     getLastPrompt() { return chatgpt.getChatData('active', 'msg', 'user', 'latest'); },
     getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
-
-    getNewChatButton() {
-        return document.querySelector('button:has([d*="M15.6729"],' // pencil-on-pad icon
-                                    + '[d^="M3.06957"])'); // refresh icon if temp chat
-    },
-
+    getNewChatButton() { return document.querySelector('button[data-testid*="new-chat-button"]'); },
     getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
     getRegenerateButton() { return document.querySelector('button:has([d^="M3.06957"])'); },
 
@@ -909,13 +904,8 @@ const chatgpt = { // eslint-disable-line no-redeclare
     getResponseFromAPI(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet); },
     getResponseFromDOM(pos) { return chatgpt.response.getFromDOM(pos); },
     getScrollToBottomButton() { return document.querySelector('button[class*="cursor"][class*="bottom"]'); },
-
-    getSendButton() {
-        return document.querySelector('[data-testid="send-button"]') // pre-GPT-4o
-            || document.querySelector('path[d*="M15.192 8.906a1.143"]')?.parentNode.parentNode; // post-GPT-4o
-    },
-
-    getStopButton() { return document.querySelector('button:has([d*="2 0 0 1 2"], rect)'); },
+    getSendButton() { return document.querySelector('[data-testid="send-button"]'); },
+    getStopButton() { return document.querySelector('button[data-testid="stop-button"]'); },
 
     getUserLanguage() {
         return navigator.languages[0] || navigator.language || navigator.browserLanguage ||
@@ -1797,13 +1787,9 @@ const chatgpt = { // eslint-disable-line no-redeclare
         },
 
         toggle() {
-            const isMobileDevice = chatgpt.browser.isMobile(),
-                  navBtnSelector = isMobileDevice ? 'button' : 'nav button',
-                  isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
-                              : btn => btn.querySelector('svg path[d^="M8.857"]');
-            for (const btn of document.querySelectorAll(navBtnSelector))
-                if (isToggleBtn(btn)) { btn.click(); return; }
-            console.error('Sidebar toggle not found!');
+            const sidebarToggle = document.querySelector('button[data-testid*="sidebar-button"]');
+            if (!sidebarToggle) console.error('Sidebar toggle not found!');
+            sidebarToggle.click();
         },
 
         async isLoaded(timeout = 5000) {
