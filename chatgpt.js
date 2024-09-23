@@ -903,7 +903,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
     getResponseFromAPI(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet); },
     getResponseFromDOM(pos) { return chatgpt.response.getFromDOM(pos); },
-    getScrollToBottomButton() { return document.querySelector('button[class*="cursor"][class*="bottom"]'); },
+    getScrollToBottomButton() { return document.querySelector('button:has([d^="M12 21C11.7348"])'); },
     getSendButton() { return document.querySelector('[data-testid="send-button"]'); },
     getStopButton() { return document.querySelector('button[data-testid="stop-button"]'); },
 
