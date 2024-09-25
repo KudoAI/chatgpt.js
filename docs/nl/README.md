@@ -78,7 +78,7 @@
 
 </div>
 
-### ES6:
+### ES11 (2020):
 
 > **Opmerking** _Om altijd de nieuwste versie te importeren (niet aanbevolen in productie!) Vervang de jsDelivr-URL met versiebeheer door: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
 
@@ -89,7 +89,7 @@
 })();
 ```
 
-### ES5:
+### ES5 (2009):
 
 ```js
 var xhr = new XMLHttpRequest();

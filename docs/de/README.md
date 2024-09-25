@@ -80,7 +80,7 @@
 
 </div>
 
-### ES6:
+### ES11 (2020):
 
 ```js
 (async () => {
@@ -89,7 +89,7 @@
 })();
 ```
 
-### ES5:
+### ES5 (2009):
 
 ```js
 var xhr = new XMLHttpRequest();

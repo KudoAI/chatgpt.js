@@ -81,7 +81,7 @@
 
 > **참고** _항상 최신 버전을 가져오려면(프로덕션에서는 권장되지 않음!) 버전이 지정된 jsDelivr URL 을 `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js` 바꾸세요._
 
-### ES6:
+### ES11 (2020):
 
 ```js
 (async () => {
@@ -91,7 +91,7 @@
 })();
 ```
 
-### ES5:
+### ES5 (2009):
 
 ```js
 var xhr = new XMLHttpRequest();

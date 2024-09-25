@@ -80,7 +80,7 @@
 
 > **Lưu ý** _Để luôn nhập phiên bản mới nhất (không khuyến nghị trong phiên bản chính thức!) hãy thay thế URL jsDelivr đã được phiên bản bằng: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
 
-### ES6:
+### ES11 (2020):
 
 ```js
 (async () => {
@@ -89,7 +89,7 @@
 })();
 ```
 
-### ES5:
+### ES5 (2009):
 
 ```js
 var xhr = new XMLHttpRequest();
