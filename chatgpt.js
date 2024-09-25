@@ -1472,7 +1472,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         },
 
         getFromDOM(pos) {
-            const responseDivs = document.querySelectorAll('div[data-testid*="conversation-turn"]:nth-child(odd)'),
+            const responseDivs = document.querySelectorAll('div[data-message-author-role="assistant"]'),
                   strPos = pos.toString().toLowerCase();
             let response = '';
             if (!responseDivs.length) return console.error('No conversation found!');
