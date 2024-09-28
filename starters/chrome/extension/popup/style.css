@@ -15,7 +15,7 @@ a:focus, a:hover { text-decoration: underline ; color: inherit }
     border-bottom: solid 1px lightgrey ; padding: 5px 5px 5px 0; margin: 0 ;
     display: flex; background: white ; align-items: center }
 .logo { margin: 4px 10px 4px 12px }
-.menu-title { font-size: 0.85rem ; font-weight: 600 ; right-padding: 3px }
+.menu-title { font-size: 0.85rem ; font-weight: 600 ; padding-right: 3px }
 .menu-icons > .toggle-switch { transform: scale(1.1) } /* make master toggle bigger */
 .main-toggle { margin-left: auto ; display: flex }
 
