@@ -2022,4 +2022,3 @@ console.info = (msg) => {
 // Export chatgpt object
 try { window.chatgpt = chatgpt; } catch (err) {} // for Greasemonkey
 try { module.exports = chatgpt; } catch (err) {} // for CommonJS
-export { chatgpt };

@@ -7,7 +7,7 @@
 
     // Import libs
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'));
-    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.js'));
 
     // Add Chrome action msg listener
     chrome.runtime.onMessage.addListener((request) => {
