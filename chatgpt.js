@@ -882,7 +882,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         }));
     },
 
-    getChatInput() { return chatgpt.getChatBox().value; },
+    getChatInput() { return chatgpt.getChatBox().firstChild.innerText; },
     getContinueButton() { return document.querySelector('button:has([d^="M4.47189"])'); },
     getFooterDiv() { return chatgpt.footer.get(); },
     getHeaderDiv() { return chatgpt.header.get(); },
