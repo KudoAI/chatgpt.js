@@ -46,7 +46,7 @@
 [![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/KudoAI/chatgpt.js?label=Commits&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/commits/main)
 ![](https://img.shields.io/badge/Clones-578/month-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge)
-[![](https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.3.3&label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/tree/v3.3.3/dist/chatgpt.min.js)
+[![](https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.3.4&label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/tree/v3.3.4/dist/chatgpt.min.js)
 [![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
 [![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dkudoai_chatgpt.js%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=Vulnerabilities&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=kudoai_chatgpt.js)
 [![](https://img.shields.io/badge/Mentioned_in-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
@@ -84,7 +84,7 @@
 
 ```js
 (async () => {
-    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.3/dist/chatgpt.min.js');    
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.4/dist/chatgpt.min.js');    
     // आपका कोड यहां लिखें...
 })();
 ```
@@ -93,7 +93,7 @@
 
 ```js
 var xhr = new XMLHttpRequest()
-xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.3/dist/chatgpt.min.js')
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.4/dist/chatgpt.min.js')
 xhr.onload = function() {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script')
@@ -115,7 +115,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.3/dist/chatgpt.min.js
+// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.4/dist/chatgpt.min.js
 // ==/UserScript==
 
 // आपका कोड यहां लिखें...
@@ -184,7 +184,7 @@ chatgpt.get('reply', 'last')
 
 यह सभी समान रिजल्ट देते है, जैसे की लास्ट रिस्पॉन्स। अगर आपको लगता है कि जो आप लिख रहे है वो काम करेगा..., तो यह संभव है की वो काम करेगा तो बस लिख के देखें।
 
-यदि ऐसा नहीं हुआ, तो विस्तारित [यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v3.3.3/docs/USERGUIDE.md) देखें, या बस एक [इश्यू](https://github.com/KudoAI/chatgpt.js/issues) सबमिट करें या [PR](https://github.com/KudoAI/chatgpt.js/pulls) और इसे एकीकृत किया जाएगा, आसान!
+यदि ऐसा नहीं हुआ, तो विस्तारित [यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v3.3.4/docs/USERGUIDE.md) देखें, या बस एक [इश्यू](https://github.com/KudoAI/chatgpt.js/issues) सबमिट करें या [PR](https://github.com/KudoAI/chatgpt.js/pulls) और इसे एकीकृत किया जाएगा, आसान!
 
 <img height=8px width="100%" src="https://media.chatgptjs.org/images/separators/gradient-aqua.png?78210a7">
 
@@ -356,7 +356,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 <div align="center">
 
 **[विज्ञप्ति](https://github.com/KudoAI/chatgpt.js/releases)** /
-[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v3.3.2/docs/USERGUIDE.md) / 
+[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v3.3.4/docs/USERGUIDE.md) / 
 [चर्चा करना](https://github.com/KudoAI/chatgpt.js/discussions) / 
 <a href="#">वापस शीर्ष पर ↑</a>
 
