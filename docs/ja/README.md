@@ -332,7 +332,7 @@ chatgpt.js で何かを作成して共有したい場合は、<a href="mailto:sh
 
 <div id="partners">
 
-## 🤝 伙伴
+## 🤝 パートナー
 
 </div>
 
