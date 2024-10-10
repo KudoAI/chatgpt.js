@@ -53,6 +53,7 @@
                     <li><a href="#/it/" target="_self" class="dropdown-link">Italiano</a></li>
                     <li><a href="#/nl/" target="_self" class="dropdown-link">Nederlands</a></li>
                     <li><a href="#/pt/" target="_self" class="dropdown-link">Português</a></li>
+                    <li><a href="#/ru/" target="_self" class="dropdown-link">Английский</a></li>
                     <li><a href="#/vi/" target="_self" class="dropdown-link">Việt</a></li>
                 </ul>
             </div>
@@ -62,21 +63,21 @@
             window.$docsify = {
                 name: 'chatgpt.js', repo: 'KudoAI/chatgpt.js',
                 coverpage: ['/', '/zh-cn/', '/zh-tw/', '/ja/', '/ko/', '/hi/', '/ne/', '/de/',
-                    '/es/', '/fr/', '/it/', '/nl/', '/pt/', '/vi/'],
+                    '/es/', '/fr/', '/it/', '/nl/', '/pt/', '/ru/', '/vi/'],
                 maxLevel: 3,
                 search: {
                     paths: 'auto',
                     placeholder: { 
                         '/zh-cn/': '搜索', '/zh-tw/': '搜索', '/ja/': '찾다', '/ko/': '検索', '/hi/': 'खोज', '/ne/' : 'खोज', 
-                        '/de/': 'Suchen', '/es/': 'Buscar', '/fr/': 'Recherche', '/it/': 'Ricerca',
-                        '/nl/': 'Zoekopdracht', '/pt/': 'Procurar', '/vi/': 'Tìm kiếm', '/': 'Search' },
+                        '/de/': 'Suchen', '/es/': 'Buscar', '/fr/': 'Recherche', '/it/': 'Ricerca', '/nl/': 'Zoekopdracht',
+                        '/pt/': 'Procurar', '/ru/': 'Поиск', '/vi/': 'Tìm kiếm', '/': 'Search' },
                     noData: { 
                         '/zh-cn/': '没有结果!', '/zh-tw/': '沒有結果!', '/ja/': '結果がありません!', '/ko/': '결과가 없습니다!',
                         '/hi/': 'कोई परिणाम नहीं!', '/ne/' : 'कुनै परिणाम छैन!', '/de/': 'Keine Ergebnisse!',
                         '/es/': '¡No hay resultados!', '/fr/': 'Aucun résultat!', '/it/': 'Nessun risultato!',
-                        '/nl/': 'Geen resultaten!', '/pt/': 'Sem resultados!', '/vi/': 'Ko có kết quả!',
-                        '/': 'No results!' },
-                    pathNamespaces: /^(\/(zh-cn|zh-tw|ja|ko|hi|ne|de|es|fr|it|nl|pt|vi))?/
+                        '/nl/': 'Geen resultaten!', '/pt/': 'Sem resultados!', '/ru/': 'Результатов нет!',
+                        '/vi/': 'Ko có kết quả!', '/': 'No results!' },
+                    pathNamespaces: /^(\/(zh-cn|zh-tw|ja|ko|hi|ne|de|es|fr|it|nl|pt|ru|vi))?/
                 }
             }
         </script>
