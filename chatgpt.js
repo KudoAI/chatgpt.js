@@ -677,14 +677,15 @@ const chatgpt = { // eslint-disable-line no-redeclare
         return this[targetFuncName](); // call found function
     },
 
-    getAccessToken() {
+    async getAccessToken() {
+        if (Object.keys(chatgpt.openAIaccessToken).length > 0 && 
+            (Date.parse(chatgpt.openAIaccessToken.expireDate) - Date.parse(new Date()) >= 0)) {
+            return chatgpt.openAIaccessToken.token;
+        }
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', chatgpt.endpoints.openAI.session, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
         return new Promise((resolve, reject) => {
-            if (Object.keys(chatgpt.openAIaccessToken).length > 0 && // populated
-                    (Date.parse(chatgpt.openAIaccessToken.expireDate) - Date.parse(new Date()) >= 0)) // not expired
-                return resolve(chatgpt.openAIaccessToken.token);
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', chatgpt.endpoints.openAI.session, true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onload = () => {
                 if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
                 console.info('Token expiration: ' + new Date(JSON.parse(xhr.responseText).expires).toLocaleString().replace(',', ' at'));
@@ -692,7 +693,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                     token: JSON.parse(xhr.responseText).accessToken,
                     expireDate: JSON.parse(xhr.responseText).expires
                 };
-                return resolve(chatgpt.openAIaccessToken.token);
+                resolve(chatgpt.openAIaccessToken.token);
             };
             xhr.send();
         });
@@ -1515,20 +1516,19 @@ const chatgpt = { // eslint-disable-line no-redeclare
     reviewCode() { chatgpt.code.review(); },
     scrollToBottom() { try { chatgpt.getScrollBtn().click(); } catch (err) { console.error(err.message); }},
 
-    send(msg, method='') {
-        for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
-            return console.error(`Argument ${ i + 1 } must be a string!`);
+    async send(msg, method='') {
+        if (typeof msg !== 'string') return console.error('Message must be a string!');
         const textArea = chatgpt.getChatBox();
         if (!textArea) return console.error('Chatbar element not found!');
-        const msgP = document.createElement('p'); msgP.textContent = msg;
+        const msgP = document.createElement('p'); 
+        msgP.textContent = msg;
         textArea.replaceChild(msgP, textArea.querySelector('p'));
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
-        setTimeout(function delaySend() {
+        setTimeout(() => {
             const sendBtn = chatgpt.getSendButton();
-            if (!sendBtn?.hasAttribute('disabled')) { // send msg
-                method.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendBtn.click()
-                    : textArea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
-            } else setTimeout(delaySend, 222);
+            if (!sendBtn?.hasAttribute('disabled')) {
+                method.toLowerCase() === 'click' || chatgpt.browser.isMobile() ? sendBtn.click() : textArea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+            }
         }, 222);
     },
 
