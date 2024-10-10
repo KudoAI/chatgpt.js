@@ -1491,7 +1491,7 @@ Asks ChatGPT to refactor the given code.
 
 `code`: A string being the code to refactor.
 
-`objective` (optional): A string reprenting the objective of the refactoring. Defaults to `brevity`.
+`objective` (optional): A string representing the objective of the refactoring. Defaults to `brevity`.
 
 Example code:
 
