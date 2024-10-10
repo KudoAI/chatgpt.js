@@ -1,6 +1,11 @@
 <div align="center">
     <h6>
-        <a href="../"><img height=15 style="margin: 0 3px -2px" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/6fa1659feadaf70853996dc7d7f6e1ab5a1e6301/media/images/icons/earth-americas.svg"></a>
+        <a href="../">
+            <picture>
+                <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/icons/earth-americas-white-padded-icon17x15.svg?714b6a1">
+                <img src="https://media.chatgptjs.org/images/icons/earth-americas-padded-icon17x15.svg?714b6a1">
+            </picture>
+        </a>
         Italiano |
         <a href="../../LICENSE.md">English</a> |
         <a href="../zh-cn/LICENSE.md">简体中文</a> |
