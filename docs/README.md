@@ -21,6 +21,7 @@
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/it#readme">Italiano</a> |
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/nl#readme">Nederlands</a> |
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/pt#readme">Português</a> |
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/ru#readme">Английский</a> |
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/vi#readme">Việt</a>
     </h6>
 </div>

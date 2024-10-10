@@ -21,6 +21,7 @@
         <a href="../fr#readme">Français</a> |
         <a href="../nl#readme">Nederlands</a> |
         <a href="../pt#readme">Português</a> |
+        <a href="../ru#readme">Английский</a> |
         <a href="../vi#readme">Việt</a>
     </h6>
 </div>
