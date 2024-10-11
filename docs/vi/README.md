@@ -1,6 +1,6 @@
 <div id="repo-cover" align="center">
 
-<div align="center">
+<div id="lang-selector" align="center">
     <h6>
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs">
             <picture>
@@ -366,6 +366,6 @@ Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng 
 **[Phát hành](https://github.com/KudoAI/chatgpt.js/releases)** /
 [Hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/v3.3.4/docs/USERGUIDE.md) /
 [Bàn luận](https://github.com/KudoAI/chatgpt.js/discussions) /
-<a href="#">Trở lại đầu trang ↑</a>
+<a href="#lang-selector">Trở lại đầu trang ↑</a>
 
 </div>

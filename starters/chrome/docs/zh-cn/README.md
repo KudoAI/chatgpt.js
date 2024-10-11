@@ -1,4 +1,4 @@
-<div align="center">
+<div id="lang-selector" align="center">
     <h6>
         <picture>
             <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/icons/earth-americas-white-icon32.svg?main">
@@ -90,4 +90,4 @@
 
 #
 
-<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">得到帮助</a> / <a href="#">回到顶部 ↑</a>
+<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">得到帮助</a> / <a href="#lang-selector">回到顶部 ↑</a>

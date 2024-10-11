@@ -1,4 +1,4 @@
-<div align="center">
+<div id="lang-selector" align="center">
     <h6>
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/starters/docs">
             <picture>
@@ -31,4 +31,4 @@ Mẫu để tạo bản mô tả người dùng Greasemonkey bằng chatgpt.js
 
 #
 
-[Trở lại đầu trang ↑](#)
+[Trở lại đầu trang ↑](#lang-selector)

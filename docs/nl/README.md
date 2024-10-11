@@ -1,6 +1,6 @@
 <div id="repo-cover" align="center">
 
-<div align="center">
+<div id="lang-selector" align="center">
     <h6>
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs">
             <picture>
@@ -359,6 +359,6 @@ Deze bibliotheek bestaat dankzij code, vertalingen, problemen en ideeën van de 
 **[Uitgaven](https://github.com/KudoAI/chatgpt.js/releases)** /
 [gebruikershandleiding](https://github.com/KudoAI/chatgpt.js/blob/v3.3.4/docs/USERGUIDE.md) /
 [Bespreken](https://github.com/KudoAI/chatgpt.js/discussions) /
-<a href="#">Terug naar boven ↑</a>
+<a href="#lang-selector">Terug naar boven ↑</a>
 
 </div>

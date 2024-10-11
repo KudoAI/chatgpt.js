@@ -1,4 +1,4 @@
-<div align="center">
+<div id="lang-selector" align="center">
     <h6>
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/starters/docs">
             <picture>
@@ -31,4 +31,4 @@ Modèle pour créer un script utilisateur Greasemonkey à l'aide de chatgpt.js
 
 #
 
-[Retour au sommet ↑](#)
+[Retour au sommet ↑](#lang-selector)
