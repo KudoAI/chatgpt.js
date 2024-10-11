@@ -1,6 +1,7 @@
 <div id="repo-cover" align="center">
 
 <div align="center">
+     <a id="top"></a>
     <h6>
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs">
             <picture>
@@ -359,6 +360,6 @@ This library exists thanks to code, translations, issues & ideas from the follow
 **[Releases](https://github.com/KudoAI/chatgpt.js/releases)** /
 [Userguide](https://github.com/KudoAI/chatgpt.js/blob/v3.3.4/docs/USERGUIDE.md) /
 [Discuss](https://github.com/KudoAI/chatgpt.js/discussions) /
-<a href="#--------------------------------------------------------------------------------english---------简体中文---------繁體中文---------日本---------한국인---------हिंदी---------नेपाली---------deutsch---------español---------français---------italiano---------nederlands---------português---------việt----">Back to top ↑</a>
+[Back to top ↑](#top)
 
 </div>
