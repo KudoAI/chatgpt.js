@@ -1,6 +1,8 @@
 <div id="repo-cover" align="center">
 
-<div id="lang-selector" align="center">
+<a id="top"></a>
+
+<div align="center">
     <h6>
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs">
             <picture>
@@ -359,6 +361,6 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 **[发布](https://github.com/KudoAI/chatgpt.js/releases)** /
 [用户指南](https://github.com/KudoAI/chatgpt.js/blob/v3.3.4/docs/USERGUIDE.md) / 
 [讨论](https://github.com/KudoAI/chatgpt.js/discussions) / 
-<a href="#lang-selector">返回顶部 ↑</a>
+<a href="#top">返回顶部 ↑</a>
 
 </div>

@@ -1,4 +1,6 @@
-<div id="lang-selector" align="center">
+<a id="top"></a>
+
+<div align="center">
     <h6>
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/starters/docs">
             <picture>
@@ -32,4 +34,4 @@ chatgpt.js を使用して Greasemonkey ユーザースクリプトを作成す�
 
 #
 
-[トップに戻る ↑](#lang-selector)
+[トップに戻る ↑](#top)

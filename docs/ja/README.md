@@ -1,6 +1,8 @@
 <div id="repo-cover" align="center">
 
-<div id="lang-selector" align="center">
+<a id="top"></a>
+
+<div align="center">
     <h6>
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs">
             <picture>
@@ -360,6 +362,6 @@ chatgpt.js で何かを作成して共有したい場合は、<a href="mailto:sh
 **[リリース](https://github.com/KudoAI/chatgpt.js/releases)** /
 [ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/v3.3.4/docs/USERGUIDE.md) / 
 [議論](https://github.com/KudoAI/chatgpt.js/discussions) / 
-<a href="#lang-selector">トップに戻る ↑</a>
+<a href="#top">トップに戻る ↑</a>
 
 </div>

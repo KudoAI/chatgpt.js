@@ -1,4 +1,6 @@
-<div id="lang-selector" align="center">
+<a id="top"></a>
+
+<div align="center">
     <h6>
         <picture>
             <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/icons/earth-americas-white-icon32.svg?main">
@@ -90,4 +92,4 @@ These are some of the extensions featured by Google that use chatgpt.js:
 
 #
 
-<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">Get Help</a> / <a href="#lang-selector">Back to top ↑</a>
+<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">Get Help</a> / <a href="#top">Back to top ↑</a>

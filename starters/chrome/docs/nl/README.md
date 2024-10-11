@@ -1,4 +1,6 @@
-<div id="lang-selector" align="center">
+<a id="top"></a>
+
+<div align="center">
     <h6>
         <picture>
             <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/icons/earth-americas-white-icon32.svg?main">
@@ -90,4 +92,4 @@ Dit zijn enkele van de extensies van Google die chatgpt.js gebruiken:
 
 #
 
-<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">Hulp krijgen</a> / <a href="#lang-selector">Terug naar boven ↑</a>
+<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">Hulp krijgen</a> / <a href="#top">Terug naar boven ↑</a>

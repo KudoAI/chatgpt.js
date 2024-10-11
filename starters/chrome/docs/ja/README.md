@@ -1,4 +1,6 @@
-<div id="lang-selector" align="center">
+<a id="top"></a>
+
+<div align="center">
     <h6>
         <picture>
             <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/icons/earth-americas-white-icon32.svg?main">
@@ -90,4 +92,4 @@
 
 #
 
-<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">助けを得ます</a> / <a href="#lang-selector">トップに戻る ↑</a>
+<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">助けを得ます</a> / <a href="#top">トップに戻る ↑</a>

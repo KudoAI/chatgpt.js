@@ -1,6 +1,8 @@
 <div id="repo-cover" align="center">
 
-<div id="lang-selector" align="center">
+<a id="top"></a>
+
+<div align="center">
     <h6>
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs">
             <picture>
@@ -364,6 +366,6 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href=
 **[릴리스](https://github.com/KudoAI/chatgpt.js/releases)** /
 [사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v3.3.4/docs/USERGUIDE.md) /
 [토론](https://github.com/KudoAI/chatgpt.js/discussions) /
-<a href="#lang-selector">상단으로 ↑</a>
+<a href="#top">상단으로 ↑</a>
 
 </div>

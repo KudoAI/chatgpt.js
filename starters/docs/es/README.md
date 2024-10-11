@@ -1,4 +1,6 @@
-<div id="lang-selector" align="center">
+<a id="top"></a>
+
+<div align="center">
     <h6>
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/starters/docs">
             <picture>
@@ -31,4 +33,4 @@ Plantilla para crear un script de usuario de Greasemonkey usando chatgpt.js
 
 #
 
-[Volver arriba ↑](#lang-selector)
+[Volver arriba ↑](#top)

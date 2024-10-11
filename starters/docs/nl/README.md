@@ -1,4 +1,6 @@
-<div id="lang-selector" align="center">
+<a id="top"></a>
+
+<div align="center">
     <h6>
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/starters/docs">
             <picture>
@@ -31,4 +33,4 @@ Sjabloon voor het maken van een Greasemonkey-gebruikersscript met behulp van cha
 
 #
 
-[Terug naar boven ↑](#lang-selector)
+[Terug naar boven ↑](#top)
