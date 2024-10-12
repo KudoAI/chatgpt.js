@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <div align="center">
     <h6>
         <picture>
@@ -90,4 +92,4 @@ Voici quelques-unes des extensions proposées par Google qui utilisent chatgpt.j
 
 #
 
-<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">Obtenir de l'aide</a> / <a href="#">Retour au sommet ↑</a>
+<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">Obtenir de l'aide</a> / <a href="#top">Retour au sommet ↑</a>

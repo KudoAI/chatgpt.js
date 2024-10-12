@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <div align="center">
     <h6>
         <picture>
@@ -90,4 +92,4 @@ Dit zijn enkele van de extensies van Google die chatgpt.js gebruiken:
 
 #
 
-<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">Hulp krijgen</a> / <a href="#">Terug naar boven ↑</a>
+<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">Hulp krijgen</a> / <a href="#top">Terug naar boven ↑</a>

@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <div align="center">
     <h6>
         <picture>
@@ -90,4 +92,4 @@
 
 #
 
-<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">도움 받기</a> / <a href="#">맨 위로 ↑</a>
+<a href="https://github.com/KudoAI/chatgpt.js-chrome-starter/issues">도움 받기</a> / <a href="#top">맨 위로 ↑</a>

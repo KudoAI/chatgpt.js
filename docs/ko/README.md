@@ -1,5 +1,7 @@
 <div id="repo-cover" align="center">
 
+<a id="top"></a>
+
 <div align="center">
     <h6>
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs">
@@ -46,7 +48,7 @@
 
 [![](https://img.shields.io/github/stars/KudoAI/chatgpt.js?label=별&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/stargazers)
 [![](https://img.shields.io/badge/라이센스-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
-[![](https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.3.4&label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/tree/v3.3.4/dist/chatgpt.min.js)
+[![](https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.3.5&label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/tree/v3.3.5/dist/chatgpt.min.js)
 [![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=코드+품질&logo=codefactor&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
 [![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dkudoai_chatgpt.js%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=취약점&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=kudoai_chatgpt.js)
 [![](https://img.shields.io/badge/언급됨-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
@@ -84,7 +86,7 @@
 
 ```js
 (async () => {
-    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.4/dist/chatgpt.min.js');
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.5/dist/chatgpt.min.js');
     // 코드를 여기에 작성해 주세요...
 
 })();
@@ -94,7 +96,7 @@
 
 ```js
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.4/dist/chatgpt.min.js');
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.5/dist/chatgpt.min.js');
 xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
@@ -118,7 +120,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.4/dist/chatgpt.min.js
+// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.3.5/dist/chatgpt.min.js
 // ==/UserScript==
 
 // 코드를 여기에 작성해 주세요...
@@ -187,7 +189,7 @@ chatgpt.get('reply', 'last');
 
 각 호출은 동일한 방식으로 최신 응답을 가져옵니다. 만약 잘 작동한다고 생각하신다면, 그렇게 하시면 될겁니다... 그러니 그냥 입력하세요!
 
-그렇지 않은 경우 확장된 [사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v3.3.4/docs/USERGUIDE.md)를 확인하거나 간단히 [문제](https://github.com/KudoAI/chatgpt.js/issues) 또는 [PR](https://github.com/KudoAI/chatgpt.js/pulls)을 주시면 통합될 것 입니다, 참 쉽죠!
+그렇지 않은 경우 확장된 [사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v3.3.5/docs/USERGUIDE.md)를 확인하거나 간단히 [문제](https://github.com/KudoAI/chatgpt.js/issues) 또는 [PR](https://github.com/KudoAI/chatgpt.js/pulls)을 주시면 통합될 것 입니다, 참 쉽죠!
 
 <img height=8px width="100%" src="https://media.chatgptjs.org/images/separators/gradient-aqua.png?78210a7">
 
@@ -328,6 +330,7 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href=
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/12472719?first-contrib=2024.10.2-getchatinput-stopped-working-report&h=47&w=47&mask=circle&maxage=7d "@ae3e")](https://github.com/ae3e)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129654632?first-contrib=2024.10.10-userguide-typo-correction&h=47&w=47&mask=circle&maxage=7d "@FarukhS52")](https://github.com/FarukhS52)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/183274513?first-contrib=2024.10.10-create-ru-readme&h=47&w=47&mask=circle&maxage=7d "@Innovatorcloudy")](https://github.com/Innovatorcloudy)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/94866865?first-contrib=2024.10.11-fix-readme-back-to-top-link&h=47&w=47&mask=circle&maxage=7d "@barbarian360")](https://github.com/barbarian360)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=47&w=47&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 <a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@main/media/images/icons/platforms/chatgpt/black-on-white/icon189.png?h=46&w=46&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@main/media/images/icons/platforms/chatgpt/white-on-black/icon189.png?h=46&w=46&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
 <a href="https://poe.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@main/media/images/icons/platforms/poe/w-purple-blue-stripes/black-on-white/icon175.png?h=46&w=46&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@main/media/images/icons/platforms/poe/w-purple-blue-stripes/white-on-black/icon175.png?h=46&w=46&mask=circle&maxage=7d" title="Poe"></picture></a>
@@ -361,8 +364,8 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href=
 <div align="center">
 
 **[릴리스](https://github.com/KudoAI/chatgpt.js/releases)** /
-[사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v3.3.4/docs/USERGUIDE.md) /
+[사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v3.3.5/docs/USERGUIDE.md) /
 [토론](https://github.com/KudoAI/chatgpt.js/discussions) /
-<a href="#">상단으로 ↑</a>
+<a href="#top">상단으로 ↑</a>
 
 </div>

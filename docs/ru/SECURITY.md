@@ -1,13 +1,14 @@
 <div align="center">
     <h6>
-        <a href="../">
+        <a href="./">
             <picture>
                 <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/icons/earth-americas-white-padded-icon17x15.svg?714b6a1">
                 <img src="https://media.chatgptjs.org/images/icons/earth-americas-padded-icon17x15.svg?714b6a1">
             </picture>
         </a>
-        简体中文 |
-        <a href="../SECURITY.md">English</a> |
+        Английский |
+        <a href="../../SECURITY.md">English</a> |
+        <a href="../zh-cn/SECURITY.md">简体中文</a> |
         <a href="../zh-tw/SECURITY.md">繁體中文</a> |
         <a href="../ja/SECURITY.md">日本</a> |
         <a href="../ko/SECURITY.md">한국인</a> |
@@ -24,8 +25,8 @@
     </h6>
 </div>
 
-# 安全政策
+# Политика безопасности
 
-如果您发现漏洞，请打开[安全公告草案](https://github.com/KudoAI/chatgpt.js/security/advisories/new)。
+Если вы обнаружили уязвимость, откройте [черновик рекомендации по безопасности](https://github.com/KudoAI/chatgpt.js/security/advisories/new).
 
-也欢迎拉取请求，但出于安全原因，请发送电子邮件至 <security@kudoai.com> 并等待回复后再公开。
+Запросы на извлечение также приветствуются, но из соображений безопасности отправьте электронное письмо на адрес <security@kudoai.com> и дождитесь ответа, прежде чем публиковать его.
