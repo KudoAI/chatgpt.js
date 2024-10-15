@@ -1,4 +1,4 @@
-name: Sync /starters/chrome/ to KudoAI/chatgpt.js-chrome-starter/
+name: Sync starters/chrome/ to KudoAI/chatgpt.js-chrome-starter/
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
           repository: KudoAI/chatgpt.js-chrome-starter
           path: KudoAI/chatgpt.js-chrome-starter
 
-      - name: Sync /starters/chrome/ to KudoAI/chatgpt.js-chrome-starter/
+      - name: Sync starters/chrome/ to KudoAI/chatgpt.js-chrome-starter/
         run: |
           rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
             "${{ github.workspace }}/KudoAI/chatgpt.js/starters/chrome/" \
@@ -48,7 +48,7 @@ jobs:
           git config --global commit.gpgsign true
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
-          git config --global user.signingkey  "${{ secrets.GPG_PRIVATE_ID }}"
+          git config --global user.signingkey "${{ secrets.GPG_PRIVATE_ID }}"
 
       - name: Push changes to KudoAI/chatgpt.js-chrome-starter
         run: |

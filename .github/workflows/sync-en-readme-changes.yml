@@ -1,4 +1,4 @@
-name: Sync changes between English readmes in root + docs/
+name: Sync English READMEs between root + docs/
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
           path: KudoAI/chatgpt.js
           fetch-depth: 2
 
-      - name: Sync README.md between root & docs/
+      - name: Sync English READMEs between root + docs/
         id: sync_readmes
         run: |
           cd "${{ github.workspace }}/KudoAI/chatgpt.js"
@@ -49,7 +49,7 @@ jobs:
           git config --global commit.gpgsign true
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
-          git config --global user.signingkey  "${{ secrets.GPG_PRIVATE_ID }}"
+          git config --global user.signingkey "${{ secrets.GPG_PRIVATE_ID }}"
 
       - name: Push changes to KudoAI/chatgpt.js
         run: |

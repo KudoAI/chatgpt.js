@@ -1,4 +1,4 @@
-name: ESLint
+name: Lint pushes/PRs
 
 on: [push, pull_request]
 

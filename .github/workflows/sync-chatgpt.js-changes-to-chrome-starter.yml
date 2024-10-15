@@ -1,4 +1,4 @@
-name: Sync chatgpt.js to (/starters/chrome && KudoAI/chatgpt.js-chrome-starter)/extension/lib/chatgpt.js
+name: Sync chatgpt.js to starters/chrome/extension/lib/ & KudoAI/chatgpt.js-chrome-starter/extension/lib/
 
 on:
   push:
@@ -27,7 +27,7 @@ jobs:
           repository: KudoAI/chatgpt.js-chrome-starter
           path: KudoAI/chatgpt.js-chrome-starter
 
-      - name: Sync chatgpt.js to /starters/chrome/extension/lib/chatgpt.js + update version in manifest.json
+      - name: Sync chatgpt.js to starters/chrome/extension/lib/chatgpt.js + update version in manifest.json
         run: |
           cp -f \
             "${{ github.workspace }}/KudoAI/chatgpt.js/chatgpt.js" \
@@ -57,7 +57,7 @@ jobs:
           git config --global commit.gpgsign true
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
-          git config --global user.signingkey  "${{ secrets.GPG_PRIVATE_ID }}"
+          git config --global user.signingkey "${{ secrets.GPG_PRIVATE_ID }}"
 
       - name: Push changes to KudoAI/chatgpt.js
         run: |
