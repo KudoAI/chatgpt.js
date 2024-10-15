@@ -24,7 +24,6 @@ jobs:
           fetch-depth: 2
 
       - name: Sync English READMEs between root + docs/
-        id: sync_readmes
         run: |
           cd "${{ github.workspace }}/KudoAI/chatgpt.js"
           root_readme_modified=$(git log -1 --format="%ct" -- "README.md")
@@ -32,8 +31,8 @@ jobs:
           if [ "$root_readme_modified" -gt "$docs_readme_modified" ] ; then cp -f "README.md" "docs/README.md" ; sync_src="root"
           elif [ "$docs_readme_modified" -gt "$root_readme_modified" ] ; then cp -f "docs/README.md" "README.md" ; sync_src="docs" ; fi
 
-          # Store sync src for commit msg in next step
-          echo "sync_src=$sync_src" >> $GITHUB_OUTPUT
+          # Expose sync src for commit msg in push step
+          echo "sync_src=$sync_src" >> $GITHUB_ENV
 
       - name: Escape backticks in commit msg
         env:
@@ -55,5 +54,5 @@ jobs:
         run: |
           cd ${{ github.workspace }}/KudoAI/chatgpt.js
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`${{ steps.sync_readmes.outputs.sync_src }}\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`${{ env.sync_src }}\`]" || true
           git push
