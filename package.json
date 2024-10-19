@@ -9,6 +9,7 @@
   },
   "homepage": "https://chatgpt.js.org",
   "license": "MIT",
+  "funding": "http://github.com/sponsors/KudoAI",
   "browser": "chatgpt.js",
   "files": [
     "chatgpt.js",
@@ -59,10 +60,6 @@
     "openai"
   ],
   "bugs": "https://github.com/KudoAI/chatgpt.js/issues",
-  "funding": {
-    "type": "github",
-    "url": "https://github.com/sponsors/KudoAI"
-  },
   "devDependencies": {
     "@adamlui/minify.js": "^1.8.5",
     "@adamlui/scss-to-css": "^1.10.13",
