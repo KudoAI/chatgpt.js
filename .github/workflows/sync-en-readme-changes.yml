@@ -32,7 +32,7 @@ jobs:
           elif [ "$docs_readme_modified" -gt "$root_readme_modified" ] ; then cp -f "docs/README.md" "README.md" ; sync_src="docs" ; fi
 
           # Expose sync src for commit msg in push step
-          echo "sync_src=$sync_src" >> $GITHUB_ENV
+          echo "SYNC_SRC=$sync_src" >> $GITHUB_ENV
 
       - name: Escape backticks in commit msg
         env:
@@ -54,5 +54,5 @@ jobs:
         run: |
           cd ${{ github.workspace }}/KudoAI/chatgpt.js
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`${{ env.sync_src }}\`]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from \`${{ env.SYNC_SRC }}\`]" || true
           git push
