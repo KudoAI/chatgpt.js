@@ -16,7 +16,7 @@
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/ja#readme">日本</a> |
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/ko#readme">한국인</a> |
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/hi#readme">हिंदी</a> |
-        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/ne">नेपाली</a> |
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/ne#readme">नेपाली</a> |
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/de#readme">Deutsch</a> |
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/es#readme">Español</a> |
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/fr#readme">Français</a> |
