@@ -79,7 +79,7 @@
 
 </div>
 
-> **नोट** _सधैं नवीनतम संस्करण आयात गर्न (उत्पादनमा सिफारिस गरिएको छैन!) संस्करण गरिएको jsDelivr URL लाई प्रतिस्थापन गर्नुहोस्: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
+> **नोट** _सधैं नवीनतम संस्करण इम्पोर्ट गर्न (उत्पादनमा सिफारिस गरिएको छैन!) संस्करण गरिएको jsDelivr URL लाई प्रतिस्थापन गर्नुहोस्: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
 
 ### ES11 (2020):
 
