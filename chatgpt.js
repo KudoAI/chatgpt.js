@@ -1286,7 +1286,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
                           vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${ vOffset }px`; // change prop
                 }
-            } catch (err) {}
+            } catch {}
         }
 
         // Show notification
@@ -1669,7 +1669,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
 
             // Stop the previous observer to preserve resources
             if (this.observer instanceof MutationObserver)
-                try { this.observer.disconnect(); } catch (e) {}
+                try { this.observer.disconnect(); } catch {}
 
             if (!this.elements.length) return console.error('🤖 chatgpt.js >> No elements to append!');
 
@@ -1875,7 +1875,7 @@ const chatgpt = { // eslint-disable-line no-redeclare
         try {
             // use native secure uuid generator when available
             return crypto.randomUUID();
-        } catch(_e) {
+        } catch {
             let d = new Date().getTime(); // get current timestamp in ms (to ensure UUID uniqueness)
             const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
                 const r = ( // generate random nibble
@@ -2025,5 +2025,5 @@ console.info = (msg) => {
 };
 
 // Export chatgpt object
-try { window.chatgpt = chatgpt; } catch (err) {} // for Greasemonkey
-try { module.exports = chatgpt; } catch (err) {} // for CommonJS
+try { window.chatgpt = chatgpt; } catch {} // for Greasemonkey
+try { module.exports = chatgpt; } catch {} // for CommonJS
