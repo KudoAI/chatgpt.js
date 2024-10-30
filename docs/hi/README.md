@@ -126,7 +126,7 @@ function yourCode() {
 
 > **टिप्पणी** _स्टार्टर टेम्पलेट का उपयोग करने के लिए: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
-चूँकि Google रिमोट कोड की अनुमति नहीं देता है, इसलिए Chatgpt.js को स्थानीय रूप से आयात करना आवश्यक है:
+चूँकि Google रिमोट कोड की अनुमति नहीं देता है, इसलिए Chatgpt.js को स्थानीय रूप से इम्पोर्ट करना आवश्यक है:
 
 1. https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/chatgpt.js ये लिंक को अपने सब डायरेक्टरी में सेव करे (इस उदाहरण में यह `lib` है)
 
