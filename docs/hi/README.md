@@ -64,7 +64,7 @@
 
 </div>
 
-<span style="color: white"><b>chatgpt.js</b></span> एक <span style="color: white">शक्तिशाली</span> जावास्क्रिप्ट लाइब्रेरी है जो ChatGPT DOM के साथ <span style="color: white">बेहद आसान</span> इंटरैक्शन की अनुमति देती है।
+<span style="color: white"><b>chatgpt.js</b></span> एक <span style="color: white">शक्तिशाली</span> जावास्क्रिप्ट लाइब्रेरी है जो चैटजीपीटी डोम के साथ <span style="color: white">बेहद आसान</span> इंटरैक्शन की अनुमति देती है।
 
 - सुविधा संपन्न
 - ऑब्जेक्ट-ओरिएन्टेड
@@ -126,7 +126,7 @@ function yourCode() {
 
 > **टिप्पणी** _स्टार्टर टेम्पलेट का उपयोग करने के लिए: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
-चूँकि Google रिमोट कोड की अनुमति नहीं देता है, इसलिए Chatgpt.js को स्थानीय रूप से इम्पोर्ट करना आवश्यक है:
+चूँकि गूगल रिमोट कोड की अनुमति नहीं देता है, इसलिए चैटजीपीटी.जे.एस को स्थानीय रूप से इम्पोर्ट करना आवश्यक है:
 
 1. https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/chatgpt.js ये लिंक को अपने सब डायरेक्टरी में सेव करे (इस उदाहरण में यह `lib` है)
 
@@ -227,9 +227,9 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [रीडमी](https://docs.chatgptautocontinue.com/#readme) / 
 [चर्चा करना](https://github.chatgptautocontinue.com/discussions)
 
-### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/white/icon64.png"><img width=21 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/black/icon64.png"></picture> [ChatGPT ऑटो-टॉक 📣](https://github.com/adamlui/chatgpt-auto-talk)
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/white/icon64.png"><img width=21 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/black/icon64.png"></picture> [चैटजीपीटी ऑटो-टॉक 📣](https://github.com/adamlui/chatgpt-auto-talk)
 
-> ऑटो-प्ले ChatGPT प्रतिक्रियाएं।
+> ऑटो-प्ले चैटजीपीटी प्रतिक्रियाएं।
 <br>[Install](https://greasyfork.org/scripts/500940-chatgpt-auto-talk) /
 [Readme](https://github.com/adamlui/chatgpt-auto-talk#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-auto-talk/discussions)
