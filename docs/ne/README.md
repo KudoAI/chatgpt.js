@@ -79,7 +79,7 @@
 
 </div>
 
-> [!Note]
+> [!NOTE]
 > _सधैं नया संस्करण प्रयोग गर्न (प्रोडक्सनमा यस्तो नगर्नुहोला!) भर्जन सहितको jsDelivr URL लाई यसमा परिवर्तन गर्नुहोस्: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
 
 ### ES11 (2020):
@@ -113,7 +113,7 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://media.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?a3e53bf7"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://media.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?a3e53bf7"> Greasemonkey:
 
-> [!Note]
+> [!NOTE]
 > _स्टार्टर टेम्प्लेट प्रयोग गर्न: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
 ```js
@@ -126,7 +126,7 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://media.chatgptjs.org/images/icons/platforms/chrome/icon16.png?8c852fa5"> Chrome:
 
-> [!Note]
+> [!NOTE]
 > _स्टार्टर टेम्प्लेट प्रयोग गर्न: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
 गुगलले रिमोट कोडलाई अनुमति नदिने भएकोले, स्थानीय रूपमा chatgpt.js आयात गर्न आवश्यक छ:

@@ -79,7 +79,7 @@
 
 </div>
 
-> [!Note]
+> [!NOTE]
 > To always import the latest version (not recommended in production!) replace the versioned jsDelivr URL with: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`
 
 ### ES11 (2020):
@@ -113,7 +113,7 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://media.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?a3e53bf7"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://media.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?a3e53bf7"> Greasemonkey:
 
-> [!Note]
+> [!NOTE]
 > To use a starter template: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)
 
 ```js
@@ -126,7 +126,7 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://media.chatgptjs.org/images/icons/platforms/chrome/icon16.png?8c852fa5"> Chrome:
 
-> [!Note]
+> [!NOTE]
 > To use a starter template: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)
 
 Since Google does not allow remote code, importing chatgpt.js locally is required:
