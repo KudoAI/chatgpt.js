@@ -8,7 +8,7 @@ localStorage.alertQueue = JSON.stringify([]);
 localStorage.notifyProps = JSON.stringify({ queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }});
 
 // Define chatgpt API
-const chatgpt = { // eslint-disable-line no-redeclare
+const chatgpt = {
     openAIaccessToken: {}, endpoints: {
     assets: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js',
     openAI: {
