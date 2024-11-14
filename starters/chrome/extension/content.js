@@ -8,11 +8,10 @@
     await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
     // Add Chrome action msg listener
-    chrome.runtime.onMessage.addListener((request) => {
-        if (request.action === 'notify') notify(request.msg, request.position);
-        else if (request.action === 'alert') alert(request.title, request.msg, request.btns)
-        else if (request.action === 'syncExtension') syncExtension()
-        return true
+    chrome.runtime.onMessage.addListener(req => {
+        if (req.action === 'notify') notify(req.msg, req.position)
+        else if (req.action === 'alert') alert(req.title, req.msg, req.btns)
+        else if (req.action === 'syncExtension') syncExtension()
     })
 
     // Init CONFIG
