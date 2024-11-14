@@ -50,7 +50,7 @@
         if (config.extensionDisabled) {
             // remove your hacks
         } else {
-            // sync each potentially updated setting per key names from lib/settings.js's settings.availKeys
+            // sync each potentially updated setting per settings.availKeys in lib/settings.js
         }
     }
 
