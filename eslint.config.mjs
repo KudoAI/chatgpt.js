@@ -12,8 +12,7 @@ export default [
             ecmaVersion: 'latest', sourceType: 'script',
             globals: {
                 ...globals.browser, ...globals.greasemonkey, ...globals.node,
-                chatgpt: 'readonly', chrome: 'readonly', CryptoJS: 'readonly',
-                syncExtension: 'writable'
+                chrome: 'readonly', CryptoJS: 'readonly',
             }
         },
         rules: {
