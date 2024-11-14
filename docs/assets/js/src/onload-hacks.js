@@ -85,7 +85,7 @@ const onLoadObserver = new MutationObserver(() => {
     smoothScroll(document, 155, 9);
 
     // Hack HOMEPAGE
-    if (/#\/(\w{2}(-\w{2})?\/)?$/.test(location.hash)) {
+    if (/#\/(?:\w{2}(?:-\w{2})?\/)?$/.test(location.hash)) {
 
         // Hide SIDEBAR
         if (!isMobileDevice()) document.body.className = 'ready close';
