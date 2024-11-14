@@ -1255,7 +1255,7 @@ const chatgpt = {
                     + 'opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ;' // visibility
                     + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;'
                     + `transform: translateX(${ !notificationDiv.isRight ? '-' : '' }35px) ;` // init off-screen for transition fx
-                    + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ) + '}'
+                    + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(?:shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ) + '}'
                 + '.notif-close-btn { cursor: pointer ; float: right ; position: relative ; right: -4px ; margin-left: -3px ;'
                     + 'display: grid }' // top-align for non-OpenAI sites
                 + '@keyframes notif-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }' // transition out keyframes
@@ -1497,8 +1497,8 @@ const chatgpt = {
                         : /^(?:10|ten)(?:th)?$/.test(strPos) ? 10 : 1 )
 
                     // Transform base number if suffixed
-                    * ( /(ty|ieth)$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
-                    + ( /teen(th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
+                    * ( /(?:ty|ieth)$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
+                    + ( /teen(?:th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
 
                 );
                 response = responseDivs[nthOfResponse - 1].textContent;
