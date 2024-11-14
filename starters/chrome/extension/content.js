@@ -22,25 +22,6 @@
     // Init CONFIG
     await settings.load(settings.availKeys)
 
-    // LOG chatgpt.js methods
-    await chatgpt.isLoaded()
-    chatgpt.printAllFunctions()
-    if (!config.skipAlert) {
-        chatgpt.alert('≫ ChatGPT extension loaded! 🚀', // title
-            'Success! Press Ctrl+Shift+J to view all chatgpt.js methods.', // msg
-            function getHelp() { // button
-                window.open(config.ghRepoURL + '/issues', '_blank', 'noopener') },
-            function dontShowAgain() { // checkbox
-                settings.save('skipAlert', !config.skipAlert) }
-    )}
-
-    // Your code here...
-    // Your code here...
-    // Your code here...
-    // Your code here...
-    // Your code here...
-    // Your code here...
-
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
@@ -59,5 +40,25 @@
             } else {
                 // sync each potentially updated setting passed to settings.load()
     }})}
+
+    // Run MAIN routine
+
+    await chatgpt.isLoaded()
+    chatgpt.printAllFunctions() // to console
+    if (!config.skipAlert) {
+        chatgpt.alert('≫ ChatGPT extension loaded! 🚀', // title
+            'Success! Press Ctrl+Shift+J to view all chatgpt.js methods.', // msg
+            function getHelp() { // button
+                window.open(config.ghRepoURL + '/issues', '_blank', 'noopener') },
+            function dontShowAgain() { // checkbox
+                settings.save('skipAlert', !config.skipAlert) }
+    )}
+
+    // Your code here...
+    // Your code here...
+    // Your code here...
+    // Your code here...
+    // Your code here...
+    // Your code here...
 
 })()
