@@ -12,7 +12,7 @@ export default [
             ecmaVersion: 'latest', sourceType: 'script',
             globals: {
                 ...globals.browser, ...globals.greasemonkey, ...globals.node,
-                chrome: 'readonly', CryptoJS: 'readonly',
+                chrome: 'readonly', CryptoJS: 'readonly'
             }
         },
         rules: {
