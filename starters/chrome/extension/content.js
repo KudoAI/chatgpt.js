@@ -44,9 +44,9 @@
     // Run MAIN routine
 
     if (config.extensionDisabled) return
-    await chatgpt.isLoaded()
+
     chatgpt.printAllFunctions() // to console
-    if (!config.skipAlert) {
+    if (!config.skipAlert) { // alert to extension load
         chatgpt.alert('≫ ChatGPT extension loaded! 🚀', // title
             'Success! Press Ctrl+Shift+J to view all chatgpt.js methods.', // msg
             function getHelp() { // button
@@ -54,6 +54,8 @@
             function dontShowAgain() { // checkbox
                 settings.save('skipAlert', !config.skipAlert) }
     )}
+
+    await chatgpt.isLoaded()
 
     // Your code here...
     // Your code here...
