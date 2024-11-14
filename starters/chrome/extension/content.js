@@ -59,14 +59,14 @@
     if (config.extensionDisabled) return
 
     chatgpt.printAllFunctions() // to console
-    if (!config.skipAlert) { // alert to extension load
+    if (!config.skipAlert) // alert to extension load
         chatgpt.alert('≫ ChatGPT extension loaded! 🚀', // title
             'Success! Press Ctrl+Shift+J to view all chatgpt.js methods.', // msg
             function getHelp() { // button
                 window.open(config.ghRepoURL + '/issues', '_blank', 'noopener') },
             function dontShowAgain() { // checkbox
                 settings.save('skipAlert', !config.skipAlert) }
-    )}
+        )
 
     await chatgpt.isLoaded()
 
