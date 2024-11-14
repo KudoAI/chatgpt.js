@@ -10,5 +10,5 @@ chrome.runtime.onInstalled.addListener(details => {
 chrome.tabs.onActivated.addListener((activeInfo) => {
     chrome.tabs.get(activeInfo.tabId, (tab) => {
         if (allowedHosts.includes(new URL(tab.url).hostname)) {
-            chrome.tabs.sendMessage(tab.id, { action: 'syncExtension' })
+            chrome.tabs.sendMessage(tab.id, { action: 'syncStorageToUI' })
 }})})

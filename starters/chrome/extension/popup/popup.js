@@ -15,7 +15,7 @@
           masterToggle = toggles[0]
     masterToggle.addEventListener('change', function() {    
         settings.save('extensionDisabled', !this.checked)
-        syncExtension() ; updateGreyness()
+        syncStorageToUI() ; updateGreyness()
         notify(config.appName + ( this.checked ? ' ON' : ' OFF' ))
     })
 
@@ -65,9 +65,9 @@
 
     // Define SYNC functions
 
-    function syncExtension() {
+    function syncStorageToUI() {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-            chrome.tabs.sendMessage(tabs[0].id, { action: 'syncExtension' })
+            chrome.tabs.sendMessage(tabs[0].id, { action: 'syncStorageToUI' })
     })}
 
     function updateGreyness() {

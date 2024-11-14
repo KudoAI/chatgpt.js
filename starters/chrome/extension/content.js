@@ -11,7 +11,7 @@
     chrome.runtime.onMessage.addListener(req => {
         if (req.action === 'notify') notify(req.msg, req.position)
         else if (req.action === 'alert') siteAlert(req.title, req.msg, req.btns)
-        else if (req.action === 'syncExtension') syncExtension()
+        else if (req.action === 'syncStorageToUI') syncStorageToUI()
     })
 
     // Init CONFIG
@@ -45,7 +45,7 @@
 
     // Define SYNC function
 
-    async function syncExtension() {
+    async function syncStorageToUI() {
         await settings.load(settings.availKeys)
         if (config.extensionDisabled) {
             // remove your hacks
