@@ -13,12 +13,12 @@
     "permissions": [ "storage", "tabs" ],
     "action": { "default_popup": "popup/index.html" },
     "web_accessible_resources": [{
-        "matches": ["<all_urls>"],
-        "resources": ["lib/settings-utils.js", "lib/chatgpt.js"]
+        "matches": [ "<all_urls>" ],
+        "resources": [ "lib/settings-utils.js", "lib/chatgpt.js" ]
     }],
     "content_scripts": [{
-        "matches": ["https://chatgpt.com/*", "https://chat.openai.com/*"],
-        "js": ["content.js"]
+        "matches": [ "https://chatgpt.com/*", "https://chat.openai.com/*" ],
+        "js": [ "content.js" ]
     }],
     "background": { "service_worker": "background.js" }
 }
