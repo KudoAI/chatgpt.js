@@ -1,7 +1,7 @@
 (async () => {
 
-    // Import settings-utils.js
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
+    // Import settings.js
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
 
     // Initialize popup toggles
     settings.load('extensionDisabled')
