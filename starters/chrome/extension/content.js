@@ -19,17 +19,20 @@
         return true
     })
 
+    // Init CONFIG
+    await settings.load(settings.availKeys)
+
+    // LOG chatgpt.js methods
     await chatgpt.isLoaded()
-    chatgpt.printAllFunctions() // to console
-    settings.load('skipAlert').then(() => {
-        if (!config.skipAlert) {
-            chatgpt.alert('≫ ChatGPT extension loaded! 🚀', // title
-                'Success! Press Ctrl+Shift+J to view all chatgpt.js methods.', // msg
-                function getHelp() { // button
-                    window.open(config.ghRepoURL + '/issues', '_blank', 'noopener') },
-                function dontShowAgain() { // checkbox
-                    settings.save('skipAlert', !config.skipAlert) }
-    )}})
+    chatgpt.printAllFunctions()
+    if (!config.skipAlert) {
+        chatgpt.alert('≫ ChatGPT extension loaded! 🚀', // title
+            'Success! Press Ctrl+Shift+J to view all chatgpt.js methods.', // msg
+            function getHelp() { // button
+                window.open(config.ghRepoURL + '/issues', '_blank', 'noopener') },
+            function dontShowAgain() { // checkbox
+                settings.save('skipAlert', !config.skipAlert) }
+    )}
 
     // Your code here...
     // Your code here...

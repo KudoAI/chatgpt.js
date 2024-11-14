@@ -3,6 +3,8 @@ const config = {
     ghRepoURL: 'https://github.kudoai.com/chatgpt.js-chrome-starter' }
 
 const settings = {
+    availKeys: [ 'extensionDisabled', 'skipAlert' ],
+
     load() {
         const keys = ( // original array if array, else new array from multiple args
             Array.isArray(arguments[0]) ? arguments[0] : Array.from(arguments))
