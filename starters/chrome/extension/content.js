@@ -10,7 +10,7 @@
     // Add CHROME MSG listener
     chrome.runtime.onMessage.addListener(req => {
         if (req.action === 'notify') notify(req.msg, req.position)
-        else if (req.action === 'alert') alert(req.title, req.msg, req.btns)
+        else if (req.action === 'alert') siteAlert(req.title, req.msg, req.btns)
         else if (req.action === 'syncExtension') syncExtension()
     })
 
@@ -40,7 +40,7 @@
         }
     }
 
-    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${config.appSymbol} ${title}`, msg, btns, checkbox, width )}
 
     // Define SYNC function
