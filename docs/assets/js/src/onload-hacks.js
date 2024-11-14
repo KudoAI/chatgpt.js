@@ -372,7 +372,7 @@ const onLoadObserver = new MutationObserver(() => {
         mdLoaded.then(() => {
             const docLangSelector = document.querySelectorAll('h5 a');
             for (const lang of docLangSelector)
-                lang.href = lang.href.replace(/(.*\/\/.*?\/)(.*)\.md/, '$1#/$2');
+                lang.href = lang.href.replace(/(https?:\/\/[^/]+\/)([^.]+)\.md/, '$1#/$2');
         });
     }
 

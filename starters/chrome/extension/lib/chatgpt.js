@@ -1398,7 +1398,7 @@ const chatgpt = {
 
     renderHTML(node) {
         const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
-              reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+\S+=|[>']))+.)['"]?/g,
+              reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+\S+=|[>']))+.)['"]?/g, // eslint-disable-line
               nodeContent = node.childNodes;
 
         // Preserve consecutive spaces + line breaks
