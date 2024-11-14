@@ -1,92 +1,92 @@
 (async () => {
 
     // Import settings-utils.js
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'));
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
 
     // Initialize popup toggles
     settings.load('extensionDisabled')
         .then(function() { // restore extension/toggle states
-            masterToggle.checked = !config.extensionDisabled;
-            updateGreyness();
-        });
+            masterToggle.checked = !config.extensionDisabled
+            updateGreyness()
+        })
 
     // Add main toggle click-listener
     const toggles = document.querySelectorAll('input'),
-          masterToggle = toggles[0];
+          masterToggle = toggles[0]
     masterToggle.addEventListener('change', function() {    
-        settings.save('extensionDisabled', !this.checked);
-        syncExtension() ; updateGreyness();
-        notify(config.appName + ( this.checked ? ' ON' : ' OFF' ));
-    });
+        settings.save('extensionDisabled', !this.checked)
+        syncExtension() ; updateGreyness()
+        notify(config.appName + ( this.checked ? ' ON' : ' OFF' ))
+    })
 
     // Add update-check span click-listener
-    const updateSpan = document.querySelector('span[title*="update" i]');
+    const updateSpan = document.querySelector('span[title*="update" i]')
     updateSpan.addEventListener('click', () => {
         window.close(); // popup
         chrome.runtime.requestUpdateCheck((status, details) => {
-            alertToUpdate(status === 'update_available' ? details.version : '');
-    });});
+            alertToUpdate(status === 'update_available' ? details.version : '')
+    })})
 
     // Add Support span click-listener
     const supportLink = document.querySelector('a[title*="support" i]'),
           supportSpan = supportLink.parentNode;
     supportSpan.addEventListener('click', (event) => {
-        if (event.target == supportSpan) supportLink.click(); // to avoid double-toggle
-    });
+        if (event.target == supportSpan) supportLink.click() // to avoid double-toggle
+    })
 
     // Add More Add-ons span click-listener
     const moreAddOnsLink = document.querySelector('a[title*="more" i]'),
-          moreAddOnsSpan = moreAddOnsLink.parentNode;
+          moreAddOnsSpan = moreAddOnsLink.parentNode
     moreAddOnsSpan.addEventListener('click', (event) => {
-        if (event.target == moreAddOnsSpan) moreAddOnsLink.click(); // to avoid double-toggle
-    });
+        if (event.target == moreAddOnsSpan) moreAddOnsLink.click() // to avoid double-toggle
+    })
 
     // Add Powered by chatgpt.js hover-listener
     const chatGPTjsHostPath = 'https://media.chatgptjs.org/images/badges/',
-          chatGPTjsImg = document.querySelector('.chatgpt-js img');
+          chatGPTjsImg = document.querySelector('.chatgpt-js img')
     chatGPTjsImg.addEventListener('mouseover', () => {
-        chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png'; });
+        chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png' })
     chatGPTjsImg.addEventListener('mouseout', () => {
-      chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png'; });
+      chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png' })
 
     // Define FEEDBACK functions
 
     function notify(msg, position) {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, { 
-                action: 'notify', msg: msg, position: position || 'bottom-right' });
-    });}
+                action: 'notify', msg: msg, position: position || 'bottom-right' })
+    })}
     
     function alertToUpdate(version) {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, { 
-                action: 'alertToUpdate', args: version });
-    });}
+                action: 'alertToUpdate', args: version })
+    })}
 
     // Define SYNC functions
 
     function syncExtension() {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-            chrome.tabs.sendMessage(tabs[0].id, { action: 'syncExtension' });
-    });}
+            chrome.tabs.sendMessage(tabs[0].id, { action: 'syncExtension' })
+    })}
 
     function updateGreyness() {
 
         // Updated toolbar icon
-        const iconDimensions = [16, 32, 64, 128], iconPaths = {};
+        const iconDimensions = [16, 32, 64, 128], iconPaths = {}
         iconDimensions.forEach((dimension) => {
             iconPaths[dimension] = '../icons/'
                 + (config.extensionDisabled ? 'faded/' : '')
-                + 'icon' + dimension + '.png';
-        });
-        chrome.action.setIcon({ path: iconPaths });
+                + 'icon' + dimension + '.png'
+        })
+        chrome.action.setIcon({ path: iconPaths })
 
         // Update menu contents
         document.querySelectorAll('div.logo, div.menu-title, div.menu')
             .forEach((elem) => {
-                elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled');
-                elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled');
-            });
+                elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
+                elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
+            })
     }
 
-})();
+})()
