@@ -26,7 +26,7 @@
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, pos, notifDuration,
+        chatgpt.notify(`${config.appSymbol} ${msg}`, pos, notifDuration,
             shadow || chatgpt.isDarkMode() ? '' : 'shadow' )
         const notif = document.querySelector('.chatgpt-notif:last-child')
 
@@ -41,7 +41,7 @@
     }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
+        return chatgpt.alert(`${config.appSymbol} ${title}`, msg, btns, checkbox, width )}
 
     // Define SYNC function
 
