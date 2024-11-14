@@ -11,11 +11,7 @@
     chrome.runtime.onMessage.addListener((request) => {
         if (request.action === 'notify') notify(request.msg, request.position);
         else if (request.action === 'alert') alert(request.title, request.msg, request.btns)
-        else if (typeof window[request.action] === 'function') {
-            const args = Array.isArray(request.args) ? request.args // preserve array if supplied
-                       : request.args !== undefined ? [request.args] : [] // convert to array if single or no arg
-            window[request.action](...args) // call expression functions
-        }
+        else if (request.action === 'syncExtension') syncExtension()
         return true
     })
 
@@ -33,13 +29,14 @@
 
     // Define SYNC function
 
-    syncExtension = () => {
-        settings.load('extensionDisabled').then(() => {
-            if (config.extensionDisabled) {
-                // remove your hacks
-            } else {
-                // sync each potentially updated setting passed to settings.load()
-    }})}
+    async function syncExtension() {
+        await settings.load(settings.availKeys)
+        if (config.extensionDisabled) {
+            // remove your hacks
+        } else {
+            // sync each potentially updated setting stored in lib/settings.js's settings.availKeys
+        }
+    }
 
     // Run MAIN routine
 
