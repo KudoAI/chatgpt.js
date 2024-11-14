@@ -45,12 +45,12 @@
 
     // Define SYNC function
 
-    async function syncStorageToUI() {
+    async function syncStorageToUI() { // on toolbar popup toggles + ChatGPT tab activations
         await settings.load(settings.availKeys)
         if (config.extensionDisabled) {
-            // remove your hacks
+            // remove all hacks
         } else {
-            // apply hacks to sync each potentially updated setting per settings.availKeys in lib/settings.js
+            // apply hacks to match each potentially updated setting per settings.availKeys in lib/settings.js
         }
     }
 
