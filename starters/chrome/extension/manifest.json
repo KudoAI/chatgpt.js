@@ -3,7 +3,7 @@
   "name": "ChatGPT Extension",
   "short_name": "ChatGPT 🧩",
   "description": "A Chrome template to start using chatgpt.js like a boss!",
-  "version": "2024.11.13",
+  "version": "2024.11.14",
   "author": "chatgpt.js",
   "homepage_url": "https://github.com/KudoAI/chatgpt.js-chrome-starter",
   "icons": {
