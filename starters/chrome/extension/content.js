@@ -43,6 +43,7 @@
 
     // Run MAIN routine
 
+    if (config.extensionDisabled) return
     await chatgpt.isLoaded()
     chatgpt.printAllFunctions() // to console
     if (!config.skipAlert) {
