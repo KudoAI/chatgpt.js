@@ -7,8 +7,9 @@ import eslintPluginYml from 'eslint-plugin-yml'
 export default [
     { ignores: ['**/*.min.js'] },
     {
-        files: ['**/*.js', '**/*.mjs'], ...js.configs.recommended,
+        files: ['**/*.js', '**/*.mjs'],
         rules: {
+            ...js.configs.recommended.rules,
             'indent': 'off', 'no-unexpected-multiline': 'off', 'key-spacing': 'off', // allow whitespace anywhere
             'quotes': ['error', 'single', { 'allowTemplateLiterals': true }], // enforce single quotes except backticks to avoid escaping quotes
             'comma-dangle': ['error', 'never'], // enforce no trailing commas in arrays or objects
