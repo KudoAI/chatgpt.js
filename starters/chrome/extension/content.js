@@ -66,7 +66,7 @@
         chatgpt.alert('≫ ChatGPT extension loaded! 🚀', // title
             'Success! Press Ctrl+Shift+J to view all chatgpt.js methods.', // msg
             function getHelp() { // button
-                window.open(config.ghRepoURL + '/issues', '_blank', 'noopener') },
+                chrome.tabs.create({ url: `${config.ghRepoURL}/issues` }) },
             function dontShowAgain() { // checkbox
                 settings.save('skipAlert', !config.skipAlert) }
         )
