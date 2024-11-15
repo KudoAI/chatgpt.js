@@ -71,7 +71,7 @@
                 settings.save('skipAlert', !config.skipAlert) }
         )
 
-    await chatgpt.isLoaded()
+    await chatgpt.isLoaded() // if your hacks depend on delayed DOM content
 
     // Your code here...
     // Your code here...
