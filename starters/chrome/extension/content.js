@@ -50,7 +50,7 @@
         if (config.extensionDisabled) {
             // remove all hacks
         } else {
-            // apply hacks to match each potentially updated setting per settings.availKeys in lib/settings.js
+            // apply hacks to reflect each potentially updated setting per settings.availKeys in lib/settings.js
         }
     }
 
