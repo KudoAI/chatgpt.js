@@ -50,10 +50,10 @@
         if (config.extensionDisabled) {
             // remove all hacks
         } else {
-            // apply hacks to reflect each potentially updated setting per settings.availKeys in lib/settings.js
-            // e.g. if you add popup/index.html toggle to hide ChatGPT footer using hiddenFooter key...
-            // ...here you would use `if (config.hiddenFooter)` to re-apply hidden footer styles...
-            // ...(initial style application would go in main routine, style removal would go in above block)
+            // add/remove hacks to reflect each potentially updated setting per settings.availKeys in lib/settings.js
+            // e.g. if you created popup/index.html toggle to hide ChatGPT footer using hiddenFooter key...
+            // ...here you would use `config.hiddenFooter` to conditionally append/remove hidden footer style...
+            // ...(initial style creation + append if `config.hiddenFooter` would go in main routine)
         }
     }
 
