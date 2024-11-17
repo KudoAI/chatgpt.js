@@ -27,11 +27,10 @@ export default [
             'no-empty': 'off', // allow empty blocks
             'no-inner-declarations': 'off', // allow function declarations anywhere
             'no-useless-escape': 'off', // allow all escape chars cause ESLint sucks at detecting truly useless ones
-            'no-unused-vars': ['error', { 'caughtErrors': 'none' }], // allow unused named args in catch blocks
-            'no-redeclare': ['error', { 'builtinGlobals': false }] // allow redeclaration of `chatgpt` in chatgpt.js
-                // ...due to languageOptions.globals declaration for starter refs
+            'no-unused-vars': ['error', { 'caughtErrors': 'none' }] // allow unused named args in catch blocks
         }
     },
+    { files: ['**/chatgpt.js'], languageOptions: { globals: { chatgpt: 'off' }}},
     { files: ['**/*.mjs', '**/lib*/*.js'], languageOptions: { sourceType: 'module' }},
     { files: ['**/*.json'], ignores: ['**/package-lock.json'], language: 'json/json', ...json.configs.recommended },
     {
