@@ -12,7 +12,7 @@
     "64": "icons/icon64.png",
     "128": "icons/icon128.png"
   },
-  "permissions": [ "storage", "tabs" ],
+  "permissions": [ "activeTab", "storage" ],
   "action": { "default_popup": "popup/index.html" },
   "web_accessible_resources": [{
     "matches": [ "<all_urls>" ],
