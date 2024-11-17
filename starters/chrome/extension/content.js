@@ -7,6 +7,9 @@
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
     await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
+    // Import APP data
+    const { app } = await chrome.storage.sync.get('app')
+
     // Add CHROME MSG listener
     chrome.runtime.onMessage.addListener(req => {
         if (req.action === 'notify') notify(req.msg, req.position)
@@ -26,7 +29,7 @@
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        chatgpt.notify(`${config.appSymbol} ${msg}`, pos, notifDuration,
+        chatgpt.notify(`${app.symbol} ${msg}`, pos, notifDuration,
             shadow || chatgpt.isDarkMode() ? '' : 'shadow' )
         const notif = document.querySelector('.chatgpt-notif:last-child')
 
@@ -41,7 +44,7 @@
     }
 
     function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${config.appSymbol} ${title}`, msg, btns, checkbox, width )}
+        return chatgpt.alert(`${app.symbol} ${title}`, msg, btns, checkbox, width )}
 
     // Define SYNC function
 
@@ -66,7 +69,7 @@
         chatgpt.alert('≫ ChatGPT extension loaded! 🚀', // title
             'Success! Press Ctrl+Shift+J to view all chatgpt.js methods.', // msg
             function getHelp() { // button
-                chrome.tabs.create({ url: `${config.ghRepoURL}/issues` }) },
+                chrome.tabs.create({ url: `${app.urls.gitHub}/issues` }) },
             function dontShowAgain() { // checkbox
                 settings.save('skipAlert', !config.skipAlert) }
         )

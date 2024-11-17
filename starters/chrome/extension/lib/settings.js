@@ -1,8 +1,4 @@
-const config = {
-    appSymbol: '🤖', appName: 'ChatGPT Extension',
-    ghRepoURL: 'https://github.kudoai.com/chatgpt.js-chrome-starter' }
-
-const settings = {
+const config = {}, settings = {
     availKeys: [ 'extensionDisabled', 'skipAlert' ],
 
     load() {
