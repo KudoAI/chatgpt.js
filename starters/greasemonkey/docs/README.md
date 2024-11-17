@@ -5,3 +5,5 @@
 <br>
 
 <img src="../media/images/screenshots/chatgpt-userscript-on.png">
+
+_To utilize advanced Greasemonkey API methods, see: https://wiki.greasespot.net/Greasemonkey_Manual:API_
