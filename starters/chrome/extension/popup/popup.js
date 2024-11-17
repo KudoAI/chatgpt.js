@@ -51,10 +51,10 @@
 
     // Define FEEDBACK functions
 
-    function notify(msg, position) {
+    function notify(msg, pos) {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, { 
-                action: 'notify', msg: msg, position: position || 'bottom-right' })
+                action: 'notify', msg: msg, pos: pos || 'bottom-right' })
     })}
     
     function alertToUpdate(version) {
