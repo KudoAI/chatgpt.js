@@ -12,9 +12,9 @@
 
     // Add CHROME MSG listener
     chrome.runtime.onMessage.addListener(req => {
-        if (req.action === 'notify') notify(req.msg, req.position)
-        else if (req.action === 'alert') siteAlert(req.title, req.msg, req.btns)
-        else if (req.action === 'syncStorageToUI') syncStorageToUI()
+        if (req.action == 'notify') notify(req.msg, req.position)
+        else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
+        else if (req.action == 'syncStorageToUI') syncStorageToUI()
     })
 
     // Init CONFIG

@@ -24,7 +24,7 @@
     updateSpan.addEventListener('click', () => {
         window.close(); // popup
         chrome.runtime.requestUpdateCheck((status, details) => {
-            alertToUpdate(status === 'update_available' ? details.version : '')
+            alertToUpdate(status == 'update_available' ? details.version : '')
     })})
 
     // Add Support span click-listener
