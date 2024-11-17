@@ -3,7 +3,7 @@
 // @description   A Greasemonkey template to start using chatgpt.js like a boss
 // @author        chatgpt.js
 // @namespace     https://chatgpt.js.org
-// @version       2024.11.14
+// @version       2024.11.17
 // @license       MIT
 // @match         *://chatgpt.com/*
 // @match         *://chat.openai.com/*
@@ -19,7 +19,7 @@
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org © 2023–2024 KudoAI & contributors under the MIT license
 
-(async () => { /* global chatgpt */
+(async () => {
 
     // Init config
     const config = { prefix: 'chatgptScript' }; loadSetting('skipAlert');

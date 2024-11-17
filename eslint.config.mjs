@@ -13,7 +13,7 @@ export default [
             ecmaVersion: 'latest', sourceType: 'script',
             globals: {
                 ...globals.browser, ...globals.greasemonkey, ...globals.node,
-                chrome: 'readonly', CryptoJS: 'readonly'
+                chatgpt: 'readonly', chrome: 'readonly', CryptoJS: 'readonly'
             }
         },
         plugins: { regexp },
@@ -27,7 +27,9 @@ export default [
             'no-empty': 'off', // allow empty blocks
             'no-inner-declarations': 'off', // allow function declarations anywhere
             'no-useless-escape': 'off', // allow all escape chars cause ESLint sucks at detecting truly useless ones
-            'no-unused-vars': ['error', { 'caughtErrors': 'none' }] // allow unused named args in catch blocks
+            'no-unused-vars': ['error', { 'caughtErrors': 'none' }], // allow unused named args in catch blocks
+            'no-redeclare': ['error', { 'builtinGlobals': false }] // allow redeclaration of `chatgpt` in chatgpt.js
+                // ...due to languageOptions.globals declaration for starter refs
         }
     },
     { files: ['**/*.mjs', '**/lib*/*.js'], languageOptions: { sourceType: 'module' }},
