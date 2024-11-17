@@ -19,14 +19,6 @@
         notify(`${chrome.runtime.getManifest().name} ${ this.checked ? 'ON' : 'OFF' }`)
     })
 
-    // Add update-check span click-listener
-    const updateSpan = document.querySelector('span[title*="update" i]')
-    updateSpan.addEventListener('click', () => {
-        window.close(); // popup
-        chrome.runtime.requestUpdateCheck((status, details) => {
-            alertToUpdate(status == 'update_available' ? details.version : '')
-    })})
-
     // Add Support span click-listener
     const supportLink = document.querySelector('a[title*="support" i]'),
           supportSpan = supportLink.parentNode;
@@ -49,21 +41,13 @@
     chatGPTjsImg.addEventListener('mouseout', () => {
       chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png' })
 
-    // Define FEEDBACK functions
+    // Define FUNCTIONS
 
     function notify(msg, pos) {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, { 
                 action: 'notify', msg: msg, pos: pos || 'bottom-right' })
     })}
-    
-    function alertToUpdate(version) {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-            chrome.tabs.sendMessage(tabs[0].id, { 
-                action: 'alertToUpdate', args: version })
-    })}
-
-    // Define SYNC functions
 
     function syncStorageToUI() {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
