@@ -1,7 +1,7 @@
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org
 // © 2023–2024 KudoAI & contributors under the MIT license
 
-(async () => { /* global chatgpt */
+(async () => {
 
     // Import LIBS
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
