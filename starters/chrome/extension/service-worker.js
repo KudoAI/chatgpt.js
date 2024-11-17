@@ -1,5 +1,5 @@
 // Init APP data
-const app = { name: 'ChatGPT Extension', symbol: '🤖', urls: { gitHub: 'https://github.com/KudoAI/chatgpt.js-chrome-starter' }}
+const app = { symbol: '🤖', urls: { gitHub: 'https://github.com/KudoAI/chatgpt.js-chrome-starter' }}
 chrome.storage.sync.set({ app })
 
 // Launch ChatGPT on install

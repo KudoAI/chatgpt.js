@@ -3,9 +3,6 @@
     // Import settings.js
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
 
-    // Import APP data
-    const { app } = await chrome.storage.sync.get('app')
-
     // Initialize popup toggles
     settings.load('extensionDisabled')
         .then(function() { // restore extension/toggle states
@@ -19,7 +16,7 @@
     masterToggle.addEventListener('change', function() {    
         settings.save('extensionDisabled', !this.checked)
         syncStorageToUI() ; updateGreyness()
-        notify(`${app.name} ${ this.checked ? 'ON' : 'OFF' }`)
+        notify(`${chrome.runtime.getManifest().name} ${ this.checked ? 'ON' : 'OFF' }`)
     })
 
     // Add update-check span click-listener
