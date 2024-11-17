@@ -69,6 +69,8 @@ Dat is het! **ChatGPT Extension** verschijnt nu in de extensielijst:
 
 </div>
 
+_Voor het gebruik van geavanceerde Chrome API-methoden, zie: https://developer.chrome.com/docs/extensions/reference/api_
+
 ## 🤖 Gemaakt met chatgpt.js
 
 Dit zijn enkele van de extensies van Google die chatgpt.js gebruiken:

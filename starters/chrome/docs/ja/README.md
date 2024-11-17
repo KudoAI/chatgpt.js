@@ -69,6 +69,8 @@
 
 </div>
 
+_高度な Chrome API メソッドを利用するには、https://developer.chrome.com/docs/extensions/reference/api を参照してください。_
+
 ## 🤖 chatgpt.js で作成
 
 以下は、Google が提供する chatgpt.js を使用する拡張機能の一部です:

@@ -69,6 +69,8 @@
 
 </div>
 
+_Để sử dụng các phương pháp API Chrome nâng cao, hãy xem: https://developer.chrome.com/docs/extensions/reference/api_
+
 ## 🤖 Được tạo bằng chatgpt.js
 
 Đây là một số tiện ích mở rộng được Google sử dụng chatgpt.js:

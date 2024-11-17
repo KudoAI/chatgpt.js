@@ -69,6 +69,8 @@
 
 </div>
 
+_若要利用進階 Chrome API 方法，請參閱：https://developer.chrome.com/docs/extensions/reference/api_
+
 ## 🤖 用 chatgpt.js 製作
 
 以下是 Google 提供的一些使用 chatgpt.js 的擴展：

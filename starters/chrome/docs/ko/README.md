@@ -69,6 +69,8 @@
 
 </div>
 
+_고급 Chrome API 방법을 활용하려면 https://developer.chrome.com/docs/extensions/reference/api를 참조하세요_
+
 ## 🤖 chatgpt.js 로 제작
 
 다음은 chatgpt.js를 사용하는 Google의 확장 프로그램 중 일부입니다:

@@ -69,6 +69,8 @@
 
 </div>
 
+_Para utilizar métodos avanzados de la API de Chrome, consulte: https://developer.chrome.com/docs/extensions/reference/api_
+
 ## 🤖 Hecho con chatgpt.js
 
 Estas son algunas de las extensiones presentadas por Google que usan chatgpt.js:

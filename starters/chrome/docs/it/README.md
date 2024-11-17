@@ -69,6 +69,8 @@ Questo è tutto! **ChatGPT Extension** verrà ora visualizzata nell'elenco delle
 
 </div>
 
+_Per utilizzare i metodi API Chrome avanzati, vedere: https://developer.chrome.com/docs/extensions/reference/api_
+
 ## 🤖 Realizzato con chatgpt.js
 
 Queste sono alcune delle estensioni presenti in Google che utilizzano chatgpt.js:
