@@ -2,9 +2,11 @@
 const app = {
     symbol: '🤖',
     urls: {
+        assetHost: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter',
         cjsMediaHost: 'https://media.chatgptjs.org',
         gitHub: 'https://github.com/KudoAI/chatgpt.js-chrome-starter',
-        assetHost: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter'
+        relatedExtensions: 'https://aiwebextensions.com',
+        support: 'https://github.com/KudoAI/chatgpt.js-chrome-starter/issues'
     }
 }
 chrome.storage.sync.set({ app })

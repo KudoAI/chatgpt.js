@@ -1,7 +1,15 @@
 (async () => {
 
-    // Import settings.js
+    // Import LIBS
+    await import(chrome.runtime.getURL('lib/dom.js'))
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
+
+    // Ipmort APP data
+    const { app } = await chrome.storage.sync.get('app')
+
+    // Import ICONS
+    const { icons } = await import(chrome.runtime.getURL('components/icons.js'))
+    icons.appProps = app // for src's using urls.mediaHost
 
     // Define FUNCTIONS
 
@@ -37,42 +45,44 @@
 
     // Run MAIN routine
 
-    // Initialize popup toggles
-    settings.load('extensionDisabled')
-        .then(function() { // restore extension/toggle states
-            masterToggle.checked = !config.extensionDisabled
-            sync.fade()
-        })
-
-    // Add main toggle click-listener
-    const toggles = document.querySelectorAll('input'),
-          masterToggle = toggles[0]
-    masterToggle.addEventListener('change', function() {    
-        settings.save('extensionDisabled', !this.checked)
-        sync.storageToUI() ; sync.fade()
+    // Init MASTER TOGGLE
+    const masterToggle = document.querySelector('input')
+    await settings.load('extensionDisabled')
+    masterToggle.checked = !config.extensionDisabled ; sync.fade()
+    masterToggle.onchange = () => {    
+        settings.save('extensionDisabled', !config.extensionDisabled)
+        Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
         notify(`${chrome.runtime.getManifest().name} ${ this.checked ? 'ON' : 'OFF' }`)
-    })
+    }
 
-    // Add Support span click-listener
-    const supportLink = document.querySelector('a[title*="support" i]'),
-          supportSpan = supportLink.parentNode;
-    supportSpan.addEventListener('click', (event) => {
-        if (event.target == supportSpan) supportLink.click() // to avoid double-toggle
-    })
+    // Create/append FOOTER container
+    const footer = document.createElement('footer')
+    document.body.append(footer)
 
-    // Add More Add-ons span click-listener
-    const moreAddOnsLink = document.querySelector('a[title*="more" i]'),
-          moreAddOnsSpan = moreAddOnsLink.parentNode
-    moreAddOnsSpan.addEventListener('click', (event) => {
-        if (event.target == moreAddOnsSpan) moreAddOnsLink.click() // to avoid double-toggle
-    })
+    // Create/append CHATGPT.JS footer logo
+    const cjsDiv = dom.create.elem('div', { class: 'chatgpt-js' })
+    const cjsLogo = dom.create.elem('img', {
+        title: 'Powered by chatgpt.js',
+        src: `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png` })
+    cjsLogo.onmouseover = cjsLogo.onmouseout = event => cjsLogo.src = `${
+        app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js${ event.type == 'mouseover' ? '' : '-faded' }.png`
+    cjsLogo.onclick = () => chrome.tabs.create({ url: app.urls.chatgptJS })
+    cjsDiv.append(cjsLogo) ; footer.append(cjsDiv)
 
-    // Add Powered by chatgpt.js hover-listener
-    const chatGPTjsHostPath = 'https://media.chatgptjs.org/images/badges/',
-          chatGPTjsImg = document.querySelector('.chatgpt-js img')
-    chatGPTjsImg.addEventListener('mouseover', () => {
-        chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png' })
-    chatGPTjsImg.addEventListener('mouseout', () => {
-      chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png' })
+    // Create/append SUPPORT footer button
+    const supportSpan = dom.create.elem('span', {
+        title: 'Get Support',
+        class: 'menu-icon menu-area', style: 'right:30px ; padding-top: 2px' })
+    const supportIcon = icons.create({ name: 'questionMark', width: 15, height: 13, style: 'margin-bottom: 0.04rem' })
+    supportSpan.onclick = () => { chrome.tabs.create({ url: app.urls.support }) ; close() }
+    supportSpan.append(supportIcon) ; footer.append(supportSpan)
+
+    // Create/append RELATED APPS footer button
+    const moreAppsSpan = dom.create.elem('span', {
+        title:  'More AI Extensions',
+        class: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px' })
+    const moreAppsIcon = icons.create({ name: 'plus', size: 16 })
+    moreAppsSpan.onclick = () => { chrome.tabs.create({ url: app.urls.relatedExtensions }) ; close() }
+    moreAppsSpan.append(moreAppsIcon) ; footer.append(moreAppsSpan)
 
 })()
