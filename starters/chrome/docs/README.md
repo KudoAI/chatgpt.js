@@ -69,7 +69,7 @@ That's it! **ChatGPT Extension** will now appear in extension list:
 
 </div>
 
-_To utilize advanced Chrome API methods, see: https://developer.chrome.com/docs/extensions/reference/api_
+_For advanced Chrome API methods, see: https://developer.chrome.com/docs/extensions/reference/api_
 
 ## 🤖 Made with chatgpt.js
 

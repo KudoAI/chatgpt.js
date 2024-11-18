@@ -69,7 +69,7 @@
 
 </div>
 
-_고급 Chrome API 방법을 활용하려면 https://developer.chrome.com/docs/extensions/reference/api를 참조하세요_
+_고급 Chrome API 메서드에 대한 자세한 내용은 https://developer.chrome.com/docs/extensions/reference/api를 참조하세요_
 
 ## 🤖 chatgpt.js 로 제작
 

@@ -69,7 +69,7 @@
 
 </div>
 
-_高度な Chrome API メソッドを利用するには、https://developer.chrome.com/docs/extensions/reference/api を参照してください。_
+_Chrome API の高度なメソッドについては、https://developer.chrome.com/docs/extensions/reference/api を参照してください。_
 
 ## 🤖 chatgpt.js で作成
 

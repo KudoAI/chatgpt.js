@@ -69,7 +69,7 @@
 
 </div>
 
-_उन्नत Chrome API विधियों का उपयोग करने के लिए, देखें: https://developer.chrome.com/docs/extensions/reference/api_
+_उन्नत Chrome API विधियों के लिए, देखें: https://developer.chrome.com/docs/extensions/reference/api_
 
 ## 🤖 chatgpt.js के साथ बनाया गया
 

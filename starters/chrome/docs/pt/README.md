@@ -69,7 +69,7 @@
 
 </div>
 
-_Para utilizar métodos avançados da API do Chrome, consulte: https://developer.chrome.com/docs/extensions/reference/api_
+_Para métodos avançados da API do Chrome, consulte: https://developer.chrome.com/docs/extensions/reference/api_
 
 ## 🤖 Feito com chatgpt.js
 

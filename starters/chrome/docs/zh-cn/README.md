@@ -69,7 +69,7 @@
 
 </div>
 
-要使用高级 Chrome API 方法，请参阅：https://developer.chrome.com/docs/extensions/reference/api_
+_有关高级 Chrome API 方法，请参阅：https://developer.chrome.com/docs/extensions/reference/api_
 
 ## 🤖 使用 chatgpt.js 制作
 
