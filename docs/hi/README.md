@@ -342,27 +342,6 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 <img height=8px width="100%" src="https://media.chatgptjs.org/images/separators/gradient-aqua.png?78210a7">
 
-<div id="partners">
-
-## 🤝 भागीदारों
-
-</div>
-
-**chatgpt.js** को आंशिक रूप से वित्त पोषित किया जाता है:
-
-<div id="partners-collage" align="center">
-
-<picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/partners/collage/white.png?3109608">
-    <img width=888 src="https://media.chatgptjs.org/images/logos/partners/collage/black.png?3109608">
-</picture>
-
-</div>
-
-<br>
-
-<img height=8px width="100%" src="https://media.chatgptjs.org/images/separators/gradient-aqua.png?78210a7">
-
 <div align="center">
 
 **[विज्ञप्ति](https://github.com/KudoAI/chatgpt.js/releases)** /

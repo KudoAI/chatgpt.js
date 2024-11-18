@@ -85,7 +85,7 @@ const onLoadObserver = new MutationObserver(() => {
     smoothScroll(document, 155, 9);
 
     // Hack HOMEPAGE
-    if (/#\/(\w{2}(-\w{2})?\/)?$/.test(location.hash)) {
+    if (/#\/(?:\w{2}(?:-\w{2})?\/)?$/.test(location.hash)) {
 
         // Hide SIDEBAR
         if (!isMobileDevice()) document.body.className = 'ready close';
@@ -372,7 +372,7 @@ const onLoadObserver = new MutationObserver(() => {
         mdLoaded.then(() => {
             const docLangSelector = document.querySelectorAll('h5 a');
             for (const lang of docLangSelector)
-                lang.href = lang.href.replace(/(.*\/\/.*?\/)((\w{2}(-\w{2})?\/)?.*)\.md/, '$1#/$2');
+                lang.href = lang.href.replace(/(https?:\/\/[^/]+\/)([^.]+)\.md/, '$1#/$2');
         });
     }
 

@@ -79,7 +79,7 @@
 
 </div>
 
-> [!Note]
+> [!NOTE]
 > To always import the latest version (not recommended in production!) replace the versioned jsDelivr URL with: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`
 
 ### ES11 (2020):
@@ -113,7 +113,7 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://media.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?a3e53bf7"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://media.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?a3e53bf7"> Greasemonkey:
 
-> [!Note]
+> [!NOTE]
 > To use a starter template: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)
 
 ```js
@@ -126,7 +126,7 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://media.chatgptjs.org/images/icons/platforms/chrome/icon16.png?8c852fa5"> Chrome:
 
-> [!Note]
+> [!NOTE]
 > To use a starter template: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)
 
 Since Google does not allow remote code, importing chatgpt.js locally is required:
@@ -342,27 +342,6 @@ This library exists thanks to code, translations, issues & ideas from the follow
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=51&w=51&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 
 </div><br>
-
-<img height=8px width="100%" src="https://media.chatgptjs.org/images/separators/gradient-aqua.png?78210a7">
-
-<div id="partners">
-
-## 🤝 Partners
-
-</div>
-
-**chatgpt.js** is funded in part by:
-
-<div id="partners-collage" align="center">
-
-<picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/partners/collage/white.png?3109608">
-    <img width=888 src="https://media.chatgptjs.org/images/logos/partners/collage/black.png?3109608">
-</picture>
-
-</div>
-
-<br>
 
 <img height=8px width="100%" src="https://media.chatgptjs.org/images/separators/gradient-aqua.png?78210a7">
 

@@ -28,7 +28,7 @@
 
 <br>
 
-<img src="../../media/images/screenshots/extension-loaded.png">
+<img src="../../images/screenshots/extension-loaded.png">
 
 ## ⚡ Cài đặt
 
@@ -39,20 +39,20 @@
 3. Truy cập `chrome://extensions` trong Chrome (hoặc bất kỳ trình duyệt Chromium nào)
 
 4. Đảm bảo chuyển đổi **Developer mode** được kích hoạt<br>
-![](../../media/images/screenshots/developer-mode-toggle.png)
+![](../../images/screenshots/developer-mode-toggle.png)
 
 5. Nhấp chuột **Load unpacked**<br><br>
-<img src="../../media/images/screenshots/load-unpacked-button.png">
+<img src="../../images/screenshots/load-unpacked-button.png">
 <br>
 
 6. Trong cửa sổ bật lên, chọn thư mục **extension** > nhấp chuột **Select Folder**<br><br><br>
-<img src="../../media/images/screenshots/select-extension-folder.png"><br><br>
+<img src="../../images/screenshots/select-extension-folder.png"><br><br>
 
 Đó là nó! **ChatGPT Extension** hiện sẽ xuất hiện trong danh sách tiện ích mở rộng:
 
 <br>
 
-<img src="../../media/images/screenshots/chatgpt-extension-in-list.png">
+<img src="../../images/screenshots/chatgpt-extension-in-list.png">
 
 <p><br>
 
@@ -62,12 +62,14 @@
 
 <br>
 
-<img src="../../media/images/screenshots/reload-extension-button.png">
-<img src="../../media/images/screenshots/reload-page-button.png">
+<img src="../../images/screenshots/reload-extension-button.png">
+<img src="../../images/screenshots/reload-page-button.png">
 
 <p><br>
 
 </div>
+
+_Để biết các phương pháp API Chrome nâng cao, hãy xem: https://developer.chrome.com/docs/extensions/reference/api_
 
 ## 🤖 Được tạo bằng chatgpt.js
 

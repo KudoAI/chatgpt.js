@@ -28,7 +28,7 @@
 
 <br>
 
-<img src="../../media/images/screenshots/extension-loaded.png">
+<img src="../../images/screenshots/extension-loaded.png">
 
 ## ⚡ 安装
 
@@ -39,20 +39,20 @@
 3. 在 Chrome（或任何 Chromium 浏览器）中访问 `chrome://extensions`
 
 4. 确保 **Developer Mode** 开关已激活<br>
-![](../../media/images/screenshots/developer-mode-toggle.png)
+![](../../images/screenshots/developer-mode-toggle.png)
 
 5. 点击 **Load unpacked**<br><br>
-<img src="../../media/images/screenshots/load-unpacked-button.png">
+<img src="../../images/screenshots/load-unpacked-button.png">
 <br>
 
 6. 在弹出窗口中，选择 **extension** 文件夹 > 点击 **Select Folder**<br><br><br>
-<img src="../../media/images/screenshots/select-extension-folder.png"><br><br>
+<img src="../../images/screenshots/select-extension-folder.png"><br><br>
 
 就是这样! **ChatGPT Extension** 现在将出现在扩展列表中:
 
 <br>
 
-<img src="../../media/images/screenshots/chatgpt-extension-in-list.png">
+<img src="../../images/screenshots/chatgpt-extension-in-list.png">
 
 <p><br>
 
@@ -62,12 +62,14 @@
 
 <br>
 
-<img src="../../media/images/screenshots/reload-extension-button.png">
-<img src="../../media/images/screenshots/reload-page-button.png">
+<img src="../../images/screenshots/reload-extension-button.png">
+<img src="../../images/screenshots/reload-page-button.png">
 
 <p><br>
 
 </div>
+
+_有关高级 Chrome API 方法，请参阅：https://developer.chrome.com/docs/extensions/reference/api_
 
 ## 🤖 使用 chatgpt.js 制作
 

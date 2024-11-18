@@ -3,7 +3,7 @@
 // @description   A Greasemonkey template to start using chatgpt.js like a boss
 // @author        chatgpt.js
 // @namespace     https://chatgpt.js.org
-// @version       2024.10.11
+// @version       2024.11.17
 // @license       MIT
 // @match         *://chatgpt.com/*
 // @match         *://chat.openai.com/*

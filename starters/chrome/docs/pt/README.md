@@ -28,7 +28,7 @@
 
 <br>
 
-<img src="../../media/images/screenshots/extension-loaded.png">
+<img src="../../images/screenshots/extension-loaded.png">
 
 ## ⚡ Instalação
 
@@ -39,20 +39,20 @@
 3. Visite `chrome://extensions` no Chrome (ou qualquer navegador Chromium)
 
 4. Certifique-se de que a alternância **Developer mode** esteja ativada<br>
-![](../../media/images/screenshots/developer-mode-toggle.png)
+![](../../images/screenshots/developer-mode-toggle.png)
 
 5. Clique **Load unpacked**<br><br>
-<img src="../../media/images/screenshots/load-unpacked-button.png">
+<img src="../../images/screenshots/load-unpacked-button.png">
 <br>
 
 6. Na janela pop-up, selecione a pasta **extension** > clique **Select Folder**<br><br><br>
-<img src="../../media/images/screenshots/select-extension-folder.png"><br><br>
+<img src="../../images/screenshots/select-extension-folder.png"><br><br>
 
 É isso! **ChatGPT Extension** agora aparecerá na lista de extensões:
 
 <br>
 
-<img src="../../media/images/screenshots/chatgpt-extension-in-list.png">
+<img src="../../images/screenshots/chatgpt-extension-in-list.png">
 
 <p><br>
 
@@ -62,12 +62,14 @@
 
 <br>
 
-<img src="../../media/images/screenshots/reload-extension-button.png">
-<img src="../../media/images/screenshots/reload-page-button.png">
+<img src="../../images/screenshots/reload-extension-button.png">
+<img src="../../images/screenshots/reload-page-button.png">
 
 <p><br>
 
 </div>
+
+_Para métodos avançados da API do Chrome, consulte: https://developer.chrome.com/docs/extensions/reference/api_
 
 ## 🤖 Feito com chatgpt.js
 

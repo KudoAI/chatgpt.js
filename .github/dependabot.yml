@@ -4,3 +4,9 @@ updates:
     directory: /
     schedule:
       interval: daily
+    groups:
+      prod-dependencies:
+        dependency-type: production
+      dev-dependencies:
+        dependency-type: development
+    versioning-strategy: increase

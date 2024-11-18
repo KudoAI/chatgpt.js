@@ -342,27 +342,6 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 
 <img height=8px width="100%" src="https://media.chatgptjs.org/images/separators/gradient-aqua.png?78210a7">
 
-<div id="partners">
-
-## 🤝 Partners
-
-</div>
-
-**chatgpt.js** è parzialmente finanziato da:
-
-<div id="partners-collage" align="center">
-
-<picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/partners/collage/white.png?3109608">
-    <img width=888 src="https://media.chatgptjs.org/images/logos/partners/collage/black.png?3109608">
-</picture>
-
-</div>
-
-<br>
-
-<img height=8px width="100%" src="https://media.chatgptjs.org/images/separators/gradient-aqua.png?78210a7">
-
 <div align="center">
 
 **[Versioni](https://github.com/KudoAI/chatgpt.js/releases)** /
