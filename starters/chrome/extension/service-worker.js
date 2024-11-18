@@ -1,5 +1,12 @@
 // Init APP data
-const app = { symbol: '🤖', urls: { gitHub: 'https://github.com/KudoAI/chatgpt.js-chrome-starter' }}
+const app = {
+    symbol: '🤖',
+    urls: {
+        cjsMediaHost: 'https://media.chatgptjs.org',
+        gitHub: 'https://github.com/KudoAI/chatgpt.js-chrome-starter',
+        assetHost: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter'
+    }
+}
 chrome.storage.sync.set({ app })
 
 // Launch ChatGPT on install
