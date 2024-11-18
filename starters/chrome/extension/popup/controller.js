@@ -13,7 +13,7 @@
     function notify(msg) { sendMsgToActiveTab({ action: 'notify', msg: msg, pos: 'bottom-right' })}
     function syncStorageToUI() { return sendMsgToActiveTab({ action: 'sync.storageToUI' })}
 
-    function updateGreyness() {
+    function syncFade() {
 
         // Updated toolbar icon
         const iconDimensions = [16, 32, 64, 128], iconPaths = {}
@@ -38,7 +38,7 @@
     settings.load('extensionDisabled')
         .then(function() { // restore extension/toggle states
             masterToggle.checked = !config.extensionDisabled
-            updateGreyness()
+            syncFade()
         })
 
     // Add main toggle click-listener
@@ -46,7 +46,7 @@
           masterToggle = toggles[0]
     masterToggle.addEventListener('change', function() {    
         settings.save('extensionDisabled', !this.checked)
-        syncStorageToUI() ; updateGreyness()
+        syncStorageToUI() ; syncFade()
         notify(`${chrome.runtime.getManifest().name} ${ this.checked ? 'ON' : 'OFF' }`)
     })
 
