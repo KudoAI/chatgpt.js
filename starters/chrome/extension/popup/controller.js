@@ -11,25 +11,28 @@
     }
 
     function notify(msg) { sendMsgToActiveTab({ action: 'notify', msg: msg, pos: 'bottom-right' })}
-    function syncStorageToUI() { return sendMsgToActiveTab({ action: 'sync.storageToUI' })}
 
-    function syncFade() {
+    const sync = {
+        fade() {
 
-        // Updated toolbar icon
-        const iconDimensions = [16, 32, 64, 128], iconPaths = {}
-        iconDimensions.forEach((dimension) => {
-            iconPaths[dimension] = '../icons/'
-                + (config.extensionDisabled ? 'faded/' : '')
-                + 'icon' + dimension + '.png'
-        })
-        chrome.action.setIcon({ path: iconPaths })
-
-        // Update menu contents
-        document.querySelectorAll('div.logo, div.menu-title, div.menu')
-            .forEach((elem) => {
-                elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
-                elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
+            // Update toolbar icon
+            const iconDimensions = [16, 32, 48, 64, 128], iconPaths = {}
+            iconDimensions.forEach(dimension => {
+                iconPaths[dimension] = '../icons/'
+                    + (config.extensionDisabled ? 'faded/' : '')
+                    + 'icon' + dimension + '.png'
             })
+            chrome.action.setIcon({ path: iconPaths })
+    
+            // Update menu contents
+            document.querySelectorAll('div.logo, div.menu-title, div.menu')
+                .forEach(elem => {
+                    elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
+                    elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
+                })
+        },
+
+        storageToUI() { return sendMsgToActiveTab({ action: 'syncStorageToUI' })}
     }
 
     // Run MAIN routine
@@ -38,7 +41,7 @@
     settings.load('extensionDisabled')
         .then(function() { // restore extension/toggle states
             masterToggle.checked = !config.extensionDisabled
-            syncFade()
+            sync.fade()
         })
 
     // Add main toggle click-listener
@@ -46,7 +49,7 @@
           masterToggle = toggles[0]
     masterToggle.addEventListener('change', function() {    
         settings.save('extensionDisabled', !this.checked)
-        syncStorageToUI() ; syncFade()
+        sync.storageToUI() ; sync.fade()
         notify(`${chrome.runtime.getManifest().name} ${ this.checked ? 'ON' : 'OFF' }`)
     })
 
