@@ -16,8 +16,8 @@ Object.assign(app, { settings: {
     // - 'type': the control type (e.g. 'toggle' or 'prompt')
     // - 'label': a descriptive label
     // - 'symbol' (optional): for icon display (e.g. ⌚)
-    // NOTE: Toggles are disabled by default unless key name includes 'disabled' or 'hidden' (case insensitive)
-    // NOTE: Add each key name to settings.availKeys in lib/settings.js for proper loading
+    // NOTE: Toggles are disabled by default unless key name contains 'disabled' or 'hidden' (case insensitive)
+    // NOTE: Also add each key name to settings.availKeys in lib/settings.js for proper loading
     // EXAMPLES:
     // autoScrollDisabled: { type: 'toggle', label: 'Auto-Scroll' },
     // replyLanguage: { type: 'prompt', symbol: '🌐', label: 'Reply Language' }
