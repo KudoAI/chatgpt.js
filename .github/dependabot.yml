@@ -2,6 +2,11 @@ version: 2
 updates:
   - package-ecosystem: npm
     directory: /
-    versioning-strategy: increase
     schedule:
       interval: daily
+    groups:
+      production-dependencies:
+        dependency-type: production
+      development-dependencies:
+        dependency-type: development
+    versioning-strategy: increase
