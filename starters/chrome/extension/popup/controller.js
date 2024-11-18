@@ -5,10 +5,10 @@
 
     // Define FUNCTIONS
 
-    function notify(msg, pos) {
+    function notify(msg) {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, { 
-                action: 'notify', msg: msg, pos: pos || 'bottom-right' })
+                action: 'notify', msg: msg, pos: 'bottom-right' })
     })}
 
     function syncStorageToUI() {
