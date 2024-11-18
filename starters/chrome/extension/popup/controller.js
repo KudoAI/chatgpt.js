@@ -131,7 +131,7 @@
 
     // Create/append RELATED EXTENSIONS footer button
     const moreExtensionsSpan = dom.create.elem('span', {
-        title:  'More AI Extensions',
+        title: 'More AI Extensions',
         class: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px' })
     const moreExtensionsIcon = icons.create({ name: 'plus', size: 16 })
     moreExtensionsSpan.onclick = () => { chrome.tabs.create({ url: app.urls.relatedExtensions }) ; close() }
