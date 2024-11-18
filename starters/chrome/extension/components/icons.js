@@ -22,7 +22,7 @@ const icons = {
 
     questionMark: {
         type: 'png',
-        get src() { return `${icons.appProps.urls.assetHost}/images/icons/question-mark/icon16.png` }
+        get src() { return `${icons.appProps.urls.assetHost}@b5551ac/images/icons/question-mark/icon16.png` }
     }
 }
 

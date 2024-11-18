@@ -12,7 +12,7 @@
 
     // Import ICONS
     const { icons } = await import(chrome.runtime.getURL('components/icons.js'))
-    icons.appProps = app // for src's using urls.mediaHost
+    icons.appProps = app // for src's using urls.assetHost
 
     // Define FUNCTIONS
 
@@ -115,9 +115,9 @@
     const cjsDiv = dom.create.elem('div', { class: 'chatgpt-js' })
     const cjsLogo = dom.create.elem('img', {
         title: 'Powered by chatgpt.js',
-        src: `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png` })
+        src: `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png?a439ab6` })
     cjsLogo.onmouseover = cjsLogo.onmouseout = event => cjsLogo.src = `${
-        app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js${ event.type == 'mouseover' ? '' : '-faded' }.png`
+        app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js${ event.type == 'mouseover' ? '' : '-faded' }.png?a439ab6`
     cjsLogo.onclick = () => chrome.tabs.create({ url: app.urls.chatgptJS })
     cjsDiv.append(cjsLogo) ; footer.append(cjsDiv)
 
