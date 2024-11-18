@@ -1,5 +1,8 @@
 (async () => {
 
+    const site = /([^.]+)\.[^.]+$/.exec(new URL((await chrome.tabs.query(
+        { active: true, currentWindow: true }))[0].url).hostname)?.[1]
+
     // Import LIBS
     await import(chrome.runtime.getURL('lib/dom.js'))
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings.js'))
@@ -55,6 +58,55 @@
         notify(`${chrome.runtime.getManifest().name} ${ this.checked ? 'ON' : 'OFF' }`)
     }
 
+    // Create CHILD toggles on chatgpt.com
+    if (site == 'chatgpt') {
+        await settings.load(settings.availKeys)
+
+        // Create/insert toggles section
+        const togglesDiv = dom.create.elem('div', { class: 'menu' })
+        document.querySelector('.menu-header').insertAdjacentElement('afterend', togglesDiv)
+
+        // Create/insert settings toggles
+        Object.keys(app.settings).forEach(key => {
+
+            // Init elems
+            const menuItemDiv = dom.create.elem('div', { class: 'menu-item menu-area' }),
+                  menuLabel = dom.create.elem('label', { class: 'menu-icon' }),
+                  menuLabelSpan = document.createElement('span')
+            let menuInput, menuSlider
+            menuLabelSpan.textContent = app.settings[key].label
+            if (app.settings[key].type == 'toggle') {
+                menuInput = dom.create.elem('input', { type: 'checkbox' })
+                menuInput.checked = /disabled|hidden/i.test(key) ^ config[key]
+                menuSlider = dom.create.elem('span', { class: 'slider' })
+                menuLabel.append(menuInput, menuSlider)
+                menuLabel.classList.add('toggle-switch')
+            } else if (app.settings[key].type == 'prompt') {
+                menuLabel.innerText = app.settings[key].symbol
+                menuLabel.classList.add('menu-prompt')
+            }
+
+            // Assemble/append elems
+            menuItemDiv.append(menuLabel, menuLabelSpan)
+            togglesDiv.append(menuItemDiv)
+
+            // Add listeners
+            if (app.settings[key].type == 'toggle') {
+                menuItemDiv.onclick = () => menuInput.click()
+                menuInput.onclick = menuSlider.onclick = event => // prevent double toggle
+                    event.stopImmediatePropagation()
+                menuInput.onchange = () => {
+                    settings.save(key, !config[key]) ; sync.storageToUI()
+                    notify(`${app.settings[key].label} ${ /disabled|hidden/i.test(key) != config[key] ? 'ON' : 'OFF' }`)
+                }
+            } else if (app.settings[key].type == 'prompt') {
+                // custom logic for each prompt based on key name
+            }
+        })
+
+        sync.fade() // in case master toggle off
+    }
+
     // Create/append FOOTER container
     const footer = document.createElement('footer')
     document.body.append(footer)
@@ -77,7 +129,7 @@
     supportSpan.onclick = () => { chrome.tabs.create({ url: app.urls.support }) ; close() }
     supportSpan.append(supportIcon) ; footer.append(supportSpan)
 
-    // Create/append RELATED APPS footer button
+    // Create/append RELATED EXTENSIONS footer button
     const moreAppsSpan = dom.create.elem('span', {
         title:  'More AI Extensions',
         class: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px' })
