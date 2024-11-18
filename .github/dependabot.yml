@@ -5,8 +5,8 @@ updates:
     schedule:
       interval: daily
     groups:
-      production-dependencies:
+      prod-dependencies:
         dependency-type: production
-      development-dependencies:
+      dev-dependencies:
         dependency-type: development
     versioning-strategy: increase
