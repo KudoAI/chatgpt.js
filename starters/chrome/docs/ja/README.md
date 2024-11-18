@@ -28,7 +28,7 @@
 
 <br>
 
-<img src="../../media/images/screenshots/extension-loaded.png">
+<img src="../../images/screenshots/extension-loaded.png">
 
 ## ⚡ インストール
 
@@ -39,20 +39,20 @@
 3. Chrome (または任意の Chromium ブラウザ) で `chrome://extensions` にアクセスします
 
 4. **Developer mode** の切り替えが有効になっていることを確認してください<br>
-![](../../media/images/screenshots/developer-mode-toggle.png)
+![](../../images/screenshots/developer-mode-toggle.png)
 
 5. クリック **Load unpacked**<br><br>
-<img src="../../media/images/screenshots/load-unpacked-button.png">
+<img src="../../images/screenshots/load-unpacked-button.png">
 <br>
 
 6. ポップアップ ウィンドウで、**extension** フォルダーを選択します > クリック **Select Folder**<br><br><br>
-<img src="../../media/images/screenshots/select-extension-folder.png"><br><br>
+<img src="../../images/screenshots/select-extension-folder.png"><br><br>
 
 それでおしまい！ **ChatGPT Extension** が拡張機能リストに表示されます:
 
 <br>
 
-<img src="../../media/images/screenshots/chatgpt-extension-in-list.png">
+<img src="../../images/screenshots/chatgpt-extension-in-list.png">
 
 <p><br>
 
@@ -62,8 +62,8 @@
 
 <br>
 
-<img src="../../media/images/screenshots/reload-extension-button.png">
-<img src="../../media/images/screenshots/reload-page-button.png">
+<img src="../../images/screenshots/reload-extension-button.png">
+<img src="../../images/screenshots/reload-page-button.png">
 
 <p><br>
 

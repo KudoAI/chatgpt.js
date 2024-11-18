@@ -28,7 +28,7 @@
 
 <br>
 
-<img src="../../media/images/screenshots/extension-loaded.png">
+<img src="../../images/screenshots/extension-loaded.png">
 
 ## ⚡ Installazione
 
@@ -39,20 +39,20 @@
 3. Visita `chrome://extensions` in Chrome (o qualsiasi browser Chromium)
 
 4. Assicurati che l'opzione **Developer mode** sia attivata<br>
-![](../../media/images/screenshots/developer-mode-toggle.png)
+![](../../images/screenshots/developer-mode-toggle.png)
 
 5. Clic **Load unpacked**<br><br>
-<img src="../../media/images/screenshots/load-unpacked-button.png">
+<img src="../../images/screenshots/load-unpacked-button.png">
 <br>
 
 6. Nella finestra pop-up, seleziona la cartella **extension** > clic **Select Folder**<br><br><br>
-<img src="../../media/images/screenshots/select-extension-folder.png"><br><br>
+<img src="../../images/screenshots/select-extension-folder.png"><br><br>
 
 Questo è tutto! **ChatGPT Extension** verrà ora visualizzata nell'elenco delle estensioni:
 
 <br>
 
-<img src="../../media/images/screenshots/chatgpt-extension-in-list.png">
+<img src="../../images/screenshots/chatgpt-extension-in-list.png">
 
 <p><br>
 
@@ -62,8 +62,8 @@ Questo è tutto! **ChatGPT Extension** verrà ora visualizzata nell'elenco delle
 
 <br>
 
-<img src="../../media/images/screenshots/reload-extension-button.png">
-<img src="../../media/images/screenshots/reload-page-button.png">
+<img src="../../images/screenshots/reload-extension-button.png">
+<img src="../../images/screenshots/reload-page-button.png">
 
 <p><br>
 

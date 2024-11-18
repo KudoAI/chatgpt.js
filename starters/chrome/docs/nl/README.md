@@ -28,7 +28,7 @@
 
 <br>
 
-<img src="../../media/images/screenshots/extension-loaded.png">
+<img src="../../images/screenshots/extension-loaded.png">
 
 ## ⚡ Installatie
 
@@ -39,20 +39,20 @@
 3. Ga naar `chrome://extensions` in Chrome (of een andere Chromium-browser)
 
 4. Zorg ervoor dat de schakelaar **Developer mode** is geactiveerd<br>
-![](../../media/images/screenshots/developer-mode-toggle.png)
+![](../../images/screenshots/developer-mode-toggle.png)
 
 5. Klik **Load unpacked**<br><br>
-<img src="../../media/images/screenshots/load-unpacked-button.png">
+<img src="../../images/screenshots/load-unpacked-button.png">
 <br>
 
 6. Selecteer in het pop-upvenster de map **extension** > klik **Select Folder**<br><br><br>
-<img src="../../media/images/screenshots/select-extension-folder.png"><br><br>
+<img src="../../images/screenshots/select-extension-folder.png"><br><br>
 
 Dat is het! **ChatGPT Extension** verschijnt nu in de extensielijst:
 
 <br>
 
-<img src="../../media/images/screenshots/chatgpt-extension-in-list.png">
+<img src="../../images/screenshots/chatgpt-extension-in-list.png">
 
 <p><br>
 
@@ -62,8 +62,8 @@ Dat is het! **ChatGPT Extension** verschijnt nu in de extensielijst:
 
 <br>
 
-<img src="../../media/images/screenshots/reload-extension-button.png">
-<img src="../../media/images/screenshots/reload-page-button.png">
+<img src="../../images/screenshots/reload-extension-button.png">
+<img src="../../images/screenshots/reload-page-button.png">
 
 <p><br>
 

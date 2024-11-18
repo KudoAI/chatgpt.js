@@ -28,7 +28,7 @@
 
 <br>
 
-<img src="../../media/images/screenshots/extension-loaded.png">
+<img src="../../images/screenshots/extension-loaded.png">
 
 ## ⚡ 安裝
 
@@ -39,20 +39,20 @@
 3. 在 Chrome（或任何 Chromium 瀏覽器）中訪問 `chrome://extensions`
 
 4. 確保 **Developer mode** 開關已激活<br>
-![](../../media/images/screenshots/developer-mode-toggle.png)
+![](../../images/screenshots/developer-mode-toggle.png)
 
 5. 點擊 **Load unpacked**<br><br>
-<img src="../../media/images/screenshots/load-unpacked-button.png">
+<img src="../../images/screenshots/load-unpacked-button.png">
 <br>
 
 6. 在彈出窗口中，選擇 **extension** 文件夾 > 點擊 **Select Folder**<br><br><br>
-<img src="../../media/images/screenshots/select-extension-folder.png"><br><br>
+<img src="../../images/screenshots/select-extension-folder.png"><br><br>
 
 就是這樣！ **ChatGPT Extension** 現在將出現在擴展列表中：
 
 <br>
 
-<img src="../../media/images/screenshots/chatgpt-extension-in-list.png">
+<img src="../../images/screenshots/chatgpt-extension-in-list.png">
 
 <p><br>
 
@@ -62,8 +62,8 @@
 
 <br>
 
-<img src="../../media/images/screenshots/reload-extension-button.png">
-<img src="../../media/images/screenshots/reload-page-button.png">
+<img src="../../images/screenshots/reload-extension-button.png">
+<img src="../../images/screenshots/reload-page-button.png">
 
 <p><br>
 
