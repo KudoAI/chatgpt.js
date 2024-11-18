@@ -349,27 +349,6 @@ Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng 
 
 <img height=8px width="100%" src="https://media.chatgptjs.org/images/separators/gradient-aqua.png?78210a7">
 
-<div id="partners">
-
-## 🤝 Các đối tác
-
-</div>
-
-**chatgpt.js** được tài trợ một phần bởi:
-
-<div id="partners-collage" align="center">
-
-<picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/partners/collage/white.png?3109608">
-    <img width=888 src="https://media.chatgptjs.org/images/logos/partners/collage/black.png?3109608">
-</picture>
-
-</div>
-
-<br>
-
-<img height=8px width="100%" src="https://media.chatgptjs.org/images/separators/gradient-aqua.png?78210a7">
-
 <div align="center">
 
 **[Phát hành](https://github.com/KudoAI/chatgpt.js/releases)** /
