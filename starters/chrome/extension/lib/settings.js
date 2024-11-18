@@ -1,5 +1,5 @@
 const config = {}, settings = {
-    availKeys: [ 'extensionDisabled', 'skipAlert' ],
+    availKeys: [ 'extensionDisabled' ],
 
     load() {
         const keys = ( // original array if array, else new array from multiple args
