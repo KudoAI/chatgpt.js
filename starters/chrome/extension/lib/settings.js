@@ -1,5 +1,4 @@
 const config = {}, settings = {
-    availKeys: [ 'extensionDisabled' ],
 
     // Init SETTINGS props (for popup menu)
     props: {
@@ -8,7 +7,6 @@ const config = {}, settings = {
         // - 'label': a descriptive label
         // - 'symbol' (optional): for icon display (e.g. ⌚)
         // NOTE: Toggles are disabled by default unless key name contains 'disabled' or 'hidden' (case insensitive)
-        // NOTE: Also add each key name to availKeys for proper loading
         // EXAMPLES:
         // autoScrollDisabled: { type: 'toggle', label: 'Auto-Scroll' },
         // replyLanguage: { type: 'prompt', symbol: '🌐', label: 'Reply Language' }

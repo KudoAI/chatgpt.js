@@ -49,11 +49,11 @@
     // Define SYNC function
 
     async function syncStorageToUI() { // on toolbar popup toggles + ChatGPT tab activations
-        await settings.load(settings.availKeys) // load from Chrome storage to content.js config
+        await settings.load('extensionDisabled', ...Object.keys(settings.props)) // load from Chrome storage to content.js config
         if (config.extensionDisabled) {
             // Remove all hacks
         } else {
-            // Add/remove hacks to reflect each potentially updated setting per settings.availKeys in lib/settings.js
+            // Add/remove hacks to reflect each potentially updated setting per settings.props in lib/settings.js
             // e.g. if you created toolbar popup toggle to hide ChatGPT footer using hiddenFooter key...
             // ...here you would use config.hiddenFooter to conditionally append/remove hidden footer style...
             // ...(initial style creation + append if config.hiddenFooter would go in main routine)
