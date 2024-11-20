@@ -67,22 +67,22 @@
         document.querySelector('.menu-header').insertAdjacentElement('afterend', togglesDiv)
 
         // Create/insert settings toggles
-        Object.keys(settings.props).forEach(key => {
+        Object.keys(settings.controls).forEach(key => {
 
             // Init elems
             const menuItemDiv = dom.create.elem('div', { class: 'menu-item menu-area' }),
                   menuLabel = dom.create.elem('label', { class: 'menu-icon' }),
                   menuLabelSpan = document.createElement('span')
             let menuInput, menuSlider
-            menuLabelSpan.textContent = settings.props[key].label
-            if (settings.props[key].type == 'toggle') {
+            menuLabelSpan.textContent = settings.controls[key].label
+            if (settings.controls[key].type == 'toggle') {
                 menuInput = dom.create.elem('input', { type: 'checkbox' })
                 menuInput.checked = /disabled|hidden/i.test(key) ^ config[key]
                 menuSlider = dom.create.elem('span', { class: 'slider' })
                 menuLabel.append(menuInput, menuSlider)
                 menuLabel.classList.add('toggle-switch')
-            } else if (settings.props[key].type == 'prompt') {
-                menuLabel.innerText = settings.props[key].symbol
+            } else if (settings.controls[key].type == 'prompt') {
+                menuLabel.innerText = settings.controls[key].symbol
                 menuLabel.classList.add('menu-prompt')
             }
 
@@ -91,15 +91,15 @@
             togglesDiv.append(menuItemDiv)
 
             // Add listeners
-            if (settings.props[key].type == 'toggle') {
+            if (settings.controls[key].type == 'toggle') {
                 menuItemDiv.onclick = () => menuInput.click()
                 menuInput.onclick = menuSlider.onclick = event => // prevent double toggle
                     event.stopImmediatePropagation()
                 menuInput.onchange = () => {
                     settings.save(key, !config[key]) ; sync.storageToUI()
-                    notify(`${settings.props[key].label} ${ /disabled|hidden/i.test(key) != config[key] ? 'ON' : 'OFF' }`)
+                    notify(`${settings.controls[key].label} ${ /disabled|hidden/i.test(key) != config[key] ? 'ON' : 'OFF' }`)
                 }
-            } else if (settings.props[key].type == 'prompt') {
+            } else if (settings.controls[key].type == 'prompt') {
                 // custom logic for each prompt based on key name
             }
         })

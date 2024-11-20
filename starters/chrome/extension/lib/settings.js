@@ -1,7 +1,7 @@
 const config = {}, settings = {
 
     // Init SETTINGS props (for popup menu)
-    props: {
+    controls: {
         // Add settings options as keys, with each key's value being an object that includes:
         // - 'type': the control type (e.g. 'toggle' or 'prompt')
         // - 'label': a descriptive label
