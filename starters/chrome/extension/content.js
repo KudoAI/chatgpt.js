@@ -18,7 +18,7 @@
     })
 
     // Init CONFIG
-    await settings.load(...settings.availKeys, 'skipAlert')
+    await settings.load(...Object.keys(settings.props), 'skipAlert')
 
     // Define FEEDBACK functions
 
