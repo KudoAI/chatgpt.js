@@ -18,7 +18,7 @@
     })
 
     // Init CONFIG
-    await settings.load(...Object.keys(settings.props), 'skipAlert')
+    await settings.load(Object.keys(settings.props), 'skipAlert')
 
     // Define FEEDBACK functions
 
@@ -49,7 +49,7 @@
     // Define SYNC function
 
     async function syncStorageToUI() { // on toolbar popup toggles + ChatGPT tab activations
-        await settings.load('extensionDisabled', ...Object.keys(settings.props)) // load from Chrome storage to content.js config
+        await settings.load('extensionDisabled', Object.keys(settings.props)) // load from Chrome storage to content.js config
         if (config.extensionDisabled) {
             // Remove all hacks
         } else {
