@@ -65,6 +65,8 @@
     if (config.extensionDisabled) return
 
     chatgpt.printAllFunctions() // to console
+    await chatgpt.isLoaded() // if your hacks depend on delayed DOM content
+
     if (!config.skipAlert) // alert to extension load
         chatgpt.alert('≫ ChatGPT extension loaded! 🚀', // title
             'Success! Press Ctrl+Shift+J to view all chatgpt.js methods.', // msg
@@ -73,8 +75,6 @@
             function dontShowAgain() { // checkbox
                 settings.save('skipAlert', !config.skipAlert) }
         )
-
-    await chatgpt.isLoaded() // if your hacks depend on delayed DOM content
 
     // Your code here...
     // Your code here...
