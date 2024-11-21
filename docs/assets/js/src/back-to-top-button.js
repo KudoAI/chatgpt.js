@@ -24,8 +24,8 @@ function fadeIn(el, duration) {
     let last = +new Date();
     const tick = () => {
         el.style.opacity = +el.style.opacity + (new Date() - last) / duration;
-        last = +new Date();    
-        if (+el.style.opacity < 1) 
+        last = +new Date();
+        if (+el.style.opacity < 1)
             (window.requestAnimationFrame && requestAnimationFrame(tick)) ||
                 setTimeout(tick, 16);
         else el.style.display = 'block';
@@ -56,7 +56,7 @@ function scrollToTop() {
     }
 }
 button.addEventListener('click', scrollToTop);
-  
+
 window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     if (scrollTop > 0) fadeIn(button, 500);

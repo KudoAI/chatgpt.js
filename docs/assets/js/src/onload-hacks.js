@@ -30,7 +30,7 @@ const iObserver = new IntersectionObserver(entries => { entries.forEach(entry =>
     const key = entry.target.id || entry.target.className;
     visibilityMap[key] = entry.isIntersecting;
 
-    // Handle COVER    
+    // Handle COVER
     if (entry.target.className === 'cover-main') {
         if (entry.isIntersecting) {
 
@@ -108,7 +108,7 @@ const onLoadObserver = new MutationObserver(() => {
         function updateTGvisibility() {
             topGradient.style.display = ( // hide/show when fold is 85% at top
                 window.scrollY > 0.85 * cover.offsetHeight ? '' : 'none' ); }
-       
+
         mdLoaded.then(() => {
 
             // Scroll slightly to overcome Chromium bug preventing parallax
@@ -155,7 +155,7 @@ const onLoadObserver = new MutationObserver(() => {
             ghDemo.parentNode.replaceChild(ytDemo, ghDemo);
             ytDemo.parentNode.style.textAlign = 'center';
 
-            // Strip blockquote wrappers from showcase app descriptions    
+            // Strip blockquote wrappers from showcase app descriptions
             document.querySelectorAll('blockquote').forEach(blockquote => {
                 const parent = blockquote.parentNode, content = blockquote.innerHTML;
                 parent.replaceChild(document.createRange().createContextualFragment(content), blockquote);
@@ -196,7 +196,7 @@ const onLoadObserver = new MutationObserver(() => {
                                   activeNavItem = (document.querySelector(
                                       `a[title="${ headingText }"]`) || {}).parentElement;
 
-                            // Add `nav-active` class to matched nav item                        
+                            // Add `nav-active` class to matched nav item
                             if (activeNavItem) {
                                 sideNavItems.forEach(item => item.classList.remove('nav-active'));
                                 activeNavItem.classList.add('nav-active');
@@ -233,12 +233,12 @@ const onLoadObserver = new MutationObserver(() => {
 
                 // Exit if still in 1st two sections
                 if (visibilityMap['cover-main'] || visibilityMap['feature-list']) return;
-              
+
                 // Determine current section
                 let currentSection = 0;
-                while (window.scrollY > triggerPoints[currentSection] && 
+                while (window.scrollY > triggerPoints[currentSection] &&
                         currentSection < triggerPoints.length)
-                    currentSection++; 
+                    currentSection++;
 
                 // Color/animate logo/stars + color scrollbar if section changed
                 const sectionColor = sectionColors[currentSection - 2];
@@ -349,7 +349,7 @@ const onLoadObserver = new MutationObserver(() => {
                                       scaleDelay = 285, // px from trigger.y to delay scaling
                                       scaleFactor = topGap > -scaleDelay ? 1
                                                   : 1 - Math.abs(topGap + scaleDelay) / 5 / window.innerHeight;
-                                
+
                                 try { elem.classList.remove('content-fadeup'); } catch (err) {}
                                 elem.style.opacity = newOpacity;
                                 elem.style.transform = `translateY(${parallaxOffset}px) scale(${scaleFactor})`;
@@ -390,22 +390,22 @@ function validateIntArg(arg, name, defaultVal) {
     if (arg === undefined) return defaultVal; // no validation required
     if (!Number.isInteger(arg) && !/^\d+$/.test(arg))
         throw new Error(name + ' must be an integer.');
-    return parseInt(arg, 10); 
+    return parseInt(arg, 10);
 }
 
 function smoothScroll(target, speed, smooth) {
 
     // Init target
     if (target === document)
-        target = (document.scrollingElement 
-              || document.documentElement 
-              || document.body.parentNode 
+        target = (document.scrollingElement
+              || document.documentElement
+              || document.body.parentNode
               || document.body); // cross browser support for document scrolling
 
     // Init variables
     let moving = false, pos = target.scrollTop;
-    const frame = target === document.body && document.documentElement 
-                      ? document.documentElement 
+    const frame = target === document.body && document.documentElement
+                      ? document.documentElement
                       : target; // safari
     // Add listeners
     target.addEventListener('mousewheel', scrolled, { passive: false });
@@ -429,8 +429,8 @@ function smoothScroll(target, speed, smooth) {
     }
 
     function update() {
-        moving = true;    
-        const delta = (pos - target.scrollTop) / smooth;    
+        moving = true;
+        const delta = (pos - target.scrollTop) / smooth;
         target.scrollTop += delta;
         if (Math.abs(delta) > 0.5) requestFrame(update);
         else moving = false;
@@ -512,7 +512,7 @@ function typeText(txtToType, destination, typeDelay, iniTxtToType, iniTxtPos, li
         iniTxtPos, 'Initial text string position', 3);
     linesToScrollAt = validateIntArg( // lines reached before scrolling up
         linesToScrollAt, 'Lines to scroll at', 5);
-    
+
     // Init variables
     let typeContent =  ' ',
         iniRow = Math.max(0, iniTxtToType - linesToScrollAt);
@@ -588,7 +588,7 @@ langSelector.onmouseover = langSelector.onmouseout = langMenu.onmouseover = lang
     clearTimeout(hideTimeout);
     if (event.type == 'mouseover') langMenu.style.display = 'block';
     else if (event.type == 'mouseout')
-        hideTimeout = setTimeout(() => langMenu.style.display = 'none', 55);    
+        hideTimeout = setTimeout(() => langMenu.style.display = 'none', 55);
 };
 document.querySelectorAll('#language-selector a').forEach(link => { // add listener to hide tooltips
     link.addEventListener('mouseenter', () => { link.removeAttribute('title'); });});

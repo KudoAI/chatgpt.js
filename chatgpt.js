@@ -76,7 +76,7 @@ const chatgpt = {
               modalMessage = document.createElement('p');
 
         // Create/append/update modal style (if missing or outdated)
-        const thisUpdated = 20231203; // datestamp of last edit for this file's `modalStyle` 
+        const thisUpdated = 20231203; // datestamp of last edit for this file's `modalStyle`
         let modalStyle = document.querySelector('#chatgpt-modal-style'); // try to select existing style
         if (!modalStyle || parseInt(modalStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
             if (!modalStyle) { // outright missing, create/id/attr/append it first
@@ -88,7 +88,7 @@ const chatgpt = {
                 '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
 
                 // Background styles
-                + '.chatgpt-modal {' 
+                + '.chatgpt-modal {'
                     + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
                     + 'background-color: rgba(67, 70, 72, 0) ;' // init dim bg but no opacity
                     + 'transition: background-color 0.05s ease ;' // speed to transition in show alert routine
@@ -140,7 +140,7 @@ const chatgpt = {
                     + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
                     + 'background-color: black ; position: inherit }'
                 + '.chatgpt-modal input[type="checkbox"]:focus { outline: none ; box-shadow: none }'
-            );            
+            );
         }
 
         // Insert text into elements
@@ -210,7 +210,7 @@ const chatgpt = {
         const modalElems = [closeBtn, modalTitle, modalMessage, modalButtons, checkboxDiv];
         modalElems.forEach((elem) => { modal.append(elem); });
         modal.style.width = `${ width || 458 }px`;
-        modalContainer.append(modal); document.body.append(modalContainer); 
+        modalContainer.append(modal); document.body.append(modalContainer);
 
         // Enqueue alert
         let alertQueue = JSON.parse(localStorage.alertQueue);
@@ -222,7 +222,7 @@ const chatgpt = {
         if (alertQueue.length === 1) {
             modalContainer.style.display = '';
             setTimeout(() => { // delay non-0 opacity's for transition fx
-                modalContainer.style.backgroundColor = ( 
+                modalContainer.style.backgroundColor = (
                     `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.1 })`);
                 modalContainer.classList.add('animated'); }, 100);
         }
@@ -557,7 +557,7 @@ const chatgpt = {
                               .replace('Copy code', '');
                     msgs.push(sender + ': ' + msg);
                 });
-                transcript = msgs.join('\n\n');                     
+                transcript = msgs.join('\n\n');
 
             // ...or from getChatData(chatToGet)
             } else {
@@ -623,7 +623,7 @@ const chatgpt = {
     footer: {
         get() { return document.querySelector('main form')?.parentNode.parentNode.nextElementSibling; },
 
-        hide() { 
+        hide() {
             const footer = chatgpt.footer.get();
             if (!footer) return console.error('Footer element not found!');
             if (footer.style.visibility == 'hidden') return console.info('Footer already hidden!');
@@ -634,7 +634,7 @@ const chatgpt = {
             const footer = chatgpt.footer.get();
             if (!footer) return console.error('Footer element not found!');
             if (footer.style.visibility != 'hidden') return console.info('Footer already shown!');
-            footer.style.visibility = footer.style.height = 'inherit';            
+            footer.style.visibility = footer.style.height = 'inherit';
         }
     },
 
@@ -893,7 +893,7 @@ const chatgpt = {
     getRegenerateButton() { return document.querySelector('button:has([d^="M3.06957"])'); },
 
     getResponse() {
-    // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:        
+    // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:
     // chatToGet = index|title|id of chat to get (defaults to latest if '' unpassed)
     // responseToGet = index of response to get (defaults to latest if '' unpassed)
     // regenResponseToGet = index of regenerated response to get (defaults to latest if '' unpassed)
@@ -1147,7 +1147,7 @@ const chatgpt = {
             }
 
             else if (element == 'dropdown') {
-                if (!attrs?.items || // there no are options to add 
+                if (!attrs?.items || // there no are options to add
                     !Array.isArray(attrs.items) || // it's not an array
                     !attrs.items.length) // the array is empty
                         attrs.items = [{ text: '🤖 chatgpt.js option', value: 'chatgpt.js option value' }]; // set default dropdown entry
@@ -1168,7 +1168,7 @@ const chatgpt = {
             const addElementsToMenu = () => {
                 const optionButtons = document.querySelectorAll('a[role="menuitem"]');
                 let cssClasses;
-        
+
                 for (const navLink of optionButtons)
                     if (navLink.textContent == 'Settings') {
                         cssClasses = navLink.classList;
@@ -1240,7 +1240,7 @@ const chatgpt = {
                                  + (notificationDiv.isRight ? 'Right' : 'Left');
 
         // Create/append/update notification style (if missing or outdated)
-        const thisUpdated = 20231110; // datestamp of last edit for this file's `notifStyle` 
+        const thisUpdated = 20231110; // datestamp of last edit for this file's `notifStyle`
         let notifStyle = document.querySelector('#chatgpt-notif-style'); // try to select existing style
         if (!notifStyle || parseInt(notifStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
             if (!notifStyle) { // outright missing, create/id/attr/append it first
@@ -1263,7 +1263,7 @@ const chatgpt = {
                     + '45% { opacity: 0.05 ; transform: rotateX(-81deg) }'
                     + '100% { opacity: 0 ; transform: rotateX(-180deg) scale(1.15) }}'
             );
-        } 
+        }
 
         // Enqueue notification
         let notifyProps = JSON.parse(localStorage.notifyProps);
@@ -1296,7 +1296,7 @@ const chatgpt = {
             notificationDiv.style.transition = 'transform 0.15s ease, opacity 0.15s ease';
         }, 10);
 
-        // Init delay before hiding        
+        // Init delay before hiding
         const hideDelay = fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
                         : notifDuration - fadeDuration; // otherwise delay for difference
 
@@ -1305,7 +1305,7 @@ const chatgpt = {
             notificationDiv.style.animation = `notif-zoom-fade-out ${ fadeDuration }s ease-out`;
             clearTimeout(dismissFuncTID);
         };
-        const dismissFuncTID = setTimeout(dismissNotif, hideDelay * 1000); // maintain visibility for `hideDelay` secs, then dismiss     
+        const dismissFuncTID = setTimeout(dismissNotif, hideDelay * 1000); // maintain visibility for `hideDelay` secs, then dismiss
         closeSVG.onclick = dismissNotif; // add to close button clicks
 
         // Destroy notification
@@ -1453,7 +1453,7 @@ const chatgpt = {
         continue() { try { chatgpt.getContinueBtn().click(); } catch (err) { console.error(err.message); }},
 
         get() {
-            // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:        
+            // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:
             // chatToGet = index|title|id of chat to get (defaults to latest if '' unpassed)
             // responseToGet = index of response to get (defaults to latest if '' unpassed)
             // regenResponseToGet = index of regenerated response to get (defaults to latest if '' unpassed)
@@ -1682,14 +1682,14 @@ const chatgpt = {
                     break;
                 }
             }
-    
+
             // Apply CSS to make the added elements look like they belong to the website
             this.elements.forEach(element => {
                 element.setAttribute('class', cssClasses);
                 element.style.maxHeight = element.style.minHeight = '44px'; // Fix the height of the element
                 element.style.margin = '2px 0';
             });
-    
+
             // Create MutationObserver instance
             const navBar = document.querySelector('nav');
             if (!navBar) return console.error('Sidebar element not found!');
@@ -1746,7 +1746,7 @@ const chatgpt = {
             }
 
             else if (element == 'dropdown') {
-                if (!attrs?.items || // There no are options to add 
+                if (!attrs?.items || // There no are options to add
                     !Array.isArray(attrs.items) || // It's not an array
                     !attrs.items.length) // The array is empty
                         attrs.items = [{ text: '🤖 chatgpt.js option', value: 'chatgpt.js option value' }]; // Set default dropdown entry
@@ -1761,7 +1761,7 @@ const chatgpt = {
                     newElement.add(optionElement);
                 });
             }
-                        
+
 
             // Fix for blank background on dropdown elements
             if (element == 'dropdown') newElement.style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))';
@@ -1862,7 +1862,7 @@ const chatgpt = {
         if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!');
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return console.error(`Argument ${ i + 1 } must be a string!`);
-        chatgpt.send('Translate the following text to ' + outputLang 
+        chatgpt.send('Translate the following text to ' + outputLang
             + '. Only reply with the translation.\n\n' + text);
         console.info('Translating text...');
         await chatgpt.isIdle();
@@ -2016,7 +2016,7 @@ for (const prop in chatgpt) {
 // Prefix console logs w/ '🤖 chatgpt.js >> '
 const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info;
 console.error = (...args) => {
-    if (!args[0].startsWith(consolePrefix)) ogError(consolePrefix + args[0], ...args.slice(1)); 
+    if (!args[0].startsWith(consolePrefix)) ogError(consolePrefix + args[0], ...args.slice(1));
     else ogError(...args);
 };
 console.info = (msg) => {

@@ -8,7 +8,7 @@ const icons = {
         if (iconData.type == 'svg') {
             const svg = dom.create.svgElem('svg', { viewBox: iconData.viewBox, ...iconAttrs  })
             iconData.elems.forEach(([tag, attrs]) => svg.append(dom.create.svgElem(tag, attrs)))
-            return svg            
+            return svg
         } else // img w/ src
             return dom.create.elem('img', { src: iconData.src, ...iconAttrs })
     },

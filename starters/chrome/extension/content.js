@@ -23,7 +23,7 @@
     // Define FEEDBACK functions
 
     function notify(msg, pos = '', notifDuration = '', shadow = '') {
-        
+
         // Strip state word to append colored one later
         const foundState = ['ON', 'OFF'].find(word => msg.includes(word))
         if (foundState) msg = msg.replace(foundState, '')

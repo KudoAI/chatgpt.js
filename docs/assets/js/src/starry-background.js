@@ -1,5 +1,5 @@
-/*          *     .        *  .    *    *   . 
- .  *  Add starry background to <canvas>    
+/*          *     .        *  .    *    *   .
+ .  *  Add starry background to <canvas>
  *  .  .      .      *     .      .   *     */
 
 // Init variables
@@ -56,10 +56,10 @@ function animateStars() {
         star.x += (star.x - width/2) * window.starVelocity.z * star.z;
         star.y += (star.y - height/2) * window.starVelocity.z * star.z;
         star.z += window.starVelocity.z;
-  
+
         // Recycle star when out-of-bounds
         if (star.x < -overflowThreshold || star.x > width + overflowThreshold ||
-                star.y < -overflowThreshold || star.y > height + overflowThreshold) {            
+                star.y < -overflowThreshold || star.y > height + overflowThreshold) {
             let direction = 'z', vx = Math.abs(window.starVelocity.x), vy = Math.abs(window.starVelocity.y);
             if (vx > 1 || vy > 1) {
                 let axis;
@@ -76,7 +76,7 @@ function animateStars() {
             else if (direction === 'b') { star.x = width * Math.random(); star.y = height + overflowThreshold; }
         }
     });
-    
+
     // Render stars
     stars.forEach((star) => {
         context.beginPath();
