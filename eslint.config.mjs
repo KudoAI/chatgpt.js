@@ -4,7 +4,7 @@ import stylisticJS from '@stylistic/eslint-plugin-js'
 import json from '@eslint/json'
 import markdown from '@eslint/markdown'
 import * as regexp from 'eslint-plugin-regexp'
-import eslintPluginYml from 'eslint-plugin-yml'
+import yml from 'eslint-plugin-yml'
 
 export default [
     { ignores: ['**/*.min.js'] },
@@ -44,5 +44,5 @@ export default [
             'markdown/no-missing-label-refs': 'off' // allow missing label references
         }
     },
-    { files: ['**/*.yaml, **/*.yml'], ...eslintPluginYml.configs['flat/standard'][1] }
+    { files: ['**/*.yaml, **/*.yml'], ...yml.configs['flat/standard'][1] }
 ]
