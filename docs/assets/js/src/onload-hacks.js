@@ -344,7 +344,8 @@ const onLoadObserver = new MutationObserver(() => {
                             prevElems.forEach(elem => {
                                 const topGap = trigger.y - window.scrollY,
                                       newOpacity = 1 - Math.abs(topGap) / ( window.innerHeight - 5),
-                                      maxBlur = 4.5, blurAmount = Math.min(maxBlur, Math.abs(topGap) / (window.innerHeight / maxBlur)),
+                                      maxBlur = 4.5,
+                                      blurAmount = Math.min(maxBlur, Math.abs(topGap) / (window.innerHeight / maxBlur)),
                                       parallaxOffset = topGap * -0.55,
                                       scaleDelay = 285, // px from trigger.y to delay scaling
                                       scaleFactor = topGap > -scaleDelay ? 1
