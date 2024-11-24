@@ -1,6 +1,6 @@
 '''
 Script:       translate-en-messages.py
-Version:      2024.11.24
+Version:      2024.11.24.1
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
 Homepage:     https://github.com/adamlui/python-utils
@@ -17,8 +17,9 @@ target_langs = [
     'hu', 'hy', 'id', 'is', 'it', 'ja', 'ka', 'kab', 'kk', 'km', 'kn', 'ko', 'ku', 'ky', 'la', 'lb', 'lo', 'lt', 'lv',
     'mg', 'mi', 'mk', 'ml', 'mn', 'ms', 'mt', 'my', 'ne', 'nl', 'no', 'ny', 'pa', 'pap', 'pl', 'ps', 'pt', 'ro', 'ru',
     'rw', 'sg', 'si', 'sk', 'sl', 'sm', 'sn', 'so', 'sr', 'sv', 'sw', 'ta', 'te', 'tg', 'th', 'ti', 'tk', 'tn', 'to',
-    'tpi', 'tr', 'uk', 'ur', 'uz', 'vi', 'xh', 'yi', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW', 'zu
+    'tpi', 'tr', 'uk', 'ur', 'uz', 'vi', 'xh', 'yi', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW', 'zu'
 ]
+
 # UI initializations
 terminal_width = os.get_terminal_size()[0]
 def print_trunc(msg, end='\n') : print(msg if len(msg) < terminal_width else msg[0:terminal_width-4] + '...', end=end)
