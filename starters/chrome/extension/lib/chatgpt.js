@@ -1341,8 +1341,9 @@ const chatgpt = {
         const functionNames = [];
         for (const prop in this) {
             if (typeof this[prop] == 'function') {
-                const chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name)),
-                      functionParent = chatgptIsParent ? 'chatgpt' : 'other';
+                const chatgptIsParent = !Object.keys(this)
+                    .find(obj => Object.keys(this[obj]).includes(this[prop].name))
+                const functionParent = chatgptIsParent ? 'chatgpt' : 'other';
                 functionNames.push([functionParent, prop]);
             } else if (typeof this[prop] == 'object') {
                 for (const nestedProp in this[prop]) {
