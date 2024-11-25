@@ -7,6 +7,7 @@ const config = {}, settings = {
         // - 'label': a descriptive label
         // - 'symbol' (optional): for icon display (e.g. ⌚)
         // NOTE: Toggles are disabled by default unless key name contains 'disabled' or 'hidden' (case insensitive)
+        // NOTE: Controls are displayed in top-to-bottom order
         // EXAMPLES:
         // autoScrollDisabled: { type: 'toggle', label: 'Auto-Scroll' },
         // replyLanguage: { type: 'prompt', symbol: '🌐', label: 'Reply Language' }
