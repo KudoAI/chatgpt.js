@@ -159,352 +159,255 @@ a { word-break: break-word }
     0%, 100% { top: 0 ;  left: 0 ; text-shadow: $kudo-depth $kudo-depth }
     25% { top: 0 ; left: $kudo-depth ; text-shadow: -$kudo-depth $kudo-depth }
     50% { top: $kudo-depth ; left: $kudo-depth ; text-shadow: -$kudo-depth (-$kudo-depth) }
-    75% { top: $kudo-depth ; left: 0 ; text-shadow: $kudo-depth (-$kudo-depth) }}
+    75% { top: $kudo-depth ; left: 0 ; text-shadow: $kudo-depth (-$kudo-depth) }
+}
 
+/* MEDIA QUERIES */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+    #kudoai {
+        font-size: 5vw; /* Scale font size for smaller screens */
+        left: 20px; /* Adjust position */
+    }
+    .top-gradient {
+        height: 25vh; /* Increase gradient height for better visibility */
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #kudoai {
+        font-size: 7vw; /* Further scale font size */
+        top: 10px; /* Adjust top position */
+    }
+    .app-nav a.active {
+        border-bottom: 2px solid $blue; /* Adjust active border color for contrast */
+    }
+    .content-fadeup, .content-faderight, .content-fadeleft {
+        opacity: 1;
+        transform: none; /* Simplify animations on smaller screens */
+        transition: none; /* Remove transition for performance */
+    }
+}
 /* GitHub badge */
-.github-corner { z-index: 5 } /* to cover .top-gradient */
-.github-corner svg { fill: white ; color: black ; height: 115px ; width: 115px }
+.github-corner { z-index: 5 }
+.github-corner svg { fill: white; color: black; height: 115px; width: 115px }
 
 /* Starry background (from `../../js/src/starry-background.js`) */
-canvas { position: fixed ; width: 100% ; height: 100% ; pointer-events: none }
+canvas { position: fixed; width: 100%; height: 100%; pointer-events: none }
 
 /* COVER */
-
-.cover-main > img { margin-bottom: 16px ; width: 98% } /* cover logo */
-.cover-main { color: white } /* all cover txt color */
-section.cover p { /* cover tagline size / weight / position */
-    font-family: 'Major Mono Display', 'IBM Plex Mono', 'Roboto Mono', Monaco, courier, monospace !important ;
-    font-size: 1.75rem !important ; font-weight: bold ; margin-bottom: 48px ; line-height: 2.3rem !important }
+.cover-main > img { margin-bottom: 16px; width: 98% }
+.cover-main { color: white }
+section.cover p {
+    font-family: 'Major Mono Display', 'IBM Plex Mono', 'Roboto Mono', Monaco, courier, monospace !important;
+    font-size: 1.75rem !important; font-weight: bold; margin-bottom: 48px; line-height: 2.3rem !important;
+}
+@media (max-width: 768px) {
+    section.cover p { font-size: 1.5rem; line-height: 2rem; }
+}
 
 /* Buttons */
-.cover-main > p:last-child a { /* all buttons */
-    font-family: 'IBM Plex Mono', 'Roboto Mono', Monaco, courier, monospace !important ;
-    text-transform: uppercase ; font-size: 1.35rem !important ; color: white !important ;
-    border-width: 3px !important ; border-radius: 0 !important ; border-color: white !important ;
-    padding: 16px 68px !important ; transition: 0.04s !important ;
+.cover-main > p:last-child a {
+    font-family: 'IBM Plex Mono', 'Roboto Mono', Monaco, courier, monospace !important;
+    text-transform: uppercase; font-size: 1.35rem !important; color: white !important;
+    border-width: 3px !important; border-radius: 0 !important; border-color: white !important;
+    padding: 16px 68px !important; transition: 0.04s !important;
     @each $property, $value in $no-select { #{$property}: #{$value}; }
-    @each $property, $value in $no-touch-select { #{$property}: #{$value}; }}
-.cover-main > p:last-child a:hover { /* 1st button hover */
-    background-color: blue ; color: white !important ; opacity: 1 !important }
-.cover-main > p:last-child a:last-child { /* 2nd button */
-    padding: 16px 60px !important ; border-color: white !important ; font-weight: bold ;
-    background-color: white !important ; color: black !important }
-.cover-main > p:last-child a:last-child:hover { /* 2nd button hover */
-    background-color: blue !important ; border-color: blue !important ; color: white !important }
+    @each $property, $value in $no-touch-select { #{$property}: #{$value}; }
+}
+@media (max-width: 768px) {
+    .cover-main > p:last-child a { font-size: 1.2rem; padding: 12px 50px; }
+}
+.cover-main > p:last-child a:hover { background-color: blue; color: white !important; opacity: 1 !important }
+.cover-main > p:last-child a:last-child { padding: 16px 60px !important; border-color: white !important; font-weight: bold; background-color: white !important; color: black !important }
+.cover-main > p:last-child a:last-child:hover { background-color: blue !important; border-color: blue !important; color: white !important }
 
 /* NAV */
-
-.app-nav { right: 35px ; top: 15px }
-.app-nav a { color: white !important ; font-size: 1.5rem }
+.app-nav { right: 35px; top: 15px }
+.app-nav a { color: white !important; font-size: 1.5rem }
+@media (max-width: 768px) {
+    .app-nav a { font-size: 1.2rem; }
+}
 
 /* LANGUAGE SELECTOR */
-
-#language-selector { position: relative ; top: -25px ; right: 32px }
-#language-selector svg {
-    position: relative ; top: 9px ; right: 9px ; cursor: pointer }
+#language-selector { position: relative; top: -25px; right: 32px }
+#language-selector svg { position: relative; top: 9px; right: 9px; cursor: pointer }
 #language-selector a { font-size: 30px }
-#language-selector li { width: 88% ; /* to center acive stripe + hover overlay */
-    margin-right: unset } /* to cancel .app-nav li { margin: 0 1rem } creates h-bar */
+#language-selector li { width: 88%; margin-right: unset }
 #language-menu {
-    display: none ; position: absolute ; top: 127% ; right: -49px ;
-    width: 256px ; height: 87vh ; overflow: scroll ; font-size: 28px !important; text-align: left ;
-    background: rgba(0, 0, 0, 0.75) ; border: 3px solid #cccccc ; border-radius: 4px ;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) ; padding: 5px 0 ; z-index: 1 }
-.dropdown--hoverable:hover #language-menu { display: block }
-.dropdown-link {
-    display: block ; padding: 5px 15px ; color: #333333 ;
-    text-decoration: none ; transition: none !important }
-#language-selector li:hover { background-color: $green }
-.dropdown-link:hover { color: black !important}
-#dropdown-button { position: relative ; padding-right: 20px }
-#dropdown-button:after {
-    content: '▼' ; position: absolute ; right: -18px ; top: 0.159rem ;
-    transform: scale(0.7) }
+    display: none; position: absolute; top: 127%; right: -49px;
+    width: 256px; height: 87vh; overflow: scroll; font-size: 28px !important; text-align: left;
+    background: rgba(0, 0, 0, 0.75); border: 3px solid #cccccc; border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); padding: 5px 0; z-index: 1;
+}
+@media (max-width: 768px) {
+    #language-menu { width: 200px; font-size: 24px; }
+}
 
 /* SIDEBAR */
-
-.sidebar-toggle { bottom: 36px ; left: 29px ; background-color: transparent ;
-   @each $property, $value in $no-touch-select { #{$property}: #{$value}; }}
+.sidebar-toggle { bottom: 36px; left: 29px; background-color: transparent;
+    @each $property, $value in $no-touch-select { #{$property}: #{$value}; }
+}
 .sidebar-toggle:hover .sidebar-toggle-button { opacity: 1 }
-.sidebar-toggle span { /* color/size/space toggle bars */
-    background-color: white ; width: 20px ; height: 3px ; margin-bottom: 5px }
-.sidebar { background-color: transparent ; padding-right: 5px !important }
-.app-name { display: none }
+.sidebar-toggle span { background-color: white; width: 20px; height: 3px; margin-bottom: 5px }
+.sidebar { background-color: transparent; padding-right: 5px !important }
 .sidebar-nav { padding-top: 20px }
-.sidebar-nav > ul:first-of-type { margin-top: 5vh } /* add gap between logo and links */
-.sidebar a { font-size: 2.1rem !important ; line-height: 3.8rem ; color: white !important }
-.sidebar li.active > a { border-right: 0 !important } /* move line indicator from active links... */
-.sidebar li.nav-active { border-right: 4px solid $green ;  /* ...to active li's */
-    padding-right: 15px } /* ...so padding can be applied */
-.sidebar ul > ul { margin: 0 0 12px 26px } /* indent subheadings */
-.sidebar ul > li:first-child { margin-top: 8px } /* lower subheadings */
-.sidebar ul > ul a { font-size: 2rem !important ; line-height: 3.1rem } /* shrink subheadings */
-.sidebar li img { display: none } /* hide sub icons */
-.search { background-color: white ; font-size: 1.3rem }
-.matching-post { transform: scale(.7) ; margin: -31px }
-.app-name-link img { padding: 0 2px }
-.sidebar-nav > ul > li:first-of-type, /* hide description */
-.sidebar-nav > ul > ul > ul:nth-of-type(2), /* hide showcase apps */
-.sidebar-nav > ul > ul:first-of-type + li { display: none } /* hide mystery <li> before contributors */
+.sidebar-nav > ul:first-of-type { margin-top: 5vh }
+.sidebar a { font-size: 2.1rem !important; line-height: 3.8rem; color: white !important }
+.sidebar li.active > a { border-right: 0 !important }
+.sidebar li.nav-active { border-right: 4px solid $green; padding-right: 15px }
+.sidebar ul > ul { margin: 0 0 12px 26px }
+@media (max-width: 768px) {
+    .sidebar a { font-size: 1.6rem; line-height: 3rem; }
+    .sidebar li.nav-active { padding-right: 10px; }
+}
 
 /* MAIN */
-
-body { background: black ; color: white ; cursor: url('../../cursors/futuristic/pointer.cur'), auto ;
-    font-family: 'PolySans Neutral', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif }
-strong, .anchor span { color: white !important } /* whiten all strongs & headings */
+body {
+    background: black; color: white; cursor: url('../../cursors/futuristic/pointer.cur'), auto;
+    font-family: 'PolySans Neutral', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+}
+strong, .anchor span { color: white !important }
 main a { color: $blue !important }
-#repo-cover { display: none } /* hide repo cover */
-main h2 { /* headings */
-    text-align: center ; margin: 8.4rem 0 5rem !important ; font-size: 6rem !important ;
-    font-family: 'Eurostile Extended Black', Georgia, Cambria, Times New Roman, Times, serif ;
-    text-transform: uppercase }
-main h2 span { word-break: break-word }
-main h2 a { pointer-events: none }
-.anchor:hover { text-decoration: none }
-main h3 { font-size: 3.6rem !important ; margin: 4.75rem 0 2rem !important }
-main p { font-size: 1.78rem !important ; line-height: 2.65rem !important}
-main blockquote { border-left: 4px solid $green !important }
-main blockquote strong { color: yellow !important } /* tips' title */
-main blockquote em { color: #87a99d !important } /* tips' italics */
-main blockquote p { /* tips content */
-    border-left: none ; width: 38vw ; font-size: 1.5rem !important ; line-height: 2.1rem !important ;
-    text-align: left ; float: right ; position: relative ; left: 29px }
-main blockquote:first-of-type p { margin-top: 55px !important } /* Greasemonkey tip */
-main blockquote:nth-of-type(2) p { margin-top: 25px !important } /* Chrome tip */
-img[src*='separator'] { display: none } /* hide section separators */
-main h2 + p { /* blurbs after headings w/o tips */
-    font-size: 2.75rem !important ; text-align: center ; margin-top: -85px !important }
-main li::marker { font-size: 1.4rem }
+main h2 {
+    text-align: center; margin: 8.4rem 0 5rem !important; font-size: 6rem !important;
+    font-family: 'Eurostile Extended Black', Georgia, Cambria, Times New Roman, Times, serif;
+    text-transform: uppercase;
+}
+@media (max-width: 768px) {
+    main h2 { font-size: 4rem; }
+}
+main p { font-size: 1.78rem !important; line-height: 2.65rem !important }
+@media (max-width: 768px) {
+    main p { font-size: 1.5rem; line-height: 2.3rem; }
+}
 
 /* Code */
-main pre { width: 100% ; /* to avoid shrinking from adjacent left/right floats */
-    margin: 65px 0 !important }
+main pre { width: 100%; margin: 65px 0 !important }
 main code { line-height: 2.1rem !important }
+@media (max-width: 768px) {
+    main code { font-size: 1.2rem; }
+}
 main pre, main code, .punctuation {
-    font-family: 'Roboto Mono', Monaco, courier, monospace !important ; position: relative ;
-    font-size: 1.35rem !important ; color: white !important ; background: rgba(0, 0, 0, 0.35) !important ;
-    margin-bottom: 1px } /* fix bottom border disappears glitch */
-.punctuation { background-color: rgba(0, 0, 0, 0) !important; } /* clear bg for scanlines */
-main pre code::before { /* add scanlines */
-    content: '' ; display: block ; 
-    position: absolute ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ;
-    background: linear-gradient(to bottom, rgba(0, 128, 128, 0) 50%, rgba(0, 255, 255, 0.2) 50%) ;
-    background-size: 100% 5px }
-main pre code { border: $blue 2px solid ; border-radius: 12px !important ; padding: 26px !important }
+    font-family: 'Roboto Mono', Monaco, courier, monospace !important;
+    position: relative; font-size: 1.35rem !important; color: white !important;
+    background: rgba(0, 0, 0, 0.35) !important; margin-bottom: 1px;
+}
+main pre code { border: $blue 2px solid; border-radius: 12px !important; padding: 26px !important }
+@media (max-width: 768px) {
+    main pre code { padding: 20px; }
+}
 main p code {
-    font-size: 1.3rem !important ; position: relative ; bottom: 2px ;
-    padding: 2px 12px 5px !important ; margin: 0 5px !important ; word-break: break-word ;
-    border: white 1px solid ; border-radius: 8px !important }
-main pre:after { display: none } /* hide lang indicator */
-.docsify-copy-code-button {    
-    font-size: 1.1rem !important ; background-color: rgba(0, 0, 0, 0) !important ; color: white !important ;
-    padding: 13px 18px 13px 15px !important ; right: 30px !important ; top: 2px !important }
-.success, .error { font-size: 1.1rem !important }
-main li pre { margin: 65px 0 !important }
-.token.string { color: $green }
-.token.comment { color: #b6e3d4 }
-.token.function, .token.keyword, .token.boolean, .token.number { color: #ffcb00 }
+    font-size: 1.3rem !important; position: relative; bottom: 2px;
+    padding: 2px 12px 5px !important; margin: 0 5px !important;
+    word-break: break-word; border: white 1px solid; border-radius: 8px !important;
+}
+@media (max-width: 768px) {
+    main p code { font-size: 1.1rem; padding: 2px 8px 4px; }
+}
 
 /* Shields */
 #shields { margin: 125px 0 305px }
-#shields img { height: 48px ; margin: 4px -2px }
-
-/* About section */
-#intro + p { /* ABOUT description */
-    margin-top: -488px !important ; font-size: 3.3rem !important ; color: #bbb ;
-    line-height: 4.3rem !important ; text-align: right ; width: 59% }
-#intro ~ ul:first-of-type { display: none } /* hide readme feature list */
-#intro h2 span { display: none !important } /* hide ABOUT heading */
-#feature-list { /* generated in `../../js/src/online-modifier.js` */
-    font-family: 'IBM Plex Mono', 'Roboto Mono', Monaco, courier, monospace !important ;
-    font-size: 1.4rem ; color: $green ; position: relative ; float: right ;
-    height: 100px ; top: -311px ; right: -90px ; width: 41% ; margin-bottom: 365px }
-
-/* Headings */
-h2 { padding-top: 211px } /* add gaps for prettier parallax */
-
-/* Greasemonkey/Chrome sections */
-#-greasemonkey, #-chrome { text-align: center ; margin-bottom: 55px !important }
-main blockquote + p { font-size: 1.85rem !important ; width: 50% ; text-align: right }
-main pre + p, main pre + p + p { text-align: center ; padding: 0 10vw }
-main ol { margin-top: 95px ; padding: 0 9vw 0 12vw !important }
-
+#shields img { height: 48px; margin: 4px -2px }
+@media (max-width: 768px) {
+    #shields img { height: 36px; }
+}
 /* Usage section */
 #usage ~ pre + p { /* 1st p after pre */
-    text-align: left !important ; margin: 65px 0 0 !important }
+    text-align: left !important; margin: 65px 0 0 !important;
+}
 #usage ~ pre + p + p { /* 2nd p after pre */
-    text-align: right !important ; float: right !important ; margin-bottom: 152px }
+    text-align: right !important; float: right !important; margin-bottom: 152px;
+}
+@media (max-width: 768px) {
+    #usage ~ pre + p, #usage ~ pre + p + p {
+        text-align: center !important; float: none !important; margin-bottom: 80px;
+    }
+}
 
 /* Showcase */
 #showcase ~ h3:nth-of-type(even):not(#contributors ~ *),
-#showcase ~ h3 + p:nth-of-type(even):not(#contributors ~ *) { text-align: right }
+#showcase ~ h3 + p:nth-of-type(even):not(#contributors ~ *) { 
+    text-align: right; 
+}
 #showcase ~ h3 + p + p:not(#contributors ~ *), /* 1st showcase tile */
 #showcase ~ h3 + p + p ~ p:not(#contributors ~ *) { /* 2nd+ showcase tiles + CTA */
-    text-align: center !important }
+    text-align: center !important; 
+}
 #showcase-cta {
-    font-size: 2.5rem !important ; line-height: 3.5rem !important ;
-    padding: 0 10vw ; margin-top: -29px }
+    font-size: 2.5rem !important; line-height: 3.5rem !important;
+    padding: 0 10vw; margin-top: -29px;
+}
 main h3 img { /* app icons */
-    height: 39px !important ; width: auto !important ; margin: 0 19px -2px 0 }
+    height: 39px !important; width: auto !important; margin: 0 19px -2px 0;
+}
 main h3 a { /* app titles */
-    text-decoration: none ; color: white !important }
-main h3 a:hover { text-decoration: underline #42b983 }
-img[src*='promo-tile'] { width: 74vw ; border: 1px solid white ; margin: 32px 0 }
-a[href*='mailto:showcase'] { word-break: keep-all }
-
-/* Contributors */
-#contributors, #contributors ~ p { text-align: center !important } /* center contributors section */
-#contributors ~ p { padding: 0 15vw } /* narrow container of avatars */
-#contributors + p { /* contributors description */
-    font-family: 'IBM Plex Mono', 'Roboto Mono', Monaco, courier, monospace !important ;
-    font-size: 1.7rem !important ; padding: 0 12vw }
-#contributors ~ * img:not(#partners ~ * *) { width: 5.5vw } /* resize contributor avatars */
-a[href='https://chat.openai.com'] img { /* outline ChatGPT's avatar */
-    border: 2px solid #aeecff ; border-radius: 50% }
-#contributors ~ br { display: none } /* hide trailing line break */
-
-/* Footer */
-#partners + p { font-size: 2rem !important ; padding: 0 } /* Partners sentence */
-#partners-collage img { margin-top: 17px ; width: 100% ; opacity: .6 }
-#star-history { display: none } /* hide Star History section */
-#footer { text-align: center ; margin: -96px 0 -105px } /* general position */
-#mc_embed_signup h2 { /* 1st CTA */
-    margin: 3rem 0 3.5rem !important ;
-    font-size: 2.68rem !important ; color: white ; -webkit-text-stroke: 1px black }
-.mc-field-group { margin: -4px 0 95px } /* input row div v-margins */
-.mc-field-group input { height: 55px } /* input row height */
-input#mce-EMAIL { /* email field */
-    border-radius: 0 ; width: 32% ; min-width: 250px ;
-    margin-bottom: 18px ; border: 1px solid #ccc ; outline: none }
-input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent: 15px }
-#mc-embedded-subscribe { /* sub button */
-    font-size: 1.45rem ; color: white ; background: black ; cursor: pointer ;
-    width: 200px ; margin-left: -6px ; border-radius: 0 ; border: 1px ;
-    border: white solid ; position: relative ; bottom: 1px } /* correct for font-size shifting */
-#copyright-footer {
-    font-family: 'IBM Plex Mono', 'Roboto Mono', Monaco, courier, monospace !important ;
-    text-align: center ; margin: 69px 0 25px ; font-size: 1.15rem ; line-height: 29px }
-#copyright-footer span { /* copyright notice */
-    position: relative ; bottom: 2px }
-#copyright-footer a { color: white !important ; font-weight: 400 ; text-decoration-line: underline }
-
-/* BUTTONS */
-
-.back-to-top {
-    margin: 0 ; padding: 0 ; border: none ; cursor: pointer ;
-    outline: none ; width: fit-content ; height: fit-content ;
-    background: none ; position: fixed ; bottom: 5% ;
-    right: 3% ; display: none ; opacity: 0 ;
-    @each $property, $value in $no-touch-select { #{$property}: #{$value}; }}    
-.back-to-top svg > path { fill: #fff; }
-
-/* MOBILE tweaks */
-
-@media screen and (min-width: 768px) and (max-width: 1279px) {
-    #intro ~ p:first-of-type { line-height: 3.6rem !important }
-    main h2 { font-size: 5rem !important }
-    main h3 { font-size: 3.55rem !important }
-    main p, main blockquote + p, main blockquote + p + p {
-        font-size: 1.85rem !important ; line-height: 2.7rem !important }
-    main p code {
-        font-size: 1.5rem !important ; padding: 2px 9px !important ; border-radius: 8px !important }
+    text-decoration: none; color: white !important;
+}
+main h3 a:hover { text-decoration: underline #42b983; }
+img[src*='promo-tile'] { width: 74vw; border: 1px solid white; margin: 32px 0; }
+a[href*='mailto:showcase'] { word-break: keep-all; }
+@media (max-width: 768px) {
+    #showcase ~ h3, #showcase ~ h3 + p { text-align: center !important; }
+    img[src*='promo-tile'] { width: 100% !important; }
 }
 
-@media screen and (max-width: 767px) and (orientation: portrait) {
-    article { padding: 0 }
-    .markdown-section { max-width: 96% }
-    .github-corner svg { height: 88px ; width: 88px }
+/* Contributors */
+#contributors, #contributors ~ p { text-align: center !important; }
+#contributors ~ p { padding: 0 15vw; }
+#contributors + p { /* contributors description */
+    font-family: 'IBM Plex Mono', 'Roboto Mono', Monaco, courier, monospace !important;
+    font-size: 1.7rem !important; padding: 0 12vw;
+}
+#contributors ~ * img:not(#partners ~ * *) { width: 5.5vw; }
+a[href='https://chat.openai.com'] img { /* outline ChatGPT's avatar */
+    border: 2px solid #aeecff; border-radius: 50%;
+}
+#contributors ~ br { display: none; }
+@media (max-width: 768px) {
+    #contributors + p { font-size: 1.5rem !important; padding: 0 5px !important; }
+    #contributors ~ p { padding: 0 !important; }
+    #contributors ~ * img { width: 69px !important; }
+}
 
-    #kudoai { transform: scale(1.7); margin-top: 5.2px; }
+/* Footer */
+#partners + p { font-size: 2rem !important; padding: 0; }
+#partners-collage img { margin-top: 17px; width: 100%; opacity: 0.6; }
+#star-history { display: none; }
+#footer { text-align: center; margin: -96px 0 -105px; }
+#mc_embed_signup h2 {
+    margin: 3rem 0 3.5rem !important;
+    font-size: 2.68rem !important; color: white; -webkit-text-stroke: 1px black;
+}
+.mc-field-group { margin: -4px 0 95px; }
+.mc-field-group input { height: 55px; }
+input#mce-EMAIL {
+    border-radius: 0; width: 32%; min-width: 250px;
+    margin-bottom: 18px; border: 1px solid #ccc; outline: none;
+}
+input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem; text-indent: 15px; }
+#mc-embedded-subscribe {
+    font-size: 1.45rem; color: white; background: black; cursor: pointer;
+    width: 200px; margin-left: -6px; border-radius: 0; border: 1px solid white;
+    position: relative; bottom: 1px;
+}
+@media (max-width: 768px) {
+    input#mce-EMAIL { width: 90%; text-align: center; }
+    #mc_embed_signup h2 { font-size: 2.5rem; }
+}
 
-    /* LANGUAGE SELECTOR */
-    #language-selector { transform: scale(0.7) ; right: 0 !important }
-    #language-selector a { font-size: 26px }
-    #language-selector svg { width: 28px ; height: 28px }
+/* BUTTONS */
+.back-to-top {
+    margin: 0; padding: 0; border: none; cursor: pointer;
+    outline: none; width: fit-content; height: fit-content;
+    background: none; position: fixed; bottom: 5%;
+    right: 3%; display: none; opacity: 0;
+    @each $property, $value in $no-touch-select { #{$property}: #{$value}; }
+}
+.back-to-top svg > path { fill: #fff; }
 
-    /* COVER */
-
-    .cover-main { padding-top: 21px } /* make room for lang selector + GitHub badge */
-    section.cover, .cover-main { margin: 0 !important }
-    .cover-main > img { width: 100% ; margin-bottom: 0 } /* cover logo */
-    section.cover p { /* cover description */
-        font-size: 6.3vw !important ; line-height: 4.3vh !important }
-    .cover-main > p:last-child a, .cover-main > p:last-child a:last-child { /* buttons */
-        padding: 12px 43px !important }
-    blockquote { margin: 0 !important; }
-
-    /* BUTTONS */
-
-    .sidebar-toggle { bottom: 33px ; left: 5px ; background: transparent !important }
-    .back-to-top { bottom: 39px ; right: 10px }
-
-    /* SHIELDS */
-
-    #shields { display: none }
-
-    /* ABOUT */
-
-    #intro ~ p:first-of-type { /* ABOUT description */
-        font-size: 2.8rem !important ; line-height: 3.1rem !important ;
-        margin: -236px 0 490px !important }
-    #feature-list { /* generated in `../../js/src/onload-modifier.js` */
-        font-size: 1.7rem! important ; margin-bottom: -136px !important ;
-        position: relative ; width: inherit ; left: 16px ; top: -244px ; float: none }
-    
-    /* BODY */
-
-    $mobile-p-size: 1.85rem;
-    main li::marker { font-size: 1.84rem !important } /* unzoom list markers */
-
-    /* Headings */
-    main h2 { font-size: 3rem !important ; padding: 0 12px 0 16px !important }
-    main h3 { font-size: 2.5rem !important }
-    main h3 img { height: 32px !important } /* platform icons */
-
-    /* Text */
-    main p {
-        font-size: $mobile-p-size !important ; width: inherit !important ;
-        text-align: center !important ; line-height: 2.5rem !important ;
-        word-wrap: break-word }
-    main blockquote { /* platform tips parent */
-        margin: 0 18px !important }
-    main blockquote p { /* platform tips */
-        float: none ; left: 0 }
-    main blockquote + p, main pre + p { /* code-block neighbor p's */
-        font-size: 1.65rem !important ; margin: 0 17px !important }
-    main pre + p, main pre + p + p { padding: 0 !important } /* remove padding from 2x p's following code blocks */
-    main ol { width: inherit ; margin: 0 32px ; padding: 0 0 0 15px !important } /* platform steps parent */
-    main ol p { text-align: left !important ; word-break: break-word } /* platform steps */
-
-    /* Code */
-    main code, .token { font-size: 1.2rem !important } /* shrink font */
-    main pre { padding: 0 0.11rem !important } /* widen blocks */
-    main li pre { /* widen/center li blocks */
-        padding: 0 !important } 
-    main p code { /* zoom/pad p code */
-        font-size: 1.45rem !important ; padding: 2px 8px !important }
-    .docsify-copy-code-button { display: none }
-
-    /* Usage section */
-    #usage ~ pre + p, #usage ~ pre + p + p { /* re-size/center text */
-        font-size: $mobile-p-size !important ; text-align: center !important ;
-        margin: 63px 0 !important ; float: none !important }
-
-    /* Showcase */
-    #showcase ~ h3, #showcase ~ p { text-align: center !important } /* center titles */
-    img[src*=promo-tile] { width: 100% !important } /* expand tiles full-width */
-
-    /* Contributors */
-    #contributors + p { /* shrink contributors description font, remove padding */
-        font-size: 1.5rem !important ; padding: 0 5px !important }
-    #contributors ~ p { /* remove padding from avatars container */
-        padding: 0 !important }
-    #contributors ~ * img { width: 69px !important } /* resize contributor avatars */
-
-    /* Footer */
-    #mc_embed_signup h2 { /* CTA */
-        font-size: 2.55rem !important ; /* shrink font */
-        left: -21px !important } /* nudge right to re-center */
-    input#mce-EMAIL, input#mce-EMAIL::placeholder { /* email input txt/placeholder */
-        text-indent: 0 !important ; text-align: center } /* center them */
+@media (max-width: 768px) {
+    .back-to-top { bottom: 39px; right: 10px; }
 }
