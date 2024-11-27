@@ -36,7 +36,8 @@ export default [
         }
     },
     { files: ['**/chatgpt.js'], languageOptions: { globals: { chatgpt: 'off' }}},
-    { files: ['**/*.mjs', '**/components/*.js', '**/lib*/*.js'], languageOptions: { sourceType: 'module' }},
+    { files: ['**/dom.js'], languageOptions: { globals: { chatgpt: 'dom' }}},
+    { files: ['**/*.mjs'], languageOptions: { sourceType: 'module' }},
     { files: ['**/*.json'], ignores: ['**/package-lock.json'], language: 'json/json', ...json.configs.recommended },
     {
         files: ['**/*.md'], language: 'markdown/commonmark', plugins: { markdown },
