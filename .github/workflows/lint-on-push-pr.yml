@@ -1,4 +1,4 @@
-name: Lint pushes + PRs
+name: Lint pushes/PRs
 on: [push, pull_request]
 
 jobs:
