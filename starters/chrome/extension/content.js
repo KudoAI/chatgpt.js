@@ -50,14 +50,15 @@
 
     // Define SYNC function
 
-    async function syncConfigToUI() { // on toolbar popup toggles + ChatGPT tab activations
+    async function syncConfigToUI(options) { // eslint-disable-line
         await settings.load('extensionDisabled', Object.keys(settings.controls)) // load from Chrome storage to content.js config
         if (config.extensionDisabled) {
             // Remove all hacks
         } else {
             // Add/remove hacks to reflect each potentially updated setting per settings.controls in lib/settings.mjs
             // e.g. if you created toolbar popup toggle to hide ChatGPT footer using hiddenFooter key...
-            // ...here you would use config.hiddenFooter to conditionally append/remove hidden footer style...
+            // ...here you would use options?.updatedKey == 'hiddenFooter' && config.hiddenFooter...
+            // ...to conditionally append/remove hidden footer style...
             // ...(initial style creation + append if config.hiddenFooter would go in main routine)
         }
     }
