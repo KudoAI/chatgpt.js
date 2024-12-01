@@ -888,7 +888,10 @@ const chatgpt = {
     getHeaderDiv() { return chatgpt.header.get(); },
     getLastPrompt() { return chatgpt.getChatData('active', 'msg', 'user', 'latest'); },
     getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
-    getNewChatButton() { return document.querySelector('button[data-testid*="new-chat-button"]'); },
+
+    getNewChatButton() {
+        return document.querySelector('button[data-testid*="new-chat-button"], button:has([d^="M15.6729"])'); },
+
     getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
     getRegenerateButton() { return document.querySelector('button:has([d^="M3.06957"])'); },
 
