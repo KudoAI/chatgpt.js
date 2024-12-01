@@ -1,6 +1,6 @@
 // Requires lib/dom.js
 
-const icons = {
+window.icons = {
 
     create({ name, size = 16, width, height, ...additionalAttrs }) {
         const iconData = icons[name],
@@ -24,6 +24,4 @@ const icons = {
         type: 'png',
         get src() { return `${icons.appProps.urls.assetHost}@b5551ac/images/icons/question-mark/icon16.png` }
     }
-}
-
-export { icons }
+};
