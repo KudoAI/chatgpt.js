@@ -5,7 +5,7 @@
 
     // Import LIBS
     await import(chrome.runtime.getURL('lib/dom.js'))
-    await import(chrome.runtime.getURL('lib/settings.mjs'))
+    await import(chrome.runtime.getURL('lib/settings.js'))
 
     // Import APP data
     const { app } = await chrome.storage.sync.get('app')
