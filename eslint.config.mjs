@@ -14,7 +14,7 @@ export default [
             ecmaVersion: 'latest', sourceType: 'script',
             globals: {
                 ...globals.browser, ...globals.greasemonkey, ...globals.node, chatgpt: 'readonly', chrome: 'readonly',
-                config: 'writable', CryptoJS: 'readonly', dom: 'readonly', settings: 'writable'
+                config: 'writable', dom: 'readonly', settings: 'writable'
             }
         },
         plugins: { regexp, 'js-styles': stylisticJS },
@@ -37,7 +37,6 @@ export default [
         }
     },
     { files: ['**/chatgpt.js'], languageOptions: { globals: { chatgpt: 'off' }}},
-    { files: ['**/dom.js'], languageOptions: { globals: { dom: 'off' }}},
     { files: ['**/*.mjs'], languageOptions: { sourceType: 'module' }},
     { files: ['**/*.json'], ignores: ['**/package-lock.json'], language: 'json/json', ...json.configs.recommended },
     {
