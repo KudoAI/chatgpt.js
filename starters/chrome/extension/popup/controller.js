@@ -43,7 +43,7 @@
                 })
         },
 
-        storageToUI(options) { return sendMsgToActiveTab('syncConfigToUI', options) }
+        configToUI(options) { return sendMsgToActiveTab('syncConfigToUI', options) }
     }
 
     // Run MAIN routine
@@ -96,7 +96,7 @@
                 menuInput.onclick = menuSlider.onclick = event => // prevent double toggle
                     event.stopImmediatePropagation()
                 menuInput.onchange = () => {
-                    settings.save(key, !config[key]) ; sync.storageToUI()
+                    settings.save(key, !config[key]) ; sync.configToUI()
                     notify(`${settings.controls[key].label} ${ /disabled|hidden/i.test(key) != config[key] ? 'ON' : 'OFF' }`)
                 }
             } else if (settings.controls[key].type == 'prompt') {
