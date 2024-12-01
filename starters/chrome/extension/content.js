@@ -14,7 +14,7 @@
     chrome.runtime.onMessage.addListener(req => {
         if (req.action == 'notify') notify(req.msg, req.pos)
         else if (req.action == 'alert') siteAlert(req.title, req.msg, req.btns)
-        else if (req.action == 'syncconfigToUI') syncconfigToUI()
+        else if (req.action == 'syncConfigToUI') syncConfigToUI()
     })
 
     // Init CONFIG
@@ -48,7 +48,7 @@
 
     // Define SYNC function
 
-    async function syncconfigToUI() { // on toolbar popup toggles + ChatGPT tab activations
+    async function syncConfigToUI() { // on toolbar popup toggles + ChatGPT tab activations
         await settings.load('extensionDisabled', Object.keys(settings.controls)) // load from Chrome storage to content.js config
         if (config.extensionDisabled) {
             // Remove all hacks

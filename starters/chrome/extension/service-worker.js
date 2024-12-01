@@ -18,4 +18,4 @@ chrome.runtime.onInstalled.addListener(details => {
 
 // Sync settings to activated tabs
 chrome.tabs.onActivated.addListener(activeInfo =>
-    chrome.tabs.sendMessage(activeInfo.tabId, { action: 'syncconfigToUI' }))
+    chrome.tabs.sendMessage(activeInfo.tabId, { action: 'syncConfigToUI' }))
