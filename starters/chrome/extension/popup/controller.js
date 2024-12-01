@@ -1,9 +1,8 @@
 (async () => {
 
     // Import JS resources
-    await import(chrome.runtime.getURL('components/icons.js'))
-    await import(chrome.runtime.getURL('lib/dom.js'))
-    await import(chrome.runtime.getURL('lib/settings.js'))
+    for (const resource of ['components/icons.js', 'lib/dom.js', 'lib/settings.js'])
+        await import(chrome.runtime.getURL(resource))
 
     // Init ENV context
     const env = { site: /([^.]+)\.[^.]+$/.exec(new URL((await chrome.tabs.query(
