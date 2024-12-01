@@ -21,7 +21,7 @@
         return await chrome.tabs.sendMessage(activeTab.id, { action: action, options: { ...options }})
     }
 
-    function notify(msg) { sendMsgToActiveTab({ action: 'notify', msg: msg, pos: 'bottom-right' })}
+    function notify(msg, pos = 'bottom-right') { sendMsgToActiveTab('notify', { msg, pos }) }
 
     const sync = {
         fade() {
