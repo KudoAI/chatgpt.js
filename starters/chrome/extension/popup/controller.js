@@ -96,7 +96,7 @@
                 menuInput.onclick = menuSlider.onclick = event => // prevent double toggle
                     event.stopImmediatePropagation()
                 menuInput.onchange = () => {
-                    settings.save(key, !config[key]) ; sync.configToUI()
+                    settings.save(key, !config[key]) ; sync.configToUI({ updatedKey: key })
                     notify(`${settings.controls[key].label} ${ /disabled|hidden/i.test(key) != config[key] ? 'ON' : 'OFF' }`)
                 }
             } else if (settings.controls[key].type == 'prompt') {
