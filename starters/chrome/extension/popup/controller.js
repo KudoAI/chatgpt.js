@@ -43,7 +43,7 @@
                 })
         },
 
-        storageToUI() { return sendMsgToActiveTab({ action: 'syncStorageToUI' })}
+        storageToUI(options) { return sendMsgToActiveTab('syncConfigToUI', options) }
     }
 
     // Run MAIN routine
