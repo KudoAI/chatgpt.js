@@ -2,6 +2,8 @@
 
 window.icons = {
 
+    import(dependencies) { Object.entries(dependencies).forEach(([name, dependency]) => this[name] = dependency) },
+
     create({ name, size = 16, width, height, ...additionalAttrs }) {
         const iconData = icons[name],
               iconAttrs = { width: width || size, height: height || size, ...additionalAttrs }
@@ -22,6 +24,6 @@ window.icons = {
 
     questionMark: {
         type: 'png',
-        get src() { return `${icons.appProps.urls.assetHost}@b5551ac/images/icons/question-mark/icon16.png` }
+        get src() { return `${icons.app.urls.assetHost}@b5551ac/images/icons/question-mark/icon16.png` }
     }
 };
