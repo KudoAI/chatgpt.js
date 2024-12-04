@@ -15,7 +15,7 @@
     modals.import({ app, siteAlert })
 
     // Add CHROME MSG listener
-    chrome.runtime.onMessage.addListener(req => {
+    chrome.runtime.onMessage.addListener(req => { // from service-worker.js + popup/index.html
         if (req.action == 'notify')
             notify(...['msg', 'pos', 'notifDuration', 'shadow'].map(arg => req.options[arg]))
         else if (req.action == 'alert')
@@ -74,7 +74,7 @@
 
     chatgpt.printAllFunctions() // to console
 
-    // Chill a bit if your hacks depend on delayed DOM content
+    // CHILL a bit if your hacks depend on delayed DOM content
     await chatgpt.isLoaded()
     await new Promise(resolve => setTimeout(resolve, 500)) // sleep .5s
 
@@ -120,6 +120,12 @@
                 settings.save('skipAlert', !config.skipAlert) }
         )
 
+    // Your code here...
+    // Your code here...
+    // Your code here...
+    // Your code here...
+    // Your code here...
+    // Your code here...
     // Your code here...
     // Your code here...
     // Your code here...
