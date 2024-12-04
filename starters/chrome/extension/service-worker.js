@@ -1,3 +1,16 @@
+// Init APP data
+const app = {
+    symbol: '🤖', version: chrome.runtime.getManifest().version,
+    urls: {
+        assetHost: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter',
+        cjsMediaHost: 'https://media.chatgptjs.org',
+        gitHub: 'https://github.com/KudoAI/chatgpt.js-chrome-starter',
+        relatedExtensions: 'https://aiwebextensions.com',
+        support: 'https://github.com/KudoAI/chatgpt.js-chrome-starter/issues'
+    }
+}
+chrome.storage.sync.set({ app }) // save to Chrome storage
+
 // Launch ChatGPT on install
 chrome.runtime.onInstalled.addListener(details => {
     if (details.reason == 'install')
@@ -23,19 +36,4 @@ chrome.runtime.onMessage.addListener(async req => {
         }}))
         chrome.tabs.sendMessage(chatgptTab.id, { action: 'showAbout' })
     }
-});
-
-// Init APP data
-(async () => {
-    const app = {
-        symbol: '🤖', version: chrome.runtime.getManifest().version,
-        urls: {
-            assetHost: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter',
-            cjsMediaHost: 'https://media.chatgptjs.org',
-            gitHub: 'https://github.com/KudoAI/chatgpt.js-chrome-starter',
-            relatedExtensions: 'https://aiwebextensions.com',
-            support: 'https://github.com/KudoAI/chatgpt.js-chrome-starter/issues'
-        }
-    }
-    chrome.storage.sync.set({ app }) // save to Chrome storage
-})()
+})
