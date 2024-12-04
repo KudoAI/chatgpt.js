@@ -1,15 +1,3 @@
-// Init APP data
-const app = {
-    symbol: '🤖',
-    urls: {
-        assetHost: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter',
-        cjsMediaHost: 'https://media.chatgptjs.org',
-        gitHub: 'https://github.com/KudoAI/chatgpt.js-chrome-starter',
-        relatedExtensions: 'https://aiwebextensions.com',
-        support: 'https://github.com/KudoAI/chatgpt.js-chrome-starter/issues'
-    }
-} ; chrome.storage.sync.set({ app }) // save to Chrome storage
-
 // Launch ChatGPT on install
 chrome.runtime.onInstalled.addListener(details => {
     if (details.reason == 'install')
@@ -19,3 +7,35 @@ chrome.runtime.onInstalled.addListener(details => {
 // Sync settings to activated tabs
 chrome.tabs.onActivated.addListener(activeInfo =>
     chrome.tabs.sendMessage(activeInfo.tabId, { action: 'syncConfigToUI' }))
+
+// Show ABOUT modal on ChatGPT when toolbar button clicked
+chrome.runtime.onMessage.addListener(async req => {
+    if (req.action == 'showAbout') {
+        const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
+        const chatgptTab = new URL(activeTab.url).hostname == 'chatgpt.com' ? activeTab
+            : await chrome.tabs.create({ url: 'https://chatgpt.com/' })
+        if (activeTab != chatgptTab) await new Promise(resolve => // after new tab loads
+            chrome.tabs.onUpdated.addListener(async function statusListener(tabId, info) {
+                if (tabId == chatgptTab.id && info.status == 'complete') {
+                    chrome.tabs.onUpdated.removeListener(statusListener)
+                    await new Promise(resolve => setTimeout(resolve, 2500))
+                    resolve()
+        }}))
+        chrome.tabs.sendMessage(chatgptTab.id, { action: 'showAbout' })
+    }
+});
+
+// Init APP data
+(async () => {
+    const app = {
+        symbol: '🤖', version: chrome.runtime.getManifest().version,
+        urls: {
+            assetHost: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter',
+            cjsMediaHost: 'https://media.chatgptjs.org',
+            gitHub: 'https://github.com/KudoAI/chatgpt.js-chrome-starter',
+            relatedExtensions: 'https://aiwebextensions.com',
+            support: 'https://github.com/KudoAI/chatgpt.js-chrome-starter/issues'
+        }
+    }
+    chrome.storage.sync.set({ app }) // save to Chrome storage
+})()

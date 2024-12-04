@@ -116,13 +116,13 @@
     cjsLogo.onclick = () => chrome.tabs.create({ url: app.urls.chatgptJS })
     cjsDiv.append(cjsLogo) ; footer.append(cjsDiv)
 
-    // Create/append SUPPORT footer button
-    const supportSpan = dom.create.elem('span', {
-        title: 'Get Support',
+    // Create/append ABOUT footer button
+    const aboutSpan = dom.create.elem('span', {
+        title: 'About ChatGPT Extension',
         class: 'menu-icon menu-area', style: 'right:30px ; padding-top: 2px' })
-    const supportIcon = icons.create({ name: 'questionMark', width: 15, height: 13, style: 'margin-bottom: 0.04rem' })
-    supportSpan.onclick = () => { chrome.tabs.create({ url: app.urls.support }) ; close() }
-    supportSpan.append(supportIcon) ; footer.append(supportSpan)
+    const aboutIcon = icons.create({ name: 'questionMark', width: 15, height: 13, style: 'margin-bottom: 0.04rem' })
+    aboutSpan.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
+    aboutSpan.append(aboutIcon) ; footer.append(aboutSpan)
 
     // Create/append RELATED EXTENSIONS footer button
     const moreExtensionsSpan = dom.create.elem('span', {
