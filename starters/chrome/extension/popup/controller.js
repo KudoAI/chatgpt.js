@@ -26,11 +26,8 @@
 
             // Update toolbar icon
             const iconDimensions = [16, 32, 64, 128], iconPaths = {}
-            iconDimensions.forEach(dimension => {
-                iconPaths[dimension] = '../icons/'
-                    + (config.extensionDisabled ? 'faded/' : '')
-                    + 'icon' + dimension + '.png'
-            })
+            iconDimensions.forEach(dimension => iconPaths[dimension] = `../icons/${
+                config.extensionDisabled ? 'faded/' : '' }icon${dimension}.png` )
             chrome.action.setIcon({ path: iconPaths })
 
             // Update menu contents
