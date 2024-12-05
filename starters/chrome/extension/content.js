@@ -12,7 +12,7 @@
 
     // Import APP data
     const { app } = await chrome.storage.sync.get('app')
-    modals.import({ app, siteAlert })
+    modals.dependencies.import({ app, siteAlert })
 
     // Add CHROME MSG listener
     chrome.runtime.onMessage.addListener(req => { // from service-worker.js + popup/index.html

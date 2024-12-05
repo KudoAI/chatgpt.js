@@ -3,8 +3,10 @@
 window.modals = {
     stack: [], // of types of undismissed modals
 
-    import(dependencies) { // { app, siteAlert }
-        Object.entries(dependencies).forEach(([name, dependency]) => this[name] = dependency) },
+    dependencies: {
+        import(dependencies) { // { app, siteAlert }
+            for (const name in dependencies) this[name] = dependencies[name] }
+    },
 
     open(modalType) {
         this.stack.unshift(modalType) // add to stack
@@ -71,23 +73,23 @@ window.modals = {
 
         // Init buttons
         const modalBtns = [
-            function getSupport(){ modals.safeWinOpen(`${modals.app.urls.gitHub}/issues`) },
-            function rateUs() { modals.safeWinOpen(`${modals.app.urls.gitHub}/discussions`) },
-            function moreAiExtensions(){ modals.safeWinOpen(modals.app.urls.relatedExtensions) }
+            function getSupport(){ modals.safeWinOpen(`${modals.dependencies.app.urls.gitHub}/issues`) },
+            function rateUs() { modals.safeWinOpen(`${modals.dependencies.app.urls.gitHub}/discussions`) },
+            function moreAiExtensions(){ modals.safeWinOpen(modals.dependencies.app.urls.relatedExtensions) }
         ]
 
         // Show modal
-        const aboutModal = this.siteAlert(
-            `${this.app.symbol} ${chrome.runtime.getManifest().name}`, // title
+        const aboutModal = this.dependencies.siteAlert(
+            `${this.dependencies.app.symbol} ${chrome.runtime.getManifest().name}`, // title
             `<span style="${headingStyle}"><b>🏷️ <i>Version</i></b>: </span>`
-                + `<span style="${pStyle}">${this.app.version}</span>\n`
+                + `<span style="${pStyle}">${this.dependencies.app.version}</span>\n`
             + `<span style="${headingStyle}"><b>⚡ <i>Powered by</i></b>: </span>`
                 + `<span style="${pStyle}">`
-                    + `<a style="${aStyle}" href="${this.app.urls.chatgptJS}" target="_blank" rel="noopener">`
-                        + 'chatgpt.js</a></span>\n'
+                    + `<a style="${aStyle}" href="${this.dependencies.app.urls.chatgptJS}" target="_blank"`
+                        + ' rel="noopener">chatgpt.js</a></span>\n'
             + `<span style="${headingStyle}"><b>📜 <i>Open source code</i></b>:</span>\n`
-                + `<span style="${pBrStyle}"><a href="${this.app.urls.gitHub}" target="_blank" rel="nopener">`
-                    + this.app.urls.gitHub + '</a></span>',
+                + `<span style="${pBrStyle}"><a href="${this.dependencies.app.urls.gitHub}" target="_blank"`
+                    + ` rel="nopener">${this.dependencies.app.urls.gitHub}</a></span>`,
             modalBtns, '', 451
         )
 

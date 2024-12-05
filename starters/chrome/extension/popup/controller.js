@@ -10,7 +10,7 @@
 
     // Import APP data
     const { app } = await chrome.storage.sync.get('app')
-    icons.import({ app }) // for src's using app.urls.assetHost
+    icons.dependencies.import({ app }) // for src's using app.urls.assetHost
 
     // Define FUNCTIONS
 
