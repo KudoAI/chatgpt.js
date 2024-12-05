@@ -2,7 +2,7 @@ window.dom = {
     create: {
         elem(elemType, attrs = {}) {
             const elem = document.createElement(elemType)
-            Object.entries(attrs).forEach(([attr, val]) => elem.setAttribute(attr, val))
+            for (const attr in attrs) elem.setAttribute(attr, attrs[attr])
             return elem
         },
 
