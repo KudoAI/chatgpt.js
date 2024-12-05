@@ -2,8 +2,10 @@
 
 window.icons = {
 
-    import(dependencies) { // { app }
-        for (const name in dependencies) this[name] = dependencies[name] },
+    dependencies: {
+        import(dependencies) { // { app }
+            for (const name in dependencies) this[name] = dependencies[name] }
+    },
 
     create({ name, size = 16, width, height, ...additionalAttrs }) {
         const iconData = icons[name],
