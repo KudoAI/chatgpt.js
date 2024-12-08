@@ -621,20 +621,20 @@ const chatgpt = {
     focusChatbar() { chatgpt.getChatBox()?.focus(); },
 
     footer: {
-        get() { return document.querySelector('main form')?.parentNode.parentNode.nextElementSibling; },
+        get() { return document.querySelector('.min-h-4'); },
 
         hide() {
             const footer = chatgpt.footer.get();
             if (!footer) return console.error('Footer element not found!');
             if (footer.style.visibility == 'hidden') return console.info('Footer already hidden!');
-            footer.style.visibility = 'hidden'; footer.style.height = '3px';
+            footer.style.display = 'none';
         },
 
         show() {
             const footer = chatgpt.footer.get();
             if (!footer) return console.error('Footer element not found!');
             if (footer.style.visibility != 'hidden') return console.info('Footer already shown!');
-            footer.style.visibility = footer.style.height = 'inherit';
+            footer.style.display = 'inherit'
         }
     },
 
