@@ -1,2 +1,3 @@
 .eslintcache
 node_modules/
+**/*.css.map
