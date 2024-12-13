@@ -3,7 +3,7 @@
 // @description   A Greasemonkey template to start using chatgpt.js like a boss
 // @author        chatgpt.js
 // @namespace     https://chatgpt.js.org
-// @version       2024.12.6
+// @version       2024.12.12
 // @license       MIT
 // @icon          https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@3.3.5/starters/greasemonkey/media/images/icons/robot/icon48.png
 // @icon64        https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@3.3.5/starters/greasemonkey/media/images/icons/robot/icon64.png
@@ -22,22 +22,22 @@
 (async () => {
 
     // Init config
-    const config = { prefix: 'chatgptScript' }; loadSetting('skipAlert');
+    const config = { prefix: 'chatgptScript' } ; loadSetting('skipAlert')
 
     // Print chatgpt.js methods
-    await chatgpt.isLoaded(); chatgpt.printAllFunctions(); // to console
+    await chatgpt.isLoaded() ; chatgpt.printAllFunctions() // to console
 
     // Show alert
-    if (!config.skipAlert) {
+    if (!config.skipAlert)
         chatgpt.alert('≫ ChatGPT script loaded! 🚀', // title
             'Success! Press Ctrl+Shift+' // msg
                 + ( navigator.userAgent.indexOf('Firefox') > -1 ? 'K' : 'J' )
                 + ' to view all chatgpt.js functions.',
             function getHelp() { // button
-                window.open('https://github.kudoai.com/chatgpt.js-greasemonkey-starter/issues', '_blank', 'noopener'); },
+                window.open('https://github.kudoai.com/chatgpt.js-greasemonkey-starter/issues', '_blank', 'noopener') },
             function dontShowAgain() { // checkbox
-                saveSetting('skipAlert', !config.skipAlert); });
-    }
+                saveSetting('skipAlert', !config.skipAlert) }
+        )
 
     // Your code here...
     // Your code here...
@@ -47,7 +47,7 @@
     // Your code here...
 
     // Define HELPER functions
-    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false); });}
-    function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value); config[key] = value; }
+    function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(config.prefix + '_' + key, false)) }
+    function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
 
 })();
