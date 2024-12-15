@@ -372,11 +372,11 @@ a[href='https://chat.openai.com'] img { /* outline ChatGPT's avatar */
 
 /* Footer */
 #star-history { display: none } /* hide Star History section */
-#footer { text-align: center ; margin: -96px 0 -105px } /* general position */
+#footer { text-align: center ; margin: -119px 0 -105px } /* general position */
 #mc_embed_signup h2 { /* 1st CTA */
-    margin: 3rem 0 3.5rem !important ;
+    margin: 15px 0 3.5rem !important ;
     font-size: 2.68rem !important ; color: white ; -webkit-text-stroke: 1px black }
-.mc-field-group { margin: -4px 0 95px } /* input row div v-margins */
+.mc-field-group { margin: -4px 0 195px } /* input row div v-margins */
 .mc-field-group input { height: 55px } /* input row height */
 input#mce-EMAIL { /* email field */
     border-radius: 0 ; width: 32% ; min-width: 250px ;
