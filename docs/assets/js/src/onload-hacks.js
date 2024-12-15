@@ -177,18 +177,18 @@ const onLoadObserver = new MutationObserver(() => {
                 '.cover-main img, .cover-main a,' // cover elements
                   + 'h2, h3, p, pre, main li,' // general elements
                   + '#copyright-footer')) // footer elements
-            fadeUpElements.forEach(element => element.classList.add('content-fadeup'))
+            fadeUpElements.forEach(elem => elem.classList.add('content-fadeup'))
             fadeUpElements.push( // language selector
                 document.querySelector('#language-menu'))
             fadeUpElements[fadeUpElements.length - 1].classList.add('menu-fadeup')
             fadeRightElements.push(...document.querySelectorAll( // left-side showcase apps
                 `#showcase ~ h3:nth-of-type(odd):not(#contributors ~ *),
                  #showcase ~ h3 + p:nth-of-type(odd):not(#contributors ~ *`))
-            fadeRightElements.forEach(element => element.classList.add('content-faderight'))
+            fadeRightElements.forEach(elem => elem.classList.add('content-faderight'))
             fadeLeftElements.push(...document.querySelectorAll( // right-side showcase apps
                 `#showcase ~ h3:nth-of-type(even):not(#contributors ~ *),
                  #showcase ~ h3 + p:nth-of-type(even):not(#contributors ~ *`))
-            fadeLeftElements.forEach(element => element.classList.add('content-fadeleft'))
+            fadeLeftElements.forEach(elem => elem.classList.add('content-fadeleft'))
             const fadeElements = [...fadeUpElements, ...fadeRightElements, ...fadeLeftElements]
 
             // ...then observe for visibility change to update element/sidebar states
@@ -213,7 +213,7 @@ const onLoadObserver = new MutationObserver(() => {
                     }
                 } else entry.target.classList.remove('visible')
             }), { root: null, threshold: 0.02 })
-            fadeElements.forEach(element => fadeObserver.observe(element))
+            fadeElements.forEach(elem => fadeObserver.observe(elem))
 
             // Change stars shield link to repo
             const starsShieldLink = document.querySelector('a[href$="stargazers"]'),
@@ -227,12 +227,12 @@ const onLoadObserver = new MutationObserver(() => {
             triggerElements.push(document.querySelector('h3#-chrome'))
             triggerElements.push( // 1st showcase tile
                 document.querySelector('img[src*="chatgpt-infinity"]'))
-            triggerElements.forEach(element => {
-                const elementPos = element.getBoundingClientRect().top
+            triggerElements.forEach(elem => {
+                const elementPos = elem.getBoundingClientRect().top
                 const vOffsetDivisor = ( // higher = lower pos
-                    element.id.includes('⚡') ? 1.5 // Importing the Library section
-                  : element.tagName === 'IMG' ? 0.8  // 1st showcase tile
-                                              : 8.8 ) // headings
+                    elem.id.includes('⚡') ? 1.5 // Importing the Library section
+                  : elem.tagName === 'IMG' ? 0.8  // 1st showcase tile
+                  : 8.8 ) // headings
                 triggerPoints.push(elementPos - window.innerHeight/vOffsetDivisor)
             })
             triggerPoints.sort((a, b) => a - b) // sort ascending
@@ -309,7 +309,7 @@ const onLoadObserver = new MutationObserver(() => {
             // Append EMAIL SIGNUP footer
             const emailFooter = document.createElement('div')
             fetch('assets/html/footer.html')
-                .then(response => response.text()).then(html => {
+                .then(resp => resp.text()).then(html => {
                     emailFooter.innerHTML = html
                     document.querySelector('#contributors ~ div').insertAdjacentElement('afterend', emailFooter)
                 })
