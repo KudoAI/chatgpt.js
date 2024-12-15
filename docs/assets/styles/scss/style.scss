@@ -1,12 +1,15 @@
 @charset 'UTF-8';
 
+@use "sass:list";
+@use "sass:string";
+
 /* FUNCTIONS */
 
 @function str-replace($haystack, $needle, $replace-txt) {
-    $index: str-index($haystack, $needle);
+    $index: string.index($haystack, $needle);
     @if $index {
-        @return str-slice($haystack, 1, $index - 1) + $replace-txt
-              + str-replace(str-slice($haystack, $index + str-length($needle)), $needle, $replace-txt);
+        @return string.slice($haystack, 1, $index - 1) + $replace-txt
+              + str-replace(string.slice($haystack, $index + string.length($needle)), $needle, $replace-txt);
     }
     @return $haystack;
 }
@@ -57,7 +60,7 @@ $font-families: (
     )
 );
 @mixin font-face($font-family, $full-name, $postscript-name, $font-weight, $font-style) {
-    $font-family-dashed: to-lower-case(str-replace($font-family, ' ', '-'));
+    $font-family-dashed: string.to-lower-case(str-replace($font-family, ' ', '-'));
     @font-face {
         font-family: $font-family;
         src:
@@ -73,26 +76,28 @@ $font-families: (
     @each $variation in $variations {
 
         // Extract elements
-        $postscript-name: nth($variation, 1); $font-weight: nth($variation, 2); $font-style: nth($variation, 3);
+        $postscript-name: list.nth($variation, 1);
+        $font-weight: list.nth($variation, 2);
+        $font-style: list.nth($variation, 3);
 
         // Generate full name (w/ style) for 1st `local()`
         $full-name: '#{$font-family}';
-        $style: str-slice($postscript-name, str-index($postscript-name, '-') + 1);
+        $style: string.slice($postscript-name, string.index($postscript-name, '-') + 1);
         @if $style != 'Regular' { // insert spaces
 
             // Find indices of uppercase letters
             $upper-indices: ();
-            @for $i from 2 through str-length($style) { // start at 2 since 1st char is irrelevant to spacing
-                $char: str-slice($style, $i, $i);
-                @if $char == to-upper-case($char) { $upper-indices: append($upper-indices, $i); }
+            @for $i from 2 through string.length($style) { // start at 2 since 1st char is irrelevant to spacing
+                $char: string.slice($style, $i, $i);
+                @if $char == string.to-upper-case($char) { $upper-indices: list.append($upper-indices, $i); }
             }
 
             // Insert spaces if needed
-            @if length($upper-indices) > 0 {
+            @if list.length($upper-indices) > 0 {
                 $offset: 0;
                 @each $index in $upper-indices {
                     $index: $index + $offset; // since each iteration increases length +1
-                    $style: str-insert($style, ' ', $index); // insert the space
+                    $style: string.insert($style, ' ', $index); // insert the space
                     $offset: $offset + 1;
                 }
             }
