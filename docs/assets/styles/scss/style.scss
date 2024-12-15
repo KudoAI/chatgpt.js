@@ -489,8 +489,9 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     /* Contributors */
     #contributors + p { /* shrink contributors description font, remove padding */
         font-size: 1.5rem !important ; padding: 0 5px !important }
-    #contributors ~ p { /* remove padding from avatars container */
-        padding: 0 !important }
+    #contributors + p + div { /* avatars container */
+        padding: 0 !important ; /* remove side-padding */
+        margin-bottom: 197px } /* shove footer away */
     #contributors ~ * img { width: 69px !important } /* resize contributor avatars */
 
     /* Footer */
