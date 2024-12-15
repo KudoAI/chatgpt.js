@@ -359,13 +359,13 @@ a[href*='mailto:showcase'] { word-break: keep-all }
 
 /* Contributors */
 #contributors, #contributors ~ p { text-align: center !important } /* center contributors section */
-#contributors ~ p { padding: 0 15vw } /* narrow container of avatars */
 #contributors + p { /* contributors description */
     font-family: 'IBM Plex Mono', 'Roboto Mono', Monaco, courier, monospace !important ;
     font-size: 1.7rem !important ; padding: 0 12vw }
+#contributors + p + div { padding: 0 7vw } /* narrow container of avatars */
 #contributors ~ * img { /* avatars */
     border-radius: 50% ; /* add circular mask */
-    width: 4.5vw } /* resize */
+    width: 4.2vw } /* resize */
 #contributors ~ br { display: none } /* hide trailing line break */
 
 /* Footer */
