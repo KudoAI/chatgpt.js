@@ -18,13 +18,13 @@ const iniStarZvelocity = window.starVelocity.z,
 
 // Define OBSERVERS
 
-const mdLoaded = new Promise((resolve) => {
+const mdLoaded = new Promise(resolve => {
     const mdObserver = new MutationObserver((mutationsList, observer) => {
         if (document.querySelector('#shields')) { observer.disconnect() ; resolve() }})
     mdObserver.observe(document.body, { childList: true, subtree: true })
 })
 
-const iObserver = new IntersectionObserver(entries => { entries.forEach(entry => {
+const iObserver = new IntersectionObserver(entries => entries.forEach(entry => {
 
     // Set visibility FLAG
     const key = entry.target.id || entry.target.className
@@ -74,7 +74,7 @@ const iObserver = new IntersectionObserver(entries => { entries.forEach(entry =>
         else { entry.target.innerHTML = '' ; clearTimeout(typeText.timeoutID) }
     }
 
-})})
+}))
 
 const onLoadObserver = new MutationObserver(() => {
 
@@ -92,9 +92,9 @@ const onLoadObserver = new MutationObserver(() => {
 
         // Populate [taglineWords] for iObserver's scrambleText() + randomizeCase()
         const taglineSpans = Array.from(document.querySelectorAll('span[id^="tagline"]'))
-        taglineSpans.map(span => { taglineWords.push(
-            /pre|post/.exec(span.id) ? span.textContent : span.textContent.split('|')) })
-        taglineSpans.forEach(span => { span.textContent = '' }) // clear them out
+        taglineSpans.map(span => taglineWords.push(
+            /pre|post/.exec(span.id) ? span.textContent : span.textContent.split('|')))
+        taglineSpans.forEach(span => span.textContent = '') // clear them out
 
         // Observe COVER for visibility change tagline hacks
         iObserver.observe(document.querySelector('.cover-main'))
@@ -177,44 +177,43 @@ const onLoadObserver = new MutationObserver(() => {
                 '.cover-main img, .cover-main a,' // cover elements
                   + 'h2, h3, p, pre, main li,' // general elements
                   + '#copyright-footer')) // footer elements
-            fadeUpElements.forEach((element) => { element.classList.add('content-fadeup') })
+            fadeUpElements.forEach(element => element.classList.add('content-fadeup'))
             fadeUpElements.push( // language selector
                 document.querySelector('#language-menu'))
             fadeUpElements[fadeUpElements.length - 1].classList.add('menu-fadeup')
             fadeRightElements.push(...document.querySelectorAll( // left-side showcase apps
                 `#showcase ~ h3:nth-of-type(odd):not(#contributors ~ *),
                  #showcase ~ h3 + p:nth-of-type(odd):not(#contributors ~ *`))
-            fadeRightElements.forEach((element) => { element.classList.add('content-faderight') })
+            fadeRightElements.forEach(element => element.classList.add('content-faderight'))
             fadeLeftElements.push(...document.querySelectorAll( // right-side showcase apps
                 `#showcase ~ h3:nth-of-type(even):not(#contributors ~ *),
                  #showcase ~ h3 + p:nth-of-type(even):not(#contributors ~ *`))
-            fadeLeftElements.forEach((element) => { element.classList.add('content-fadeleft') })
+            fadeLeftElements.forEach(element => element.classList.add('content-fadeleft'))
             const fadeElements = [...fadeUpElements, ...fadeRightElements, ...fadeLeftElements]
 
             // ...then observe for visibility change to update element/sidebar states
             const sideNavItems = [...document.querySelectorAll('.sidebar-nav li')]
-            const fadeObserver = new IntersectionObserver(
-                (entries) => { entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible')
+            const fadeObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible')
 
-                        // Update sidebar w/ active class for headings
-                        if (entry.target.tagName.startsWith('H')) {
+                    // Update sidebar w/ active class for headings
+                    if (entry.target.tagName.startsWith('H')) {
 
-                            // Find the nav item that matches intersecting heading
-                            const headingText = entry.target.querySelector('a').textContent,
-                                  activeNavItem = (document.querySelector(
-                                      `a[title="${ headingText }"]`) || {}).parentElement
+                        // Find the nav item that matches intersecting heading
+                        const headingText = entry.target.querySelector('a').textContent,
+                                activeNavItem = (document.querySelector(
+                                    `a[title="${ headingText }"]`) || {}).parentElement
 
-                            // Add `nav-active` class to matched nav item
-                            if (activeNavItem) {
-                                sideNavItems.forEach(item => item.classList.remove('nav-active'))
-                                activeNavItem.classList.add('nav-active')
-                            }
+                        // Add `nav-active` class to matched nav item
+                        if (activeNavItem) {
+                            sideNavItems.forEach(item => item.classList.remove('nav-active'))
+                            activeNavItem.classList.add('nav-active')
                         }
-                    } else entry.target.classList.remove('visible')
-                })}, { root: null, threshold: 0.02 })
-            fadeElements.forEach((element) => { fadeObserver.observe(element) })
+                    }
+                } else entry.target.classList.remove('visible')
+            }), { root: null, threshold: 0.02 })
+            fadeElements.forEach(element => fadeObserver.observe(element))
 
             // Change stars shield link to repo
             const starsShieldLink = document.querySelector('a[href$="stargazers"]'),
@@ -552,7 +551,7 @@ class Scramble {
     setText(newText) {
         const oldText = this.el.innerText,
               length = Math.max(oldText.length, newText.length),
-              promise = new Promise((resolve) => this.resolve = resolve)
+              promise = new Promise(resolve => this.resolve = resolve)
         this.queue = []
         for (let i = 0 ; i < length ; i++) {
             const from = oldText[i] || '',

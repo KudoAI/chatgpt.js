@@ -21,10 +21,10 @@ updateCanvasSize() ; animateStars()
 
 // Add listeners
 window.onresize = updateCanvasSize
-document.onmousemove = (event) => {
+document.onmousemove = event => {
     touchInput = false ; movePointer(event.clientX, event.clientY)
 }
-document.ontouchmove = (event) => {
+document.ontouchmove = event => {
     touchInput = true
     movePointer(event.touches[0].clientX, event.touches[0].clientY)
     event.preventDefault()
@@ -37,7 +37,7 @@ document.onmouseleave = () => { pointerX = null ; pointerY = null }
 function updateCanvasSize() {
     width = window.innerWidth * scale; height = window.innerHeight * scale
     canvas.width = width ; canvas.height = height
-    stars.forEach((star) => { // position it
+    stars.forEach(star => { // position it
         star.x = Math.random() * width ; star.y = Math.random() * height })
 }
 
@@ -50,7 +50,7 @@ function animateStars() {
     window.starVelocity.tx *= 0.86 ; window.starVelocity.ty *= 0.86 // proportional to momentum
     window.starVelocity.x += ( window.starVelocity.tx - window.starVelocity.x ) * 0.8
     window.starVelocity.y += ( window.starVelocity.ty - window.starVelocity.y ) * 0.8
-    stars.forEach((star) => {
+    stars.forEach(star => {
         star.x += window.starVelocity.x * star.z
         star.y += window.starVelocity.y * star.z
         star.x += (star.x - width/2) * window.starVelocity.z * star.z
@@ -78,7 +78,7 @@ function animateStars() {
     });
 
     // Render stars
-    stars.forEach((star) => {
+    stars.forEach(star => {
         context.beginPath()
         context.lineCap = 'round'
         context.lineWidth = starSize * star.z * scale
