@@ -366,12 +366,9 @@ a[href*='mailto:showcase'] { word-break: keep-all }
 #contributors ~ * img { /* avatars */
     border-radius: 50% ; /* add circular mask */
     width: 4.5vw } /* resize */
-a[href='https://chat.openai.com'] img { /* outline ChatGPT's avatar */
-    border: 2px solid #aeecff ; border-radius: 50% }
 #contributors ~ br { display: none } /* hide trailing line break */
 
 /* Footer */
-#star-history { display: none } /* hide Star History section */
 #footer { text-align: center ; margin: -119px 0 -105px } /* general position */
 #mc_embed_signup h2 { /* 1st CTA */
     margin: 15px 0 3.5rem !important ;
@@ -392,16 +389,6 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 #copyright-footer span { /* copyright notice */
     position: relative ; bottom: 2px }
 #copyright-footer a { color: white !important ; font-weight: 400 ; text-decoration-line: underline }
-
-/* BUTTONS */
-
-.back-to-top {
-    margin: 0 ; padding: 0 ; border: none ; cursor: pointer ;
-    outline: none ; width: fit-content ; height: fit-content ;
-    background: none ; position: fixed ; bottom: 5% ;
-    right: 3% ; display: none ; opacity: 0 ;
-    @each $property, $value in $no-touch-select { #{$property}: #{$value}; }}    
-.back-to-top svg > path { fill: #fff; }
 
 /* MOBILE tweaks */
 
