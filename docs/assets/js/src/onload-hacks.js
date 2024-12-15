@@ -161,6 +161,16 @@ const onLoadObserver = new MutationObserver(() => {
                 parent.replaceChild(document.createRange().createContextualFragment(content), blockquote);
             });
 
+            // Convert weserv.nl img srcs in contributor avatars into renderable ones
+            document.querySelectorAll('img[src], source[srcset]').forEach(elem => {
+                const srcAttrType = elem.hasAttribute('src') ? 'src' : 'srcset',
+                      srcAttrVal = elem[srcAttrType]
+                if (srcAttrVal.includes('weserv.nl')) {
+                    elem[srcAttrType] = /[^=]+\?url=([^&?]+)[&?][^&?]+/.exec(srcAttrVal)?.[1] || srcAttrVal
+                    //elem.parentNode.style.borderRadius = '50%'
+                }
+            })
+
             // Add FADE classes to elements
             const fadeUpElements = [], fadeRightElements = [], fadeLeftElements = [];
             fadeUpElements.push(...document.querySelectorAll(
