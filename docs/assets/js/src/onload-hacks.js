@@ -176,7 +176,7 @@ const onLoadObserver = new MutationObserver(() => {
             fadeUpElements.push(...document.querySelectorAll(
                 '.cover-main img, .cover-main a,' // cover elements
                   + 'h2, h3, p, pre, main li,' // general elements
-                  + 'div#partners-collage, #copyright-footer')) // footer elements
+                  + '#copyright-footer')) // footer elements
             fadeUpElements.forEach((element) => { element.classList.add('content-fadeup') })
             fadeUpElements.push( // language selector
                 document.querySelector('#language-menu'))
@@ -308,12 +308,11 @@ const onLoadObserver = new MutationObserver(() => {
             })
 
             // Append EMAIL SIGNUP footer
-            const partnersCollage = document.getElementById('partners-collage'), // to insert after
-                  emailFooter = document.createElement('div')
+            const emailFooter = document.createElement('div')
             fetch('assets/html/footer.html')
                 .then(response => response.text()).then(html => {
                     emailFooter.innerHTML = html
-                    partnersCollage.insertAdjacentElement('afterend', emailFooter)
+                    document.querySelector('#contributors ~ div').insertAdjacentElement('afterend', emailFooter)
                 })
 
             // Remove readme's BACK-TO-TOP link
