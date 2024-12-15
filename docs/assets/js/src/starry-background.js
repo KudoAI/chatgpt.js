@@ -21,16 +21,10 @@ updateCanvasSize() ; animateStars()
 
 // Add listeners
 window.onresize = updateCanvasSize
-document.onmousemove = event => {
-    touchInput = false ; movePointer(event.clientX, event.clientY)
-}
+document.onmousemove = event => { touchInput = false ; movePointer(event.clientX, event.clientY) }
 document.ontouchmove = event => {
-    touchInput = true
-    movePointer(event.touches[0].clientX, event.touches[0].clientY)
-    event.preventDefault()
-}
-document.ontouchend = () => { pointerX = null ; pointerY = null }
-document.onmouseleave = () => { pointerX = null ; pointerY = null }
+    touchInput = true ; movePointer(event.touches[0].clientX, event.touches[0].clientY) ; event.preventDefault() }
+document.ontouchend = document.onmouseleave = () => { pointerX = null ; pointerY = null }
 
 // Define FUNCTIONS
 
