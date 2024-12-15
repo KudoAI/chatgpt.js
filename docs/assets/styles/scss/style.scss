@@ -363,7 +363,7 @@ a[href*='mailto:showcase'] { word-break: keep-all }
 #contributors + p { /* contributors description */
     font-family: 'IBM Plex Mono', 'Roboto Mono', Monaco, courier, monospace !important ;
     font-size: 1.7rem !important ; padding: 0 12vw }
-#contributors ~ * img:not(#partners ~ * *) { /* avatars */
+#contributors ~ * img { /* avatars */
     border-radius: 50% ; /* add circular mask */
     width: 4.5vw } /* resize */
 a[href='https://chat.openai.com'] img { /* outline ChatGPT's avatar */
@@ -371,8 +371,6 @@ a[href='https://chat.openai.com'] img { /* outline ChatGPT's avatar */
 #contributors ~ br { display: none } /* hide trailing line break */
 
 /* Footer */
-#partners + p { font-size: 2rem !important ; padding: 0 } /* Partners sentence */
-#partners-collage img { margin-top: 17px ; width: 100% ; opacity: .6 }
 #star-history { display: none } /* hide Star History section */
 #footer { text-align: center ; margin: -96px 0 -105px } /* general position */
 #mc_embed_signup h2 { /* 1st CTA */
