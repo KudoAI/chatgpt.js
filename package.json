@@ -30,6 +30,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "preview:docs": "node utils/previewDocs",
     "build:js": "bash utils/build.sh",
+    "build:js-docs": "minify-js docs --no-mangle",
     "build:docs-js": "minify-js docs --no-mangle",
     "build:css": "scss-to-css",
     "bump:patch": "bash utils/bump.sh patch",
