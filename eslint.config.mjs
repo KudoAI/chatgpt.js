@@ -1,9 +1,10 @@
 import js from '@eslint/js'
 import globals from 'globals'
-import stylisticJS from '@stylistic/eslint-plugin-js'
+import importPlugin from 'eslint-plugin-import'
 import json from '@eslint/json'
 import markdown from '@eslint/markdown'
 import * as regexp from 'eslint-plugin-regexp'
+import stylisticJS from '@stylistic/eslint-plugin-js'
 import yml from 'eslint-plugin-yml'
 
 export default [
@@ -17,9 +18,11 @@ export default [
                 config: 'writable', dom: 'readonly', icons: 'writable', modals: 'writable', settings: 'writable'
             }
         },
-        plugins: { regexp, 'js-styles': stylisticJS },
+        plugins: { 'import': importPlugin, 'js-styles': stylisticJS, regexp },
         rules: {
-            ...js.configs.recommended.rules, ...regexp.configs['flat/recommended'].rules,
+            ...js.configs.recommended.rules,
+            ...importPlugin.flatConfigs.recommended.rules,
+            ...regexp.configs['flat/recommended'].rules,
             'indent': 'off', 'no-unexpected-multiline': 'off', 'key-spacing': 'off', // allow whitespace anywhere
             'js-styles/no-trailing-spaces': 'error', // ...except at ends of lines
             'js-styles/max-len': ['error', { 'code': 120, // limit lines to 120 chars except if containing...
