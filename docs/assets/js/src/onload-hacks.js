@@ -309,7 +309,8 @@ const onLoadObserver = new MutationObserver(() => {
             fetch('assets/html/footer.html')
                 .then(resp => resp.text()).then(html => {
                     emailFooter.innerHTML = html
-                    document.querySelector('#contributors ~ div').insertAdjacentElement('afterend', emailFooter)
+                    document.querySelector('a[href*="microsoft.com"]').parentNode
+                        .insertAdjacentElement('afterend', emailFooter)
                 })
 
             // Remove readme's BACK-TO-TOP link

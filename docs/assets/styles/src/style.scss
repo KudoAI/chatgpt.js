@@ -362,7 +362,7 @@ a[href*='mailto:showcase'] { word-break: keep-all }
 #contributors + p { /* contributors description */
     font-family: 'IBM Plex Mono', 'Roboto Mono', Monaco, courier, monospace !important ;
     font-size: 1.7rem !important ; padding: 0 12vw }
-#contributors + p + div { padding: 0 7vw } /* narrow container of avatars */
+#contributors + p + div { padding: 0 7vw 43px } /* pad container of avatars */
 #contributors + p + div img { /* avatars */
     border-radius: 50% ; /* add circular mask */
     width: 4.2vw } /* resize */
