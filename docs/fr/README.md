@@ -344,6 +344,25 @@ Cette bibliothèque existe grâce au code, aux traductions, aux problèmes et au
 
 <div align="center">
 
+<br>
+
+**chatgpt.js** est financé en partie par:
+
+<a href="https://microsoft.com">
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/partners/microsoft/white.png?963f917">
+        <img width=333 src="https://media.chatgptjs.org/images/logos/partners/microsoft/colored.png?963f917">
+    </picture>
+</a>
+
+</div>
+
+<br>
+
+<img height=8px width="100%" src="https://media.chatgptjs.org/images/separators/gradient-aqua.png?78210a7">
+
+<div align="center">
+
 **[Communiqués](https://github.com/KudoAI/chatgpt.js/releases)** /
 [Guide de l'utilisateur](https://github.com/KudoAI/chatgpt.js/blob/v3.3.5/docs/USERGUIDE.md) /
 [Discuter](https://github.com/KudoAI/chatgpt.js/discussions) /

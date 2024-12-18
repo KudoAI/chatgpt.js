@@ -343,6 +343,25 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 <div align="center">
 
+<br>
+
+**chatgpt.js** 的部分资金来自：
+
+<a href="https://microsoft.com">
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/partners/microsoft/white.png?963f917">
+        <img width=333 src="https://media.chatgptjs.org/images/logos/partners/microsoft/colored.png?963f917">
+    </picture>
+</a>
+
+</div>
+
+<br>
+
+<img height=8px width="100%" src="https://media.chatgptjs.org/images/separators/gradient-aqua.png?78210a7">
+
+<div align="center">
+
 **[发布](https://github.com/KudoAI/chatgpt.js/releases)** /
 [用户指南](https://github.com/KudoAI/chatgpt.js/blob/v3.3.5/docs/USERGUIDE.md) / 
 [讨论](https://github.com/KudoAI/chatgpt.js/discussions) / 

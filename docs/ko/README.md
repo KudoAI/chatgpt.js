@@ -348,6 +348,25 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href=
 
 <div align="center">
 
+<br>
+
+**chatgpt.js**는 다음으로부터 일부 자금을 지원받았습니다:
+
+<a href="https://microsoft.com">
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/partners/microsoft/white.png?963f917">
+        <img width=333 src="https://media.chatgptjs.org/images/logos/partners/microsoft/colored.png?963f917">
+    </picture>
+</a>
+
+</div>
+
+<br>
+
+<img height=8px width="100%" src="https://media.chatgptjs.org/images/separators/gradient-aqua.png?78210a7">
+
+<div align="center">
+
 **[릴리스](https://github.com/KudoAI/chatgpt.js/releases)** /
 [사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v3.3.5/docs/USERGUIDE.md) /
 [토론](https://github.com/KudoAI/chatgpt.js/discussions) /
