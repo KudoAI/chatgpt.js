@@ -165,10 +165,8 @@ const onLoadObserver = new MutationObserver(() => {
             document.querySelectorAll('img[src], source[srcset]').forEach(elem => {
                 const srcAttrType = elem.hasAttribute('src') ? 'src' : 'srcset',
                       srcAttrVal = elem[srcAttrType]
-                if (srcAttrVal.includes('weserv.nl')) {
+                if (srcAttrVal.includes('weserv.nl'))
                     elem[srcAttrType] = /[^=]+\?url=([^&?]+)[&?][^&?]+/.exec(srcAttrVal)?.[1] || srcAttrVal
-                    //elem.parentNode.style.borderRadius = '50%'
-                }
             })
 
             // Add FADE classes to elements
