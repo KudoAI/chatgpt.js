@@ -28,7 +28,7 @@
     "lint:fix": "eslint . --fix --cache",
     "lint:fix-all": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preview:docs": "node utils/previewDocs",
+    "preview:docs": "node utils/preview-docs",
     "build:js": "bash utils/build.sh",
     "build:js-docs": "minify-js docs --no-mangle",
     "build:docs-js": "minify-js docs --no-mangle",
