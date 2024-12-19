@@ -354,7 +354,7 @@ This library exists thanks to code, translations, issues & ideas from the follow
 <a href="https://microsoft.com">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/partners/microsoft/white.png?963f917">
-        <img width=333 src="https://media.chatgptjs.org/images/logos/partners/microsoft/colored.png?963f917">
+        <img width=300 src="https://media.chatgptjs.org/images/logos/partners/microsoft/colored.png?963f917">
     </picture>
 </a>
 

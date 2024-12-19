@@ -346,7 +346,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 <a href="https://microsoft.com">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/partners/microsoft/white.png?963f917">
-        <img width=333 src="https://media.chatgptjs.org/images/logos/partners/microsoft/colored.png?963f917">
+        <img width=300 src="https://media.chatgptjs.org/images/logos/partners/microsoft/colored.png?963f917">
     </picture>
 </a>
 
