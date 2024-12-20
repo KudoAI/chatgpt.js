@@ -1,4 +1,4 @@
-name: Publish to npm on new release
+name: Publish latest release to npm
 
 on: workflow_dispatch
 
