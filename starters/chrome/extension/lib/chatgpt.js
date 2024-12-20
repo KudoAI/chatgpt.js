@@ -70,23 +70,26 @@ const chatgpt = {
 
         // Define event handlers
         const handlers = {
+
             dismiss: {
                 click(event) {
                     if (event.target == event.currentTarget || event.target.closest('[class*="-close-btn]'))
                         dismissAlert()
                 },
+
                 key(event) {
-                    if (/^(?: |Space|Enter|Return|Esc)/.test(event.key) || [32, 13, 27].includes(event.keyCode)) {
-                        for (const alertId of alertQueue) { // look to handle only if triggering alert is active
-                            const alert = document.getElementById(alertId)
-                            if (alert && alert.style.display !== 'none') { // active alert found
-                                if (event.key.includes('Esc') || event.keyCode == 27) // esc pressed
-                                    dismissAlert() // dismiss alert & do nothing
-                                else if (/^(?: |Space|Enter|Return)/.test(event.key) || [32, 13].includes(event.keyCode)) {
-                                    const mainButton = alert.querySelector('.modal-buttons').lastChild // look for main button
-                                    if (mainButton) { mainButton.click() ; event.preventDefault() } // click if found
-                                } return
-                }}}}
+                    if (!/^(?: |Space|Enter|Return|Esc)/.test(event.key) || ![32, 13, 27].includes(event.keyCode))
+                        return
+                    for (const alertId of alertQueue) { // look to handle only if triggering alert is active
+                        const alert = document.getElementById(alertId)
+                        if (!alert || alert.style.display == 'none') return
+                        if (event.key.startsWith('Esc') || event.keyCode == 27) dismissAlert() // and do nothing
+                        else { // Space/Enter pressed
+                            const mainButton = alert.querySelector('.modal-buttons').lastChild // look for main button
+                            if (mainButton) { mainButton.click() ; event.preventDefault() } // click if found
+                        }
+                    }
+                }
             },
 
             drag: {
@@ -101,13 +104,14 @@ const chatgpt = {
                     handlers.drag.offsetX = event.clientX - draggableElemRect.left +21
                     handlers.drag.offsetY = event.clientY - draggableElemRect.top +12
                 },
+
                 mousemove(event) { // drag modal
-                    if (chatgpt.draggableElem) {
-                        const newX = event.clientX - handlers.drag.offsetX,
-                              newY = event.clientY - handlers.drag.offsetY
-                        Object.assign(chatgpt.draggableElem.style, { left: `${newX}px`, top: `${newY}px` })
-                    }
+                    if (!chatgpt.draggableElem) return
+                    const newX = event.clientX - handlers.drag.offsetX,
+                          newY = event.clientY - handlers.drag.offsetY
+                    Object.assign(chatgpt.draggableElem.style, { left: `${newX}px`, top: `${newY}px` })
                 },
+
                 mouseup() { // remove listeners, reset chatgpt.draggableElem
                     chatgpt.draggableElem.style.cursor = 'inherit';
                     ['mousemove', 'mouseup'].forEach(event =>
