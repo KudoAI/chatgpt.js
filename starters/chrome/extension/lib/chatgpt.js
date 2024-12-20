@@ -64,8 +64,51 @@ const chatgpt = {
     // [ title/msg = strings, btns = [named functions], checkbox = named function, width (px) = int ] = optional
     // * Spaces are inserted into button labels by parsing function names in camel/kebab/snake case
 
+        // Init env context
         const scheme = chatgpt.isDarkMode() ? 'dark' : 'light',
               isMobile = chatgpt.browser.isMobile();
+
+        // Define event handlers
+        const clickHandler = event => { // explicitly defined to support removal post-dismissal
+            if (event.target == event.currentTarget || event.target.closest('[class*="-close-btn]')) dismissAlert() }
+        const keyHandler = event => { // to dismiss active alert
+            if (/^(?: |Space|Enter|Return|Esc)/.test(event.key) || [32, 13, 27].includes(event.keyCode)) {
+                for (const alertId of alertQueue) { // look to handle only if triggering alert is active
+                    const alert = document.getElementById(alertId)
+                    if (alert && alert.style.display !== 'none') { // active alert found
+                        if (event.key.includes('Esc') || event.keyCode == 27) // esc pressed
+                            dismissAlert() // dismiss alert & do nothing
+                        else if (/^(?: |Space|Enter|Return)/.test(event.key) || [32, 13].includes(event.keyCode)) {
+                            const mainButton = alert.querySelector('.modal-buttons').lastChild // look for main button
+                            if (mainButton) { mainButton.click() ; event.preventDefault() } // click if found
+                        } return
+        }}}}
+        const dragHandlers = {
+            mousedown(event) { // find modal, attach listeners, init XY offsets
+                if (event.button != 0) return // prevent non-left-click drag
+                if (getComputedStyle(event.target).cursor == 'pointer') return // prevent drag on interactive elems
+                chatgpt.draggableElem = event.currentTarget
+                chatgpt.draggableElem.style.cursor = 'grabbing'
+                event.preventDefault(); // prevent sub-elems like icons being draggable
+                ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, dragHandlers[event]))
+                const draggableElemRect = chatgpt.draggableElem.getBoundingClientRect()
+                dragHandlers.offsetX = event.clientX - draggableElemRect.left +21
+                dragHandlers.offsetY = event.clientY - draggableElemRect.top +12
+            },
+            mousemove(event) { // drag modal
+                if (chatgpt.draggableElem) {
+                    const newX = event.clientX - dragHandlers.offsetX,
+                          newY = event.clientY - dragHandlers.offsetY
+                    Object.assign(chatgpt.draggableElem.style, { left: `${newX}px`, top: `${newY}px` })
+                }
+            },
+            mouseup() { // remove listeners, reset chatgpt.draggableElem
+                chatgpt.draggableElem.style.cursor = 'inherit';
+                ['mousemove', 'mouseup'].forEach(event =>
+                    document.removeEventListener(event, dragHandlers[event]))
+                chatgpt.draggableElem = null
+            }
+        }
 
         // Create modal parent/children elements
         const modalContainer = document.createElement('div');
@@ -96,6 +139,7 @@ const chatgpt = {
 
                 // Alert styles
                 + '.chatgpt-modal > div {'
+                    + 'position: absolute ;' // to be click-draggable
                     + 'opacity: 0 ;' // to fade-in
                     + `border: 1px solid ${ scheme == 'dark' ? 'white' : '#b5b5b5' };`
                     + `color: ${ scheme == 'dark' ? 'white' : 'black' };`
@@ -231,26 +275,11 @@ const chatgpt = {
             }, 100) // delay for transition fx
         }
 
-        // Define click/key handlers
-        const clickHandler = event => { // explicitly defined to support removal post-dismissal
-            if (event.target == event.currentTarget || event.target.closest('[class*="-close-btn]')) dismissAlert(); };
-        const keyHandler = event => { // to dismiss active alert
-            if (/^(?: |Space|Enter|Return|Esc)/.test(event.key) || [32, 13, 27].includes(event.keyCode)) {
-                for (const alertId of alertQueue) { // look to handle only if triggering alert is active
-                    const alert = document.getElementById(alertId);
-                    if (alert && alert.style.display !== 'none') { // active alert found
-                        if (event.key.includes('Esc') || event.keyCode == 27) // esc pressed
-                            dismissAlert(); // dismiss alert & do nothing
-                        else if ([' ', 'Spacebar', 'Enter', 'Return'].includes(event.key) || [32, 13].includes(event.keyCode)) { // space/enter pressed
-                            const mainButton = alert.querySelector('.modal-buttons').lastChild; // look for main button
-                            if (mainButton) { mainButton.click(); event.preventDefault(); } // click if found
-                        } return;
-        }}}};
-
-        // Add listeners to dismiss alert
+        // Add listeners
         const dismissElems = [modalContainer, closeBtn, closeSVG, dismissBtn];
         dismissElems.forEach(elem => elem.onclick = clickHandler);
         document.addEventListener('keydown', keyHandler);
+        modal.onmousedown = dragHandlers.mousedown // enable click-dragging
 
         // Define alert dismisser
         const dismissAlert = () => {
