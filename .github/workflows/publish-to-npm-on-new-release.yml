@@ -1,8 +1,6 @@
 name: Publish to npm on new release
 
-on:
-  release:
-    types: [published]
+on: workflow_dispatch
 
 jobs:
   build:
