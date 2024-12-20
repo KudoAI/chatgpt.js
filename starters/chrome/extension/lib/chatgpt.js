@@ -231,9 +231,7 @@ const chatgpt = {
         const clickHandler = event => { // explicitly defined to support removal post-dismissal
             if (event.target == event.currentTarget || event.target instanceof SVGPathElement) dismissAlert(); };
         const keyHandler = event => { // to dismiss active alert
-            const dismissKeys = [' ', 'Spacebar', 'Enter', 'Return', 'Escape', 'Esc'],
-                  dismissKeyCodes = [32, 13, 27];
-            if (dismissKeys.includes(event.key) || dismissKeyCodes.includes(event.keyCode)) {
+            if (/^(?: |Space|Enter|Return|Esc)/.test(event.key) || [32, 13, 27].includes(event.keyCode)) {
                 for (const alertId of alertQueue) { // look to handle only if triggering alert is active
                     const alert = document.getElementById(alertId);
                     if (alert && alert.style.display !== 'none') { // active alert found
