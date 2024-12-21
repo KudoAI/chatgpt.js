@@ -55,7 +55,7 @@
 
     // Create CHILD menu entries on chatgpt.com
     if (env.site == 'chatgpt') {
-        await settings.load(settings.availKeys)
+        await settings.load(Object.keys(settings.controls))
 
         // Create/insert child section
         const togglesDiv = dom.create.elem('div', { class: 'menu' })
