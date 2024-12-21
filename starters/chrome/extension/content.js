@@ -8,7 +8,7 @@
         await import(chrome.runtime.getURL(resource))
 
     // Init ENV context
-    const env = { scheme: getScheme() }}
+    const env = { scheme: getScheme() }
 
     // Import APP data
     const { app } = await chrome.storage.sync.get('app')
