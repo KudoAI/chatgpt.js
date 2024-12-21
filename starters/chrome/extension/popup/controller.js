@@ -93,7 +93,8 @@
                     event.stopImmediatePropagation()
                 menuInput.onchange = () => {
                     settings.save(key, !config[key]) ; sync.configToUI({ updatedKey: key })
-                    notify(`${settings.controls[key].label} ${ /disabled|hidden/i.test(key) != config[key] ? 'ON' : 'OFF' }`)
+                    notify(`${settings.controls[key].label} ${
+                        /disabled|hidden/i.test(key) != config[key] ? 'ON' : 'OFF' }`)
                 }
             } else if (settings.controls[key].type == 'prompt') {
                 // custom logic for each prompt based on key name
@@ -111,9 +112,10 @@
     const cjsDiv = dom.create.elem('div', { class: 'chatgpt-js' })
     const cjsLogo = dom.create.elem('img', {
         title: 'Powered by chatgpt.js',
-        src: `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png?a439ab6` })
+        src: `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png?b2a1975` })
     cjsLogo.onmouseover = cjsLogo.onmouseout = event => cjsLogo.src = `${
-        app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js${ event.type == 'mouseover' ? '' : '-faded' }.png?a439ab6`
+        app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js${
+            event.type == 'mouseover' ? '' : '-faded' }.png?b2a1975`
     cjsLogo.onclick = () => chrome.tabs.create({ url: app.urls.chatgptJS })
     cjsDiv.append(cjsLogo) ; footer.append(cjsDiv)
 
