@@ -9,7 +9,7 @@ window.modals = {
             for (const name in dependencies) this[name] = dependencies[name] }
     },
 
-    alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+    alert(title = '', msg = '', btns = '', checkbox = '', width = '') { // generic one from chatgpt.alert()
         const alertID = chatgpt.alert(title, msg, btns, checkbox, width),
               alert = document.getElementById(alertID).firstChild
         this.init(alert) // add class/starry bg
@@ -17,10 +17,8 @@ window.modals = {
     },
 
     open(modalType) {
-        this.stack.unshift(modalType) // add to stack
         const modal = this[modalType]() // show modal
-        modal.classList.add('chatgpt-infinity-modal')
-        modal.onmousedown = this.dragHandlers.mousedown
+        this.stack.unshift(modalType) // add to stack
         this.init(alert) // add class/starry bg
         this.observeRemoval(modal, modalType) // to maintain stack for proper nav
     },
