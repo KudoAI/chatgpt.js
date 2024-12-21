@@ -46,7 +46,7 @@
 
         // Append styled state word
         if (foundState) {
-            const styledStateSpan = document.createElement('span')
+            const styledStateSpan = dom.create.elem('span')
             styledStateSpan.style.cssText = `color: ${
                 foundState == 'OFF' ? '#ef4848 ; text-shadow: rgba(255, 169, 225, 0.44) 2px 1px 5px'
                                     : '#5cef48 ; text-shadow: rgba(255, 250, 169, 0.38) 2px 1px 5px' }`

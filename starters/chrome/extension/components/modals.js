@@ -31,7 +31,7 @@ window.modals = {
 
     stylize() {
         if (!this.styles) {
-            this.styles = document.createElement('style') ; this.styles.id = `${this.class}-styles`
+            this.styles = dom.create.elem('style') ; this.styles.id = `${this.class}-styles`
             document.head.append(this.styles)
         }
         this.styles.innerText = (
