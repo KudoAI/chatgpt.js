@@ -4,8 +4,14 @@ window.modals = {
     stack: [], // of types of undismissed modals
 
     dependencies: {
-        import(dependencies) { // { app, siteAlert }
+        import(dependencies) { // { app }
             for (const name in dependencies) this[name] = dependencies[name] }
+    },
+
+    alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        const alertID = chatgpt.alert(title, msg, btns, checkbox, width),
+              alert = document.getElementById(alertID).firstChild
+        return alert
     },
 
     open(modalType) {
@@ -79,7 +85,7 @@ window.modals = {
         ]
 
         // Show modal
-        const aboutModal = this.dependencies.siteAlert(
+        const aboutModal = this.alert(
             `${this.dependencies.app.symbol} ${chrome.runtime.getManifest().name}`, // title
             `<span style="${headingStyle}"><b>🏷️ <i>Version</i></b>: </span>`
                 + `<span style="${pStyle}">${this.dependencies.app.version}</span>\n`
