@@ -1,4 +1,10 @@
 window.dom = {
+
+    dependencies: {
+        import(dependencies) { // { env) }
+            for (const name in dependencies) this[name] = dependencies[name] }
+    },
+
     create: {
         elem(elemType, attrs = {}) {
             const elem = document.createElement(elemType)
@@ -13,14 +19,15 @@ window.dom = {
         }
     },
 
-    fillStarryBG(targetNode) { // requires https://assets.aiwebextensions.com/styles/css/<black|white>-rising-stars.min.css
+    fillStarryBG(targetNode) { // requires https://assets.aiwebextensions.com/styles/rising-stars/css/<black|white>.min.css
+        if (targetNode.querySelector('[id*=stars]')) return
         const starsDivsContainer = document.createElement('div')
         starsDivsContainer.style.cssText = 'position: absolute ; top: 0 ; left: 0 ;' // hug targetNode's top-left corner
           + 'height: 100% ; width: 100% ; border-radius: 15px ; overflow: clip ;' // bound innards exactly by targetNode
           + 'z-index: -1'; // allow interactive elems to be clicked
         ['sm', 'med', 'lg'].forEach(starSize => {
             const starsDiv = document.createElement('div')
-            starsDiv.id = `${ chatgpt.isDarkMode() ? 'white' : 'black' }-stars-${starSize}`
+            starsDiv.id = `${ this.dependencies.env.scheme == 'dark' ? 'white' : 'black' }-stars-${starSize}`
             starsDivsContainer.append(starsDiv)
         })
         targetNode.prepend(starsDivsContainer)

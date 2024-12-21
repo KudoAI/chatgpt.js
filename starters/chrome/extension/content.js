@@ -14,6 +14,9 @@
 
     // Import APP data
     const { app } = await chrome.storage.sync.get('app')
+
+    // Export DEPENDENCIES to imported resources
+    dom.dependencies.import({ env }) // for env.scheme
     modals.dependencies.import({ app, env }) // for app data + env.scheme
 
     // Add CHROME MSG listener
