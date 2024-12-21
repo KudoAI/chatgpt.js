@@ -77,7 +77,7 @@ window.modals = {
         new MutationObserver(([mutation], obs) => {
             mutation.removedNodes.forEach(removedNode => { if (removedNode == modalBG) {
                 if (this.stack[0] == modalType) { // new modal not launched, implement nav back logic
-                    this.stack.shift() // remove this modal type from stack
+                    this.stack.shift() // remove this modal type from stack 1st
                     const prevModalType = this.stack[0]
                     if (prevModalType) { // open it
                         this.stack.shift() // remove type from stack since re-added on open
