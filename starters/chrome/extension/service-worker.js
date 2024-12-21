@@ -11,13 +11,13 @@ const app = {
 }
 chrome.storage.sync.set({ app }) // save to Chrome storage
 
-// Launch ChatGPT on install
+// Launch CHATGPT on install
 chrome.runtime.onInstalled.addListener(details => {
     if (details.reason == 'install')
         chrome.tabs.create({ url: 'https://chatgpt.com/' })
 })
 
-// Sync settings to activated tabs
+// Sync SETTINGS to activated tabs
 chrome.tabs.onActivated.addListener(activeInfo =>
     chrome.tabs.sendMessage(activeInfo.tabId, { action: 'syncConfigToUI' }))
 
