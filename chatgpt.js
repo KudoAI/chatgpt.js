@@ -314,7 +314,7 @@ const chatgpt = {
                     }, 500);
                 }
 
-            }, 135);
+            }, 155);
         };
 
         return modalContainer.id; // if assignment used
