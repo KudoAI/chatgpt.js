@@ -48,7 +48,7 @@ const iObserver = new IntersectionObserver(entries => entries.forEach(entry => {
 
             // Scramble entire tagline + add case randomization layer
             Array.from( // clear tagline spans to maintain grow effect
-                document.querySelectorAll('span[id^="tagline"]'))
+                document.querySelectorAll('span[id^=tagline]'))
                     .forEach(span => { span.textContent = '' })
             scrambleText([taglineWords[0]], document.querySelector('#tagline-pre-adj'))
             scrambleText(taglineWords[1], document.querySelector('#tagline-adj'), 750)
@@ -91,7 +91,7 @@ const onLoadObserver = new MutationObserver(() => {
         if (!isMobileDevice()) document.body.className = 'ready close'
 
         // Populate [taglineWords] for iObserver's scrambleText() + randomizeCase()
-        const taglineSpans = Array.from(document.querySelectorAll('span[id^="tagline"]'))
+        const taglineSpans = Array.from(document.querySelectorAll('span[id^=tagline]'))
         taglineSpans.map(span => taglineWords.push(
             /pre|post/.exec(span.id) ? span.textContent : span.textContent.split('|')))
         taglineSpans.forEach(span => span.textContent = '') // clear them out
@@ -214,7 +214,7 @@ const onLoadObserver = new MutationObserver(() => {
             fadeElements.forEach(elem => fadeObserver.observe(elem))
 
             // Change stars shield link to repo
-            const starsShieldLink = document.querySelector('a[href$="stargazers"]'),
+            const starsShieldLink = document.querySelector('a[href$=stargazers]'),
                   href = starsShieldLink.getAttribute('href')
             starsShieldLink.setAttribute('href', href.replace('/stargazers', ''))
 
@@ -224,7 +224,7 @@ const onLoadObserver = new MutationObserver(() => {
             triggerElements.push(document.querySelector('h3#-greasemonkey'))
             triggerElements.push(document.querySelector('h3#-chrome'))
             triggerElements.push( // 1st showcase tile
-                document.querySelector('img[src*="chatgpt-infinity"]'))
+                document.querySelector('img[src*=chatgpt-infinity]'))
             triggerElements.forEach(elem => {
                 const elementPos = elem.getBoundingClientRect().top
                 const vOffsetDivisor = ( // higher = lower pos
@@ -321,7 +321,7 @@ const onLoadObserver = new MutationObserver(() => {
 
                 // Target TRIGGERS
                 const parallaxTriggers = []
-                document.querySelectorAll('#main, h2:not([id="about"])').forEach(trigger => {
+                document.querySelectorAll('#main, h2:not([id=about])').forEach(trigger => {
                     const y = trigger.getBoundingClientRect().top - window.innerHeight / 1.2
                     const triggerElem = trigger.tagName === 'H2' ? trigger.parentElement : trigger
                     parallaxTriggers.push({ element: triggerElem, y })

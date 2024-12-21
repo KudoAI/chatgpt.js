@@ -193,12 +193,12 @@ const chatgpt = {
                 + '.chatgpt-modal .checkbox-group label {'
                     + 'font-size: .7rem ; margin: -.04rem 0 0px .3rem ;'
                     + `color: ${ scheme == 'dark' ? '#e1e1e1' : '#1e1e1e' }}`
-                + '.chatgpt-modal input[type="checkbox"] { transform: scale(0.7) ;'
+                + '.chatgpt-modal input[type=checkbox] { transform: scale(0.7) ;'
                     + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
-                + '.chatgpt-modal input[type="checkbox"]:checked {'
+                + '.chatgpt-modal input[type=checkbox]:checked {'
                     + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
                     + 'background-color: black ; position: inherit }'
-                + '.chatgpt-modal input[type="checkbox"]:focus { outline: none ; box-shadow: none }'
+                + '.chatgpt-modal input[type=checkbox]:focus { outline: none ; box-shadow: none }'
             );
         }
 
@@ -455,7 +455,7 @@ const chatgpt = {
         async isIdle(timeout = null) {
             const obsConfig = { childList: true, subtree: true },
                   selectors = { msgDiv: 'div[data-message-author-role]',
-                                replyDiv: 'div[data-message-author-role="assistant"]' };
+                                replyDiv: 'div[data-message-author-role=assistant]' };
 
             // Create promises
             const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null;
@@ -620,7 +620,7 @@ const chatgpt = {
             filename = `${ parsedHtml.querySelector('title').textContent || 'ChatGPT conversation' }.html`;
 
             // Convert relative CSS paths to absolute ones
-            const cssLinks = parsedHtml.querySelectorAll('link[rel="stylesheet"]');
+            const cssLinks = parsedHtml.querySelectorAll('link[rel=stylesheet]');
             cssLinks.forEach(link => {
                 const href = link.getAttribute('href');
                 if (href?.startsWith('/')) link.setAttribute('href', 'https://chat.openai.com' + href);
@@ -932,7 +932,7 @@ const chatgpt = {
     getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
 
     getNewChatButton() {
-        return document.querySelector('button[data-testid*="new-chat-button"], button:has([d^="M15.6729"])'); },
+        return document.querySelector('button[data-testid*=new-chat-button], button:has([d^="M15.6729"])'); },
 
     getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
     getRegenerateButton() { return document.querySelector('button:has([d^="M3.06957"])'); },
@@ -949,8 +949,8 @@ const chatgpt = {
     getResponseFromAPI(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet); },
     getResponseFromDOM(pos) { return chatgpt.response.getFromDOM(pos); },
     getScrollToBottomButton() { return document.querySelector('button:has([d^="M12 21C11.7348"])'); },
-    getSendButton() { return document.querySelector('[data-testid="send-button"]'); },
-    getStopButton() { return document.querySelector('button[data-testid="stop-button"]'); },
+    getSendButton() { return document.querySelector('[data-testid=send-button]'); },
+    getStopButton() { return document.querySelector('button[data-testid=stop-button]'); },
 
     getUserLanguage() {
         return navigator.languages[0] || navigator.language || navigator.browserLanguage ||
@@ -1211,7 +1211,7 @@ const chatgpt = {
             }
 
             const addElementsToMenu = () => {
-                const optionButtons = document.querySelectorAll('a[role="menuitem"]');
+                const optionButtons = document.querySelectorAll('a[role=menuitem]');
                 let cssClasses;
 
                 for (const navLink of optionButtons)
@@ -1230,7 +1230,7 @@ const chatgpt = {
             };
 
             this.elements.push(newElement);
-            const menuBtn = document.querySelector('nav button[id*="headless"]');
+            const menuBtn = document.querySelector('nav button[id*=headless]');
             if (!this.addedEvent) { // to prevent adding more than one event
                 menuBtn?.addEventListener('click', () => { setTimeout(addElementsToMenu, 25); });
                 this.addedEvent = true; }
@@ -1239,12 +1239,12 @@ const chatgpt = {
         },
 
         close() {
-            try { document.querySelector('nav [id*="menu-button"][aria-expanded="true"]').click(); }
+            try { document.querySelector('nav [id*=menu-button][aria-expanded=true]').click(); }
             catch (err) { console.error(err.message); }
         },
 
         open() {
-            try { document.querySelector('nav [id*="menu-button"][aria-expanded="false"]').click(); }
+            try { document.querySelector('nav [id*=menu-button][aria-expanded=false]').click(); }
             catch (err) { console.error(err.message); }
         }
     },
@@ -1518,7 +1518,7 @@ const chatgpt = {
         },
 
         getFromDOM(pos) {
-            const responseDivs = document.querySelectorAll('div[data-message-author-role="assistant"]'),
+            const responseDivs = document.querySelectorAll('div[data-message-author-role=assistant]'),
                   strPos = pos.toString().toLowerCase();
             let response = '';
             if (!responseDivs.length) return console.error('No conversation found!');
@@ -1825,7 +1825,7 @@ const chatgpt = {
         isOff() { return !this.isOn(); },
         isOn() {
             const sidebar = (() => {
-                return chatgpt.sidebar.exists() ? document.querySelector('[class*="sidebar"]') : null; })();
+                return chatgpt.sidebar.exists() ? document.querySelector('[class*=sidebar]') : null; })();
             if (!sidebar) { console.error('Sidebar element not found!'); return false; }
             else return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
@@ -1833,7 +1833,7 @@ const chatgpt = {
         },
 
         toggle() {
-            const sidebarToggle = document.querySelector('button[data-testid*="sidebar-button"]');
+            const sidebarToggle = document.querySelector('button[data-testid*=sidebar-button]');
             if (!sidebarToggle) console.error('Sidebar toggle not found!');
             sidebarToggle.click();
         },
@@ -1943,8 +1943,8 @@ const cjsBtnActions = ['click', 'get'], cjsTargetTypes = [ 'button', 'link', 'di
 for (const btnAction of cjsBtnActions) {
     chatgpt[btnAction + 'Button'] = function handleButton(buttonIdentifier) {
         const button = /^[.#]/.test(buttonIdentifier) ? document.querySelector(buttonIdentifier)
-            : /send/i.test(buttonIdentifier) ? document.querySelector('form button[class*="bottom"]')
-            : /scroll/i.test(buttonIdentifier) ? document.querySelector('button[class*="cursor"]')
+            : /send/i.test(buttonIdentifier) ? document.querySelector('form button[class*=bottom]')
+            : /scroll/i.test(buttonIdentifier) ? document.querySelector('button[class*=cursor]')
             : (function() { // get via text content
                 for (const button of document.querySelectorAll('button')) { // try buttons
                     if (button.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
