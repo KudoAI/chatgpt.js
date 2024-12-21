@@ -12,6 +12,7 @@ window.modals = {
     alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         const alertID = chatgpt.alert(title, msg, btns, checkbox, width),
               alert = document.getElementById(alertID).firstChild
+        this.init(alert) // add class/starry bg
         return alert
     },
 
