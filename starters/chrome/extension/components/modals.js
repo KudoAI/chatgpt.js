@@ -12,7 +12,6 @@ window.modals = {
     alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         const alertID = chatgpt.alert(title, msg, btns, checkbox, width),
               alert = document.getElementById(alertID).firstChild
-        this.init(alert) // add class
         return alert
     },
 
@@ -21,13 +20,14 @@ window.modals = {
         const modal = this[modalType]() // show modal
         modal.classList.add('chatgpt-infinity-modal')
         modal.onmousedown = this.dragHandlers.mousedown
-        dom.fillStarryBG(modal) // fill BG w/ rising stars
+        this.init(alert) // add class/starry bg
         this.observeRemoval(modal, modalType) // to maintain stack for proper nav
     },
 
     init(modal) {
         if (!this.styles) this.stylize() // to init/append stylesheet
         modal.classList.add(this.class) ; modal.parentNode.classList.add(`${this.class}-bg`) // add classes
+        dom.fillStarryBG(modal) // add Rising Stars bg
     },
 
     stylize() {
