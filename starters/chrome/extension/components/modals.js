@@ -12,21 +12,21 @@ window.modals = {
     alert(title = '', msg = '', btns = '', checkbox = '', width = '') { // generic one from chatgpt.alert()
         const alertID = chatgpt.alert(title, msg, btns, checkbox, width),
               alert = document.getElementById(alertID).firstChild
-        this.init(alert) // add class/starry bg
+        this.init(alert) // add classes + starry bg
         return alert
     },
 
     open(modalType) {
         const modal = this[modalType]() // show modal
         this.stack.unshift(modalType) // add to stack
-        this.init(alert) // add class/starry bg
+        this.init(alert) // add classes + starry bg
         this.observeRemoval(modal, modalType) // to maintain stack for proper nav
     },
 
     init(modal) {
         if (!this.styles) this.stylize() // to init/append stylesheet
         modal.classList.add(this.class) ; modal.parentNode.classList.add(`${this.class}-bg`) // add classes
-        dom.fillStarryBG(modal) // add Rising Stars bg
+        dom.fillStarryBG(modal) // add starry bg
     },
 
     stylize() {
