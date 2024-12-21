@@ -88,7 +88,7 @@
             document.head.append(tweaksStyle)
         }
         tweaksStyle.innerText = (
-            '[class$="-modal"] { z-index: 13456 ; position: absolute }' // to be click-draggable
+            '[class$=-modal] { z-index: 13456 ; position: absolute }' // to be click-draggable
           + ( chatgpt.isDarkMode() ? '.chatgpt-modal > div { border: 1px solid white }' : '' )
           + '.chatgpt-modal button {'
               + 'font-size: 0.77rem ; text-transform: uppercase ;' // shrink/uppercase labels
