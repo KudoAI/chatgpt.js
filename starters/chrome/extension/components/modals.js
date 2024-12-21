@@ -2,15 +2,17 @@
 
 window.modals = {
     stack: [], // of types of undismissed modals
+    get class() { return `${this.dependencies.app.cssPrefix}-modal` },
 
     dependencies: {
-        import(dependencies) { // { app }
+        import(dependencies) { // { app, env }
             for (const name in dependencies) this[name] = dependencies[name] }
     },
 
     alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         const alertID = chatgpt.alert(title, msg, btns, checkbox, width),
               alert = document.getElementById(alertID).firstChild
+        this.init(alert) // add class
         return alert
     },
 
@@ -21,6 +23,54 @@ window.modals = {
         modal.onmousedown = this.dragHandlers.mousedown
         dom.fillStarryBG(modal) // fill BG w/ rising stars
         this.observeRemoval(modal, modalType) // to maintain stack for proper nav
+    },
+
+    init(modal) {
+        if (!this.styles) this.stylize() // to init/append stylesheet
+        modal.classList.add(this.class) ; modal.parentNode.classList.add(`${this.class}-bg`) // add classes
+    },
+
+    stylize() {
+        if (!this.styles) {
+            this.styles = document.createElement('style') ; this.styles.id = `${this.class}-styles`
+            document.head.append(this.styles)
+        }
+        this.styles.innerText = (
+            `.${this.class} {` // modals
+              + 'font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto,'
+                  + 'Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif ;'
+              + 'padding: 20px 25px 24px 25px !important ; font-size: 20px ;'
+              + `color: ${ this.dependencies.env.scheme == 'dark' ? 'white' : 'black' } !important ;`
+              + `background-image: linear-gradient(180deg, ${
+                     this.dependencies.env.scheme == 'dark' ? '#99a8a6 -200px, black 200px'
+                                                            : '#b6ebff -296px, white 171px' }) }`
+          + `.${this.class} [class*=modal-close-btn] {`
+              + 'position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;'
+              + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }'
+          + `.${this.class} [class*=modal-close-btn] svg { height: 10px }`
+          + `.${this.class} [class*=modal-close-btn] path {`
+              + `${ this.dependencies.env.scheme == 'dark' ? 'stroke: white ; fill: white'
+                                                           : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
+          + ( this.dependencies.env.scheme == 'dark' ?  // invert dark mode hover paths
+                `.${this.class} [class*=modal-close-btn]:hover path { stroke: black ; fill: black }` : '' )
+          + `.${this.class} [class*=modal-close-btn]:hover { background-color: #f2f2f2 }` // hover underlay
+          + `.${this.class} [class*=modal-close-btn] svg { margin: 11.5px }` // center SVG for hover underlay
+          + `.${this.class} a { color: #${ this.dependencies.env.scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
+          + `.${this.class} h2 { font-weight: bold }`
+          + `.${this.class} button {`
+              + 'font-size: 14px ; text-transform: uppercase ;' // shrink/uppercase labels
+              + 'border-radius: 0 !important ;' // square borders
+              + 'transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;' // smoothen hover fx
+              + 'cursor: pointer !important ;' // add finger cursor
+              + `border: 1px solid ${ this.dependencies.env.scheme == 'dark' ? 'white' : 'black' } !important ;`
+              + 'padding: 8px !important ; min-width: 102px }' // resize
+          + `.${this.class} button:hover {` // add zoom, re-scheme
+              + 'transform: scale(1.055) ; color: black !important ;'
+              + `background-color: #${ this.dependencies.env.scheme == 'dark' ? '00cfff' : '9cdaff' } !important }`
+          + ( !this.dependencies.env.browser.isMobile ?
+                `.${this.class} .modal-buttons { margin-left: -13px !important }` : '' )
+          + `.about-em { color: ${ this.dependencies.env.scheme == 'dark' ? 'white' : 'green' } !important }`
+        )
     },
 
     observeRemoval(modal, modalType) { // to maintain stack for proper nav
