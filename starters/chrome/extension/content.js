@@ -98,6 +98,10 @@
                 settings.save('skipAlert', !config.skipAlert) }
         )
 
+    // Monitor SCHEME CHANGES to update modal colors + env.scheme for your use
+    new MutationObserver(() => { env.scheme = getScheme() ; modals.stylize() })
+        .observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+
     // Your code here...
     // Your code here...
     // Your code here...
