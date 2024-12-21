@@ -33,7 +33,7 @@
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        siteAlert(`${app.symbol} ${msg}`, pos, notifDuration,
+        chatgpt.notify(`${app.symbol} ${msg}`, pos, notifDuration,
             shadow || chatgpt.isDarkMode() ? '' : 'shadow' )
         const notif = document.querySelector('.chatgpt-notif:last-child')
 
