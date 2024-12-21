@@ -27,4 +27,4 @@ window.settings = {
         chrome.storage.sync.set({ [key]: val }) // save to Chrome extension storage
         window.config[key] = val // save to memory
     }
-}
+};
