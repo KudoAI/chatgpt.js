@@ -1,7 +1,6 @@
 // Requires lib/dom.js
 
 window.icons = {
-
     dependencies: {
         import(dependencies) { // { app }
             for (const name in dependencies) this[name] = dependencies[name] }
