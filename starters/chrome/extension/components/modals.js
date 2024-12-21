@@ -121,42 +121,39 @@ window.modals = {
 
     about() {
 
-        // Init styles
-        const headingStyle = 'font-size: 1.15rem',
-              pStyle = 'position: relative ; left: 3px',
-              pBrStyle = 'position: relative ; left: 4px ',
-              aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
-
-        // Init buttons
-        const modalBtns = [
-            function getSupport(){ modals.safeWinOpen(`${modals.dependencies.app.urls.gitHub}/issues`) },
-            function rateUs() { modals.safeWinOpen(`${modals.dependencies.app.urls.gitHub}/discussions`) },
-            function moreAiExtensions(){ modals.safeWinOpen(modals.dependencies.app.urls.relatedExtensions) }
-        ]
-
         // Show modal
         const aboutModal = this.alert(
             `${this.dependencies.app.symbol} ${chrome.runtime.getManifest().name}`, // title
-            `<span style="${headingStyle}"><b>🏷️ <i>Version</i></b>: </span>`
-                + `<span style="${pStyle}">${this.dependencies.app.version}</span>\n`
-            + `<span style="${headingStyle}"><b>⚡ <i>Powered by</i></b>: </span>`
-                + `<span style="${pStyle}">`
-                    + `<a style="${aStyle}" href="${this.dependencies.app.urls.chatgptJS}" target="_blank"`
-                        + ' rel="noopener">chatgpt.js</a></span>\n'
-            + `<span style="${headingStyle}"><b>📜 <i>Open source code</i></b>:</span>\n`
-                + `<span style="${pBrStyle}"><a href="${this.dependencies.app.urls.gitHub}" target="_blank"`
-                    + ` rel="nopener">${this.dependencies.app.urls.gitHub}</a></span>`,
-            modalBtns, '', 451
+            `🏷️ Version: <span class="about-em">${this.dependencies.app.version}</span>\n` // msg
+                + '⚡ Powered by: '
+                    + `<a href="${this.dependencies.app.urls.chatgptJS}" target="_blank" rel="noopener">chatgpt.js</a>\n`
+                + '📜 Open source code: '
+                    + `<a href="${this.dependencies.app.urls.gitHub}" target="_blank" rel="nopener">`
+                        + this.dependencies.app.urls.gitHub + '</a>',
+            [ function getSupport(){}, function rateUs(){}, function moreAiExtensions(){} ], // button labels
+            '', 656 // modal width
         )
 
         // Format text
-        aboutModal.querySelector('h2').style.cssText = 'text-align: center ; font-size: 37px ; padding: 9px'
-        aboutModal.querySelector('p').style.cssText = 'text-align: center'
+        aboutModal.querySelector('h2').style.cssText = (
+            'text-align: center ; font-size: 51px ; line-height: 46px ; padding: 15px 0' )
+        aboutModal.querySelector('p').style.cssText = (
+            'text-align: center ; overflow-wrap: anywhere ;'
+          + `margin: ${ this.dependencies.env.browser.isPortrait ? '6px 0 -16px' : '3px 0 0' }` )
 
         // Hack buttons
         aboutModal.querySelector('.modal-buttons').style.justifyContent = 'center'
         aboutModal.querySelectorAll('button').forEach(btn => {
-            btn.style.cssText = 'cursor: pointer !important ; height: 43px'
+            btn.style.cssText = 'height: 55px ; min-width: 136px ; text-align: center'
+
+            // Replace buttons w/ clones that don't dismiss modal
+            const btnClone = btn.cloneNode(true)
+            btn.parentNode.replaceChild(btnClone, btn) ; btn = btnClone
+            btn.onclick = () => this.safeWinOpen(
+                btn.textContent == 'Get Support' ? `${modals.dependencies.app.urls.gitHub}/issues`
+              : btn.textContent == 'Rate Us' ? `${modals.dependencies.app.urls.gitHub}/discussions`
+              : modals.dependencies.app.urls.relatedExtensions
+            )
 
             // Prepend emoji
             if (/support/i.test(btn.textContent))
