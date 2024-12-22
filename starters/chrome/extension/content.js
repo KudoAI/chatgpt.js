@@ -98,9 +98,15 @@
                 settings.save('skipAlert', !config.skipAlert) }
         )
 
-    // Monitor SCHEME CHANGES to update modal colors + env.scheme for your use
-    new MutationObserver(() => { env.scheme = getScheme() ; modals.stylize() })
-        .observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+    // Monitor SCHEME PREF CHANGES to update modal colors + env.scheme for your use
+    new MutationObserver(handleSchemePrefChange).observe( // for site scheme pref changes
+        document.documentElement, { attributes: true, attributeFilter: ['class'] })
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener( // for browser/system scheme pref changes
+        'change', () => requestAnimationFrame(handleSchemePrefChange))
+    function handleSchemePrefChange() {
+        const displayedScheme = getScheme()
+        if (env.scheme != displayedScheme) { env.scheme = displayedScheme ;  modals.stylize() }
+    }
 
     // Your code here...
     // Your code here...
