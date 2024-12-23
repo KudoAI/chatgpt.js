@@ -18,6 +18,11 @@ if [[ ! "${ver_types[@]}" =~ "$1" ]] ; then
     echo "${BR}Invalid version argument. Please specify 'major', 'minor', or 'patch'.${NC}"
     exit 1 ; fi
 
+# PULL latest changes
+echo -e "${BY}Pulling latest changes from remote to sync local repository...${NC}\n"
+git pull || (echo -e "${BR}Merge failed, please resolve conflicts!${NC}" && exit 1)
+echo ''
+
 # Determine new version to bump to
 old_ver=$(node -pe "require('./package.json').version")
 IFS='.' read -ra subvers <<< "$old_ver" # split old_ver into subvers array
@@ -91,12 +96,11 @@ git commit -n -m "Built chatgpt.js $NEW_VER"
 
 # Push to GiHub
 echo -e "${BY}\nPushing to GitHub...\n${NC}"
-git pull && git push
+git git push
 
 # Publish to NPM
 if [[ "$*" == *"--publish"* ]] ; then
-    echo -e "${BY}\nPublishing to npm...\n${NC}"
-    npm publish ; fi
+    echo -e "${BY}\nPublishing to npm...\n${NC}" ; npm publish ; fi
 
 # Print final summary
 echo -e "\n${BG}Successfully bumped to v$NEW_VER$(
