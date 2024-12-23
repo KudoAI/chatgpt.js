@@ -99,7 +99,8 @@ const chatgpt = {
                     chatgpt.draggableElem = event.currentTarget
                     chatgpt.draggableElem.style.cursor = 'grabbing'
                     event.preventDefault(); // prevent sub-elems like icons being draggable
-                    ['mousemove', 'mouseup'].forEach(event => document.addEventListener(event, handlers.drag[event]))
+                    ['mousemove', 'mouseup'].forEach(eventType =>
+                        document.addEventListener(eventType, handlers.drag[eventType]))
                     const draggableElemRect = chatgpt.draggableElem.getBoundingClientRect()
                     handlers.drag.offsetX = event.clientX - draggableElemRect.left +21
                     handlers.drag.offsetY = event.clientY - draggableElemRect.top +12
@@ -114,8 +115,8 @@ const chatgpt = {
 
                 mouseup() { // remove listeners, reset chatgpt.draggableElem
                     chatgpt.draggableElem.style.cursor = 'inherit';
-                    ['mousemove', 'mouseup'].forEach(event =>
-                        document.removeEventListener(event, handlers.drag[event]))
+                    ['mousemove', 'mouseup'].forEach(eventType =>
+                        document.removeEventListener(eventType, handlers.drag[eventType]))
                     chatgpt.draggableElem = null
                 }
             }
