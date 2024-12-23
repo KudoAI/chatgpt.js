@@ -62,11 +62,13 @@ jobs:
       - name: Push changes to KudoAI/chatgpt.js
         run: |
           cd ${{ github.workspace }}/KudoAI/chatgpt.js
+          git pull # again to sync w/ concurrent workflow updates
           git commit -a -n -m "$ESCAPED_MSG ↞ [auto-sync from https://github.com/KudoAI/chatgpt.js]" || true
           git push
 
       - name: Push changes to KudoAI/chatgpt.js-chrome-starter
         run: |
           cd ${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter
+          git pull # again to sync w/ concurrent workflow updates
           git commit -a -n -m "$ESCAPED_MSG ↞ [auto-sync from https://github.com/KudoAI/chatgpt.js]" || true
           git push

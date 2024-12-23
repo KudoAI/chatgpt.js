@@ -53,6 +53,7 @@ jobs:
       - name: Push changes to KudoAI/chatgpt.js
         run: |
           cd ${{ github.workspace }}/KudoAI/chatgpt.js
+          git pull # again to sync w/ concurrent workflow updates
           git add .
           git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from ${{ env.SYNC_SRC }}]" || true
           git push

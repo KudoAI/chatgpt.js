@@ -53,6 +53,7 @@ jobs:
       - name: Push changes to KudoAI/chatgpt.js-greasemonkey-starter
         run: |
           cd ${{ github.workspace }}/KudoAI/chatgpt.js-greasemonkey-starter
+          git pull # again to sync w/ concurrent workflow updates
           git add .
           git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from https://github.com/KudoAI/chatgpt.js]" || true
           git push
