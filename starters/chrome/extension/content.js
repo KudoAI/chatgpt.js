@@ -8,16 +8,15 @@
         await import(chrome.runtime.getURL(resource))
 
     // Init ENV context
-    const env = { browser: { isMobile: chatgpt.browser.isMobile() }}
+    const env = { browser: { isMobile: chatgpt.browser.isMobile() }, ui: { scheme: getScheme() }}
     env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
-    env.scheme = getScheme()
 
     // Import APP data
     const { app } = await chrome.storage.sync.get('app')
 
     // Export DEPENDENCIES to imported resources
-    dom.dependencies.import({ env }) // for env.scheme
-    modals.dependencies.import({ app, env }) // for app data + env.scheme
+    dom.dependencies.import({ env }) // for env.ui.scheme
+    modals.dependencies.import({ app, env }) // for app data + env.ui.scheme
 
     // Add CHROME MSG listener
     chrome.runtime.onMessage.addListener(req => { // from service-worker.js + popup/index.html
@@ -41,7 +40,7 @@
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        chatgpt.notify(`${app.symbol} ${msg}`, pos, notifDuration, shadow || env.scheme == 'dark' ? '' : 'shadow')
+        chatgpt.notify(`${app.symbol} ${msg}`, pos, notifDuration, shadow || env.ui.scheme == 'dark' ? '' : 'shadow')
         const notif = document.querySelector('.chatgpt-notif:last-child')
 
         // Append styled state word
@@ -98,14 +97,14 @@
                 settings.save('skipAlert', !config.skipAlert) }
         )
 
-    // Monitor SCHEME PREF CHANGES to update modal colors + env.scheme for your use
+    // Monitor SCHEME PREF CHANGES to update modal colors + env.ui.scheme for your use
     new MutationObserver(handleSchemePrefChange).observe( // for site scheme pref changes
         document.documentElement, { attributes: true, attributeFilter: ['class'] })
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener( // for browser/system scheme pref changes
         'change', () => requestAnimationFrame(handleSchemePrefChange))
     function handleSchemePrefChange() {
         const displayedScheme = getScheme()
-        if (env.scheme != displayedScheme) { env.scheme = displayedScheme ;  modals.stylize() }
+        if (env.ui.scheme != displayedScheme) { env.ui.scheme = displayedScheme ;  modals.stylize() }
     }
 
     // Your code here...
