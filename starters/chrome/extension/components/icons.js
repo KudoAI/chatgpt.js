@@ -3,7 +3,7 @@
 window.icons = {
     dependencies: {
         import(dependencies) { // { app }
-            for (const name in dependencies) this[name] = dependencies[name] }
+            for (const depName in dependencies) this[depName] = dependencies[depName] }
     },
 
     create({ name, size = 16, width, height, ...additionalAttrs }) {

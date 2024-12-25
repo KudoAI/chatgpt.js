@@ -2,7 +2,7 @@ window.dom = {
 
     dependencies: {
         import(dependencies) { // { env) }
-            for (const name in dependencies) this[name] = dependencies[name] }
+            for (const depName in dependencies) this[depName] = dependencies[depName] }
     },
 
     create: {
