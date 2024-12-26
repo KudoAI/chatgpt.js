@@ -15,8 +15,8 @@
     const { app } = await chrome.storage.sync.get('app')
 
     // Export DEPENDENCIES to imported resources
-    dom.dependencies.import({ env }) // for env.ui.scheme
-    modals.dependencies.import({ app, env }) // for app data + env.ui.scheme
+    dom.imports.import({ env }) // for env.ui.scheme
+    modals.imports.import({ app, env }) // for app data + env.ui.scheme
 
     // Add CHROME MSG listener
     chrome.runtime.onMessage.addListener(req => { // from service-worker.js + popup/index.html

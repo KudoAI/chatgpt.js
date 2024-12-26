@@ -1,8 +1,8 @@
 window.dom = {
 
-    dependencies: {
-        import(dependencies) { // { env) }
-            for (const depName in dependencies) this[depName] = dependencies[depName] }
+    imports: {
+        import(deps) { // { env) }
+            for (const depName in deps) this[depName] = deps[depName] }
     },
 
     create: {
@@ -27,7 +27,7 @@ window.dom = {
           + 'z-index: -1'; // allow interactive elems to be clicked
         ['sm', 'med', 'lg'].forEach(starSize => {
             const starsDiv = document.createElement('div')
-            starsDiv.id = `${ this.dependencies.env.ui.scheme == 'dark' ? 'white' : 'black' }-stars-${starSize}`
+            starsDiv.id = `${ this.imports.env.ui.scheme == 'dark' ? 'white' : 'black' }-stars-${starSize}`
             starsDivsContainer.append(starsDiv)
         })
         targetNode.prepend(starsDivsContainer)
