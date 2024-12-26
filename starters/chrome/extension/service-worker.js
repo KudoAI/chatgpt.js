@@ -1,8 +1,10 @@
 // Init APP data
 const app = {
     version: chrome.runtime.getManifest().version, symbol: '🤖', cssPrefix: 'chatgpt-extension',
+    author: { name: 'KudoAI', url: 'https://kudoai.com' },
     urls: {
         assetHost: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter',
+        contributors: 'https://docs.chatgptjs.org/#-contributors',
         cjsMediaHost: 'https://media.chatgptjs.org',
         gitHub: 'https://github.com/KudoAI/chatgpt.js-chrome-starter',
         relatedExtensions: 'https://aiwebextensions.com',

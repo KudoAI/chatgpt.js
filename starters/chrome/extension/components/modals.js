@@ -95,12 +95,15 @@ window.modals = {
         // Show modal
         const aboutModal = this.alert(
             `${this.imports.app.symbol} ${chrome.runtime.getManifest().name}`, // title
-            `🏷️ Version: <span class="about-em">${this.imports.app.version}</span>\n` // msg
-                + '⚡ Powered by: '
-                    + `<a href="${this.imports.app.urls.chatgptJS}" target="_blank" rel="noopener">chatgpt.js</a>\n`
-                + '📜 Open source code: '
-                    + `<a href="${this.imports.app.urls.gitHub}" target="_blank" rel="nopener">`
-                        + this.imports.app.urls.gitHub + '</a>',
+            '🧠 Author: ' // msg
+                + `<a href="${this.imports.app.author.url}">${this.imports.app.author.name}</a> `
+                    + `& <a href="${this.imports.app.urls.contributors}">contributors</a>\n`
+            + `🏷️ Version: <span class="about-em">${this.imports.app.version}</span>\n`
+            + '📜 Open source code: '
+                + `<a href="${this.imports.app.urls.gitHub}" target="_blank" rel="nopener">`
+                    + this.imports.app.urls.gitHub + '</a>\n'
+            + '⚡ Powered by: '
+                + `<a href="${this.imports.app.urls.chatgptJS}" target="_blank" rel="noopener">chatgpt.js</a>`,
             [ function getSupport(){}, function rateUs(){}, function moreAiExtensions(){} ], // button labels
             '', 656 // modal width
         )
