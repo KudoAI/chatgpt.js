@@ -4,6 +4,7 @@ const app = {
     author: { name: 'KudoAI', url: 'https://kudoai.com' },
     urls: {
         assetHost: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter',
+        chatgptJS: 'https://chatgptjs.org',
         contributors: 'https://docs.chatgptjs.org/#-contributors',
         cjsMediaHost: 'https://media.chatgptjs.org',
         gitHub: 'https://github.com/KudoAI/chatgpt.js-chrome-starter',
