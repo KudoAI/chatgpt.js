@@ -26,6 +26,4 @@
 
 # 安全策略
 
-如果您發現漏洞，請打開[安全公告草案](https://github.com/KudoAI/chatgpt.js/security/advisories/new)。
-
-也歡迎拉取請求，但出於安全原因，請發送電子郵件至 <security@kudoai.com> 並等待回復後再公開。
+如果您發現漏洞，請按照報告說明 @ https://tidelift.com/security

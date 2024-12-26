@@ -26,6 +26,4 @@
 
 # Veiligheidsbeleid
 
-Als u een kwetsbaarheid vindt, open dan een [conceptbeveiligingsadvies](https://github.com/KudoAI/chatgpt.js/security/advisories/new).
-
-Pull-verzoeken zijn ook welkom, maar stuur om veiligheidsredenen een e-mail naar <security@kudoai.com> en wacht op een reactie voordat je het openbaar maakt.
+Als u een kwetsbaarheid vindt, volg dan de meldingsinstructies @ https://tidelift.com/security

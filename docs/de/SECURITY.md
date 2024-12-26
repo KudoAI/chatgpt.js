@@ -26,6 +26,4 @@
 
 # Sicherheitsrichtlinie
 
-Wenn Sie eine Sicherheitslücke finden, öffnen Sie bitte einen [Entwurf einer Sicherheitswarnung](https://github.com/KudoAI/chatgpt.js/security/advisories/new).
-
-Pull-Anfragen sind ebenfalls willkommen, aber aus Sicherheitsgründen senden Sie eine E-Mail an <security@kudoai.com> und warten Sie auf eine Antwort, bevor Sie sie veröffentlichen.
+Wenn Sie eine Schwachstelle finden, folgen Sie bitte den Anweisungen zum Melden @ https://tidelift.com/security

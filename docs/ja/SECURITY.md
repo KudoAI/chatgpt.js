@@ -26,6 +26,4 @@
 
 # セキュリティポリシー
 
-脆弱性を見つけた場合は、[セキュリティ勧告草案](https://github.com/KudoAI/chatgpt.js/security/advisories/new) を開いてください。
-
-プル リクエストも歓迎しますが、安全上の理由から、公開する前に <security@kudoai.com> に電子メールを送信し、応答を待ってください。
+脆弱性を発見した場合は、https://tidelift.com/security の報告手順に従ってください。
