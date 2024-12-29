@@ -131,7 +131,7 @@ const chatgpt = {
               modalMessage = document.createElement('p');
 
         // Create/append/update modal style (if missing or outdated)
-        const thisUpdated = 1734685032942; // timestamp of last edit for this file's `modalStyle`
+        const thisUpdated = 1735475757891 // timestamp of last edit for this file's `modalStyle`
         let modalStyle = document.querySelector('#chatgpt-modal-style'); // try to select existing style
         if (!modalStyle || parseInt(modalStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
             if (!modalStyle) { // outright missing, create/id/attr/append it first
@@ -164,6 +164,7 @@ const chatgpt = {
                     + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; }'
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
                 + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
+                + '.chatgpt-modal a:hover { text-decoration: underline }'
                 + '.chatgpt-modal.animated > div { z-index: 13456 ; opacity: 0.98 ; transform: translateX(0) translateY(0) }'
                 + '@keyframes alert-zoom-fade-out {'
                   + '0% { opacity: 1 } 50% { opacity: 0.25 ; transform: scale(1.05) }'
