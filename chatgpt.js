@@ -1286,7 +1286,7 @@ const chatgpt = {
                                  + (notificationDiv.isRight ? 'Right' : 'Left');
 
         // Create/append/update notification style (if missing or outdated)
-        const thisUpdated = 20231110; // datestamp of last edit for this file's `notifStyle`
+        const thisUpdated = 1735475527153 // timestamp of last edit for this file's `notifStyle`
         let notifStyle = document.querySelector('#chatgpt-notif-style'); // try to select existing style
         if (!notifStyle || parseInt(notifStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
             if (!notifStyle) { // outright missing, create/id/attr/append it first
@@ -1296,6 +1296,8 @@ const chatgpt = {
             }
             notifStyle.innerText = ( // update prev/new style contents
                 '.chatgpt-notif {'
+                    + 'font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC",'
+                        + '"Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif ;'
                     + '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
                     + 'background-color: black ; padding: 10px 13px 10px 18px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
                     + 'opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ;' // visibility
