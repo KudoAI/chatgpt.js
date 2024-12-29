@@ -46,7 +46,7 @@ sed -i \
 echo "v$NEW_VER"
 
 # Bump chatgpt.js version in Greasemonkey starter
-echo -e "${BY}\nBumping versions in Greasemonkey starter...${BW}"
+echo -e "${BY}\nBumping versions in Greasemonkey starter...${BW}\n"
 sed -i "s|\(chatgpt\.js@\)[0-9.]\+|\1$NEW_VER|g" starters/greasemonkey/*.user.js
 echo "chatgpt.js v$NEW_VER"
 
