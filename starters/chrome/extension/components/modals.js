@@ -58,9 +58,12 @@ window.modals = {
               + `color: #${ this.imports.env.ui.scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
           + `.${this.class} h2 { font-weight: bold }`
           + `.${this.class} button {`
+              + '--btn-transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;'
               + 'font-size: 14px ; text-transform: uppercase ;' // shrink/uppercase labels
               + 'border-radius: 0 !important ;' // square borders
-              + 'transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;' // smoothen hover fx
+              + 'transition: var(--btn-transition) ;' // smoothen hover fx
+                  + '-webkit-transition: var(--btn-transition) ; -moz-transition: var(--btn-transition) ;'
+                  + '-o-transition: var(--btn-transition) ; -ms-transition: var(--btn-transition) ;'
               + 'cursor: pointer !important ;' // add finger cursor
               + `border: 1px solid ${ this.imports.env.ui.scheme == 'dark' ? 'white' : 'black' } !important ;`
               + 'padding: 8px !important ; min-width: 102px }' // resize
