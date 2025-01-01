@@ -160,7 +160,7 @@ const chatgpt = {
                     + 'transition: opacity 0.65s cubic-bezier(.165,.84,.44,1),' // for fade-ins
                                 + 'transform 0.55s cubic-bezier(.165,.84,.44,1) ;' // for move-ins
                     + 'max-width: 75vw ; word-wrap: break-word ;'
-                    + 'padding: 20px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
+                    + 'padding: 20px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0,0,0,0.12) ;'
                     + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; }'
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
                 + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
@@ -283,7 +283,7 @@ const chatgpt = {
         if (alertQueue.length === 1) {
             modalContainer.style.display = '';
             setTimeout(() => { // dim bg
-                modal.parentNode.style.backgroundColor = `rgba(67, 70, 72, ${ scheme == 'dark' ? 0.62 : 0.33 })`
+                modal.parentNode.style.backgroundColor = `rgba(67,70,72,${ scheme == 'dark' ? 0.62 : 0.33 })`
                 modal.parentNode.classList.add('animated')
             }, 100) // delay for transition fx
         }
@@ -1814,7 +1814,7 @@ const chatgpt = {
 
 
             // Fix for blank background on dropdown elements
-            if (element == 'dropdown') newElement.style.backgroundColor = 'var(--gray-900, rgb(32, 33, 35))';
+            if (element == 'dropdown') newElement.style.backgroundColor = 'var(--gray-900, rgb(32,33,35))';
 
             this.elements.push(newElement);
             this.activateObserver();
