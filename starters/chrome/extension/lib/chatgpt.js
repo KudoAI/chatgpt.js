@@ -140,14 +140,21 @@ const chatgpt = {
                 document.head.append(modalStyle);
             }
             modalStyle.innerText = ( // update prev/new style contents
-                '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
+                '.chatgpt-modal {' // vars
+                    + '--transition: opacity 0.65s cubic-bezier(.165,.84,.44,1),' // for fade-in
+                                  + 'transform 0.55s cubic-bezier(.165,.84,.44,1) ;' // for move-in
+                    + '--bg-transition: background-color 0.25s ease }' // for bg dim
+
+                + '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
 
                 // Background styles
                 + '.chatgpt-modal {'
                     + 'pointer-events: auto ;' // override any disabling from site modals (like guest login spam)
                     + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
-                    + 'transition: background-color 0.25s ease !important ;' // speed to show bg dim
-                    + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
+                    + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 ;' // align
+                    + 'transition: var(--bg-transition) ;' // for bg dim
+                        + '-webkit-transition: var(--bg-transition) ; -moz-transition: var(--bg-transition) ;'
+                        + '-o-transition: var(--bg-transition) ; -ms-transition: var(--bg-transition) }'
 
                 // Alert styles
                 + '.chatgpt-modal > div {'
@@ -157,11 +164,12 @@ const chatgpt = {
                     + `color: ${ scheme == 'dark' ? 'white' : 'black' };`
                     + `background-color: ${ scheme == 'dark' ? 'black' : 'white' };`
                     + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
-                    + 'transition: opacity 0.65s cubic-bezier(.165,.84,.44,1),' // for fade-ins
-                                + 'transform 0.55s cubic-bezier(.165,.84,.44,1) ;' // for move-ins
                     + 'max-width: 75vw ; word-wrap: break-word ;'
                     + 'padding: 20px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0,0,0,0.12) ;'
-                    + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; }'
+                    + 'user-select: none ; -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ;'
+                    + 'transition: var(--transition) ;' // for fade-in + move-in
+                        + '-webkit-transition: var(--transition) ; -moz-transition: var(--transition) ;'
+                        + '-o-transition: var(--transition) ; -ms-transition: var(--transition) }'
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
                 + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
                 + '.chatgpt-modal a:hover { text-decoration: underline }'
