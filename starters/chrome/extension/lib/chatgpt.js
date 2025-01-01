@@ -164,9 +164,10 @@ const chatgpt = {
                     + `color: ${ scheme == 'dark' ? 'white' : 'black' };`
                     + `background-color: ${ scheme == 'dark' ? 'black' : 'white' };`
                     + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
-                    + 'max-width: 75vw ; word-wrap: break-word ;'
-                    + 'padding: 20px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0,0,0,0.12) ;'
-                    + 'user-select: none ; -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ;'
+                    + 'max-width: 75vw ; word-wrap: break-word ; border-radius: 15px ;'
+                    + 'padding: 20px ; margin: 12px 23px ; box-shadow: 0 30px 60px rgba(0,0,0,0.12) ;'
+                    + 'user-select: none ; -webkit-user-select: none ; -moz-user-select: none ; -o-user-select: none ;'
+                        + '-ms-user-select: none ;'
                     + 'transition: var(--transition) ;' // for fade-in + move-in
                         + '-webkit-transition: var(--transition) ; -moz-transition: var(--transition) ;'
                         + '-o-transition: var(--transition) ; -ms-transition: var(--transition) }'
@@ -1295,7 +1296,7 @@ const chatgpt = {
                                  + (notificationDiv.isRight ? 'Right' : 'Left');
 
         // Create/append/update notification style (if missing or outdated)
-        const thisUpdated = 1735475527153 // timestamp of last edit for this file's `notifStyle`
+        const thisUpdated = 1735767823541 // timestamp of last edit for this file's `notifStyle`
         let notifStyle = document.querySelector('#chatgpt-notif-style'); // try to select existing style
         if (!notifStyle || parseInt(notifStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
             if (!notifStyle) { // outright missing, create/id/attr/append it first
@@ -1310,7 +1311,8 @@ const chatgpt = {
                     + '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
                     + 'background-color: black ; padding: 10px 13px 10px 18px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
                     + 'opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ;' // visibility
-                    + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;'
+                    + 'user-select: none ; -webkit-user-select: none ; -moz-user-select: none ; -o-user-select: none ;'
+                        + '-ms-user-select: none ;'
                     + `transform: translateX(${ !notificationDiv.isRight ? '-' : '' }35px) ;` // init off-screen for transition fx
                     + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(?:shadow|on)\b/i.test(shadow) ? 'gray' : shadow )) : '' ) + '}'
                 + '.notif-close-btn { cursor: pointer ; float: right ; position: relative ; right: -4px ; margin-left: -3px ;'
