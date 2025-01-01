@@ -306,7 +306,7 @@ const chatgpt = {
         // Define alert dismisser
         const dismissAlert = () => {
             modalContainer.style.backgroundColor = 'transparent'
-            modal.style.animation = 'alert-zoom-fade-out 0.135s ease-out'
+            modal.style.animation = 'alert-zoom-fade-out 0.165s ease-out'
             modal.onanimationend = () => {
 
                 // Remove alert
