@@ -131,7 +131,7 @@ const chatgpt = {
               modalMessage = document.createElement('p');
 
         // Create/append/update modal style (if missing or outdated)
-        const thisUpdated = 1735475757891 // timestamp of last edit for this file's `modalStyle`
+        const thisUpdated = 1735768363880 // timestamp of last edit for this file's `modalStyle`
         let modalStyle = document.querySelector('#chatgpt-modal-style'); // try to select existing style
         if (!modalStyle || parseInt(modalStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
             if (!modalStyle) { // outright missing, create/id/attr/append it first
@@ -305,30 +305,29 @@ const chatgpt = {
 
         // Define alert dismisser
         const dismissAlert = () => {
-            modalContainer.style.backgroundColor = 'transparent';
-            modal.style.animation = 'alert-zoom-fade-out 0.135s ease-out';
-            setTimeout(() => { // delay removal for fade-out
+            modalContainer.style.backgroundColor = 'transparent'
+            modal.style.animation = 'alert-zoom-fade-out 0.135s ease-out'
+            modal.onanimationend = () => {
 
                 // Remove alert
-                modalContainer.remove(); // ...from DOM
-                alertQueue = JSON.parse(localStorage.alertQueue);
-                alertQueue.shift(); // + memory
-                localStorage.alertQueue = JSON.stringify(alertQueue); // + storage
-                document.removeEventListener('keydown', handlers.dismiss.key); // prevent memory leaks
+                modalContainer.remove() // ...from DOM
+                alertQueue = JSON.parse(localStorage.alertQueue)
+                alertQueue.shift() // + memory
+                localStorage.alertQueue = JSON.stringify(alertQueue) // + storage
+                document.removeEventListener('keydown', handlers.dismiss.key) // prevent memory leaks
 
                 // Check for pending alerts in queue
                 if (alertQueue.length > 0) {
-                    const nextAlert = document.getElementById(alertQueue[0]);
+                    const nextAlert = document.getElementById(alertQueue[0])
                     setTimeout(() => {
-                        nextAlert.style.display = '';
-                        setTimeout(() => { nextAlert.classList.add('animated'); }, 100);
-                    }, 500);
+                        nextAlert.style.display = ''
+                        setTimeout(() => nextAlert.classList.add('animated'), 100)
+                    }, 500)
                 }
+            }
+        }
 
-            }, 155);
-        };
-
-        return modalContainer.id; // if assignment used
+        return modalContainer.id // if assignment used
     },
 
     async askAndGetReply(query) {
