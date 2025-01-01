@@ -115,11 +115,10 @@ $font-families: (
     --fade-transition: 0.2s cubic-bezier(0.165,0.84,0.44,1),
              transform 0.5s cubic-bezier(0.165,0.84,0.44,1) 0.15s }
 $green: lime; $blue: #64ffff; $kudo-depth: .225vw;
-$no-select: ( user-select: none,
-    -webkit-user-select: none, -khtml-user-select: none,
-    -moz-user-select: none, -ms-user-select: none );
-$no-touch-select: (
-    -webkit-touch-callout: none, -webkit-tap-highlight-color: transparent );
+$no-select: (
+    user-select: none, -webkit-user-select: none, -khtml-user-select: none, -moz-user-select: none, -ms-user-select: none,
+    -o-user-select: none, -webkit-touch-callout: none, -webkit-tap-highlight-color: transparent
+);
 
 /* GENERAL */
 
@@ -193,8 +192,7 @@ section.cover p { /* cover tagline size / weight / position */
     text-transform: uppercase ; font-size: 1.35rem !important ; color: white !important ;
     border-width: 3px !important ; border-radius: 0 !important ; border-color: white !important ;
     padding: 16px 68px !important ; transition: 0.04s !important ;
-    @each $property, $value in $no-select { #{$property}: #{$value}; }
-    @each $property, $value in $no-touch-select { #{$property}: #{$value}; }}
+    @each $property, $value in $no-select { #{$property}: #{$value}; }}
 .cover-main > p:last-child a:hover { /* 1st button hover */
     background-color: blue ; color: white !important ; opacity: 1 !important }
 .cover-main > p:last-child a:last-child { /* 2nd button */
@@ -235,7 +233,7 @@ section.cover p { /* cover tagline size / weight / position */
 /* SIDEBAR */
 
 .sidebar-toggle { bottom: 36px ; left: 29px ; background-color: transparent ;
-   @each $property, $value in $no-touch-select { #{$property}: #{$value}; }}
+   @each $property, $value in $no-select { #{$property}: #{$value}; }}
 .sidebar-toggle:hover .sidebar-toggle-button { opacity: 1 }
 .sidebar-toggle span { /* color/size/space toggle bars */
     background-color: white ; width: 20px ; height: 3px ; margin-bottom: 5px }
