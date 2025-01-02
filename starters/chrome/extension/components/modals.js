@@ -25,7 +25,7 @@ window.modals = {
 
     init(modal) {
         if (!this.styles) this.stylize() // to init/append stylesheet
-        modal.classList.add(this.class, 'no-user-select') ; modal.parentNode.classList.add(`${this.class}-bg`)
+        modal.classList.add('no-user-select', this.class) ; modal.parentNode.classList.add(`${this.class}-bg`)
         dom.fillStarryBG(modal) // add starry bg
     },
 
