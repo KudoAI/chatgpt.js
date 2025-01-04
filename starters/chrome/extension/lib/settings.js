@@ -14,9 +14,8 @@ window.settings = {
         // replyLanguage: { type: 'prompt', symbol: '🌐', label: 'Reply Language' }
     },
 
-    load() {
-        const keys = ( // original array if array, else new array from multiple args
-            Array.isArray(arguments[0]) ? arguments[0] : Array.from(arguments))
+    load(...keys) {
+        keys = keys.flat() // flatten array args nested by spread operator
         return Promise.all(keys.map(key => // resolve promise when all keys load
             new Promise(resolve => // resolve promise when single key value loads
                 chrome.storage.sync.get(key, result => { // load from Chrome extension storage
