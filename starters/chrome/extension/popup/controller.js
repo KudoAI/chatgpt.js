@@ -25,10 +25,10 @@
         fade() {
 
             // Update toolbar icon
-            const iconDimensions = [16, 32, 64, 128], iconPaths = {}
-            iconDimensions.forEach(dimension => iconPaths[dimension] = `../icons/${
-                config.extensionDisabled ? 'faded/' : '' }icon${dimension}.png` )
-            chrome.action.setIcon({ path: iconPaths })
+            chrome.action.setIcon({ path: Object.fromEntries(
+                Object.keys(chrome.runtime.getManifest().icons).map(dimension =>
+                    [dimension, `../icons/${config.extensionDisabled ? 'faded/' : ''}icon${dimension}.png`]
+            ))})
 
             // Update menu contents
             document.querySelectorAll('div.logo, div.menu-title, div.menu')
