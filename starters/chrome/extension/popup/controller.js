@@ -27,7 +27,7 @@
             // Update toolbar icon
             chrome.action.setIcon({ path: Object.fromEntries(
                 Object.keys(chrome.runtime.getManifest().icons).map(dimension =>
-                    [dimension, `../icons/${config.extensionDisabled ? 'faded/' : ''}icon${dimension}.png`]
+                    [dimension, `../icons/${ config.extensionDisabled ? 'faded/' : '' }icon${dimension}.png`]
             ))})
 
             // Update menu contents
