@@ -22,7 +22,7 @@
     </h6>
 </div>
 
-# <img height=21 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon32.png?v=8c852fa5"> chatgpt.js-chrome-starter
+# <img height=21 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon32.png?v=e638eac"> chatgpt.js-chrome-starter
 
 <h3>使用 <a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a> 开发自己的 Chrome 扩展程序的起点</h3>
 

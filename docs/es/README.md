@@ -32,8 +32,8 @@
 
 <a href="https://chatgpt.js.org">
     <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/darkmode.png?v=bc68d0c">
-        <img width=800 src="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/lightmode.png?v=bc68d0c">
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/darkmode.png?v=e638eac">
+        <img width=800 src="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/lightmode.png?v=e638eac">
     </picture>
 </a>
 
@@ -56,7 +56,7 @@
 
 </div>
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="intro">
 
@@ -71,7 +71,7 @@
 - Fácil de usar
 - Ligero (pero con un rendimiento óptimo)
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="importing">
 
@@ -110,7 +110,7 @@ function yourCode() {
 }
 ```
 
-### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://assets.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?v=a3e53bf7"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://assets.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?v=a3e53bf7"> Greasemonkey:
+### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://assets.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?v=e638eac"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://assets.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?v=e638eac"> Greasemonkey:
 
 > **Nota** _Para utilizar una plantilla de inicio: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
@@ -122,7 +122,7 @@ function yourCode() {
 // Tu código aquí...
 ```
 
-### <img style="margin: 0 2px -1px 0" height=16 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon16.png?v=8c852fa5"> Chrome:
+### <img style="margin: 0 2px -1px 0" height=16 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon16.png?v=e638eac"> Chrome:
 
 > **Nota** _Para utilizar una plantilla de inicio: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
@@ -146,7 +146,7 @@ Dado que Google no permite el código remoto, es necesario importar chatgpt.js l
 })();
 ```
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="npm">
 
@@ -164,7 +164,7 @@ Después de la instalación, navegue hasta `node_modules/@kudoai/chatgpt.js` par
 
 </div>
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="usage">
 
@@ -187,7 +187,7 @@ Cada llamada obtiene igualmente la última respuesta. Si crees que funciona, pro
 
 Si no fue así, consulte la [guía del usuario](https://github.com/KudoAI/chatgpt.js/blob/v3.5.0/docs/USERGUIDE.md) extendida, o simplemente envíe un [problema] (https:/ /github.com/KudoAI/chatgpt.js/issues) o [PR](https://github.com/KudoAI/chatgpt.js/pulls) y se integrará, ¡pan comido!
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="showcase">
 
@@ -280,7 +280,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 ¡Si ha creado algo con chatgpt.js que desea compartir, envíe un correo electrónico a <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> o simplemente abra una <a href="https://github.com/KudoAI/chatgpt.js/pulls" target="_blank" rel="noopener">solicitud de extracción</a>!
 </p>
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="contributors">
 
@@ -341,7 +341,7 @@ Esta biblioteca existe gracias al código, las traducciones, los problemas y las
 
 </div><br>
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div align="center">
 
@@ -351,8 +351,8 @@ Esta biblioteca existe gracias al código, las traducciones, los problemas y las
 
 <a href="https://microsoft.com">
     <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/microsoft/white.png?v=963f917">
-        <img width=300 src="https://assets.chatgptjs.org/images/logos/partners/microsoft/colored.png?v=963f917">
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/microsoft/white.png?v=e638eac">
+        <img width=300 src="https://assets.chatgptjs.org/images/logos/partners/microsoft/colored.png?v=e638eac">
     </picture>
 </a>
 
@@ -360,7 +360,7 @@ Esta biblioteca existe gracias al código, las traducciones, los problemas y las
 
 <br>
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div align="center">
 

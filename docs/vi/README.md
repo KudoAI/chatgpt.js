@@ -32,8 +32,8 @@
 
 <a href="https://chatgpt.js.org">
     <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/darkmode.png?v=bc68d0c">
-        <img width=800 src="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/lightmode.png?v=bc68d0c">
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/darkmode.png?v=e638eac">
+        <img width=800 src="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/lightmode.png?v=e638eac">
     </picture>
 </a>
 
@@ -56,7 +56,7 @@
 
 </div>
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="intro">
 
@@ -71,7 +71,7 @@
 - Dễ sử dụng
 - Nhẹ (chưa tối ưu hiệu suất)
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="importing">
 
@@ -110,7 +110,7 @@ function yourCode() {
 }
 ```
 
-### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://assets.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?v=a3e53bf7"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://assets.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?v=a3e53bf7"> Greasemonkey:
+### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://assets.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?v=e638eac"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://assets.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?v=e638eac"> Greasemonkey:
 
 > **Ghi** _Để sử dụng một mẫu bắt đầu: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
@@ -122,7 +122,7 @@ function yourCode() {
 // Mã của bạn ở đây ...
 ```
 
-### <img style="margin: 0 2px -1px 0" height=16 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon16.png?v=8c852fa5"> Chrome:
+### <img style="margin: 0 2px -1px 0" height=16 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon16.png?v=e638eac"> Chrome:
 
 > **Ghi** _Để sử dụng một mẫu bắt đầu: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
@@ -146,7 +146,7 @@ Vì Google không cho phép mã từ xa nên việc nhập chatgpt.js cục bộ
 })();
 ```
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="npm">
 
@@ -164,7 +164,7 @@ Sau khi cài đặt, hãy điều hướng đến `node_modules/@kudoai/chatgpt.
 
 </div>
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="usage">
 
@@ -187,7 +187,7 @@ Mỗi cuộc gọi đều tìm nạp phản hồi cuối cùng. Nếu bạn ngh�
 
 Nếu không, hãy xem [hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/v3.5.0/docs/USERGUIDE.md) mở rộng hoặc chỉ cần gửi [vấn đề](https://github.com/KudoAI/chatgpt.js/issues) hoặc [PR](https://github.com/KudoAI/chatgpt.js/pulls) và nó sẽ được tích hợp, thật dễ dàng!
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="showcase">
 
@@ -287,7 +287,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 Nếu bạn đã tạo nội dung nào đó với chatgpt.js mà bạn muốn chia sẻ, hãy gửi email đến <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> hoặc chỉ cần mở một <a href="https://github.com/KudoAI/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>!
 </p>
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="contributors">
 
@@ -348,7 +348,7 @@ Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng 
 
 </div><br>
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div align="center">
 
@@ -358,8 +358,8 @@ Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng 
 
 <a href="https://microsoft.com">
     <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/microsoft/white.png?v=963f917">
-        <img width=300 src="https://assets.chatgptjs.org/images/logos/partners/microsoft/colored.png?v=963f917">
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/microsoft/white.png?v=e638eac">
+        <img width=300 src="https://assets.chatgptjs.org/images/logos/partners/microsoft/colored.png?v=e638eac">
     </picture>
 </a>
 
@@ -367,7 +367,7 @@ Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng 
 
 <br>
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div align="center">
 

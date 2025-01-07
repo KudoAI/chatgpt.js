@@ -32,8 +32,8 @@
 
 <a href="https://chatgpt.js.org">
     <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/darkmode.png?v=bc68d0c">
-        <img width=800 src="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/lightmode.png?v=bc68d0c">
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/darkmode.png?v=e638eac">
+        <img width=800 src="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/lightmode.png?v=e638eac">
     </picture>
 </a>
 
@@ -56,7 +56,7 @@
 
 </div>
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="intro">
 
@@ -71,7 +71,7 @@
 - 使いやすい
 - 軽量 (それでも最適なパフォーマンス)
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="importing">
 
@@ -110,7 +110,7 @@ function yourCode() {
 }
 ```
 
-### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://assets.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?v=a3e53bf7"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://assets.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?v=a3e53bf7"> Greasemonkey:
+### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://assets.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?v=e638eac"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://assets.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?v=e638eac"> Greasemonkey:
 
 > **ノート** _スターター テンプレートを使用するには: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
@@ -122,7 +122,7 @@ function yourCode() {
 // コードはここにあります...
 ```
 
-### <img style="margin: 0 2px -1px 0" height=16 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon16.png?v=8c852fa5"> Chrome:
+### <img style="margin: 0 2px -1px 0" height=16 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon16.png?v=e638eac"> Chrome:
 
 > **ノート** _スターター テンプレートを使用するには: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
@@ -146,7 +146,7 @@ Google ではリモート コードが許可されていないため、chatgpt.j
 })();
 ```
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="npm">
 
@@ -164,7 +164,7 @@ npm install @kudoai/chatgpt.js
 
 </div>
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="usage">
 
@@ -187,7 +187,7 @@ chatgpt.get('reply', 'last')
 
 そうでない場合は、拡張された [ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/v3.5.0/docs/USERGUIDE.md) を確認するか、単に [問題](https://github.com/KudoAI/chatgpt.js/issues) または [PR](https://github.com/KudoAI/chatgpt.js/pulls) と統合されるので、簡単です!
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="showcase">
 
@@ -280,7 +280,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 chatgpt.js で何かを作成して共有したい場合は、<a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> にメールするか、<a href="https://github.com/KudoAI/chatgpt.js/pulls" target="_blank" rel="noopener">プル リクエスト</a>!
 </p>
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="contributors">
 
@@ -341,7 +341,7 @@ chatgpt.js で何かを作成して共有したい場合は、<a href="mailto:sh
 
 </div><br>
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div align="center">
 
@@ -351,8 +351,8 @@ chatgpt.js で何かを作成して共有したい場合は、<a href="mailto:sh
 
 <a href="https://microsoft.com">
     <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/microsoft/white.png?v=963f917">
-        <img width=300 src="https://assets.chatgptjs.org/images/logos/partners/microsoft/colored.png?v=963f917">
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/microsoft/white.png?v=e638eac">
+        <img width=300 src="https://assets.chatgptjs.org/images/logos/partners/microsoft/colored.png?v=e638eac">
     </picture>
 </a>
 
@@ -360,7 +360,7 @@ chatgpt.js で何かを作成して共有したい場合は、<a href="mailto:sh
 
 <br>
 
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=78210a7">
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div align="center">
 

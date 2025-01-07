@@ -19,13 +19,13 @@
 
 <img src="../../chrome/media/images/screenshots/extension-loaded.png">
 
-<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon32.png?v=8c852fa5"></a> <a href="../../chrome">Chrome anlasser</a></h2>
+<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon32.png?v=e638eac"></a> <a href="../../chrome">Chrome anlasser</a></h2>
 
 Vorlage zum Erstellen einer Chrome-Erweiterung mit chatgpt.js (einschließlich Popup-Menü + Einstellungsverwaltung)
 
 [Repo](https://github.com/KudoAI/chatgpt.js-chrome-starter) / [Liesmich](../../chrome/docs/de#readme) / [Hilfe bekommen](https://github.com/KudoAI/chatgpt.js-chrome-starter/issues)
 
-<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://assets.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?v=a3e53bf7"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://assets.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?v=a3e53bf7"></a> <a href="../../greasemonkey">Greasemonkey anlasser</a></h2>
+<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://assets.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?v=e638eac"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://assets.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?v=e638eac"></a> <a href="../../greasemonkey">Greasemonkey anlasser</a></h2>
 
 Vorlage zum Erstellen eines Greasemonkey-Benutzerskripts mit chatgpt.js
 
