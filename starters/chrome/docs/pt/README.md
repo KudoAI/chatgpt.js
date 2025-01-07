@@ -3,8 +3,8 @@
 <div align="center">
     <h6>
         <picture>
-            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/icons/earth-americas-white-icon32.svg?main">
-            <img height=14 src="https://media.chatgptjs.org/images/icons/earth-americas-icon32.svg?main">
+            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/icons/earth-americas-white-icon32.svg?v=main">
+            <img height=14 src="https://assets.chatgptjs.org/images/icons/earth-americas-icon32.svg?v=main">
         </picture>
         &nbsp;Português |
         <a href="../..#readme">English</a> |
@@ -22,7 +22,7 @@
     </h6>
 </div>
 
-# <img height=21 src="https://media.chatgptjs.org/images/icons/platforms/chrome/icon32.png?8c852fa5"> chatgpt.js-chrome-starter
+# <img height=21 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon32.png?v=8c852fa5"> chatgpt.js-chrome-starter
 
 <h3>Um ponto de partida para desenvolver sua própria extensão do Chrome usando <a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a></h3>
 

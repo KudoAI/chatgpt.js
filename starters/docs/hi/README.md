@@ -14,13 +14,13 @@
 
 <img src="../../chrome/media/images/screenshots/extension-loaded.png">
 
-<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://media.chatgptjs.org/images/icons/platforms/chrome/icon32.png?8c852fa5"></a> <a href="../../chrome">Chrome स्टार्टर</a></h2>
+<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon32.png?v=8c852fa5"></a> <a href="../../chrome">Chrome स्टार्टर</a></h2>
 
 Chatgpt.js (पॉप-अप मेनू + सेटिंग्स प्रबंधन सहित) का उपयोग करके Chrome एक्सटेंशन बनाने के लिए टेम्पलेट
 
 [रेपो](https://github.com/KudoAI/chatgpt.js-chrome-starter) / [रीडमी](../../chrome/docs/hi#readme) / [मदद लें](https://github.com/KudoAI/chatgpt.js-chrome-starter/issues)
 
-<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://media.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?a3e53bf7"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://media.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?a3e53bf7"></a> <a href="../../greasemonkey">Greasemonkey स्टार्टर</a></h2>
+<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://assets.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?v=a3e53bf7"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://assets.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?v=a3e53bf7"></a> <a href="../../greasemonkey">Greasemonkey स्टार्टर</a></h2>
 
 chatgpt.js का उपयोग करके Greasemonkey उपयोगकर्तास्क्रिप्ट बनाने के लिए टेम्पलेट
 

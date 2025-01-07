@@ -12,13 +12,13 @@
 
 <img src="../../chrome/media/images/screenshots/extension-loaded.png">
 
-<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://media.chatgptjs.org/images/icons/platforms/chrome/icon32.png?8c852fa5"></a> <a href="../../chrome">Chrome 起動機</a></h2>
+<h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon32.png?v=8c852fa5"></a> <a href="../../chrome">Chrome 起動機</a></h2>
 
 使用 chatgpt.js 創建 Chrome 擴展程序的模板（包括彈出菜單+設置管理）
 
 [存儲庫](https://github.com/KudoAI/chatgpt.js-chrome-starter) / [自述文件](../../chrome/docs/zh-tw#readme) / [得到幫助](https://github.com/KudoAI/chatgpt.js-chrome-starter/issues)
 
-<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://media.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?a3e53bf7"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://media.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?a3e53bf7"></a> <a href="../../greasemonkey">Greasemonkey 起動機</a></h2>
+<h2><a href="../../greasemonkey"><img style="margin: 0 2px -0.065rem 0" height=19 src="https://assets.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?v=a3e53bf7"><img style="margin: 0 2px -0.035rem 1px" height=19.5 src="https://assets.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?v=a3e53bf7"></a> <a href="../../greasemonkey">Greasemonkey 起動機</a></h2>
 
 使用 chatgpt.js 創建 Greasemonkey 用戶腳本的模板
 
