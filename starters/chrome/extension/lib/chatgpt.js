@@ -23,7 +23,7 @@ const chatgpt = {
     actAs(persona) {
     // Prompts ChatGPT to act as a persona from https://github.com/KudoAI/chat-prompts/blob/main/personas.json
 
-        const promptsUrl = 'https://raw.githubusercontent.com/KudoAI/chat-prompts/main/dist/personas.min.json';
+        const promptsUrl = 'https://cdn.jsdelivr.net/gh/KudoAI/chat-prompts/dist/personas.min.json';
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
             xhr.open('GET', promptsUrl, true); xhr.send();
