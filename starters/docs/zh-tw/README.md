@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <div align="center">
     <h6>
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/starters/docs">
