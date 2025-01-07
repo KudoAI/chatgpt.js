@@ -7,19 +7,19 @@
             </picture>
         </a>
         English |
-        <a href="zh-cn/SECURITY.md">简体中文</a> |
-        <a href="zh-tw/SECURITY.md">繁體中文</a> |
-        <a href="ja/SECURITY.md">日本</a> |
-        <a href="ko/SECURITY.md">한국인</a> |
-        <a href="hi/SECURITY.md">हिंदी</a> |
-        <a href="np/SECURITY.md">नेपाली</a> |
-        <a href="de/SECURITY.md">Deutsch</a> |
-        <a href="es/SECURITY.md">Español</a> |
-        <a href="fr/SECURITY.md">Français</a> |
-        <a href="it/SECURITY.md">Italiano</a> |
-        <a href="nl/SECURITY.md">Nederlands</a> |
-        <a href="pt/SECURITY.md">Português</a> |
-        <a href="vi/SECURITY.md">Việt</a>
+        <a href="https://docs.chatgptjs.org/zh-cn/SECURITY.md">简体中文</a> |
+        <a href="https://docs.chatgptjs.org/zh-tw/SECURITY.md">繁體中文</a> |
+        <a href="https://docs.chatgptjs.org/ja/SECURITY.md">日本</a> |
+        <a href="https://docs.chatgptjs.org/ko/SECURITY.md">한국인</a> |
+        <a href="https://docs.chatgptjs.org/hi/SECURITY.md">हिंदी</a> |
+        <a href="https://docs.chatgptjs.org/np/SECURITY.md">नेपाली</a> |
+        <a href="https://docs.chatgptjs.org/de/SECURITY.md">Deutsch</a> |
+        <a href="https://docs.chatgptjs.org/es/SECURITY.md">Español</a> |
+        <a href="https://docs.chatgptjs.org/fr/SECURITY.md">Français</a> |
+        <a href="https://docs.chatgptjs.org/it/SECURITY.md">Italiano</a> |
+        <a href="https://docs.chatgptjs.org/nl/SECURITY.md">Nederlands</a> |
+        <a href="https://docs.chatgptjs.org/pt/SECURITY.md">Português</a> |
+        <a href="https://docs.chatgptjs.org/vi/SECURITY.md">Việt</a>
     </h6>
 </div>
 
