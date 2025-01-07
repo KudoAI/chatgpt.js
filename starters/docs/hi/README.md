@@ -12,7 +12,7 @@
 
 <br>
 
-<img src="../../chrome/media/images/screenshots/extension-loaded.png">
+<img src="../../chrome/images/screenshots/extension-loaded.png">
 
 <h2><a href="../../chrome"><img style="margin: 0 2px -1px 0" height=18 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon32.png?v=e638eac"></a> <a href="../../chrome">Chrome स्टार्टर</a></h2>
 
