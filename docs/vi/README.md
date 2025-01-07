@@ -45,14 +45,22 @@
 
 <div id="shields" align="center">
 
-[![](https://img.shields.io/github/stars/KudoAI/chatgpt.js?label=Ngôi+sao&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/stargazers)
-[![](https://img.shields.io/badge/Giấy_Phép-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
-[![](https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.5.0&label=Kích+thước+thu+nhỏ&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js/tree/v3.5.0/dist/chatgpt.min.js)
-[![](https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Chất+Lượng+Mã&logo=codefactor&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/chatgpt.js)
-[![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dkudoai_chatgpt.js%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=Lỗ+hổng&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=kudoai_chatgpt.js)
-[![](https://img.shields.io/badge/Đề_Cập_Trong-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/sindresorhus/awesome-chatgpt#javascript)
-[![](https://img.shields.io/badge/Đặc_Trưng_Trên-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.producthunt.com/posts/chatgpt-js)
-![](https://img.shields.io/badge/yêu_cầu_jsDelivr-2,000,000+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge)
+<a href="https://github.com/KudoAI/chatgpt.js/stargazers">
+    <img src="https://img.shields.io/github/stars/KudoAI/chatgpt.js?label=Ngôi+sao&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="LICENSE.md">
+    <img src="https://img.shields.io/badge/Giấy_Phép-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://github.com/KudoAI/chatgpt.js/tree/v3.5.0/dist/chatgpt.min.js">
+    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.5.0&label=Kích+thước+thu+nhỏ&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
+<a href="https://www.codefactor.io/repository/github/kudoai/chatgpt.js">
+    <img src="https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Chất+Lượng+Mã&logo=codefactor&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge"></a>
+<a href="https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=kudoai_chatgpt.js">
+    <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dkudoai_chatgpt.js%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=Lỗ+hổng&color=gold"></a>
+<a href="https://github.com/sindresorhus/awesome-chatgpt#javascript">
+    <img src="https://img.shields.io/badge/Đề_Cập_Trong-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://www.producthunt.com/posts/chatgpt-js">
+    <img src="https://img.shields.io/badge/Đặc_Trưng_Trên-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="#">
+    <img src="https://img.shields.io/badge/yêu_cầu_jsDelivr-2,000,000+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 
 </div>
 
