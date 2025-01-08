@@ -411,7 +411,7 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 <a href="https://microsoft.com">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/microsoft/white.png?v=e638eac">
-        <img width=300 src="https://assets.chatgptjs.org/images/logos/partners/microsoft/colored.png?v=e638eac">
+        <img width=300 src="https://assets.chatgptjs.org/images/logos/partners/microsoft/black.png?v=e638eac">
     </picture>
 </a>
 
