@@ -111,9 +111,9 @@
     const cjsDiv = dom.create.elem('div', { class: 'chatgpt-js' })
     const cjsLogo = dom.create.elem('img', {
         title: 'Powered by chatgpt.js',
-        src: `${app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js-faded.png?b2a1975` })
+        src: `${app.urls.cjsAssetHost}/images/badges/powered-by-chatgpt.js-faded.png?b2a1975` })
     cjsLogo.onmouseover = cjsLogo.onmouseout = event => cjsLogo.src = `${
-        app.urls.cjsMediaHost}/images/badges/powered-by-chatgpt.js${
+        app.urls.cjsAssetHost}/images/badges/powered-by-chatgpt.js${
             event.type == 'mouseover' ? '' : '-faded' }.png?b2a1975`
     cjsLogo.onclick = () => chrome.tabs.create({ url: app.urls.chatgptJS })
     cjsDiv.append(cjsLogo) ; footer.append(cjsDiv)
