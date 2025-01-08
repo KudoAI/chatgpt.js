@@ -1,8 +1,8 @@
 <div align="right">
     <h6>
         <picture>
-            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/icons/earth-americas-white-icon32.svg?v=main">
-            <img height=14 src="https://assets.chatgptjs.org/images/icons/earth-americas-icon32.svg?v=main">
+            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/icons/earth/white/icon32.svg?v=e638eac">
+           <img height=14 src="https://assets.chatgptjs.org/images/icons/earth/black/icon32.svg?v=e638eac">
         </picture>
         &nbsp;简体中文 |
         <a href="../SECURITY.md">English</a> |
