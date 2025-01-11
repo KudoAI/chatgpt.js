@@ -5,6 +5,9 @@ on:
     branches: [master, main]
     paths: [chatgpt.js]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     if: (github.repository == 'KudoAI/chatgpt.js') && (github.event.commits[0].committer.username != 'kudo-sync-bot')

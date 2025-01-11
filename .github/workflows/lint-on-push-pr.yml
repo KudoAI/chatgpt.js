@@ -1,6 +1,9 @@
 name: Lint pushes/PRs
 on: [push, pull_request]
 
+permissions:
+  contents: read
+
 jobs:
 
   js-json-md-yaml-lint:
