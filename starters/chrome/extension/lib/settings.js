@@ -6,6 +6,7 @@ window.settings = {
         // Add settings options as keys, with each key's value being an object that includes:
         // - 'type': the control type (e.g. 'toggle' or 'prompt')
         // - 'label': a descriptive label
+        // - 'defaultVal' (optional): default value of setting (true for toggles if unspecified, false otherwise)
         // - 'symbol' (optional): for icon display (e.g. ⌚)
         // NOTE: Toggles are disabled by default unless key name contains 'disabled' or 'hidden' (case insensitive)
         // NOTE: Controls are displayed in top-to-bottom order
