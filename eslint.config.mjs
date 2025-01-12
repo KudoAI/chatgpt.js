@@ -51,5 +51,5 @@ export default [
         }
     },
     { files: ['**/*.mjs'], languageOptions: { sourceType: 'module' }},
-    { files: ['**/*.yaml, **/*.yml'], ...yml.configs['flat/standard'][1] }
+    { files: ['**/*.{yaml,yml}'], ...yml.configs['flat/standard'][1] }
 ]
