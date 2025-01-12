@@ -10,7 +10,7 @@ import yml from 'eslint-plugin-yml'
 export default [
     { ignores: ['**/*.min.js', '**/package-lock.json'] },
     {
-        files: ['**/*.js', '**/*.mjs'],
+        files: ['**/*.{js,mjs}'],
         languageOptions: {
             ecmaVersion: 'latest', sourceType: 'script',
             globals: {
