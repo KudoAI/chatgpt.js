@@ -15,12 +15,11 @@ window.settings = {
     },
 
     load(...keys) {
-        keys = keys.flat() // flatten array args nested by spread operator
-        return Promise.all(keys.map(key => // resolve promise when all keys load
-            new Promise(resolve => // resolve promise when single key value loads
-                chrome.storage.sync.get(key, result => { // load from Chrome extension storage
-                    window.config[key] = result[key] || false ; resolve()
-    }))))},
+        return Promise.all(keys.flat().map(async key => // resolve promise when all keys load
+            window.config[key] = (await chrome.storage.sync.get(key))[key]
+                ?? this.controls[key]?.defaultVal ?? this.controls[key]?.type == 'toggle'
+        ))
+    },
 
     save(key, val) {
         chrome.storage.sync.set({ [key]: val }) // save to Chrome extension storage
