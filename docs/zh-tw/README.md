@@ -209,7 +209,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 ### <img src="https://amazongpt.kudoai.com/assets/images/icons/amazongpt/black-gold-teal/icon48.png" width=20> [AmazonGPT](https://amazongpt.kudoai.com)  &nbsp;<a href="https://amazongpt.kudoai.com/assets/wolfram-award/letter.pdf" target="_blank" rel="noopener"><img height=20 src="https://amazongpt.kudoai.com/assets/images/badges/wolfram-award/gold-badge.png" style="margin:0 0 -2px 5px"></a>
 
 > 將 AI 加入 Amazon 購物。
-<br>[Install](https://cdn.jsdelivr.net/gh/KudoAI/amazongpt/greasemonkey/amazongpt.user.js) /
+<br>[Install](https://github.com/KudoAI/amazongpt/raw/refs/heads/main/greasemonkey/amazongpt.user.js) /
 [Readme](https://amazongpt.kudoai.com/#readme) /
 [Discuss](https://amazongpt.kudoai.com/discussions)
 
