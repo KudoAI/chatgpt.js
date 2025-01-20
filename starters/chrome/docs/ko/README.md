@@ -81,13 +81,13 @@ _고급 Chrome API 메서드에 대한 자세한 내용은 https://developer.chr
 
 
 <a href="https://chatgptinfinity.com" target="_blank" rel="noopener">
-    <img width=777 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity@8fad59e/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+    <img width=777 src="https://assets.chatgptinfinity.com/images/tiles/marquee/tile-1400x560.png?v=34b428b">
 </a>
 
 <p><br>
 
 <a href="https://chatgptwidescreen.com" target="_blank" rel="noopener">
-    <img width=777 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@02d9942/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+    <img width=777 src="https://assets.chatgptwidescreen.com/images/tiles/marquee/tile-1400x560.png?v=4c5d018">
 </a>
 
 </div>
