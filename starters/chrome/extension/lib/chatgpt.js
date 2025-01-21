@@ -600,7 +600,7 @@ const chatgpt = {
             // Create transcript from active chat
             if (chatToGet == 'active' && /\/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$/.test(window.location.href)) {
                 const chatDivs = document.querySelectorAll('main > div > div > div > div > div > div[class*=group]');
-                if (chatDivs.length === 0) return console.error('Chat is empty!');
+                if (!chatDivs.length) return console.error('Chat is empty!');
                 const msgs = []; let isUserMsg = true;
                 chatDivs.forEach((div) => {
                     const sender = isUserMsg ? 'USER' : 'CHATGPT'; isUserMsg = !isUserMsg;
