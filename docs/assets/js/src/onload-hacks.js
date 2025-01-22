@@ -610,4 +610,4 @@ window.addEventListener('hashchange', () => {
     if (!fromUnhashedURL) fromUnhashedURL = true
     else if (fromUnhashedURL)
         onLoadObserver.observe(document.body, { childList: true, subtree: true })
-});
+})
