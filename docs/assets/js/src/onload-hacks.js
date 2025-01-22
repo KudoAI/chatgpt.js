@@ -224,7 +224,8 @@ const onLoadObserver = new MutationObserver(() => {
             triggerElements.push(document.querySelector('h3#-greasemonkey'))
             triggerElements.push(document.querySelector('h3#-chrome'))
             triggerElements.push( // 1st showcase tile
-                document.querySelector('img[src*=chatgpt-infinity]'))
+                document.querySelector('img[src*="assets.chatgptinfinity.com"]'))
+            console.log(triggerElements)
             triggerElements.forEach(elem => {
                 const elementPos = elem.getBoundingClientRect().top
                 const vOffsetDivisor = ( // higher = lower pos

@@ -489,7 +489,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 
     /* Showcase */
     #showcase ~ h3, #showcase ~ p { text-align: center !important } /* center titles */
-    img[src*=promo-tile] { width: 100% !important } /* expand tiles full-width */
+    img[src*="/tiles/"] { width: 100% !important } /* expand tiles full-width */
 
     /* Contributors */
     #contributors + p { /* shrink contributors description font, remove padding */
