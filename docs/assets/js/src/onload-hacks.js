@@ -605,9 +605,5 @@ document.querySelectorAll('.dropdown-link').forEach(link => { // add listener to
 
 // Observe for load + re-connect on nav to new hash
 onLoadObserver.observe(document.body, { childList: true, subtree: true })
-let fromUnhashedURL = window.location.href.includes('#')
-window.addEventListener('hashchange', () => {
-    if (!fromUnhashedURL) fromUnhashedURL = true
-    else if (fromUnhashedURL)
-        onLoadObserver.observe(document.body, { childList: true, subtree: true })
-})
+window.addEventListener('hashchange', () =>
+    setTimeout(() => onLoadObserver.observe(document.body, { childList: true, subtree: true }), 500))
