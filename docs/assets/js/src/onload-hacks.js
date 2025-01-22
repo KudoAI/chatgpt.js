@@ -170,24 +170,24 @@ const onLoadObserver = new MutationObserver(() => {
             })
 
             // Add FADE classes to elements
-            const fadeUpElements = [], fadeRightElements = [], fadeLeftElements = []
-            fadeUpElements.push(...document.querySelectorAll(
+            const fadeUpElems = [], fadeRightElems = [], fadeLeftElems = []
+            fadeUpElems.push(...document.querySelectorAll(
                 '.cover-main img, .cover-main a,' // cover elements
                   + 'h2, h3, p, pre, main li,' // general elements
                   + '#copyright-footer')) // footer elements
-            fadeUpElements.forEach(elem => elem.classList.add('content-fadeup'))
-            fadeUpElements.push( // language selector
+            fadeUpElems.forEach(elem => elem.classList.add('content-fadeup'))
+            fadeUpElems.push( // language selector
                 document.querySelector('#language-menu'))
-            fadeUpElements[fadeUpElements.length - 1].classList.add('menu-fadeup')
-            fadeRightElements.push(...document.querySelectorAll( // left-side showcase apps
+            fadeUpElems[fadeUpElems.length - 1].classList.add('menu-fadeup')
+            fadeRightElems.push(...document.querySelectorAll( // left-side showcase apps
                 `#showcase ~ h3:nth-of-type(odd):not(#contributors ~ *),
                  #showcase ~ h3 + p:nth-of-type(odd):not(#contributors ~ *`))
-            fadeRightElements.forEach(elem => elem.classList.add('content-faderight'))
-            fadeLeftElements.push(...document.querySelectorAll( // right-side showcase apps
+            fadeRightElems.forEach(elem => elem.classList.add('content-faderight'))
+            fadeLeftElems.push(...document.querySelectorAll( // right-side showcase apps
                 `#showcase ~ h3:nth-of-type(even):not(#contributors ~ *),
                  #showcase ~ h3 + p:nth-of-type(even):not(#contributors ~ *`))
-            fadeLeftElements.forEach(elem => elem.classList.add('content-fadeleft'))
-            const fadeElements = [...fadeUpElements, ...fadeRightElements, ...fadeLeftElements]
+            fadeLeftElems.forEach(elem => elem.classList.add('content-fadeleft'))
+            const fadeElems = [...fadeUpElems, ...fadeRightElems, ...fadeLeftElems]
 
             // ...then observe for visibility change to update element/sidebar states
             const sideNavItems = [...document.querySelectorAll('.sidebar-nav li')]
@@ -211,7 +211,7 @@ const onLoadObserver = new MutationObserver(() => {
                     }
                 } else entry.target.classList.remove('visible')
             }), { root: null, threshold: 0.02 })
-            fadeElements.forEach(elem => fadeObserver.observe(elem))
+            fadeElems.forEach(elem => fadeObserver.observe(elem))
 
             // Change stars shield link to repo
             const starsShieldLink = document.querySelector('a[href$=stargazers]'),
@@ -219,14 +219,13 @@ const onLoadObserver = new MutationObserver(() => {
             starsShieldLink.setAttribute('href', href.replace('/stargazers', ''))
 
             // Establish TRIGGER POINTS for scroll FX
-            const triggerElements = [], triggerPoints = []
-            triggerElements.push(...document.querySelectorAll('h2'))
-            triggerElements.push(document.querySelector('h3#-greasemonkey'))
-            triggerElements.push(document.querySelector('h3#-chrome'))
-            triggerElements.push( // 1st showcase tile
+            const triggerElems = [], triggerPoints = []
+            triggerElems.push(...document.querySelectorAll('h2'))
+            triggerElems.push(document.querySelector('h3#-greasemonkey'))
+            triggerElems.push(document.querySelector('h3#-chrome'))
+            triggerElems.push( // 1st showcase tile
                 document.querySelector('img[src*="assets.chatgptinfinity.com"]'))
-            console.log(triggerElements)
-            triggerElements.forEach(elem => {
+            triggerElems.forEach(elem => {
                 const elementPos = elem.getBoundingClientRect().top
                 const vOffsetDivisor = ( // higher = lower pos
                     elem.id.includes('⚡') ? 1.5 // Importing the Library section
