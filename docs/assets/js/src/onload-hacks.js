@@ -143,6 +143,9 @@ const onLoadObserver = new MutationObserver(() => {
                 + 'Hosted by <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>'
             article.append(copyrightFooter)
 
+            // Strip whitespace after MICROSOFT partner logo
+            document.querySelector('img[src*="partners/microsoft"]').nextSibling.remove()
+
             // Replace GitHub demo embed w/ YouTube one
             const ghDemo = document.querySelector('a[href*="/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3140b0f8a4"]'),
                   ytDemo = document.createElement('iframe')
