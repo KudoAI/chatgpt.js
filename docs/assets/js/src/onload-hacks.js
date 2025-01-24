@@ -143,9 +143,6 @@ const onLoadObserver = new MutationObserver(() => {
                 + 'Hosted by <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>'
             article.append(copyrightFooter)
 
-            // Strip whitespace after MICROSOFT partner logo
-            document.querySelector('img[src*="partners/microsoft"]').nextSibling.remove()
-
             // Replace GitHub demo embed w/ YouTube one
             const ghDemo = document.querySelector('a[href*="/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3140b0f8a4"]'),
                   ytDemo = document.createElement('iframe')
@@ -298,7 +295,7 @@ const onLoadObserver = new MutationObserver(() => {
                 }
             });
 
-            // Convert OpenAI showcase icons + sidebar logo to dark-mode
+            // Convert OpenAI showcase icons + sidebar/partner logo to DARK MODE
             document.querySelectorAll('picture').forEach(picture => {
                 const srcElement = picture.querySelector('source'),
                       srcSet = srcElement.getAttribute('srcset'),
@@ -306,6 +303,9 @@ const onLoadObserver = new MutationObserver(() => {
                 imgElement.setAttribute('src', srcSet)
                 picture.parentNode.replaceChild(imgElement, picture)
             })
+
+            // Strip whitespace after MICROSOFT partner logo
+            document.querySelector('img[src*="partners/microsoft"]').nextSibling.remove()
 
             // Append EMAIL SIGNUP footer
             const emailFooter = document.createElement('div')
