@@ -358,7 +358,7 @@ main h3 img { /* app icons */
 main h3 a { /* app titles */
     text-decoration: none ; color: white !important }
 main h3 a:hover { text-decoration: underline #42b983 }
-img[src*='promo-tile'] { width: 74vw ; border: 1px solid white ; margin: 32px 0 }
+img[src*="/tiles/"] { width: 74vw ; border: 1px solid white ; margin: 32px 0 }
 a[href*='mailto:showcase'] { word-break: keep-all }
 
 /* Contributors */
@@ -375,6 +375,7 @@ a[href*='mailto:showcase'] { word-break: keep-all }
 /* Footer */
 #footer { text-align: center ; margin: -119px 0 -105px } /* general position */
 img[src*="logos/partners"] { width: 18vw }
+img[src*="partners/burncloud"] { padding-bottom: 8px }
 #mc_embed_signup h2 { /* 1st CTA */
     margin: 15px 0 3.5rem !important ;
     font-size: 2.68rem !important ; color: white ; -webkit-text-stroke: 1px black }
@@ -489,7 +490,6 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 
     /* Showcase */
     #showcase ~ h3, #showcase ~ p { text-align: center !important } /* center titles */
-    img[src*="/tiles/"] { width: 100% !important } /* expand tiles full-width */
 
     /* Contributors */
     #contributors + p { /* shrink contributors description font, remove padding */
