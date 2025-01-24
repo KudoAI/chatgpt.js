@@ -358,7 +358,7 @@ main h3 img { /* app icons */
 main h3 a { /* app titles */
     text-decoration: none ; color: white !important }
 main h3 a:hover { text-decoration: underline #42b983 }
-img[src*='promo-tile'] { width: 74vw ; border: 1px solid white ; margin: 32px 0 }
+img[src*="/tiles/"] { width: 74vw ; border: 1px solid white ; margin: 32px 0 }
 a[href*='mailto:showcase'] { word-break: keep-all }
 
 /* Contributors */
@@ -489,7 +489,6 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
 
     /* Showcase */
     #showcase ~ h3, #showcase ~ p { text-align: center !important } /* center titles */
-    img[src*="/tiles/"] { width: 100% !important } /* expand tiles full-width */
 
     /* Contributors */
     #contributors + p { /* shrink contributors description font, remove padding */
