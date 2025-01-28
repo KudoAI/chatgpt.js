@@ -1,6 +1,8 @@
 import js from '@eslint/js'
 import globals from 'globals'
 import css from '@eslint/css'
+import html from '@html-eslint/eslint-plugin'
+import htmlParser from '@html-eslint/parser'
 import importPlugin from 'eslint-plugin-import'
 import json from '@eslint/json'
 import markdown from '@eslint/markdown'
@@ -9,7 +11,7 @@ import stylisticJS from '@stylistic/eslint-plugin-js'
 import yml from 'eslint-plugin-yml'
 
 export default [
-    { ignores: ['**/*.min.js', 'docs/**/*.min.css', '**/package-lock.json'] },
+    { ignores: ['**/*.min.js', '**/package-lock.json', 'docs/**/*.min.css', 'docs/**/footer.html'] },
     {
         files: ['**/*.{js,mjs}'],
         languageOptions: {
@@ -42,6 +44,16 @@ export default [
     },
     { files: ['**/chatgpt.js'], languageOptions: { globals: { chatgpt: 'off' }}},
     { files: ['**/*.css'], language: 'css/css', ...css.configs.recommended },
+    {
+        files: ['**/*.html'], languageOptions: { parser: htmlParser }, plugins: { '@html-eslint': html },
+        rules: {
+            ...html.configs['flat/recommended'].rules,
+            '@html-eslint/require-title': 'off', // allow missing title tags
+            '@html-eslint/quotes': 'off', // allow unquoted attrs for compactness
+            '@html-eslint/attrs-newline': 'off', // allow multi-attrs in single line
+            '@html-eslint/element-newline': ['error', { 'skip': ['html'] }] // allow multi-tags in single line
+        }
+    },
     { files: ['**/*.json'], language: 'json/json', ...json.configs.recommended },
     {
         files: ['**/*.md'], language: 'markdown/commonmark', plugins: { markdown },

@@ -71,6 +71,8 @@
     "@eslint/css": "^0.2.0",
     "@eslint/json": "^0.10.0",
     "@eslint/markdown": "^6.2.2",
+    "@html-eslint/eslint-plugin": "^0.33.1",
+    "@html-eslint/parser": "^0.33.0",
     "@stylistic/eslint-plugin-js": "^3.0.0",
     "docsify-cli": "^4.4.4",
     "eslint": "^9.19.0",
