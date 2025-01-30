@@ -1114,7 +1114,7 @@ const chatgpt = {
         }
     },
 
-    isDarkMode() { return document.documentElement.classList.toString().includes('dark'); },
+    isDarkMode() { return document.documentElement.className.includes('dark') },
     isFullScreen() { return chatgpt.browser.isFullScreen(); },
 
     async isIdle(timeout = null) {
