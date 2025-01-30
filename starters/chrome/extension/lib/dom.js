@@ -5,20 +5,6 @@ window.dom = {
             for (const depName in deps) this[depName] = deps[depName] }
     },
 
-    create: {
-        elem(elemType, attrs = {}) {
-            const elem = document.createElement(elemType)
-            for (const attr in attrs) elem.setAttribute(attr, attrs[attr])
-            return elem
-        },
-
-        svgElem(type, attrs) {
-            const elem = document.createElementNS('http://www.w3.org/2000/svg', type)
-            for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
-            return elem
-        }
-    },
-
     addRisingParticles(targetNode) { // requires https://assets.aiwebextensions.com/styles/rising-particles/dist/<gray|white>.min.css
         if (targetNode.querySelector('[id*=particles]')) return
         const particlesDivsContainer = document.createElement('div')
@@ -32,4 +18,18 @@ window.dom = {
         })
         targetNode.prepend(particlesDivsContainer)
     },
+
+    create: {
+        elem(elemType, attrs = {}) {
+            const elem = document.createElement(elemType)
+            for (const attr in attrs) elem.setAttribute(attr, attrs[attr])
+            return elem
+        },
+
+        svgElem(type, attrs) {
+            const elem = document.createElementNS('http://www.w3.org/2000/svg', type)
+            for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
+            return elem
+        }
+    }
 };
