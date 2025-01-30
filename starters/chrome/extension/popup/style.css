@@ -17,7 +17,7 @@ a:focus, a:hover { text-decoration: underline ; color: inherit }
     display: inline-grid ; align-content: center ; justify-content: center /* center spinner */
 }
 .loading-spinner {
-    width: 11px ; aspect-ratio: 1 ; border-radius: 50% ; border: 5px solid #000 ;
+    width: 19px ; aspect-ratio: 1 ; border-radius: 50% ; border: 3px solid #000 ;
     animation: loader-move-head-tail 0.8s infinite linear alternate, loader-rotate 1.6s infinite linear
 }
 @keyframes loader-move-head-tail {
