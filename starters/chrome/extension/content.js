@@ -87,11 +87,10 @@
     await chatgpt.isLoaded()
     await new Promise(resolve => setTimeout(resolve, 500)); // sleep .5s
 
-    // Add STARS styles for modals
-    ['black', 'white'].forEach(color => document.head.append(
+    // Add RISING PARTICLES styles for modals
+    ['gray', 'white'].forEach(color => document.head.append(
         dom.create.elem('link', { rel: 'stylesheet',
-            href: `https://assets.aiwebextensions.com/styles/rising-stars/dist/${
-                color}.min.css?v=0cde30f9ae3ce99ae998141f6e7a36de9b0cc2e7`
+            href: `https://assets.aiwebextensions.com/styles/rising-particles/dist/${color}.min.css?v=727feff`
     })))
 
     if (config.extensionDisabled) return
