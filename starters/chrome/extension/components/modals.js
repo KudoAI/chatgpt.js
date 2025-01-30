@@ -19,7 +19,7 @@ window.modals = {
     open(modalType) {
         const modal = this[modalType]() // show modal
         this.stack.unshift(modalType) // add to stack
-        this.init(alert) // add classes + starry bg
+        this.init(modal) // add classes + starry bg
         this.observeRemoval(modal, modalType) // to maintain stack for proper nav
     },
 
