@@ -1,7 +1,7 @@
 window.dom = {
 
     imports: {
-        import(deps) { // { env) }
+        import(deps) { // { config, env }
             for (const depName in deps) this[depName] = deps[depName] }
     },
 
@@ -25,16 +25,63 @@ window.dom = {
     },
 
     create: {
+        anchor(linkHref, displayContent, attrs = {}) {
+            const anchor = document.createElement('a'),
+                  defaultAttrs = { href: linkHref, target: '_blank', rel: 'noopener' },
+                  finalAttrs = { ...defaultAttrs, ...attrs }
+            Object.entries(finalAttrs).forEach(([attr, value]) => anchor.setAttribute(attr, value))
+            if (displayContent) anchor.append(displayContent)
+            return anchor
+        },
+
         elem(elemType, attrs = {}) {
             const elem = document.createElement(elemType)
             for (const attr in attrs) elem.setAttribute(attr, attrs[attr])
             return elem
         },
 
+        style(content) {
+            const style = document.createElement('style')
+            if (content) style.innerText = content
+            return style
+        },
+
         svgElem(type, attrs) {
             const elem = document.createElementNS('http://www.w3.org/2000/svg', type)
             for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
             return elem
+        }
+    },
+
+    cssSelectorize(classList) {
+        return classList.toString()
+            .replace(/([:[\]\\])/g, '\\$1') // escape special chars :[]\
+            .replace(/^| /g, '.') // prefix w/ dot, convert spaces to dots
+    },
+
+    get: {
+        computedWidth(...elems) { // including margins
+            let totalWidth = 0
+            elems.map(arg => arg instanceof NodeList ? [...arg] : arg).flat().forEach(elem => {
+                if (!(elem instanceof Element)) return
+                const elemStyle = getComputedStyle(elem) ; if (elemStyle.display == 'none') return
+                totalWidth += elem.getBoundingClientRect().width + parseFloat(elemStyle.marginLeft)
+                                                                 + parseFloat(elemStyle.marginRight)
+            })
+            return totalWidth
+        },
+
+        loadedElem(selector, timeout = null) {
+            const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(null), timeout)) : null
+            const isLoadedPromise = new Promise(resolve => {
+                const elem = document.querySelector(selector)
+                if (elem) resolve(elem)
+                else new MutationObserver((_, obs) => {
+                    const elem = document.querySelector(selector)
+                    if (elem) { obs.disconnect() ; resolve(elem) }
+                }).observe(document.documentElement, { childList: true, subtree: true })
+            })
+            return ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
         }
     }
 };
