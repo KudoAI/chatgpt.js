@@ -5,18 +5,23 @@ window.dom = {
             for (const depName in deps) this[depName] = deps[depName] }
     },
 
-    addRisingParticles(targetNode) { // requires https://assets.aiwebextensions.com/styles/rising-particles/dist/<gray|white>.min.css
+    addRisingParticles(targetNode, { lightScheme = 'gray', darkScheme = 'white' } = {}) {
+    // Requires https://assets.aiwebextensions.com/styles/rising-particles/dist/<lightScheme|darkScheme>.min.css
+
         if (targetNode.querySelector('[id*=particles]')) return
-        const particlesDivsContainer = document.createElement('div')
-        particlesDivsContainer.style.cssText = 'position: absolute ; top: 0 ; left: 0 ;' // hug targetNode's top-left corner
+        const particlesDivsWrapper = document.createElement('div')
+        particlesDivsWrapper.style.cssText = (
+            'position: absolute ; top: 0 ; left: 0 ;' // hug targetNode's top-left corner
           + 'height: 100% ; width: 100% ; border-radius: 15px ; overflow: clip ;' // bound innards exactly by targetNode
-          + 'z-index: -1'; // allow interactive elems to be clicked
+          + 'z-index: -1' ); // allow interactive elems to be clicked
         ['sm', 'med', 'lg'].forEach(particleSize => {
             const particlesDiv = document.createElement('div')
-            particlesDiv.id = `${ this.imports.env.ui.scheme == 'dark' ? 'white' : 'gray' }-particles-${particleSize}`
-            particlesDivsContainer.append(particlesDiv)
+            particlesDiv.id = this.imports.config?.bgAnimationsDisabled ? `particles-${particleSize}-off`
+                : `${( this.imports.env?.ui?.scheme || this.imports.env?.ui?.app?.scheme ) == 'dark' ? darkScheme
+                    : lightScheme }-particles-${particleSize}`
+            particlesDivsWrapper.append(particlesDiv)
         })
-        targetNode.prepend(particlesDivsContainer)
+        targetNode.prepend(particlesDivsWrapper)
     },
 
     create: {
