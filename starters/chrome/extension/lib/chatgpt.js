@@ -2033,7 +2033,7 @@ const cjsFuncSynonyms = [
     ['render', 'parse'],
     ['reply', 'response'],
     ['sentiment', 'attitude', 'emotion', 'feeling', 'opinion', 'perception'],
-    ['speak', 'say', 'speech', 'talk', 'tts'],
+    ['speak', 'play', 'say', 'speech', 'talk', 'tts'],
     ['summarize', 'tldr'],
     ['typing', 'generating'],
     ['unminify', 'beautify', 'prettify', 'prettyPrint']
