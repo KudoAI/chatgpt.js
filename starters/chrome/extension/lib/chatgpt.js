@@ -1883,7 +1883,7 @@ const chatgpt = {
     // - voice = index of voices available on user device
     // - pitch = float for pitch of speech from 0 to 2
     // - speed = float for rate of speech from 0.1 to 10
-    // - onend = callback function when speech finishes
+    // - onend = callback function invoked when speech finishes playing
 
         // Validate args
         if (typeof msg != 'string') return console.error('Message must be a string!')
