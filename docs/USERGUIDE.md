@@ -1023,6 +1023,7 @@ Available options:
  - `voice`: A number representing the index of voices available on the user device.
  - `pitch`: A float representing the pitch of the speech. From `0` to `2`.
  - `speed`: A float representing the speed of the speech. From `0.1` to `10`.
+ - `onend`: A callback function invoked when speech finishes playing.
 
 Example code:
 
