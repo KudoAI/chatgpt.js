@@ -1157,6 +1157,7 @@ const chatgpt = {
     },
 
     isLightMode() { return document.documentElement.classList.toString().includes('light'); },
+    isTyping() { return !!this.getStopButton() },
 
     logout() { window.location.href = 'https://chat.openai.com/auth/logout'; },
 
@@ -2034,6 +2035,7 @@ const cjsFuncSynonyms = [
     ['sentiment', 'attitude', 'emotion', 'feeling', 'opinion', 'perception'],
     ['speak', 'say', 'speech', 'talk', 'tts'],
     ['summarize', 'tldr'],
+    ['typing', 'generating'],
     ['unminify', 'beautify', 'prettify', 'prettyPrint']
 ];
 const camelCaser = (words) => {

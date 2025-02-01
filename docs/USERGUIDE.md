@@ -58,6 +58,7 @@
     - [getResponseFromAPI `async`](#getresponsefromapi-async)
     - [getResponseFromDOM](#getresponsefromdom)
     - [isIdle `async`](#isidle-async)
+    - [isTyping](#istyping)
     - [regenerate](#regenerate)
     - [resend `async`](#resend-async)
     - [scrollToBottom](#scrolltobottom)
@@ -928,6 +929,18 @@ Example code:
     chatgpt.alert('ChatGPT is idle');
 })();
 ```
+
+### isTyping
+
+Returns a boolean value. `true` if ChatGPT is generating a response, `false` otherwise.
+
+Example code:
+
+```js
+console.log(`ChatGPT is ${!chatgpt.isTyping() ? 'not' : ''} typing`)
+```
+
+###### _See also: [`isIdle`](#isidle-async)_
 
 ### regenerate
 
