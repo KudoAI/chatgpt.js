@@ -1879,7 +1879,7 @@ const chatgpt = {
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
 
-    speak(msg, { voice = 2, pitch = 2, speed = 1.1, onend } = {} ) { // eslint-disable-line no-unused-vars
+    speak(msg, { voice = 2, pitch = 2, speed = 1.1, onend } = {} ) {
     // Example call: chatgpt.speak(await chatgpt.getLastResponse(), { voice: 1, pitch: 2, speed: 3 })
     // - voice = index of voices available on user device
     // - pitch = float for pitch of speech from 0 to 2
@@ -1900,8 +1900,8 @@ const chatgpt = {
         }
 
         try { // to speak msg
-            const utterance = new SpeechSynthesisUtterance()
-            Object.assign(utterance, { text: msg, ...arguments[1], voice: speechSynthesis.getVoices()[voice] })
+            const utterance = new SpeechSynthesisUtterance(), voices = speechSynthesis.getVoices()
+            Object.assign(utterance, { text: msg, voice: voices[voice], pitch: pitch, speed: speed, onend: onend })
             speechSynthesis.speak(utterance)
         } catch (err) { console.error(err) }
     },
