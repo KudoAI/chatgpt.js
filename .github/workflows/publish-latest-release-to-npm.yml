@@ -1,5 +1,8 @@
-name: Publish latest release to npm
-on: workflow_dispatch
+name: Publish to npm on new release tag
+
+on:
+  push:
+    tags: ["v*"]
 
 permissions:
   contents: read
