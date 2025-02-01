@@ -96,7 +96,7 @@ git commit -n -m "Built chatgpt.js $NEW_VER"
 
 # Push to GiHub
 echo -e "${BY}\nPushing to GitHub...\n${NC}"
-git git push
+git push
 
 # Publish to NPM
 if [[ "$*" == *"--publish"* ]] ; then
