@@ -1878,31 +1878,31 @@ const chatgpt = {
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
     },
 
-    speak(msg, options = {}) {
-    // Usage example: chatgpt.speak(await chatgpt.getLastResponse(), { voice: 1, pitch: 2, speed: 3 })
-    // options.voice = index of voices available on user device
-    // options.pitch = float for pitch of speech from 0 to 2
-    // options.speed = float for rate of speech from 0.1 to 10
-
-        const { voice = 2, pitch = 2, speed = 1.1 } = options;
+    speak(msg, { voice = 2, pitch = 2, speed = 1.1, onend } = {} ) {
+    // Example call: chatgpt.speak(await chatgpt.getLastResponse(), { voice: 1, pitch: 2, speed: 3 })
+    // - voice = index of voices available on user device
+    // - pitch = float for pitch of speech from 0 to 2
+    // - speed = float for rate of speech from 0.1 to 10
+    // - onend = callback function when speech finishes
 
         // Validate args
-        if (typeof msg !== 'string') return console.error('Message must be a string!');
-        for (let key in options) {
-            const value = options[key];
-            if (typeof value !== 'number' && !/^\d+$/.test(value))
-                return console.error(`Invalid ${ key } index '${ value }'. Must be a number!`);
+        if (typeof msg != 'string') return console.error('Message must be a string!')
+        const validOptionKeys = ['voice', 'pitch', 'speed', 'onend']
+        for (const key in arguments[1]) {
+            if (!validOptionKeys.includes(key))
+                return console.error(`Invalid option '${key}'. Valid keys are: ${validOptionKeys}`)
+            const val = arguments[1][key]
+            if (key != 'onend' && typeof val != 'number' && !/^\d+$/.test(val))
+                return console.error(`Invalid ${key} value '${val}'. Must be a number!`)
+            else if (key == 'onend' && typeof val != 'function')
+                return console.error(`Invalid ${key} value. Must be a function!`)
         }
 
-        try { // to speak msg using {options}
-            const voices = speechSynthesis.getVoices(),
-                  utterance = new SpeechSynthesisUtterance();
-            utterance.text = msg;
-            utterance.voice = voices[voice];
-            utterance.pitch = pitch;
-            utterance.rate = speed;
-            speechSynthesis.speak(utterance);
-        } catch (err) { console.error( err); }
+        try { // to speak msg
+            const utterance = new SpeechSynthesisUtterance()
+            Object.assign(utterance, { text: msg, ...arguments[1], voice: speechSynthesis.getVoices()[voice] })
+            speechSynthesis.speak(utterance)
+        } catch (err) { console.error(err) }
     },
 
     async summarize(text) {
