@@ -40,8 +40,9 @@ window.dom = {
             return elem
         },
 
-        style(content) {
+        style(content, attrs = {}) {
             const style = document.createElement('style')
+            for (const attr in attrs) style.setAttribute(attr, attrs[attr])
             if (content) style.innerText = content
             return style
         },
