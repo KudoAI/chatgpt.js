@@ -408,10 +408,17 @@ chatgpt.js で何かを作成して共有したい場合は、<a href="mailto:sh
 
 **chatgpt.js** は以下の資金によって一部運営されています:
 
-<a href="https://microsoft.com">
+<a href="https://microsoft.com?utm_source=github&utm_medium=readme&utm_content=partner-logo&utm_campaign=chatgpt.js">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/microsoft/white.png?v=e638eac">
         <img width=255 src="https://assets.chatgptjs.org/images/logos/partners/microsoft/black.png?v=e638eac">
+    </picture>
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://burncloud.com/?utm_source=github&utm_medium=readme&utm_content=partner-logo&utm_campaign=chatgpt.js">
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/white.png?v=610795b">
+        <img width=285 src="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/black.png?v=610795b">
     </picture>
 </a>
 
