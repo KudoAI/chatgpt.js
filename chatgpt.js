@@ -165,19 +165,22 @@ const chatgpt = {
                     + `background-color: ${ scheme == 'dark' ? 'black' : 'white' };`
                     + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
                     + 'max-width: 75vw ; word-wrap: break-word ; border-radius: 15px ;'
-                    + 'padding: 20px ; margin: 12px 23px ; box-shadow: 0 30px 60px rgba(0,0,0,0.12) ;'
+                    + 'padding: 20px ; margin: 12px 23px ;'
+                    + `--shadow: 0 30px 60px rgba(0,0,0,0.12) ; box-shadow: var(--shadow) ;
+                          -webkit-box-shadow: var(--shadow) ; -moz-box-shadow: var(--shadow) ;`
                     + 'user-select: none ; -webkit-user-select: none ; -moz-user-select: none ; -o-user-select: none ;'
                         + '-ms-user-select: none ;'
                     + 'transition: var(--transition) ;' // for fade-in + move-in
                         + '-webkit-transition: var(--transition) ; -moz-transition: var(--transition) ;'
                         + '-o-transition: var(--transition) ; -ms-transition: var(--transition) }'
-                + '.chatgpt-modal h2 { margin-bottom: 9px }'
-                + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
-                + '.chatgpt-modal a:hover { text-decoration: underline }'
-                + '.chatgpt-modal.animated > div { z-index: 13456 ; opacity: 0.98 ; transform: translateX(0) translateY(0) }'
-                + '@keyframes alert-zoom-fade-out {'
-                  + '0% { opacity: 1 } 50% { opacity: 0.25 ; transform: scale(1.05) }'
-                  + '100% { opacity: 0 ; transform: scale(1.35) }}'
+                + `.chatgpt-modal h2 { margin-bottom: 9px }
+                  .chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}
+                  .chatgpt-modal a:hover { text-decoration: underline }
+                  .chatgpt-modal.animated > div {
+                      z-index: 13456 ; opacity: 0.98 ; transform: translateX(0) translateY(0) }
+                  @keyframes alert-zoom-fade-out {
+                      0% { opacity: 1 } 50% { opacity: 0.25 ; transform: scale(1.05) }
+                      100% { opacity: 0 ; transform: scale(1.35) }}`
 
                 // Button styles
                 + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 ;'
@@ -190,9 +193,11 @@ const chatgpt = {
                     + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
                     + `background: ${ scheme == 'dark' ? 'white' : 'black' } ;`
                     + `color: ${ scheme == 'dark' ? 'black' : 'white' }}`
-                + '.chatgpt-modal button:hover { color: #3d5d71 ; border-color: #6d9cb9 ;'
-                    + 'background-color: ' + ( scheme == 'dark' ? '#00cfff' : '#9cdaff' ) + ';'
-                    + 'box-shadow: 2px 1px ' + ( scheme == 'dark' ? '54px #00cfff' : '30px #9cdaff' ) + '}'
+                + `.chatgpt-modal button:hover {
+                      color: #3d5d71 ; border-color: #6d9cb9 ;
+                      background-color: ${ scheme == 'dark' ? '#00cfff' : '#9cdaff' };
+                      --shadow: 2px 1px ${ scheme == 'dark' ? '54px #00cfff' : '30px #9cdaff' };
+                      box-shadow: var(--shadow) ; box-shadow: var(--shadow) ; box-shadow: var(--shadow) }`
                 + '.modal-close-btn {'
                     + 'cursor: pointer ; width: 29px ; height: 29px ; border-radius: 17px ;'
                     + 'float: right ; position: relative ; right: -6px ; top: -5px }'
@@ -200,17 +205,18 @@ const chatgpt = {
                 + `.modal-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
 
                 // Checkbox styles
-                + '.chatgpt-modal .checkbox-group { display: flex ; margin-top: -18px }'
-                + '.chatgpt-modal .checkbox-group label {'
-                    + 'font-size: .7rem ; margin: -.04rem 0 0px .3rem ;'
-                    + `color: ${ scheme == 'dark' ? '#e1e1e1' : '#1e1e1e' }}`
-                + '.chatgpt-modal input[type=checkbox] { transform: scale(0.7) ;'
-                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
-                + '.chatgpt-modal input[type=checkbox]:checked {'
-                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
-                    + 'background-color: black ; position: inherit }'
-                + '.chatgpt-modal input[type=checkbox]:focus { outline: none ; box-shadow: none }'
-            );
+                + `.chatgpt-modal .checkbox-group { display: flex ; margin-top: -18px }
+                  .chatgpt-modal .checkbox-group label {'
+                      font-size: .7rem ; margin: -.04rem 0 0px .3rem 
+                      color: ${ scheme == 'dark' ? '#e1e1e1' : '#1e1e1e' }}
+                  .chatgpt-modal input[type=checkbox] { transform: scale(0.7) ;
+                      border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}
+                  .chatgpt-modal input[type=checkbox]:checked {
+                      border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;
+                      background-color: black ; position: inherit }
+                  .chatgpt-modal input[type=checkbox]:focus {
+                      outline: none ; box-shadow: none ; -webkit-box-shadow: none ; -moz-box-shadow: none }`
+            )
         }
 
         // Insert text into elements
@@ -1309,13 +1315,18 @@ const chatgpt = {
                     + 'font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC",'
                         + '"Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif ;'
                     + '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
-                    + 'background-color: black ; padding: 10px 13px 10px 18px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
+                    + 'background-color: black ; padding: 10px 13px 10px 18px ;' // bubble style
+                        + 'border-radius: 11px ; border: 1px solid #f5f5f7 ;'
                     + 'opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ;' // visibility
                     + 'user-select: none ; -webkit-user-select: none ; -moz-user-select: none ; -o-user-select: none ;'
                         + '-ms-user-select: none ;'
-                    + `transform: translateX(${ !notificationDiv.isRight ? '-' : '' }35px) ;` // init off-screen for transition fx
-                    + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(?:shadow|on)\b/i.test(shadow) ? 'gray' : shadow )) : '' ) + '}'
-                + '.notif-close-btn { cursor: pointer ; float: right ; position: relative ; right: -4px ; margin-left: -3px ;'
+                    + `transform: translateX(${ // init off-screen for transition fx
+                          !notificationDiv.isRight ? '-' : '' }35px) ;`
+                    + ( shadow ? `--shadow: -8px 13px 25px 0 ${ /\b(?:shadow|on)\b/i.test(shadow) ? 'gray' : shadow };
+                        box-shadow: var(--shadow) ; -webkit-box-shadow: var(--shadow) ; -moz-box-shadow: var(--shadow)`
+                            : '' ) + '}'
+                + `.notif-close-btn {
+                      cursor: pointer ; float: right ; position: relative ; right: -4px ; margin-left: -3px ;`
                     + 'display: grid }' // top-align for non-OpenAI sites
                 + '@keyframes notif-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }' // transition out keyframes
                     + '15% { opacity: 0.35 ; transform: rotateX(-27deg) scale(1.05) }'
