@@ -65,7 +65,7 @@ window.dom = {
 
     get: {
 
-        computed(elems, { prop } = {}) { // total width/height of elems (including margins)
+        computedSize(elems, { prop } = {}) { // total width/height of elems (including margins)
         // * Returns { width: X, height: Y } if multi or no props passed
         // * Returns float if single prop passed
 
@@ -94,8 +94,8 @@ window.dom = {
                  : computedProps[propsToCompute[0]] // single total val
         },
 
-        computedHeight(elems) { return this.computed(elems, { prop: 'height' }) }, // including margins
-        computedWidth(elems) { return this.computed(elems, { prop: 'width' }) }, // including margins
+        computedHeight(elems) { return this.computedSize(elems, { prop: 'height' }) }, // including margins
+        computedWidth(elems) { return this.computedSize(elems, { prop: 'width' }) }, // including margins
 
         loadedElem(selector, timeout = null) {
             const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(null), timeout)) : null
