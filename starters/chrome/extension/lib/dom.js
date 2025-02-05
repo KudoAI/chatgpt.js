@@ -1,3 +1,6 @@
+// Copyright © 2023–2025 Adam Lui (https://github.com/adamlui) under the MIT license
+// Source: https://github.com/adamlui/ai-web-extensions/blob/main/assets/lib/dom.js/src/dom.js
+
 window.dom = {
 
     imports: {
@@ -61,16 +64,38 @@ window.dom = {
     },
 
     get: {
-        computedWidth(...elems) { // including margins
-            let totalWidth = 0
-            elems.map(arg => arg instanceof NodeList ? [...arg] : arg).flat().forEach(elem => {
-                if (!(elem instanceof Element)) return
+
+        computed(elems, { prop } = {}) { // total width/height of elems (including margins)
+        // * Returns { width: X, height: Y } if multi or no props passed
+        // * Returns float if single prop passed
+
+            // Validate args
+            elems = elems instanceof NodeList ? [...elems] : [].concat(elems)
+            elems.forEach(elem => { if (!(elem instanceof Node))
+                throw new Error(`Invalid elem: Element "${JSON.stringify(elem)}" is not a valid DOM node`) })
+            const validProps = ['width', 'height'], propsToCompute = [].concat(prop || validProps)
+            propsToCompute.forEach(prop => { if (!validProps.includes(prop))
+                throw new Error('Invalid prop: Use \'width\' or \'height\'') })
+
+            // Compute props
+            const computedProps = { width: 0, height: 0 }
+            elems.forEach(elem => {
                 const elemStyle = getComputedStyle(elem) ; if (elemStyle.display == 'none') return
-                totalWidth += elem.getBoundingClientRect().width + parseFloat(elemStyle.marginLeft)
-                                                                 + parseFloat(elemStyle.marginRight)
+                if (propsToCompute.includes('width'))
+                    computedProps.width += elem.getBoundingClientRect().width
+                        + parseFloat(elemStyle.marginLeft) + parseFloat(elemStyle.marginRight)
+                if (propsToCompute.includes('height'))
+                    computedProps.height += elem.getBoundingClientRect().height
+                        + parseFloat(elemStyle.marginTop) + parseFloat(elemStyle.marginBottom)
             })
-            return totalWidth
+
+            // Return props
+            return propsToCompute.length > 1 ? computedProps // obj w/ width/height
+                 : computedProps[propsToCompute[0]] // single total val
         },
+
+        computedHeight(elems) { return this.computed(elems, { prop: 'height' }) }, // including margins
+        computedWidth(elems) { return this.computed(elems, { prop: 'width' }) }, // including margins
 
         loadedElem(selector, timeout = null) {
             const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(null), timeout)) : null
