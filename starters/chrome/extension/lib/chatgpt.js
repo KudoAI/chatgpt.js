@@ -984,14 +984,14 @@ const chatgpt = {
 
     history: {
         async isLoaded(timeout = null) {
-            const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null;
+            const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
             const isLoadedPromise = new Promise(resolve => {
-                if (document.querySelector('nav')) resolve(true);
+                if (document.querySelector('nav')) resolve(true)
                 else new MutationObserver((_, obs) => {
-                    if (document.querySelector('nav')) { obs.disconnect(); resolve(true); }
-                }).observe(document.body, { childList: true, subtree: true });
-            });
-            return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise );
+                    if (document.querySelector('nav')) { obs.disconnect() ; resolve(true) }
+                }).observe(document.documentElement, { childList: true, subtree: true })
+            })
+            return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
         }
     },
 
@@ -1152,14 +1152,14 @@ const chatgpt = {
     },
 
     async isLoaded(timeout = null) {
-        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null;
+        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
         const isLoadedPromise = new Promise(resolve => {
-            if (chatgpt.getNewChatBtn()) resolve(true);
+            if (chatgpt.getNewChatBtn()) resolve(true)
             else new MutationObserver((_, obs) => {
-                if (chatgpt.getNewChatBtn()) { obs.disconnect(); resolve(true); }
-            }).observe(document.body, { childList: true, subtree: true });
-        });
-        return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise );
+                if (chatgpt.getNewChatBtn()) { obs.disconnect() ; resolve(true) }
+            }).observe(document.documentElement, { childList: true, subtree: true })
+        })
+        return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
     },
 
     isLightMode() { return document.documentElement.classList.toString().includes('light'); },
@@ -1864,15 +1864,15 @@ const chatgpt = {
         },
 
         async isLoaded(timeout = 5000) {
-            await chatgpt.isLoaded();
-            const timeoutPromise = new Promise(resolve => setTimeout(() => { resolve(false); }, timeout));
+            await chatgpt.isLoaded()
+            const timeoutPromise = new Promise(resolve => setTimeout(() => resolve(false), timeout))
             const isLoadedPromise = new Promise(resolve => {
-                if (chatgpt.getNewChatLink()) resolve(true);
+                if (chatgpt.getNewChatLink()) resolve(true)
                 else new MutationObserver((_, obs) => {
-                    if (chatgpt.getNewChatLink()) { obs.disconnect(); resolve(true); }
-                }).observe(document.body, { childList: true, subtree: true });
-            });
-            return await Promise.race([isLoadedPromise, timeoutPromise]);
+                    if (chatgpt.getNewChatLink()) { obs.disconnect() ; resolve(true) }
+                }).observe(document.documentElement, { childList: true, subtree: true })
+            })
+            return await Promise.race([isLoadedPromise, timeoutPromise])
         }
     },
 
