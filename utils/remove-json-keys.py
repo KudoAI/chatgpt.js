@@ -1,6 +1,6 @@
 '''
 Script:       remove-json-keys.py
-Version:      2025.2.7
+Version:      2025.2.7.1
 Description:  Remove key/value pairs from json_folder/**.json
 Author:       Adam Lui
 URL:          https://github.com/adamlui/python-utils
@@ -13,7 +13,10 @@ json_folder = '_locales'
 # UI initializations
 os.system('color') ; print('\033[0;92m') # set font to bright green
 terminal_width = os.get_terminal_size()[0]
-def print_trunc(msg, end='\n') : print(msg if len(msg) < terminal_width else msg[0:terminal_width-4] + '...', end=end)
+def print_trunc(msg, end='\n'):
+    truncated_lines = [
+        line if len(line) < terminal_width else line[:terminal_width - 4] + '...' for line in msg.splitlines() ]
+    print('\n'.join(truncated_lines), end=end)
 
 print('')
 
