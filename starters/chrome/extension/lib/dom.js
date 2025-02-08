@@ -65,37 +65,37 @@ window.dom = {
 
     get: {
 
-        computedSize(elems, { prop } = {}) { // total width/height of elems (including margins)
-        // * Returns { width: totalWidth, height: totalHeight } if no prop passed
-        // * Returns float if { prop: 'width' | 'height' } passed
+        computedSize(elems, { dimension } = {}) { // total width/height of elems (including margins)
+        // * Returns { width: totalWidth, height: totalHeight } if no dimension passed
+        // * Returns float if { dimension: 'width' | 'height' } passed
 
             // Validate args
             elems = elems instanceof NodeList ? [...elems] : [].concat(elems)
             elems.forEach(elem => { if (!(elem instanceof Node))
                 throw new Error(`Invalid elem: Element "${JSON.stringify(elem)}" is not a valid DOM node`) })
-            const validProps = ['width', 'height'], propsToCompute = [].concat(prop || validProps)
-            propsToCompute.forEach(prop => { if (!validProps.includes(prop))
-                throw new Error('Invalid prop: Use \'width\' or \'height\'') })
+            const validDimensions = ['width', 'height'], dimensionsToCompute = [].concat(dimension || validDimensions)
+            dimensionsToCompute.forEach(dimension => { if (!validDimensions.includes(dimension))
+                throw new Error('Invalid dimension: Use \'width\' or \'height\'') })
 
-            // Compute props
-            const computedProps = { width: 0, height: 0 }
+            // Compute dimensions
+            const computedDimensions = { width: 0, height: 0 }
             elems.forEach(elem => {
                 const elemStyle = getComputedStyle(elem) ; if (elemStyle.display == 'none') return
-                if (propsToCompute.includes('width'))
-                    computedProps.width += elem.getBoundingClientRect().width
+                if (dimensionsToCompute.includes('width'))
+                    computedDimensions.width += elem.getBoundingClientRect().width
                         + parseFloat(elemStyle.marginLeft) + parseFloat(elemStyle.marginRight)
-                if (propsToCompute.includes('height'))
-                    computedProps.height += elem.getBoundingClientRect().height
+                if (dimensionsToCompute.includes('height'))
+                    computedDimensions.height += elem.getBoundingClientRect().height
                         + parseFloat(elemStyle.marginTop) + parseFloat(elemStyle.marginBottom)
             })
 
-            // Return props
-            return propsToCompute.length > 1 ? computedProps // obj w/ width/height
-                 : computedProps[propsToCompute[0]] // single total val
+            // Return computed dimensions
+            return dimensionsToCompute.length > 1 ? computedDimensions // obj w/ width/height
+                 : computedDimensions[dimensionsToCompute[0]] // single total val
         },
 
-        computedHeight(elems) { return this.computedSize(elems, { prop: 'height' }) }, // including margins
-        computedWidth(elems) { return this.computedSize(elems, { prop: 'width' }) }, // including margins
+        computedHeight(elems) { return this.computedSize(elems, { dimension: 'height' }) }, // including margins
+        computedWidth(elems) { return this.computedSize(elems, { dimension: 'width' }) }, // including margins
 
         loadedElem(selector, timeout = null) {
             const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(null), timeout)) : null
