@@ -66,8 +66,8 @@ window.dom = {
     get: {
 
         computedSize(elems, { prop } = {}) { // total width/height of elems (including margins)
-        // * Returns { width: X, height: Y } if multi or no props passed
-        // * Returns float if single prop passed
+        // * Returns { width: totalWidth, height: totalHeight } if no prop passed
+        // * Returns float if { prop: 'width' | 'height' } passed
 
             // Validate args
             elems = elems instanceof NodeList ? [...elems] : [].concat(elems)
