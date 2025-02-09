@@ -9,7 +9,7 @@ window.dom = {
     },
 
     addRisingParticles(targetNode, { lightScheme = 'gray', darkScheme = 'white' } = {}) {
-    // Requires https://assets.aiwebextensions.com/styles/rising-particles/dist/<lightScheme|darkScheme>.min.css
+    // * Requires https://assets.aiwebextensions.com/styles/rising-particles/dist/<lightScheme|darkScheme>.min.css
 
         if (targetNode.querySelector('[id*=particles]')) return
         const particlesDivsWrapper = document.createElement('div')
