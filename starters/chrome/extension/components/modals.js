@@ -1,4 +1,4 @@
-// Requires lib/chatgpt.js + lib/dom.js
+// Requires lib/chatgpt.js + lib/dom.js + app + env
 
 window.modals = {
     stack: [], // of types of undismissed modals

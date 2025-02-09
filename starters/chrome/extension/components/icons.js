@@ -1,4 +1,4 @@
-// Requires lib/dom.js
+// Requires lib/dom.js + app
 
 window.icons = {
     imports: {
