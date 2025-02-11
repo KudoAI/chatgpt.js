@@ -950,7 +950,12 @@ const chatgpt = {
     getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
 
     getNewChatButton() {
-        return document.querySelector('button[data-testid*=new-chat-button], button:has([d^="M15.6729"])'); },
+        return document.querySelector(
+            'button[data-testid*=new-chat-button],' // sidebar button (when logged in)
+          + 'button:has([d^="M3.06957"]),' // Cycle Arrows icon (Temp chat mode)
+          + 'button:has([d^="M15.6729"])' // Pencil icon (recorded chat mode)
+        )
+    },
 
     getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
     getRegenerateButton() { return document.querySelector('button:has([d^="M3.06957"])'); },
