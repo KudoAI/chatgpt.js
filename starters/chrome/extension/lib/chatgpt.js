@@ -205,8 +205,8 @@ const chatgpt = {
                 + `.modal-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
 
                 // Checkbox styles
-                + `.chatgpt-modal .checkbox-group { display: flex ; margin-top: -18px }
-                  .chatgpt-modal .checkbox-group label {'
+                + `.chatgpt-modal .checkbox-group { margin-top: 15px }
+                  .chatgpt-modal .checkbox-group label {
                       font-size: .7rem ; margin: -.04rem 0 0px .3rem 
                       color: ${ scheme == 'dark' ? '#e1e1e1' : '#1e1e1e' }}
                   .chatgpt-modal input[type=checkbox] { transform: scale(0.7) ;
@@ -283,7 +283,7 @@ const chatgpt = {
         closeSVG.append(closeSVGpath); closeBtn.append(closeSVG);
 
         // Assemble/append div
-        const modalElems = [closeBtn, modalTitle, modalMessage, modalButtons, checkboxDiv];
+        const modalElems = [closeBtn, modalTitle, modalMessage, checkboxDiv, modalButtons ];
         modalElems.forEach((elem) => { modal.append(elem); });
         modal.style.width = `${ width || 458 }px`;
         modalContainer.append(modal); document.body.append(modalContainer);
