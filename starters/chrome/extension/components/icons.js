@@ -1,10 +1,7 @@
 // Requires lib/dom.js + app
 
 window.icons = {
-    imports: {
-        import(deps) { // { app }
-            for (const depName in deps) this[depName] = deps[depName] }
-    },
+    import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
 
     create({ name, size = 16, width, height, ...additionalAttrs }) {
         const iconData = icons[name],

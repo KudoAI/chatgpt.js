@@ -1,13 +1,10 @@
 // Requires lib/chatgpt.js + lib/dom.js + app + env
 
 window.modals = {
+    import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
+
     stack: [], // of types of undismissed modals
     get class() { return `${this.imports.app.cssPrefix}-modal` },
-
-    imports: {
-        import(deps) { // { app, env }
-            for (const depName in deps) this[depName] = deps[depName] }
-    },
 
     alert(title = '', msg = '', btns = '', checkbox = '', width = '') { // generic one from chatgpt.alert()
         const alertID = chatgpt.alert(title, msg, btns, checkbox, width),
