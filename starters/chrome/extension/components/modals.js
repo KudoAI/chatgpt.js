@@ -6,93 +6,6 @@ window.modals = {
     stack: [], // of types of undismissed modals
     get class() { return `${this.imports.app.cssPrefix}-modal` },
 
-    alert(title = '', msg = '', btns = '', checkbox = '', width = '') { // generic one from chatgpt.alert()
-        const alertID = chatgpt.alert(title, msg, btns, checkbox, width),
-              alert = document.getElementById(alertID).firstChild
-        this.init(alert) // add classes + rising particles bg
-        return alert
-    },
-
-    open(modalType) {
-        const modal = this[modalType]() // show modal
-        this.stack.unshift(modalType) // add to stack
-        this.init(modal) // add classes + rising particles bg
-        this.observeRemoval(modal, modalType) // to maintain stack for proper nav
-    },
-
-    init(modal) {
-        if (!modal) return // to support non-div this.open()s
-        if (!this.styles) this.stylize() // to init/append stylesheet
-        modal.classList.add('no-user-select', this.class) ; modal.parentNode.classList.add(`${this.class}-bg`)
-        dom.addRisingParticles(modal)
-    },
-
-    stylize() {
-        if (!this.styles) {
-            this.styles = dom.create.elem('style') ; this.styles.id = `${this.class}-styles`
-            document.head.append(this.styles)
-        }
-        this.styles.innerText = (
-            `.no-user-select {
-                user-select: none ; -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none }`
-          + `.${this.class} {` // modals
-              + 'font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto,'
-                  + 'Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif ;'
-              + 'padding: 20px 25px 24px 25px !important ; font-size: 20px ;'
-              + `color: ${ this.imports.env.ui.scheme == 'dark' ? 'white' : 'black' } !important ;`
-              + `background-image: linear-gradient(180deg, ${
-                     this.imports.env.ui.scheme == 'dark' ? '#99a8a6 -200px, black 200px'
-                                                            : '#b6ebff -296px, white 171px' }) }`
-          + `.${this.class} [class*=modal-close-btn] {`
-              + 'position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;'
-              + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }'
-          + `.${this.class} [class*=modal-close-btn] svg { height: 10px }`
-          + `.${this.class} [class*=modal-close-btn] path {`
-              + `${ this.imports.env.ui.scheme == 'dark' ? 'stroke: white ; fill: white'
-                                                           : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
-          + ( this.imports.env.ui.scheme == 'dark' ?  // invert dark mode hover paths
-                `.${this.class} [class*=modal-close-btn]:hover path { stroke: black ; fill: black }` : '' )
-          + `.${this.class} [class*=modal-close-btn]:hover { background-color: #f2f2f2 }` // hover underlay
-          + `.${this.class} [class*=modal-close-btn] svg { margin: 11.5px }` // center SVG for hover underlay
-          + `.${this.class} a {`
-              + `color: #${ this.imports.env.ui.scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
-          + `.${this.class} h2 { font-weight: bold }`
-          + `.${this.class} button {`
-              + '--btn-transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;'
-              + 'font-size: 14px ; text-transform: uppercase ;' // shrink/uppercase labels
-              + 'border-radius: 0 !important ;' // square borders
-              + 'transition: var(--btn-transition) ;' // smoothen hover fx
-                  + '-webkit-transition: var(--btn-transition) ; -moz-transition: var(--btn-transition) ;'
-                  + '-o-transition: var(--btn-transition) ; -ms-transition: var(--btn-transition) ;'
-              + 'cursor: pointer !important ;' // add finger cursor
-              + `border: 1px solid ${ this.imports.env.ui.scheme == 'dark' ? 'white' : 'black' } !important ;`
-              + 'padding: 8px !important ; min-width: 102px }' // resize
-          + `.${this.class} button:hover {` // add zoom, re-scheme
-              + 'transform: scale(1.055) ; color: black !important ;'
-              + `background-color: #${ this.imports.env.ui.scheme == 'dark' ? '00cfff' : '9cdaff' } !important }`
-          + ( !this.imports.env.browser.isMobile ?
-                `.${this.class} .modal-buttons { margin-left: -13px !important }` : '' )
-          + `.about-em { color: ${ this.imports.env.ui.scheme == 'dark' ? 'white' : 'green' } !important }`
-        )
-    },
-
-    observeRemoval(modal, modalType) { // to maintain stack for proper nav
-        const modalBG = modal.parentNode
-        new MutationObserver(([mutation], obs) => {
-            mutation.removedNodes.forEach(removedNode => { if (removedNode == modalBG) {
-                if (this.stack[0] == modalType) { // new modal not launched, implement nav back logic
-                    this.stack.shift() // remove this modal type from stack 1st
-                    const prevModalType = this.stack[0]
-                    if (prevModalType) { // open it
-                        this.stack.shift() // remove type from stack since re-added on open
-                        this.open(prevModalType)
-                    }
-                }
-                obs.disconnect()
-            }})
-        }).observe(modalBG.parentNode, { childList: true, subtree: true })
-    },
-
     about() {
 
         // Show modal
@@ -147,5 +60,92 @@ window.modals = {
         return aboutModal
     },
 
-    safeWinOpen(url) { open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
+    alert(title = '', msg = '', btns = '', checkbox = '', width = '') { // generic one from chatgpt.alert()
+        const alertID = chatgpt.alert(title, msg, btns, checkbox, width),
+              alert = document.getElementById(alertID).firstChild
+        this.init(alert) // add classes + rising particles bg
+        return alert
+    },
+
+    init(modal) {
+        if (!modal) return // to support non-div this.open()s
+        if (!this.styles) this.stylize() // to init/append stylesheet
+        modal.classList.add('no-user-select', this.class) ; modal.parentNode.classList.add(`${this.class}-bg`)
+        dom.addRisingParticles(modal)
+    },
+
+    observeRemoval(modal, modalType) { // to maintain stack for proper nav
+        const modalBG = modal.parentNode
+        new MutationObserver(([mutation], obs) => {
+            mutation.removedNodes.forEach(removedNode => { if (removedNode == modalBG) {
+                if (this.stack[0] == modalType) { // new modal not launched, implement nav back logic
+                    this.stack.shift() // remove this modal type from stack 1st
+                    const prevModalType = this.stack[0]
+                    if (prevModalType) { // open it
+                        this.stack.shift() // remove type from stack since re-added on open
+                        this.open(prevModalType)
+                    }
+                }
+                obs.disconnect()
+            }})
+        }).observe(modalBG.parentNode, { childList: true, subtree: true })
+    },
+
+    open(modalType) {
+        const modal = this[modalType]() // show modal
+        this.stack.unshift(modalType) // add to stack
+        this.init(modal) // add classes + rising particles bg
+        this.observeRemoval(modal, modalType) // to maintain stack for proper nav
+    },
+
+    safeWinOpen(url) { open(url, '_blank', 'noopener') }, // to prevent backdoor vulnerabilities
+
+    stylize() {
+        if (!this.styles) {
+            this.styles = dom.create.elem('style') ; this.styles.id = `${this.class}-styles`
+            document.head.append(this.styles)
+        }
+        this.styles.innerText = (
+            `.no-user-select {
+                user-select: none ; -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none }`
+          + `.${this.class} {` // modals
+              + 'font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto,'
+                  + 'Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif ;'
+              + 'padding: 20px 25px 24px 25px !important ; font-size: 20px ;'
+              + `color: ${ this.imports.env.ui.scheme == 'dark' ? 'white' : 'black' } !important ;`
+              + `background-image: linear-gradient(180deg, ${
+                     this.imports.env.ui.scheme == 'dark' ? '#99a8a6 -200px, black 200px'
+                                                            : '#b6ebff -296px, white 171px' }) }`
+          + `.${this.class} [class*=modal-close-btn] {`
+              + 'position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;'
+              + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }'
+          + `.${this.class} [class*=modal-close-btn] svg { height: 10px }`
+          + `.${this.class} [class*=modal-close-btn] path {`
+              + `${ this.imports.env.ui.scheme == 'dark' ? 'stroke: white ; fill: white'
+                                                           : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
+          + ( this.imports.env.ui.scheme == 'dark' ?  // invert dark mode hover paths
+                `.${this.class} [class*=modal-close-btn]:hover path { stroke: black ; fill: black }` : '' )
+          + `.${this.class} [class*=modal-close-btn]:hover { background-color: #f2f2f2 }` // hover underlay
+          + `.${this.class} [class*=modal-close-btn] svg { margin: 11.5px }` // center SVG for hover underlay
+          + `.${this.class} a {`
+              + `color: #${ this.imports.env.ui.scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
+          + `.${this.class} h2 { font-weight: bold }`
+          + `.${this.class} button {`
+              + '--btn-transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;'
+              + 'font-size: 14px ; text-transform: uppercase ;' // shrink/uppercase labels
+              + 'border-radius: 0 !important ;' // square borders
+              + 'transition: var(--btn-transition) ;' // smoothen hover fx
+                  + '-webkit-transition: var(--btn-transition) ; -moz-transition: var(--btn-transition) ;'
+                  + '-o-transition: var(--btn-transition) ; -ms-transition: var(--btn-transition) ;'
+              + 'cursor: pointer !important ;' // add finger cursor
+              + `border: 1px solid ${ this.imports.env.ui.scheme == 'dark' ? 'white' : 'black' } !important ;`
+              + 'padding: 8px !important ; min-width: 102px }' // resize
+          + `.${this.class} button:hover {` // add zoom, re-scheme
+              + 'transform: scale(1.055) ; color: black !important ;'
+              + `background-color: #${ this.imports.env.ui.scheme == 'dark' ? '00cfff' : '9cdaff' } !important }`
+          + ( !this.imports.env.browser.isMobile ?
+                `.${this.class} .modal-buttons { margin-left: -13px !important }` : '' )
+          + `.about-em { color: ${ this.imports.env.ui.scheme == 'dark' ? 'white' : 'green' } !important }`
+        )
+    }
 };
