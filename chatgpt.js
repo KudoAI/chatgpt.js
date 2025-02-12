@@ -1993,7 +1993,7 @@ for (const btnAction of cjsBtnActions) {
     };
 }
 
-// Create alias functions
+// Create ALIAS functions
 const cjsFuncAliases = [
     ['actAs', 'actas', 'act', 'become', 'persona', 'premadePrompt', 'preMadePrompt', 'prePrompt', 'preprompt', 'roleplay', 'rolePlay', 'rp'],
     ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
@@ -2012,8 +2012,7 @@ const cjsFuncAliases = [
     ['getStopButton', 'getStopGeneratingButton'],
     ['getTextarea', 'getTextArea', 'getChatbar', 'getChatBar', 'getChatbox', 'getChatBox'],
     ['isFullScreen', 'isFullscreen', 'isfullscreen'],
-    ['isLoaded', 'isloaded'],
-    ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
+    ['logout', 'logOut', 'logOff', 'signOff', 'signOut'],
     ['minify', 'codeMinify', 'minifyCode'],
     ['new', 'newChat', 'startNewChat'],
     ['obfuscate', 'codeObfuscate', 'obfuscateCode'],
@@ -2034,7 +2033,7 @@ const cjsFuncAliases = [
     ['translate', 'translation', 'translator'],
     ['unminify', 'unminifyCode', 'codeUnminify'],
     ['writeCode', 'codeWrite']
-];
+]
 const cjsFuncSynonyms = [
     ['account', 'acct'],
     ['activate', 'turnOn'],
@@ -2061,40 +2060,39 @@ const cjsFuncSynonyms = [
     ['typing', 'generating'],
     ['unminify', 'beautify', 'prettify', 'prettyPrint']
 ];
-
-for (const prop in chatgpt) {
-
-    // Create new function for each alias
-    for (const subAliases of cjsFuncAliases) {
-        if (subAliases.includes(prop)) {
-            if (subAliases.some(element => element.includes('.'))) {
-                const nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
-                for (const nestAlias of subAliases) {
-                    if (/^(\w+)/.exec(nestAlias)[1] !== prop) { // don't alias og function
-                        chatgpt[nestAlias] = chatgpt[prop][nestedFunction]; // make new function, reference og one
-            }}} else { // alias direct functions
-                for (const dirAlias of subAliases) {
-                    if (dirAlias !== prop) { // don't alias og function
-                        chatgpt[dirAlias] = chatgpt[prop]; // make new function, reference og one
-            }}}
-    }}
-
-    do { // create new function per synonym per word per function
-        var newFunctionsCreated = false;
-        for (const funcName in chatgpt) {
-            if (typeof chatgpt[funcName] == 'function') {
-                const funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
-                for (const funcWord of funcWords) {
-                    const synonymValues = [].concat(...cjsFuncSynonyms // flatten into single array w/ word's cjsFuncSynonyms
+(function createCJSaliasFuncs(obj = chatgpt) {
+    for (const prop in obj) {
+        if (!Object.prototype.hasOwnProperty.call(obj, prop)) continue // skip inherited props
+        if (typeof obj[prop] == 'object') createCJSaliasFuncs(obj[prop]) // recurse thru objs to find deeper functions
+    }
+    let aliasFuncCreated
+    do {
+        aliasFuncCreated = false
+        for (const prop in obj) {
+            if (!Object.prototype.hasOwnProperty.call(obj, prop)) continue // skip inherited props
+            if (typeof obj[prop] == 'function') {
+                obj[prop.toLowerCase()] = obj[prop]  // create lowercase variant
+                cjsFuncAliases.forEach(aliasArr => { // create alias function per alias to use
+                    if (!aliasArr.includes(prop)) return
+                    aliasArr.forEach(alias => { if (!obj[alias]) {
+                        obj[alias] = obj[alias.toLowerCase()] = obj[prop] ; aliasFuncCreated = true }})
+                })
+                const funcWords = prop.split(/(?=[A-Z])/) // split function name into constituent words
+                funcWords.forEach(funcWord => { // create alias function per function word per synonym
+                    const synonymsToUse = cjsFuncSynonyms
                         .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
-                        .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
-                    for (const synonym of synonymValues) { // create function per synonym
-                        const newFuncName = toCamelCase(funcWords.map(word => (word == funcWord ? synonym : word)));
-                        if (!chatgpt[newFuncName]) { // don't alias existing functions
-                            chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
-                            newFunctionsCreated = true;
-    }}}}}} while (newFunctionsCreated); // loop over new functions to encompass all variations
-}
+                        .flat().filter(synonym => synonym != funcWord.toLowerCase()) // filter out matching word
+                    synonymsToUse.forEach(synonym => { // create alias function per synonym to use
+                        const newFuncName = toCamelCase(funcWords.map(word => word == funcWord ? synonym : word))
+                        if (!obj[newFuncName]) {
+                            obj[newFuncName] = obj[newFuncName.toLowerCase()] = obj[prop] ; aliasFuncCreated = true }
+                    })
+                })
+            }
+        }
+    } while (aliasFuncCreated) // loop over new functions to encompass all variations
+})()
+
 
 // Define HELPER functions
 
