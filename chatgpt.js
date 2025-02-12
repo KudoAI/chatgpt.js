@@ -2061,8 +2061,10 @@ const cjsFuncSynonyms = [
     ['typing', 'generating'],
     ['unminify', 'beautify', 'prettify', 'prettyPrint']
 ];
-const camelCaser = (words) => {
-    return words.map((word, index) => index === 0 || word == 's' ? word : word.charAt(0).toUpperCase() + word.slice(1)).join(''); };
+
+function toCamelCase(words) {
+    return words.map((word, idx) => idx == 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)).join('') }
+
 for (const prop in chatgpt) {
 
     // Create new function for each alias
@@ -2090,7 +2092,7 @@ for (const prop in chatgpt) {
                         .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
                         .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
                     for (const synonym of synonymValues) { // create function per synonym
-                        const newFuncName = camelCaser(funcWords.map(word => (word == funcWord ? synonym : word)));
+                        const newFuncName = toCamelCase(funcWords.map(word => (word == funcWord ? synonym : word)));
                         if (!chatgpt[newFuncName]) { // don't alias existing functions
                             chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
                             newFunctionsCreated = true;
