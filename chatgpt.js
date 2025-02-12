@@ -146,6 +146,7 @@ const chatgpt = {
                       --transition: opacity 0.65s cubic-bezier(.165,.84,.44,1), /* for fade-in */
                                     transform 0.55s cubic-bezier(.165,.84,.44,1) ; /* for move-in */
                       --bg-transition: background-color 0.25s ease ; /* for bg dim */
+                      --btn-transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ; /* for smooth zoom */
                       --btn-shadow: 2px 1px ${ scheme == 'dark' ? '54px #00cfff' : '30px #9cdaff' }}`
 
                 + '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
@@ -195,16 +196,19 @@ const chatgpt = {
                       font-size: 14px ; text-transform: uppercase ;
                       margin-left: ${ isMobile ? 0 : 10 }px ; padding: ${ isMobile ? 15 : 8 }px 18px ;
                       ${ isMobile ? 'margin-top: 5px ; margin-bottom: 3px ;' : '' }
-                      border-radius: 0 ; border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}
+                      border-radius: 0 ; border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' };
+                      transition: var(--btn-transition) ;
+                          -webkit-transition: var(--btn-transition) ; -moz-transition: var(--btn-transition) ;
+                          -o-transition: var(--btn-transition) ; -ms-transition: var(--btn-transition) }
+                  .chatgpt-modal button:hover {
+                      transform: scale(1.055) ; color: black ;
+                      background-color: #${ scheme == 'dark' ? '00cfff' : '9cdaff' };
+                      box-shadow: var(--btn-shadow) ;
+                          -webkit-box-shadow: var(--btn-shadow) ; -moz-box-shadow: var(--btn-shadow) }
                   .primary-modal-btn {
                       border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' };
                       background: ${ scheme == 'dark' ? 'white' : 'black' };
                       color: ${ scheme == 'dark' ? 'black' : 'white' }}
-                  .chatgpt-modal button:hover {
-                      color: #3d5d71 ; border-color: #6d9cb9 ;
-                      background-color: ${ scheme == 'dark' ? '#00cfff' : '#9cdaff' };
-                      box-shadow: var(--btn-shadow) ;
-                          -webkit-box-shadow: var(--btn-shadow) ; -moz-box-shadow: var(--btn-shadow) }
                   .modal-close-btn {
                       cursor: pointer ; width: 29px ; height: 29px ; border-radius: 17px ;
                       float: right ; position: relative ; right: -6px ; top: -5px }
