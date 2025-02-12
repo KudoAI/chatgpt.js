@@ -2062,9 +2062,6 @@ const cjsFuncSynonyms = [
     ['unminify', 'beautify', 'prettify', 'prettyPrint']
 ];
 
-function toCamelCase(words) {
-    return words.map((word, idx) => idx == 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)).join('') }
-
 for (const prop in chatgpt) {
 
     // Create new function for each alias
@@ -2098,6 +2095,11 @@ for (const prop in chatgpt) {
                             newFunctionsCreated = true;
     }}}}}} while (newFunctionsCreated); // loop over new functions to encompass all variations
 }
+
+// Define HELPER functions
+
+function toCamelCase(words) {
+    return words.map((word, idx) => idx == 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)).join('') }
 
 // Prefix console logs w/ '🤖 chatgpt.js >> '
 const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info;
