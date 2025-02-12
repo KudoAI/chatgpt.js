@@ -1999,7 +1999,7 @@ for (const btnAction of cjsBtnActions) {
 
 // Create ALIAS functions
 const cjsFuncAliases = [
-    ['actAs', 'actas', 'act', 'become', 'persona', 'premadePrompt', 'preMadePrompt', 'prePrompt', 'preprompt', 'roleplay', 'rolePlay', 'rp'],
+    ['actAs', 'act', 'become', 'persona', 'premadePrompt', 'preMadePrompt', 'prePrompt', 'rolePlay', 'rp'],
     ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
         'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
     ['continue', 'continueChat', 'continueGenerating', 'continueResponse'],
@@ -2015,7 +2015,7 @@ const cjsFuncAliases = [
     ['getScrollToBottomButton', 'getScrollButton'],
     ['getStopButton', 'getStopGeneratingButton'],
     ['getTextarea', 'getTextArea', 'getChatbar', 'getChatBar', 'getChatbox', 'getChatBox'],
-    ['isFullScreen', 'isFullscreen', 'isfullscreen'],
+    ['isFullScreen', 'isFullscreen'],
     ['logout', 'logOut', 'logOff', 'signOff', 'signOut'],
     ['minify', 'codeMinify', 'minifyCode'],
     ['new', 'newChat', 'startNewChat'],
