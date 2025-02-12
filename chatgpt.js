@@ -133,49 +133,52 @@ const chatgpt = {
               modalMessage = document.createElement('p');
 
         // Create/append/update modal style (if missing or outdated)
-        const thisUpdated = 1735768363880 // timestamp of last edit for this file's `modalStyle`
-        let modalStyle = document.querySelector('#chatgpt-modal-style'); // try to select existing style
+        const thisUpdated = 1739338889852 // timestamp of last edit for this file's `modalStyle`
+        let modalStyle = document.querySelector('#chatgpt-modal-style') // try to select existing style
         if (!modalStyle || parseInt(modalStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
             if (!modalStyle) { // outright missing, create/id/attr/append it first
-                modalStyle = document.createElement('style'); modalStyle.id = 'chatgpt-modal-style';
-                modalStyle.setAttribute('last-updated', thisUpdated.toString());
-                document.head.append(modalStyle);
+                modalStyle = document.createElement('style') ; modalStyle.id = 'chatgpt-modal-style'
+                modalStyle.setAttribute('last-updated', thisUpdated.toString())
+                document.head.append(modalStyle)
             }
             modalStyle.innerText = ( // update prev/new style contents
-                '.chatgpt-modal {' // vars
-                    + '--transition: opacity 0.65s cubic-bezier(.165,.84,.44,1),' // for fade-in
-                                  + 'transform 0.55s cubic-bezier(.165,.84,.44,1) ;' // for move-in
-                    + '--bg-transition: background-color 0.25s ease }' // for bg dim
+                `.chatgpt-modal { /* vars */
+                      --transition: opacity 0.65s cubic-bezier(.165,.84,.44,1), /* for fade-in */
+                                    transform 0.55s cubic-bezier(.165,.84,.44,1) ; /* for move-in */
+                      --bg-transition: background-color 0.25s ease ; /* for bg dim */
+                      --btn-shadow: 2px 1px ${ scheme == 'dark' ? '54px #00cfff' : '30px #9cdaff' }}`
 
                 + '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
 
                 // Background styles
-                + '.chatgpt-modal {'
-                    + 'pointer-events: auto ;' // override any disabling from site modals (like guest login spam)
-                    + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
-                    + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 ;' // align
-                    + 'transition: var(--bg-transition) ;' // for bg dim
-                        + '-webkit-transition: var(--bg-transition) ; -moz-transition: var(--bg-transition) ;'
-                        + '-o-transition: var(--bg-transition) ; -ms-transition: var(--bg-transition) }'
+                + `.chatgpt-modal {
+                      pointer-events: auto ; /* override any disabling from site modals (like guest login spam) */
+                      position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; /* expand to full view-port */
+                      display: flex ; justify-content: center ; align-items: center ; z-index: 9999 ; /* align */
+                      transition: var(--bg-transition) ; /* for bg dim */
+                          -webkit-transition: var(--bg-transition) ; -moz-transition: var(--bg-transition) ;
+                          -o-transition: var(--bg-transition) ; -ms-transition: var(--bg-transition) }`
 
                 // Alert styles
-                + '.chatgpt-modal > div {'
-                    + 'position: absolute ;' // to be click-draggable
-                    + 'opacity: 0 ;' // to fade-in
-                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : '#b5b5b5' };`
-                    + `color: ${ scheme == 'dark' ? 'white' : 'black' };`
-                    + `background-color: ${ scheme == 'dark' ? 'black' : 'white' };`
-                    + 'transform: translateX(-3px) translateY(7px) ;' // offset to move-in from
-                    + 'max-width: 75vw ; word-wrap: break-word ; border-radius: 15px ;'
-                    + 'padding: 20px ; margin: 12px 23px ;'
-                    + `--shadow: 0 30px 60px rgba(0,0,0,0.12) ; box-shadow: var(--shadow) ;
-                          -webkit-box-shadow: var(--shadow) ; -moz-box-shadow: var(--shadow) ;`
-                    + 'user-select: none ; -webkit-user-select: none ; -moz-user-select: none ; -o-user-select: none ;'
-                        + '-ms-user-select: none ;'
-                    + 'transition: var(--transition) ;' // for fade-in + move-in
-                        + '-webkit-transition: var(--transition) ; -moz-transition: var(--transition) ;'
-                        + '-o-transition: var(--transition) ; -ms-transition: var(--transition) }'
-                + `.chatgpt-modal h2 { margin-bottom: 9px }
+                + `.chatgpt-modal > div {
+                      position: absolute ; /* to be click-draggable */
+                      opacity: 0 ; /* to fade-in */
+                      font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto,
+                                   Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif ;
+                      padding: 20px ; margin: 12px 23px ; font-size: 20px ;
+                      color: ${ scheme == 'dark' ? 'white' : 'black' };
+                      background-color: ${ scheme == 'dark' ? 'black' : 'white' };
+                      border: 1px solid ${ scheme == 'dark' ? 'white' : '#b5b5b5' };
+                      transform: translateX(-3px) translateY(7px) ; /* offset to move-in from */
+                      max-width: 75vw ; word-wrap: break-word ; border-radius: 15px ;
+                      --shadow: 0 30px 60px rgba(0,0,0,0.12) ; box-shadow: var(--shadow) ;
+                          -webkit-box-shadow: var(--shadow) ; -moz-box-shadow: var(--shadow) ;
+                      user-select: none ; -webkit-user-select: none ; -moz-user-select: none ;
+                          -o-user-select: none ; -ms-user-select: none ;
+                      transition: var(--transition) ; /* for fade-in + move-in */
+                          -webkit-transition: var(--transition) ; -moz-transition: var(--transition) ;
+                          -o-transition: var(--transition) ; -ms-transition: var(--transition) }
+                  .chatgpt-modal h2 { font-weight: bold ; font-size: 24px ; margin-bottom: 9px }
                   .chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}
                   .chatgpt-modal a:hover { text-decoration: underline }
                   .chatgpt-modal.animated > div {
@@ -185,39 +188,41 @@ const chatgpt = {
                       100% { opacity: 0 ; transform: scale(1.35) }}`
 
                 // Button styles
-                + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 ;'
-                    + ( isMobile ? 'flex-direction: column-reverse' : '' ) + '}'
-                + '.chatgpt-modal button {'
-                    + `margin-left: ${ isMobile ? 0 : 10}px ; padding: ${ isMobile ? 15 : 4}px 18px ; border-radius: 15px ;`
-                    + ( isMobile ? 'margin-top: 5px ; margin-bottom: 3px ;' : '')
-                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
-                + '.primary-modal-btn {'
-                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
-                    + `background: ${ scheme == 'dark' ? 'white' : 'black' } ;`
-                    + `color: ${ scheme == 'dark' ? 'black' : 'white' }}`
-                + `.chatgpt-modal button:hover {
+                + `.modal-buttons {
+                        display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 ;
+                        ${ isMobile ? 'flex-direction: column-reverse' : '' }}
+                  .chatgpt-modal button {
+                      font-size: 14px ; text-transform: uppercase ;
+                      margin-left: ${ isMobile ? 0 : 10 }px ; padding: ${ isMobile ? 15 : 8 }px 18px ;
+                      ${ isMobile ? 'margin-top: 5px ; margin-bottom: 3px ;' : '' }
+                      border-radius: 0 ; border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}
+                  .primary-modal-btn {
+                      border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' };
+                      background: ${ scheme == 'dark' ? 'white' : 'black' };
+                      color: ${ scheme == 'dark' ? 'black' : 'white' }}
+                  .chatgpt-modal button:hover {
                       color: #3d5d71 ; border-color: #6d9cb9 ;
                       background-color: ${ scheme == 'dark' ? '#00cfff' : '#9cdaff' };
-                      --shadow: 2px 1px ${ scheme == 'dark' ? '54px #00cfff' : '30px #9cdaff' };
-                      box-shadow: var(--shadow) ; box-shadow: var(--shadow) ; box-shadow: var(--shadow) }`
-                + '.modal-close-btn {'
-                    + 'cursor: pointer ; width: 29px ; height: 29px ; border-radius: 17px ;'
-                    + 'float: right ; position: relative ; right: -6px ; top: -5px }'
-                + '.modal-close-btn svg { margin: 10px }' // center SVG for hover underlay
-                + `.modal-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
+                      box-shadow: var(--btn-shadow) ;
+                          -webkit-box-shadow: var(--btn-shadow) ; -moz-box-shadow: var(--btn-shadow) }
+                  .modal-close-btn {
+                      cursor: pointer ; width: 29px ; height: 29px ; border-radius: 17px ;
+                      float: right ; position: relative ; right: -6px ; top: -5px }
+                  .modal-close-btn svg { margin: 10px } /* center SVG for hover underlay */
+                  .modal-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
 
                 // Checkbox styles
-                + `.chatgpt-modal .checkbox-group { margin-top: 15px }
-                  .chatgpt-modal .checkbox-group label {
-                      font-size: .7rem ; margin: -.04rem 0 0px .3rem 
-                      color: ${ scheme == 'dark' ? '#e1e1e1' : '#1e1e1e' }}
-                  .chatgpt-modal input[type=checkbox] { transform: scale(0.7) ;
+                + `.chatgpt-modal .checkbox-group { margin: 5px 0 -8px 5px }
+                  .chatgpt-modal input[type=checkbox] {
+                      cursor: pointer ; transform: scale(0.7) ; margin-right: 5px ;
                       border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}
                   .chatgpt-modal input[type=checkbox]:checked {
-                      border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;
-                      background-color: black ; position: inherit }
+                      background-color: black ; position: inherit ;
+                      border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}
                   .chatgpt-modal input[type=checkbox]:focus {
-                      outline: none ; box-shadow: none ; -webkit-box-shadow: none ; -moz-box-shadow: none }`
+                      outline: none ; box-shadow: none ; -webkit-box-shadow: none ; -moz-box-shadow: none }
+                  .chatgpt-modal .checkbox-group label {
+                      font-size: 14px ; color: ${ scheme == 'dark' ? '#e1e1e1' : '#1e1e1e' }}`
             )
         }
 
