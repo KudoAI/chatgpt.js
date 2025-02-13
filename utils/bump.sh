@@ -65,6 +65,15 @@ else # no match for $TODAY
 new_gm_ver=$(sed -n "s/.*@version\s*\(.*\)/\1/p" starters/greasemonkey/*.user.js)
 echo "chatgpt.js-greasemonkey-starter.user.js v$new_gm_ver"
 
+# Config Git committer
+echo -e "${BY}\nConfiguring Git committer...\n${NC}"
+git config --global --list > ~/.gitconfig.backup # backup current config
+gpg --batch --import "$GPG_KEYS_PATH/kudo-sync-bot-private-key.asc" # import GPG key
+git config --global commit.gpgsign true
+git config --global user.name "kudo-sync-bot"
+git config --global user.email "auto-sync@kudoai.com"
+git config --global user.signingkey "$(cat "$GPG_KEYS_PATH/kudo-sync-bot-key-id.txt")"
+
 # Commit bumps to Git
 echo -e "${BY}\nCommitting bumps to Git...\n${NC}"
 git add package*.json
@@ -101,6 +110,10 @@ git push
 # Publish to NPM
 if [[ "$*" == *"--publish"* ]] ; then
     echo -e "${BY}\nPublishing to npm...\n${NC}" ; npm publish ; fi
+
+# Restore OG Git config
+echo -e "${BY}\nRestoring original Git config...\n${NC}"
+while IFS='=' read -r key val ; do git config --global "$key" "$val" ; done < ~/.gitconfig.backup
 
 # Print final summary
 echo -e "\n${BG}Successfully bumped to v$NEW_VER$(
