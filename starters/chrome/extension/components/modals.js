@@ -11,14 +11,14 @@ window.modals = {
         // Show modal
         const aboutModal = this.alert(
             `${this.imports.app.symbol} ${chrome.runtime.getManifest().name}`, // title
-            '🧠 Author: ' // msg
+            '<b>🧠 Author:</b> ' // msg
                 + `<a href="${this.imports.app.author.url}">${this.imports.app.author.name}</a> `
                     + `& <a href="${this.imports.app.urls.contributors}">contributors</a>\n`
-            + `🏷️ Version: <span class="about-em">${this.imports.app.version}</span>\n`
-            + '📜 Open source code: '
+            + `<b>🏷️ Version:</b> <span class="about-em">${this.imports.app.version}</span>\n`
+            + '<b>📜 Open source code:</b> '
                 + `<a href="${this.imports.app.urls.gitHub}" target="_blank" rel="nopener">`
                     + this.imports.app.urls.gitHub + '</a>\n'
-            + '⚡ Powered by: '
+            + '<b>⚡ Powered by:</b> '
                 + `<a href="${this.imports.app.urls.chatgptJS}" target="_blank" rel="noopener">chatgpt.js</a>`,
             [ function getSupport(){}, function rateUs(){}, function moreAiExtensions(){} ], // button labels
             '', 656 // modal width
