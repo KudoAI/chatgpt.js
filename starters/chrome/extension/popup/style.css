@@ -44,9 +44,9 @@ a:focus, a:hover { text-decoration: underline ; color: inherit }
 .main-toggle { margin-left: auto ; display: flex }
 
 /* Menu item elements */
-.menu-item {    
+.menu-item {
     position: relative ; align-items: center ; border-bottom: 1px solid lightgrey ;
-    display: flex ; min-height: 2rem ; padding-right: 14px ; white-space: nowrap ; font-size: 91%
+    display: flex ; min-height: 2rem ; padding: 0 14px 0 2px ; white-space: nowrap ; font-size: 91%
 }
 .menu-icon { padding: 8px }
 .menu-area:focus, .menu-area:hover { background: rgb(100,149,237) ; cursor: pointer } /* add hover color/cursor */    
