@@ -96,34 +96,34 @@ const chatgpt = {
                 mousedown(event) { // find modal, update styles, attach listeners, init XY offsets
                     if (event.button != 0) return // prevent non-left-click drag
                     if (getComputedStyle(event.target).cursor == 'pointer') return // prevent drag on interactive elems
-                    chatgpt.draggableElem = event.currentTarget
+                    chatgpt.draggingModal = event.currentTarget
                     event.preventDefault() // prevent sub-elems like icons being draggable
-                    Object.assign(chatgpt.draggableElem.style, {
+                    Object.assign(chatgpt.draggingModal.style, {
                         cursor: 'grabbing', transition: '0.1s', willChange: 'transform', transform: 'scale(1.05)' });
-                    [...chatgpt.draggableElem.children] // prevent hover FX if drag lags behind cursor
+                    [...chatgpt.draggingModal.children] // prevent hover FX if drag lags behind cursor
                         .forEach(child => child.style.pointerEvents = 'none');
                     ['mousemove', 'mouseup'].forEach(eventType => // add listeners
                         document.addEventListener(eventType, handlers.drag[eventType]))
-                    const draggableElemRect = chatgpt.draggableElem.getBoundingClientRect()
-                    handlers.drag.offsetX = event.clientX - draggableElemRect.left +21
-                    handlers.drag.offsetY = event.clientY - draggableElemRect.top +12
+                    const draggingModalRect = chatgpt.draggingModal.getBoundingClientRect()
+                    handlers.drag.offsetX = event.clientX - draggingModalRect.left +21
+                    handlers.drag.offsetY = event.clientY - draggingModalRect.top +12
                 },
 
                 mousemove(event) { // drag modal
-                    if (!chatgpt.draggableElem) return
+                    if (!chatgpt.draggingModal) return
                     const newX = event.clientX - handlers.drag.offsetX,
                           newY = event.clientY - handlers.drag.offsetY
-                    Object.assign(chatgpt.draggableElem.style, { left: `${newX}px`, top: `${newY}px` })
+                    Object.assign(chatgpt.draggingModal.style, { left: `${newX}px`, top: `${newY}px` })
                 },
 
-                mouseup() { // restore styles/pointer events, remove listeners, reset chatgpt.draggableElem
-                    Object.assign(chatgpt.draggableElem.style, { // restore styles
+                mouseup() { // restore styles/pointer events, remove listeners, reset chatgpt.draggingModal
+                    Object.assign(chatgpt.draggingModal.style, { // restore styles
                         cursor: 'inherit', transition: 'inherit', willChange: 'auto', transform: 'scale(1)' });
-                    [...chatgpt.draggableElem.children] // restore pointer events
+                    [...chatgpt.draggingModal.children] // restore pointer events
                         .forEach(child => child.style.pointerEvents = '');
                     ['mousemove', 'mouseup'].forEach(eventType => // remove listeners
                         document.removeEventListener(eventType, handlers.drag[eventType]))
-                    chatgpt.draggableElem = null
+                    chatgpt.draggingModal = null
                 }
             }
         }
