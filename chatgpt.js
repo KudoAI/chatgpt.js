@@ -50,14 +50,12 @@ const chatgpt = {
 
     activateDarkMode() {
         document.documentElement.classList.replace('light', 'dark')
-        document.documentElement.style.colorScheme = 'dark'
-        localStorage.setItem('theme', 'dark')
+        document.documentElement.style.colorScheme = localStorage.theme = 'dark'
     },
 
     activateLightMode() {
         document.documentElement.classList.replace('dark', 'light')
-        document.documentElement.style.colorScheme = 'light'
-        localStorage.setItem('theme', 'light')
+        document.documentElement.style.colorScheme = localStorage.theme = 'light'
     },
 
     alert(title, msg, btns, checkbox, width) {
