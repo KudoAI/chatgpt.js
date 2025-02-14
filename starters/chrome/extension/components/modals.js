@@ -9,16 +9,19 @@ window.modals = {
     about() {
 
         // Show modal
+        const labelStyles = 'text-transform: uppercase ; font-size: 17px ; font-weight: bold ;'
+                          + `color: ${ this.imports.env.ui.scheme == 'dark' ? 'white' : '#494141' }`
         const aboutModal = this.alert(
             `${this.imports.app.symbol} ${chrome.runtime.getManifest().name}`, // title
-            '<b>🧠 Author:</b> ' // msg
-                + `<a href="${this.imports.app.author.url}">${this.imports.app.author.name}</a> `
+            `<span style="${labelStyles}">🧠 Author:</span> `
+            + `<a href="${this.imports.app.author.url}">${this.imports.app.author.name}</a> `
                     + `& <a href="${this.imports.app.urls.contributors}">contributors</a>\n`
-            + `<b>🏷️ Version:</b> <span class="about-em">${this.imports.app.version}</span>\n`
-            + '<b>📜 Open source code:</b> '
+            + `<span style="${labelStyles}">🏷️ Version:</span> `
+                    + `<span class="about-em">${this.imports.app.version}</span>\n`
+            + `<span style="${labelStyles}">📜 Open source code:</span> `
                 + `<a href="${this.imports.app.urls.gitHub}" target="_blank" rel="nopener">`
                     + this.imports.app.urls.gitHub + '</a>\n'
-            + '<b>⚡ Powered by:</b> '
+            + `<span style="${labelStyles}">⚡ Powered by:</span> `
                 + `<a href="${this.imports.app.urls.chatgptJS}" target="_blank" rel="noopener">chatgpt.js</a>`,
             [ function getSupport(){}, function rateUs(){}, function moreAiExtensions(){} ], // button labels
             '', 656 // modal width
