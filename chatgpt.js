@@ -265,8 +265,7 @@ const chatgpt = {
             checkboxDiv.classList.add('checkbox-group')
             const checkboxFn = checkbox, // assign the named function to checkboxFn
                   checkboxInput = document.createElement('input')
-            checkboxInput.type = 'checkbox'
-            checkboxInput.onchange = checkboxFn
+            checkboxInput.type = 'checkbox' ; checkboxInput.onchange = checkboxFn
 
             // Create/show label
             const checkboxLabel = document.createElement('label')
@@ -295,8 +294,7 @@ const chatgpt = {
         closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG)
 
         // Assemble/append div
-        const modalElems = [closeBtn, modalTitle, modalMessage, checkboxDiv, modalButtons ]
-        modalElems.forEach(elem => modal.append(elem))
+        modal.append(closeBtn, modalTitle, modalMessage, checkboxDiv, modalButtons)
         modal.style.width = `${ width || 458 }px`
         modalContainer.append(modal) ; document.body.append(modalContainer)
 
@@ -316,8 +314,7 @@ const chatgpt = {
         }
 
         // Add listeners
-        const dismissElems = [modalContainer, closeBtn, closeSVG, dismissBtn]
-        dismissElems.forEach(elem => elem.onclick = handlers.dismiss.click)
+        [modalContainer, closeBtn, closeSVG, dismissBtn].forEach(elem => elem.onclick = handlers.dismiss.click)
         document.addEventListener('keydown', handlers.dismiss.key)
         modal.onmousedown = handlers.drag.mousedown // enable click-dragging
 
