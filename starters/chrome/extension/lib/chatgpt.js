@@ -354,7 +354,7 @@ const chatgpt = {
         activate(interval) {
             if (this.isActive) // already running, do nothing
                 return console.log(
-                    '↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already active!')
+                    `↻ ChatGPT >> [${chatgpt.autoRefresh.nowTimeStamp()}] Auto refresh already active!`)
 
             const autoRefresh = this
 
@@ -366,13 +366,13 @@ const chatgpt = {
                     const manifestScript = document.querySelector('script[src*="_ssgManifest.js"]')
                     if (manifestScript) {
                         document.querySelector('#refresh-frame').src = manifestScript.src + '?' + Date.now()
-                        console.log('↻ ChatGPT >> [' + autoRefresh.nowTimeStamp() + '] ChatGPT session refreshed')
+                        console.log(`↻ ChatGPT >> [${autoRefresh.nowTimeStamp()}] ChatGPT session refreshed`)
                     }
                     scheduleRefreshes(interval)
                 }, (interval + randomDelay) * 1000)
             };
             scheduleRefreshes( interval ? parseInt(interval, 10) : 30 )
-            console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh activated')
+            console.log(`↻ ChatGPT >> [${chatgpt.autoRefresh.nowTimeStamp()}] Auto refresh activated`)
 
             // Add listener to send beacons in Chromium to thwart auto-discards if Page Visibility API supported
             if (navigator.userAgent.includes('Chrome') && typeof document.hidden != 'undefined')
@@ -384,9 +384,9 @@ const chatgpt = {
                 this.toggle.refreshFrame()
                 document.removeEventListener('visibilitychange', this.toggle.beacons)
                 clearTimeout(this.isActive) ; this.isActive = null
-                console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh de-activated')
+                console.log(`↻ ChatGPT >> [${ chatgpt.autoRefresh.nowTimeStamp()}] Auto refresh de-activated`)
             } else
-                console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already inactive!')
+                console.log(`↻ ChatGPT >> [${chatgpt.autoRefresh.nowTimeStamp()}] Auto refresh already inactive!`)
         },
 
         nowTimeStamp() {
@@ -395,7 +395,7 @@ const chatgpt = {
             let minutes = now.getMinutes(), seconds = now.getSeconds()
             if (minutes < 10) minutes = '0' + minutes; if (seconds < 10) seconds = '0' + seconds
             const meridiem = now.getHours() < 12 ? 'AM' : 'PM'
-            return hours + ':' + minutes + ':' + seconds + ' ' + meridiem
+            return `${hours}:${minutes}:${seconds} ${meridiem}`
         },
 
         toggle: {
@@ -403,13 +403,13 @@ const chatgpt = {
             beacons() {
                 if (chatgpt.autoRefresh.beaconID) {
                     clearInterval(chatgpt.autoRefresh.beaconID) ; chatgpt.autoRefresh.beaconID = null
-                    console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons de-activated')
+                    console.log(`↻ ChatGPT >> [${chatgpt.autoRefresh.nowTimeStamp()}] Beacons de-activated`)
                 } else {
                     chatgpt.autoRefresh.beaconID = setInterval(() => {
                         navigator.sendBeacon('https://httpbin.org/post', new Uint8Array())
-                        console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacon sent')
+                        console.log(`↻ ChatGPT >> [${chatgpt.autoRefresh.nowTimeStamp()}] Beacon sent`)
                     }, 90000)
-                    console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons activated')
+                    console.log(`ChatGPT >> [${chatgpt.autoRefresh.nowTimeStamp()}] Beacons activated`)
                 }
             },
 
@@ -539,7 +539,7 @@ const chatgpt = {
             if (!code) return console.error('Code (1st) argument not supplied. Pass some code!')
             for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] != 'string')
                 return console.error(`Argument ${ i + 1 } must be a string.`)
-            chatgpt.send('Refactor the following code for ' + (objective || 'brevity') + ':\n\n' + code)
+            chatgpt.send(`Refactor the following code for ${ objective || 'brevity' }:\n\n${code}`)
             console.info('Refactoring code...')
             await chatgpt.isIdle()
             return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
@@ -568,7 +568,7 @@ const chatgpt = {
             if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!')
             for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] != 'string')
                 return console.error(`Argument ${ i + 1 } must be a string.`)
-            chatgpt.send(prompt + '\n\nWrite this as code in ' + outputLang)
+            chatgpt.send(`${prompt}\n\nWrite this as code in ${outputLang}`)
             console.info('Writing code...')
             await chatgpt.isIdle()
             return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
@@ -580,7 +580,7 @@ const chatgpt = {
     async detectLanguage(text) {
         if (!text) return console.error('Text argument not supplied. Pass some text!')
         if (typeof text != 'string') return console.error('Text argument must be a string!')
-        chatgpt.send('Detect the language of the following text:\n\n' + text
+        chatgpt.send(`Detect the language of the following text:\n\n${text}`
             + '\n\nOnly respond with the name of the language')
         console.info('Reviewing text...')
         await chatgpt.isIdle()
@@ -624,7 +624,7 @@ const chatgpt = {
                     const msg = Array.from(div.childNodes).map(node => node.innerText)
                               .join('\n\n') // insert double line breaks between paragraphs
                               .replace('Copy code', '')
-                    msgs.push(sender + ': ' + msg)
+                    msgs.push(`${sender}: ${msg}`)
                 })
                 transcript = msgs.join('\n\n')
 
@@ -716,26 +716,24 @@ const chatgpt = {
     // targetName = from get[targetName][targetType] methods, e.g. 'send'
 
         // Validate argument types to be string only
-        if (typeof targetType != 'string' || typeof targetName != 'string') {
-            throw new TypeError('Invalid arguments. Both arguments must be strings.') }
+        if (typeof targetType != 'string' || typeof targetName != 'string')
+            throw new TypeError('Invalid arguments. Both arguments must be strings.')
 
         // Validate targetType
-        if (!cjsTargetTypes.includes(targetType.toLowerCase())) {
-            throw new Error('Invalid targetType: ' + targetType
-                + '. Valid values are: ' + JSON.stringify(cjsTargetTypes)) }
+        if (!cjsTargetTypes.includes(targetType.toLowerCase()))
+            throw new Error(`Invalid targetType: ${targetType}. Valid values are: ${JSON.stringify(cjsTargetTypes)}`)
 
         // Validate targetName scoped to pre-validated targetType
-        const targetNames = [], reTargetName = new RegExp('^get(.*)' + targetType + '$', 'i')
+        const targetNames = [], reTargetName = new RegExp(`^get(.*)${targetType}$`, 'i')
         for (const prop in chatgpt) {
             if (typeof chatgpt[prop] == 'function' && reTargetName.test(prop)) {
                 targetNames.push( // add found targetName to valid array
                     prop.replace(reTargetName, '$1').toLowerCase())
         }}
-        if (!targetNames.includes(targetName.toLowerCase())) {
-            throw new Error('Invalid targetName: ' + targetName + '. '
+        if (!targetNames.includes(targetName.toLowerCase()))
+            throw new Error(`Invalid targetName: ${targetName}. `
                 + (targetNames.length > 0 ? 'Valid values are: ' + JSON.stringify(targetNames)
                     : 'targetType ' + targetType.toLowerCase() + ' does not require additional options.'))
-        }
 
         // Call target function using pre-validated name components
         const targetFuncNameLower = ('get' + targetName + targetType).toLowerCase()
@@ -776,10 +774,10 @@ const chatgpt = {
                 : Array.from(arguments) ) // details arg(s) passed, convert to array
 
         // Validate detail args
-        for (const detail of details) {
-            if (!validDetails.includes(detail)) { return console.error(
-                'Invalid detail arg \'' + detail + '\' supplied. Valid details are:\n'
-              + '                    [' + validDetails + ']') }}
+        for (const detail of details) if (!validDetails.includes(detail))
+            return console.error(
+                `Invalid detail arg '${detail}' supplied. Valid details are:\n`
+              + `                    [${validDetails}]`)
 
         // Return account details
         return new Promise((resolve, reject) => {
@@ -825,16 +823,16 @@ const chatgpt = {
                  : 'invalid' // else set 'invalid' for validation step
 
         // Validate args
-        for (const detail of detailsToGet) {
+        for (const detail of detailsToGet)
             if (!validDetails.includes(detail)) return console.error(
-                'Invalid detail arg \'' + detail + '\' passed. Valid details are:\n'
-              + '                    [' + validDetails + ']') }
+                `Invalid detail arg '${detail}' passed. Valid details are:\n`
+              + `                    [${validDetails}]`)
         if (sender == 'invalid') return console.error(
             'Invalid sender arg passed. Valid senders are:\n'
-          + '                    [' + validSenders + ']')
+          + `                    [${validSenders}]`)
         if (msgToGet == 'invalid') return console.error(
-            'Invalid msgToGet arg passed. Valid msg\'s to get are:\n'
-          + '                    [ \'all\' | \'latest\' | index of msg to get ]')
+            `Invalid msgToGet arg passed. Valid msg's to get are:\n`
+          + `                    [ 'all' | 'latest' | index of msg to get ]`)
 
         const getChatDetails = (token, detailsToGet) => {
             const re_chatID = /\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/
@@ -852,11 +850,11 @@ const chatgpt = {
 
                     // Return by index if num, 'latest', or 'active' passed but not truly active
                     if (Number.isInteger(chatToGet) || chatToGet == 'latest' ||
-                            (chatToGet == 'active' && !new RegExp('\/' + re_chatID.source + '$').test(location.href))) {
+                            (chatToGet == 'active' && !new RegExp(`\/${re_chatID.source}$`).test(location.href))) {
                         chatToGet = Number.isInteger(chatToGet) ? chatToGet : 0 // preserve index, otherwise get latest
-                        if (chatToGet > data.length) { // reject if index out-of-bounds
-                            return reject('🤖 chatgpt.js >> Chat with index ' + ( chatToGet + 1 )
-                                + ' is out of bounds. Only ' + data.length + ' chats exist!') }
+                        if (chatToGet > data.length) // reject if index out-of-bounds
+                            return reject(`🤖 chatgpt.js >> Chat with index ${ chatToGet + 1 }`
+                                + ` is out of bounds. Only ${data.length} chats exist!`)
                         for (const detail of detailsToGet) detailsToReturn[detail] = data[chatToGet][detail]
                         return resolve(detailsToReturn)
                     }
@@ -864,14 +862,14 @@ const chatgpt = {
                     // Return by title, ID or active chat
                     const chatIdentifier = ( // determine to check by ID or title
                         chatToGet == 'active' ||
-                            new RegExp('^' + re_chatID.source + '$').test(chatToGet) ? 'id' : 'title' )
+                            new RegExp(`^${re_chatID.source}$`).test(chatToGet) ? 'id' : 'title' )
                     if (chatToGet == 'active') // replace chatToGet w/ actual ID
                         chatToGet = re_chatID.exec(window.location.href)[0]
                     let idx, chatFound // index of potentially found chat, flag if found
                     for (idx = 0 ; idx < data.length ; idx++) { // search for id/title to set chatFound flag
                         if (data[idx][chatIdentifier] == chatToGet) { chatFound = true ; break }}
                     if (!chatFound) // exit
-                        return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatToGet + ' found.')
+                        return reject(`🤖 chatgpt.js >> No chat with ${chatIdentifier} = ${chatToGet} found.`)
                     for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail]
                     return resolve(detailsToReturn)
                 }
@@ -900,8 +898,8 @@ const chatgpt = {
                         userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time) // sort in chronological order
 
                         if (parseInt(msgToGet, 10) + 1 > userMessages.length) // reject if index out of bounds
-                            return reject('🤖 chatgpt.js >> Message/response with index ' + ( msgToGet + 1)
-                                + ' is out of bounds. Only ' + userMessages.length + ' messages/responses exist!')
+                            return reject(`🤖 chatgpt.js >> Message/response with index ${ msgToGet + 1 }`
+                                + ` is out of bounds. Only ${userMessages.length} messages/responses exist!`)
 
                         // Fill [chatGPTMessages]
                         for (const userMessage of userMessages) {
@@ -1204,7 +1202,7 @@ const chatgpt = {
                 const icon = document.createElement('img')
                 icon.src = attrs?.icon && typeof attrs.icon == 'string' // can also be base64 encoded image string
                     ? attrs.icon // add icon to button element if given, else default one
-                    : ( chatgpt.endpoints.assets + '/starters/chrome/extension/icons/icon128.png' )
+                    : `${chatgpt.endpoints.assets}/starters/chrome/extension/icons/icon128.png`
                 icon.width = 18
                 newElem.firstChild.before(icon)
                 newElem.onclick = attrs?.onclick && typeof attrs.onclick == 'function' ? attrs.onclick : function(){}
@@ -1655,7 +1653,7 @@ const chatgpt = {
 
         const validMethods = ['alert', 'notify', 'notification', 'clipboard', 'copy']
         if (!validMethods.includes(method)) return console.error(
-            'Invalid method \'' + method + '\' passed. Valid methods are [' + validMethods + '].')
+            `Invalid method '${method}' passed. Valid methods are [${validMethods}].`)
 
         const getChatNode = token => {
             return new Promise((resolve, reject) => {
@@ -1720,8 +1718,8 @@ const chatgpt = {
                         confirmShareChat(token, data).then(() => {
                             if (['copy', 'clipboard'].includes(method)) navigator.clipboard.writeText(data.share_url)
                             else chatgpt.alert('🚀 Share link created!',
-                                '"' + data.title + '" is available at: <a target="blank" rel="noopener" href="'
-                                    + data.share_url + '" >' + data.share_url + '</a>',
+                                `"${data.title}" is available at: <a target="blank" rel="noopener" href="${
+                                    data.share_url}">${data.share_url}</a>`,
                                 [ function openLink() { window.open(data.share_url, '_blank', 'noopener') },
                                     function copyLink() { navigator.clipboard.writeText(data.share_url) }])
                             resolve(data.share_url)
@@ -1799,7 +1797,7 @@ const chatgpt = {
                 const icon = document.createElement('img')
                 icon.src = attrs?.icon && typeof attrs.icon == 'string' // Can also be base64 encoded image string
                     ? attrs.icon // Add icon to button element if given, else default one
-                    : ( chatgpt.endpoints.assets + '/starters/chrome/extension/icons/icon128.png' )
+                    : `${chatgpt.endpoints.assets}/starters/chrome/extension/icons/icon128.png`
                 icon.width = 18
                 newElem.firstChild.before(icon)
                 newElem.onclick = attrs?.onclick && typeof attrs.onclick == 'function' ? attrs.onclick : function(){}
@@ -1870,7 +1868,7 @@ const chatgpt = {
 
     async suggest(ideaType, details) {
         if (!ideaType) return console.error('ideaType (1st argument) not supplied'
-            + '(e.g. \'gifts\', \'names\', \'recipes\', etc.)')
+            + `(e.g. 'gifts', 'names', 'recipes', etc.)`)
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] != 'string')
             return console.error(`Argument ${ i + 1 } must be a string.`)
         chatgpt.send('Suggest some names. ' + ( details || '' ))
@@ -1922,8 +1920,7 @@ const chatgpt = {
         if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!')
         for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
             return console.error(`Argument ${ i + 1 } must be a string!`)
-        chatgpt.send('Translate the following text to ' + outputLang
-            + '. Only reply with the translation.\n\n' + text)
+        chatgpt.send(`Translate the following text to ${outputLang}. Only reply with the translation.\n\n${text}`)
         console.info('Translating text...')
         await chatgpt.isIdle()
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
@@ -1955,7 +1952,7 @@ chatgpt.scheme = { ...chatgpt.settings.scheme } // copy `chatgpt.settings.scheme
 // Create chatgpt.[actions]Button(identifier) functions
 const cjsBtnActions = ['click', 'get'], cjsTargetTypes = [ 'button', 'link', 'div', 'response' ]
 for (const btnAction of cjsBtnActions) {
-    chatgpt[btnAction + 'Button'] = function handleButton(btnIdentifier) {
+    chatgpt[`${btnAction}Button`] = function handleButton(btnIdentifier) {
         const btn = /^[.#]/.test(btnIdentifier) ? document.querySelector(btnIdentifier)
           : /send/i.test(btnIdentifier) ? document.querySelector('form button[class*=bottom]')
           : /scroll/i.test(btnIdentifier) ? document.querySelector('button[class*=cursor]')
