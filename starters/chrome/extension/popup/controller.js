@@ -46,7 +46,7 @@
     // Init MASTER TOGGLE
     const masterToggle = document.querySelector('input')
     await settings.load('extensionDisabled')
-    masterToggle.checked = !config.extensionDisabled ; sync.fade()
+    masterToggle.checked = !config.extensionDisabled
     masterToggle.onchange = () => {
         settings.save('extensionDisabled', !config.extensionDisabled)
         Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
@@ -100,9 +100,9 @@
                 // custom logic for each prompt based on key name
             }
         })
-
-        sync.fade() // in case master toggle off
     }
+
+    sync.fade() // in case master toggle off
 
     // Create/append FOOTER container
     const footer = dom.create.elem('footer') ; document.body.append(footer)
