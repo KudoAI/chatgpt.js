@@ -32,10 +32,7 @@
 
             // Update menu contents
             document.querySelectorAll('div.logo, div.menu-title, div.menu')
-                .forEach(elem => {
-                    elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
-                    elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
-                })
+                .forEach(elem => elem.classList.toggle('disabled', !masterToggle.checked))
         },
 
         configToUI(options) { return sendMsgToActiveTab('syncConfigToUI', options) }
