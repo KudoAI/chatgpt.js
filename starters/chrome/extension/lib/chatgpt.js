@@ -228,7 +228,7 @@ const chatgpt = {
                   .chatgpt-modal input[type=checkbox]:focus {
                       outline: none ; box-shadow: none ; -webkit-box-shadow: none ; -moz-box-shadow: none }
                   .chatgpt-modal .checkbox-group label {
-                      font-size: 14px ; color: ${ scheme == 'dark' ? '#e1e1e1' : '#1e1e1e' }}`
+                      cursor: pointer ; font-size: 14px ; color: ${ scheme == 'dark' ? '#e1e1e1' : '#1e1e1e' }}`
             )
         }
 
