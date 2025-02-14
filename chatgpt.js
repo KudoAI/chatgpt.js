@@ -239,25 +239,25 @@ const chatgpt = {
         modalMessage.innerText = msg || ''; chatgpt.renderHTML(modalMessage);
 
         // Create/append buttons (if provided) to buttons div
-        const modalButtons = document.createElement('div');
-        modalButtons.classList.add('modal-buttons', 'no-mobile-tap-outline');
+        const modalButtons = document.createElement('div')
+        modalButtons.classList.add('modal-buttons', 'no-mobile-tap-outline')
         if (btns) { // are supplied
-            if (!Array.isArray(btns)) btns = [btns]; // convert single button to array if necessary
+            if (!Array.isArray(btns)) btns = [btns] // convert single button to array if necessary
             btns.forEach((buttonFn) => { // create title-cased labels + attach listeners
-                const button = document.createElement('button');
+                const button = document.createElement('button')
                 button.textContent = buttonFn.name
                     .replace(/[_-]\w/g, match => match.slice(1).toUpperCase()) // convert snake/kebab to camel case
                     .replace(/([A-Z])/g, ' $1') // insert spaces
-                    .replace(/^\w/, firstChar => firstChar.toUpperCase()); // capitalize first letter
-                button.onclick = () => { dismissAlert(); buttonFn(); };
-                modalButtons.insertBefore(button, modalButtons.firstChild); // insert button to left
-            });
+                    .replace(/^\w/, firstChar => firstChar.toUpperCase()) // capitalize first letter
+                button.onclick = () => { dismissAlert() ; buttonFn() }
+                modalButtons.insertBefore(button, modalButtons.firstChild)
+            })
         }
 
         // Create/append OK/dismiss button to buttons div
-        const dismissBtn = document.createElement('button');
-        dismissBtn.textContent = btns ? 'Dismiss' : 'OK';
-        modalButtons.insertBefore(dismissBtn, modalButtons.firstChild);
+        const dismissBtn = document.createElement('button')
+        dismissBtn.textContent = btns ? 'Dismiss' : 'OK'
+        modalButtons.insertBefore(dismissBtn, modalButtons.firstChild)
 
         // Highlight primary button
         modalButtons.lastChild.classList.add('primary-modal-btn');
@@ -1214,18 +1214,14 @@ const chatgpt = {
             if (element == 'button') {
                 newElement.textContent = attrs?.label && typeof attrs.label == 'string'
                     ? attrs.label
-                    : 'chatgpt.js button';
-
-                const icon = document.createElement('img');
+                    : 'chatgpt.js button'
+                const icon = document.createElement('img')
                 icon.src = attrs?.icon && typeof attrs.icon == 'string' // can also be base64 encoded image string
                     ? attrs.icon // add icon to button element if given, else default one
-                    : ( chatgpt.endpoints.assets + '/starters/chrome/extension/icons/icon128.png' );
-                icon.width = 18;
-                newElement.insertBefore(icon, newElement.firstChild);
-
-                newElement.onclick = attrs?.onclick && typeof attrs.onclick == 'function'
-                    ? attrs.onclick
-                    : function() {};
+                    : ( chatgpt.endpoints.assets + '/starters/chrome/extension/icons/icon128.png' )
+                icon.width = 18
+                newElement.firstChild.before(icon)
+                newElement.onclick = attrs?.onclick && typeof attrs.onclick == 'function' ? attrs.onclick : function(){}
             }
 
             else if (element == 'dropdown') {
@@ -1259,10 +1255,10 @@ const chatgpt = {
                 const headlessNav = optionButtons[0].parentNode;
 
                 chatgpt.menu.elements.forEach(element => {
-                    element.setAttribute('class', cssClasses);
+                    element.setAttribute('class', cssClasses)
                     if (!headlessNav.contains(element))
-                        try { headlessNav.insertBefore(element, headlessNav.firstChild); }
-                        catch (err) { console.error(err); }
+                        try { headlessNav.firstChild.before(element) }
+                        catch (err) { console.error(err) }
                 });
             };
 
@@ -1526,9 +1522,9 @@ const chatgpt = {
                           afterTextNode = document.createTextNode(text.substring(elem.index + tagContent.length));
 
                     // Replace text node with processed nodes
-                    node.replaceChild(beforeTextNode, childNode);
-                    node.insertBefore(renderedNode, beforeTextNode.nextSibling);
-                    node.insertBefore(afterTextNode, renderedNode.nextSibling);
+                    node.replaceChild(beforeTextNode, childNode)
+                    beforeTextNode.nextSibling.before(renderedNode)
+                    renderedNode.nextSibling.before(afterTextNode)
                 }
 
             // Process element nodes recursively
@@ -1782,23 +1778,19 @@ const chatgpt = {
             });
 
             // Create MutationObserver instance
-            const navBar = document.querySelector('nav');
-            if (!navBar) return console.error('Sidebar element not found!');
-            this.observer = new MutationObserver(mutations => {
+            const navBar = document.querySelector('nav')
+            if (!navBar) return console.error('Sidebar element not found!')
+            this.observer = new MutationObserver(mutations =>
                 mutations.forEach(mutation => {
                     if ((mutation.type == 'childList' && mutation.addedNodes.length) ||
                         (mutation.type == 'attributes' && mutation.attributeName == 'data-chatgptjs')) // check for trigger
-                        // Try to insert each element...
-                        this.elements.forEach(element => {
-                            // ...if it's not already present...
-                            if (!navBar.contains(element))
-                                try {
-                                    // ...at the top of the sidebar
-                                    navBar.insertBefore(element, navBar.querySelector('a').parentNode);
-                                } catch (err) { console.error(err); }
-                            });
-                });
-            });
+                            this.elements.forEach(element => { // try to insert each element...
+                                if (!navBar.contains(element)) // ...if it's not already present...
+                                    try { navBar.querySelector('a').parentNode.before(element) } // ...at top of sidebar
+                                    catch (err) { console.error(err) }
+                            })
+                })
+            )
 
             this.observer.observe(document.documentElement, { childList: true, subtree: true, attributes: true });
         },
@@ -1822,18 +1814,14 @@ const chatgpt = {
             if (element == 'button') {
                 newElement.textContent = attrs?.label && typeof attrs.label == 'string'
                     ? attrs.label
-                    : 'chatgpt.js button';
-
-                const icon = document.createElement('img');
+                    : 'chatgpt.js button'
+                const icon = document.createElement('img')
                 icon.src = attrs?.icon && typeof attrs.icon == 'string' // Can also be base64 encoded image string
                     ? attrs.icon // Add icon to button element if given, else default one
-                    : ( chatgpt.endpoints.assets + '/starters/chrome/extension/icons/icon128.png' );
-                icon.width = 18;
-                newElement.insertBefore(icon, newElement.firstChild);
-
-                newElement.onclick = attrs?.onclick && typeof attrs.onclick == 'function'
-                    ? attrs.onclick
-                    : function() {};
+                    : ( chatgpt.endpoints.assets + '/starters/chrome/extension/icons/icon128.png' )
+                icon.width = 18
+                newElement.firstChild.before(icon)
+                newElement.onclick = attrs?.onclick && typeof attrs.onclick == 'function' ? attrs.onclick : function(){}
             }
 
             else if (element == 'dropdown') {
