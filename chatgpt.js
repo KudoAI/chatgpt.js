@@ -4,8 +4,8 @@
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
 
 // Init feedback props
-localStorage.alertQueue = JSON.stringify([]);
-localStorage.notifyProps = JSON.stringify({ queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }});
+localStorage.alertQueue = JSON.stringify([])
+localStorage.notifyProps = JSON.stringify({ queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }})
 
 // Define chatgpt API
 const chatgpt = {
@@ -23,41 +23,41 @@ const chatgpt = {
     actAs(persona) {
     // Prompts ChatGPT to act as a persona from https://github.com/KudoAI/chat-prompts/blob/main/personas.json
 
-        const promptsUrl = 'https://cdn.jsdelivr.net/gh/KudoAI/chat-prompts/dist/personas.min.json';
+        const promptsUrl = 'https://cdn.jsdelivr.net/gh/KudoAI/chat-prompts/dist/personas.min.json'
         return new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', promptsUrl, true); xhr.send();
+            const xhr = new XMLHttpRequest()
+            xhr.open('GET', promptsUrl, true) ; xhr.send()
             xhr.onload = () => {
-                if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.');
-                const data = JSON.parse(xhr.responseText).personas;
+                if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.')
+                const data = JSON.parse(xhr.responseText).personas
                 if (!persona) {
                     console.log('\n%c🤖 chatgpt.js personas\n',
-                        'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
+                        'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold')
                     for (const prompt of data) // list personas
-                        console.log(`%c${ prompt.title }`, 'font-family: monospace ; font-size: larger ;');
-                    return resolve();
+                        console.log(`%c${ prompt.title }`, 'font-family: monospace ; font-size: larger ;')
+                    return resolve()
                 }
-                const selectedPrompt = data.find(obj => obj.title.toLowerCase() == persona.toLowerCase());
+                const selectedPrompt = data.find(obj => obj.title.toLowerCase() == persona.toLowerCase())
                 if (!selectedPrompt)
-                    return reject(`🤖 chatgpt.js >> Persona '${ persona }' was not found!`);
-                chatgpt.send(selectedPrompt.prompt, 'click');
-                console.info(`Loading ${ persona } persona...`);
-                chatgpt.isIdle().then(() => { console.info('Persona activated!'); });
-                return resolve();
-            };
-        });
+                    return reject(`🤖 chatgpt.js >> Persona '${ persona }' was not found!`)
+                chatgpt.send(selectedPrompt.prompt, 'click')
+                console.info(`Loading ${ persona } persona...`)
+                chatgpt.isIdle().then(() => console.info('Persona activated!'))
+                return resolve()
+            }
+        })
     },
 
     activateDarkMode() {
-        document.documentElement.classList.replace('light', 'dark');
-        document.documentElement.style.colorScheme = 'dark';
-        localStorage.setItem('theme', 'dark');
+        document.documentElement.classList.replace('light', 'dark')
+        document.documentElement.style.colorScheme = 'dark'
+        localStorage.setItem('theme', 'dark')
     },
 
     activateLightMode() {
-        document.documentElement.classList.replace('dark', 'light');
-        document.documentElement.style.colorScheme = 'light';
-        localStorage.setItem('theme', 'light');
+        document.documentElement.classList.replace('dark', 'light')
+        document.documentElement.style.colorScheme = 'light'
+        localStorage.setItem('theme', 'light')
     },
 
     alert(title, msg, btns, checkbox, width) {
@@ -66,7 +66,7 @@ const chatgpt = {
 
         // Init env context
         const scheme = chatgpt.isDarkMode() ? 'dark' : 'light',
-              isMobile = chatgpt.browser.isMobile();
+              isMobile = chatgpt.browser.isMobile()
 
         // Define event handlers
         const handlers = {
@@ -85,8 +85,8 @@ const chatgpt = {
                         if (!alert || alert.style.display == 'none') return
                         if (event.key.startsWith('Esc') || event.keyCode == 27) dismissAlert() // and do nothing
                         else { // Space/Enter pressed
-                            const mainButton = alert.querySelector('.modal-buttons').lastChild // look for main button
-                            if (mainButton) { mainButton.click() ; event.preventDefault() } // click if found
+                            const mainBtn = alert.querySelector('.modal-buttons').lastChild // look for main button
+                            if (mainBtn) { mainBtn.click() ; event.preventDefault() } // click if found
                         }
                     }
                 }
@@ -128,13 +128,13 @@ const chatgpt = {
             }
         }
 
-        // Create modal parent/children elements
-        const modalContainer = document.createElement('div');
-        modalContainer.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
-        modalContainer.classList.add('chatgpt-modal'); // add class to main div
+        // Create modal parent/children elems
+        const modalContainer = document.createElement('div')
+        modalContainer.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now()
+        modalContainer.classList.add('chatgpt-modal') // add class to main div
         const modal = document.createElement('div'),
               modalTitle = document.createElement('h2'),
-              modalMessage = document.createElement('p');
+              modalMessage = document.createElement('p')
 
         // Create/append/update modal style (if missing or outdated)
         const thisUpdated = 1739338889852 // timestamp of last edit for this file's `modalStyle`
@@ -234,9 +234,8 @@ const chatgpt = {
             )
         }
 
-        // Insert text into elements
-        modalTitle.innerText = title || '';
-        modalMessage.innerText = msg || ''; chatgpt.renderHTML(modalMessage);
+        // Insert text into elems
+        modalTitle.innerText = title || '' ; modalMessage.innerText = msg || '' ; chatgpt.renderHTML(modalMessage)
 
         // Create/append buttons (if provided) to buttons div
         const modalButtons = document.createElement('div')
@@ -260,58 +259,58 @@ const chatgpt = {
         modalButtons.insertBefore(dismissBtn, modalButtons.firstChild)
 
         // Highlight primary button
-        modalButtons.lastChild.classList.add('primary-modal-btn');
+        modalButtons.lastChild.classList.add('primary-modal-btn')
 
         // Create/append checkbox (if provided) to checkbox group div
-        const checkboxDiv = document.createElement('div');
+        const checkboxDiv = document.createElement('div')
         if (checkbox) { // is supplied
-            checkboxDiv.classList.add('checkbox-group');
+            checkboxDiv.classList.add('checkbox-group')
             const checkboxFn = checkbox, // assign the named function to checkboxFn
-                  checkboxInput = document.createElement('input');
-            checkboxInput.type = 'checkbox';
-            checkboxInput.onchange = checkboxFn;
+                  checkboxInput = document.createElement('input')
+            checkboxInput.type = 'checkbox'
+            checkboxInput.onchange = checkboxFn
 
             // Create/show label
-            const checkboxLabel = document.createElement('label');
-            checkboxLabel.onclick = () => { checkboxInput.checked = !checkboxInput.checked; checkboxFn(); };
+            const checkboxLabel = document.createElement('label')
+            checkboxLabel.onclick = () => { checkboxInput.checked = !checkboxInput.checked ; checkboxFn() }
             checkboxLabel.textContent = checkboxFn.name.charAt(0).toUpperCase() // capitalize first char
                 + checkboxFn.name.slice(1) // format remaining chars
                     .replace(/([A-Z])/g, (match, letter) => ' ' + letter.toLowerCase()) // insert spaces, convert to lowercase
                     .replace(/\b(\w+)nt\b/gi, '$1n\'t') // insert apostrophe in 'nt' suffixes
-                    .trim(); // trim leading/trailing spaces
+                    .trim() // trim leading/trailing spaces
 
-            checkboxDiv.append(checkboxInput); checkboxDiv.append(checkboxLabel);
+            checkboxDiv.append(checkboxInput) ; checkboxDiv.append(checkboxLabel)
         }
 
         // Create close button
-        const closeBtn = document.createElement('div');
-        closeBtn.title = 'Close'; closeBtn.classList.add('modal-close-btn', 'no-mobile-tap-outline');
-        const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        closeSVG.setAttribute('height', '10px');
-        closeSVG.setAttribute('viewBox', '0 0 14 14');
-        closeSVG.setAttribute('fill', 'none');
-        const closeSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        closeSVGpath.setAttribute('fill-rule', 'evenodd');
-        closeSVGpath.setAttribute('clip-rule', 'evenodd');
-        closeSVGpath.setAttribute('fill', chatgpt.isDarkMode() ? 'white' : 'black');
-        closeSVGpath.setAttribute('d', 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z');
-        closeSVG.append(closeSVGpath); closeBtn.append(closeSVG);
+        const closeBtn = document.createElement('div')
+        closeBtn.title = 'Close' ; closeBtn.classList.add('modal-close-btn', 'no-mobile-tap-outline')
+        const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+        closeSVG.setAttribute('height', '10px')
+        closeSVG.setAttribute('viewBox', '0 0 14 14')
+        closeSVG.setAttribute('fill', 'none')
+        const closeSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+        closeSVGpath.setAttribute('fill-rule', 'evenodd')
+        closeSVGpath.setAttribute('clip-rule', 'evenodd')
+        closeSVGpath.setAttribute('fill', chatgpt.isDarkMode() ? 'white' : 'black')
+        closeSVGpath.setAttribute('d', 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z')
+        closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG)
 
         // Assemble/append div
-        const modalElems = [closeBtn, modalTitle, modalMessage, checkboxDiv, modalButtons ];
-        modalElems.forEach((elem) => { modal.append(elem); });
-        modal.style.width = `${ width || 458 }px`;
-        modalContainer.append(modal); document.body.append(modalContainer);
+        const modalElems = [closeBtn, modalTitle, modalMessage, checkboxDiv, modalButtons ]
+        modalElems.forEach(elem => modal.append(elem))
+        modal.style.width = `${ width || 458 }px`
+        modalContainer.append(modal) ; document.body.append(modalContainer)
 
         // Enqueue alert
-        let alertQueue = JSON.parse(localStorage.alertQueue);
-        alertQueue.push(modalContainer.id);
-        localStorage.alertQueue = JSON.stringify(alertQueue);
+        let alertQueue = JSON.parse(localStorage.alertQueue)
+        alertQueue.push(modalContainer.id)
+        localStorage.alertQueue = JSON.stringify(alertQueue)
 
         // Show alert if none active
-        modalContainer.style.display = 'none';
-        if (alertQueue.length === 1) {
-            modalContainer.style.display = '';
+        modalContainer.style.display = 'none'
+        if (alertQueue.length == 1) {
+            modalContainer.style.display = ''
             setTimeout(() => { // dim bg
                 modal.parentNode.style.backgroundColor = `rgba(67,70,72,${ scheme == 'dark' ? 0.62 : 0.33 })`
                 modal.parentNode.classList.add('animated')
@@ -319,9 +318,9 @@ const chatgpt = {
         }
 
         // Add listeners
-        const dismissElems = [modalContainer, closeBtn, closeSVG, dismissBtn];
-        dismissElems.forEach(elem => elem.onclick = handlers.dismiss.click);
-        document.addEventListener('keydown', handlers.dismiss.key);
+        const dismissElems = [modalContainer, closeBtn, closeSVG, dismissBtn]
+        dismissElems.forEach(elem => elem.onclick = handlers.dismiss.click)
+        document.addEventListener('keydown', handlers.dismiss.key)
         modal.onmousedown = handlers.drag.mousedown // enable click-dragging
 
         // Define alert dismisser
@@ -352,78 +351,80 @@ const chatgpt = {
     },
 
     async askAndGetReply(query) {
-        chatgpt.send(query); await chatgpt.isIdle();
-        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+        chatgpt.send(query) ; await chatgpt.isIdle()
+        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
 
     autoRefresh: {
         activate(interval) {
-            if (this.isActive) { // already running, do nothing
-                console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already active!'); return; }
+            if (this.isActive) // already running, do nothing
+                return console.log(
+                    '↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already active!')
 
-            const autoRefresh = this;
+            const autoRefresh = this
 
             // Run main activate routine
-            this.toggle.refreshFrame();
+            this.toggle.refreshFrame()
             const scheduleRefreshes = interval => {
-                const randomDelay = Math.max(2, Math.floor(chatgpt.randomFloat() * 21 - 10)); // set random delay up to ±10 secs
+                const randomDelay = Math.max(2, Math.floor(chatgpt.randomFloat() * 21 - 10)) // set random delay up to ±10 secs
                 autoRefresh.isActive = setTimeout(() => {
-                    const manifestScript = document.querySelector('script[src*="_ssgManifest.js"]');
+                    const manifestScript = document.querySelector('script[src*="_ssgManifest.js"]')
                     if (manifestScript) {
-                        document.querySelector('#refresh-frame').src = manifestScript.src + '?' + Date.now();
-                        console.log('↻ ChatGPT >> [' + autoRefresh.nowTimeStamp() + '] ChatGPT session refreshed');
+                        document.querySelector('#refresh-frame').src = manifestScript.src + '?' + Date.now()
+                        console.log('↻ ChatGPT >> [' + autoRefresh.nowTimeStamp() + '] ChatGPT session refreshed')
                     }
-                    scheduleRefreshes(interval);
-                }, (interval + randomDelay) * 1000);
+                    scheduleRefreshes(interval)
+                }, (interval + randomDelay) * 1000)
             };
-            scheduleRefreshes( interval ? parseInt(interval, 10) : 30 );
-            console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh activated');
+            scheduleRefreshes( interval ? parseInt(interval, 10) : 30 )
+            console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh activated')
 
             // Add listener to send beacons in Chromium to thwart auto-discards if Page Visibility API supported
-            if (navigator.userAgent.includes('Chrome') && typeof document.hidden !== 'undefined')
-                document.addEventListener('visibilitychange', this.toggle.beacons);
+            if (navigator.userAgent.includes('Chrome') && typeof document.hidden != 'undefined')
+                document.addEventListener('visibilitychange', this.toggle.beacons)
         },
 
         deactivate() {
             if (this.isActive) {
-                this.toggle.refreshFrame();
-                document.removeEventListener('visibilitychange', this.toggle.beacons);
-                clearTimeout(this.isActive); this.isActive = null;
-                console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh de-activated');
-            } else { console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already inactive!'); }
+                this.toggle.refreshFrame()
+                document.removeEventListener('visibilitychange', this.toggle.beacons)
+                clearTimeout(this.isActive) ; this.isActive = null
+                console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh de-activated')
+            } else
+                console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Auto refresh already inactive!')
         },
 
         nowTimeStamp() {
-            const now = new Date();
-            const hours = now.getHours() % 12 || 12; // Convert to 12-hour format
-            let minutes = now.getMinutes(), seconds = now.getSeconds();
-            if (minutes < 10) minutes = '0' + minutes; if (seconds < 10) seconds = '0' + seconds;
-            const meridiem = now.getHours() < 12 ? 'AM' : 'PM';
-            return hours + ':' + minutes + ':' + seconds + ' ' + meridiem;
+            const now = new Date()
+            const hours = now.getHours() % 12 || 12 // convert to 12h format
+            let minutes = now.getMinutes(), seconds = now.getSeconds()
+            if (minutes < 10) minutes = '0' + minutes; if (seconds < 10) seconds = '0' + seconds
+            const meridiem = now.getHours() < 12 ? 'AM' : 'PM'
+            return hours + ':' + minutes + ':' + seconds + ' ' + meridiem
         },
 
         toggle: {
 
             beacons() {
                 if (chatgpt.autoRefresh.beaconID) {
-                    clearInterval(chatgpt.autoRefresh.beaconID); chatgpt.autoRefresh.beaconID = null;
-                    console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons de-activated');
+                    clearInterval(chatgpt.autoRefresh.beaconID) ; chatgpt.autoRefresh.beaconID = null
+                    console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons de-activated')
                 } else {
                     chatgpt.autoRefresh.beaconID = setInterval(() => {
-                        navigator.sendBeacon('https://httpbin.org/post', new Uint8Array());
-                        console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacon sent');
-                    }, 90000);
-                    console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons activated');
+                        navigator.sendBeacon('https://httpbin.org/post', new Uint8Array())
+                        console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacon sent')
+                    }, 90000)
+                    console.log('↻ ChatGPT >> [' + chatgpt.autoRefresh.nowTimeStamp() + '] Beacons activated')
                 }
             },
 
             refreshFrame() {
-                let refreshFrame = document.querySelector('#refresh-frame');
-                if (refreshFrame) refreshFrame.remove();
+                let refreshFrame = document.querySelector('#refresh-frame')
+                if (refreshFrame) refreshFrame.remove()
                 else {
                     refreshFrame = Object.assign(document.createElement('iframe'),
-                        { id: 'refresh-frame', style: 'display: none' });
-                    document.head.prepend(refreshFrame);
+                        { id: 'refresh-frame', style: 'display: none' })
+                    document.head.prepend(refreshFrame)
                 }
             }
         }
@@ -431,167 +432,167 @@ const chatgpt = {
 
     browser: {
 
-        isLightMode() { return window.matchMedia?.('(prefers-color-scheme: light)')?.matches; },
-        isDarkMode() { return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches; },
-        isChromium() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chromium'); },
-        isChrome() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chrome'); },
-        isEdge() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge'); },
-        isBrave() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave'); },
-        isFirefox() { return navigator.userAgent.includes('Firefox'); },
+        isLightMode() { return window.matchMedia?.('(prefers-color-scheme: light)')?.matches },
+        isDarkMode() { return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches },
+        isChromium() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chromium') },
+        isChrome() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chrome') },
+        isEdge() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge') },
+        isBrave() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave') },
+        isFirefox() { return navigator.userAgent.includes('Firefox') },
 
         isFullScreen() {
-            const userAgentStr = navigator.userAgent;
+            const userAgentStr = navigator.userAgent
             return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
                  : userAgentStr.includes('Firefox') ? window.fullScreen
-                 : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen;
+                 : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen
         },
 
         isMobile() {
-            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) }
     },
 
     async clearChats() { // back-end method
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve, reject) =>
             chatgpt.getAccessToken().then(token => {
-                const xhr = new XMLHttpRequest();
-                xhr.open('PATCH', chatgpt.endpoints.openAI.chats, true);
-                xhr.setRequestHeader('Content-Type', 'application/json');
-                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                const xhr = new XMLHttpRequest()
+                xhr.open('PATCH', chatgpt.endpoints.openAI.chats, true)
+                xhr.setRequestHeader('Content-Type', 'application/json')
+                xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
-                    if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot clear chats.');
-                    console.info('Chats successfully cleared'); resolve();
-                };
-                xhr.send(JSON.stringify({ is_visible: false }));
-            }).catch(err => reject(new Error(err.message)));
-        });
+                    if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot clear chats.')
+                    console.info('Chats successfully cleared') ; resolve()
+                }
+                xhr.send(JSON.stringify({ is_visible: false }))
+            }).catch(err => reject(new Error(err.message)))
+        )
     },
 
     code: {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
         async execute(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!');
-            if (typeof code !== 'string') return console.error('Code argument must be a string!');
-            chatgpt.send('Display the output as if you were terminal:\n\n' + code);
-            console.info('Executing code...');
-            await chatgpt.isIdle();
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
+            if (!code) return console.error('Code argument not supplied. Pass some code!')
+            if (typeof code != 'string') return console.error('Code argument must be a string!')
+            chatgpt.send('Display the output as if you were terminal:\n\n' + code)
+            console.info('Executing code...')
+            await chatgpt.isIdle()
+            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
         },
 
         extract(msg) { // extract pure code from response (targets last block)
-            const codeBlocks = msg.match(/(?<=```.*\n)[\s\S]*?(?=```)/g);
-            return codeBlocks ? codeBlocks[codeBlocks.length - 1] : msg;
+            const codeBlocks = msg.match(/(?<=```.*\n)[\s\S]*?(?=```)/g)
+            return codeBlocks ? codeBlocks[codeBlocks.length - 1] : msg
         },
 
         async isIdle(timeout = null) {
             const obsConfig = { childList: true, subtree: true },
                   selectors = { msgDiv: 'div[data-message-author-role]',
-                                replyDiv: 'div[data-message-author-role=assistant]' };
+                                replyDiv: 'div[data-message-author-role=assistant]' }
 
             // Create promises
-            const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null;
+            const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
             const isIdlePromise = (async () => {
                 await new Promise(resolve => { // when on convo page
-                    if (document.querySelector(selectors.msgDiv)) resolve();
+                    if (document.querySelector(selectors.msgDiv)) resolve()
                     else new MutationObserver((_, obs) => {
-                        if (document.querySelector(selectors.msgDiv)) { obs.disconnect(); resolve(); }
-                    }).observe(document.body, obsConfig);
-                });
-                await new Promise(resolve => { // when reply starts generating
+                        if (document.querySelector(selectors.msgDiv)) { obs.disconnect() ; resolve() }
+                    }).observe(document.body, obsConfig)
+                })
+                await new Promise(resolve => // when reply starts generating
                     new MutationObserver((_, obs) => {
-                        if (chatgpt.getStopBtn()) { obs.disconnect(); resolve(); }
-                    }).observe(document.body, { childList: true, subtree: true });
-                });
+                        if (chatgpt.getStopBtn()) { obs.disconnect() ; resolve() }
+                    }).observe(document.body, { childList: true, subtree: true })
+                )
                 const replyDivs = document.querySelectorAll(selectors.replyDiv),
-                      lastReplyDiv = replyDivs[replyDivs.length - 1];
-                await new Promise(resolve => { // when code starts generating
+                      lastReplyDiv = replyDivs[replyDivs.length - 1]
+                await new Promise(resolve => // when code starts generating
                     new MutationObserver((_, obs) => {
-                        if (lastReplyDiv?.querySelector('pre')) { obs.disconnect(); resolve(); }
-                    }).observe(document.body, obsConfig);
-                });
-                return new Promise(resolve => { // when code stops generating
+                        if (lastReplyDiv?.querySelector('pre')) { obs.disconnect() ; resolve() }
+                    }).observe(document.body, obsConfig)
+                )
+                return new Promise(resolve => // when code stops generating
                     new MutationObserver((_, obs) => {
                         if (lastReplyDiv?.querySelector('pre')?.nextElementSibling // code block not last child of reply div
                             || !chatgpt.getStopBtn() // ...or reply outright stopped generating
-                        ) { obs.disconnect(); resolve(true); }
-                    }).observe(document.body, obsConfig);
-                });
-            })();
+                        ) { obs.disconnect() ; resolve(true) }
+                    }).observe(document.body, obsConfig)
+                )
+            })()
 
-            return await (timeoutPromise ? Promise.race([isIdlePromise, timeoutPromise]) : isIdlePromise);
+            return await (timeoutPromise ? Promise.race([isIdlePromise, timeoutPromise]) : isIdlePromise)
         },
 
         async minify(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!');
-            if (typeof code !== 'string') return console.error('Code argument must be a string!');
-            chatgpt.send('Minify the following code:\n\n' + code);
-            console.info('Minifying code...');
-            await chatgpt.isIdle();
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
+            if (!code) return console.error('Code argument not supplied. Pass some code!')
+            if (typeof code != 'string') return console.error('Code argument must be a string!')
+            chatgpt.send('Minify the following code:\n\n' + code)
+            console.info('Minifying code...')
+            await chatgpt.isIdle()
+            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
         },
 
         async obfuscate(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!');
-            if (typeof code !== 'string') return console.error('Code argument must be a string!');
-            chatgpt.send('Obfuscate the following code:\n\n' + code);
-            console.info('Obfuscating code...');
-            await chatgpt.isIdle();
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
+            if (!code) return console.error('Code argument not supplied. Pass some code!')
+            if (typeof code != 'string') return console.error('Code argument must be a string!')
+            chatgpt.send('Obfuscate the following code:\n\n' + code)
+            console.info('Obfuscating code...')
+            await chatgpt.isIdle()
+            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
         },
 
         async refactor(code, objective) {
-            if (!code) return console.error('Code (1st) argument not supplied. Pass some code!');
-            for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
-                return console.error(`Argument ${ i + 1 } must be a string.`);
-            chatgpt.send('Refactor the following code for ' + (objective || 'brevity') + ':\n\n' + code);
-            console.info('Refactoring code...');
-            await chatgpt.isIdle();
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
+            if (!code) return console.error('Code (1st) argument not supplied. Pass some code!')
+            for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] != 'string')
+                return console.error(`Argument ${ i + 1 } must be a string.`)
+            chatgpt.send('Refactor the following code for ' + (objective || 'brevity') + ':\n\n' + code)
+            console.info('Refactoring code...')
+            await chatgpt.isIdle()
+            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
         },
 
         async review(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!');
-            if (typeof code !== 'string') return console.error('Code argument must be a string!');
-            chatgpt.send('Review the following code for me:\n\n' + code);
-            console.info('Reviewing code...');
-            await chatgpt.isIdle();
-            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+            if (!code) return console.error('Code argument not supplied. Pass some code!')
+            if (typeof code == 'string') return console.error('Code argument must be a string!')
+            chatgpt.send('Review the following code for me:\n\n' + code)
+            console.info('Reviewing code...')
+            await chatgpt.isIdle()
+            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
         },
 
         async unminify(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!');
-            if (typeof code !== 'string') return console.error('Code argument must be a string!');
-            chatgpt.send('Unminify the following code.:\n\n' + code);
-            console.info('Unminifying code...');
-            await chatgpt.isIdle();
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
+            if (!code) return console.error('Code argument not supplied. Pass some code!')
+            if (typeof code != 'string') return console.error('Code argument must be a string!')
+            chatgpt.send('Unminify the following code.:\n\n' + code)
+            console.info('Unminifying code...')
+            await chatgpt.isIdle()
+            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
         },
 
         async write(prompt, outputLang) {
-            if (!prompt) return console.error('Prompt (1st) argument not supplied. Pass a prompt!');
-            if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!');
-            for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
-                return console.error(`Argument ${ i + 1 } must be a string.`);
-            chatgpt.send(prompt + '\n\nWrite this as code in ' + outputLang);
-            console.info('Writing code...');
-            await chatgpt.isIdle();
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'));
+            if (!prompt) return console.error('Prompt (1st) argument not supplied. Pass a prompt!')
+            if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!')
+            for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] != 'string')
+                return console.error(`Argument ${ i + 1 } must be a string.`)
+            chatgpt.send(prompt + '\n\nWrite this as code in ' + outputLang)
+            console.info('Writing code...')
+            await chatgpt.isIdle()
+            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
         }
     },
 
-    continue() { chatgpt.response.continue(); },
+    continue() { chatgpt.response.continue() },
 
     async detectLanguage(text) {
-        if (!text) return console.error('Text argument not supplied. Pass some text!');
-        if (typeof text !== 'string') return console.error('Text argument must be a string!');
+        if (!text) return console.error('Text argument not supplied. Pass some text!')
+        if (typeof text != 'string') return console.error('Text argument must be a string!')
         chatgpt.send('Detect the language of the following text:\n\n' + text
-            + '\n\nOnly respond with the name of the language');
-        console.info('Reviewing text...');
-        await chatgpt.isIdle();
-        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+            + '\n\nOnly respond with the name of the language')
+        console.info('Reviewing text...')
+        await chatgpt.isIdle()
+        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
 
-    executeCode() { chatgpt.code.execute(); },
+    executeCode() { chatgpt.code.execute() },
 
     async exportChat(chatToGet, format) {
     // chatToGet = 'active' (default) | 'latest' | index|title|id of chat to get
@@ -601,12 +602,12 @@ const chatgpt = {
         chatToGet = !chatToGet ? 'active' // default to 'active' if unpassed
                   : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
                       parseInt(chatToGet, 10) // parse as integer
-                  : chatToGet; // else preserve non-num string as 'active', 'latest' or title/id of chat to get
-        format = format.toLowerCase() || 'html'; // default to 'html' if unpassed
+                  : chatToGet // else preserve non-num string as 'active', 'latest' or title/id of chat to get
+        format = format.toLowerCase() || 'html' // default to 'html' if unpassed
 
         // Create transcript + filename
-        console.info('Generating transcript...');
-        let transcript = '', filename;
+        console.info('Generating transcript...')
+        let transcript = '', filename
         if (/te?xt/.test(format)) { // generate plain transcript + filename for TXT export
 
             // Format filename using date/time
@@ -615,106 +616,104 @@ const chatgpt = {
                   month = (now.getMonth() + 1).toString().padStart(2, '0'),
                   year = now.getFullYear(),
                   hour = now.getHours().toString().padStart(2, '0'),
-                  minute = now.getMinutes().toString().padStart(2, '0');
-            filename = `ChatGPT_${ day }-${ month }-${ year }_${ hour }-${ minute }.txt`;
+                  minute = now.getMinutes().toString().padStart(2, '0')
+            filename = `ChatGPT_${ day }-${ month }-${ year }_${ hour }-${ minute }.txt`
 
             // Create transcript from active chat
             if (chatToGet == 'active' && /\/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$/.test(window.location.href)) {
-                const chatDivs = document.querySelectorAll('main > div > div > div > div > div > div[class*=group]');
-                if (!chatDivs.length) return console.error('Chat is empty!');
-                const msgs = []; let isUserMsg = true;
-                chatDivs.forEach((div) => {
-                    const sender = isUserMsg ? 'USER' : 'CHATGPT'; isUserMsg = !isUserMsg;
+                const chatDivs = document.querySelectorAll('main > div > div > div > div > div > div[class*=group]')
+                if (!chatDivs.length) return console.error('Chat is empty!')
+                const msgs = [] ; let isUserMsg = true
+                chatDivs.forEach(div => {
+                    const sender = isUserMsg ? 'USER' : 'CHATGPT'; isUserMsg = !isUserMsg
                     const msg = Array.from(div.childNodes).map(node => node.innerText)
                               .join('\n\n') // insert double line breaks between paragraphs
-                              .replace('Copy code', '');
-                    msgs.push(sender + ': ' + msg);
-                });
-                transcript = msgs.join('\n\n');
+                              .replace('Copy code', '')
+                    msgs.push(sender + ': ' + msg)
+                })
+                transcript = msgs.join('\n\n')
 
             // ...or from getChatData(chatToGet)
-            } else {
-                for (const entry of await chatgpt.getChatData(chatToGet, 'msg', 'both', 'all')) {
-                    transcript += `USER: ${ entry.user }\n\n`;
-                    transcript += `CHATGPT: ${ entry.chatgpt }\n\n`;
-            }}
+            } else
+                for (const entry of await chatgpt.getChatData(chatToGet, 'msg', 'both', 'all'))
+                    transcript += `USER: ${entry.user}\n\nCHATGPT: ${entry.chatgpt}\n\n`
 
         } else { // generate rich transcript + filename for HTML/MD/PDF export
 
             // Fetch HTML transcript from OpenAI
             const response = await fetch(await chatgpt.shareChat(chatToGet)),
-                  htmlContent = await response.text();
+                  htmlContent = await response.text()
 
             // Format filename after <title>
             const parser = new DOMParser(),
-                  parsedHtml = parser.parseFromString(htmlContent, 'text/html');
-            filename = `${ parsedHtml.querySelector('title').textContent || 'ChatGPT conversation' }.html`;
+                  parsedHtml = parser.parseFromString(htmlContent, 'text/html')
+            filename = `${ parsedHtml.querySelector('title').textContent || 'ChatGPT conversation' }.html`
 
             // Convert relative CSS paths to absolute ones
-            const cssLinks = parsedHtml.querySelectorAll('link[rel=stylesheet]');
+            const cssLinks = parsedHtml.querySelectorAll('link[rel=stylesheet]')
             cssLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href?.startsWith('/')) link.setAttribute('href', 'https://chat.openai.com' + href);
+                const href = link.getAttribute('href')
+                if (href?.startsWith('/')) link.setAttribute('href', 'https://chat.openai.com' + href)
             });
 
             // Serialize updated HTML to string
-            transcript = new XMLSerializer().serializeToString(parsedHtml);
+            transcript = new XMLSerializer().serializeToString(parsedHtml)
         }
 
         // Export transcript
-        console.info(`Exporting transcript as ${ format.toUpperCase() }...`);
+        console.info(`Exporting transcript as ${ format.toUpperCase() }...`)
         if (format == 'pdf') { // convert SVGs + launch PDF printer
 
             // Convert SVG icons to data URLs for proper PDF rendering
             transcript = transcript.replace(/<svg.*?<\/svg>/g, (match) => {
-                const dataURL = 'data:image/svg+xml,' + encodeURIComponent(match);
-                return `<img src="${ dataURL }">`;
-            });
+                const dataURL = 'data:image/svg+xml,' + encodeURIComponent(match)
+                return `<img src="${ dataURL }">`
+            })
 
             // Launch PDF printer
-            const transcriptPopup = window.open('', '', 'toolbar=0, location=0, menubar=0, height=600, width=800');
-            transcriptPopup.document.write(transcript);
-            setTimeout(() => { transcriptPopup.print({ toPDF: true }); }, 100);
+            const transcriptPopup = window.open('', '', 'toolbar=0, location=0, menubar=0, height=600, width=800')
+            transcriptPopup.document.write(transcript)
+            setTimeout(() => { transcriptPopup.print({ toPDF: true }) }, 100)
 
         } else { // auto-save to file
 
             if (format == 'md') { // remove extraneous HTML + fix file extension
-                const mdMatch = /<.*<h1(.|\n)*?href=".*?continue[^"]*".*?\/a>.*?<[^/]/.exec(transcript)[1];
-                transcript = mdMatch || transcript; filename = filename.replace('.html', '.md');
+                const mdMatch = /<.*<h1(.|\n)*?href=".*?continue[^"]*".*?\/a>.*?<[^/]/.exec(transcript)[1]
+                transcript = mdMatch || transcript; filename = filename.replace('.html', '.md')
             }
             const blob = new Blob([transcript],
-                { type: 'text/' + ( format == 'html' ? 'html' : format == 'md' ? 'markdown' : 'plain' )});
-            const link = document.createElement('a'), blobURL = URL.createObjectURL(blob);
-            link.href = blobURL; link.download = filename; document.body.append(link);
-            link.click(); document.body.removeChild(link); URL.revokeObjectURL(blobURL);
+                { type: 'text/' + ( format == 'html' ? 'html' : format == 'md' ? 'markdown' : 'plain' )})
+            const link = document.createElement('a'), blobURL = URL.createObjectURL(blob)
+            link.href = blobURL ; link.download = filename ; document.body.append(link)
+            link.click() ; document.body.removeChild(link) ; URL.revokeObjectURL(blobURL)
         }
     },
 
-    extractCode() { chatgpt.code.extract(); },
-    focusChatbar() { chatgpt.getChatBox()?.focus(); },
+    extractCode() { chatgpt.code.extract() },
+    focusChatbar() { chatgpt.getChatBox()?.focus() },
 
     footer: {
-        get() { return document.querySelector('.min-h-4'); },
+        get() { return document.querySelector('.min-h-4') },
 
         hide() {
-            const footer = chatgpt.footer.get();
-            if (!footer) return console.error('Footer element not found!');
-            if (footer.style.visibility == 'hidden') return console.info('Footer already hidden!');
-            footer.style.display = 'none';
+            const footer = chatgpt.footer.get()
+            if (!footer) return console.error('Footer element not found!')
+            if (footer.style.visibility == 'hidden') return console.info('Footer already hidden!')
+            footer.style.display = 'none'
         },
 
         show() {
-            const footer = chatgpt.footer.get();
-            if (!footer) return console.error('Footer element not found!');
-            if (footer.style.visibility != 'hidden') return console.info('Footer already shown!');
+            const footer = chatgpt.footer.get()
+            if (!footer) return console.error('Footer element not found!')
+            if (footer.style.visibility != 'hidden') return console.info('Footer already shown!')
             footer.style.display = 'inherit'
         }
     },
 
     generateRandomIP() {
-        const ip = Array.from({length: 4}, () => Math.floor(chatgpt.randomFloat() * 256)).join('.');
-        console.info('IP generated: ' + ip);
-        return ip;
+        const ip = Array.from({length: 4}, () => Math.floor(chatgpt.randomFloat() * 256)).join('.')
+        console.info('IP generated: ' + ip)
+        return ip
     },
 
     get(targetType, targetName = '') {
@@ -722,87 +721,88 @@ const chatgpt = {
     // targetName = from get[targetName][targetType] methods, e.g. 'send'
 
         // Validate argument types to be string only
-        if (typeof targetType !== 'string' || typeof targetName !== 'string') {
-            throw new TypeError('Invalid arguments. Both arguments must be strings.'); }
+        if (typeof targetType != 'string' || typeof targetName != 'string') {
+            throw new TypeError('Invalid arguments. Both arguments must be strings.') }
 
         // Validate targetType
         if (!cjsTargetTypes.includes(targetType.toLowerCase())) {
             throw new Error('Invalid targetType: ' + targetType
-                + '. Valid values are: ' + JSON.stringify(cjsTargetTypes)); }
+                + '. Valid values are: ' + JSON.stringify(cjsTargetTypes)) }
 
         // Validate targetName scoped to pre-validated targetType
-        const targetNames = [], reTargetName = new RegExp('^get(.*)' + targetType + '$', 'i');
+        const targetNames = [], reTargetName = new RegExp('^get(.*)' + targetType + '$', 'i')
         for (const prop in chatgpt) {
             if (typeof chatgpt[prop] == 'function' && reTargetName.test(prop)) {
                 targetNames.push( // add found targetName to valid array
-                    prop.replace(reTargetName, '$1').toLowerCase());
+                    prop.replace(reTargetName, '$1').toLowerCase())
         }}
         if (!targetNames.includes(targetName.toLowerCase())) {
             throw new Error('Invalid targetName: ' + targetName + '. '
                 + (targetNames.length > 0 ? 'Valid values are: ' + JSON.stringify(targetNames)
-                    : 'targetType ' + targetType.toLowerCase() + ' does not require additional options.'));
+                    : 'targetType ' + targetType.toLowerCase() + ' does not require additional options.'))
         }
 
         // Call target function using pre-validated name components
-        const targetFuncNameLower = ('get' + targetName + targetType).toLowerCase();
+        const targetFuncNameLower = ('get' + targetName + targetType).toLowerCase()
         const targetFuncName = Object.keys(this).find( // find originally cased target function name
-            (name) => { return name.toLowerCase() == targetFuncNameLower; }); // test for match
-        return this[targetFuncName](); // call found function
+            (name) => { return name.toLowerCase() == targetFuncNameLower }) // test for match
+        return this[targetFuncName]() // call found function
     },
 
     getAccessToken() {
         return new Promise((resolve, reject) => {
             if (Object.keys(chatgpt.openAIaccessToken).length > 0 && // populated
                     (Date.parse(chatgpt.openAIaccessToken.expireDate) - Date.parse(new Date()) >= 0)) // not expired
-                return resolve(chatgpt.openAIaccessToken.token);
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', chatgpt.endpoints.openAI.session, true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
+                return resolve(chatgpt.openAIaccessToken.token)
+            const xhr = new XMLHttpRequest()
+            xhr.open('GET', chatgpt.endpoints.openAI.session, true)
+            xhr.setRequestHeader('Content-Type', 'application/json')
             xhr.onload = () => {
-                if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.');
-                console.info('Token expiration: ' + new Date(JSON.parse(xhr.responseText).expires).toLocaleString().replace(',', ' at'));
+                if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.')
+                console.info(`Token expiration: ${
+                    new Date(JSON.parse(xhr.responseText).expires).toLocaleString().replace(',', ' at')}`)
                 chatgpt.openAIaccessToken = {
                     token: JSON.parse(xhr.responseText).accessToken,
                     expireDate: JSON.parse(xhr.responseText).expires
-                };
-                return resolve(chatgpt.openAIaccessToken.token);
-            };
-            xhr.send();
-        });
+                }
+                return resolve(chatgpt.openAIaccessToken.token)
+            }
+            xhr.send()
+        })
     },
 
     getAccountDetails(...details) {
     // details = [email|id|image|name|picture] = optional
 
         // Build details array
-        const validDetails = [ 'email', 'id', 'image', 'name', 'picture' ];
+        const validDetails = [ 'email', 'id', 'image', 'name', 'picture' ]
         details = ( !arguments[0] ? validDetails // no details passed, populate w/ all valid ones
                 : Array.isArray(arguments[0]) ? arguments[0] // details array passed, do nothing
-                : Array.from(arguments) ); // details arg(s) passed, convert to array
+                : Array.from(arguments) ) // details arg(s) passed, convert to array
 
         // Validate detail args
         for (const detail of details) {
             if (!validDetails.includes(detail)) { return console.error(
                 'Invalid detail arg \'' + detail + '\' supplied. Valid details are:\n'
-              + '                    [' + validDetails + ']'); }}
+              + '                    [' + validDetails + ']') }}
 
         // Return account details
         return new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', chatgpt.endpoints.openAI.session, true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
+            const xhr = new XMLHttpRequest()
+            xhr.open('GET', chatgpt.endpoints.openAI.session, true)
+            xhr.setRequestHeader('Content-Type', 'application/json')
             xhr.onload = () => {
-                if (xhr.status === 200) {
-                    const data = JSON.parse(xhr.responseText).user, detailsToReturn = {};
-                    for (const detail of details) detailsToReturn[detail] = data[detail];
-                    return resolve(detailsToReturn);
-                } else return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve account details.');
-            };
-            xhr.send();
-        });
+                if (xhr.status == 200) {
+                    const data = JSON.parse(xhr.responseText).user, detailsToReturn = {}
+                    for (const detail of details) detailsToReturn[detail] = data[detail]
+                    return resolve(detailsToReturn)
+                } else return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve account details.')
+            }
+            xhr.send()
+        })
     },
 
-    getChatBox() { return document.getElementById('prompt-textarea'); },
+    getChatBox() { return document.getElementById('prompt-textarea') },
 
     getChatData(chatToGet = 1, detailsToGet = 'all', sender = 'all', msgToGet = 'all') {
     // chatToGet = 'active' | 'latest' | index|title|id of chat to get (defaults to active OpenAI chat > latest chat)
@@ -811,156 +811,159 @@ const chatgpt = {
     // msgToGet = 'all' | 'latest' | index of msg to get (defaults to 'all', requires 2nd param = 'msg')
 
         // Init args
-        const validDetails = [ 'all', 'id', 'title', 'create_time', 'update_time', 'msg' ];
-        const validSenders = [ 'all', 'both', 'user', 'chatgpt' ];
+        const validDetails = [ 'all', 'id', 'title', 'create_time', 'update_time', 'msg' ]
+        const validSenders = [ 'all', 'both', 'user', 'chatgpt' ]
         chatToGet = !chatToGet ? 'active' // if '' passed, set to active
                   : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
-                      ( parseInt(chatToGet, 10) === 0 ? 0 : parseInt(chatToGet, 10) - 1 ) // ...offset -1 or keep as 0
-                  : chatToGet; // else preserve non-num string as 'active', 'latest' or title/id of chat to get
+                      ( parseInt(chatToGet, 10) == 0 ? 0 : parseInt(chatToGet, 10) - 1 ) // ...offset -1 or keep as 0
+                  : chatToGet // else preserve non-num string as 'active', 'latest' or title/id of chat to get
         detailsToGet = ['all', ''].includes(detailsToGet) ? // if '' or 'all' passed
                          validDetails.filter(detail => /^(?!all$|msg$).*/.test(detail)) // populate w/ [validDetails] except 'all' & 'msg'
-                     : Array.isArray(detailsToGet) ? detailsToGet : [detailsToGet]; // else convert to array if needed
+                     : Array.isArray(detailsToGet) ? detailsToGet : [detailsToGet] // else convert to array if needed
         sender = !sender ? 'all' // if '' or unpassed, set to 'all'
-               : validSenders.includes(sender) ? sender : 'invalid'; // else set to validSenders or 'invalid'
+               : validSenders.includes(sender) ? sender : 'invalid' // else set to validSenders or 'invalid'
         msgToGet = Number.isInteger(msgToGet) || /^\d+$/.test(msgToGet) ? // if string/int num passed
-                     ( parseInt(msgToGet, 10) === 0 ? 0 : parseInt(msgToGet, 10) - 1 ) // ...offset -1 or keep as 0
+                     ( parseInt(msgToGet, 10) == 0 ? 0 : parseInt(msgToGet, 10) - 1 ) // ...offset -1 or keep as 0
                  : ['all', 'latest'].includes(msgToGet.toLowerCase()) ? // else if 'all' or 'latest' passed
                      msgToGet.toLowerCase() // ...preserve it
                  : !msgToGet ? 'all' // else if '', set to 'all'
-                 : 'invalid'; // else set 'invalid' for validation step
+                 : 'invalid' // else set 'invalid' for validation step
 
         // Validate args
         for (const detail of detailsToGet) {
-            if (!validDetails.includes(detail)) { return console.error(
+            if (!validDetails.includes(detail)) return console.error(
                 'Invalid detail arg \'' + detail + '\' passed. Valid details are:\n'
-              + '                    [' + validDetails + ']'); }}
-        if (sender == 'invalid') { return console.error(
+              + '                    [' + validDetails + ']') }
+        if (sender == 'invalid') return console.error(
             'Invalid sender arg passed. Valid senders are:\n'
-          + '                    [' + validSenders + ']'); }
-        if (msgToGet == 'invalid') { return console.error(
+          + '                    [' + validSenders + ']')
+        if (msgToGet == 'invalid') return console.error(
             'Invalid msgToGet arg passed. Valid msg\'s to get are:\n'
-          + '                    [ \'all\' | \'latest\' | index of msg to get ]'); }
+          + '                    [ \'all\' | \'latest\' | index of msg to get ]')
 
         const getChatDetails = (token, detailsToGet) => {
-            const re_chatID = /\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/;
+            const re_chatID = /\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/
             return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
-                xhr.open('GET', chatgpt.endpoints.openAI.chats, true);
-                xhr.setRequestHeader('Content-Type', 'application/json');
-                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                const xhr = new XMLHttpRequest()
+                xhr.open('GET', chatgpt.endpoints.openAI.chats, true)
+                xhr.setRequestHeader('Content-Type', 'application/json')
+                xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
-                    if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.');
-                    const data = JSON.parse(xhr.responseText).items;
-                    if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.');
-                    const detailsToReturn = {};
+                    if (xhr.status != 200)
+                        return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.')
+                    const data = JSON.parse(xhr.responseText).items
+                    if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.')
+                    const detailsToReturn = {}
 
                     // Return by index if num, 'latest', or 'active' passed but not truly active
                     if (Number.isInteger(chatToGet) || chatToGet == 'latest' ||
-                            (chatToGet == 'active' && !new RegExp('\/' + re_chatID.source + '$').test(window.location.href))) {
-                        chatToGet = Number.isInteger(chatToGet) ? chatToGet : 0; // preserve index, otherwise get latest
+                            (chatToGet == 'active' && !new RegExp('\/' + re_chatID.source + '$').test(location.href))) {
+                        chatToGet = Number.isInteger(chatToGet) ? chatToGet : 0 // preserve index, otherwise get latest
                         if (chatToGet > data.length) { // reject if index out-of-bounds
                             return reject('🤖 chatgpt.js >> Chat with index ' + ( chatToGet + 1 )
-                                + ' is out of bounds. Only ' + data.length + ' chats exist!'); }
-                        for (const detail of detailsToGet) detailsToReturn[detail] = data[chatToGet][detail];
-                        return resolve(detailsToReturn);
+                                + ' is out of bounds. Only ' + data.length + ' chats exist!') }
+                        for (const detail of detailsToGet) detailsToReturn[detail] = data[chatToGet][detail]
+                        return resolve(detailsToReturn)
                     }
 
                     // Return by title, ID or active chat
                     const chatIdentifier = ( // determine to check by ID or title
-                        chatToGet == 'active' || new RegExp('^' + re_chatID.source + '$').test(chatToGet) ? 'id' : 'title' );
+                        chatToGet == 'active' ||
+                            new RegExp('^' + re_chatID.source + '$').test(chatToGet) ? 'id' : 'title' )
                     if (chatToGet == 'active') // replace chatToGet w/ actual ID
-                        chatToGet = re_chatID.exec(window.location.href)[0];
-                    let idx, chatFound; // index of potentially found chat, flag if found
-                    for (idx = 0; idx < data.length; idx++) { // search for id/title to set chatFound flag
-                        if (data[idx][chatIdentifier] == chatToGet) { chatFound = true; break; }}
+                        chatToGet = re_chatID.exec(window.location.href)[0]
+                    let idx, chatFound // index of potentially found chat, flag if found
+                    for (idx = 0 ; idx < data.length ; idx++) { // search for id/title to set chatFound flag
+                        if (data[idx][chatIdentifier] == chatToGet) { chatFound = true ; break }}
                     if (!chatFound) // exit
-                        return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatToGet + ' found.');
-                    for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail];
-                    return resolve(detailsToReturn);
-                };
-                xhr.send();
-        });};
+                        return reject('🤖 chatgpt.js >> No chat with ' + chatIdentifier + ' = ' + chatToGet + ' found.')
+                    for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail]
+                    return resolve(detailsToReturn)
+                }
+                xhr.send()
+        })}
 
         const getChatMsgs = token => {
             return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
+                const xhr = new XMLHttpRequest()
                 getChatDetails(token, ['id']).then(chat => {
-                    xhr.open('GET', `${chatgpt.endpoints.openAI.chat}/${chat.id}`, true);
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                    xhr.open('GET', `${chatgpt.endpoints.openAI.chat}/${chat.id}`, true)
+                    xhr.setRequestHeader('Content-Type', 'application/json')
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
-                        if (xhr.status !== 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat messages.');
+                        if (xhr.status != 200)
+                            return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat messages.')
 
                         // Init const's
-                        const data = JSON.parse(xhr.responseText).mapping; // Get chat messages
-                        const userMessages = [], chatGPTMessages = [], msgsToReturn = [];
+                        const data = JSON.parse(xhr.responseText).mapping // get chat messages
+                        const userMessages = [], chatGPTMessages = [], msgsToReturn = []
 
                         // Fill [userMessages]
                         for (const key in data)
                             if (data[key].message != null && data[key].message.author.role == 'user')
-                                userMessages.push({ id: data[key].id, msg: data[key].message });
-                        userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time); // sort in chronological order
+                                userMessages.push({ id: data[key].id, msg: data[key].message })
+                        userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time) // sort in chronological order
 
                         if (parseInt(msgToGet, 10) + 1 > userMessages.length) // reject if index out of bounds
                             return reject('🤖 chatgpt.js >> Message/response with index ' + ( msgToGet + 1)
-                                + ' is out of bounds. Only ' + userMessages.length + ' messages/responses exist!');
+                                + ' is out of bounds. Only ' + userMessages.length + ' messages/responses exist!')
 
                         // Fill [chatGPTMessages]
                         for (const userMessage of userMessages) {
-                            let sub = [];
+                            let sub = []
                             for (const key in data) {
-                                if (data[key].message != null && data[key].message.author.role == 'assistant' && data[key].parent == userMessage.id) {
-                                    sub.push(data[key].message);
-                                }
+                                if (data[key].message != null && data[key].message.author.role == 'assistant'
+                                    && data[key].parent == userMessage.id)
+                                        sub.push(data[key].message)
                             }
-                            sub.sort((a, b) => a.create_time - b.create_time); // sort in chronological order
+                            sub.sort((a, b) => a.create_time - b.create_time) // sort in chronological order
                             sub = sub.map(x => { // pull out msgs after sorting
                                 switch(x.content.content_type) {
-                                    case 'code': return x.content.text;
-                                    case 'text': return x.content.parts[0];
-                                    default: return;
+                                    case 'code': return x.content.text
+                                    case 'text': return x.content.parts[0]
+                                    default: return
                                 }
-                            });
-                            sub = sub.length === 1 ? sub[0] : sub; // convert not regenerated responses to strings
-                            chatGPTMessages.push(sub); // array of arrays (length > 1 = regenerated responses)
+                            })
+                            sub = sub.length == 1 ? sub[0] : sub // convert not regenerated responses to strings
+                            chatGPTMessages.push(sub) // array of arrays (length > 1 = regenerated responses)
                         }
 
                         if (sender == 'user') // Fill [msgsToReturn] with user messages
                             for (const userMessage in userMessages)
-                                msgsToReturn.push(userMessages[userMessage].msg.content.parts[0]);
+                                msgsToReturn.push(userMessages[userMessage].msg.content.parts[0])
                         else if (sender == 'chatgpt') // Fill [msgsToReturn] with ChatGPT responses
                             for (const chatGPTMessage of chatGPTMessages)
                                 msgsToReturn.push(msgToGet == 'latest' ? chatGPTMessages[chatGPTMessages.length - 1] : chatGPTMessage );
                         else { // Fill [msgsToReturn] with objects of user messages and chatgpt response(s)
-                            let i = 0;
+                            let i = 0
                             for (const message in userMessages) {
                                 msgsToReturn.push({
                                     user: userMessages[message].msg.content.parts[0],
                                     chatgpt: msgToGet == 'latest' ? chatGPTMessages[i][chatGPTMessages[i].length - 1] : chatGPTMessages[i]
-                                });
-                                i++;
+                                })
+                                i++
                             }
                         }
                         return resolve(msgToGet == 'all' ? msgsToReturn // if 'all' passed, return array
                                      : msgToGet == 'latest' ? msgsToReturn[msgsToReturn.length - 1] // else if 'latest' passed, return latest
-                                     : msgsToReturn[msgToGet] ); // else return element of array
-                    };
-                    xhr.send();
-        });});};
+                                     : msgsToReturn[msgToGet] ) // else return element of array
+                    }
+                    xhr.send()
+        })})}
 
         // Return chat data
         return new Promise(resolve => chatgpt.getAccessToken().then(token => {
             return resolve(detailsToGet.includes('msg') ? getChatMsgs(token)
-                         : getChatDetails(token, detailsToGet));
-        }));
+                         : getChatDetails(token, detailsToGet))
+        }))
     },
 
-    getChatInput() { return chatgpt.getChatBox().firstChild.innerText; },
-    getContinueButton() { return document.querySelector('button.btn:has([d^="M4.47189"])'); },
-    getFooterDiv() { return chatgpt.footer.get(); },
-    getHeaderDiv() { return chatgpt.header.get(); },
-    getLastPrompt() { return chatgpt.getChatData('active', 'msg', 'user', 'latest'); },
-    getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
+    getChatInput() { return chatgpt.getChatBox().firstChild.innerText },
+    getContinueButton() { return document.querySelector('button.btn:has([d^="M4.47189"])') },
+    getFooterDiv() { return chatgpt.footer.get() },
+    getHeaderDiv() { return chatgpt.header.get() },
+    getLastPrompt() { return chatgpt.getChatData('active', 'msg', 'user', 'latest') },
+    getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest') },
 
     getNewChatButton() {
         return document.querySelector(
@@ -970,8 +973,8 @@ const chatgpt = {
         )
     },
 
-    getNewChatLink() { return document.querySelector('nav a[href="/"]'); },
-    getRegenerateButton() { return document.querySelector('button:has([d^="M3.06957"])'); },
+    getNewChatLink() { return document.querySelector('nav a[href="/"]') },
+    getRegenerateButton() { return document.querySelector('button:has([d^="M3.06957"])') },
 
     getResponse() {
     // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:
@@ -979,28 +982,28 @@ const chatgpt = {
     // responseToGet = index of response to get (defaults to latest if '' unpassed)
     // regenResponseToGet = index of regenerated response to get (defaults to latest if '' unpassed)
 
-        return chatgpt.response.get(...arguments);
+        return chatgpt.response.get(...arguments)
     },
 
-    getResponseFromAPI(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet); },
-    getResponseFromDOM(pos) { return chatgpt.response.getFromDOM(pos); },
-    getScrollToBottomButton() { return document.querySelector('button:has([d^="M12 21C11.7348"])'); },
-    getSendButton() { return document.querySelector('[data-testid=send-button]'); },
-    getStopButton() { return document.querySelector('button[data-testid=stop-button]'); },
+    getResponseFromAPI(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet) },
+    getResponseFromDOM(pos) { return chatgpt.response.getFromDOM(pos) },
+    getScrollToBottomButton() { return document.querySelector('button:has([d^="M12 21C11.7348"])') },
+    getSendButton() { return document.querySelector('[data-testid=send-button]') },
+    getStopButton() { return document.querySelector('button[data-testid=stop-button]') },
 
     getUserLanguage() {
         return navigator.languages[0] || navigator.language || navigator.browserLanguage ||
-            navigator.systemLanguage || navigator.userLanguage || '';
+            navigator.systemLanguage || navigator.userLanguage || ''
     },
 
     header: {
-        get() { return document.querySelector('main .sticky'); },
-        hide() { chatgpt.header.get().style.display = 'none'; },
-        show() { chatgpt.header.get().style.display = 'flex'; }
+        get() { return document.querySelector('main .sticky') },
+        hide() { chatgpt.header.get().style.display = 'none' },
+        show() { chatgpt.header.get().style.display = 'flex' }
     },
 
-    hideFooter() { chatgpt.footer.hide(); },
-    hideHeader() { chatgpt.header.hide(); },
+    hideFooter() { chatgpt.footer.hide() },
+    hideHeader() { chatgpt.header.hide() },
 
     history: {
         async isLoaded(timeout = null) {
@@ -1019,156 +1022,150 @@ const chatgpt = {
     // NOTE: DOM is not updated to reflect new instructions added/removed or toggle state (until session refresh)
 
         add(instruction, target) {
-            if (!instruction) return console.error('Please provide an instruction');
-            if (typeof instruction !== 'string') return console.error('Instruction must be a string');
-            const validTargets = ['user', 'chatgpt']; // valid targets
-            if (!target) return console.error('Please provide a valid target!');
-            if (typeof target !== 'string') return console.error('Target must be a string');
-            target = target.toLowerCase(); // lowercase target
+            if (!instruction) return console.error('Please provide an instruction')
+            if (typeof instruction != 'string') return console.error('Instruction must be a string')
+            const validTargets = ['user', 'chatgpt'] // valid targets
+            if (!target) return console.error('Please provide a valid target!')
+            if (typeof target != 'string') return console.error('Target must be a string')
+            target = target.toLowerCase() // lowercase target
             if (!validTargets.includes(target))
-                return console.error(`Invalid target ${target}. Valid targets are [${validTargets}]`);
+                return console.error(`Invalid target ${target}. Valid targets are [${validTargets}]`)
 
-            instruction = `\n\n${instruction}`; // add 2 newlines to the new instruction
+            instruction = `\n\n${instruction}` // add 2 newlines to the new instruction
 
             return new Promise(resolve => {
                 chatgpt.getAccessToken().then(async token => {
-                    const instructionsData = await this.fetchData();
+                    const instructionsData = await this.fetchData()
 
                     // Concatenate old instructions with new instruction
-                    if (target == 'user') instructionsData.about_user_message += instruction;
-                    else if (target == 'chatgpt') instructionsData.about_model_message += instruction;
+                    if (target == 'user') instructionsData.about_user_message += instruction
+                    else if (target == 'chatgpt') instructionsData.about_model_message += instruction
 
-                    await this.sendRequest('POST', token, instructionsData);
+                    await this.sendRequest('POST', token, instructionsData)
                     return resolve();
                 });
             });
         },
 
         clear(target) {
-            const validTargets = ['user', 'chatgpt']; // valid targets
-            if (!target) return console.error('Please provide a valid target!');
-            if (typeof target !== 'string') return console.error('Target must be a string');
-            target = target.toLowerCase(); // lowercase target
+            const validTargets = ['user', 'chatgpt'] // valid targets
+            if (!target) return console.error('Please provide a valid target!')
+            if (typeof target != 'string') return console.error('Target must be a string')
+            target = target.toLowerCase() // lowercase target
             if (!validTargets.includes(target))
-                return console.error(`Invalid target ${target}. Valid targets are [${validTargets}]`);
+                return console.error(`Invalid target ${target}. Valid targets are [${validTargets}]`)
 
             return new Promise(resolve => {
                 chatgpt.getAccessToken().then(async token => {
-                    const instructionsData = await this.fetchData();
+                    const instructionsData = await this.fetchData()
 
                     // Clear target's instructions
-                    if (target == 'user') instructionsData.about_user_message = '';
-                    else if (target == 'chatgpt') instructionsData.about_model_message = '';
+                    if (target == 'user') instructionsData.about_user_message = ''
+                    else if (target == 'chatgpt') instructionsData.about_model_message = ''
 
-                    await this.sendRequest('POST', token, instructionsData);
-                    return resolve();
-                });});
+                    await this.sendRequest('POST', token, instructionsData)
+                    return resolve()
+                })})
         },
 
         fetchData() {
         // INTERNAL METHOD
-            return new Promise(resolve => {
-                chatgpt.getAccessToken().then(async token => {
-                    return resolve(await this.sendRequest('GET', token)); // Return API data
-                });});
+            return new Promise(resolve =>
+                chatgpt.getAccessToken().then(async token =>
+                    resolve(await this.sendRequest('GET', token)))) // return API data
         },
 
         sendRequest(method, token, body) {
         // INTERNAL METHOD
             // Validate args
-            for (let i = 0; i < arguments.length - 1; i++) if (typeof arguments[i] !== 'string')
-                return console.error(`Argument ${ i + 1 } must be a string`);
-            const validMethods = ['POST', 'GET'];
-            method = (method || '').trim().toUpperCase();
+            for (let i = 0 ; i < arguments.length - 1 ; i++) if (typeof arguments[i] == 'string')
+                return console.error(`Argument ${ i + 1 } must be a string`)
+            const validMethods = ['POST', 'GET']
+            method = (method || '').trim().toUpperCase()
             if (!method || !validMethods.includes(method)) // reject if not valid method
-                return console.error(`Valid methods are ${ validMethods }`);
-            if (!token) return console.error('Please provide a valid access token!');
-            if (body && typeof body !== 'object') // reject if body is passed but not an object
-                return console.error(`Invalid body data type. Got ${ typeof body }, expected object`);
+                return console.error(`Valid methods are ${ validMethods }`)
+            if (!token) return console.error('Please provide a valid access token!')
+            if (body && typeof body != 'object') // reject if body is passed but not an object
+                return console.error(`Invalid body data type. Got ${ typeof body }, expected object`)
 
             return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
-                xhr.open(method, chatgpt.endpoints.openAI.instructions, true);
+                const xhr = new XMLHttpRequest()
+                xhr.open(method, chatgpt.endpoints.openAI.instructions, true)
                 // Set headers
-                xhr.setRequestHeader('Accept-Language', 'en-US');
-                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                if (method == 'POST') xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.setRequestHeader('Accept-Language', 'en-US')
+                xhr.setRequestHeader('Authorization', 'Bearer ' + token)
+                if (method == 'POST') xhr.setRequestHeader('Content-Type', 'application/json')
 
                 xhr.onload = () => {
-                    const responseData = JSON.parse(xhr.responseText);
-                    if (xhr.status === 422)
+                    const responseData = JSON.parse(xhr.responseText)
+                    if (xhr.status == 422)
                         return reject('🤖 chatgpt.js >> Character limit exceeded. Custom instructions can have a maximum length of 1500 characters.');
-                    else if (xhr.status === 403 && responseData.detail.reason == 'content_policy')
-                        return reject('🤖 chatgpt.js >> ' + responseData.detail.description);
-                    else if (xhr.status !== 200)
-                        return reject('🤖 chatgpt.js >> Request failed. Cannot contact custom instructions endpoint.');
-                    console.info(`Custom instructions successfully contacted with method ${ method }`);
-                    return resolve(responseData || {}); // return response data no matter what the method is
-                };
-                xhr.send(JSON.stringify(body) || ''); // if body is passed send it, else just send the request
-            });
+                    else if (xhr.status == 403 && responseData.detail.reason == 'content_policy')
+                        return reject('🤖 chatgpt.js >> ' + responseData.detail.description)
+                    else if (xhr.status != 200)
+                        return reject('🤖 chatgpt.js >> Request failed. Cannot contact custom instructions endpoint.')
+                    console.info(`Custom instructions successfully contacted with method ${ method }`)
+                    return resolve(responseData || {}) // return response data no matter what the method is
+                }
+                xhr.send(JSON.stringify(body) || '') // if body is passed send it, else just send the request
+            })
         },
 
         turnOff() {
-            return new Promise(resolve => {
-                chatgpt.getAccessToken().then(async token => {
-                    const instructionsData = await this.fetchData();
-                    instructionsData.enabled = false;
-                    await this.sendRequest('POST', token, instructionsData);
-                    return resolve();
-                });
-            });
+            return new Promise(resolve => chatgpt.getAccessToken().then(async token => {
+                const instructionsData = await this.fetchData()
+                instructionsData.enabled = false
+                await this.sendRequest('POST', token, instructionsData)
+                return resolve()
+            }))
         },
 
         turnOn() {
-            return new Promise(resolve => {
-                chatgpt.getAccessToken().then(async token => {
-                    const instructionsData = await this.fetchData();
-                    instructionsData.enabled = true;
-                    await this.sendRequest('POST', token, instructionsData);
-                    return resolve();
-                });
-            });
+            return new Promise(resolve => chatgpt.getAccessToken().then(async token => {
+                const instructionsData = await this.fetchData()
+                instructionsData.enabled = true
+                await this.sendRequest('POST', token, instructionsData)
+                return resolve()
+            }))
         },
 
         toggle() {
-            return new Promise(resolve => {
-                this.fetchData().then(async instructionsData => {
-                    await (instructionsData.enabled ? this.turnOff() : this.turnOn());
-                    return resolve();
-                });});
+            return new Promise(resolve => this.fetchData().then(async instructionsData => {
+                await (instructionsData.enabled ? this.turnOff() : this.turnOn())
+                return resolve()
+            }))
         }
     },
 
     isDarkMode() { return document.documentElement.className.includes('dark') },
-    isFullScreen() { return chatgpt.browser.isFullScreen(); },
+    isFullScreen() { return chatgpt.browser.isFullScreen() },
 
     async isIdle(timeout = null) {
         const obsConfig = { childList: true, subtree: true },
-              msgDivSelector = 'div[data-message-author-role]';
+              msgDivSelector = 'div[data-message-author-role]'
 
         // Create promises
-        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null;
+        const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
         const isIdlePromise = (async () => {
             await new Promise(resolve => { // when on convo page
-                if (document.querySelector(msgDivSelector)) resolve();
+                if (document.querySelector(msgDivSelector)) resolve()
                 else new MutationObserver((_, obs) => {
-                    if (document.querySelector(msgDivSelector)) { obs.disconnect(); resolve(); }
-                }).observe(document.body, obsConfig);
-            });
-            await new Promise(resolve => { // when reply starts generating
+                    if (document.querySelector(msgDivSelector)) { obs.disconnect() ; resolve() }
+                }).observe(document.body, obsConfig)
+            })
+            await new Promise(resolve => // when reply starts generating
                 new MutationObserver((_, obs) => {
-                    if (chatgpt.getStopBtn()) { obs.disconnect(); resolve(); }
-                }).observe(document.body, obsConfig);
-            });
-            return new Promise(resolve => { // when reply stops generating
+                    if (chatgpt.getStopBtn()) { obs.disconnect() ; resolve() }
+                }).observe(document.body, obsConfig)
+            )
+            return new Promise(resolve => // when reply stops generating
                 new MutationObserver((_, obs) => {
-                    if (!chatgpt.getStopBtn()) { obs.disconnect(); resolve(true); }
-                }).observe(document.body, obsConfig);
-            });
-        })();
+                    if (!chatgpt.getStopBtn()) { obs.disconnect() ; resolve(true) }
+                }).observe(document.body, obsConfig)
+            )
+        })()
 
-        return await (timeoutPromise ? Promise.race([isIdlePromise, timeoutPromise]) : isIdlePromise);
+        return await (timeoutPromise ? Promise.race([isIdlePromise, timeoutPromise]) : isIdlePromise)
     },
 
     async isLoaded(timeout = null) {
@@ -1182,103 +1179,91 @@ const chatgpt = {
         return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
     },
 
-    isLightMode() { return document.documentElement.classList.toString().includes('light'); },
+    isLightMode() { return document.documentElement.classList.toString().includes('light') },
     isTyping() { return !!this.getStopButton() },
 
-    logout() { window.location.href = 'https://chat.openai.com/auth/logout'; },
+    logout() { window.location.href = 'https://chat.openai.com/auth/logout' },
 
     menu: {
-        elements: [],
-        addedEvent: false,
+        elems: [],
 
-        append(element, attrs = {}) {
-        // element = 'button' | 'dropdown' REQUIRED (no default value)
+        append(elem, attrs = {}) {
+        // elem = 'button' | 'dropdown' REQUIRED (no default value)
         // attrs = { ... }
         // attrs for 'button': 'icon' = src string, 'label' = string, 'onclick' = function
         // attrs for 'dropdown': 'items' = [ { text: string, value: string }, ... ] array of objects
         // where 'text' is the displayed text of the option and 'value' is the value of the option
 
-            const validElements = ['button', 'dropdown'];
-            if (!element || typeof element !== 'string') // element not passed or invalid type
-                return console.error('🤖 chatgpt.js >> Please supply a valid string element name!');
-            element = element.toLowerCase();
-            if (!validElements.includes(element)) // element not in list
-                return console.error(`🤖 chatgpt.js >> Invalid element! Valid elements are [${validElements}]`);
+            const validElems = ['button', 'dropdown']
+            if (!elem || typeof elem != 'string') // element not passed or invalid type
+                return console.error('🤖 chatgpt.js >> Please supply a valid string element name!')
+            elem = elem.toLowerCase()
+            if (!validElems.includes(elem)) // element not in list
+                return console.error(`🤖 chatgpt.js >> Invalid element! Valid elems are [${validElems}]`)
 
-            const newElement = document.createElement(
-                element == 'dropdown' ? 'select' :
-                element == 'button' ? 'a' : element
-            );
-            newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // add random id to the element
+            const newElem = document.createElement(elem == 'dropdown' ? 'select' : elem == 'button' ? 'a' : elem)
+            newElem.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now()
 
-            if (element == 'button') {
-                newElement.textContent = attrs?.label && typeof attrs.label == 'string'
-                    ? attrs.label
-                    : 'chatgpt.js button'
+            if (elem == 'button') {
+                newElem.textContent = attrs?.label && typeof attrs.label == 'string' ? attrs.label : 'chatgpt.js button'
                 const icon = document.createElement('img')
                 icon.src = attrs?.icon && typeof attrs.icon == 'string' // can also be base64 encoded image string
                     ? attrs.icon // add icon to button element if given, else default one
                     : ( chatgpt.endpoints.assets + '/starters/chrome/extension/icons/icon128.png' )
                 icon.width = 18
-                newElement.firstChild.before(icon)
-                newElement.onclick = attrs?.onclick && typeof attrs.onclick == 'function' ? attrs.onclick : function(){}
+                newElem.firstChild.before(icon)
+                newElem.onclick = attrs?.onclick && typeof attrs.onclick == 'function' ? attrs.onclick : function(){}
             }
 
-            else if (element == 'dropdown') {
+            else if (elem == 'dropdown') {
                 if (!attrs?.items || // there no are options to add
                     !Array.isArray(attrs.items) || // it's not an array
                     !attrs.items.length) // the array is empty
-                        attrs.items = [{ text: '🤖 chatgpt.js option', value: 'chatgpt.js option value' }]; // set default dropdown entry
+                        attrs.items = [{ text: '🤖 chatgpt.js option', value: 'chatgpt.js option value' }] // set default dropdown entry
 
                 if (!attrs.items.every(el => typeof el == 'object')) // the entries of the array are not objects
-                    return console.error('\'items\' must be an array of objects!');
+                    return console.error('\'items\' must be an array of objects!')
 
-                newElement.style = 'background-color: #000; width: 100%; border: none;';
+                newElem.style = 'background-color: #000; width: 100%; border: none;'
 
                 attrs.items.forEach(item => {
-                    const optionElement = document.createElement('option');
-                    optionElement.textContent = item?.text;
-                    optionElement.value = item?.value;
-                    newElement.add(optionElement);
-                });
+                    const optionElement = document.createElement('option')
+                    optionElement.textContent = item?.text
+                    optionElement.value = item?.value
+                    newElem.add(optionElement)
+                })
             }
 
-            const addElementsToMenu = () => {
-                const optionButtons = document.querySelectorAll('a[role=menuitem]');
-                let cssClasses;
-
-                for (const navLink of optionButtons)
-                    if (navLink.textContent == 'Settings') {
-                        cssClasses = navLink.classList;
-                        break; }
-
-                const headlessNav = optionButtons[0].parentNode;
-
-                chatgpt.menu.elements.forEach(element => {
-                    element.setAttribute('class', cssClasses)
-                    if (!headlessNav.contains(element))
-                        try { headlessNav.firstChild.before(element) }
+            const addElemsToMenu = () => {
+                const optionBtns = document.querySelectorAll('a[role=menuitem]')
+                let cssClasses
+                for (const navLink of optionBtns)
+                    if (navLink.textContent == 'Settings') { cssClasses = navLink.classList ; break }
+                const headlessNav = optionBtns[0].parentNode
+                chatgpt.menu.elems.forEach(elem => {
+                    elem.setAttribute('class', cssClasses)
+                    if (!headlessNav.contains(elem))
+                        try { headlessNav.firstChild.before(elem) }
                         catch (err) { console.error(err) }
-                });
-            };
+                })
+            }
 
-            this.elements.push(newElement);
-            const menuBtn = document.querySelector('nav button[id*=headless]');
+            this.elems.push(newElem)
+            const menuBtn = document.querySelector('nav button[id*=headless]')
             if (!this.addedEvent) { // to prevent adding more than one event
-                menuBtn?.addEventListener('click', () => { setTimeout(addElementsToMenu, 25); });
-                this.addedEvent = true; }
+                menuBtn?.addEventListener('click', () => setTimeout(addElemsToMenu, 25)) ; this.addedEvent = true }
 
-            return newElement.id; // Return the element id
+            return newElem.id
         },
 
         close() {
-            try { document.querySelector('nav [id*=menu-button][aria-expanded=true]').click(); }
-            catch (err) { console.error(err.message); }
+            try { document.querySelector('nav [id*=menu-button][aria-expanded=true]').click() }
+            catch (err) { console.error(err.message) }
         },
 
         open() {
-            try { document.querySelector('nav [id*=menu-button][aria-expanded=false]').click(); }
-            catch (err) { console.error(err.message); }
+            try { document.querySelector('nav [id*=menu-button][aria-expanded=false]').click() }
+            catch (err) { console.error(err.message) }
         }
     },
 
@@ -1287,44 +1272,44 @@ const chatgpt = {
     notify(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
         const fadeDuration = 0.35, // sec duration of fade-out
-              vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
+              vpYoffset = 23, vpXoffset = 27 // px offset from viewport border
 
         // Create/append notification div
-        const notificationDiv = document.createElement('div'); // make div
-        notificationDiv.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
-        notificationDiv.classList.add('chatgpt-notif');
-        notificationDiv.innerText = msg; // insert msg
-        document.body.append(notificationDiv); // insert into DOM
+        const notificationDiv = document.createElement('div') // make div
+        notificationDiv.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now()
+        notificationDiv.classList.add('chatgpt-notif')
+        notificationDiv.innerText = msg // insert msg
+        document.body.append(notificationDiv) // insert into DOM
 
         // Create/append close button
-        const closeBtn = document.createElement('div');
-        closeBtn.title = 'Dismiss'; closeBtn.classList.add('notif-close-btn', 'no-mobile-tap-outline');
-        const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        closeSVG.setAttribute('height', '8px');
-        closeSVG.setAttribute('viewBox', '0 0 14 14');
-        closeSVG.setAttribute('fill', 'none');
-        closeSVG.style.height = closeSVG.style.width = '8px'; // override SVG styles on non-OpenAI sites
-        const closeSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        closeSVGpath.setAttribute('fill-rule', 'evenodd');
-        closeSVGpath.setAttribute('clip-rule', 'evenodd');
-        closeSVGpath.setAttribute('fill', 'white');
+        const closeBtn = document.createElement('div')
+        closeBtn.title = 'Dismiss'; closeBtn.classList.add('notif-close-btn', 'no-mobile-tap-outline')
+        const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+        closeSVG.setAttribute('height', '8px')
+        closeSVG.setAttribute('viewBox', '0 0 14 14')
+        closeSVG.setAttribute('fill', 'none')
+        closeSVG.style.height = closeSVG.style.width = '8px' // override SVG styles on non-OpenAI sites
+        const closeSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+        closeSVGpath.setAttribute('fill-rule', 'evenodd')
+        closeSVGpath.setAttribute('clip-rule', 'evenodd')
+        closeSVGpath.setAttribute('fill', 'white')
         closeSVGpath.setAttribute('d', 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z');
-        closeSVG.append(closeSVGpath); closeBtn.append(closeSVG); notificationDiv.append(closeBtn);
+        closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG) ; notificationDiv.append(closeBtn)
 
         // Determine div position/quadrant
-        notificationDiv.isTop = !position || !/low|bottom/i.test(position);
-        notificationDiv.isRight = !position || !/left/i.test(position);
+        notificationDiv.isTop = !position || !/low|bottom/i.test(position)
+        notificationDiv.isRight = !position || !/left/i.test(position)
         notificationDiv.quadrant = (notificationDiv.isTop ? 'top' : 'bottom')
-                                 + (notificationDiv.isRight ? 'Right' : 'Left');
+                                 + (notificationDiv.isRight ? 'Right' : 'Left')
 
         // Create/append/update notification style (if missing or outdated)
         const thisUpdated = 1735767823541 // timestamp of last edit for this file's `notifStyle`
-        let notifStyle = document.querySelector('#chatgpt-notif-style'); // try to select existing style
+        let notifStyle = document.querySelector('#chatgpt-notif-style') // try to select existing style
         if (!notifStyle || parseInt(notifStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
             if (!notifStyle) { // outright missing, create/id/attr/append it first
-                notifStyle = document.createElement('style'); notifStyle.id = 'chatgpt-notif-style';
-                notifStyle.setAttribute('last-updated', thisUpdated.toString());
-                document.head.append(notifStyle);
+                notifStyle = document.createElement('style') ; notifStyle.id = 'chatgpt-notif-style'
+                notifStyle.setAttribute('last-updated', thisUpdated.toString())
+                document.head.append(notifStyle)
             }
             notifStyle.innerText = ( // update prev/new style contents
                 '.chatgpt-notif {'
@@ -1348,64 +1333,64 @@ const chatgpt = {
                     + '15% { opacity: 0.35 ; transform: rotateX(-27deg) scale(1.05) }'
                     + '45% { opacity: 0.05 ; transform: rotateX(-81deg) }'
                     + '100% { opacity: 0 ; transform: rotateX(-180deg) scale(1.15) }}'
-            );
+            )
         }
 
         // Enqueue notification
-        let notifyProps = JSON.parse(localStorage.notifyProps);
-        notifyProps.queue[notificationDiv.quadrant].push(notificationDiv.id);
-        localStorage.notifyProps = JSON.stringify(notifyProps);
+        let notifyProps = JSON.parse(localStorage.notifyProps)
+        notifyProps.queue[notificationDiv.quadrant].push(notificationDiv.id)
+        localStorage.notifyProps = JSON.stringify(notifyProps)
 
         // Position notification (defaults to top-right)
-        notificationDiv.style.top = notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
-        notificationDiv.style.bottom = !notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
-        notificationDiv.style.right = notificationDiv.isRight ? vpXoffset.toString() + 'px' : '';
-        notificationDiv.style.left = !notificationDiv.isRight ? vpXoffset.toString() + 'px' : '';
+        notificationDiv.style.top = notificationDiv.isTop ? vpYoffset.toString() + 'px' : ''
+        notificationDiv.style.bottom = !notificationDiv.isTop ? vpYoffset.toString() + 'px' : ''
+        notificationDiv.style.right = notificationDiv.isRight ? vpXoffset.toString() + 'px' : ''
+        notificationDiv.style.left = !notificationDiv.isRight ? vpXoffset.toString() + 'px' : ''
 
         // Reposition old notifications
-        const thisQuadrantQueue = notifyProps.queue[notificationDiv.quadrant];
+        const thisQuadrantQueue = notifyProps.queue[notificationDiv.quadrant]
         if (thisQuadrantQueue.length > 1) {
             try { // to move old notifications
                 for (const divId of thisQuadrantQueue.slice(0, -1)) { // exclude new div
                     const oldDiv = document.getElementById(divId),
                           offsetProp = oldDiv.style.top ? 'top' : 'bottom', // pick property to change
-                          vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
-                    oldDiv.style[offsetProp] = `${ vOffset }px`; // change prop
+                          vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height
+                    oldDiv.style[offsetProp] = `${ vOffset }px` // change prop
                 }
             } catch (err) {}
         }
 
         // Show notification
         setTimeout(() => {
-            notificationDiv.style.opacity = chatgpt.isDarkMode() ? 0.8 : 0.67; // show msg
-            notificationDiv.style.transform = 'translateX(0)'; // bring from off-screen
-            notificationDiv.style.transition = 'transform 0.15s ease, opacity 0.15s ease';
-        }, 10);
+            notificationDiv.style.opacity = chatgpt.isDarkMode() ? 0.8 : 0.67 // show msg
+            notificationDiv.style.transform = 'translateX(0)' // bring from off-screen
+            notificationDiv.style.transition = 'transform 0.15s ease, opacity 0.15s ease'
+        }, 10)
 
         // Init delay before hiding
         const hideDelay = fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
-                        : notifDuration - fadeDuration; // otherwise delay for difference
+                        : notifDuration - fadeDuration // otherwise delay for difference
 
         // Add notification dismissal to timeout schedule + button clicks
         const dismissNotif = () => {
             notificationDiv.style.animation = `notif-zoom-fade-out ${ fadeDuration }s ease-out`;
-            clearTimeout(dismissFuncTID);
-        };
-        const dismissFuncTID = setTimeout(dismissNotif, hideDelay * 1000); // maintain visibility for `hideDelay` secs, then dismiss
-        closeSVG.onclick = dismissNotif; // add to close button clicks
+            clearTimeout(dismissFuncTID)
+        }
+        const dismissFuncTID = setTimeout(dismissNotif, hideDelay * 1000) // maintain visibility for `hideDelay` secs, then dismiss
+        closeSVG.onclick = dismissNotif // add to close button clicks
 
         // Destroy notification
         notificationDiv.onanimationend = () => {
-            notificationDiv.remove(); // remove from DOM
-            notifyProps = JSON.parse(localStorage.notifyProps);
-            notifyProps.queue[notificationDiv.quadrant].shift(); // + memory
-            localStorage.notifyProps = JSON.stringify(notifyProps); // + storage
-        };
+            notificationDiv.remove() // remove from DOM
+            notifyProps = JSON.parse(localStorage.notifyProps)
+            notifyProps.queue[notificationDiv.quadrant].shift() // + memory
+            localStorage.notifyProps = JSON.stringify(notifyProps) // + storage
+        }
 
-        return notificationDiv;
+        return notificationDiv
     },
 
-    obfuscate() { chatgpt.code.obfuscate(); },
+    obfuscate() { chatgpt.code.obfuscate() },
 
     printAllFunctions() {
 
@@ -1416,39 +1401,39 @@ const chatgpt = {
             methodName: ['#005aff', '#ffa500'], // blue, orange
             entryType: ['#467e06', '#b981f9'], // green, purple
             srcMethod: ['#ff0000', '#00ffff'] // red, cyan
-        };
-        Object.keys(colors).forEach(element => { // populate dark scheme colors if missing
-            colors[element][1] = colors[element][1] ||
-                '#' + (Number(`0x1${ colors[element][0].replace(/^#/, '') }`) ^ 0xFFFFFF)
-                    .toString(16).substring(1).toUpperCase(); // convert to hex
-        });
+        }
+        Object.keys(colors).forEach(elem => { // populate dark scheme colors if missing
+            colors[elem][1] = colors[elem][1] ||
+                '#' + (Number(`0x1${ colors[elem][0].replace(/^#/, '') }`) ^ 0xFFFFFF)
+                    .toString(16).substring(1).toUpperCase() // convert to hex
+        })
 
         // Create [functionNames]
-        const functionNames = [];
+        const functionNames = []
         for (const prop in this) {
             if (typeof this[prop] == 'function') {
                 const chatgptIsParent = !Object.keys(this)
                     .find(obj => Object.keys(this[obj]).includes(this[prop].name))
-                const functionParent = chatgptIsParent ? 'chatgpt' : 'other';
-                functionNames.push([functionParent, prop]);
+                const functionParent = chatgptIsParent ? 'chatgpt' : 'other'
+                functionNames.push([functionParent, prop])
             } else if (typeof this[prop] == 'object') {
                 for (const nestedProp in this[prop]) {
                     if (typeof this[prop][nestedProp] == 'function') {
-                        functionNames.push([prop, nestedProp]);
+                        functionNames.push([prop, nestedProp])
         }}}}
-        functionNames.sort((a, b) => { return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]); });
+        functionNames.sort((a, b) => a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]))
 
         // Print methods
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches,
-              baseFontStyles = 'font-family: monospace ; font-size: larger ; ';
-        console.log('\n%c🤖 chatgpt.js methods\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
+              baseFontStyles = 'font-family: monospace ; font-size: larger ; '
+        console.log('\n%c🤖 chatgpt.js methods\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold')
         for (const functionName of functionNames) {
             const isChatGptObjParent = /chatgpt|other/.test(functionName[0]),
                   rootFunction = ( functionName[0] == 'chatgpt' ? this[functionName[1]].name
-                    : functionName[0] !== 'other' ? functionName[0] + '.' + functionName[1]
+                    : functionName[0] != 'other' ? functionName[0] + '.' + functionName[1]
                     : (( Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[functionName[1]].name)) + '.' )
                         + this[functionName[1]].name )),
-                  isAsync = this[functionName[1]]?.constructor.name == 'AsyncFunction';
+                  isAsync = this[functionName[1]]?.constructor.name == 'AsyncFunction'
             console.log('%c>> %c' + ( isChatGptObjParent ? '' : `${ functionName[0] }.%c`) + functionName[1]
                     + ' - https://chatgptjs.org/userguide/' + /(?:.*\.)?(.*)/.exec(rootFunction)[1].toLowerCase() + ( isAsync ? '-async' : '' ) + '\n%c[%c'
                 + ((( functionName[0] == 'chatgpt' && functionName[1] == this[functionName[1]].name ) || // parent is chatgpt + names match or
@@ -1470,28 +1455,28 @@ const chatgpt = {
                     + 'color:' + ( isChatGptObjParent ? colors.srcMethod[+isDarkMode] : 'initial' ),
                 baseFontStyles + ( isChatGptObjParent ? 'font-weight: initial' : 'font-style: italic' ) + ';'
                     + 'color:' + ( isChatGptObjParent ? 'initial' : colors.srcMethod[+isDarkMode] ),
-                isChatGptObjParent ? '' : ( baseFontStyles + 'color: initial ; font-weight: initial' ));
+                isChatGptObjParent ? '' : ( baseFontStyles + 'color: initial ; font-weight: initial' ))
         }
     },
 
     randomFloat() {
     // * Generates a random, cryptographically secure value between 0 (inclusive) & 1 (exclusive)
-        const crypto = window.crypto || window.msCrypto;
-        return crypto?.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF || Math.random();
+        const crypto = window.crypto || window.msCrypto
+        return crypto?.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF || Math.random()
     },
 
-    refactor() { chatgpt.code.refactor(); },
-    regenerate() { chatgpt.response.regenerate(); },
+    refactor() { chatgpt.code.refactor() },
+    regenerate() { chatgpt.response.regenerate() },
 
     renderHTML(node) {
         const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
-              reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+\S+=|[>']))+.)['"]?/g, // eslint-disable-line
-              nodeContent = node.childNodes;
+              reAttrs = /(\S+)=['"]?((?:.(?!['"]?\s+\S+=|[>']))+.)['"]?/g, // eslint-disable-line
+              nodeContent = node.childNodes
 
         // Preserve consecutive spaces + line breaks
         if (!chatgpt.renderHTML.preWrapSet) {
-            node.style.whiteSpace = 'pre-wrap'; chatgpt.renderHTML.preWrapSet = true;
-            setTimeout(() => { chatgpt.renderHTML.preWrapSet = false; }, 100);
+            node.style.whiteSpace = 'pre-wrap' ; chatgpt.renderHTML.preWrapSet = true
+            setTimeout(() => chatgpt.renderHTML.preWrapSet = false, 100)
         }
 
         // Process child nodes
@@ -1500,26 +1485,26 @@ const chatgpt = {
             // Process text node
             if (childNode.nodeType == Node.TEXT_NODE) {
                 const text = childNode.nodeValue,
-                      elems = Array.from(text.matchAll(reTags));
+                      elems = Array.from(text.matchAll(reTags))
 
                 // Process 1st element to render
                 if (elems.length > 0) {
                     const elem = elems[0],
-                          [tagContent, tagName, tagAttributes, tagText] = elem.slice(0, 4),
-                          tagNode = document.createElement(tagName); tagNode.textContent = tagText;
+                          [tagContent, tagName, tagAttrs, tagText] = elem.slice(0, 4),
+                          tagNode = document.createElement(tagName) ; tagNode.textContent = tagText
 
                     // Extract/set attributes
-                    const attributes = Array.from(tagAttributes.matchAll(reAttributes));
-                    attributes.forEach(attribute => {
-                        const name = attribute[1], value = attribute[2].replace(/['"]/g, '');
-                        tagNode.setAttribute(name, value);
-                    });
+                    const attrs = Array.from(tagAttrs.matchAll(reAttrs))
+                    attrs.forEach(attr => {
+                        const name = attr[1], value = attr[2].replace(/['"]/g, '')
+                        tagNode.setAttribute(name, value)
+                    })
 
-                    const renderedNode = chatgpt.renderHTML(tagNode); // render child elements of newly created node
+                    const renderedNode = chatgpt.renderHTML(tagNode) // render child elems of newly created node
 
                     // Insert newly rendered node
                     const beforeTextNode = document.createTextNode(text.substring(0, elem.index)),
-                          afterTextNode = document.createTextNode(text.substring(elem.index + tagContent.length));
+                          afterTextNode = document.createTextNode(text.substring(elem.index + tagContent.length))
 
                     // Replace text node with processed nodes
                     node.replaceChild(beforeTextNode, childNode)
@@ -1528,16 +1513,16 @@ const chatgpt = {
                 }
 
             // Process element nodes recursively
-            } else if (childNode.nodeType == Node.ELEMENT_NODE) chatgpt.renderHTML(childNode);
+            } else if (childNode.nodeType == Node.ELEMENT_NODE) chatgpt.renderHTML(childNode)
         }
 
-        return node; // if assignment used
+        return node // if assignment used
     },
 
-    async resend() { chatgpt.send(await chatgpt.getChatData('latest', 'msg', 'user', 'latest')); },
+    async resend() { chatgpt.send(await chatgpt.getChatData('latest', 'msg', 'user', 'latest')) },
 
     response: {
-        continue() { try { chatgpt.getContinueBtn().click(); } catch (err) { console.error(err.message); }},
+        continue() { try { chatgpt.getContinueBtn().click() } catch (err) { console.error(err.message) }},
 
         get() {
             // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:
@@ -1546,25 +1531,25 @@ const chatgpt = {
             // regenResponseToGet = index of regenerated response to get (defaults to latest if '' unpassed)
 
                 if (window.location.href.startsWith('https://chatgpt.com/c/'))
-                    return this.getFromDOM.apply(null, arguments);
-                else return this.getFromAPI.apply(null, arguments);
+                    return this.getFromDOM.apply(null, arguments)
+                else return this.getFromAPI.apply(null, arguments)
         },
 
         getFromAPI(chatToGet, responseToGet) {
         // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
         // responseToGet = index of response to get (defaults to latest if '' or unpassed)
 
-            chatToGet = chatToGet || 'latest'; responseToGet = responseToGet || 'latest';
-            return chatgpt.getChatData(chatToGet, 'msg', 'chatgpt', responseToGet);
+            chatToGet = chatToGet || 'latest'; responseToGet = responseToGet || 'latest'
+            return chatgpt.getChatData(chatToGet, 'msg', 'chatgpt', responseToGet)
         },
 
         getFromDOM(pos) {
             const responseDivs = document.querySelectorAll('div[data-message-author-role=assistant]'),
-                  strPos = pos.toString().toLowerCase();
-            let response = '';
-            if (!responseDivs.length) return console.error('No conversation found!');
+                  strPos = pos.toString().toLowerCase()
+            let response = ''
+            if (!responseDivs.length) return console.error('No conversation found!')
             if (/last|final/.test(strPos)) // get last response
-                response = responseDivs[responseDivs.length - 1].textContent;
+                response = responseDivs[responseDivs.length - 1].textContent
             else { // get nth response
                 const nthOfResponse = (
 
@@ -1587,140 +1572,142 @@ const chatgpt = {
                     * ( /(?:ty|ieth)$/.test(strPos) ? 10 : 1 ) // x 10 if -ty/ieth
                     + ( /teen(?:th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
 
-                );
-                response = responseDivs[nthOfResponse - 1].textContent;
+                )
+                response = responseDivs[nthOfResponse - 1].textContent
             }
-            response = response.replace(/^ChatGPT(?:ChatGPT)?/, ''); // strip sender name
-            return response;
+            response = response.replace(/^ChatGPT(?:ChatGPT)?/, '') // strip sender name
+            return response
         },
 
-        getLast() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
-        regenerate() { try { chatgpt.getRegenerateBtn().click(); } catch (err) { console.error(err.message); }},
-        stopGenerating() { try { chatgpt.getStopBtn().click(); } catch (err) { console.error(err.message); }}
+        getLast() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest') },
+        regenerate() { try { chatgpt.getRegenerateBtn().click() } catch (err) { console.error(err.message) }},
+        stopGenerating() { try { chatgpt.getStopBtn().click() } catch (err) { console.error(err.message) }}
     },
 
-    reviewCode() { chatgpt.code.review(); },
-    scrollToBottom() { try { chatgpt.getScrollBtn().click(); } catch (err) { console.error(err.message); }},
+    reviewCode() { chatgpt.code.review() },
+    scrollToBottom() { try { chatgpt.getScrollBtn().click() } catch (err) { console.error(err.message) }},
 
     send(msg, method='') {
-        for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
-            return console.error(`Argument ${ i + 1 } must be a string!`);
-        const textArea = chatgpt.getChatBox();
-        if (!textArea) return console.error('Chatbar element not found!');
-        const msgP = document.createElement('p'); msgP.textContent = msg;
-        textArea.replaceChild(msgP, textArea.querySelector('p'));
-        textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
+        for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
+            return console.error(`Argument ${ i + 1 } must be a string!`)
+        const textArea = chatgpt.getChatBox()
+        if (!textArea) return console.error('Chatbar element not found!')
+        const msgP = document.createElement('p'); msgP.textContent = msg
+        textArea.replaceChild(msgP, textArea.querySelector('p'))
+        textArea.dispatchEvent(new Event('input', { bubbles: true })) // enable send button
         setTimeout(function delaySend() {
-            const sendBtn = chatgpt.getSendButton();
+            const sendBtn = chatgpt.getSendButton()
             if (!sendBtn?.hasAttribute('disabled')) { // send msg
                 method.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendBtn.click()
-                    : textArea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
-            } else setTimeout(delaySend, 222);
-        }, 222);
+                    : textArea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }))
+            } else setTimeout(delaySend, 222)
+        }, 222)
     },
 
     sendInNewChat(msg) {
-        if (typeof msg !== 'string') return console.error('Message must be a string!');
-        try { chatgpt.getNewChatBtn().click(); } catch (err) { return console.error(err.message); }
-        setTimeout(() => { chatgpt.send(msg); }, 500);
+        if (typeof msg != 'string') return console.error('Message must be a string!')
+        try { chatgpt.getNewChatBtn().click() } catch (err) { return console.error(err.message) }
+        setTimeout(() => chatgpt.send(msg), 500)
     },
 
     settings: {
         scheme: {
-            isDark() { return document.documentElement.classList.contains('dark'); },
-            isLight() { return document.documentElement.classList.contains('light'); },
+            isDark() { return document.documentElement.classList.contains('dark') },
+            isLight() { return document.documentElement.classList.contains('light') },
             set(value) {
 
                 // Validate value
-                const validValues = ['dark', 'light', 'system'];
-                if (!value) return console.error('Please specify a scheme value!');
-                if (!validValues.includes(value)) return console.error(`Invalid scheme value. Valid values are [${ validValues }]`);
+                const validValues = ['dark', 'light', 'system']
+                if (!value) return console.error('Please specify a scheme value!')
+                if (!validValues.includes(value))
+                    return console.error(`Invalid scheme value. Valid values are [${ validValues }]`)
 
                 // Determine scheme to set
-                let schemeToSet = value;
-                if (value == 'system') schemeToSet = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                localStorage.setItem('theme', value);
-                console.info(`Scheme set to ${ value.toUpperCase() }.`);
+                let schemeToSet = value
+                if (value == 'system')
+                    schemeToSet = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+                localStorage.setItem('theme', value)
+                console.info(`Scheme set to ${ value.toUpperCase() }.`)
 
                 // Toggle scheme if necessary
-                if (!document.documentElement.classList.contains(schemeToSet)) this.toggle();
+                if (!document.documentElement.classList.contains(schemeToSet)) this.toggle()
             },
             toggle() {
-                const [schemeToRemove, schemeToAdd] = this.isDark() ? ['dark', 'light'] : ['light', 'dark'];
-                document.documentElement.classList.replace(schemeToRemove, schemeToAdd);
-                document.documentElement.style.colorScheme = schemeToAdd;
-                localStorage.setItem('theme', schemeToAdd);
+                const [schemeToRemove, schemeToAdd] = this.isDark() ? ['dark', 'light'] : ['light', 'dark']
+                document.documentElement.classList.replace(schemeToRemove, schemeToAdd)
+                document.documentElement.style.colorScheme = schemeToAdd
+                localStorage.setItem('theme', schemeToAdd)
             }
         }
     },
 
     async sentiment(text, entity) {
-        for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
-            return console.error(`Argument ${ i + 1 } must be a string.`);
+        for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] != 'string')
+            return console.error(`Argument ${ i + 1 } must be a string.`)
         chatgpt.send('What is the sentiment of the following text'
             + ( entity ? ` towards the entity ${ entity },` : '')
-            + ' from strongly negative to strongly positive?\n\n' + text );
-        console.info('Analyzing sentiment...');
-        await chatgpt.isIdle();
-        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+            + ' from strongly negative to strongly positive?\n\n' + text )
+        console.info('Analyzing sentiment...')
+        await chatgpt.isIdle()
+        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
 
-    setScheme(value) { chatgpt.settings.scheme.set(value); },
+    setScheme(value) { chatgpt.settings.scheme.set(value) },
 
     shareChat(chatToGet, method = 'clipboard') {
     // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
     // method = [ 'alert'|'clipboard' ] (defaults to 'clipboard' if '' or unpassed)
 
-        const validMethods = ['alert', 'notify', 'notification', 'clipboard', 'copy'];
+        const validMethods = ['alert', 'notify', 'notification', 'clipboard', 'copy']
         if (!validMethods.includes(method)) return console.error(
-            'Invalid method \'' + method + '\' passed. Valid methods are [' + validMethods + '].');
+            'Invalid method \'' + method + '\' passed. Valid methods are [' + validMethods + '].')
 
         const getChatNode = token => {
             return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
+                const xhr = new XMLHttpRequest()
                 chatgpt.getChatData(chatToGet).then(chat => {
-                    xhr.open('GET', `${ chatgpt.endpoints.openAI.chat }/${ chat.id }`, true);
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                    xhr.open('GET', `${ chatgpt.endpoints.openAI.chat }/${ chat.id }`, true)
+                    xhr.setRequestHeader('Content-Type', 'application/json')
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
-                        if (xhr.status !== 200)
-                            return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat node.');
-                        return resolve(JSON.parse(xhr.responseText).current_node); // chat messages until now
-                    };
-                    xhr.send();
-        });});};
+                        if (xhr.status != 200)
+                            return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat node.')
+                        return resolve(JSON.parse(xhr.responseText).current_node) // chat messages until now
+                    }
+                    xhr.send()
+        })})}
 
         const makeChatToShare = (token, node) => {
             return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
+                const xhr = new XMLHttpRequest()
                 chatgpt.getChatData(chatToGet).then(chat => {
-                    xhr.open('POST', chatgpt.endpoints.openAI.share_create, true);
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                    xhr.open('POST', chatgpt.endpoints.openAI.share_create, true)
+                    xhr.setRequestHeader('Content-Type', 'application/json')
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
-                        if (xhr.status !== 200)
-                            return reject('🤖 chatgpt.js >> Request failed. Cannot initialize share chat.');
-                        return resolve(JSON.parse(xhr.responseText)); // return untouched data
-                    };
+                        if (xhr.status != 200)
+                            return reject('🤖 chatgpt.js >> Request failed. Cannot initialize share chat.')
+                        return resolve(JSON.parse(xhr.responseText)) // return untouched data
+                    }
                     xhr.send(JSON.stringify({ // request body
                         current_node_id: node, // by getChatNode
                         conversation_id: chat.id, // current chat id
                         is_anonymous: true // show user name in the conversation or not
-                    }));
-        });});};
+                    }))
+        })})}
 
         const confirmShareChat = (token, data) => {
             return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
-                xhr.open('PATCH', `${ chatgpt.endpoints.openAI.share }/${ data.share_id }`, true);
-                xhr.setRequestHeader('Content-Type', 'application/json');
-                xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                const xhr = new XMLHttpRequest()
+                xhr.open('PATCH', `${ chatgpt.endpoints.openAI.share }/${ data.share_id }`, true)
+                xhr.setRequestHeader('Content-Type', 'application/json')
+                xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
-                    if (xhr.status !== 200)
-                        return reject('🤖 chatgpt.js >> Request failed. Cannot share chat.');
-                    console.info(`Chat shared at '${ data.share_url }'`);
-                    return resolve(); // the response has nothing useful
-                };
+                    if (xhr.status != 200)
+                        return reject('🤖 chatgpt.js >> Request failed. Cannot share chat.')
+                    console.info(`Chat shared at '${ data.share_url }'`)
+                    return resolve() // the response has nothing useful
+                }
                 xhr.send(JSON.stringify({ // request body
                     share_id: data.share_id,
                     highlighted_message_id: data.highlighted_message_id,
@@ -1728,54 +1715,53 @@ const chatgpt = {
                     is_public: true, // must be true or it'll cause a 404 error
                     is_visible: data.is_visible,
                     is_anonymous: data.is_anonymous
-                }));
-        });};
+                }))
+        })}
 
         return new Promise(resolve => {
             chatgpt.getAccessToken().then(token => { // get access token
                 getChatNode(token).then(node => { // get chat node
                     makeChatToShare(token, node).then(data => {
                         confirmShareChat(token, data).then(() => {
-                            if (['copy', 'clipboard'].includes(method)) navigator.clipboard.writeText(data.share_url);
+                            if (['copy', 'clipboard'].includes(method)) navigator.clipboard.writeText(data.share_url)
                             else chatgpt.alert('🚀 Share link created!',
                                 '"' + data.title + '" is available at: <a target="blank" rel="noopener" href="'
                                     + data.share_url + '" >' + data.share_url + '</a>',
-                                [ function openLink() { window.open(data.share_url, '_blank', 'noopener'); },
-                                    function copyLink() { navigator.clipboard.writeText(data.share_url); }]);
-                            resolve(data.share_url);
-        });});});});});
+                                [ function openLink() { window.open(data.share_url, '_blank', 'noopener') },
+                                    function copyLink() { navigator.clipboard.writeText(data.share_url) }])
+                            resolve(data.share_url)
+        })})})})})
     },
 
-    showFooter() { chatgpt.footer.show(); },
-    showHeader() { chatgpt.header.show(); },
+    showFooter() { chatgpt.footer.show() },
+    showHeader() { chatgpt.header.show() },
 
     sidebar: {
-        elements: [], observer: {},
+        elems: [], observer: {},
 
         activateObserver() {
 
             // Stop the previous observer to preserve resources
             if (this.observer instanceof MutationObserver)
-                try { this.observer.disconnect(); } catch (e) {}
+                try { this.observer.disconnect() } catch (e) {}
 
-            if (!this.elements.length) return console.error('🤖 chatgpt.js >> No elements to append!');
+            if (!this.elems.length) return console.error('🤖 chatgpt.js >> No elems to append!')
 
-            let cssClasses;
-            // Grab CSS from original website elements
-            for (let navLink of document.querySelectorAll('nav a')) {
+            // Grab CSS from original website elems
+            let cssClasses
+            for (let navLink of document.querySelectorAll('nav a'))
                 if (/.*chat/.exec(navLink.text)[0]) {
-                    cssClasses = navLink.classList;
-                    navLink.parentNode.style.margin = '2px 0'; // add v-margins to ensure consistency across all inserted buttons
-                    break;
+                    cssClasses = navLink.classList
+                    navLink.parentNode.style.margin = '2px 0' // add v-margins for consistency across all inserted btns
+                    break
                 }
-            }
 
-            // Apply CSS to make the added elements look like they belong to the website
-            this.elements.forEach(element => {
-                element.setAttribute('class', cssClasses);
-                element.style.maxHeight = element.style.minHeight = '44px'; // Fix the height of the element
-                element.style.margin = '2px 0';
-            });
+            // Apply CSS to make the added elems look like they belong to the website
+            this.elems.forEach(elem => {
+                elem.setAttribute('class', cssClasses)
+                elem.style.maxHeight = elem.style.minHeight = '44px' // fix the height of the element
+                elem.style.margin = '2px 0'
+            })
 
             // Create MutationObserver instance
             const navBar = document.querySelector('nav')
@@ -1784,35 +1770,35 @@ const chatgpt = {
                 mutations.forEach(mutation => {
                     if ((mutation.type == 'childList' && mutation.addedNodes.length) ||
                         (mutation.type == 'attributes' && mutation.attributeName == 'data-chatgptjs')) // check for trigger
-                            this.elements.forEach(element => { // try to insert each element...
-                                if (!navBar.contains(element)) // ...if it's not already present...
-                                    try { navBar.querySelector('a').parentNode.before(element) } // ...at top of sidebar
+                            this.elems.forEach(elem => { // try to insert each element...
+                                if (!navBar.contains(elem)) // ...if it's not already present...
+                                    try { navBar.querySelector('a').parentNode.before(elem) } // ...at top of sidebar
                                     catch (err) { console.error(err) }
                             })
                 })
             )
 
-            this.observer.observe(document.documentElement, { childList: true, subtree: true, attributes: true });
+            this.observer.observe(document.documentElement, { childList: true, subtree: true, attributes: true })
         },
 
-        append(element, attrs = {}) {
+        append(elem, attrs = {}) {
         // element = 'button' | 'dropdown' REQUIRED (no default value)
         // attrs = { ... }
         // attrs for 'button': 'icon' = src string, 'label' = string, 'onclick' = function
         // attrs for 'dropdown': 'items' = [ { text: string, value: string }, ... ] array of objects
         // where 'text' is the displayed text of the option and 'value' is the value of the option
-            const validElements = ['button', 'dropdown'];
-            if (!element || typeof element !== 'string') // Element not passed or invalid type
-                return console.error('🤖 chatgpt.js >> Please supply a valid string element name!');
-            element = element.toLowerCase();
-            if (!validElements.includes(element)) // Element not in list
-                return console.error(`🤖 chatgpt.js >> Invalid element! Valid elements are [${validElements}]`);
+            const validElems = ['button', 'dropdown']
+            if (!elem || typeof elem != 'string') // Element not passed or invalid type
+                return console.error('🤖 chatgpt.js >> Please supply a valid string element name!')
+            elem = elem.toLowerCase()
+            if (!validElems.includes(elem)) // Element not in list
+                return console.error(`🤖 chatgpt.js >> Invalid element! Valid elems are [${validElems}]`)
 
-            const newElement = document.createElement(element == 'dropdown' ? 'select' : element);
-            newElement.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now(); // Add random id to the element
+            const newElem = document.createElement(elem == 'dropdown' ? 'select' : elem)
+            newElem.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now() // Add random id to the element
 
-            if (element == 'button') {
-                newElement.textContent = attrs?.label && typeof attrs.label == 'string'
+            if (elem == 'button') {
+                newElem.textContent = attrs?.label && typeof attrs.label == 'string'
                     ? attrs.label
                     : 'chatgpt.js button'
                 const icon = document.createElement('img')
@@ -1820,55 +1806,55 @@ const chatgpt = {
                     ? attrs.icon // Add icon to button element if given, else default one
                     : ( chatgpt.endpoints.assets + '/starters/chrome/extension/icons/icon128.png' )
                 icon.width = 18
-                newElement.firstChild.before(icon)
-                newElement.onclick = attrs?.onclick && typeof attrs.onclick == 'function' ? attrs.onclick : function(){}
+                newElem.firstChild.before(icon)
+                newElem.onclick = attrs?.onclick && typeof attrs.onclick == 'function' ? attrs.onclick : function(){}
             }
 
-            else if (element == 'dropdown') {
+            else if (elem == 'dropdown') {
                 if (!attrs?.items || // There no are options to add
                     !Array.isArray(attrs.items) || // It's not an array
                     !attrs.items.length) // The array is empty
-                        attrs.items = [{ text: '🤖 chatgpt.js option', value: 'chatgpt.js option value' }]; // Set default dropdown entry
+                        attrs.items = [{ text: '🤖 chatgpt.js option', value: 'chatgpt.js option value' }] // Set default dropdown entry
 
                 if (!attrs.items.every(el => typeof el == 'object')) // The entries of the array are not objects
-                    return console.error('\'items\' must be an array of objects!');
+                    return console.error('\'items\' must be an array of objects!')
 
                 attrs.items.forEach(item => {
-                    const optionElement = document.createElement('option');
-                    optionElement.textContent = item?.text;
-                    optionElement.value = item?.value;
-                    newElement.add(optionElement);
-                });
+                    const optionElement = document.createElement('option')
+                    optionElement.textContent = item?.text
+                    optionElement.value = item?.value
+                    newElem.add(optionElement)
+                })
             }
 
 
-            // Fix for blank background on dropdown elements
-            if (element == 'dropdown') newElement.style.backgroundColor = 'var(--gray-900, rgb(32,33,35))';
+            // Fix for blank background on dropdown elems
+            if (elem == 'dropdown') newElem.style.backgroundColor = 'var(--gray-900, rgb(32,33,35))'
 
-            this.elements.push(newElement);
-            this.activateObserver();
-            document.body.setAttribute('data-chatgptjs', 'observer-trigger'); // add attribute to trigger the observer
+            this.elems.push(newElem)
+            this.activateObserver()
+            document.body.setAttribute('data-chatgptjs', 'observer-trigger') // add attribute to trigger the observer
 
-            return newElement.id; // Return the element id
+            return newElem.id // Return the element id
         },
 
         exists() { return !!chatgpt.getNewChatLink(); },
-        hide() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
-        show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
-        isOff() { return !this.isOn(); },
+        hide() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!') },
+        show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!') },
+        isOff() { return !this.isOn() },
         isOn() {
             const sidebar = (() => {
-                return chatgpt.sidebar.exists() ? document.querySelector('[class*=sidebar]') : null; })();
-            if (!sidebar) { console.error('Sidebar element not found!'); return false; }
+                return chatgpt.sidebar.exists() ? document.querySelector('[class*=sidebar]') : null })()
+            if (!sidebar) { console.error('Sidebar element not found!'); return false }
             else return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
-              : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px';
+              : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px'
         },
 
         toggle() {
-            const sidebarToggle = document.querySelector('button[data-testid*=sidebar-button]');
-            if (!sidebarToggle) console.error('Sidebar toggle not found!');
-            sidebarToggle.click();
+            const sidebarToggle = document.querySelector('button[data-testid*=sidebar-button]')
+            if (!sidebarToggle) console.error('Sidebar toggle not found!')
+            sidebarToggle.click()
         },
 
         async isLoaded(timeout = 5000) {
@@ -1884,18 +1870,18 @@ const chatgpt = {
         }
     },
 
-    startNewChat() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }},
+    startNewChat() { try { chatgpt.getNewChatBtn().click() } catch (err) { console.error(err.message) }},
     stop() { chatgpt.response.stopGenerating(); },
 
     async suggest(ideaType, details) {
         if (!ideaType) return console.error('ideaType (1st argument) not supplied'
-            + '(e.g. \'gifts\', \'names\', \'recipes\', etc.)');
-        for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
-            return console.error(`Argument ${ i + 1 } must be a string.`);
-        chatgpt.send('Suggest some names. ' + ( details || '' ));
-        console.info(`Creating ${ ideaType }...`);
-        await chatgpt.isIdle();
-        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+            + '(e.g. \'gifts\', \'names\', \'recipes\', etc.)')
+        for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] != 'string')
+            return console.error(`Argument ${ i + 1 } must be a string.`)
+        chatgpt.send('Suggest some names. ' + ( details || '' ))
+        console.info(`Creating ${ ideaType }...`)
+        await chatgpt.isIdle()
+        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
 
     speak(msg, { voice = 2, pitch = 2, speed = 1.1, onend } = {} ) {
@@ -1926,67 +1912,68 @@ const chatgpt = {
     },
 
     async summarize(text) {
-        if (!text) return console.error('Text (1st) argument not supplied. Pass some text!');
-        if (typeof text !== 'string') return console.error('Text argument must be a string!');
-        chatgpt.send('Summarize the following text:\n\n' + text);
-        console.info('Summarizing text...');
-        await chatgpt.isIdle();
-        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+        if (!text) return console.error('Text (1st) argument not supplied. Pass some text!')
+        if (typeof text != 'string') return console.error('Text argument must be a string!')
+        chatgpt.send('Summarize the following text:\n\n' + text)
+        console.info('Summarizing text...')
+        await chatgpt.isIdle()
+        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
 
     toggleScheme() { chatgpt.settings.scheme.toggle(); },
 
     async translate(text, outputLang) {
-        if (!text) return console.error('Text (1st) argument not supplied. Pass some text!');
-        if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!');
-        for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
-            return console.error(`Argument ${ i + 1 } must be a string!`);
+        if (!text) return console.error('Text (1st) argument not supplied. Pass some text!')
+        if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!')
+        for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
+            return console.error(`Argument ${ i + 1 } must be a string!`)
         chatgpt.send('Translate the following text to ' + outputLang
-            + '. Only reply with the translation.\n\n' + text);
-        console.info('Translating text...');
-        await chatgpt.isIdle();
-        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest');
+            + '. Only reply with the translation.\n\n' + text)
+        console.info('Translating text...')
+        await chatgpt.isIdle()
+        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
 
-    unminify() { chatgpt.code.unminify(); },
+    unminify() { chatgpt.code.unminify() },
 
     uuidv4() {
         try {
             // use native secure uuid generator when available
-            return crypto.randomUUID();
+            return crypto.randomUUID()
         } catch(_e) {
-            let d = new Date().getTime(); // get current timestamp in ms (to ensure UUID uniqueness)
+            let d = new Date().getTime() // get current timestamp in ms (to ensure UUID uniqueness)
             const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
                 const r = ( // generate random nibble
-                    ( d + (window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) - 1))*16)%16 | 0 );
-                d = Math.floor(d/16); // correspond each UUID digit to unique 4-bit chunks of timestamp
+                    ( d + (window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) - 1))*16)%16 | 0 )
+                d = Math.floor(d/16) // correspond each UUID digit to unique 4-bit chunks of timestamp
                 return ( c == 'x' ? r : (r&0x3|0x8) ).toString(16); // generate random hexadecimal digit
-            });
-            return uuid;
+            })
+            return uuid
         }
     },
 
-    writeCode() { chatgpt.code.write(); }
-};
+    writeCode() { chatgpt.code.write() }
+}
 
-chatgpt.scheme = { ...chatgpt.settings.scheme }; // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
+chatgpt.scheme = { ...chatgpt.settings.scheme } // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
 
 // Create chatgpt.[actions]Button(identifier) functions
-const cjsBtnActions = ['click', 'get'], cjsTargetTypes = [ 'button', 'link', 'div', 'response' ];
+const cjsBtnActions = ['click', 'get'], cjsTargetTypes = [ 'button', 'link', 'div', 'response' ]
 for (const btnAction of cjsBtnActions) {
-    chatgpt[btnAction + 'Button'] = function handleButton(buttonIdentifier) {
-        const button = /^[.#]/.test(buttonIdentifier) ? document.querySelector(buttonIdentifier)
-            : /send/i.test(buttonIdentifier) ? document.querySelector('form button[class*=bottom]')
-            : /scroll/i.test(buttonIdentifier) ? document.querySelector('button[class*=cursor]')
-            : (function() { // get via text content
-                for (const button of document.querySelectorAll('button')) { // try buttons
-                    if (button.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
-                        return button; }}
-                for (const navLink of document.querySelectorAll('nav a')) { // try nav links if no button
-                    if (navLink.textContent.toLowerCase().includes(buttonIdentifier.toLowerCase())) {
-                        return navLink; }}})();
-        if (btnAction == 'click') { button.click(); } else { return button; }
-    };
+    chatgpt[btnAction + 'Button'] = function handleButton(btnIdentifier) {
+        const btn = /^[.#]/.test(btnIdentifier) ? document.querySelector(btnIdentifier)
+          : /send/i.test(btnIdentifier) ? document.querySelector('form button[class*=bottom]')
+          : /scroll/i.test(btnIdentifier) ? document.querySelector('button[class*=cursor]')
+          : (function() { // get via text content
+                for (const btn of document.querySelectorAll('button')) // try buttons
+                    if (btn.textContent.toLowerCase().includes(btnIdentifier.toLowerCase()))
+                        return btn
+                for (const navLink of document.querySelectorAll('nav a')) // try nav links if no button
+                    if (navLink.textContent.toLowerCase().includes(btnIdentifier.toLowerCase()))
+                        return navLink
+            })()
+        if (btnAction == 'click') btn.click() ; else return btn
+    }
 }
 
 // Create ALIAS functions
@@ -2097,16 +2084,16 @@ function toCamelCase(words) {
     return words.map((word, idx) => idx == 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)).join('') }
 
 // Prefix console logs w/ '🤖 chatgpt.js >> '
-const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info;
+const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info
 console.error = (...args) => {
-    if (!args[0].startsWith(consolePrefix)) ogError(consolePrefix + args[0], ...args.slice(1));
-    else ogError(...args);
-};
+    if (!args[0].startsWith(consolePrefix)) ogError(consolePrefix + args[0], ...args.slice(1))
+    else ogError(...args)
+}
 console.info = (msg) => {
     if (!msg.startsWith(consolePrefix)) ogInfo(consolePrefix + msg);
-    else ogInfo(msg);
-};
+    else ogInfo(msg)
+}
 
 // Export chatgpt object
-try { window.chatgpt = chatgpt; } catch (err) {} // for Greasemonkey
-try { module.exports = chatgpt; } catch (err) {} // for CommonJS
+try { window.chatgpt = chatgpt } catch (err) {} // for Greasemonkey
+try { module.exports = chatgpt } catch (err) {} // for CommonJS
