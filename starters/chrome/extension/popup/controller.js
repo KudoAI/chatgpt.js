@@ -119,7 +119,7 @@
     const aboutSpan = dom.create.elem('span', {
         title: 'About ChatGPT Extension',
         class: 'menu-icon menu-area', style: 'right:30px ; padding-top: 2px' })
-    const aboutIcon = icons.create({ name: 'questionMark', width: 15, height: 13, style: 'margin-bottom: 0.04rem' })
+    const aboutIcon = icons.create('questionMark', { width: 15, height: 13, style: 'margin-bottom: 0.04rem' })
     aboutSpan.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
     aboutSpan.append(aboutIcon) ; footer.append(aboutSpan)
 
@@ -127,7 +127,7 @@
     const moreExtensionsSpan = dom.create.elem('span', {
         title: 'More AI Extensions',
         class: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px' })
-    const moreExtensionsIcon = icons.create({ name: 'plus', size: 16 })
+    const moreExtensionsIcon = icons.create('plus')
     moreExtensionsSpan.onclick = () => { chrome.tabs.create({ url: app.urls.relatedExtensions }) ; close() }
     moreExtensionsSpan.append(moreExtensionsIcon) ; footer.append(moreExtensionsSpan)
 
