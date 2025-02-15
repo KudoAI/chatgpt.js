@@ -9,7 +9,7 @@
         { active: true, currentWindow: true }))[0].url).hostname)?.[1] }
 
     // Import APP data
-    const { app } = await chrome.storage.sync.get('app')
+    const { app } = await chrome.storage.local.get('app')
     icons.import({ app }) // for srcs using app.urls.assetHost
 
     // Define FUNCTIONS

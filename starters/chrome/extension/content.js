@@ -12,7 +12,7 @@
     env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
 
     // Import APP data
-    const { app } = await chrome.storage.sync.get('app')
+    const { app } = await chrome.storage.local.get('app')
 
     // Export DEPENDENCIES to imported resources
     dom.import({ env }) // for env.ui.scheme

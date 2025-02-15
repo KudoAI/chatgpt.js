@@ -12,7 +12,7 @@ const app = {
         support: 'https://github.com/KudoAI/chatgpt.js-chrome-starter/issues'
     }
 }
-chrome.storage.sync.set({ app }) // save to Chrome storage
+chrome.storage.local.set({ app }) // save to Chrome storage
 
 // Launch CHATGPT on install
 chrome.runtime.onInstalled.addListener(details => {
