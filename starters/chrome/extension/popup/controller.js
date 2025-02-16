@@ -105,12 +105,12 @@
     const footer = dom.create.elem('footer') ; document.body.append(footer)
 
     // Create/append CHATGPT.JS footer logo
-    const cjsDiv = dom.create.elem('div', {
-        class: 'chatgpt-js', title: `${chrome.i18n.getMessage('about_poweredBy')} chatgpt.js` })
+    const cjsSpan = dom.create.elem('span', {
+        class: 'chatgpt-js', title: 'Powered by chatgpt.js' })
     const cjsLogo = dom.create.elem('img', {
         src: `${app.urls.cjsAssetHost}/images/badges/powered-by-chatgpt.js.png?b2a1975` })
-    cjsDiv.onclick = () => { chrome.tabs.create({ url: app.urls.chatgptJS }) ; close() }
-    cjsDiv.append(cjsLogo) ; footer.append(cjsDiv)
+    cjsSpan.onclick = () => { chrome.tabs.create({ url: app.urls.chatgptJS }) ; close() }
+    cjsSpan.append(cjsLogo) ; footer.append(cjsSpan)
 
     // Create/append ABOUT footer button
     const aboutSpan = dom.create.elem('span', {
