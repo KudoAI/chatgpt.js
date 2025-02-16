@@ -48,7 +48,7 @@
             const stateStyles = {
                 on: {
                     light: 'color: #5cef48 ; text-shadow: rgba(255,250,169,0.38) 2px 1px 5px',
-                    dark:  'color: #5cef48 ; text-shadow: rgb(55, 255, 0) 3px 0 10px'
+                    dark:  'color: #5cef48 ; text-shadow: rgb(55,255,0) 3px 0 10px'
                 },
                 off: {
                     light: 'color: #ef4848 ; text-shadow: rgba(255,169,225,0.44) 2px 1px 5px',
