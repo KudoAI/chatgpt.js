@@ -1501,8 +1501,8 @@ const chatgpt = {
 
                     // Replace text node with processed nodes
                     node.replaceChild(beforeTextNode, childNode)
-                    beforeTextNode.nextSibling.before(renderedNode)
-                    renderedNode.nextSibling.before(afterTextNode)
+                    node.insertBefore(renderedNode, beforeTextNode.nextSibling)
+                    node.insertBefore(afterTextNode, renderedNode.nextSibling)
                 }
 
             // Process element nodes recursively

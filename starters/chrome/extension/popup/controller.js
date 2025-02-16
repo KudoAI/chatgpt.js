@@ -9,17 +9,17 @@
         { active: true, currentWindow: true }))[0].url).hostname)?.[1] }
 
     // Import APP data
-    const { app } = await chrome.storage.sync.get('app')
+    const { app } = await chrome.storage.local.get('app')
     icons.import({ app }) // for srcs using app.urls.assetHost
 
     // Define FUNCTIONS
+
+    function notify(msg, pos = 'bottom-right') { sendMsgToActiveTab('notify', { msg, pos }) }
 
     async function sendMsgToActiveTab(action, options) {
         const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
         return await chrome.tabs.sendMessage(activeTab.id, { action: action, options: { ...options }})
     }
-
-    function notify(msg, pos = 'bottom-right') { sendMsgToActiveTab('notify', { msg, pos }) }
 
     const sync = {
         fade() {
@@ -32,10 +32,7 @@
 
             // Update menu contents
             document.querySelectorAll('div.logo, div.menu-title, div.menu')
-                .forEach(elem => {
-                    elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
-                    elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
-                })
+                .forEach(elem => elem.classList.toggle('disabled', !masterToggle.checked))
         },
 
         configToUI(options) { return sendMsgToActiveTab('syncConfigToUI', options) }
@@ -46,7 +43,7 @@
     // Init MASTER TOGGLE
     const masterToggle = document.querySelector('input')
     await settings.load('extensionDisabled')
-    masterToggle.checked = !config.extensionDisabled ; sync.fade()
+    masterToggle.checked = !config.extensionDisabled
     masterToggle.onchange = () => {
         settings.save('extensionDisabled', !config.extensionDisabled)
         Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
@@ -100,29 +97,26 @@
                 // custom logic for each prompt based on key name
             }
         })
-
-        sync.fade() // in case master toggle off
     }
+
+    sync.fade() // in case master toggle off
 
     // Create/append FOOTER container
     const footer = dom.create.elem('footer') ; document.body.append(footer)
 
     // Create/append CHATGPT.JS footer logo
-    const cjsDiv = dom.create.elem('div', { class: 'chatgpt-js' })
+    const cjsSpan = dom.create.elem('span', {
+        class: 'chatgpt-js', title: 'Powered by chatgpt.js' })
     const cjsLogo = dom.create.elem('img', {
-        title: 'Powered by chatgpt.js',
-        src: `${app.urls.cjsAssetHost}/images/badges/powered-by-chatgpt.js-faded.png?b2a1975` })
-    cjsLogo.onmouseover = cjsLogo.onmouseout = event => cjsLogo.src = `${
-        app.urls.cjsAssetHost}/images/badges/powered-by-chatgpt.js${
-            event.type == 'mouseover' ? '' : '-faded' }.png?b2a1975`
-    cjsLogo.onclick = () => chrome.tabs.create({ url: app.urls.chatgptJS })
-    cjsDiv.append(cjsLogo) ; footer.append(cjsDiv)
+        src: `${app.urls.cjsAssetHost}/images/badges/powered-by-chatgpt.js.png?b2a1975` })
+    cjsSpan.onclick = () => { open(app.urls.chatgptJS) ; close() }
+    cjsSpan.append(cjsLogo) ; footer.append(cjsSpan)
 
     // Create/append ABOUT footer button
     const aboutSpan = dom.create.elem('span', {
         title: 'About ChatGPT Extension',
         class: 'menu-icon menu-area', style: 'right:30px ; padding-top: 2px' })
-    const aboutIcon = icons.create({ name: 'questionMark', width: 15, height: 13, style: 'margin-bottom: 0.04rem' })
+    const aboutIcon = icons.create('questionMark', { width: 15, height: 13, style: 'margin-bottom: 0.04rem' })
     aboutSpan.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
     aboutSpan.append(aboutIcon) ; footer.append(aboutSpan)
 
@@ -130,8 +124,8 @@
     const moreExtensionsSpan = dom.create.elem('span', {
         title: 'More AI Extensions',
         class: 'menu-icon menu-area', style: 'right:2px ; padding-top: 2px' })
-    const moreExtensionsIcon = icons.create({ name: 'plus', size: 16 })
-    moreExtensionsSpan.onclick = () => { chrome.tabs.create({ url: app.urls.relatedExtensions }) ; close() }
+    const moreExtensionsIcon = icons.create('plus')
+    moreExtensionsSpan.onclick = () => { open(app.urls.relatedExtensions) ; close() }
     moreExtensionsSpan.append(moreExtensionsIcon) ; footer.append(moreExtensionsSpan)
 
     // Remove loading spinner

@@ -3,7 +3,7 @@
 window.icons = {
     import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
 
-    create({ name, size = 16, width, height, ...additionalAttrs }) {
+    create(name, { size = 16, width, height, ...additionalAttrs } = {}) {
         const iconData = icons[name],
               iconAttrs = { width: width || size, height: height || size, ...additionalAttrs }
         if (iconData.type == 'svg') {
