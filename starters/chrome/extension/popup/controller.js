@@ -34,8 +34,8 @@
             const extensionIsDisabled = !masterToggle.checked
             document.querySelectorAll('.logo, .menu-title, .menu-item').forEach((elem, idx) => {
                 elem.style.transition = extensionIsDisabled ? '' : 'opacity 0.25s ease-in'
-                setTimeout(() => // fade-out abruptly, fade-in staggered
-                    elem.classList.toggle('disabled', extensionIsDisabled), extensionIsDisabled ? 0 : idx *10)
+                setTimeout(() => elem.classList.toggle('disabled', extensionIsDisabled),
+                    extensionIsDisabled ? 0 : idx *10) // fade-out abruptly, fade-in staggered
             })
         },
 
