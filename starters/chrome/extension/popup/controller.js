@@ -106,7 +106,7 @@
 
     // Create/append CHATGPT.JS footer logo
     const cjsSpan = dom.create.elem('span', {
-        class: 'chatgpt-js', title: 'Powered by chatgpt.js' })
+        class: 'cjs-span', title: 'Powered by chatgpt.js' })
     const cjsLogo = dom.create.elem('img', {
         src: `${app.urls.cjsAssetHost}/images/badges/powered-by-chatgpt.js.png?b2a1975` })
     cjsSpan.onclick = () => { open(app.urls.chatgptJS) ; close() }
