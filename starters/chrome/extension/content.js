@@ -99,7 +99,7 @@
         modals.alert('≫ ChatGPT extension loaded! 🚀', // title
             'Success! Press Ctrl+Shift+J to view all chatgpt.js methods.', // msg
             function getHelp() { // button
-                chrome.tabs.create({ url: `${app.urls.gitHub}/issues` }) },
+                open(`${app.urls.gitHub}/issues`) },
             function dontShowAgain() { // checkbox
                 settings.save('skipAlert', !config.skipAlert) }
         )
