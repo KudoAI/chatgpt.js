@@ -79,4 +79,4 @@ footer > .menu-icon { position: absolute ; bottom: -10px ; opacity: 0.7 }
 @supports (overflow: clip) { body { overflow: clip }}
 @supports (user-select: none) { body, button, input, select, textarea { user-select: none }}
 @supports (cursor: pointer) {
-    .menu-area:focus, .menu-area:hover, .toggle-switch .slider, .chatgpt-js { cursor: pointer }}
+    .menu-area:focus, .menu-area:hover, .toggle-switch .slider, .chatgpt-js img { cursor: pointer }}
