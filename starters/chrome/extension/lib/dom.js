@@ -77,12 +77,12 @@ window.dom = {
             const computedDimensions = { width: 0, height: 0 }
             elems.forEach(elem => {
                 const elemStyle = getComputedStyle(elem) ; if (elemStyle.display == 'none') return
-                if (dimensionsToCompute.includes('width'))
-                    computedDimensions.width += elem.getBoundingClientRect().width
-                        + parseFloat(elemStyle.marginLeft) + parseFloat(elemStyle.marginRight)
-                if (dimensionsToCompute.includes('height'))
-                    computedDimensions.height += elem.getBoundingClientRect().height
-                        + parseFloat(elemStyle.marginTop) + parseFloat(elemStyle.marginBottom)
+                Object.keys(computedDimensions).forEach(dimension => {
+                    if (dimensionsToCompute.includes(dimension))
+                        computedDimensions[dimension] += elem.getBoundingClientRect()[dimension]
+                            + parseFloat(elemStyle[`margin${dimension == 'width' ? 'Left' : 'Top'}`])
+                            + parseFloat(elemStyle[`margin${dimension == 'width' ? 'Right' : 'Bottom'}`])
+                })
             })
 
             // Return computed dimensions
