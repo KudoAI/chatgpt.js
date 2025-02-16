@@ -36,8 +36,8 @@ a:focus, a:hover { text-decoration: underline ; color: inherit }
 
 /* Header */
 .menu-header {
-    border-bottom: solid 1px lightgrey ; padding: 5px 5px 5px 0; margin: 0 ;
-    display: flex; background: white ; align-items: center }
+    border-bottom: solid 1px lightgrey ; padding: 5px 5px 5px 0 ; margin: 0 ;
+    min-height: 38px ; display: flex; background: white ; align-items: center }
 .logo { margin: 4px 8px 4px 12px ; position: relative ; top: 3px }
 .menu-title { font-size: 0.85rem ; font-weight: 600 ; padding-right: 3px }
 .menu-icons > .toggle-switch { transform: scale(1.1) } /* make master toggle bigger */
