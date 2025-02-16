@@ -31,8 +31,12 @@
             ))})
 
             // Update menu contents
-            document.querySelectorAll('div.logo, div.menu-title, div.menu')
-                .forEach(elem => elem.classList.toggle('disabled', !masterToggle.checked))
+            const extensionIsDisabled = !masterToggle.checked
+            document.querySelectorAll('.logo, .menu-title, .menu-item').forEach((elem, idx) => {
+                elem.style.transition = extensionIsDisabled ? '' : 'opacity 0.25s ease-in'
+                setTimeout(() => // fade-out abruptly, fade-in staggered
+                    elem.classList.toggle('disabled', extensionIsDisabled), extensionIsDisabled ? 0 : idx *10)
+            })
         },
 
         configToUI(options) { return sendMsgToActiveTab('syncConfigToUI', options) }
