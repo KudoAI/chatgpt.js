@@ -9,6 +9,7 @@ localStorage.notifyProps = JSON.stringify({ queue: { topRight: [], bottomRight: 
 
 // Define chatgpt API
 const chatgpt = {
+
     endpoints: {
         assets: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js',
         openAI: {
@@ -19,6 +20,28 @@ const chatgpt = {
             share: 'https://chatgpt.com/backend-api/share',
             instructions: 'https://chatgpt.com/backend-api/user_system_messages'
         }
+    },
+
+    selectors: {
+        btns: {
+            continue: 'button.btn:has([d^="M4.47189"])',
+            newChat: 'button[data-testid*=new-chat-button],' // sidebar button (when logged in)
+                   + 'button:has([d^="M3.06957"]),' // Cycle Arrows icon (Temp chat mode)
+                   + 'button:has([d^="M15.6729"])', // Pencil icon (recorded chat mode)
+            regen: 'button:has([d^="M3.06957"])', scroll: 'button:has([d^="M12 21C11.7348"])',
+            send: '[data-testid=send-button]', sidebar: 'button[data-testid*=sidebar-button]',
+            stop: 'button[data-testid=stop-button]'
+        },
+        chatDivs: {
+            convo: 'main > div > div > div > div > div > div[class*=group]',
+            msg: 'div[data-message-author-role]', reply: 'div[data-message-author-role=assistant]'
+        },
+        chatHistory: 'nav',
+        footer: '.min-h-4',
+        header: 'main .sticky',
+        links: { newChat: 'nav a[href="/"]', sidebarItem: 'nav a' },
+        sidebar: 'div[class*=sidebar]',
+        ssgManifest: 'script[src*="_ssgManifest.js"]'
     },
 
     actAs(persona) {
@@ -364,7 +387,7 @@ const chatgpt = {
             const scheduleRefreshes = interval => {
                 const randomDelay = Math.max(2, Math.floor(chatgpt.randomFloat() * 21 - 10)) // set random delay up to ±10 secs
                 autoRefresh.isActive = setTimeout(() => {
-                    const manifestScript = document.querySelector('script[src*="_ssgManifest.js"]')
+                    const manifestScript = document.querySelector(chatgpt.selectors.ssgManifest)
                     if (manifestScript) {
                         document.querySelector('#refresh-frame').src = manifestScript.src + '?' + Date.now()
                         console.log(`↻ ChatGPT >> [${autoRefresh.nowTimeStamp()}] ChatGPT session refreshed`)
@@ -481,17 +504,15 @@ const chatgpt = {
         },
 
         async isIdle(timeout = null) {
-            const obsConfig = { childList: true, subtree: true },
-                  selectors = { msgDiv: 'div[data-message-author-role]',
-                                replyDiv: 'div[data-message-author-role=assistant]' }
+            const obsConfig = { childList: true, subtree: true }
 
             // Create promises
             const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
             const isIdlePromise = (async () => {
                 await new Promise(resolve => { // when on convo page
-                    if (document.querySelector(selectors.msgDiv)) resolve()
+                    if (document.querySelector(chatgpt.selectors.chatDivs.msg)) resolve()
                     else new MutationObserver((_, obs) => {
-                        if (document.querySelector(selectors.msgDiv)) { obs.disconnect() ; resolve() }
+                        if (document.querySelector(chatgpt.selectors.chatDivs.msg)) { obs.disconnect() ; resolve() }
                     }).observe(document.body, obsConfig)
                 })
                 await new Promise(resolve => // when reply starts generating
@@ -499,7 +520,7 @@ const chatgpt = {
                         if (chatgpt.getStopBtn()) { obs.disconnect() ; resolve() }
                     }).observe(document.body, { childList: true, subtree: true })
                 )
-                const replyDivs = document.querySelectorAll(selectors.replyDiv),
+                const replyDivs = document.querySelectorAll(chatgpt.selectors.chatDivs.reply),
                       lastReplyDiv = replyDivs[replyDivs.length - 1]
                 await new Promise(resolve => // when code starts generating
                     new MutationObserver((_, obs) => {
@@ -617,7 +638,7 @@ const chatgpt = {
 
             // Create transcript from active chat
             if (chatToGet == 'active' && /\/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$/.test(window.location.href)) {
-                const chatDivs = document.querySelectorAll('main > div > div > div > div > div > div[class*=group]')
+                const chatDivs = document.querySelectorAll(chatgpt.selectors.chatDivs.convo)
                 if (!chatDivs.length) return console.error('Chat is empty!')
                 const msgs = [] ; let isUserMsg = true
                 chatDivs.forEach(div => {
@@ -689,7 +710,7 @@ const chatgpt = {
     focusChatbar() { chatgpt.getChatBox()?.focus() },
 
     footer: {
-        get() { return document.querySelector('.min-h-4') },
+        get() { return document.querySelector(chatgpt.selectors.footer) },
 
         hide() {
             const footer = chatgpt.footer.get()
@@ -950,22 +971,14 @@ const chatgpt = {
     },
 
     getChatInput() { return chatgpt.getChatBox().firstChild.innerText },
-    getContinueButton() { return document.querySelector('button.btn:has([d^="M4.47189"])') },
+    getContinueButton() { return document.querySelector(chatgpt.selectors.btns.continue) },
     getFooterDiv() { return chatgpt.footer.get() },
     getHeaderDiv() { return chatgpt.header.get() },
     getLastPrompt() { return chatgpt.getChatData('active', 'msg', 'user', 'latest') },
     getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest') },
-
-    getNewChatButton() {
-        return document.querySelector(
-            'button[data-testid*=new-chat-button],' // sidebar button (when logged in)
-          + 'button:has([d^="M3.06957"]),' // Cycle Arrows icon (Temp chat mode)
-          + 'button:has([d^="M15.6729"])' // Pencil icon (recorded chat mode)
-        )
-    },
-
-    getNewChatLink() { return document.querySelector('nav a[href="/"]') },
-    getRegenerateButton() { return document.querySelector('button:has([d^="M3.06957"])') },
+    getNewChatButton() { return document.querySelector(chatgpt.selectors.btns.newChat) },
+    getNewChatLink() { return document.querySelector(chatgpt.selectors.links.newChat) },
+    getRegenerateButton() { return document.querySelector(chatgpt.selectors.btns.regen) },
 
     getResponse() {
     // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:
@@ -978,17 +991,17 @@ const chatgpt = {
 
     getResponseFromAPI(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet) },
     getResponseFromDOM(pos) { return chatgpt.response.getFromDOM(pos) },
-    getScrollToBottomButton() { return document.querySelector('button:has([d^="M12 21C11.7348"])') },
-    getSendButton() { return document.querySelector('[data-testid=send-button]') },
-    getStopButton() { return document.querySelector('button[data-testid=stop-button]') },
+    getScrollToBottomButton() { return document.querySelector(chatgpt.selectors.btns.scroll) },
+    getSendButton() { return document.querySelector(chatgpt.selectors.btns.send) },
+    getStopButton() { return document.querySelector(chatgpt.selectors.btns.stop) },
 
     getUserLanguage() {
-        return navigator.languages[0] || navigator.language || navigator.browserLanguage ||
-            navigator.systemLanguage || navigator.userLanguage || ''
+        return navigator.languages[0] || navigator.language || navigator.browserLanguage
+            || navigator.systemLanguage || navigator.userLanguage || ''
     },
 
     header: {
-        get() { return document.querySelector('main .sticky') },
+        get() { return document.querySelector(chatgpt.selectors.header) },
         hide() { chatgpt.header.get().style.display = 'none' },
         show() { chatgpt.header.get().style.display = 'flex' }
     },
@@ -1000,9 +1013,9 @@ const chatgpt = {
         async isLoaded(timeout = null) {
             const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
             const isLoadedPromise = new Promise(resolve => {
-                if (document.querySelector('nav')) resolve(true)
+                if (document.querySelector(chatgpt.selectors.chatHistory)) resolve(true)
                 else new MutationObserver((_, obs) => {
-                    if (document.querySelector('nav')) { obs.disconnect() ; resolve(true) }
+                    if (document.querySelector(chatgpt.selectors.chatHistory)) { obs.disconnect() ; resolve(true) }
                 }).observe(document.documentElement, { childList: true, subtree: true })
             })
             return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
@@ -1132,16 +1145,15 @@ const chatgpt = {
     isFullScreen() { return chatgpt.browser.isFullScreen() },
 
     async isIdle(timeout = null) {
-        const obsConfig = { childList: true, subtree: true },
-              msgDivSelector = 'div[data-message-author-role]'
+        const obsConfig = { childList: true, subtree: true }
 
         // Create promises
         const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
         const isIdlePromise = (async () => {
             await new Promise(resolve => { // when on convo page
-                if (document.querySelector(msgDivSelector)) resolve()
+                if (document.querySelector(chatgpt.selectors.chatDivs.msg)) resolve()
                 else new MutationObserver((_, obs) => {
-                    if (document.querySelector(msgDivSelector)) { obs.disconnect() ; resolve() }
+                    if (document.querySelector(chatgpt.selectors.chatDivs.msg)) { obs.disconnect() ; resolve() }
                 }).observe(document.body, obsConfig)
             })
             await new Promise(resolve => // when reply starts generating
@@ -1740,7 +1752,7 @@ const chatgpt = {
 
             // Grab CSS from original website elems
             let cssClasses
-            for (let navLink of document.querySelectorAll('nav a'))
+            for (let navLink of document.querySelectorAll(chatgpt.selectors.links.sidebarItem))
                 if (/.*chat/.exec(navLink.text)[0]) {
                     cssClasses = navLink.classList
                     navLink.parentNode.style.margin = '2px 0' // add v-margins for consistency across all inserted btns
@@ -1755,7 +1767,7 @@ const chatgpt = {
             })
 
             // Create MutationObserver instance
-            const navBar = document.querySelector('nav')
+            const navBar = document.querySelector(chatgpt.selectors.chatHistory)
             if (!navBar) return console.error('Sidebar element not found!')
             this.observer = new MutationObserver(mutations =>
                 mutations.forEach(mutation => {
@@ -1835,7 +1847,7 @@ const chatgpt = {
         isOff() { return !this.isOn() },
         isOn() {
             const sidebar = (() => {
-                return chatgpt.sidebar.exists() ? document.querySelector('[class*=sidebar]') : null })()
+                return chatgpt.sidebar.exists() ? document.querySelector(chatgpt.selectors.sidebar) : null })()
             if (!sidebar) { console.error('Sidebar element not found!'); return false }
             else return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
@@ -1843,7 +1855,7 @@ const chatgpt = {
         },
 
         toggle() {
-            const sidebarToggle = document.querySelector('button[data-testid*=sidebar-button]')
+            const sidebarToggle = document.querySelector(chatgpt.selectors.btns.sidebar)
             if (!sidebarToggle) console.error('Sidebar toggle not found!')
             sidebarToggle.click()
         },
@@ -1952,13 +1964,13 @@ const cjsBtnActions = ['click', 'get'], cjsTargetTypes = [ 'button', 'link', 'di
 for (const btnAction of cjsBtnActions) {
     chatgpt[`${btnAction}Button`] = function handleButton(btnIdentifier) {
         const btn = /^[.#]/.test(btnIdentifier) ? document.querySelector(btnIdentifier)
-          : /send/i.test(btnIdentifier) ? document.querySelector('form button[class*=bottom]')
-          : /scroll/i.test(btnIdentifier) ? document.querySelector('button[class*=cursor]')
+          : /send/i.test(btnIdentifier) ? document.querySelector(chatgpt.selectors.btns.send)
+          : /scroll/i.test(btnIdentifier) ? document.querySelector(chatgpt.selectors.btns.scroll)
           : (function() { // get via text content
-                for (const btn of document.querySelectorAll('button')) // try buttons
+                for (const btn of document.querySelectorAll('button'))
                     if (btn.textContent.toLowerCase().includes(btnIdentifier.toLowerCase()))
                         return btn
-                for (const navLink of document.querySelectorAll('nav a')) // try nav links if no button
+                for (const navLink of document.querySelectorAll(chatgpt.selectors.links.sidebarItem))
                     if (navLink.textContent.toLowerCase().includes(btnIdentifier.toLowerCase()))
                         return navLink
             })()
