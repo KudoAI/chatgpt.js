@@ -9,16 +9,17 @@ localStorage.notifyProps = JSON.stringify({ queue: { topRight: [], bottomRight: 
 
 // Define chatgpt API
 const chatgpt = {
-    openAIaccessToken: {}, endpoints: {
-    assets: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js',
-    openAI: {
-        session: 'https://chatgpt.com/api/auth/session',
-        chats: 'https://chatgpt.com/backend-api/conversations',
-        chat: 'https://chatgpt.com/backend-api/conversation',
-        share_create: 'https://chatgpt.com/backend-api/share/create',
-        share: 'https://chatgpt.com/backend-api/share',
-        instructions: 'https://chatgpt.com/backend-api/user_system_messages'
-    }},
+    endpoints: {
+        assets: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js',
+        openAI: {
+            session: 'https://chatgpt.com/api/auth/session',
+            chats: 'https://chatgpt.com/backend-api/conversations',
+            chat: 'https://chatgpt.com/backend-api/conversation',
+            share_create: 'https://chatgpt.com/backend-api/share/create',
+            share: 'https://chatgpt.com/backend-api/share',
+            instructions: 'https://chatgpt.com/backend-api/user_system_messages'
+        }
+    },
 
     actAs(persona) {
     // Prompts ChatGPT to act as a persona from https://github.com/KudoAI/chat-prompts/blob/main/personas.json
@@ -744,9 +745,8 @@ const chatgpt = {
 
     getAccessToken() {
         return new Promise((resolve, reject) => {
-            if (Object.keys(chatgpt.openAIaccessToken).length > 0 && // populated
-                    (Date.parse(chatgpt.openAIaccessToken.expireDate) - Date.parse(new Date()) >= 0)) // not expired
-                return resolve(chatgpt.openAIaccessToken.token)
+            if (chatgpt.accessToken && (Date.parse(chatgpt.accessToken.expireDate) - Date.parse(new Date()) >= 0))
+                return resolve(chatgpt.accessToken.token) // unexpired one exists already
             const xhr = new XMLHttpRequest()
             xhr.open('GET', chatgpt.endpoints.openAI.session, true)
             xhr.setRequestHeader('Content-Type', 'application/json')
@@ -754,11 +754,9 @@ const chatgpt = {
                 if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.')
                 console.info(`Token expiration: ${
                     new Date(JSON.parse(xhr.responseText).expires).toLocaleString().replace(',', ' at')}`)
-                chatgpt.openAIaccessToken = {
-                    token: JSON.parse(xhr.responseText).accessToken,
-                    expireDate: JSON.parse(xhr.responseText).expires
-                }
-                return resolve(chatgpt.openAIaccessToken.token)
+                chatgpt.accessToken = {
+                    token: JSON.parse(xhr.responseText).accessToken, expireDate: JSON.parse(xhr.responseText).expires }
+                resolve(chatgpt.accessToken.token)
             }
             xhr.send()
         })
