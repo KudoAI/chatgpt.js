@@ -219,12 +219,13 @@ const onLoadObserver = new MutationObserver(() => {
             starsShieldLink.setAttribute('href', href.replace('/stargazers', ''))
 
             // Establish TRIGGER POINTS for scroll FX
-            const triggerElems = [], triggerPoints = []
-            triggerElems.push(...document.querySelectorAll('h2'))
-            triggerElems.push(document.querySelector('h3#-greasemonkey'))
-            triggerElems.push(document.querySelector('h3#-chrome'))
-            triggerElems.push( // 1st showcase tile
-                document.querySelector('img[src*="assets.chatgptinfinity.com"]'))
+            const triggerElems = [
+                ...document.querySelectorAll('h2'),
+                document.querySelector('h3#-greasemonkey'),
+                document.querySelector('h3#-chrome'),
+                document.querySelector('img[src*="assets.chatgptinfinity.com"]') // 1st showcase tile
+            ]
+            const triggerPoints = []
             triggerElems.forEach(elem => {
                 const elementPos = elem.getBoundingClientRect().top
                 const vOffsetDivisor = ( // higher = lower pos
