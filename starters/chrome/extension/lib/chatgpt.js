@@ -1186,8 +1186,9 @@ const chatgpt = {
     },
 
     isLightMode() { return document.documentElement.classList.toString().includes('light') },
+    isTempChat() { return location.search == '?temporary-chat=true' },
     isTyping() { return !!this.getStopButton() },
-
+    login() { window.location.href = 'https://chat.openai.com/auth/login' },
     logout() { window.location.href = 'https://chat.openai.com/auth/logout' },
 
     menu: {
@@ -2001,6 +2002,7 @@ const cjsFuncAliases = [
     ['getTextarea', 'getTextArea', 'getChatbar', 'getChatBar', 'getChatbox', 'getChatBox'],
     ['getVoiceButton', 'getVoiceModeButton'],
     ['isFullScreen', 'isFullscreen'],
+    ['isTempChat', 'isIncognito', 'isIncognitoMode', 'isTempChatMode'],
     ['minify', 'codeMinify', 'minifyCode'],
     ['new', 'newChat', 'startNewChat'],
     ['obfuscate', 'codeObfuscate', 'obfuscateCode'],
@@ -2048,6 +2050,7 @@ const cjsFuncSynonyms = [
     ['sentiment', 'attitude', 'emotion', 'feeling', 'opinion', 'perception'],
     ['speak', 'play', 'say', 'speech', 'talk', 'tts'],
     ['summarize', 'tldr'],
+    ['temp', 'temporary'],
     ['typing', 'generating'],
     ['unminify', 'beautify', 'prettify', 'prettyPrint']
 ];
