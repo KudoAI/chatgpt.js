@@ -25,6 +25,7 @@
     - [getUserLanguage](#getuserlanguage)
     - [isFullScreen](#isfullscreen)
     - [isLoaded `async`](#isloaded-async)
+    - [isTempChat](#istempchat)
     - [printAllFunctions](#printallfunctions)
     - [randomFloat](#randomfloat)
     - [renderHTML](#renderhtml)
@@ -330,6 +331,18 @@ Example code:
     await chatgpt.isLoaded();
     chatgpt.alert('ChatGPT has finished loading.');
 })();
+```
+
+### isTempChat
+
+Returns a boolean value. `true` if the website is in Temporary Chat mode and `false` otherwise.
+
+Example code:
+
+```js
+if (chatgpt.isTempChat()) {
+    // Do something
+}
 ```
 
 ### printAllFunctions
