@@ -24,7 +24,7 @@ const chatgpt = {
 
     selectors: {
         btns: {
-            continue: 'button.btn:has([d^="M4.47189"])',
+            continue: 'button.btn:has([d^="M4.47189"])', login: '[data-testid*=login]',
             newChat: 'button[data-testid*=new-chat-button],' // sidebar button (when logged in)
                    + 'button:has([d^="M3.06957"]),' // Cycle Arrows icon (Temp chat mode)
                    + 'button:has([d^="M15.6729"])', // Pencil icon (recorded chat mode)
@@ -976,6 +976,7 @@ const chatgpt = {
     getHeaderDiv() { return chatgpt.header.get() },
     getLastPrompt() { return chatgpt.getChatData('active', 'msg', 'user', 'latest') },
     getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest') },
+    getLoginButton() { return document.querySelector(chatgpt.selectors.btns.login) },
     getNewChatButton() { return document.querySelector(chatgpt.selectors.btns.newChat) },
     getNewChatLink() { return document.querySelector(chatgpt.selectors.links.newChat) },
     getRegenerateButton() { return document.querySelector(chatgpt.selectors.btns.regen) },

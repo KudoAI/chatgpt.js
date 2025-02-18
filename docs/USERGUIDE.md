@@ -74,6 +74,7 @@
     - [getContinueButton](#getContinueButton)
     - [getFooterDiv](#getfooterdiv)
     - [getHeaderDiv](#getheaderdiv)
+    - [getLoginButton](#getloginbutton)
     - [getNewChatButton](#getnewchatbutton)
     - [getNewChatLink](#getnewchatlink)
     - [getRegenerateButton](#getregeneratebutton)
@@ -1120,6 +1121,17 @@ Example code:
 ```js
 const headerDiv = chatgpt.getHeaderDiv();
 headerDiv.style.display = none; // hide the header
+```
+
+### getLoginButton
+
+Returns the login button as an HTML element.
+
+Example code:
+
+```js
+const loginBtn = chatgpt.getLoginButton();
+loginBtn.click(); // navs to login page
 ```
 
 ### getNewChatButton
