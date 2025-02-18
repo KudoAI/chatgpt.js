@@ -1,15 +1,14 @@
-/* General size */
+/* General */
 html { height: fit-content ; min-height: 89px }
-body { width: max-content ; margin: 0 }
-
-/* General font */
-body, button, input, select, textarea {
+body {
+    width: max-content ; margin: 0 ; font-size: .905rem ;
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif ;
-    font-size: .905rem
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif    
 }
-a { color: #999 ; text-decoration: none }
-a:focus, a:hover { text-decoration: underline ; color: inherit }
+
+/* Color/fade mods */
+.highlight-on-hover:hover { background: rgb(100,149,237) }
+.disabled { opacity: 0.3 ; pointer-events: none }
 
 /* Loader */
 .loading-bg {
@@ -32,52 +31,46 @@ a:focus, a:hover { text-decoration: underline ; color: inherit }
 @keyframes loader-rotate { 
     0% { transform: scaleY(1) rotate(0deg) } 49.99% { transform: scaleY(1) rotate(135deg) }
     50% { transform: scaleY(-1) rotate(0deg) } 100% { transform: scaleY(-1) rotate(-135deg) }
-}  
+}
 
 /* Header */
 .menu-header {
     border-bottom: solid 1px lightgrey ; padding: 5px 5px 5px 0 ; margin: 0 ;
     min-height: 38px ; display: flex; background: white ; align-items: center }
-.logo { margin: 4px 8px 4px 12px ; position: relative ; top: 3px }
+.logo { margin: 4px 10px 4px 12px }
 .menu-title { font-size: 0.85rem ; font-weight: 600 ; padding-right: 3px }
-.menu-icons > .toggle-switch { transform: scale(1.1) } /* make master toggle bigger */
-.main-toggle { margin-left: auto ; display: flex }
+.master-toggle { margin-left: auto ; display: flex }
 
 /* Menu item elements */
-.menu-item {
+.menu-entry {
     position: relative ; align-items: center ; border-bottom: 1px solid lightgrey ;
     display: flex ; min-height: 2rem ; padding: 0 14px 0 2px ; white-space: nowrap ; font-size: 91%
 }
 .menu-icon { padding: 8px }
-.menu-area:focus, .menu-area:hover { background: rgb(100,149,237) } /* add hover color/cursor */    
-.menu-item:hover span:not(.slider) { filter: invert(1) } /* invert setting labels on hover */
-.menu-item > label > .slider { transform: scale(0.95) ; top: 1px } /* make child toggles smaller */
+.menu-entry:hover span:not(.track), .menu-entry:hover .caret { filter: invert(1) } /* invert setting labels on hover */
+.menu-entry > label > .track { transform: scale(0.95) ; top: 1px } /* make child toggles smaller */
 .menu-prompt { margin-left: 2px } /* align non-toggle items */
 
 /* Toggle elements */
-.toggle-switch input[type="checkbox"] { display: none } /* hide checkbox from toggles */
-.toggle-switch .slider { /* style sliders */
-    background-color: white;  display: block; border: 1px solid black; border-radius: 7px ; 
-    position: relative ; top: 0.05rem ; height: 10px ; width: 18px ;
+.toggle .track {
+    display: block ; border-radius: 7px ; position: relative ; transform: scale(0.95) ; background: white ; 
+    border: 1px solid black ; top: 1px ; height: 10px ; width: 18px ; transition: background 0.15s ease-in-out
 }
-.toggle-switch .slider::before { /* style slider knobs */
-    position: absolute ; height: 0.625rem ; width: 0.625rem ; left: -0.04rem ; top: -0.05rem ;
-    border: 1px solid black ; border-radius: 50% ; background-color: white ; content: ""
+.toggle.on .track { background: black }
+.toggle .track::before { /* knob */
+    content: "" ; position: absolute ; height: 0.625rem ; width: 0.625rem ; left: -0.04rem ; top: -0.05rem ;
+    border: 1px solid black ; border-radius: 50% ; background: white ; transition: transform 0.15s ease-in-out
 }
-.toggle-switch input[type="checkbox"]:checked + .slider { background-color: black } /* color active slider */
-.toggle-switch input[type="checkbox"]:checked + .slider::before { transform: translateX(9px) } /* toggle knob right */
-
+.toggle.on .track::before { transform: translateX(9px) }
+  
 /* Footer */
-footer { font-size: 12px ; text-align: center ; color: #999 ; background: #f5f5f5 ; height: 40px ; line-height: 40px }
+footer {
+    font-size: 12px ; text-align: center ; color: #999 ; background: #f5f5f5 ; height: 40px ; line-height: 40px }
 footer > .menu-icon { position: absolute ; bottom: -10px ; opacity: 0.7 }
 .cjs-span { position: absolute ; bottom: -.25rem ; left: 0.7rem }
 .cjs-span img { opacity: 0.5 } .cjs-span:hover img { opacity: 1 ; transition: 0.15s }
 
-/* Master toggle effects */
-.disabled { opacity: 0.3 ; pointer-events: none }
-
 /* Non-baseline features */
 @supports (overflow: clip) { body { overflow: clip }}
 @supports (user-select: none) { body, button, input, select, textarea { user-select: none }}
-@supports (cursor: pointer) {
-    .menu-area:focus, .menu-area:hover, .toggle-switch .slider, .cjs-span { cursor: pointer }}
+@supports (cursor: pointer) { .highlight-on-hover:hover, .toggle .track, .cjs-span { cursor: pointer }}
