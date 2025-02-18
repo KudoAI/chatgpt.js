@@ -1,5 +1,6 @@
 // Init APP data
 const app = {
+    name: chrome.runtime.getManifest().name,
     version: chrome.runtime.getManifest().version, symbol: '🤖', cssPrefix: 'chatgpt-extension',
     author: { name: 'KudoAI', url: 'https://kudoai.com' },
     urls: {
