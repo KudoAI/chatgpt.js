@@ -30,7 +30,7 @@ const chatgpt = {
                    + 'button:has([d^="M15.6729"])', // Pencil icon (recorded chat mode)
             regen: 'button:has([d^="M3.06957"])', scroll: 'button:has([d^="M12 21C11.7348"])',
             send: '[data-testid=send-button]', sidebar: 'button[data-testid*=sidebar-button]',
-            stop: 'button[data-testid=stop-button]'
+            stop: 'button[data-testid=stop-button]', voice: 'button[data-testid*=composer-speech-button]'
         },
         chatDivs: {
             convo: 'main > div > div > div > div > div > div[class*=group]',
@@ -1000,6 +1000,8 @@ const chatgpt = {
         return navigator.languages[0] || navigator.language || navigator.browserLanguage
             || navigator.systemLanguage || navigator.userLanguage || ''
     },
+
+    getVoiceButton() { return document.querySelector(chatgpt.selectors.btns.voice) },
 
     header: {
         get() { return document.querySelector(chatgpt.selectors.header) },
@@ -1997,6 +1999,7 @@ const cjsFuncAliases = [
     ['getScrollToBottomButton', 'getScrollButton'],
     ['getStopButton', 'getStopGeneratingButton'],
     ['getTextarea', 'getTextArea', 'getChatbar', 'getChatBar', 'getChatbox', 'getChatBox'],
+    ['getVoiceButton', 'getVoiceModeButton'],
     ['isFullScreen', 'isFullscreen'],
     ['logout', 'logOut', 'logOff', 'signOff', 'signOut'],
     ['minify', 'codeMinify', 'minifyCode'],
