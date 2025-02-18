@@ -124,7 +124,9 @@
     moreExtensionsSpan.onclick = () => { open(app.urls.relatedExtensions) ; close() }
     moreExtensionsSpan.append(moreExtensionsIcon) ; footer.append(moreExtensionsSpan)
 
-    // Remove loading spinner
-    document.querySelectorAll('[class^=loading]').forEach(elem => elem.remove())
+    // Remove LOADING SPINNER after imgs load
+    Promise.all([...document.querySelectorAll('img')].map(img =>
+        img.complete ? Promise.resolve() : new Promise(resolve => img.onload = resolve)
+    )).then(() => document.querySelectorAll('[class^=loading]').forEach(elem => elem.remove()))
 
 })()
