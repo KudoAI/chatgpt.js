@@ -81,6 +81,7 @@
     - [getScrollToBottomButton](#getscrolltobottombutton)
     - [getSendButton](#getsendbutton)
     - [getStopGeneratingButton](#getstopgeneratingbutton)
+    - [getVoiceButton](#getVoiceButton)
     - [hideFooter](#hidefooter)
     - [hideHeader](#hideheader)
     - [showFooter](#showfooter)
@@ -1198,6 +1199,17 @@ Example code:
 ```js
 const stopBtn = chatgpt.getStopGeneratingButton();
 stopBtn.click();
+```
+
+### getVoiceButton
+
+Returns the chatbar button that activates Voice mode as an HTML element.
+
+Example code:
+
+```js
+const voiceBtn = chatgpt.getVoiceButton();
+getVoiceButton.click(); // activates Voice mode
 ```
 
 ### hideFooter
