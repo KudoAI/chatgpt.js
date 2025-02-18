@@ -320,7 +320,7 @@ main li pre { margin: 65px 0 !important }
 
 /* About section */
 #intro + p { /* ABOUT description */
-    margin-top: -488px !important ; font-size: 3.3rem !important ; color: #bbb ;
+    margin-top: -282px !important ; font-size: 3.3rem !important ; color: #bbb ;
     line-height: 4.3rem !important ; text-align: right ; width: 59% }
 #intro ~ ul:first-of-type { display: none } /* hide readme feature list */
 #intro h2 span { display: none !important } /* hide ABOUT heading */
@@ -331,6 +331,12 @@ main li pre { margin: 65px 0 !important }
 
 /* Headings */
 h2 { padding-top: 211px } /* add gaps for prettier parallax */
+
+/* Golden Sponsor */
+h3#golden-sponsor { font-size: 35px !important ; margin: 259px 0 0 55px !important }
+h3#golden-sponsor + a { position: relative ; top: -139px }
+#golden-sponsors img { width: 85% }
+div#golden-sponsors { margin-bottom: 128px }
 
 /* Greasemonkey/Chrome sections */
 #-greasemonkey, #-chrome { text-align: center ; margin-bottom: 55px !important }

@@ -221,6 +221,7 @@ const onLoadObserver = new MutationObserver(() => {
             // Establish TRIGGER POINTS for scroll FX
             const triggerElems = [
                 ...document.querySelectorAll('h2'),
+                document.querySelector('div#golden-sponsors'),
                 document.querySelector('h3#-greasemonkey'),
                 document.querySelector('h3#-chrome'),
                 document.querySelector('img[src*="assets.chatgptinfinity.com"]') // 1st showcase tile
@@ -325,7 +326,7 @@ const onLoadObserver = new MutationObserver(() => {
 
                 // Target TRIGGERS
                 const parallaxTriggers = []
-                document.querySelectorAll('#main, h2:not([id=about])').forEach(trigger => {
+                document.querySelectorAll('#main, h2, h3#golden-sponsor').forEach(trigger => {
                     const y = trigger.getBoundingClientRect().top - window.innerHeight / 1.2
                     const triggerElem = trigger.tagName === 'H2' ? trigger.parentElement : trigger
                     parallaxTriggers.push({ element: triggerElem, y })
