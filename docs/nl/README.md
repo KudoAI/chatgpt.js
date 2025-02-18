@@ -81,6 +81,23 @@
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
+<div id="golden-sponsors" align="center">
+<br>
+
+### Golden Sponsor:
+
+<a href="https://www.burncloud.com/893.html">
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/white.png?v=610795b">
+        <img width=685 src="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/black.png?v=610795b">
+    </picture>
+</a>
+<br><br><br>
+
+</div>
+
+<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
+
 <div id="importing">
 
 ## ⚡ De bibliotheek importeren
@@ -415,7 +432,14 @@ Deze bibliotheek bestaat dankzij code, vertalingen, problemen en ideeën van de 
     </picture>
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://burncloud.com/?utm_source=github&utm_medium=readme&utm_content=partner-logo&utm_campaign=chatgpt.js">
+<a href="https://www.burncloud.com/893.html">
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/white.png?v=610795b">
+        <img width=285 src="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/black.png?v=610795b">
+    </picture>
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.burncloud.com/893.html">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/white.png?v=610795b">
         <img width=285 src="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/black.png?v=610795b">
