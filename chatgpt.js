@@ -1187,7 +1187,7 @@ const chatgpt = {
 
     isLightMode() { return document.documentElement.classList.toString().includes('light') },
     isTyping() { return !!this.getStopButton() },
-
+    login() { window.location.href = 'https://chat.openai.com/auth/login' },
     logout() { window.location.href = 'https://chat.openai.com/auth/logout' },
 
     menu: {

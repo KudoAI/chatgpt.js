@@ -45,6 +45,7 @@
   - [User session](#user-session)
     - [getAccessToken `async`](#getaccesstoken-async)
     - [getAccountDetails `async`](#getaccountdetails-async)
+    - [login](#login)
     - [logout](#logout)
   - [Chats](#chats)
     - [askAndGetReply `async`](#askandgetreply-async)
@@ -621,6 +622,16 @@ Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single det
     }
     */
 })();
+```
+
+### login
+
+Navs to login page.
+
+Example code:
+
+```js
+chatgpt.login();
 ```
 
 ### logout
