@@ -54,14 +54,14 @@ body {
 /* Toggle elements */
 .toggle .track {
     display: block ; border-radius: 7px ; position: relative ; transform: scale(0.95) ; background: white ; 
-    border: 1px solid black ; top: 1px ; height: 10px ; width: 18px ; transition: background 0.15s ease-in-out
+    border: 1px solid black ; top: 1px ; height: 10px ; width: 18px ; transition: background 0.08s ease-in-out
 }
-.toggle.on .track { background: black }
+.toggle.on .track { background: black ; transition: background 0.15s ease-in-out }
 .toggle .track::before { /* knob */
     content: "" ; position: absolute ; height: 0.625rem ; width: 0.625rem ; left: -0.04rem ; top: -0.05rem ;
-    border: 1px solid black ; border-radius: 50% ; background: white ; transition: transform 0.15s ease-in-out
+    border: 1px solid black ; border-radius: 50% ; background: white ; transition: transform 0.08s ease-in-out
 }
-.toggle.on .track::before { transform: translateX(9px) }
+.toggle.on .track::before { transform: translateX(9px) ; transition: transform 0.15s ease-in-out }
   
 /* Footer */
 footer {
