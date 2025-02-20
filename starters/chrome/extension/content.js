@@ -24,12 +24,14 @@
             notify(...['msg', 'pos', 'notifDuration', 'shadow'].map(arg => req.options[arg]))
         else if (req.action == 'alert')
             modals.alert(...['title', 'msg', 'btns', 'checkbox', 'width'].map(arg => req.options[arg]))
-        else if (req.action == 'showAbout') chatgpt.isLoaded().then(() => { modals.open('about') })
-        else if (req.action == 'syncConfigToUI') syncConfigToUI(req.options)
+        else if (req.action == 'showAbout') {
+            config.skipAlert = true ; chatgpt.isLoaded().then(() => modals.open('about'))
+        } else if (req.action == 'syncConfigToUI') syncConfigToUI(req.options)
     })
 
     // Init SETTINGS
-    await settings.load(Object.keys(settings.controls), 'skipAlert')
+    await settings.load(Object.keys(settings.controls))
+    if (!config.skipAlert) await settings.load('skipAlert') // only if not showing About modal
 
     // Define FUNCTIONS
 
