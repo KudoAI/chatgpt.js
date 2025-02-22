@@ -24,7 +24,7 @@ const chatgpt = {
 
     selectors: {
         btns: {
-            continue: 'button.btn:has([d^="M4.47189"])', login: '[data-testid*=login]',
+            continue: 'button:has([class*=rotate] [d^="M4.47189"])', login: '[data-testid*=login]',
             newChat: 'button[data-testid*=new-chat-button],' // sidebar button (when logged in)
                    + 'button:has([d^="M3.06957"]),' // Cycle Arrows icon (Temp chat mode)
                    + 'button:has([d^="M15.6729"])', // Pencil icon (recorded chat mode)
