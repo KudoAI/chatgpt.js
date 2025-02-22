@@ -54,6 +54,7 @@
     - [exportChat `async`](#exportchat-async)
     - [getChatData `async`](#getchatdata-async)
     - [getChatInput](#getchatinput)
+    - [getErrorMsg](#geterrormsg)
     - [getLastPrompt `async`](#getlastprompt-async)
     - [getLastResponse `async`](#getlastresponse-async)
     - [getResponse](#getresponse)
@@ -870,6 +871,17 @@ Example code:
 ```js
 const chatInput = chatgpt.getChatInput();
 chatgpt.alert(chatInput); // Example output: 'Hello from chatgpt.js!'
+```
+
+### getErrorMsg
+
+Returns the error message (if any) of the last generation as a string.
+
+Example code:
+
+```js
+const chatErrorMsg = chatgpt.getErrorMsg();
+chatgpt.alert(chatErrorMsg); // Example output: 'Conversation not found'
 ```
 
 ### getLastPrompt `async`
