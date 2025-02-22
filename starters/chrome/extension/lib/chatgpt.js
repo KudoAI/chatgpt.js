@@ -1851,6 +1851,7 @@ const chatgpt = {
         hide() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!') },
         show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!') },
         isOff() { return !this.isOn() },
+
         isOn() {
             const sidebar = (() => {
                 return chatgpt.sidebar.exists() ? document.querySelector(chatgpt.selectors.sidebar) : null })()
@@ -2088,7 +2089,6 @@ const cjsFuncSynonyms = [
         }
     } while (aliasFuncCreated) // loop over new functions to encompass all variations
 })()
-
 
 // Define HELPER functions
 
