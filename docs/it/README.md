@@ -49,8 +49,8 @@
     <img src="https://img.shields.io/github/stars/KudoAI/chatgpt.js?label=Stelle&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="LICENSE.md">
     <img src="https://img.shields.io/badge/Licenza-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.com/KudoAI/chatgpt.js/tree/v3.6.3/dist/chatgpt.min.js">
-    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.6.3&label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
+<a href="https://github.com/KudoAI/chatgpt.js/tree/v3.7.0/dist/chatgpt.min.js">
+    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.7.0&label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/kudoai/chatgpt.js">
     <img src="https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Qualità+del+Codice&logo=codefactor&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge"></a>
 <a href="https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=kudoai_chatgpt.js">
@@ -110,7 +110,7 @@
 
 ```js
 (async () => {
-    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.6.3/dist/chatgpt.min.js');
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.7.0/dist/chatgpt.min.js');
     // Il tuo codice qui...
 })();
 ```
@@ -119,7 +119,7 @@
 
 ```js
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.6.3/dist/chatgpt.min.js');
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.7.0/dist/chatgpt.min.js');
 xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
@@ -141,7 +141,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.6.3/dist/chatgpt.min.js
+// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.7.0/dist/chatgpt.min.js
 // ==/UserScript==
 
 // Il tuo codice qui...
@@ -210,7 +210,7 @@ chatgpt.get('reply', 'last');
 
 Ogni chiamata ritorna ugualmente l'ultima risposta di ChatGPT. Se pensi che funzioni, probabilmente lo farà... quindi scrivilo!
 
-In caso contrario, consulta la [guida per l'utente](https://github.com/KudoAI/chatgpt.js/blob/v3.6.3/docs/USERGUIDE.md) estesa o invia semplicemente un [problema](https://github.com/KudoAI/chatgpt.js/issues) o [PR](https://github.com/KudoAI/chatgpt.js/pulls) e sarà integrato, facile!
+In caso contrario, consulta la [guida per l'utente](https://github.com/KudoAI/chatgpt.js/blob/v3.7.0/docs/USERGUIDE.md) estesa o invia semplicemente un [problema](https://github.com/KudoAI/chatgpt.js/issues) o [PR](https://github.com/KudoAI/chatgpt.js/pulls) e sarà integrato, facile!
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
@@ -455,7 +455,7 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 <div align="center">
 
 **[Versioni](https://github.com/KudoAI/chatgpt.js/releases)** /
-[Guida per l'utente](https://github.com/KudoAI/chatgpt.js/blob/v3.6.3/docs/USERGUIDE.md) /
+[Guida per l'utente](https://github.com/KudoAI/chatgpt.js/blob/v3.7.0/docs/USERGUIDE.md) /
 [Discutere](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#top">Torna all'inizio ↑</a>
 

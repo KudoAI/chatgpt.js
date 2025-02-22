@@ -49,8 +49,8 @@
     <img src="https://img.shields.io/github/stars/KudoAI/chatgpt.js?label=星星&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="LICENSE.md">
     <img src="https://img.shields.io/badge/许可证-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.com/KudoAI/chatgpt.js/tree/v3.6.3/dist/chatgpt.min.js">
-    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.6.3&label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
+<a href="https://github.com/KudoAI/chatgpt.js/tree/v3.7.0/dist/chatgpt.min.js">
+    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.7.0&label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/kudoai/chatgpt.js">
     <img src="https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=代码质量&logo=codefactor&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge"></a>
 <a href="https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=kudoai_chatgpt.js">
@@ -109,7 +109,7 @@
 
 ```js
 (async () => {
-    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.6.3/dist/chatgpt.min.js');    
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.7.0/dist/chatgpt.min.js');    
     // 这里是您的代码
 })();
 ```
@@ -118,7 +118,7 @@
 
 ```js
 var xhr = new XMLHttpRequest()
-xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.6.3/dist/chatgpt.min.js')
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.7.0/dist/chatgpt.min.js')
 xhr.onload = function() {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script')
@@ -140,7 +140,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.6.3/dist/chatgpt.min.js
+// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.7.0/dist/chatgpt.min.js
 // ==/UserScript==
 
 // 这里是您的代码
@@ -209,7 +209,7 @@ chatgpt.get('reply', 'last')
 
 每个调用都会同样获取最后一个回应。如果您认为它有效，那么它可能就是有效的……所以只需输入它！（谁有时间看文档？）
 
-如果没有，请查看扩展的[用户指南](https://github.com/KudoAI/chatgpt.js/blob/v3.6.3/docs/USERGUIDE.md)，或者只需提交一个[问题](https://github.com/KudoAI/chatgpt.js/issues) 或 [PR](https://github.com/KudoAI/chatgpt.js/pulls) 它将被集成，简单易行！
+如果没有，请查看扩展的[用户指南](https://github.com/KudoAI/chatgpt.js/blob/v3.7.0/docs/USERGUIDE.md)，或者只需提交一个[问题](https://github.com/KudoAI/chatgpt.js/issues) 或 [PR](https://github.com/KudoAI/chatgpt.js/pulls) 它将被集成，简单易行！
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
@@ -454,7 +454,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 <div align="center">
 
 **[发布](https://github.com/KudoAI/chatgpt.js/releases)** /
-[用户指南](https://github.com/KudoAI/chatgpt.js/blob/v3.6.3/docs/USERGUIDE.md) / 
+[用户指南](https://github.com/KudoAI/chatgpt.js/blob/v3.7.0/docs/USERGUIDE.md) / 
 [讨论](https://github.com/KudoAI/chatgpt.js/discussions) / 
 <a href="#top">返回顶部 ↑</a>
 
