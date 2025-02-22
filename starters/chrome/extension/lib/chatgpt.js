@@ -28,7 +28,7 @@ const chatgpt = {
             newChat: 'button[data-testid*=new-chat-button],' // sidebar button (when logged in)
                    + 'button:has([d^="M3.06957"]),' // Cycle Arrows icon (Temp chat mode)
                    + 'button:has([d^="M15.6729"])', // Pencil icon (recorded chat mode)
-            regen: 'button[data-testid*="regenerate"],' // oval button in place of chatbar on errors
+            regen: 'button[data-testid*=regenerate],' // oval button in place of chatbar on errors
                  + 'div[role=menuitem]:has([d^="M3.06957"])', // 'Try Again' entry of model selector below msg
             scroll: 'button:has([d^="M12 21C11.7348"])',
             send: '[data-testid=send-button]', sidebar: 'button[data-testid*=sidebar-button]',
