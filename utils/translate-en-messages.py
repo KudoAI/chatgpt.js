@@ -1,6 +1,6 @@
 '''
 Script:       translate-en-messages.py
-Version:      2024.11.24.1
+Version:      2025.2.7
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
 Homepage:     https://github.com/adamlui/python-utils
@@ -22,7 +22,10 @@ target_langs = [
 
 # UI initializations
 terminal_width = os.get_terminal_size()[0]
-def print_trunc(msg, end='\n') : print(msg if len(msg) < terminal_width else msg[0:terminal_width-4] + '...', end=end)
+def print_trunc(msg, end='\n'):
+    truncated_lines = [
+        line if len(line) < terminal_width else line[:terminal_width - 4] + '...' for line in msg.splitlines() ]
+    print('\n'.join(truncated_lines), end=end)
 def overwrite_print(msg) : stdout.write('\r' + msg.ljust(terminal_width)[:terminal_width])
 
 print('')
@@ -77,8 +80,8 @@ for lang_code in output_langs:
     lang_added, lang_skipped, lang_translated = False, False, False
     folder = lang_code.replace('-', '_') ; translated_msgs = {}
     if '-' in lang_code: # cap suffix
-        sep_index = folder.index('_')
-        folder = folder[:sep_index] + '_' + folder[sep_index+1:].upper()
+        sep_idx = folder.index('_')
+        folder = folder[:sep_idx] + '_' + folder[sep_idx+1:].upper()
 
     # Skip English locales
     if lang_code.startswith('en'):
@@ -121,11 +124,11 @@ for lang_code in output_langs:
 
     # Format messages
     formatted_msgs = '{\n'
-    for index, (key, message_data) in enumerate(translated_msgs.items()):
+    for idx, (key, message_data) in enumerate(translated_msgs.items()):
         formatted_msg = json.dumps(message_data, ensure_ascii=False) \
                             .replace('{', '{ ').replace('}', ' }') # add spacing
         formatted_msgs += ( f'  "{key}": {formatted_msg}'
-                        + ( ',\n' if index < len(translated_msgs) - 1 else '\n' )) # terminate line
+                        + ( ',\n' if idx < len(translated_msgs) - 1 else '\n' )) # terminate line
     formatted_msgs += '}'
     with open(msgs_path, 'w', encoding='utf-8') as output_file : output_file.write(formatted_msgs + '\n')
 
