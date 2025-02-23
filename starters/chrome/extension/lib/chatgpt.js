@@ -297,7 +297,7 @@ const chatgpt = {
             // Create/show label
             const checkboxLabel = document.createElement('label')
             checkboxLabel.onclick = () => { checkboxInput.checked = !checkboxInput.checked ; checkboxFn() }
-            checkboxLabel.textContent = checkboxFn.name.charAt(0).toUpperCase() // capitalize first char
+            checkboxLabel.textContent = checkboxFn.name[0].toUpperCase() // capitalize first char
                 + checkboxFn.name.slice(1) // format remaining chars
                     .replace(/([A-Z])/g, (match, letter) => ' ' + letter.toLowerCase()) // insert spaces, convert to lowercase
                     .replace(/\b(\w+)nt\b/gi, '$1n\'t') // insert apostrophe in 'nt' suffixes
@@ -2095,7 +2095,7 @@ const cjsFuncSynonyms = [
 // Define HELPER functions
 
 function toCamelCase(words) {
-    return words.map((word, idx) => idx == 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)).join('') }
+    return words.map((word, idx) => idx == 0 ? word : word[0].toUpperCase() + word.slice(1)).join('') }
 
 // Prefix console logs w/ '🤖 chatgpt.js >> '
 const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info
