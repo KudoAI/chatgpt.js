@@ -1,6 +1,6 @@
 '''
 Script:       translate-en-messages.py
-Version:      2025.2.7
+Version:      2025.2.23
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
 Homepage:     https://github.com/adamlui/python-utils
