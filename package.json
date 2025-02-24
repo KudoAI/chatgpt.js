@@ -75,7 +75,7 @@
     "@html-eslint/parser": "^0.35.0",
     "@stylistic/eslint-plugin-js": "^4.0.1",
     "docsify-cli": "^4.4.4",
-    "eslint": "^9.20.1",
+    "eslint": "^9.21.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-regexp": "^2.7.0",
     "eslint-plugin-yml": "^1.17.0",
