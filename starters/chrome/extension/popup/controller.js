@@ -23,7 +23,7 @@
         return await chrome.tabs.sendMessage(activeTab.id, { action: action, options: { ...options }})
     }
 
-    function settingIsEnabled(key) { return config[key] ^ /disabled|hidden/i.test(key) }
+    function settingIsEnabled(key) { return config[key] ^ /disabled/i.test(key) }
 
     const sync = {
         fade() {
