@@ -116,6 +116,4 @@ echo -e "${BY}\nRestoring original Git config...\n${NC}"
 while IFS='=' read -r key val ; do git config --global "$key" "$val" ; done < ~/.gitconfig.backup
 
 # Print final summary
-echo -e "\n${BG}Successfully bumped to v$NEW_VER$(
-    [[ "$*" == *"--publish"* ]] && echo ' and published to npm'
-)!${NC}"
+echo -e "\n${BG}Successfully bumped to v$NEW_VER$([[ "$*" == *"--publish"* ]] && echo ' and published to npm')!${NC}"
