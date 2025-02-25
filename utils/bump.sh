@@ -117,5 +117,5 @@ while IFS='=' read -r key val ; do git config --global "$key" "$val" ; done < ~/
 
 # Print final summary
 echo -e "\n${BG}Successfully bumped to v$NEW_VER$(
-    [[ "$*" == *"--publish"* ]] && echo ' and published to npm' || echo ''
+    [[ "$*" == *"--publish"* ]] && echo ' and published to npm'
 )!${NC}"
