@@ -124,7 +124,8 @@ const chatgpt = {
                     chatgpt.draggingModal = event.currentTarget
                     event.preventDefault() // prevent sub-elems like icons being draggable
                     Object.assign(chatgpt.draggingModal.style, {
-                        cursor: 'grabbing', transition: '0.1s', willChange: 'transform', transform: 'scale(1.05)' });
+                        transition: '0.1s', willChange: 'transform', transform: 'scale(1.05)' })
+                    document.body.style.cursor = 'grabbing'; // update cursor
                     [...chatgpt.draggingModal.children] // prevent hover FX if drag lags behind cursor
                         .forEach(child => child.style.pointerEvents = 'none');
                     ['mousemove', 'mouseup'].forEach(eventType => // add listeners
@@ -143,7 +144,8 @@ const chatgpt = {
 
                 mouseup() { // restore styles/pointer events, remove listeners, reset chatgpt.draggingModal
                     Object.assign(chatgpt.draggingModal.style, { // restore styles
-                        cursor: 'inherit', transition: 'inherit', willChange: 'auto', transform: 'scale(1)' });
+                        cursor: 'inherit', transition: 'inherit', willChange: 'auto', transform: 'scale(1)' })
+                    document.body.style.cursor = ''; // restore cursor
                     [...chatgpt.draggingModal.children] // restore pointer events
                         .forEach(child => child.style.pointerEvents = '');
                     ['mousemove', 'mouseup'].forEach(eventType => // remove listeners
