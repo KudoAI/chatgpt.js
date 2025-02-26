@@ -15,6 +15,8 @@ window.settings = {
         // replyLanguage: { type: 'prompt', symbol: '🌐', label: 'Reply Language' }
     },
 
+    isEnabled(key) { return window.config[key] ^ /disabled/i.test(key) },
+
     load(...keys) {
         return Promise.all(keys.flat().map(async key => // resolve promise when all keys load
             window.config[key] = (await chrome.storage.local.get(key))[key]
