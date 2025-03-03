@@ -1543,9 +1543,8 @@ const chatgpt = {
             // responseToGet = index of response to get (defaults to latest if '' unpassed)
             // regenResponseToGet = index of regenerated response to get (defaults to latest if '' unpassed)
 
-                if (window.location.href.startsWith('https://chatgpt.com/c/'))
-                    return this.getFromDOM.apply(null, arguments)
-                else return this.getFromAPI.apply(null, arguments)
+                return this[`getFrom${ location.href.startsWith('https://chatgpt.com/c/') ? 'DOM' : 'API' }`]
+                    .apply(null, arguments)
         },
 
         getFromAPI(chatToGet, responseToGet) {
@@ -1859,7 +1858,7 @@ const chatgpt = {
         isOn() {
             const sidebar = (() => {
                 return chatgpt.sidebar.exists() ? document.querySelector(chatgpt.selectors.sidebar) : null })()
-            if (!sidebar) { console.error('Sidebar element not found!'); return false }
+            if (!sidebar) { return console.error('Sidebar element not found!') || false }
             else return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
               : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px'
