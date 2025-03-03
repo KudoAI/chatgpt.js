@@ -1367,7 +1367,7 @@ const chatgpt = {
                 for (const divId of thisQuadrantQueue.slice(0, -1)) { // exclude new div
                     const oldDiv = document.getElementById(divId),
                           offsetProp = oldDiv.style.top ? 'top' : 'bottom', // pick property to change
-                          vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height
+                          vOffset = +parseInt(oldDiv.style[offsetProp]) +5 + oldDiv.getBoundingClientRect().height
                     oldDiv.style[offsetProp] = `${ vOffset }px` // change prop
                 }
             } catch (err) {}
