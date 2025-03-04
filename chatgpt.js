@@ -1605,7 +1605,7 @@ const chatgpt = {
         const textArea = chatgpt.getChatBox()
         if (!textArea) return console.error('Chatbar element not found!')
         const msgP = document.createElement('p'); msgP.textContent = msg
-        textArea.replaceChild(msgP, textArea.querySelector('p'))
+        textArea.querySelector('p').replaceWith(msgP)
         textArea.dispatchEvent(new Event('input', { bubbles: true })) // enable send button
         setTimeout(function delaySend() {
             const sendBtn = chatgpt.getSendButton()
