@@ -152,14 +152,12 @@ const onLoadObserver = new MutationObserver(() => {
                 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share' : '' )
             ytDemo.setAttribute('allowfullscreen', '')
             ytDemo.style.minWidth = 'fit-content'; ytDemo.style.width = '855px'; ytDemo.style.marginBottom = '30px'
-            ghDemo.parentNode.replaceChild(ytDemo, ghDemo)
+            ghDemo.replaceWith(ytDemo)
             ytDemo.parentNode.style.textAlign = 'center'
 
             // Strip blockquote wrappers from showcase app descriptions
-            document.querySelectorAll('blockquote').forEach(blockquote => {
-                const parent = blockquote.parentNode, content = blockquote.innerHTML
-                parent.replaceChild(document.createRange().createContextualFragment(content), blockquote)
-            })
+            document.querySelectorAll('blockquote').forEach(blockquote =>
+                blockquote.replaceWith(document.createRange().createContextualFragment(blockquote.innerHTML)))
 
             // Convert weserv.nl img srcs in contributor avatars into renderable ones
             document.querySelectorAll('img[src], source[srcset]').forEach(elem => {
@@ -303,7 +301,7 @@ const onLoadObserver = new MutationObserver(() => {
                       srcSet = srcElement.getAttribute('srcset'),
                       imgElement = document.createElement('img')
                 imgElement.setAttribute('src', srcSet)
-                picture.parentNode.replaceChild(imgElement, picture)
+                picture.replaceWith(imgElement)
             })
 
             // Strip whitespace after MICROSOFT partner logo
