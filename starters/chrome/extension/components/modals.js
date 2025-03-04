@@ -40,8 +40,7 @@ window.modals = {
             btn.style.cssText = 'height: 55px ; min-width: 136px ; text-align: center'
 
             // Replace buttons w/ clones that don't dismiss modal
-            const btnClone = btn.cloneNode(true)
-            btn.parentNode.replaceChild(btnClone, btn) ; btn = btnClone
+            btn.replaceWith(btn = btn.cloneNode(true))
             btn.onclick = () => this.safeWinOpen(
                 btn.textContent == 'Get Support' ? `${modals.imports.app.urls.gitHub}/issues`
               : btn.textContent == 'Rate Us' ? `${modals.imports.app.urls.gitHub}/discussions`
