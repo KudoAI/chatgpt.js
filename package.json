@@ -27,7 +27,6 @@
     "lint:all": "eslint .",
     "lint:fix": "eslint . --fix --cache",
     "lint:fix-all": "eslint . --fix",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "preview:docs": "node utils/preview-docs",
     "translate": "py utils/translate-en-messages.py",
     "build:js": "bash utils/build.sh",
