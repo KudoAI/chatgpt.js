@@ -59,6 +59,8 @@
     <img src="https://img.shields.io/badge/Упоминается_в-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.producthunt.com/posts/chatgpt-js">
     <img src="https://img.shields.io/badge/Представлено_на-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://trendshift.io/repositories/2896">
+    <img src="https://img.shields.io/badge/GitHub_Repos-Трендил_в_топ--20-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="#">
     <img src="https://img.shields.io/badge/Запросы_jsDelivr-2,000,000+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 
