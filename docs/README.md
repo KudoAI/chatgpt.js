@@ -12,7 +12,7 @@
         </a>
         English |
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/zh-cn#readme">简体中文</a> |
-        <a href="zh-tw#readme">繁體中文</a> |
+        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/zh-tw#readme">繁體中文</a> |
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/ja#readme">日本</a> |
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/ko#readme">한국인</a> |
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/hi#readme">हिंदी</a> |
