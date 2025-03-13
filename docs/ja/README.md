@@ -46,23 +46,23 @@
 <div id="shields" align="center">
 
 <a href="https://github.com/KudoAI/chatgpt.js/stargazers">
-    <img src="https://img.shields.io/github/stars/KudoAI/chatgpt.js?label=出演者&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    <img src="https://img.shields.io/github/stars/KudoAI/chatgpt.js?label=%E5%87%BA%E6%BC%94%E8%80%85&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="LICENSE.md">
-    <img src="https://img.shields.io/badge/ライセンス-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    <img src="https://img.shields.io/badge/%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/chatgpt.js/tree/v3.7.1/dist/chatgpt.min.js">
-    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.7.1&label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
+    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.7.1&label=%E7%B8%AE%E5%B0%8F%E3%82%B5%E3%82%A4%E3%82%BA&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/kudoai/chatgpt.js">
-    <img src="https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=コードの品質&logo=codefactor&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge"></a>
+    <img src="https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E5%93%81%E8%B3%AA&logo=codefactor&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge"></a>
 <a href="https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=kudoai_chatgpt.js">
-    <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dkudoai_chatgpt.js%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=脆弱性&color=gold"></a>
+    <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dkudoai_chatgpt.js%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=%E8%84%86%E5%BC%B1%E6%80%A7&color=gold"></a>
 <a href="https://github.com/sindresorhus/awesome-chatgpt#javascript">
-    <img src="https://img.shields.io/badge/で言及-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    <img src="https://img.shields.io/badge/%E3%81%A7%E8%A8%80%E5%8F%8A-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.producthunt.com/posts/chatgpt-js">
-    <img src="https://img.shields.io/badge/で特集されました-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    <img src="https://img.shields.io/badge/%E3%81%A7%E7%89%B9%E9%9B%86%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://trendshift.io/repositories/2896">
-    <img src="https://img.shields.io/badge/GitHub_Repos-トップ20入りトレンド-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    <img src="https://img.shields.io/badge/GitHub_Repos-%E3%83%88%E3%83%83%E3%83%9720%E5%85%A5%E3%82%8A%E3%83%88%E3%83%AC%E3%83%B3%E3%83%89-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="#">
-    <img src="https://img.shields.io/badge/jsDelivr_リクエスト-2,000,000+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    <img src="https://img.shields.io/badge/jsDelivr_%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88-2,000,000+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 
 </div>
 

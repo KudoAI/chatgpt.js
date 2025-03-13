@@ -48,11 +48,11 @@
 <a href="https://github.com/KudoAI/chatgpt.js/stargazers">
     <img src="https://img.shields.io/github/stars/KudoAI/chatgpt.js?label=Estrelas&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="LICENSE.md">
-    <img src="https://img.shields.io/badge/Licença-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    <img src="https://img.shields.io/badge/Licen%C3%A7a-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/chatgpt.js/tree/v3.7.1/dist/chatgpt.min.js">
-    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.7.1&label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
+    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.7.1&label=Tamanho%20reduzido&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/kudoai/chatgpt.js">
-    <img src="https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Qualidade+do+Código&logo=codefactor&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge"></a>
+    <img src="https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Qualidade+do+C%C3%B3digo&logo=codefactor&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge"></a>
 <a href="https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=kudoai_chatgpt.js">
     <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dkudoai_chatgpt.js%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=Vulnerabilidades&color=gold"></a>
 <a href="https://github.com/sindresorhus/awesome-chatgpt#javascript">
@@ -62,7 +62,7 @@
 <a href="https://trendshift.io/repositories/2896">
     <img src="https://img.shields.io/badge/GitHub_Repos-Tendenciou_no_Top_20-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="#">
-    <img src="https://img.shields.io/badge/Solicitações_jsDelivr-2,000,000+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    <img src="https://img.shields.io/badge/Solicita%C3%A7%C3%B5es_jsDelivr-2,000,000+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 
 </div>
 
