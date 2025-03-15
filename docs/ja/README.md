@@ -249,7 +249,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautocontinue.com/images/icons/continue-symbol/white/icon48.png?v=61c4f16"><img width=21 src="https://assets.chatgptautocontinue.com/images/icons/continue-symbol/black/icon48.png?v=61c4f16"></picture> [ChatGPT 自動継続 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.chatgptautocontinue.com/images/badges/awesome/badge.svg?3c80c0c" style="margin:0 0 -3px 3px"></a>
 
-> ChatGPTの複数の応答を自動的に継続的に生成し続ける。
+> ChatGPT の応答が中断されたときに、自動的に回答の生成を継続します。
 <br>[インストール](https://docs.chatgptautocontinue.com/#-installation) / 
 [お読みください](https://docs.chatgptautocontinue.com/#readme) / 
 [議論](https://github.chatgptautocontinue.com/discussions)

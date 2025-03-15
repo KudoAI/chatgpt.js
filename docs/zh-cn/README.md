@@ -248,7 +248,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautocontinue.com/images/icons/continue-symbol/white/icon48.png?v=61c4f16"><img width=21 src="https://assets.chatgptautocontinue.com/images/icons/continue-symbol/black/icon48.png?v=61c4f16"></picture> [ChatGPT 自动继续 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.chatgptautocontinue.com/images/badges/awesome/badge.svg?3c80c0c" style="margin:0 0 -3px 3px"></a>
 
-> 自动继续生成多个 ChatGPT 响应。
+> 当 ChatGPT 响应被切断时自动继续生成答案。
 <br>[安装](https://docs.chatgptautocontinue.com/zh-cn#-如何安装) / 
 [自述文件](https://docs.chatgptautocontinue.com/zh-cn#readme) / 
 [讨论](https://github.chatgptautocontinue.com/discussions)
