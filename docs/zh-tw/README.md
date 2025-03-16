@@ -49,6 +49,8 @@
     <img src="https://img.shields.io/github/stars/KudoAI/chatgpt.js?label=%E6%98%9F%E6%98%9F&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="LICENSE.md">
     <img src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://www.npmjs.com/package/@kudoai/chatgpt.js/v/latest">
+    <img src="https://img.shields.io/npm/v/%40kudoai%2Fchatgpt.js?logo=npm&logoColor=white&labelColor=464646&color=blue&style=for-the-badge&label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC"></a>
 <a href="https://github.com/KudoAI/chatgpt.js/tree/v3.7.1/dist/chatgpt.min.js">
     <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.7.1&label=%E6%9C%80%E5%B0%8F%E5%8C%96%E5%B0%BA%E5%AF%B8&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/kudoai/chatgpt.js">
