@@ -87,8 +87,22 @@
 
 <div id="golden-sponsors" align="center">
 <br>
+    
+### Supported by:
+<div align="center" markdown="1">
+   <br>
+   <br>
+   <a href="https://www.warp.dev/chatgptjs" target="_blank">
+      <img alt="Warp sponsorship" width="600" src="https://github.com/user-attachments/assets/775dd593-9b5f-40f1-bf48-479faff4c27b">
+   </a>
 
-### Golden Sponsor:
+### [Warp, the AI Devtool that lives in your terminal](https://www.warp.dev/perplexica)
+
+[Available for MacOS, Linux, & Windows](https://www.warp.dev/perplexica)
+
+</div>
+<br>
+</br>
 
 <a href="https://www.burncloud.com/893.html">
     <picture>
