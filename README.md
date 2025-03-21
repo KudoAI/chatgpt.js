@@ -96,9 +96,9 @@
       <img alt="Warp sponsorship" width="600" src="https://github.com/user-attachments/assets/775dd593-9b5f-40f1-bf48-479faff4c27b">
    </a>
 
-### [Warp, the AI Devtool that lives in your terminal](https://www.warp.dev/perplexica)
+### [Warp, the AI Devtool that lives in your terminal](https://www.warp.dev/chatgptjs)
 
-[Available for MacOS, Linux, & Windows](https://www.warp.dev/perplexica)
+[Available for MacOS, Linux, & Windows](https://www.warp.dev/chatgptjs)
 
 </div>
 <br>
