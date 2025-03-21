@@ -88,7 +88,20 @@
 <div id="golden-sponsors" align="center">
 <br>
 
-### Golden Sponsor:
+### ゴールデン スポンサー:
+
+<div align="center">
+    <br><br>
+    <a href="https://www.warp.dev/chatgptjs" target="_blank">
+        <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
+    </a>
+    <h3><a href="https://www.warp.dev/chatgptjs" target="_blank">
+        ターミナルで使える AI 開発ツール、Warp</h3>
+    <a href="https://www.warp.dev/chatgptjs" target="_blank">
+        MacOS、Linux、Windows で利用可能</a>
+</div>
+
+<br><br>
 
 <a href="https://www.burncloud.com/893.html" target="_blank">
     <picture>
@@ -429,6 +442,13 @@ chatgpt.js で何かを作成して共有したい場合は、<a href="mailto:sh
 
 **chatgpt.js** は以下の資金によって一部運営されています:
 
+<a href="https://www.burncloud.com/893.html" target="_blank">
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/white.png?v=610795b">
+        <img width=285 src="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/black.png?v=610795b">
+    </picture>
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://microsoft.com?utm_source=github&utm_medium=readme&utm_content=partner-logo&utm_campaign=chatgpt.js" target="_blank">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/microsoft/white.png?v=e638eac">
@@ -436,10 +456,10 @@ chatgpt.js で何かを作成して共有したい場合は、<a href="mailto:sh
     </picture>
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.burncloud.com/893.html" target="_blank">
+<a href="https://www.warp.dev/chatgptjs" target="_blank">
     <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/white.png?v=610795b">
-        <img width=285 src="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/black.png?v=610795b">
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/warp/white.svg?v=476e837">
+        <img width=220 src="https://assets.chatgptjs.org/images/logos/partners/warp/black.svg?v=476e837">
     </picture>
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

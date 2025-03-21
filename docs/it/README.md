@@ -88,7 +88,20 @@
 <div id="golden-sponsors" align="center">
 <br>
 
-### Golden Sponsor:
+### Sponsor d'oro:
+
+<div align="center">
+    <br><br>
+    <a href="https://www.warp.dev/chatgptjs" target="_blank">
+        <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
+    </a>
+    <h3><a href="https://www.warp.dev/chatgptjs" target="_blank">
+        Warp, lo strumento di sviluppo AI che vive nel tuo terminale</h3>
+    <a href="https://www.warp.dev/chatgptjs" target="_blank">
+        Disponibile per MacOS, Linux e Windows</a>
+</div>
+
+<br><br>
 
 <a href="https://www.burncloud.com/893.html" target="_blank">
     <picture>
@@ -429,6 +442,13 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
 
 **chatgpt.js** è finanziato in parte da:
 
+<a href="https://www.burncloud.com/893.html" target="_blank">
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/white.png?v=610795b">
+        <img width=285 src="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/black.png?v=610795b">
+    </picture>
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://microsoft.com?utm_source=github&utm_medium=readme&utm_content=partner-logo&utm_campaign=chatgpt.js" target="_blank">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/microsoft/white.png?v=e638eac">
@@ -436,10 +456,10 @@ Questa libreria esiste grazie al codice, alle traduzioni, alle issues e alle ide
     </picture>
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.burncloud.com/893.html" target="_blank">
+<a href="https://www.warp.dev/chatgptjs" target="_blank">
     <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/white.png?v=610795b">
-        <img width=285 src="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/black.png?v=610795b">
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/warp/white.svg?v=476e837">
+        <img width=220 src="https://assets.chatgptjs.org/images/logos/partners/warp/black.svg?v=476e837">
     </picture>
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

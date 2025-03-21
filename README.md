@@ -89,20 +89,19 @@
 <br>
     
 ### Golden Sponsors:
-<div align="center" markdown="1">
-   <br>
-   <br>
-   <a href="https://www.warp.dev/chatgptjs" target="_blank">
-      <img alt="Warp sponsorship" width="600" src="https://github.com/user-attachments/assets/775dd593-9b5f-40f1-bf48-479faff4c27b">
-   </a>
 
-### [Warp, the AI Devtool that lives in your terminal](https://www.warp.dev/chatgptjs)
-
-[Available for MacOS, Linux, & Windows](https://www.warp.dev/chatgptjs)
-
+<div align="center">
+    <br><br>
+    <a href="https://www.warp.dev/chatgptjs" target="_blank">
+        <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
+    </a>
+    <h3><a href="https://www.warp.dev/chatgptjs" target="_blank">
+        Warp, the AI Devtool that lives in your terminal</h3>
+    <a href="https://www.warp.dev/chatgptjs" target="_blank">
+        Available for MacOS, Linux, & Windows</a>
 </div>
-<br>
-</br>
+
+<br><br>
 
 <a href="https://www.burncloud.com/893.html" target="_blank">
     <picture>
@@ -446,6 +445,13 @@ This library exists thanks to code, translations, issues & ideas from the follow
 
  **chatgpt.js** is funded in part by:
 
+<a href="https://www.burncloud.com/893.html" target="_blank">
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/white.png?v=610795b">
+        <img width=285 src="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/black.png?v=610795b">
+    </picture>
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://microsoft.com?utm_source=github&utm_medium=readme&utm_content=partner-logo&utm_campaign=chatgpt.js" target="_blank">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/microsoft/white.png?v=e638eac">
@@ -453,10 +459,10 @@ This library exists thanks to code, translations, issues & ideas from the follow
     </picture>
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.burncloud.com/893.html" target="_blank">
+<a href="https://www.warp.dev/chatgptjs" target="_blank">
     <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/white.png?v=610795b">
-        <img width=285 src="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/black.png?v=610795b">
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/warp/white.svg?v=476e837">
+        <img width=220 src="https://assets.chatgptjs.org/images/logos/partners/warp/black.svg?v=476e837">
     </picture>
 </a>
 
