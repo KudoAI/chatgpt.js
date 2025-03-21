@@ -89,20 +89,19 @@
 <br>
     
 ### Golden Sponsors:
-<div align="center" markdown="1">
-   <br>
-   <br>
-   <a href="https://www.warp.dev/chatgptjs" target="_blank">
-      <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
-   </a>
 
-### [Warp, the AI Devtool that lives in your terminal](https://www.warp.dev/chatgptjs)
-
-[Available for MacOS, Linux, & Windows](https://www.warp.dev/chatgptjs)
-
+<div align="center">
+    <br><br>
+    <a href="https://www.warp.dev/chatgptjs" target="_blank">
+        <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
+    </a>
+    <h3><a href="https://www.warp.dev/chatgptjs" target="_blank">
+        Warp, the AI Devtool that lives in your terminal</h3>
+    <a href="https://www.warp.dev/chatgptjs" target="_blank">
+        Available for MacOS, Linux, & Windows</a>
 </div>
-<br>
-</br>
+
+<br><br>
 
 <a href="https://www.burncloud.com/893.html" target="_blank">
     <picture>
