@@ -421,6 +421,8 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href=
     <img title="@JanumalaAkhilendra" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/82641474?first-contrib=2024.10.30-improve-hindi-readme&h=47&w=47&mask=circle&maxage=7d"></a>
 <a href="https://github.com/AliasUruz" target="_blank">
     <img title="@AliasUruz" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/130197125?first-contrib=2024.12.1-new-chat-selector-outdated-report&h=47&w=47&mask=circle&maxage=7d"></a>
+<a href="https://github.com/ericdachen" target="_blank">
+    <img title="@ericdachen" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54382303?first-contrib=2025.3.20-implement-warp-to-golden-sponsors&h=47&w=47&mask=circle&maxage=7d"></a>
 <a href="https://github.com/dependabot" target="_blank">
     <img title="Dependabot" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=47&w=47&mask=circle&maxage=7d"></a>
 <a href="https://chatgpt.com" target="_blank">
