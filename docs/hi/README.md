@@ -87,7 +87,7 @@
 
 <div id="golden-sponsors" align="center">
     <br>
-    <h3>Golden Sponsors:</h3>
+    <h3>स्वर्ण प्रायोजक:</h3>
     <div id="creatives">
         <div id="warp">
             <br><br>

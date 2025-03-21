@@ -88,7 +88,7 @@
 
 <div id="golden-sponsors" align="center">
     <br>
-    <h3>Golden Sponsors:</h3>
+    <h3>골든 스폰서:</h3>
     <div id="creatives">
         <div id="warp">
             <br><br>
