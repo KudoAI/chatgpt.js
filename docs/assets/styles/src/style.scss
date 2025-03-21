@@ -327,16 +327,20 @@ main li pre { margin: 65px 0 !important }
 #feature-list { /* generated in `../../js/src/online-modifier.js` */
     font-family: 'IBM Plex Mono', 'Roboto Mono', Monaco, courier, monospace !important ;
     font-size: 1.4rem ; color: $green ; position: relative ; float: right ;
-    height: 100px ; top: -311px ; right: -90px ; width: 41% ; margin-bottom: 365px }
+    height: 100px ; top: -311px ; right: -90px ; width: 41% ; margin-bottom: 200px }
 
 /* Headings */
 h2 { padding-top: 211px } /* add gaps for prettier parallax */
 
-/* Golden Sponsor */
-h3#golden-sponsor { font-size: 35px !important ; margin: 259px 0 0 55px !important }
-h3#golden-sponsor + a { position: relative ; top: -139px }
+/* Golden Sponsors */
+#golden-sponsors { display: flex ; flex-direction: column ; margin: 360px 0 -155px }
+#golden-sponsors > h3 { font-size: 35px !important ; color: white ; width: 80vw }
+#golden-sponsors #creatives {
+    display: flex ; flex-direction: row ; align-items: center ; width: 80vw ; margin-bottom: 200px }
 #golden-sponsors img { width: 85% }
-div#golden-sponsors { margin-bottom: 128px }
+#warp, #burncloud { padding: 81px 0 } /* v-pad sponsors */
+#warp h3 { font-size: 31px !important } /* tagline */
+#warp i > a { font-size: 19px } /* platform availability */
 
 /* Greasemonkey/Chrome sections */
 #-greasemonkey, #-chrome { text-align: center ; margin-bottom: 55px !important }
