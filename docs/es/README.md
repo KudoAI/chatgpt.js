@@ -86,20 +86,19 @@
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="golden-sponsors" align="center">
+
 <br>
 
 ### Patrocinadores Golden:
 
-<div align="center">
-    <br><br>
-    <a href="https://www.warp.dev/chatgptjs" target="_blank">
-        <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
-    </a>
-    <h3><a href="https://www.warp.dev/chatgptjs" target="_blank">
-        Warp, la herramienta de desarrollo de IA que reside en tu terminal</h3>
-    <a href="https://www.warp.dev/chatgptjs" target="_blank">
-        Disponible para macOS, Linux y Windows</a>
-</div>
+<br><br>
+<a href="https://www.warp.dev/chatgptjs" target="_blank">
+    <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
+</a>
+<h3><a href="https://www.warp.dev/chatgptjs" target="_blank">
+    Warp, la herramienta de desarrollo de IA que reside en tu terminal</h3>
+<i><a href="https://www.warp.dev/chatgptjs" target="_blank">
+    Disponible para macOS, Linux y Windows</a></i>
 
 <br><br>
 

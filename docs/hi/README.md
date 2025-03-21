@@ -86,20 +86,19 @@
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="golden-sponsors" align="center">
+
 <br>
 
 ### गोल्डन प्रायोजक:
 
-<div align="center">
-    <br><br>
-    <a href="https://www.warp.dev/chatgptjs" target="_blank">
-        <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
-    </a>
-    <h3><a href="https://www.warp.dev/chatgptjs" target="_blank">
-        Warp, आपके टर्मिनल में मौजूद AI डेवटूल</h3>
-    <a href="https://www.warp.dev/chatgptjs" target="_blank">
-        MacOS, Linux, और Windows के लिए उपलब्ध</a>
-</div>
+<br><br>
+<a href="https://www.warp.dev/chatgptjs" target="_blank">
+    <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
+</a>
+<h3><a href="https://www.warp.dev/chatgptjs" target="_blank">
+    Warp, आपके टर्मिनल में मौजूद AI डेवटूल</h3>
+<i><a href="https://www.warp.dev/chatgptjs" target="_blank">
+    MacOS, Linux, और Windows के लिए उपलब्ध</a></i>
 
 <br><br>
 

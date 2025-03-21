@@ -86,20 +86,19 @@
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="golden-sponsors" align="center">
+
 <br>
 
 ### ゴールデン スポンサー:
 
-<div align="center">
-    <br><br>
-    <a href="https://www.warp.dev/chatgptjs" target="_blank">
-        <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
-    </a>
-    <h3><a href="https://www.warp.dev/chatgptjs" target="_blank">
-        ターミナルで使える AI 開発ツール、Warp</h3>
-    <a href="https://www.warp.dev/chatgptjs" target="_blank">
-        MacOS、Linux、Windows で利用可能</a>
-</div>
+<br><br>
+<a href="https://www.warp.dev/chatgptjs" target="_blank">
+    <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
+</a>
+<h3><a href="https://www.warp.dev/chatgptjs" target="_blank">
+    ターミナルで使える AI 開発ツール、Warp</h3>
+<i><a href="https://www.warp.dev/chatgptjs" target="_blank">
+    MacOS、Linux、Windows で利用可能</a></i>
 
 <br><br>
 
