@@ -88,7 +88,7 @@
 <div id="golden-sponsors" align="center">
 <br>
     
-### Supported by:
+### Golden Sponsors:
 <div align="center" markdown="1">
    <br>
    <br>
