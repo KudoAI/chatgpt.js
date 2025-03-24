@@ -384,7 +384,8 @@ a[href*='mailto:showcase'] { word-break: keep-all }
 
 /* Footer */
 #footer { text-align: center ; margin: -119px 0 -105px } /* general position */
-img[src*="logos/partners"] { width: 18vw }
+img[src*="logos/partners"] { width: 18vw } /* size partner logos */
+[href*=microsoft] + [href*=warp] img { width: 16vw } /* shrink Warp logo */
 img[src*="partners/burncloud"] { padding-bottom: 8px }
 #mc_embed_signup h2 { /* 1st CTA */
     margin: 15px 0 3.5rem !important ;
