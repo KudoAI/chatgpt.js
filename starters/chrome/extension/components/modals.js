@@ -72,7 +72,7 @@ window.modals = {
     init(modal) {
         if (!modal) return // to support non-div this.open()s
         if (!this.styles) this.stylize() // to init/append stylesheet
-        modal.classList.add('no-user-select', this.class) ; modal.parentNode.classList.add(`${this.class}-bg`)
+        modal.classList.add(this.class) ; modal.parentNode.classList.add(`${this.class}-bg`)
         dom.addRisingParticles(modal)
     },
 
@@ -108,9 +108,8 @@ window.modals = {
             document.head.append(this.styles)
         }
         this.styles.innerText = (
-            `.no-user-select {
-                user-select: none ; -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none }`
-          + `.${this.class} {` // modals
+            `.${this.class} {` // modals
+              + 'user-select: none ; -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ;'
               + 'font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto,'
                   + 'Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif ;'
               + 'padding: 20px 25px 24px 25px !important ; font-size: 20px ;'
