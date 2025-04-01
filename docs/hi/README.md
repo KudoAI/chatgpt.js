@@ -87,10 +87,10 @@
 
 <div id="golden-sponsors" align="center">
     <br>
-    <h3>स्वर्ण प्रायोजक:</h3>
+    <h3>द्वारा समर्थित:</h3>
     <div id="creatives">
         <div id="warp">
-            <br><br>
+            <br>
             <a href="https://www.warp.dev/chatgptjs" target="_blank">
                 <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
             </a>
@@ -99,17 +99,8 @@
             <i><a href="https://www.warp.dev/chatgptjs" target="_blank">
                 MacOS, Linux, और Windows के लिए उपलब्ध</a></i>
         </div>
-        <br><br>
-        <div id="burncloud">
-            <a href="https://www.burncloud.com/893.html" target="_blank">
-                <picture>
-                    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/white.png?v=610795b">
-                    <img width=685 src="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/black.png?v=610795b">
-                </picture>
-            </a>
-        </div>
-        <br><br>
     </div>
+    <br><br><br>
 </div>
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
@@ -443,13 +434,6 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 **chatgpt.js** को आंशिक रूप से निम्नलिखित द्वारा वित्तपोषित किया जाता है:
 
-<a href="https://www.burncloud.com/893.html" target="_blank">
-    <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/white.png?v=610795b">
-        <img width=285 src="https://assets.chatgptjs.org/images/logos/partners/burncloud/with-description/black.png?v=610795b">
-    </picture>
-</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://microsoft.com?utm_source=github&utm_medium=readme&utm_content=partner-logo&utm_campaign=chatgpt.js" target="_blank">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/microsoft/white.png?v=e638eac">
@@ -463,11 +447,6 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
         <img width=220 src="https://assets.chatgptjs.org/images/logos/partners/warp/black.svg?v=476e837">
     </picture>
 </a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.burncloud.com/893.html" target="_blank"><picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/burncloud/white.png?v=610795b">
-    <img width=285 src="https://assets.chatgptjs.org/images/logos/partners/burncloud/black.png?v=610795b">
-</picture></a>
 
 </div>
 
