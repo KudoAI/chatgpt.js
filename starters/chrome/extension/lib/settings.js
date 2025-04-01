@@ -15,7 +15,12 @@ window.settings = {
         // replyLanguage: { type: 'prompt', symbol: '🌐', label: 'Reply Language' }
     },
 
-    isEnabled(key) { return window.config[key] ^ /disabled/i.test(key) },
+    typeIsEnabled(key) { // for menu labels + notifs to return ON/OFF for type w/o suffix
+        const reInvertFlags = /disabled|hidden/i
+        return reInvertFlags.test(key) // flag in control key name
+            && !reInvertFlags.test(this.controls[key]?.label) // but not in label name
+                ? !config[key] : config[key] // so invert since flag reps opposite type state, else don't
+    },
 
     load(...keys) {
         return Promise.all(keys.flat().map(async key => // resolve promise when all keys load
