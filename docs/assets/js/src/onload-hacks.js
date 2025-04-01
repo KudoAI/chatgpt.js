@@ -197,11 +197,10 @@ const onLoadObserver = new MutationObserver(() => {
                     if (entry.target.tagName.startsWith('H')) {
 
                         // Find the nav item that matches intersecting heading
-                        const headingText = entry.target.querySelector('a').textContent,
-                                activeNavItem = (document.querySelector(
-                                    `a[title="${ headingText }"]`) || {}).parentElement
+                        const headingText = entry.target.querySelector('a')?.textContent?.trim(),
+                              activeNavItem = document.querySelector(`a[title="${headingText}"]`)?.parentElement
 
-                        // Add `nav-active` class to matched nav item
+                        // Add nav-active class to matched nav item
                         if (activeNavItem) {
                             sideNavItems.forEach(item => item.classList.remove('nav-active'))
                             activeNavItem.classList.add('nav-active')
