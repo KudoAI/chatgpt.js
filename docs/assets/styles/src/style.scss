@@ -335,12 +335,12 @@ h2 { padding-top: 211px } /* add gaps for prettier parallax */
 /* Golden Sponsors */
 #golden-sponsors { display: flex ; flex-direction: column ; margin: 360px 0 -155px }
 #golden-sponsors > h3 { font-size: 35px !important ; color: white ; width: 80vw }
-#golden-sponsors #creatives {
-    display: flex ; flex-direction: row ; align-items: center ; width: 80vw ; margin-bottom: 200px }
+#golden-sponsors > #creatives {
+    display: flex ; flex-direction: row ; align-items: center ; width: 80vw ; margin-bottom: 430px }
 #golden-sponsors img { width: 85% }
-#warp, #burncloud { padding: 81px 0 } /* v-pad sponsors */
-#warp h3 { font-size: 31px !important } /* tagline */
-#warp i > a { font-size: 19px } /* platform availability */
+#golden-sponsors > #creatives > div { padding: 81px 115px } /* pad sponsors */
+#warp > h3 { font-size: 31px !important } /* tagline */
+#warp > i > a { font-size: 19px } /* platform availability */
 
 /* Greasemonkey/Chrome sections */
 #-greasemonkey, #-chrome { text-align: center ; margin-bottom: 55px !important }
@@ -386,7 +386,6 @@ a[href*='mailto:showcase'] { word-break: keep-all }
 #footer { text-align: center ; margin: -119px 0 -105px } /* general position */
 img[src*="logos/partners"] { width: 18vw } /* size partner logos */
 [href*=microsoft] + [href*=warp] img { width: 16vw } /* shrink Warp logo */
-img[src*="partners/burncloud"] { padding-bottom: 8px }
 #mc_embed_signup h2 { /* 1st CTA */
     margin: 15px 0 3.5rem !important ;
     font-size: 2.68rem !important ; color: white ; -webkit-text-stroke: 1px black }
@@ -419,7 +418,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
         font-size: 1.5rem !important ; padding: 2px 9px !important ; border-radius: 8px !important }
 }
 
-@media screen and (max-width: 767px) and (orientation: portrait) {
+@media screen and (max-width: 767px) {
     article { padding: 0 }
     .markdown-section { max-width: 96% }
     .github-corner svg { height: 88px ; width: 88px }
@@ -508,7 +507,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     #contributors + p + div { /* avatars container */
         padding: 0 !important ; /* remove side-padding */
         margin-bottom: 197px } /* shove footer away */
-    #contributors ~ * img { width: 69px !important } /* resize contributor avatars */
+    #contributors + p + div img { width: 69px !important } /* resize contributor avatars */
 
     /* Footer */
     #mc_embed_signup h2 { /* CTA */
@@ -516,4 +515,20 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
         left: -21px !important } /* nudge right to re-center */
     input#mce-EMAIL, input#mce-EMAIL::placeholder { /* email input txt/placeholder */
         text-indent: 0 !important ; text-align: center } /* center them */
+}
+
+/* Phone */
+@media screen and (max-width: 480px) {
+
+    /* Golden Sponsors */
+    #golden-sponsors > h3 { font-size: 25px !important } /* reduce heading size */
+    #golden-sponsors > #creatives > div { padding-left: 0 ; padding-right: 0 } /* remove x-pad from sponsors */
+    #golden-sponsors > #creatives { margin-bottom: 300px } /* reduce bottom margin */
+
+    /* Footer */
+    #contributors + p + div { /* avatars container */
+        margin-bottom: 85px } /* reduce mobile shove footer away */
+    #footer { margin-top: 121px } /* reduce desktop top-margin */
+    img[src*="logos/partners"] { width: 77vw } /* size partner logos */
+    [href*=microsoft]+[href*=warp] img { width: 62vw ; margin-top: 18px } /* size/pos Warp logo */
 }
