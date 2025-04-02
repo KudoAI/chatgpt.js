@@ -8,8 +8,8 @@
 </p>
 </blockquote>
 
-[GitHub](https://github.com/KudoAI/chatgpt.js)
-[Get Started](#⚡-importing-the-library)
+<a target="_blank" rel="noopener" href="https://github.com/KudoAI/chatgpt.js">GitHub</a>
+<a href="#⚡-importing-the-library">Get Started</a>
 
 <!-- background color -->
 

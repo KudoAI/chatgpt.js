@@ -4,8 +4,8 @@
 
 > 🤖 Thư viện JavaScript phía máy khách mạnh mẽ cho ChatGPT
 
-[GitHub](https://github.com/KudoAI/chatgpt.js)
-[Bắt đầu](#⚡-nhập-thư-viện)
+<a target="_blank" rel="noopener" href="https://github.com/KudoAI/chatgpt.js">GitHub</a>
+<a href="#⚡-nhập-thư-viện">Bắt đầu</a>
 
 <!-- background color -->
 

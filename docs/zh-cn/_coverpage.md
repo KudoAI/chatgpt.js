@@ -4,8 +4,8 @@
 
 > 🤖 ChatGPT 的强大客户端 JavaScript 库
 
-[GitHub](https://github.com/KudoAI/chatgpt.js)
-[开始吧](#⚡-导入库)
+<a target="_blank" rel="noopener" href="https://github.com/KudoAI/chatgpt.js">GitHub</a>
+<a href="#⚡-导入库">开始吧</a>
 
 <!-- background color -->
 

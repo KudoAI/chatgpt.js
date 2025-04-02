@@ -4,8 +4,8 @@
 
 > 🤖 適用於 ChatGPT 的強大客戶端 JavaScript 庫
 
-[GitHub](https://github.com/KudoAI/chatgpt.js)
-[開始使用](#⚡-導入庫)
+<a target="_blank" rel="noopener" href="https://github.com/KudoAI/chatgpt.js">GitHub</a>
+<a href="#⚡-導入庫">開始使用</a>
 
 <!-- background color -->
 
