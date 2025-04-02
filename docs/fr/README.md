@@ -444,7 +444,7 @@ Cette bibliothèque existe grâce au code, aux traductions, aux problèmes et au
 <a href="https://www.warp.dev/chatgptjs" target="_blank">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/warp/white.svg?v=476e837">
-        <img width=220 src="https://assets.chatgptjs.org/images/logos/partners/warp/black.svg?v=476e837">
+        <img width=185 src="https://assets.chatgptjs.org/images/logos/partners/warp/black.svg?v=476e837">
     </picture>
 </a>
 
