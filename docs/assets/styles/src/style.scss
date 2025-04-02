@@ -354,6 +354,9 @@ main ol { margin-top: 95px ; padding: 0 9vw 0 12vw !important }
 #usage ~ pre + p + p { /* 2nd p after pre */
     text-align: right !important ; float: right !important ; margin-bottom: 152px }
 
+/* Demo vid */
+iframe { min-width: fit-content ; width: 100% ; max-width: 855px ; aspect-ratio: 16/7 }
+
 /* Showcase */
 #showcase ~ h3:nth-of-type(even):not(#contributors ~ *),
 #showcase ~ h3 + p:nth-of-type(even):not(#contributors ~ *) { text-align: right }
