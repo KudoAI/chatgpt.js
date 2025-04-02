@@ -180,7 +180,7 @@ canvas { position: fixed ; width: 100% ; height: 100% ; pointer-events: none }
 
 /* COVER */
 
-.cover-main > img { margin-bottom: 16px ; width: 98% } /* cover logo */
+.cover-main > img { margin: 25px 0 7px ; width: 98% ; max-width: 1589px } /* cover logo */
 .cover-main { color: white } /* all cover txt color */
 section.cover p { /* cover tagline size / weight / position */
     font-family: 'Major Mono Display', 'IBM Plex Mono', 'Roboto Mono', Monaco, courier, monospace !important ;

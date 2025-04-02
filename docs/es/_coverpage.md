@@ -1,6 +1,6 @@
 <!-- _coverpage.md -->
 
-<img class="logo" src="https://assets.chatgptjs.org/images/chatgpt.js-logo-dark-mode-padded-7000x777.png?v=main">
+<img class="logo" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@058fdea/assets/images/logos/chatgpt.js/with-reflection/darkmode/logo-1504x334.png">
 
 > 🤖 Una poderosa biblioteca de JavaScript del lado del cliente para ChatGPT
 
