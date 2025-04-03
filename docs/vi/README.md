@@ -91,12 +91,12 @@
     <div id="creatives">
         <div id="warp">
             <br>
-            <a href="https://www.warp.dev/chatgptjs" target="_blank">
+            <a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
                 <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
             </a>
-            <h3><a href="https://www.warp.dev/chatgptjs" target="_blank">
+            <h3><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
                 Warp, công cụ phát triển AI nằm trong thiết bị đầu cuối của bạn</a></h3>
-            <i><a href="https://www.warp.dev/chatgptjs" target="_blank">
+            <i><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
                 Có sẵn cho MacOS, Linux và Windows</a></i>
         </div>
     </div>
@@ -331,104 +331,104 @@ Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng 
 
 <div align="center"><br>
 
-<a href="https://github.com/adamlui" target="_blank">
+<a href="https://github.com/adamlui" target="_blank" rel="noopener">
     <img title="@adamlui" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.15&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/mefengl" target="_blank">
+<a href="https://github.com/mefengl" target="_blank" rel="noopener">
     <img title="@mefengl" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?first-contrib=2023.03.16-get-functions&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/Zin6969" target="_blank">
+<a href="https://github.com/Zin6969" target="_blank" rel="noopener">
     <img title="@Zin6969" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.30-doc-translations&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/madruga8" target="_blank">
+<a href="https://github.com/madruga8" target="_blank" rel="noopener">
     <img title="@madruga8" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/30551844?first-contrib=2023.05.02-getlastresponse-bug-report&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/XiaoYingYo" target="_blank">
+<a href="https://github.com/XiaoYingYo" target="_blank" rel="noopener">
     <img title="@XiaoYingYo" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54934866?first-contrib=2023.05.01-clearchats-discard-fix&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/AliAlSarre" target="_blank">
+<a href="https://github.com/AliAlSarre" target="_blank" rel="noopener">
     <img title="@AliAlSarre" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.24-css-readability&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/madkarmaa" target="_blank">
+<a href="https://github.com/madkarmaa" target="_blank" rel="noopener">
     <img title="@madkarmaa" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/100418457?first-contrib=2023.06.02-send-function-bug-report&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/wamoyo" target="_blank">
+<a href="https://github.com/wamoyo" target="_blank" rel="noopener">
     <img title="@wamoyo" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/1170326?first-contrib=2023.06.10-html-parser-idea&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/meiraleal" target="_blank">
+<a href="https://github.com/meiraleal" target="_blank" rel="noopener">
     <img title="@meiraleal" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/33952?first-contrib=2023.06.10-html-parser-idea&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/eltociear" target="_blank">
+<a href="https://github.com/eltociear" target="_blank" rel="noopener">
     <img title="@eltociear" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/22633385?first-contrib=2023.07.11-fix-ja-doc-md&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/Rojojun" target="_blank">
+<a href="https://github.com/Rojojun" target="_blank" rel="noopener">
     <img title="@Rojojun" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/72805486?first-contrib=2023.07.14-enhance-ko-docs&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/iamnishantgaharwar" target="_blank">
+<a href="https://github.com/iamnishantgaharwar" target="_blank" rel="noopener">
     <img title="@iamnishantgaharwar" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/62183023?first-contrib=2023.07.24-fix-hi-doc&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/hakimel" target="_blank">
+<a href="https://github.com/hakimel" target="_blank" rel="noopener">
     <img title="@hakimel" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/629429?first-contrib=2023.07.31-homepage-starry-bg&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/omahs" target="_blank">
+<a href="https://github.com/omahs" target="_blank" rel="noopener">
     <img title="@omahs" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/73983677?first-contrib=2023.08.23-fix-readme-typos&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://www.linkedin.com/in/najam-ul-arfeen-khan/" target="_blank">
+<a href="https://www.linkedin.com/in/najam-ul-arfeen-khan/" target="_blank" rel="noopener">
     <img title="Najam Ul Arfeen" src="https://images.weserv.nl/?url=https://i.imgur.com/DQVC7vj.jpg?first-contrib=2023.09.19-add-dmarc-policy&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/iambijayd" target="_blank">
+<a href="https://github.com/iambijayd" target="_blank" rel="noopener">
     <img title="@iambijayd" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/110587589?first-contrib=2023.10.13-translate-docs-to-nepali&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/abhinavm24" target="_blank">
+<a href="https://github.com/abhinavm24" target="_blank" rel="noopener">
     <img title="@abhinavm24" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/4698976?first-contrib=2023.10.29-remove-outdated-mv2-preface-from-docs&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/deyvisml" target="_blank">
+<a href="https://github.com/deyvisml" target="_blank" rel="noopener">
     <img title="@deyvisml" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/77867745?first-contrib=2023.11.4-getchatdetails-bug-report&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/philly88r" target="_blank">
+<a href="https://github.com/philly88r" target="_blank" rel="noopener">
     <img title="@philly88r" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/150537240?first-contrib=2023.11.15-regenerate-btn-changed-bug-email&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/thomasgauthier" target="_blank">
+<a href="https://github.com/thomasgauthier" target="_blank" rel="noopener">
     <img title="@thomasgauthier" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/9730392?first-contrib=2023.12.18-get-response-from-dom-request&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/pranav-bhatt" target="_blank">
+<a href="https://github.com/pranav-bhatt" target="_blank" rel="noopener">
     <img title="@pranav-bhatt" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/42911524?first-contrib=2024.1.17-add-custom-gpt-support&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/gadelkareem" target="_blank">
+<a href="https://github.com/gadelkareem" target="_blank" rel="noopener">
     <img title="@gadelkareem" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/1441127?first-contrib=2024.1.20-chat-id-structure-updated-alert&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/hopana" target="_blank">
+<a href="https://github.com/hopana" target="_blank" rel="noopener">
     <img title="@hopana" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13976824?first-contrib=2024.01.31-aria-labels-unreliable-bug-report&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/emtry" target="_blank">
+<a href="https://github.com/emtry" target="_blank" rel="noopener">
     <img title="@emtry" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/26219737?first-contrib=2024.2.2-data-key-message-bug-fix&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/thedayofcondor" target="_blank">
+<a href="https://github.com/thedayofcondor" target="_blank" rel="noopener">
     <img title="@thedayofcondor" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/44357327?first-contrib=2024.2.14-msg-fetching-for-localization-fails-report&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/Luwa-Tech" target="_blank">
+<a href="https://github.com/Luwa-Tech" target="_blank" rel="noopener">
     <img title="@Luwa-Tech" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/111466842?first-contrib=2024.2.15-add-en-gb-locale&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/micz" target="_blank">
+<a href="https://github.com/micz" target="_blank" rel="noopener">
     <img title="@micz" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/61795?first-contrib=2024.5.9-update-css-selector-for-getregeneratebutton&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/imranaalam" target="_blank">
+<a href="https://github.com/imranaalam" target="_blank" rel="noopener">
     <img title="@imranaalam" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/17583722?first-contrib=2024.5.17-chrome-starter-manifest-matches-outdated-alert&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/grayfallstown" target="_blank">
+<a href="https://github.com/grayfallstown" target="_blank" rel="noopener">
     <img title="@grayfallstown" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/50076933?first-contrib=2024.6.22-code.isidle-request&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/svan-b" target="_blank">
+<a href="https://github.com/svan-b" target="_blank" rel="noopener">
     <img title="@svan-b" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/155944537?first-contrib=2024.8.27-sidebar-update-testing&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/Jeff-Zzh" target="_blank">
+<a href="https://github.com/Jeff-Zzh" target="_blank" rel="noopener">
     <img title="@Jeff-Zzh" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/74002352?first-contrib=2024.8.28-sidebar-update-testing&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/ae3e" target="_blank">
+<a href="https://github.com/ae3e" target="_blank" rel="noopener">
     <img title="@ae3e" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/12472719?first-contrib=2024.10.2-getchatinput-stopped-working-report&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/FarukhS52" target="_blank">
+<a href="https://github.com/FarukhS52" target="_blank" rel="noopener">
     <img title="@FarukhS52" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129654632?first-contrib=2024.10.10-userguide-typo-correction&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/Innovatorcloudy" target="_blank">
+<a href="https://github.com/Innovatorcloudy" target="_blank" rel="noopener">
     <img title="@Innovatorcloudy" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/183274513?first-contrib=2024.10.10-create-ru-readme&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/barbarian360" target="_blank">
+<a href="https://github.com/barbarian360" target="_blank" rel="noopener">
     <img title="@barbarian360" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/94866865?first-contrib=2024.10.11-fix-readme-back-to-top-link&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/adityadeshpande09" target="_blank">
+<a href="https://github.com/adityadeshpande09" target="_blank" rel="noopener">
     <img title="@adityadeshpande09" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/98452243?first-contrib=2024.10.26-fix-nepali-doc-link&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/twlite" target="_blank">
+<a href="https://github.com/twlite" target="_blank" rel="noopener">
     <img title="@twlite" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/46562212?first-contrib=2024.10.27-added-callout-notation-to-en-readme&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/sulav7" target="_blank">
+<a href="https://github.com/sulav7" target="_blank" rel="noopener">
     <img title="@sulav7" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/100464898?first-contrib=2024.10.27-fix-nepali-grammar&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/samir-byte" target="_blank">
+<a href="https://github.com/samir-byte" target="_blank" rel="noopener">
     <img title="@samir-byte" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/75193555?first-contrib=2024.10.28-fix-nepali-typo&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/ghimirebibek" target="_blank">
+<a href="https://github.com/ghimirebibek" target="_blank" rel="noopener">
     <img title="@ghimirebibek" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54546340?first-contrib=2024.10.28-fix-nepali-grammar&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/JanumalaAkhilendra" target="_blank">
+<a href="https://github.com/JanumalaAkhilendra" target="_blank" rel="noopener">
     <img title="@JanumalaAkhilendra" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/82641474?first-contrib=2024.10.30-improve-hindi-readme&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/AliasUruz" target="_blank">
+<a href="https://github.com/AliasUruz" target="_blank" rel="noopener">
     <img title="@AliasUruz" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/130197125?first-contrib=2024.12.1-new-chat-selector-outdated-report&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/ericdachen" target="_blank">
+<a href="https://github.com/ericdachen" target="_blank" rel="noopener">
     <img title="@ericdachen" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54382303?first-contrib=2025.3.20-implement-warp-to-golden-sponsors&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://github.com/dependabot" target="_blank">
+<a href="https://github.com/dependabot" target="_blank" rel="noopener">
     <img title="Dependabot" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=47&w=47&mask=circle&maxage=7d"></a>
-<a href="https://chatgpt.com" target="_blank">
+<a href="https://chatgpt.com" target="_blank" rel="noopener">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://assets.chatgptjs.org/images/icons/platforms/chatgpt/black-on-white/icon189.png?h=46&w=46&mask=circle&maxage=7d">
         <img title="ChatGPT" src="https://images.weserv.nl/?url=https://assets.chatgptjs.org/images/icons/platforms/chatgpt/white-on-black/icon189.png?h=46&w=46&mask=circle&maxage=7d">
     </picture></a>
-<a href="https://poe.com" target="_blank">
+<a href="https://poe.com" target="_blank" rel="noopener">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://assets.chatgptjs.org/images/icons/platforms/poe/w-purple-blue-stripes/black-on-white/icon175.png?h=46&w=46&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://assets.chatgptjs.org/images/icons/platforms/poe/w-purple-blue-stripes/white-on-black/icon175.png?h=46&w=46&mask=circle&maxage=7d" title="Poe">
     </picture></a>
-<a href="https://github.com/ImgBotApp" target="_blank">
+<a href="https://github.com/ImgBotApp" target="_blank" rel="noopener">
     <img title="@ImgBotApp" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=51&w=51&mask=circle&maxage=7d"></a>
 
 </div><br>
@@ -441,14 +441,15 @@ Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng 
 
 **chatgpt.js** được tài trợ một phần bởi:
 
-<a href="https://microsoft.com?utm_source=github&utm_medium=readme&utm_content=partner-logo&utm_campaign=chatgpt.js" target="_blank">
+<a href="https://microsoft.com?utm_source=github&utm_medium=readme&utm_content=partner-logo&utm_campaign=chatgpt.js"
+   target="_blank" rel="noopener">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/microsoft/white.png?v=e638eac">
         <img width=255 src="https://assets.chatgptjs.org/images/logos/partners/microsoft/black.png?v=e638eac">
     </picture>
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.warp.dev/chatgptjs" target="_blank">
+<a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/warp/white.svg?v=476e837">
         <img width=185 src="https://assets.chatgptjs.org/images/logos/partners/warp/black.svg?v=476e837">
