@@ -236,28 +236,28 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Amazon ショッピングにAIを追加します。
 <br>[Install](https://raw.githubusercontent.com/KudoAI/amazongpt/main/greasemonkey/amazongpt.user.js) /
 [Readme](https://amazongpt.kudoai.com/#readme) /
-[Discuss](https://amazongpt.kudoai.com/discussions)
+[Discuss](https://github.com/KudoAI/amazongpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.autoclearchatgpt.com/images/icons/openai/white/icon48.png?cece513"><img width=21 src="https://assets.autoclearchatgpt.com/images/icons/openai/black/icon48.png?cece513"></picture> [ChatGPT の履歴を削除する](https://autoclearchatgpt.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.autoclearchatgpt.com/images/badges/awesome/badge.svg?2c0d9fc" style="margin:0 0 -2px 5px"></a>
 
 > プライバシーを最大限に高めるために、ChatGPT クエリ履歴を自動消去します。
 <br>[インストール](https://docs.autoclearchatgpt.com/#-installation) / 
 [お読みください](https://docs.autoclearchatgpt.com/#readme) / 
-[議論](https://github.autoclearchatgpt.com/discussions)
+[議論](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
 ### <img width=24 src="https://assets.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287"> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Brave Search に AI 回答を追加 (GPT-4o 搭載!)
 <br>[インストール](https://docs.bravegpt.com/#-installation) / 
 [お読みください](https://docs.bravegpt.com/#readme) / 
-[議論](https://github.bravegpt.com/discussions)
+[議論](https://github.com/KudoAI/bravegpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautocontinue.com/images/icons/continue-symbol/white/icon48.png?v=61c4f16"><img width=21 src="https://assets.chatgptautocontinue.com/images/icons/continue-symbol/black/icon48.png?v=61c4f16"></picture> [ChatGPT 自動継続 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.chatgptautocontinue.com/images/badges/awesome/badge.svg?3c80c0c" style="margin:0 0 -3px 3px"></a>
 
 > ChatGPT の応答が中断されたときに、自動的に回答の生成を継続します。
 <br>[インストール](https://docs.chatgptautocontinue.com/#-installation) / 
 [お読みください](https://docs.chatgptautocontinue.com/#readme) / 
-[議論](https://github.chatgptautocontinue.com/discussions)
+[議論](https://github.com/adamlui/chatgpt-auto-continue/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/white/icon64.png"><img width=21 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/black/icon64.png"></picture> [ChatGPT オートトーク 📣](https://github.com/adamlui/chatgpt-auto-talk)
 
@@ -271,21 +271,21 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > ChatGPTセッションを最新の状態に保ち、チャット時間制限、ネットワークエラー、Cloudflareチェックを排除します。
 <br>[インストール](https://docs.chatgptautorefresh.com/#-installation) / 
 [お読みください](https://docs.chatgptautorefresh.com/#readme) / 
-[議論](https://github.chatgptautorefresh.com/discussions)
+[議論](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
 ### <img width=23 src="https://assets.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302"> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > DuckDuckGo に AI 回答を追加 (GPT-4o 搭載!)
 <br>[インストール](https://docs.ddgpt.com/#-installation) / 
 [お読みください](https://docs.ddgpt.com/#readme) / 
-[議論](https://github.ddgpt.com/discussions)
+[議論](https://github.com/KudoAI/duckduckgpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.googlegpt.io/images/icons/googlegpt/white/icon32.png?8652a6e"><img width=21 src="https://assets.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.googlegpt.io/images/badges/awesome/badge.svg?699c63d" style="margin:0 0 -2px 5px"></a>
 
 > Google Search に AI 回答を追加 (Google Gemma + GPT-4o 搭載!)
 <br>[インストール](https://greasyfork.googlegpt.io) /
 [お読みください](https://docs.googlegpt.io/#readme) /
-[議論](https://github.googlegpt.io/discussions)
+[議論](https://github.com/KudoAI/googlegpt/discussions)
 
 ### <img width=23 src="https://assets.chatgptjs.org/images/icons/platforms/thunderbird/icon32.png?v=e638eac"> <a href="https://micz.it/thunderdbird-addon-thunderai/?utm_source=chatgpt.js-github&utm_medium=referral&utm_content=showcase-link" target="_blank" rel="noopener">ThunderAI</a> &nbsp;<a href="https://addons.thunderbird.net/thunderbird/addon/thunderai/reviews" target="_blank" rel="noopener"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/badges/5-star/blue-stars.png?v=e638eac"><img width=92 alt="[5 つ星評価]" src="https://assets.chatgptjs.org/images/badges/5-star/yellow-stars-in-white-pill.png?v=e638eac"></picture></a>
 

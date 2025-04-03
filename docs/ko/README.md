@@ -240,28 +240,28 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Amazon 쇼핑에 AI 를 추가하세요.
 <br>[Install](https://raw.githubusercontent.com/KudoAI/amazongpt/main/greasemonkey/amazongpt.user.js) /
 [Readme](https://amazongpt.kudoai.com/#readme) /
-[Discuss](https://amazongpt.kudoai.com/discussions)
+[Discuss](https://github.com/KudoAI/amazongpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.autoclearchatgpt.com/images/icons/openai/white/icon48.png?cece513"><img width=21 src="https://assets.autoclearchatgpt.com/images/icons/openai/black/icon48.png?cece513"></picture> [ChatGPT 히스토리 자동삭제](https://autoclearchatgpt.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.autoclearchatgpt.com/images/badges/awesome/badge.svg?2c0d9fc" style="margin:0 0 -2px 5px"></a>
 
 > 최대 개인정보를 위해 ChatGPT 쿼리 히스토리를 자동으로 지는 기능입니다.
 <br>[설치](https://docs.autoclearchatgpt.com/#-installation) /
 [리드미](https://docs.autoclearchatgpt.com/#readme) /
-[토론](https://github.autoclearchatgpt.com/discussions)
+[토론](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
 ### <img width=24 src="https://assets.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287"> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Brave Search 에 AI 답변 추가 (GPT-4o 제공!)
 <br>[설치](https://docs.bravegpt.com/#-installation) /
 [리드미](https://docs.bravegpt.com/#readme) /
-[토론](https://github.bravegpt.com/discussions)
+[토론](https://github.com/KudoAI/bravegpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautocontinue.com/images/icons/continue-symbol/white/icon48.png?v=61c4f16"><img width=21 src="https://assets.chatgptautocontinue.com/images/icons/continue-symbol/black/icon48.png?v=61c4f16"></picture> [ChatGPT 자동 진행 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.chatgptautocontinue.com/images/badges/awesome/badge.svg?3c80c0c" style="margin:0 0 -3px 3px"></a>
 
 > ChatGPT 응답이 중단되면 자동으로 답변 생성을 계속합니다.
 <br>[설치](https://docs.chatgptautocontinue.com/#-installation) /
 [리드미](https://docs.chatgptautocontinue.com/#readme) /
-[토론](https://github.chatgptautocontinue.com/discussions)
+[토론](https://github.com/adamlui/chatgpt-auto-continue/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/white/icon64.png"><img width=21 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/black/icon64.png"></picture> [ChatGPT 자동-토크 📣](https://github.com/adamlui/chatgpt-auto-talk)
 
@@ -275,21 +275,21 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > ChatGPT 세션을 최신 상태로 유지하여 채팅 시간 제한 + 네트워크 오류 + Cloudflare 검사를 제거합니다..
 <br>[설치](https://docs.chatgptautorefresh.com/#-installation) /
 [리드미](https://docs.chatgptautorefresh.com/#readme) /
-[토론](https://github.chatgptautorefresh.com/discussions)
+[토론](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
 ### <img width=23 src="https://assets.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302"> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > DuckDuckGo 에 AI 답변 추가 (GPT-4o 제공!)
 <br>[설치](https://docs.ddgpt.com/#-installation) /
 [리드미](https://docs.ddgpt.com/#readme) /
-[토론](https://github.ddgpt.com/discussions)
+[토론](https://github.com/KudoAI/duckduckgpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.googlegpt.io/images/icons/googlegpt/white/icon32.png?8652a6e"><img width=21 src="https://assets.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.googlegpt.io/images/badges/awesome/badge.svg?699c63d" style="margin:0 0 -2px 5px"></a>
 
 > Google Search 에 AI 답변 추가 (Google Gemma + GPT-4o 제공!)
 <br>[설치](https://greasyfork.googlegpt.io) /
 [리드미](https://docs.googlegpt.io/#readme) /
-[토론](https://github.googlegpt.io/discussions)
+[토론](https://github.com/KudoAI/googlegpt/discussions)
 
 ### <img width=23 src="https://assets.chatgptjs.org/images/icons/platforms/thunderbird/icon32.png?v=e638eac"> <a href="https://micz.it/thunderdbird-addon-thunderai/?utm_source=chatgpt.js-github&utm_medium=referral&utm_content=showcase-link" target="_blank" rel="noopener">ThunderAI</a> &nbsp;<a href="https://addons.thunderbird.net/thunderbird/addon/thunderai/reviews" target="_blank" rel="noopener"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/badges/5-star/blue-stars.png?v=e638eac"><img width=92 alt="[별점 5 개]" src="https://assets.chatgptjs.org/images/badges/5-star/yellow-stars-in-white-pill.png?v=e638eac"></picture></a>
 

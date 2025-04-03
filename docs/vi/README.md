@@ -236,14 +236,14 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Thêm AI vào mua sắm trên Amazon.
 <br>[Install](https://raw.githubusercontent.com/KudoAI/amazongpt/main/greasemonkey/amazongpt.user.js) /
 [Readme](https://amazongpt.kudoai.com/#readme) /
-[Discuss](https://amazongpt.kudoai.com/discussions)
+[Discuss](https://github.com/KudoAI/amazongpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.autoclearchatgpt.com/images/icons/openai/white/icon48.png?cece513"><img width=21 src="https://assets.autoclearchatgpt.com/images/icons/openai/black/icon48.png?cece513"></picture> [Xóa Lịch Sử ChatGPT](https://autoclearchatgpt.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.autoclearchatgpt.com/images/badges/awesome/badge.svg?2c0d9fc" style="margin:0 0 -2px 5px"></a>
 
 > Tự động xóa lịch sử truy vấn ChatGPT của bạn để có quyền riêng tư tối đa.
 <br>[Cài đặt](https://docs.autoclearchatgpt.com/#-installation) /
 [Đọc tôi](https://docs.autoclearchatgpt.com/#readme) /
-[Bàn luận](https://github.autoclearchatgpt.com/discussions)
+[Bàn luận](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
 ### <img width=16 src="https://i.imgur.com/1yjmK3W.png"> [Automatic ChatGPT DAN](https://github.com/madkarmaa/automatic-chatgpt-dan)
 
@@ -257,14 +257,14 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Thêm câu trả lời AI vào Brave Search (được cung cấp bởi GPT-4o!)
 <br>[Cài đặt](https://docs.bravegpt.com/#-installation) /
 [Đọc tôi](https://docs.bravegpt.com/#readme) /
-[Bàn luận](https://github.bravegpt.com/discussions)
+[Bàn luận](https://github.com/KudoAI/bravegpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautocontinue.com/images/icons/continue-symbol/white/icon48.png?v=61c4f16"><img width=21 src="https://assets.chatgptautocontinue.com/images/icons/continue-symbol/black/icon48.png?v=61c4f16"></picture> [ChatGPT Tự Động Tiếp Tục ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.chatgptautocontinue.com/images/badges/awesome/badge.svg?3c80c0c" style="margin:0 0 -3px 3px"></a>
 
 > Tự động tiếp tục tạo câu trả lời khi phản hồi ChatGPT bị cắt.
 <br>[Cài đặt](https://docs.chatgptautocontinue.com/#-installation) /
 [Đọc tôi](https://docs.chatgptautocontinue.com/#readme) /
-[Bàn luận](https://github.chatgptautocontinue.com/discussions)
+[Bàn luận](https://github.com/adamlui/chatgpt-auto-continue/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/white/icon64.png"><img width=21 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/black/icon64.png"></picture> [ChatGPT Tự-Động-Nói 📣](https://github.com/adamlui/chatgpt-auto-talk)
 
@@ -278,21 +278,21 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Giữ cho các phiên ChatGPT luôn mới, loại bỏ giới hạn thời gian trò chuyện + lỗi mạng + kiểm tra Cloudflare.
 <br>[Cài đặt](https://docs.chatgptautorefresh.com/#-installation) /
 [Đọc tôi](https://docs.chatgptautorefresh.com/#readme) /
-[Bàn luận](https://github.chatgptautorefresh.com/discussions)
+[Bàn luận](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
 ### <img width=23 src="https://assets.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302"> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Thêm câu trả lời AI vào DuckDuckGo (được cung cấp bởi GPT-4o!)
 <br>[Cài đặt](https://docs.ddgpt.com/#-installation) /
 [Đọc tôi](https://docs.ddgpt.com/#readme) /
-[Bàn luận](https://github.ddgpt.com/discussions)
+[Bàn luận](https://github.com/KudoAI/duckduckgpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.googlegpt.io/images/icons/googlegpt/white/icon32.png?8652a6e"><img width=21 src="https://assets.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.googlegpt.io/images/badges/awesome/badge.svg?699c63d" style="margin:0 0 -2px 5px"></a>
 
 > Thêm câu trả lời AI vào Google Search (được cung cấp bởi Google Gemma + GPT-4o!)
 <br>[Cài đặt](https://greasyfork.googlegpt.io) /
 [Đọc tôi](https://docs.googlegpt.io/#readme) /
-[Bàn luận](https://github.googlegpt.io/discussions)
+[Bàn luận](https://github.com/KudoAI/googlegpt/discussions)
 
 ### <img width=23 src="https://assets.chatgptjs.org/images/icons/platforms/thunderbird/icon32.png?v=e638eac"> <a href="https://micz.it/thunderdbird-addon-thunderai/?utm_source=chatgpt.js-github&utm_medium=referral&utm_content=showcase-link" target="_blank" rel="noopener">ThunderAI</a> &nbsp;<a href="https://addons.thunderbird.net/thunderbird/addon/thunderai/reviews" target="_blank" rel="noopener"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/badges/5-star/blue-stars.png?v=e638eac"><img width=92 alt="[Đã xếp hạng 5 sao]" src="https://assets.chatgptjs.org/images/badges/5-star/yellow-stars-in-white-pill.png?v=e638eac"></picture></a>
 

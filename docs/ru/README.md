@@ -231,28 +231,28 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Добавьте ИИ в покупки на Amazon.
 <br>[Установить](https://raw.githubusercontent.com/KudoAI/amazongpt/main/greasemonkey/amazongpt.user.js) /
 [Читать](https://amazongpt.kudoai.com/#readme) /
-[Обсудить](https://amazongpt.kudoai.com/discussions)
+[Обсудить](https://github.com/KudoAI/amazongpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.autoclearchatgpt.com/images/icons/openai/white/icon48.png?cece513"><img width=21 src="https://assets.autoclearchatgpt.com/images/icons/openai/black/icon48.png?cece513"></picture> [Autoclear ChatGPT History](https://autoclearchatgpt.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.autoclearchatgpt.com/images/badges/awesome/badge.svg?2c0d9fc" style="margin:0 0 -2px 5px"></a>
 
 > Автоочистка истории запросов ChatGPT для максимальной конфиденциальности.
 <br>[Установить](https://docs.autoclearchatgpt.com/#-installation) /
 [Читать](https://docs.autoclearchatgpt.com/#readme) /
-[Обсудить](https://github.autoclearchatgpt.com/discussions)
+[Обсудить](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
 ### <img width=24 src="https://assets.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287"> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Добавляет AI-ответы в Brave Search (на базе GPT-4o!)
 <br>[Установить](https://docs.bravegpt.com/#-installation) /
 [Читать](https://docs.bravegpt.com/#readme) /
-[Обсуждение](https://github.bravegpt.com/discussions)
+[Обсуждение](https://github.com/KudoAI/bravegpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautocontinue.com/images/icons/continue-symbol/white/icon48.png?v=61c4f16"><img width=21 src="https://assets.chatgptautocontinue.com/images/icons/continue-symbol/black/icon48.png?v=61c4f16"></picture> [ChatGPT Auto-Continue ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.chatgptautocontinue.com/images/badges/awesome/badge.svg?3c80c0c" style="margin:0 0 -3px 3px"></a>
 
 > Автоматически продолжать генерацию ответов, когда ответы ChatGPT прерываются.
 <br>[Установить](https://docs.chatgptautocontinue.com/#-installation) /
 [Читать](https://docs.chatgptautocontinue.com/#readme) /
-[Обсуждение](https://github.chatgptautocontinue.com/discussions)
+[Обсуждение](https://github.com/adamlui/chatgpt-auto-continue/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/white/icon64.png"><img width=21 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/black/icon64.png"></picture> [ChatGPT Auto-Talk 📣](https://github.com/adamlui/chatgpt-auto-talk)
 
@@ -266,21 +266,21 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Поддерживает сессии ChatGPT свежими, чтобы избежать сетевых ошибок + проверок Cloudflare.
 <br>[Установить](https://docs.chatgptautorefresh.com/#-installation) /
 [Читать](https://docs.chatgptautorefresh.com/#readme) /
-[Обсуждение](https://github.chatgptautorefresh.com/discussions)
+[Обсуждение](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
 ### <img width=23 src="https://assets.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302"> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Добавляет AI-ответы в DuckDuckGo (на базе GPT-4o!)
 <br>[Установить](https://docs.ddgpt.com/#-installation) /
 [Читать](https://docs.ddgpt.com/#readme) /
-[Обсуждение](https://github.ddgpt.com/discussions)
+[Обсуждение](https://github.com/KudoAI/duckduckgpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.googlegpt.io/images/icons/googlegpt/white/icon32.png?8652a6e"><img width=21 src="https://assets.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.googlegpt.io/images/badges/awesome/badge.svg?699c63d" style="margin:0 0 -2px 5px"></a>
 
 > Добавляет AI-ответы в поиск Google (на базе Google Gemma + GPT-4o!)
 <br>[Установить](https://greasyfork.googlegpt.io) /
 [Читать](https://docs.googlegpt.io/#readme) /
-[Обсуждение](https://github.googlegpt.io/discussions)
+[Обсуждение](https://github.com/KudoAI/googlegpt/discussions)
 
 ### <img width=23 src="https://assets.chatgptjs.org/images/icons/platforms/thunderbird/icon32.png?v=e638eac"> <a href="https://micz.it/thunderdbird-addon-thunderai/?utm_source=chatgpt.js-github&utm_medium=referral&utm_content=showcase-link" target="_blank" rel="noopener">ThunderAI</a> &nbsp;<a href="https://addons.thunderbird.net/thunderbird/addon/thunderai/reviews" target="_blank" rel="noopener"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/badges/5-star/blue-stars.png?v=e638eac"><img width=92 alt="[Оценка 5 звезд]" src="https://assets.chatgptjs.org/images/badges/5-star/yellow-stars-in-white-pill.png?v=e638eac"></picture></a>
 

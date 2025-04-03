@@ -239,28 +239,28 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Amazon किनमेलमा AI थप्नुहोस्।
 <br>[Install](https://raw.githubusercontent.com/KudoAI/amazongpt/main/greasemonkey/amazongpt.user.js) /
 [Readme](https://amazongpt.kudoai.com/#readme) /
-[Discuss](https://amazongpt.kudoai.com/discussions)
+[Discuss](https://github.com/KudoAI/amazongpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.autoclearchatgpt.com/images/icons/openai/white/icon48.png?cece513"><img width=21 src="https://assets.autoclearchatgpt.com/images/icons/openai/black/icon48.png?cece513"></picture> [अटोक्लियर ChatGPT हिस्ट्री](https://autoclearchatgpt.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.autoclearchatgpt.com/images/badges/awesome/badge.svg?2c0d9fc" style="margin:0 0 -2px 5px"></a>
 
 > यो अटो क्लियर एक्सटेंशनले अधिकतम गोपनीयताको लागि तपाईँको ChatGPT हिस्ट्री स्वतः मेटाउनेछ।
 <br>[इंस्टॉल](https://docs.autoclearchatgpt.com/#-installation) / 
 [रीडमी](https://docs.autoclearchatgpt.com/#readme) / 
-[चर्चा](https://github.autoclearchatgpt.com/discussions)
+[चर्चा](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
 ### <img width=24 src="https://assets.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287"> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Brave Search मा AI जवाफहरू थप्छ (GPT-4o द्वारा संचालित!)
 <br>[इंस्टॉल](https://docs.bravegpt.com/#-installation) / 
 [रीडमी](https://docs.bravegpt.com/#readme) / 
-[चर्चा](https://github.bravegpt.com/discussions)
+[चर्चा](https://github.com/KudoAI/bravegpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautocontinue.com/images/icons/continue-symbol/white/icon48.png?v=61c4f16"><img width=21 src="https://assets.chatgptautocontinue.com/images/icons/continue-symbol/black/icon48.png?v=61c4f16"></picture> [ChatGPT अटो-कंटिन्यू ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.chatgptautocontinue.com/images/badges/awesome/badge.svg?3c80c0c" style="margin:0 0 -3px 3px"></a>
 
 > ChatGPT प्रतिक्रियाहरू काटिएपछि स्वचालित रूपमा उत्तरहरू उत्पन्न गर्न जारी राख्नुहोस्।
 <br>[इंस्टॉल](https://docs.chatgptautocontinue.com/#-installation) / 
 [रीडमी](https://docs.chatgptautocontinue.com/#readme) / 
-[चर्चा](https://github.chatgptautocontinue.com/discussions)
+[चर्चा](https://github.com/adamlui/chatgpt-auto-continue/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/white/icon64.png"><img width=21 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@eb7f285/assets/images/icons/openai/black/icon64.png"></picture> [ChatGPT स्वचालित-वार्ता 📣](https://github.com/adamlui/chatgpt-auto-talk)
 
@@ -274,21 +274,21 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 > Cloudflare जाँचहरू नेटवर्क त्रुटिहरू हटाउन ChatGPT सत्रहरू ताजा राख्नुहोस्।
 <br>[इंस्टॉल](https://docs.chatgptautorefresh.com/#-installation) / 
 [रीडमी](https://docs.chatgptautorefresh.com/#readme) / 
-[चर्चा](https://github.chatgptautorefresh.com/discussions)
+[चर्चा](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
 ### <img width=23 src="https://assets.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302"> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > DuckDuckGo मा AI जवाफहरू थप्छ (GPT-4o द्वारा संचालित!)
 <br>[इंस्टॉल](https://docs.ddgpt.com/#-installation) / 
 [रीडमी](https://docs.ddgpt.com/#readme) / 
-[चर्चा](https://github.ddgpt.com/discussions)
+[चर्चा](https://github.com/KudoAI/duckduckgpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.googlegpt.io/images/icons/googlegpt/white/icon32.png?8652a6e"><img width=21 src="https://assets.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.googlegpt.io/images/badges/awesome/badge.svg?699c63d" style="margin:0 0 -2px 5px"></a>
 
 > Google Search मा AI जवाफहरू थप्छ (Google Gemma + GPT-4o द्वारा संचालित!)
 <br>[इंस्टॉल](https://greasyfork.googlegpt.io) /
 [रीडमी](https://docs.googlegpt.io/#readme) /
-[चर्चा](https://github.googlegpt.io/discussions)
+[चर्चा](https://github.com/KudoAI/googlegpt/discussions)
 
 ### <img width=23 src="https://assets.chatgptjs.org/images/icons/platforms/thunderbird/icon32.png?v=e638eac"> <a href="https://micz.it/thunderdbird-addon-thunderai/?utm_source=chatgpt.js-github&utm_medium=referral&utm_content=showcase-link" target="_blank" rel="noopener">ThunderAI</a> &nbsp;<a href="https://addons.thunderbird.net/thunderbird/addon/thunderai/reviews" target="_blank" rel="noopener"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/badges/5-star/blue-stars.png?v=e638eac"><img width=92 alt="[5-तारे मूल्याङ्कन गरियो]" src="https://assets.chatgptjs.org/images/badges/5-star/yellow-stars-in-white-pill.png?v=e638eac"></picture></a>
 
