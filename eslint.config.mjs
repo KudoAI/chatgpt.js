@@ -52,7 +52,7 @@ export default [
             '@html-eslint/quotes': 'off', // allow unquoted attrs for compactness
             '@html-eslint/attrs-newline': 'off', // allow multi-attrs in single line
             '@html-eslint/require-img-alt': 'off', // allow img tags w/o alt attributes
-            '@html-eslint/element-newline': ['error', { 'skip': ['html'] }] // allow multi-tags in single line
+            '@html-eslint/indent': 'off', '@html-eslint/element-newline': 'off' // allow whitespace anywhere
         }
     },
     { files: ['**/*.json'], language: 'json/json', ...json.configs.recommended },
