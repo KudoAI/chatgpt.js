@@ -62,7 +62,7 @@
 <a href="https://www.producthunt.com/posts/chatgpt-js" target="_blank" rel="noopener">
     <img src="https://img.shields.io/badge/%E3%81%A7%E7%89%B9%E9%9B%86%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F-Product_Hunt-ff6154?logo=producthunt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://trendshift.io/repositories/2896" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/badge/GitHub_Repos-%E3%83%88%E3%83%83%E3%83%9720%E5%85%A5%E3%82%8A%E3%83%88%E3%83%AC%E3%83%B3%E3%83%89-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    <img src="https://img.shields.io/badge/GitHub-%E3%83%88%E3%83%83%E3%83%9720%E5%85%A5%E3%82%8A%E3%83%88%E3%83%AC%E3%83%B3%E3%83%89-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="#">
     <img src="https://img.shields.io/badge/jsDelivr_%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88-2,000,000+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 
