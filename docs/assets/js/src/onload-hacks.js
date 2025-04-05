@@ -357,14 +357,16 @@ const onLoadObserver = new MutationObserver(() => {
                                       scaleDelay = 285, // px from trigger.y to delay scaling
                                       scaleFactor = topGap > -scaleDelay ? 1
                                                   : 1 - Math.abs(topGap + scaleDelay) / 5 / window.innerHeight
-
-                                try { elem.classList.remove('content-fadeup') } catch (err) {}
+                                elem.classList?.remove('content-fadeup')
                                 elem.style.opacity = newOpacity
                                 elem.style.transform = `translateY(${parallaxOffset}px) scale(${scaleFactor})`
                                 elem.style.filter = `blur(${blurAmount}px)`
                             })
+                        }
+                    })
+                })
 
-            }})})}, 100)
+            }, 100)
         })
 
     // Hide SITE LANG SELECTOR from NON-HOME pages
