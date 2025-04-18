@@ -20,7 +20,7 @@
 
     // PREVIEW site
     const availPort = await getPort({ port: portNumbers(3000, 3999) })
-    require('child_process').exec(`docsify serve docs -o -p ${availPort}`).stdout.on('data', () =>
+    spawn('docsify', ['serve', 'docs', '-o', '-p', availPort], { shell: false }).stdout.on('data', () =>
         console.log(`Previewing ${bw}chatgpt.js.org${nc} @ ${by}http://localhost:${availPort}${nc}\n\n`
             + 'Close this window to stop server')
     )
