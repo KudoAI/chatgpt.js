@@ -23,6 +23,7 @@
   ],
   "scripts": {
     "prepare": "husky",
+    "dev:docs": "node utils/preview-docs",
     "lint": "eslint . --cache",
     "lint:all": "eslint .",
     "lint:fix": "eslint . --fix --cache",
