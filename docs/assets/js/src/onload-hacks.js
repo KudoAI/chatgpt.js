@@ -91,7 +91,7 @@ const onLoadObserver = new MutationObserver(() => {
         if (!isMobileDevice()) document.body.className = 'ready close'
 
         // Populate [taglineWords] for iObserver's scrambleText() + randomizeCase()
-        const taglineSpans = Array.from(document.querySelectorAll('span[id^=tagline]'))
+        const taglineSpans = [...document.querySelectorAll('span[id^=tagline]')]
         taglineSpans.map(span => taglineWords.push(
             /pre|post/.exec(span.id) ? span.textContent : span.textContent.split('|')))
         taglineSpans.forEach(span => span.textContent = '') // clear them out
