@@ -92,7 +92,7 @@ const onLoadObserver = new MutationObserver(() => {
 
         // Populate [taglineWords] for iObserver's scrambleText() + randomizeCase()
         const taglineSpans = [...document.querySelectorAll('span[id^=tagline]')]
-        taglineSpans.map(span => taglineWords.push(
+        taglineSpans.forEach(span => taglineWords.push(
             /pre|post/.exec(span.id) ? span.textContent : span.textContent.split('|')))
         taglineSpans.forEach(span => span.textContent = '') // clear them out
 
