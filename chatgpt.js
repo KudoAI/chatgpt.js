@@ -1498,7 +1498,7 @@ const chatgpt = {
             // Process text node
             if (childNode.nodeType == Node.TEXT_NODE) {
                 const text = childNode.nodeValue,
-                      elems = [...text.matchAll(reTags])
+                      elems = [...text.matchAll(reTags)]
 
                 // Process 1st element to render
                 if (elems.length > 0) {
@@ -1507,7 +1507,7 @@ const chatgpt = {
                           tagNode = document.createElement(tagName) ; tagNode.textContent = tagText
 
                     // Extract/set attributes
-                    const attrs = [...tagAttrs.matchAll(reAttrs])
+                    const attrs = [...tagAttrs.matchAll(reAttrs)]
                     attrs.forEach(attr => {
                         const name = attr[1], value = attr[2].replace(/['"]/g, '')
                         tagNode.setAttribute(name, value)
