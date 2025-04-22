@@ -68,7 +68,7 @@
   "bugs": "https://github.com/KudoAI/chatgpt.js/issues",
   "devDependencies": {
     "@adamlui/minify.js": "^1.8.6",
-    "@adamlui/scss-to-css": "^1.10.31",
+    "@adamlui/scss-to-css": "^1.10.32",
     "@eslint/css": "^0.7.0",
     "@eslint/json": "^0.12.0",
     "@eslint/markdown": "^6.4.0",
@@ -76,7 +76,7 @@
     "@html-eslint/parser": "^0.39.0",
     "@stylistic/eslint-plugin-js": "^4.2.0",
     "docsify-cli": "^4.4.4",
-    "eslint": "^9.25.0",
+    "eslint": "^9.25.1",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-regexp": "^2.7.0",
     "eslint-plugin-yml": "^1.17.0",
