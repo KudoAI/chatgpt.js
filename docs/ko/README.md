@@ -49,7 +49,7 @@
 <a href="https://github.com/KudoAI/chatgpt.js/stargazers" target="_blank" rel="noopener">
     <img src="https://img.shields.io/github/stars/KudoAI/chatgpt.js?label=%EB%B3%84&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="LICENSE.md" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/badge/%EB%9D%BC%EC%9D%B4%EC%84%BC%EC%8A%A4-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    <img src="https://img.shields.io/badge/%EB%9D%BC%EC%9D%B4%EC%84%BC%EC%8A%A4-MIT-fc4f2d.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.npmjs.com/package/@kudoai/chatgpt.js/v/latest" target="_blank" rel="noopener">
     <img src="https://img.shields.io/npm/v/%40kudoai%2Fchatgpt.js?logo=npm&logoColor=white&labelColor=464646&color=blue&style=for-the-badge&label=%EC%B5%9C%EC%8B%A0%20%EB%A6%B4%EB%A6%AC%EC%8A%A4"></a>
 <a href="https://github.com/KudoAI/chatgpt.js/tree/v3.7.1/dist/chatgpt.min.js" target="_blank" rel="noopener">
