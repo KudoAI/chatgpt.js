@@ -434,14 +434,21 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 **chatgpt.js** को आंशिक रूप से निम्नलिखित द्वारा वित्तपोषित किया जाता है:
 
+<a href="https://iproyal.com/?r=855573" target="_blank" rel="noopener">
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/iproyal/white.svg?v=0a9f73e">
+        <img width=215 src="https://assets.chatgptjs.org/images/logos/partners/iproyal/black.svg?v=0a9f73e">
+    </picture>
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.microsoft.com/?utm_source=chatgpt.js-github&utm_medium=referral&utm_content=partner-logo"
    target="_blank" rel="noopener">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/microsoft/white.png?v=e638eac">
-        <img width=255 src="https://assets.chatgptjs.org/images/logos/partners/microsoft/black.png?v=e638eac">
+        <img width=250 src="https://assets.chatgptjs.org/images/logos/partners/microsoft/black.png?v=e638eac">
     </picture>
 </a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/warp/white.svg?v=476e837">
