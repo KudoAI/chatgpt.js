@@ -236,7 +236,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://amazongpt.kudoai.com/assets/images/icons/app/white/icon48.png"><img width=20 src="https://amazongpt.kudoai.com/assets/images/icons/app/black-gold-teal/icon48.png"></picture> [AmazonGPT](https://amazongpt.kudoai.com)  &nbsp;<a href="https://amazongpt.kudoai.com/assets/wolfram-award/letter.pdf" target="_blank" rel="noopener"><img height=20 src="https://amazongpt.kudoai.com/assets/images/badges/wolfram-award/gold-badge.png" style="margin:0 0 -2px 5px"></a>
 
-> Amazon किनमेलमा AI थप्नुहोस्।
+> नवीनतम LLM हरू द्वारा संचालित, Amazon किनमेलमा AI च्याट र उत्पादन/श्रेणी सारांशहरू थप्नुहोस्!
 <br>[Install](https://raw.githubusercontent.com/KudoAI/amazongpt/main/greasemonkey/amazongpt.user.js) /
 [Readme](https://amazongpt.kudoai.com/#readme) /
 [Discuss](https://github.com/KudoAI/amazongpt/discussions)
@@ -250,7 +250,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <img width=24 src="https://assets.bravegpt.com/images/icons/app/icon48.png"> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-> Brave Search मा AI जवाफहरू थप्छ (GPT-4o द्वारा संचालित!)
+> नवीनतम LLM हरू द्वारा संचालित, Brave Search मा AI च्याट र खोज सारांशहरू थप्नुहोस्!
 <br>[इंस्टॉल](https://docs.bravegpt.com/#-installation) / 
 [रीडमी](https://docs.bravegpt.com/#readme) / 
 [चर्चा](https://github.com/KudoAI/bravegpt/discussions)
@@ -278,14 +278,14 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <img width=23 src="https://assets.ddgpt.com/images/icons/app/icon48.png"> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-> DuckDuckGo मा AI जवाफहरू थप्छ (GPT-4o द्वारा संचालित!)
+> नवीनतम LLM हरू द्वारा संचालित, DuckDuckGo मा AI च्याट र खोज सारांशहरू थप्नुहोस्!
 <br>[इंस्टॉल](https://docs.ddgpt.com/#-installation) / 
 [रीडमी](https://docs.ddgpt.com/#readme) / 
 [चर्चा](https://github.com/KudoAI/duckduckgpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.googlegpt.io/images/icons/app/white/icon48.png"><img width=21 src="https://assets.googlegpt.io/images/icons/app/black/icon48.png"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.googlegpt.io/images/badges/awesome/badge.svg?699c63d" style="margin:0 0 -2px 5px"></a>
 
-> Google Search मा AI जवाफहरू थप्छ (Google Gemma + GPT-4o द्वारा संचालित!)
+> नवीनतम LLM हरू द्वारा संचालित, Google खोजमा AI च्याट र खोज सारांशहरू थप्नुहोस्!
 <br>[इंस्टॉल](https://greasyfork.googlegpt.io) /
 [रीडमी](https://docs.googlegpt.io/#readme) /
 [चर्चा](https://github.com/KudoAI/googlegpt/discussions)

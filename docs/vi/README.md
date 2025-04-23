@@ -233,7 +233,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://amazongpt.kudoai.com/assets/images/icons/app/white/icon48.png"><img width=20 src="https://amazongpt.kudoai.com/assets/images/icons/app/black-gold-teal/icon48.png"></picture> [AmazonGPT](https://amazongpt.kudoai.com)  &nbsp;<a href="https://amazongpt.kudoai.com/assets/wolfram-award/letter.pdf" target="_blank" rel="noopener"><img height=20 src="https://amazongpt.kudoai.com/assets/images/badges/wolfram-award/gold-badge.png" style="margin:0 0 -2px 5px"></a>
 
-> Thêm AI vào mua sắm trên Amazon.
+> Thêm tóm tắt trò chuyện AI & sản phẩm/danh mục vào mua sắm trên Amazon, được hỗ trợ bởi LLM mới nhất!
 <br>[Install](https://raw.githubusercontent.com/KudoAI/amazongpt/main/greasemonkey/amazongpt.user.js) /
 [Readme](https://amazongpt.kudoai.com/#readme) /
 [Discuss](https://github.com/KudoAI/amazongpt/discussions)
@@ -254,7 +254,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <img width=24 src="https://assets.bravegpt.com/images/icons/app/icon48.png"> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-> Thêm câu trả lời AI vào Brave Search (được cung cấp bởi GPT-4o!)
+> Thêm tóm tắt trò chuyện AI & tìm kiếm vào Brave Search, được hỗ trợ bởi LLM mới nhất!
 <br>[Cài đặt](https://docs.bravegpt.com/#-installation) /
 [Đọc tôi](https://docs.bravegpt.com/#readme) /
 [Bàn luận](https://github.com/KudoAI/bravegpt/discussions)
@@ -282,14 +282,14 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 
 ### <img width=23 src="https://assets.ddgpt.com/images/icons/app/icon48.png"> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-> Thêm câu trả lời AI vào DuckDuckGo (được cung cấp bởi GPT-4o!)
+> Thêm tóm tắt trò chuyện AI & tìm kiếm vào DuckDuckGo, được hỗ trợ bởi LLM mới nhất!
 <br>[Cài đặt](https://docs.ddgpt.com/#-installation) /
 [Đọc tôi](https://docs.ddgpt.com/#readme) /
 [Bàn luận](https://github.com/KudoAI/duckduckgpt/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.googlegpt.io/images/icons/app/white/icon48.png"><img width=21 src="https://assets.googlegpt.io/images/icons/app/black/icon48.png"></picture> [GoogleGPT](https://googlegpt.io) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt" target="_blank" rel="noopener"><img src="https://assets.googlegpt.io/images/badges/awesome/badge.svg?699c63d" style="margin:0 0 -2px 5px"></a>
 
-> Thêm câu trả lời AI vào Google Search (được cung cấp bởi Google Gemma + GPT-4o!)
+> Thêm tóm tắt trò chuyện AI & tìm kiếm vào Google Search, được hỗ trợ bởi LLM mới nhất!
 <br>[Cài đặt](https://greasyfork.googlegpt.io) /
 [Đọc tôi](https://docs.googlegpt.io/#readme) /
 [Bàn luận](https://github.com/KudoAI/googlegpt/discussions)
