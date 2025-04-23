@@ -387,8 +387,9 @@ a[href*='mailto:showcase'] { word-break: keep-all }
 
 /* Footer */
 #footer { text-align: center ; margin: -119px 0 -105px } /* general position */
-img[src*="logos/partners"] { width: 18vw } /* size partner logos */
-[href*=microsoft] + [href*=warp] img { width: 16vw } /* shrink Warp logo */
+img[src*="logos/partners/iproyal"] { width: 12vw }
+img[src*="logos/partners/microsoft"] { width: 14vw }
+img[src*="logos/partners/warp"] { width: 11vw }
 #mc_embed_signup h2 { /* 1st CTA */
     margin: 15px 0 3.5rem !important ;
     font-size: 2.68rem !important ; color: white ; -webkit-text-stroke: 1px black }
@@ -532,6 +533,8 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
     #contributors + p + div { /* avatars container */
         margin-bottom: 85px } /* reduce mobile shove footer away */
     #footer { margin-top: 121px } /* reduce desktop top-margin */
-    img[src*="logos/partners"] { width: 77vw } /* size partner logos */
-    [href*=microsoft]+[href*=warp] img { width: 62vw ; margin-top: 18px } /* size/pos Warp logo */
+    p:has(+ a > img[src*=partners]) { margin-bottom: 33px } /* add gap after partners heading */
+    img[src*="logos/partners/iproyal"] { width: 55vw }
+    img[src*="logos/partners/microsoft"] { width: 59vw ; margin: 15px 0 }
+    img[src*="logos/partners/warp"] { width: 47vw }
 }
