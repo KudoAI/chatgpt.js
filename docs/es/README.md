@@ -437,7 +437,7 @@ Esta biblioteca existe gracias al código, las traducciones, los problemas y las
 <a href="https://iproyal.com/?r=855573" target="_blank" rel="noopener">
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/partners/iproyal/white.svg?v=0a9f73e">
-        <img width=215 src="https://assets.chatgptjs.org/images/logos/partners/iproyal/black.svg?v=0a9f73e">
+        <img width=212 src="https://assets.chatgptjs.org/images/logos/partners/iproyal/black.svg?v=0a9f73e">
     </picture>
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
