@@ -445,7 +445,7 @@ Cette bibliothèque existe grâce au code, aux traductions, aux problèmes et au
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)"
                 srcset="https://assets.chatgptjs.org/images/logos/partners/iproyal/white.svg?v=962dcd1">
-        <img width=168 src="https://assets.chatgptjs.org/images/logos/partners/iproyal/black.svg?v=962dcd1">
+        <img width=165 src="https://assets.chatgptjs.org/images/logos/partners/iproyal/black.svg?v=962dcd1">
     </picture></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.microsoft.com/?utm_source=chatgpt.js-github&utm_medium=referral&utm_content=partner-logo"
