@@ -65,30 +65,30 @@
         const childEntriesDiv = dom.create.elem('div') ; document.body.append(childEntriesDiv)
         await settings.load(Object.keys(settings.controls))
         Object.keys(settings.controls).forEach(key => {
-            const controlType = settings.controls[key].type
+            const ctrl = settings.controls[key]
 
             // Init entry's elems
             const entry = {
                 div: dom.create.elem('div', {
-                    class: 'menu-entry highlight-on-hover', title: settings.controls[key].helptip || '' }),
-                leftElem: dom.create.elem('div', { class: `menu-icon ${ controlType || '' }` }),
+                    class: 'menu-entry highlight-on-hover', title: ctrl.helptip || '' }),
+                leftElem: dom.create.elem('div', { class: `menu-icon ${ ctrl.type || '' }` }),
                 label: dom.create.elem('span')
             }
-            entry.label.textContent = settings.controls[key].label
+            entry.label.textContent = ctrl.label
             entry.div.append(entry.leftElem, entry.label) ; childEntriesDiv.append(entry.div)
-            if (controlType == 'toggle') { // add track to left, init knob pos
+            if (ctrl.type == 'toggle') { // add track to left, init knob pos
                 entry.leftElem.append(dom.create.elem('span', { class: 'track' }))
                 entry.leftElem.classList.toggle('on', settings.typeIsEnabled(key))
             } else { // add symbol to left, append status to right
-                entry.leftElem.innerText = settings.controls[key].symbol
-                entry.label.innerText += `— ${settings.controls[key].status}`
+                entry.leftElem.innerText = ctrl.symbol
+                entry.label.innerText += `— ${ctrl.status}`
             }
 
             entry.div.onclick = () => {
-                if (controlType == 'toggle') {
+                if (ctrl.type == 'toggle') {
                     entry.leftElem.classList.toggle('on')
                     settings.save(key, !config[key]) ; sync.configToUI({ updatedKey: key })
-                    notify(`${settings.controls[key].label} ${ settings.typeIsEnabled(key) ? 'ON' : 'OFF' }`)
+                    notify(`${ctrl.label} ${ settings.typeIsEnabled(key) ? 'ON' : 'OFF' }`)
                 }
             }
         })
