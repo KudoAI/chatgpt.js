@@ -301,9 +301,6 @@ const onLoadObserver = new MutationObserver(() => {
                 picture.replaceWith(imgElement)
             })
 
-            // Strip whitespace after MICROSOFT partner logo
-            document.querySelector('img[src*="partners/microsoft"]').nextSibling.remove()
-
             // Append EMAIL SIGNUP footer
             const emailFooter = document.createElement('div')
             fetch('assets/html/footer.html')
