@@ -438,7 +438,7 @@ Deze bibliotheek bestaat dankzij code, vertalingen, problemen en ideeën van de 
     <picture>
         <source type="image/png" media="(prefers-color-scheme: dark)"
                 srcset="https://assets.chatgptjs.org/images/logos/partners/iproyal/white.svg?v=0a9f73e">
-        <img width=212 src="https://assets.chatgptjs.org/images/logos/partners/iproyal/black.svg?v=0a9f73e">
+        <img width=200 src="https://assets.chatgptjs.org/images/logos/partners/iproyal/black.svg?v=0a9f73e">
     </picture></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.microsoft.com/?utm_source=chatgpt.js-github&utm_medium=referral&utm_content=partner-logo"
