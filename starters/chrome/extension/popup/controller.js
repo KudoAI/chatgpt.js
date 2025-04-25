@@ -62,8 +62,8 @@
 
     // Create CHILD menu entries on chatgpt.com
     if (env.site == 'chatgpt') {
-        const menuEntriesDiv = dom.create.elem('div') ; document.body.append(menuEntriesDiv)
         await settings.load(Object.keys(settings.controls))
+        const menuEntriesDiv = dom.create.elem('div') ; document.body.append(menuEntriesDiv)
         Object.keys(settings.controls).forEach(key => {
             const ctrl = settings.controls[key]
 
