@@ -50,6 +50,7 @@ body {
 }
 .menu-icon { padding: 8px }
 .menu-entry > label > .track { transform: scale(0.95) ; top: 1px } /* make child toggles smaller */
+.caret { position: absolute ; right: 14px ; transform: rotate(-90deg) }
 .categorized-entries { /* add left-stripe */
     border-left: 4px solid transparent ; height: 0 ; overflow: hidden ;
     border-image: linear-gradient(transparent, rgb(161 161 161)) 30 100%
