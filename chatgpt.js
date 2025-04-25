@@ -40,10 +40,10 @@ const chatgpt = {
         },
         chatHistory: 'nav',
         errors: { txt: '[class*=text-error]' },
-        footer: '.min-h-4',
-        header: 'main .sticky',
+        footer: '.text-sm.leading-none',
+        header: 'main .sticky:first-of-type',
         links: { newChat: 'nav a[href="/"]', sidebarItem: 'nav a' },
-        sidebar: 'div[class*=sidebar]',
+        sidebar: 'div[class*=sidebar]:not(:has([data-testid=screen-threadFlyOut]))',
         ssgManifest: 'script[src*="_ssgManifest.js"]'
     },
 
