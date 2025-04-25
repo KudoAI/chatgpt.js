@@ -16,7 +16,7 @@
 
     // Define FUNCTIONS
 
-    function createMenuEntry(entryData, { type } = {}) {
+    function createMenuEntry(entryData) {
         const entry = {
             div: dom.create.elem('div', {
                 id: entryData.key, class: 'menu-entry highlight-on-hover', title: entryData.helptip || '' }),
@@ -31,10 +31,10 @@
             entry.leftElem.innerText = entryData.symbol || '⚙️'
             if (entryData.status) entry.label.textContent += ` — ${entryData.status}`
         }
-        if (type == 'category') entry.div.append(icons.create('caretDown', { size: 11, class: 'caret',
-            style: 'position: absolute ; right: 14px ; transform: rotate(-90deg)' }))
+        if (entryData.type == 'category') entry.div.append(icons.create('caretDown', {
+            size: 11, class: 'caret', style: 'position: absolute ; right: 14px ; transform: rotate(-90deg)' }))
         entry.div.onclick = () => {
-            if (type == 'category') toggleCategorySettingsVisiblity(entryData.key)
+            if (entryData.type == 'category') toggleCategorySettingsVisiblity(entryData.key)
             else if (entryData.type == 'toggle') {
                 entry.leftElem.classList.toggle('on')
                 settings.save(entryData.key, !config[entryData.key]) ; sync.configToUI({ updatedKey: entryData.key })
@@ -132,11 +132,11 @@
         // Create/append categorized controls
         Object.entries(categorizedCtrls).forEach(([category, ctrls]) => {
             if (category == 'general') return
-            const catData = { ...settings.categories[category], key: category },
+            const catData = { ...settings.categories[category], key: category, type: 'category' },
                   catChildrenDiv = dom.create.elem('div', { class: 'categorized-entries' })
             if (catData.color) // color the stripe
                 catChildrenDiv.style.borderImage = `linear-gradient(transparent, #${catData.color}) 30 100%`
-            menuEntriesDiv.append(createMenuEntry(catData, { type: 'category' }), catChildrenDiv)
+            menuEntriesDiv.append(createMenuEntry(catData), catChildrenDiv)
             Object.values(ctrls).forEach(ctrl => catChildrenDiv.append(createMenuEntry(ctrl)))
         })
     }
