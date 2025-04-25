@@ -8,6 +8,7 @@ window.settings = {
         // - 'defaultVal' (optional): default value of setting (true for toggles if unspecified, false otherwise)
         // - 'category' (optional): string key from this.categories to group control under
         // - 'symbol' (optional): for icon display (e.g. ⌚)
+        // - 'helptip' (optional): tooltip to display on hover
         // NOTE: Controls are displayed in top-to-bottom order (within categories and in top-level)
         // NOTE: Toggles are disabled by default unless defaultVal is true
         //    ...or key name contains 'disabled' or 'hidden' (case insensitive)
