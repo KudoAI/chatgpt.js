@@ -14,6 +14,11 @@ window.icons = {
             return dom.create.elem('img', { src: iconData.src, ...iconAttrs })
     },
 
+    caretDown: {
+        type: 'svg', viewBox: '0 0 24 24',
+        elems: [[ 'path', { d: 'm0 6.4 12 12 12-12z' }]]
+    },
+
     plus: {
         type: 'svg',  viewBox: '0 0 1024 1024',
         elems: [
