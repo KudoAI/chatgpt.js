@@ -160,17 +160,14 @@
     cjsSpan.append(cjsLogo) ; footer.append(cjsSpan)
 
     // Create/append ABOUT footer button
-    const aboutSpan = dom.create.elem('span', {
-        title: `About ${app.name}`,
-        class: 'menu-icon highlight-on-hover', style: 'right:30px ; padding-top: 2px' })
-    const aboutIcon = icons.create('questionMark', { width: 15, height: 13, style: 'margin-bottom: 0.04rem' })
+    const aboutSpan = dom.create.elem('span', { title: `About ${app.name}`, class: 'menu-icon highlight-on-hover' }),
+          aboutIcon = icons.create('questionMark', { width: 15, height: 13 })
     aboutSpan.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
     aboutSpan.append(aboutIcon) ; footer.append(aboutSpan)
 
     // Create/append RELATED EXTENSIONS footer button
     const moreExtensionsSpan = dom.create.elem('span', {
-        title: 'More AI Extensions',
-        class: 'menu-icon highlight-on-hover', style: 'right:2px ; padding-top: 2px' })
+        title: 'More AI Extensions', class: 'menu-icon highlight-on-hover' })
     const moreExtensionsIcon = icons.create('plus')
     moreExtensionsSpan.onclick = () => { open(app.urls.relatedExtensions) ; close() }
     moreExtensionsSpan.append(moreExtensionsIcon) ; footer.append(moreExtensionsSpan)
