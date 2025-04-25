@@ -16,7 +16,7 @@
 
     // Define FUNCTIONS
 
-    function createMenuEntry(entryData, { isCategory = false } = {}) {
+    function createMenuEntry(entryData, { type } = {}) {
         const entry = {
             div: dom.create.elem('div', {
                 id: entryData.key, class: 'menu-entry highlight-on-hover', title: entryData.helptip || '' }),
@@ -31,10 +31,10 @@
             entry.leftElem.innerText = entryData.symbol || '⚙️'
             if (entryData.status) entry.label.textContent += ` — ${entryData.status}`
         }
-        if (isCategory) entry.div.append(icons.create('caretDown', { size: 11, class: 'caret',
+        if (type == 'category') entry.div.append(icons.create('caretDown', { size: 11, class: 'caret',
             style: 'position: absolute ; right: 14px ; transform: rotate(-90deg)' }))
         entry.div.onclick = () => {
-            if (isCategory) toggleCategorySettingsVisiblity(entryData.key)
+            if (type == 'category') toggleCategorySettingsVisiblity(entryData.key)
             else if (entryData.type == 'toggle') {
                 entry.leftElem.classList.toggle('on')
                 settings.save(entryData.key, !config[entryData.key]) ; sync.configToUI({ updatedKey: entryData.key })
@@ -136,7 +136,7 @@
                   catChildrenDiv = dom.create.elem('div', { class: 'categorized-entries' })
             if (catData.color) // color the stripe
                 catChildrenDiv.style.borderImage = `linear-gradient(transparent, #${catData.color}) 30 100%`
-            menuEntriesDiv.append(createMenuEntry(catData, { isCategory: true }), catChildrenDiv)
+            menuEntriesDiv.append(createMenuEntry(catData, { type: 'category' }), catChildrenDiv)
             Object.values(ctrls).forEach(ctrl => catChildrenDiv.append(createMenuEntry(ctrl)))
         })
     }
