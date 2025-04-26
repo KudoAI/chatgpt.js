@@ -31,7 +31,7 @@
             entry.leftElem.innerText = entryData.symbol || '⚙️'
             if (entryData.status) entry.label.textContent += ` — ${entryData.status}`
         }
-        if (entryData.type == 'category') entry.div.append(icons.create('caretDown', { size: 11, class: 'caret' }))
+        if (entryData.type == 'category') entry.div.append(icons.create('caretDown', { size: 11, class: 'menu-caret' }))
         entry.div.onclick = () => {
             if (entryData.type == 'category') toggleCategorySettingsVisiblity(entryData.key)
             else if (entryData.type == 'toggle') {
@@ -75,7 +75,7 @@
     function toggleCategorySettingsVisiblity(category, { transitions = true, action } = {}) {
         const transitionDuration = 350, // ms
               categoryDiv = document.getElementById(category),
-              caret = categoryDiv.querySelector('.caret'),
+              caret = categoryDiv.querySelector('.menu-caret'),
               catChildrenDiv = categoryDiv.nextSibling,
               catChild = catChildrenDiv.querySelectorAll('.menu-entry')
         if (action != 'hide' && dom.get.computedHeight(catChildrenDiv) == 0) { // show category settings
@@ -90,7 +90,7 @@
                 if (transitions) row.style.transition = `opacity ${ transitionDuration /1000 }s ease-in-out`
                 setTimeout(() => row.style.opacity = 1, transitions ? idx * transitionDuration /10 : 0)
             })
-            document.querySelectorAll(`.menu-entry:has(.caret):not(#${category})`).forEach(otherCategoryDiv =>
+            document.querySelectorAll(`.menu-entry:has(.menu-caret):not(#${category})`).forEach(otherCategoryDiv =>
                 toggleCategorySettingsVisiblity(otherCategoryDiv.id, { action: 'hide' }))
         } else { // hide category settings
             Object.assign(catChildrenDiv.style, { height: 0, transition: '' })
@@ -141,7 +141,7 @@
     }
 
     // AUTO-EXPAND categories
-    document.querySelectorAll('.menu-entry:has(.caret)').forEach(categoryDiv => {
+    document.querySelectorAll('.menu-entry:has(.menu-caret)').forEach(categoryDiv => {
         if (settings.categories[categoryDiv.id]?.autoExpand)
             toggleCategorySettingsVisiblity(categoryDiv.id, { transitions: false })
     })

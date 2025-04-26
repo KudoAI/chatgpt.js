@@ -8,7 +8,7 @@ body {
 
 /* Color/fade mods */
 .highlight-on-hover:hover { background: rgb(100,149,237) }
-.highlight-on-hover:hover span:not(.track), .highlight-on-hover:hover .caret { /* invert setting labels on hover */
+.highlight-on-hover:hover span:not(.track), .highlight-on-hover:hover .menu-caret { /* invert setting labels on hover */
     filter: invert(1) }
 .disabled { opacity: 0.3 ; pointer-events: none }
 
@@ -50,7 +50,7 @@ body {
 }
 .menu-icon { padding: 8px }
 .menu-entry > label > .track { transform: scale(0.95) ; top: 1px } /* make child toggles smaller */
-.caret { position: absolute ; right: 14px ; transform: rotate(-90deg) }
+.menu-caret { position: absolute ; right: 14px ; transform: rotate(-90deg) }
 .categorized-entries { /* add left-stripe */
     border-left: 4px solid transparent ; height: 0 ; overflow: hidden ;
     border-image: linear-gradient(transparent, rgb(161 161 161)) 30 100%
