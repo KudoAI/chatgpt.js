@@ -116,9 +116,10 @@
     }
 
     // Create CHILD menu entries on chatgpt.com
+    const footer = document.querySelector('footer')
     if (env.site == 'chatgpt') {
         await settings.load(Object.keys(settings.controls))
-        const menuEntriesDiv = dom.create.elem('div') ; document.body.append(menuEntriesDiv)
+        const menuEntriesDiv = dom.create.elem('div') ; footer.before(menuEntriesDiv)
 
         // Group controls by category
         const categorizedCtrls = {}
@@ -148,28 +149,22 @@
 
     sync.fade() // based on master toggle
 
-    // Create/append FOOTER container
-    const footer = dom.create.elem('footer') ; document.body.append(footer)
-
-    // Create/append CHATGPT.JS footer logo
-    const cjsSpan = dom.create.elem('span', { class: 'cjs-span' })
-    const cjsLogo = dom.create.elem('img', {
-        src: `${app.urls.cjsAssetHost.replace('@latest', '@745f0ca')}/images/badges/powered-by-chatgpt.js.png` })
+    // Init CHATGPT.JS footer logo
+    const cjsLogo = footer.querySelector('.cjs-logo')
+    cjsLogo.src = `${app.urls.cjsAssetHost.replace('@latest', '@745f0ca')}/images/badges/powered-by-chatgpt.js.png`
     cjsLogo.onclick = () => { open(app.urls.chatgptJS) ; close() }
-    cjsSpan.append(cjsLogo) ; footer.append(cjsSpan)
 
-    // Create/append ABOUT footer button
-    const aboutSpan = dom.create.elem('span', { title: `About ${app.name}`, class: 'menu-icon highlight-on-hover' }),
-          aboutIcon = icons.create('questionMark', { width: 15, height: 13 })
+    // Init ABOUT footer button
+    const aboutSpan = footer.querySelector('.about-span')
+    aboutSpan.title = `About ${app.name}`
+    aboutSpan.append(icons.create('questionMark', { width: 15, height: 13 }))
     aboutSpan.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
-    aboutSpan.append(aboutIcon) ; footer.append(aboutSpan)
 
-    // Create/append RELATED EXTENSIONS footer button
-    const moreExtensionsSpan = dom.create.elem('span', {
-        title: 'More AI Extensions', class: 'menu-icon highlight-on-hover' })
-    const moreExtensionsIcon = icons.create('plus')
+    // Set up More Extensions button
+    const moreExtensionsSpan = footer.querySelector('.more-extensions-span')
+    moreExtensionsSpan.title = 'More AI Extensions'
+    moreExtensionsSpan.append(icons.create('plus'))
     moreExtensionsSpan.onclick = () => { open(app.urls.relatedExtensions) ; close() }
-    moreExtensionsSpan.append(moreExtensionsIcon) ; footer.append(moreExtensionsSpan)
 
     // Remove LOADING SPINNER after imgs load
     Promise.all([...document.querySelectorAll('img')].map(img =>
