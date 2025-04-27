@@ -1,7 +1,7 @@
 // Requires lib/dom.js + app
 
 window.icons = {
-    import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
+    import(deps) { Object.assign(this.imports ||= {}, deps) },
 
     create(name, { size = 16, width, height, ...additionalAttrs } = {}) {
         const iconData = icons[name],
