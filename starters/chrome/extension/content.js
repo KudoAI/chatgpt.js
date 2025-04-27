@@ -18,15 +18,13 @@
     dom.import({ env }) // for env.ui.scheme
     modals.import({ app, env }) // for app data + env.<browser|ui> flags
 
-    // Add CHROME MSG listener
-    chrome.runtime.onMessage.addListener(req => { // from service-worker.js + popup/index.html
-        if (req.action == 'notify')
-            notify(...['msg', 'pos', 'notifDuration', 'shadow'].map(arg => req.options[arg]))
-        else if (req.action == 'alert')
-            modals.alert(...['title', 'msg', 'btns', 'checkbox', 'width'].map(arg => req.options[arg]))
-        else if (req.action == 'showAbout') {
-            config.skipAlert = true ; chatgpt.isLoaded().then(() => modals.open('about'))
-        } else if (req.action == 'syncConfigToUI') syncConfigToUI(req.options)
+    chrome.runtime.onMessage.addListener(({ action, options }) => { // from service-worker.js + popup/index.html
+        ({
+            notify: () => notify(...['msg', 'pos', 'notifDuration', 'shadow'].map(arg => options[arg])),
+            alert: () => modals.alert(...['title', 'msg', 'btns', 'checkbox', 'width'].map(arg => options[arg])),
+            showAbout: () => { config.skipAlert = true ; chatgpt.isLoaded().then(() => modals.open('about')) },
+            syncConfigToUI: () => syncConfigToUI(options)
+        }[action]?.())
     })
 
     // Init SETTINGS
