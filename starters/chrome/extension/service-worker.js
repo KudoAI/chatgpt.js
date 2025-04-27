@@ -8,7 +8,6 @@ const app = {
     urls: {
         assetHost: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@latest',
         chatgptJS: 'https://chatgptjs.org',
-        cjsAssetHost: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@latest/assets',
         contributors: 'https://docs.chatgptjs.org/#-contributors',
         gitHub: 'https://github.com/KudoAI/chatgpt.js-chrome-starter',
         relatedExtensions: 'https://aiwebextensions.com',
