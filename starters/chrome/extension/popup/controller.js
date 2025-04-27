@@ -160,7 +160,7 @@
     aboutSpan.append(icons.create('questionMark', { width: 15, height: 13 }))
     aboutSpan.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
 
-    // Set up More Extensions button
+    // Init MORE EXTENSIONS footer button
     const moreExtensionsSpan = footer.querySelector('.more-extensions-span')
     moreExtensionsSpan.title = 'More AI Extensions'
     moreExtensionsSpan.append(icons.create('plus'))
