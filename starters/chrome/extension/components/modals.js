@@ -103,10 +103,7 @@ window.modals = {
     safeWinOpen(url) { open(url, '_blank', 'noopener') }, // to prevent backdoor vulnerabilities
 
     stylize() {
-        if (!this.styles) {
-            this.styles = dom.create.elem('style') ; this.styles.id = `${this.class}-styles`
-            document.head.append(this.styles)
-        }
+        if (!this.styles) document.head.append(this.styles = dom.create.elem('style'))
         this.styles.innerText = (
             `.${this.class} {` // modals
               + 'user-select: none ; -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ;'
