@@ -40,7 +40,7 @@ const chatgpt = {
             reply: 'div[data-message-author-role=assistant]'
         },
         chatHistory: 'div#history',
-        errors: { txt: '[class*=text-error]' },
+        errors: { toast: 'div.toast-root', txt: 'div[class*=text-error]' },
         footer: 'div#thread-bottom-container > div:last-of-type > div, span.text-sm.leading-none',
         header: 'main .sticky:first-of-type',
         links: { newChat: 'nav a[href="/"]', sidebarItem: 'nav a' },
