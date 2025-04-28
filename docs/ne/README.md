@@ -49,10 +49,10 @@
     <img src="https://img.shields.io/github/stars/KudoAI/chatgpt.js?label=Stars&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="LICENSE.md" target="_blank" rel="noopener">
     <img src="https://img.shields.io/badge/License-MIT-fc4f2d.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.com/KudoAI/chatgpt.js/tree/v3.7.1/dist/chatgpt.min.js">
+<a href="https://github.com/KudoAI/chatgpt.js/tree/v3.8.0/dist/chatgpt.min.js">
 <a href="https://www.npmjs.com/package/@kudoai/chatgpt.js/v/latest" target="_blank" rel="noopener">
     <img src="https://img.shields.io/npm/v/%40kudoai%2Fchatgpt.js?logo=npm&logoColor=white&labelColor=464646&color=blue&style=for-the-badge&label=Latest+Release"></a>
-    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.7.1&label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
+    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.8.0&label=Minified%20Size&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/kudoai/chatgpt.js" target="_blank" rel="noopener">
     <img src="https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge"></a>
 <a href="https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=kudoai_chatgpt.js" target="_blank" rel="noopener">
@@ -118,7 +118,7 @@
 
 ```js
 (async () => {
-    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.7.1/dist/chatgpt.min.js');    
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.0/dist/chatgpt.min.js');    
     // आफ्नो कोड यहाँ लेख्नुहोस्...
 })();
 ```
@@ -127,7 +127,7 @@
 
 ```js
 var xhr = new XMLHttpRequest()
-xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.7.1/dist/chatgpt.min.js')
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.0/dist/chatgpt.min.js')
 xhr.onload = function() {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script')
@@ -150,7 +150,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.7.1/dist/chatgpt.min.js
+// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.0/dist/chatgpt.min.js
 // ==/UserScript==
 
 // आफ्नो कोड यहाँ लेख्नुहोस्...
@@ -220,7 +220,7 @@ chatgpt.get('reply', 'last')
 
 माथिको प्रत्येक API कलले समान रूपमा अन्तिम प्रतिक्रिया ल्याउँछ। यदि तपाइँले सोच्नुहुन्छ कि तपाइँले लेखेको काम गर्छ वा गर्दैन..., संभावना छ कि त्‍यो काम गर्नेछ, त्यसैले त्‍यसलाई लेख्नुहोस् र हेर्नुहोस्।
 
-यदि त्यसो भएन भने, यो विस्तारित [यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v3.7.1/docs/USERGUIDE.md) हेर्नुहोस्, अथवा एउटा [इश्यू](https://github.com/KudoAI/chatgpt.js/issues) सबमिट गर्नुहोस् अथवा [PR](https://github.com/KudoAI/chatgpt.js/pulls) अनि यस्‍लाई समावेश गरिनेछ, निकै सजिलो!
+यदि त्यसो भएन भने, यो विस्तारित [यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v3.8.0/docs/USERGUIDE.md) हेर्नुहोस्, अथवा एउटा [इश्यू](https://github.com/KudoAI/chatgpt.js/issues) सबमिट गर्नुहोस् अथवा [PR](https://github.com/KudoAI/chatgpt.js/pulls) अनि यस्‍लाई समावेश गरिनेछ, निकै सजिलो!
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
@@ -475,7 +475,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 <div align="center">
 
 **[विज्ञप्ति](https://github.com/KudoAI/chatgpt.js/releases)** /
-[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v3.7.1/docs/USERGUIDE.md) / 
+[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v3.8.0/docs/USERGUIDE.md) / 
 [चर्चा](https://github.com/KudoAI/chatgpt.js/discussions) / 
 <a href="#top">शीर्षमा जाऔं ↑</a>
 
