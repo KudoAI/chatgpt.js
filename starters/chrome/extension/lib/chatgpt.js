@@ -50,7 +50,7 @@ const chatgpt = {
         chatHistory: 'div#history',
         errors: { toast: 'div.toast-root', txt: 'div[class*=text-error]' },
         footer: 'div#thread-bottom-container > div:last-of-type > div, span.text-sm.leading-none',
-        header: 'main div.sticky:first-of-type',
+        header: 'div#page-header, main div.sticky:first-of-type',
         links: { newChat: 'nav a[href="/"]', sidebarItem: 'nav a' },
         sidebar: 'div[class*=sidebar]:not(:has(div[data-testid=screen-threadFlyOut]))',
         ssgManifest: 'script[src*="_ssgManifest.js"]'
