@@ -24,7 +24,10 @@ const chatgpt = {
 
     selectors: {
         btns: {
-            continue: 'button:has(svg[class*=rotate] > path[d^="M4.47189"])', login: 'button[data-testid*=login]',
+            continue: 'button:has(svg[class*=rotate] > path[d^="M4.47189"])',
+            createImage: 'button[data-testid="composer-create-image"]',
+            deepResearch: 'button[data-testid="composer-deep-research"]',
+            login: 'button[data-testid*=login]',
             newChat: 'a[data-testid=create-new-chat-button],' // sidebar button (when logged in)
                    + 'button:has(path[d^="M3.06957"]),' // Cycle Arrows icon (Temp chat mode)
                    + 'a:has(> svg > path[d^="M15.6729"])', // Pencil icon (recorded chat mode)
@@ -32,8 +35,13 @@ const chatgpt = {
                     // 'Try Again' entry of model selector below msg
                  + 'div[role=menuitem] div:has(svg):has(path[d^="M3.06957"])',
             scroll: 'button:has(> svg > path[d^="M12 21C11.7348"])',
-            send: 'button[data-testid=send-button]', sidebar: 'button[data-testid*=sidebar-button]',
-            stop: 'button[data-testid=stop-button]', voice: 'button[data-testid*=composer-speech-button]'
+            search: 'button[data-testid="composer-button-search"]',
+            reason: 'button[data-testid="composer-button-reason"]',
+            send: 'button[data-testid=send-button]',
+            sidebar: 'button[data-testid*=sidebar-button]',
+            stop: 'button[data-testid=stop-button]',
+            upload: 'button:has(> svg > path[d^="M12 3C12.5523"])',
+            voice: 'button[data-testid*=composer-speech-button]'
         },
         chatDivs: {
             convo: 'div[class*=thread]', msg: 'div[data-message-author-role]',
