@@ -28,9 +28,8 @@ const chatgpt = {
             createImage: 'button[data-testid="composer-create-image"]',
             deepResearch: 'button[data-testid="composer-deep-research"]',
             login: 'button[data-testid*=login]',
-            newChat: 'a[data-testid=create-new-chat-button],' // sidebar button (when logged in)
-                   + 'button:has(path[d^="M3.06957"]),' // Cycle Arrows icon (Temp chat mode)
-                   + 'a:has(> svg > path[d^="M15.6729"])', // Pencil icon (recorded chat mode)
+            newChat: 'a[href="/"]:has(svg),' // Pencil button (when logged in)
+                   + 'button:has([d^="M3.06957"])', // Cycle Arrows button (in temp chat logged out)
             regen: 'button[data-testid*=regenerate],' // oval button in place of chatbar on errors
                     // 'Try Again' entry of model selector below msg
                  + 'div[role=menuitem] div:has(svg):has(path[d^="M3.06957"])',
