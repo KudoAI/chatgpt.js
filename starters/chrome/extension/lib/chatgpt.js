@@ -52,7 +52,7 @@ const chatgpt = {
         footer: 'div#thread-bottom-container > div:last-of-type > div, span.text-sm.leading-none',
         header: 'div#page-header, main div.sticky:first-of-type',
         links: { newChat: 'nav a[href="/"]', sidebarItem: 'nav a' },
-        sidebar: 'div[class*=sidebar]:not(:has(div[data-testid=screen-threadFlyOut]))',
+        sidebar: 'div[class*=sidebar]:has(nav > div#sidebar-header)',
         ssgManifest: 'script[src*="_ssgManifest.js"]'
     },
 
