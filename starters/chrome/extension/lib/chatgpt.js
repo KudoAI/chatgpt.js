@@ -39,7 +39,7 @@ const chatgpt = {
             convo: 'div[class*=thread]', msg: 'div[data-message-author-role]',
             reply: 'div[data-message-author-role=assistant]'
         },
-        chatHistory: 'nav',
+        chatHistory: 'div#history',
         errors: { txt: '[class*=text-error]' },
         footer: 'div#thread-bottom-container > div:last-of-type > div, span.text-sm.leading-none',
         header: 'main .sticky:first-of-type',
