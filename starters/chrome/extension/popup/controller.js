@@ -149,18 +149,18 @@
 
     sync.fade() // based on master toggle
 
-    // Init CHATGPT.JS footer logo
+    // Init CHATGPT.JS footer logo/listener
     const cjsLogo = footer.querySelector('.cjs-logo')
     cjsLogo.src = 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@745f0ca/assets/images/badges/powered-by-chatgpt.js.png'
     cjsLogo.onclick = () => { open(app.urls.chatgptJS) ; close() }
 
-    // Init ABOUT footer button
+    // Init ABOUT footer tooltip/icon/listener
     const aboutSpan = footer.querySelector('.about-span')
     aboutSpan.title = `About ${app.name}`
     aboutSpan.append(icons.create('questionMark', { width: 15, height: 13 }))
     aboutSpan.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
 
-    // Init MORE EXTENSIONS footer button
+    // Init MORE EXTENSIONS footer tooltip/icon/listener
     const moreExtensionsSpan = footer.querySelector('.more-extensions-span')
     moreExtensionsSpan.title = 'More AI Extensions'
     moreExtensionsSpan.append(icons.create('plus'))
