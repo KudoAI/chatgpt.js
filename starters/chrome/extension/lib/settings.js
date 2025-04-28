@@ -24,6 +24,7 @@ window.settings = {
         // - 'symbol' (optional): for icon display (e.g. ⌚)
         // - 'color' (optional): hex code (w/o #) of color for left-border
         // - 'helptip' (optional): tooltip to display on hover
+        // - 'autoExpand' (optional): true/false to auto-expand categories on toolbar icon click
         // NOTE: Categories are displayed in top-to-bottom order
 
         // EXAMPLE:
