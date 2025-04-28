@@ -9,6 +9,7 @@ window.settings = {
         // - 'category' (optional): string key from this.categories to group control under
         // - 'symbol' (optional): for icon display (e.g. ⌚)
         // - 'helptip' (optional): tooltip to display on hover
+
         // NOTE: Controls are displayed in top-to-bottom order (within categories and in top-level)
         // NOTE: Toggles are disabled by default unless defaultVal is true
         //    ...or key name contains 'disabled' or 'hidden' (case insensitive)
@@ -25,6 +26,7 @@ window.settings = {
         // - 'color' (optional): hex code (w/o #) of color for left-border
         // - 'helptip' (optional): tooltip to display on hover
         // - 'autoExpand' (optional): true/false to auto-expand categories on toolbar icon click
+
         // NOTE: Categories are displayed in top-to-bottom order
 
         // EXAMPLE:
