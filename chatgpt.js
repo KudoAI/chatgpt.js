@@ -36,8 +36,8 @@ const chatgpt = {
             stop: 'button[data-testid=stop-button]', voice: 'button[data-testid*=composer-speech-button]'
         },
         chatDivs: {
-            convo: 'main > div > div > div > div > div > div[class*=group]',
-            msg: 'div[data-message-author-role]', reply: 'div[data-message-author-role=assistant]'
+            convo: 'div[class*=thread]', msg: 'div[data-message-author-role]',
+            reply: 'div[data-message-author-role=assistant]'
         },
         chatHistory: 'nav',
         errors: { txt: '[class*=text-error]' },
