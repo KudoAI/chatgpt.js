@@ -1368,7 +1368,7 @@ const chatgpt = {
         notificationDiv.style.right = notificationDiv.isRight ? vpXoffset.toString() + 'px' : ''
         notificationDiv.style.left = !notificationDiv.isRight ? vpXoffset.toString() + 'px' : ''
 
-        // Reposition old notifications
+        // Re-position old notifications
         const thisQuadrantQueue = notifyProps.queue[notificationDiv.quadrant]
         if (thisQuadrantQueue.length > 1) {
             try { // to move old notifications
@@ -1378,7 +1378,7 @@ const chatgpt = {
                           vOffset = +parseInt(oldDiv.style[offsetProp]) +5 + oldDiv.getBoundingClientRect().height
                     oldDiv.style[offsetProp] = `${ vOffset }px` // change prop
                 }
-            } catch (err) {}
+            } catch (err) { console.warn('Failed to re-position notification:', err) }
         }
 
         // Show notification
@@ -1762,8 +1762,7 @@ const chatgpt = {
         activateObserver() {
 
             // Stop the previous observer to preserve resources
-            if (this.observer instanceof MutationObserver)
-                try { this.observer.disconnect() } catch (e) {}
+            if (this.observer instanceof MutationObserver) this.observer.disconnect()
 
             if (!this.elems.length) return console.error('🤖 chatgpt.js >> No elems to append!')
 
