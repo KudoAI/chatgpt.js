@@ -128,7 +128,8 @@ const chatgpt = {
             drag: {
                 mousedown(event) { // find modal, update styles, attach listeners, init XY offsets
                     if (event.button != 0) return // prevent non-left-click drag
-                    if (getComputedStyle(event.target).cursor == 'pointer') return // prevent drag on interactive elems
+                    if (!/auto|default/.test(getComputedStyle(event.target).cursor))
+                        return // prevent drag on interactive elems
                     chatgpt.draggingModal = event.currentTarget
                     event.preventDefault() // prevent sub-elems like icons being draggable
                     Object.assign(chatgpt.draggingModal.style, {
