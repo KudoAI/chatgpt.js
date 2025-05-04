@@ -2,7 +2,7 @@
 // Source: https://github.com/adamlui/ai-web-extensions/blob/main/assets/lib/dom.js/src/dom.js
 
 window.dom = {
-    import(deps) { Object.assign(this.imports = this.imports || {}, deps) },
+    import(deps) { Object.assign(this.imports ||= {}, deps) },
 
     addRisingParticles(targetNode, { lightScheme = 'gray', darkScheme = 'white' } = {}) {
     // * Requires https://assets.aiwebextensions.com/styles/rising-particles/dist/<lightScheme>.min.css
@@ -94,17 +94,18 @@ window.dom = {
         computedWidth(elems) { return this.computedSize(elems, { dimension: 'width' }) }, // including margins
 
         loadedElem(selector, { timeout = null } = {}) {
-            const timeoutPromise = new Promise(resolve =>
-                timeout ? setTimeout(() => resolve(null), timeout) : undefined)
-            const isLoadedPromise = new Promise(resolve => {
-                const elem = document.querySelector(selector)
-                if (elem) resolve(elem)
-                else new MutationObserver((_, obs) => {
+            const raceEntries = [
+                new Promise(resolve => { // when elem loads
                     const elem = document.querySelector(selector)
-                    if (elem) { obs.disconnect() ; resolve(elem) }
-                }).observe(document.documentElement, { childList: true, subtree: true })
-            })
-            return Promise.race([isLoadedPromise, timeoutPromise])
+                    if (elem) resolve(elem)
+                    else new MutationObserver((_, obs) => {
+                        const elem = document.querySelector(selector)
+                        if (elem) { obs.disconnect() ; resolve(elem) }
+                    }).observe(document.documentElement, { childList: true, subtree: true })
+                })
+            ]
+            if (timeout) raceEntries.push(new Promise(resolve => setTimeout(() => resolve(null), timeout)))
+            return Promise.race(raceEntries)
         }
     }
 };
