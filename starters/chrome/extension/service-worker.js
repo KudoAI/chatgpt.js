@@ -1,7 +1,7 @@
 const chatgptURL = 'https://chatgpt.com'
 
 // Init APP data
-const app = {
+chrome.storage.local.set({ app: {
     name: chrome.runtime.getManifest().name,
     version: chrome.runtime.getManifest().version, symbol: '🤖', cssPrefix: 'chatgpt-extension',
     author: { name: 'KudoAI', url: 'https://kudoai.com' },
@@ -13,8 +13,7 @@ const app = {
         relatedExtensions: 'https://aiwebextensions.com',
         support: 'https://github.com/KudoAI/chatgpt.js-chrome-starter/issues'
     }
-}
-chrome.storage.local.set({ app }) // save to Chrome storage
+}}) // save to Chrome storage
 
 // Launch CHATGPT on install
 chrome.runtime.onInstalled.addListener(details => {
