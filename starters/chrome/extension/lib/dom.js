@@ -2,7 +2,6 @@
 // Source: https://github.com/adamlui/ai-web-extensions/blob/main/assets/lib/dom.js/src/dom.js
 
 window.dom = {
-    import(deps) { Object.assign(this.imports ||= {}, deps) },
 
     addRisingParticles(targetNode, { lightScheme = 'gray', darkScheme = 'white' } = {}) {
     // * Requires https://assets.aiwebextensions.com/styles/rising-particles/dist/<lightScheme>.min.css
@@ -15,8 +14,8 @@ window.dom = {
           + 'z-index: -1' ); // allow interactive elems to be clicked
         ['sm', 'med', 'lg'].forEach(particleSize => {
             const particlesDiv = document.createElement('div')
-            particlesDiv.id = this.imports.config?.bgAnimationsDisabled ? `particles-${particleSize}-off`
-                : `${( this.imports.env?.ui?.scheme || this.imports.env?.ui?.app?.scheme ) == 'dark' ? darkScheme
+            particlesDiv.id = config?.bgAnimationsDisabled ? `particles-${particleSize}-off`
+                : `${( env?.ui?.scheme || env?.ui?.app?.scheme ) == 'dark' ? darkScheme
                     : lightScheme }-particles-${particleSize}`
             particlesDivsWrapper.append(particlesDiv)
         })

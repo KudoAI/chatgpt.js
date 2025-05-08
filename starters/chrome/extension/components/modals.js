@@ -1,13 +1,13 @@
-// Requires lib/chatgpt.js + lib/dom.js + app + env
+// Requires lib/<chatgpt|dom>.js + app + env
 
 window.modals = {
-    import(deps) { Object.assign(this.imports ||= {}, deps) },
 
     stack: [], // of types of undismissed modals
-    get class() { return `${this.imports.app.cssPrefix}-modal` },
+    get class() { return `${app.cssPrefix}-modal` },
 
     about() {
-        const { app, env: { ui: { scheme }, browser: { isPortrait }}} = this.imports
+        const { ui: { scheme }, browser: { isPortrait }} = env
+        console.log(scheme)
 
         // Show modal
         const labelStyles = 'text-transform: uppercase ; font-size: 17px ; font-weight: bold ;'
@@ -15,7 +15,7 @@ window.modals = {
         const aboutModal = this.alert(
             `${app.symbol} ${chrome.runtime.getManifest().name}`, // title
             `<span style="${labelStyles}">🧠 Author:</span> `
-            + `<a href="${app.author.url}">${this.imports.app.author.name}</a> `
+            + `<a href="${app.author.url}">${app.author.name}</a> `
                     + `& <a href="${app.urls.contributors}">contributors</a>\n`
             + `<span style="${labelStyles}">🏷️ Version:</span> `
                     + `<span class="about-em">${app.version}</span>\n`
@@ -43,9 +43,9 @@ window.modals = {
             // Replace buttons w/ clones that don't dismiss modal
             btn.replaceWith(btn = btn.cloneNode(true))
             btn.onclick = () => this.safeWinOpen(
-                btn.textContent == 'Get Support' ? `${modals.imports.app.urls.gitHub}/issues`
-              : btn.textContent == 'Rate Us' ? `${modals.imports.app.urls.gitHub}/discussions`
-              : modals.imports.app.urls.relatedExtensions
+                btn.textContent == 'Get Support' ? `${app.urls.gitHub}/issues`
+              : btn.textContent == 'Rate Us' ? `${app.urls.gitHub}/discussions`
+              : app.urls.relatedExtensions
             )
 
             // Prepend emoji
@@ -104,7 +104,7 @@ window.modals = {
     safeWinOpen(url) { open(url, '_blank', 'noopener') }, // to prevent backdoor vulnerabilities
 
     stylize() {
-        const { env: { ui: { scheme }, browser: { isMobile }}} = this.imports
+        const { ui: { scheme }, browser: { isMobile }} = env
         if (!this.styles) document.head.append(this.styles = dom.create.elem('style'))
         this.styles.innerText = (
             `.${this.class} {` // modals

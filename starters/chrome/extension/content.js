@@ -8,15 +8,11 @@
         await import(chrome.runtime.getURL(resource))
 
     // Init ENV context
-    const env = { browser: { isMobile: chatgpt.browser.isMobile() }, ui: { scheme: ui.getScheme() }}
+    window.env = { browser: { isMobile: chatgpt.browser.isMobile() }, ui: { scheme: ui.getScheme() }}
     env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
 
     // Import APP data
-    const { app } = await chrome.storage.local.get('app')
-
-    // Export DEPENDENCIES to imported resources
-    dom.import({ env }) // for env.ui.scheme
-    modals.import({ app, env }) // for app data + env.<browser|ui> flags
+    ;({ app: window.app } = await chrome.storage.local.get('app'))
 
     chrome.runtime.onMessage.addListener(({ action, options }) => { // from service-worker.js + popup/index.html
         ({
