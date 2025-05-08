@@ -5,7 +5,7 @@
         await import(chrome.runtime.getURL(resource))
 
     // Init ENV context
-    const env = {
+    window.env = {
         site: new URL((await chrome.tabs.query({ active: true, currentWindow: true }))[0].url)
             .hostname.split('.').slice(-2, -1)[0] // extract 2nd-level domain
     }
