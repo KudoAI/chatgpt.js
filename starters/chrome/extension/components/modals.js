@@ -7,7 +7,6 @@ window.modals = {
 
     about() {
         const { ui: { scheme }, browser: { isPortrait }} = env
-        console.log(scheme)
 
         // Show modal
         const labelStyles = 'text-transform: uppercase ; font-size: 17px ; font-weight: bold ;'
