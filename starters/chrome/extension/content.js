@@ -4,11 +4,11 @@
 (async () => {
 
     // Import JS resources
-    for (const resource of ['components/modals.js', 'lib/chatgpt.js', 'lib/dom.js', 'lib/settings.js'])
+    for (const resource of ['components/modals.js', 'lib/chatgpt.js', 'lib/dom.js', 'lib/settings.js', 'lib/ui.js'])
         await import(chrome.runtime.getURL(resource))
 
     // Init ENV context
-    const env = { browser: { isMobile: chatgpt.browser.isMobile() }, ui: { scheme: getScheme() }}
+    const env = { browser: { isMobile: chatgpt.browser.isMobile() }, ui: { scheme: ui.getScheme() }}
     env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
 
     // Import APP data
@@ -74,11 +74,6 @@
         }
     }
 
-    function getScheme() {
-        return /\b(light|dark)\b/.exec(document.documentElement.className)?.[1]
-            || ( window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' )
-    }
-
     // Run MAIN routine
 
     chatgpt.printAllFunctions() // to console
@@ -111,7 +106,7 @@
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener( // for browser/system scheme pref changes
         'change', () => requestAnimationFrame(handleSchemePrefChange))
     function handleSchemePrefChange() {
-        const displayedScheme = getScheme()
+        const displayedScheme = ui.getScheme()
         if (env.ui.scheme != displayedScheme) { env.ui.scheme = displayedScheme ;  modals.stylize() }
     }
 
