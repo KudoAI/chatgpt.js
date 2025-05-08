@@ -11,8 +11,7 @@
     }
 
     // Import DATA
-    const { app } = await chrome.storage.local.get('app')
-    icons.import({ app }) // for src's using app.urls.assetHost
+    ;({ app: window.app } = await chrome.storage.local.get('app'))
 
     // Define FUNCTIONS
 
