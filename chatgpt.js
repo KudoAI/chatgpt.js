@@ -233,7 +233,7 @@ const chatgpt = {
                         display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 ;
                         ${ isMobile ? 'flex-direction: column-reverse' : '' }}
                   .chatgpt-modal button {
-                      font-size: 14px ; text-transform: uppercase ;
+                      font-size: 14px ; text-transform: uppercase ; cursor: crosshair ;
                       margin-left: ${ isMobile ? 0 : 10 }px ; padding: ${ isMobile ? 15 : 8 }px 18px ;
                       ${ isMobile ? 'margin-top: 5px ; margin-bottom: 3px ;' : '' }
                       border-radius: 0 ; border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' };
