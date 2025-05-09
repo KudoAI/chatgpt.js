@@ -48,7 +48,7 @@
 
     async function sendMsgToActiveTab(action, options) {
         const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-        return await chrome.tabs.sendMessage(activeTab.id, { action: action, options: { ...options }})
+        return await chrome.tabs.sendMessage(activeTab.id, { action, options })
     }
 
     const sync = {
