@@ -181,7 +181,7 @@ const chatgpt = {
                 modalStyle.setAttribute('last-updated', thisUpdated.toString())
                 document.head.append(modalStyle)
             }
-            modalStyle.innerText = ( // update prev/new style contents
+            modalStyle.textContent = ( // update prev/new style contents
                 `.chatgpt-modal { /* vars */
                       --transition: opacity 0.65s cubic-bezier(.165,.84,.44,1), /* for fade-in */
                                     transform 0.55s cubic-bezier(.165,.84,.44,1) ; /* for move-in */
@@ -271,7 +271,7 @@ const chatgpt = {
         }
 
         // Insert text into elems
-        modalTitle.innerText = title || '' ; modalMessage.innerText = msg || '' ; chatgpt.renderHTML(modalMessage)
+        modalTitle.textContent = title || '' ; modalMessage.textContent = msg || '' ; chatgpt.renderHTML(modalMessage)
 
         // Create/append buttons (if provided) to buttons div
         const modalButtons = document.createElement('div')
@@ -1300,7 +1300,7 @@ const chatgpt = {
         const notificationDiv = document.createElement('div') // make div
         notificationDiv.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now()
         notificationDiv.classList.add('chatgpt-notif')
-        notificationDiv.innerText = msg // insert msg
+        notificationDiv.textContent = msg // insert msg
         document.body.append(notificationDiv) // insert into DOM
 
         // Create/append close button
@@ -1333,7 +1333,7 @@ const chatgpt = {
                 notifStyle.setAttribute('last-updated', thisUpdated.toString())
                 document.head.append(notifStyle)
             }
-            notifStyle.innerText = ( // update prev/new style contents
+            notifStyle.textContent = ( // update prev/new style contents
                 '.chatgpt-notif {'
                     + 'font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC",'
                         + '"Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif ;'
