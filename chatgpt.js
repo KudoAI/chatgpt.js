@@ -352,7 +352,7 @@ const chatgpt = {
         }
 
         // Add listeners
-        ;[modalContainer, closeBtn, closeSVG, dismissBtn].forEach(elem => elem.onclick = handlers.dismiss.click)
+        [modalContainer, closeBtn, closeSVG, dismissBtn].forEach(elem => elem.onclick = handlers.dismiss.click)
         document.addEventListener('keydown', handlers.dismiss.key)
         modal.onmousedown = handlers.drag.mousedown // enable click-dragging
 
