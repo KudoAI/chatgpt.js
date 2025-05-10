@@ -11,8 +11,8 @@ window.dom = {
         particlesDivsWrapper.style.cssText = (
             'position: absolute ; top: 0 ; left: 0 ;' // hug targetNode's top-left corner
           + 'height: 100% ; width: 100% ; border-radius: 15px ; overflow: clip ;' // bound innards exactly by targetNode
-          + 'z-index: -1' ); // allow interactive elems to be clicked
-        ['sm', 'med', 'lg'].forEach(particleSize => {
+          + 'z-index: -1' ) // allow interactive elems to be clicked
+        ;['sm', 'med', 'lg'].forEach(particleSize => {
             const particlesDiv = document.createElement('div')
             particlesDiv.id = config?.bgAnimationsDisabled ? `particles-${particleSize}-off`
                 : `${( env?.ui?.scheme || env?.ui?.app?.scheme ) == 'dark' ? darkScheme

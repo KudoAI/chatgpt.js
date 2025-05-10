@@ -76,10 +76,10 @@
 
     // CHILL a bit if your hacks depend on delayed DOM content
     await chatgpt.isLoaded()
-    await new Promise(resolve => setTimeout(resolve, 500)); // sleep .5s
+    await new Promise(resolve => setTimeout(resolve, 500)) // sleep .5s
 
     // Add RISING PARTICLES styles for modals
-    ['gray', 'white'].forEach(color => document.head.append(
+    ;['gray', 'white'].forEach(color => document.head.append(
         dom.create.elem('link', { rel: 'stylesheet',
             href: `https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@727feff/assets/styles/rising-particles/dist/${
                 color}.min.css`
