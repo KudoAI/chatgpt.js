@@ -134,10 +134,10 @@ const chatgpt = {
                     event.preventDefault() // prevent sub-elems like icons being draggable
                     Object.assign(chatgpt.draggingModal.style, {
                         transition: '0.1s', willChange: 'transform', transform: 'scale(1.05)' })
-                    document.body.style.cursor = 'grabbing'; // update cursor
-                    [...chatgpt.draggingModal.children] // prevent hover FX if drag lags behind cursor
-                        .forEach(child => child.style.pointerEvents = 'none');
-                    ['mousemove', 'mouseup'].forEach(eventType => // add listeners
+                    document.body.style.cursor = 'grabbing' // update cursor
+                    ;[...chatgpt.draggingModal.children] // prevent hover FX if drag lags behind cursor
+                        .forEach(child => child.style.pointerEvents = 'none')
+                    ;['mousemove', 'mouseup'].forEach(eventType => // add listeners
                         document.addEventListener(eventType, handlers.drag[eventType]))
                     const draggingModalRect = chatgpt.draggingModal.getBoundingClientRect()
                     handlers.drag.offsetX = event.clientX - draggingModalRect.left +21
@@ -154,10 +154,10 @@ const chatgpt = {
                 mouseup() { // restore styles/pointer events, remove listeners, reset chatgpt.draggingModal
                     Object.assign(chatgpt.draggingModal.style, { // restore styles
                         cursor: 'inherit', transition: 'inherit', willChange: 'auto', transform: 'scale(1)' })
-                    document.body.style.cursor = ''; // restore cursor
-                    [...chatgpt.draggingModal.children] // restore pointer events
-                        .forEach(child => child.style.pointerEvents = '');
-                    ['mousemove', 'mouseup'].forEach(eventType => // remove listeners
+                    document.body.style.cursor = '' // restore cursor
+                    ;[...chatgpt.draggingModal.children] // restore pointer events
+                        .forEach(child => child.style.pointerEvents = '')
+                    ;['mousemove', 'mouseup'].forEach(eventType => // remove listeners
                         document.removeEventListener(eventType, handlers.drag[eventType]))
                     chatgpt.draggingModal = null
                 }
@@ -352,7 +352,7 @@ const chatgpt = {
         }
 
         // Add listeners
-        [modalContainer, closeBtn, closeSVG, dismissBtn].forEach(elem => elem.onclick = handlers.dismiss.click)
+        ;[modalContainer, closeBtn, closeSVG, dismissBtn].forEach(elem => elem.onclick = handlers.dismiss.click)
         document.addEventListener('keydown', handlers.dismiss.key)
         modal.onmousedown = handlers.drag.mousedown // enable click-dragging
 
