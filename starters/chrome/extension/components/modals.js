@@ -105,7 +105,7 @@ window.modals = {
     stylize() {
         const { ui: { scheme }, browser: { isMobile }} = env
         if (!this.styles) document.head.append(this.styles = dom.create.elem('style'))
-        this.styles.innerText = (
+        this.styles.textContent = (
             `.${this.class} {` // modals
               + 'user-select: none ; -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ;'
               + 'font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto,'

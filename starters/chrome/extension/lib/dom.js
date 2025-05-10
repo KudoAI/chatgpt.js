@@ -42,7 +42,7 @@ window.dom = {
             const style = document.createElement('style')
             style.setAttribute('type', 'text/css') // support older browsers
             for (const attr in attrs) style.setAttribute(attr, attrs[attr])
-            if (content) style.innerText = content
+            if (content) style.textContent = content
             return style
         },
 

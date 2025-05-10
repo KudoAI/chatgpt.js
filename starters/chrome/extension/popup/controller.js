@@ -27,7 +27,7 @@
             entry.leftElem.append(dom.create.elem('span', { class: 'track' }))
             entry.leftElem.classList.toggle('on', settings.typeIsEnabled(entryData.key))
         } else { // add symbol to left, append status to right
-            entry.leftElem.innerText = entryData.symbol || '⚙️'
+            entry.leftElem.textContent = entryData.symbol || '⚙️'
             if (entryData.status) entry.label.textContent += ` — ${entryData.status}`
         }
         if (entryData.type == 'category') entry.div.append(icons.create('caretDown', { size: 11, class: 'menu-caret' }))
