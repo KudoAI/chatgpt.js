@@ -9,10 +9,10 @@
   },
   "homepage": "https://chatgpt.js.org",
   "license": "MIT",
-  "funding": {
-    "type": "github",
-    "url": "http://github.com/sponsors/KudoAI"
-  },
+  "funding": [
+    { "type": "github", "url": "http://github.com/sponsors/KudoAI" },
+    { "type": "paypal", "url": "http://paypal.biz/kudoai" }
+  ],
   "browser": "chatgpt.js",
   "files": [
     "chatgpt.js",
