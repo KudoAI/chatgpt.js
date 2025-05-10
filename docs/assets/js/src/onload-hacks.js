@@ -37,7 +37,7 @@ const iObserver = new IntersectionObserver(entries => entries.forEach(entry => {
             // Reset colors
             document.querySelector('#kudoai a').style.color = 'white'
             window.starColor = 'white';
-            (document.querySelector('#scrollbar-style') || {}).innerText = (
+            (document.querySelector('#scrollbar-style') || {}).textContent = (
                 ':root { scrollbar-color: rgb(210,210,210) #1a1a1a }'
               + 'body::-webkit-scrollbar-thumb { background-color: white }')
 
@@ -279,12 +279,12 @@ const onLoadObserver = new MutationObserver(() => {
                         scrollbarStyle.setAttribute('id', 'scrollbar-style')
                         document.head.append(scrollbarStyle)
                     }
-                    scrollbarStyle.innerText = (
+                    scrollbarStyle.textContent = (
                         `:root { scrollbar-color: ${ sectionColor } #1a1a1a }`
                       + `body::-webkit-scrollbar-thumb { background-color: ${ sectionColor } }`)
                     setTimeout(() => { // schedule color reset
                         if (window.starVelocity.z <= iniStarZvelocity) {
-                            scrollbarStyle.innerText = (
+                            scrollbarStyle.textContent = (
                                 ':root { scrollbar-color: rgb(210,210,210) #1a1a1a }'
                               + 'body::-webkit-scrollbar-thumb { background-color: white }')
                     }}, warpDuration + 5)
