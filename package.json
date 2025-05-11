@@ -1,6 +1,6 @@
 {
   "name": "@kudoai/chatgpt.js",
-  "version": "3.8.0",
+  "version": "3.8.1",
   "description": "Client-side JavaScript library for ChatGPT",
   "author": {
     "name": "KudoAI & contributors",
@@ -10,8 +10,14 @@
   "homepage": "https://chatgpt.js.org",
   "license": "MIT",
   "funding": [
-    { "type": "github", "url": "http://github.com/sponsors/KudoAI" },
-    { "type": "paypal", "url": "http://paypal.biz/kudoai" }
+    {
+      "type": "github",
+      "url": "http://github.com/sponsors/KudoAI"
+    },
+    {
+      "type": "paypal",
+      "url": "http://paypal.biz/kudoai"
+    }
   ],
   "browser": "chatgpt.js",
   "files": [
