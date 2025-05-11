@@ -581,22 +581,24 @@ chatgpt.alert(alertID); // Example output: '1693237957878'
 
 ### notify
 
-Displays a temporary notification at a specified position in the website.
+Displays a temporary on-screen notification.
 
 **Parameters**:
 
-`msg`: A string which is the message to be displayed.
+`options` (optional): An object containing the options for the vocal synthesizer.
 
-`position` (optional): A string specifying the position of the notification.
+Available options:
 
-`notifDuration` (optional): A float specifying the duration of the notification before it fades out.
-
-`shadow` (optional): A string specifying if the `box-shadow` CSS property should be used.
+ - `msg`: A string which is the message to be displayed.
+ - `position` (optional): A string specifying the position of the notification.
+ - `notifDuration` (optional): A float specifying the duration of the notification before it fades out.
+ - `shadow` (optional): A string specifying if the `box-shadow` CSS property should be used.
+ - `toast` (optional): A boolean specifying whether notifications should be flattened/centered into toast alerts.
 
 Example code:
 
 ```js
-chatgpt.notify('Hello, world!', 'top left', 3, 'on');
+chatgpt.notify({ msg: 'Hello, world!', position: 'top left', notifDuration: 3, shadow: 'on' });
 ```
 
 ## User session
