@@ -57,6 +57,17 @@ header {
 }
 .expanded > span { font-weight: 500 ; transform: scale(1.05) ; margin-left: 2px }
 
+/* About entry */
+div#about > div.menu-icon { padding: 8px 10px 8px 11px }
+.ticker {
+    align-content: center ; overflow: hidden ; font-size: 10px ; width: 105px ;
+    mask-image:         linear-gradient(to right, transparent, black 20%, black 89%, transparent) ;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)
+}
+.ticker-em { color: green } .highlight-on-hover:hover .ticker-em { color: #28ee28 }
+.ticker > div { animation: ticker linear 60s infinite } 
+@keyframes ticker { 0% { transform: translateX(100%) } 100% { transform: translateX(-2000%) }}
+
 /* Toggle elements */
 .toggle .track {
     display: block ; border-radius: 7px ; position: relative ; transform: scale(0.95) ; background: white ; 

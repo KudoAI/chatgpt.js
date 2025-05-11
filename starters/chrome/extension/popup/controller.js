@@ -28,12 +28,11 @@
             entry.leftElem.append(dom.create.elem('span', { class: 'track' }))
             entry.leftElem.classList.toggle('on', settings.typeIsEnabled(entryData.key))
         } else { // add symbol to left, append status to right
-            entry.leftElem.textContent = entryData.symbol || '⚙️'
+            entry.leftElem.textContent = entryData.symbol || '⚙️' ; entry.label.style.flexGrow = 1
             if (entryData.status) entry.label.textContent += ` — ${entryData.status}`
             if (entryData.type == 'link') {
                 entry.label.after(entry.rightIcon = dom.create.elem('div', { class: 'menu-right-icon' }))
                 entry.rightIcon.append(icons.create('open', { size: 18, fill: 'black' }))
-                entry.label.style.flexGrow = 1
             }
         }
         if (entryData.type == 'category') entry.div.append(icons.create('caretDown', { size: 11, class: 'menu-caret' }))
@@ -67,6 +66,7 @@
 
             // Menu elems
             document.querySelectorAll('.logo, .menu-title, .menu-entry').forEach((elem, idx) => {
+                if (elem.id == 'about') return // never disable About entry
                 elem.style.transition = config.extensionDisabled ? '' : 'opacity 0.15s ease-in'
                 setTimeout(() => elem.classList.toggle('disabled', config.extensionDisabled),
                     config.extensionDisabled ? 0 : idx *10) // fade-out abruptly, fade-in staggered
@@ -146,6 +146,22 @@
             Object.values(ctrls).forEach(ctrl => catChildrenDiv.append(createMenuEntry(ctrl)))
         })
     }
+
+    // Create/append ABOUT entry
+    const about = {
+        entryDiv: createMenuEntry({ key: 'about', symbol: '💡', label: 'About...' }),
+        ticker: {
+            textGap: '&emsp;&emsp;&emsp;',
+            span: dom.create.elem('span', { class: 'ticker' }), innerDiv: dom.create.elem('div')
+        }
+    }
+    about.ticker.content = `Version: <span class="ticker-em">v${ app.version + about.ticker.textGap }</span>`
+                         + `Powered by <span class="ticker-em">chatgpt.js</span>${about.ticker.textGap}`
+    for (let i = 0 ; i < 7 ; i++) about.ticker.content += about.ticker.content // make long af
+    about.ticker.innerDiv.innerHTML = about.ticker.content
+    about.ticker.span.append(about.ticker.innerDiv)
+    about.entryDiv.append(about.ticker.span) ; footer.before(about.entryDiv)
+    about.entryDiv.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
 
     // AUTO-EXPAND categories
     document.querySelectorAll('.menu-entry:has(.menu-caret)').forEach(categoryDiv => {
