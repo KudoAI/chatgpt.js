@@ -61,8 +61,8 @@ header {
 div#about > div.menu-icon { padding: 8px 10px 8px 11px }
 .ticker {
     align-content: center ; overflow: hidden ; font-size: 10px ; width: 105px ;
-    mask-image:         linear-gradient(to right, transparent, black 20%, black 89%, transparent) ;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 89%, transparent)
+    --mask: linear-gradient(to right, transparent, black 20%, black 89%, transparent) ;
+    mask-image: var(--mask) ; -webkit-mask-image: var(--mask)
 }
 .ticker-em { color: green } .highlight-on-hover:hover .ticker-em { color: #28ee28 }
 .ticker > div { animation: ticker linear 60s infinite } 
