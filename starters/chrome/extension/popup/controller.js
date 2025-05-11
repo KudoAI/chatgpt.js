@@ -38,7 +38,7 @@
                 settings.save(entryData.key, !config[entryData.key]) ; sync.configToUI({ updatedKey: entryData.key })
                 notify(`${entryData.label} ${chrome.i18n.getMessage(`state_${
                     settings.typeIsEnabled(entryData.key) ? 'on' : 'off' }`).toUpperCase()}`)
-            }
+            } else if (entryData.type == 'link') { open(entryData.url) ; close() }
         }
         entry.div.append(entry.leftElem, entry.label)
         return entry.div

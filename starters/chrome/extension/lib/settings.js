@@ -3,7 +3,7 @@ window.settings = {
 
     controls: {
         // Add settings options as keys, with each key's value being an object that includes:
-        // - 'type': the control type (e.g. 'toggle' or 'prompt')
+        // - 'type': the control type (e.g. 'toggle', 'link' or 'prompt')
         // - 'label': a descriptive label
         // - 'defaultVal' (optional): default value of setting (true for toggles if unspecified, false otherwise)
         // - 'category' (optional): string key from this.categories to group control under
