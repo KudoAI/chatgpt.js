@@ -78,6 +78,7 @@
               catChildrenDiv = categoryDiv.nextSibling,
               catChild = catChildrenDiv.querySelectorAll('.menu-entry')
         if (action != 'hide' && dom.get.computedHeight(catChildrenDiv) == 0) { // show category settings
+            categoryDiv.classList.toggle('expanded', true)
             Object.assign(catChildrenDiv.style, { height: `${dom.get.computedHeight(catChild)}px`,
                 transition: transitions ? 'height 0.25s' : '' })
             Object.assign(caret.style, { // point it down
@@ -92,6 +93,7 @@
             document.querySelectorAll(`.menu-entry:has(.menu-caret):not(#${category})`).forEach(otherCategoryDiv =>
                 toggleCategorySettingsVisiblity(otherCategoryDiv.id, { action: 'hide' }))
         } else { // hide category settings
+            categoryDiv.classList.toggle('expanded', false)
             Object.assign(catChildrenDiv.style, { height: 0, transition: '' })
             Object.assign(caret.style, { transform: 'rotate(-90deg)', transition: '' }) // point it right
         }
