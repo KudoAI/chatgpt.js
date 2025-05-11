@@ -49,7 +49,8 @@ header {
     display: flex ; min-height: 2rem ; padding: 0 14px 0 2px ; white-space: nowrap ; font-size: 91%
 }
 .menu-icon { padding: 8px }
-.menu-entry > label > .track { transform: scale(0.95) ; top: 1px } /* make child toggles smaller */
+.menu-right-icon { display: flex ; height: 33px ; align-items: center ; padding: 0 11.5px ; margin-right: -14px }
+.menu-entry:hover svg { fill: white }
 .menu-caret { position: absolute ; right: 14px ; transform: rotate(-90deg) }
 .categorized-entries { /* add left-stripe */
     border-left: 5px solid transparent ; height: 0 ; overflow: hidden ;
