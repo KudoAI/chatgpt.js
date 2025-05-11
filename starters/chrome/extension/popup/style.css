@@ -8,8 +8,7 @@ body {
 
 /* Color/fade mods */
 .highlight-on-hover:hover { background: rgb(100,149,237) }
-.highlight-on-hover:hover span:not(.track), .highlight-on-hover:hover .menu-caret { /* invert setting labels on hover */
-    filter: invert(1) }
+.highlight-on-hover:hover span:not(.track) { filter: invert(1) } /* invert setting labels on hover */
 .disabled { opacity: 0.3 ; pointer-events: none }
 
 /* Loader */
