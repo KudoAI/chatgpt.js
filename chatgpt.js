@@ -271,7 +271,7 @@ const chatgpt = {
         }
 
         // Insert text into elems
-        modalTitle.textContent = title || '' ; modalMessage.textContent = msg || '' ; chatgpt.renderHTML(modalMessage)
+        modalTitle.textContent = title || '' ; modalMessage.innerText = msg || '' ; chatgpt.renderHTML(modalMessage)
 
         // Create/append buttons (if provided) to buttons div
         const modalButtons = document.createElement('div')
