@@ -1291,7 +1291,11 @@ const chatgpt = {
 
     minify() { chatgpt.code.minify(); },
 
-    notify(msg, position, notifDuration, shadow) {
+    notify(...args) {
+        let msg, position, notifDuration, shadow, toast
+        if (typeof args[0] == 'object' && !Array.isArray(args[0]))
+            ({ msg, position, notifDuration, shadow, toast } = args[0])
+        else [msg, position, notifDuration, shadow] = args
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
         const fadeDuration = 0.35, // sec duration of fade-out
               vpYoffset = 23, vpXoffset = 27 // px offset from viewport border
@@ -1325,7 +1329,7 @@ const chatgpt = {
                                  + (notificationDiv.isRight ? 'Right' : 'Left')
 
         // Create/append/update notification style (if missing or outdated)
-        const thisUpdated = 1735767823541 // timestamp of last edit for this file's `notifStyle`
+        const thisUpdated = 1746994649450 // timestamp of last edit for this file's `notifStyle`
         let notifStyle = document.querySelector('#chatgpt-notif-style') // try to select existing style
         if (!notifStyle || parseInt(notifStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
             if (!notifStyle) { // outright missing, create/id/attr/append it first
@@ -1356,6 +1360,11 @@ const chatgpt = {
                     + '45% { opacity: 0.05 ; transform: rotateX(-81deg) }'
                     + '100% { opacity: 0 ; transform: rotateX(-180deg) scale(1.15) }}'
             )
+            if (toast) notifStyle.textContent += `
+                div.chatgpt-notif {
+                    position: absolute ; left: 50% ; right: 21% !important ; text-align: center ;
+                    transform: translate(-50%, -50%) scale(0.6) !important }
+                div.chatgpt-notif > div.notif-close-btn { top: 18px ; right: 7px ; transform: scale(2) }`
         }
 
         // Enqueue notification
