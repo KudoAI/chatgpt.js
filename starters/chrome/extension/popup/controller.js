@@ -172,22 +172,23 @@
 
     sync.fade() // based on master toggle
 
-    // Init CHATGPT.JS footer logo/listener
-    const cjsLogo = footer.querySelector('.cjs-logo')
-    cjsLogo.src = 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@745f0ca/assets/images/badges/powered-by-chatgpt.js.png'
-    cjsLogo.onclick = () => { open(app.urls.chatgptJS) ; close() }
+    // Init CHATGPT.JS footer tooltip/logo/listener
+    const footerElems = { chatgptJS: { logo: footer.querySelector('.cjs-logo') }}
+    footerElems.chatgptJS.logo.src = 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@745f0ca'
+                                   + '/assets/images/badges/powered-by-chatgpt.js.png'
+    footerElems.chatgptJS.logo.onclick = () => { open(app.urls.chatgptjs) ; close() }
 
     // Init ABOUT footer tooltip/icon/listener
-    const aboutSpan = footer.querySelector('.about-span')
-    aboutSpan.title = `About ${app.name}`
-    aboutSpan.append(icons.create('questionMark', { width: 15, height: 13 }))
-    aboutSpan.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
+    footerElems.about = { span: footer.querySelector('.about-span') }
+    footerElems.about.span.title = `About ${app.name}`
+    footerElems.about.span.append(icons.create('questionMark', { width: 15, height: 13 }))
+    footerElems.about.span.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
 
     // Init MORE EXTENSIONS footer tooltip/icon/listener
-    const moreExtensionsSpan = footer.querySelector('.more-extensions-span')
-    moreExtensionsSpan.title = 'More AI Extensions'
-    moreExtensionsSpan.append(icons.create('plus'))
-    moreExtensionsSpan.onclick = () => { open(app.urls.relatedExtensions) ; close() }
+    footerElems.moreExtensions = { span: footer.querySelector('.more-extensions-span') }
+    footerElems.moreExtensions.span.title = 'More AI Extensions'
+    footerElems.moreExtensions.span.append(icons.create('plus'))
+    footerElems.moreExtensions.span.onclick = () => { open(app.urls.relatedExtensions) ; close() }
 
     // Remove LOADING SPINNER after imgs load
     Promise.all([...document.querySelectorAll('img')].map(img =>
