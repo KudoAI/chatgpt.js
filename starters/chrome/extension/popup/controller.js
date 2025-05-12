@@ -35,7 +35,8 @@
                 entry.rightElem.append(icons.create('open', { size: 18, fill: 'black' }))
             }
         }
-        if (entryData.type == 'category') entry.div.append(icons.create('caretDown', { size: 11, class: 'menu-caret' }))
+        if (entryData.type == 'category')
+            entry.div.append(icons.create('caretDown', { size: 11, class: 'menu-caret menu-right-elem' }))
         entry.div.onclick = () => {
             if (entryData.type == 'category') toggleCategorySettingsVisiblity(entryData.key)
             else if (entryData.type == 'toggle') {
