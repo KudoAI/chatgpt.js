@@ -149,20 +149,20 @@
     }
 
     // Create/append ABOUT entry
-    const about = {
-        entryDiv: createMenuEntry({ key: 'about', symbol: '💡', label: 'About...', helptip: `About ${app.name}` }),
+    const aboutEntry = {
+        div: createMenuEntry({ key: 'about', symbol: '💡', label: 'aboutEntry...', helptip: `About ${app.name}` }),
         ticker: {
             textGap: '&emsp;&emsp;&emsp;',
             span: dom.create.elem('span', { class: 'ticker' }), innerDiv: dom.create.elem('div')
         }
     }
-    about.ticker.content = `Version: <span class="ticker-em">v${ app.version + about.ticker.textGap }</span>`
-                         + `Powered by <span class="ticker-em">chatgpt.js</span>${about.ticker.textGap}`
-    for (let i = 0 ; i < 7 ; i++) about.ticker.content += about.ticker.content // make long af
-    about.ticker.innerDiv.innerHTML = about.ticker.content
-    about.ticker.span.append(about.ticker.innerDiv)
-    about.entryDiv.append(about.ticker.span) ; footer.before(about.entryDiv)
-    about.entryDiv.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
+    aboutEntry.ticker.content = `Version: <span class="ticker-em">v${ app.version + aboutEntry.ticker.textGap }</span>`
+                         + `Powered by <span class="ticker-em">chatgpt.js</span>${aboutEntry.ticker.textGap}`
+    for (let i = 0 ; i < 7 ; i++) aboutEntry.ticker.content += aboutEntry.ticker.content // make long af
+    aboutEntry.ticker.innerDiv.innerHTML = aboutEntry.ticker.content
+    aboutEntry.ticker.span.append(aboutEntry.ticker.innerDiv)
+    aboutEntry.div.append(aboutEntry.ticker.span) ; footer.before(aboutEntry.div)
+    aboutEntry.div.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
 
     // AUTO-EXPAND categories
     document.querySelectorAll('.menu-entry:has(.menu-caret)').forEach(categoryDiv => {
