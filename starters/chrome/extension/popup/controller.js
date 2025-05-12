@@ -150,7 +150,7 @@
 
     // Create/append ABOUT entry
     const about = {
-        entryDiv: createMenuEntry({ key: 'about', symbol: '💡', label: 'About...' }),
+        entryDiv: createMenuEntry({ key: 'about', symbol: '💡', label: 'About...', helptip: `About ${app.name}` }),
         ticker: {
             textGap: '&emsp;&emsp;&emsp;',
             span: dom.create.elem('span', { class: 'ticker' }), innerDiv: dom.create.elem('div')
