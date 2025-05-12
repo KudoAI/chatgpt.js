@@ -176,7 +176,7 @@
     const footerElems = { chatgptJS: { logo: footer.querySelector('.cjs-logo') }}
     footerElems.chatgptJS.logo.src = 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@745f0ca'
                                    + '/assets/images/badges/powered-by-chatgpt.js.png'
-    footerElems.chatgptJS.logo.onclick = () => { open(app.urls.chatgptjs) ; close() }
+    footerElems.chatgptJS.logo.onclick = () => { open(app.urls.chatgptJS) ; close() }
 
     // Init ABOUT footer tooltip/icon/listener
     footerElems.about = { span: footer.querySelector('.about-span') }
