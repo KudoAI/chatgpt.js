@@ -185,10 +185,10 @@
     footerElems.about.span.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
 
     // Init MORE EXTENSIONS footer tooltip/icon/listener
-    footerElems.moreExtensions = { span: footer.querySelector('.more-extensions-span') }
-    footerElems.moreExtensions.span.title = 'More AI Extensions'
-    footerElems.moreExtensions.span.append(icons.create('plus'))
-    footerElems.moreExtensions.span.onclick = () => { open(app.urls.relatedExtensions) ; close() }
+    footerElems.moreExt = { span: footer.querySelector('.more-extensions-span') }
+    footerElems.moreExt.span.title = 'More AI Extensions'
+    footerElems.moreExt.span.append(icons.create('plus'))
+    footerElems.moreExt.span.onclick = () => { open(app.urls.relatedExtensions) ; close() }
 
     // Remove LOADING SPINNER after imgs load
     Promise.all([...document.querySelectorAll('img')].map(img =>
