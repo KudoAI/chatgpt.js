@@ -187,7 +187,7 @@
             toggleCategorySettingsVisiblity(categoryDiv.id, { transitions: false })
     })
 
-    sync.fade() // based on master toggle
+    sync.fade() // based on master toggle state
 
     // Remove LOADING SPINNER after imgs load
     Promise.all([...document.querySelectorAll('img')].map(img =>
