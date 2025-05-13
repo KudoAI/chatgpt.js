@@ -21,10 +21,13 @@ window.modals = {
             + `<span style="${labelStyles}">📜 Open source code:</span> `
                 + `<a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                     + app.urls.gitHub + '</a>\n'
+            + `<span style="${labelStyles}">📜 Latest changes:</span> `
+                + `<a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
+                    + `${app.urls.gitHub}/commits</a>\n`
             + `<span style="${labelStyles}">⚡ Powered by:</span> `
                 + `<a href="${app.urls.chatgptjs}" target="_blank" rel="noopener">chatgpt.js</a>`,
             [ function getSupport(){}, function rateUs(){}, function moreAiExtensions(){} ], // button labels
-            '', 656 // modal width
+            '', 747 // modal width
         )
 
         // Format text
