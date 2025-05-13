@@ -165,6 +165,22 @@
     aboutEntry.div.append(aboutEntry.ticker.span) ; footer.before(aboutEntry.div)
     aboutEntry.div.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
 
+    // Init FOOTER
+    const footerElems = {
+        chatgptJS: { logo: footer.querySelector('.cjs-logo') },
+        about: { span: footer.querySelector('.about-span') },
+        moreExt: { span: footer.querySelector('.more-extensions-span') }
+    }
+    footerElems.chatgptJS.logo.src = 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@745f0ca'
+                                   + '/assets/images/badges/powered-by-chatgpt.js.png'
+    footerElems.chatgptJS.logo.onclick = () => { open(app.urls.chatgptJS) ; close() }
+    footerElems.about.span.title = `About ${app.name}`
+    footerElems.about.span.append(icons.create('questionMark', { width: 15, height: 13 }))
+    footerElems.about.span.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
+    footerElems.moreExt.span.title = 'More AI Extensions'
+    footerElems.moreExt.span.append(icons.create('plus'))
+    footerElems.moreExt.span.onclick = () => { open(app.urls.relatedExtensions) ; close() }
+
     // AUTO-EXPAND categories
     document.querySelectorAll('.menu-entry:has(.menu-caret)').forEach(categoryDiv => {
         if (settings.categories[categoryDiv.id]?.autoExpand)
@@ -172,24 +188,6 @@
     })
 
     sync.fade() // based on master toggle
-
-    // Init CHATGPT.JS footer tooltip/logo/listener
-    const footerElems = { chatgptJS: { logo: footer.querySelector('.cjs-logo') }}
-    footerElems.chatgptJS.logo.src = 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@745f0ca'
-                                   + '/assets/images/badges/powered-by-chatgpt.js.png'
-    footerElems.chatgptJS.logo.onclick = () => { open(app.urls.chatgptJS) ; close() }
-
-    // Init ABOUT footer tooltip/icon/listener
-    footerElems.about = { span: footer.querySelector('.about-span') }
-    footerElems.about.span.title = `About ${app.name}`
-    footerElems.about.span.append(icons.create('questionMark', { width: 15, height: 13 }))
-    footerElems.about.span.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
-
-    // Init MORE EXTENSIONS footer tooltip/icon/listener
-    footerElems.moreExt = { span: footer.querySelector('.more-extensions-span') }
-    footerElems.moreExt.span.title = 'More AI Extensions'
-    footerElems.moreExt.span.append(icons.create('plus'))
-    footerElems.moreExt.span.onclick = () => { open(app.urls.relatedExtensions) ; close() }
 
     // Remove LOADING SPINNER after imgs load
     Promise.all([...document.querySelectorAll('img')].map(img =>
