@@ -6,7 +6,7 @@ chrome.storage.local.set({ app: {
     version: chrome.runtime.getManifest().version, symbol: '🤖', cssPrefix: 'chatgpt-extension',
     author: { name: 'KudoAI', url: 'https://kudoai.com' },
     urls: {
-        chatgptJS: 'https://chatgptjs.org',
+        chatgptjs: 'https://chatgptjs.org',
         contributors: 'https://docs.chatgptjs.org/#-contributors',
         gitHub: 'https://github.com/KudoAI/chatgpt.js-chrome-starter',
         relatedExtensions: 'https://aiwebextensions.com',

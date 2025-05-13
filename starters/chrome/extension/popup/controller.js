@@ -167,13 +167,13 @@
 
     // Init FOOTER
     const footerElems = { // left-to-right
-        chatgptJS: { logo: footer.querySelector('.chatgptjs-logo') },
+        chatgptjs: { logo: footer.querySelector('.chatgptjs-logo') },
         about: { span: footer.querySelector('.about-span') },
         moreExt: { span: footer.querySelector('.more-ext-span') }
     }
-    footerElems.chatgptJS.logo.src = 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@745f0ca'
+    footerElems.chatgptjs.logo.src = 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@745f0ca'
                                    + '/assets/images/badges/powered-by-chatgpt.js.png'
-    footerElems.chatgptJS.logo.onclick = () => { open(app.urls.chatgptJS) ; close() }
+    footerElems.chatgptjs.logo.onclick = () => { open(app.urls.chatgptjs) ; close() }
     footerElems.about.span.title = `About ${app.name}`
     footerElems.about.span.append(icons.create('questionMark', { width: 15, height: 13 }))
     footerElems.about.span.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }

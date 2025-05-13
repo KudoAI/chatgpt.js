@@ -22,7 +22,7 @@ window.modals = {
                 + `<a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                     + app.urls.gitHub + '</a>\n'
             + `<span style="${labelStyles}">⚡ Powered by:</span> `
-                + `<a href="${app.urls.chatgptJS}" target="_blank" rel="noopener">chatgpt.js</a>`,
+                + `<a href="${app.urls.chatgptjs}" target="_blank" rel="noopener">chatgpt.js</a>`,
             [ function getSupport(){}, function rateUs(){}, function moreAiExtensions(){} ], // button labels
             '', 656 // modal width
         )
