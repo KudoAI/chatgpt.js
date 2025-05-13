@@ -21,7 +21,7 @@ window.modals = {
             + `<span style="${labelStyles}">📜 Open source code:</span> `
                 + `<a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                     + app.urls.gitHub + '</a>\n'
-            + `<span style="${labelStyles}">📜 Latest changes:</span> `
+            + `<span style="${labelStyles}">🚀 Latest changes:</span> `
                 + `<a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
                     + `${app.urls.gitHub}/commits</a>\n`
             + `<span style="${labelStyles}">⚡ Powered by:</span> `
