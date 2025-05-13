@@ -67,7 +67,8 @@
 
             // Menu elems
             document.querySelectorAll('.logo, .menu-title, .menu-entry').forEach((elem, idx) => {
-                if (elem.id == 'about') return // never disable About entry
+                if (elem.id && ( document.querySelector(`#${elem.id}:has(> div.link)`) || elem.id == 'aboutEntry' ))
+                    return // never disable link/About entries
                 elem.style.transition = config.extensionDisabled ? '' : 'opacity 0.15s ease-in'
                 setTimeout(() => elem.classList.toggle('disabled', config.extensionDisabled),
                     config.extensionDisabled ? 0 : idx *10) // fade-out abruptly, fade-in staggered
@@ -150,7 +151,7 @@
 
     // Create/append ABOUT entry
     const aboutEntry = {
-        div: createMenuEntry({ key: 'about', symbol: '💡', label: 'aboutEntry...', helptip: `About ${app.name}` }),
+        div: createMenuEntry({ key: 'aboutEntry', symbol: '💡', label: 'About...', helptip: `About ${app.name}` }),
         ticker: {
             textGap: '&emsp;&emsp;&emsp;',
             span: dom.create.elem('span', { class: 'ticker' }), innerDiv: dom.create.elem('div')
