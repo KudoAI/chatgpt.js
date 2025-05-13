@@ -165,6 +165,12 @@
     aboutEntry.div.append(aboutEntry.ticker.span) ; footer.before(aboutEntry.div)
     aboutEntry.div.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
 
+    // Create/append CHATGPT entry
+    const chatgptURL = chrome.runtime.getManifest().content_scripts[0].matches.map(url => url.replace(/\/\*$/, ''))
+    const chatgptEntry = createMenuEntry({
+        key: 'chatgptEntry', type: 'link', symbol: '🤖', label: 'Open ChatGPT', url: chatgptURL, helptip: chatgptURL })
+    footer.before(chatgptEntry)
+
     // Init FOOTER
     const footerElems = { // left-to-right
         chatgptjs: { logo: footer.querySelector('.chatgptjs-logo') },
