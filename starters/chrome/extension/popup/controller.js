@@ -167,7 +167,7 @@
 
     // Init FOOTER
     const footerElems = { // left-to-right
-        chatgptJS: { logo: footer.querySelector('.cjs-logo') },
+        chatgptJS: { logo: footer.querySelector('.chatgptjs-logo') },
         about: { span: footer.querySelector('.about-span') },
         moreExt: { span: footer.querySelector('.more-extensions-span') }
     }
