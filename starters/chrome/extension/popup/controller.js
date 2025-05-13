@@ -67,7 +67,7 @@
 
             // Menu elems
             document.querySelectorAll('.logo, .menu-title, .menu-entry').forEach((elem, idx) => {
-                if (elem.id && ( document.querySelector(`#${elem.id}:has(> div.link)`) || elem.id == 'aboutEntry' ))
+                if (elem.id && ( elem.matches(`#${elem.id}:has(> div.link)`) || elem.id == 'aboutEntry' ))
                     return // never disable link/About entries
                 elem.style.transition = config.extensionDisabled ? '' : 'opacity 0.15s ease-in'
                 setTimeout(() => elem.classList.toggle('disabled', config.extensionDisabled),
