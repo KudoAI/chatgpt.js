@@ -187,11 +187,12 @@
             toggleCategorySettingsVisiblity(categoryDiv.id, { transitions: false })
     })
 
-    sync.fade() // based on master toggle state
-
     // Remove LOADING SPINNER after imgs load
     Promise.all([...document.querySelectorAll('img')].map(img =>
         img.complete ? Promise.resolve() : new Promise(resolve => img.onload = resolve)
-    )).then(() => document.querySelectorAll('[class^=loading]').forEach(elem => elem.remove()))
+    )).then(() => {
+        document.querySelectorAll('[class^=loading]').forEach(elem => elem.remove())
+        sync.fade() // based on master toggle state
+    })
 
 })()
