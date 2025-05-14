@@ -52,8 +52,8 @@
     function notify(msg, pos = 'bottom-right') { sendMsgToActiveTab('notify', { msg, pos }) }
 
     async function sendMsgToActiveTab(action, options) {
-        const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
-        return await chrome.tabs.sendMessage(activeTab.id, { action, options })
+        const activeTabID = await chrome.tabs.query({ active: true, currentWindow: true }).id
+        return await chrome.tabs.sendMessage(activeTabID, { action, options })
     }
 
     const sync = {
@@ -157,6 +157,7 @@
             span: dom.create.elem('span', { class: 'ticker' }), innerDiv: dom.create.elem('div')
         }
     }
+    aboutEntry.div.querySelector('span').style.paddingLeft = '4.5px'
     aboutEntry.ticker.content = `Version: <span class="ticker-em">v${ app.version + aboutEntry.ticker.textGap }</span>`
                          + `Powered by <span class="ticker-em">chatgpt.js</span>${aboutEntry.ticker.textGap}`
     for (let i = 0 ; i < 7 ; i++) aboutEntry.ticker.content += aboutEntry.ticker.content // make long af
