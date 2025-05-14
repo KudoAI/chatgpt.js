@@ -157,8 +157,8 @@
             span: dom.create.elem('span', { class: 'ticker' }), innerDiv: dom.create.elem('div')
         }
     }
-    aboutEntry.div.querySelector('div.menu-icon').style.paddingLeft = '11px'
-    aboutEntry.div.querySelector('span').style.paddingLeft = '1.5px'
+    aboutEntry.div.querySelector('div.menu-icon').style.paddingLeft = '10px'
+    aboutEntry.div.querySelector('span').style.paddingLeft = '2.5px'
     aboutEntry.ticker.content = `Version: <span class="ticker-em">v${ app.version + aboutEntry.ticker.textGap }</span>`
                          + `Powered by <span class="ticker-em">chatgpt.js</span>${aboutEntry.ticker.textGap}`
     for (let i = 0 ; i < 7 ; i++) aboutEntry.ticker.content += aboutEntry.ticker.content // make long af
