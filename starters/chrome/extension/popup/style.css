@@ -49,11 +49,9 @@ header {
     display: flex ; min-height: 2rem ; padding: 0 14px 0 2px ; white-space: nowrap ; font-size: 91%
 }
 .menu-icon { padding: 8px ; justify-content: center }
-.menu-right-elem {
-    display: flex ; height: 33px ; align-items: center ; padding: 0 11.5px ; margin-right: -14px ;
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1))
-}
+.menu-right-elem { display: flex ; height: 33px ; align-items: center ; padding: 0 11.5px ; margin-right: -14px }
 .menu-caret { position: absolute ; right: 14px ; transform: rotate(-90deg) }
+.menu-right-elem, .menu-caret { filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1)) }
 .categorized-entries { /* add left-stripe */
     border-left: 5px solid transparent ; height: 0 ; overflow: hidden ;
     border-image: linear-gradient(transparent, rgb(161 161 161)) 30 100%
