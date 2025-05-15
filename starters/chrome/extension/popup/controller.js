@@ -171,7 +171,7 @@
     const activeTabURL = (await chrome.tabs.query({ active: true, currentWindow: true }))[0].url,
           chatgptURL = chrome.runtime.getManifest().content_scripts[0].matches.map(url => url.replace(/\/\*$/, ''))
     if (!activeTabURL.includes(chatgptURL)) footer.before(createMenuEntry({
-        key: 'chatgptEntry', type: 'link', symbol: '🤖', label: 'Open ChatGPT', url: chatgptURL, helptip: chatgptURL }))
+        key: 'chatgptEntry', type: 'link', symbol: '💬', label: 'Open ChatGPT', url: chatgptURL, helptip: chatgptURL }))
 
     // Create/append LATEST CHANGES entry
     const latestChangesURL = `${app.urls.github}/commits`
