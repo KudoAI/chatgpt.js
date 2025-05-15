@@ -173,6 +173,13 @@
     if (!activeTabURL.includes(chatgptURL)) footer.before(createMenuEntry({
         key: 'chatgptEntry', type: 'link', symbol: '🤖', label: 'Open ChatGPT', url: chatgptURL, helptip: chatgptURL }))
 
+    // Create/append LATEST CHANGES entry
+    const latestChangesURL = `${app.urls.github}/commits`
+    footer.before(createMenuEntry({
+        key: 'latestChangesEntry', type: 'link', symbol: '🚀',
+        label: 'Latest Changes...', url: latestChangesURL, helptip: latestChangesURL
+    }))
+
     // Init FOOTER
     const footerElems = { // left-to-right
         chatgptjs: { logo: footer.querySelector('.chatgptjs-logo') },
