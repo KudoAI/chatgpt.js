@@ -168,11 +168,10 @@
     aboutEntry.div.onclick = () => { chrome.runtime.sendMessage({ action: 'showAbout' }) ; close() }
 
     // Create/append CHATGPT entry
-    const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true }),
+    const activeTabURL = (await chrome.tabs.query({ active: true, currentWindow: true }))[0].url,
           chatgptURL = chrome.runtime.getManifest().content_scripts[0].matches.map(url => url.replace(/\/\*$/, ''))
-    if (!activeTab.url.includes(chatgptURL))
-        footer.before(createMenuEntry({
-            key: 'chatgptEntry', type: 'link', symbol: '🤖', label: 'Open ChatGPT', url: chatgptURL, helptip: chatgptURL }))
+    if (!activeTabURL.includes(chatgptURL)) footer.before(createMenuEntry({
+        key: 'chatgptEntry', type: 'link', symbol: '🤖', label: 'Open ChatGPT', url: chatgptURL, helptip: chatgptURL }))
 
     // Init FOOTER
     const footerElems = { // left-to-right
