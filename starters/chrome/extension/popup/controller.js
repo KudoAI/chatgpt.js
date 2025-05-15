@@ -52,7 +52,7 @@
     function notify(msg, pos = 'bottom-right') { sendMsgToActiveTab('notify', { msg, pos }) }
 
     async function sendMsgToActiveTab(action, options) {
-        const activeTabID = await chrome.tabs.query({ active: true, currentWindow: true }).id
+        const activeTabID = (await chrome.tabs.query({ active: true, currentWindow: true }))[0].id
         return await chrome.tabs.sendMessage(activeTabID, { action, options })
     }
 
