@@ -45,8 +45,8 @@ header {
 
 /* Menu item elements */
 .menu-entry {
-    position: relative ; align-items: center ; border-bottom: 1px solid lightgrey ;
-    display: flex ; min-height: 2rem ; padding: 0 14px 0 2px ; white-space: nowrap ; font-size: 91%
+    height: 38px ; position: relative ; align-items: center ; border-bottom: 1px solid lightgrey ;
+    display: flex ; min-height: 2rem ; padding: 0 14px 0 2px ; white-space: nowrap ; font-size: 93%
 }
 .menu-icon { padding: 8px ; justify-content: center }
 .menu-right-elem { display: flex ; height: 33px ; align-items: center ; padding: 0 11.5px ; margin-right: -14px }
