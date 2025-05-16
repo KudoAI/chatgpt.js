@@ -56,7 +56,6 @@ header {
     border-left: 5px solid transparent ; height: 0 ; overflow: hidden ;
     border-image: linear-gradient(transparent, rgb(161 161 161)) 30 100%
 }
-.menu-entry:has(.menu-caret) { opacity: 0.88 }
 .anchored { pointer-events: none ; border-top: 1px solid lightgray } /* disable collapse, add top border */
 .expanded > span { font-weight: 500 ; transform: scale(1.05) ; margin-left: 5px }
 
