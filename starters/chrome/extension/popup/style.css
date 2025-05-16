@@ -58,6 +58,7 @@ header {
 }
 .anchored { pointer-events: none ; border-top: 1px solid lightgray } /* disable collapse, add top border */
 .expanded > span { font-weight: 500 ; transform: scale(1.05) ; margin-left: 5px }
+div.categorized-entries > div.menu-entry { height: 35px }
 
 /* About entry */
 div#about > div.menu-icon { padding: 8px 10px 8px 11px }
