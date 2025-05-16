@@ -6,7 +6,7 @@ window.icons = {
         if (!key) return console.error('Option \'key\' required by icons.create()')
         const icon = {
             data: this[key], attrs: { width: width || size, height: height || size, class: key, ...moreAttrs }}
-        if (icon.data?.svg) {
+        if (icon.data?.svg) { // return <svg>
             icon.svg = dom.create.svgElem('svg', { ...icon.data.svg, ...icon.attrs })
             ;(function create(elems) {
                 return elems.map(elem => {
@@ -16,8 +16,10 @@ window.icons = {
                 })
             })(icon.data.elems).forEach(elem => icon.svg.append(elem))
             return icon.svg
-        } else // img w/ src
+        } else if (icon.data?.src) // return <img> w/ src
             return dom.create.elem('img', { src: icon.data.src, ...icon.attrs })
+        else
+            return console.error(`No <svg|src> data found for key ${key}`)
     },
 
     caretDown: { svg: { viewBox: '0 0 24 24' }, elems: [{ path: { d: 'm0 6.4 12 12 12-12z' }}]},
