@@ -32,7 +32,7 @@
             if (entryData.status) entry.label.textContent += ` — ${entryData.status}`
             if (entryData.type == 'link') {
                 entry.label.after(entry.rightElem = dom.create.elem('div', { class: 'menu-right-elem' }))
-                entry.rightElem.append(icons.create({ key: 'open', size: 18, fill: 'black' }))
+                entry.rightElem.append(icons.create({ key: 'open', size: 17, fill: 'black' }))
             }
         }
         if (entryData.type == 'category')
