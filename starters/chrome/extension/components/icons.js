@@ -2,10 +2,10 @@
 
 window.icons = {
 
-    create({ key, size = 18, width, height, ...moreAttrs }) {
+    create({ key, size = 18, width, height, ...otherAttrs }) {
         if (!key) return console.error('Option \'key\' required by icons.create()')
         const icon = {
-            data: this[key], attrs: { width: width || size, height: height || size, class: key, ...moreAttrs }}
+            data: this[key], attrs: { width: width || size, height: height || size, class: key, ...otherAttrs }}
         if (icon.data?.svg) { // return <svg>
             icon.svg = dom.create.svgElem('svg', { ...icon.data.svg, ...icon.attrs })
             ;(function create(elems) {
