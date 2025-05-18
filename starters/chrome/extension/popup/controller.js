@@ -112,8 +112,7 @@
     const masterToggle = {
         div: document.querySelector('.master-toggle'),
         switch: dom.create.elem('div', { class: 'toggle menu-icon highlight-on-hover', style: 'height: 26px' }),
-        track: dom.create.elem('span', {
-            class: 'track', style: 'transform: scale(1.02) ; position: relative ; top: 7.5px' })
+        track: dom.create.elem('span', { class: 'track', style: 'position: relative ; top: 7.5px' })
     }
     masterToggle.div.append(masterToggle.switch) ; masterToggle.switch.append(masterToggle.track)
     await settings.load('extensionDisabled') ; masterToggle.switch.classList.toggle('on', !config.extensionDisabled)
