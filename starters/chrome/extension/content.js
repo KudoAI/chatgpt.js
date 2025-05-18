@@ -20,7 +20,7 @@
             alert: () => modals.alert(...['title', 'msg', 'btns', 'checkbox', 'width'].map(arg => options[arg])),
             showAbout: () => { config.skipAlert = true ; chatgpt.isLoaded().then(() => modals.open('about')) },
             syncConfigToUI: () => syncConfigToUI(options)
-        }[action]?.() || console.warn(`Received unsupported action: "${action}"`))
+        }[action]?.() || console.warn(`Chome msg listener warning: "${action}"`))
     })
 
     // Init SETTINGS
