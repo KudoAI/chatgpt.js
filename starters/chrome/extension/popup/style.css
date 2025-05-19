@@ -58,7 +58,7 @@ header {
     border-image: linear-gradient(transparent, rgb(161 161 161)) 30 100%
 }
 .anchored { pointer-events: none } /* disable collapse */
-.expanded > span { font-weight: 500 ; transform: scale(1.05) ; margin-left: 5px }
+.expanded > span { font-weight: 600 ; transform: scale(1.05) ; margin-left: 5px }
 
 /* About entry */
 div#about > div.menu-icon { padding: 8px 10px 8px 11px }
