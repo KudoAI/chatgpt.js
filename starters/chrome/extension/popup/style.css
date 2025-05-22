@@ -53,7 +53,8 @@ header {
 .menu-caret { position: absolute ; right: 14px ; transform: rotate(-90deg) }
 .menu-right-elem, .menu-caret { filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1)) }
 .categorized-entries { /* add left-stripe */
-    border-left: 5px solid transparent ; height: 0 ; overflow: hidden ;
+    border-left: 5px solid transparent ; height: 0 ;
+    overflow: hidden ; /* for y-pos calc */
     border-image: linear-gradient(transparent, rgb(161 161 161)) 30 100%
 }
 .anchored { pointer-events: none } /* disable collapse */
