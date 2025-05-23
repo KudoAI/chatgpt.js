@@ -6,8 +6,8 @@ permissions:
 
 jobs:
 
-  js-json-md-yaml-lint:
-    name: JavaScript + JSON + Markdown + YAML
+  eslint:
+    name: ESLint
     runs-on: ubuntu-latest
     steps:
 
