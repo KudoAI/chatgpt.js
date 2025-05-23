@@ -37,15 +37,16 @@
         }
         if (entryData.type == 'category')
             entry.div.append(icons.create({ key: 'caretDown', size: 11, class: 'menu-caret menu-right-elem' }))
-        entry.div.onclick = () => {
-            if (entryData.type == 'category') toggleCategorySettingsVisiblity(entryData.key)
-            else if (entryData.type == 'toggle') {
+        entry.div.onclick = ({
+            category: () => toggleCategorySettingsVisiblity(entryData.key),
+            toggle: () => {
                 entry.leftElem.classList.toggle('on')
                 settings.save(entryData.key, !config[entryData.key]) ; sync.configToUI({ updatedKey: entryData.key })
                 requestAnimationFrame(() => notify(`${entryData.label} ${chrome.i18n.getMessage(`state_${
                     settings.typeIsEnabled(entryData.key) ? 'on' : 'off' }`).toUpperCase()}`))
-            } else if (entryData.type == 'link') { open(entryData.url) ; close() }
-        }
+            },
+            link: () => { open(entryData.url) ; close() }
+        })[entryData.type]
         return entry.div
     }
 
