@@ -132,7 +132,7 @@
         // Group controls by category
         const categorizedCtrls = {}
         Object.entries(settings.controls).forEach(([key, ctrl]) =>
-            ( categorizedCtrls[ctrl.category || 'general'] ??= {} )[key] = { ...ctrl, key: key })
+            ( categorizedCtrls[ctrl.category || 'general'] ??= {} )[key] = { ...ctrl, key })
 
         // Create/append general controls
         Object.values(categorizedCtrls.general || {}).forEach(ctrl => menuEntriesDiv.append(createMenuEntry(ctrl)))
