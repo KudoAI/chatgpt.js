@@ -80,28 +80,28 @@
 
     function toggleCategorySettingsVisiblity(category, { transitions = true, action } = {}) {
         const transitionDuration = 350, // ms
-              categoryDiv = document.getElementById(category),
-              caret = categoryDiv.querySelector('.menu-caret'),
-              catChildrenDiv = categoryDiv.nextSibling,
-              catChild = catChildrenDiv.querySelectorAll('.menu-entry')
-        if (action != 'hide' && dom.get.computedHeight(catChildrenDiv) == 0) { // show category settings
-            categoryDiv.classList.toggle('expanded', true)
-            Object.assign(catChildrenDiv.style, { height: `${dom.get.computedHeight(catChild)}px`,
+              ctgDiv = document.getElementById(category),
+              caret = ctgDiv.querySelector('.menu-caret'),
+              ctgChildrenDiv = ctgDiv.nextSibling,
+              ctgChild = ctgChildrenDiv.querySelectorAll('.menu-entry')
+        if (action != 'hide' && dom.get.computedHeight(ctgChildrenDiv) == 0) { // show category settings
+            ctgDiv.classList.toggle('expanded', true)
+            Object.assign(ctgChildrenDiv.style, { height: `${dom.get.computedHeight(ctgChild)}px`,
                 transition: transitions ? 'height 0.25s' : '' })
             Object.assign(caret.style, { // point it down
                 transform: 'rotate(0deg)', transition: transitions ? 'transform 0.15s ease-out' : '' })
-            catChild.forEach(row => { // reset styles to support continuous transition on rapid show/hide
+            ctgChild.forEach(row => { // reset styles to support continuous transition on rapid show/hide
                 row.style.transition = 'none' ; row.style.opacity = 0 })
-            catChildrenDiv.offsetHeight // force reflow to insta-apply reset
-            catChild.forEach((row, idx) => { // fade-in staggered
+            ctgChildrenDiv.offsetHeight // force reflow to insta-apply reset
+            ctgChild.forEach((row, idx) => { // fade-in staggered
                 if (transitions) row.style.transition = `opacity ${ transitionDuration /1000 }s ease-in-out`
                 setTimeout(() => row.style.opacity = 1, transitions ? idx * transitionDuration /10 : 0)
             })
-            document.querySelectorAll(`.menu-entry:has(.menu-caret):not(#${category})`).forEach(otherCategoryDiv =>
-                toggleCategorySettingsVisiblity(otherCategoryDiv.id, { action: 'hide' }))
+            document.querySelectorAll(`.menu-entry:has(.menu-caret):not(#${category})`).forEach(otherCtgDiv =>
+                toggleCategorySettingsVisiblity(otherCtgDiv.id, { action: 'hide' }))
         } else { // hide category settings
-            categoryDiv.classList.toggle('expanded', false)
-            Object.assign(catChildrenDiv.style, { height: 0, transition: '' })
+            ctgDiv.classList.toggle('expanded', false)
+            Object.assign(ctgChildrenDiv.style, { height: 0, transition: '' })
             Object.assign(caret.style, { transform: 'rotate(-90deg)', transition: '' }) // point it right
         }
     }
@@ -140,12 +140,12 @@
         // Create/append categorized controls
         Object.entries(categorizedCtrls).forEach(([category, ctrls]) => {
             if (category == 'general') return
-            const catData = { ...settings.categories[category], key: category, type: 'category' },
-                  catChildrenDiv = dom.create.elem('div', { class: 'categorized-entries' })
-            if (catData.color) // color the stripe
-                catChildrenDiv.style.borderImage = `linear-gradient(transparent, #${catData.color}) 30 100%`
-            menuEntriesDiv.append(createMenuEntry(catData), catChildrenDiv)
-            Object.values(ctrls).forEach(ctrl => catChildrenDiv.append(createMenuEntry(ctrl)))
+            const ctgData = { ...settings.categories[category], key: category, type: 'category' },
+                  ctgChildrenDiv = dom.create.elem('div', { class: 'categorized-entries' })
+            if (ctgData.color) // color the stripe
+                ctgChildrenDiv.style.borderImage = `linear-gradient(transparent, #${ctgData.color}) 30 100%`
+            menuEntriesDiv.append(createMenuEntry(ctgData), ctgChildrenDiv)
+            Object.values(ctrls).forEach(ctrl => ctgChildrenDiv.append(createMenuEntry(ctrl)))
         })
     }
 
@@ -197,9 +197,9 @@
     footerElems.moreExt.span.onclick = () => { open(app.urls.relatedExtensions) ; close() }
 
     // AUTO-EXPAND categories
-    document.querySelectorAll('.menu-entry:has(.menu-caret)').forEach(categoryDiv => {
-        if (settings.categories[categoryDiv.id]?.autoExpand)
-            toggleCategorySettingsVisiblity(categoryDiv.id, { transitions: false })
+    document.querySelectorAll('.menu-entry:has(.menu-caret)').forEach(ctgDiv => {
+        if (settings.categories[ctgDiv.id]?.autoExpand)
+            toggleCategorySettingsVisiblity(ctgDiv.id, { transitions: false })
     })
 
     // Remove LOADING SPINNER after imgs load
