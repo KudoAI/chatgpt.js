@@ -19,7 +19,7 @@
         const entry = {
             div: dom.create.elem('div', {
                 id: entryData.key, class: 'menu-entry highlight-on-hover', title: entryData.helptip || '' }),
-            leftElem: dom.create.elem('div', { class: `menu-icon ${ entryData.type || '' }` }),
+            leftElem: dom.create.elem('div', { class: `menu-icon ${ entryData.type || '' }`}),
             label: dom.create.elem('span')
         }
         entry.label.textContent = entryData.label
