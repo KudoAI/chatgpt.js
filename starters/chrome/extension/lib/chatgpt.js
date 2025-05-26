@@ -183,11 +183,11 @@ const chatgpt = {
             }
             modalStyle.textContent = ( // update prev/new style contents
                 `.chatgpt-modal { /* vars */
-                      --transition: opacity 0.65s cubic-bezier(.165,.84,.44,1), /* for fade-in */
-                                    transform 0.55s cubic-bezier(.165,.84,.44,1) ; /* for move-in */
-                      --bg-transition: background-color 0.25s ease ; /* for bg dim */
-                      --btn-transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ; /* for smooth zoom */
-                      --btn-shadow: 2px 1px ${ scheme == 'dark' ? '54px #00cfff' : '30px #9cdaff' }}`
+                    --transition: opacity 0.65s cubic-bezier(.165,.84,.44,1), /* for fade-in */
+                                  transform 0.55s cubic-bezier(.165,.84,.44,1) ; /* for move-in */
+                    --bg-transition: background-color 0.25s ease ; /* for bg dim */
+                    --btn-transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ; /* for smooth zoom */
+                    --btn-shadow: 2px 1px ${ scheme == 'dark' ? '54px #00cfff' : '30px #9cdaff' }}`
 
                 + '.no-mobile-tap-outline { outline: none ; -webkit-tap-highlight-color: transparent }'
 
@@ -212,7 +212,7 @@ const chatgpt = {
                       border: 1px solid ${ scheme == 'dark' ? 'white' : '#b5b5b5' };
                       transform: translateX(-3px) translateY(7px) ; /* offset to move-in from */
                       max-width: 75vw ; word-wrap: break-word ; border-radius: 15px ;
-                      --shadow: 0 30px 60px rgba(0,0,0,0.12) ; box-shadow: var(--shadow) ;
+                    --shadow: 0 30px 60px rgba(0,0,0,0.12) ; box-shadow: var(--shadow) ;
                           -webkit-box-shadow: var(--shadow) ; -moz-box-shadow: var(--shadow) ;
                       user-select: none ; -webkit-user-select: none ; -moz-user-select: none ;
                           -o-user-select: none ; -ms-user-select: none ;
