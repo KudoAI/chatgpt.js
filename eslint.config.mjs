@@ -7,7 +7,7 @@ import importPlugin from 'eslint-plugin-import'
 import json from '@eslint/json'
 import markdown from '@eslint/markdown'
 import regexp from 'eslint-plugin-regexp'
-import stylisticJS from '@stylistic/eslint-plugin-js'
+import stylisticJS from '@stylistic/eslint-plugin'
 import yml from 'eslint-plugin-yml'
 
 export default [
