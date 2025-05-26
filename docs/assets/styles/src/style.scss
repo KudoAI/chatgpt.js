@@ -112,8 +112,8 @@ $font-families: (
 /* VARIABLES */
 
 :root {
-    --fade-transition: 0.2s cubic-bezier(0.165,0.84,0.44,1),
-             transform 0.5s cubic-bezier(0.165,0.84,0.44,1) 0.15s }
+  --fade-transition: 0.2s cubic-bezier(0.165,0.84,0.44,1),
+    transform 0.5s cubic-bezier(0.165,0.84,0.44,1) 0.15s }
 $green: lime; $blue: #64ffff; $kudo-depth: .225vw;
 $no-select: (
     user-select: none, -webkit-user-select: none, -khtml-user-select: none, -moz-user-select: none, -ms-user-select: none,
