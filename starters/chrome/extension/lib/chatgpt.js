@@ -197,8 +197,8 @@ const chatgpt = {
                       position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; /* expand to full view-port */
                       display: flex ; justify-content: center ; align-items: center ; z-index: 9999 ; /* align */
                       transition: var(--bg-transition) ; /* for bg dim */
-                          -webkit-transition: var(--bg-transition) ; -moz-transition: var(--bg-transition) ;
-                          -o-transition: var(--bg-transition) ; -ms-transition: var(--bg-transition) }`
+                         -webkit-transition: var(--bg-transition) ; -moz-transition: var(--bg-transition) ;
+                         -o-transition: var(--bg-transition) ; -ms-transition: var(--bg-transition) }`
 
                 // Alert styles
                 + `.chatgpt-modal > div {
@@ -213,12 +213,12 @@ const chatgpt = {
                       transform: translateX(-3px) translateY(7px) ; /* offset to move-in from */
                       max-width: 75vw ; word-wrap: break-word ; border-radius: 15px ;
                     --shadow: 0 30px 60px rgba(0,0,0,0.12) ; box-shadow: var(--shadow) ;
-                          -webkit-box-shadow: var(--shadow) ; -moz-box-shadow: var(--shadow) ;
+                         -webkit-box-shadow: var(--shadow) ; -moz-box-shadow: var(--shadow) ;
                       user-select: none ; -webkit-user-select: none ; -moz-user-select: none ;
-                          -o-user-select: none ; -ms-user-select: none ;
+                         -o-user-select: none ; -ms-user-select: none ;
                       transition: var(--transition) ; /* for fade-in + move-in */
-                          -webkit-transition: var(--transition) ; -moz-transition: var(--transition) ;
-                          -o-transition: var(--transition) ; -ms-transition: var(--transition) }
+                         -webkit-transition: var(--transition) ; -moz-transition: var(--transition) ;
+                         -o-transition: var(--transition) ; -ms-transition: var(--transition) }
                   .chatgpt-modal h2 { font-weight: bold ; font-size: 24px ; margin-bottom: 9px }
                   .chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}
                   .chatgpt-modal a:hover { text-decoration: underline }
@@ -238,8 +238,8 @@ const chatgpt = {
                       ${ isMobile ? 'margin-top: 5px ; margin-bottom: 3px ;' : '' }
                       border-radius: 0 ; border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' };
                       transition: var(--btn-transition) ;
-                          -webkit-transition: var(--btn-transition) ; -moz-transition: var(--btn-transition) ;
-                          -o-transition: var(--btn-transition) ; -ms-transition: var(--btn-transition) }
+                         -webkit-transition: var(--btn-transition) ; -moz-transition: var(--btn-transition) ;
+                         -o-transition: var(--btn-transition) ; -ms-transition: var(--btn-transition) }
                   .chatgpt-modal button:hover {
                       transform: scale(1.055) ; color: black ;
                       background-color: #${ scheme == 'dark' ? '00cfff' : '9cdaff' };
