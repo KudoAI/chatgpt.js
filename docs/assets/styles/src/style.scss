@@ -116,8 +116,8 @@ $font-families: (
     transform 0.5s cubic-bezier(0.165,0.84,0.44,1) 0.15s }
 $green: lime; $blue: #64ffff; $kudo-depth: .225vw;
 $no-select: (
-    user-select: none, -webkit-user-select: none, -khtml-user-select: none, -moz-user-select: none, -ms-user-select: none,
-    -o-user-select: none, -webkit-touch-callout: none, -webkit-tap-highlight-color: transparent
+    user-select: none, -webkit-user-select: none, -khtml-user-select: none, -moz-user-select: none,
+   -ms-user-select: none, -o-user-select: none, -webkit-touch-callout: none, -webkit-tap-highlight-color: transparent
 );
 
 /* GENERAL */
@@ -141,20 +141,20 @@ a { word-break: break-word }
 .menu-fadeup.visible {
     opacity: 1 ; transform: translateY(0) ;
     transition: var(--fade-transition) ;
-        -webkit-transition: var(--fade-transition) ; -moz-transition: var(--fade-transition) ;
-        -o-transition: var(--fade-transition) ; -ms-transition: var(--fade-transition) }
+       -webkit-transition: var(--fade-transition) ; -moz-transition: var(--fade-transition) ;
+       -o-transition: var(--fade-transition) ; -ms-transition: var(--fade-transition) }
 .content-fadeup { opacity: 0 ; transform: translateY(20px) }
 .content-fadeup.visible { opacity: 1 ; transform: translateY(0) ;
     transition: var(--fade-transition) ;
-        -webkit-transition: var(--fade-transition) ; -moz-transition: var(--fade-transition) ;
-        -o-transition: var(--fade-transition) ; -ms-transition: var(--fade-transition) }
+       -webkit-transition: var(--fade-transition) ; -moz-transition: var(--fade-transition) ;
+       -o-transition: var(--fade-transition) ; -ms-transition: var(--fade-transition) }
 .content-faderight { opacity: 0 ; transform: translateX(-20px) }
 .content-fadeleft { opacity: 0 ; transform: translateX(20px) }
 .content-faderight.visible, .content-fadeleft.visible {
     opacity: 1 ; transform: translateX(0) ;
     transition: var(--fade-transition) ;
-        -webkit-transition: var(--fade-transition) ; -moz-transition: var(--fade-transition) ;
-        -o-transition: var(--fade-transition) ; -ms-transition: var(--fade-transition) }
+       -webkit-transition: var(--fade-transition) ; -moz-transition: var(--fade-transition) ;
+       -o-transition: var(--fade-transition) ; -ms-transition: var(--fade-transition) }
 
 /* KudoAI logo */
 #kudoai {
