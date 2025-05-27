@@ -35,6 +35,22 @@
                 entry.rightElem.append(icons.create({ key: 'open', size: 17, fill: 'black' }))
             }
         }
+        if (entryData.type == 'slider') { // append slider, add listeners, remove .highlight-on-hover
+            entry.slider = dom.create.elem('input', { class: 'slider', type: 'range',
+                min: entry.min || 0, max: entry.max || 100, value: config[entryData.key] })
+            entry.label.textContent += `: ${entry.slider.value}${ entryData.labelSuffix || '' }`
+            entry.slider.style.setProperty('--track-fill-percent', `${ entry.slider.value / entry.slider.max *100 }%`)
+            entry.slider.oninput = ({ target: { value }}) => { // update label/color
+                settings.save(entryData.key, parseInt(value)) ; sync.configToUI({ updatedKey: entryData.key })
+                entry.label.textContent = `${entryData.label}: ${value}${ entryData.labelSuffix || '' }`
+                entry.slider.style.setProperty('--track-fill-percent', `${ value / entry.slider.max *100 }%`)
+            }
+            entry.div.onwheel = event => { // move slider by 2 steps
+                entry.slider.value = parseInt(entry.slider.value) -Math.sign(event.deltaY) *2
+                entry.slider.dispatchEvent(new Event('input'))
+            }
+            entry.div.append(entry.slider) ; entry.div.classList.remove('highlight-on-hover')
+        }
         if (entryData.type == 'category')
             entry.div.append(icons.create({ key: 'caretDown', size: 11, class: 'menu-caret menu-right-elem' }))
         entry.div.onclick = ({

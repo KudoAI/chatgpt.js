@@ -3,7 +3,7 @@ window.settings = {
 
     controls: {
         // Add settings options as keys, with each key's value being an object that includes:
-        // - 'type': the control type (e.g. 'toggle', 'link' or 'prompt')
+        // - 'type': the control type (e.g. 'toggle', 'slider', 'link' or 'prompt')
         // - 'label': a descriptive label
         // - 'defaultVal' (optional): default value of setting (true for toggles if unspecified, false otherwise)
         // - 'category' (optional): string key from this.categories to group control under
@@ -44,7 +44,9 @@ window.settings = {
     load(...keys) {
         return Promise.all(keys.flat().map(async key => // resolve promise when all keys load
             config[key] = (await chrome.storage.local.get(key))[key]
-                ?? this.controls[key]?.defaultVal ?? this.controls[key]?.type == 'toggle'
+                ?? this.controls[key]?.defaultVal
+                ?? this.controls[key]?.type == 'slider' ? 100
+                 : this.controls[key]?.type == 'toggle'
         ))
     },
 
