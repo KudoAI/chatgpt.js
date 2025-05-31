@@ -53,19 +53,21 @@ header {
 .menu-right-elem { display: flex ; height: 33px ; align-items: center ; padding: 0 11.5px ; margin-right: -14px }
 .menu-caret { position: absolute ; right: 14px ; transform: rotate(-90deg) }
 .menu-right-elem, .menu-caret { filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1)) }
-.categorized-entries { /* add left-stripe */
+.categorized-entries { /* add left-stripe + bg */
     border-left: 5px solid transparent ; height: 0 ;
     overflow: hidden ; /* for y-pos calc */
-    border-image: linear-gradient(transparent, rgb(161 161 161)) 30 100%
+    border-image: linear-gradient(transparent, rgb(161 161 161)) 30 100% ;
+    --categorized-bg-color: #f8f8f8 ; background: var(--categorized-bg-color)
 }
 .anchored { pointer-events: none } /* disable collapse */
 .expanded > span { font-weight: 600 ; transform: scale(1.05) ; margin-left: 5px }
 
 /* Slider */
 div.menu-entry > input.slider {
-  --track-filled-color: #000 ; --track-empty-color: #E0E0E0 ; --thumb-color: #000 ; --thumb-border: #fff ;
-  --track-fill-percent: 100% ; padding: 7px 0 ; width: 100% ; margin: -4px -5px 7px 8px ; cursor: pointer ;
-   -webkit-appearance: none ; appearance: none
+  --track-filled-color: #000 ; --track-empty-color: #E0E0E0 ; --track-fill-percent: 100% ;
+  --thumb-color: #000 ; --thumb-border: var(--categorized-bg-color, #fff) ;
+   padding: 7px 0 ; width: 100% ; margin: -4px -5px 7px 8px ; cursor: pointer ;
+   -webkit-appearance: none ; appearance: none ; background: none
 }
 .slider::-webkit-slider-runnable-track {
     height: 6px ; border-radius: 10px ;
