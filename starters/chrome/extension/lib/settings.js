@@ -10,6 +10,7 @@ window.settings = {
         // - 'symbol' (optional): for icon display (e.g. ⌚)
         // - 'helptip' (optional): tooltip to display on hover
         // - 'throttle' (optional): true/false or ms to disable toggles on click (defaults to 1500 if true)
+        // - 'dependencies' (optional): array of key names of categories/controls that must also be enabled
 
         // NOTE: Controls are displayed in top-to-bottom order (within categories and in top-level)
         // NOTE: Toggles are disabled by default unless defaultVal is true
@@ -28,6 +29,8 @@ window.settings = {
         // - 'helptip' (optional): tooltip to display on hover
         // - 'autoExpand' (optional): true/false to auto-expand categories on toolbar icon click
         // - 'throttle' (optional): true/false or ms to disable toggles on click (defaults to 1500 if true)
+        // - 'throttle' (optional): true/false or ms to disable toggles on click (defaults to 1500 if true)
+        // - 'dependencies' (optional): array of key names of categories/controls that must also be enabled
 
         // NOTE: Categories are displayed in top-to-bottom order
 
