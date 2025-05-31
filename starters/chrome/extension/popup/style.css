@@ -57,7 +57,7 @@ header {
     border-left: 5px solid transparent ; height: 0 ;
     overflow: hidden ; /* for y-pos calc */
     border-image: linear-gradient(transparent, rgb(161 161 161)) 30 100% ;
-    --categorized-bg-color: #f8f8f8 ; background: var(--categorized-bg-color)
+  --categorized-bg-color: #f8f8f8 ; background: var(--categorized-bg-color)
 }
 .anchored { pointer-events: none } /* disable collapse */
 .expanded > span { font-weight: 600 ; transform: scale(1.05) ; margin-left: 5px }
@@ -66,7 +66,7 @@ header {
 div.menu-entry > input.slider {
   --track-filled-color: #000 ; --track-empty-color: #E0E0E0 ; --track-fill-percent: 100% ;
   --thumb-color: #000 ; --thumb-border: var(--categorized-bg-color, #fff) ;
-   padding: 7px 0 ; width: 100% ; margin: -4px -5px 7px 8px ; cursor: pointer ;
+    padding: 7px 0 ; width: 100% ; margin: -4px -5px 7px 8px ; cursor: pointer ;
    -webkit-appearance: none ; appearance: none ; background: none
 }
 .slider::-webkit-slider-runnable-track {
@@ -133,5 +133,5 @@ footer img[src*=question-mark] { position: relative ; top: 1px }
 @supports selector(:has(> input.slider)) {
     div.menu-entry:has(> input.slider) { flex-wrap: wrap ; padding-top: 2px }}
 @supports selector(:has(> .chatgptjs-logo)) {
-      footer > span:has(> .chatgptjs-logo) { display: flex ; align-items: center ; flex-grow: 1 ; padding-left: 2px }}
+    footer > span:has(> .chatgptjs-logo) { display: flex ; align-items: center ; flex-grow: 1 ; padding-left: 2px }}
 @supports (user-select: none) { body, button, input, select, textarea { user-select: none }}
