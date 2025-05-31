@@ -58,7 +58,7 @@
             const throttleMs = typeof entryData.throttle == 'number' ? entryData.throttle
                              : entryData.throttle ? 1500 : 0
             if (throttleMs && now -( entry.div.lastClickTime || 0 ) < throttleMs) return
-            entry.div.lastClickTime = now
+            entry.div.classList.remove('disabled') ; entry.div.lastClickTime = now
             ;({
                 category: () => toggleCategorySettingsVisiblity(entryData.key),
                 toggle: () => {
@@ -70,6 +70,10 @@
                 },
                 link: () => { open(entryData.url) ; close() }
             })[entryData.type]()
+            if (entryData.throttle) {
+                entry.div.classList.add('disabled')
+                setTimeout(() => entry.div.classList.remove('disabled'), throttleMs)
+            }
         }
         return entry.div
     }
