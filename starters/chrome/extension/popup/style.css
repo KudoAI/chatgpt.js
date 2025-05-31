@@ -10,7 +10,7 @@ body {
 .highlight-on-hover:hover { background: rgb(100,149,237) }
 .highlight-on-hover:hover span:not(.track), .highlight-on-hover:hover svg, span.menu-icon.highlight-on-hover:hover img {
     filter: invert(1) } /* invert setting labels on hover */
-.disabled { opacity: 0.3 !important; pointer-events: none } /* eslint-disable-line */
+.disabled { opacity: 0.3 !important ; pointer-events: none } /* eslint-disable-line */
 
 /* Loader */
 .loading-bg {
