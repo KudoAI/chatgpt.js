@@ -107,7 +107,8 @@ div#about > div.menu-icon { padding: 8px 10px 8px 11px }
 
 /* Toggle elements */
 .toggle .track {
-    display: block ; border-radius: 7px ; position: relative ; transform: scale(0.95) ; background: white ; 
+    display: block ; border-radius: 7px ; position: relative ; transform: scale(0.95) ;
+    background: var(--categorized-bg-color, white) ; 
     border: 1px solid black ; top: 1px ; height: 10px ; width: 18px ; transition: background 0.08s ease-in-out
 }
 .toggle.on .track { background: black ; transition: background 0.15s ease-in-out }
