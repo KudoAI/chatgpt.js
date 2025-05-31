@@ -57,8 +57,9 @@ header {
     border-left: 5px solid transparent ; height: 0 ;
     overflow: hidden ; /* for y-pos calc */
     border-image: linear-gradient(transparent, rgb(161 161 161)) 30 100% ;
-  --categorized-bg-color: #f8f8f8 ; background: var(--categorized-bg-color)
+  --categorized-bg-color: #f8f8f8
 }
+div.categorized-entries > div.menu-entry:not(:has(> div.slider)) { background: #fcfcfc }
 .anchored { pointer-events: none } /* disable collapse */
 .expanded > span { font-weight: 600 ; transform: scale(1.05) ; margin-left: 5px }
 
