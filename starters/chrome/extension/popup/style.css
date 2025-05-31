@@ -22,13 +22,13 @@ body {
     animation: loader-move-head-tail 0.8s infinite linear alternate, loader-rotate 1.6s infinite linear
 }
 @keyframes loader-move-head-tail {
-     0% { clip-path: polygon(50% 50%, 0 0, 50% 0, 50% 0, 50% 0, 50% 0, 50% 0) }
-     12.5% { clip-path: polygon(50% 50%, 0 0, 50% 0, 100% 0, 100% 0, 100% 0, 100% 0) }
-     25% { clip-path: polygon(50% 50%, 0 0, 50% 0, 100% 0, 100% 100%, 100% 100%, 100% 100%) }
-     50% { clip-path: polygon(50% 50%, 0 0, 50% 0, 100% 0, 100% 100%, 50% 100%, 0 100%) }
-     62.5% { clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%) }
-     75% { clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0 100%) }
-     100% { clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0 100%) }
+    0% { clip-path: polygon(50% 50%, 0 0, 50% 0, 50% 0, 50% 0, 50% 0, 50% 0) }
+    12.5% { clip-path: polygon(50% 50%, 0 0, 50% 0, 100% 0, 100% 0, 100% 0, 100% 0) }
+    25% { clip-path: polygon(50% 50%, 0 0, 50% 0, 100% 0, 100% 100%, 100% 100%, 100% 100%) }
+    50% { clip-path: polygon(50% 50%, 0 0, 50% 0, 100% 0, 100% 100%, 50% 100%, 0 100%) }
+    62.5% { clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%) }
+    75% { clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0 100%) }
+    100% { clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0 100%) }
 }
 @keyframes loader-rotate { 
     0% { transform: scaleY(1) rotate(0deg) } 49.99% { transform: scaleY(1) rotate(135deg) }
