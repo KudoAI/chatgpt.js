@@ -130,5 +130,5 @@ footer img[src*=question-mark] { position: relative ; top: 1px }
 @supports selector(:has(> input.slider)) {
     div.menu-entry:has(> input.slider) { flex-wrap: wrap ; padding-top: 2px }}
 @supports selector(:has(> .chatgptjs-logo)) {
-      footer > span:has(> .chatgptjs-logo) { display: flex ; align-items: center ; flex-grow: 1 ; padding-left: 2px }}      
+      footer > span:has(> .chatgptjs-logo) { display: flex ; align-items: center ; flex-grow: 1 ; padding-left: 2px }}
 @supports (user-select: none) { body, button, input, select, textarea { user-select: none }}
