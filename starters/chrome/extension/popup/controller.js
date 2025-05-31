@@ -53,16 +53,24 @@
         }
         if (entryData.type == 'category')
             entry.div.append(icons.create({ key: 'caretDown', size: 11, class: 'menu-caret menu-right-elem' }))
-        entry.div.onclick = ({
-            category: () => toggleCategorySettingsVisiblity(entryData.key),
-            toggle: () => {
-                entry.leftElem.classList.toggle('on')
-                settings.save(entryData.key, !config[entryData.key]) ; sync.configToUI({ updatedKey: entryData.key })
-                requestAnimationFrame(() => notify(`${entryData.label} ${chrome.i18n.getMessage(`state_${
-                    settings.typeIsEnabled(entryData.key) ? 'on' : 'off' }`).toUpperCase()}`))
-            },
-            link: () => { open(entryData.url) ; close() }
-        })[entryData.type]
+        entry.div.onclick = () => {
+            const now = Date.now()
+            const throttleMs = typeof entryData.throttle == 'number' ? entryData.throttle
+                             : entryData.throttle ? 1500 : 0
+            if (throttleMs && now -( entry.div.lastClickTime || 0 ) < throttleMs) return
+            entry.div.lastClickTime = now
+            ;({
+                category: () => toggleCategorySettingsVisiblity(entryData.key),
+                toggle: () => {
+                    entry.leftElem.classList.toggle('on')
+                    settings.save(entryData.key, !config[entryData.key])
+                    sync.configToUI({ updatedKey: entryData.key })
+                    requestAnimationFrame(() => notify(`${entryData.label} ${chrome.i18n.getMessage(`state_${
+                        settings.typeIsEnabled(entryData.key) ? 'on' : 'off' }`).toUpperCase()}`))
+                },
+                link: () => { open(entryData.url) ; close() }
+            })[entryData.type]()
+        }
         return entry.div
     }
 
