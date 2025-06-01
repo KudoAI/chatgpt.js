@@ -66,7 +66,7 @@ header {
 div.menu-entry > input.slider {
   --track-filled-color: #000 ; --track-empty-color: #E0E0E0 ; --track-fill-percent: 100% ;
   --thumb-color: #000 ; --thumb-border: #fff ;
-    padding: 7px 0 ; width: 100% ; margin: -2px -5px 7px 8px ; cursor: pointer ;
+    width: 100% ; margin: -2px -5px 7px 8px ; padding: 8.5px 3px ; cursor: pointer ;
    -webkit-appearance: none ; appearance: none ; background: none
 }
 .slider::-webkit-slider-runnable-track {
@@ -76,23 +76,11 @@ div.menu-entry > input.slider {
         var(--track-empty-color) var(--track-fill-percent), var(--track-empty-color) 100%
     )
 }
-.slider::-moz-range-track {
-    height: 5px ; border-radius: 10px ;
-    background: linear-gradient(to right,
-        var(--track-filled-color) 0%, var(--track-filled-color) var(--track-fill-percent),
-        var(--track-empty-color) var(--track-fill-percent), var(--track-empty-color) 100%
-    )
-}
 .slider::-webkit-slider-thumb {
-   -webkit-appearance: none ; width: 12.5px ; height: 25.5px ; background: var(--thumb-color) ; margin-top: -10px ;
-    border: 4px solid var(--thumb-border) ; border-radius: 16px ; cursor: ew-resize ; transition: transform 0.05s ease
-}
-.slider::-moz-range-thumb {
-    width: 4.5px ; height: 14px ; background: var(--thumb-color) ; margin-top: -11px ;
+   -webkit-appearance: none ; width: 12px ; height: 26.5px ; background: var(--thumb-color) ; margin-top: -10.5px ;
     border: 4px solid var(--thumb-border) ; border-radius: 16px ; cursor: ew-resize ; transition: transform 0.05s ease
 }
 .slider::-webkit-slider-thumb:hover { transform: scaleX(1.325) }
-.slider::-moz-range-thumb:hover { transform: scaleX(1.325) }
 
 /* About entry */
 div#about > div.menu-icon { padding: 8px 10px 8px 11px }
