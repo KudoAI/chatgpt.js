@@ -123,11 +123,11 @@
                         return // never disable link/About entries
                     elem.style.transition = config.extensionDisabled ? '' : 'opacity 0.15s ease-in'
                     const toDisable = config.extensionIsDisabled || !depIsEnabled(elem.id)
-                    if ([...elem.classList].includes('categorized-entries')) { // fade strip
+                    if ([...elem.classList].includes('categorized-entries')) { // fade category strip
                         elem.style.transition = toDisable ? 'none' : 'border-image 0.35s ease-in'
                         elem.style.borderImage = elem.style.borderImage
                             .replace(/rgba?\(([\d,\s]+)(?:,\s*[\d.]+)?\)/, toDisable ? 'rgba($1, 0.3)' : 'rgb($1)')
-                    } else // fade entries
+                    } else // fade entry
                         setTimeout(() => elem.classList.toggle('disabled', toDisable),
                             toDisable ? 0 : idx *10) // fade-out abruptly, fade-in staggered
                 })
