@@ -117,19 +117,20 @@
             ))})
 
             // Menu elems
-            document.querySelectorAll('.logo, .menu-title, .menu-entry').forEach((elem, idx) => {
-                if (elem.id && ( elem.matches(`#${elem.id}:has(> div.link)`) || elem.id == 'aboutEntry' ))
-                    return // never disable link/About entries
-                elem.style.transition = config.extensionDisabled ? '' : 'opacity 0.15s ease-in'
-                const toDisable = config.extensionIsDisabled || !depIsEnabled(elem.id)
-                if ([...elem.classList].includes('categorized-entries')) { // fade strip
-                    elem.style.transition = toDisable ? 'none' : 'border-image 0.35s ease-in'
-                    elem.style.borderImage = elem.style.borderImage
-                        .replace(/rgba?\(([\d,\s]+)(?:,\s*[\d.]+)?\)/, toDisable ? 'rgba($1, 0.3)' : 'rgb($1)')
-                } else // fade entries
-                    setTimeout(() => elem.classList.toggle('disabled', toDisable),
-                        toDisable ? 0 : idx *10) // fade-out abruptly, fade-in staggered
-            })
+            document.querySelectorAll('.logo, .menu-title, .menu-entry, .slider, .categorized-entries')
+                .forEach((elem, idx) => {
+                    if (elem.id && ( elem.matches(`#${elem.id}:has(> div.link)`) || elem.id == 'aboutEntry' ))
+                        return // never disable link/About entries
+                    elem.style.transition = config.extensionDisabled ? '' : 'opacity 0.15s ease-in'
+                    const toDisable = config.extensionIsDisabled || !depIsEnabled(elem.id)
+                    if ([...elem.classList].includes('categorized-entries')) { // fade strip
+                        elem.style.transition = toDisable ? 'none' : 'border-image 0.35s ease-in'
+                        elem.style.borderImage = elem.style.borderImage
+                            .replace(/rgba?\(([\d,\s]+)(?:,\s*[\d.]+)?\)/, toDisable ? 'rgba($1, 0.3)' : 'rgb($1)')
+                    } else // fade entries
+                        setTimeout(() => elem.classList.toggle('disabled', toDisable),
+                            toDisable ? 0 : idx *10) // fade-out abruptly, fade-in staggered
+                })
         },
 
         configToUI(options) { return sendMsgToActiveTab('syncConfigToUI', options) }
