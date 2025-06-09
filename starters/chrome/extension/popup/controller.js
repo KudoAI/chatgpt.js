@@ -167,7 +167,7 @@
     // Run MAIN routine
 
     // Append RISING PARTICLES styles
-    ;['gray', 'white'].forEach(color => document.head.append(
+    ['gray', 'white'].forEach(color => document.head.append(
         dom.create.elem('link', { rel: 'stylesheet',
             href: `https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@71695ca/assets/styles/rising-particles/dist/${
                 color}.min.css`
