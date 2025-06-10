@@ -172,7 +172,7 @@
             href: `https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@71695ca/assets/styles/rising-particles/dist/${
                 color}.min.css`
     })))
-    dom.addRisingParticles(document.body)
+    dom.addRisingParticles(document.body, { lightScheme: 'white' })
 
     // Init MASTER TOGGLE
     const masterToggle = {
@@ -252,8 +252,8 @@
         about: { span: footer.querySelector('.about-span') },
         moreExt: { span: footer.querySelector('.more-ext-span') }
     }
-    footerElems.chatgptjs.logo.src = 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@745f0ca'
-                                   + '/assets/images/badges/powered-by-chatgpt.js.png'
+    footerElems.chatgptjs.logo.src = 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@858b952'
+                                   + '/assets/images/badges/powered-by-chatgpt.js/white/with-robot/95x19.png'
     footerElems.chatgptjs.logo.onclick = () => { open(app.urls.chatgptjs) ; close() }
     footerElems.about.span.title = `About ${app.name}`
     footerElems.about.span.append(icons.create({ key: 'questionMark', width: 15, height: 13 }))
