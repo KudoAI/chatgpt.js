@@ -139,8 +139,7 @@ html.dark .menu-icon:hover img { filter: none }
 /* Non-baseline features */
 @supports (cursor: pointer) { .highlight-on-hover:hover, .toggle .track, .chatgptjs-logo { cursor: pointer }}
 @supports (overflow: clip) { body { overflow: clip }}
-@supports selector(:has(> input.slider)) {
-    div.menu-entry:has(> input.slider) { flex-wrap: wrap ; padding-top: 2px }}
+@supports selector(:has(> input.slider)) { div.menu-entry:has(> input.slider) { flex-wrap: wrap ; padding-top: 2px }}
 @supports selector(:has(> .chatgptjs-logo)) {
     footer > span:has(> .chatgptjs-logo) { display: flex ; align-items: center ; flex-grow: 1 ; padding-left: 2px }}
 @supports (user-select: none) { body, button, input, select, textarea { user-select: none }}
