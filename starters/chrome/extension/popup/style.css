@@ -126,7 +126,7 @@ html.dark .toggle .track {
 html.dark .toggle.on .track { background: var(--track-filled-color) }
 html.dark .toggle .track::before { top: -3px ; left: -2px ; border: 2px solid black } /* toggle knob */
 html.dark .master-toggle .toggle .track::before { border-color: #444343 } /* master toggle knob */
-html.dark .master-toggle:hover .toggle .track { background: #444343 } /* master toggle track */
+html.dark .master-toggle:hover .toggle .track { background: #444343 }
 html.dark .toggle.on .track::before { transform: translateX(11px) }
 html.dark .highlight-on-hover:hover { background: white }
 html.dark .highlight-on-hover:hover .track { background: black }
