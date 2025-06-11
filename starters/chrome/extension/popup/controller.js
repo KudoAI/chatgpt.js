@@ -172,7 +172,8 @@
             href: `https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@71695ca/assets/styles/rising-particles/dist/${
                 color}.min.css`
     })))
-    dom.addRisingParticles(document.body, { lightScheme: 'white' })
+    dom.addRisingParticles(document.body, {
+        lightScheme: [...document.documentElement.classList].includes('dark') ? 'white' : 'gray' })
 
     // Init MASTER TOGGLE
     const masterToggle = {
