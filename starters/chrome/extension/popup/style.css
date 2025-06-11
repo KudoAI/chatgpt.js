@@ -116,9 +116,9 @@ footer > .menu-icon {
 footer img[src*=question-mark] { position: relative ; top: 1px }
 
 /* Dark styles */
-:root {
+html.dark {
     --track-filled-color: white ; --track-empty-color: #b2b2b2 ; --thumb-color: white ; --thumb-border: black }
-.loading-bg { background-color: black } .loading-spinner { border-color: white }
+html.dark .loading-bg { background-color: black } html.dark .loading-spinner { border-color: white }
 html.dark body { background-image: linear-gradient(180deg, #99a8a6 -245px, black 185px) }
 html.dark, html.dark header, html.dark footer { color: white } html.dark footer { background: black }
 html.dark .toggle .track {
@@ -131,10 +131,10 @@ html.dark .toggle.on .track::before { transform: translateX(11px) }
 html.dark .highlight-on-hover:hover { background: white }
 html.dark .highlight-on-hover:hover .track { background: black }
 html.dark .menu-icon, html.dark .chatgptjs-logo { opacity: 1 }
-html.dark .menu-icon svg, html.dark .menu-right-elem, .menu-right-elem > svg { fill: white }
+html.dark .menu-icon svg, html.dark .menu-right-elem, html.dark .menu-right-elem > svg { fill: white }
 html.dark .menu-icon img { filter: brightness(0) invert(1) }
 html.dark .menu-icon:hover img { filter: none }
-.ticker-em { color: #28ee28 } .highlight-on-hover:hover .ticker-em { color: green }
+html.dark .ticker-em { color: #28ee28 } .highlight-on-hover:hover .ticker-em { color: green }
 
 /* Non-baseline features */
 @supports (cursor: pointer) { .highlight-on-hover:hover, .toggle .track, .chatgptjs-logo { cursor: pointer }}
