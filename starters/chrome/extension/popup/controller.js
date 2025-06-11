@@ -7,7 +7,8 @@
     // Init ENV context
     window.env = {
         site: new URL((await chrome.tabs.query({ active: true, currentWindow: true }))[0].url)
-            .hostname.split('.').slice(-2, -1)[0] // extract 2nd-level domain
+            .hostname.split('.').slice(-2, -1)[0], // extract 2nd-level domain
+        menu: { isDark: document.documentElement.classList.contains('dark') }
     }
 
     // Import DATA
@@ -125,8 +126,10 @@
                     const toDisable = config.extensionIsDisabled || !depIsEnabled(elem.id)
                     if ([...elem.classList].includes('categorized-entries')) { // fade category strip
                         elem.style.transition = toDisable ? 'none' : 'var(--border-transition)'
-                        elem.style.borderImage = elem.style.borderImage
-                            .replace(/rgba?\(([\d,\s]+)(?:,\s*[\d.]+)?\)/, toDisable ? 'rgba($1, 0.3)' : 'rgb($1)')
+                        elem.style.borderImage = elem.style.borderImage.replace(
+                            /rgba?\(([\d,\s]+)(?:,\s*[\d.]+)?\)/,
+                            `rgba($1,${ toDisable ? 0.3 : env.menu.isDark ? 0.5 : 1 })`
+                        )
                     } else // fade entry
                         setTimeout(() => elem.classList.toggle('disabled', toDisable),
                             toDisable ? 0 : idx *10) // fade-out abruptly, fade-in staggered
@@ -209,8 +212,11 @@
             if (category == 'general') return
             const ctgData = { ...settings.categories[category], key: category, type: 'category' },
                   ctgChildrenDiv = dom.create.elem('div', { class: 'categorized-entries' })
-            if (ctgData.color) // color the stripe
-                ctgChildrenDiv.style.borderImage = `linear-gradient(transparent, #${ctgData.color}) 30 100%`
+            if (ctgData.color) { // color the stripe
+                const [r, g, b] = ctgData.color.match(/\w\w/g).map(v => parseInt(v, 16))
+                ctgChildrenDiv.style.borderImage = `linear-gradient(transparent, rgba(${r},${g},${b},${
+                    env.menu.isDark ? 0.5 : 1 })) 30 100% ${ env.menu.isDark ? '/ 100' : '' }`
+            }
             menuEntriesDiv.append(createMenuEntry(ctgData), ctgChildrenDiv)
             Object.values(ctrls).forEach(ctrl => ctgChildrenDiv.append(createMenuEntry(ctrl)))
         })

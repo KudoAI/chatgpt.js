@@ -58,7 +58,7 @@ header {
 .categorized-entries { /* add left-stripe + bg */
     border-left: 5px solid transparent ; height: 0 ;
     overflow: hidden ; /* for y-pos calc */
-    border-image: linear-gradient(transparent, rgb(161 161 161)) 30 100% ;
+    border-image: linear-gradient(transparent, rgb(161,161,161)) 30 100% ;
   --border-transition: border-image 0.35s ease-in
 }
 .anchored { pointer-events: none } /* disable collapse */
@@ -121,6 +121,7 @@ html.dark {
 html.dark .loading-bg { background-color: black } html.dark .loading-spinner { border-color: white }
 html.dark body { background-image: linear-gradient(180deg, #99a8a6 -245px, black 185px) }
 html.dark, html.dark header, html.dark footer { color: white } html.dark footer { background: none }
+html.dark div.categorized-entries {  border-image: linear-gradient(transparent, rgba(161,161,161,0.5)) 30 100% / 100 }
 html.dark .toggle .track {
     background: var(--track-empty-color) ; border-color: black ; height: 8px ; width: 20px ; transition: none }
 html.dark .toggle.on .track { background: var(--track-filled-color) }
