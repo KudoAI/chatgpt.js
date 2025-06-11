@@ -124,7 +124,7 @@
                         return // never disable link/About entries
                     elem.style.transition = config.extensionDisabled ? '' : 'opacity 0.15s ease-in'
                     const toDisable = config.extensionIsDisabled || !depIsEnabled(elem.id)
-                    if ([...elem.classList].includes('categorized-entries')) { // fade category strip
+                    if (elem.classList.contains('categorized-entries')) { // fade category strip
                         elem.style.transition = toDisable ? 'none' : 'var(--border-transition)'
                         elem.style.borderImage = elem.style.borderImage.replace(
                             /rgba?\(([\d,\s]+)(?:,\s*[\d.]+)?\)/,
