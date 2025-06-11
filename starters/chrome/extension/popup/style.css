@@ -120,7 +120,7 @@ html.dark {
     --track-filled-color: white ; --track-empty-color: #b2b2b2 ; --thumb-color: white ; --thumb-border: black }
 html.dark .loading-bg { background-color: black } html.dark .loading-spinner { border-color: white }
 html.dark body { background-image: linear-gradient(180deg, #99a8a6 -245px, black 185px) }
-html.dark, html.dark header, html.dark footer { color: white } html.dark footer { background: black }
+html.dark, html.dark header, html.dark footer { color: white } html.dark footer { background: none }
 html.dark .toggle .track {
     background: var(--track-empty-color) ; border-color: black ; height: 8px ; width: 20px ; transition: none }
 html.dark .toggle.on .track { background: var(--track-filled-color) }
