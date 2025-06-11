@@ -253,7 +253,8 @@
         moreExt: { span: footer.querySelector('.more-ext-span') }
     }
     footerElems.chatgptjs.logo.src = 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@858b952'
-                                   + '/assets/images/badges/powered-by-chatgpt.js/white/with-robot/95x19.png'
+        + `/assets/images/badges/powered-by-chatgpt.js/${
+            [...document.documentElement.classList].includes('dark') ? 'white' : 'black' }/with-robot/95x19.png`
     footerElems.chatgptjs.logo.onclick = () => { open(app.urls.chatgptjs) ; close() }
     footerElems.about.span.title = `About ${app.name}`
     footerElems.about.span.append(icons.create({ key: 'questionMark', width: 15, height: 13 }))
