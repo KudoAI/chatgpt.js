@@ -1,5 +1,8 @@
 /* General */
-:root { --track-filled-color: #000 ; --track-empty-color: #e0e0e0 ; --thumb-color: #000 ; --thumb-border: #fff }
+:root {
+    --entry-highlighted-bg: rgb(100,149,237) ;
+    --track-filled-color: #000 ; --track-empty-color: #e0e0e0 ; --thumb-color: #000 ; --thumb-border: #fff
+}
 html { height: fit-content ; min-height: 89px }
 body {
     width: 268px ; margin: 0 ; font-size: .905rem ;
@@ -9,7 +12,7 @@ body {
 }
 
 /* Color/fade mods */
-.highlight-on-hover:hover { background: rgb(100,149,237) }
+.highlight-on-hover:hover { background: var(--entry-highlighted-bg) }
 .highlight-on-hover:hover span:not(.track), .highlight-on-hover:hover svg, span.menu-icon.highlight-on-hover:hover img {
     filter: invert(1) } /* invert setting labels on hover */
 .disabled { opacity: 0.3 !important ; pointer-events: none }
@@ -117,7 +120,9 @@ footer img[src*=question-mark] { position: relative ; top: 1px }
 
 /* Dark styles */
 html.dark {
-    --track-filled-color: white ; --track-empty-color: #b2b2b2 ; --thumb-color: white ; --thumb-border: black }
+    --entry-highlighted-bg: white ;
+    --track-filled-color: white ; --track-empty-color: #b2b2b2 ; --thumb-color: white ; --thumb-border: black
+}
 html.dark .loading-bg { background-color: black } html.dark .loading-spinner { border-color: white }
 html.dark body { background-image: linear-gradient(180deg, #99a8a6 -245px, black 185px) }
 html.dark, html.dark header, html.dark footer { color: white } html.dark footer { background: none }
@@ -129,7 +134,6 @@ html.dark .toggle .track::before { top: -3px ; left: -2px ; border: 2px solid bl
 html.dark .master-toggle .toggle .track::before { border-color: #444343 } /* master toggle knob */
 html.dark .master-toggle:hover .toggle .track { background: #444343 }
 html.dark .toggle.on .track::before { transform: translateX(11px) }
-html.dark .highlight-on-hover:hover { background: white }
 html.dark .highlight-on-hover:hover .track { background: black }
 html.dark .menu-icon, html.dark .chatgptjs-logo { opacity: 1 }
 html.dark .menu-icon svg, html.dark .menu-right-elem, html.dark .menu-right-elem > svg { fill: white }
