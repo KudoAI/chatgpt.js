@@ -61,8 +61,11 @@
         if (entryData.type == 'category')
             entry.div.append(icons.create({ key: 'caretDown', size: 11, class: 'menu-caret menu-right-elem' }))
         if (entryData.dependencies) {
-            const deps = Object.values(entryData.dependencies).flat()
-            entry.div.style.display = deps.some(dep => !settings.typeIsEnabled(dep)) ? 'none' : ''
+            const toDisable = Object.values(entryData.dependencies).flat().some(dep => !settings.typeIsEnabled(dep))
+            Object.assign(entry.div.style, {
+                transition: '', minHeight: 'auto', opacity: +!toDisable,
+                height: toDisable ? 0 : 'auto', visibility: toDisable ? 'hidden' : 'visible'
+            })
         }
 
         // Add click listener
@@ -101,8 +104,13 @@
                         height: `${dom.get.computedHeight(ctgChildren)}px`,
                         transition: env.browser.isFF || toDisable ? '' : 'height 0.25s'
                     }))
-                    if (toDisable) depDiv.style.display ='none'
-                    else { depDiv.classList.remove('disabled') ; depDiv.style.display = '' }
+                    if (toDisable)
+                        Object.assign(depDiv.style, { transition: '', height: '0px',  visibility: 'hidden', opacity: 0 })
+                    else {
+                        Object.assign(depDiv.style, {
+                            transition: 'opacity 0.15s ease-in', height: 'auto', visibility: 'visible', opacity: '' })
+                        depDiv.classList.remove('disabled')
+                    }
                 }
         }
 
