@@ -104,13 +104,11 @@
                         height: `${dom.get.computedHeight(ctgChildren)}px`,
                         transition: env.browser.isFF || toDisable ? '' : 'height 0.25s'
                     }))
-                    if (toDisable)
-                        Object.assign(depDiv.style, { transition: '', height: '0px',  visibility: 'hidden', opacity: 0 })
-                    else {
-                        Object.assign(depDiv.style, {
-                            transition: 'opacity 0.15s ease-in', height: 'auto', visibility: 'visible', opacity: '' })
-                        depDiv.classList.remove('disabled')
-                    }
+                    Object.assign(depDiv.style, {
+                        transition: toDisable ? '' : 'opacity 0.15s ease-in', height: toDisable ? 0 : 'auto',
+                        visibility: toDisable ? 'hidden' : 'visible', opacity: +!toDisable
+                    })
+                    depDiv.classList.toggle('disabled', toDisable)
                 }
         }
 
