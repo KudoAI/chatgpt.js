@@ -1,5 +1,9 @@
 (async () => {
 
+    // Init SCHEME
+    if (window.matchMedia?.('(prefers-color-scheme: dark)').matches)
+        document.documentElement.classList.add('dark')
+
     // Import JS resources
     for (const resource of ['components/icons.js', 'lib/dom.js', 'lib/settings.js'])
         await import(chrome.runtime.getURL(resource))
