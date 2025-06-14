@@ -60,7 +60,10 @@
         }
         if (entryData.type == 'category')
             entry.div.append(icons.create({ key: 'caretDown', size: 11, class: 'menu-caret menu-right-elem' }))
-        if (entryData.dependencies) entry.div.classList.add('disabled')
+        if (entryData.dependencies) {
+            const deps = Object.values(entryData.dependencies).flat()
+            entry.div.style.display = deps.some(dep => !settings.typeIsEnabled(dep)) ? 'none' : ''
+        }
 
         // Add click listener
         entry.div.onclick = () => {
@@ -91,9 +94,15 @@
             for (const [ctrlKey, ctrlData] of Object.entries({ ...settings.categories, ...settings.controls }))
                 if (Object.values(ctrlData.dependencies || {}).flat().includes(entryData.key)) {
                     const depDiv = document.querySelector(`div#${ctrlKey}`) ; if (!depDiv) continue
-                    const toDisable = !settings.typeIsEnabled(entryData.key)
-                    depDiv.style.transition = toDisable ? '' : 'opacity 0.15s ease-in'
-                    depDiv.classList.toggle('disabled', toDisable)
+                    const ctgChildrenDiv = depDiv.closest('.categorized-entries'),
+                          ctgChildren = ctgChildrenDiv.querySelectorAll('.menu-entry'),
+                          toDisable = !settings.typeIsEnabled(entryData.key)
+                    requestAnimationFrame(() => Object.assign(depDiv.closest('.categorized-entries').style, {
+                        height: `${dom.get.computedHeight(ctgChildren)}px`,
+                        transition: env.browser.isFF || toDisable ? '' : 'height 0.25s'
+                    }))
+                    if (toDisable) depDiv.style.display ='none'
+                    else { depDiv.classList.remove('disabled') ; depDiv.style.display = '' }
                 }
         }
 
