@@ -76,7 +76,7 @@
             if (throttleMs && now -( entry.div.lastClickTime || 0 ) < throttleMs) return
             entry.div.classList.remove('disabled') ; entry.div.lastClickTime = now
             ;({
-                category: () => toggleCategorySettingsVisiblity(entryData.key),
+                category: () => toggleCategorySettingsVisiblity({ key: entryData.key }),
                 toggle: () => {
                     entry.leftElem.classList.toggle('on')
                     settings.save(entryData.key, !config[entryData.key])
@@ -158,9 +158,9 @@
         configToUI(options) { return sendMsgToActiveTab('syncConfigToUI', options) }
     }
 
-    function toggleCategorySettingsVisiblity(category, { transitions = true, action } = {}) {
+    function toggleCategorySettingsVisiblity({ key, transitions = true, action }) {
         const transitionDuration = 350, // ms
-              ctgDiv = document.getElementById(category),
+              ctgDiv = document.getElementById(key),
               caret = ctgDiv.querySelector('.menu-caret'),
               ctgChildrenDiv = ctgDiv.nextSibling,
               ctgChild = ctgChildrenDiv.querySelectorAll('.menu-entry')
@@ -177,8 +177,8 @@
                 if (transitions) row.style.transition = `opacity ${ transitionDuration /1000 }s ease-in-out`
                 setTimeout(() => row.style.opacity = 1, transitions ? idx * transitionDuration /10 : 0)
             })
-            document.querySelectorAll(`.menu-entry:has(.menu-caret):not(#${category})`).forEach(otherCtgDiv =>
-                toggleCategorySettingsVisiblity(otherCtgDiv.id, { action: 'hide' }))
+            document.querySelectorAll(`.menu-entry:has(.menu-caret):not(#${key})`).forEach(otherCtgDiv =>
+                toggleCategorySettingsVisiblity({ key: otherCtgDiv.id, action: 'hide' }))
         } else { // hide category settings
             ctgDiv.classList.toggle('expanded', false)
             Object.assign(ctgChildrenDiv.style, { height: 0, transition: '' })
@@ -290,7 +290,7 @@
     // AUTO-EXPAND categories
     document.querySelectorAll('.menu-entry:has(.menu-caret)').forEach(ctgDiv => {
         if (settings.categories[ctgDiv.id]?.autoExpand)
-            toggleCategorySettingsVisiblity(ctgDiv.id, { transitions: false })
+            toggleCategorySettingsVisiblity({ key: ctgDiv.id, transitions: false })
     })
 
     // REMOVE LOADING spinner after imgs load
