@@ -105,7 +105,7 @@ div#about > div.menu-icon { padding: 8px 10px 8px 11px }
     mask-image: var(--mask) ; -webkit-mask-image: var(--mask) /* eslint-disable-line */
 }
 .ticker-em { color: green } .highlight-on-hover:hover .ticker-em { color: #28ee28 }
-.ticker > div { animation: ticker linear 60s infinite } 
+.ticker > div { animation: ticker linear 75s infinite } 
 @keyframes ticker { 0% { transform: translateX(100%) } 100% { transform: translateX(-2000%) }}
   
 /* Footer */
