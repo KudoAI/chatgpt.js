@@ -194,12 +194,12 @@ section.cover p { /* cover tagline size / weight / position */
     padding: 16px 68px !important ; transition: 0.04s !important ;
     @each $property, $value in $no-select { #{$property}: #{$value}; }}
 .cover-main > p:last-child a:hover { /* 1st button hover */
-    background-color: blue ; color: white !important ; opacity: 1 !important }
+    background: blue ; color: white !important ; opacity: 1 !important }
 .cover-main > p:last-child a:last-child { /* 2nd button */
     padding: 16px 60px !important ; border-color: white !important ; font-weight: bold ;
-    background-color: white !important ; color: black !important }
+    background: white !important ; color: black !important }
 .cover-main > p:last-child a:last-child:hover { /* 2nd button hover */
-    background-color: blue !important ; border-color: blue !important ; color: white !important }
+    background: blue !important ; border-color: blue !important ; color: white !important }
 
 /* NAV */
 
@@ -223,7 +223,7 @@ section.cover p { /* cover tagline size / weight / position */
 .dropdown-link {
     display: block ; padding: 5px 15px ; color: #333333 ;
     text-decoration: none ; transition: none !important }
-#language-selector li:hover { background-color: $green }
+#language-selector li:hover { background: $green }
 .dropdown-link:hover { color: black !important}
 #dropdown-button { position: relative ; padding-right: 20px }
 #dropdown-button:after {
@@ -232,12 +232,12 @@ section.cover p { /* cover tagline size / weight / position */
 
 /* SIDEBAR */
 
-.sidebar-toggle { bottom: 36px ; left: 29px ; background-color: transparent ;
+.sidebar-toggle { bottom: 36px ; left: 29px ; background: transparent ;
    @each $property, $value in $no-select { #{$property}: #{$value}; }}
 .sidebar-toggle:hover .sidebar-toggle-button { opacity: 1 }
 .sidebar-toggle span { /* color/size/space toggle bars */
-    background-color: white ; width: 20px ; height: 3px ; margin-bottom: 5px }
-.sidebar { background-color: transparent ; padding-right: 5px !important }
+    background: white ; width: 20px ; height: 3px ; margin-bottom: 5px }
+.sidebar { background: transparent ; padding-right: 5px !important }
 .app-name { display: none }
 .sidebar-nav { padding-top: 20px }
 .sidebar-nav > ul:first-of-type { margin-top: 5vh } /* add gap between logo and links */
@@ -249,7 +249,7 @@ section.cover p { /* cover tagline size / weight / position */
 .sidebar ul > li:first-child { margin-top: 8px } /* lower subheadings */
 .sidebar ul > ul a { font-size: 2rem !important ; line-height: 3.1rem } /* shrink subheadings */
 .sidebar li img { display: none } /* hide sub icons */
-.search { background-color: white ; font-size: 1.3rem }
+.search { background: white ; font-size: 1.3rem }
 .matching-post { transform: scale(.7) ; margin: -31px }
 .app-name-link img { padding: 0 2px }
 .sidebar-nav > ul > li:first-of-type, /* hide description */
@@ -293,7 +293,7 @@ main pre, main code, .punctuation {
     font-family: 'Roboto Mono', Monaco, courier, monospace !important ; position: relative ;
     font-size: 1.35rem !important ; color: white !important ; background: rgba(0,0,0,0.35) !important ;
     margin-bottom: 1px } /* fix bottom border disappears glitch */
-.punctuation { background-color: rgba(0,0,0,0) !important; } /* clear bg for scanlines */
+.punctuation { background: rgba(0,0,0,0) !important; } /* clear bg for scanlines */
 main pre code::before { /* add scanlines */
     content: '' ; display: block ; 
     position: absolute ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ;
@@ -306,7 +306,7 @@ main p code {
     border: white 1px solid ; border-radius: 8px !important }
 main pre:after { display: none } /* hide lang indicator */
 .docsify-copy-code-button {    
-    font-size: 1.1rem !important ; background-color: rgba(0,0,0,0) !important ; color: white !important ;
+    font-size: 1.1rem !important ; background: rgba(0,0,0,0) !important ; color: white !important ;
     padding: 13px 18px 13px 15px !important ; right: 30px !important ; top: 2px !important }
 .success, .error { font-size: 1.1rem !important }
 main li pre { margin: 65px 0 !important }
