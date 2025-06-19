@@ -19,7 +19,7 @@ body {
 
 /* Loader */
 .loading-bg {
-    background-color: white ; width: 100% ; height: 100% ; position: absolute ; z-index: 1111 ;
+    background: white ; width: 100% ; height: 100% ; position: absolute ; z-index: 1111 ;
     display: inline-grid ; align-content: center ; justify-content: center /* center spinner */
 }
 .loading-spinner {
@@ -122,7 +122,7 @@ html.dark {
     --entry-highlighted-bg: white ;
     --track-filled-color: white ; --track-empty-color: #b2b2b2 ; --thumb-color: white ; --thumb-border: black
 }
-html.dark .loading-bg { background-color: black } html.dark .loading-spinner { border-color: white }
+html.dark .loading-bg { background: black } html.dark .loading-spinner { border-color: white }
 html.dark body { background-image: linear-gradient(180deg, #99a8a6 -245px, black 185px) }
 html.dark, html.dark header, html.dark footer { color: white } html.dark footer { background: none }
 html.dark div.categorized-entries {  border-image: linear-gradient(transparent, rgba(161,161,161,0.5)) 30 100% / 100 }
