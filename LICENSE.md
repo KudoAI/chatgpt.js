@@ -1,3 +1,29 @@
+<div align="center">
+    <h6>
+        <a href="docs/">
+            <picture>
+                <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/icons/earth/white/icon32.svg?v=e638eac">
+               <img height=14 src="https://assets.chatgptjs.org/images/icons/earth/black/icon32.svg?v=e638eac">
+            </picture>
+        </a>
+        English |
+        <a href="docs/zh-cn/LICENSE.md">简体中文</a> |
+        <a href="docs/zh-tw/LICENSE.md">繁體中文</a> |
+        <a href="docs/ja/LICENSE.md">日本</a> |
+        <a href="docs/ko/LICENSE.md">한국인</a> |
+        <a href="docs/hi/LICENSE.md">हिंदी</a> |
+        <a href="docs/ne/LICENSE.md">नेपाली</a> |
+        <a href="docs/de/LICENSE.md">Deutsch</a> |
+        <a href="docs/es/LICENSE.md">Español</a> |
+        <a href="docs/fr/LICENSE.md">Français</a> |
+        <a href="docs/it/LICENSE.md">Italiano</a> |
+        <a href="docs/nl/LICENSE.md">Nederlands</a> |
+        <a href="docs/pt/LICENSE.md">Português</a> |
+        <a href="docs/ru/LICENSE.md">Английский</a> |
+        <a href="docs/vi/LICENSE.md">Việt</a>
+    </h6>
+</div>
+
 # MIT License
 
 **Copyright © 2023–2025 [KudoAI](https://github.com/KudoAI) & [contributors](.#-contributors).**
