@@ -44,7 +44,9 @@
         }
         if (entryData.type == 'slider') { // append slider, add listeners, remove .highlight-on-hover
             entry.slider = dom.create.elem('input', { class: 'slider', type: 'range',
-                min: entry.min || 0, max: entry.max || 100, value: config[entryData.key] })
+                min: entryData.min || 0, max: entryData.max || 100, value: config[entryData.key] })
+            if (entryData.step || env.browser.isFF) // use val from entryData or default to 2% in FF for being laggy
+                entry.slider.step = entryData.step || ( 0.02 * entry.slider.max - entry.slider.min )
             entry.label.textContent += `: ${entry.slider.value}${ entryData.labelSuffix || '' }`
             entry.slider.style.setProperty('--track-fill-percent', `${ entry.slider.value / entry.slider.max *100 }%`)
             entry.slider.oninput = ({ target: { value }}) => { // update label/color
