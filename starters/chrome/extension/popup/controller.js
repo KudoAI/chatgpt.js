@@ -42,7 +42,9 @@
                 entry.rightElem.append(icons.create({ key: 'open', size: 17, fill: 'black' }))
             }
         }
-        if (entryData.type == 'slider') { // append slider, add listeners, remove .highlight-on-hover
+        if (entryData.type == 'category')
+            entry.div.append(icons.create({ key: 'caretDown', size: 11, class: 'menu-caret menu-right-elem' }))
+        else if (entryData.type == 'slider') { // append slider, add listeners, remove .highlight-on-hover
             entry.slider = dom.create.elem('input', { class: 'slider', type: 'range',
                 min: entryData.min || 0, max: entryData.max || 100, value: config[entryData.key] })
             if (entryData.step || env.browser.isFF) // use val from entryData or default to 2% in FF for being laggy
@@ -60,8 +62,6 @@
             }
             entry.div.append(entry.slider) ; entry.div.classList.remove('highlight-on-hover')
         }
-        if (entryData.type == 'category')
-            entry.div.append(icons.create({ key: 'caretDown', size: 11, class: 'menu-caret menu-right-elem' }))
         if (entryData.dependencies) {
             const toDisable = Object.values(entryData.dependencies).flat().some(dep => !settings.typeIsEnabled(dep))
             Object.assign(entry.div.style, {
