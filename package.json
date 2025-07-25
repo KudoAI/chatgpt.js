@@ -78,7 +78,7 @@
     "@eslint/css": "^0.10.0",
     "@eslint/json": "^0.13.1",
     "@eslint/markdown": "^7.1.0",
-    "@html-eslint/eslint-plugin": "^0.43.0",
+    "@html-eslint/eslint-plugin": "^0.43.1",
     "@html-eslint/parser": "^0.43.0",
     "@stylistic/eslint-plugin": "^5.2.2",
     "eslint": "^9.31.0",
