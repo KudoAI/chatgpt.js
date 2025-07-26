@@ -940,7 +940,7 @@ const chatgpt = {
                             let depth = 0;
                             while (currentId && depth < maxDepth) {
                                 const currentMessage = data[currentId];
-                                if (!currentMessage || !currentMessage.message) {
+                                if (!currentMessage?.message) {
                                     return false;
                                 }
                                 if (currentMessage.id === targetUserId) {
