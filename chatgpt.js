@@ -934,13 +934,32 @@ const chatgpt = {
                             return reject(`🤖 chatgpt.js >> Message/response with index ${ msgToGet +1 }`
                                 + ` is out of bounds. Only ${userMessages.length} messages/responses exist!`)
 
+                        const isUserMessageAncestor = (messageId, targetUserId) => {
+                            let currentId = messageId;
+                            const maxDepth = 10; // Protection against infinite loops
+                            let depth = 0;
+                            while (currentId && depth < maxDepth) {
+                                const currentMessage = data[currentId];
+                                if (!currentMessage?.message) {
+                                    return false;
+                                }
+                                if (currentMessage.id === targetUserId) {
+                                    return true;
+                                }
+                                currentId = currentMessage.parent;
+                                depth++;
+                            }
+                            return false;
+                        };
+
                         // Fill [chatGPTMessages]
                         for (const userMessage of userMessages) {
                             let sub = []
                             for (const key in data) {
                                 if (data[key].message != null && data[key].message.author.role == 'assistant'
-                                    && data[key].parent == userMessage.id)
+                                    && isUserMessageAncestor(key, userMessage.id)) {
                                         sub.push(data[key].message)
+                                }
                             }
                             sub.sort((a, b) => a.create_time - b.create_time) // sort in chronological order
                             sub = sub.map(x => { // pull out msgs after sorting
