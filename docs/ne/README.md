@@ -415,6 +415,8 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
     <img title="@AliasUruz" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/130197125?first-contrib=2024.12.1-new-chat-selector-outdated-report&h=47&w=47&mask=circle&maxage=7d"></a>
 <a href="https://github.com/ericdachen" target="_blank" rel="noopener">
     <img title="@ericdachen" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54382303?first-contrib=2025.3.20-implement-warp-to-golden-sponsors&h=47&w=47&mask=circle&maxage=7d"></a>
+<a href="https://github.com/m-k8s" target="_blank" rel="noopener">
+    <img title="@m-k8s" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/42094254?first-contrib=2025.7.26-fixed-hand,ling-of-intermediate-msgs-by-getchatdata&h=47&w=47&mask=circle&maxage=7d"></a>
 <a href="https://github.com/dependabot" target="_blank" rel="noopener">
     <img title="Dependabot" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=47&w=47&mask=circle&maxage=7d"></a>
 <a href="https://chatgpt.com" target="_blank" rel="noopener">
