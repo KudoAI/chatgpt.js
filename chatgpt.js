@@ -975,13 +975,13 @@ const chatgpt = {
                                      : msgToGet == 'latest' ? msgsToReturn[msgsToReturn.length - 1] // else if 'latest' passed, return latest
                                      : msgsToReturn[msgToGet] ) // else return element of array
 
-                        function isUserMsgAncestor(messageId, targetUserId) {
-                            let currentId = messageId ; const maxDepth = 10 ; let depth = 0
-                            while (currentId && depth < maxDepth) {
-                                const currentMsg = data[currentId]
+                        function isUserMsgAncestor(msgID, targetUserID) {
+                            let currentID = msgID ; const maxDepth = 10 ; let depth = 0
+                            while (currentID && depth < maxDepth) {
+                                const currentMsg = data[currentID]
                                 if (!currentMsg?.message) return false
-                                if (currentMsg.id == targetUserId) return true
-                                currentId = currentMsg.parent ; depth++
+                                if (currentMsg.id == targetUserID) return true
+                                currentID = currentMsg.parent ; depth++
                             }
                             return false
                         }
