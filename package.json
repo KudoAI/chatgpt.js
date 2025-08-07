@@ -74,7 +74,7 @@
   "bugs": "https://github.com/KudoAI/chatgpt.js/issues",
   "devDependencies": {
     "@adamlui/minify.js": "^1.8.6",
-    "@adamlui/scss-to-css": "^1.10.36",
+    "@adamlui/scss-to-css": "^1.10.37",
     "@eslint/css": "^0.10.0",
     "@eslint/json": "^0.13.1",
     "@eslint/markdown": "^7.1.0",
