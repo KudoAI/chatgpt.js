@@ -19,11 +19,7 @@ jobs:
       - name: Checkout KudoAI/chatgpt.js
         uses: actions/checkout@v5
         with:
-          repository: KudoAI/chatgpt.js
-          path: KudoAI/chatgpt.js
           fetch-depth: 0
 
       - name: Push changes to gitlab.com/kudoai/chatgpt-js
-        run: |
-          cd ${{ github.workspace }}/KudoAI/chatgpt.js
-          git push --force https://oauth2:${{ secrets.GITLAB_SYNC_PAT }}@gitlab.com/kudoai/chatgpt-js.git main
+        run: git push --force https://oauth2:${{ secrets.GITLAB_SYNC_PAT }}@gitlab.com/kudoai/chatgpt-js.git main
