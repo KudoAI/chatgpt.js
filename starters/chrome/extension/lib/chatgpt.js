@@ -1893,7 +1893,7 @@ const chatgpt = {
             if (!sidebar) { return console.error('Sidebar element not found!') || false }
             else return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
-              : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px'
+              : sidebar.style.visibility != 'hidden' && parseInt(getComputedStyle(sidebar).width) > 150
         },
 
         toggle() {
