@@ -51,12 +51,10 @@ window.settings = {
             config[key] = processKey(key, (await chrome.storage.local.get(key))[key])))
         function processKey(key, val) {
             const ctrl = settings.controls?.[key]
-            if (val != undefined) {
-                if (ctrl?.type == 'toggle' // ensure toggle vals are booleans
-                    && typeof val != 'boolean') val = undefined
-                else if (ctrl?.type == 'slider') { // ensure slider vals are nums
-                    val = parseFloat(val) ; if (isNaN(val)) val = undefined }
-            }
+            if (val != undefined && ( // validate stored val
+                    (ctrl?.type == 'toggle' && typeof val != 'boolean')
+                    || (ctrl?.type == 'slider' && isNaN(parseFloat(val)))
+            )) val = undefined
             return val ?? (ctrl?.defaultVal ?? (ctrl?.type == 'slider' ? 100 : false))
         }
     },
