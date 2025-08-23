@@ -228,17 +228,17 @@
         Object.values(categorizedCtrls.general || {}).forEach(ctrl => menuEntriesDiv.append(createMenuEntry(ctrl)))
 
         // Create/append categorized controls
-        Object.entries(categorizedCtrls).forEach(([category, ctrls]) => {
-            if (category == 'general') return
-            const ctgData = { ...settings.categories[category], key: category, type: 'category' },
-                  ctgChildrenDiv = dom.create.elem('div', { class: 'categorized-entries' })
-            if (ctgData.color) { // color the stripe
-                const [r, g, b] = ctgData.color.match(/\w\w/g).map(v => parseInt(v, 16))
+        Object.entries(settings.categories).forEach(([key, category]) => {
+            if (!categorizedCtrls[key]) return
+            category.key = key ; category.type = 'category'
+            const ctgChildrenDiv = dom.create.elem('div', { class: 'categorized-entries' })
+            if (category.color) { // color the stripe
+                const [r, g, b] = category.color.match(/\w\w/g).map(v => parseInt(v, 16))
                 ctgChildrenDiv.style.borderImage = `linear-gradient(transparent, rgba(${r},${g},${b},${
                     env.menu.isDark ? 0.5 : 1 })) 30 100% ${ env.menu.isDark ? '/ 100' : '' }`
             }
-            menuEntriesDiv.append(createMenuEntry(ctgData), ctgChildrenDiv)
-            Object.values(ctrls).forEach(ctrl => ctgChildrenDiv.append(createMenuEntry(ctrl)))
+            menuEntriesDiv.append(createMenuEntry(category), ctgChildrenDiv)
+            Object.values(categorizedCtrls[key]).forEach(ctrl => ctgChildrenDiv.append(createMenuEntry(ctrl)))
         })
     }
 
