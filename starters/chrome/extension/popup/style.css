@@ -43,9 +43,9 @@ body {
 /* Header */
 header {
     border-bottom: solid 1px lightgrey ; padding: 5px 5px 5px 0 ; margin: 0 ;
-    height: 38px ; display: flex ; align-items: center }
+    height: 40px ; display: flex ; align-items: center }
 .logo { margin: 0 8px 0 12px ; position: relative ; top: 3px }
-.menu-title { font-size: 0.85rem ; font-weight: 600 ; padding-right: 3px }
+.menu-title { font-size: 1rem ; font-weight: 600 ; padding: 4px }
 .master-toggle { margin-left: auto ; display: flex }
 
 /* Menu item elements */
