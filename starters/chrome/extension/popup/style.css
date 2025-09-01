@@ -74,7 +74,7 @@ div.menu-entry > input.slider {
 }
 .slider::-webkit-slider-runnable-track {
     height: 5px ; border-radius: 10px ;
-    background: linear-gradient(to right,
+    background: linear-gradient(to right, /* eslint-disable-line */
         var(--track-filled-color) 0%, var(--track-filled-color) var(--track-fill-percent),
         var(--track-empty-color) var(--track-fill-percent), var(--track-empty-color) 100%
     )
