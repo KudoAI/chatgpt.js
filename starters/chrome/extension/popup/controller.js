@@ -68,7 +68,7 @@
             }
             entry.div.append(entry.slider) ; entry.div.classList.remove('highlight-on-hover')
         }
-        if (entryData.dependencies) { // hide/show accordingly
+        if (entryData.dependencies) { // hide/show according to toggle state
             const toDisable = Object.values(entryData.dependencies).flat().some(dep => !settings.typeIsEnabled(dep))
             Object.assign(entry.div.style, {
                 transition: '', minHeight: 'auto', opacity: +!toDisable,
