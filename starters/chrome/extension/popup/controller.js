@@ -39,9 +39,8 @@
             if (entryData.status) entry.label.textContent += ` — ${entryData.status}`
             if (entryData.type == 'link') {
                 entry.label.after(entry.rightElem = dom.create.elem('div', { class: 'menu-right-elem' }))
-                entry.favicon = !entryData.favicon ? null
-                    : dom.create.elem('img', { width: 15,
-                        src: typeof entryData.favicon == 'string' ? entryData.favicon
+                if (entryData.favicon) entry.favicon = dom.create.elem('img', { width: 15,
+                    src: typeof entryData.favicon == 'string' ? entryData.favicon
                             : `https://www.google.com/s2/favicons?domain=${new URL(entryData.url).hostname}` })
                 entry.openIcon = icons.create({ key: 'open', size: 17, fill: 'black' })
                 entry.rightElem.append(entry.favicon || entry.openIcon)
@@ -49,7 +48,7 @@
                     entry.rightElem.firstChild.replaceWith(entry[event.type == 'mouseenter' ? 'openIcon' : 'favicon'])
             }
         }
-        if (entryData.type == 'category')
+        if (entryData.type == 'category') // add caret
             entry.div.append(icons.create({ key: 'caretDown', size: 11, class: 'menu-caret menu-right-elem' }))
         else if (entryData.type == 'slider') { // append slider, add listeners, remove .highlight-on-hover
             entry.slider = dom.create.elem('input', { class: 'slider', type: 'range',
@@ -69,7 +68,7 @@
             }
             entry.div.append(entry.slider) ; entry.div.classList.remove('highlight-on-hover')
         }
-        if (entryData.dependencies) {
+        if (entryData.dependencies) { // hide/show accordingly
             const toDisable = Object.values(entryData.dependencies).flat().some(dep => !settings.typeIsEnabled(dep))
             Object.assign(entry.div.style, {
                 transition: '', minHeight: 'auto', opacity: +!toDisable,
