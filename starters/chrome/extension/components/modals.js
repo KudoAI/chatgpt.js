@@ -19,11 +19,11 @@ window.modals = {
             + `<span style="${labelStyles}">🏷️ Version:</span> `
                     + `<span class="about-em">${app.version}</span>\n`
             + `<span style="${labelStyles}">📜 Open source code:</span> `
-                + `<a href="${app.urls.gitHub}" target="_blank" rel="nopener">`
-                    + app.urls.gitHub + '</a>\n'
+                + `<a href="${app.urls.github}" target="_blank" rel="nopener">`
+                    + app.urls.github + '</a>\n'
             + `<span style="${labelStyles}">🚀 Latest changes:</span> `
-                + `<a href="${app.urls.gitHub}/commits" target="_blank" rel="nopener">`
-                    + `${app.urls.gitHub}/commits</a>\n`
+                + `<a href="${app.urls.github}/commits" target="_blank" rel="nopener">`
+                    + `${app.urls.github}/commits</a>\n`
             + `<span style="${labelStyles}">⚡ Powered by:</span> `
                 + `<a href="${app.urls.chatgptjs}" target="_blank" rel="noopener">chatgpt.js</a>`,
             [ function getSupport(){}, function rateUs(){}, function moreAiExtensions(){} ], // button labels
@@ -45,8 +45,8 @@ window.modals = {
             // Replace buttons w/ clones that don't dismiss modal
             btn.replaceWith(btn = btn.cloneNode(true))
             btn.onclick = () => this.safeWinOpen(
-                btn.textContent == 'Get Support' ? `${app.urls.gitHub}/issues`
-              : btn.textContent == 'Rate Us' ? `${app.urls.gitHub}/discussions`
+                btn.textContent == 'Get Support' ? `${app.urls.github}/issues`
+              : btn.textContent == 'Rate Us' ? `${app.urls.github}/discussions`
               : app.urls.relatedExtensions
             )
 
