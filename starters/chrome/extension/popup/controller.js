@@ -279,7 +279,7 @@
     // Create/append LATEST CHANGES entry
     const latestChangesURL = `${app.urls.github}/commits`
     footer.before(createMenuEntry({
-        key: 'latestChangesEntry', type: 'link', symbol: '🚀',
+        key: 'latestChangesEntry', type: 'link', symbol: '🚀', favicon: true,
         label: 'Latest Changes...', url: latestChangesURL, helptip: latestChangesURL
     }))
 
