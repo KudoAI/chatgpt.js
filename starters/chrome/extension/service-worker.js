@@ -15,18 +15,18 @@ chrome.storage.local.set({ app: {
 }}) // save to Chrome storage
 
 // Launch CHATGPT on install
-chrome.runtime.onInstalled.addListener(details => {
-    if (details.reason == 'install') // to exclude updates
+chrome.runtime.onInstalled.addListener(({ reason }) => {
+    if (reason == 'install') // to exclude updates
         chrome.tabs.create({ url: chatgptURL })
 })
 
 // Sync SETTINGS to activated tabs
-chrome.tabs.onActivated.addListener(activeInfo =>
-    chrome.tabs.sendMessage(activeInfo.tabId, { action: 'syncConfigToUI' }))
+chrome.tabs.onActivated.addListener(({ tabId }) =>
+    chrome.tabs.sendMessage(tabId, { action: 'syncConfigToUI' }))
 
 // Show ABOUT modal on ChatGPT when toolbar button clicked
-chrome.runtime.onMessage.addListener(async req => {
-    if (req.action == 'showAbout') {
+chrome.runtime.onMessage.addListener(async ({ action }) => {
+    if (action == 'showAbout') {
         const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
         const chatgptTab = new URL(activeTab.url).hostname == 'chatgpt.com' ? activeTab
             : await chrome.tabs.create({ url: chatgptURL })
