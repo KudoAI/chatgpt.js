@@ -33,7 +33,7 @@ chrome.runtime.onMessage.addListener(async ({ action }) => {
         if (activeTab != chatgptTab) await new Promise(resolve => // after new tab loads
             chrome.tabs.onUpdated.addListener(function loadedListener(tabId, changeInfo) {
                 if (tabId == chatgptTab.id && changeInfo.status == 'complete') {
-                    chrome.tabs.onUpdated.removeListener(loadedListener) ; setTimeout(resolve, 500)
+                    chrome.tabs.onUpdated.removeListener(loadedListener) ; setTimeout(resolve, 1500)
         }}))
         chrome.tabs.sendMessage(chatgptTab.id, { action: 'showAbout' })
     }
