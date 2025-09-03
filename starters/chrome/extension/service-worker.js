@@ -8,7 +8,7 @@ chrome.storage.local.set({ app: {
     urls: {
         chatgptjs: 'https://chatgptjs.org',
         contributors: 'https://docs.chatgptjs.org/#-contributors',
-        gitHub: 'https://github.com/KudoAI/chatgpt.js-chrome-starter',
+        github: 'https://github.com/KudoAI/chatgpt.js-chrome-starter',
         relatedExtensions: 'https://aiwebextensions.com',
         support: 'https://github.com/KudoAI/chatgpt.js-chrome-starter/issues'
     }
