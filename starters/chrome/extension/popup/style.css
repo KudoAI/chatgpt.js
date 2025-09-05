@@ -85,6 +85,9 @@ div.menu-entry > input.slider {
 }
 .slider::-webkit-slider-thumb:hover { transform: scaleX(1.325) }
 
+.edit-link { text-transform: uppercase ; font-size: 0.65em ; margin-left: 0.75em ; opacity: 0.7 ; cursor: pointer }
+.edit-link:hover { opacity: 1 }
+
 /* Toggle elements */
 .toggle .track {
     display: block ; border-radius: 7px ; position: relative ; transform: scale(0.95) ; background: white ; 

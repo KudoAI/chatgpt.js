@@ -51,16 +51,34 @@
         if (entryData.type == 'category') // add caret
             entry.div.append(icons.create({ key: 'caretDown', size: 11, class: 'menu-caret menu-right-elem' }))
         else if (entryData.type == 'slider') { // append slider, add listeners, remove .highlight-on-hover
+
+            // Create/append slider elems
             entry.slider = dom.create.elem('input', { class: 'slider', type: 'range',
                 min: entryData.min || 0, max: entryData.max || 100, value: config[entryData.key] })
             if (entryData.step || env.browser.isFF) // use val from entryData or default to 2% in FF for being laggy
                 entry.slider.step = entryData.step || ( 0.02 * entry.slider.max - entry.slider.min )
             entry.label.textContent += `: ${entry.slider.value}${ entryData.labelSuffix || '' }`
+            entry.label.append(entry.editLink = dom.create.elem('span', { class: 'edit-link' }))
+            entry.editLink.textContent = 'Edit'
             entry.slider.style.setProperty('--track-fill-percent', `${ entry.slider.value / entry.slider.max *100 }%`)
             entry.slider.oninput = ({ target: { value }}) => { // update label/color
                 settings.save(entryData.key, parseInt(value)) ; sync.configToUI({ updatedKey: entryData.key })
                 entry.label.textContent = `${entryData.label}: ${value}${ entryData.labelSuffix || '' }`
+                entry.label.append(entry.editLink)
                 entry.slider.style.setProperty('--track-fill-percent', `${ value / entry.slider.max *100 }%`)
+            }
+
+            // Add listeners
+            entry.editLink.onclick = () => {
+                const userVal = prompt(`Enter new value for ${entryData.label}:`, entry.slider.value)
+                if (!userVal) return
+                const numVal = parseInt(userVal.replace(/\D/g, '')) ; if (isNaN(numVal)) return
+                const clampedVal = Math.max(entryData.min || 0, Math.min(entryData.max || 100, numVal))
+                entry.slider.value = clampedVal
+                settings.save(entryData.key, clampedVal) ; sync.configToUI({ updatedKey: entryData.key })
+                entry.label.textContent = `${entryData.label}: ${clampedVal}${ entryData.labelSuffix || '' }`
+                entry.label.appendChild(entry.editLink)
+                entry.slider.style.setProperty('--track-fill-percent', `${ clampedVal / entry.slider.max *100 }%`)
             }
             entry.div.onwheel = event => { // move slider by 2 steps
                 entry.slider.value = parseInt(entry.slider.value) -Math.sign(event.deltaY) *2
