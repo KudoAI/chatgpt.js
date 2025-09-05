@@ -77,7 +77,7 @@
                 entry.slider.value = clampedVal
                 settings.save(entryData.key, clampedVal) ; sync.configToUI({ updatedKey: entryData.key })
                 entry.label.textContent = `${entryData.label}: ${clampedVal}${ entryData.labelSuffix || '' }`
-                entry.label.appendChild(entry.editLink)
+                entry.label.append(entry.editLink)
                 entry.slider.style.setProperty('--track-fill-percent', `${ clampedVal / entry.slider.max *100 }%`)
             }
             entry.div.onwheel = event => { // move slider by 2 steps
