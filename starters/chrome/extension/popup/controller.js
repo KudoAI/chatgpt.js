@@ -21,8 +21,6 @@
     // Define FUNCTIONS
 
     function createMenuEntry(entryData) {
-
-        // Assemble elems
         const entry = {
             div: dom.create.elem('div', {
                 id: entryData.key, class: 'menu-entry highlight-on-hover', title: entryData.helptip || '' }),
@@ -30,9 +28,11 @@
             label: dom.create.elem('span', { textContent: entryData.label })
         }
         entry.div.append(entry.leftElem, entry.label)
+
         if (entryData.type == 'toggle') { // add track to left, init knob pos
             entry.leftElem.append(dom.create.elem('span', { class: 'track' }))
             entry.leftElem.classList.toggle('on', settings.typeIsEnabled(entryData.key))
+
         } else { // add symbol to left, append status to right
             entry.leftElem.textContent = entryData.symbol || '⚙️' ; entry.label.style.flexGrow = 1
             if (entryData.status) entry.label.textContent += ` — ${entryData.status}`
@@ -47,19 +47,21 @@
                     entry.rightElem.firstChild.replaceWith(entry[type == 'mouseenter' ? 'openIcon' : 'favicon'])
             }
         }
-        if (entryData.type == 'category') // add caret
+
+        if (entryData.type == 'category') // append drop-down caret
             entry.div.append(icons.create({ key: 'caretDown', size: 11, class: 'menu-caret menu-right-elem' }))
+
         else if (entryData.type == 'slider') { // append slider, add listeners, remove .highlight-on-hover
 
             // Create/append slider elems
-            entry.slider = dom.create.elem('input', { class: 'slider', type: 'range',
-                min: entryData.min || 0, max: entryData.max || 100, value: config[entryData.key] })
+            entry.div.append(entry.slider = dom.create.elem('input', { class: 'slider', type: 'range',
+                min: entryData.min || 0, max: entryData.max || 100, value: config[entryData.key] }))
+            entry.div.classList.remove('highlight-on-hover')
             if (entryData.step || env.browser.isFF) // use val from entryData or default to 2% in FF for being laggy
                 entry.slider.step = entryData.step || ( 0.02 * entry.slider.max - entry.slider.min )
             entry.label.textContent += `: ${entry.slider.value}${ entryData.labelSuffix || '' }`
             entry.label.append(entry.editLink = dom.create.elem('span', {
-                class: 'edit-link', role: 'button', tabindex: '0', 'aria-label': entryData.helptip,
-                textContent: 'Edit'
+                class: 'edit-link', role: 'button', tabindex: '0', 'aria-label': entryData.helptip, textContent: 'Edit'
             }))
             entry.slider.style.setProperty('--track-fill-percent', `${ entry.slider.value / entry.slider.max *100 }%`)
             entry.slider.oninput = ({ target: { value }}) => { // update label/color
@@ -87,8 +89,7 @@
                 entry.slider.value = parseInt(entry.slider.value) - Math.sign(deltaY) *2
                 entry.slider.dispatchEvent(new Event('input'))
             }
-            entry.div.append(entry.slider) ; entry.div.classList.remove('highlight-on-hover')
-        }
+
         if (entryData.dependencies) { // hide/show according to toggle state
             const toDisable = Object.values(entryData.dependencies).flat().some(dep => !settings.typeIsEnabled(dep))
             Object.assign(entry.div.style, {
@@ -110,8 +111,8 @@
                     entry.leftElem.classList.toggle('on')
                     settings.save(entryData.key, !config[entryData.key])
                     sync.configToUI({ updatedKey: entryData.key })
-                    requestAnimationFrame(() => notify(`${entryData.label} ${chrome.i18n.getMessage(`state_${
-                        settings.typeIsEnabled(entryData.key) ? 'on' : 'off' }`).toUpperCase()}`))
+                    requestAnimationFrame(() => notify(
+                        `${entryData.label} ${['OFF', 'ON'][+settings.typeIsEnabled(entryData.key)]}`))
                 },
                 link: () => { open(entryData.url) ; close() }
             })[entryData.type]()
@@ -139,6 +140,7 @@
                     })
                     depDiv.classList.toggle('disabled', toDisable)
                 }
+            }
         }
 
         return entry.div
