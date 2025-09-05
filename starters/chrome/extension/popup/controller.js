@@ -8,14 +8,12 @@
     for (const resource of ['components/icons.js', 'lib/dom.js', 'lib/settings.js'])
         await import(chrome.runtime.getURL(resource))
 
-    // Init ENV context
+    // Init DATA
     window.env = {
         site: new URL((await chrome.tabs.query({ active: true, currentWindow: true }))[0].url)
             .hostname.split('.').slice(-2, -1)[0], // extract 2nd-level domain
         menu: { isDark: document.documentElement.classList.contains('dark') }
     }
-
-    // Import DATA
     ;({ app: window.app } = await chrome.storage.local.get('app'))
 
     // Define FUNCTIONS
