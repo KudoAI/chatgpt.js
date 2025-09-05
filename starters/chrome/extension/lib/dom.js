@@ -34,7 +34,10 @@ window.dom = {
 
         elem(elemType, attrs = {}) {
             const elem = document.createElement(elemType)
-            for (const attr in attrs) elem.setAttribute(attr, attrs[attr])
+            for (const attr in attrs) {
+                if (attr in elem) elem[attr] = attrs[attr]
+                else elem.setAttribute(attr, attrs[attr])
+            }
             return elem
         },
 
