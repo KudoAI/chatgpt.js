@@ -128,8 +128,7 @@
             for (const [ctrlKey, ctrlData] of Object.entries({ ...settings.categories, ...settings.controls }))
                 if (Object.values(ctrlData.dependencies || {}).flat().includes(entryData.key)) {
                     const depDiv = document.querySelector(`div#${ctrlKey}`) ; if (!depDiv) continue
-                    const ctgChildrenDiv = depDiv.closest('.categorized-entries'),
-                          ctgChildren = ctgChildrenDiv.querySelectorAll('.menu-entry'),
+                    const ctgChildren = depDiv.closest('.categorized-entries').querySelectorAll('.menu-entry'),
                           toDisable = !settings.typeIsEnabled(entryData.key)
                     requestAnimationFrame(() => Object.assign(depDiv.closest('.categorized-entries').style, {
                         height: `${dom.get.computedHeight(ctgChildren)}px`,
