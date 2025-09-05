@@ -43,8 +43,8 @@
                             : `https://www.google.com/s2/favicons?domain=${new URL(entryData.url).hostname}` })
                 entry.openIcon = icons.create({ key: 'open', size: 17, fill: 'black' })
                 entry.rightElem.append(entry.favicon || entry.openIcon)
-                if (entry.favicon) entry.rightElem.onmouseenter = entry.rightElem.onmouseleave = event =>
-                    entry.rightElem.firstChild.replaceWith(entry[event.type == 'mouseenter' ? 'openIcon' : 'favicon'])
+                if (entry.favicon) entry.rightElem.onmouseenter = entry.rightElem.onmouseleave = ({ type }) =>
+                    entry.rightElem.firstChild.replaceWith(entry[type == 'mouseenter' ? 'openIcon' : 'favicon'])
             }
         }
         if (entryData.type == 'category') // add caret
@@ -83,8 +83,8 @@
                 entry.label.append(entry.editLink)
                 entry.slider.style.setProperty('--track-fill-percent', `${ validVal / entry.slider.max *100 }%`)
             }
-            entry.div.onwheel = event => { // move slider by 2 steps
-                entry.slider.value = parseInt(entry.slider.value) -Math.sign(event.deltaY) *2
+            entry.div.onwheel = ({ deltaY }) => { // move slider by 2 steps
+                entry.slider.value = parseInt(entry.slider.value) -Math.sign(deltaY) *2
                 entry.slider.dispatchEvent(new Event('input'))
             }
             entry.div.append(entry.slider) ; entry.div.classList.remove('highlight-on-hover')
