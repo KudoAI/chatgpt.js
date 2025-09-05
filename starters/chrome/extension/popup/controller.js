@@ -84,7 +84,7 @@
                 entry.slider.style.setProperty('--track-fill-percent', `${ validVal / entry.slider.max *100 }%`)
             }
             entry.div.onwheel = ({ deltaY }) => { // move slider by 2 steps
-                entry.slider.value = parseInt(entry.slider.value) -Math.sign(deltaY) *2
+                entry.slider.value = parseInt(entry.slider.value) - Math.sign(deltaY) *2
                 entry.slider.dispatchEvent(new Event('input'))
             }
             entry.div.append(entry.slider) ; entry.div.classList.remove('highlight-on-hover')
