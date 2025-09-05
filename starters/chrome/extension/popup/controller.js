@@ -58,7 +58,8 @@
             if (entryData.step || env.browser.isFF) // use val from entryData or default to 2% in FF for being laggy
                 entry.slider.step = entryData.step || ( 0.02 * entry.slider.max - entry.slider.min )
             entry.label.textContent += `: ${entry.slider.value}${ entryData.labelSuffix || '' }`
-            entry.label.append(entry.editLink = dom.create.elem('span', { class: 'edit-link' }))
+            entry.label.append(entry.editLink = dom.create.elem('span',
+                { class: 'edit-link', role: 'button', tabindex: '0', 'aria-label': entryData.helptip }))
             entry.editLink.textContent = 'Edit'
             entry.slider.style.setProperty('--track-fill-percent', `${ entry.slider.value / entry.slider.max *100 }%`)
             entry.slider.oninput = ({ target: { value }}) => { // update label/color
@@ -71,14 +72,16 @@
             // Add listeners
             entry.editLink.onclick = () => {
                 const userVal = prompt(`Enter new value for ${entryData.label}:`, entry.slider.value)
-                if (!userVal) return
-                const numVal = parseInt(userVal.replace(/\D/g, '')) ; if (isNaN(numVal)) return
-                const clampedVal = Math.max(entryData.min || 0, Math.min(entryData.max || 100, numVal))
-                entry.slider.value = clampedVal
-                settings.save(entryData.key, clampedVal) ; sync.configToUI({ updatedKey: entryData.key })
-                entry.label.textContent = `${entryData.label}: ${clampedVal}${ entryData.labelSuffix || '' }`
+                if (userVal == null) return // user cancelled so do nothing
+                if (!/\d/.test(userVal)) return alert(`Enter a valid number between ${
+                    entryData.min || '0' } and ${ entryData.max || '100' }!`)
+                let validVal = parseInt(userVal.replace(/\D/g, '')) ; if (isNaN(validVal)) return
+                validVal = Math.max(entryData.min || 0, Math.min(entryData.max || 100, validVal))
+                entry.slider.value = validVal ; settings.save(entryData.key, validVal)
+                sync.configToUI({ updatedKey: entryData.key })
+                entry.label.textContent = `${entryData.label}: ${validVal}${ entryData.labelSuffix || '' }`
                 entry.label.append(entry.editLink)
-                entry.slider.style.setProperty('--track-fill-percent', `${ clampedVal / entry.slider.max *100 }%`)
+                entry.slider.style.setProperty('--track-fill-percent', `${ validVal / entry.slider.max *100 }%`)
             }
             entry.div.onwheel = event => { // move slider by 2 steps
                 entry.slider.value = parseInt(entry.slider.value) -Math.sign(event.deltaY) *2
