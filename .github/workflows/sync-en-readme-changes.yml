@@ -21,8 +21,6 @@ jobs:
       - name: Checkout KudoAI/chatgpt.js
         uses: actions/checkout@v5
         with:
-          token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: KudoAI/chatgpt.js
           path: KudoAI/chatgpt.js
           fetch-depth: 2
 
