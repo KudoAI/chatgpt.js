@@ -18,8 +18,8 @@ export default [
             ecmaVersion: 'latest', sourceType: 'script',
             globals: {
                 ...globals.browser, ...globals.greasemonkey, ...globals.node, app: 'writable', chatgpt: 'readonly',
-                chrome: 'readonly', config: 'writable', dom: 'readonly', env: 'writable', icons: 'writable',
-                modals: 'writable', settings: 'writable', ui: 'readonly'
+                chrome: 'readonly', config: 'writable', dom: 'readonly', env: 'writable', feedback: 'readonly',
+                icons: 'writable', modals: 'writable', settings: 'writable', ui: 'readonly'
             }
         },
         plugins: { 'import': importPlugin, 'js-styles': stylisticJS, regexp },
