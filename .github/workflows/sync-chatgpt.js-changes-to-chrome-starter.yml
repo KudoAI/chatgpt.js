@@ -19,6 +19,7 @@ jobs:
       - name: Checkout KudoAI/chatgpt.js
         uses: actions/checkout@v5
         with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
           path: KudoAI/chatgpt.js
 
       - name: Checkout KudoAI/chatgpt.js-chrome-starter
