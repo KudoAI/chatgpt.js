@@ -15,11 +15,15 @@
     // Import APP data
     ;({ app: window.app } = await chrome.storage.local.get('app'))
 
-    chrome.runtime.onMessage.addListener(({ action, options }) => { // from service-worker.js + popup/index.html
+    chrome.runtime.onMessage.addListener(({ action, options, source }) => { // from service-worker.js + popup/index.html
         ({
             notify: () => feedback.notify(...['msg', 'pos', 'notifDuration', 'shadow'].map(arg => options[arg])),
             alert: () => modals.alert(...['title', 'msg', 'btns', 'checkbox', 'width'].map(arg => options[arg])),
-            showAbout: () => { config.skipAlert = true ; chatgpt.isLoaded().then(() => modals.open('about')) },
+            showAbout: () => {
+                if (source != 'service-worker.js') return
+                config.skipAlert = true
+                chatgpt.isLoaded().then(() => modals.open('about'))
+            },
             syncConfigToUI: () => syncConfigToUI(options)
         }[action]?.() || console.warn(`Chome msg listener warning: "${action}"`))
     })
