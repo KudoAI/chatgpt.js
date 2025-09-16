@@ -20,7 +20,7 @@
             notify: () => feedback.notify(...['msg', 'pos', 'notifDuration', 'shadow'].map(arg => options[arg])),
             alert: () => modals.alert(...['title', 'msg', 'btns', 'checkbox', 'width'].map(arg => options[arg])),
             showAbout: () => {
-                if (source != 'service-worker.js') return
+                if (!source.endsWith('service-worker.js')) return
                 config.skipAlert = true
                 chatgpt.isLoaded().then(() => modals.open('about'))
             },
