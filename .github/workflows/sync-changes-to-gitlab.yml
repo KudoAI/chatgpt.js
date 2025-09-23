@@ -22,6 +22,8 @@ jobs:
           fetch-depth: 0
 
       - name: Push changes to gitlab.com/kudoai/chatgpt-js
+        env:
+          GITLAB_SYNC_PAT: ${{ secrets.GITLAB_SYNC_PAT }}
         run: |
           git push --force -o ci.skip \
-            https://oauth2:${{ secrets.GITLAB_SYNC_PAT }}@gitlab.com/kudoai/chatgpt-js.git main
+            https://oauth2:$GITLAB_SYNC_PAT@gitlab.com/kudoai/chatgpt-js.git main
