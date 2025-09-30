@@ -54,7 +54,7 @@
 
             // Create/append slider elems
             entry.div.append(entry.slider = dom.create.elem('input', { class: 'slider', type: 'range',
-                min: minVal, max: maxVal || 100, value: config[entryData.key] }))
+                min: minVal, max: maxVal, value: config[entryData.key] }))
             entry.div.classList.remove('highlight-on-hover')
             if (entryData.step || env.browser.isFF) // use val from entryData or default to 2% in FF for being laggy
                 entry.slider.step = entryData.step || ( 0.02 * entry.slider.max - entry.slider.min )
