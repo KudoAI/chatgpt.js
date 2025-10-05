@@ -38,7 +38,7 @@ const chatgpt = {
             reason: 'button[data-testid=composer-button-reason]',
             send: 'button[data-testid=send-button]',
             sidebar: 'div[style*=-sidebar-width] button[data-testid=close-sidebar-button], div[style*=-sidebar-rail-width] button[aria-controls=stage-slideover-sidebar]',
-            stop: 'button[data-testid=stop-button]',
+            stop: 'div:has(> svg > path[d^="M10 2.08496C14.3713"])',
             upload: 'button:has(> svg > path[d^="M12 3C12.5523"])',
             voice: 'button[data-testid*=composer-speech-button]'
         },
