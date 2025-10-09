@@ -141,7 +141,7 @@ html.dark .menu-icon svg, html.dark .menu-right-elem, html.dark .menu-right-elem
 html.dark .menu-icon img { filter: brightness(0) invert(1) }
 html.dark .menu-icon:hover img { filter: none }
 html.dark .ticker-em { color: #28ee28 } html.dark .highlight-on-hover:hover .ticker-em { color: green }
-html.dark #chatgpt-entry:hover img { filter: invert(1) } /* to white favicon for legibility */
+html.dark #chatgptEntry:hover img { filter: invert(1) } /* to white favicon for legibility */
 
 /* Non-baseline features */
 @supports (cursor: pointer) { .highlight-on-hover:hover, .toggle .track, .chatgptjs-logo { cursor: pointer }}
