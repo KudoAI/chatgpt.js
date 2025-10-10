@@ -66,7 +66,7 @@
 
             // Add listeners
             entry.editLink.onclick = () => {
-                const promptMsg = `Enter new value for ${entryData.label} (${minVal}–${maxVal}):`,
+                const promptMsg = `Enter new value for ${entryData.label} (between ${minVal}–${maxVal}):`,
                       userVal = prompt(promptMsg, entry.slider.value)
                 if (userVal == null) return // user cancelled so do nothing
                 if (!/\d/.test(userVal)) return alert(`Enter a valid number between ${minVal} and ${maxVal}!`)
