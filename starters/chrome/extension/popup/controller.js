@@ -234,7 +234,6 @@
     masterToggle.div.append(masterToggle.switch) ; masterToggle.switch.append(masterToggle.track)
     await settings.load('extensionDisabled') ; masterToggle.switch.classList.toggle('on', !config.extensionDisabled)
     masterToggle.div.onclick = () => {
-        env.extensionWasDisabled = config.extensionDisabled
         masterToggle.switch.classList.toggle('on') ; settings.save('extensionDisabled', !config.extensionDisabled)
         Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
         notify(`${app.name} ${ this.checked ? 'ON' : 'OFF' }`)
