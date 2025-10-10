@@ -108,42 +108,42 @@ window.modals = {
     stylize() {
         const { ui: { scheme }, browser: { isMobile }} = env
         if (!this.styles) document.head.append(this.styles = dom.create.elem('style'))
-        this.styles.textContent = (
-            `.${this.class} {` // modals
-              + 'user-select: none ; -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ;'
-              + 'font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto,'
-                  + 'Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif ;'
-              + 'padding: 20px 25px 24px 25px !important ; font-size: 20px ;'
-              + `color: ${ scheme == 'dark' ? 'white' : 'black' } !important ;`
-              + `background-image: linear-gradient(180deg, ${
-                     scheme == 'dark' ? '#99a8a6 -200px, black 200px' : '#b6ebff -296px, white 171px' }) }`
-          + `.${this.class} [class*=modal-close-btn] {`
-              + 'position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;'
-              + 'cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }'
-          + `.${this.class} [class*=modal-close-btn] svg { height: 10px }`
-          + `.${this.class} [class*=modal-close-btn] path {`
-              + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
-          + ( scheme == 'dark' ?  // invert dark mode hover paths
-                `.${this.class} [class*=modal-close-btn]:hover path { stroke: black ; fill: black }` : '' )
-          + `.${this.class} [class*=modal-close-btn]:hover { background-color: #f2f2f2 }` // hover underlay
-          + `.${this.class} [class*=modal-close-btn] svg { margin: 11.5px }` // center SVG for hover underlay
-          + `.${this.class} a { color: #${ scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
-          + `.${this.class} h2 { font-weight: bold }`
-          + `.${this.class} button {`
-              + '--btn-transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;'
-              + 'font-size: 14px ; text-transform: uppercase ;' // shrink/uppercase labels
-              + 'border-radius: 0 !important ;' // square borders
-              + 'transition: var(--btn-transition) ;' // smoothen hover fx
-                  + '-webkit-transition: var(--btn-transition) ; -moz-transition: var(--btn-transition) ;'
-                  + '-o-transition: var(--btn-transition) ; -ms-transition: var(--btn-transition) ;'
-              + 'cursor: pointer !important ;' // add finger cursor
-              + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } !important ;`
-              + 'padding: 8px !important ; min-width: 102px }' // resize
-          + `.${this.class} button:hover {` // add zoom, re-scheme
-              + 'transform: scale(1.055) ; color: black !important ;'
-              + `background-color: #${ scheme == 'dark' ? '00cfff' : '9cdaff' } !important }`
-          + ( !isMobile ? `.${this.class} .modal-buttons { margin-left: -13px !important }` : '' )
-          + `.about-em { color: ${ scheme == 'dark' ? 'white' : 'green' } !important }`
-        )
+        this.styles.textContent = `
+            .${this.class} { /* modals */
+                user-select: none ; -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ;
+                font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu,
+                    Cantarell, Helvetica Neue, sans-serif ;
+                padding: 20px 25px 24px 25px !important ; font-size: 20px ;
+                color: ${ scheme == 'dark' ? 'white' : 'black' } !important ;
+                background-image: linear-gradient(180deg, ${
+                     scheme == 'dark' ? '#99a8a6 -200px, black 200px' : '#b6ebff -296px, white 171px' })
+            }
+            .${this.class} [class*=modal-close-btn] {
+                position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;
+                cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }
+            .${this.class} [class*=modal-close-btn] svg { height: 10px }
+            .${this.class} [class*=modal-close-btn] path {
+                ${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}
+            ${ scheme == 'dark' ?  // invert dark mode hover paths
+                `.${this.class} [class*=modal-close-btn]:hover path { stroke: black ; fill: black }` : '' }
+            .${this.class} [class*=modal-close-btn]:hover { background-color: #f2f2f2 } /* hover underlay */
+            .${this.class} [class*=modal-close-btn] svg { margin: 11.5px } /* center SVG for hover underlay */
+            .${this.class} a { color: #${ scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }
+            .${this.class} h2 { font-weight: bold }
+            .${this.class} button {
+              --btn-transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;
+                font-size: 14px ; text-transform: uppercase ; /* shrink/uppercase labels */
+                border-radius: 0 !important ; /* square borders */
+                transition: var(--btn-transition) ; /* smoothen hover fx */
+                   -webkit-transition: var(--btn-transition) ; -moz-transition: var(--btn-transition) ;
+                   -o-transition: var(--btn-transition) ; -ms-transition: var(--btn-transition) ;
+                cursor: pointer !important ; /* add finger cursor */
+                border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } !important ;
+                padding: 8px !important ; min-width: 102px } /* resize */
+            .${this.class} button:hover { /* add zoom, re-scheme */
+                transform: scale(1.055) ; color: black !important ;
+                background-color: #${ scheme == 'dark' ? '00cfff' : '9cdaff' } !important }
+            ${ !isMobile ? `.${this.class} .modal-buttons { margin-left: -13px !important }` : '' }
+            .about-em { color: ${ scheme == 'dark' ? 'white' : 'green' } !important }`
     }
 };
