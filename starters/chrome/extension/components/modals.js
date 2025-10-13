@@ -120,7 +120,8 @@ window.modals = {
             }
             .${this.class} [class*=modal-close-btn] {
                 position: absolute !important ; float: right ; top: 14px !important ; right: 16px !important ;
-                cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px }
+                cursor: pointer ; width: 33px ; height: 33px ; border-radius: 20px
+            }
             .${this.class} [class*=modal-close-btn] svg { height: 10px }
             .${this.class} [class*=modal-close-btn] path {
                 ${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}
@@ -139,11 +140,15 @@ window.modals = {
                    -o-transition: var(--btn-transition) ; -ms-transition: var(--btn-transition) ;
                 cursor: pointer !important ; /* add finger cursor */
                 border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } !important ;
-                padding: 8px !important ; min-width: 102px } /* resize */
-            .${this.class} button:hover { /* add zoom, re-scheme */
-                transform: scale(1.055) ; color: black !important ;
-                background-color: #${ scheme == 'dark' ? '00cfff' : '9cdaff' } !important }
+                padding: 8px !important ; min-width: 102px /* resize */
+            }
+            .${this.class} button:hover {
+                ${ scheme == 'light' ? // reduce intensity of light scheme hover glow
+                    '--btn-shadow: 2px 1px 43px #00cfff70 ;' : '' }
+                color: inherit ; background-color: inherit /* remove color hacks */
+            }
             ${ !isMobile ? `.${this.class} .modal-buttons { margin-left: -13px !important }` : '' }
             .about-em { color: ${ scheme == 'dark' ? 'white' : 'green' } !important }`
+        if (!this.styles.isConnected) document.head.append(this.styles)
     }
 };
