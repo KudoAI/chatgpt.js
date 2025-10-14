@@ -9,8 +9,8 @@ window.modals = {
         const { ui: { scheme }, browser: { isPortrait }} = env
 
         // Show modal
-        const labelStyles = 'text-transform: uppercase ; font-size: 17px ; font-weight: bold ;'
-                          + `color: ${ scheme == 'dark' ? 'white' : '#494141' }`
+        const labelStyles = `text-transform: uppercase ; font-size: 17px ; font-weight: bold ;
+                             color: ${ scheme == 'dark' ? 'white' : '#494141' }`
         const aboutModal = this.alert(
             `${app.symbol} ${chrome.runtime.getManifest().name}`, // title
             `<span style="${labelStyles}">🧠 Author:</span> `
@@ -31,8 +31,8 @@ window.modals = {
         )
 
         // Format text
-        aboutModal.querySelector('h2').style.cssText = (
-            'text-align: center ; font-size: 51px ; line-height: 46px ; padding: 15px 0' )
+        aboutModal.querySelector('h2').style.cssText = `
+            text-align: center ; font-size: 51px ; line-height: 46px ; padding: 15px 0`
         aboutModal.querySelector('p').style.cssText = (
             'text-align: center ; overflow-wrap: anywhere ;'
           + `margin: ${ isPortrait ? '6px 0 -16px' : '3px 0 0' }` )
