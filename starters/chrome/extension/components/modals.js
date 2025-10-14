@@ -9,8 +9,8 @@ window.modals = {
         const { ui: { scheme }, browser: { isPortrait }} = env
 
         // Show modal
-        const labelStyles = `text-transform: uppercase ; font-size: 17px ; font-weight: bold ;
-                             color: ${ scheme == 'dark' ? 'white' : '#494141' }`
+        const labelStyles = 'text-transform: uppercase ; font-size: 17px ; font-weight: bold ;'
+                          + `color: ${ scheme == 'dark' ? 'white' : '#494141' }`
         const aboutModal = this.alert(
             `${app.symbol} ${chrome.runtime.getManifest().name}`, // title
             `<span style="${labelStyles}">🧠 Author:</span> `
