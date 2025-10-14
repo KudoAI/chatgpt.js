@@ -130,6 +130,7 @@ window.modals = {
             .${this.class} [class*=modal-close-btn]:hover { background-color: #f2f2f2 } /* hover underlay */
             .${this.class} [class*=modal-close-btn] svg { margin: 11.5px } /* center SVG for hover underlay */
             .${this.class} a { color: #${ scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }
+            .${this.class} a:hover { text-decoration: none ; opacity: 0.7 ; transition: 0.15s ease }
             .${this.class} h2 { font-weight: bold }
             .${this.class} button {
               --btn-transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out ;
