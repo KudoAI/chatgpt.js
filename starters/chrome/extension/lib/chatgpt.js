@@ -127,13 +127,14 @@ const chatgpt = {
 
             drag: {
                 mousedown(event) { // find modal, update styles, attach listeners, init XY offsets
-                    if (event.button != 0) return // prevent non-left-click drag
-                    if (!/auto|default/.test(getComputedStyle(event.target).cursor))
-                        return // prevent drag on interactive elems
+                    if ( // prevent drag when...
+                        event.button != 0 // non-left-click
+                        || !/auto|default/.test(getComputedStyle(event.target).cursor) // cursor changed
+                    ) return
                     chatgpt.draggingModal = event.currentTarget
                     event.preventDefault() // prevent sub-elems like icons being draggable
                     Object.assign(chatgpt.draggingModal.style, {
-                        transition: '0.1s', willChange: 'transform', transform: 'scale(1.05)' })
+                        transition: 'transform 0.1s ease', transform: 'scale(1.05)' })
                     document.body.style.cursor = 'grabbing' // update cursor
                     ;[...chatgpt.draggingModal.children] // prevent hover FX if drag lags behind cursor
                         .forEach(child => child.style.pointerEvents = 'none')
@@ -153,7 +154,7 @@ const chatgpt = {
 
                 mouseup() { // restore styles/pointer events, remove listeners, reset chatgpt.draggingModal
                     Object.assign(chatgpt.draggingModal.style, { // restore styles
-                        cursor: 'inherit', transition: 'inherit', willChange: 'auto', transform: 'scale(1)' })
+                        cursor: 'inherit', transition: 'inherit', transform: 'scale(1)' })
                     document.body.style.cursor = '' // restore cursor
                     ;[...chatgpt.draggingModal.children] // restore pointer events
                         .forEach(child => child.style.pointerEvents = '')
