@@ -371,7 +371,7 @@ const chatgpt = {
                 document.removeEventListener('keydown', handlers.dismiss.key) // prevent memory leaks
 
                 // Check for pending alerts in queue
-                if (alertQueue.length > 0) {
+                if (alertQueue.length) {
                     const nextAlert = document.getElementById(alertQueue[0])
                     setTimeout(() => {
                         nextAlert.style.display = ''
@@ -769,7 +769,7 @@ const chatgpt = {
         }}
         if (!targetNames.includes(targetName.toLowerCase()))
             throw new Error(`Invalid targetName: ${targetName}. `
-                + (targetNames.length > 0 ? 'Valid values are: ' + JSON.stringify(targetNames)
+                + (targetNames.length ? 'Valid values are: ' + JSON.stringify(targetNames)
                     : 'targetType ' + targetType.toLowerCase() + ' does not require additional options.'))
 
         // Call target function using pre-validated name components
@@ -1535,7 +1535,7 @@ const chatgpt = {
                       elems = [...text.matchAll(reTags)]
 
                 // Process 1st element to render
-                if (elems.length > 0) {
+                if (elems.length) {
                     const elem = elems[0],
                           [tagContent, tagName, tagAttrs, tagText] = elem.slice(0, 4),
                           tagNode = document.createElement(tagName) ; tagNode.textContent = tagText
