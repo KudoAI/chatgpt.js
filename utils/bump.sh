@@ -24,7 +24,7 @@ case $1 in # edit subvers based on version type
        echo -e "\n${BY}Valid args are: ${BUMP_TYPES[*]/#/--}${NC}" ;
        exit 1 ;;
 esac
-NEW_VER=$(printf "%s.%s.%s" "${subvers[@]}")
+new_ver=$(printf "%s.%s.%s" "${subvers[@]}")
 
 # PULL latest changes
 echo -e "${BY}Pulling latest changes from remote to sync local repository...${NC}\n"
@@ -33,20 +33,20 @@ echo ''
 
 # Bump version in package.json + package-lock.json
 echo -e "${BY}Bumping versions in package manifests...${BW}"
-npm version --no-git-tag-version "$NEW_VER"
+npm version --no-git-tag-version "$new_ver"
 
 # Bump versions in READMEs
 echo -e "${BY}\nBumping versions in READMEs...${BW}"
 sed -i \
-    -e "s/\(chatgpt\(-\|\.js@\)\)[0-9]\+\(\.[0-9]\+\)\{2\}/\1$NEW_VER/g" `# jsDelivr URLs` \
-    -e "s|v[0-9]\+\.[0-9]\+\.[0-9]\+|v$NEW_VER|g" `# Minified Size shield link/src + userguide links` \
+    -e "s/\(chatgpt\(-\|\.js@\)\)[0-9]\+\(\.[0-9]\+\)\{2\}/\1$new_ver/g" `# jsDelivr URLs` \
+    -e "s|v[0-9]\+\.[0-9]\+\.[0-9]\+|v$new_ver|g" `# Minified Size shield link/src + userguide links` \
     $(find docs -regex ".*/\(README\|USERGUIDE\)\.md") ./README.md
-echo "v$NEW_VER"
+echo "v$new_ver"
 
 # Bump chatgpt.js version in Greasemonkey starter
 echo -e "${BY}\nBumping versions in Greasemonkey starter...${BW}\n"
-sed -i "s|\(@require.*chatgpt\.js@\)[0-9.]\+|\1$NEW_VER|g" starters/greasemonkey/*.user.js
-echo "chatgpt.js v$NEW_VER"
+sed -i "s|\(@require.*chatgpt\.js@\)[0-9.]\+|\1$new_ver|g" starters/greasemonkey/*.user.js
+echo "chatgpt.js v$new_ver"
 
 # Bump userscript version in Greasemonkey starter
 TODAY=$(date +'%Y.%-m.%-d') # YYYY.M.D format
@@ -75,11 +75,11 @@ git config --global user.signingkey "$(cat "$GPG_KEYS_PATH/kudo-sync-bot-key-id.
 # Commit bumps to Git
 echo -e "${BY}\nCommitting bumps to Git...\n${NC}"
 git add package*.json
-git commit -n -m "Bumped versions in manifests to $NEW_VER"
+git commit -n -m "Bumped versions in manifests to $new_ver"
 git add "README.md" "./**/README.md" "./**/USERGUIDE.md"
-git commit -n -m "Bumped versions in jsDelivr URLs to $NEW_VER"
+git commit -n -m "Bumped versions in jsDelivr URLs to $new_ver"
 git add ./*greasemonkey-starter.user.js
-git commit -n -m "Bumped chatgpt.js to $NEW_VER"
+git commit -n -m "Bumped chatgpt.js to $new_ver"
 
 # Build chatgpt.min.js to dist/
 echo -e "${BY}\nBuilding chatgpt.min.js...\n${NC}"
@@ -87,19 +87,19 @@ bash utils/build.sh
 
 # Update jsDelivr URLs for GitHub assets w/ commit hash
 echo -e "${BY}\nUpdating jsDelivr URLs for GitHub assets w/ commit hash...${NC}"
-BUMP_HASH=$(git rev-parse HEAD)
+bump_hash=$(git rev-parse HEAD)
 old_file=$(<dist/chatgpt.min.js)
-sed -i -E "s|(cdn\.jsdelivr\.net\/gh\/[^/]+\/[^@/\"']+)[^/\"']*|\1@$BUMP_HASH|g" dist/chatgpt.min.js
+sed -i -E "s|(cdn\.jsdelivr\.net\/gh\/[^/]+\/[^@/\"']+)[^/\"']*|\1@$bump_hash|g" dist/chatgpt.min.js
 new_file=$(<dist/chatgpt.min.js)
 if [[ "$old_file" != "$new_file" ]]
-    then echo -e "${BW}$BUMP_HASH${NC}"
+    then echo -e "${BW}$bump_hash${NC}"
     else echo "No jsDelivr URLs for GH assets found in built files"
 fi
 
 # Commit build to Git
 echo -e "${BY}\nCommitting build to Git...\n${NC}"
 git add ./**/chatgpt.min.js
-git commit -n -m "Built chatgpt.js $NEW_VER"
+git commit -n -m "Built chatgpt.js $new_ver"
 
 # Push to GiHub
 echo -e "${BY}\nPushing to GitHub...\n${NC}"
@@ -114,4 +114,4 @@ echo -e "${BY}\nRestoring original Git config...\n${NC}"
 while IFS='=' read -r key val ; do git config --global "$key" "$val" ; done < ~/.gitconfig.backup
 
 # Print final summary
-echo -e "\n${BG}Successfully bumped to v$NEW_VER$([[ "$*" == *"--publish"* ]] && echo ' and published to npm')!${NC}"
+echo -e "\n${BG}Successfully bumped to v$new_ver$([[ "$*" == *"--publish"* ]] && echo ' and published to npm')!${NC}"
