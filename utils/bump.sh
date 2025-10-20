@@ -12,26 +12,24 @@ BY="\033[1;33m" # bright yellow
 BG="\033[1;92m" # bright green
 BW="\033[1;97m" # bright white
 
-# Validate version arg
-ver_types=("major" "minor" "patch")
-if [[ ! "${ver_types[@]}" =~ "$1" ]] ; then
-    echo "${BR}Invalid version argument. Please specify 'major', 'minor', or 'patch'.${NC}"
-    exit 1 ; fi
-
-# PULL latest changes
-echo -e "${BY}Pulling latest changes from remote to sync local repository...${NC}\n"
-git pull || (echo -e "${BR}Merge failed, please resolve conflicts!${NC}" && exit 1)
-echo ''
-
 # Determine new version to bump to
+BUMP_TYPES=("major" "minor" "patch")
 old_ver=$(node -pe "require('./package.json').version")
 IFS='.' read -ra subvers <<< "$old_ver" # split old_ver into subvers array
 case $1 in # edit subvers based on version type
     "patch") subvers[2]=$((subvers[2] + 1)) ;;
     "minor") subvers[1]=$((subvers[1] + 1)) ; subvers[2]=0 ;;
     "major") subvers[0]=$((subvers[0] + 1)) ; subvers[1]=0 ; subvers[2]=0 ;;
+    *) echo -e "\n${BR}Invalid bump type arg provided: $1${NC}" ;
+       echo -e "\n${BY}Valid args are: ${BUMP_TYPES[*]/#/--}${NC}" ;
+       exit 1 ;;
 esac
 NEW_VER=$(printf "%s.%s.%s" "${subvers[@]}")
+
+# PULL latest changes
+echo -e "${BY}Pulling latest changes from remote to sync local repository...${NC}\n"
+git pull || (echo -e "${BR}Merge failed, please resolve conflicts!${NC}" && exit 1)
+echo ''
 
 # Bump version in package.json + package-lock.json
 echo -e "${BY}Bumping versions in package manifests...${BW}"
