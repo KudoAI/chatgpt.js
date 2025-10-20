@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 (async () => {
+    'use strict'
 
     // Import LIBS
     const { default: getPort, portNumbers } = await import('get-port'),
