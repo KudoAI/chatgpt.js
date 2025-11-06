@@ -927,7 +927,7 @@ const chatgpt = {
 
                         // Fill [userMessages]
                         for (const key in data)
-                            if (data[key].message != null && data[key].message.author.role == 'user')
+                            if (data[key]?.message?.author?.role == 'user')
                                 userMessages.push({ id: data[key].id, msg: data[key].message })
                         userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time) // sort in chronological order
 
@@ -938,12 +938,10 @@ const chatgpt = {
                         // Fill [chatGPTMessages]
                         for (const userMessage of userMessages) {
                             let sub = []
-                            for (const key in data) {
-                                if (data[key].message != null && data[key].message.author.role == 'assistant'
-                                    && isUserMsgAncestor(key, userMessage.id)) {
-                                        sub.push(data[key].message)
-                                }
-                            }
+                            for (const key in data)
+                                if (data[key]?.message?.author?.role == 'assistant'
+                                    && isUserMsgAncestor(key, userMessage.id)
+                                ) sub.push(data[key].message)
                             sub.sort((a, b) => a.create_time - b.create_time) // sort in chronological order
                             sub = sub.map(x => { // pull out msgs after sorting
                                 switch(x.content.content_type) {
