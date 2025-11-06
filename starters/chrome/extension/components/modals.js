@@ -6,7 +6,7 @@ window.modals = {
     get class() { return `${app.cssPrefix}-modal` },
 
     about() {
-        const { ui: { scheme }, browser: { isPortrait }} = env
+        const { ui: { scheme }, browser: { isCompact }} = env
 
         // Show modal
         const labelStyles = 'text-transform: uppercase ; font-size: 17px ; font-weight: bold ;'
@@ -35,7 +35,7 @@ window.modals = {
             text-align: center ; font-size: 51px ; line-height: 46px ; padding: 15px 0`
         aboutModal.querySelector('p').style.cssText = (
             'text-align: center ; overflow-wrap: anywhere ;'
-          + `margin: ${ isPortrait ? '6px 0 -16px' : '3px 0 0' }` )
+          + `margin: ${ isCompact ? '6px 0 -16px' : '3px 0 0' }` )
 
         // Hack buttons
         aboutModal.querySelector('.modal-buttons').style.justifyContent = 'center'

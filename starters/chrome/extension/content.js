@@ -10,7 +10,7 @@
 
     // Init ENV context
     window.env = { browser: { isMobile: chatgpt.browser.isMobile() }, ui: { scheme: ui.getScheme() }}
-    env.browser.isPortrait = env.browser.isMobile && (window.innerWidth < window.innerHeight)
+    Object.assign(env.browser, { get isCompact() { return innerWidth <= 480 }})
 
     // Import APP data
     ;({ app: window.app } = await chrome.storage.local.get('app'))
