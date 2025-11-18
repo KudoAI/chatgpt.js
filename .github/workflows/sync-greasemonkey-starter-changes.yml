@@ -18,12 +18,12 @@ jobs:
     steps:
 
       - name: Checkout KudoAI/chatgpt.js
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v5.0.1
         with:
           path: KudoAI/chatgpt.js
 
       - name: Checkout KudoAI/chatgpt.js-greasemonkey-starter
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v5.0.1
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: KudoAI/chatgpt.js-greasemonkey-starter
