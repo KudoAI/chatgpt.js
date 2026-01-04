@@ -409,7 +409,7 @@ const chatgpt = {
                     }
                     scheduleRefreshes(interval)
                 }, (interval + randomDelay) * 1000)
-            };
+            }
             scheduleRefreshes( interval ? parseInt(interval, 10) : 30 )
             console.log(`↻ ChatGPT >> [${chatgpt.autoRefresh.nowTimeStamp()}] Auto refresh activated`)
 
@@ -432,7 +432,7 @@ const chatgpt = {
             const now = new Date()
             const hours = now.getHours() % 12 || 12 // convert to 12h format
             let minutes = now.getMinutes(), seconds = now.getSeconds()
-            if (minutes < 10) minutes = '0' + minutes; if (seconds < 10) seconds = '0' + seconds
+            if (minutes < 10) minutes = '0' + minutes ; if (seconds < 10) seconds = '0' + seconds
             const meridiem = now.getHours() < 12 ? 'AM' : 'PM'
             return `${hours}:${minutes}:${seconds} ${meridiem}`
         },
@@ -574,7 +574,7 @@ const chatgpt = {
 
         async refactor(code, objective) {
             if (!code) return console.error('Code (1st) argument not supplied. Pass some code!')
-            for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] != 'string')
+            for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
                 return console.error(`Argument ${ i + 1 } must be a string.`)
             chatgpt.send(`Refactor the following code for ${ objective || 'brevity' }:\n\n${code}`)
             console.info('Refactoring code...')
@@ -603,7 +603,7 @@ const chatgpt = {
         async write(prompt, outputLang) {
             if (!prompt) return console.error('Prompt (1st) argument not supplied. Pass a prompt!')
             if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!')
-            for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] != 'string')
+            for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
                 return console.error(`Argument ${ i + 1 } must be a string.`)
             chatgpt.send(`${prompt}\n\nWrite this as code in ${outputLang}`)
             console.info('Writing code...')
@@ -657,7 +657,7 @@ const chatgpt = {
                 if (!chatDivs.length) return console.error('Chat is empty!')
                 const msgs = [] ; let isUserMsg = true
                 chatDivs.forEach(div => {
-                    const sender = isUserMsg ? 'USER' : 'CHATGPT'; isUserMsg = !isUserMsg
+                    const sender = isUserMsg ? 'USER' : 'CHATGPT' ; isUserMsg = !isUserMsg
                     const msg = [...div.childNodes].map(node => node.innerText)
                               .join('\n\n') // insert double line breaks between paragraphs
                               .replace('Copy code', '')
@@ -686,7 +686,7 @@ const chatgpt = {
             cssLinks.forEach(link => {
                 const href = link.getAttribute('href')
                 if (href?.startsWith('/')) link.setAttribute('href', 'https://chat.openai.com' + href)
-            });
+            })
 
             // Serialize updated HTML to string
             transcript = new XMLSerializer().serializeToString(parsedHtml)
@@ -711,7 +711,7 @@ const chatgpt = {
 
             if (format == 'md') { // remove extraneous HTML + fix file extension
                 const mdMatch = /<.*<h1(.|\n)*?href=".*?continue[^"]*".*?\/a>.*?<[^/]/.exec(transcript)[1]
-                transcript = mdMatch || transcript; filename = filename.replace('.html', '.md')
+                transcript = mdMatch || transcript ; filename = filename.replace('.html', '.md')
             }
             const blob = new Blob([transcript],
                 { type: 'text/' + ( format == 'html' ? 'html' : format == 'md' ? 'markdown' : 'plain' )})
@@ -959,7 +959,8 @@ const chatgpt = {
                                 msgsToReturn.push(userMessages[userMessage].msg.content.parts[0])
                         else if (sender == 'chatgpt') // Fill [msgsToReturn] with ChatGPT responses
                             for (const chatGPTMessage of chatGPTMessages)
-                                msgsToReturn.push(msgToGet == 'latest' ? chatGPTMessages[chatGPTMessages.length - 1] : chatGPTMessage );
+                                msgsToReturn.push(msgToGet == 'latest' ? chatGPTMessages[chatGPTMessages.length - 1]
+                                                                       : chatGPTMessage )
                         else { // Fill [msgsToReturn] with objects of user messages and chatgpt response(s)
                             let i = 0
                             for (const message in userMessages) {
@@ -1075,9 +1076,9 @@ const chatgpt = {
                     else if (target == 'chatgpt') instructionsData.about_model_message += instruction
 
                     await this.sendRequest('POST', token, instructionsData)
-                    return resolve();
-                });
-            });
+                    return resolve()
+                })
+            })
         },
 
         clear(target) {
@@ -1132,7 +1133,7 @@ const chatgpt = {
                 xhr.onload = () => {
                     const responseData = JSON.parse(xhr.responseText)
                     if (xhr.status == 422)
-                        return reject('🤖 chatgpt.js >> Character limit exceeded. Custom instructions can have a maximum length of 1500 characters.');
+                        return reject('🤖 chatgpt.js >> Character limit exceeded. Custom instructions can have a maximum length of 1500 characters.')
                     else if (xhr.status == 403 && responseData.detail.reason == 'content_policy')
                         return reject('🤖 chatgpt.js >> ' + responseData.detail.description)
                     else if (xhr.status != 200)
@@ -1257,7 +1258,7 @@ const chatgpt = {
                 if (!attrs.items.every(el => typeof el == 'object')) // the entries of the array are not objects
                     return console.error('\'items\' must be an array of objects!')
 
-                newElem.style = 'background-color: #000; width: 100%; border: none;'
+                newElem.style = 'background-color: #000 ; width: 100% ; border: none'
 
                 attrs.items.forEach(item => {
                     const optionElement = document.createElement('option')
@@ -1300,7 +1301,7 @@ const chatgpt = {
         }
     },
 
-    minify() { chatgpt.code.minify(); },
+    minify() { chatgpt.code.minify() },
 
     notify(...args) {
         const scheme = chatgpt.isDarkMode() ? 'dark' : 'light'
@@ -1308,7 +1309,7 @@ const chatgpt = {
         if (typeof args[0] == 'object' && !Array.isArray(args[0]))
             ({ msg, position, notifDuration, shadow, toast } = args[0])
         else [msg, position, notifDuration, shadow] = args
-        notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
+        notifDuration = notifDuration ? +notifDuration : 1.75 // sec duration to maintain notification visibility
         const fadeDuration = 0.35, // sec duration of fade-out
               vpYoffset = 23, vpXoffset = 27 // px offset from viewport border
 
@@ -1321,7 +1322,7 @@ const chatgpt = {
 
         // Create/append close button
         const closeBtn = document.createElement('div')
-        closeBtn.title = 'Dismiss'; closeBtn.classList.add('notif-close-btn', 'no-mobile-tap-outline')
+        closeBtn.title = 'Dismiss' ; closeBtn.classList.add('notif-close-btn', 'no-mobile-tap-outline')
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         closeSVG.setAttribute('height', '8px')
         closeSVG.setAttribute('viewBox', '0 0 14 14')
@@ -1331,7 +1332,7 @@ const chatgpt = {
         closeSVGpath.setAttribute('fill-rule', 'evenodd')
         closeSVGpath.setAttribute('clip-rule', 'evenodd')
         closeSVGpath.setAttribute('fill', 'white')
-        closeSVGpath.setAttribute('d', 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z');
+        closeSVGpath.setAttribute('d', 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z')
         closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG) ; notificationDiv.append(closeBtn)
 
         // Determine div position/quadrant
@@ -1418,7 +1419,7 @@ const chatgpt = {
 
         // Add notification dismissal to timeout schedule + button clicks
         const dismissNotif = () => {
-            notificationDiv.style.animation = `notif-zoom-fade-out ${fadeDuration}s ease-out`;
+            notificationDiv.style.animation = `notif-zoom-fade-out ${fadeDuration}s ease-out`
             clearTimeout(dismissFuncTID)
         }
         const dismissFuncTID = setTimeout(dismissNotif, hideDelay * 1000) // maintain visibility for `hideDelay` secs, then dismiss
@@ -1470,7 +1471,7 @@ const chatgpt = {
 
         // Print methods
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches,
-              baseFontStyles = 'font-family: monospace ; font-size: larger ; '
+              baseFontStyles = 'font-family: monospace ; font-size: larger ;'
         console.log('\n%c🤖 chatgpt.js methods\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold')
         for (const functionName of functionNames) {
             const isChatGptObjParent = /chatgpt|other/.test(functionName[0]),
@@ -1583,7 +1584,7 @@ const chatgpt = {
         // chatToGet = index|title|id of chat to get (defaults to latest if '' or unpassed)
         // responseToGet = index of response to get (defaults to latest if '' or unpassed)
 
-            chatToGet = chatToGet || 'latest'; responseToGet = responseToGet || 'latest'
+            chatToGet = chatToGet || 'latest' ; responseToGet = responseToGet || 'latest'
             return chatgpt.getChatData(chatToGet, 'msg', 'chatgpt', responseToGet)
         },
 
@@ -1636,7 +1637,7 @@ const chatgpt = {
             return console.error(`Argument ${ i + 1 } must be a string!`)
         const textArea = chatgpt.getChatBox()
         if (!textArea) return console.error('Chatbar element not found!')
-        const msgP = document.createElement('p'); msgP.textContent = msg
+        const msgP = document.createElement('p') ; msgP.textContent = msg
         textArea.querySelector('p').replaceWith(msgP)
         textArea.dispatchEvent(new Event('input', { bubbles: true })) // enable send button
         setTimeout(function delaySend() {
@@ -1686,7 +1687,7 @@ const chatgpt = {
     },
 
     async sentiment(text, entity) {
-        for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] != 'string')
+        for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
             return console.error(`Argument ${ i + 1 } must be a string.`)
         chatgpt.send('What is the sentiment of the following text'
             + ( entity ? ` towards the entity ${entity},` : '')
@@ -1881,7 +1882,7 @@ const chatgpt = {
             return newElem.id // Return the element id
         },
 
-        exists() { return !!chatgpt.getNewChatLink(); },
+        exists() { return !!chatgpt.getNewChatLink() },
         hide() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!') },
         show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!') },
         isOff() { return !this.isOn() },
@@ -1915,12 +1916,12 @@ const chatgpt = {
     },
 
     startNewChat() { try { chatgpt.getNewChatBtn().click() } catch (err) { console.error(err.message) }},
-    stop() { chatgpt.response.stopGenerating(); },
+    stop() { chatgpt.response.stopGenerating() },
 
     async suggest(ideaType, details) {
         if (!ideaType) return console.error('ideaType (1st argument) not supplied'
             + `(e.g. 'gifts', 'names', 'recipes', etc.)`)
-        for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] != 'string')
+        for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
             return console.error(`Argument ${ i + 1 } must be a string.`)
         chatgpt.send('Suggest some names. ' + ( details || '' ))
         console.info(`Creating ${ideaType}...`)
@@ -1964,7 +1965,7 @@ const chatgpt = {
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
 
-    toggleScheme() { chatgpt.settings.scheme.toggle(); },
+    toggleScheme() { chatgpt.settings.scheme.toggle() },
 
     async translate(text, outputLang) {
         if (!text) return console.error('Text (1st) argument not supplied. Pass some text!')
@@ -1989,7 +1990,7 @@ const chatgpt = {
                 const r = ( // generate random nibble
                     ( d + (window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) - 1))*16)%16 | 0 )
                 d = Math.floor(d/16) // correspond each UUID digit to unique 4-bit chunks of timestamp
-                return ( c == 'x' ? r : (r&0x3|0x8) ).toString(16); // generate random hexadecimal digit
+                return ( c == 'x' ? r : (r&0x3|0x8) ).toString(16) // generate random hexadecimal digit
             })
             return uuid
         }
@@ -2090,8 +2091,8 @@ const cjsFuncSynonyms = [
     ['temp', 'temporary'],
     ['typing', 'generating'],
     ['unminify', 'beautify', 'prettify', 'prettyPrint']
-];
-(function createCJSaliasFuncs(obj = chatgpt) {
+]
+;(function createCJSaliasFuncs(obj = chatgpt) {
     for (const prop in obj) {
         if (!Object.prototype.hasOwnProperty.call(obj, prop)) continue // skip inherited props
         if (typeof obj[prop] == 'object') createCJSaliasFuncs(obj[prop]) // recurse thru objs to find deeper functions
@@ -2138,7 +2139,7 @@ console.error = (...args) => {
     } else ogError(consolePrefix, ...args)
 }
 console.info = (msg) => {
-    if (!msg.startsWith(consolePrefix)) ogInfo(consolePrefix + msg);
+    if (!msg.startsWith(consolePrefix)) ogInfo(consolePrefix + msg)
     else ogInfo(msg)
 }
 
