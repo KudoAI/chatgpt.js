@@ -2132,8 +2132,11 @@ function toCamelCase(words) {
 // Prefix console logs w/ '🤖 chatgpt.js >> '
 const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info
 console.error = (...args) => {
-    if (!args[0].startsWith(consolePrefix)) ogError(consolePrefix + args[0], ...args.slice(1))
-    else ogError(...args)
+    if (typeof args[0] === 'string') {
+        if (!args[0].startsWith(consolePrefix)) ogError(consolePrefix + args[0], ...args.slice(1))
+        else ogError(...args)
+    }
+    else ogError(consolePrefix, ...args)
 }
 console.info = (msg) => {
     if (!msg.startsWith(consolePrefix)) ogInfo(consolePrefix + msg);
