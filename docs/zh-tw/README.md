@@ -51,8 +51,8 @@
     <img src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-fc4f2d.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.npmjs.com/package/@kudoai/chatgpt.js/v/latest" target="_blank" rel="noopener">
     <img src="https://img.shields.io/npm/v/%40kudoai%2Fchatgpt.js?logo=npm&logoColor=white&labelColor=464646&color=blue&style=for-the-badge&label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC"></a>
-<a href="https://github.com/KudoAI/chatgpt.js/tree/v3.8.4/dist/chatgpt.min.js" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.8.4&label=%E6%9C%80%E5%B0%8F%E5%8C%96%E5%B0%BA%E5%AF%B8&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
+<a href="https://github.com/KudoAI/chatgpt.js/tree/v3.8.5/dist/chatgpt.min.js" target="_blank" rel="noopener">
+    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.8.5&label=%E6%9C%80%E5%B0%8F%E5%8C%96%E5%B0%BA%E5%AF%B8&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/kudoai/chatgpt.js" target="_blank" rel="noopener">
     <img src="https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=%E4%BB%A3%E7%A2%BC%E8%B3%AA%E9%87%8F&logo=codefactor&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge"></a>
 <a href="https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=kudoai_chatgpt.js" target="_blank" rel="noopener">
@@ -116,7 +116,7 @@
 
 ```js
 (async () => {
-    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.4/dist/chatgpt.min.js');
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.5/dist/chatgpt.min.js');
     // 你的代碼在這裡...
 })();
 ```
@@ -125,7 +125,7 @@
 
 ```js
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.4/dist/chatgpt.min.js');
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.5/dist/chatgpt.min.js');
 xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
@@ -147,7 +147,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.4/dist/chatgpt.min.js
+// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.5/dist/chatgpt.min.js
 // ==/UserScript==
 
 // 你的代碼在這裡...
@@ -216,7 +216,7 @@ chatgpt.get('reply', 'last');
 
 每個調用都會同等地獲取最後一個響應。 如果您認為它有效，它可能會......所以只需輸入它即可！
 
-如果沒有，請查看擴展的[用戶指南](https://github.com/KudoAI/chatgpt.js/blob/v3.8.4/docs/USERGUIDE.md)，或者只需提交一個[問題](https://github.com/KudoAI/chatgpt.js/issues) 或 [PR](https://github.com/KudoAI/chatgpt.js/pulls) 它將被集成，簡單易行！
+如果沒有，請查看擴展的[用戶指南](https://github.com/KudoAI/chatgpt.js/blob/v3.8.5/docs/USERGUIDE.md)，或者只需提交一個[問題](https://github.com/KudoAI/chatgpt.js/issues) 或 [PR](https://github.com/KudoAI/chatgpt.js/pulls) 它將被集成，簡單易行！
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
@@ -477,7 +477,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 <div align="center">
 
 **[發布](https://github.com/KudoAI/chatgpt.js/releases)** /
-[用戶指南](https://github.com/KudoAI/chatgpt.js/blob/v3.8.4/docs/USERGUIDE.md) /
+[用戶指南](https://github.com/KudoAI/chatgpt.js/blob/v3.8.5/docs/USERGUIDE.md) /
 [討論](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#top">回到頂部 ↑</a>
 

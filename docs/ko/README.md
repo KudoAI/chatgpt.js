@@ -52,8 +52,8 @@
     <img src="https://img.shields.io/badge/%EB%9D%BC%EC%9D%B4%EC%84%BC%EC%8A%A4-MIT-fc4f2d.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.npmjs.com/package/@kudoai/chatgpt.js/v/latest" target="_blank" rel="noopener">
     <img src="https://img.shields.io/npm/v/%40kudoai%2Fchatgpt.js?logo=npm&logoColor=white&labelColor=464646&color=blue&style=for-the-badge&label=%EC%B5%9C%EC%8B%A0%20%EB%A6%B4%EB%A6%AC%EC%8A%A4"></a>
-<a href="https://github.com/KudoAI/chatgpt.js/tree/v3.8.4/dist/chatgpt.min.js" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.8.4&label=%EC%B6%95%EC%86%8C%EB%90%9C%20%ED%81%AC%EA%B8%B0&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
+<a href="https://github.com/KudoAI/chatgpt.js/tree/v3.8.5/dist/chatgpt.min.js" target="_blank" rel="noopener">
+    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.8.5&label=%EC%B6%95%EC%86%8C%EB%90%9C%20%ED%81%AC%EA%B8%B0&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/kudoai/chatgpt.js" target="_blank" rel="noopener">
     <img src="https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=%EC%BD%94%EB%93%9C+%ED%92%88%EC%A7%88&logo=codefactor&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge"></a>
 <a href="https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=kudoai_chatgpt.js" target="_blank" rel="noopener">
@@ -118,7 +118,7 @@
 
 ```js
 (async () => {
-    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.4/dist/chatgpt.min.js');
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.5/dist/chatgpt.min.js');
     // 코드를 여기에 작성해 주세요...
 
 })();
@@ -128,7 +128,7 @@
 
 ```js
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.4/dist/chatgpt.min.js');
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.5/dist/chatgpt.min.js');
 xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
@@ -152,7 +152,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.4/dist/chatgpt.min.js
+// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.5/dist/chatgpt.min.js
 // ==/UserScript==
 
 // 코드를 여기에 작성해 주세요...
@@ -221,7 +221,7 @@ chatgpt.get('reply', 'last');
 
 각 호출은 동일한 방식으로 최신 응답을 가져옵니다. 만약 잘 작동한다고 생각하신다면, 그렇게 하시면 될겁니다... 그러니 그냥 입력하세요!
 
-그렇지 않은 경우 확장된 [사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v3.8.4/docs/USERGUIDE.md)를 확인하거나 간단히 [문제](https://github.com/KudoAI/chatgpt.js/issues) 또는 [PR](https://github.com/KudoAI/chatgpt.js/pulls)을 주시면 통합될 것 입니다, 참 쉽죠!
+그렇지 않은 경우 확장된 [사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v3.8.5/docs/USERGUIDE.md)를 확인하거나 간단히 [문제](https://github.com/KudoAI/chatgpt.js/issues) 또는 [PR](https://github.com/KudoAI/chatgpt.js/pulls)을 주시면 통합될 것 입니다, 참 쉽죠!
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
@@ -482,7 +482,7 @@ chatgpt.js 를 사용해 공유하고 싶은 프로젝트가 있다면, <a href=
 <div align="center">
 
 **[릴리스](https://github.com/KudoAI/chatgpt.js/releases)** /
-[사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v3.8.4/docs/USERGUIDE.md) /
+[사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v3.8.5/docs/USERGUIDE.md) /
 [토론](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#top">상단으로 ↑</a>
 
