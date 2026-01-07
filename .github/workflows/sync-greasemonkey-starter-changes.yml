@@ -39,9 +39,10 @@ jobs:
         env:
           COMMIT_MSG: ${{ github.event.head_commit.message }}
         run: |
-          echo "ESCAPED_MSG<<EOF" >> $GITHUB_ENV
-          echo "$COMMIT_MSG" | sed 's/`/\`/g' >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          DELIM="EOF_$(uuidgen)"
+          echo "ESCAPED_MSG<<$DELIM" >> "$GITHUB_ENV"
+          echo "$COMMIT_MSG" | sed 's/`/\`/g' >> "$GITHUB_ENV"
+          echo "$DELIM" >> "$GITHUB_ENV"
 
       - name: Config committer
         env:
