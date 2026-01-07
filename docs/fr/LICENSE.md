@@ -26,7 +26,7 @@
 
 # Licence MIT
 
-Droit d'auteurs © 2023–2025 [KudoAI](https://github.com/KudoAI) & [contributeurs](.#-contributeurs)
+Droit d'auteurs © 2023–2026 [KudoAI](https://github.com/KudoAI) & [contributeurs](.#-contributeurs)
 
 Autorisation est accordée par la présente, gratuitement, à toute personne obtenant une copie de ce logiciel et des fichiers de documentation associés (le "Logiciel"), de traiter dans le Logiciel sans restriction, y compris sans limitation les droits d'utilisation, de copie, de modification, de fusion, de publication, de distribution, de sous-licence, et/ou de vendre des copies du Logiciel, et de permettre aux personnes à qui le Logiciel est fourni de le faire, sous réserve des conditions suivantes:
 

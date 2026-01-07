@@ -26,7 +26,7 @@
 
 # MIT-licentie
 
-Auteursrechten © 2023–2025 [KudoAI](https://github.com/KudoAI) & [bijdragers](.#-bijdragers)
+Auteursrechten © 2023–2026 [KudoAI](https://github.com/KudoAI) & [bijdragers](.#-bijdragers)
 
 Toestemming wordt hierbij kosteloos verleend aan een ieder die een kopie verkrijgt van deze software en bijbehorende documentatiebestanden (de "Software"), te behandelen in de Software zonder beperking, inclusief maar niet beperkt tot de rechten gebruiken, kopiëren, wijzigen, samenvoegen, publiceren, distribueren, in sublicentie geven en/of verkopen kopieën van de Software, en om personen aan wie de Software is toe te staan daartoe ingericht onder de volgende voorwaarden:
 

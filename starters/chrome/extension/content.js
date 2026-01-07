@@ -1,5 +1,5 @@
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org
-// © 2023–2025 KudoAI & contributors under the MIT license
+// © 2023–2026 KudoAI & contributors under the MIT license
 
 (async () => {
 

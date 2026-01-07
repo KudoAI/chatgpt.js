@@ -22,7 +22,7 @@
 
 # 🏛️ Giấy phép MIT
 
-**Bản quyền © 2023–2025 [KudoAI](https://github.com/KudoAI) & người đóng góp**
+**Bản quyền © 2023–2026 [KudoAI](https://github.com/KudoAI) & người đóng góp**
 
 Giấy phép được cấp miễn phí cho bất kỳ người nào có được một bản sao của phần mềm này và các tệp tài liệu liên quan ("Phần mềm"), để xử lý trong Phần mềm mà không bị hạn chế, bao gồm nhưng không giới hạn các quyền để sử dụng, sao chép, sửa đổi, hợp nhất, xuất bản, phân phối, cấp phép lại và/hoặc bán các bản sao của Phần mềm và để cho phép những người mà Phần mềm được được trang bị để làm như vậy, với các điều kiện sau đây:
 
