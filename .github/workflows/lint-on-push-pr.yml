@@ -1,21 +1,20 @@
 name: Lint pushes/PRs
 on: [push, pull_request]
 
-permissions:
-  contents: read
-
 jobs:
 
   eslint:
     name: ESLint
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
 
       - name: Checkout repository code
         uses: actions/checkout@v6.0.1
 
       - name: Set up Node.js
-        uses: actions/setup-node@v6.2.0
+        uses: actions/setup-node@v6.1.0
         with:
           node-version: 'lts/*'
 

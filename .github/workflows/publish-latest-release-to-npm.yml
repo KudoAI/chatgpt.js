@@ -4,13 +4,12 @@ on:
   push:
     tags: ["v*"]
 
-permissions:
-  contents: read
-  id-token: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - uses: actions/checkout@v6.0.1
       - uses: actions/setup-node@v6.2.0

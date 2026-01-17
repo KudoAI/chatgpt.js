@@ -4,13 +4,12 @@ on:
   push:
     branches: [main]
 
-permissions:
-  contents: read
-
 jobs:
   build:
     if: (github.repository == 'KudoAI/chatgpt.js')
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     env:
       TZ: PST8PDT
 

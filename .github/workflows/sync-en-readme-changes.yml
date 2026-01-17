@@ -7,13 +7,12 @@ on:
       - README.md
       - docs/README.md
 
-permissions:
-  contents: read
-
 jobs:
   build:
     if: (github.repository == 'KudoAI/chatgpt.js') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     env:
       TZ: PST8PDT
 
