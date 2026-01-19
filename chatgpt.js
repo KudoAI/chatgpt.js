@@ -1839,15 +1839,13 @@ const chatgpt = {
                 return console.error(`🤖 chatgpt.js >> Invalid element! Valid elems are [${validElems}]`)
 
             const newElem = document.createElement(elem == 'dropdown' ? 'select' : elem)
-            newElem.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now() // Add random id to the element
+            newElem.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now()
 
             if (elem == 'button') {
-                newElem.textContent = attrs?.label && typeof attrs.label == 'string'
-                    ? attrs.label
-                    : 'chatgpt.js button'
+                newElem.textContent = attrs?.label && typeof attrs.label == 'string' ? attrs.label : 'chatgpt.js button'
                 const icon = document.createElement('img')
-                icon.src = attrs?.icon && typeof attrs.icon == 'string' // Can also be base64 encoded image string
-                    ? attrs.icon // Add icon to button element if given, else default one
+                icon.src = attrs?.icon && typeof attrs.icon == 'string' // can also be base64 encoded image string
+                    ? attrs.icon // add icon to button element if given, else default one
                     : `${chatgpt.endpoints.assets}/starters/chrome/extension/icons/icon128.png`
                 icon.width = 18
                 newElem.firstChild.before(icon)
@@ -1855,9 +1853,9 @@ const chatgpt = {
             }
 
             else if (elem == 'dropdown') {
-                if (!attrs?.items || // There no are options to add
+                if (!attrs?.items || // there no are options to add
                     !Array.isArray(attrs.items) || // It's not an array
-                    !attrs.items.length) // The array is empty
+                    !attrs.items.length) // the array is empty
                         attrs.items = [{ text: '🤖 chatgpt.js option', value: 'chatgpt.js option value' }] // Set default dropdown entry
 
                 if (!attrs.items.every(el => typeof el == 'object')) // The entries of the array are not objects
