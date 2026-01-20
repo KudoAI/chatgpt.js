@@ -61,6 +61,8 @@
     <img src="https://img.shields.io/badge/jsDelivr_%E8%AF%B7%E6%B1%82-2,000,000+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 </div>
 
+<br><br>
+
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="intro">

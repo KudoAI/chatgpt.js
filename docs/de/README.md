@@ -62,6 +62,8 @@
 
 </div>
 
+<br><br>
+
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
 <div id="intro">
