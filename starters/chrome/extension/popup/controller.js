@@ -5,7 +5,7 @@
         document.documentElement.classList.add('dark')
 
     // Import JS resources
-    for (const resource of ['components/icons.js', 'lib/css.min.js', 'lib/dom.js', 'lib/settings.js'])
+    for (const resource of ['components/icons.js', 'lib/css.min.js', 'lib/dom.min.js', 'lib/settings.js'])
         await import(chrome.runtime.getURL(resource))
 
     // Init DATA
