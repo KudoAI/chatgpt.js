@@ -1,26 +1,7 @@
-// Copyright © 2023–2026 Adam Lui (https://github.com/adamlui) under the MIT license
-// Source: https://github.com/adamlui/ai-web-extensions/blob/main/assets/lib/dom.js/src/dom.js
+// Copyright © 2025–2026 Adam Lui (https://github.com/adamlui) under the MIT license
+// Source: https://github.com/adamlui/ai-web-extensions/blob/main/assets/js/lib/dom.js/dom.js
 
 window.dom = {
-
-    addRisingParticles(targetNode, { lightScheme = 'gray', darkScheme = 'white' } = {}) {
-    // * Requires https://assets.aiwebextensions.com/styles/rising-particles/dist/<lightScheme>.min.css
-
-        if (targetNode.querySelector('[id*=particles]')) return
-        const particlesDivsWrapper = document.createElement('div')
-        particlesDivsWrapper.style.cssText = (
-            'position: absolute ; top: 0 ; left: 0 ;' // hug targetNode's top-left corner
-          + 'height: 100% ; width: 100% ; border-radius: 15px ; overflow: clip ;' // bound innards exactly by targetNode
-          + 'z-index: -1' ) // allow interactive elems to be clicked
-        ;['sm', 'med', 'lg'].forEach(particleSize => {
-            const particlesDiv = document.createElement('div')
-            particlesDiv.id = config?.bgAnimationsDisabled ? `particles-${particleSize}-off`
-                : `${( env?.ui?.scheme || env?.ui?.app?.scheme ) == 'dark' ? darkScheme
-                    : lightScheme }-particles-${particleSize}`
-            particlesDivsWrapper.append(particlesDiv)
-        })
-        targetNode.prepend(particlesDivsWrapper)
-    },
 
     create: {
         anchor(linkHref, displayContent, attrs = {}) {
@@ -54,12 +35,6 @@ window.dom = {
             for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
             return elem
         }
-    },
-
-    cssSelectorize(classList) {
-        return classList.toString()
-            .replace(/([:[\]\\])/g, '\\$1') // escape special chars :[]\
-            .replace(/^| /g, '.') // prefix w/ dot, convert spaces to dots
     },
 
     get: {
