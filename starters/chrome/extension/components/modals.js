@@ -1,4 +1,4 @@
-// Requires lib/<chatgpt|dom>.js + app + env
+// Requires lib/<chatgpt|css|dom>.js + app + env
 
 window.modals = {
 
@@ -76,7 +76,7 @@ window.modals = {
         if (!modal) return // to support non-div this.open()s
         if (!this.styles) this.stylize() // to init/append stylesheet
         modal.classList.add(this.class) ; modal.parentNode.classList.add(`${this.class}-bg`)
-        dom.addRisingParticles(modal)
+        css.addRisingParticles(modal)
     },
 
     observeRemoval(modal, modalType) { // to maintain stack for proper nav
