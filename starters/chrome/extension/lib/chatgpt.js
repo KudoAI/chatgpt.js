@@ -1640,10 +1640,10 @@ const chatgpt = {
         textArea.dispatchEvent(new Event('input', { bubbles: true })) // enable send button
         setTimeout(function delaySend() {
             const sendBtn = chatgpt.getSendButton()
-            if (!sendBtn?.hasAttribute('disabled')) { // send msg
+            if (!sendBtn?.hasAttribute('disabled')) // send msg
                 method.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendBtn.click()
                     : textArea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }))
-            } else setTimeout(delaySend, 222)
+            else setTimeout(delaySend, 222)
         }, 222)
     },
 
