@@ -3,10 +3,6 @@
 // User guide: https://chatgptjs.org/userguide
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
 
-// Init feedback props
-localStorage.alertQueue = JSON.stringify([])
-localStorage.notifyProps = JSON.stringify({ queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }})
-
 // Define chatgpt API
 const chatgpt = {
 
@@ -338,7 +334,7 @@ const chatgpt = {
         modalContainer.append(modal) ; document.body.append(modalContainer)
 
         // Enqueue alert
-        let alertQueue = JSON.parse(localStorage.alertQueue)
+        let alertQueue = JSON.parse(localStorage.alertQueue ??= JSON.stringify([]))
         alertQueue.push(modalContainer.id)
         localStorage.alertQueue = JSON.stringify(alertQueue)
 
@@ -1383,7 +1379,8 @@ const chatgpt = {
         }
 
         // Enqueue notification
-        let notifyProps = JSON.parse(localStorage.notifyProps)
+        let notifyProps = JSON.parse(localStorage.notifyProps
+            ??= JSON.stringify({ queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }}))
         notifyProps.queue[notificationDiv.quadrant].push(notificationDiv.id)
         localStorage.notifyProps = JSON.stringify(notifyProps)
 
