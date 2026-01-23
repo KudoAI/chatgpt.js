@@ -84,7 +84,7 @@
     "docsify-cli": "^5.0.0-rc.3",
     "eslint": "^9.39.2",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-regexp": "^2.10.0",
+    "eslint-plugin-regexp": "^3.0.0",
     "get-port": "^7.1.0",
     "husky": "^9.1.7"
   }
