@@ -16,7 +16,7 @@ jobs:
     steps:
 
       - name: Checkout KudoAI/chatgpt.js
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v6.0.1
         with:
           fetch-depth: 0
 

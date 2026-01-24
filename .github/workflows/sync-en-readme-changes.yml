@@ -19,7 +19,7 @@ jobs:
     steps:
 
       - name: Checkout KudoAI/chatgpt.js
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v6.0.1
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
           path: KudoAI/chatgpt.js
