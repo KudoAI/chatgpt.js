@@ -54,7 +54,7 @@
 
             // Create/append slider elems
             entry.div.append(entry.slider = dom.create.elem('input', { class: 'slider', type: 'range',
-                min: minVal, max: maxVal, value: config[entryData.key] }))
+                min: minVal, max: maxVal, value: app.config[entryData.key] }))
             entry.div.classList.remove('highlight-on-hover')
             if (entryData.step || env.browser.isFF) // use val from entryData or default to 2% in FF for being laggy
                 entry.slider.step = entryData.step || ( 0.02 * entry.slider.max - entry.slider.min )
@@ -109,7 +109,7 @@
                 category: () => toggleCategorySettingsVisiblity({ key: entryData.key }),
                 toggle: () => {
                     entry.leftElem.classList.toggle('on')
-                    settings.save(entryData.key, !config[entryData.key])
+                    settings.save(entryData.key, !app.config[entryData.key])
                     sync.configToUI({ updatedKey: entryData.key })
                     requestAnimationFrame(() => notify(
                         `${entryData.label} ${['OFF', 'ON'][+settings.typeIsEnabled(entryData.key)]}`))
@@ -162,7 +162,7 @@
             // Toolbar icon
             chrome.action.setIcon({ path: Object.fromEntries(
                 Object.keys(chrome.runtime.getManifest().icons).map(dimension =>
-                    [dimension, `../icons/${ config.extensionDisabled ? 'faded/' : '' }icon${dimension}.png`]
+                    [dimension, `../icons/${ app.config.extensionDisabled ? 'faded/' : '' }icon${dimension}.png`]
             ))})
 
             // Menu elems
@@ -170,8 +170,8 @@
                 .forEach((elem, idx) => {
                     if (elem.id && (elem.matches(`#${elem.id}:has(> div.link)`) || elem.id == 'aboutEntry'))
                         return // never disable link/About entries
-                    elem.style.transition = config.extensionDisabled ? '' : 'opacity 0.15s ease-in'
-                    const toDisable = config.extensionDisabled || !depIsEnabled(elem.id)
+                    elem.style.transition = app.config.extensionDisabled ? '' : 'opacity 0.15s ease-in'
+                    const toDisable = app.config.extensionDisabled || !depIsEnabled(elem.id)
                     if (elem.classList.contains('categorized-entries')) { // fade category strip
                         elem.style.transition = toDisable ? 'none' : 'var(--border-transition)'
                         elem.style.borderImage = elem.style.borderImage.replace(
@@ -232,9 +232,9 @@
         track: dom.create.elem('span', { class: 'track', style: 'position: relative ; top: 7.5px' })
     }
     masterToggle.div.append(masterToggle.switch) ; masterToggle.switch.append(masterToggle.track)
-    await settings.load('extensionDisabled') ; masterToggle.switch.classList.toggle('on', !config.extensionDisabled)
+    await settings.load('extensionDisabled') ; masterToggle.switch.classList.toggle('on', !app.config.extensionDisabled)
     masterToggle.div.onclick = () => {
-        masterToggle.switch.classList.toggle('on') ; settings.save('extensionDisabled', !config.extensionDisabled)
+        masterToggle.switch.classList.toggle('on') ; settings.save('extensionDisabled', !app.config.extensionDisabled)
         Object.keys(sync).forEach(key => sync[key]()) // sync fade + storage to UI
         notify(`${app.name} ${ this.checked ? 'ON' : 'OFF' }`)
     }
