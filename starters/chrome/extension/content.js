@@ -21,7 +21,7 @@
             alert: () => modals.alert(...['title', 'msg', 'btns', 'checkbox', 'width'].map(arg => options[arg])),
             showAbout: () => {
                 if (!source?.endsWith('service-worker.js')) return
-                config.skipAlert = true
+                app.config.skipAlert = true
                 chatgpt.isLoaded().then(() => modals.open('about'))
             },
             syncConfigToUI: () => syncConfigToUI(options)
@@ -30,20 +30,20 @@
 
     // Init SETTINGS
     await settings.load(Object.keys(settings.controls))
-    if (!config.skipAlert) await settings.load('skipAlert') // only if not showing About modal
+    if (!app.config.skipAlert) await settings.load('skipAlert') // only if not showing About modal
 
     // Define FUNCTIONS
 
     async function syncConfigToUI(options = {}) { // eslint-disable-line
-        await settings.load('extensionDisabled', Object.keys(settings.controls)) // load from Chrome storage to content.js config
-        if (config.extensionDisabled) {
+        await settings.load('extensionDisabled', Object.keys(settings.controls)) // load from Chrome storage to app.config
+        if (app.config.extensionDisabled) {
             // Remove all hacks
         } else {
             // Add/remove hacks to reflect each potentially updated setting per settings.controls in lib/settings.mjs
             // e.g. if you created toolbar popup toggle to hide ChatGPT footer using hiddenFooter key...
-            // ...here you would use options.updatedKey == 'hiddenFooter' && config.hiddenFooter...
+            // ...here you would use options.updatedKey == 'hiddenFooter' && app.config.hiddenFooter...
             // ...to conditionally append/remove hidden footer style...
-            // ...(initial style creation + append if config.hiddenFooter would go in main routine)
+            // ...(initial style creation + append if app.config.hiddenFooter would go in main routine)
         }
     }
 
@@ -62,15 +62,15 @@
                 color}.min.css`
     })))
 
-    if (config.extensionDisabled) return
+    if (app.config.extensionDisabled) return
 
-    if (!config.skipAlert) // alert to extension load
+    if (!app.config.skipAlert) // alert to extension load
         modals.alert('≫ ChatGPT extension loaded! 🚀', // title
             'Success! Press Ctrl+Shift+J to view all chatgpt.js methods.', // msg
             function getHelp() { // button
                 open(`${app.urls.github}/issues`) },
             function dontShowAgain() { // checkbox
-                settings.save('skipAlert', !config.skipAlert) }
+                settings.save('skipAlert', !app.config.skipAlert) }
         )
 
     // Monitor SCHEME PREF CHANGES to update modal colors + env.ui.scheme for your use

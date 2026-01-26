@@ -1,4 +1,4 @@
-// Requires lib/<browser|chatgpt|dom|styles>.js + <app|env|configt>
+// Requires lib/<browser|chatgpt|dom|styles>.js + <app|env>
 
 window.feedback = {
     notify(msg, pos = '', notifDuration = '', shadow = '') {
@@ -8,7 +8,7 @@ window.feedback = {
         if (foundState) msg = msg.replace(foundState, '')
 
         // Show notification
-        chatgpt.notify(`${app.symbol} ${msg}`, pos ||( config.notifBottom ? 'bottom' : '' ),
+        chatgpt.notify(`${app.symbol} ${msg}`, pos ||( app.config.notifBottom ? 'bottom' : '' ),
             notifDuration, shadow || env.ui.scheme == 'light')
         const notif = document.querySelector('.chatgpt-notif:last-child')
         notif.classList.add(app.slug) // for styles.toast

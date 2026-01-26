@@ -1,4 +1,3 @@
-window.config = {}
 window.settings = {
 
     controls: {
@@ -43,12 +42,13 @@ window.settings = {
         const reInvertFlags = /disabled|hidden/i
         return reInvertFlags.test(key) // flag in control key name
             && !reInvertFlags.test(this.controls[key]?.label) // but not in label name
-                ? !config[key] : config[key] // so invert since flag reps opposite type state, else don't
+                ? !app.config[key] : app.config[key] // so invert since flag reps opposite type state, else don't
     },
 
     load(...keys) {
+        app.config ??= {}
         return Promise.all(keys.flat().map(async key => // resolve promise when all keys load
-            config[key] = processKey(key, (await chrome.storage.local.get(key))[key])))
+            app.config[key] = processKey(key, (await chrome.storage.local.get(key))[key])))
         function processKey(key, val) {
             const ctrl = settings.controls?.[key]
             if (val != undefined && ( // validate stored val
@@ -60,7 +60,8 @@ window.settings = {
     },
 
     save(key, val) {
+        app.config ??= {}
         chrome.storage.local.set({ [key]: val }) // save to Chrome extension storage
-        config[key] = val // save to memory
+        app.config[key] = val // save to memory
     }
 };
