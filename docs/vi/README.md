@@ -49,8 +49,8 @@
     <img src="https://img.shields.io/badge/Gi%E1%BA%A5y_Ph%C3%A9p-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.npmjs.com/package/@kudoai/chatgpt.js/v/latest" target="_blank" rel="noopener">
     <img src="https://img.shields.io/npm/v/%40kudoai%2Fchatgpt.js?logo=npm&logoColor=white&labelColor=464646&color=blue&style=for-the-badge&label=B%E1%BA%A3n%20ph%C3%A1t%20h%C3%A0nh%20m%E1%BB%9Bi%20nh%E1%BA%A5t"></a>
-<a href="https://github.com/KudoAI/chatgpt.js/tree/v3.8.5/dist/chatgpt.min.js" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.8.5&label=K%C3%ADch+th%C6%B0%E1%BB%9Bc+thu+nh%E1%BB%8F&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
+<a href="https://github.com/KudoAI/chatgpt.js/tree/v3.9.0/dist/chatgpt.min.js" target="_blank" rel="noopener">
+    <img src="https://img.shields.io/github/size/KudoAI/chatgpt.js/dist/chatgpt.min.js?branch=v3.9.0&label=K%C3%ADch+th%C6%B0%E1%BB%9Bc+thu+nh%E1%BB%8F&logo=databricks&logoColor=white&labelColor=464646&color=ff69b4&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/kudoai/chatgpt.js" target="_blank" rel="noopener">
     <img src="https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Ch%E1%BA%A5t+L%C6%B0%E1%BB%A3ng+M%C3%A3&logo=codefactor&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge"></a>
 <a href="https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=kudoai_chatgpt.js" target="_blank" rel="noopener">
@@ -113,7 +113,7 @@
 
 ```js
 (async () => {
-    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.5/dist/chatgpt.min.js');
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.9.0/dist/chatgpt.min.js');
     // Mã của bạn ở đây ...
 })();
 ```
@@ -122,7 +122,7 @@
 
 ```js
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.5/dist/chatgpt.min.js');
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.9.0/dist/chatgpt.min.js');
 xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
@@ -144,7 +144,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.5/dist/chatgpt.min.js
+// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.9.0/dist/chatgpt.min.js
 // ==/UserScript==
 
 // Mã của bạn ở đây ...
@@ -213,7 +213,7 @@ chatgpt.get('reply', 'last');
 
 Mỗi cuộc gọi đều tìm nạp phản hồi cuối cùng. Nếu bạn nghĩ rằng nó hoạt động, nó có thể sẽ... vì vậy hãy gõ nó!
 
-Nếu không, hãy xem [hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/v3.8.5/docs/USERGUIDE.md) mở rộng hoặc chỉ cần gửi [vấn đề](https://github.com/KudoAI/chatgpt.js/issues) hoặc [PR](https://github.com/KudoAI/chatgpt.js/pulls) và nó sẽ được tích hợp, thật dễ dàng!
+Nếu không, hãy xem [hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) mở rộng hoặc chỉ cần gửi [vấn đề](https://github.com/KudoAI/chatgpt.js/issues) hoặc [PR](https://github.com/KudoAI/chatgpt.js/pulls) và nó sẽ được tích hợp, thật dễ dàng!
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
 
@@ -481,7 +481,7 @@ Thư viện này tồn tại nhờ mã, bản dịch, vấn đề & ý tưởng 
 <div align="center">
 
 **[Phát hành](https://github.com/KudoAI/chatgpt.js/releases)** /
-[Hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/v3.8.5/docs/USERGUIDE.md) /
+[Hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) /
 [Bàn luận](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#top">Trở lại đầu trang ↑</a>
 
