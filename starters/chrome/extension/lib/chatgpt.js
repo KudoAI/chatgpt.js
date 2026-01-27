@@ -21,22 +21,20 @@ const chatgpt = {
     selectors: {
         btns: {
             continue: 'button:has(svg[class*=rotate] > path[d^="M4.47189"])',
-            createImage: 'button[data-testid=composer-create-image]',
-            deepResearch: 'button[data-testid=composer-deep-research]',
+            createImage: 'button[data-testid=composer-button-create-image]',
             login: 'button[data-testid*=login]',
             newChat: 'a[href="/"]:has(svg),' // Pencil button (when logged in)
                    + 'button:has([d^="M3.06957"])', // Cycle Arrows button (in temp chat logged out)
             regen: 'button[data-testid*=regenerate],' // oval button in place of chatbar on errors
-                    // 'Try Again' entry of model selector below msg
-                 + 'div[role=menuitem] div:has(svg):has(path[d^="M3.06957"])',
-            scroll: 'button:has(> svg > path[d^="M12 21C11.7348"])',
+                 + 'button:has(use[href$="sprites-core-k5zux585.svg#ec66f0"])', // 'Try again...' button below msg
+            scroll: 'button:has(use[href$="sprites-core-k5zux585.svg#ac89a7"])',
             search: 'button[data-testid=composer-button-search]',
-            reason: 'button[data-testid=composer-button-reason]',
             send: 'button[data-testid=send-button]',
             sidebar: 'div[style*=-sidebar-width] button[data-testid=close-sidebar-button],'
                    + 'div[style*=-sidebar-rail-width] button[aria-controls=stage-slideover-sidebar]',
-            stop: 'div:has(> svg > path[d^="M10 2.08496C14.3713"])',
-            upload: 'button:has(> svg > path[d^="M12 3C12.5523"])',
+            stop: 'button[data-testid=stop-button]',
+            upload: 'div[data-testid=composer-action-file-upload],' // tall chatbar
+                  + 'button#composer-plus-btn', // short chatbar
             voice: 'button[data-testid*=composer-speech-button]'
         },
         chatDivs: {
