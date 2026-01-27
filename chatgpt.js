@@ -32,6 +32,7 @@ const chatgpt = {
             send: 'button[data-testid=send-button]',
             sidebar: 'div[style*=-sidebar-width] button[data-testid=close-sidebar-button],'
                    + 'div[style*=-sidebar-rail-width] button[aria-controls=stage-slideover-sidebar]',
+            signup: 'button[data-testid=signup-button]',
             stop: 'button[data-testid=stop-button]',
             upload: 'div[data-testid=composer-action-file-upload],' // tall chatbar
                   + 'button#composer-plus-btn', // short chatbar
