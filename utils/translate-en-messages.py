@@ -1,6 +1,6 @@
 '''
 Script:       translate-en-messages.py
-Version:      2026.1.18
+Version:      2026.1.26
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
 Homepage:     https://github.com/adamlui/python-utils
@@ -24,7 +24,7 @@ target_langs = [
 terminal_width = os.get_terminal_size()[0]
 def print_trunc(msg, end='\n'):
     truncated_lines = [
-        line if len(line) < terminal_width else line[:terminal_width - 4] + '...' for line in msg.splitlines() ]
+        line if len(line) < terminal_width else line[:terminal_width -4] + '...' for line in msg.splitlines() ]
     print('\n'.join(truncated_lines), end=end)
 def overwrite_print(msg) : stdout.write('\r' + msg.ljust(terminal_width)[:terminal_width])
 
@@ -128,7 +128,7 @@ for lang_code in output_langs:
         formatted_msg = json.dumps(message_data, ensure_ascii=False) \
                             .replace('{', '{ ').replace('}', ' }') # add spacing
         formatted_msgs += ( f'  "{key}": {formatted_msg}'
-                        + ( ',\n' if idx < len(translated_msgs) - 1 else '\n' )) # terminate line
+                        + ( ',\n' if idx < len(translated_msgs) -1 else '\n' )) # terminate line
     formatted_msgs += '}'
     with open(msgs_path, 'w', encoding='utf-8') as output_file : output_file.write(formatted_msgs + '\n')
 
