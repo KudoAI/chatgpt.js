@@ -1,5 +1,3 @@
-
-app.config ??= {}
 window.settings = {
 
     controls: {
@@ -41,6 +39,7 @@ window.settings = {
     },
 
     typeIsEnabled(key) { // for menu labels + notifs to return ON/OFF for type w/o suffix
+        app.config ??= {}
         const reInvertFlags = /disabled|hidden/i
         return reInvertFlags.test(key) // flag in control key name
             && !reInvertFlags.test(this.controls[key]?.label) // but not in label name
@@ -48,6 +47,7 @@ window.settings = {
     },
 
     load(...keys) {
+        app.config ??= {}
         return Promise.all(keys.flat().map(async key => // resolve promise when all keys load
             app.config[key] = processKey(key, (await chrome.storage.local.get(key))[key])))
         function processKey(key, val) {
@@ -61,6 +61,7 @@ window.settings = {
     },
 
     save(key, val) {
+        app.config ??= {}
         chrome.storage.local.set({ [key]: val }) // save to Chrome extension storage
         app.config[key] = val // save to memory
     }
