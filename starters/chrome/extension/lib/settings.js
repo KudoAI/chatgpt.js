@@ -1,3 +1,5 @@
+
+app.config ??= {}
 window.settings = {
 
     controls: {
@@ -46,7 +48,6 @@ window.settings = {
     },
 
     load(...keys) {
-        app.config ??= {}
         return Promise.all(keys.flat().map(async key => // resolve promise when all keys load
             app.config[key] = processKey(key, (await chrome.storage.local.get(key))[key])))
         function processKey(key, val) {
@@ -60,7 +61,6 @@ window.settings = {
     },
 
     save(key, val) {
-        app.config ??= {}
         chrome.storage.local.set({ [key]: val }) // save to Chrome extension storage
         app.config[key] = val // save to memory
     }
