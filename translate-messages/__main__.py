@@ -10,12 +10,12 @@ if cli.args.init : init.config_file(cli)
 print('')
 
 # Prompt user for keys to ignore
-ignore_keys = data.parse_csv_val(cli.args.ignore_keys or cli.config_data.get('ignore_keys', ''))
+cli.ignore_keys = data.parse_csv_val(cli.args.ignore_keys or cli.config_data.get('ignore_keys', ''))
 while True:
-    if ignore_keys : print('Ignored key(s):', ignore_keys)
+    if cli.ignore_keys : print('Ignored key(s):', cli.ignore_keys)
     key = input('Enter key to ignore (or ENTER if done): ')
     if not key : break
-    ignore_keys.append(key)
+    cli.ignore_keys.append(key)
 
 # Determine closest locales dir
 log.trunc(f'\nSearching for {cli.locales_dir}...')
@@ -70,7 +70,7 @@ for lang_code in output_langs:
     en_keys = list(en_messages.keys())
     fail_flags = ['INVALID TARGET LANGUAGE', 'TOO MANY REQUESTS', 'MYMEMORY']
     for key in en_keys:
-        if key in ignore_keys:
+        if key in cli.ignore_keys:
             translated_msg = en_messages[key]['message']
             translated_msgs[key] = { 'message': translated_msg }
             continue
