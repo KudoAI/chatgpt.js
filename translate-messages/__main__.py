@@ -6,7 +6,7 @@ Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
 Support:      https://github.com/adamlui/python-utils/issues
 Sponsor:      https://github.com/sponsors/adamlui
-Notes:        Use --help to print CLI args.
+Notes:        Use --help to print CLI args
 '''
 
 import argparse, os, json
