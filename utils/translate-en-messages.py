@@ -1,16 +1,12 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.6
+Version:      2026.2.10.7
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
 Support:      https://github.com/adamlui/python-utils/issues
 Sponsor:      https://github.com/sponsors/adamlui
-
-CLI arguments:
- --include-langs=locales     Comma-separated list of languages to include (e.g. "en,es,fr")
- --exclude-langs=locales     Comma-separated list of languages to exclude (e.g. "en,es")
- --help                      Print help screen
+Notes:        Use --help to print CLI arguments.
 '''
 
 import argparse
