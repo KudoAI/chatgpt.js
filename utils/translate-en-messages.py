@@ -1,17 +1,18 @@
 '''
 Script:       translate-en-messages.py
-Version:      2026.1.26
+Version:      2026.2.10
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
 Homepage:     https://github.com/adamlui/python-utils
 '''
 
+import argparse
 import os, json
 from sys import stdout # for dynamic prints
 from translate import Translator
 
 locales_folder = '_locales' ; provider = ''
-target_langs = [
+default_target_langs = [
     'af', 'am', 'ar', 'az', 'be', 'bem', 'bg', 'bn', 'bo', 'bs', 'ca', 'ceb', 'cs', 'cy', 'da', 'de', 'dv', 'dz', 'el',
     'en', 'en-GB', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fo', 'fr', 'gd', 'gl', 'gu', 'haw', 'he', 'hi', 'hr', 'ht',
     'hu', 'hy', 'id', 'is', 'it', 'ja', 'ka', 'kab', 'kk', 'km', 'kn', 'ko', 'ku', 'ky', 'la', 'lb', 'lo', 'lt', 'lv',
@@ -19,6 +20,14 @@ target_langs = [
     'rw', 'sg', 'si', 'sk', 'sl', 'sm', 'sn', 'so', 'sr', 'sv', 'sw', 'ta', 'te', 'tg', 'th', 'ti', 'tk', 'tn', 'tpi',
     'tr', 'uk', 'ur', 'uz', 'vi', 'xh', 'yi', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW', 'zu'
 ]
+
+parser = argparse.ArgumentParser(description='Translate en/messages.json to other locales')
+parser.add_argument('--target_langs', type=str, help='Comma-separated list of target languages (e.g. "en,es,fr")')
+args = parser.parse_args()
+if args.target_langs:
+    target_langs = [lang.strip() for lang in args.target_langs.split(',') if lang.strip()]
+else:
+    target_langs = default_target_langs
 
 # UI initializations
 terminal_width = os.get_terminal_size()[0]
