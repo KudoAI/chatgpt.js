@@ -2,6 +2,7 @@ import os, json
 from lib import init
 from sys import stdout
 from translate import Translator
+from urllib.error import URLError, HTTPError
 from urllib.request import urlopen
 
 env = init.env()
@@ -14,8 +15,13 @@ if cli.args.init: # create config file
         try:  # try to fetch template from jsDelivr
             jsd_url = f'{cli.urls.jsdelivr}/{cli.name}/{cli.config_filename}'
             with urlopen(jsd_url) as resp:
-                if resp.status == 200 : cli.config_data = json.loads(resp.read().decode('utf-8'))
-        except Exception : pass
+                if resp.status == 200:
+                    cli.config_data = json.loads(resp.read().decode('utf-8'))
+                else:
+                    raise ValueError('Non-200 response')
+        except (URLError, HTTPError, json.JSONDecodeError, ValueError):
+            cli.config_data = {}
+
         with open(cli.config_path, 'w', encoding='utf-8') as configFile:
             json.dump(cli.config_data, configFile, indent=2)
         print(f'Default config created at {cli.config_path}')

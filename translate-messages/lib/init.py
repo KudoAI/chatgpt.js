@@ -5,7 +5,7 @@ def parse_csv_val(val) : return [item.strip() for item in val.split(',') if item
 def cli(callerFile):
     cli = sns(
         name='translate-messages',
-        version='2026.2.10.38',
+        version='2026.2.10.39',
         author=sns(name='Adam Lui', email='adam@kudoa.com', url='https://github.com/adamlui'),
         description='Translate en/messages.json to other locales',
         urls=sns(
