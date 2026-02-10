@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages
-Version:      2026.2.10.32
+Version:      2026.2.10.33
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -31,13 +31,13 @@ if cli.args.init: # create config file
         print(f'Default config created at {cli.config_path}')
     exit()
 
-# Init target_locales
+# Init cli.target_locales
 def parse_csv_val(val) : return [item.strip() for item in val.split(',') if item.strip()]
 include_arg = cli.args.include_langs or cli.config_data.get('include_langs', '')
 exclude_arg = cli.args.exclude_langs or cli.config_data.get('exclude_langs', '')
-target_locales = parse_csv_val(include_arg) or cli.default_target_locales
+cli.target_locales = parse_csv_val(include_arg) or cli.default_target_locales
 exclude_langs = set(parse_csv_val(exclude_arg))
-target_locales = [lang for lang in target_locales if lang not in exclude_langs]
+cli.target_locales = [lang for lang in cli.target_locales if lang not in exclude_langs]
 
 # UI initializations
 try:
@@ -86,8 +86,8 @@ en_msgs_path = os.path.join(cli.locales_dir, 'en', msgs_filename)
 with open(en_msgs_path, 'r', encoding='utf-8') as en_file:
     en_messages = json.load(en_file)
 
-# Combine [target_locales] w/ languages discovered in _locales
-output_langs = list(set(target_locales)) # remove duplicates
+# Combine [cli.target_locales] w/ languages discovered in _locales
+output_langs = list(set(cli.target_locales)) # remove duplicates
 for root, dirs, files in os.walk(cli.locales_dir):
     for folder in dirs:
         folder_path = os.path.join(root, folder)
