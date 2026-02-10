@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.14
+Version:      2026.2.10.15
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -26,34 +26,33 @@ default_target_locales = [
 ]
 
 # Init/load config file
-DEFAULT_CONFIG = { 'include_langs': '', 'exclude_langs': '', 'ignore_keys': '' }
 script_name = os.path.splitext(os.path.basename(__file__))[0]
 config_filename = f'{script_name}.config.json'
 config_path = os.path.join(os.path.dirname(__file__), config_filename)
-config_data = DEFAULT_CONFIG.copy()
+config_data = {}
 if os.path.exists(config_path):
     with open(config_path, 'r', encoding='utf-8') as file_config:
         config_data.update(json.load(file_config))
 
 # Parse CLI args
 parser = argparse.ArgumentParser(description='Translate en/messages.json to other locales')
-parser.add_argument('--include-langs', type=str, help='Comma-separated list of languages to include (e.g. "en,es,fr")')
-parser.add_argument('--exclude-langs', type=str, help='Comma-separated list of languages to exclude (e.g. "en,es")')
-parser.add_argument('--ignore-keys', type=str, help='Comma-separated list of keys to ignore (e.g. "appName,author")')
-parser.add_argument('--init', action='store_true', help='Create a .config.json adjacent to this script')
+parser.add_argument('--include-langs', type=str, help='Languages to include (e.g. "en,es,fr")')
+parser.add_argument('--exclude-langs', type=str, help='Languages to exclude (e.g. "en,es")')
+parser.add_argument('--ignore-keys', type=str, help='Keys to ignore (e.g. "appName,author")')
+parser.add_argument('--init', action='store_true', help='Create .config.json file to store defaults')
 args = parser.parse_args()
 
 if args.init: # create config file
     if os.path.exists(config_path):
         print(f'Config already exists at {config_path}')
     else:
-        try: # to use jsDelivr copy
+        try:  # try to fetch template from jsDelivr
             jsd_url = f'https://cdn.jsdelivr.net/gh/adamlui/python-utils/translate-messages/{config_filename}'
             with urlopen(jsd_url) as resp:
                 if resp.status == 200 : config_data = json.loads(resp.read().decode('utf-8'))
-        except Exception:
-            config_data = { 'include_langs': '', 'exclude_langs': '' }
-        with open(config_path, 'w', encoding='utf-8') as f: json.dump(config_data, f, indent=2)
+        except Exception : pass
+        with open(config_path, 'w', encoding='utf-8') as configFile:
+            json.dump(config_data, configFile, indent=2)
         print(f'Default config created at {config_path}')
     exit()
 
