@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.25
+Version:      2026.2.10.26
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -10,33 +10,12 @@ Notes:        Use --help to print CLI arguments.
 '''
 
 import argparse, os, json
-from types import SimpleNamespace as sns
+import lib.init as init
 from sys import stdout
 from translate import Translator
 from urllib.request import urlopen
 
-cli = sns(
-    name='translate-messages',
-    urls=sns(jsdelivr='https://cdn.jsdelivr.net/gh/adamlui/python-utils'),
-    default_target_locales=[
-        'af', 'am', 'ar', 'az', 'be', 'bem', 'bg', 'bn', 'bo', 'bs', 'ca', 'ceb', 'cs', 'cy', 'da', 'de', 'dv', 'dz',
-        'el', 'en', 'en-GB', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fo', 'fr', 'gd', 'gl', 'gu', 'haw', 'he', 'hi', 'hr',
-        'ht', 'hu', 'hy', 'id', 'is', 'it', 'ja', 'ka', 'kab', 'kk', 'km', 'kn', 'ko', 'ku', 'ky', 'la', 'lb', 'lo',
-        'lt', 'lv', 'mg', 'mi', 'mk', 'ml', 'mn', 'ms', 'mt', 'my', 'ne', 'nl', 'no', 'ny', 'pa', 'pap', 'pl', 'ps',
-        'pt', 'ro', 'ru', 'rw', 'sg', 'si', 'sk', 'sl', 'sm', 'sn', 'so', 'sr', 'sv', 'sw', 'ta', 'te', 'tg', 'th',
-        'ti', 'tk', 'tn', 'tpi', 'tr', 'uk', 'ur', 'uz', 'vi', 'xh', 'yi', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW',
-        'zu'
-    ]
-)
-
-# Init/load config file
-cli.script_name = os.path.splitext(os.path.basename(__file__))[0]
-cli.config_filename = f'{cli.script_name}.config.json'
-cli.config_path = os.path.join(os.path.dirname(__file__), cli.config_filename)
-cli.config_data = {}
-if os.path.exists(cli.config_path):
-    with open(cli.config_path, 'r', encoding='utf-8') as file_config:
-        cli.config_data.update(json.load(file_config))
+cli = init.cli() ; init.configFile(cli, __file__)
 
 # Parse CLI args
 parser = argparse.ArgumentParser(description='Translate en/messages.json to other locales')
