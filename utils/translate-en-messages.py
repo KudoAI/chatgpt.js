@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.20
+Version:      2026.2.10.21
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -47,7 +47,7 @@ parser.add_argument('--ignore-keys', type=str, help='Keys to ignore (e.g. "appNa
 parser.add_argument('--locales-dir', type=str, help='Name of folder containing locales')
 parser.add_argument('--init', action='store_true', help='Create .config.json file to store defaults')
 args = parser.parse_args()
-locales_dir = args.locales_dir or config_data.get('include_langs', '') or '_locales'
+locales_dir = args.locales_dir or config_data.get('locales_dir', '') or '_locales'
 
 if args.init: # create config file
     if os.path.exists(config_path):
