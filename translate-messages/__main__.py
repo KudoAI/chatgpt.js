@@ -81,8 +81,8 @@ for lang_code in output_langs:
                 translated_msg = translator.translate(original_msg).replace('&quot;', "'").replace('&#39;', "'")
                 if any(flag in translated_msg for flag in fail_flags):
                     translated_msg = original_msg
-            except Exception as e:
-                log.trunc(f'Translation failed for key "{key}" in {lang_code}/messages.json: {e}')
+            except Exception as err:
+                log.trunc(f'Translation failed for key "{key}" in {lang_code}/messages.json: {err}')
                 translated_msg = original_msg
             translated_msgs[key] = { 'message': translated_msg }
         else : translated_msgs[key] = messages[key]
