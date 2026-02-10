@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.12
+Version:      2026.2.10.13
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -33,9 +33,8 @@ config_filename = f'{script_name}.config.json'
 config_path = os.path.join(os.path.dirname(__file__), config_filename)
 config_data = DEFAULT_CONFIG.copy()
 if os.path.exists(config_path):
-    with open(config_path, 'r', encoding='utf-8') as f:
-        file_config = json.load(f)
-        config_data.update(file_config)
+    with open(config_path, 'r', encoding='utf-8') as file_config:
+        config_data.update(json.load(file_config))
 
 # Parse CLI args
 parser = argparse.ArgumentParser(description='Translate en/messages.json to other locales')
