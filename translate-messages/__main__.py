@@ -4,6 +4,7 @@ from sys import stdout
 from translate import Translator
 from urllib.error import URLError, HTTPError
 from urllib.request import urlopen
+from urllib.parse import urlparse
 
 env = init.env()
 cli = init.cli(__file__)
@@ -14,16 +15,21 @@ if cli.args.init: # create config file
     else:
         try:  # try to fetch template from jsDelivr
             jsd_url = f'{cli.urls.jsdelivr}/{cli.name}/{cli.config_filename}'
+            if urlparse(jsd_url).scheme != 'https':
+                raise ValueError('Only https URLs are allowed')
+
             with urlopen(jsd_url) as resp:
                 if resp.status == 200:
                     cli.config_data = json.loads(resp.read().decode('utf-8'))
                 else:
                     raise ValueError('Non-200 response')
+
         except (URLError, HTTPError, json.JSONDecodeError, ValueError):
             cli.config_data = {}
 
         with open(cli.config_path, 'w', encoding='utf-8') as configFile:
             json.dump(cli.config_data, configFile, indent=2)
+
         print(f'Default config created at {cli.config_path}')
     exit()
 
