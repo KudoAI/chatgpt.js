@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.22
+Version:      2026.2.10.23
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -20,7 +20,6 @@ cli = sns(
     urls=sns(jsdelivr='https://cdn.jsdelivr.net/gh/adamlui/python-utils')
 )
 
-provider = ''
 default_target_locales = [
     'af', 'am', 'ar', 'az', 'be', 'bem', 'bg', 'bn', 'bo', 'bs', 'ca', 'ceb', 'cs', 'cy', 'da', 'de', 'dv', 'dz', 'el',
     'en', 'en-GB', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fo', 'fr', 'gd', 'gl', 'gu', 'haw', 'he', 'hi', 'hr', 'ht',
@@ -45,9 +44,11 @@ parser.add_argument('--include-langs', type=str, help='Languages to include (e.g
 parser.add_argument('--exclude-langs', type=str, help='Languages to exclude (e.g. "en,es")')
 parser.add_argument('--ignore-keys', type=str, help='Keys to ignore (e.g. "appName,author")')
 parser.add_argument('--locales-dir', type=str, help='Name of folder containing locales')
+parser.add_argument('--provider', type=str, help='Name of provider to use for translation')
 parser.add_argument('--init', action='store_true', help='Create .config.json file to store defaults')
 args = parser.parse_args()
 locales_dir = args.locales_dir or cli.config_data.get('locales_dir', '') or '_locales'
+provider = args.provider or cli.config_data.get('provider', '')
 
 if args.init: # create config file
     if os.path.exists(cli.config_path):
@@ -166,7 +167,7 @@ for lang_code in output_langs:
         if key not in messages:
             original_msg = translated_msg = en_messages[key]['message']
             try:
-                translator = Translator(provider=provider if provider else '', to_lang=lang_code)
+                translator = Translator(provider=provider, to_lang=lang_code)
                 translated_msg = translator.translate(original_msg).replace('&quot;', "'").replace('&#39;', "'")
                 if any(flag in translated_msg for flag in fail_flags):
                     translated_msg = original_msg
