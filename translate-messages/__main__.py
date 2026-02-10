@@ -1,5 +1,5 @@
 import os, json, requests
-from lib import init
+from lib import data, init
 from sys import stdout
 from translate import Translator
 
@@ -33,8 +33,7 @@ def overwrite_print(msg) : stdout.write('\r' + msg.ljust(env.terminal_width)[:en
 print('')
 
 # Prompt user for keys to ignore
-def parse_csv_val(val) : return [item.strip() for item in val.split(',') if item.strip()]
-ignore_keys = parse_csv_val(cli.args.ignore_keys or cli.config_data.get('ignore_keys', ''))
+ignore_keys = data.parse_csv_val(cli.args.ignore_keys or cli.config_data.get('ignore_keys', ''))
 while True:
     if ignore_keys : print('Ignored key(s):', ignore_keys)
     key = input('Enter key to ignore (or ENTER if done): ')

@@ -1,11 +1,11 @@
 import argparse, json, os
+from lib import data
 from types import SimpleNamespace as sns
-def parse_csv_val(val) : return [item.strip() for item in val.split(',') if item.strip()]
 
 def cli(callerFile):
     cli = sns(
         name='translate-messages',
-        version='2026.2.10.41',
+        version='2026.2.10.42',
         author=sns(name='Adam Lui', email='adam@kudoa.com', url='https://github.com/adamlui'),
         description='Translate en/messages.json to other locales',
         urls=sns(
@@ -48,8 +48,8 @@ def cli(callerFile):
     # Init cli.target_locales
     include_arg = cli.args.include_langs or cli.config_data.get('include_langs', '')
     exclude_arg = cli.args.exclude_langs or cli.config_data.get('exclude_langs', '')
-    cli.target_locales = parse_csv_val(include_arg) or cli.default_target_locales
-    exclude_langs = set(parse_csv_val(exclude_arg))
+    cli.target_locales = data.parse_csv_val(include_arg) or cli.default_target_locales
+    exclude_langs = set(data.parse_csv_val(exclude_arg))
     cli.target_locales = [lang for lang in cli.target_locales if lang not in exclude_langs]
 
     return cli
