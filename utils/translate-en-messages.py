@@ -1,6 +1,6 @@
 '''
 Script:       translate-en-messages.py
-Version:      2026.2.10
+Version:      2026.2.10.1
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
 Homepage:     https://github.com/adamlui/python-utils
@@ -21,13 +21,16 @@ default_target_langs = [
     'tr', 'uk', 'ur', 'uz', 'vi', 'xh', 'yi', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW', 'zu'
 ]
 
+# Parse CLI args
 parser = argparse.ArgumentParser(description='Translate en/messages.json to other locales')
-parser.add_argument('--target_langs', type=str, help='Comma-separated list of target languages (e.g. "en,es,fr")')
+parser.add_argument('--target-langs', type=str, help='Comma-separated list of target languages (e.g. "en,es,fr")')
+parser.add_argument('--exclude-langs', type=str, help='Comma-separated list of languages to exclude (e.g. "en,es")')
 args = parser.parse_args()
-if args.target_langs:
-    target_langs = [lang.strip() for lang in args.target_langs.split(',') if lang.strip()]
-else:
-    target_langs = default_target_langs
+def parse_csv_langs(value) : return [lang.strip() for lang in value.split(',') if lang.strip()]
+target_langs = parse_csv_langs(args.target_langs) if args.target_langs else default_target_langs
+if args.exclude_langs:
+    exclude_langs = set(parse_csv_langs(args.exclude_langs))
+    target_langs = [lang for lang in target_langs if lang not in exclude_langs]
 
 # UI initializations
 terminal_width = os.get_terminal_size()[0]
