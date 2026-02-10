@@ -1,9 +1,13 @@
 '''
-Script:       translate-en-messages.py
-Version:      2026.2.10.1
-Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
+Name:         translate-en-messages.py
+Version:      2026.2.10.2
 Author:       Adam Lui
+Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
+
+Options:
+ --include-langs=locales     Comma-separated list of languages to include (e.g. "en,es,fr")
+ --exclude-langs=locales     Comma-separated list of languages to exclude (e.g. "en,es")
 '''
 
 import argparse
@@ -12,7 +16,7 @@ from sys import stdout # for dynamic prints
 from translate import Translator
 
 locales_folder = '_locales' ; provider = ''
-default_target_langs = [
+default_target_locales = [
     'af', 'am', 'ar', 'az', 'be', 'bem', 'bg', 'bn', 'bo', 'bs', 'ca', 'ceb', 'cs', 'cy', 'da', 'de', 'dv', 'dz', 'el',
     'en', 'en-GB', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fo', 'fr', 'gd', 'gl', 'gu', 'haw', 'he', 'hi', 'hr', 'ht',
     'hu', 'hy', 'id', 'is', 'it', 'ja', 'ka', 'kab', 'kk', 'km', 'kn', 'ko', 'ku', 'ky', 'la', 'lb', 'lo', 'lt', 'lv',
@@ -23,14 +27,14 @@ default_target_langs = [
 
 # Parse CLI args
 parser = argparse.ArgumentParser(description='Translate en/messages.json to other locales')
-parser.add_argument('--target-langs', type=str, help='Comma-separated list of target languages (e.g. "en,es,fr")')
+parser.add_argument('--include-langs', type=str, help='Comma-separated list of languages to include (e.g. "en,es,fr")')
 parser.add_argument('--exclude-langs', type=str, help='Comma-separated list of languages to exclude (e.g. "en,es")')
 args = parser.parse_args()
-def parse_csv_langs(value) : return [lang.strip() for lang in value.split(',') if lang.strip()]
-target_langs = parse_csv_langs(args.target_langs) if args.target_langs else default_target_langs
+def parse_csv_langs(str) : return [lang.strip() for lang in str.split(',') if lang.strip()]
+target_locales = parse_csv_langs(args.include_langs) if args.include_langs else default_target_locales
 if args.exclude_langs:
     exclude_langs = set(parse_csv_langs(args.exclude_langs))
-    target_langs = [lang for lang in target_langs if lang not in exclude_langs]
+    target_locales = [lang for lang in target_locales if lang not in exclude_langs]
 
 # UI initializations
 terminal_width = os.get_terminal_size()[0]
@@ -76,8 +80,8 @@ en_msgs_path = os.path.join(locales_dir, 'en', msgs_filename)
 with open(en_msgs_path, 'r', encoding='utf-8') as en_file:
     en_messages = json.load(en_file)
 
-# Combine [target_langs] w/ languages discovered in _locales
-output_langs = list(set(target_langs)) # remove duplicates
+# Combine [target_locales] w/ languages discovered in _locales
+output_langs = list(set(target_locales)) # remove duplicates
 for root, dirs, files in os.walk(locales_dir):
     for folder in dirs:
         folder_path = os.path.join(root, folder)
