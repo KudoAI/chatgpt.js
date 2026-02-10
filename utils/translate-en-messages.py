@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.10
+Version:      2026.2.10.11
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -81,12 +81,12 @@ def overwrite_print(msg) : stdout.write('\r' + msg.ljust(terminal_width)[:termin
 print('')
 
 # Prompt user for keys to ignore
-keys_to_ignore = parse_csv_langs(args.ignore_keys or config_data.get('ignore_keys', ''))
+ignore_keys = parse_csv_langs(args.ignore_keys or config_data.get('ignore_keys', ''))
 while True:
-    if keys_to_ignore : print('Ignored key(s):', keys_to_ignore)
+    if ignore_keys : print('Ignored key(s):', ignore_keys)
     key = input('Enter key to ignore (or ENTER if done): ')
     if not key : break
-    keys_to_ignore.append(key)
+    ignore_keys.append(key)
 
 # Determine closest locales dir
 print_trunc(f'\nSearching for { locales_folder }...')
@@ -156,7 +156,7 @@ for lang_code in output_langs:
     en_keys = list(en_messages.keys())
     fail_flags = ['INVALID TARGET LANGUAGE', 'TOO MANY REQUESTS', 'MYMEMORY']
     for key in en_keys:
-        if key in keys_to_ignore:
+        if key in ignore_keys:
             translated_msg = en_messages[key]['message']
             translated_msgs[key] = { 'message': translated_msg }
             continue
