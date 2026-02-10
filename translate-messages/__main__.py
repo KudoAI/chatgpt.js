@@ -1,9 +1,8 @@
 import os, json, requests
-from lib import data, init
+from lib import data, init, log
 from sys import stdout
 from translate import Translator
 
-env = init.env()
 cli = init.cli(__file__)
 
 if cli.args.init: # create config file
@@ -24,12 +23,6 @@ if cli.args.init: # create config file
         print(f'Default config created at {cli.config_path}')
     exit()
 
-def print_trunc(msg, end='\n'):
-    truncated_lines = [
-        line if len(line) < env.terminal_width else line[:env.terminal_width -4] + '...' for line in msg.splitlines() ]
-    print('\n'.join(truncated_lines), end=end)
-def overwrite_print(msg) : stdout.write('\r' + msg.ljust(env.terminal_width)[:env.terminal_width])
-
 print('')
 
 # Prompt user for keys to ignore
@@ -41,7 +34,7 @@ while True:
     ignore_keys.append(key)
 
 # Determine closest locales dir
-print_trunc(f'\nSearching for {cli.locales_dir}...')
+log.trunc(f'\nSearching for {cli.locales_dir}...')
 script_dir = os.path.abspath(os.path.dirname(__file__))
 for root, dirs, files in os.walk(script_dir): # search script dir recursively
     if cli.locales_dir in dirs:
@@ -57,8 +50,8 @@ else: # search script parent dirs recursively
     else : cli.locales_dir = None
 
 # Print result
-if cli.locales_dir : print_trunc(f'_locales directory found!\n\n>> {cli.locales_dir}\n')
-else : print_trunc(f'Unable to locate a {cli.locales_dir} directory.') ; exit()
+if cli.locales_dir : log.trunc(f'_locales directory found!\n\n>> {cli.locales_dir}\n')
+else : log.trunc(f'Unable to locate a {cli.locales_dir} directory.') ; exit()
 
 # Load en/messages.json
 msgs_filename = 'messages.json'
@@ -87,7 +80,7 @@ for lang_code in output_langs:
 
     # Skip English locales
     if lang_code.startswith('en'):
-        print_trunc(f'Skipped {folder}/messages.json...')
+        log.trunc(f'Skipped {folder}/messages.json...')
         langs_skipped.append(lang_code) ; langs_not_translated.append(lang_code) ; continue
 
     # Initialize target locale folder
@@ -102,7 +95,7 @@ for lang_code in output_langs:
     else : messages = {}
 
     # Attempt translations
-    print_trunc(f"{ 'Adding' if not messages else 'Updating' } { folder }/messages.json...", end='')
+    log.trunc(f"{ 'Adding' if not messages else 'Updating' } { folder }/messages.json...", end='')
     stdout.flush()
     en_keys = list(en_messages.keys())
     fail_flags = ['INVALID TARGET LANGUAGE', 'TOO MANY REQUESTS', 'MYMEMORY']
@@ -119,7 +112,7 @@ for lang_code in output_langs:
                 if any(flag in translated_msg for flag in fail_flags):
                     translated_msg = original_msg
             except Exception as e:
-                print_trunc(f'Translation failed for key "{key}" in {lang_code}/messages.json: {e}')
+                log.trunc(f'Translation failed for key "{key}" in {lang_code}/messages.json: {e}')
                 translated_msg = original_msg
             translated_msgs[key] = { 'message': translated_msg }
         else : translated_msgs[key] = messages[key]
@@ -138,14 +131,12 @@ for lang_code in output_langs:
     if translated_msgs == messages : langs_skipped.append(lang_code) ; lang_skipped = True
     elif translated_msgs != messages : langs_translated.append(lang_code) ; lang_translated = True
     if not lang_translated : langs_not_translated.append(lang_code)
-    overwrite_print(f"{ 'Added' if lang_added else 'Skipped' if lang_skipped else 'Updated' } { folder }/messages.json")
+    log.overwrite_print(
+        f"{ 'Added' if lang_added else 'Skipped' if lang_skipped else 'Updated' } { folder }/messages.json")
 
-# Print final summary
-print_trunc('\nAll messages.json files updated successfully!\n')
-lang_data = [langs_translated, langs_skipped, langs_added, langs_not_translated]
-for data in lang_data:
-    if data:
-        list_name = next(name for name, value in globals().items() if value is data)
-        status = list_name.split('langs_')[-1].replace('_', ' ')
-        print(f'Languages {status}: {len(data)}\n')  # print tally
-        print('[ ' + ', '.join(data) + ' ]\n')  # list languages
+log.finalSummary({
+    'translated': langs_translated,
+    'skipped': langs_skipped,
+    'added': langs_added,
+    'not translated': langs_not_translated,
+})

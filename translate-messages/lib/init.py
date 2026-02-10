@@ -5,7 +5,7 @@ from types import SimpleNamespace as sns
 def cli(callerFile):
     cli = sns(
         name='translate-messages',
-        version='2026.2.10.42',
+        version='2026.2.10.43',
         author=sns(name='Adam Lui', email='adam@kudoa.com', url='https://github.com/adamlui'),
         description='Translate en/messages.json to other locales',
         urls=sns(
@@ -53,12 +53,3 @@ def cli(callerFile):
     cli.target_locales = [lang for lang in cli.target_locales if lang not in exclude_langs]
 
     return cli
-
-def env():
-    env = sns()
-    try:
-        env.terminal_width = os.get_terminal_size()[0]
-    except OSError:
-        env.terminal_width = 80
-
-    return env
