@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages
-Version:      2026.2.10.35
+Version:      2026.2.10.36
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -15,8 +15,8 @@ from sys import stdout
 from translate import Translator
 from urllib.request import urlopen
 
-cli = init.cli(__file__)
 env = init.env()
+cli = init.cli(__file__)
 
 if cli.args.init: # create config file
     if os.path.exists(cli.config_path):
