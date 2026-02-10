@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.18
+Version:      2026.2.10.19
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -9,11 +9,10 @@ Sponsor:      https://github.com/sponsors/adamlui
 Notes:        Use --help to print CLI arguments.
 '''
 
-import argparse
-import os, json
+import argparse, os, json
+from types import SimpleNamespace as sns
 from sys import stdout
 from translate import Translator
-from types import SimpleNamespace as sns
 from urllib.request import urlopen
 
 cli = sns(
