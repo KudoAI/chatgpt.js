@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages
-Version:      2026.2.10.34
+Version:      2026.2.10.35
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -16,6 +16,7 @@ from translate import Translator
 from urllib.request import urlopen
 
 cli = init.cli(__file__)
+env = init.env()
 
 if cli.args.init: # create config file
     if os.path.exists(cli.config_path):
@@ -31,16 +32,11 @@ if cli.args.init: # create config file
         print(f'Default config created at {cli.config_path}')
     exit()
 
-# UI initializations
-try:
-    terminal_width = os.get_terminal_size()[0]
-except OSError:
-    terminal_width = 80
 def print_trunc(msg, end='\n'):
     truncated_lines = [
-        line if len(line) < terminal_width else line[:terminal_width -4] + '...' for line in msg.splitlines() ]
+        line if len(line) < env.terminal_width else line[:env.terminal_width -4] + '...' for line in msg.splitlines() ]
     print('\n'.join(truncated_lines), end=end)
-def overwrite_print(msg) : stdout.write('\r' + msg.ljust(terminal_width)[:terminal_width])
+def overwrite_print(msg) : stdout.write('\r' + msg.ljust(env.terminal_width)[:env.terminal_width])
 
 print('')
 
