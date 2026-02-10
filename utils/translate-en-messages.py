@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.8
+Version:      2026.2.10.9
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -82,6 +82,7 @@ print('')
 # Prompt user for keys to ignore
 keys_to_ignore = []
 while True:
+    if len(keys_to_ignore) : print('Ignored key(s):', keys_to_ignore)
     key = input('Enter key to ignore (or ENTER if done): ')
     if not key : break
     keys_to_ignore.append(key)
