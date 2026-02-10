@@ -20,10 +20,8 @@ while True:
 # Determine closest locales dir
 log.trunc(f'\nSearching for {cli.locales_dir}...')
 cli.locales_dir = init.locales_dir(cli.locales_dir)
-if cli.locales_dir:
-    log.trunc(f'_locales directory found!\n\n>> {cli.locales_dir}\n')
-else:
-    log.trunc(f'Unable to locate a {cli.locales_dir} directory.') ; exit()
+if cli.locales_dir : log.trunc(f'_locales directory found!\n\n>> {cli.locales_dir}\n')
+else : log.trunc(f'Unable to locate a {cli.locales_dir} directory.') ; exit()
 
 # Load en/messages.json
 msgs_filename = 'messages.json'
