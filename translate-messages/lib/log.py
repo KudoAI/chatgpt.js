@@ -6,7 +6,7 @@ try:
 except OSError:
     terminal_width = 80
 
-def finalSummary(summary_dict):
+def final_summary(summary_dict):
     trunc('\nAll JSON files updated successfully!\n\n')
     for name, lang_set in summary_dict.items():
         if lang_set:

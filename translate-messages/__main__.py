@@ -134,7 +134,7 @@ for lang_code in output_langs:
     log.overwrite_print(
         f"{ 'Added' if lang_added else 'Skipped' if lang_skipped else 'Updated' } { folder }/messages.json")
 
-log.finalSummary({
+log.final_summary({
     'translated': langs_translated,
     'skipped': langs_skipped,
     'added': langs_added,
