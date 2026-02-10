@@ -1,4 +1,4 @@
-import argparse, json, os
+import argparse, json, os, requests
 from lib import data
 from types import SimpleNamespace as sns
 
@@ -6,7 +6,7 @@ def cli(caller_file):
 
     cli = sns(
         name='translate-messages',
-        version='2026.2.10.46',
+        version='2026.2.10.47',
         author=sns(name='Adam Lui', email='adam@kudoa.com', url='https://github.com/adamlui'),
         description='Translate en/messages.json to other locales',
         urls=sns(
@@ -54,3 +54,20 @@ def cli(caller_file):
     cli.target_locales = [lang for lang in cli.target_locales if lang not in exclude_langs]
 
     return cli
+
+def configFile(cli):
+    if os.path.exists(cli.config_path):
+        print(f'Config already exists at {cli.config_path}')
+    else:
+        try:
+            jsd_url = f'{cli.urls.jsdelivr}/{cli.name}/{cli.config_filename}'
+            resp = requests.get(jsd_url, timeout=5)
+            resp.raise_for_status()
+            cli.config_data = resp.json()
+        except (requests.RequestException, ValueError):
+            cli.config_data = {}
+
+        with open(cli.config_path, 'w', encoding='utf-8') as configFile:
+            json.dump(cli.config_data, configFile, indent=2)
+
+        print(f'Default config created at {cli.config_path}')

@@ -1,27 +1,11 @@
-import os, json, requests
+import os, json
 from lib import data, init, log
 from sys import stdout
 from translate import Translator
 
 cli = init.cli(__file__)
 
-if cli.args.init: # create config file
-    if os.path.exists(cli.config_path):
-        print(f'Config already exists at {cli.config_path}')
-    else:
-        try:
-            jsd_url = f'{cli.urls.jsdelivr}/{cli.name}/{cli.config_filename}'
-            resp = requests.get(jsd_url, timeout=5)
-            resp.raise_for_status()
-            cli.config_data = resp.json()
-        except (requests.RequestException, ValueError):
-            cli.config_data = {}
-
-        with open(cli.config_path, 'w', encoding='utf-8') as configFile:
-            json.dump(cli.config_data, configFile, indent=2)
-
-        print(f'Default config created at {cli.config_path}')
-    exit()
+if cli.args.init : init.configFile(cli)
 
 print('')
 
