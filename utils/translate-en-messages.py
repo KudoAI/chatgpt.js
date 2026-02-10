@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.21
+Version:      2026.2.10.22
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -31,13 +31,13 @@ default_target_locales = [
 ]
 
 # Init/load config file
-script_name = os.path.splitext(os.path.basename(__file__))[0]
-config_filename = f'{script_name}.config.json'
-config_path = os.path.join(os.path.dirname(__file__), config_filename)
-config_data = {}
-if os.path.exists(config_path):
-    with open(config_path, 'r', encoding='utf-8') as file_config:
-        config_data.update(json.load(file_config))
+cli.script_name = os.path.splitext(os.path.basename(__file__))[0]
+cli.config_filename = f'{cli.script_name}.config.json'
+cli.config_path = os.path.join(os.path.dirname(__file__), cli.config_filename)
+cli.config_data = {}
+if os.path.exists(cli.config_path):
+    with open(cli.config_path, 'r', encoding='utf-8') as file_config:
+        cli.config_data.update(json.load(file_config))
 
 # Parse CLI args
 parser = argparse.ArgumentParser(description='Translate en/messages.json to other locales')
@@ -47,26 +47,26 @@ parser.add_argument('--ignore-keys', type=str, help='Keys to ignore (e.g. "appNa
 parser.add_argument('--locales-dir', type=str, help='Name of folder containing locales')
 parser.add_argument('--init', action='store_true', help='Create .config.json file to store defaults')
 args = parser.parse_args()
-locales_dir = args.locales_dir or config_data.get('locales_dir', '') or '_locales'
+locales_dir = args.locales_dir or cli.config_data.get('locales_dir', '') or '_locales'
 
 if args.init: # create config file
-    if os.path.exists(config_path):
-        print(f'Config already exists at {config_path}')
+    if os.path.exists(cli.config_path):
+        print(f'Config already exists at {cli.config_path}')
     else:
         try:  # try to fetch template from jsDelivr
-            jsd_url = f'{cli.urls.jsdelivr}/{cli.name}/{config_filename}'
+            jsd_url = f'{cli.urls.jsdelivr}/{cli.name}/{cli.config_filename}'
             with urlopen(jsd_url) as resp:
-                if resp.status == 200 : config_data = json.loads(resp.read().decode('utf-8'))
+                if resp.status == 200 : cli.config_data = json.loads(resp.read().decode('utf-8'))
         except Exception : pass
-        with open(config_path, 'w', encoding='utf-8') as configFile:
-            json.dump(config_data, configFile, indent=2)
-        print(f'Default config created at {config_path}')
+        with open(cli.config_path, 'w', encoding='utf-8') as configFile:
+            json.dump(cli.config_data, configFile, indent=2)
+        print(f'Default config created at {cli.config_path}')
     exit()
 
 # Init target_locales
 def parse_csv_langs(str) : return [lang.strip() for lang in str.split(',') if lang.strip()]
-include_arg = args.include_langs or config_data.get('include_langs', '')
-exclude_arg = args.exclude_langs or config_data.get('exclude_langs', '')
+include_arg = args.include_langs or cli.config_data.get('include_langs', '')
+exclude_arg = args.exclude_langs or cli.config_data.get('exclude_langs', '')
 target_locales = parse_csv_langs(include_arg) or default_target_locales
 exclude_langs = set(parse_csv_langs(exclude_arg))
 target_locales = [lang for lang in target_locales if lang not in exclude_langs]
@@ -85,7 +85,7 @@ def overwrite_print(msg) : stdout.write('\r' + msg.ljust(terminal_width)[:termin
 print('')
 
 # Prompt user for keys to ignore
-ignore_keys = parse_csv_langs(args.ignore_keys or config_data.get('ignore_keys', ''))
+ignore_keys = parse_csv_langs(args.ignore_keys or cli.config_data.get('ignore_keys', ''))
 while True:
     if ignore_keys : print('Ignored key(s):', ignore_keys)
     key = input('Enter key to ignore (or ENTER if done): ')
