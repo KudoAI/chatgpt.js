@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.7
+Version:      2026.2.10.8
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -11,8 +11,11 @@ Notes:        Use --help to print CLI arguments.
 
 import argparse
 import os, json
-from sys import stdout # for dynamic prints
+from sys import stdout
 from translate import Translator
+from urllib.request import urlopen
+
+DEFAULT_CONFIG = { 'include_langs': '', 'exclude_langs': '' }
 
 locales_folder = '_locales' ; provider = ''
 default_target_locales = [
@@ -24,18 +27,50 @@ default_target_locales = [
     'tr', 'uk', 'ur', 'uz', 'vi', 'xh', 'yi', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW', 'zu'
 ]
 
+# Init/load config file
+script_name = os.path.splitext(os.path.basename(__file__))[0]
+config_filename = f'{script_name}.config.json'
+config_path = os.path.join(os.path.dirname(__file__), config_filename)
+config_data = DEFAULT_CONFIG.copy()
+if os.path.exists(config_path):
+    with open(config_path, 'r', encoding='utf-8') as f:
+        file_config = json.load(f)
+        config_data.update(file_config)
+
 # Parse CLI args
 parser = argparse.ArgumentParser(description='Translate en/messages.json to other locales')
 parser.add_argument('--include-langs', type=str, help='Comma-separated list of languages to include (e.g. "en,es,fr")')
 parser.add_argument('--exclude-langs', type=str, help='Comma-separated list of languages to exclude (e.g. "en,es")')
+parser.add_argument('--init', action='store_true', help='Create a default config file adjacent to this script')
 args = parser.parse_args()
+
+if args.init: # create config file
+    if os.path.exists(config_path):
+        print(f'Config already exists at {config_path}')
+    else:
+        try: # to use jsDelivr copy
+            jsd_url = f'https://cdn.jsdelivr.net/gh/adamlui/python-utils/translate-messages/{config_filename}'
+            with urlopen(jsd_url) as resp:
+                if resp.status == 200 : config_data = json.loads(resp.read().decode('utf-8'))
+        except Exception:
+            config_data = { 'include_langs': '', 'exclude_langs': '' }
+        with open(config_path, 'w', encoding='utf-8') as f: json.dump(config_data, f, indent=2)
+        print(f'Default config created at {config_path}')
+    exit()
+
+# Init target_locales
 def parse_csv_langs(str) : return [lang.strip() for lang in str.split(',') if lang.strip()]
-target_locales = parse_csv_langs(args.include_langs or '') or default_target_locales
-exclude_langs = set(parse_csv_langs(args.exclude_langs or ''))
+include_arg = args.include_langs or config_data.get('include_langs', '')
+exclude_arg = args.exclude_langs or config_data.get('exclude_langs', '')
+target_locales = parse_csv_langs(include_arg) or default_target_locales
+exclude_langs = set(parse_csv_langs(exclude_arg))
 target_locales = [lang for lang in target_locales if lang not in exclude_langs]
 
 # UI initializations
-terminal_width = os.get_terminal_size()[0]
+try:
+    terminal_width = os.get_terminal_size()[0]
+except OSError:
+    terminal_width = 80
 def print_trunc(msg, end='\n'):
     truncated_lines = [
         line if len(line) < terminal_width else line[:terminal_width -4] + '...' for line in msg.splitlines() ]
