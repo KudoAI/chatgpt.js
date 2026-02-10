@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.11
+Version:      2026.2.10.12
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -42,7 +42,7 @@ parser = argparse.ArgumentParser(description='Translate en/messages.json to othe
 parser.add_argument('--include-langs', type=str, help='Comma-separated list of languages to include (e.g. "en,es,fr")')
 parser.add_argument('--exclude-langs', type=str, help='Comma-separated list of languages to exclude (e.g. "en,es")')
 parser.add_argument('--ignore-keys', type=str, help='Comma-separated list of keys to ignore (e.g. "appName,author")')
-parser.add_argument('--init', action='store_true', help='Create a default config file adjacent to this script')
+parser.add_argument('--init', action='store_true', help='Create a .config.json adjacent to this script')
 args = parser.parse_args()
 
 if args.init: # create config file
