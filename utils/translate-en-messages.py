@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.16
+Version:      2026.2.10.17
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -13,7 +13,13 @@ import argparse
 import os, json
 from sys import stdout
 from translate import Translator
+from types import SimpleNamespace
 from urllib.request import urlopen
+
+cli = SimpleNamespace(
+    name='translate-messages',
+    urls=SimpleNamespace(jsdelivr='https://cdn.jsdelivr.net/gh/adamlui/python-utils')
+)
 
 provider = ''
 default_target_locales = [
@@ -49,7 +55,7 @@ if args.init: # create config file
         print(f'Config already exists at {config_path}')
     else:
         try:  # try to fetch template from jsDelivr
-            jsd_url = f'https://cdn.jsdelivr.net/gh/adamlui/python-utils/translate-messages/{config_filename}'
+            jsd_url = f'{cli.urls.jsdelivr}/{cli.name}/{config_filename}'
             with urlopen(jsd_url) as resp:
                 if resp.status == 200 : config_data = json.loads(resp.read().decode('utf-8'))
         except Exception : pass
