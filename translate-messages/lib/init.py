@@ -17,8 +17,7 @@ def cli():
     )
 
 def configFile(cli, caller_file):
-    cli.script_name = os.path.splitext(os.path.basename(caller_file))[0]
-    cli.config_filename = f'{cli.script_name}.config.json'
+    cli.config_filename = f'{cli.name}.config.json'
     cli.config_path = os.path.join(os.path.dirname(caller_file), cli.config_filename)
     cli.config_data = {}
     if os.path.exists(cli.config_path):

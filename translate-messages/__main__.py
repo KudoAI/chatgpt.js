@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages
-Version:      2026.2.10.29
+Version:      2026.2.10.30
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -25,11 +25,11 @@ parser.add_argument('--ignore-keys', type=str, help='Keys to ignore (e.g. "appNa
 parser.add_argument('--locales-dir', type=str, help='Name of folder containing locales')
 parser.add_argument('--provider', type=str, help='Name of provider to use for translation')
 parser.add_argument('--init', action='store_true', help='Create .config.json file to store defaults')
-args = parser.parse_args()
-locales_dir = args.locales_dir or cli.config_data.get('locales_dir', '') or '_locales'
-provider = args.provider or cli.config_data.get('provider', '')
+cli.args = parser.parse_args()
+cli.locales_dir = cli.args.locales_dir or cli.config_data.get('locales_dir', '') or '_locales'
+cli.provider = cli.args.provider or cli.config_data.get('provider', '')
 
-if args.init: # create config file
+if cli.args.init: # create config file
     if os.path.exists(cli.config_path):
         print(f'Config already exists at {cli.config_path}')
     else:
@@ -45,8 +45,8 @@ if args.init: # create config file
 
 # Init target_locales
 def parse_csv_val(val) : return [item.strip() for item in val.split(',') if item.strip()]
-include_arg = args.include_langs or cli.config_data.get('include_langs', '')
-exclude_arg = args.exclude_langs or cli.config_data.get('exclude_langs', '')
+include_arg = cli.args.include_langs or cli.config_data.get('include_langs', '')
+exclude_arg = cli.args.exclude_langs or cli.config_data.get('exclude_langs', '')
 target_locales = parse_csv_val(include_arg) or cli.default_target_locales
 exclude_langs = set(parse_csv_val(exclude_arg))
 target_locales = [lang for lang in target_locales if lang not in exclude_langs]
@@ -65,7 +65,7 @@ def overwrite_print(msg) : stdout.write('\r' + msg.ljust(terminal_width)[:termin
 print('')
 
 # Prompt user for keys to ignore
-ignore_keys = parse_csv_val(args.ignore_keys or cli.config_data.get('ignore_keys', ''))
+ignore_keys = parse_csv_val(cli.args.ignore_keys or cli.config_data.get('ignore_keys', ''))
 while True:
     if ignore_keys : print('Ignored key(s):', ignore_keys)
     key = input('Enter key to ignore (or ENTER if done): ')
@@ -73,34 +73,34 @@ while True:
     ignore_keys.append(key)
 
 # Determine closest locales dir
-print_trunc(f'\nSearching for { locales_dir }...')
+print_trunc(f'\nSearching for {cli.locales_dir}...')
 script_dir = os.path.abspath(os.path.dirname(__file__))
 for root, dirs, files in os.walk(script_dir): # search script dir recursively
-    if locales_dir in dirs:
-        locales_dir = os.path.join(root, locales_dir) ; break
+    if cli.locales_dir in dirs:
+        cli.locales_dir = os.path.join(root, cli.locales_dir) ; break
 else: # search script parent dirs recursively
     parent_dir = os.path.dirname(script_dir)
     while parent_dir and parent_dir != script_dir:
         for root, dirs, files in os.walk(parent_dir):
-            if locales_dir in dirs:
-                locales_dir = os.path.join(root, locales_dir) ; break
-        if locales_dir : break
+            if cli.locales_dir in dirs:
+                cli.locales_dir = os.path.join(root, cli.locales_dir) ; break
+        if cli.locales_dir : break
         parent_dir = os.path.dirname(parent_dir)
-    else : locales_dir = None
+    else : cli.locales_dir = None
 
 # Print result
-if locales_dir : print_trunc(f'_locales directory found!\n\n>> { locales_dir }\n')
-else : print_trunc(f'Unable to locate a { locales_dir } directory.') ; exit()
+if cli.locales_dir : print_trunc(f'_locales directory found!\n\n>> {cli.locales_dir}\n')
+else : print_trunc(f'Unable to locate a {cli.locales_dir} directory.') ; exit()
 
 # Load en/messages.json
 msgs_filename = 'messages.json'
-en_msgs_path = os.path.join(locales_dir, 'en', msgs_filename)
+en_msgs_path = os.path.join(cli.locales_dir, 'en', msgs_filename)
 with open(en_msgs_path, 'r', encoding='utf-8') as en_file:
     en_messages = json.load(en_file)
 
 # Combine [target_locales] w/ languages discovered in _locales
 output_langs = list(set(target_locales)) # remove duplicates
-for root, dirs, files in os.walk(locales_dir):
+for root, dirs, files in os.walk(cli.locales_dir):
     for folder in dirs:
         folder_path = os.path.join(root, folder)
         msgs_path = os.path.join(folder_path, msgs_filename)
@@ -123,7 +123,7 @@ for lang_code in output_langs:
         langs_skipped.append(lang_code) ; langs_not_translated.append(lang_code) ; continue
 
     # Initialize target locale folder
-    folder_path = os.path.join(locales_dir, folder)
+    folder_path = os.path.join(cli.locales_dir, folder)
     if not os.path.exists(folder_path): # if missing, create folder
         os.makedirs(folder_path) ; langs_added.append(lang_code) ; lang_added = True
 
@@ -146,7 +146,7 @@ for lang_code in output_langs:
         if key not in messages:
             original_msg = translated_msg = en_messages[key]['message']
             try:
-                translator = Translator(provider=provider, to_lang=lang_code)
+                translator = Translator(provider=cli.provider, to_lang=lang_code)
                 translated_msg = translator.translate(original_msg).replace('&quot;', "'").replace('&#39;', "'")
                 if any(flag in translated_msg for flag in fail_flags):
                     translated_msg = original_msg
