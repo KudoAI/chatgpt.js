@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.26
+Version:      2026.2.10.27
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -44,11 +44,11 @@ if args.init: # create config file
     exit()
 
 # Init target_locales
-def parse_csv_langs(str) : return [lang.strip() for lang in str.split(',') if lang.strip()]
+def parse_csv_val(val) : return [item.strip() for item in val.split(',') if item.strip()]
 include_arg = args.include_langs or cli.config_data.get('include_langs', '')
 exclude_arg = args.exclude_langs or cli.config_data.get('exclude_langs', '')
-target_locales = parse_csv_langs(include_arg) or cli.default_target_locales
-exclude_langs = set(parse_csv_langs(exclude_arg))
+target_locales = parse_csv_val(include_arg) or cli.default_target_locales
+exclude_langs = set(parse_csv_val(exclude_arg))
 target_locales = [lang for lang in target_locales if lang not in exclude_langs]
 
 # UI initializations
@@ -65,7 +65,7 @@ def overwrite_print(msg) : stdout.write('\r' + msg.ljust(terminal_width)[:termin
 print('')
 
 # Prompt user for keys to ignore
-ignore_keys = parse_csv_langs(args.ignore_keys or cli.config_data.get('ignore_keys', ''))
+ignore_keys = parse_csv_val(args.ignore_keys or cli.config_data.get('ignore_keys', ''))
 while True:
     if ignore_keys : print('Ignored key(s):', ignore_keys)
     key = input('Enter key to ignore (or ENTER if done): ')
