@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.13
+Version:      2026.2.10.14
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -15,8 +15,6 @@ from sys import stdout
 from translate import Translator
 from urllib.request import urlopen
 
-DEFAULT_CONFIG = { 'include_langs': '', 'exclude_langs': '', 'ignore_keys': '' }
-
 locales_folder = '_locales' ; provider = ''
 default_target_locales = [
     'af', 'am', 'ar', 'az', 'be', 'bem', 'bg', 'bn', 'bo', 'bs', 'ca', 'ceb', 'cs', 'cy', 'da', 'de', 'dv', 'dz', 'el',
@@ -28,6 +26,7 @@ default_target_locales = [
 ]
 
 # Init/load config file
+DEFAULT_CONFIG = { 'include_langs': '', 'exclude_langs': '', 'ignore_keys': '' }
 script_name = os.path.splitext(os.path.basename(__file__))[0]
 config_filename = f'{script_name}.config.json'
 config_path = os.path.join(os.path.dirname(__file__), config_filename)
