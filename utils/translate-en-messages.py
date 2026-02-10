@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.18
+Version:      2026.2.10.17
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -17,8 +17,8 @@ from types import SimpleNamespace
 from urllib.request import urlopen
 
 cli = SimpleNamespace(
-    name = 'translate-messages',
-    urls = SimpleNamespace(jsdelivr = 'https://cdn.jsdelivr.net/gh/adamlui/python-utils')
+    name='translate-messages',
+    urls=SimpleNamespace(jsdelivr='https://cdn.jsdelivr.net/gh/adamlui/python-utils')
 )
 
 provider = ''
