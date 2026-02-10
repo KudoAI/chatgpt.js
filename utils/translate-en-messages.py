@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.23
+Version:      2026.2.10.25
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -17,17 +17,17 @@ from urllib.request import urlopen
 
 cli = sns(
     name='translate-messages',
-    urls=sns(jsdelivr='https://cdn.jsdelivr.net/gh/adamlui/python-utils')
+    urls=sns(jsdelivr='https://cdn.jsdelivr.net/gh/adamlui/python-utils'),
+    default_target_locales=[
+        'af', 'am', 'ar', 'az', 'be', 'bem', 'bg', 'bn', 'bo', 'bs', 'ca', 'ceb', 'cs', 'cy', 'da', 'de', 'dv', 'dz',
+        'el', 'en', 'en-GB', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fo', 'fr', 'gd', 'gl', 'gu', 'haw', 'he', 'hi', 'hr',
+        'ht', 'hu', 'hy', 'id', 'is', 'it', 'ja', 'ka', 'kab', 'kk', 'km', 'kn', 'ko', 'ku', 'ky', 'la', 'lb', 'lo',
+        'lt', 'lv', 'mg', 'mi', 'mk', 'ml', 'mn', 'ms', 'mt', 'my', 'ne', 'nl', 'no', 'ny', 'pa', 'pap', 'pl', 'ps',
+        'pt', 'ro', 'ru', 'rw', 'sg', 'si', 'sk', 'sl', 'sm', 'sn', 'so', 'sr', 'sv', 'sw', 'ta', 'te', 'tg', 'th',
+        'ti', 'tk', 'tn', 'tpi', 'tr', 'uk', 'ur', 'uz', 'vi', 'xh', 'yi', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW',
+        'zu'
+    ]
 )
-
-default_target_locales = [
-    'af', 'am', 'ar', 'az', 'be', 'bem', 'bg', 'bn', 'bo', 'bs', 'ca', 'ceb', 'cs', 'cy', 'da', 'de', 'dv', 'dz', 'el',
-    'en', 'en-GB', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fo', 'fr', 'gd', 'gl', 'gu', 'haw', 'he', 'hi', 'hr', 'ht',
-    'hu', 'hy', 'id', 'is', 'it', 'ja', 'ka', 'kab', 'kk', 'km', 'kn', 'ko', 'ku', 'ky', 'la', 'lb', 'lo', 'lt', 'lv',
-    'mg', 'mi', 'mk', 'ml', 'mn', 'ms', 'mt', 'my', 'ne', 'nl', 'no', 'ny', 'pa', 'pap', 'pl', 'ps', 'pt', 'ro', 'ru',
-    'rw', 'sg', 'si', 'sk', 'sl', 'sm', 'sn', 'so', 'sr', 'sv', 'sw', 'ta', 'te', 'tg', 'th', 'ti', 'tk', 'tn', 'tpi',
-    'tr', 'uk', 'ur', 'uz', 'vi', 'xh', 'yi', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW', 'zu'
-]
 
 # Init/load config file
 cli.script_name = os.path.splitext(os.path.basename(__file__))[0]
@@ -68,7 +68,7 @@ if args.init: # create config file
 def parse_csv_langs(str) : return [lang.strip() for lang in str.split(',') if lang.strip()]
 include_arg = args.include_langs or cli.config_data.get('include_langs', '')
 exclude_arg = args.exclude_langs or cli.config_data.get('exclude_langs', '')
-target_locales = parse_csv_langs(include_arg) or default_target_locales
+target_locales = parse_csv_langs(include_arg) or cli.default_target_locales
 exclude_langs = set(parse_csv_langs(exclude_arg))
 target_locales = [lang for lang in target_locales if lang not in exclude_langs]
 
