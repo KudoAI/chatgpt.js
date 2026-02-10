@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.3
+Version:      2026.2.10.4
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -33,10 +33,9 @@ parser.add_argument('--include-langs', type=str, help='Comma-separated list of l
 parser.add_argument('--exclude-langs', type=str, help='Comma-separated list of languages to exclude (e.g. "en,es")')
 args = parser.parse_args()
 def parse_csv_langs(str) : return [lang.strip() for lang in str.split(',') if lang.strip()]
-target_locales = parse_csv_langs(args.include_langs) if args.include_langs else default_target_locales
-if args.exclude_langs:
-    exclude_langs = set(parse_csv_langs(args.exclude_langs))
-    target_locales = [lang for lang in target_locales if lang not in exclude_langs]
+target_locales = parse_csv_langs(args.include_langs or '') or default_target_locales
+exclude_langs = set(parse_csv_langs(args.exclude_langs or ''))
+target_locales = [lang for lang in target_locales if lang not in exclude_langs]
 
 # UI initializations
 terminal_width = os.get_terminal_size()[0]
