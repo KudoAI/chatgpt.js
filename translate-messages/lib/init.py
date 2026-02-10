@@ -6,7 +6,7 @@ def cli(caller_file):
 
     cli = sns(
         name='translate-messages',
-        version='2026.2.10.47',
+        version='2026.2.10.48',
         author=sns(name='Adam Lui', email='adam@kudoa.com', url='https://github.com/adamlui'),
         description='Translate en/messages.json to other locales',
         urls=sns(
@@ -55,7 +55,7 @@ def cli(caller_file):
 
     return cli
 
-def configFile(cli):
+def config_file(cli):
     if os.path.exists(cli.config_path):
         print(f'Config already exists at {cli.config_path}')
     else:
@@ -67,7 +67,23 @@ def configFile(cli):
         except (requests.RequestException, ValueError):
             cli.config_data = {}
 
-        with open(cli.config_path, 'w', encoding='utf-8') as configFile:
-            json.dump(cli.config_data, configFile, indent=2)
+        with open(cli.config_path, 'w', encoding='utf-8') as config_file:
+            json.dump(cli.config_data, config_file, indent=2)
 
         print(f'Default config created at {cli.config_path}')
+
+def locales_dir(locales_dir):
+    script_dir = os.path.abspath(os.path.dirname(__file__))
+    for root, dirs, files in os.walk(script_dir): # search script dir recursively
+        if locales_dir in dirs:
+            locales_dir = os.path.join(root, locales_dir) ; break
+    else: # search script parent dirs recursively
+        parent_dir = os.path.dirname(script_dir)
+        while parent_dir and parent_dir != script_dir:
+            for root, dirs, files in os.walk(parent_dir):
+                if locales_dir in dirs:
+                    locales_dir = os.path.join(root, locales_dir) ; break
+            if locales_dir : break
+            parent_dir = os.path.dirname(parent_dir)
+        else : locales_dir = None
+    return locales_dir

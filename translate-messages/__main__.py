@@ -5,7 +5,7 @@ from translate import Translator
 
 cli = init.cli(__file__)
 
-if cli.args.init : init.configFile(cli)
+if cli.args.init : init.config_file(cli)
 
 print('')
 
@@ -19,23 +19,11 @@ while True:
 
 # Determine closest locales dir
 log.trunc(f'\nSearching for {cli.locales_dir}...')
-script_dir = os.path.abspath(os.path.dirname(__file__))
-for root, dirs, files in os.walk(script_dir): # search script dir recursively
-    if cli.locales_dir in dirs:
-        cli.locales_dir = os.path.join(root, cli.locales_dir) ; break
-else: # search script parent dirs recursively
-    parent_dir = os.path.dirname(script_dir)
-    while parent_dir and parent_dir != script_dir:
-        for root, dirs, files in os.walk(parent_dir):
-            if cli.locales_dir in dirs:
-                cli.locales_dir = os.path.join(root, cli.locales_dir) ; break
-        if cli.locales_dir : break
-        parent_dir = os.path.dirname(parent_dir)
-    else : cli.locales_dir = None
-
-# Print result
-if cli.locales_dir : log.trunc(f'_locales directory found!\n\n>> {cli.locales_dir}\n')
-else : log.trunc(f'Unable to locate a {cli.locales_dir} directory.') ; exit()
+cli.locales_dir = init.locales_dir(cli.locales_dir)
+if cli.locales_dir:
+    log.trunc(f'_locales directory found!\n\n>> {cli.locales_dir}\n')
+else:
+    log.trunc(f'Unable to locate a {cli.locales_dir} directory.') ; exit()
 
 # Load en/messages.json
 msgs_filename = 'messages.json'
