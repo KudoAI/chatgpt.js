@@ -5,7 +5,15 @@ def parse_csv_val(val) : return [item.strip() for item in val.split(',') if item
 def cli(callerFile):
     cli = sns(
         name='translate-messages',
-        urls=sns(jsdelivr='https://cdn.jsdelivr.net/gh/adamlui/python-utils'),
+        version='2026.2.10.38',
+        author=sns(name='Adam Lui', email='adam@kudoa.com', url='https://github.com/adamlui'),
+        description='Translate en/messages.json to other locales',
+        urls=sns(
+            github='https://github.com/adamlui/python-utils',
+            jsdelivr='https://cdn.jsdelivr.net/gh/adamlui/python-utils',
+            sponsor='https://github.com/sponsors/adamlui',
+            support='https://github.com/adamlui/python-utils/issues'
+        ),
         default_target_locales=[
             'af', 'am', 'ar', 'az', 'be', 'bem', 'bg', 'bn', 'bo', 'bs', 'ca', 'ceb', 'cs', 'cy', 'da', 'de', 'dv',
             'dz', 'el', 'en', 'en-GB', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fo', 'fr', 'gd', 'gl', 'gu', 'haw', 'he',
