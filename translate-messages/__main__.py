@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages
-Version:      2026.2.10.33
+Version:      2026.2.10.34
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -31,14 +31,6 @@ if cli.args.init: # create config file
         print(f'Default config created at {cli.config_path}')
     exit()
 
-# Init cli.target_locales
-def parse_csv_val(val) : return [item.strip() for item in val.split(',') if item.strip()]
-include_arg = cli.args.include_langs or cli.config_data.get('include_langs', '')
-exclude_arg = cli.args.exclude_langs or cli.config_data.get('exclude_langs', '')
-cli.target_locales = parse_csv_val(include_arg) or cli.default_target_locales
-exclude_langs = set(parse_csv_val(exclude_arg))
-cli.target_locales = [lang for lang in cli.target_locales if lang not in exclude_langs]
-
 # UI initializations
 try:
     terminal_width = os.get_terminal_size()[0]
@@ -53,6 +45,7 @@ def overwrite_print(msg) : stdout.write('\r' + msg.ljust(terminal_width)[:termin
 print('')
 
 # Prompt user for keys to ignore
+def parse_csv_val(val) : return [item.strip() for item in val.split(',') if item.strip()]
 ignore_keys = parse_csv_val(cli.args.ignore_keys or cli.config_data.get('ignore_keys', ''))
 while True:
     if ignore_keys : print('Ignored key(s):', ignore_keys)
