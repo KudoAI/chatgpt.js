@@ -20,7 +20,7 @@ const chatgpt = {
 
     selectors: {
         btns: {
-            continue: 'button:has(svg[class*=rotate] > path[d^="M4.47189"])',
+            continue: 'button:has(svg > use[href$="#ee0f3c"])',
             createImage: 'button[data-testid=composer-button-create-image]',
             login: 'button[data-testid*=login]',
             newChat: 'a[href="/"]:has(svg),' // Pencil button (when logged in)
