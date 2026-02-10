@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.15
+Version:      2026.2.10.16
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -15,7 +15,7 @@ from sys import stdout
 from translate import Translator
 from urllib.request import urlopen
 
-locales_folder = '_locales' ; provider = ''
+provider = ''
 default_target_locales = [
     'af', 'am', 'ar', 'az', 'be', 'bem', 'bg', 'bn', 'bo', 'bs', 'ca', 'ceb', 'cs', 'cy', 'da', 'de', 'dv', 'dz', 'el',
     'en', 'en-GB', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fo', 'fr', 'gd', 'gl', 'gu', 'haw', 'he', 'hi', 'hr', 'ht',
@@ -39,8 +39,10 @@ parser = argparse.ArgumentParser(description='Translate en/messages.json to othe
 parser.add_argument('--include-langs', type=str, help='Languages to include (e.g. "en,es,fr")')
 parser.add_argument('--exclude-langs', type=str, help='Languages to exclude (e.g. "en,es")')
 parser.add_argument('--ignore-keys', type=str, help='Keys to ignore (e.g. "appName,author")')
+parser.add_argument('--locales-dir', type=str, help='Name of folder containing locales')
 parser.add_argument('--init', action='store_true', help='Create .config.json file to store defaults')
 args = parser.parse_args()
+locales_dir = args.locales_dir or '_locales'
 
 if args.init: # create config file
     if os.path.exists(config_path):
@@ -86,25 +88,24 @@ while True:
     ignore_keys.append(key)
 
 # Determine closest locales dir
-print_trunc(f'\nSearching for { locales_folder }...')
+print_trunc(f'\nSearching for { locales_dir }...')
 script_dir = os.path.abspath(os.path.dirname(__file__))
-locales_dir = None
 for root, dirs, files in os.walk(script_dir): # search script dir recursively
-    if locales_folder in dirs:
-        locales_dir = os.path.join(root, locales_folder) ; break
+    if locales_dir in dirs:
+        locales_dir = os.path.join(root, locales_dir) ; break
 else: # search script parent dirs recursively
     parent_dir = os.path.dirname(script_dir)
     while parent_dir and parent_dir != script_dir:
         for root, dirs, files in os.walk(parent_dir):
-            if locales_folder in dirs:
-                locales_dir = os.path.join(root, locales_folder) ; break
+            if locales_dir in dirs:
+                locales_dir = os.path.join(root, locales_dir) ; break
         if locales_dir : break
         parent_dir = os.path.dirname(parent_dir)
     else : locales_dir = None
 
 # Print result
 if locales_dir : print_trunc(f'_locales directory found!\n\n>> { locales_dir }\n')
-else : print_trunc(f'Unable to locate a { locales_folder } directory.') ; exit()
+else : print_trunc(f'Unable to locate a { locales_dir } directory.') ; exit()
 
 # Load en/messages.json
 msgs_filename = 'messages.json'
