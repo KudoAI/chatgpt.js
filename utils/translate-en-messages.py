@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages.py
-Version:      2026.2.10.9
+Version:      2026.2.10.10
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -15,7 +15,7 @@ from sys import stdout
 from translate import Translator
 from urllib.request import urlopen
 
-DEFAULT_CONFIG = { 'include_langs': '', 'exclude_langs': '' }
+DEFAULT_CONFIG = { 'include_langs': '', 'exclude_langs': '', 'ignore_keys': '' }
 
 locales_folder = '_locales' ; provider = ''
 default_target_locales = [
@@ -41,6 +41,7 @@ if os.path.exists(config_path):
 parser = argparse.ArgumentParser(description='Translate en/messages.json to other locales')
 parser.add_argument('--include-langs', type=str, help='Comma-separated list of languages to include (e.g. "en,es,fr")')
 parser.add_argument('--exclude-langs', type=str, help='Comma-separated list of languages to exclude (e.g. "en,es")')
+parser.add_argument('--ignore-keys', type=str, help='Comma-separated list of keys to ignore (e.g. "appName,author")')
 parser.add_argument('--init', action='store_true', help='Create a default config file adjacent to this script')
 args = parser.parse_args()
 
@@ -80,9 +81,9 @@ def overwrite_print(msg) : stdout.write('\r' + msg.ljust(terminal_width)[:termin
 print('')
 
 # Prompt user for keys to ignore
-keys_to_ignore = []
+keys_to_ignore = parse_csv_langs(args.ignore_keys or config_data.get('ignore_keys', ''))
 while True:
-    if len(keys_to_ignore) : print('Ignored key(s):', keys_to_ignore)
+    if keys_to_ignore : print('Ignored key(s):', keys_to_ignore)
     key = input('Enter key to ignore (or ENTER if done): ')
     if not key : break
     keys_to_ignore.append(key)
