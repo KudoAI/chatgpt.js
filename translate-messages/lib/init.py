@@ -2,11 +2,11 @@ import argparse, json, os
 from lib import data
 from types import SimpleNamespace as sns
 
-def cli(callerFile):
+def cli(caller_file):
 
     cli = sns(
         name='translate-messages',
-        version='2026.2.10.44',
+        version='2026.2.10.45',
         author=sns(name='Adam Lui', email='adam@kudoa.com', url='https://github.com/adamlui'),
         description='Translate en/messages.json to other locales',
         urls=sns(
@@ -28,7 +28,7 @@ def cli(callerFile):
 
     # Load from config file
     cli.config_filename = f'{cli.name}.config.json'
-    cli.config_path = os.path.join(os.path.dirname(callerFile), cli.config_filename)
+    cli.config_path = os.path.join(os.path.dirname(caller_file), cli.config_filename)
     cli.config_data = {}
     if os.path.exists(cli.config_path):
         with open(cli.config_path, 'r', encoding='utf-8') as f:
