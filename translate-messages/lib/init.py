@@ -1,8 +1,8 @@
-import json, os
+import argparse, json, os
 from types import SimpleNamespace as sns
 
-def cli():
-    return sns(
+def cli(callerFile):
+    cli = sns(
         name='translate-messages',
         urls=sns(jsdelivr='https://cdn.jsdelivr.net/gh/adamlui/python-utils'),
         default_target_locales=[
@@ -16,10 +16,24 @@ def cli():
         ]
     )
 
-def configFile(cli, caller_file):
+    # Init config file
     cli.config_filename = f'{cli.name}.config.json'
-    cli.config_path = os.path.join(os.path.dirname(caller_file), cli.config_filename)
+    cli.config_path = os.path.join(os.path.dirname(callerFile), cli.config_filename)
     cli.config_data = {}
     if os.path.exists(cli.config_path):
         with open(cli.config_path, 'r', encoding='utf-8') as f:
             cli.config_data.update(json.load(f))
+
+    # Parse CLI args
+    parser = argparse.ArgumentParser(description='Translate en/messages.json to other locales')
+    parser.add_argument('--include-langs', type=str, help='Languages to include (e.g. "en,es,fr")')
+    parser.add_argument('--exclude-langs', type=str, help='Languages to exclude (e.g. "en,es")')
+    parser.add_argument('--ignore-keys', type=str, help='Keys to ignore (e.g. "appName,author")')
+    parser.add_argument('--locales-dir', type=str, help='Name of folder containing locales')
+    parser.add_argument('--provider', type=str, help='Name of provider to use for translation')
+    parser.add_argument('--init', action='store_true', help='Create .config.json file to store defaults')
+    cli.args = parser.parse_args()
+    cli.locales_dir = cli.args.locales_dir or cli.config_data.get('locales_dir', '') or '_locales'
+    cli.provider = cli.args.provider or cli.config_data.get('provider', '')
+
+    return cli

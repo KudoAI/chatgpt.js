@@ -1,6 +1,6 @@
 '''
 Name:         translate-en-messages
-Version:      2026.2.10.31
+Version:      2026.2.10.32
 Author:       Adam Lui
 Description:  Translate en/messages.json to other locales
 Homepage:     https://github.com/adamlui/python-utils
@@ -9,25 +9,13 @@ Sponsor:      https://github.com/sponsors/adamlui
 Notes:        Use --help to print CLI args
 '''
 
-import argparse, os, json
+import os, json
 from lib import init
 from sys import stdout
 from translate import Translator
 from urllib.request import urlopen
 
-cli = init.cli() ; init.configFile(cli, __file__)
-
-# Parse CLI args
-parser = argparse.ArgumentParser(description='Translate en/messages.json to other locales')
-parser.add_argument('--include-langs', type=str, help='Languages to include (e.g. "en,es,fr")')
-parser.add_argument('--exclude-langs', type=str, help='Languages to exclude (e.g. "en,es")')
-parser.add_argument('--ignore-keys', type=str, help='Keys to ignore (e.g. "appName,author")')
-parser.add_argument('--locales-dir', type=str, help='Name of folder containing locales')
-parser.add_argument('--provider', type=str, help='Name of provider to use for translation')
-parser.add_argument('--init', action='store_true', help='Create .config.json file to store defaults')
-cli.args = parser.parse_args()
-cli.locales_dir = cli.args.locales_dir or cli.config_data.get('locales_dir', '') or '_locales'
-cli.provider = cli.args.provider or cli.config_data.get('provider', '')
+cli = init.cli(__file__)
 
 if cli.args.init: # create config file
     if os.path.exists(cli.config_path):
