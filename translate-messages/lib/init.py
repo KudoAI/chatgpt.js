@@ -6,7 +6,7 @@ def cli(caller_file):
 
     cli = sns(
         name='translate-messages',
-        version='2026.2.10.56',
+        version='2026.2.10.57',
         author=sns(name='Adam Lui', email='adam@kudoa.com', url='https://github.com/adamlui'),
         description='Translate en/messages.json to other locales',
         urls=sns(
@@ -77,9 +77,8 @@ def locales_dir(locales_dir):
     for root, dirs, _ in os.walk(lib_dir): # search lib dir recursively
         if locales_dir in dirs:
             locales_dir = os.path.join(root, locales_dir) ; break
-    else: # search lib parent dirs recursively
         parent_dir = os.path.dirname(lib_dir)
-        while parent_dir and parent_dir != lib_dir:
+        while parent_dir and parent_dir != lib_dir: # search recursively
             for root, dirs, _ in os.walk(parent_dir):
                 if locales_dir in dirs:
                     locales_dir = os.path.join(root, locales_dir) ; break
