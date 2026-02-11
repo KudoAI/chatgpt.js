@@ -7,17 +7,14 @@ cli = init.cli(__file__)
 
 if cli.args.init : init.config_file(cli)
 
-print('')
-
-# Prompt user for keys to ignore
 cli.ignore_keys = data.csv.parse_val(cli.args.ignore_keys or cli.config_data.get('ignore_keys', ''))
-while True:
+print('')
+while True: # prompt user for keys to ignore
     if cli.ignore_keys : print('Ignored key(s):', cli.ignore_keys)
     key = input('Enter key to ignore (or ENTER if done): ')
     if not key : break
     cli.ignore_keys.append(key)
 
-# Determine closest locales dir
 log.trunc(f'\nSearching for {cli.locales_dir}...')
 cli.locales_dir = init.locales_dir(cli.locales_dir)
 if cli.locales_dir : log.trunc(f'_locales directory found!\n\n>> {cli.locales_dir}\n')
@@ -30,7 +27,7 @@ with open(en_msgs_path, 'r', encoding='utf-8') as en_file : en_messages = json.l
 
 # Combine [cli.target_locales] w/ languages discovered in _locales
 output_langs = list(set(cli.target_locales)) # remove duplicates
-for root, dirs, files in os.walk(cli.locales_dir):
+for root, dirs, _ in os.walk(cli.locales_dir):
     for folder in dirs:
         folder_path = os.path.join(root, folder)
         msgs_path = os.path.join(folder_path, msgs_filename)
