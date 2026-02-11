@@ -6,7 +6,7 @@ def cli(caller_file):
 
     cli = sns(
         name='translate-messages',
-        version='2026.2.10.61',
+        version='2026.2.10.62',
         author=sns(name='Adam Lui', email='adam@kudoa.com', url='https://github.com/adamlui'),
         description='Translate en/messages.json to other locales',
         urls=sns(
@@ -49,8 +49,8 @@ def cli(caller_file):
     # Init cli.target_locales
     include_arg = cli.args.include_langs or cli.config_data.get('include_langs', '')
     exclude_arg = cli.args.exclude_langs or cli.config_data.get('exclude_langs', '')
-    cli.target_locales = data.csv.parse_val(include_arg) or cli.default_target_locales
-    exclude_langs = set(data.csv.parse_val(exclude_arg))
+    cli.target_locales = data.csv.parse(include_arg) or cli.default_target_locales
+    exclude_langs = set(data.csv.parse(exclude_arg))
     cli.target_locales = [lang for lang in cli.target_locales if lang not in exclude_langs]
 
     return cli

@@ -6,7 +6,7 @@ cli = init.cli(__file__)
 
 if cli.args.init : init.config_file(cli) ; sys.exit(0)
 
-cli.ignore_keys = data.csv.parse_val(cli.args.ignore_keys or cli.config_data.get('ignore_keys', ''))
+cli.ignore_keys = data.csv.parse(cli.args.ignore_keys or cli.config_data.get('ignore_keys', ''))
 print('')
 while True: # prompt user for keys to ignore
     if cli.ignore_keys : print('Ignored key(s):', cli.ignore_keys)
