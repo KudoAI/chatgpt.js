@@ -22,7 +22,7 @@ else : log.trunc(f'Unable to locate a {cli.locales_dir} directory.') ; exit()
 # Load en/messages.json
 msgs_filename = 'messages.json'
 en_msgs_path = os.path.join(cli.locales_dir, 'en', msgs_filename)
-with open(en_msgs_path, 'r', encoding='utf-8') as en_file : en_messages = json.load(en_file)
+en_messages = data.json.read(en_msgs_path)
 
 # Combine [cli.target_locales] w/ languages discovered in _locales
 output_langs = list(set(cli.target_locales)) # remove duplicates
@@ -55,9 +55,7 @@ for lang_code in output_langs:
 
     # Initialize target messages
     msgs_path = os.path.join(folder_path, msgs_filename)
-    if os.path.exists(msgs_path):
-        with open(msgs_path, 'r', encoding='utf-8') as messages_file : messages = json.load(messages_file)
-    else : messages = {}
+    messages = data.json.read(msgs_path)
 
     # Attempt translations
     log.trunc(f"{ 'Adding' if not messages else 'Updating' } { folder }/messages.json...", end='')
