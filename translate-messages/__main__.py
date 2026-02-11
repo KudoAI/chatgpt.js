@@ -26,8 +26,7 @@ else : log.trunc(f'Unable to locate a {cli.locales_dir} directory.') ; exit()
 # Load en/messages.json
 msgs_filename = 'messages.json'
 en_msgs_path = os.path.join(cli.locales_dir, 'en', msgs_filename)
-with open(en_msgs_path, 'r', encoding='utf-8') as en_file:
-    en_messages = json.load(en_file)
+with open(en_msgs_path, 'r', encoding='utf-8') as en_file : en_messages = json.load(en_file)
 
 # Combine [cli.target_locales] w/ languages discovered in _locales
 output_langs = list(set(cli.target_locales)) # remove duplicates
