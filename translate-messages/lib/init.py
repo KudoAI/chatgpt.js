@@ -6,7 +6,7 @@ def cli(caller_file):
 
     cli = sns(
         name='translate-messages',
-        version='2026.2.10.53',
+        version='2026.2.10.54',
         author=sns(name='Adam Lui', email='adam@kudoa.com', url='https://github.com/adamlui'),
         description='Translate en/messages.json to other locales',
         urls=sns(
@@ -73,13 +73,13 @@ def config_file(cli):
         print(f'Default config created at {cli.config_path}')
 
 def locales_dir(locales_dir):
-    script_dir = os.path.abspath(os.path.dirname(__file__))
-    for root, dirs, files in os.walk(script_dir): # search script dir recursively
+    lib_dir = os.path.abspath(os.path.dirname(__file__))
+    for root, dirs, files in os.walk(lib_dir): # search lib dir recursively
         if locales_dir in dirs:
             locales_dir = os.path.join(root, locales_dir) ; break
-    else: # search script parent dirs recursively
-        parent_dir = os.path.dirname(script_dir)
-        while parent_dir and parent_dir != script_dir:
+    else: # search lib parent dirs recursively
+        parent_dir = os.path.dirname(lib_dir)
+        while parent_dir and parent_dir != lib_dir:
             for root, dirs, files in os.walk(parent_dir):
                 if locales_dir in dirs:
                     locales_dir = os.path.join(root, locales_dir) ; break
