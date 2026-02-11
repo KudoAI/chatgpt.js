@@ -10,7 +10,7 @@ if cli.args.init : init.config_file(cli)
 print('')
 
 # Prompt user for keys to ignore
-cli.ignore_keys = data.parse_csv_val(cli.args.ignore_keys or cli.config_data.get('ignore_keys', ''))
+cli.ignore_keys = data.csv.parse_val(cli.args.ignore_keys or cli.config_data.get('ignore_keys', ''))
 while True:
     if cli.ignore_keys : print('Ignored key(s):', cli.ignore_keys)
     key = input('Enter key to ignore (or ENTER if done): ')
