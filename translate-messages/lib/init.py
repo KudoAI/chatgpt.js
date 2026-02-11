@@ -66,10 +66,8 @@ def config_file(cli):
             cli.config_data = resp.json()
         except (requests.RequestException, ValueError):
             cli.config_data = {}
-
-        with open(cli.config_path, 'w', encoding='utf-8') as config_file:
-            json.dump(cli.config_data, config_file, indent=2)
-
+        
+        data.json.write(cli.config_data, cli.config_path)
         print(f'Default config created at {cli.config_path}')
 
 def locales_dir(locales_dir):
