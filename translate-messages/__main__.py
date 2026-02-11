@@ -1,11 +1,10 @@
-import os, json
+import json, os, sys
 from lib import data, init, log
-from sys import stdout
 from translate import Translator
 
 cli = init.cli(__file__)
 
-if cli.args.init : init.config_file(cli)
+if cli.args.init : init.config_file(cli) ; sys.exit(0)
 
 cli.ignore_keys = data.csv.parse_val(cli.args.ignore_keys or cli.config_data.get('ignore_keys', ''))
 print('')
@@ -62,7 +61,7 @@ for lang_code in output_langs:
 
     # Attempt translations
     log.trunc(f"{ 'Adding' if not messages else 'Updating' } { folder }/messages.json...", end='')
-    stdout.flush()
+    sys.stdout.flush()
     en_keys = list(en_messages.keys())
     fail_flags = ['INVALID TARGET LANGUAGE', 'TOO MANY REQUESTS', 'MYMEMORY']
     for key in en_keys:
