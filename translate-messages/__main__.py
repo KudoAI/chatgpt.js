@@ -45,7 +45,7 @@ for lang_code in output_langs:
 
     # Skip English locales
     if lang_code.startswith('en'):
-        log.trunc(f'Skipped {folder}/messages.json...')
+        log.trunc(f'Skipped {folder}/{msgs_filename}...')
         langs_skipped.append(lang_code) ; langs_not_translated.append(lang_code) ; continue
 
     # Initialize target locale folder
@@ -58,7 +58,7 @@ for lang_code in output_langs:
     messages = data.json.read(msgs_path)
 
     # Attempt translations
-    log.trunc(f"{ 'Adding' if not messages else 'Updating' } { folder }/messages.json...", end='')
+    log.trunc(f"{ 'Adding' if not messages else 'Updating' } {folder}/{msgs_filename}...", end='')
     sys.stdout.flush()
     en_keys = list(en_messages.keys())
     fail_flags = ['INVALID TARGET LANGUAGE', 'TOO MANY REQUESTS', 'MYMEMORY']
@@ -75,7 +75,7 @@ for lang_code in output_langs:
                 if any(flag in translated_msg for flag in fail_flags):
                     translated_msg = original_msg
             except Exception as err:
-                log.trunc(f'Translation failed for key "{key}" in {lang_code}/messages.json: {err}')
+                log.trunc(f'Translation failed for key "{key}" in {lang_code}/{msgs_filename}: {err}')
                 translated_msg = original_msg
             translated_msgs[key] = { 'message': translated_msg }
         else : translated_msgs[key] = messages[key]
@@ -95,7 +95,7 @@ for lang_code in output_langs:
     elif translated_msgs != messages : langs_translated.append(lang_code) ; lang_translated = True
     if not lang_translated : langs_not_translated.append(lang_code)
     log.overwrite_print(
-        f"{ 'Added' if lang_added else 'Skipped' if lang_skipped else 'Updated' } { folder }/messages.json")
+        f"{ 'Added' if lang_added else 'Skipped' if lang_skipped else 'Updated' } {folder}/{msgs_filename}")
 
 log.final_summary({
     'translated': langs_translated,
