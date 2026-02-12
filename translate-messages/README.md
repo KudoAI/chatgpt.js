@@ -1,11 +1,11 @@
-# > translate.py
+# > translate-messages
 
 Translate `en/messages.json` to other locales automatically.  
 
 ## Installation
 
 ```bash
-pip install translate.py
+pip install translate-messages
 ```
 
 ## Usage
@@ -36,7 +36,7 @@ Options can be set using command-line arguments:
 
 ## Config file
 
-- Use `--init` to create `translate.py.config.json` in your project root to set default options
+- Use `--init` to create `translate-messages.config.json` in your project root to set default options
 - CLI arguments always override config file
 
 ## Example
