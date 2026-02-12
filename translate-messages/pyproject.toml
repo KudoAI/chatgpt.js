@@ -1,6 +1,6 @@
 [project]
 name = "translate-messages"
-version = "1.0.0"
+version = "1.0.1"
 description = "Translate en/messages.json to other locales."
 authors = [{name = "Adam Lui", email = "adam@kudoai.com"}]
 readme = 'README.md'
