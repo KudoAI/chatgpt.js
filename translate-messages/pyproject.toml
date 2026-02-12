@@ -1,6 +1,6 @@
 [project]
 name = "translate-messages"
-version = "1.0.3"
+version = "1.0.4"
 description = "Translate en/messages.json to other locales."
 authors = [{name = "Adam Lui", email = "adam@kudoai.com"}]
 readme = 'README.md'
@@ -11,7 +11,7 @@ translate-msgs = "translate_messages.__main__:main"
 translate-messages = "translate_messages.__main__:main"
 
 [tool.setuptools.packages.find]
-where = ["."]
+where = ["src"]
 
 [tool.setuptools.package-data]
 "*" = ["package-data.json", "*.md"]
