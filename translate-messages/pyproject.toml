@@ -1,13 +1,16 @@
 [project]
 name = "translate-messages"
-version = "0.0.2"
-description = "Translate en/messages.json to other locales. Type translate-messages --help to view options."
+version = "1.0.0"
+description = "Translate en/messages.json to other locales. Type translate-msgs --help to view options."
 authors = [{name = "Adam Lui", email = "adam@kudoai.com"}]
-include = ["LICENSE.md"]
 dependencies = ["requests>=2.32.0,<3.0.0", "translate>=3.8.0,<4.0.0"]
 
 [project.scripts]
-translate-messages = "translate_messages.__main__:main"
+translate-msgs = "translate.__main__:main"
+translate-messages = "translate.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
 
 [tool.setuptools.package-data]
-translate_messages = ["package-data.json"]
+"*" = ["*.md"]
