@@ -14,4 +14,4 @@ translate-messages = "translate.__main__:main"
 where = ["."]
 
 [tool.setuptools.package-data]
-"*" = ["*.md"]
+"*" = ["package-data.json", "*.md"]
