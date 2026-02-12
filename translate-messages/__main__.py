@@ -1,99 +1,34 @@
-import json, os, sys
-from lib import data, init, log
-from translate import Translator
+import os, sys
+from lib import data, init, language, log
 
 cli = init.cli(__file__)
-
-if cli.args.init : init.config_file(cli) ; sys.exit(0)
+if cli.config.init : init.config_file(cli) ; sys.exit(0)
 
 while True: # prompt user for keys to ignore
-    if cli.ignore_keys : print('Ignored key(s):', cli.ignore_keys)
-    key = input('Enter key to ignore (or ENTER if done): ')
-    if not key : break
-    cli.ignore_keys.append(key)
+    if getattr(cli.config, 'ignore_keys', '') : print('Ignored key(s):', cli.config.ignore_keys)
+    input_key = input('Enter key to ignore (or ENTER if done): ')
+    if not input_key : break
+    cli.config.ignore_keys.append(input_key)
 
-log.trunc(f'\nSearching for {cli.locales_dir}...')
-cli.locales_dir = init.locales_dir(cli.locales_dir)
-if cli.locales_dir : log.trunc(f'_locales directory found!\n\n>> {cli.locales_dir}\n')
-else : log.trunc(f'Unable to locate a {cli.locales_dir} directory.') ; exit()
+log.trunc(f'\nSearching for {cli.config.locales_dir}...')
+cli.config.locales_dir = init.locales_dir(cli.config.locales_dir)
+if cli.config.locales_dir : log.trunc(f'_locales directory found!\n\n>> {cli.config.locales_dir}\n')
+else : log.trunc(f'Unable to locate a {cli.config.locales_dir} directory.') ; sys.exit(1)
 
-# Load en/messages.json
-msgs_filename = 'messages.json'
-en_msgs_path = os.path.join(cli.locales_dir, 'en', msgs_filename)
-en_messages = data.json.read(en_msgs_path)
+cli.config.msgs_filename = 'messages.json'
+cli.config.en_msgs = data.json.read(os.path.join(cli.config.locales_dir, 'en', cli.config.msgs_filename))
+cli.config.output_langs = list(set(cli.config.target_locales)) # remove dupes
 
-# Combine [cli.target_locales] w/ languages discovered in _locales
-output_langs = list(set(cli.target_locales)) # remove duplicates
-for root, dirs, _ in os.walk(cli.locales_dir):
-    for folder in dirs:
-        folder_path = os.path.join(root, folder)
-        msgs_path = os.path.join(folder_path, msgs_filename)
-        discovered_lang = folder.replace('_', '-')
-        if os.path.exists(msgs_path) and discovered_lang not in output_langs : output_langs.append(discovered_lang)
-output_langs.sort() # alphabetize languages
+if not cli.config.include_langs: # merge discovered locales w/ output_langs
+    for root, dirs, _ in os.walk(cli.config.locales_dir):
+        for lang_folder in dirs:
+            msgs_path = os.path.join(root, lang_folder, cli.config.msgs_filename)
+            discovered_lang = lang_folder.replace('_', '-')
+            if os.path.exists(msgs_path) and discovered_lang not in cli.config.output_langs:
+                cli.config.output_langs.append(discovered_lang)
+cli.config.output_langs.sort()
 
-# Create/update/translate [[output_langs]/messages.json]
-langs_added, langs_skipped, langs_translated, langs_not_translated = [], [], [], []
-for lang_code in output_langs:
-    lang_added, lang_skipped, lang_translated = False, False, False
-    folder = lang_code.replace('-', '_') ; translated_msgs = {}
-    if '-' in lang_code: # cap suffix
-        sep_idx = folder.index('_')
-        folder = folder[:sep_idx] + '_' + folder[sep_idx+1:].upper()
-
-    # Skip English locales
-    if lang_code.startswith('en'):
-        log.trunc(f'Skipped {folder}/{msgs_filename}...')
-        langs_skipped.append(lang_code) ; langs_not_translated.append(lang_code) ; continue
-
-    # Initialize target locale folder
-    folder_path = os.path.join(cli.locales_dir, folder)
-    if not os.path.exists(folder_path): # if missing, create folder
-        os.makedirs(folder_path) ; langs_added.append(lang_code) ; lang_added = True
-
-    # Initialize target messages
-    msgs_path = os.path.join(folder_path, msgs_filename)
-    messages = data.json.read(msgs_path)
-
-    # Attempt translations
-    log.trunc(f"{ 'Adding' if not messages else 'Updating' } {folder}/{msgs_filename}...", end='')
-    sys.stdout.flush()
-    en_keys = list(en_messages.keys())
-    fail_flags = ['INVALID TARGET LANGUAGE', 'TOO MANY REQUESTS', 'MYMEMORY']
-    for key in en_keys:
-        if key in cli.ignore_keys:
-            translated_msg = en_messages[key]['message']
-            translated_msgs[key] = { 'message': translated_msg }
-            continue
-        if key not in messages:
-            original_msg = translated_msg = en_messages[key]['message']
-            try:
-                translator = Translator(provider=cli.provider, to_lang=lang_code)
-                translated_msg = translator.translate(original_msg).replace('&quot;', "'").replace('&#39;', "'")
-                if any(flag in translated_msg for flag in fail_flags):
-                    translated_msg = original_msg
-            except Exception as err:
-                log.trunc(f'Translation failed for key "{key}" in {lang_code}/{msgs_filename}: {err}')
-                translated_msg = original_msg
-            translated_msgs[key] = { 'message': translated_msg }
-        else : translated_msgs[key] = messages[key]
-
-    # Format messages
-    formatted_msgs = '{\n'
-    for idx, (key, message_data) in enumerate(translated_msgs.items()):
-        formatted_msg = json.dumps(message_data, ensure_ascii=False) \
-                            .replace('{', '{ ').replace('}', ' }') # add spacing
-        formatted_msgs += ( f'  "{key}": {formatted_msg}'
-                        + ( ',\n' if idx < len(translated_msgs) -1 else '\n' )) # terminate line
-    formatted_msgs += '}'
-    with open(msgs_path, 'w', encoding='utf-8') as output_file : output_file.write(formatted_msgs + '\n')
-
-    # Print file summary
-    if translated_msgs == messages : langs_skipped.append(lang_code) ; lang_skipped = True
-    elif translated_msgs != messages : langs_translated.append(lang_code) ; lang_translated = True
-    if not lang_translated : langs_not_translated.append(lang_code)
-    log.overwrite_print(
-        f"{ 'Added' if lang_added else 'Skipped' if lang_skipped else 'Updated' } {folder}/{msgs_filename}")
+langs_translated, langs_skipped, langs_added, langs_not_translated = language.writeTranslations(cli)
 
 log.final_summary({
     'translated': langs_translated,

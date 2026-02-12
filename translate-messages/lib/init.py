@@ -6,9 +6,9 @@ def cli(caller_file):
 
     cli = sns(
         name='translate-messages',
-        version='2026.2.10.63',
+        version='2026.2.11',
         author=sns(name='Adam Lui', email='adam@kudoa.com', url='https://github.com/adamlui'),
-        description='Translate en/messages.json to other locales',
+        description='Translate en/messages.json to other locales. Type --help for cmds',
         urls=sns(
             github='https://github.com/adamlui/python-utils',
             jsdelivr='https://cdn.jsdelivr.net/gh/adamlui/python-utils',
@@ -27,12 +27,10 @@ def cli(caller_file):
     )
 
     # Load from config file
-    cli.config_filename = f'{cli.name}.config.json'
-    cli.config_path = os.path.join(os.path.dirname(caller_file), cli.config_filename)
-    cli.config_data = {}
-    if os.path.exists(cli.config_path):
-        with open(cli.config_path, 'r', encoding='utf-8') as f:
-            cli.config_data.update(json.load(f))
+    cli.config=sns()
+    cli.config.filename = f'{cli.name}.config.json'
+    cli.config.path = os.path.join(os.path.dirname(caller_file), cli.config.filename)
+    for key, val in data.json.read(cli.config.path).items() : setattr(cli.config, key, val)
 
     # Parse CLI args
     parser = argparse.ArgumentParser(description='Translate en/messages.json to other locales')
@@ -42,45 +40,48 @@ def cli(caller_file):
     parser.add_argument('--locales-dir', type=str, help='Name of folder containing locales')
     parser.add_argument('--provider', type=str, help='Name of provider to use for translation')
     parser.add_argument('--init', action='store_true', help=f'Create {cli.name}.config.json file to store defaults')
-    cli.args = parser.parse_args()
-    cli.locales_dir = cli.args.locales_dir or cli.config_data.get('locales_dir', '') or '_locales'
-    cli.provider = cli.args.provider or cli.config_data.get('provider', '')
-    include_arg = cli.args.include_langs or cli.config_data.get('include_langs', '')
-    exclude_arg = cli.args.exclude_langs or cli.config_data.get('exclude_langs', '')
-    cli.target_locales = data.csv.parse(include_arg) or cli.default_target_locales
-    exclude_langs = set(data.csv.parse(exclude_arg))
-    cli.target_locales = [lang for lang in cli.target_locales if lang not in exclude_langs]
-    cli.ignore_keys = data.csv.parse(cli.args.ignore_keys or cli.config_data.get('ignore_keys', ''))
+    cli.config.__dict__.update({ key:val for key,val in vars(parser.parse_args()).items() if val is not None })
 
-    print('')
+    # Init cli.config vals
+    cli.config.target_locales = cli.default_target_locales
+    if (getattr(cli.config, 'include_langs', '')):
+        cli.config.target_locales = data.csv.parse(cli.config.include_langs)
+    if (getattr(cli.config, 'exclude_langs', '')):
+        cli.config.exclude_langs = set(data.csv.parse(cli.config.exclude_langs))
+    if (getattr(cli.config, 'ignore_keys', '')):
+        cli.config.ignore_keys = data.csv.parse(cli.config.ignore_keys)
+    if (not getattr(cli.config, 'locales_dir', '')):
+        cli.config.locales_dir = '_locales'
+    if (cli.config.exclude_langs):
+        cli.config.target_locales = [lang for lang in cli.config.target_locales if lang not in cli.config.exclude_langs]
 
     return cli
 
 def config_file(cli):
-    if os.path.exists(cli.config_path):
-        print(f'Config already exists at {cli.config_path}')
+    if os.path.exists(cli.config.path):
+        print(f'Config already exists at {cli.config.path}')
     else:
         try:
-            jsd_url = f'{cli.urls.jsdelivr}/{cli.name}/{cli.config_filename}'
+            jsd_url = f'{cli.urls.jsdelivr}/{cli.name}/{cli.config.filename}'
             resp = requests.get(jsd_url, timeout=5)
             resp.raise_for_status()
-            cli.config_data = resp.json()
+            cli.file_config = resp.json()
         except (requests.RequestException, ValueError):
-            cli.config_data = {}
+            cli.file_config = {}
         
-        data.json.write(cli.config_data, cli.config_path)
-        print(f'Default config created at {cli.config_path}')
+        data.json.write(cli.file_config, cli.config.path)
+        print(f'Default config created at {cli.config.path}')
 
 def locales_dir(locales_dir):
     lib_dir = os.path.abspath(os.path.dirname(__file__))
     for root, dirs, _ in os.walk(lib_dir): # search lib dir recursively
         if locales_dir in dirs:
-            locales_dir = os.path.join(root, locales_dir) ; break
+           locales_dir = os.path.join(root, locales_dir) ; break
         parent_dir = os.path.dirname(lib_dir)
         while parent_dir and parent_dir != lib_dir: # search recursively
             for root, dirs, _ in os.walk(parent_dir):
                 if locales_dir in dirs:
-                    locales_dir = os.path.join(root, locales_dir) ; break
+                   locales_dir = os.path.join(root, locales_dir) ; break
             if locales_dir : break
             parent_dir = os.path.dirname(parent_dir)
         else : locales_dir = None
