@@ -2,7 +2,7 @@ import os, sys
 from lib import data, log
 from translate import Translator
 
-def createTranslations(cli, target_msgs, lang_code):
+def create_translations(cli, target_msgs, lang_code):
     src_keys = list(cli.config.en_msgs.keys()) ; translated_msgs = {}
     fail_flags = ['INVALID TARGET LANGUAGE', 'TOO MANY REQUESTS', 'MYMEMORY']
 
@@ -29,7 +29,7 @@ def createTranslations(cli, target_msgs, lang_code):
     
     return translated_msgs
 
-def writeTranslations(cli):
+def write_translations(cli):
     langs_added, langs_skipped, langs_translated, langs_not_translated = [], [], [], []
     for lang_code in cli.config.output_langs:
         lang_added, lang_skipped, lang_translated = False, False, False
@@ -51,7 +51,7 @@ def writeTranslations(cli):
 
         log.trunc(f"{ 'Adding' if not msgs else 'Updating' } {lang_folder}/{cli.config.msgs_filename}...", end='')
         sys.stdout.flush()
-        translated_msgs = createTranslations(cli, msgs, lang_code)
+        translated_msgs = create_translations(cli, msgs, lang_code)
         data.json.write(translated_msgs, msgs_path)
 
         if translated_msgs == msgs : langs_skipped.append(lang_code) ; lang_skipped = True

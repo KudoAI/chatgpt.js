@@ -29,7 +29,7 @@ if not cli.config.include_langs: # merge discovered locales w/ output_langs
                 cli.config.output_langs.append(discovered_lang)
 cli.config.output_langs.sort()
 
-langs_translated, langs_skipped, langs_added, langs_not_translated = language.writeTranslations(cli)
+langs_translated, langs_skipped, langs_added, langs_not_translated = language.write_translations(cli)
 
 log.final_summary({
     'translated': langs_translated,
