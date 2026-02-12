@@ -1,7 +1,7 @@
 [project]
 name = "translate-messages"
 version = "1.0.0"
-description = "Translate en/messages.json to other locales. Type translate-msgs --help to view options."
+description = "Translate en/messages.json to other locales."
 authors = [{name = "Adam Lui", email = "adam@kudoai.com"}]
 readme = 'README.md'
 dependencies = ["requests>=2.32.0,<3.0.0", "translate>=3.8.0,<4.0.0"]
