@@ -1,5 +1,5 @@
 import os, sys
-from lib import data, log
+from . import data, log
 from translate import Translator
 
 def create_translations(cli, target_msgs, lang_code):
