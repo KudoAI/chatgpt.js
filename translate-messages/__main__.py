@@ -4,11 +4,12 @@ from lib import data, init, language, log
 cli = init.cli(__file__)
 if cli.config.init : init.config_file(cli) ; sys.exit(0)
 
-while True: # prompt user for keys to ignore
-    if getattr(cli.config, 'ignore_keys', '') : print('Ignored key(s):', cli.config.ignore_keys)
-    input_key = input('Enter key to ignore (or ENTER if done): ')
-    if not input_key : break
-    cli.config.ignore_keys.append(input_key)
+if not cli.config.no_wizard:
+    while True: # prompt user for keys to ignore
+        if getattr(cli.config, 'ignore_keys', '') : print('Ignored key(s):', cli.config.ignore_keys)
+        input_key = input('Enter key to ignore (or ENTER if done): ')
+        if not input_key : break
+        cli.config.ignore_keys.append(input_key)
 
 log.trunc(f'\nSearching for {cli.config.locales_dir}...')
 cli.config.locales_dir = init.locales_dir(cli.config.locales_dir)

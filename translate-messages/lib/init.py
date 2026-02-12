@@ -40,6 +40,7 @@ def cli(caller_file):
     parser.add_argument('--locales-dir', type=str, help='Name of folder containing locales')
     parser.add_argument('--provider', type=str, help='Name of provider to use for translation')
     parser.add_argument('--init', action='store_true', help=f'Create {cli.name}.config.json file to store defaults')
+    parser.add_argument('--no-wizard', action='store_true', default=None, help='Skip start-up prompts')
     cli.config.__dict__.update({ key:val for key,val in vars(parser.parse_args()).items() if val is not None })
 
     # Init cli.config vals
@@ -52,8 +53,9 @@ def cli(caller_file):
         cli.config.ignore_keys = data.csv.parse(cli.config.ignore_keys)
     if (not getattr(cli.config, 'locales_dir', '')):
         cli.config.locales_dir = '_locales'
-    if (cli.config.exclude_langs):
+    if (getattr(cli.config, 'exclude_langs', '')):
         cli.config.target_locales = [lang for lang in cli.config.target_locales if lang not in cli.config.exclude_langs]
+    if not hasattr(cli.config, 'no_wizard') : cli.config.no_wizard = False
 
     return cli
 
