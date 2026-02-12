@@ -7,11 +7,11 @@ except OSError:
     terminal_width = 80
 
 def final_summary(summary_dict):
-    trunc('\nAll JSON files updated successfully!\n\n')
+    trunc('\nAll JSON files updated successfully!\n')
     for name, lang_set in summary_dict.items():
         if lang_set:
             status = name.replace('_', ' ')
-            print(f'Languages {status}: {len(lang_set)}')
+            print(f'\nLanguages {status}: {len(lang_set)}')
             print(f"[ {', '.join(lang_set)} ]")
 
 def overwrite_print(msg) : stdout.write('\r' + msg.ljust(terminal_width)[:terminal_width])
