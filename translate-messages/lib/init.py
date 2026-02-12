@@ -31,8 +31,8 @@ def cli(caller_file):
         data.csv.parse(cli.config.exclude_langs) if (getattr(cli.config, 'exclude_langs', '')) else []
     cli.config.ignore_keys = \
         data.csv.parse(cli.config.ignore_keys) if (getattr(cli.config, 'ignore_keys', '')) else []
-    if not hasattr(cli.config, 'locales_dir') : cli.config.locales_dir = '_locales'
-    if not hasattr(cli.config, 'provider') : cli.config.provider = ''
+    cli.config.locales_dir = getattr(cli.config, 'locales_dir', '_locales')
+    cli.config.provider = getattr(cli.config, 'provider', '')
     if cli.config.exclude_langs:
        cli.config.target_locales = [lang for lang in cli.config.target_locales if lang not in cli.config.exclude_langs]
     cli.config.no_wizard = getattr(cli.config, 'no_wizard', False)
