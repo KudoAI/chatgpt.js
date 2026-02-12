@@ -20,7 +20,7 @@ def cli(caller_file):
     argp.add_argument('--locales-dir', type=str, help='Name of folder containing locales')
     argp.add_argument('--provider', type=str, help='Name of provider to use for translation')
     argp.add_argument('--init', action='store_true', help=f'Create {cli.name}.config.json file to store defaults')
-    argp.add_argument('--no-wizard', action='store_true', default=None, help='Skip start-up prompts')
+    argp.add_argument('--no-wizard', action='store_true', default=None, help='Skip interactive prompts during start-up')
     cli.config.__dict__.update({ key:val for key,val in vars(argp.parse_args()).items() if val is not None })
 
     # Init cli.config vals

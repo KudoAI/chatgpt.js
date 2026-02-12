@@ -1,6 +1,6 @@
 [project]
 name = "translate-messages"
-version = "0.0.1"
+version = "0.0.2"
 description = "Translate en/messages.json to other locales. Type translate-messages --help to view options."
 authors = [{name = "Adam Lui", email = "adam@kudoai.com"}]
 include = ["LICENSE.md"]
