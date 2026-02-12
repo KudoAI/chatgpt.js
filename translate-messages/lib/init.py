@@ -24,13 +24,9 @@ def cli(caller_file):
     cli.config.__dict__.update({ key:val for key,val in vars(parser.parse_args()).items() if val is not None })
 
     # Init cli.config vals
-    cli.config.target_locales = \
-        data.csv.parse(cli.config.include_langs) if getattr(cli.config, 'include_langs', '') \
-            else cli.default_target_locales
-    cli.config.exclude_langs = \
-        data.csv.parse(cli.config.exclude_langs) if (getattr(cli.config, 'exclude_langs', '')) else []
-    cli.config.ignore_keys = \
-        data.csv.parse(cli.config.ignore_keys) if (getattr(cli.config, 'ignore_keys', '')) else []
+    cli.config.target_locales = data.csv.parse(getattr(cli.config, 'include_langs', None)) or cli.default_target_locales
+    cli.config.exclude_langs = data.csv.parse(getattr(cli.config, 'exclude_langs', None)) or []
+    cli.config.ignore_keys = data.csv.parse(getattr(cli.config, 'ignore_keys', None)) or []
     cli.config.locales_dir = getattr(cli.config, 'locales_dir', '_locales')
     cli.config.provider = getattr(cli.config, 'provider', '')
     if cli.config.exclude_langs:
