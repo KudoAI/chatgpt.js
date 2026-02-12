@@ -6,9 +6,9 @@ def cli(caller_file):
 
     cli = sns(
         name='translate-messages',
-        version='2026.2.11',
-        author=sns(name='Adam Lui', email='adam@kudoa.com', url='https://github.com/adamlui'),
-        description='Translate en/messages.json to other locales. Type --help for cmds',
+        version='2026.2.12',
+        author=sns(name='Adam Lui', email='adam@kudoai.com', url='https://github.com/adamlui'),
+        description='Translate en/messages.json to other locales. Type --help to view options',
         urls=sns(
             github='https://github.com/adamlui/python-utils',
             jsdelivr='https://cdn.jsdelivr.net/gh/adamlui/python-utils',
