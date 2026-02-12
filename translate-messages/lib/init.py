@@ -44,18 +44,18 @@ def cli(caller_file):
     cli.config.__dict__.update({ key:val for key,val in vars(parser.parse_args()).items() if val is not None })
 
     # Init cli.config vals
-    cli.config.target_locales = cli.default_target_locales
-    if (getattr(cli.config, 'include_langs', '')):
-        cli.config.target_locales = data.csv.parse(cli.config.include_langs)
-    if (getattr(cli.config, 'exclude_langs', '')):
-        cli.config.exclude_langs = set(data.csv.parse(cli.config.exclude_langs))
-    if (getattr(cli.config, 'ignore_keys', '')):
-        cli.config.ignore_keys = data.csv.parse(cli.config.ignore_keys)
-    if (not getattr(cli.config, 'locales_dir', '')):
-        cli.config.locales_dir = '_locales'
-    if (getattr(cli.config, 'exclude_langs', '')):
-        cli.config.target_locales = [lang for lang in cli.config.target_locales if lang not in cli.config.exclude_langs]
-    if not hasattr(cli.config, 'no_wizard') : cli.config.no_wizard = False
+    cli.config.target_locales = \
+        data.csv.parse(cli.config.include_langs) if getattr(cli.config, 'include_langs', '') \
+            else cli.default_target_locales
+    cli.config.exclude_langs = \
+        data.csv.parse(cli.config.exclude_langs) if (getattr(cli.config, 'exclude_langs', '')) else []
+    cli.config.ignore_keys = \
+        data.csv.parse(cli.config.ignore_keys) if (getattr(cli.config, 'ignore_keys', '')) else []
+    if not hasattr(cli.config, 'locales_dir') : cli.config.locales_dir = '_locales'
+    if not hasattr(cli.config, 'provider') : cli.config.provider = ''
+    if cli.config.exclude_langs:
+       cli.config.target_locales = [lang for lang in cli.config.target_locales if lang not in cli.config.exclude_langs]
+    cli.config.no_wizard = getattr(cli.config, 'no_wizard', False)
 
     return cli
 
