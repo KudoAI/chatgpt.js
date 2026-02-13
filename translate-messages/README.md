@@ -24,15 +24,15 @@ If no options are provided, the CLI will:
 
 Options can be set using command-line arguments:
 
-| Option            | Description                                                      |
-| ----------------- | ---------------------------------------------------------------- |
-| `--include-langs` | Comma-separated list of languages to include (e.g. `en,es,fr")   |
-| `--exclude-langs` | Comma-separated list of languages to exclude (e.g. `en,es`)    |
-| `--ignore-keys`   | Comma-separated list of keys to ignore (e.g. `appName,author`) |
-| `--locales-dir`   | Name of the folder containing locale files (default: `_locales`) |
-| `--provider`      | Translation provider to use                                      |
-| `--init`          | Create a .config.json file to store your defaults                |
-| `--no-wizard`     | Skip interactive prompts during start-up                         |
+| Option            | Description                                                          | Example
+| ----------------- | ---------------------------------------------------------------------|--------------------------------
+| `--include-langs` | Comma-separated list of languages to include                         | `--include-langs=en,es,fr`
+| `--exclude-langs` | Comma-separated list of languages to exclude                         | `--exclude-langs=en,es`
+| `--ignore-keys`   | Comma-separated list of keys to ignore                               | `--ignore-keys=appName,author`
+| `--locales-dir`   | Name of the folder containing locale files                           | `--locales-dir=_messages`
+| `--provider`      | Translation provider to use (requires API key) (default: `mymemory`) | `--provider=deepl`
+| `--init`          | Create a .config.json file to store your defaults                    |
+| `--no-wizard`     | Skip interactive prompts during start-up                             |
 
 ## Config file
 
