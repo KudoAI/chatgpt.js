@@ -7,7 +7,7 @@
     "sponsor": "https://github.com/sponsors/adamlui",
     "support": "https://github.com/adamlui/python-utils/issues"
   },
-  "default_target_locales": [
+  "supported_locales": [
     "af", "am", "ar", "az", "be", "bem", "bg", "bn", "bo", "bs", "ca", "ceb", "cs", "cy", "da", "de", "dv", "dz", "el",
     "en", "en-GB", "eo", "es", "et", "eu", "fa", "fi", "fo", "fr", "gd", "gl", "gu", "haw", "he", "hi", "hr", "ht",
     "hu", "hy", "id", "is", "it", "ja", "ka", "kab", "kk", "km", "kn", "ko", "ku", "ky", "la", "lb", "lo", "lt", "lv",
