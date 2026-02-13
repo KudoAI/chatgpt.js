@@ -35,6 +35,12 @@ Options can be set by using command-line arguments:
 | `--init`          | Create a .config.json file to store your defaults                    |
 | `--no-wizard`     | Skip interactive prompts during start-up                             |
 
+## Example
+
+```bash
+translate-msgs --include-langs=fr,es --ignore-keys=appName,author
+```
+
 ## Config file
 
 Use `--init` to create `translate-messages.config.json` in your project root to set default options.
@@ -52,12 +58,6 @@ Example defaults:
 ```
 
 ###### _Note: CLI arguments always override config file._
-
-## Example
-
-```bash
-translate-msgs --include-langs=fr,es --ignore-keys=appName,author
-```
 
 ## MIT License
 
