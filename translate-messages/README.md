@@ -52,15 +52,15 @@ Example defaults:
 
 ```json
 {
+  "locales_dir": "_locales",
   "include_langs": "",
   "exclude_langs": "",
   "ignore_keys": "",
-  "locales_dir": "_locales",
   "no_wizard": false
 }
 ```
 
-###### _Note: CLI arguments always override config file._
+_Note: CLI arguments always override config file._
 
 ## MIT License
 
