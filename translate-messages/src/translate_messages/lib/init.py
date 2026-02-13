@@ -16,13 +16,17 @@ def cli(caller_file):
             cli.config = data.sns.from_dict(data.json.read(config_path)) ; break
 
     # Parse CLI args
-    argp = argparse.ArgumentParser(description='Translate en/messages.json to other locales')
+    argp = argparse.ArgumentParser(
+        description="Translate en/messages.json to other locales",
+        add_help=False  # disable default --help arg to re-create last
+    )
     argp.add_argument('--include-langs', type=str, help='Languages to include (e.g. "en,es,fr")')
     argp.add_argument('--exclude-langs', type=str, help='Languages to exclude (e.g. "en,es")')
     argp.add_argument('--ignore-keys', type=str, help='Keys to ignore (e.g. "appName,author")')
     argp.add_argument('--locales-dir', type=str, help='Name of folder containing locales')
     argp.add_argument('--init', action='store_true', help=f'Create {cli.name}.config.json file to store defaults')
     argp.add_argument('--no-wizard', action='store_true', default=None, help='Skip interactive prompts during start-up')
+    argp.add_argument('-h', '--help', action='help', help="Show help screen")
     cli.config.__dict__.update({ key:val for key,val in vars(argp.parse_args()).items() if val is not None })
 
     # Init cli.config vals
