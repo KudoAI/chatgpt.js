@@ -14,4 +14,4 @@ translate-messages = "translate_messages.__main__:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-"*" = ["package-data.json", "*.md", "assets/ascii/*.txt"]
+"*" = ["package_data.json", "*.md", "assets/ascii/*.txt"]
