@@ -34,6 +34,7 @@ Options can be set by using command-line arguments:
 | `--ignore-keys`   | Comma-separated list of keys to ignore                                                               | `--ignore-keys=appName,author`
 | `--init`          | Create translate-messages.config.json in project root to store defaults                              |
 | `--no-wizard`     | Skip interactive prompts during start-up                                                             |
+| `-h`, `--help`    | Show help screen                                                                                     |
 
 [supported-locales]: https://github.com/adamlui/python-utils/blob/translate-messages-1.0.4/translate-messages/src/translate_messages/package-data.json#L10-L17
 
