@@ -14,7 +14,7 @@ def cli(caller_file):
         config_path = os.path.join(cli.project_root, filename)
         if os.path.exists(config_path):
             cli.config = data.sns.from_dict(data.json.read(config_path)) ; break
-    
+
     # Parse CLI args
     argp = argparse.ArgumentParser(description='Translate en/messages.json to other locales')
     argp.add_argument('--include-langs', type=str, help='Languages to include (e.g. "en,es,fr")')
