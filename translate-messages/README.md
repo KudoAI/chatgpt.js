@@ -19,12 +19,12 @@ translate-msgs
 
 If no options are provided, the CLI will:
 1. Prompt for `en/messages.json` keys to ignore 
-2. Search for closest `_locales` directory
+2. Auto-discover closest `_locales` directory
 3. Translate `en/messages.json` to target languages
 
 ## Options
 
-Options can be set using command-line arguments:
+Options can be set by using command-line arguments:
 
 | Option            | Description                                                          | Example
 | ----------------- | ---------------------------------------------------------------------|--------------------------------
@@ -37,8 +37,21 @@ Options can be set using command-line arguments:
 
 ## Config file
 
-- Use `--init` to create `translate-messages.config.json` in your project root to set default options
-- CLI arguments always override config file
+Use `--init` to create `translate-messages.config.json` in your project root to set default options.
+
+Example defaults:
+
+```json
+{
+  "include_langs": "",
+  "exclude_langs": "",
+  "ignore_keys": "",
+  "locales_dir": "_locales",
+  "no_wizard": false
+}
+```
+
+###### _Note: CLI arguments always override config file._
 
 ## Example
 
