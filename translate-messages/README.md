@@ -18,8 +18,8 @@ translate-msgs
 ```
 
 If no options are provided, the CLI will:
-1. Prompt for `en/messages.json` keys to ignore 
-2. Auto-discover closest `_locales` directory
+1. Prompt for message keys to ignore 
+2. Auto-discover closest `_locales` dir
 3. Translate `en/messages.json` to target languages
 
 ## Options
