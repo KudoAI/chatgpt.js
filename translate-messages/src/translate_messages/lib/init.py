@@ -8,11 +8,10 @@ def cli(caller_file):
 
     # Load from config file
     cli.config = sns()
-    possible_filenames = [f'{cli.name}.config.json', f'{cli.name.replace("messages", "msgs")}.config.json']
-    project_root = os.path.join(os.path.dirname(caller_file),
+    cli.project_root = os.path.join(os.path.dirname(caller_file),
         f"{ '' if 'src' in os.path.dirname(caller_file) else '../../' }../../")
-    for filename in possible_filenames:
-        config_path = os.path.join(project_root, filename)
+    for filename in [f'{cli.name}.config.json', f'{cli.name.replace("messages", "msgs")}.config.json']:
+        config_path = os.path.join(cli.project_root, filename)
         if os.path.exists(config_path):
             cli.config = data.sns.from_dict(data.json.read(config_path)) ; break
     
