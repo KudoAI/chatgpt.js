@@ -30,7 +30,6 @@ Options can be set using command-line arguments:
 | `--exclude-langs` | Comma-separated list of languages to exclude                         | `--exclude-langs=en,es`
 | `--ignore-keys`   | Comma-separated list of keys to ignore                               | `--ignore-keys=appName,author`
 | `--locales-dir`   | Name of the folder containing locale files                           | `--locales-dir=_messages`
-| `--provider`      | Translation provider to use (requires API key) (default: `mymemory`) | `--provider=deepl`
 | `--init`          | Create a .config.json file to store your defaults                    |
 | `--no-wizard`     | Skip interactive prompts during start-up                             |
 

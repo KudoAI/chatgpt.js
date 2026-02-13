@@ -18,7 +18,6 @@ def cli(caller_file):
     argp.add_argument('--exclude-langs', type=str, help='Languages to exclude (e.g. "en,es")')
     argp.add_argument('--ignore-keys', type=str, help='Keys to ignore (e.g. "appName,author")')
     argp.add_argument('--locales-dir', type=str, help='Name of folder containing locales')
-    argp.add_argument('--provider', type=str, help='Name of provider to use for translation')
     argp.add_argument('--init', action='store_true', help=f'Create {cli.name}.config.json file to store defaults')
     argp.add_argument('--no-wizard', action='store_true', default=None, help='Skip interactive prompts during start-up')
     cli.config.__dict__.update({ key:val for key,val in vars(argp.parse_args()).items() if val is not None })
@@ -29,7 +28,6 @@ def cli(caller_file):
     cli.config.exclude_langs = data.csv.parse(getattr(cli.config, 'exclude_langs', None))
     cli.config.ignore_keys = data.csv.parse(getattr(cli.config, 'ignore_keys', None))
     cli.config.locales_dir = getattr(cli.config, 'locales_dir', '_locales')
-    cli.config.provider = getattr(cli.config, 'provider', '')
     if cli.config.exclude_langs:
        cli.config.target_locales = [lang for lang in cli.config.target_locales if lang not in cli.config.exclude_langs]
     cli.config.no_wizard = getattr(cli.config, 'no_wizard', False)

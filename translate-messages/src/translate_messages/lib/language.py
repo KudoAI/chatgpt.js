@@ -17,7 +17,7 @@ def create_translations(cli, target_msgs, lang_code):
         if key not in target_msgs:
             original_msg = translated_msg = cli.config.en_msgs[key]['message']
             try:
-                translator = Translator(provider=cli.config.provider, to_lang=lang_code)
+                translator = Translator(provider='', to_lang=lang_code)
                 translated_msg = translator.translate(original_msg).replace('&quot;', "'").replace('&#39;', "'")
                 if any(flag in translated_msg for flag in fail_flags):
                     translated_msg = original_msg
