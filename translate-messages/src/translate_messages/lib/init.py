@@ -7,11 +7,15 @@ def cli(caller_file):
     cli = data.sns.from_dict(data.json.read(os.path.join(os.path.dirname(__file__), '../package-data.json')))
 
     # Load from config file
-    cli.config=sns()
-    cli.config.filename = f'{cli.name}.config.json'
-    cli.config.path = os.path.join(os.path.dirname(caller_file), cli.config.filename)
-    for key, val in data.json.read(cli.config.path).items() : setattr(cli.config, key, val)
-
+    cli.config = sns()
+    possible_filenames = [f'{cli.name}.config.json', f'{cli.name.replace("messages", "msgs")}.config.json']
+    project_root = os.path.join(os.path.dirname(caller_file),
+        f"{ '' if 'src' in os.path.dirname(caller_file) else '../../' }../../")
+    for filename in possible_filenames:
+        config_path = os.path.join(project_root, filename)
+        if os.path.exists(config_path):
+            cli.config = data.sns.from_dict(data.json.read(config_path)) ; break
+    
     # Parse CLI args
     argp = argparse.ArgumentParser(description='Translate en/messages.json to other locales')
     argp.add_argument('--include-langs', type=str, help='Languages to include (e.g. "en,es,fr")')
