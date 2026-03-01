@@ -30,7 +30,7 @@ jobs:
 
       - name: Sync/starters/greasemonkey/ to KudoAI/chatgpt.js-greasemonkey-starter/
         run: |
-          rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
+          rsync -avhc --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
             "${{ github.workspace }}/KudoAI/chatgpt.js/starters/greasemonkey/" \
             "${{ github.workspace }}/KudoAI/chatgpt.js-greasemonkey-starter/"
 
