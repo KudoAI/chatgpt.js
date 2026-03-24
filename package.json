@@ -34,7 +34,7 @@
     "lint:all": "eslint .",
     "lint:fix": "eslint . --fix --cache",
     "lint:fix-all": "eslint . --fix",
-    "translate": "py utils/translate-en-messages.py",
+    "translate": "translate-messages",
     "build:js": "bash utils/build.sh",
     "build:js-docs": "minify-js docs/assets/js/src docs/assets/js/min --no-mangle",
     "build:docs-js": "npm run build:js-docs",
