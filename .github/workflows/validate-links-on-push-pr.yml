@@ -1,0 +1,46 @@
+name: Validate links on push + PR
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lychee:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6.0.2
+
+      - name: Restore lychee cache
+        id: restore-cache
+        uses: actions/cache/restore@v5.0.4
+        with:
+          path: .lycheecache
+          key: cache-lychee-${{ github.sha }}
+          restore-keys: cache-lychee-
+
+      - name: Validate links
+        uses: lycheeverse/lychee-action@v2.8.0
+        with:
+          # Check all files, ignore ok/redir/blocked/rate-limited/LinkedIn-anti-botted
+          args: >-
+            . --no-progress
+            --accept 200..299,300..399,403,429,999
+            --cache --max-cache-age 3d
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Save lychee cache
+        uses: actions/cache/save@v5.0.4
+        if: always()
+        with:
+          path: .lycheecache
+          key: ${{ steps.restore-cache.outputs.cache-primary-key }}
