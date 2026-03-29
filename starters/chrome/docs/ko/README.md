@@ -39,7 +39,7 @@
 3. Chrome (또는 모든 Chromium 브라우저) 에서 `chrome://extensions` 를 방문합니다
 
 4. **Developer mode** 토글이 활성화되어 있는지 확인합니다<br>
-![](../images/screenshots/developer-mode-toggle.png)
+![](../../images/screenshots/developer-mode-toggle.png)
 
 5. 딸깍 하는 소리 **Load unpacked**<br><br>
 <img src="../../images/screenshots/load-unpacked-button.png">
