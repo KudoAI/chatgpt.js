@@ -34,7 +34,7 @@ jobs:
           args: >-
             . --no-progress --include-mail
             --include-fragments --index-files README.md,docs/README.md
-            --exclude "#readme" --exclude-path "(^|/)_coverpage\.md$"
+            --exclude "#readme" --exclude "showcase@chatgptjs\.org" --exclude-path "(^|/)_coverpage\.md$"
             --accept 200..299,300..399,403,429,999
             --cache --max-cache-age 3d
         env:
