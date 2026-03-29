@@ -33,7 +33,7 @@ jobs:
           # Check all files, ignore ok/redir/blocked/rate-limited/LinkedIn-anti-botted
           args: >-
             . --no-progress --include-mail
-            --include-fragments --index-files README.md,docs/README.md
+            --include-fragments --index-files README.md,docs/README.md,index.html
             --exclude "#readme" --exclude "showcase@chatgptjs\.org" --exclude-path "(^|/)_coverpage\.md$"
             --accept 200..299,300..399,403,429,999
             --cache --max-cache-age 3d
