@@ -12,7 +12,7 @@
         <a href="https://docs.chatgptjs.org/ja/SECURITY.md">日本</a> |
         <a href="https://docs.chatgptjs.org/ko/SECURITY.md">한국인</a> |
         <a href="https://docs.chatgptjs.org/hi/SECURITY.md">हिंदी</a> |
-        <a href="https://docs.chatgptjs.org/np/SECURITY.md">नेपाली</a> |
+        <a href="https://docs.chatgptjs.org/ne/SECURITY.md">नेपाली</a> |
         <a href="https://docs.chatgptjs.org/de/SECURITY.md">Deutsch</a> |
         <a href="https://docs.chatgptjs.org/es/SECURITY.md">Español</a> |
         <a href="https://docs.chatgptjs.org/fr/SECURITY.md">Français</a> |

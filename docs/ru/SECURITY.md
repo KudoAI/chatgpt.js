@@ -7,7 +7,7 @@
             </picture>
         </a>
         Английский |
-        <a href="../../SECURITY.md">English</a> |
+        <a href="../SECURITY.md">English</a> |
         <a href="../zh-cn/SECURITY.md">简体中文</a> |
         <a href="../zh-tw/SECURITY.md">繁體中文</a> |
         <a href="../ja/SECURITY.md">日本</a> |
