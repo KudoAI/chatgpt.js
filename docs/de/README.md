@@ -349,7 +349,7 @@ Diese Bibliothek existiert dank Code, Übersetzungen, Problemen und Ideen der fo
 <a href="https://github.com/omahs" target="_blank" rel="noopener">
     <img title="@omahs" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/73983677?first-contrib=2023.08.23-fix-readme-typos&h=47&w=47&mask=circle&maxage=7d"></a>
 <a href="https://www.linkedin.com/in/najam-ul-arfeen-khan/" target="_blank" rel="noopener">
-    <img title="Najam Ul Arfeen" src="https://i.imgur.com/DQVC7vj.jpg?first-contrib=2023.09.19-add-dmarc-policy"></a>
+    <img height=47 width=47 title="Najam Ul Arfeen" src="https://i.imgur.com/DQVC7vj.jpg?first-contrib=2023.09.19-add-dmarc-policy"></a>
 <a href="https://github.com/iambijayd" target="_blank" rel="noopener">
     <img title="@iambijayd" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/110587589?first-contrib=2023.10.13-translate-docs-to-nepali&h=47&w=47&mask=circle&maxage=7d"></a>
 <a href="https://github.com/abhinavm24" target="_blank" rel="noopener">
