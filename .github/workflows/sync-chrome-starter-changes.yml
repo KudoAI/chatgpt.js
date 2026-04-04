@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    if: (github.repository == 'KudoAI/chatgpt.js') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
+    if: (github.repository == 'KudoAI/chatgpt.js') && !contains(github.event.head_commit.message, '[auto-sync')
     runs-on: ubuntu-24.04
     permissions:
       contents: read
