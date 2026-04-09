@@ -5,9 +5,6 @@ on:
     branches: [master, main]
     paths: [chatgpt.js]
 
-concurrency:
-  group: sync-changes-to-repos
-
 jobs:
   build:
     if: (github.repository == 'KudoAI/chatgpt.js') && !contains(github.event.head_commit.message, '[auto-sync')
