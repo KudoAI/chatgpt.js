@@ -103,4 +103,4 @@ if [[ "$*" == *"--publish"* ]] ; then
 echo -e "${BY}\nRestoring original Git config...\n${NC}"
 while IFS='=' read -r key val ; do git config --global "$key" "$val" ; done < ~/.gitconfig.backup
 
-echo -e "\n${BG}Successfully bumped to v$new_ver$([[ "$*" == *"--publish"* ]] && echo ' and published to npm')!${NC}"
+echo -e "${BG}\nSuccessfully bumped to v$new_ver$([[ "$*" == *"--publish"* ]] && echo ' and published to npm')!${NC}"
