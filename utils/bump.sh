@@ -63,14 +63,18 @@ else # no match for $TODAY
 new_gm_ver=$(sed -n "s/.*@version\s*\(.*\)/\1/p" starters/greasemonkey/*.user.js)
 echo "chatgpt.js-greasemonkey-starter.user.js v$new_gm_ver"
 
-# Config Git committer
-echo -e "${BY}\nConfiguring Git committer...\n${NC}"
-git config --global --list > ~/.gitconfig.backup # backup current config
-gpg --batch --import "$GPG_KEYS_PATH/kudo-sync-bot-private-key.asc" # import GPG key
-git config --global commit.gpgsign true
-git config --global user.name "kudo-sync-bot"
-git config --global user.email "auto-sync@kudoai.com"
-git config --global user.signingkey "$(cat "$GPG_KEYS_PATH/kudo-sync-bot-key-id.txt")"
+# Change Git author/committer to kudo-sync-bot
+echo -e "${BY}\nChanging Git author/committer to kudo-sync-bot...\n${NC}"
+if [ -n "$GPG_KEYS_PATH" ] ; then
+    KEY_PATH="$GPG_KEYS_PATH/kudo-sync-bot-private-key.asc"
+    if [ -f "$KEY_PATH" ] ; then gpg --batch --import "$KEY_PATH" ; fi
+    KEY_ID_PATH="$GPG_KEYS_PATH/kudo-sync-bot-key-id.txt"
+    if [ -f "$KEY_ID_PATH" ] ; then KEY_ID="$(cat "$KEY_ID_PATH")" ; fi
+fi
+export GIT_AUTHOR_NAME="kudo-sync-bot"
+export GIT_AUTHOR_EMAIL="auto-sync@kudoai.com"
+export GIT_COMMITTER_NAME="kudo-sync-bot"
+export GIT_COMMITTER_EMAIL="auto-sync@kudoai.com"
 
 # Commit bumps to Git
 echo -e "${BY}\nCommitting bumps to Git...\n${NC}"
