@@ -71,11 +71,11 @@ export GIT_COMMITTER_EMAIL="auto-sync@kudoai.com"
 
 echo -e "${BY}\nCommitting bumps to Git...\n${NC}"
 git add package*.json
-git commit -n -m "Bumped versions in manifests to $new_ver" -S $KEY_ID
+git commit -n -m "Bumped versions in manifests to $new_ver" -S$KEY_ID
 git add "README.md" "./**/README.md" "./**/USERGUIDE.md"
-git commit -n -m "Bumped versions in jsDelivr URLs to $new_ver" -S $KEY_ID
+git commit -n -m "Bumped versions in jsDelivr URLs to $new_ver" -S$KEY_ID
 git add ./*greasemonkey-starter.user.js
-git commit -n -m "Bumped chatgpt.js to $new_ver" -S $KEY_ID
+git commit -n -m "Bumped chatgpt.js to $new_ver" -S$KEY_ID
 
 echo -e "${BY}\nBuilding chatgpt.min.js...\n${NC}"
 bash utils/build.sh
@@ -92,7 +92,7 @@ fi
 
 echo -e "${BY}\nCommitting build to Git...\n${NC}"
 git add ./**/chatgpt.min.js
-git commit -n -m "Built chatgpt.js $new_ver" -S $KEY_ID
+git commit -n -m "Built chatgpt.js $new_ver" -S$KEY_ID
 
 echo -e "${BY}\nPushing to GitHub...\n${NC}"
 git push
