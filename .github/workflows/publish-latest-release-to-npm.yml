@@ -5,7 +5,7 @@ on:
     tags: ["v*"]
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-24.04
     permissions:
       contents: read
@@ -14,8 +14,6 @@ jobs:
       - uses: actions/checkout@v6.0.2
       - uses: actions/setup-node@v6.3.0
         with:
-          node-version: 'lts/*'
+          node-version: 24
           registry-url: "https://registry.npmjs.org"
-      - run: npm install -g npm
-      - run: npm ci
-      - run: npm publish --access public --provenance
+      - run: npm ci && npm publish --provenance
