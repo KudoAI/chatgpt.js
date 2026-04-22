@@ -26,7 +26,7 @@
                 chatgpt.isLoaded().then(() => modals.open('about'))
             },
             syncConfigToUI: () => syncConfigToUI(options)
-        }[action]?.() || console.warn(`Chome msg listener warning: "${action}"`))
+        }[action]())
     })
 
     // Init SETTINGS
