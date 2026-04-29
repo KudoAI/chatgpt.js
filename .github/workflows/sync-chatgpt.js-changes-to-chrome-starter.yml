@@ -29,10 +29,10 @@ jobs:
           repository: KudoAI/chatgpt.js-chrome-starter
           path: KudoAI/chatgpt.js-chrome-starter
 
-      - name: Sync chatgpt.js to KudoAI/chatgpt.js-chrome-starter/extension/lib/chatgpt.js + update version in manifest.json
+      - name: Sync src/chatgpt.js to KudoAI/chatgpt.js-chrome-starter/extension/lib/chatgpt.js + update version in manifest.json
         run: |
           cp -f \
-            "${{ github.workspace }}/KudoAI/chatgpt.js/chatgpt.js" \
+            "${{ github.workspace }}/KudoAI/chatgpt.js/src/chatgpt.js" \
             "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/extension/lib/chatgpt.js"
           cd "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/extension"
           sed -i -E "s/\"version\": \"([0-9]+\.[0-9]+\.[0-9]+)\.*([0-9]*)\"/\"version\": \"$(date +'%Y.%-m.%-d')\"/g" manifest.json
