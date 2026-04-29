@@ -110,9 +110,9 @@
 3. 在需要 `chatgpt.js` (前景/背景相似) 的脚本中, 像这样导入它:
 ```js
 (async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
     // 这里是您的代码
-})();
+})()
 ```
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">

@@ -110,9 +110,9 @@
 3. 在需要 `chatgpt.js` （前台/後台類似）的腳本中，像這樣導入它：
 ```js
 (async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
     // 你的代碼在這裡...
-})();
+})()
 ```
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
@@ -146,10 +146,10 @@ npm install @kudoai/chatgpt.js
 例如：
 
 ```js
-chatgpt.getLastResponse();
-chatgpt.getLastReply();
-chatgpt.response.getLast();
-chatgpt.get('reply', 'last');
+chatgpt.getLastResponse()
+chatgpt.getLastReply()
+chatgpt.response.getLast()
+chatgpt.get('reply', 'last')
 ```
 
 每個調用都會同等地獲取最後一個響應。 如果您認為它有效，它可能會......所以只需輸入它即可！

@@ -111,9 +111,9 @@ Google ではリモート コードが許可されていないため、chatgpt.j
 3. `chatgpt.js` (フォアグラウンド/バックグラウンド同様) を必要とするスクリプトでは、次のようにインポートします:
 ```js
 (async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
     // コードはここにあります...
-})();
+})()
 ```
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">

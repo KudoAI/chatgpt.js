@@ -111,9 +111,9 @@ Vì Google không cho phép mã từ xa nên việc nhập chatgpt.js cục bộ
 3. Trong các tập lệnh cần `chatgpt.js` (tiền cảnh/nền giống nhau), hãy nhập nó như sau:
 ```js
 (async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
     // Mã của bạn ở đây ...
-})();
+})()
 ```
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
@@ -147,10 +147,10 @@ Sau khi cài đặt, hãy điều hướng đến `node_modules/@kudoai/chatgpt.
 Ví dụ:
 
 ```js
-chatgpt.getLastResponse();
-chatgpt.getLastReply();
-chatgpt.response.getLast();
-chatgpt.get('reply', 'last');
+chatgpt.getLastResponse()
+chatgpt.getLastReply()
+chatgpt.response.getLast()
+chatgpt.get('reply', 'last')
 ```
 
 Mỗi cuộc gọi đều tìm nạp phản hồi cuối cùng. Nếu bạn nghĩ rằng nó hoạt động, nó có thể sẽ... vì vậy hãy gõ nó!

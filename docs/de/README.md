@@ -111,9 +111,9 @@ Da Google keinen Remote-Code zulässt, ist der lokale Import von chatgpt.js erfo
 3. In Skripten, die `chatgpt.js` benötigen (Vordergrund/Hintergrund gleichermaßen), importieren Sie es wie folgt:
 ```js
 (async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
     // Ihr Code hier...
-})();
+})()
 ```
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
@@ -147,10 +147,10 @@ Navigieren sie nach der installation zu `node_modules/@kudoai/chatgpt.js`, um di
 Zum Beispiel:
 
 ```js
-chatgpt.getLastResponse();
-chatgpt.getLastReply();
-chatgpt.response.getLast();
-chatgpt.get('reply', 'last');
+chatgpt.getLastResponse()
+chatgpt.getLastReply()
+chatgpt.response.getLast()
+chatgpt.get('reply', 'last')
 ```
 
 Jeder Aufruf ruft gleichermaßen die letzte Antwort ab. Wenn Sie glauben, dass es funktioniert, wird es wahrscheinlich auch funktionieren ... also geben Sie es einfach ein! (Wer hat Zeit für Dokumente?)

@@ -111,9 +111,9 @@
 3. Dans les scripts qui ont besoin de `chatgpt.js` (avant-plan/arrière-plan), importez-le comme suit:
 ```js
 (async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
     // Votre code ici...
-})();
+})()
 ```
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
@@ -147,10 +147,10 @@ Après l'installation, accédez à `node_modules/@kudoai/chatgpt.js` pour trouve
 Par exemple:
 
 ```js
-chatgpt.getLastResponse();
-chatgpt.getLastReply();
-chatgpt.response.getLast();
-chatgpt.get('reply', 'last');
+chatgpt.getLastResponse()
+chatgpt.getLastReply()
+chatgpt.response.getLast()
+chatgpt.get('reply', 'last')
 ```
 
 Chaque appel récupère également la dernière réponse. Si vous pensez que cela fonctionne, cela fonctionnera probablement... alors tapez-le simplement!

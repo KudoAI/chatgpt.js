@@ -112,9 +112,9 @@ Google은 원격 코드를 허용하지 않으므로 chatgpt.js를 로컬로 가
 3. `chatgpt.js` 를 필요로하는 스크립트 (전경/배경 같은) 에서는 다음과 같이 가져옵니다.
 ```js
 (async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
     // 코드를 여기에 작성해 주세요...
-})();
+})()
 ```
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
@@ -148,10 +148,10 @@ npm install @kudoai/chatgpt.js
 예시:
 
 ```js
-chatgpt.getLastResponse();
-chatgpt.getLastReply();
-chatgpt.response.getLast();
-chatgpt.get('reply', 'last');
+chatgpt.getLastResponse()
+chatgpt.getLastReply()
+chatgpt.response.getLast()
+chatgpt.get('reply', 'last')
 ```
 
 각 호출은 동일한 방식으로 최신 응답을 가져옵니다. 만약 잘 작동한다고 생각하신다면, 그렇게 하시면 될겁니다... 그러니 그냥 입력하세요!

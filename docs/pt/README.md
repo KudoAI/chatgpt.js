@@ -111,9 +111,9 @@ Como o Google não permite código remoto, é necessário importar chatgpt.js lo
 3. Em scripts que precisam de `chatgpt.js` (tanto em primeiro plano quanto em segundo plano), importe-o da seguinte forma:
 ```js
 (async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
     // Seu código aqui...
-})();
+})()
 ```
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
@@ -147,10 +147,10 @@ Após a instalação, navegue até `node_modules/@kudoai/chatgpt.js` para encont
 Por exemplo:
 
 ```js
-chatgpt.getLastResponse();
-chatgpt.getLastReply();
-chatgpt.response.getLast();
-chatgpt.get('reply', 'last');
+chatgpt.getLastResponse()
+chatgpt.getLastReply()
+chatgpt.response.getLast()
+chatgpt.get('reply', 'last')
 ```
 
 Cada chamada busca igualmente a última resposta. Se você acha que funciona, provavelmente funcionará... então apenas digite! (Quem tem tempo para documentos?)

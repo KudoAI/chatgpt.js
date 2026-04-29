@@ -109,9 +109,9 @@
 3. В скриптах, которые нуждаются в `chatgpt.js` (как в переднем, так и в фоновом режиме), импортируйте его следующим образом:
     ```js
     (async () => {
-        await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
+        await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
         // Ваш код здесь...
-    })();
+    })()
     ```
 
 <img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
@@ -142,10 +142,10 @@ npm install @kudoai/chatgpt.js
 Например:
 
 ```js
-chatgpt.getLastResponse();
-chatgpt.getLastReply();
-chatgpt.response.getLast();
-chatgpt.get('reply', 'last');
+chatgpt.getLastResponse()
+chatgpt.getLastReply()
+chatgpt.response.getLast()
+chatgpt.get('reply', 'last')
 
 
 ```
