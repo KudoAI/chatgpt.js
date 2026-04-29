@@ -186,37 +186,6 @@ chatgpt.printAllFunctions()
 
 #
 
-#### `randomFloat()`
-
-Returns a random, cryptographically secure float number between 0 (inclusive) and 1 (exclusive).
-
-Example:
-
-```js
-const randomNumber = chatgpt.randomFloat()
-chatgpt.alert(randomNumber) // Example output: 0.9472113021060851
-```
-
-#
-
-#### `renderHTML()`
-
-Cleans and renders given HTML code.
-
-Parameters:
-
-`node`: A string representing the HTML to be rendered.
-
-Example:
-
-```js
-document.body.append(
-    chatgpt.renderHTML('<div>Hello World!</div>')
-)
-```
-
-#
-
 #### `sentiment()` `async`
 
 Asks ChatGPT to analyze sentiment from a given text.
