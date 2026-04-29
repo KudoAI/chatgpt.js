@@ -870,7 +870,7 @@ chatgpt.scrollToBottom();
 
 ### send
 
-Sends a message into the chat.
+Sends a message into the chat if DOM present, otherwise sends to OpenRouter API.
 
 **Parameters**:
 
@@ -885,6 +885,31 @@ Example code:
 chatgpt.send('Hello, world!', 'click');
 ```
 
+### send
+
+Sends a message via the ChatGPT interface (DOM) if available, otherwise sends it to the OpenRoute API and returns the response.
+
+**Parameters**:
+
+- `userQuery`: *(string)* — The message to send  
+- `options` *(optional object)*:
+  - `provider`: *(string)* — API provider to use (default: `'openrouter'`)
+  - `stream`: *(boolean)* — Whether to stream the response in real-time (default: `true`)
+  - `systemQuery`: *(string)* — Optional system prompt to guide the response
+  - `color`: *(string)* — Output color for CLI responses (default: `'green'`)
+  - `method`: *(string)* — DOM-only: `'click'` to simulate send button (useful for mobile)
+
+---
+
+Exmample code:
+
+
+```js
+chatgpt.send('Hello, world!')
+
+// e.g. => Hello! How can I assist you today?
+```
+
 ### sendInNewChat
 
 Creates a new chat and sends a message.
@@ -897,6 +922,24 @@ Example code:
 
 ```js
 chatgpt.sendInNewChat('Hello, world!');
+```
+
+### setProvider
+
+Sets the active API provider and stores its API key for use in `send()`.
+
+**Parameters**:
+
+- `provider`: *(string)* — The API provider name (default: `'openrouter'`)
+- `options` *(object)*:
+  - `key`: *(string)* — The API key for the provider
+
+---
+
+Example code:
+
+```js
+chatgpt.setProvider('openrouter', { key: 'sk-or-...' })
 ```
 
 ### shareChat `async`
