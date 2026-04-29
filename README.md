@@ -130,7 +130,7 @@ After installation, navigate to `node_modules/@kudoai/chatgpt.js` to find the li
 
 </div>
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="usage">
 

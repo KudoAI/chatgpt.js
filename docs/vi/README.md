@@ -134,7 +134,7 @@ Sau khi cài đặt, hãy điều hướng đến `node_modules/@kudoai/chatgpt.
 
 </div>
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="usage">
 

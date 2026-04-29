@@ -134,7 +134,7 @@ Na de installatie navigeert u naar `node_modules/@kudoai/chatgpt.js` om de bibli
 
 </div>
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="usage">
 

@@ -134,7 +134,7 @@ Após a instalação, navegue até `node_modules/@kudoai/chatgpt.js` para encont
 
 </div>
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="usage">
 
