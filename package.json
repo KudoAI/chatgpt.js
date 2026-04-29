@@ -17,7 +17,7 @@
   ],
   "browser": "chatgpt.js",
   "files": [
-    "chatgpt.js",
+    "src/chatgpt.js",
     "dist/chatgpt.min.js",
     "docs/*.md"
   ],
