@@ -21,4 +21,4 @@ jobs:
         with:
           paths: '**/*.md'
           statusCodes: '{ "429": "skip", "502": "skip" }'
-          linksToSkip: 'npmjs\.com'
+          linksToSkip: '(?:npmjs\.com|LICENSE\.md|transparent)$'
