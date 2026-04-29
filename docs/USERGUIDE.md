@@ -100,7 +100,7 @@ Asks ChatGPT to detect the language of given text.
 
 `text`: A string being the text to detect the language of.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -119,7 +119,7 @@ Asks ChatGPT to execute the given code.
 
 `code`: A string being the code to execute.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -131,7 +131,7 @@ Example code:
 
 Returns a random IP address as a string.
 
-Example code:
+Example:
 
 ```js
 const randomIP = chatgpt.generateRandomIP();
@@ -140,7 +140,7 @@ chatgpt.alert(randomIP); // Example output: '161.192.110.125'
 
 ### get
 
-Example code:
+Example:
 
 ```js
 var response;
@@ -154,7 +154,7 @@ response = chatgpt.getLastResponse();
 
 Returns the user language as a string.
 
-Example code:
+Example:
 
 ```js
 const userLanguage = chatgpt.getUserLanguage();
@@ -165,7 +165,7 @@ chatgpt.alert(userLanguage); // Example output: 'en-US'
 
 Returns a boolean value. `true` if the website is fullscreen and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.isFullScreen()) {
@@ -181,7 +181,7 @@ Resolves a promise when ChatGPT has finished loading.
 
 `timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until ChatGPT finishes loading.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -194,7 +194,7 @@ Example code:
 
 Returns a boolean value. `true` if the website is in Temporary Chat mode and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.isTempChat()) {
@@ -206,7 +206,7 @@ if (chatgpt.isTempChat()) {
 
 Prints all the library functions to the console.
 
-Example code:
+Example:
 
 ```js
 chatgpt.printAllFunctions();
@@ -216,7 +216,7 @@ chatgpt.printAllFunctions();
 
 Returns a random, cryptographically secure float number between 0 (inclusive) and 1 (exclusive).
 
-Example code:
+Example:
 
 ```js
 const randomNumber = chatgpt.randomFloat();
@@ -231,7 +231,7 @@ Cleans and renders given HTML code.
 
 `node`: A string representing the HTML to be rendered.
 
-Example code:
+Example:
 
 ```js
 document.body.append(
@@ -249,7 +249,7 @@ Asks ChatGPT to analyze sentiment from a given text.
 
 `entity` (optional): A string being the entity to analyze sentiment towards.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -276,7 +276,7 @@ Asks ChatGPT to suggest ideas.
 
 `details` (optional): A string being details to fine-tune the suggestion.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -315,7 +315,7 @@ Asks ChatGPT to summarize given text.
 
 `text`: A string being the text to be summarized.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -334,7 +334,7 @@ Asks ChatGPT to translate given text to a given language.
 
 `outputLang`: A string representing the output language of the translation.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -345,7 +345,7 @@ Example code:
 
 ### uuidv4
 
-Example code:
+Example:
 
 ```js
 const randomID = chatgpt.uuidv4();
@@ -358,7 +358,7 @@ chatgpt.alert(randomID); // Example output: '239067d1-bcb8-4fd7-91eb-9ab94619b7b
 
 Changes the website theme to dark mode.
 
-Example code:
+Example:
 
 ```js
 chatgpt.activateDarkMode();
@@ -368,7 +368,7 @@ chatgpt.activateDarkMode();
 
 Changes the website theme to light mode.
 
-Example code:
+Example:
 
 ```js
 chatgpt.activateLightMode();
@@ -378,7 +378,7 @@ chatgpt.activateLightMode();
 
 Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 chatgpt.alert(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
@@ -388,7 +388,7 @@ chatgpt.alert(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
 
 Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 chatgpt.alert(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
@@ -398,7 +398,7 @@ chatgpt.alert(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
 
 Toggles the theme between light and dark mode.
 
-Example code:
+Example:
 
 ```js
 chatgpt.toggleScheme();
@@ -422,7 +422,7 @@ Creates a static alert box which displays a message. Only a user interaction can
 
 `width` (optional): An integer representing the width of the alert box in `px`.
 
-Example code:
+Example:
 
 ```js
 function doSomething() { /* Your code */ }
@@ -451,7 +451,7 @@ Available options:
  - `shadow` (optional): A string specifying if the `box-shadow` CSS property should be used.
  - `toast` (optional): A boolean specifying whether notifications should be flattened/centered into toast alerts.
 
-Example code:
+Example:
 
 ```js
 chatgpt.notify({ msg: 'Hello, world!', position: 'top left', notifDuration: 3, shadow: 'on' });
@@ -500,7 +500,7 @@ Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single det
 
 Navs to login page.
 
-Example code:
+Example:
 
 ```js
 chatgpt.login();
@@ -510,7 +510,7 @@ chatgpt.login();
 
 Logs out the user from the website.
 
-Example code:
+Example:
 
 ```js
 chatgpt.logout();
@@ -522,7 +522,7 @@ chatgpt.logout();
 
 Sends a given message to ChatGPT and returns the response as a string.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -535,7 +535,7 @@ Example code:
 
 Clears chat history.
 
-Example code:
+Example:
 
 ```js
 chatgpt.clearChats().then(() => chatgpt.alert('Chat history cleared!'));
@@ -555,7 +555,7 @@ Can be the following: `active`, the current chat, `latest`, the latest chat in t
 
 Can be the following: `html`, `md`, `pdf` or `text`. Defaults to `html`.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -724,7 +724,7 @@ In case of a response being regenerated, the `chatgpt` object key will be conver
 
 Returns the value of the chat input field as a string.
 
-Example code:
+Example:
 
 ```js
 const chatInput = chatgpt.getChatInput();
@@ -735,7 +735,7 @@ chatgpt.alert(chatInput); // Example output: 'Hello from chatgpt.js!'
 
 Returns the error message (if any) of the last generation as a string.
 
-Example code:
+Example:
 
 ```js
 const chatErrorMsg = chatgpt.getErrorMsg();
@@ -780,7 +780,7 @@ Returns the Nth response ChatGPT has written in a Nth chat as a string.
 
 `responseToGet` (optional): A number representing the index of the response to get. Defaults to `latest`.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -797,7 +797,7 @@ Returns the Nth response ChatGPT has written as a string.
 
 `pos`: A string or integer representing the position of the wanted response.
 
-Example code:
+Example:
 
 ```js
 var fifthResp;
@@ -817,7 +817,7 @@ Resolves a promise when ChatGPT has finished generating a response.
 
 `timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until response generation finishes.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -830,7 +830,7 @@ Example code:
 
 Returns a boolean value. `true` if ChatGPT is generating a response, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 console.log(`ChatGPT is ${!chatgpt.isTyping() ? 'not' : ''} typing`)
@@ -842,7 +842,7 @@ console.log(`ChatGPT is ${!chatgpt.isTyping() ? 'not' : ''} typing`)
 
 Regenerates ChatGPT's response.
 
-Example code:
+Example:
 
 ```js
 chatgpt.regenerate();
@@ -862,7 +862,7 @@ Re-sends the last user message.
 
 Scrolls to the bottom of the chat.
 
-Example code:
+Example:
 
 ```js
 chatgpt.scrollToBottom();
@@ -878,7 +878,7 @@ Sends a message into the chat if DOM present, otherwise sends to OpenRouter API.
 
 `method` (optional): A string representing the method to send the message with, can only be `click`. Usually needed for mobile devices compatibility.
 
-Example code:
+Example:
 
 ```js
 // Clicks the send button instead of triggering the 'Enter' key press.
@@ -918,7 +918,7 @@ Creates a new chat and sends a message.
 
 `msg`: A string representing the message to send.
 
-Example code:
+Example:
 
 ```js
 chatgpt.sendInNewChat('Hello, world!');
@@ -936,7 +936,7 @@ Sets the active API provider and stores its API key for use in `send()`.
 
 ---
 
-Example code:
+Example:
 
 ```js
 chatgpt.setProvider('openrouter', { key: 'sk-or-...' })
@@ -977,7 +977,7 @@ Available options:
  - `speed`: A float representing the speed of the speech. From `0.1` to `10`.
  - `onend`: A callback function invoked when speech finishes playing.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -989,7 +989,7 @@ Example code:
 
 Creates a new chat.
 
-Example code:
+Example:
 
 ```js
 chatgpt.startNewChat();
@@ -999,7 +999,7 @@ chatgpt.startNewChat();
 
 Stops the generation of ChatGPT's response.
 
-Example code:
+Example:
 
 ```js
 chatgpt.stop();
@@ -1011,7 +1011,7 @@ chatgpt.stop();
 
 Focuses the chatbar.
 
-Example code:
+Example:
 
 ```js
 chatgpt.focusChatbar();
@@ -1021,7 +1021,7 @@ chatgpt.focusChatbar();
 
 Returns the chat input as an HTML element.
 
-Example code:
+Example:
 
 ```js
 const chatbox = chatgpt.getChatBox();
@@ -1032,7 +1032,7 @@ chatgpt.alert(chatbox.value); // Example output: 'Hello from chatgpt.js!'
 
 Returns the 'Continue generating' button as an HTML element.
 
-Example code:
+Example:
 
 ```js
 const continueBtn = chatgpt.getContinueButton();
@@ -1043,7 +1043,7 @@ continueBtn.click();
 
 Returns the footer div as an HTML element.
 
-Example code:
+Example:
 
 ```js
 const footerDiv = chatgpt.getFooterDiv();
@@ -1054,7 +1054,7 @@ footerDiv.style.padding = '15px'; // make the footer taller
 
 Returns the header div as an HTML element.
 
-Example code:
+Example:
 
 ```js
 const headerDiv = chatgpt.getHeaderDiv();
@@ -1065,7 +1065,7 @@ headerDiv.style.display = none; // hide the header
 
 Returns the login button as an HTML element.
 
-Example code:
+Example:
 
 ```js
 const loginBtn = chatgpt.getLoginButton();
@@ -1076,7 +1076,7 @@ loginBtn.click(); // navs to login page
 
 Returns the sidebar button (w/ icon) that creates a new chat as an HTML element.
 
-Example code:
+Example:
 
 ```js
 const newChatBtn = chatgpt.getNewChatButton();
@@ -1087,7 +1087,7 @@ newChatBtn.style.display = 'none'; // hide New Chat button
 
 Returns the sidebar link (w/ label) that creates a new chat as an HTML element.
 
-Example code:
+Example:
 
 ```js
 const newChatLink = chatgpt.getNewChatLink();
@@ -1098,7 +1098,7 @@ newChatLink.style.display = 'none'; // hide New Chat link
 
 Returns the button which regenerates ChatGPT's response as an HTML element.
 
-Example code:
+Example:
 
 ```js
 const regenBtn = chatgpt.getRegenerateButton();
@@ -1109,7 +1109,7 @@ regenBtn.click();
 
 Returns the button which scrolls to bottom as an HTML element.
 
-Example code:
+Example:
 
 ```js
 const scrollToBottomBtn = chatgpt.getScrollToBottomButton();
@@ -1120,7 +1120,7 @@ scrollToBottomBtn.click();
 
 Returns the button which sends the message as an HTML element.
 
-Example code:
+Example:
 
 ```js
 const sendBtn = chatgpt.getSendButton();
@@ -1131,7 +1131,7 @@ sendBtn.click();
 
 Returns the button which stops the generation of ChatGPT's response as an HTML element.
 
-Example code:
+Example:
 
 ```js
 const stopBtn = chatgpt.getStopGeneratingButton();
@@ -1142,7 +1142,7 @@ stopBtn.click();
 
 Returns the chatbar button that activates Voice mode as an HTML element.
 
-Example code:
+Example:
 
 ```js
 const voiceBtn = chatgpt.getVoiceButton();
@@ -1153,7 +1153,7 @@ getVoiceButton.click(); // activates Voice mode
 
 Hides the footer div.
 
-Example code:
+Example:
 
 ```js
 chatgpt.hideFooter()
@@ -1163,7 +1163,7 @@ chatgpt.hideFooter()
 
 Hides the header div.
 
-Example code:
+Example:
 
 ```js
 chatgpt.hideHeader()
@@ -1173,7 +1173,7 @@ chatgpt.hideHeader()
 
 Shows the footer div if hidden.
 
-Example code:
+Example:
 
 ```js
 chatgpt.showFooter()
@@ -1183,7 +1183,7 @@ chatgpt.showFooter()
 
 Shows the header div if hidden.
 
-Example code:
+Example:
 
 ```js
 chatgpt.showHeader()
@@ -1203,7 +1203,7 @@ Activates the auto-refresh functionality.
 
 `interval` (optional): A number representing the interval in seconds between sessions refreshes. Defaults to `30`.
 
-Example code:
+Example:
 
 ```js
 chatgpt.autoRefresh.activate();
@@ -1213,7 +1213,7 @@ chatgpt.autoRefresh.activate();
 
 Deactivates the auto-refresh functionality.
 
-Example code:
+Example:
 
 ```js
 chatgpt.autoRefresh.deactivate();
@@ -1223,7 +1223,7 @@ chatgpt.autoRefresh.deactivate();
 
 Returns the current timestamp as a string (12-hour format).
 
-Example code:
+Example:
 
 ```js
 const timeStamp = chatgpt.autoRefresh.nowTimeStamp();
@@ -1236,7 +1236,7 @@ chatgpt.alert(timeStamp); // Example output: '1:56:25 PM'
 
 Returns a boolean value. `true` if system/browser scheme preference is set to light, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 chatgpt.alert(chatgpt.browser.isLightMode()); // logs `true` or `false`
@@ -1246,7 +1246,7 @@ chatgpt.alert(chatgpt.browser.isLightMode()); // logs `true` or `false`
 
 Returns a boolean value. `true` if system/browser scheme preference is set to dark, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 chatgpt.alert(chatgpt.browser.isDarkMode()); // logs `true` or `false`
@@ -1256,7 +1256,7 @@ chatgpt.alert(chatgpt.browser.isDarkMode()); // logs `true` or `false`
 
 Returns a boolean value. `true` if the browser is Chromium and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.browser.isChromium()) {
@@ -1268,7 +1268,7 @@ if (chatgpt.browser.isChromium()) {
 
 Returns a boolean value. `true` if the browser is Chrome and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.browser.isChrome()) {
@@ -1280,7 +1280,7 @@ if (chatgpt.browser.isChrome()) {
 
 Returns a boolean value. `true` if the browser is Edge and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.browser.isEdge()) {
@@ -1292,7 +1292,7 @@ if (chatgpt.browser.isEdge()) {
 
 Returns a boolean value. `true` if the browser is Brave and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.browser.isBrave()) {
@@ -1304,7 +1304,7 @@ if (chatgpt.browser.isBrave()) {
 
 Returns a boolean value. `true` if the browser is Firefox and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.browser.isFirefox()) {
@@ -1316,7 +1316,7 @@ if (chatgpt.browser.isFirefox()) {
 
 Returns a boolean value. `true` if the browser is fullscreen and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.browser.isFullScreen()) {
@@ -1328,7 +1328,7 @@ if (chatgpt.browser.isFullScreen()) {
 
 Returns a boolean value. `true` if the browser is mobile and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.browser.isMobile()) {
@@ -1346,7 +1346,7 @@ Asks ChatGPT to minify the given code.
 
 `code`: A string being the code to be minified.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1376,7 +1376,7 @@ Asks ChatGPT to execute the given code.
 
 `code`: A string being the code to execute.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1392,7 +1392,7 @@ Extracts pure code from response.
 
 `msg`: A string being the response to extract code from.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1427,7 +1427,7 @@ Resolves a promise when code has finished generating.
 
 `timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until code generation finishes.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1445,7 +1445,7 @@ Asks ChatGPT to obfuscate the given code.
 
 `code`: A string being the code to obfuscate.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1468,7 +1468,7 @@ Asks ChatGPT to refactor the given code.
 
 `objective` (optional): A string representing the objective of the refactoring. Defaults to `brevity`.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1494,7 +1494,7 @@ Asks ChatGPT to review given code.
 
 `code`: A string being the code to review.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1513,7 +1513,7 @@ Asks ChatGPT to unminify the given code.
 
 `code`: A string being the code to unminify.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1546,7 +1546,7 @@ Asks ChatGPT to write code given a prompt.
 
 `outputLang`: A string representing the code language to generate the prompt with.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1568,7 +1568,7 @@ API related to the footer.
 
 Returns the footer div as an HTML element.
 
-Example code:
+Example:
 
 ```js
 const footerDiv = chatgpt.footer.get();
@@ -1579,7 +1579,7 @@ footerDiv.style.padding = '15px'; // make the footer taller
 
 Hides the footer div.
 
-Example code:
+Example:
 
 ```js
 chatgpt.footer.hide()
@@ -1589,7 +1589,7 @@ chatgpt.footer.hide()
 
 Shows the footer div if hidden.
 
-Example code:
+Example:
 
 ```js
 chatgpt.footer.show()
@@ -1603,7 +1603,7 @@ API related to the header.
 
 Returns the header div as an HTML element.
 
-Example code:
+Example:
 
 ```js
 const headerDiv = chatgpt.header.get();
@@ -1614,7 +1614,7 @@ headerDiv.style.display = none; // hide the header
 
 Hides the header div.
 
-Example code:
+Example:
 
 ```js
 chatgpt.header.hide()
@@ -1624,7 +1624,7 @@ chatgpt.header.hide()
 
 Shows the header div if hidden.
 
-Example code:
+Example:
 
 ```js
 chatgpt.header.show()
@@ -1642,7 +1642,7 @@ Resolves a promise when chat history has finished loading.
 
 `timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until chat history finishes loading.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1663,7 +1663,7 @@ Adds a custom instruction for either the user or ChatGPT.
 
 `target`: A string representing the target of the instruction. Can be either `user` or `chatgpt`.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1679,7 +1679,7 @@ Clears the custom instructions of either the user or ChatGPT.
 
 `target`: A string representing the target of the instruction. Can be either `user` or `chatgpt`.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1691,7 +1691,7 @@ Example code:
 
 Turns off custom instructions.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1703,7 +1703,7 @@ Example code:
 
 Turns on custom instructions.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1715,7 +1715,7 @@ Example code:
 
 Toggles on/off custom instructions.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1731,7 +1731,7 @@ The small menu that shows up when clicking on the account button.
 
 Toggles the menu.
 
-Example code:
+Example:
 
 ```js
 chatgpt.menu.toggle()
@@ -1741,7 +1741,7 @@ chatgpt.menu.toggle()
 
 Opens the menu.
 
-Example code:
+Example:
 
 ```js
 chatgpt.menu.open()
@@ -1751,7 +1751,7 @@ chatgpt.menu.open()
 
 Closes the menu.
 
-Example code:
+Example:
 
 ```js
 chatgpt.menu.close()
@@ -1765,7 +1765,7 @@ API related to ChatGPT's responses.
 
 Continues the generation of ChatGPT's cut-off response.
 
-Example code:
+Example:
 
 ```js
 chatgpt.response.continue();
@@ -1807,7 +1807,7 @@ API for interfacing with ChatGPT user settings.
 
 Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 chatgpt.alert(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
@@ -1817,7 +1817,7 @@ chatgpt.alert(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
 
 Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 chatgpt.alert(chatgpt.settings.scheme.isLight()); // logs `true` or `false`
@@ -1831,7 +1831,7 @@ Sets the theme to `light`, `dark` or `system`.
 
 `value`: A string being the value to set the theme to.
 
-Example code:
+Example:
 
 ```js
 chatgpt.settings.scheme.set('dark');
@@ -1841,7 +1841,7 @@ chatgpt.settings.scheme.set('dark');
 
 Toggles the theme between light and dark mode.
 
-Example code:
+Example:
 
 ```js
 chatgpt.settings.scheme.toggle();
@@ -1855,7 +1855,7 @@ API related to the sidebar's behavior.
 
 Returns a boolean value. `true` if the sidebar exists , `false` otherwise (e.g. logged out UI).
 
-Example code:
+Example:
 
 ```js
 if (!chatgpt.sidebar.exists())
@@ -1866,7 +1866,7 @@ if (!chatgpt.sidebar.exists())
 
 Returns a boolean value. `true` if the sidebar is open, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.sidebar.isOn()) {
@@ -1878,7 +1878,7 @@ if (chatgpt.sidebar.isOn()) {
 
 Returns a boolean value. `true` if the sidebar is closed, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.sidebar.isOff()) {
@@ -1890,7 +1890,7 @@ if (chatgpt.sidebar.isOff()) {
 
 Hides the sidebar.
 
-Example code:
+Example:
 
 ```js
 chatgpt.sidebar.hide();
@@ -1900,7 +1900,7 @@ chatgpt.sidebar.hide();
 
 Shows the sidebar.
 
-Example code:
+Example:
 
 ```js
 chatgpt.sidebar.show();
@@ -1910,7 +1910,7 @@ chatgpt.sidebar.show();
 
 Toggles the visibility of the sidebar.
 
-Example code:
+Example:
 
 ```js
 chatgpt.sidebar.toggle();
@@ -1924,7 +1924,7 @@ Resolves a promise when the ChatGPT sidebar has finished loading.
 
 `timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits 5s or until New Chat link appears (since it is not always present).
 
-Example code:
+Example:
 
 ```js
 (async () => {
