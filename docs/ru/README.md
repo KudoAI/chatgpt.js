@@ -82,7 +82,7 @@
 
 [greasemonkey-usage]: #-greasemonkey
 
-> Примечание Чтобы использовать стартовый шаблон: kudoai/chatgpt.js-greasemonkey-starter
+> Примечание Чтобы использовать стартовый шаблон: KudoAI/chatgpt.js-greasemonkey-starter
 
 ```js
 ...
@@ -92,7 +92,7 @@
 // Ваш код здесь...
 ```
 <img style="margin: 0 2px -1px 0" height=16 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon16.png?v=e638eac"> Chrome:
-> Примечание Чтобы использовать стартовый шаблон: kudoai/chatgpt.js-chrome-starter
+> Примечание Чтобы использовать стартовый шаблон: KudoAI/chatgpt.js-chrome-starter
 
 Поскольку Google не позволяет удаленный код, необходимо импортировать chatgpt.js локально:
 

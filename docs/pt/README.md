@@ -82,7 +82,7 @@
 
 [greasemonkey-usage]: #-greasemonkey
 
-> **Observação** _Para usar um modelo inicial: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
+> **Observação** _Para usar um modelo inicial: [KudoAI/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
 ```js
 ...
@@ -94,7 +94,7 @@
 
 #### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">](#-chrome) Chrome:
 
-> **Observação** _Para usar um modelo inicial: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
+> **Observação** _Para usar um modelo inicial: [KudoAI/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
 Como o Google não permite código remoto, é necessário importar chatgpt.js localmente:
 
