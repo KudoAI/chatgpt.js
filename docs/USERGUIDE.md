@@ -13,6 +13,8 @@
 
 </div>
 
+<hr>
+
 # ⚡ Importing the library
 
 </div>
