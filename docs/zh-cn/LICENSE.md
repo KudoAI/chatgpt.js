@@ -7,7 +7,7 @@
             </picture>
         </a>
         简体中文 |
-        <a href="../../LICENSE.md">English</a> |
+        <a href="../LICENSE.md">English</a> |
         <a href="../zh-tw/LICENSE.md">繁體中文</a> |
         <a href="../ja/LICENSE.md">日本</a> |
         <a href="../ko/LICENSE.md">한국인</a> |
