@@ -82,6 +82,7 @@
 
 [greasemonkey-usage]: #-greasemonkey
 
+> **Note** _स्टार्टर टेम्प्लेट प्रयोग गर्न: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
 ```js
 ...
@@ -91,7 +92,7 @@
 // आफ्नो कोड यहाँ लेख्नुहोस्...
 ```
 
-### <img style="margin: 0 2px -1px 0" height=16 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon16.png?v=e638eac"> Chrome:
+#### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">](#-chrome) Chrome:
 
 
 गुगलले रिमोट कोडलाई अनुमति नदिने भएकोले, स्थानीय रूपमा chatgpt.js आयात गर्न आवश्यक छ:
