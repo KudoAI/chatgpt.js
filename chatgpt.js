@@ -1820,104 +1820,6 @@ const chatgpt = {
     showHeader() { chatgpt.header.show() },
 
     sidebar: {
-        elems: [], observer: {},
-
-        activateObserver() {
-
-            // Stop the previous observer to preserve resources
-            if (this.observer instanceof MutationObserver) this.observer.disconnect()
-
-            if (!this.elems.length) return console.error('🤖 chatgpt.js >> No elems to append!')
-
-            // Grab CSS from original website elems
-            let cssClasses
-            for (let navLink of document.querySelectorAll(chatgpt.selectors.links.sidebarItem))
-                if (/.*chat/.exec(navLink.text)[0]) {
-                    cssClasses = navLink.classList
-                    navLink.parentNode.style.margin = '2px 0' // add v-margins for consistency across all inserted btns
-                    break
-                }
-
-            // Apply CSS to make the added elems look like they belong to the website
-            this.elems.forEach(elem => {
-                elem.setAttribute('class', cssClasses)
-                elem.style.maxHeight = elem.style.minHeight = '44px' // fix the height of the element
-                elem.style.margin = '2px 0'
-            })
-
-            // Create MutationObserver instance
-            const navBar = document.querySelector(chatgpt.selectors.chatHistory)
-            if (!navBar) return console.error('Sidebar element not found!')
-            this.observer = new MutationObserver(mutations =>
-                mutations.forEach(mutation => {
-                    if ((mutation.type == 'childList' && mutation.addedNodes.length) ||
-                        (mutation.type == 'attributes' && mutation.attributeName == 'data-chatgptjs')) // check for trigger
-                            this.elems.forEach(elem => { // try to insert each element...
-                                if (!navBar.contains(elem)) // ...if it's not already present...
-                                    try { navBar.querySelector('a').parentNode.before(elem) } // ...at top of sidebar
-                                    catch (err) { console.error(err) }
-                            })
-                })
-            )
-
-            this.observer.observe(document.documentElement, { childList: true, subtree: true, attributes: true })
-        },
-
-        append(elem, attrs = {}) {
-        // element = 'button' | 'dropdown' REQUIRED (no default value)
-        // attrs = { ... }
-        // attrs for 'button': 'icon' = src string, 'label' = string, 'onclick' = function
-        // attrs for 'dropdown': 'items' = [ { text: string, value: string }, ... ] array of objects
-        // where 'text' is the displayed text of the option and 'value' is the value of the option
-            const validElems = ['button', 'dropdown']
-            if (!elem || typeof elem != 'string') // Element not passed or invalid type
-                return console.error('🤖 chatgpt.js >> Please supply a valid string element name!')
-            elem = elem.toLowerCase()
-            if (!validElems.includes(elem)) // Element not in list
-                return console.error(`🤖 chatgpt.js >> Invalid element! Valid elems are [${validElems}]`)
-
-            const newElem = document.createElement(elem == 'dropdown' ? 'select' : elem)
-            newElem.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now()
-
-            if (elem == 'button') {
-                newElem.textContent = attrs?.label && typeof attrs.label == 'string' ? attrs.label : 'chatgpt.js button'
-                const icon = document.createElement('img')
-                icon.src = attrs?.icon && typeof attrs.icon == 'string' // can also be base64 encoded image string
-                    ? attrs.icon // add icon to button element if given, else default one
-                    : `${chatgpt.endpoints.assets}/starters/chrome/extension/icons/icon128.png`
-                icon.width = 18
-                newElem.firstChild.before(icon)
-                newElem.onclick = attrs?.onclick && typeof attrs.onclick == 'function' ? attrs.onclick : function(){}
-            }
-
-            else if (elem == 'dropdown') {
-                if (!attrs?.items || // there no are options to add
-                    !Array.isArray(attrs.items) || // It's not an array
-                    !attrs.items.length) // the array is empty
-                        attrs.items = [{ text: '🤖 chatgpt.js option', value: 'chatgpt.js option value' }] // Set default dropdown entry
-
-                if (!attrs.items.every(el => typeof el == 'object')) // The entries of the array are not objects
-                    return console.error('\'items\' must be an array of objects!')
-
-                attrs.items.forEach(item => {
-                    const optionElement = document.createElement('option')
-                    optionElement.textContent = item?.text
-                    optionElement.value = item?.value
-                    newElem.add(optionElement)
-                })
-            }
-
-
-            // Fix for blank background on dropdown elems
-            if (elem == 'dropdown') newElem.style.backgroundColor = 'var(--gray-900, rgb(32,33,35))'
-
-            this.elems.push(newElem)
-            this.activateObserver()
-            document.body.setAttribute('data-chatgptjs', 'observer-trigger') // add attribute to trigger the observer
-
-            return newElem.id // Return the element id
-        },
-
         exists() { return !!chatgpt.getNewChatLink() },
         hide() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!') },
         show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!') },
@@ -1932,12 +1834,6 @@ const chatgpt = {
               : sidebar.style.visibility != 'hidden' && parseInt(getComputedStyle(sidebar).width) > 150
         },
 
-        toggle() {
-            const sidebarToggle = document.querySelector(chatgpt.selectors.btns.sidebar)
-            if (!sidebarToggle) console.error('Sidebar toggle not found!')
-            sidebarToggle.click()
-        },
-
         async isLoaded(timeout = 5000) {
             await chatgpt.isLoaded()
             const timeoutPromise = new Promise(resolve => setTimeout(() => resolve(false), timeout))
@@ -1948,6 +1844,12 @@ const chatgpt = {
                 }).observe(document.documentElement, { childList: true, subtree: true })
             })
             return await Promise.race([isLoadedPromise, timeoutPromise])
+        },
+
+        toggle() {
+            const sidebarToggle = document.querySelector(chatgpt.selectors.btns.sidebar)
+            if (!sidebarToggle) console.error('Sidebar toggle not found!')
+            sidebarToggle.click()
         }
     },
 

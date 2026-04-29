@@ -1841,60 +1841,6 @@ chatgpt.settings.scheme.toggle();
 
 API related to the sidebar's behavior.
 
-### append
-
-Appends a new element to the sidebar. Returns the `id` property of the element.
-
-**Parameters**:
-
-`element`: A string being the name of the element to append.
-
-Currently supported elements are [`button`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) and [`dropdown`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
-
-`attrs`: An object which contains the attributes of the element to append.
-
-_**Attributes for `button`**_
-
-`label`: A string being the label (displayed text) of the button. Defaults to `chatgpt.js button`.
-
-`icon`: A string being either a url to an image or a base64 encoded string of the image data. Defaults to [this icon](https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/starters/chrome/extension/icons/icon128.png).
-
-`onclick`: A function which is called when the button is clicked. Defaults to `function() {}`.
-
-_**Attributes for `dropdown`**_
-
-`items`: An array of objects where the `text` key is the displayed text of the option, and the `value` key is the value of the option.
-
-Example item object:
-
-```js
-{
-    text: 'The text to display in the option',
-    value: 'The value of the option'
-}
-```
-
-Example code:
-
-```js
-const buttonId = chatgpt.sidebar.append('button', {
-    label: 'I am a button!',
-    icon: 'https://chat.openai.com/favicon-32x32.png',
-    onclick: function() {
-        chatgpt.alert('Clicked!');
-    }
-});
-chatgpt.alert(buttonId); // Example output: 1693295258727
-
-const dropdownId = chatgpt.sidebar.append('dropdown', {
-    items: [
-        { text: 'Hello world', value: 'helloworld' },
-        { text: 'Hello there', value: 'hellothere' }
-    ]
-});
-chatgpt.alert(dropdownId); // Example output: 1693294795240
-```
-
 ### exists
 
 Returns a boolean value. `true` if the sidebar exists , `false` otherwise (e.g. logged out UI).
