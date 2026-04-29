@@ -13,19 +13,13 @@
     {
       "type": "github",
       "url": "http://github.com/sponsors/KudoAI"
-    },
-    {
-      "type": "paypal",
-      "url": "http://paypal.biz/kudoai"
     }
   ],
   "browser": "chatgpt.js",
   "files": [
     "chatgpt.js",
     "dist/chatgpt.min.js",
-    "docs/*.md",
-    "starters/",
-    "!starters/**/docs/*/"
+    "docs/*.md"
   ],
   "scripts": {
     "prepare": "husky",
