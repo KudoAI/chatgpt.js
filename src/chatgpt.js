@@ -1534,11 +1534,13 @@ const chatgpt = {
 
     async send(userQuery, options = {}) {
         const { provider = 'openrouter', stream = true, systemQuery = '', color = 'green' } = options
+        const apiKey = chatgpt.config?.apiKeys?.[provider] || process.env[`${provider.toUpperCase()}_API_KEY`]
+        if (typeof apiKey != 'string' || !apiKey) throw new Error('Missing API key for provider: ' + provider)
         const respColor = chatgpt.colors?.[color] || chatgpt.colors.green
-        const resp = await fetch(chatgpt.endpoints.openrouter.chat, {
+        const resp = await fetch(chatgpt.endpoints[provider].chat, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json', 'Authorization': `Bearer ${chatgpt.config.apiKeys[provider]}` },
+                'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
             body: JSON.stringify({
                 model: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free', max_tokens: 500, stream,
                 messages: [{ role: 'system', content: systemQuery }, { role: 'user', content: userQuery }]
@@ -1582,10 +1584,12 @@ const chatgpt = {
     setProvider(provider = 'openrouter', { key } = {}) {
         if (typeof provider != 'string' || !provider)
             return console.error('Provider must be a string')
-        if (typeof key != 'string' || !key)
-            return console.error('API key must be a string')
-        Object.assign(chatgpt.config ??= {}, { apiKeys: {}, provider })
-        chatgpt.config.apiKeys[provider] = key
+        Object.assign(chatgpt.config ??= {}, { apiKeys: chatgpt.config?.apiKeys ?? {}, provider })
+        if (key) {
+            if (typeof key != 'string')
+                return console.error('API key must be a string')
+            chatgpt.config.apiKeys[provider] = key
+        }
     },
 
     settings: {
