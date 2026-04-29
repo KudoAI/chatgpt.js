@@ -110,17 +110,6 @@ Example:
 })()
 ```
 
-### generateRandomIP
-
-Returns a random IP address as a string.
-
-Example:
-
-```js
-const randomIP = chatgpt.generateRandomIP()
-chatgpt.alert(randomIP) // Example output: '161.192.110.125'
-```
-
 ### get
 
 Example:

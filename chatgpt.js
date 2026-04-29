@@ -747,12 +747,6 @@ const chatgpt = {
         }
     },
 
-    generateRandomIP() {
-        const ip = Array.from({length: 4}, () => Math.floor(chatgpt.randomFloat() * 256)).join('.')
-        console.info('IP generated: ' + ip)
-        return ip
-    },
-
     get(targetType, targetName = '') {
     // targetType = 'button'|'link'|'div'|'response'
     // targetName = from get[targetName][targetType] methods, e.g. 'send'
