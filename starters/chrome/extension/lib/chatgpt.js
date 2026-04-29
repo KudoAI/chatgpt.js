@@ -8,7 +8,7 @@ const chatgpt = {
 
     endpoints: {
         assets: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js',
-        openAI: {
+        openai: {
             session: 'https://chatgpt.com/api/auth/session',
             chats: 'https://chatgpt.com/backend-api/conversations',
             chat: 'https://chatgpt.com/backend-api/conversation',
@@ -485,7 +485,7 @@ const chatgpt = {
         return new Promise((resolve, reject) =>
             chatgpt.getAccessToken().then(token => {
                 const xhr = new XMLHttpRequest()
-                xhr.open('PATCH', chatgpt.endpoints.openAI.chats, true)
+                xhr.open('PATCH', chatgpt.endpoints.openai.chats, true)
                 xhr.setRequestHeader('Content-Type', 'application/json')
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
@@ -780,7 +780,7 @@ const chatgpt = {
             if (chatgpt.accessToken && (Date.parse(chatgpt.accessToken.expireDate) - Date.parse(new Date()) >= 0))
                 return resolve(chatgpt.accessToken.token) // unexpired one exists already
             const xhr = new XMLHttpRequest()
-            xhr.open('GET', chatgpt.endpoints.openAI.session, true)
+            xhr.open('GET', chatgpt.endpoints.openai.session, true)
             xhr.setRequestHeader('Content-Type', 'application/json')
             xhr.onload = () => {
                 if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.')
@@ -812,7 +812,7 @@ const chatgpt = {
         // Return account details
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest()
-            xhr.open('GET', chatgpt.endpoints.openAI.session, true)
+            xhr.open('GET', chatgpt.endpoints.openai.session, true)
             xhr.setRequestHeader('Content-Type', 'application/json')
             xhr.onload = () => {
                 if (xhr.status == 200) {
@@ -868,7 +868,7 @@ const chatgpt = {
             const re_chatID = /\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest()
-                xhr.open('GET', chatgpt.endpoints.openAI.chats, true)
+                xhr.open('GET', chatgpt.endpoints.openai.chats, true)
                 xhr.setRequestHeader('Content-Type', 'application/json')
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
@@ -910,7 +910,7 @@ const chatgpt = {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest()
                 getChatDetails(token, ['id']).then(chat => {
-                    xhr.open('GET', `${chatgpt.endpoints.openAI.chat}/${chat.id}`, true)
+                    xhr.open('GET', `${chatgpt.endpoints.openai.chat}/${chat.id}`, true)
                     xhr.setRequestHeader('Content-Type', 'application/json')
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
@@ -1120,7 +1120,7 @@ const chatgpt = {
 
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest()
-                xhr.open(method, chatgpt.endpoints.openAI.instructions, true)
+                xhr.open(method, chatgpt.endpoints.openai.instructions, true)
                 // Set headers
                 xhr.setRequestHeader('Accept-Language', 'en-US')
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token)
@@ -1708,7 +1708,7 @@ const chatgpt = {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest()
                 chatgpt.getChatData(chatToGet).then(chat => {
-                    xhr.open('GET', `${chatgpt.endpoints.openAI.chat}/${chat.id}`, true)
+                    xhr.open('GET', `${chatgpt.endpoints.openai.chat}/${chat.id}`, true)
                     xhr.setRequestHeader('Content-Type', 'application/json')
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
@@ -1723,7 +1723,7 @@ const chatgpt = {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest()
                 chatgpt.getChatData(chatToGet).then(chat => {
-                    xhr.open('POST', chatgpt.endpoints.openAI.share_create, true)
+                    xhr.open('POST', chatgpt.endpoints.openai.share_create, true)
                     xhr.setRequestHeader('Content-Type', 'application/json')
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
@@ -1741,7 +1741,7 @@ const chatgpt = {
         const confirmShareChat = (token, data) => {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest()
-                xhr.open('PATCH', `${chatgpt.endpoints.openAI.share}/${data.share_id}`, true)
+                xhr.open('PATCH', `${chatgpt.endpoints.openai.share}/${data.share_id}`, true)
                 xhr.setRequestHeader('Content-Type', 'application/json')
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
