@@ -15,40 +15,23 @@
 
 </div>
 
-# Importing the library
+## ⚡ Importing the library
 
-## ES6
+</div>
 
-```js
-(async () => {
-    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js')
-    // Your code here...
-})()
-```
+#### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">][web-usage][<img height=13.5 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/edge/icon16.png" title="Edge">][web-usage][<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/firefox/icon16.png" title="Firefox">][web-usage][<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/safari/icon16.png" title="Safari">][web-usage][<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/qq/3d/icon-32x33.png" title="QQ Browser">][web-usage] Web:
 
-## ES5
+[web-usage]: #-web
 
 ```js
-var xhr = new XMLHttpRequest()
-xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js')
-xhr.onload = function () {
-    if (xhr.status === 200) {
-        var chatgptJS = document.createElement('script')
-        chatgptJS.textContent = xhr.responseText
-        document.head.append(chatgptJS)
-        yourCode() // runs your code
-    }
-}
-xhr.send()
-
-function yourCode() {
-    // Your code here...
-}
+<script src="https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js"></script>
 ```
 
-## Greasemonkey
+#### [<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/tampermonkey/icon28.png" title="Tampermonkey">][greasemonkey-usage][<img height="15" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/violentmonkey/icon25.png" title="Violentmonkey">][greasemonkey-usage][<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/scriptcat/icon32.png" title="ScriptCat">][greasemonkey-usage][<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/orangemonkey/icon16.png" title="OrangeMonkey">][greasemonkey-usage][<img height="14" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/stay/icon32.png" title="Stay">][greasemonkey-usage][<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/userscripts/icon32.png" title="Userscripts">][greasemonkey-usage] Greasemonkey:
 
-> **Note** _To use a starter template: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
+[greasemonkey-usage]: #-greasemonkey
+
+> **Note** _To use a starter template: [KudoAI/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
 ```js
 ...
@@ -58,33 +41,31 @@ function yourCode() {
 // Your code here...
 ```
 
-## Chrome
+#### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">](#-chrome) Chrome:
 
-> **Note** _To use a starter template: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
+> **Note** _To use a starter template: [KudoAI/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
-1. Save https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/chatgpt.js to a subdirectory (`lib` in this example)
+Since Google does not allow remote code, importing chatgpt.js locally is required:
 
-2. Add ES6 export statement to end of `lib/chatgpt.js`
-```js
-...
-export { chatgpt }
-```
+1. Save https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js to a subdirectory (`lib` in this example)
 
-3. In project's (V3) `manifest.json`, add `lib/chatgpt.js` as a web accessible resource
+2. In project's (V3) `manifest.json`, add `lib/chatgpt.min.js` as a web accessible resource
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
-        "resources": ["lib/chatgpt.js"]
+        "resources": ["lib/chatgpt.min.js"]
     }],
 ```
 
-4. In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
+3. In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
 ```js
 (async () => {
-    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
     // Your code here...
 })()
 ```
+
+<hr>
 
 # Library methods
 
