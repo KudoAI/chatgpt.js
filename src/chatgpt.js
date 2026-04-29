@@ -1539,8 +1539,7 @@ const chatgpt = {
         const respColor = chatgpt.colors?.[color] || chatgpt.colors.green
         const resp = await fetch(chatgpt.endpoints[provider].chat, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
+            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
             body: JSON.stringify({
                 model: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free', max_tokens: 500, stream,
                 messages: [{ role: 'system', content: systemQuery }, { role: 'user', content: userQuery }]
@@ -1582,12 +1581,10 @@ const chatgpt = {
     },
 
     setProvider(provider = 'openrouter', { key } = {}) {
-        if (typeof provider != 'string' || !provider)
-            return console.error('Provider must be a string')
+        if (typeof provider != 'string') return console.error('Provider must be a string')
         Object.assign(chatgpt.config ??= {}, { apiKeys: chatgpt.config?.apiKeys ?? {}, provider })
         if (key) {
-            if (typeof key != 'string')
-                return console.error('API key must be a string')
+            if (typeof key != 'string') return console.error('API key must be a string')
             chatgpt.config.apiKeys[provider] = key
         }
     },
@@ -1596,6 +1593,7 @@ const chatgpt = {
         scheme: {
             isDark() { return document.documentElement.classList.contains('dark') },
             isLight() { return document.documentElement.classList.contains('light') },
+
             set(value) {
 
                 // Validate value
@@ -1614,6 +1612,7 @@ const chatgpt = {
                 // Toggle scheme if necessary
                 if (!document.documentElement.classList.contains(schemeToSet)) this.toggle()
             },
+
             toggle() {
                 const [schemeToRemove, schemeToAdd] = this.isDark() ? ['dark', 'light'] : ['light', 'dark']
                 document.documentElement.classList.replace(schemeToRemove, schemeToAdd)
