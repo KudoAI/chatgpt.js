@@ -747,37 +747,6 @@ const chatgpt = {
         }
     },
 
-    get(targetType, targetName = '') {
-    // targetType = 'button'|'link'|'div'|'response'
-    // targetName = from get[targetName][targetType] methods, e.g. 'send'
-
-        // Validate argument types to be string only
-        if (typeof targetType != 'string' || typeof targetName != 'string')
-            throw new TypeError('Invalid arguments. Both arguments must be strings.')
-
-        // Validate targetType
-        if (!cjsTargetTypes.includes(targetType.toLowerCase()))
-            throw new Error(`Invalid targetType: ${targetType}. Valid values are: ${JSON.stringify(cjsTargetTypes)}`)
-
-        // Validate targetName scoped to pre-validated targetType
-        const targetNames = [], reTargetName = new RegExp(`^get(.*)${targetType}$`, 'i')
-        for (const prop in chatgpt) {
-            if (typeof chatgpt[prop] == 'function' && reTargetName.test(prop)) {
-                targetNames.push( // add found targetName to valid array
-                    prop.replace(reTargetName, '$1').toLowerCase())
-        }}
-        if (!targetNames.includes(targetName.toLowerCase()))
-            throw new Error(`Invalid targetName: ${targetName}. `
-                + (targetNames.length ? 'Valid values are: ' + JSON.stringify(targetNames)
-                    : 'targetType ' + targetType.toLowerCase() + ' does not require additional options.'))
-
-        // Call target function using pre-validated name components
-        const targetFuncNameLower = ('get' + targetName + targetType).toLowerCase()
-        const targetFuncName = Object.keys(this).find( // find originally cased target function name
-            (name) => { return name.toLowerCase() == targetFuncNameLower }) // test for match
-        return this[targetFuncName]() // call found function
-    },
-
     getAccessToken() {
         return new Promise((resolve, reject) => {
             if (chatgpt.accessToken && (Date.parse(chatgpt.accessToken.expireDate) - Date.parse(new Date()) >= 0))
@@ -1864,25 +1833,6 @@ const chatgpt = {
 }
 
 chatgpt.scheme = { ...chatgpt.settings.scheme } // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
-
-// Create chatgpt.[actions]Button(identifier) functions
-const cjsBtnActions = ['click', 'get'], cjsTargetTypes = [ 'button', 'link', 'div', 'response' ]
-for (const btnAction of cjsBtnActions) {
-    chatgpt[`${btnAction}Button`] = function handleButton(btnIdentifier) {
-        const btn = /^[.#]/.test(btnIdentifier) ? document.querySelector(btnIdentifier)
-          : /send/i.test(btnIdentifier) ? document.querySelector(chatgpt.selectors.btns.send)
-          : /scroll/i.test(btnIdentifier) ? document.querySelector(chatgpt.selectors.btns.scroll)
-          : (function() { // get via text content
-                for (const btn of document.querySelectorAll('button'))
-                    if (btn.textContent.toLowerCase().includes(btnIdentifier.toLowerCase()))
-                        return btn
-                for (const navLink of document.querySelectorAll(chatgpt.selectors.links.sidebarItem))
-                    if (navLink.textContent.toLowerCase().includes(btnIdentifier.toLowerCase()))
-                        return navLink
-            })()
-        if (btnAction == 'click') btn.click() ; else return btn
-    }
-}
 
 // Create ALIAS functions
 const cjsFuncAliases = [

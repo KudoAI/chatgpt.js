@@ -110,18 +110,6 @@ Example:
 })()
 ```
 
-### get
-
-Example:
-
-```js
-var response
-
-response = chatgpt.get('reply', 'last')
-// Equivalent of
-response = chatgpt.getLastResponse()
-```
-
 ### getUserLanguage
 
 Returns the user language as a string.
