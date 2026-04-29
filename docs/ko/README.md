@@ -114,7 +114,7 @@
 
 ```js
 (async () => {
-    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.9.0/dist/chatgpt.min.js');
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js');
     // 코드를 여기에 작성해 주세요...
 
 })();
@@ -124,7 +124,7 @@
 
 ```js
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.9.0/dist/chatgpt.min.js');
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js');
 xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
@@ -148,7 +148,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.9.0/dist/chatgpt.min.js
+// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js
 // ==/UserScript==
 
 // 코드를 여기에 작성해 주세요...

@@ -16,14 +16,11 @@
 </div>
 
 # Importing the library
-
-> **Note** _To always import the latest current major version, use: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/chatgpt.min.js`_
-
 ## ES6
 
 ```js
 (async () => {
-    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.9.0/dist/chatgpt.min.js');
+    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js');
     // Your code here...
 })();
 ```
@@ -32,7 +29,7 @@
 
 ```js
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.9.0/dist/chatgpt.min.js');
+xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js');
 xhr.onload = function () {
     if (xhr.status === 200) {
         var chatgptJS = document.createElement('script');
@@ -54,7 +51,7 @@ function yourCode() {
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.9.0/dist/chatgpt.min.js
+// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js
 // ==/UserScript==
 
 // Your code here...
