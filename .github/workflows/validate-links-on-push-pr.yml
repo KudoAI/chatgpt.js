@@ -20,5 +20,5 @@ jobs:
       - uses: JustinBeckwith/linkinator-action@v2.4.2
         with:
           paths: '**/*.md'
-          statusCodes: '{ "429": "skip" }'
+          statusCodes: '{ "429": "skip", "502": "skip" }'
           linksToSkip: 'npmjs\.com'
