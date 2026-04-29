@@ -67,9 +67,17 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
 
 <hr>
 
-# Library methods
+# 📖 Library methods
 
 Unless noted otherwise, methods are **synchronous**: they wait for the operation to finish, instead of returning immediately. If you need to know the result of calling **asynchronous** methods, use the returned promise or pass a callback function into the method.
+
+<div align="center">
+
+[General](#general) / [Page theme](#page-theme) / [Chats](#chats) / [DOM related](#dom-related) / [APIs](#library-apis)
+
+</strong></div>
+
+<hr>
 
 ## General
 
@@ -880,8 +888,6 @@ Sends a message via the ChatGPT interface (DOM) if available, otherwise sends it
   - `color`: *(string)* — Output color for CLI responses (default: `'green'`)
   - `method`: *(string)* — DOM-only: `'click'` to simulate send button (useful for mobile)
 
----
-
 Exmample code:
 
 
@@ -914,8 +920,6 @@ Sets the active API provider and stores its API key for use in `send()`.
 - `provider`: *(string)* — The API provider name (default: `'openrouter'`)
 - `options` *(object)*:
   - `key`: *(string)* — The API key for the provider
-
----
 
 Example:
 
