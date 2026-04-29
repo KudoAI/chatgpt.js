@@ -1,4 +1,5 @@
 *cache
 *sandbox*
+dist/
 node_modules/
 *.css.map
