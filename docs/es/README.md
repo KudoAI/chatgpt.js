@@ -372,47 +372,6 @@ Esta biblioteca existe gracias al código, las traducciones, los problemas y las
 
 <div align="center">
 
-<br>
-
-**chatgpt.js** está financiado en parte por:
-
-<a href="https://www.cloudflare.com/?utm_source=chatgpt.js-github&utm_medium=referral&utm_content=partner-logo"
-   target="_blank" rel="noopener">
-    <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)"
-                srcset="https://assets.chatgptjs.org/images/logos/partners/cloudflare/white.png?v=962dcd1">
-        <img width=160 src="https://assets.chatgptjs.org/images/logos/partners/cloudflare/black.png?v=962dcd1">
-    </picture></a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)"
-                srcset="https://assets.chatgptjs.org/images/logos/partners/iproyal/white.svg?v=962dcd1">
-        <img width=165 src="https://assets.chatgptjs.org/images/logos/partners/iproyal/black.svg?v=962dcd1">
-    </picture></a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.microsoft.com/?utm_source=chatgpt.js-github&utm_medium=referral&utm_content=partner-logo"
-   target="_blank" rel="noopener">
-    <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)"
-                srcset="https://assets.chatgptjs.org/images/logos/partners/microsoft/white.png?v=962dcd1">
-        <img width=188 src="https://assets.chatgptjs.org/images/logos/partners/microsoft/black.png?v=962dcd1">
-    </picture></a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-    <picture>
-        <source type="image/png" media="(prefers-color-scheme: dark)"
-                srcset="https://assets.chatgptjs.org/images/logos/partners/warp/white.svg?v=962dcd1">
-        <img width=133 src="https://assets.chatgptjs.org/images/logos/partners/warp/black.svg?v=962dcd1">
-    </picture></a>
-
-</div>
-
-<br>
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div align="center">
-
 **[Lanzamientos](https://github.com/KudoAI/chatgpt.js/releases)** /
 [Guía del usuario](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) /
 [Conversar](https://github.com/KudoAI/chatgpt.js/discussions) /
