@@ -37,8 +37,6 @@
     </picture>
 </a>
 
-### 🤖 ChatGPT 用の強力なクライアント側 JavaScript ライブラリ
-
 </div>
 
 <br>

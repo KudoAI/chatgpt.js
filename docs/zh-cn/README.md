@@ -37,8 +37,6 @@
     </picture>
 </a>
 
-### 🤖 ChatGPT 的强大客户端 JavaScript 库 
-
 </div>
 
 <br>

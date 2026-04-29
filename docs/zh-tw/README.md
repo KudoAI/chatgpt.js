@@ -37,8 +37,6 @@
     </picture>
 </a>
 
-### 🤖 適用於 ChatGPT 的強大客戶端 JavaScript 庫
-
 </div>
 
 <br>

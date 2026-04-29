@@ -37,8 +37,6 @@
     </picture>
 </a>
 
-### 🤖 Eine leistungsstarke clientseitige JavaScript-Bibliothek für ChatGPT
-
 </div>
 
 <br>

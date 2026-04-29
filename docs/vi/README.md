@@ -37,8 +37,6 @@
     </picture>
 </a>
 
-### 🤖 Thư viện JavaScript phía máy khách mạnh mẽ cho ChatGPT
-
 </div>
 
 <br>
