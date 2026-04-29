@@ -116,7 +116,7 @@ Poiché Google non consente il codice remoto, è richiesta l'importazione di cha
 })()
 ```
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="npm">
 
@@ -157,7 +157,7 @@ Ogni chiamata ritorna ugualmente l'ultima risposta di ChatGPT. Se pensi che funz
 
 In caso contrario, consulta la [guida per l'utente](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) estesa o invia semplicemente un [problema](https://github.com/KudoAI/chatgpt.js/issues) o [PR](https://github.com/KudoAI/chatgpt.js/pulls) e sarà integrato, facile!
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="showcase">
 
@@ -246,7 +246,7 @@ In caso contrario, consulta la [guida per l'utente](https://github.com/KudoAI/ch
 Se hai creato qualcosa con chatgpt.js che desideri condividere, invia un'email a <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> o semplicemente apri una <a href="https://github.com/KudoAI/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>!
 </p>
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 ## 🧠 Contributori
 

@@ -115,7 +115,7 @@
 })()
 ```
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="npm">
 
@@ -156,7 +156,7 @@ chatgpt.get('reply', 'last')
 
 如果沒有，請查看擴展的[用戶指南](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md)，或者只需提交一個[問題](https://github.com/KudoAI/chatgpt.js/issues) 或 [PR](https://github.com/KudoAI/chatgpt.js/pulls) 它將被集成，簡單易行！
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="showcase">
 
@@ -245,7 +245,7 @@ chatgpt.get('reply', 'last')
 如果您使用 chatgpt.js 製作了一些想要分享的內容，請發送電子郵件至 <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> 或打開一個 <a href="https://github.com/KudoAI/chatgpt.js/pulls" target="_blank" rel="noopener">pull 請求</a>！
 </p>
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 ## 🧠 貢獻者
 

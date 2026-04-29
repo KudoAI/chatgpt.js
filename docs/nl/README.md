@@ -116,7 +116,7 @@ Omdat Google geen externe code toestaat, is het lokaal importeren van chatgpt.js
 })()
 ```
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="npm">
 
@@ -157,7 +157,7 @@ Elke oproep haalt gelijkelijk het laatste antwoord op. Als je denkt dat het werk
 
 Als dit niet het geval is, bekijk dan de uitgebreide [gebruikershandleiding](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md), of dien gewoon een [probleem](https://github.com/KudoAI/chatgpt.js/issues) in of [PR](https://github.com/KudoAI/chatgpt.js/pulls) en het wordt geïntegreerd, makkelijk!
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="showcase">
 
@@ -246,7 +246,7 @@ Als dit niet het geval is, bekijk dan de uitgebreide [gebruikershandleiding](htt
 Als je iets hebt gemaakt met chatgpt.js dat je wilt delen, stuur dan een e-mail naar <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> of open gewoon een <a href="https://github.com/KudoAI/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>!
 </p>
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 ## 🧠 Bijdragers
 

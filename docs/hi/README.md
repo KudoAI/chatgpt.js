@@ -116,7 +116,7 @@
 })()
 ```
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="npm">
 
@@ -157,7 +157,7 @@ chatgpt.get('reply', 'last')
 
 यदि ऐसा नहीं हुआ, तो विस्तारित [यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) देखें, या बस एक [इश्यू](https://github.com/KudoAI/chatgpt.js/issues) सबमिट करें या [PR](https://github.com/KudoAI/chatgpt.js/pulls) और इसे एकीकृत किया जाएगा, आसान!
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="showcase">
 
@@ -246,7 +246,7 @@ chatgpt.get('reply', 'last')
 यदि आपने chatgpt.js के साथ कुछ बनाया है जिसे आप साझा करना चाहते हैं, तो ईमेल करें <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> या बस एक <a href="https://github.com/KudoAI/chatgpt.js/pulls" target="_blank" rel="noopener">पुल अनुरोध</a>!
 </p>
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 ## 🧠 योगदानकर्ता
 

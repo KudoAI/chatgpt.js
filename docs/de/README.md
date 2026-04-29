@@ -116,7 +116,7 @@ Da Google keinen Remote-Code zulässt, ist der lokale Import von chatgpt.js erfo
 })()
 ```
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="npm">
 
@@ -157,7 +157,7 @@ Jeder Aufruf ruft gleichermaßen die letzte Antwort ab. Wenn Sie glauben, dass e
 
 Wenn dies nicht der Fall ist, schauen Sie sich den erweiterten [benutzerleitfaden](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) an oder reichen Sie einfach ein [Problem](https://github.com/KudoAI/chatgpt.js/issues) ein oder [PR](https://github.com/KudoAI/chatgpt.js/pulls) und es wird integriert, ganz einfach!
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="showcase">
 
@@ -246,7 +246,7 @@ Wenn dies nicht der Fall ist, schauen Sie sich den erweiterten [benutzerleitfade
 Wenn Sie etwas mit chatgpt.js erstellt haben, das Sie teilen möchten, senden Sie eine E-Mail an <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> oder öffnen Sie einfach eine <a href="https://github.com/KudoAI/chatgpt.js/pulls" target="_blank" rel="noopener">Pull-Anfrage</a>!
 </p>
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 ## 🧠 Mitwirkende
 

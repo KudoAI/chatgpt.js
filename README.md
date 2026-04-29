@@ -112,7 +112,7 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
 })()
 ```
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="npm">
 
@@ -153,7 +153,7 @@ Each call equally fetches the last response. If you think it works, it probably 
 
 If it didn't, check out the extended [userguide](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md), or simply submit an [issue](https://github.com/KudoAI/chatgpt.js/issues) or [PR](https://github.com/KudoAI/chatgpt.js/pulls) and it will be integrated, ezpz!
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 <div id="showcase">
 
@@ -242,7 +242,7 @@ If it didn't, check out the extended [userguide](https://github.com/KudoAI/chatg
 If you've made something w/ chatgpt.js you want to share, email <a href="mailto:showcase@chatgptjs.org">showcase@chatgptjs.org</a> or just open a <a href="https://github.com/KudoAI/chatgpt.js/pulls" target="_blank" rel="noopener">pull request</a>!
 </p>
 
-<img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
+<hr>
 
 ## 🧠 Contributors
 
