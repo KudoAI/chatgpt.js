@@ -75,11 +75,11 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
 
 ## General
 
-### detectLanguage `async`
+#### `detectLanguage(text)` `async`
 
 Asks ChatGPT to detect the language of given text.
 
-**Parameters**:
+Parameters:
 
 `text`: A string being the text to detect the language of.
 
@@ -94,11 +94,11 @@ Example:
 })()
 ```
 
-### executeCode `async`
+#### `executeCode()` `async`
 
 Asks ChatGPT to execute the given code.
 
-**Parameters**:
+Parameters:
 
 `code`: A string being the code to execute.
 
@@ -110,7 +110,7 @@ Example:
 })()
 ```
 
-### getUserLanguage
+#### `getUserLanguage()`
 
 Returns the user language as a string.
 
@@ -121,7 +121,7 @@ const userLanguage = chatgpt.getUserLanguage()
 chatgpt.alert(userLanguage) // Example output: 'en-US'
 ```
 
-### isFullScreen
+#### `isFullScreen()`
 
 Returns a boolean value. `true` if the website is fullscreen and `false` otherwise.
 
@@ -133,11 +133,11 @@ if (chatgpt.isFullScreen()) {
 }
 ```
 
-### isLoaded `async`
+#### `isLoaded()` `async`
 
 Resolves a promise when ChatGPT has finished loading.
 
-**Parameters**:
+Parameters:
 
 `timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until ChatGPT finishes loading.
 
@@ -150,7 +150,7 @@ Example:
 })()
 ```
 
-### isTempChat
+#### `isTempChat()`
 
 Returns a boolean value. `true` if the website is in Temporary Chat mode and `false` otherwise.
 
@@ -162,7 +162,7 @@ if (chatgpt.isTempChat()) {
 }
 ```
 
-### printAllFunctions
+#### `printAllFunctions()`
 
 Prints all the library functions to the console.
 
@@ -172,7 +172,7 @@ Example:
 chatgpt.printAllFunctions()
 ```
 
-### randomFloat
+#### `randomFloat()`
 
 Returns a random, cryptographically secure float number between 0 (inclusive) and 1 (exclusive).
 
@@ -183,11 +183,11 @@ const randomNumber = chatgpt.randomFloat()
 chatgpt.alert(randomNumber) // Example output: 0.9472113021060851
 ```
 
-### renderHTML
+#### `renderHTML()`
 
 Cleans and renders given HTML code.
 
-**Parameters**:
+Parameters:
 
 `node`: A string representing the HTML to be rendered.
 
@@ -199,11 +199,11 @@ document.body.append(
 )
 ```
 
-### sentiment `async`
+#### `sentiment()` `async`
 
 Asks ChatGPT to analyze sentiment from a given text.
 
-**Parameters**:
+Parameters:
 
 `text`: A string being the text to be analyzed.
 
@@ -226,11 +226,11 @@ Example:
 })()
 ```
 
-### suggest `async`
+#### `suggest()` `async`
 
 Asks ChatGPT to suggest ideas.
 
-**Parameters**:
+Parameters:
 
 `ideaType`: A string being the type of idea to suggest.
 
@@ -267,11 +267,11 @@ Example:
 })()
 ```
 
-### summarize `async`
+#### `summarize()` `async`
 
 Asks ChatGPT to summarize given text.
 
-**Parameters**:
+Parameters:
 
 `text`: A string being the text to be summarized.
 
@@ -284,11 +284,11 @@ Example:
 })()
 ```
 
-### translate `async`
+#### `translate()` `async`
 
 Asks ChatGPT to translate given text to a given language.
 
-**Parameters**:
+Parameters:
 
 `text`: A string being the text to translate.
 
@@ -303,7 +303,7 @@ Example:
 })()
 ```
 
-### uuidv4
+#### `uuidv4()`
 
 Example:
 
@@ -314,7 +314,7 @@ chatgpt.alert(randomID) // Example output: '239067d1-bcb8-4fd7-91eb-9ab94619b7b3
 
 ## Page theme
 
-### activateDarkMode
+#### `activateDarkMode()`
 
 Changes the website theme to dark mode.
 
@@ -324,7 +324,7 @@ Example:
 chatgpt.activateDarkMode()
 ```
 
-### activateLightMode
+#### `activateLightMode()`
 
 Changes the website theme to light mode.
 
@@ -334,7 +334,7 @@ Example:
 chatgpt.activateLightMode()
 ```
 
-### isDarkMode
+#### `isDarkMode()`
 
 Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
 
@@ -344,7 +344,7 @@ Example:
 chatgpt.alert(chatgpt.settings.scheme.isDark()) // logs `true` or `false`
 ```
 
-### isLightMode
+#### `isLightMode()`
 
 Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
 
@@ -354,7 +354,7 @@ Example:
 chatgpt.alert(chatgpt.settings.scheme.isDark()) // logs `true` or `false`
 ```
 
-### toggleScheme
+#### `toggleScheme()`
 
 Toggles the theme between light and dark mode.
 
@@ -366,11 +366,11 @@ chatgpt.toggleScheme()
 
 ## In-site notifications
 
-### alert
+#### `alert()`
 
 Creates a static alert box which displays a message. Only a user interaction can close it. Returns the HTML `id` property of the alert box as a string.
 
-**Parameters**:
+Parameters:
 
 `title` (optional): A string which is the title of the alert.
 
@@ -395,11 +395,11 @@ const alertID = chatgpt.alert('Hello, world!', 'The sky is blue.', [doSomething,
 chatgpt.alert(alertID) // Example output: '1693237957878'
 ```
 
-### notify
+#### `notify()`
 
 Displays a temporary on-screen notification.
 
-**Parameters**:
+Parameters:
 
 `options` (optional): An object containing the options for the vocal synthesizer.
 
@@ -419,7 +419,7 @@ chatgpt.notify({ msg: 'Hello, world!', position: 'top left', notifDuration: 3, s
 
 ## User session
 
-### getAccessToken `async`
+#### `getAccessToken()` `async`
 
 Returns an account access token as a string.
 
@@ -430,11 +430,11 @@ Returns an account access token as a string.
 })()
 ```
 
-### getAccountDetails `async`
+#### `getAccountDetails()` `async`
 
 Returns a given account detail as a string.
 
-**Parameters**:
+Parameters:
 
 `detail`: A string representing the account detail(s) that will be returned.
 
@@ -456,7 +456,7 @@ Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single det
 })()
 ```
 
-### login
+#### `login()`
 
 Navs to login page.
 
@@ -466,7 +466,7 @@ Example:
 chatgpt.login()
 ```
 
-### logout
+#### `logout()`
 
 Logs out the user from the website.
 
@@ -478,7 +478,7 @@ chatgpt.logout()
 
 ## Chats
 
-### askAndGetReply `async`
+#### `askAndGetReply()` `async`
 
 Sends a given message to ChatGPT and returns the response as a string.
 
@@ -491,7 +491,7 @@ Example:
 })()
 ```
 
-### clearChats `async`
+#### `clearChats()` `async`
 
 Clears chat history.
 
@@ -501,11 +501,11 @@ Example:
 chatgpt.clearChats().then(() => chatgpt.alert('Chat history cleared!'))
 ```
 
-### exportChat `async`
+#### `exportChat()` `async`
 
 Exports a given chat as a file.
 
-**Parameters**:
+Parameters:
 
 `chatToGet` (optional): A string representing the chat to get the data from.
 
@@ -523,11 +523,11 @@ Example:
 })()
 ```
 
-### getChatData `async`
+#### `getChatData()` `async`
 
 Returns the requested chat data as a string (if single detail requested) or object of key-value pairs (if multiple details requested).
 
-**Parameters**:
+Parameters:
 
 `chatToGet` (optional): A string representing the chat to get the data from.
 
@@ -680,7 +680,7 @@ In case of a response being regenerated, the `chatgpt` object key will be conver
 ]
 ```
 
-### getChatInput
+#### `getChatInput()`
 
 Returns the value of the chat input field as a string.
 
@@ -691,7 +691,7 @@ const chatInput = chatgpt.getChatInput()
 chatgpt.alert(chatInput) // Example output: 'Hello from chatgpt.js!'
 ```
 
-### getErrorMsg
+#### `getErrorMsg()`
 
 Returns the error message (if any) of the last generation as a string.
 
@@ -702,7 +702,7 @@ const chatErrorMsg = chatgpt.getErrorMsg()
 chatgpt.alert(chatErrorMsg) // Example output: 'Conversation not found'
 ```
 
-### getLastPrompt `async`
+#### `getLastPrompt()` `async`
 
 Returns the last message sent by the user as a string.
 
@@ -713,7 +713,7 @@ Returns the last message sent by the user as a string.
 })()
 ```
 
-### getLastResponse `async`
+#### `getLastResponse()` `async`
 
 Returns the last ChatGPT response as a string.
 
@@ -724,17 +724,17 @@ Returns the last ChatGPT response as a string.
 })()
 ```
 
-### getResponse
+#### `getResponse()`
 
 If it's a previously created chat, see [chatgpt.getResponseFromDOM](#getresponsefromdom)
 
 If it's a new chat, see [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
 
-### getResponseFromAPI `async`
+#### `getResponseFromAPI()` `async`
 
 Returns the Nth response ChatGPT has written in a Nth chat as a string.
 
-**Parameters**:
+Parameters:
 
 `chatToGet` (optional): A number representing the index of the chat to get the response from. Defaults to `latest`.
 
@@ -749,11 +749,11 @@ Example:
 })()
 ```
 
-### getResponseFromDOM
+#### `getResponseFromDOM()`
 
 Returns the Nth response ChatGPT has written as a string.
 
-**Parameters**:
+Parameters:
 
 `pos`: A string or integer representing the position of the wanted response.
 
@@ -769,11 +769,11 @@ fifthResp = chatgpt.getResponseFromDOM('five') // Returns the 5th response too
 chatgpt.alert(fifthResp) // Example output: 'Hello from ChatGPT!'
 ```
 
-### isIdle `async`
+#### `isIdle()` `async`
 
 Resolves a promise when ChatGPT has finished generating a response.
 
-**Parameters**:
+Parameters:
 
 `timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until response generation finishes.
 
@@ -786,7 +786,7 @@ Example:
 })()
 ```
 
-### isTyping
+#### `isTyping()`
 
 Returns a boolean value. `true` if ChatGPT is generating a response, `false` otherwise.
 
@@ -798,7 +798,7 @@ console.log(`ChatGPT is ${!chatgpt.isTyping() ? 'not' : ''} typing`)
 
 ###### _See also: [`isIdle`](#isidle-async)_
 
-### regenerate
+#### `regenerate()`
 
 Regenerates ChatGPT's response.
 
@@ -808,7 +808,7 @@ Example:
 chatgpt.regenerate()
 ```
 
-### resend `async`
+#### `resend()` `async`
 
 Re-sends the last user message.
 
@@ -818,7 +818,7 @@ Re-sends the last user message.
 })()
 ```
 
-### scrollToBottom
+#### `scrollToBottom()`
 
 Scrolls to the bottom of the chat.
 
@@ -828,11 +828,11 @@ Example:
 chatgpt.scrollToBottom()
 ```
 
-### send
+#### `send()`
 
 Sends a message via the ChatGPT interface (DOM) if available, otherwise sends it to the OpenRoute API and returns the response.
 
-**Parameters**:
+Parameters:
 
 - `userQuery`: *(string)* — The message to send  
 - `options` *(optional object)*:
@@ -851,11 +851,11 @@ chatgpt.send('Hello, world!')
 // e.g. => Hello! How can I assist you today?
 ```
 
-### sendInNewChat
+#### `sendInNewChat()`
 
 Creates a new chat and sends a message.
 
-**Parameters**:
+Parameters:
 
 `msg`: A string representing the message to send.
 
@@ -865,11 +865,11 @@ Example:
 chatgpt.sendInNewChat('Hello, world!')
 ```
 
-### setProvider
+#### `setProvider()`
 
 Sets the active API provider and stores its API key for use in `send()`.
 
-**Parameters**:
+Parameters:
 
 - `provider`: *(string)* — The API provider name (default: `'openrouter'`)
 - `options` *(object)*:
@@ -881,11 +881,11 @@ Example:
 chatgpt.setProvider('openrouter', { key: 'sk-or-...' })
 ```
 
-### shareChat `async`
+#### `shareChat()` `async`
 
 Makes the selected chat available to others. Returns the URL of the chat as a string.
 
-**Parameters**:
+Parameters:
 
 `chatToGet` (optional): A number or string representing the `index`, `title` or `id` of the chat to share.
 
@@ -899,11 +899,11 @@ Can be the following: `copy` or `clipboard` to copy the chat URL to clipboard, `
 })()
 ```
 
-### speak
+#### `speak()`
 
 Text To Speech (TTS) conversion of a given message.
 
-**Parameters**:
+Parameters:
 
 `msg`: A string representing the message to TTS.
 
@@ -924,7 +924,7 @@ Example:
 })()
 ```
 
-### startNewChat
+#### `startNewChat()`
 
 Creates a new chat.
 
@@ -934,7 +934,7 @@ Example:
 chatgpt.startNewChat()
 ```
 
-### stop
+#### `stop()`
 
 Stops the generation of ChatGPT's response.
 
@@ -946,7 +946,7 @@ chatgpt.stop()
 
 ## DOM related
 
-### focusChatbar
+#### `focusChatbar()`
 
 Focuses the chatbar.
 
@@ -956,7 +956,7 @@ Example:
 chatgpt.focusChatbar()
 ```
 
-### getChatBox
+#### `getChatBox()`
 
 Returns the chat input as an HTML element.
 
@@ -967,7 +967,7 @@ const chatbox = chatgpt.getChatBox()
 chatgpt.alert(chatbox.value) // Example output: 'Hello from chatgpt.js!'
 ```
 
-### getContinueButton
+#### `getContinueButton()`
 
 Returns the 'Continue generating' button as an HTML element.
 
@@ -978,7 +978,7 @@ const continueBtn = chatgpt.getContinueButton()
 continueBtn.click()
 ```
 
-### getFooterDiv
+#### `getFooterDiv()`
 
 Returns the footer div as an HTML element.
 
@@ -989,7 +989,7 @@ const footerDiv = chatgpt.getFooterDiv()
 footerDiv.style.padding = '15px' // make the footer taller
 ```
 
-### getHeaderDiv
+#### `getHeaderDiv()`
 
 Returns the header div as an HTML element.
 
@@ -1000,7 +1000,7 @@ const headerDiv = chatgpt.getHeaderDiv()
 headerDiv.style.display = none // hide the header
 ```
 
-### getLoginButton
+#### `getLoginButton()`
 
 Returns the login button as an HTML element.
 
@@ -1011,7 +1011,7 @@ const loginBtn = chatgpt.getLoginButton()
 loginBtn.click() // navs to login page
 ```
 
-### getNewChatButton
+#### `getNewChatButton()`
 
 Returns the sidebar button (w/ icon) that creates a new chat as an HTML element.
 
@@ -1022,7 +1022,7 @@ const newChatBtn = chatgpt.getNewChatButton()
 newChatBtn.style.display = 'none' // hide New Chat button
 ```
 
-### getNewChatLink
+#### `getNewChatLink()`
 
 Returns the sidebar link (w/ label) that creates a new chat as an HTML element.
 
@@ -1033,7 +1033,7 @@ const newChatLink = chatgpt.getNewChatLink()
 newChatLink.style.display = 'none' // hide New Chat link
 ```
 
-### getRegenerateButton
+#### `getRegenerateButton()`
 
 Returns the button which regenerates ChatGPT's response as an HTML element.
 
@@ -1044,7 +1044,7 @@ const regenBtn = chatgpt.getRegenerateButton()
 regenBtn.click()
 ```
 
-### getScrollToBottomButton
+#### `getScrollToBottomButton()`
 
 Returns the button which scrolls to bottom as an HTML element.
 
@@ -1055,7 +1055,7 @@ const scrollToBottomBtn = chatgpt.getScrollToBottomButton()
 scrollToBottomBtn.click()
 ```
 
-### getSendButton
+#### `getSendButton()`
 
 Returns the button which sends the message as an HTML element.
 
@@ -1066,7 +1066,7 @@ const sendBtn = chatgpt.getSendButton()
 sendBtn.click()
 ```
 
-### getStopGeneratingButton
+#### `getStopGeneratingButton()`
 
 Returns the button which stops the generation of ChatGPT's response as an HTML element.
 
@@ -1077,7 +1077,7 @@ const stopBtn = chatgpt.getStopGeneratingButton()
 stopBtn.click()
 ```
 
-### getVoiceButton
+#### `getVoiceButton()`
 
 Returns the chatbar button that activates Voice mode as an HTML element.
 
@@ -1088,7 +1088,7 @@ const voiceBtn = chatgpt.getVoiceButton()
 getVoiceButton.click() // activates Voice mode
 ```
 
-### hideFooter
+#### `hideFooter()`
 
 Hides the footer div.
 
@@ -1098,7 +1098,7 @@ Example:
 chatgpt.hideFooter()
 ```
 
-### hideHeader
+#### `hideHeader()`
 
 Hides the header div.
 
@@ -1108,7 +1108,7 @@ Example:
 chatgpt.hideHeader()
 ```
 
-### showFooter
+#### `showFooter()`
 
 Shows the footer div if hidden.
 
@@ -1118,7 +1118,7 @@ Example:
 chatgpt.showFooter()
 ```
 
-### showHeader
+#### `showHeader()`
 
 Shows the header div if hidden.
 
@@ -1134,11 +1134,11 @@ chatgpt.showHeader()
 
 API related to keeping the user's session alive and fresh.
 
-#### activate
+##### `activate()`
 
 Activates the auto-refresh functionality.
 
-**Parameters**:
+Parameters:
 
 `interval` (optional): A number representing the interval in seconds between sessions refreshes. Defaults to `30`.
 
@@ -1148,7 +1148,7 @@ Example:
 chatgpt.autoRefresh.activate()
 ```
 
-#### deactivate
+##### `deactivate()`
 
 Deactivates the auto-refresh functionality.
 
@@ -1158,7 +1158,7 @@ Example:
 chatgpt.autoRefresh.deactivate()
 ```
 
-#### nowTimeStamp
+##### `nowTimeStamp()`
 
 Returns the current timestamp as a string (12-hour format).
 
@@ -1171,7 +1171,7 @@ chatgpt.alert(timeStamp) // Example output: '1:56:25 PM'
 
 ## browser `api`
 
-### isLightMode
+#### `isLightMode()`
 
 Returns a boolean value. `true` if system/browser scheme preference is set to light, `false` otherwise.
 
@@ -1181,7 +1181,7 @@ Example:
 chatgpt.alert(chatgpt.browser.isLightMode()) // logs `true` or `false`
 ```
 
-### isDarkMode
+#### `isDarkMode()`
 
 Returns a boolean value. `true` if system/browser scheme preference is set to dark, `false` otherwise.
 
@@ -1191,7 +1191,7 @@ Example:
 chatgpt.alert(chatgpt.browser.isDarkMode()) // logs `true` or `false`
 ```
 
-### isChromium
+#### `isChromium()`
 
 Returns a boolean value. `true` if the browser is Chromium and `false` otherwise.
 
@@ -1203,7 +1203,7 @@ if (chatgpt.browser.isChromium()) {
 }
 ```
 
-### isChrome
+#### `isChrome()`
 
 Returns a boolean value. `true` if the browser is Chrome and `false` otherwise.
 
@@ -1215,7 +1215,7 @@ if (chatgpt.browser.isChrome()) {
 }
 ```
 
-### isEdge
+#### `isEdge()`
 
 Returns a boolean value. `true` if the browser is Edge and `false` otherwise.
 
@@ -1227,7 +1227,7 @@ if (chatgpt.browser.isEdge()) {
 }
 ```
 
-### isBrave
+#### `isBrave()`
 
 Returns a boolean value. `true` if the browser is Brave and `false` otherwise.
 
@@ -1239,7 +1239,7 @@ if (chatgpt.browser.isBrave()) {
 }
 ```
 
-### isFirefox
+#### `isFirefox()`
 
 Returns a boolean value. `true` if the browser is Firefox and `false` otherwise.
 
@@ -1251,7 +1251,7 @@ if (chatgpt.browser.isFirefox()) {
 }
 ```
 
-### isFullScreen
+#### `isFullScreen()`
 
 Returns a boolean value. `true` if the browser is fullscreen and `false` otherwise.
 
@@ -1263,7 +1263,7 @@ if (chatgpt.browser.isFullScreen()) {
 }
 ```
 
-### isMobile
+#### `isMobile()`
 
 Returns a boolean value. `true` if the browser is mobile and `false` otherwise.
 
@@ -1277,11 +1277,11 @@ if (chatgpt.browser.isMobile()) {
 
 ## code `api`
 
-### minify `async`
+#### `minify()` `async`
 
 Asks ChatGPT to minify the given code.
 
-**Parameters**:
+Parameters:
 
 `code`: A string being the code to be minified.
 
@@ -1307,11 +1307,11 @@ Example:
 })()
 ```
 
-### execute `async`
+#### `execute()` `async`
 
 Asks ChatGPT to execute the given code.
 
-**Parameters**:
+Parameters:
 
 `code`: A string being the code to execute.
 
@@ -1323,11 +1323,11 @@ Example:
 })()
 ```
 
-### extract
+#### `extract()`
 
 Extracts pure code from response.
 
-**Parameters**:
+Parameters:
 
 `msg`: A string being the response to extract code from.
 
@@ -1358,11 +1358,11 @@ Example:
 })()
 ```
 
-### isIdle `async`
+#### `isIdle()` `async`
 
 Resolves a promise when code has finished generating.
 
-**Parameters**:
+Parameters:
 
 `timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until code generation finishes.
 
@@ -1376,11 +1376,11 @@ Example:
 })()
 ```
 
-### obfuscate `async`
+#### `obfuscate()` `async`
 
 Asks ChatGPT to obfuscate the given code.
 
-**Parameters**:
+Parameters:
 
 `code`: A string being the code to obfuscate.
 
@@ -1397,11 +1397,11 @@ Example:
 })()
 ```
 
-### refactor `async`
+#### `refactor()` `async`
 
 Asks ChatGPT to refactor the given code.
 
-**Parameters**:
+Parameters:
 
 `code`: A string being the code to refactor.
 
@@ -1425,11 +1425,11 @@ Example:
 })()
 ```
 
-### review `async`
+#### `review()` `async`
 
 Asks ChatGPT to review given code.
 
-**Parameters**:
+Parameters:
 
 `code`: A string being the code to review.
 
@@ -1444,11 +1444,11 @@ Example:
 })()
 ```
 
-### unminify `async`
+#### `unminify()` `async`
 
 Asks ChatGPT to unminify the given code.
 
-**Parameters**:
+Parameters:
 
 `code`: A string being the code to unminify.
 
@@ -1475,11 +1475,11 @@ Example:
 })()
 ```
 
-### write `async`
+#### `write()` `async`
 
 Asks ChatGPT to write code given a prompt.
 
-**Parameters**:
+Parameters:
 
 `prompt`: A string describing the code to generate.
 
@@ -1503,7 +1503,7 @@ Example:
 
 API related to the footer.
 
-### get
+#### `get()`
 
 Returns the footer div as an HTML element.
 
@@ -1514,7 +1514,7 @@ const footerDiv = chatgpt.footer.get()
 footerDiv.style.padding = '15px' // make the footer taller
 ```
 
-### hide
+#### `hide()`
 
 Hides the footer div.
 
@@ -1524,7 +1524,7 @@ Example:
 chatgpt.footer.hide()
 ```
 
-### show
+#### `show()`
 
 Shows the footer div if hidden.
 
@@ -1538,7 +1538,7 @@ chatgpt.footer.show()
 
 API related to the header.
 
-### get
+#### `get()`
 
 Returns the header div as an HTML element.
 
@@ -1549,7 +1549,7 @@ const headerDiv = chatgpt.header.get()
 headerDiv.style.display = none // hide the header
 ```
 
-### hide
+#### `hide()`
 
 Hides the header div.
 
@@ -1559,7 +1559,7 @@ Example:
 chatgpt.header.hide()
 ```
 
-### show
+#### `show()`
 
 Shows the header div if hidden.
 
@@ -1573,11 +1573,11 @@ chatgpt.header.show()
 
 API related to the chat history.
 
-### isLoaded `async`
+#### `isLoaded()` `async`
 
 Resolves a promise when chat history has finished loading.
 
-**Parameters**:
+Parameters:
 
 `timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until chat history finishes loading.
 
@@ -1592,11 +1592,11 @@ Example:
 
 ## instructions `api`
 
-### add `async`
+#### `add()` `async`
 
 Adds a custom instruction for either the user or ChatGPT.
 
-**Parameters**:
+Parameters:
 
 `instruction`: A string being the instruction to be added.
 
@@ -1610,11 +1610,11 @@ Example:
 })()
 ```
 
-### clear `async`
+#### `clear()` `async`
 
 Clears the custom instructions of either the user or ChatGPT.
 
-**Parameters**:
+Parameters:
 
 `target`: A string representing the target of the instruction. Can be either `user` or `chatgpt`.
 
@@ -1626,7 +1626,7 @@ Example:
 })()
 ```
 
-### turnOff `async`
+#### `turnOff()` `async`
 
 Turns off custom instructions.
 
@@ -1638,7 +1638,7 @@ Example:
 })()
 ```
 
-### turnOn `async`
+#### `turnOn()` `async`
 
 Turns on custom instructions.
 
@@ -1650,7 +1650,7 @@ Example:
 })()
 ```
 
-### toggle `async`
+#### `toggle()` `async`
 
 Toggles on/off custom instructions.
 
@@ -1666,7 +1666,7 @@ Example:
 
 The small menu that shows up when clicking on the account button.
 
-### toggle
+#### `toggle()`
 
 Toggles the menu.
 
@@ -1676,7 +1676,7 @@ Example:
 chatgpt.menu.toggle()
 ```
 
-### open
+#### `open()`
 
 Opens the menu.
 
@@ -1686,7 +1686,7 @@ Example:
 chatgpt.menu.open()
 ```
 
-### close
+#### `close()`
 
 Closes the menu.
 
@@ -1700,7 +1700,7 @@ chatgpt.menu.close()
 
 API related to ChatGPT's responses.
 
-### continue
+#### `continue()`
 
 Continues the generation of ChatGPT's cut-off response.
 
@@ -1710,29 +1710,29 @@ Example:
 chatgpt.response.continue()
 ```
 
-### get
+#### `get()`
 
 If it's a previously created chat, see [chatgpt.getResponseFromDOM](#getresponsefromdom)
 
 If it's a new chat, see [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
 
-### getFromAPI `async`
+#### `getFromAPI()` `async`
 
 See [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
 
-### getFromDOM
+#### `getFromDOM()`
 
 See [chatgpt.getResponseFromDOM](#getresponsefromdom)
 
-### getLast `async`
+#### `getLast()` `async`
 
 See [chatgpt.getLastResponse](#getlastresponse-async)
 
-### regenerate
+#### `regenerate()`
 
 See [chatgpt.regenerate](#regenerate)
 
-### stopGenerating
+#### `stopGenerating()`
 
 See [chatgpt.stop](#stop)
 
@@ -1740,9 +1740,9 @@ See [chatgpt.stop](#stop)
 
 API for interfacing with ChatGPT user settings.
 
-### scheme `api subset`
+#### `scheme()``api subset`
 
-#### isDark
+##### `isDark()`
 
 Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
 
@@ -1752,7 +1752,7 @@ Example:
 chatgpt.alert(chatgpt.settings.scheme.isDark()) // logs `true` or `false`
 ````
 
-#### isLight
+##### `isLight()`
 
 Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
 
@@ -1762,7 +1762,7 @@ Example:
 chatgpt.alert(chatgpt.settings.scheme.isLight()) // logs `true` or `false`
 ````
 
-#### set
+##### `set()`
 
 Sets the theme to `light`, `dark` or `system`.
 
@@ -1776,7 +1776,7 @@ Example:
 chatgpt.settings.scheme.set('dark')
 ```
 
-#### toggle
+##### `toggle()`
 
 Toggles the theme between light and dark mode.
 
@@ -1790,7 +1790,7 @@ chatgpt.settings.scheme.toggle()
 
 API related to the sidebar's behavior.
 
-### exists
+#### `exists()`
 
 Returns a boolean value. `true` if the sidebar exists , `false` otherwise (e.g. logged out UI).
 
@@ -1801,7 +1801,7 @@ if (!chatgpt.sidebar.exists())
     chatgpt.alert('Sidebar is missing!')
 ```
 
-### isOn
+#### `isOn()`
 
 Returns a boolean value. `true` if the sidebar is open, `false` otherwise.
 
@@ -1813,7 +1813,7 @@ if (chatgpt.sidebar.isOn()) {
 }
 ```
 
-### isOff
+#### `isOff()`
 
 Returns a boolean value. `true` if the sidebar is closed, `false` otherwise.
 
@@ -1825,7 +1825,7 @@ if (chatgpt.sidebar.isOff()) {
 }
 ```
 
-### hide
+#### `hide()`
 
 Hides the sidebar.
 
@@ -1835,7 +1835,7 @@ Example:
 chatgpt.sidebar.hide()
 ```
 
-### show
+#### `show()`
 
 Shows the sidebar.
 
@@ -1845,7 +1845,7 @@ Example:
 chatgpt.sidebar.show()
 ```
 
-### toggle
+#### `toggle()`
 
 Toggles the visibility of the sidebar.
 
@@ -1855,11 +1855,11 @@ Example:
 chatgpt.sidebar.toggle()
 ```
 
-### isLoaded `async`
+#### `isLoaded()` `async`
 
 Resolves a promise when the ChatGPT sidebar has finished loading.
 
-**Parameters**:
+Parameters:
 
 `timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits 5s or until New Chat link appears (since it is not always present).
 
