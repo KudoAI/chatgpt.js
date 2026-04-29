@@ -15,10 +15,10 @@
       "url": "http://github.com/sponsors/KudoAI"
     }
   ],
-  "browser": "chatgpt.js",
+  "main": "dist/chatgpt.min.js",
   "files": [
     "src/chatgpt.js",
-    "dist/chatgpt.min.js",
+    "dist/",
     "docs/*.md"
   ],
   "scripts": {
