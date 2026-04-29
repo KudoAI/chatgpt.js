@@ -45,7 +45,7 @@
 
 <div id="shields" align="center">
 
-<a href="https://github.com/KudoAI/chatgpt.js/blob/main/LICENSE.md" target="_blank" rel="noopener">
+<a href="https://github.com/KudoAI/chatgpt.js/blob/main/docs/LICENSE.md" target="_blank" rel="noopener">
     <img src="https://img.shields.io/badge/%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.npmjs.com/package/@kudoai/chatgpt.js/v/latest" target="_blank" rel="noopener">
     <img src="https://img.shields.io/npm/v/%40kudoai%2Fchatgpt.js?logo=npm&logoColor=white&labelColor=464646&color=blue&style=for-the-badge&label=%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B9%20%D1%80%D0%B5%D0%BB%D0%B8%D0%B7"></a>
