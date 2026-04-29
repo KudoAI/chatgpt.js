@@ -31,6 +31,7 @@ const chatgpt = {
             continue: 'button:has(svg > use[href$="#ee0f3c"])',
             createImage: 'button[data-testid=composer-button-create-image]',
             login: 'button[data-testid*=login]',
+            menu: 'div[data-testid=accounts-profile-button]',
             newChat: 'a[href="/"]:has(svg),' // Pencil button (when logged in)
                    + 'button:has([d^="M3.06957"])', // Cycle Arrows button (in temp chat logged out)
             regen: 'button[data-testid*=regenerate],' // oval button in place of chatbar on errors
@@ -1223,86 +1224,17 @@ const chatgpt = {
     logout() { window.location.href = 'https://chat.openai.com/auth/logout' },
 
     menu: {
-        elems: [],
-
-        append(elem, attrs = {}) {
-        // elem = 'button' | 'dropdown' REQUIRED (no default value)
-        // attrs = { ... }
-        // attrs for 'button': 'icon' = src string, 'label' = string, 'onclick' = function
-        // attrs for 'dropdown': 'items' = [ { text: string, value: string }, ... ] array of objects
-        // where 'text' is the displayed text of the option and 'value' is the value of the option
-
-            const validElems = ['button', 'dropdown']
-            if (!elem || typeof elem != 'string') // element not passed or invalid type
-                return console.error('🤖 chatgpt.js >> Please supply a valid string element name!')
-            elem = elem.toLowerCase()
-            if (!validElems.includes(elem)) // element not in list
-                return console.error(`🤖 chatgpt.js >> Invalid element! Valid elems are [${validElems}]`)
-
-            const newElem = document.createElement(elem == 'dropdown' ? 'select' : elem == 'button' ? 'a' : elem)
-            newElem.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now()
-
-            if (elem == 'button') {
-                newElem.textContent = attrs?.label && typeof attrs.label == 'string' ? attrs.label : 'chatgpt.js button'
-                const icon = document.createElement('img')
-                icon.src = attrs?.icon && typeof attrs.icon == 'string' // can also be base64 encoded image string
-                    ? attrs.icon // add icon to button element if given, else default one
-                    : `${chatgpt.endpoints.assets}/starters/chrome/extension/icons/icon128.png`
-                icon.width = 18
-                newElem.firstChild.before(icon)
-                newElem.onclick = attrs?.onclick && typeof attrs.onclick == 'function' ? attrs.onclick : function(){}
-            }
-
-            else if (elem == 'dropdown') {
-                if (!attrs?.items || // there no are options to add
-                    !Array.isArray(attrs.items) || // it's not an array
-                    !attrs.items.length) // the array is empty
-                        attrs.items = [{ text: '🤖 chatgpt.js option', value: 'chatgpt.js option value' }] // set default dropdown entry
-
-                if (!attrs.items.every(el => typeof el == 'object')) // the entries of the array are not objects
-                    return console.error('\'items\' must be an array of objects!')
-
-                newElem.style = 'background-color: #000 ; width: 100% ; border: none'
-
-                attrs.items.forEach(item => {
-                    const optionElement = document.createElement('option')
-                    optionElement.textContent = item?.text
-                    optionElement.value = item?.value
-                    newElem.add(optionElement)
-                })
-            }
-
-            const addElemsToMenu = () => {
-                const optionBtns = document.querySelectorAll('a[role=menuitem]')
-                let cssClasses
-                for (const navLink of optionBtns)
-                    if (navLink.textContent == 'Settings') { cssClasses = navLink.classList ; break }
-                const headlessNav = optionBtns[0].parentNode
-                chatgpt.menu.elems.forEach(elem => {
-                    elem.setAttribute('class', cssClasses)
-                    if (!headlessNav.contains(elem))
-                        try { headlessNav.firstChild.before(elem) }
-                        catch (err) { console.error(err) }
-                })
-            }
-
-            this.elems.push(newElem)
-            const menuBtn = document.querySelector('nav button[id*=headless]')
-            if (!this.addedEvent) { // to prevent adding more than one event
-                menuBtn?.addEventListener('click', () => setTimeout(addElemsToMenu, 25)) ; this.addedEvent = true }
-
-            return newElem.id
+        toggle() {
+            try {
+                const el = document.querySelector(chatgpt.selectors.btns.menu)
+                if (!el) return
+                ['pointerdown','mousedown','pointerup','mouseup','click'].forEach(eventType =>
+                    el.dispatchEvent(new MouseEvent(eventType, { bubbles: true, cancelable: true, view: window })))
+            } catch (err) { console.error(err.message) }
         },
 
-        close() {
-            try { document.querySelector('nav [id*=menu-button][aria-expanded=true]').click() }
-            catch (err) { console.error(err.message) }
-        },
-
-        open() {
-            try { document.querySelector('nav [id*=menu-button][aria-expanded=false]').click() }
-            catch (err) { console.error(err.message) }
-        }
+        open() { document.querySelector(`${chatgpt.selectors.btns.menu}[aria-expanded="false"]`) && this.toggle() },
+        close() { document.querySelector(`${chatgpt.selectors.btns.menu}[aria-expanded="true"]`) && this.toggle() }
     },
 
     minify() { chatgpt.code.minify() },

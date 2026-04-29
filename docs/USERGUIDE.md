@@ -1727,6 +1727,16 @@ Example code:
 
 The small menu that shows up when clicking on the account button.
 
+### toggle
+
+Toggles the menu.
+
+Example code:
+
+```js
+chatgpt.menu.toggle()
+```
+
 ### open
 
 Opens the menu.
@@ -1734,7 +1744,7 @@ Opens the menu.
 Example code:
 
 ```js
-chatgpt.menu.open();
+chatgpt.menu.open()
 ```
 
 ### close
@@ -1744,7 +1754,7 @@ Closes the menu.
 Example code:
 
 ```js
-chatgpt.menu.close();
+chatgpt.menu.close()
 ```
 
 ## response `api`
