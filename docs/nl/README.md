@@ -98,20 +98,20 @@
 
 Omdat Google geen externe code toestaat, is het lokaal importeren van chatgpt.js vereist:
 
-1. Sla https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/chatgpt.js op in een subdirectory (`lib` in dit voorbeeld)
+1. Sla https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js op in een subdirectory (`lib` in dit voorbeeld)
 
-2. Voeg in project's (V3) `manifest.json` `lib/chatgpt.js` toe als een webtoegankelijke bron
+2. Voeg in project's (V3) `manifest.json` `lib/chatgpt.min.js` toe als een webtoegankelijke bron
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
-        "resources": ["lib/chatgpt.js"]
+        "resources": ["lib/chatgpt.min.js"]
     }],
 ```
 
 3. In scripts die `chatgpt.js` nodig hebben (zowel voorgrond als achtergrond), importeer je het als volgt:
 ```js
 (async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
     // Uw code hier...
 })();
 ```

@@ -97,20 +97,20 @@
 
 由于 Google 不允许远程代码，因此需要在本地导入 chatgpt.js:
 
-1. 将 https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/chatgpt.js 保存到子目录 (本例中为 `lib`)
+1. 将 https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js 保存到子目录 (本例中为 `lib`)
 
-2. 在项目的 (V3) `manifest.json` 中，添加 `lib/chatgpt.js` 作为 Web 可访问资源
+2. 在项目的 (V3) `manifest.json` 中，添加 `lib/chatgpt.min.js` 作为 Web 可访问资源
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
-        "resources": ["lib/chatgpt.js"]
+        "resources": ["lib/chatgpt.min.js"]
     }],
 ```
 
 3. 在需要 `chatgpt.js` (前景/背景相似) 的脚本中, 像这样导入它:
 ```js
 (async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
     // 这里是您的代码
 })();
 ```

@@ -99,20 +99,20 @@
 
 Google은 원격 코드를 허용하지 않으므로 chatgpt.js를 로컬로 가져와야 합니다:
 
-1. https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/chatgpt.js 를 하위 디렉토리에 저장합니다. (`lib` 이라고 가정)
+1. https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js 를 하위 디렉토리에 저장합니다. (`lib` 이라고 가정)
 
-2. 프로젝트(V3)의 `manifest.json` 파일에, `lib/chatgpt.js`를 웹에서 접근가능한 리소스로 추가합니다.
+2. 프로젝트(V3)의 `manifest.json` 파일에, `lib/chatgpt.min.js`를 웹에서 접근가능한 리소스로 추가합니다.
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
-        "resources": ["lib/chatgpt.js"]
+        "resources": ["lib/chatgpt.min.js"]
     }],
 ```
 
 3. `chatgpt.js` 를 필요로하는 스크립트 (전경/배경 같은) 에서는 다음과 같이 가져옵니다.
 ```js
 (async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
     // 코드를 여기에 작성해 주세요...
 })();
 ```

@@ -96,20 +96,20 @@
 
 Поскольку Google не позволяет удаленный код, необходимо импортировать chatgpt.js локально:
 
-1. Сохраните [chatgpt.js](https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/chatgpt.js) в подкаталог (`lib` в этом примере).
+1. Сохраните [chatgpt.js](https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js) в подкаталог (`lib` в этом примере).
 
-2. В `manifest.json` вашего проекта (V3) добавьте `lib/chatgpt.js` в качестве веб-доступного ресурса:
+2. В `manifest.json` вашего проекта (V3) добавьте `lib/chatgpt.min.js` в качестве веб-доступного ресурса:
     ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
-        "resources": ["lib/chatgpt.js"]
+        "resources": ["lib/chatgpt.min.js"]
     }],
     ```
 
 3. В скриптах, которые нуждаются в `chatgpt.js` (как в переднем, так и в фоновом режиме), импортируйте его следующим образом:
     ```js
     (async () => {
-        await import(chrome.runtime.getURL('lib/chatgpt.js'));
+        await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
         // Ваш код здесь...
     })();
     ```

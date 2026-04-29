@@ -98,20 +98,20 @@
 
 चूँकि गूगल रिमोट कोड की अनुमति नहीं देता है, इसलिए चैटजीपीटी.जे.एस को स्थानीय रूप से इम्पोर्ट करना आवश्यक है:
 
-1. https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/chatgpt.js ये लिंक को अपने सब डायरेक्टरी में सेव करे (इस उदाहरण में यह `lib` है)
+1. https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js ये लिंक को अपने सब डायरेक्टरी में सेव करे (इस उदाहरण में यह `lib` है)
 
-2. प्रोजेक्ट(V3) `manifest.json` में, `lib/chatgpt.js` को वेब एक्सेसिबल रिसोर्स के रूप में जोड़ें
+2. प्रोजेक्ट(V3) `manifest.json` में, `lib/chatgpt.min.js` को वेब एक्सेसिबल रिसोर्स के रूप में जोड़ें
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
-        "resources": ["lib/chatgpt.js"]
+        "resources": ["lib/chatgpt.min.js"]
     }],
 ```
 
 3. उन स्क्रिप्ट्स में जिन्हें `chatgpt.js` (फॉरेग्राउंड बैकग्राउंड जैसे) की आवश्यकता है, इसे इस प्रकार इम्पोर्ट करें:
 ```js
 (async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
     // आपका कोड यहां लिखें...
 })();
 ```

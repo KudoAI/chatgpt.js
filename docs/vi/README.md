@@ -98,20 +98,20 @@
 
 Vì Google không cho phép mã từ xa nên việc nhập chatgpt.js cục bộ là bắt buộc:
 
-1. Lưu https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/chatgpt.js vào thư mục con (`lib` trong ví dụ này)
+1. Lưu https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js vào thư mục con (`lib` trong ví dụ này)
 
-2. Trong `manifest.json` của dự án (V3), hãy thêm `lib/chatgpt.js` làm tài nguyên có thể truy cập web
+2. Trong `manifest.json` của dự án (V3), hãy thêm `lib/chatgpt.min.js` làm tài nguyên có thể truy cập web
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
-        "resources": ["lib/chatgpt.js"]
+        "resources": ["lib/chatgpt.min.js"]
     }],
 ```
 
 3. Trong các tập lệnh cần `chatgpt.js` (tiền cảnh/nền giống nhau), hãy nhập nó như sau:
 ```js
 (async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
     // Mã của bạn ở đây ...
 })();
 ```

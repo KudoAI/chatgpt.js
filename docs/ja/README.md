@@ -98,20 +98,20 @@
 
 Google ではリモート コードが許可されていないため、chatgpt.js をローカルにインポートする必要があります:
 
-1. https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/chatgpt.js をサブディレクトリ (この例では `lib`) に保存します
+1. https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js をサブディレクトリ (この例では `lib`) に保存します
 
-2. プロジェクト (V3) の `manifest.json` に、Web アクセス可能なリソースとして `lib/chatgpt.js` を追加します
+2. プロジェクト (V3) の `manifest.json` に、Web アクセス可能なリソースとして `lib/chatgpt.min.js` を追加します
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
-        "resources": ["lib/chatgpt.js"]
+        "resources": ["lib/chatgpt.min.js"]
     }],
 ```
 
 3. `chatgpt.js` (フォアグラウンド/バックグラウンド同様) を必要とするスクリプトでは、次のようにインポートします:
 ```js
 (async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'));
     // コードはここにあります...
 })();
 ```
