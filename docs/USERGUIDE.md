@@ -2,12 +2,16 @@
 
 <div align="center">
 
+<br>
+
 <picture>
     <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/darkmode/logo-6014x1334.png?v=8169c77">
     <img width=700 src="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/lightmode/logo-6014x1334.png?v=8169c77">
 </picture>
 
 **chatgpt.js** is a powerful JavaScript library that allows for super easy interaction w/ the ChatGPT DOM.
+
+<br>
 
 </div>
 
