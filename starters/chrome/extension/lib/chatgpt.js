@@ -3,8 +3,13 @@
 // User guide: https://chatgptjs.org/userguide
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
 
-// Define chatgpt API
 const chatgpt = {
+
+    colors: {
+        orange: '\x1b[38;5;214m',
+        green: '\x1b[92m',
+        reset: '\x1b[0m'
+    },
 
     endpoints: {
         assets: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js',
@@ -15,6 +20,9 @@ const chatgpt = {
             share_create: 'https://chatgpt.com/backend-api/share/create',
             share: 'https://chatgpt.com/backend-api/share',
             instructions: 'https://chatgpt.com/backend-api/user_system_messages'
+        },
+        openrouter: {
+            chat: 'https://openrouter.ai/api/v1/chat/completions'
         }
     },
 
@@ -1629,27 +1637,60 @@ const chatgpt = {
     reviewCode() { chatgpt.code.review() },
     scrollToBottom() { try { chatgpt.getScrollBtn().click() } catch (err) { console.error(err.message) }},
 
-    send(msg, method='') {
-        for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-            return console.error(`Argument ${ i + 1 } must be a string!`)
-        const textArea = chatgpt.getChatBox()
-        if (!textArea) return console.error('Chatbar element not found!')
-        const msgP = document.createElement('p') ; msgP.textContent = msg
-        textArea.querySelector('p').replaceWith(msgP)
-        textArea.dispatchEvent(new Event('input', { bubbles: true })) // enable send button
-        setTimeout(function delaySend() {
-            const sendBtn = chatgpt.getSendButton()
-            if (!sendBtn?.hasAttribute('disabled')) // send msg
-                method.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendBtn.click()
-                    : textArea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }))
-            else setTimeout(delaySend, 222)
-        }, 222)
+    async send(userQuery, options = {}) {
+        const { provider = 'openrouter', stream = true, systemQuery = '', color = 'green' } = options
+        const respColor = chatgpt.colors?.[color] || chatgpt.colors.green
+        const resp = await fetch(chatgpt.endpoints.openrouter.chat, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', 'Authorization': `Bearer ${chatgpt.config.apiKeys[provider]}` },
+            body: JSON.stringify({
+                model: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free', max_tokens: 500, stream,
+                messages: [{ role: 'system', content: systemQuery }, { role: 'user', content: userQuery }]
+            })
+        })
+        if (!resp.ok) {
+            const err = await resp.json().catch(() => null)
+            throw new Error(err?.error?.message || 'API error')
+        }
+        if (!stream) { // return text
+            const text = (await resp.json()).choices[0].message.content
+            console.log(respColor + text + chatgpt.colors.reset)
+            return text
+        }
+        const reader = resp.body.getReader(), decoder = new TextDecoder()
+        let output = ''
+        process.stdout.write(respColor)
+        while (true) {
+            const { done, value } = await reader.read()
+            if (done) break
+            for (const line of decoder.decode(value, { stream: true }).split('\n')) {
+                if (!line.startsWith('data: ')) continue
+                const json = line.slice(6).trim()
+                if (json == '[DONE]') { process.stdout.write(chatgpt.colors.reset + '\n') ; return output }
+                try {
+                    const token = JSON.parse(json).choices?.[0]?.delta?.content
+                    if (token) { process.stdout.write(token) ; output += token }
+                } catch {}
+            }
+        }
+        process.stdout.write(chatgpt.colors.reset + '\n')
+        return output
     },
 
     sendInNewChat(msg) {
         if (typeof msg != 'string') return console.error('Message must be a string!')
         try { chatgpt.getNewChatBtn().click() } catch (err) { return console.error(err.message) }
         setTimeout(() => chatgpt.send(msg), 500)
+    },
+
+    setProvider(provider = 'openrouter', { key } = {}) {
+        if (typeof provider != 'string' || !provider)
+            return console.error('Provider must be a string')
+        if (typeof key != 'string' || !key)
+            return console.error('API key must be a string')
+        Object.assign(chatgpt.config ??= {}, { apiKeys: {}, provider })
+        chatgpt.config.apiKeys[provider] = key
     },
 
     settings: {
