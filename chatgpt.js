@@ -629,7 +629,7 @@ const chatgpt = {
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
 
-    executeCode() { chatgpt.code.execute() },
+    execute() { chatgpt.code.execute() },
 
     async exportChat(chatToGet, format) {
     // chatToGet = 'active' (default) | 'latest' | index|title|id of chat to get
@@ -1842,7 +1842,6 @@ const cjsFuncAliases = [
     ['continue', 'continueChat', 'continueGenerating', 'continueResponse'],
     ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
     ['detectLanguage', 'getLanguage'],
-    ['executeCode', 'codeExecute'],
     ['exists', 'isAvailable', 'isExistent', 'isPresent'],
     ['exportChat', 'chatExport', 'export'],
     ['getFooterDiv', 'getFooter'],

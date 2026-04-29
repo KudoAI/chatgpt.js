@@ -96,7 +96,7 @@ Example:
 
 #
 
-#### `executeCode()` `async`
+#### `execute()` `async`
 
 Asks ChatGPT to execute the given code.
 
@@ -108,7 +108,7 @@ Example:
 
 ```js
 (async () => {
-    chatgpt.alert(await chatgpt.executeCode('return 6 + 5')) // logs '11'
+    chatgpt.alert(await chatgpt.execute('return 6 + 5')) // logs '11'
 })()
 ```
 
