@@ -830,23 +830,6 @@ chatgpt.scrollToBottom()
 
 ### send
 
-Sends a message into the chat if DOM present, otherwise sends to OpenRouter API.
-
-**Parameters**:
-
-`msg`: A string representing the message to send.
-
-`method` (optional): A string representing the method to send the message with, can only be `click`. Usually needed for mobile devices compatibility.
-
-Example:
-
-```js
-// Clicks the send button instead of triggering the 'Enter' key press.
-chatgpt.send('Hello, world!', 'click')
-```
-
-### send
-
 Sends a message via the ChatGPT interface (DOM) if available, otherwise sends it to the OpenRoute API and returns the response.
 
 **Parameters**:
