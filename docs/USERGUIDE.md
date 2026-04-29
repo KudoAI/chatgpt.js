@@ -69,13 +69,7 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
 
 # 📖 Library methods
 
-Unless noted otherwise, methods are **synchronous**: they wait for the operation to finish, instead of returning immediately. If you need to know the result of calling **asynchronous** methods, use the returned promise or pass a callback function into the method.
-
-<div align="center">
-
-[General](#general) / [Page theme](#page-theme) / [Chats](#chats) / [DOM related](#dom-related) / [APIs](#library-apis)
-
-</strong></div>
+<strong>[General](#general) / [Page theme](#page-theme) / [Chats](#chats) / [DOM related](#dom-related) / [APIs](#library-apis)</strong>
 
 <hr>
 
