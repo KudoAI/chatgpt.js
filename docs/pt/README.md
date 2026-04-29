@@ -68,41 +68,6 @@
 
 <div id="intro">
 
-## 💡 Sobre
-
-</div>
-
-<span style="color: white"><b>chatgpt.js</b></span> é uma <span style="color: white">poderosa</span> biblioteca JavaScript que permite uma interação <span style="color: white">superfácil</span> com o ChatGPT DOM.
-
-- Rico em recursos
-- Orientado a Objeto
-- Fácil de usar
-- Leve (ainda com ótimo desempenho)
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="golden-sponsors" align="center">
-    <br>
-    <h3>Apoiado por:</h3>
-    <div id="creatives">
-        <div id="warp">
-            <br>
-            <a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
-            </a>
-            <h3><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                Warp, a ferramenta de desenvolvimento de IA que vive no seu terminal</a></h3>
-            <i><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                Disponível para MacOS, Linux e Windows</a></i>
-        </div>
-    </div>
-    <br><br><br>
-</div>
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="importing">
-
 ## ⚡ Importando a biblioteca
 
 </div>

@@ -68,41 +68,6 @@
 
 <div id="intro">
 
-## 💡 अभाउट
-
-</div>
-
-<span style="color: white"><b>chatgpt.js</b></span> एक <span style="color: white">शक्तिशाली</span> जावास्क्रिप्ट लाइब्रेरी है जो चैटजीपीटी डोम के साथ <span style="color: white">बेहद आसान</span> इंटरैक्शन की अनुमति देती है।
-
-- सुविधा संपन्न
-- ऑब्जेक्ट-ओरिएन्टेड
-- प्रयोग करने में आसान
-- लाइटवेट (फिर भी सर्वोत्तम प्रदर्शन करने वाला)
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="golden-sponsors" align="center">
-    <br>
-    <h3>द्वारा समर्थित:</h3>
-    <div id="creatives">
-        <div id="warp">
-            <br>
-            <a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
-            </a>
-            <h3><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                Warp, आपके टर्मिनल में मौजूद AI डेवटूल</a></h3>
-            <i><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                MacOS, Linux, और Windows के लिए उपलब्ध</a></i>
-        </div>
-    </div>
-    <br><br><br>
-</div>
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="importing">
-
 ## ⚡ लाइब्रेरी इम्पोर्ट करने के तरीके
 
 </div>

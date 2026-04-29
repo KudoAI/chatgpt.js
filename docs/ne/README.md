@@ -68,47 +68,9 @@
 
 <div id="intro">
 
-## 💡 chatgpt.js को बारेमा
-
-</div>
-
-<span style="color: white"><b>chatgpt.js</b></span> एक <span style="color: white">शक्तिशाली</span> जाभास्क्रिप्ट लाइब्रेरी हो जसले ChatGPT DOM सँग<span style="color: white"> धेरै सजीलो</span> अन्तरक्रिया गर्न मद्दत गर्छ।
-
-- सुविधा सम्पन्न
-- ऑब्जेक्ट-ओरिएन्टेड
-- प्रयोग गर्न सजिलो
-- लाइटवेट (तरपनी राम्रो प्रदर्शन गर्ने)
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="golden-sponsors" align="center">
-    <br>
-    <h3>द्वारा समर्थित:</h3>
-    <div id="creatives">
-        <div id="warp">
-            <br>
-            <a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
-            </a>
-            <h3><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                Warp, तपाईंको टर्मिनलमा रहने एआई डेभटूल</a></h3>
-            <i><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                MacOS, Linux, र Windows को लागि उपलब्ध</a></i>
-        </div>
-    </div>
-    <br><br><br>
-</div>
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="importing">
-
 ## ⚡ लाइब्रेरी इम्पोर्ट गर्ने तरिकाहरू
 
 </div>
-
-> [!NOTE]
-> _सधैं नया संस्करण प्रयोग गर्न (प्रोडक्सनमा यस्तो नगर्नुहोला!) भर्जन सहितको jsDelivr URL लाई यसमा परिवर्तन गर्नुहोस्: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
 
 ### ES11 (2020):
 
@@ -141,8 +103,6 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://assets.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?v=e638eac"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://assets.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?v=e638eac"> Greasemonkey:
 
-> [!NOTE]
-> _स्टार्टर टेम्प्लेट प्रयोग गर्न: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
 ```js
 ...
@@ -154,8 +114,6 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon16.png?v=e638eac"> Chrome:
 
-> [!NOTE]
-> _स्टार्टर टेम्प्लेट प्रयोग गर्न: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
 गुगलले रिमोट कोडलाई अनुमति नदिने भएकोले, स्थानीय रूपमा chatgpt.js आयात गर्न आवश्यक छ:
 

@@ -68,41 +68,6 @@
 
 <div id="intro">
 
-## 💡 Về
-
-</div>
-
-<span style="color: white"><b>chatgpt.js</b></span> là một thư viện JavaScript <span style="color: white">mạnh mẽ</span> cho phép tương tác <span style="color: white">siêu dễ dàng</span> với ChatGPT DOM.
-
-- Tính năng phong phú
-- Hướng đối tượng
-- Dễ sử dụng
-- Nhẹ (chưa tối ưu hiệu suất)
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="golden-sponsors" align="center">
-    <br>
-    <h3>Được hỗ trợ bởi:</h3>
-    <div id="creatives">
-        <div id="warp">
-            <br>
-            <a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
-            </a>
-            <h3><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                Warp, công cụ phát triển AI nằm trong thiết bị đầu cuối của bạn</a></h3>
-            <i><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                Có sẵn cho MacOS, Linux và Windows</a></i>
-        </div>
-    </div>
-    <br><br><br>
-</div>
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="importing">
-
 ## ⚡ Nhập thư viện
 
 </div>

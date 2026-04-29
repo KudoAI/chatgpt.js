@@ -67,41 +67,6 @@
 
 <div id="intro">
 
-## 💡 关于
-
-</div>
-
-<span style="color: white"><b>chatgpt.js</b></span> 是一个功能<span style="color: white">强大的</span> JavaScript 库，<span style="color: white">可轻松与</span> ChatGPT DOM 进行交互。
-
-- 功能丰富
-- 面向对象
-- 易于使用
-- 轻量级（但性能最优）
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="golden-sponsors" align="center">
-    <br>
-    <h3>支持方：</h3>
-    <div id="creatives">
-        <div id="warp">
-            <br>
-            <a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
-            </a>
-            <h3><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                Warp，存在于您的终端中的 AI Devtool</a></h3>
-            <i><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                适用于 MacOS、Linux 和 Windows</a></i>
-        </div>
-    </div>
-    <br><br><br>
-</div>
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="importing">
-
 ## ⚡ 导入库
 
 </div>

@@ -68,41 +68,6 @@
 
 <div id="intro">
 
-## 💡 アバウト
-
-</div>
-
-<span style="color: white"><b>chatgpt.js</b></span> は、ChatGPT DOM との非<span style="color: white">常に簡</span>単な対話を可能にする<span style="color: white">強力な</span> JavaScript ライブラリです。
-
-- 豊富な機能
-- オブジェクト指向
-- 使いやすい
-- 軽量 (それでも最適なパフォーマンス)
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="golden-sponsors" align="center">
-    <br>
-    <h3>サポート:</h3>
-    <div id="creatives">
-        <div id="warp">
-            <br>
-            <a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
-            </a>
-            <h3><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                ターミナルで使える AI 開発ツール、Warp</a></h3>
-            <i><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                MacOS、Linux、Windows で利用可能</a></i>
-        </div>
-    </div>
-    <br><br><br>
-</div>
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="importing">
-
 ## ⚡ ライブラリのインポート
 
 </div>

@@ -68,43 +68,6 @@
 
 <div id="intro">
 
-## 💡 Um
-
-</div>
-
-<span style="color: white"><b>chatgpt.js</b></span> ist eine <span style="color: white">leistungsstarke</span> JavaScript-Bibliothek, die eine <span style="color: white">supereinfache</span> Interaktion mit dem ChatGPT-DOM ermöglicht.
-
-- Reich an Funktionen
-- Objektorientierte
-- Einfach zu verwenden
-- Leicht (und dennoch optimal leistungsfähig)
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="golden-sponsors" align="center">
-    <br>
-    <h3>Unterstützt von:</h3>
-    <div id="creatives">
-        <div id="warp">
-            <br>
-            <a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
-            </a>
-            <h3><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                Warp, das KI-Entwicklertool, das in Ihrem Terminal lebt</a></h3>
-            <i><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                Verfügbar für MacOS, Linux und Windows</a></i>
-        </div>
-    </div>
-    <br><br><br>
-</div>
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="importing">
-
-> **Hinweis** _Um immer die neueste version zu importieren (nicht in der produktion empfohlen!), ersetzen sie die versionierte jsDelivr-URL durch: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
-
 ## ⚡ Importieren der Bibliothek
 
 </div>

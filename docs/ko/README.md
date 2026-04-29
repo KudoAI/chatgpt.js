@@ -69,41 +69,6 @@
 
 <div id="intro">
 
-## 💡 개요
-
-</div>
-
-<span style="color: white"><b>chatgpt.js</b></span> 는 Chat GPT DOM과 <span style="color: white">매우 간편한</span> 상호작용을 가능하게 하는 <span style="color: white">강력한</span> 자바스크립트 라이브러리입니다.
-
-- 풍부한 기능
-- 객체지향
-- 손쉬운 사용
-- 경량화 (최적의 성능 제공)
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="golden-sponsors" align="center">
-    <br>
-    <h3>지원:</h3>
-    <div id="creatives">
-        <div id="warp">
-            <br>
-            <a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
-            </a>
-            <h3><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                터미널에 있는 AI Devtool 인 Warp</a></h3>
-            <i><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                MacOS, Linux 및 Windows 에서 사용 가능</a></i>
-        </div>
-    </div>
-    <br><br><br>
-</div>
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="importing">
-
 ## ⚡ 라이브러리 호출
 
 </div>

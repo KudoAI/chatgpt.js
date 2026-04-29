@@ -68,47 +68,9 @@
 
 <div id="intro">
 
-## 💡 About
-
-</div>
-
-<span style="color: white"><b>chatgpt.js</b></span> is a <span style="color: white">powerful</span> JavaScript library that allows for <span style="color: white">super easy</span> interaction w/ the ChatGPT DOM.
-
-- Feature-rich
-- Object-oriented
-- Easy-to-use
-- Lightweight (yet optimally performant)
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="golden-sponsors" align="center">
-    <br>
-    <h3>Supported by:</h3>
-    <div id="creatives">
-        <div id="warp">
-            <br>
-            <a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
-            </a>
-            <h3><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                Warp, the AI Devtool that lives in your terminal</a></h3>
-            <i><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                Available for MacOS, Linux, & Windows</a></i>
-        </div>
-    </div>
-    <br><br><br>
-</div>
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="importing">
-
 ## ⚡ Importing the library
 
 </div>
-
-> [!NOTE]
-> To always import the latest version (not recommended in production!) replace the versioned jsDelivr URL with: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`
 
 ### ES11 (2020):
 
@@ -141,8 +103,6 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://assets.chatgptjs.org/images/icons/platforms/tampermonkey/icon28.png?v=e638eac"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://assets.chatgptjs.org/images/icons/platforms/violentmonkey/icon25.png?v=e638eac"> Greasemonkey:
 
-> [!NOTE]
-> To use a starter template: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)
 
 ```js
 ...
@@ -154,8 +114,6 @@ function yourCode() {
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon16.png?v=e638eac"> Chrome:
 
-> [!NOTE]
-> To use a starter template: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)
 
 Since Google does not allow remote code, importing chatgpt.js locally is required:
 

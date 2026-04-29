@@ -68,41 +68,6 @@
 
 <div id="intro">
 
-## 💡 О проекте
-
-</div>
-
-<span style="color: white"><b>chatgpt.js</b></span> — это <span style="color: white">мощная</span> библиотека JavaScript, которая позволяет <span style="color: white">очень легко</span> взаимодействовать с DOM ChatGPT.
-
-- Богатая функциональность
-- Объектно-ориентированная
-- Легкость в использовании
-- Легковесная (и при этом оптимально производительная)
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="golden-sponsors" align="center">
-    <br>
-    <h3>При поддержке:</h3>
-    <div id="creatives">
-        <div id="warp">
-            <br>
-            <a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                <img width="600" src="https://assets.chatgptjs.org/images/banners/warp/banner-1500x500.png?v=476e837">
-            </a>
-            <h3><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                Warp, AI Devtool, который живет в вашем терминале</a></h3>
-            <i><a href="https://www.warp.dev/chatgptjs" target="_blank" rel="noopener">
-                Доступно для MacOS, Linux и Windows</a></i>
-        </div>
-    </div>
-    <br><br><br>
-</div>
-
-<img height=8px width="100%" src="https://assets.chatgptjs.org/images/separators/gradient-aqua.png?v=e638eac">
-
-<div id="importing">
-
 ## ⚡ Импорт библиотеки
 
 </div>
