@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <div align="center">
 
 <picture>
@@ -1934,4 +1936,4 @@ Example code:
 <br>
 
 [Discuss](https://github.com/KudoAI/chatgpt.js/discussions) /
-<a href="#">Back to top ↑</a>
+<a href="#top">Back to top ↑</a>
