@@ -178,7 +178,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 Hướng dẫn sử dụng chi tiết:
 
-<https://github.com/KudoAI/chatgpt.js/blob/v4.0.0/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.0.1/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -479,7 +479,7 @@ Mọi đóng góp đều được hoan nghênh!
 <div align="center">
 
 **[Các bản phát hành mới nhất](https://github.com/KudoAI/chatgpt.js/releases)** /
-[Hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/v4.0.0/docs/USERGUIDE.md) /
+[Hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/v4.0.1/docs/USERGUIDE.md) /
 [Nhận hỗ trợ](https://github.com/KudoAI/chatgpt.js/issues) /
 [Bàn luận](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#top">Trở lại đầu trang ↑</a>

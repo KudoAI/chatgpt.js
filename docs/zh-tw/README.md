@@ -177,7 +177,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 擴充使用者指南：
 
-<https://github.com/KudoAI/chatgpt.js/blob/v4.0.0/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.0.1/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -478,7 +478,7 @@ chatgpt --query "sup"  # or cjs -q sup
 <div align="center">
 
 **[최신 릴리스](https://github.com/KudoAI/chatgpt.js/releases)** /
-[用戶指南](https://github.com/KudoAI/chatgpt.js/blob/v4.0.0/docs/USERGUIDE.md) /
+[用戶指南](https://github.com/KudoAI/chatgpt.js/blob/v4.0.1/docs/USERGUIDE.md) /
 [지원 받기](https://github.com/KudoAI/chatgpt.js/issues) /
 [討論](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#top">回到頂部 ↑</a>

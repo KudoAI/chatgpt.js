@@ -177,7 +177,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 विस्तारित उपयोगकर्ता मार्गदर्शिका:
 
-<https://github.com/KudoAI/chatgpt.js/blob/v4.0.0/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.0.1/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -478,7 +478,7 @@ ChatGPT जवाबों को अपने-आप चलाएँ।
 <div align="center">
 
 **[हाल की रिलीज़](https://github.com/KudoAI/chatgpt.js/releases)** /
-[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v4.0.0/docs/USERGUIDE.md) /
+[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v4.0.1/docs/USERGUIDE.md) /
 [सहायता प्राप्त करें](https://github.com/KudoAI/chatgpt.js/issues) /
 [चर्चा करना](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#top">वापस शीर्ष पर ↑</a>
