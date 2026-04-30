@@ -21,6 +21,11 @@
     "dist/",
     "docs/*.md"
   ],
+  "bin": {
+    "chatgpt-js": "dist/cli/index.js",
+    "chatgpt": "dist/cli/index.js",
+    "cjs": "dist/cli/index.js"
+  },
   "scripts": {
     "prepare": "husky",
     "dev:docs": "node utils/preview-docs",
@@ -66,6 +71,11 @@
     "openai"
   ],
   "bugs": "https://github.com/KudoAI/chatgpt.js/issues",
+  "dependencies": {
+    "console-table-printer": "^2.15.0",
+    "is-unicode-supported": "^2.1.0",
+    "non-latin-locales": "^1.0.1"
+  },
   "devDependencies": {
     "@adamlui/minify.js": "^2.5.3",
     "@adamlui/scss-to-css": "^2.4.4",
