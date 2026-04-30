@@ -180,6 +180,8 @@ Hướng dẫn sử dụng chi tiết:
 
 <https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md>
 
+<br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
+
 <hr>
 
 <div id="showcase">
