@@ -1533,7 +1533,7 @@ const chatgpt = {
     scrollToBottom() { try { chatgpt.getScrollBtn().click() } catch (err) { console.error(err.message) }},
 
     async send(userQuery, options = {}) {
-        const { provider = 'openrouter', stream = true, systemQuery = '', color = 'green' } = options
+        const { provider = 'openrouter', stream = true, output = 'return', systemQuery = '', color = 'green' } = options
         const apiKey = chatgpt.config?.apiKeys?.[provider] || process.env[`${provider.toUpperCase()}_API_KEY`]
         if (typeof apiKey != 'string' || !apiKey) throw new Error('Missing API key for provider: ' + provider)
         const respColor = chatgpt.colors?.[color] || chatgpt.colors.green
@@ -1549,29 +1549,35 @@ const chatgpt = {
             const err = await resp.json().catch(() => null)
             throw new Error(err?.error?.message || 'API error')
         }
-        if (!stream) { // return text
-            const text = (await resp.json()).choices[0].message.content
-            console.log(respColor + text + chatgpt.colors.reset)
+        if (!stream || !resp.body) {
+            const text = (await resp.json()).choices?.[0]?.message?.content
+            if (output == 'stdout') console.log(respColor + text + chatgpt.colors.reset)
             return text
         }
         const reader = resp.body.getReader(), decoder = new TextDecoder()
-        let output = ''
-        process.stdout.write(respColor)
+        let outputStr = ''
+        if (output == 'stdout') process.stdout.write(respColor)
         while (true) {
-            const { done, value } = await reader.read()
+            const { done, value } = await reader.read() 
             if (done) break
             for (const line of decoder.decode(value, { stream: true }).split('\n')) {
                 if (!line.startsWith('data: ')) continue
                 const json = line.slice(6).trim()
-                if (json == '[DONE]') { process.stdout.write(chatgpt.colors.reset + '\n') ; return output }
+                if (json == '[DONE]') {
+                    if (output == 'stdout') process.stdout.write(chatgpt.colors.reset + '\n')
+                    return outputStr
+                }
                 try {
                     const token = JSON.parse(json).choices?.[0]?.delta?.content
-                    if (token) { process.stdout.write(token) ; output += token }
+                    if (token) {
+                        if (output == 'stdout') process.stdout.write(token)
+                        outputStr += token
+                    }
                 } catch {}
             }
         }
-        process.stdout.write(chatgpt.colors.reset + '\n')
-        return output
+        if (output == 'stdout') process.stdout.write(chatgpt.colors.reset + '\n')
+        return outputStr
     },
 
     sendInNewChat(msg) {

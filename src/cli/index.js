@@ -21,6 +21,6 @@
 
     if (!chatgpt.config?.apiKeys?.[cli.config.provider])
         chatgpt.setProvider(cli.config.provider, { key: process.env[`${cli.config.provider.toUpperCase()}_API_KEY`] })
-    await chatgpt.send(cli.config.query)
+    await chatgpt.send(cli.config.query, { output: 'stdout' })
 
 })()
