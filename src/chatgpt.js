@@ -1558,7 +1558,7 @@ const chatgpt = {
         let outputStr = ''
         if (output == 'stdout') process.stdout.write(respColor)
         while (true) {
-            const { done, value } = await reader.read() 
+            const { done, value } = await reader.read()
             if (done) break
             for (const line of decoder.decode(value, { stream: true }).split('\n')) {
                 if (!line.startsWith('data: ')) continue
