@@ -55,9 +55,9 @@
 
 <hr>
 
-## ⚡ लाइब्रेरी इम्पोर्ट गर्ने तरिकाहरू
+## ⚡ स्थापना
 
-</div>
+### पुस्तकालय
 
 #### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">][web-usage][<img height=13.5 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/edge/icon16.png" title="Edge">][web-usage][<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/firefox/icon16.png" title="Firefox">][web-usage][<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/safari/icon16.png" title="Safari">][web-usage][<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/qq/3d/icon-32x33.png" title="QQ Browser">][web-usage] Web:
 
@@ -71,24 +71,22 @@
 
 [greasemonkey-usage]: #-greasemonkey
 
-> **Note** _स्टार्टर टेम्प्लेट प्रयोग गर्न: [KudoAI/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
+> **नोट** _स्टार्टर टेम्प्लेट प्रयोग गर्न: [KudoAI/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
 ```js
 ...
 // @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js
 // ==/UserScript==
-
-// आफ्नो कोड यहाँ लेख्नुहोस्...
 ```
 
 #### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">](#-chrome) Chrome:
 
+> **नोट** _स्टार्टर टेम्प्लेट प्रयोग गर्न: [KudoAI/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
-गुगलले रिमोट कोडलाई अनुमति नदिने भएकोले, स्थानीय रूपमा chatgpt.js आयात गर्न आवश्यक छ:
+१. https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js लाई `lib` मा सेभ गर्नुहोस्।
 
-1. https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js यो लिङ्क तपाईंको आफ्‍नो सब डायरेक्टरी मा सेभ गर्नुहोस् (यो उदाहरण मा `lib` सब डायरेक्टरी हो)
+२. परियोजनाको (V3) `manifest.json` मा, वेब पहुँचयोग्य स्रोतको रूपमा `lib/chatgpt.min.js` थप्नुहोस्।
 
-2. प्रोजेक्ट(V3) `manifest.json` मा, `lib/chatgpt.min.js` लाई वेब एक्सेसिबल रिसोर्स को रूप मा जोडनुहोस्‌ |
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
@@ -96,54 +94,89 @@
     }],
 ```
 
-3. स्क्रिप्टहरूमा जसलाई `chatgpt.js` (फॉरेग्राउंड बैकग्राउंड समान) चाहिन्छ, यसलाई यसरी इम्पोर्ट गर्नुहोस्:
-```js
-(async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
-    // आफ्नो कोड यहाँ लेख्नुहोस्...
-})()
-```
+#### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
 
-<hr>
-
-<div id="npm">
-
-## 💾 npm मार्फत डाउनलोड गर्न:
-
-</div>
-
-स्थानीय अनुकूलनका लागि **chatgpt.js** डाउनलोड गर्न, तपाइँको परियोजनाको मूल डायरेक्टरीमा निम्न आदेश चलाउनुहोस्:
+तपाईंको परियोजनाको मूलबाट:
 
 ```bash
 npm install @kudoai/chatgpt.js
+``` 
+
+#
+
+### CLI उपयोगिता
+
+#### <a href="#-nodejs-1"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
+
+```bash
+npm install -g @kudoai/chatgpt.js
 ```
 
-स्थापना पछि, लाइब्रेरी स्रोत फेला पार्न `node_modules/@kudoai/chatgpt.js` मा नेभिगेट गर्न सक्नुहुन्छ।
+#
 
-</div>
+### API कुञ्जीहरू
+
+#### <img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@7dc4431/assets/images/icons/providers/openrouter/icon32.png"> OpenRouter:
+
+> **नोट** _नि:शुल्क OpenRouter API कुञ्जी प्राप्त गर्न: <https://openrouter.ai/settings/keys>_
+
+##### Windows:
+
+```bash
+setx OPENROUTER_API_KEY "sk-or-v1-8a69..."
+```
+
+##### Mac/Linux:
+
+```bash
+export OPENROUTER_API_KEY="sk-or-v1-8a69..."
+```
 
 <hr>
 
-<div id="usage">
-
 ## 💻 प्रयोग
 
-</div>
-
-**chatgpt.js** सहजतालाई ध्यानमा राखेर बनाइएको हो।
-
-उदाहरणका लागि:
+#### <a href="#-es-modules-esm"><img height=13 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/module-systems/esm/icon32.png"></a> ES Modules (ESM):
 
 ```js
-chatgpt.getLastResponse()
-chatgpt.getLastReply()
-chatgpt.response.getLast()
-chatgpt.get('reply', 'last')
+import chatgpt from '@kudoai/chatgpt.js'
+
+console.log(await chatgpt.send('sup'))
+// e.g. => Hey! Not much—just here and ready to help. What's up with you?
 ```
 
-माथिको प्रत्येक API कलले समान रूपमा अन्तिम प्रतिक्रिया ल्याउँछ। यदि तपाइँले सोच्नुहुन्छ कि तपाइँले लेखेको काम गर्छ वा गर्दैन..., संभावना छ कि त्‍यो काम गर्नेछ, त्यसैले त्‍यसलाई लेख्नुहोस् र हेर्नुहोस्।
+#### <a href="#-commonjs-cjs"><img height=13 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/module-systems/cjs/icon32.png"></a> CommonJS (CJS):
 
-यदि त्यसो भएन भने, यो विस्तारित [यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) हेर्नुहोस्, अथवा एउटा [इश्यू](https://github.com/KudoAI/chatgpt.js/issues) सबमिट गर्नुहोस् अथवा [PR](https://github.com/KudoAI/chatgpt.js/pulls) अनि यस्‍लाई समावेश गरिनेछ, निकै सजिलो!
+```js
+(async () => {
+    const chatgpt = require('@kudoai/chatgpt.js')
+
+    console.log(await chatgpt.send('sup'))
+    // e.g. => Hey! What's up?
+})()
+```
+
+#### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">](#-chrome) Chrome:
+
+```js
+(async () => {
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
+
+    await chatgpt.isIdle()
+    console.log('ChatGPT is ready!') 
+})()
+```
+
+#### <a href="#-terminal"><img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@37edc4d/assets/images/icons/terminal/blue-gradient/icon32.png"></a> Terminal:
+
+```bash
+chatgpt --query "sup"  # or cjs -q sup
+# e.g. => Hey there! What's up?
+```
+
+विस्तारित प्रयोगकर्ता गाइड:
+
+<https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md>
 
 <hr>
 

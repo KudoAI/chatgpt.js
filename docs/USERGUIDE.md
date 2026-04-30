@@ -37,8 +37,6 @@
 ...
 // @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js
 // ==/UserScript==
-
-// Your code here...
 ```
 
 #### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">](#-chrome) Chrome:
@@ -47,9 +45,10 @@
 
 Since Google does not allow remote code, importing chatgpt.js locally is required:
 
-1. Save https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js to a subdirectory (`lib` in this example)
+1. Save https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js to `lib`
 
 2. In project's (V3) `manifest.json`, add `lib/chatgpt.min.js` as a web accessible resource
+
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],

@@ -55,9 +55,9 @@
 
 <hr>
 
-## ⚡ Nhập thư viện
+## ⚡ Lắp đặt
 
-</div>
+### Thư viện
 
 #### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">][web-usage][<img height=13.5 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/edge/icon16.png" title="Edge">][web-usage][<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/firefox/icon16.png" title="Firefox">][web-usage][<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/safari/icon16.png" title="Safari">][web-usage][<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/qq/3d/icon-32x33.png" title="QQ Browser">][web-usage] Web:
 
@@ -71,25 +71,22 @@
 
 [greasemonkey-usage]: #-greasemonkey
 
-> **Ghi** _Để sử dụng một mẫu bắt đầu: [KudoAI/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
+> **Ghi chú** _Để sử dụng mẫu khởi đầu: [KudoAI/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
 ```js
 ...
 // @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js
 // ==/UserScript==
-
-// Mã của bạn ở đây ...
 ```
 
 #### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">](#-chrome) Chrome:
 
-> **Ghi** _Để sử dụng một mẫu bắt đầu: [KudoAI/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
+> **Ghi chú** _Để sử dụng mẫu khởi đầu: [KudoAI/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
-Vì Google không cho phép mã từ xa nên việc nhập chatgpt.js cục bộ là bắt buộc:
+1. Lưu https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js vào thư mục `lib`
 
-1. Lưu https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js vào thư mục con (`lib` trong ví dụ này)
+2. Trong tệp `manifest.json` của dự án (phiên bản 3), thêm `lib/chatgpt.min.js` làm tài nguyên có thể truy cập trên web.
 
-2. Trong `manifest.json` của dự án (V3), hãy thêm `lib/chatgpt.min.js` làm tài nguyên có thể truy cập web
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
@@ -97,54 +94,89 @@ Vì Google không cho phép mã từ xa nên việc nhập chatgpt.js cục bộ
     }],
 ```
 
-3. Trong các tập lệnh cần `chatgpt.js` (tiền cảnh/nền giống nhau), hãy nhập nó như sau:
-```js
-(async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
-    // Mã của bạn ở đây ...
-})()
-```
+#### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
 
-<hr>
-
-<div id="npm">
-
-## 💾 Tải xuống qua npm:
-
-</div>
-
-Để tải xuống **chatgpt.js** để tùy chỉnh cục bộ, hãy chạy lệnh sau trong thư mục gốc của dự án của bạn:
+Từ thư mục gốc dự án của bạn:
 
 ```bash
 npm install @kudoai/chatgpt.js
 ```
 
-Sau khi cài đặt, hãy điều hướng đến `node_modules/@kudoai/chatgpt.js` để tìm nguồn thư viện.
+#
 
-</div>
+### Tiện ích CLI
+
+#### <a href="#-nodejs-1"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
+
+```bash
+npm install -g @kudoai/chatgpt.js
+```
+
+#
+
+### Khóa API
+
+#### <img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@7dc4431/assets/images/icons/providers/openrouter/icon32.png"> OpenRouter:
+
+> **Ghi chú** _Để nhận khóa API OpenRouter miễn phí: <https://openrouter.ai/settings/keys>_
+
+##### Windows:
+
+```bash
+setx OPENROUTER_API_KEY "sk-or-v1-8a69..."
+```
+
+##### Mac/Linux:
+
+```bash
+export OPENROUTER_API_KEY="sk-or-v1-8a69..."
+```
 
 <hr>
 
-<div id="usage">
-
 ## 💻 Cách sử dụng
 
-</div>
-
-**chatgpt.js** được viết với tính linh hoạt cực cao.
-
-Ví dụ:
+#### <a href="#-es-modules-esm"><img height=13 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/module-systems/esm/icon32.png"></a> ES Modules (ESM):
 
 ```js
-chatgpt.getLastResponse()
-chatgpt.getLastReply()
-chatgpt.response.getLast()
-chatgpt.get('reply', 'last')
+import chatgpt from '@kudoai/chatgpt.js'
+
+console.log(await chatgpt.send('sup'))
+// e.g. => Hey! Not much—just here and ready to help. What's up with you?
 ```
 
-Mỗi cuộc gọi đều tìm nạp phản hồi cuối cùng. Nếu bạn nghĩ rằng nó hoạt động, nó có thể sẽ... vì vậy hãy gõ nó!
+#### <a href="#-commonjs-cjs"><img height=13 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/module-systems/cjs/icon32.png"></a> CommonJS (CJS):
 
-Nếu không, hãy xem [hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) mở rộng hoặc chỉ cần gửi [vấn đề](https://github.com/KudoAI/chatgpt.js/issues) hoặc [PR](https://github.com/KudoAI/chatgpt.js/pulls) và nó sẽ được tích hợp, thật dễ dàng!
+```js
+(async () => {
+    const chatgpt = require('@kudoai/chatgpt.js')
+
+    console.log(await chatgpt.send('sup'))
+    // e.g. => Hey! What's up?
+})()
+```
+
+#### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">](#-chrome) Chrome:
+
+```js
+(async () => {
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
+
+    await chatgpt.isIdle()
+    console.log('ChatGPT is ready!') 
+})()
+```
+
+#### <a href="#-terminal"><img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@37edc4d/assets/images/icons/terminal/blue-gradient/icon32.png"></a> Terminal:
+
+```bash
+chatgpt --query "sup"  # or cjs -q sup
+# e.g. => Hey there! What's up?
+```
+
+Hướng dẫn sử dụng chi tiết:
+
+<https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md>
 
 <hr>
 

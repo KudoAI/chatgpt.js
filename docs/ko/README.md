@@ -55,9 +55,9 @@
 
 <hr>
 
-## ⚡ 라이브러리 호출
+## ⚡ 설치
 
-</div>
+### 도서관
 
 #### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">][web-usage][<img height=13.5 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/edge/icon16.png" title="Edge">][web-usage][<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/firefox/icon16.png" title="Firefox">][web-usage][<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/safari/icon16.png" title="Safari">][web-usage][<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/qq/3d/icon-32x33.png" title="QQ Browser">][web-usage] Web:
 
@@ -71,25 +71,22 @@
 
 [greasemonkey-usage]: #-greasemonkey
 
-> **참고** _스타터 템플릿을 사용하시려면: [KudoAI/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
+> **메모** _시작 템플릿을 사용하려면 다음 단계를 따르세요: [KudoAI/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
 ```js
 ...
 // @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js
 // ==/UserScript==
-
-// 코드를 여기에 작성해 주세요...
 ```
 
 #### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">](#-chrome) Chrome:
 
-> **참고** _스타터 템플릿을 사용하시려면: [KudoAI/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
+> **메모** _시작 템플릿을 사용하려면 다음 단계를 따르세요: [KudoAI/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
-Google은 원격 코드를 허용하지 않으므로 chatgpt.js를 로컬로 가져와야 합니다:
+1. https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js 파일을 `lib` 폴더에 저장하세요.
 
-1. https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js 를 하위 디렉토리에 저장합니다. (`lib` 이라고 가정)
+2. 프로젝트(V3)의 `manifest.json` 파일에 `lib/chatgpt.min.js`를 웹에서 접근 가능한 리소스로 추가하세요.
 
-2. 프로젝트(V3)의 `manifest.json` 파일에, `lib/chatgpt.min.js`를 웹에서 접근가능한 리소스로 추가합니다.
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
@@ -97,54 +94,89 @@ Google은 원격 코드를 허용하지 않으므로 chatgpt.js를 로컬로 가
     }],
 ```
 
-3. `chatgpt.js` 를 필요로하는 스크립트 (전경/배경 같은) 에서는 다음과 같이 가져옵니다.
-```js
-(async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
-    // 코드를 여기에 작성해 주세요...
-})()
-```
+#### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
 
-<hr>
-
-<div id="npm">
-
-## 💾 npm 을 통해 다운로드:
-
-</div>
-
-로컬 사용자 지정을 위해 **chatgpt.js** 를 다운로드하려면 프로젝트 루트에서 다음 명령을 실행하세요:
+프로젝트 루트 디렉토리에서:
 
 ```bash
 npm install @kudoai/chatgpt.js
 ```
 
-설치 후 `node_modules/@kudoai/chatgpt.js` 로 이동하여 라이브러리 소스를 찾으세요.
+#
 
-</div>
+### CLI 앱
+
+#### <a href="#-nodejs-1"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
+
+```bash
+npm install -g @kudoai/chatgpt.js
+```
+
+#
+
+### API 키
+
+#### <img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@7dc4431/assets/images/icons/providers/openrouter/icon32.png"> OpenRouter:
+
+> **메모** _무료 OpenRouter API 키를 받으려면 다음 단계를 따르세요: <https://openrouter.ai/settings/keys>_
+
+##### Windows:
+
+```bash
+setx OPENROUTER_API_KEY "sk-or-v1-8a69..."
+```
+
+##### Mac/Linux:
+
+```bash
+export OPENROUTER_API_KEY="sk-or-v1-8a69..."
+```
 
 <hr>
 
-<div id="usage">
+## 💻 용법
 
-## 💻 사용법
-
-</div>
-
-**chatgpt.js** 는 유연성을 상당히 고려하여 작성되었습니다.
-
-예시:
+#### <a href="#-es-modules-esm"><img height=13 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/module-systems/esm/icon32.png"></a> ES Modules (ESM):
 
 ```js
-chatgpt.getLastResponse()
-chatgpt.getLastReply()
-chatgpt.response.getLast()
-chatgpt.get('reply', 'last')
+import chatgpt from '@kudoai/chatgpt.js'
+
+console.log(await chatgpt.send('sup'))
+// e.g. => Hey! Not much—just here and ready to help. What's up with you?
 ```
 
-각 호출은 동일한 방식으로 최신 응답을 가져옵니다. 만약 잘 작동한다고 생각하신다면, 그렇게 하시면 될겁니다... 그러니 그냥 입력하세요!
+#### <a href="#-commonjs-cjs"><img height=13 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/module-systems/cjs/icon32.png"></a> CommonJS (CJS):
 
-그렇지 않은 경우 확장된 [사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md)를 확인하거나 간단히 [문제](https://github.com/KudoAI/chatgpt.js/issues) 또는 [PR](https://github.com/KudoAI/chatgpt.js/pulls)을 주시면 통합될 것 입니다, 참 쉽죠!
+```js
+(async () => {
+    const chatgpt = require('@kudoai/chatgpt.js')
+
+    console.log(await chatgpt.send('sup'))
+    // e.g. => Hey! What's up?
+})()
+```
+
+#### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">](#-chrome) Chrome:
+
+```js
+(async () => {
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
+
+    await chatgpt.isIdle()
+    console.log('ChatGPT is ready!') 
+})()
+```
+
+#### <a href="#-terminal"><img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@37edc4d/assets/images/icons/terminal/blue-gradient/icon32.png"></a> Terminal:
+
+```bash
+chatgpt --query "sup"  # or cjs -q sup
+# e.g. => Hey there! What's up?
+```
+
+확장 사용자 가이드:
+
+<https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md>
 
 <hr>
 

@@ -55,9 +55,9 @@
 
 <hr>
 
-## ⚡ Importing the library
+## ⚡ Installation
 
-</div>
+### Library
 
 #### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">][web-usage][<img height=13.5 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/edge/icon16.png" title="Edge">][web-usage][<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/firefox/icon16.png" title="Firefox">][web-usage][<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/safari/icon16.png" title="Safari">][web-usage][<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/qq/3d/icon-32x33.png" title="QQ Browser">][web-usage] Web:
 
@@ -74,22 +74,18 @@
 > **Note** _To use a starter template: [KudoAI/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
 ```js
-...
 // @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js
 // ==/UserScript==
-
-// Your code here...
 ```
 
 #### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">](#-chrome) Chrome:
 
 > **Note** _To use a starter template: [KudoAI/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
-Since Google does not allow remote code, importing chatgpt.js locally is required:
-
-1. Save https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js to a subdirectory (`lib` in this example)
+1. Save https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js to `lib`
 
 2. In project's (V3) `manifest.json`, add `lib/chatgpt.min.js` as a web accessible resource
+
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
@@ -97,54 +93,89 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
     }],
 ```
 
-3. In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
-```js
-(async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
-    // Your code here...
-})()
-```
+#### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
 
-<hr>
-
-<div id="npm">
-
-## 💾 Downloading via npm:
-
-</div>
-
-To download **chatgpt.js** for local customization, run the following command in your project's root:
+From your project root:
 
 ```bash
 npm install @kudoai/chatgpt.js
 ```
 
-After installation, navigate to `node_modules/@kudoai/chatgpt.js` to find the library source.
+#
 
-</div>
+### CLI app
+
+#### <a href="#-nodejs-1"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
+
+```bash
+npm install -g @kudoai/chatgpt.js
+```
+
+#
+
+### API keys
+
+#### <img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@7dc4431/assets/images/icons/providers/openrouter/icon32.png"> OpenRouter:
+
+> **Note** _To get a free OpenRouter API key: <https://openrouter.ai/settings/keys>_
+
+Windows:
+
+```bash
+setx OPENROUTER_API_KEY "sk-or-v1-8a69..."
+```
+
+Mac/Linux:
+
+```bash
+export OPENROUTER_API_KEY="sk-or-v1-8a69..."
+```
 
 <hr>
 
-<div id="usage">
-
 ## 💻 Usage
 
-</div>
-
-**chatgpt.js** was written w/ ultra flexibility in mind.
-
-For example:
+#### <a href="#-es-modules-esm"><img height=13 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/module-systems/esm/icon32.png"></a> ES Modules (ESM):
 
 ```js
-chatgpt.getLastResponse()
-chatgpt.getLastReply()
-chatgpt.response.getLast()
-chatgpt.get('reply', 'last')
+import chatgpt from '@kudoai/chatgpt.js'
+
+console.log(await chatgpt.send('sup'))
+// e.g. => Hey! Not much—just here and ready to help. What's up with you?
 ```
 
-Each call equally fetches the last response. If you think it works, it probably will... so just type it!
+#### <a href="#-commonjs-cjs"><img height=13 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/module-systems/cjs/icon32.png"></a> CommonJS (CJS):
 
-If it didn't, check out the extended [userguide](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md), or simply submit an [issue](https://github.com/KudoAI/chatgpt.js/issues) or [PR](https://github.com/KudoAI/chatgpt.js/pulls) and it will be integrated, ezpz!
+```js
+(async () => {
+    const chatgpt = require('@kudoai/chatgpt.js')
+
+    console.log(await chatgpt.send('sup'))
+    // e.g. => Hey! What's up?
+})()
+```
+
+#### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">](#-chrome) Chrome:
+
+```js
+(async () => {
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
+
+    await chatgpt.isIdle()
+    console.log('ChatGPT is ready!') 
+})()
+```
+
+#### <a href="#-terminal"><img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@37edc4d/assets/images/icons/terminal/blue-gradient/icon32.png"></a> Terminal:
+
+```bash
+chatgpt --query "sup"  # or cjs -q sup
+# e.g. => Hey there! What's up?
+```
+
+Extended userguide:
+
+<https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md>
 
 <hr>
 

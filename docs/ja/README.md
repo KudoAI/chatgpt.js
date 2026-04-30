@@ -55,9 +55,9 @@
 
 <hr>
 
-## ⚡ ライブラリのインポート
+## ⚡ インストール
 
-</div>
+### 図書館
 
 #### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">][web-usage][<img height=13.5 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/edge/icon16.png" title="Edge">][web-usage][<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/firefox/icon16.png" title="Firefox">][web-usage][<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/safari/icon16.png" title="Safari">][web-usage][<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/qq/3d/icon-32x33.png" title="QQ Browser">][web-usage] Web:
 
@@ -71,25 +71,21 @@
 
 [greasemonkey-usage]: #-greasemonkey
 
-> **ノート** _スターター テンプレートを使用するには: [KudoAI/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
+> **注** _スターターテンプレートを使用するには： [KudoAI/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
 ```js
-...
 // @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js
 // ==/UserScript==
-
-// コードはここにあります...
 ```
 
 #### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">](#-chrome) Chrome:
 
-> **ノート** _スターター テンプレートを使用するには: [KudoAI/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
+> **注** _スターターテンプレートを使用するには： [KudoAI/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
-Google ではリモート コードが許可されていないため、chatgpt.js をローカルにインポートする必要があります:
+1. https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js を `lib` に保存します。
 
-1. https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js をサブディレクトリ (この例では `lib`) に保存します
+2. プロジェクト（V3）の`manifest.json`に、`lib/chatgpt.min.js`をWebアクセス可能なリソースとして追加します。
 
-2. プロジェクト (V3) の `manifest.json` に、Web アクセス可能なリソースとして `lib/chatgpt.min.js` を追加します
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
@@ -97,54 +93,90 @@ Google ではリモート コードが許可されていないため、chatgpt.j
     }],
 ```
 
-3. `chatgpt.js` (フォアグラウンド/バックグラウンド同様) を必要とするスクリプトでは、次のようにインポートします:
-```js
-(async () => {
-    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
-    // コードはここにあります...
-})()
-```
+#### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
 
-<hr>
-
-<div id="npm">
-
-## 💾 npm 経由でダウンロード:
-
-</div>
-
-ローカルカスタマイズ用に **chatgpt.js** をダウンロードするには、プロジェクトのルートで次のコマンドを実行します:
+プロジェクトのルートディレクトリから：
 
 ```bash
 npm install @kudoai/chatgpt.js
 ```
 
-インストール後、 `node_modules/@kudoai/chatgpt.js` に移動してライブラリ ソースを見つけます。
+#
 
-</div>
+### CLIアプリ
+
+#### <a href="#-nodejs-1"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
+
+```bash
+npm install -g @kudoai/chatgpt.js
+```
+
+#
+
+### APIキー
+
+#### <img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@7dc4431/assets/images/icons/providers/openrouter/icon32.png"> OpenRouter:
+
+> **注記** _無料の OpenRouter API キーを取得するには： <https://openrouter.ai/settings/keys>_
+
+
+##### Windows:
+
+```bash
+setx OPENROUTER_API_KEY "sk-or-v1-8a69..."
+```
+
+##### Mac/Linux:
+
+```bash
+export OPENROUTER_API_KEY="sk-or-v1-8a69..."
+```
 
 <hr>
 
-<div id="usage">
-
 ## 💻 使用法
 
-</div>
-
-**chatgpt.js** は、超柔軟性を念頭に置いて作成されました。
-
-例えば：
+#### <a href="#-es-modules-esm"><img height=13 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/module-systems/esm/icon32.png"></a> ES Modules (ESM):
 
 ```js
-chatgpt.getLastResponse()
-chatgpt.getLastReply()
-chatgpt.response.getLast()
-chatgpt.get('reply', 'last')
+import chatgpt from '@kudoai/chatgpt.js'
+
+console.log(await chatgpt.send('sup'))
+// e.g. => Hey! Not much—just here and ready to help. What's up with you?
 ```
 
-各呼び出しは同様に最後の応答を取得します。 うまくいくと思うなら、おそらくうまくいきます...だから、それを入力してください! (資料を読む時間が誰にありますか?)
+#### <a href="#-commonjs-cjs"><img height=13 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/module-systems/cjs/icon32.png"></a> CommonJS (CJS):
 
-そうでない場合は、拡張された [ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) を確認するか、単に [問題](https://github.com/KudoAI/chatgpt.js/issues) または [PR](https://github.com/KudoAI/chatgpt.js/pulls) と統合されるので、簡単です!
+```js
+(async () => {
+    const chatgpt = require('@kudoai/chatgpt.js')
+
+    console.log(await chatgpt.send('sup'))
+    // e.g. => Hey! What's up?
+})()
+```
+
+#### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">](#-chrome) Chrome:
+
+```js
+(async () => {
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
+
+    await chatgpt.isIdle()
+    console.log('ChatGPT is ready!') 
+})()
+```
+
+#### <a href="#-terminal"><img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@37edc4d/assets/images/icons/terminal/blue-gradient/icon32.png"></a> Terminal:
+
+```bash
+chatgpt --query "sup"  # or cjs -q sup
+# e.g. => Hey there! What's up?
+```
+
+拡張版ユーザーガイド：
+
+<https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md>
 
 <hr>
 
