@@ -1,8 +1,8 @@
-name: Publish to npm on new release tag
+name: Publish to NPM on new tag
 
 on:
-  push:
-    tags: ["v*"]
+  release:
+    types: [published]
 
 jobs:
   publish:
@@ -15,5 +15,6 @@ jobs:
       - uses: actions/setup-node@v6.4.0
         with:
           node-version: 24
-          registry-url: "https://registry.npmjs.org"
-      - run: npm ci && npm publish --provenance
+          registry-url: https://registry.npmjs.org
+      - run: |
+          npm ci && npm run build && npm publish --provenance
