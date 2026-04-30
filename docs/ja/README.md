@@ -120,6 +120,8 @@ npm install -g @kudoai/chatgpt.js
 > **注記** _無料の OpenRouter API キーを取得するには： <https://openrouter.ai/settings/keys>_
 
 
+<img height=135 width="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@0049334/assets/images/screenshots/openrouter-api-keys-dash.png">
+
 ##### Windows:
 
 ```bash

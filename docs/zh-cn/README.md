@@ -119,6 +119,8 @@ npm install -g @kudoai/chatgpt.js
 
 > **注意** _要获取免费的 OpenRouter API 密钥： <https://openrouter.ai/settings/keys>_
 
+<img height=135 width="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@0049334/assets/images/screenshots/openrouter-api-keys-dash.png">
+
 ##### Windows:
 
 ```bash

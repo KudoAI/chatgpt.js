@@ -120,6 +120,8 @@ npm install -g @kudoai/chatgpt.js
 
 > **नोट** _नि:शुल्क OpenRouter API कुञ्जी प्राप्त गर्न: <https://openrouter.ai/settings/keys>_
 
+<img height=135 width="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@0049334/assets/images/screenshots/openrouter-api-keys-dash.png">
+
 ##### Windows:
 
 ```bash
