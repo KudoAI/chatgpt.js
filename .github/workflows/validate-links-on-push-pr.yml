@@ -2,20 +2,15 @@ name: Validate links on push + PR
 
 on:
   push:
-    branches:
-      - main
   pull_request:
-    branches:
-      - main
   workflow_dispatch:
-
-permissions:
-  contents: read
 
 jobs:
   linkinator:
     if: ${{ github.event.head_commit.author.name != 'kudo-sync-bot' }} # skip auto bump commits containing future links
     runs-on: ubuntu-24.04
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v6.0.2
       - uses: JustinBeckwith/linkinator-action@v2.4.2

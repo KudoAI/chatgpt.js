@@ -12,16 +12,11 @@ jobs:
       contents: read
     env:
       TZ: PST8PDT
-
     steps:
-
-      - name: Checkout KudoAI/chatgpt.js
-        uses: actions/checkout@v6.0.2
+      - uses: actions/checkout@v6.0.2
         with:
           fetch-depth: 0
-
-      - name: Push changes to gitlab.com/kudoai/chatgpt-js
-        env:
+      - env:
           GITLAB_SYNC_PAT: ${{ secrets.GITLAB_SYNC_PAT }}
         run: |
           git push --force -o ci.skip \

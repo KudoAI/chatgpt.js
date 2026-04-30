@@ -13,41 +13,30 @@ jobs:
       contents: read
     env:
       TZ: PST8PDT
-
     steps:
-
-      - name: Checkout KudoAI/chatgpt.js
-        uses: actions/checkout@v6.0.2
+      - uses: actions/checkout@v6.0.2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
           path: KudoAI/chatgpt.js
-
-      - name: Checkout KudoAI/chatgpt.js-chrome-starter
-        uses: actions/checkout@v6.0.2
+      - uses: actions/checkout@v6.0.2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: KudoAI/chatgpt.js-chrome-starter
           path: KudoAI/chatgpt.js-chrome-starter
-
-      - name: Sync src/chatgpt.js to KudoAI/chatgpt.js-chrome-starter/extension/lib/chatgpt.js + update version in manifest.json
-        run: |
+      - run: |
           cp -f \
             "${{ github.workspace }}/KudoAI/chatgpt.js/src/chatgpt.js" \
             "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/extension/lib/chatgpt.js"
           cd "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/extension"
           sed -i -E "s/\"version\": \"([0-9]+\.[0-9]+\.[0-9]+)\.*([0-9]*)\"/\"version\": \"$(date +'%Y.%-m.%-d')\"/g" manifest.json
-
-      - name: Escape backticks in commit msg
-        env:
+      - env:
           COMMIT_MSG: ${{ github.event.head_commit.message }}
         run: |
           DELIM="EOF_$(uuidgen)"
           echo "ESCAPED_MSG<<$DELIM" >> "$GITHUB_ENV"
           echo "$COMMIT_MSG" | sed 's/`/\`/g' >> "$GITHUB_ENV"
           echo "$DELIM" >> "$GITHUB_ENV"
-
-      - name: Config committer
-        env:
+      - env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PRIVATE_ID: ${{ secrets.GPG_PRIVATE_ID }}
         run: |
@@ -56,9 +45,7 @@ jobs:
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
           git config --global user.signingkey "$GPG_PRIVATE_ID"
-
-      - name: Push changes to KudoAI/chatgpt.js-chrome-starter
-        run: |
+      - run: |
           cd ${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter
           git commit -a -n -m "$ESCAPED_MSG ↞ [auto-sync from https://github.com/KudoAI/chatgpt.js]" || true
           git pull --rebase

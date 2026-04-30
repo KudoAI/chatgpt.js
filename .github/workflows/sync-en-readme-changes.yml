@@ -15,38 +15,27 @@ jobs:
       contents: read
     env:
       TZ: PST8PDT
-
     steps:
-
-      - name: Checkout KudoAI/chatgpt.js
-        uses: actions/checkout@v6.0.2
+      - uses: actions/checkout@v6.0.2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
           path: KudoAI/chatgpt.js
           fetch-depth: 2
-
-      - name: Sync English READMEs between root + docs/
-        run: |
+      - run: |
           cd "${{ github.workspace }}/KudoAI/chatgpt.js"
           root_readme_modified=$(git log -1 --format="%ct" -- "README.md")
           docs_readme_modified=$(git log -1 --format="%ct" -- "docs/README.md")  
           if [ "$root_readme_modified" -gt "$docs_readme_modified" ] ; then cp -f "README.md" "docs/README.md" ; sync_src="root"
           elif [ "$docs_readme_modified" -gt "$root_readme_modified" ] ; then cp -f "docs/README.md" "README.md" ; sync_src="docs" ; fi
-
-          # Expose sync src for commit msg in push step
           echo "SYNC_SRC=$sync_src" >> $GITHUB_ENV
-
-      - name: Escape backticks in commit msg
-        env:
+      - env:
           COMMIT_MSG: ${{ github.event.head_commit.message }}
         run: |
           DELIM="EOF_$(uuidgen)"
           echo "ESCAPED_MSG<<$DELIM" >> "$GITHUB_ENV"
           echo "$COMMIT_MSG" | sed 's/`/\`/g' >> "$GITHUB_ENV"
           echo "$DELIM" >> "$GITHUB_ENV"
-
-      - name: Config committer
-        env:
+      - env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PRIVATE_ID: ${{ secrets.GPG_PRIVATE_ID }}
         run: |
@@ -55,9 +44,7 @@ jobs:
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
           git config --global user.signingkey "$GPG_PRIVATE_ID"
-
-      - name: Push changes to KudoAI/chatgpt.js
-        run: |
+      - run: |
           cd ${{ github.workspace }}/KudoAI/chatgpt.js
           git add . && git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from $SYNC_SRC/]" || true
           git pull --rebase
