@@ -17,9 +17,8 @@
   ],
   "main": "dist/chatgpt.min.js",
   "files": [
-    "src/chatgpt.js",
     "dist/",
-    "docs/*.md"
+    "docs/**/*.md"
   ],
   "bin": {
     "chatgpt-js": "dist/cli/index.js",
