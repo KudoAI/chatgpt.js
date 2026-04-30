@@ -478,8 +478,9 @@ ChatGPTの応答を自動再生。
 
 <div align="center">
 
-**[リリース](https://github.com/KudoAI/chatgpt.js/releases)** /
-[ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) / 
+**[最新リリース](https://github.com/KudoAI/chatgpt.js/releases)** /
+[ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) /
+[サポートを受ける](https://github.com/KudoAI/chatgpt.js/issues) / 
 [議論](https://github.com/KudoAI/chatgpt.js/discussions) / 
 <a href="#top">トップに戻る ↑</a>
 

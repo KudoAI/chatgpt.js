@@ -477,9 +477,10 @@ ChatGPT जवाबों को अपने-आप चलाएँ।
 
 <div align="center">
 
-**[विज्ञप्ति](https://github.com/KudoAI/chatgpt.js/releases)** /
-[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) / 
-[चर्चा करना](https://github.com/KudoAI/chatgpt.js/discussions) / 
+**[हाल की रिलीज़](https://github.com/KudoAI/chatgpt.js/releases)** /
+[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) /
+[सहायता प्राप्त करें](https://github.com/KudoAI/chatgpt.js/issues) /
+[चर्चा करना](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#top">वापस शीर्ष पर ↑</a>
 
 </div>

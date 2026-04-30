@@ -478,8 +478,9 @@ ChatGPT 응답 자동 재생.
 
 <div align="center">
 
-**[릴리스](https://github.com/KudoAI/chatgpt.js/releases)** /
+**[최신 릴리스](https://github.com/KudoAI/chatgpt.js/releases)** /
 [사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) /
+[지원 받기](https://github.com/KudoAI/chatgpt.js/issues) /
 [토론](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#top">상단으로 ↑</a>
 

@@ -477,8 +477,9 @@ chatgpt --query "sup"  # or cjs -q sup
 
 <div align="center">
 
-**[發布](https://github.com/KudoAI/chatgpt.js/releases)** /
+**[최신 릴리스](https://github.com/KudoAI/chatgpt.js/releases)** /
 [用戶指南](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) /
+[지원 받기](https://github.com/KudoAI/chatgpt.js/issues) /
 [討論](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#top">回到頂部 ↑</a>
 

@@ -477,8 +477,9 @@ All contributions are very welcome!
 
 <div align="center">
 
-**[Releases](https://github.com/KudoAI/chatgpt.js/releases)** /
+**[Latest releases](https://github.com/KudoAI/chatgpt.js/releases)** /
 [Userguide](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) /
+[Get support](https://github.com/KudoAI/chatgpt.js/issues) /
 [Discuss](https://github.com/KudoAI/chatgpt.js/discussions) /
 [Back to top ↑](#top)
 
