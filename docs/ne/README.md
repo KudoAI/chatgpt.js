@@ -234,7 +234,7 @@ https://github.com/KudoAI/chatgpt.js/assets/10906554/f53c740f-d5e0-49b6-ae02-3b3
 [रीडमी](https://docs.chatgptautorefresh.com/#readme) / 
 [चर्चा](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
-### <img width=23 src="https://assets.ddgpt.com/images/icons/app/icon48.png"> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
+### <img width=24 src="https://assets.ddgpt.com/images/icons/app/icon48.png"> [DuckDuckGPT](https://github.com/KudoAI/duckduckgpt/#readme) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="auto" /></a>
 
 > नवीनतम LLM हरू द्वारा संचालित, DuckDuckGo मा AI च्याट र खोज सारांशहरू थप्नुहोस्!
 <br>[इंस्टॉल](https://docs.ddgpt.com/#-installation) / 

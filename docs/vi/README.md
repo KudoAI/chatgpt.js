@@ -237,7 +237,7 @@ Hướng dẫn sử dụng chi tiết:
 [Đọc tôi](https://docs.chatgptautorefresh.com/#readme) /
 [Bàn luận](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
-### <img width=23 src="https://assets.ddgpt.com/images/icons/app/icon48.png"> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
+### <img width=24 src="https://assets.ddgpt.com/images/icons/app/icon48.png"> [DuckDuckGPT](https://github.com/KudoAI/duckduckgpt/#readme) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt" target="_blank" rel="noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="auto" /></a>
 
 > Thêm tóm tắt trò chuyện AI & tìm kiếm vào DuckDuckGo, được hỗ trợ bởi LLM mới nhất!
 <br>[Cài đặt](https://docs.ddgpt.com/#-installation) /
