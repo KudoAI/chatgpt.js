@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir -p dist/data
+
 cp assets/data/_locales/en/messages.json dist/data/messages.json
 cp package-data.json dist/data/package-data.json
 cp -r src/cli dist/
