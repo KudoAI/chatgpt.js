@@ -2,7 +2,7 @@ name: Sync chatgpt.js to KudoAI/chatgpt.js-chrome-starter/extension/lib/
 
 on:
   push:
-    branches: [master, main]
+    branches: [main]
     paths: ["**/chatgpt.js"]
 
 jobs:
