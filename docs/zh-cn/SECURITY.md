@@ -19,4 +19,4 @@
 
 # 安全政策
 
-如果发现漏洞，请按照报告说明 @ https://tidelift.com/security
+如果您发现漏洞，请发送电子邮件至 <security@kudoai.com>。

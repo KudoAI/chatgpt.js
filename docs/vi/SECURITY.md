@@ -19,4 +19,4 @@
 
 # Chính sách bảo mật
 
-Nếu bạn tìm thấy lỗ hổng, vui lòng làm theo hướng dẫn báo cáo @ https://tidelift.com/security
+Nếu bạn phát hiện lỗ hổng bảo mật, vui lòng gửi email đến <security@kudoai.com>.

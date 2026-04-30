@@ -19,4 +19,4 @@
 
 # 보안 정책
 
-취약점을 발견한 경우 https://tidelift.com/security에서 보고 지침을 따르세요.
+취약점을 발견하시면 <security@kudoai.com>으로 이메일을 보내주세요.
