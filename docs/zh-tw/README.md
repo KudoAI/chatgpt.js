@@ -17,13 +17,6 @@
         <a href="../ko#readme">한국인</a> |
         <a href="../hi#readme">हिंदी</a> |
         <a href="../ne#readme">नेपाली</a> |
-        <a href="../de#readme">Deutsch</a> |
-        <a href="../es#readme">Español</a> |
-        <a href="../fr#readme">Français</a> |
-        <a href="../it#readme">Italiano</a> |
-        <a href="../nl#readme">Nederlands</a> |
-        <a href="../pt#readme">Português</a> |
-        <a href="../ru#readme">Английский</a> |
         <a href="../vi#readme">Việt</a>
     </h6>
 </div>

@@ -13,13 +13,6 @@
         <a href="docs/ko/LICENSE.md">한국인</a> |
         <a href="docs/hi/LICENSE.md">हिंदी</a> |
         <a href="docs/ne/LICENSE.md">नेपाली</a> |
-        <a href="docs/de/LICENSE.md">Deutsch</a> |
-        <a href="docs/es/LICENSE.md">Español</a> |
-        <a href="docs/fr/LICENSE.md">Français</a> |
-        <a href="docs/it/LICENSE.md">Italiano</a> |
-        <a href="docs/nl/LICENSE.md">Nederlands</a> |
-        <a href="docs/pt/LICENSE.md">Português</a> |
-        <a href="docs/ru/LICENSE.md">Английский</a> |
         <a href="docs/vi/LICENSE.md">Việt</a>
     </h6>
 </div>

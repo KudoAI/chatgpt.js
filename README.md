@@ -17,13 +17,6 @@
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/ko#readme">한국인</a> |
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/hi#readme">हिंदी</a> |
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/ne#readme">नेपाली</a> |
-        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/de#readme">Deutsch</a> |
-        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/es#readme">Español</a> |
-        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/fr#readme">Français</a> |
-        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/it#readme">Italiano</a> |
-        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/nl#readme">Nederlands</a> |
-        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/pt#readme">Português</a> |
-        <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/ru#readme">Английский</a> |
         <a href="https://github.com/KudoAI/chatgpt.js/tree/main/docs/vi#readme">Việt</a>
     </h6>
 </div>
@@ -54,7 +47,7 @@
 <a href="https://github.com/sindresorhus/awesome-chatgpt#javascript" target="_blank" rel="noopener">
     <img src="https://img.shields.io/badge/Mentioned_in-Awesome-ff69b4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="#">
-    <img src="https://img.shields.io/badge/jsDelivr_Requests-2,000,000+-7bb7fc.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    <img src="https://img.shields.io/badge/jsDelivr_Requests-2,000,000+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 
 </div>
 
