@@ -163,7 +163,7 @@ console.log(await chatgpt.send('sup'))
 (async () => {
     await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
 
-    await chatgpt.isIdle()
+    await chatgpt.isLoaded()
     console.log('ChatGPT is ready!') 
 })()
 ```
