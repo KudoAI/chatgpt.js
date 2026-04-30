@@ -7,26 +7,19 @@
             </picture>
         </a>
          한국어 |
-        <a href="../../LICENSE.md">English</a> |
+        <a href="../LICENSE.md">English</a> |
         <a href="../zh-cn/LICENSE.md">简体中文</a> |
         <a href="../zh-tw/LICENSE.md">繁體中文</a> |
         <a href="../ja/LICENSE.md">日本</a> |
         <a href="../hi/LICENSE.md">हिंदी</a> |
         <a href="../ne/LICENSE.md">नेपाली</a> |
-        <a href="../de/LICENSE.md">Deutsch</a> |
-        <a href="../es/LICENSE.md">Español</a> |
-        <a href="../fr/LICENSE.md">Français</a> |
-        <a href="../it/LICENSE.md">Italiano</a> |
-        <a href="../nl/LICENSE.md">Nederlands</a> |
-        <a href="../pt/LICENSE.md">Português</a> |
-        <a href="../ru/LICENSE.md">Английский</a> |
         <a href="../vi/LICENSE.md">Việt</a>
     </h6>
 </div>
 
 # MIT License
 
-저작권 © 2023–2025 [KudoAI](https://github.com/KudoAI) & [기여자](.#-기여자)
+저작권 © 2023–2026 [KudoAI](https://github.com/KudoAI) & [기여자](.#-기여자)
 
 이 소프트웨어와 그리고 관련된 문서 파일 (이하, "소프트웨어")의 복사본을 받는 모든 사람들에게 다음 조건에 한하여 무료로 사용권한을 제공받습니다.
 위 소프트웨어를 사용하는 유저들은 제한 없이 사용, 복사, 수정, 병합, 게시, 배포, 서브 라이센스 부여하거나 판매하는 것이 가능합니다.

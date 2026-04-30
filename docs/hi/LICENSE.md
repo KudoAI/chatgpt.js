@@ -7,26 +7,19 @@
             </picture>
         </a>
         हिंदी |
-        <a href="../../LICENSE.md">English</a> |
+        <a href="../LICENSE.md">English</a> |
         <a href="../zh-cn/LICENSE.md">简体中文</a> |
         <a href="../zh-tw/LICENSE.md">繁體中文</a> |
         <a href="../ja/LICENSE.md">日本</a> |
         <a href="../ko/LICENSE.md">한국인</a> |
         <a href="../ne/LICENSE.md">नेपाली</a> |
-        <a href="../de/LICENSE.md">Deutsch</a> |
-        <a href="../es/LICENSE.md">Español</a> |
-        <a href="../fr/LICENSE.md">Français</a> |
-        <a href="../it/LICENSE.md">Italiano</a> |
-        <a href="../nl/LICENSE.md">Nederlands</a> |
-        <a href="../pt/LICENSE.md">Português</a> |
-        <a href="../ru/LICENSE.md">Английский</a> |
         <a href="../vi/LICENSE.md">Việt</a>
     </h6>
 </div>
 
 # MIT लाइसेंस
 
-कॉपीराइट © 2023–2025 [KudoAI](https://github.com/KudoAI) और [योगदानकर्ता](.#-योगदानकर्ता)
+कॉपीराइट © 2023–2026 [KudoAI](https://github.com/KudoAI) और [योगदानकर्ता](.#-योगदानकर्ता)
 
 इसके द्वारा प्रति प्राप्त करने वाले किसी भी व्यक्ति को अनुमति निःशुल्क प्रदान की जाती है इस सॉफ़्टवेयर और संबंधित दस्तावेज़ फ़ाइलों ("सॉफ़्टवेयर") से निपटने के लिए सॉफ़्टवेयर में बिना किसी प्रतिबंध के, जिसमें बिना किसी सीमा के अधिकार शामिल हैं उपयोग करना, प्रतिलिपि बनाना, संशोधित करना, विलय करना, प्रकाशित करना, वितरित करना, उपलाइसेंस देना और/या बेचना सॉफ़्टवेयर की प्रतियां, और उन व्यक्तियों को अनुमति देना जिनके पास सॉफ़्टवेयर है निम्नलिखित शर्तों के अधीन, ऐसा करने के लिए सुसज्जित:
 

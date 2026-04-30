@@ -8,7 +8,6 @@ import json from '@eslint/json'
 import markdown from '@eslint/markdown'
 import regexp from 'eslint-plugin-regexp'
 import stylisticJS from '@stylistic/eslint-plugin'
-import yml from 'eslint-plugin-yml'
 
 export default [
     { ignores: ['**/*.min.js', '**/package-lock.json', 'docs/**/*.min.css', 'docs/**/footer.html'] },
@@ -18,8 +17,9 @@ export default [
             ecmaVersion: 'latest', sourceType: 'script',
             globals: {
                 ...globals.browser, ...globals.greasemonkey, ...globals.node, app: 'writable', chatgpt: 'readonly',
-                chrome: 'readonly', config: 'writable', dom: 'readonly', env: 'writable', feedback: 'readonly',
-                icons: 'writable', modals: 'writable', settings: 'writable', ui: 'readonly'
+                chrome: 'readonly', cli: 'writable', config: 'writable', css: 'readonly', dom: 'readonly',
+                env: 'writable', feedback: 'readonly', icons: 'writable', log: 'writable', modals: 'writable',
+                ui: 'readonly'
             }
         },
         plugins: { 'import': importPlugin, 'js-styles': stylisticJS, regexp },
@@ -40,7 +40,10 @@ export default [
             'no-empty': 'off', // allow empty blocks
             'no-inner-declarations': 'off', // allow function declarations anywhere
             'no-useless-escape': 'off', // allow all escape chars cause ESLint sucks at detecting truly useless ones
-            'no-unused-vars': ['error', { 'caughtErrors': 'none' }] // allow unused named args in catch blocks
+            'no-unused-vars': ['error', { 'caughtErrors': 'none' }], // allow unused named args in catch blocks
+            'import/no-named-as-default-member': 'off', // allow accessing named exports via default import
+            'import/no-unresolved': ['error', { ignore: ['^(?:https?://)'] }] // allow dynamic imports from URLs...
+                // ...maintainer refuses to support (https://github.com/import-js/eslint-plugin-import/issues/3118)
         }
     },
     { files: ['**/chatgpt.js'], languageOptions: { globals: { chatgpt: 'off' }}},
@@ -71,6 +74,5 @@ export default [
             'markdown/require-alt-text': 'off' // allow missing img alts
         }
     },
-    { files: ['**/*.mjs'], languageOptions: { sourceType: 'module' }},
-    { files: ['**/*.{yaml,yml}'], ...yml.configs['flat/standard'][1] }
+    { files: ['**/*.mjs'], languageOptions: { sourceType: 'module' }}
 ]

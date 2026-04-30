@@ -7,26 +7,19 @@
             </picture>
         </a>
         नेपाली |
-        <a href="../../LICENSE.md">English</a> |
+        <a href="../LICENSE.md">English</a> |
         <a href="../hi/LICENSE.md">हिंदी</a> |
         <a href="../zh-cn/LICENSE.md">简体中文</a> |
         <a href="../zh-tw/LICENSE.md">繁體中文</a> |
         <a href="../ja/LICENSE.md">日本</a> |
         <a href="../ko/LICENSE.md">한국인</a> |
-        <a href="../de/LICENSE.md">Deutsch</a> |
-        <a href="../es/LICENSE.md">Español</a> |
-        <a href="../fr/LICENSE.md">Français</a> |
-        <a href="../it/LICENSE.md">Italiano</a> |
-        <a href="../nl/LICENSE.md">Nederlands</a> |
-        <a href="../pt/LICENSE.md">Português</a> |
-        <a href="../ru/LICENSE.md">Английский</a> |
         <a href="../vi/LICENSE.md">Việt</a>
     </h6>
 </div>
 
 # MIT लाइसेंस
 
-कॉपीराइट © 2023–2025 [KudoAI](https://github.com/KudoAI) र [योगदानकर्ता](.#-योगदानकर्ता)
+कॉपीराइट © 2023–2026 [KudoAI](https://github.com/KudoAI) र [योगदानकर्ता](.#-योगदानकर्ता)
 
 प्रतिलिपि प्राप्त गर्ने कुनै पनि व्यक्तिलाई नि:शुल्क रूपमा अनुमति दिइन्छ
 यो सफ्टवेयर र सम्बन्धित कागजात फाइलहरू ("सफ्टवेयर"), सम्झौता गर्न

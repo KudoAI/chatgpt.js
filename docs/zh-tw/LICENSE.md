@@ -7,26 +7,19 @@
             </picture>
         </a>
         繁體中文 |
-        <a href="../../LICENSE.md">English</a> |
+        <a href="../LICENSE.md">English</a> |
         <a href="../zh-cn/LICENSE.md">简体中文</a> |
         <a href="../ja/LICENSE.md">日本</a> |
         <a href="../ko/LICENSE.md">한국인</a> |
         <a href="../hi/LICENSE.md">हिंदी</a> |
         <a href="../ne/LICENSE.md">नेपाली</a> |
-        <a href="../de/LICENSE.md">Deutsch</a> |
-        <a href="../es/LICENSE.md">Español</a> |
-        <a href="../fr/LICENSE.md">Français</a> |
-        <a href="../it/LICENSE.md">Italiano</a> |
-        <a href="../nl/LICENSE.md">Nederlands</a> |
-        <a href="../pt/LICENSE.md">Português</a> |
-        <a href="../ru/LICENSE.md">Английский</a> |
         <a href="../vi/LICENSE.md">Việt</a>
     </h6>
 </div>
 
 # MIT 许可证
 
-版權所有 © 2023–2025 [KudoAI](https://github.com/KudoAI) & [貢獻者](.#-貢獻者)
+版權所有 © 2023–2026 [KudoAI](https://github.com/KudoAI) & [貢獻者](.#-貢獻者)
 
 特此免費授予任何取得副本的人許可本軟體和相關文件文件（『軟體』），處理在軟體中不受限制，包括但不限於權利使用、複製、修改、合併、發布、分發、再授權和/或出售該軟體的副本，並允許該軟體是提供這樣做，但須滿足以下條件：
 

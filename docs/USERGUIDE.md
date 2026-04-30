@@ -1,315 +1,136 @@
+<a id="top"></a>
+
 <div align="center">
+
+<br>
 
 <picture>
     <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/darkmode/logo-6014x1334.png?v=8169c77">
-    <img width=700 src="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/lightmode/logo-6014x1334.png?v=8169c77">
+    <img width=850 src="https://assets.chatgptjs.org/images/logos/chatgpt.js/with-reflection/lightmode/logo-6014x1334.png?v=8169c77">
 </picture>
 
-**chatgpt.js** is a powerful JavaScript library that allows for super easy interaction w/ the ChatGPT DOM.
+<br>
 
 </div>
 
-## Table of contents
+<hr>
 
-- [Importing the library](#importing-the-library)
-  - [ES6](#es6)
-  - [ES5](#es5)
-  - [Greasemonkey](#greasemonkey)
-  - [Chrome](#chrome)
-- [Library methods](#library-methods)
-  - [General](#general)
-    - [detectLanguage `async`](#detectlanguage-async)
-    - [executeCode `async`](#executecode-async)
-    - [generateRandomIP](#generaterandomip)
-    - [get](#get)
-    - [getUserLanguage](#getuserlanguage)
-    - [isFullScreen](#isfullscreen)
-    - [isLoaded `async`](#isloaded-async)
-    - [isTempChat](#istempchat)
-    - [printAllFunctions](#printallfunctions)
-    - [randomFloat](#randomfloat)
-    - [renderHTML](#renderhtml)
-    - [sentiment `async`](#sentiment-async)
-    - [suggest `async`](#suggest-async)
-    - [summarize `async`](#summarize-async)
-    - [translate `async`](#translate-async)
-    - [uuidv4](#uuidv4)
-  - [Page theme](#page-theme)
-    - [activateDarkMode](#activatedarkmode)
-    - [activateLightMode](#activatelightmode)
-    - [isDarkMode](#isdarkmode)
-    - [isLightMode](#islightmode)
-    - [toggleScheme](#togglescheme)
-  - [In-site notifications](#in-site-notifications)
-    - [alert](#alert)
-    - [notify](#notify)
-  - [User session](#user-session)
-    - [getAccessToken `async`](#getaccesstoken-async)
-    - [getAccountDetails `async`](#getaccountdetails-async)
-    - [login](#login)
-    - [logout](#logout)
-  - [Chats](#chats)
-    - [askAndGetReply `async`](#askandgetreply-async)
-    - [clearChats `async`](#clearchats-async)
-    - [exportChat `async`](#exportchat-async)
-    - [getChatData `async`](#getchatdata-async)
-    - [getChatInput](#getchatinput)
-    - [getErrorMsg](#geterrormsg)
-    - [getLastPrompt `async`](#getlastprompt-async)
-    - [getLastResponse `async`](#getlastresponse-async)
-    - [getResponse](#getresponse)
-    - [getResponseFromAPI `async`](#getresponsefromapi-async)
-    - [getResponseFromDOM](#getresponsefromdom)
-    - [isIdle `async`](#isidle-async)
-    - [isTyping](#istyping)
-    - [regenerate](#regenerate)
-    - [resend `async`](#resend-async)
-    - [scrollToBottom](#scrolltobottom)
-    - [send](#send)
-    - [sendInNewChat](#sendinnewchat)
-    - [shareChat `async`](#sharechat-async)
-    - [speak](#speak)
-    - [startNewChat](#startnewchat)
-    - [stop](#stop)
-  - [DOM related](#dom-related)
-    - [focusChatbar](#focuschatbar)
-    - [getChatBox](#getchatbox)
-    - [getContinueButton](#getcontinuebutton)
-    - [getFooterDiv](#getfooterdiv)
-    - [getHeaderDiv](#getheaderdiv)
-    - [getLoginButton](#getloginbutton)
-    - [getNewChatButton](#getnewchatbutton)
-    - [getNewChatLink](#getnewchatlink)
-    - [getRegenerateButton](#getregeneratebutton)
-    - [getScrollToBottomButton](#getscrolltobottombutton)
-    - [getSendButton](#getsendbutton)
-    - [getStopGeneratingButton](#getstopgeneratingbutton)
-    - [getVoiceButton](#getvoicebutton)
-    - [hideFooter](#hidefooter)
-    - [hideHeader](#hideheader)
-    - [showFooter](#showfooter)
-    - [showHeader](#showheader)
-- [Library APIs](#library-apis)
-  - [autoRefresh `api`](#autorefresh-api)
-      - [activate](#activate)
-      - [deactivate](#deactivate)
-      - [nowTimeStamp](#nowtimestamp)
-  - [browser `api`](#browser-api)
-      - [isLightMode](#islightmode-1)
-      - [isDarkMode](#isdarkmode-1)
-      - [isChromium](#ischromium)
-      - [isChrome](#ischrome)
-      - [isEdge](#isedge)
-      - [isBrave](#isbrave)
-      - [isFirefox](#isfirefox)
-      - [isFullScreen](#isfullscreen-1)
-      - [isMobile](#ismobile)
-  - [code `api`](#code-api)
-    - [minify `async`](#minify-async)
-    - [execute `async`](#execute-async)
-    - [extract](#extract)
-    - [isIdle `async`](#isidle-async-1)
-    - [obfuscate `async`](#obfuscate-async)
-    - [refactor `async`](#refactor-async)
-    - [review `async`](#review-async)
-    - [unminify `async`](#unminify-async)
-    - [write `async`](#write-async)
-  - [footer `api`](#footer-api)
-    - [get](#get)
-    - [hide](#hide)
-    - [show](#show)
-  - [header `api`](#header-api)
-    - [get](#get-1)
-    - [hide](#hide-1)
-    - [show](#show-1)
-  - [history `api`](#history-api)
-    - [isLoaded](#isloaded-async-1)
-  - [instructions `api`](#instructions-api)
-    - [add `async`](#add-async)
-    - [clear `async`](#clear-async)
-    - [turnOff `async`](#turnoff-async)
-    - [turnOn `async`](#turnon-async)
-    - [toggle `async`](#toggle-async)
-  - [menu `api`](#menu-api)
-    - [open](#open)
-    - [close](#close)
-  - [response `api`](#response-api)
-    - [continue](#continue)
-    - [get](#get-2)
-    - [getFromAPI `async`](#getfromapi-async)
-    - [getFromDOM](#getfromdom)
-    - [getLast `async`](#getlast-async)
-    - [regenerate](#regenerate-1)
-    - [stopGenerating](#stopgenerating)
-  - [settings `api`](#settings-api)
-    - [scheme `api subset`](#scheme-api-subset)
-      - [isDark](#isdark)
-      - [isLight](#islight)
-      - [set](#set)
-      - [toggle](#toggle-1)
-  - [sidebar `api`](#sidebar-api)
-    - [append](#append)
-    - [exists](#exists)
-    - [isOn](#ison)
-    - [isOff](#isoff)
-    - [hide](#hide-2)
-    - [show](#show-2)
-    - [toggle](#toggle-1)
-    - [isLoaded](#isloaded-async-2)
+# ⚡ Importing the library
 
-# Importing the library
+</div>
 
-> **Note** _To always import the latest version (not recommended in production!) replace the versioned jsDelivr URL with: `https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js`_
+#### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">][web-usage][<img height=13.5 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/edge/icon16.png" title="Edge">][web-usage][<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/firefox/icon16.png" title="Firefox">][web-usage][<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/safari/icon16.png" title="Safari">][web-usage][<img height=13 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/qq/3d/icon-32x33.png" title="QQ Browser">][web-usage] Web:
 
-## ES6
+[web-usage]: #-web
 
 ```js
-(async () => {
-    await import('https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.4/dist/chatgpt.min.js');
-    // Your code here...
-})();
+<script src="https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js"></script>
 ```
 
-## ES5
+#### [<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/tampermonkey/icon28.png" title="Tampermonkey">][greasemonkey-usage][<img height="15" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/violentmonkey/icon25.png" title="Violentmonkey">][greasemonkey-usage][<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/scriptcat/icon32.png" title="ScriptCat">][greasemonkey-usage][<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/orangemonkey/icon16.png" title="OrangeMonkey">][greasemonkey-usage][<img height="14" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/stay/icon32.png" title="Stay">][greasemonkey-usage][<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/userscripts/icon32.png" title="Userscripts">][greasemonkey-usage] Greasemonkey:
 
-```js
-var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.4/dist/chatgpt.min.js');
-xhr.onload = function () {
-    if (xhr.status === 200) {
-        var chatgptJS = document.createElement('script');
-        chatgptJS.textContent = xhr.responseText;
-        document.head.append(chatgptJS);
-        yourCode(); // runs your code
-    }
-};
-xhr.send();
+[greasemonkey-usage]: #-greasemonkey
 
-function yourCode() {
-    // Your code here...
-}
-```
-
-## Greasemonkey
-
-> **Note** _To use a starter template: [kudoai/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
+> **Note** _To use a starter template: [KudoAI/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3.8.4/dist/chatgpt.min.js
+// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js
 // ==/UserScript==
-
-// Your code here...
 ```
 
-## Chrome
+#### [<img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@c226de5/assets/images/icons/browsers/chrome/icon16.png" title="Chrome">](#-chrome) Chrome:
 
-> **Note** _To use a starter template: [kudoai/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
+> **Note** _To use a starter template: [KudoAI/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
-1. Save https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/chatgpt.js to a subdirectory (`lib` in this example)
+Since Google does not allow remote code, importing chatgpt.js locally is required:
 
-2. Add ES6 export statement to end of `lib/chatgpt.js`
-```js
-...
-export { chatgpt }
-```
+1. Save https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js to `lib`
 
-3. In project's (V3) `manifest.json`, add `lib/chatgpt.js` as a web accessible resource
+2. In project's (V3) `manifest.json`, add `lib/chatgpt.min.js` as a web accessible resource
+
 ```json
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
-        "resources": ["lib/chatgpt.js"]
+        "resources": ["lib/chatgpt.min.js"]
     }],
 ```
 
-4. In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
+3. In scripts that need `chatgpt.js` (foreground/background alike), import it like so:
 ```js
 (async () => {
-    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'));
+    await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
     // Your code here...
-})();
+})()
 ```
 
-# Library methods
+<hr>
 
-Unless noted otherwise, methods are **synchronous**: they wait for the operation to finish, instead of returning immediately. If you need to know the result of calling **asynchronous** methods, use the returned promise or pass a callback function into the method.
+# 📖 Library methods
+
+<strong>[General](#general) / [Page theme](#page-theme) / [Chats](#chats) / [DOM related](#dom-related) / [APIs](#library-apis)</strong>
+
+<hr>
 
 ## General
 
-### detectLanguage `async`
+#### `detectLanguage(text)` `async`
 
 Asks ChatGPT to detect the language of given text.
 
-**Parameters**:
+Parameters:
 
 `text`: A string being the text to detect the language of.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    const language = await chatgpt.detectLanguage('我是一個大男孩');
-    chatgpt.alert(language);
+    const language = await chatgpt.detectLanguage('我是一個大男孩')
+    chatgpt.alert(language)
     /* Alerts:
     Chinese (Traditional) */
-})();
+})()
 ```
 
-### executeCode `async`
+#
+
+#### `execute()` `async`
 
 Asks ChatGPT to execute the given code.
 
-**Parameters**:
+Parameters:
 
 `code`: A string being the code to execute.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    chatgpt.alert(await chatgpt.executeCode('return 6 + 5')); // logs '11'
-})();
+    chatgpt.alert(await chatgpt.execute('return 6 + 5')) // logs '11'
+})()
 ```
 
-### generateRandomIP
+#
 
-Returns a random IP address as a string.
-
-Example code:
-
-```js
-const randomIP = chatgpt.generateRandomIP();
-chatgpt.alert(randomIP); // Example output: '161.192.110.125'
-```
-
-### get
-
-Example code:
-
-```js
-var response;
-
-response = chatgpt.get('reply', 'last');
-// Equivalent of
-response = chatgpt.getLastResponse();
-```
-
-### getUserLanguage
+#### `getUserLanguage()`
 
 Returns the user language as a string.
 
-Example code:
+Example:
 
 ```js
-const userLanguage = chatgpt.getUserLanguage();
-chatgpt.alert(userLanguage); // Example output: 'en-US'
+const userLanguage = chatgpt.getUserLanguage()
+chatgpt.alert(userLanguage) // Example output: 'en-US'
 ```
 
-### isFullScreen
+#
+
+#### `isFullScreen()`
 
 Returns a boolean value. `true` if the website is fullscreen and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.isFullScreen()) {
@@ -317,28 +138,32 @@ if (chatgpt.isFullScreen()) {
 }
 ```
 
-### isLoaded `async`
+#
+
+#### `isLoaded()` `async`
 
 Resolves a promise when ChatGPT has finished loading.
 
-**Parameters**:
+Parameters:
 
 `timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until ChatGPT finishes loading.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    await chatgpt.isLoaded();
-    chatgpt.alert('ChatGPT has finished loading.');
-})();
+    await chatgpt.isLoaded()
+    chatgpt.alert('ChatGPT has finished loading.')
+})()
 ```
 
-### isTempChat
+#
+
+#### `isTempChat()`
 
 Returns a boolean value. `true` if the website is in Temporary Chat mode and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.isTempChat()) {
@@ -346,60 +171,37 @@ if (chatgpt.isTempChat()) {
 }
 ```
 
-### printAllFunctions
+#
+
+#### `printAllFunctions()`
 
 Prints all the library functions to the console.
 
-Example code:
+Example:
 
 ```js
-chatgpt.printAllFunctions();
+chatgpt.printAllFunctions()
 ```
 
-### randomFloat
+#
 
-Returns a random, cryptographically secure float number between 0 (inclusive) and 1 (exclusive).
-
-Example code:
-
-```js
-const randomNumber = chatgpt.randomFloat();
-chatgpt.alert(randomNumber); // Example output: 0.9472113021060851
-```
-
-### renderHTML
-
-Cleans and renders given HTML code.
-
-**Parameters**:
-
-`node`: A string representing the HTML to be rendered.
-
-Example code:
-
-```js
-document.body.append(
-    chatgpt.renderHTML('<div>Hello World!</div>');
-);
-```
-
-### sentiment `async`
+#### `sentiment()` `async`
 
 Asks ChatGPT to analyze sentiment from a given text.
 
-**Parameters**:
+Parameters:
 
 `text`: A string being the text to be analyzed.
 
 `entity` (optional): A string being the entity to analyze sentiment towards.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    const text = 'Are you an #OSS supporter? Do you love JavaScript? Then why not contribute to the future of #AI app development? https://chatgpt.js.org (a #100Builders project) is seeking collabs for exactly this! @withBackdrop';
-    const sentiment = await chatgpt.sentiment(text, '100 Builders');
-    chatgpt.alert(sentiment);
+    const text = 'Are you an #OSS supporter? Do you love JavaScript? Then why not contribute to the future of #AI app development? https://chatgpt.js.org (a #100Builders project) is seeking collabs for exactly this! @withBackdrop'
+    const sentiment = await chatgpt.sentiment(text, '100 Builders')
+    chatgpt.alert(sentiment)
 
     /* Example output:
     The sentiment of the text towards the entity "100 Builders" is strongly positive. The text encourages
@@ -407,25 +209,27 @@ Example code:
     the project. Phrases like "contribute to the future," "seeking collabs," and the inclusion of the hashtag
     #100Builders project indicate a positive and enthusiastic tone, promoting engagement and collaboration
     with the project. */
-})();
+})()
 ```
 
-### suggest `async`
+#
+
+#### `suggest()` `async`
 
 Asks ChatGPT to suggest ideas.
 
-**Parameters**:
+Parameters:
 
 `ideaType`: A string being the type of idea to suggest.
 
 `details` (optional): A string being details to fine-tune the suggestion.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    const suggestions = await chatgpt.suggest('names', 'baby boy');
-    chatgpt.alert(suggestions);
+    const suggestions = await chatgpt.suggest('names', 'baby boy')
+    chatgpt.alert(suggestions)
 
     /* Example output:
     1. Liam
@@ -448,113 +252,127 @@ Example code:
     18. James
     19. Nathan
     20. Gabriel */
-})();
+})()
 ```
 
-### summarize `async`
+#
+
+#### `summarize()` `async`
 
 Asks ChatGPT to summarize given text.
 
-**Parameters**:
+Parameters:
 
 `text`: A string being the text to be summarized.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    const summary = await chatgpt.summarize('A very long text...');
-    chatgpt.alert(summary); // Example output: 'A very short text...'
-})();
+    const summary = await chatgpt.summarize('A very long text...')
+    chatgpt.alert(summary) // Example output: 'A very short text...'
+})()
 ```
 
-### translate `async`
+#
+
+#### `translate()` `async`
 
 Asks ChatGPT to translate given text to a given language.
 
-**Parameters**:
+Parameters:
 
 `text`: A string being the text to translate.
 
 `outputLang`: A string representing the output language of the translation.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    const translation = await chatgpt.translate('Hello, how are you?', 'spanish');
-    chatgpt.alert(translation); // Alerts: 'Hola, ¿cómo estás?'
-})();
+    const translation = await chatgpt.translate('Hello, how are you?', 'spanish')
+    chatgpt.alert(translation) // Alerts: 'Hola, ¿cómo estás?'
+})()
 ```
 
-### uuidv4
+#
 
-Example code:
+#### `uuidv4()`
+
+Example:
 
 ```js
-const randomID = chatgpt.uuidv4();
-chatgpt.alert(randomID); // Example output: '239067d1-bcb8-4fd7-91eb-9ab94619b7b3'
+const randomID = chatgpt.uuidv4()
+chatgpt.alert(randomID) // Example output: '239067d1-bcb8-4fd7-91eb-9ab94619b7b3'
 ```
 
 ## Page theme
 
-### activateDarkMode
+#### `activateDarkMode()`
 
 Changes the website theme to dark mode.
 
-Example code:
+Example:
 
 ```js
-chatgpt.activateDarkMode();
+chatgpt.activateDarkMode()
 ```
 
-### activateLightMode
+#
+
+#### `activateLightMode()`
 
 Changes the website theme to light mode.
 
-Example code:
+Example:
 
 ```js
-chatgpt.activateLightMode();
+chatgpt.activateLightMode()
 ```
 
-### isDarkMode
+#
+
+#### `isDarkMode()`
 
 Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
-chatgpt.alert(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
+chatgpt.alert(chatgpt.settings.scheme.isDark()) // logs `true` or `false`
 ```
 
-### isLightMode
+#
+
+#### `isLightMode()`
 
 Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
-chatgpt.alert(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
+chatgpt.alert(chatgpt.settings.scheme.isDark()) // logs `true` or `false`
 ```
 
-### toggleScheme
+#
+
+#### `toggleScheme()`
 
 Toggles the theme between light and dark mode.
 
-Example code:
+Example:
 
 ```js
-chatgpt.toggleScheme();
+chatgpt.toggleScheme()
 ```
 
 ## In-site notifications
 
-### alert
+#### `alert()`
 
 Creates a static alert box which displays a message. Only a user interaction can close it. Returns the HTML `id` property of the alert box as a string.
 
-**Parameters**:
+Parameters:
 
 `title` (optional): A string which is the title of the alert.
 
@@ -566,24 +384,26 @@ Creates a static alert box which displays a message. Only a user interaction can
 
 `width` (optional): An integer representing the width of the alert box in `px`.
 
-Example code:
+Example:
 
 ```js
 function doSomething() { /* Your code */ }
 
 function doSomethingElse() { /* Your code */ }
 
-function sayHello() { chatgpt.alert('Hello!'); }
+function sayHello() { chatgpt.alert('Hello!') }
 
-const alertID = chatgpt.alert('Hello, world!', 'The sky is blue.', [doSomething, doSomethingElse], sayHello, 200);
-chatgpt.alert(alertID); // Example output: '1693237957878'
+const alertID = chatgpt.alert('Hello, world!', 'The sky is blue.', [doSomething, doSomethingElse], sayHello, 200)
+chatgpt.alert(alertID) // Example output: '1693237957878'
 ```
 
-### notify
+#
+
+#### `notify()`
 
 Displays a temporary on-screen notification.
 
-**Parameters**:
+Parameters:
 
 `options` (optional): An object containing the options for the vocal synthesizer.
 
@@ -595,30 +415,32 @@ Available options:
  - `shadow` (optional): A string specifying if the `box-shadow` CSS property should be used.
  - `toast` (optional): A boolean specifying whether notifications should be flattened/centered into toast alerts.
 
-Example code:
+Example:
 
 ```js
-chatgpt.notify({ msg: 'Hello, world!', position: 'top left', notifDuration: 3, shadow: 'on' });
+chatgpt.notify({ msg: 'Hello, world!', position: 'top left', notifDuration: 3, shadow: 'on' })
 ```
 
 ## User session
 
-### getAccessToken `async`
+#### `getAccessToken()` `async`
 
 Returns an account access token as a string.
 
 ```js
 (async () => {
-    const token = await chatgpt.getAccessToken();
-    chatgpt.alert(token); // Example output: 'abcdef[...]'
-})();
+    const token = await chatgpt.getAccessToken()
+    chatgpt.alert(token) // Example output: 'abcdef[...]'
+})()
 ```
 
-### getAccountDetails `async`
+#
+
+#### `getAccountDetails()` `async`
 
 Returns a given account detail as a string.
 
-**Parameters**:
+Parameters:
 
 `detail`: A string representing the account detail(s) that will be returned.
 
@@ -626,70 +448,78 @@ Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single det
 
 ```js
 (async () => {
-    const accountName = await chatgpt.getAccountDetails('name');
-    chatgpt.alert(accountName); // Example output: 'chatgpt.js'
+    const accountName = await chatgpt.getAccountDetails('name')
+    chatgpt.alert(accountName) // Example output: 'chatgpt.js'
 
-    const accountData = await chatgpt.getAccountDetails('name', 'email');
-    chatgpt.alert(accountData);
+    const accountData = await chatgpt.getAccountDetails('name', 'email')
+    chatgpt.alert(accountData)
     /* Example output:
     {
         name: 'chatgpt.js',
         email: 'showcase@chatgptjs.org'
     }
     */
-})();
+})()
 ```
 
-### login
+#
+
+#### `login()`
 
 Navs to login page.
 
-Example code:
+Example:
 
 ```js
-chatgpt.login();
+chatgpt.login()
 ```
 
-### logout
+#
+
+#### `logout()`
 
 Logs out the user from the website.
 
-Example code:
+Example:
 
 ```js
-chatgpt.logout();
+chatgpt.logout()
 ```
 
 ## Chats
 
-### askAndGetReply `async`
+#### `askAndGetReply()` `async`
 
 Sends a given message to ChatGPT and returns the response as a string.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    const response = await chatgpt.askAndGetReply('Hello, ChatGPT');
-    chatgpt.alert(response); // Example output: 'Hello user, I'm ChatGPT!'
-})();
+    const response = await chatgpt.askAndGetReply('Hello, ChatGPT')
+    chatgpt.alert(response) // Example output: 'Hello user, I'm ChatGPT!'
+})()
 ```
 
-### clearChats `async`
+#
+
+#### `clearChats()` `async`
 
 Clears chat history.
 
-Example code:
+Example:
 
 ```js
-chatgpt.clearChats().then(() => chatgpt.alert('Chat history cleared!'));
+chatgpt.clearChats().then(() => chatgpt.alert('Chat history cleared!'))
 ```
 
-### exportChat `async`
+#
+
+#### `exportChat()` `async`
 
 Exports a given chat as a file.
 
-**Parameters**:
+Parameters:
 
 `chatToGet` (optional): A string representing the chat to get the data from.
 
@@ -699,19 +529,21 @@ Can be the following: `active`, the current chat, `latest`, the latest chat in t
 
 Can be the following: `html`, `md`, `pdf` or `text`. Defaults to `html`.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    await chatgpt.exportChat('latest', 'html'); // Downloads a '.html' file
-})();
+    await chatgpt.exportChat('latest', 'html') // Downloads a '.html' file
+})()
 ```
 
-### getChatData `async`
+#
+
+#### `getChatData()` `async`
 
 Returns the requested chat data as a string (if single detail requested) or object of key-value pairs (if multiple details requested).
 
-**Parameters**:
+Parameters:
 
 `chatToGet` (optional): A string representing the chat to get the data from.
 
@@ -738,11 +570,11 @@ Example code **for all return types**:
 _**All details from specified chat**_
 
 ```js
-await chatgpt.getChatData();
+await chatgpt.getChatData()
 // or
-await chatgpt.getChatData('latest'); // can also be 'active', 'title of the chat' or 'id of the chat'
+await chatgpt.getChatData('latest') // can also be 'active', 'title of the chat' or 'id of the chat'
 // or
-await chatgpt.getChatData('latest', 'all');
+await chatgpt.getChatData('latest', 'all')
 ```
 
 _Returns a JSON object_
@@ -759,7 +591,7 @@ _Returns a JSON object_
 _**Specific detail(s) from specified chat**_
 
 ```js
-await chatgpt.getChatData('latest', ['id', 'title']);
+await chatgpt.getChatData('latest', ['id', 'title'])
 ```
 
 _Returns a JSON object_
@@ -774,11 +606,11 @@ _Returns a JSON object_
 _**All messages from both participants in a specified chat**_
 
 ```js
-await chatgpt.getChatData('latest', 'msg');
+await chatgpt.getChatData('latest', 'msg')
 // or
-await chatgpt.getChatData('latest', 'msg', 'all'); // all/both
+await chatgpt.getChatData('latest', 'msg', 'all') // all/both
 // or
-await chatgpt.getChatData('latest', 'msg', 'all', 'all');
+await chatgpt.getChatData('latest', 'msg', 'all', 'all')
 ```
 
 _Returns an array of JSON objects_
@@ -804,11 +636,11 @@ In case of a response being regenerated, the `chatgpt` object key will be conver
 _**All messages from a specific participant in a specified chat**_
 
 ```js
-await chatgpt.getChatData('latest', 'msg');
+await chatgpt.getChatData('latest', 'msg')
 // or
-await chatgpt.getChatData('latest', 'msg', 'chatgpt'); // user/chatgpt
+await chatgpt.getChatData('latest', 'msg', 'chatgpt') // user/chatgpt
 // or
-await chatgpt.getChatData('latest', 'msg', 'chatgpt', 'all');
+await chatgpt.getChatData('latest', 'msg', 'chatgpt', 'all')
 ```
 
 _Returns an array of strings/arrays_
@@ -828,7 +660,7 @@ In case of a response being regenerated and the requested participant being `cha
 _**One/latest message from both participants in a specified chat**_
 
 ```js
-await chatgpt.getChatData('latest', 'msg', 'all', 2); // can also be 'latest' message
+await chatgpt.getChatData('latest', 'msg', 'all', 2) // can also be 'latest' message
 ```
 
 _Returns a JSON object_
@@ -848,7 +680,7 @@ In case of a response being regenerated, the `chatgpt` object key will be conver
 _**One/latest message from a specific participant in a specified chat**_
 
 ```js
-await chatgpt.getChatData('latest', 'msg', 'chatgpt', 2);
+await chatgpt.getChatData('latest', 'msg', 'chatgpt', 2)
 ```
 
 _Returns a string or an array of strings_
@@ -864,117 +696,135 @@ In case of a response being regenerated, the `chatgpt` object key will be conver
 ]
 ```
 
-### getChatInput
+#
+
+#### `getChatInput()`
 
 Returns the value of the chat input field as a string.
 
-Example code:
+Example:
 
 ```js
-const chatInput = chatgpt.getChatInput();
-chatgpt.alert(chatInput); // Example output: 'Hello from chatgpt.js!'
+const chatInput = chatgpt.getChatInput()
+chatgpt.alert(chatInput) // Example output: 'Hello from chatgpt.js!'
 ```
 
-### getErrorMsg
+#
+
+#### `getErrorMsg()`
 
 Returns the error message (if any) of the last generation as a string.
 
-Example code:
+Example:
 
 ```js
-const chatErrorMsg = chatgpt.getErrorMsg();
-chatgpt.alert(chatErrorMsg); // Example output: 'Conversation not found'
+const chatErrorMsg = chatgpt.getErrorMsg()
+chatgpt.alert(chatErrorMsg) // Example output: 'Conversation not found'
 ```
 
-### getLastPrompt `async`
+#
+
+#### `getLastPrompt()` `async`
 
 Returns the last message sent by the user as a string.
 
 ```js
 (async () => {
-    const message = await chatgpt.getLastPrompt();
-    chatgpt.alert(message); // Example output: 'Hello from chatgpt.js!'
-})();
+    const message = await chatgpt.getLastPrompt()
+    chatgpt.alert(message) // Example output: 'Hello from chatgpt.js!'
+})()
 ```
 
-### getLastResponse `async`
+#
+
+#### `getLastResponse()` `async`
 
 Returns the last ChatGPT response as a string.
 
 ```js
 (async () => {
-    const response = await chatgpt.getLastResponse();
-    chatgpt.alert(response); // Example output: 'I am ChatGPT!'
-})();
+    const response = await chatgpt.getLastResponse()
+    chatgpt.alert(response) // Example output: 'I am ChatGPT!'
+})()
 ```
 
-### getResponse
+#
+
+#### `getResponse()`
 
 If it's a previously created chat, see [chatgpt.getResponseFromDOM](#getresponsefromdom)
 
 If it's a new chat, see [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
 
-### getResponseFromAPI `async`
+#
+
+#### `getResponseFromAPI()` `async`
 
 Returns the Nth response ChatGPT has written in a Nth chat as a string.
 
-**Parameters**:
+Parameters:
 
 `chatToGet` (optional): A number representing the index of the chat to get the response from. Defaults to `latest`.
 
 `responseToGet` (optional): A number representing the index of the response to get. Defaults to `latest`.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    const response = chatgpt.getResponseFromAPI();
-    chatgpt.alert(response); // Example output: 'Hello from ChatGPT!'
-})();
+    const response = chatgpt.getResponseFromAPI()
+    chatgpt.alert(response) // Example output: 'Hello from ChatGPT!'
+})()
 ```
 
-### getResponseFromDOM
+#
+
+#### `getResponseFromDOM()`
 
 Returns the Nth response ChatGPT has written as a string.
 
-**Parameters**:
+Parameters:
 
 `pos`: A string or integer representing the position of the wanted response.
 
-Example code:
+Example:
 
 ```js
-var fifthResp;
+var fifthResp
 
-fifthResp = chatgpt.getResponseFromDOM(5); // Returns the 5th response
-fifthResp = chatgpt.getResponseFromDOM('fifth'); // Also returns the 5th response
-fifthResp = chatgpt.getResponseFromDOM('five'); // Returns the 5th response too
+fifthResp = chatgpt.getResponseFromDOM(5) // Returns the 5th response
+fifthResp = chatgpt.getResponseFromDOM('fifth') // Also returns the 5th response
+fifthResp = chatgpt.getResponseFromDOM('five') // Returns the 5th response too
 
-chatgpt.alert(fifthResp); // Example output: 'Hello from ChatGPT!'
+chatgpt.alert(fifthResp) // Example output: 'Hello from ChatGPT!'
 ```
 
-### isIdle `async`
+#
+
+#### `isIdle()` `async`
 
 Resolves a promise when ChatGPT has finished generating a response.
 
-**Parameters**:
+Parameters:
 
 `timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until response generation finishes.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    await chatgpt.code.isIdle();
-    chatgpt.alert('ChatGPT is idle');
-})();
+    await chatgpt.code.isIdle()
+    chatgpt.alert('ChatGPT is idle')
+})()
 ```
 
-### isTyping
+#
+
+#### `isTyping()`
 
 Returns a boolean value. `true` if ChatGPT is generating a response, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 console.log(`ChatGPT is ${!chatgpt.isTyping() ? 'not' : ''} typing`)
@@ -982,72 +832,108 @@ console.log(`ChatGPT is ${!chatgpt.isTyping() ? 'not' : ''} typing`)
 
 ###### _See also: [`isIdle`](#isidle-async)_
 
-### regenerate
+#
+
+#### `regenerate()`
 
 Regenerates ChatGPT's response.
 
-Example code:
+Example:
 
 ```js
-chatgpt.regenerate();
+chatgpt.regenerate()
 ```
 
-### resend `async`
+#
+
+#### `resend()` `async`
 
 Re-sends the last user message.
 
 ```js
 (async () => {
-    await chatgpt.resend();
-})();
+    await chatgpt.resend()
+})()
 ```
 
-### scrollToBottom
+#
+
+#### `scrollToBottom()`
 
 Scrolls to the bottom of the chat.
 
-Example code:
+Example:
 
 ```js
-chatgpt.scrollToBottom();
+chatgpt.scrollToBottom()
 ```
 
-### send
+#
 
-Sends a message into the chat.
+#### `send()`
 
-**Parameters**:
+Sends a message via the ChatGPT interface (DOM) if available, otherwise sends it to the OpenRoute API and returns the response.
 
-`msg`: A string representing the message to send.
+Parameters:
 
-`method` (optional): A string representing the method to send the message with, can only be `click`. Usually needed for mobile devices compatibility.
+- `userQuery`: *(string)* — The message to send  
+- `options` *(optional object)*:
+  - `provider`: *(string)* — API provider to use (default: `'openrouter'`)
+  - `stream`: *(boolean)* — Whether to stream the response in real-time (default: `true`)
+  - `systemQuery`: *(string)* — Optional system prompt to guide the response
+  - `color`: *(string)* — Output color for CLI responses (default: `'green'`)
+  - `method`: *(string)* — DOM-only: `'click'` to simulate send button (useful for mobile)
 
-Example code:
+Exmample code:
+
 
 ```js
-// Clicks the send button instead of triggering the 'Enter' key press.
-chatgpt.send('Hello, world!', 'click');
+chatgpt.send('Hello, world!')
+
+// e.g. => Hello! How can I assist you today?
 ```
 
-### sendInNewChat
+#
+
+#### `sendInNewChat()`
 
 Creates a new chat and sends a message.
 
-**Parameters**:
+Parameters:
 
 `msg`: A string representing the message to send.
 
-Example code:
+Example:
 
 ```js
-chatgpt.sendInNewChat('Hello, world!');
+chatgpt.sendInNewChat('Hello, world!')
 ```
 
-### shareChat `async`
+#
+
+#### `setProvider()`
+
+Sets the active API provider and stores its API key for use in `send()`.
+
+Parameters:
+
+- `provider`: *(string)* — The API provider name (default: `'openrouter'`)
+- `options` *(object)*:
+  - `key`: *(string)* — The API key for the provider
+
+Example:
+
+```js
+chatgpt.setProvider('openrouter', { key: 'sk-or-...' })
+```
+
+#
+
+#### `shareChat()` `async`
 
 Makes the selected chat available to others. Returns the URL of the chat as a string.
 
-**Parameters**:
+Parameters:
 
 `chatToGet` (optional): A number or string representing the `index`, `title` or `id` of the chat to share.
 
@@ -1057,15 +943,17 @@ Can be the following: `copy` or `clipboard` to copy the chat URL to clipboard, `
 
 ```js
 (async () => {
-    await chatgpt.shareChat(1, 'copy'); // copy/clipboard
-})();
+    await chatgpt.shareChat(1, 'copy') // copy/clipboard
+})()
 ```
 
-### speak
+#
+
+#### `speak()`
 
 Text To Speech (TTS) conversion of a given message.
 
-**Parameters**:
+Parameters:
 
 `msg`: A string representing the message to TTS.
 
@@ -1078,213 +966,249 @@ Available options:
  - `speed`: A float representing the speed of the speech. From `0.1` to `10`.
  - `onend`: A callback function invoked when speech finishes playing.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    chatgpt.speak(await chatgpt.getLastResponse(), { voice: 1, pitch: 2, speed: 3 });
-})();
+    chatgpt.speak(await chatgpt.getLastResponse(), { voice: 1, pitch: 2, speed: 3 })
+})()
 ```
 
-### startNewChat
+#
+
+#### `startNewChat()`
 
 Creates a new chat.
 
-Example code:
+Example:
 
 ```js
-chatgpt.startNewChat();
+chatgpt.startNewChat()
 ```
 
-### stop
+#
+
+#### `stop()`
 
 Stops the generation of ChatGPT's response.
 
-Example code:
+Example:
 
 ```js
-chatgpt.stop();
+chatgpt.stop()
 ```
 
 ## DOM related
 
-### focusChatbar
+#### `focusChatbar()`
 
 Focuses the chatbar.
 
-Example code:
+Example:
 
 ```js
-chatgpt.focusChatbar();
+chatgpt.focusChatbar()
 ```
 
-### getChatBox
+#
+
+#### `getChatBox()`
 
 Returns the chat input as an HTML element.
 
-Example code:
+Example:
 
 ```js
-const chatbox = chatgpt.getChatBox();
-chatgpt.alert(chatbox.value); // Example output: 'Hello from chatgpt.js!'
+const chatbox = chatgpt.getChatBox()
+chatgpt.alert(chatbox.value) // Example output: 'Hello from chatgpt.js!'
 ```
 
-### getContinueButton
+#
+
+#### `getContinueButton()`
 
 Returns the 'Continue generating' button as an HTML element.
 
-Example code:
+Example:
 
 ```js
-const continueBtn = chatgpt.getContinueButton();
-continueBtn.click();
+const continueBtn = chatgpt.getContinueButton()
+continueBtn.click()
 ```
 
-### getFooterDiv
+#
+
+#### `getFooterDiv()`
 
 Returns the footer div as an HTML element.
 
-Example code:
+Example:
 
 ```js
-const footerDiv = chatgpt.getFooterDiv();
-footerDiv.style.padding = '15px'; // make the footer taller
+const footerDiv = chatgpt.getFooterDiv()
+footerDiv.style.padding = '15px' // make the footer taller
 ```
 
-### getHeaderDiv
+#
+
+#### `getHeaderDiv()`
 
 Returns the header div as an HTML element.
 
-Example code:
+Example:
 
 ```js
-const headerDiv = chatgpt.getHeaderDiv();
-headerDiv.style.display = none; // hide the header
+const headerDiv = chatgpt.getHeaderDiv()
+headerDiv.style.display = none // hide the header
 ```
 
-### getLoginButton
+#
+
+#### `getLoginButton()`
 
 Returns the login button as an HTML element.
 
-Example code:
+Example:
 
 ```js
-const loginBtn = chatgpt.getLoginButton();
-loginBtn.click(); // navs to login page
+const loginBtn = chatgpt.getLoginButton()
+loginBtn.click() // navs to login page
 ```
 
-### getNewChatButton
+#
+
+#### `getNewChatButton()`
 
 Returns the sidebar button (w/ icon) that creates a new chat as an HTML element.
 
-Example code:
+Example:
 
 ```js
-const newChatBtn = chatgpt.getNewChatButton();
-newChatBtn.style.display = 'none'; // hide New Chat button
+const newChatBtn = chatgpt.getNewChatButton()
+newChatBtn.style.display = 'none' // hide New Chat button
 ```
 
-### getNewChatLink
+#
+
+#### `getNewChatLink()`
 
 Returns the sidebar link (w/ label) that creates a new chat as an HTML element.
 
-Example code:
+Example:
 
 ```js
-const newChatLink = chatgpt.getNewChatLink();
-newChatLink.style.display = 'none'; // hide New Chat link
+const newChatLink = chatgpt.getNewChatLink()
+newChatLink.style.display = 'none' // hide New Chat link
 ```
 
-### getRegenerateButton
+#
+
+#### `getRegenerateButton()`
 
 Returns the button which regenerates ChatGPT's response as an HTML element.
 
-Example code:
+Example:
 
 ```js
-const regenBtn = chatgpt.getRegenerateButton();
-regenBtn.click();
+const regenBtn = chatgpt.getRegenerateButton()
+regenBtn.click()
 ```
 
-### getScrollToBottomButton
+#
+
+#### `getScrollToBottomButton()`
 
 Returns the button which scrolls to bottom as an HTML element.
 
-Example code:
+Example:
 
 ```js
-const scrollToBottomBtn = chatgpt.getScrollToBottomButton();
-scrollToBottomBtn.click();
+const scrollToBottomBtn = chatgpt.getScrollToBottomButton()
+scrollToBottomBtn.click()
 ```
 
-### getSendButton
+#
+
+#### `getSendButton()`
 
 Returns the button which sends the message as an HTML element.
 
-Example code:
+Example:
 
 ```js
-const sendBtn = chatgpt.getSendButton();
-sendBtn.click();
+const sendBtn = chatgpt.getSendButton()
+sendBtn.click()
 ```
 
-### getStopGeneratingButton
+#
+
+#### `getStopGeneratingButton()`
 
 Returns the button which stops the generation of ChatGPT's response as an HTML element.
 
-Example code:
+Example:
 
 ```js
-const stopBtn = chatgpt.getStopGeneratingButton();
-stopBtn.click();
+const stopBtn = chatgpt.getStopGeneratingButton()
+stopBtn.click()
 ```
 
-### getVoiceButton
+#
+
+#### `getVoiceButton()`
 
 Returns the chatbar button that activates Voice mode as an HTML element.
 
-Example code:
+Example:
 
 ```js
-const voiceBtn = chatgpt.getVoiceButton();
-getVoiceButton.click(); // activates Voice mode
+const voiceBtn = chatgpt.getVoiceButton()
+getVoiceButton.click() // activates Voice mode
 ```
 
-### hideFooter
+#
+
+#### `hideFooter()`
 
 Hides the footer div.
 
-Example code:
+Example:
 
 ```js
 chatgpt.hideFooter()
 ```
 
-### hideHeader
+#
+
+#### `hideHeader()`
 
 Hides the header div.
 
-Example code:
+Example:
 
 ```js
 chatgpt.hideHeader()
 ```
 
-### showFooter
+#
+
+#### `showFooter()`
 
 Shows the footer div if hidden.
 
-Example code:
+Example:
 
 ```js
 chatgpt.showFooter()
 ```
 
-### showHeader
+#
+
+#### `showHeader()`
 
 Shows the header div if hidden.
 
-Example code:
+Example:
 
 ```js
 chatgpt.showHeader()
@@ -1296,68 +1220,78 @@ chatgpt.showHeader()
 
 API related to keeping the user's session alive and fresh.
 
-#### activate
+##
+
+#### `activate()`
 
 Activates the auto-refresh functionality.
 
-**Parameters**:
+Parameters:
 
 `interval` (optional): A number representing the interval in seconds between sessions refreshes. Defaults to `30`.
 
-Example code:
+Example:
 
 ```js
-chatgpt.autoRefresh.activate();
+chatgpt.autoRefresh.activate()
 ```
 
-#### deactivate
+##
+
+#### `deactivate()`
 
 Deactivates the auto-refresh functionality.
 
-Example code:
+Example:
 
 ```js
-chatgpt.autoRefresh.deactivate();
+chatgpt.autoRefresh.deactivate()
 ```
 
-#### nowTimeStamp
+##
+
+#### `nowTimeStamp()`
 
 Returns the current timestamp as a string (12-hour format).
 
-Example code:
+Example:
 
 ```js
-const timeStamp = chatgpt.autoRefresh.nowTimeStamp();
-chatgpt.alert(timeStamp); // Example output: '1:56:25 PM'
+const timeStamp = chatgpt.autoRefresh.nowTimeStamp()
+chatgpt.alert(timeStamp) // Example output: '1:56:25 PM'
 ```
 
 ## browser `api`
 
-### isLightMode
+#### `isLightMode()`
 
 Returns a boolean value. `true` if system/browser scheme preference is set to light, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
-chatgpt.alert(chatgpt.browser.isLightMode()); // logs `true` or `false`
+chatgpt.alert(chatgpt.browser.isLightMode()) // logs `true` or `false`
 ```
 
-### isDarkMode
+#
+
+#### `isDarkMode()`
 
 Returns a boolean value. `true` if system/browser scheme preference is set to dark, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
-chatgpt.alert(chatgpt.browser.isDarkMode()); // logs `true` or `false`
+chatgpt.alert(chatgpt.browser.isDarkMode()) // logs `true` or `false`
 ```
 
-### isChromium
+#
+
+#### `isChromium()`
 
 Returns a boolean value. `true` if the browser is Chromium and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.browser.isChromium()) {
@@ -1365,11 +1299,13 @@ if (chatgpt.browser.isChromium()) {
 }
 ```
 
-### isChrome
+#
+
+#### `isChrome()`
 
 Returns a boolean value. `true` if the browser is Chrome and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.browser.isChrome()) {
@@ -1377,11 +1313,13 @@ if (chatgpt.browser.isChrome()) {
 }
 ```
 
-### isEdge
+#
+
+#### `isEdge()`
 
 Returns a boolean value. `true` if the browser is Edge and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.browser.isEdge()) {
@@ -1389,11 +1327,13 @@ if (chatgpt.browser.isEdge()) {
 }
 ```
 
-### isBrave
+#
+
+#### `isBrave()`
 
 Returns a boolean value. `true` if the browser is Brave and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.browser.isBrave()) {
@@ -1401,11 +1341,13 @@ if (chatgpt.browser.isBrave()) {
 }
 ```
 
-### isFirefox
+#
+
+#### `isFirefox()`
 
 Returns a boolean value. `true` if the browser is Firefox and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.browser.isFirefox()) {
@@ -1413,11 +1355,13 @@ if (chatgpt.browser.isFirefox()) {
 }
 ```
 
-### isFullScreen
+#
+
+#### `isFullScreen()`
 
 Returns a boolean value. `true` if the browser is fullscreen and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.browser.isFullScreen()) {
@@ -1425,11 +1369,13 @@ if (chatgpt.browser.isFullScreen()) {
 }
 ```
 
-### isMobile
+#
+
+#### `isMobile()`
 
 Returns a boolean value. `true` if the browser is mobile and `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.browser.isMobile()) {
@@ -1439,15 +1385,15 @@ if (chatgpt.browser.isMobile()) {
 
 ## code `api`
 
-### minify `async`
+#### `minify()` `async`
 
 Asks ChatGPT to minify the given code.
 
-**Parameters**:
+Parameters:
 
 `code`: A string being the code to be minified.
 
-Example code:
+Example:
 
 ```js
 (async () => {
@@ -1461,167 +1407,181 @@ Example code:
             }
             replyBox.style.height = replyBox.scrollHeight + 'px'
             prevLength = newLength
-        }`);
-    chatgpt.alert(minifiedCode);
+        }`)
+    chatgpt.alert(minifiedCode)
 
     /* Alerts:
-    'function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}' */
-})();
+    'function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto'if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px'prevLength=n}' */
+})()
 ```
 
-### execute `async`
+#
+
+#### `execute()` `async`
 
 Asks ChatGPT to execute the given code.
 
-**Parameters**:
+Parameters:
 
 `code`: A string being the code to execute.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    chatgpt.alert(await chatgpt.code.execute('return 6 + 5')); // logs '11'
-})();
+    chatgpt.alert(await chatgpt.code.execute('return 6 + 5')) // logs '11'
+})()
 ```
 
-### extract
+#
+
+#### `extract()`
 
 Extracts pure code from response.
 
-**Parameters**:
+Parameters:
 
 `msg`: A string being the response to extract code from.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    chatgpt.send('What is a short script to delete files?');
-    await chatgpt.isIdle();
+    chatgpt.send('What is a short script to delete files?')
+    await chatgpt.isIdle()
     const response = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'),
-          scriptCode = chatgpt.code.extract(response);
-    chatgpt.alert(scriptCode);
+          scriptCode = chatgpt.code.extract(response)
+    chatgpt.alert(scriptCode)
 
     /* Alerts:    
-    const fs = require('fs');
+    const fs = require('fs')
 
     // Specify the path of the file(s) you want to delete
-    const filePath = 'path/to/your/file.txt';
+    const filePath = 'path/to/your/file.txt'
 
     // Delete the file
     fs.unlink(filePath, (err) => {
         if (err) {
-            console.error('Error deleting file:', err);
+            console.error('Error deleting file:', err)
         } else {
-            chatgpt.alert('File deleted successfully');
+            chatgpt.alert('File deleted successfully')
         }
-    }); */
-})();
+    }) */
+})()
 ```
 
-### isIdle `async`
+#
+
+#### `isIdle()` `async`
 
 Resolves a promise when code has finished generating.
 
-**Parameters**:
+Parameters:
 
 `timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until code generation finishes.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    chatgpt.send('Type me a short code block');
-    await chatgpt.code.isIdle();
-    chatgpt.alert('Code finished generating'); // non-code may still be generating
-})();
+    chatgpt.send('Type me a short code block')
+    await chatgpt.code.isIdle()
+    chatgpt.alert('Code finished generating') // non-code may still be generating
+})()
 ```
 
-### obfuscate `async`
+#
+
+#### `obfuscate()` `async`
 
 Asks ChatGPT to obfuscate the given code.
 
-**Parameters**:
+Parameters:
 
 `code`: A string being the code to obfuscate.
 
-Example code:
+Example:
 
 ```js
 (async () => {
     const code = `window[elem].addEventListener('mouseover', toggleTooltip)`
-    const obfuscatedCode = await chatgpt.code.obfuscate(code);
-    chatgpt.alert(obfuscatedCode);
+    const obfuscatedCode = await chatgpt.code.obfuscate(code)
+    chatgpt.alert(obfuscatedCode)
 
     /* Alerts:
-    '(window[elem])[btoa('YWxlcnRWaWV3')](btoa('bW91c2VyYm94ZXJOYW1l'), btoa('dG9nZ2VkT3V0d2FsbA==')); */
-})();
+    '(window[elem])[btoa('YWxlcnRWaWV3')](btoa('bW91c2VyYm94ZXJOYW1l'), btoa('dG9nZ2VkT3V0d2FsbA==')) */
+})()
 ```
 
-### refactor `async`
+#
+
+#### `refactor()` `async`
 
 Asks ChatGPT to refactor the given code.
 
-**Parameters**:
+Parameters:
 
 `code`: A string being the code to refactor.
 
 `objective` (optional): A string representing the objective of the refactoring. Defaults to `brevity`.
 
-Example code:
+Example:
 
 ```js
 (async () => {
     const code =  `
         if (6 > 5) {
-            return true;
+            return true
         } else {
-            return false;
-        }`;
-    const refactoredCode = await chatgpt.code.refactor(code, 'brevity');
-    chatgpt.alert(refactoredCode);
+            return false
+        }`
+    const refactoredCode = await chatgpt.code.refactor(code, 'brevity')
+    chatgpt.alert(refactoredCode)
 
     /* Alerts:
-    return 6 > 5; */
-})();
+    return 6 > 5 */
+})()
 ```
 
-### review `async`
+#
+
+#### `review()` `async`
 
 Asks ChatGPT to review given code.
 
-**Parameters**:
+Parameters:
 
 `code`: A string being the code to review.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    chatgpt.alert(await chatgpt.code.review('btoa("Hello World")'));
+    chatgpt.alert(await chatgpt.code.review('btoa("Hello World")'))
 
     /* Example output:
     The code appears to be correct. It uses the `btoa` function to encode the string "Hello World" in base64. */
-})();
+})()
 ```
 
-### unminify `async`
+#
+
+#### `unminify()` `async`
 
 Asks ChatGPT to unminify the given code.
 
-**Parameters**:
+Parameters:
 
 `code`: A string being the code to unminify.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    const code = `function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto';if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px';prevLength=n}`;
+    const code = `function autosizeBox(){const n=replyBox.value.length;if(n<prevLength){replyBox.style.height='auto'if(parseInt(getComputedStyle(replyBox).height)<55){replyBox.style.height='2.15rem'}}replyBox.style.height=replyBox.scrollHeight+'px'prevLength=n}`
 
-    const minifiedCode = await chatgpt.code.unminify(code);
-    chatgpt.alert(minifiedCode);
+    const minifiedCode = await chatgpt.code.unminify(code)
+    chatgpt.alert(minifiedCode)
 
     /* Alerts:
     function autosizeBox() {
@@ -1634,63 +1594,71 @@ Example code:
         replyBox.style.height = replyBox.scrollHeight + 'px'
         prevLength = newLength
     }` */
-})();
+})()
 ```
 
-### write `async`
+#
+
+#### `write()` `async`
 
 Asks ChatGPT to write code given a prompt.
 
-**Parameters**:
+Parameters:
 
 `prompt`: A string describing the code to generate.
 
 `outputLang`: A string representing the code language to generate the prompt with.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    const code = await chatgpt.code.write('Repeat a task every 10 seconds', 'javascript');
-    chatgpt.alert(code);
+    const code = await chatgpt.code.write('Repeat a task every 10 seconds', 'javascript')
+    chatgpt.alert(code)
 
     /* Alerts:
     setInterval(function() {
         // Your task code here
-    }, 10000); */
-})();
+    }, 10000) */
+})()
 ```
 
 ## footer `api`
 
 API related to the footer.
 
-### get
+#
+
+#### `get()`
 
 Returns the footer div as an HTML element.
 
-Example code:
+Example:
 
 ```js
-const footerDiv = chatgpt.footer.get();
-footerDiv.style.padding = '15px'; // make the footer taller
+const footerDiv = chatgpt.footer.get()
+footerDiv.style.padding = '15px' // make the footer taller
 ```
 
-### hide
+#
+
+#### `hide()`
 
 Hides the footer div.
 
-Example code:
+Example:
 
 ```js
 chatgpt.footer.hide()
 ```
 
-### show
+#
+
+#### `show()`
 
 Shows the footer div if hidden.
 
-Example code:
+Example:
 
 ```js
 chatgpt.footer.show()
@@ -1700,32 +1668,38 @@ chatgpt.footer.show()
 
 API related to the header.
 
-### get
+#
+
+#### `get()`
 
 Returns the header div as an HTML element.
 
-Example code:
+Example:
 
 ```js
-const headerDiv = chatgpt.header.get();
-headerDiv.style.display = none; // hide the header
+const headerDiv = chatgpt.header.get()
+headerDiv.style.display = none // hide the header
 ```
 
-### hide
+#
+
+#### `hide()`
 
 Hides the header div.
 
-Example code:
+Example:
 
 ```js
 chatgpt.header.hide()
 ```
 
-### show
+#
+
+#### `show()`
 
 Shows the header div if hidden.
 
-Example code:
+Example:
 
 ```js
 chatgpt.header.show()
@@ -1735,156 +1709,196 @@ chatgpt.header.show()
 
 API related to the chat history.
 
-### isLoaded `async`
+#
+
+#### `isLoaded()` `async`
 
 Resolves a promise when chat history has finished loading.
 
-**Parameters**:
+Parameters:
 
 `timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits indefinitely until chat history finishes loading.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    await chatgpt.history.isLoaded();
-    chatgpt.alert('ChatGPT history has finished loading.');
-})();
+    await chatgpt.history.isLoaded()
+    chatgpt.alert('ChatGPT history has finished loading.')
+})()
 ```
 
 ## instructions `api`
 
-### add `async`
+#### `add()` `async`
 
 Adds a custom instruction for either the user or ChatGPT.
 
-**Parameters**:
+Parameters:
 
 `instruction`: A string being the instruction to be added.
 
 `target`: A string representing the target of the instruction. Can be either `user` or `chatgpt`.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    await chatgpt.instructions.add('Detailed and well-explained answers', 'chatgpt');
-})();
+    await chatgpt.instructions.add('Detailed and well-explained answers', 'chatgpt')
+})()
 ```
 
-### clear `async`
+#
+
+#### `clear()` `async`
 
 Clears the custom instructions of either the user or ChatGPT.
 
-**Parameters**:
+Parameters:
 
 `target`: A string representing the target of the instruction. Can be either `user` or `chatgpt`.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    await chatgpt.instructions.clear('user');
-})();
+    await chatgpt.instructions.clear('user')
+})()
 ```
 
-### turnOff `async`
+#
+
+#### `turnOff()` `async`
 
 Turns off custom instructions.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    await chatgpt.instructions.turnOff();
-})();
+    await chatgpt.instructions.turnOff()
+})()
 ```
 
-### turnOn `async`
+#
+
+#### `turnOn()` `async`
 
 Turns on custom instructions.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    await chatgpt.instructions.turnOn();
-})();
+    await chatgpt.instructions.turnOn()
+})()
 ```
 
-### toggle `async`
+#
+
+#### `toggle()` `async`
 
 Toggles on/off custom instructions.
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    await chatgpt.instructions.toggle();
-})();
+    await chatgpt.instructions.toggle()
+})()
 ```
 
 ## menu `api`
 
 The small menu that shows up when clicking on the account button.
 
-### open
+#
+
+#### `toggle()`
+
+Toggles the menu.
+
+Example:
+
+```js
+chatgpt.menu.toggle()
+```
+
+#
+
+#### `open()`
 
 Opens the menu.
 
-Example code:
+Example:
 
 ```js
-chatgpt.menu.open();
+chatgpt.menu.open()
 ```
 
-### close
+#
+
+#### `close()`
 
 Closes the menu.
 
-Example code:
+Example:
 
 ```js
-chatgpt.menu.close();
+chatgpt.menu.close()
 ```
 
 ## response `api`
 
 API related to ChatGPT's responses.
 
-### continue
+#
+
+#### `continue()`
 
 Continues the generation of ChatGPT's cut-off response.
 
-Example code:
+Example:
 
 ```js
-chatgpt.response.continue();
+chatgpt.response.continue()
 ```
 
-### get
+#
+
+#### `get()`
 
 If it's a previously created chat, see [chatgpt.getResponseFromDOM](#getresponsefromdom)
 
 If it's a new chat, see [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
 
-### getFromAPI `async`
+#
+
+#### `getFromAPI()` `async`
 
 See [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
 
-### getFromDOM
+#
+
+#### `getFromDOM()`
 
 See [chatgpt.getResponseFromDOM](#getresponsefromdom)
 
-### getLast `async`
+#
+
+#### `getLast()` `async`
 
 See [chatgpt.getLastResponse](#getlastresponse-async)
 
-### regenerate
+#
+
+#### `regenerate()`
 
 See [chatgpt.regenerate](#regenerate)
 
-### stopGenerating
+#
+
+#### `stopGenerating()`
 
 See [chatgpt.stop](#stop)
 
@@ -1892,29 +1906,37 @@ See [chatgpt.stop](#stop)
 
 API for interfacing with ChatGPT user settings.
 
-### scheme `api subset`
+#
 
-#### isDark
+#### `scheme()``api subset`
+
+##
+
+#### `isDark()`
 
 Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
-chatgpt.alert(chatgpt.settings.scheme.isDark()); // logs `true` or `false`
+chatgpt.alert(chatgpt.settings.scheme.isDark()) // logs `true` or `false`
 ````
 
-#### isLight
+##
+
+#### `isLight()`
 
 Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
-chatgpt.alert(chatgpt.settings.scheme.isLight()); // logs `true` or `false`
+chatgpt.alert(chatgpt.settings.scheme.isLight()) // logs `true` or `false`
 ````
 
-#### set
+##
+
+#### `set()`
 
 Sets the theme to `light`, `dark` or `system`.
 
@@ -1922,96 +1944,48 @@ Sets the theme to `light`, `dark` or `system`.
 
 `value`: A string being the value to set the theme to.
 
-Example code:
+Example:
 
 ```js
-chatgpt.settings.scheme.set('dark');
+chatgpt.settings.scheme.set('dark')
 ```
 
-#### toggle
+##
+
+#### `toggle()`
 
 Toggles the theme between light and dark mode.
 
-Example code:
+Example:
 
 ```js
-chatgpt.settings.scheme.toggle();
+chatgpt.settings.scheme.toggle()
 ```
 
 ## sidebar `api`
 
 API related to the sidebar's behavior.
 
-### append
+#
 
-Appends a new element to the sidebar. Returns the `id` property of the element.
-
-**Parameters**:
-
-`element`: A string being the name of the element to append.
-
-Currently supported elements are [`button`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) and [`dropdown`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
-
-`attrs`: An object which contains the attributes of the element to append.
-
-_**Attributes for `button`**_
-
-`label`: A string being the label (displayed text) of the button. Defaults to `chatgpt.js button`.
-
-`icon`: A string being either a url to an image or a base64 encoded string of the image data. Defaults to [this icon](https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/starters/chrome/extension/icons/icon128.png).
-
-`onclick`: A function which is called when the button is clicked. Defaults to `function() {}`.
-
-_**Attributes for `dropdown`**_
-
-`items`: An array of objects where the `text` key is the displayed text of the option, and the `value` key is the value of the option.
-
-Example item object:
-
-```js
-{
-    text: 'The text to display in the option',
-    value: 'The value of the option'
-}
-```
-
-Example code:
-
-```js
-const buttonId = chatgpt.sidebar.append('button', {
-    label: 'I am a button!',
-    icon: 'https://chat.openai.com/favicon-32x32.png',
-    onclick: function() {
-        chatgpt.alert('Clicked!');
-    }
-});
-chatgpt.alert(buttonId); // Example output: 1693295258727
-
-const dropdownId = chatgpt.sidebar.append('dropdown', {
-    items: [
-        { text: 'Hello world', value: 'helloworld' },
-        { text: 'Hello there', value: 'hellothere' }
-    ]
-});
-chatgpt.alert(dropdownId); // Example output: 1693294795240
-```
-
-### exists
+#### `exists()`
 
 Returns a boolean value. `true` if the sidebar exists , `false` otherwise (e.g. logged out UI).
 
-Example code:
+Example:
 
 ```js
 if (!chatgpt.sidebar.exists())
     chatgpt.alert('Sidebar is missing!')
 ```
 
-### isOn
+#
+
+#### `isOn()`
 
 Returns a boolean value. `true` if the sidebar is open, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.sidebar.isOn()) {
@@ -2019,11 +1993,13 @@ if (chatgpt.sidebar.isOn()) {
 }
 ```
 
-### isOff
+#
+
+#### `isOff()`
 
 Returns a boolean value. `true` if the sidebar is closed, `false` otherwise.
 
-Example code:
+Example:
 
 ```js
 if (chatgpt.sidebar.isOff()) {
@@ -2031,55 +2007,63 @@ if (chatgpt.sidebar.isOff()) {
 }
 ```
 
-### hide
+#
+
+#### `hide()`
 
 Hides the sidebar.
 
-Example code:
+Example:
 
 ```js
-chatgpt.sidebar.hide();
+chatgpt.sidebar.hide()
 ```
 
-### show
+#
+
+#### `show()`
 
 Shows the sidebar.
 
-Example code:
+Example:
 
 ```js
-chatgpt.sidebar.show();
+chatgpt.sidebar.show()
 ```
 
-### toggle
+#
+
+#### `toggle()`
 
 Toggles the visibility of the sidebar.
 
-Example code:
+Example:
 
 ```js
-chatgpt.sidebar.toggle();
+chatgpt.sidebar.toggle()
 ```
 
-### isLoaded `async`
+#
+
+#### `isLoaded()` `async`
 
 Resolves a promise when the ChatGPT sidebar has finished loading.
 
-**Parameters**:
+Parameters:
 
 `timeout` (optional): An integer specifying the number of milliseconds to wait before resolving with `false`. If not provided, waits 5s or until New Chat link appears (since it is not always present).
 
-Example code:
+Example:
 
 ```js
 (async () => {
-    await chatgpt.sidebar.isLoaded();
-    chatgpt.alert('ChatGPT sidebar has finished loading.');
-})();
+    await chatgpt.sidebar.isLoaded()
+    chatgpt.alert('ChatGPT sidebar has finished loading.')
+})()
 ```
 
 <br>
 <br>
 
 [Discuss](https://github.com/KudoAI/chatgpt.js/discussions) /
-<a href="#">Back to top ↑</a>
+<a href="#top">Back to top ↑</a>

@@ -4,20 +4,19 @@ on:
   push:
     branches: [main]
 
-permissions:
-  contents: read
-
 jobs:
   build:
     if: (github.repository == 'KudoAI/chatgpt.js')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
     env:
       TZ: PST8PDT
 
     steps:
 
       - name: Checkout KudoAI/chatgpt.js
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v6.0.2
         with:
           fetch-depth: 0
 

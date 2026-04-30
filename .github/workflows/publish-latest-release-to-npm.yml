@@ -4,21 +4,16 @@ on:
   push:
     tags: ["v*"]
 
-permissions:
-  contents: read
-  id-token: write
-
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  publish:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      id-token: write
     steps:
-      - uses: actions/checkout@v5.0.0
-      - uses: actions/setup-node@v6.0.0
+      - uses: actions/checkout@v6.0.2
+      - uses: actions/setup-node@v6.4.0
         with:
-          node-version: 'lts/*'
+          node-version: 24
           registry-url: "https://registry.npmjs.org"
-      - run: npm install -g npm
-      - run: npm ci
-      - run: npm publish --access public --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_PAT }}
+      - run: npm ci && npm publish --provenance

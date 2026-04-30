@@ -1,10 +1,10 @@
 {
   "name": "@kudoai/chatgpt.js",
-  "version": "3.8.4",
+  "version": "3.9.0",
   "description": "Client-side JavaScript library for ChatGPT",
   "author": {
     "name": "KudoAI & contributors",
-    "email": "opensource@kudoai.com",
+    "email": "contact@kudoai.com",
     "url": "https://www.kudoai.com"
   },
   "homepage": "https://chatgpt.js.org",
@@ -13,20 +13,19 @@
     {
       "type": "github",
       "url": "http://github.com/sponsors/KudoAI"
-    },
-    {
-      "type": "paypal",
-      "url": "http://paypal.biz/kudoai"
     }
   ],
-  "browser": "chatgpt.js",
+  "main": "dist/chatgpt.min.js",
   "files": [
-    "chatgpt.js",
-    "dist/chatgpt.min.js",
-    "docs/*.md",
-    "starters/",
-    "!starters/**/docs/*/"
+    "src/chatgpt.js",
+    "dist/",
+    "docs/*.md"
   ],
+  "bin": {
+    "chatgpt-js": "dist/cli/index.js",
+    "chatgpt": "dist/cli/index.js",
+    "cjs": "dist/cli/index.js"
+  },
   "scripts": {
     "prepare": "husky",
     "dev:docs": "node utils/preview-docs",
@@ -34,12 +33,12 @@
     "lint:all": "eslint .",
     "lint:fix": "eslint . --fix --cache",
     "lint:fix-all": "eslint . --fix",
-    "translate": "py utils/translate-en-messages.py",
-    "build:js": "bash utils/build.sh",
-    "build:js-docs": "minify-js docs --no-mangle",
-    "build:docs-js": "minify-js docs --no-mangle",
+    "translate": "translate-messages",
+    "build": "bash utils/build.sh",
+    "build:js": "npm run build",
+    "build:js-docs": "minify-js docs/assets/js/src docs/assets/js/min --no-mangle",
+    "build:docs-js": "npm run build:js-docs",
     "build:css": "scss-to-css . dist",
-    "preview:docs": "node utils/preview-docs",
     "bump:patch": "bash utils/bump.sh patch",
     "bump:minor": "bash utils/bump.sh minor",
     "bump:major": "bash utils/bump.sh major",
@@ -72,20 +71,24 @@
     "openai"
   ],
   "bugs": "https://github.com/KudoAI/chatgpt.js/issues",
+  "dependencies": {
+    "console-table-printer": "^2.15.0",
+    "is-unicode-supported": "^2.1.0",
+    "non-latin-locales": "^1.0.1"
+  },
   "devDependencies": {
-    "@adamlui/minify.js": "^1.8.6",
-    "@adamlui/scss-to-css": "^1.10.44",
-    "@eslint/css": "^0.14.1",
-    "@eslint/json": "^0.14.0",
-    "@eslint/markdown": "^7.5.1",
-    "@html-eslint/eslint-plugin": "^0.48.0",
-    "@html-eslint/parser": "^0.48.0",
-    "@stylistic/eslint-plugin": "^5.5.0",
-    "eslint": "^9.39.1",
+    "@adamlui/minify.js": "^2.5.3",
+    "@adamlui/scss-to-css": "^2.4.4",
+    "@eslint/css": "^1.1.0",
+    "@eslint/json": "^1.2.0",
+    "@eslint/markdown": "^8.0.1",
+    "@html-eslint/eslint-plugin": "^0.60.0",
+    "@html-eslint/parser": "^0.60.0",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^9.39.4",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-regexp": "^2.10.0",
-    "eslint-plugin-yml": "^1.19.0",
-    "get-port": "^7.1.0",
+    "eslint-plugin-regexp": "^3.1.0",
+    "get-port": "^7.2.0",
     "husky": "^9.1.7"
   }
 }

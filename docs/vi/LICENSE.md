@@ -7,26 +7,19 @@
             </picture>
         </a>
         Việt |
-        <a href="../../LICENSE.md">English</a> |
+        <a href="../LICENSE.md">English</a> |
         <a href="../zh-cn/LICENSE.md">简体中文</a> |
         <a href="../zh-tw/LICENSE.md">繁體中文</a> |
         <a href="../ja/LICENSE.md">日本</a> |
         <a href="../ko/LICENSE.md">한국인</a> |
         <a href="../hi/LICENSE.md">हिंदी</a> |
-        <a href="../ne/LICENSE.md">नेपाली</a> |
-        <a href="../de/LICENSE.md">Deutsch</a> |
-        <a href="../es/LICENSE.md">Español</a> |
-        <a href="../fr/LICENSE.md">Français</a> |
-        <a href="../it/LICENSE.md">Italiano</a> |
-        <a href="../nl/LICENSE.md">Nederlands</a> |
-        <a href="../pt/LICENSE.md">Português</a> |
-        <a href="../ru/LICENSE.md">Английский</a>
+        <a href="../ne/LICENSE.md">नेपाली</a>
     </h6>
 </div>
 
 # Giấy phép MIT
 
-Bản quyền © 2023–2025 [KudoAI](https://github.com/KudoAI) & [người đóng góp](.#-người-đóng-góp)
+Bản quyền © 2023–2026 [KudoAI](https://github.com/KudoAI) & [người đóng góp](.#-người-đóng-góp)
 
 Giấy phép được cấp miễn phí cho bất kỳ người nào có được một bản sao của phần mềm này và các tệp tài liệu liên quan ("Phần mềm"), để xử lý trong Phần mềm mà không bị hạn chế, bao gồm nhưng không giới hạn các quyền để sử dụng, sao chép, sửa đổi, hợp nhất, xuất bản, phân phối, cấp phép lại và/hoặc bán các bản sao của Phần mềm và để cho phép những người mà Phần mềm được được trang bị để làm như vậy, với các điều kiện sau đây:
 

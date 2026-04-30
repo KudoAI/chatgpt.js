@@ -7,19 +7,19 @@ on:
       - README.md
       - docs/README.md
 
-permissions:
-  contents: read
-
 jobs:
   build:
-    if: (github.repository == 'KudoAI/chatgpt.js') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
-    runs-on: ubuntu-latest
+    if: (github.repository == 'KudoAI/chatgpt.js') && !contains(github.event.head_commit.message, '[auto-sync')
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
     env:
       TZ: PST8PDT
 
     steps:
+
       - name: Checkout KudoAI/chatgpt.js
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v6.0.2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
           path: KudoAI/chatgpt.js
@@ -40,9 +40,10 @@ jobs:
         env:
           COMMIT_MSG: ${{ github.event.head_commit.message }}
         run: |
-          echo "ESCAPED_MSG<<EOF" >> $GITHUB_ENV
-          echo "$COMMIT_MSG" | sed 's/`/\`/g' >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          DELIM="EOF_$(uuidgen)"
+          echo "ESCAPED_MSG<<$DELIM" >> "$GITHUB_ENV"
+          echo "$COMMIT_MSG" | sed 's/`/\`/g' >> "$GITHUB_ENV"
+          echo "$DELIM" >> "$GITHUB_ENV"
 
       - name: Config committer
         env:
@@ -58,7 +59,6 @@ jobs:
       - name: Push changes to KudoAI/chatgpt.js
         run: |
           cd ${{ github.workspace }}/KudoAI/chatgpt.js
-          git pull # again to sync w/ concurrent workflow updates
-          git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from $SYNC_SRC/]" || true
+          git add . && git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from $SYNC_SRC/]" || true
+          git pull --rebase
           git push
