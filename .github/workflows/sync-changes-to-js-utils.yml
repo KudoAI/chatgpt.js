@@ -1,0 +1,49 @@
+name: Sync changes to adamlui/js-utils
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    if: (github.repository == 'KudoAI/chatgpt.js') && !contains(github.event.head_commit.message, '[auto-sync')
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    env:
+      TZ: PST8PDT
+    steps:
+      - uses: actions/checkout@v6.0.2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          path: KudoAI/chatgpt.js
+      - uses: actions/checkout@v6.0.2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/js-utils
+          path: adamlui/js-utils
+      - run: |
+          rsync -avhc --delete --include '.chatgpt.config.mjs' --exclude '.*' \
+            ${{ github.workspace }}/KudoAI/chatgpt.js/ \
+            ${{ github.workspace }}/adamlui/js-utils/chatgpt.js/
+      - env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          DELIM="EOF_$(uuidgen)"
+          echo "ESCAPED_MSG<<$DELIM" >> "$GITHUB_ENV"
+          echo "$COMMIT_MSG" | sed 's/`/\`/g' >> "$GITHUB_ENV"
+          echo "$DELIM" >> "$GITHUB_ENV"
+      - env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PRIVATE_ID: ${{ secrets.GPG_PRIVATE_ID }}
+        run: |
+          gpg --batch --import <(echo "$GPG_PRIVATE_KEY")
+          git config --global commit.gpgsign true
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git config --global user.signingkey "$GPG_PRIVATE_ID"
+      - run: |
+          cd ${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter
+          git commit -a -n -m "$ESCAPED_MSG ↞ [auto-sync from https://github.com/KudoAI/chatgpt.js]" || true
+          git pull --rebase
+          git push
