@@ -72,7 +72,7 @@ npm install @kudoai/chatgpt.js
 [web-usage]: #-web
 
 ```js
-<script src="https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@4/dist/chatgpt.min.js"></script>
 ```
 
 #### [<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/tampermonkey/icon28.png" title="Tampermonkey">][greasemonkey-usage][<img height="15" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/violentmonkey/icon25.png" title="Violentmonkey">][greasemonkey-usage][<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/scriptcat/icon32.png" title="ScriptCat">][greasemonkey-usage][<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/orangemonkey/icon16.png" title="OrangeMonkey">][greasemonkey-usage][<img height="14" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/stay/icon32.png" title="Stay">][greasemonkey-usage][<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/userscripts/icon32.png" title="Userscripts">][greasemonkey-usage] Greasemonkey:
@@ -83,7 +83,7 @@ npm install @kudoai/chatgpt.js
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js
+// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@4/dist/chatgpt.min.js
 // ==/UserScript==
 ```
 
@@ -91,7 +91,7 @@ npm install @kudoai/chatgpt.js
 
 > **Ghi chú** _Để sử dụng mẫu khởi đầu: [KudoAI/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
-1. Lưu https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js vào thư mục `lib`
+1. Lưu https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@4/dist/chatgpt.min.js vào thư mục `lib`
 
 2. Trong tệp `manifest.json` của dự án (phiên bản 3), thêm `lib/chatgpt.min.js` làm tài nguyên có thể truy cập trên web.
 
@@ -164,7 +164,7 @@ console.log(await chatgpt.send('sup'))
 (async () => {
     await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
 
-    await chatgpt.isIdle()
+    await chatgpt.isLoaded()
     console.log('ChatGPT is ready!') 
 })()
 ```
@@ -178,7 +178,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 Hướng dẫn sử dụng chi tiết:
 
-<https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.0.2/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -479,7 +479,7 @@ Mọi đóng góp đều được hoan nghênh!
 <div align="center">
 
 **[Các bản phát hành mới nhất](https://github.com/KudoAI/chatgpt.js/releases)** /
-[Hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) /
+[Hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/v4.0.2/docs/USERGUIDE.md) /
 [Nhận hỗ trợ](https://github.com/KudoAI/chatgpt.js/issues) /
 [Bàn luận](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#top">Trở lại đầu trang ↑</a>

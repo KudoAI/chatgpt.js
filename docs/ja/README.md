@@ -72,7 +72,7 @@ npm install @kudoai/chatgpt.js
 [web-usage]: #-web
 
 ```js
-<script src="https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@4/dist/chatgpt.min.js"></script>
 ```
 
 #### [<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/tampermonkey/icon28.png" title="Tampermonkey">][greasemonkey-usage][<img height="15" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/violentmonkey/icon25.png" title="Violentmonkey">][greasemonkey-usage][<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/scriptcat/icon32.png" title="ScriptCat">][greasemonkey-usage][<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/orangemonkey/icon16.png" title="OrangeMonkey">][greasemonkey-usage][<img height="14" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/stay/icon32.png" title="Stay">][greasemonkey-usage][<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/userscripts/icon32.png" title="Userscripts">][greasemonkey-usage] Greasemonkey:
@@ -82,7 +82,7 @@ npm install @kudoai/chatgpt.js
 > **注** _スターターテンプレートを使用するには： [KudoAI/chatgpt.js-greasemonkey-starter](https://github.com/KudoAI/chatgpt.js-greasemonkey-starter)_
 
 ```js
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js
+// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@4/dist/chatgpt.min.js
 // ==/UserScript==
 ```
 
@@ -90,7 +90,7 @@ npm install @kudoai/chatgpt.js
 
 > **注** _スターターテンプレートを使用するには： [KudoAI/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
-1. https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js を `lib` に保存します。
+1. https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@4/dist/chatgpt.min.js を `lib` に保存します。
 
 2. プロジェクト（V3）の`manifest.json`に、`lib/chatgpt.min.js`をWebアクセス可能なリソースとして追加します。
 
@@ -164,7 +164,7 @@ console.log(await chatgpt.send('sup'))
 (async () => {
     await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
 
-    await chatgpt.isIdle()
+    await chatgpt.isLoaded()
     console.log('ChatGPT is ready!') 
 })()
 ```
@@ -178,7 +178,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 拡張版ユーザーガイド：
 
-<https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.0.2/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -479,7 +479,7 @@ ChatGPTの応答を自動再生。
 <div align="center">
 
 **[最新リリース](https://github.com/KudoAI/chatgpt.js/releases)** /
-[ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) /
+[ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/v4.0.2/docs/USERGUIDE.md) /
 [サポートを受ける](https://github.com/KudoAI/chatgpt.js/issues) / 
 [議論](https://github.com/KudoAI/chatgpt.js/discussions) / 
 <a href="#top">トップに戻る ↑</a>

@@ -72,7 +72,7 @@ npm install @kudoai/chatgpt.js
 [web-usage]: #-web
 
 ```js
-<script src="https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@4/dist/chatgpt.min.js"></script>
 ```
 
 #### [<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/tampermonkey/icon28.png" title="Tampermonkey">][greasemonkey-usage][<img height="15" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/violentmonkey/icon25.png" title="Violentmonkey">][greasemonkey-usage][<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/scriptcat/icon32.png" title="ScriptCat">][greasemonkey-usage][<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/orangemonkey/icon16.png" title="OrangeMonkey">][greasemonkey-usage][<img height="14" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/stay/icon32.png" title="Stay">][greasemonkey-usage][<img height="13" src="https://cdn.jsdelivr.net/gh/adamlui/userscripts@2793398/assets/images/icons/userscript-managers/userscripts/icon32.png" title="Userscripts">][greasemonkey-usage] Greasemonkey:
@@ -83,7 +83,7 @@ npm install @kudoai/chatgpt.js
 
 ```js
 ...
-// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js
+// @require https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@4/dist/chatgpt.min.js
 // ==/UserScript==
 ```
 
@@ -91,7 +91,7 @@ npm install @kudoai/chatgpt.js
 
 > **नोट** _स्टार्टर टेम्प्लेट प्रयोग गर्न: [KudoAI/chatgpt.js-chrome-starter](https://github.com/KudoAI/chatgpt.js-chrome-starter)_
 
-१. https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@3/dist/chatgpt.min.js लाई `lib` मा सेभ गर्नुहोस्।
+१. https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@4/dist/chatgpt.min.js लाई `lib` मा सेभ गर्नुहोस्।
 
 २. परियोजनाको (V3) `manifest.json` मा, वेब पहुँचयोग्य स्रोतको रूपमा `lib/chatgpt.min.js` थप्नुहोस्।
 
@@ -164,7 +164,7 @@ console.log(await chatgpt.send('sup'))
 (async () => {
     await import(chrome.runtime.getURL('lib/chatgpt.min.js'))
 
-    await chatgpt.isIdle()
+    await chatgpt.isLoaded()
     console.log('ChatGPT is ready!') 
 })()
 ```
@@ -178,7 +178,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 विस्तारित प्रयोगकर्ता गाइड:
 
-<https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.0.2/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -479,7 +479,7 @@ ChatGPT प्रतिक्रियाहरू स्वतः प्ले 
 <div align="center">
 
 **[पछिल्ला रिलिजहरू](https://github.com/KudoAI/chatgpt.js/releases)** /
-[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v3.9.0/docs/USERGUIDE.md) /
+[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v4.0.2/docs/USERGUIDE.md) /
 [समर्थन प्राप्त गर्नुहोस्](https://github.com/KudoAI/chatgpt.js/issues) / 
 [चर्चा](https://github.com/KudoAI/chatgpt.js/discussions) / 
 <a href="#top">शीर्षमा जाऔं ↑</a>
