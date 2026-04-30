@@ -19,4 +19,4 @@
 
 # セキュリティポリシー
 
-脆弱性を発見した場合は、https://tidelift.com/security の報告手順に従ってください。
+脆弱性を見つけた場合は、<security@kudoai.com> までメールにてご連絡ください。
