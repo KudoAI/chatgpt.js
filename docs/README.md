@@ -177,7 +177,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 Extended userguide:
 
-<https://github.com/KudoAI/chatgpt.js/blob/v4.0.1/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.0.2/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -478,7 +478,7 @@ All contributions are very welcome!
 <div align="center">
 
 **[Latest releases](https://github.com/KudoAI/chatgpt.js/releases)** /
-[Userguide](https://github.com/KudoAI/chatgpt.js/blob/v4.0.1/docs/USERGUIDE.md) /
+[Userguide](https://github.com/KudoAI/chatgpt.js/blob/v4.0.2/docs/USERGUIDE.md) /
 [Get support](https://github.com/KudoAI/chatgpt.js/issues) /
 [Discuss](https://github.com/KudoAI/chatgpt.js/discussions) /
 [Back to top ↑](#top)
