@@ -1858,19 +1858,6 @@ const chatgpt = {
 
 chatgpt.scheme = { ...chatgpt.settings.scheme } // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
 
-// Prefix console logs w/ '🤖 chatgpt.js >> '
-const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info
-console.error = (...args) => {
-    if (typeof args[0] == 'string') {
-        if (!args[0].startsWith(consolePrefix)) ogError(consolePrefix + args[0], ...args.slice(1))
-        else ogError(...args)
-    } else ogError(consolePrefix, ...args)
-}
-console.info = (msg) => {
-    if (!msg.startsWith(consolePrefix)) ogInfo(consolePrefix + msg)
-    else ogInfo(msg)
-}
-
 // Export chatgpt object
 try { window.chatgpt = chatgpt } catch (err) {} // for Greasemonkey
 try { module.exports = chatgpt } catch (err) {} // for CommonJS
