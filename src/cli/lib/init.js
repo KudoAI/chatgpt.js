@@ -43,7 +43,8 @@ module.exports = {
         Object.assign(globalThis.env ??= {}, {
             args: process.argv.slice(2),
             modes: { dev: /[\\/]src(?:[\\/]|$)/i.test(__dirname) },
-            supports: { unicode: require('is-unicode-supported').default() }
+            supports: { unicode: require('is-unicode-supported').default() },
+            width: process.stdout.columns || 80
         })
         env.modes.debug = env.args.some(arg => /^--?(?:V|debug(?:[-_]?mode)?)$/.test(arg))
         env.paths = { libData: `../../${ env.modes.dev ? '..' : 'data' }` }

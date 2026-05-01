@@ -9,7 +9,8 @@
 
     // Import LIBS
     globalThis.log = require('./lib/log')
-    const chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`)
+    const chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
+          loader = require('./lib/loader').create({ width: env.width })
 
     await init.cli()
 
@@ -20,7 +21,17 @@
     else if (cli.config.stats) return log.stats()
 
     if (!chatgpt.config?.apiKeys?.[cli.config.provider])
-        chatgpt.setProvider(cli.config.provider, { key: process.env[`${cli.config.provider.toUpperCase()}_API_KEY`] })
-    await chatgpt.send(cli.config.query, { output: 'stdout' })
+        chatgpt.setProvider(cli.config.provider, {
+            key: process.env[`${cli.config.provider.toUpperCase()}_API_KEY`] })
+
+    // Get AI reply
+    loader.start()
+    try {
+        const resp = await chatgpt.send(cli.config.query, { output: 'stdout' })
+        loader.stop()
+        return resp
+    } finally {
+        loader.stop()
+    }
 
 })()
