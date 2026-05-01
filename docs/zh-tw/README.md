@@ -219,7 +219,7 @@ chatgpt --query "sup"  # or cjs -q sup
 # e.g. => Hey there! What's up?
 ```
 
-擴充使用者指南：
+如需更多選項及範例，請參閱擴充使用者指南：
 
 <https://github.com/KudoAI/chatgpt.js/blob/v4.0.2/docs/USERGUIDE.md>
 
