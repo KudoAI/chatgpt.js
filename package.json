@@ -1,6 +1,6 @@
 {
   "name": "@kudoai/chatgpt.js",
-  "version": "4.0.2",
+  "version": "4.1.0",
   "description": "Client-side JavaScript library for ChatGPT",
   "author": {
     "name": "KudoAI & contributors",
