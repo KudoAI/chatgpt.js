@@ -1539,6 +1539,7 @@ const chatgpt = {
         const {
             provider = 'openrouter', // or 'google'
             stream = true, // return streaming resp if possible, otherwise text
+            onLoadStart = null,
             output = 'return', // or 'stdout'
             systemQuery = '', // for systemPrompt
             color = 'green' // for stdout
@@ -1570,8 +1571,8 @@ const chatgpt = {
             return text
         }
         const reader = resp.body.getReader(), decoder = new TextDecoder()
-        let outputStr = ''
-        if (output == 'stdout') process.stdout.write(respColor)
+        let outputStr = '', activeColor = '', streamStarted = false
+        if (output == 'stdout') { process.stdout.write(respColor) ; activeColor = respColor }
         while (true) {
             const { done, value } = await reader.read()
             if (done) break
@@ -1585,7 +1586,8 @@ const chatgpt = {
                 try {
                     const token = JSON.parse(json).choices?.[0]?.delta?.content
                     if (token) {
-                        if (output == 'stdout') process.stdout.write(token)
+                        if (!streamStarted) { streamStarted = true ; onLoadStart?.() }
+                        if (output == 'stdout') process.stdout.write(activeColor + token)
                         outputStr += token
                     }
                 } catch {}
