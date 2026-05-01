@@ -44,6 +44,6 @@ jobs:
           git config --global user.signingkey "$GPG_PRIVATE_ID"
       - run: |
           cd ${{ github.workspace }}/adamlui/js-utils
-          git commit -a -n -m "$ESCAPED_MSG ↞ [auto-sync from https://github.com/KudoAI/chatgpt.js]" || true
+          git add . && git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from https://github.com/KudoAI/chatgpt.js]" || true
           git pull --rebase
           git push
