@@ -518,6 +518,20 @@ Tự động phát phản hồi của ChatGPT.
 
 Mọi đóng góp đều được hoan nghênh!
 
+<hr>
+
+## 🏛️ Giấy phép
+
+### Giấy phép MIT
+
+**Bản quyền © 2023–2026 [KudoAI](https://github.com/KudoAI) & người đóng góp**
+
+Quyền được cấp miễn phí cho bất kỳ người nào có được bản sao phần mềm này và các tệp tài liệu liên quan (gọi là "Phần mềm"), để sử dụng Phần mềm mà không bị hạn chế, bao gồm nhưng không giới hạn quyền sử dụng, sao chép, sửa đổi, hợp nhất, xuất bản, phân phối, cấp phép lại và/hoặc bán bản sao Phần mềm, và cho phép những người được cung cấp Phần mềm làm như vậy, tuân theo các điều kiện sau:
+
+Thông báo bản quyền và thông báo quyền này phải được bao gồm trong tất cả các bản sao hoặc các phần quan trọng của Phần mềm.
+
+PHẦN MỀM ĐƯỢC CUNG CẤP "NGUYÊN TRẠNG", KHÔNG CÓ BẢO ĐẢM NÀO, DÙ RÕ RÀNG HAY NGẦM HIỂU, BAO GỒM NHƯNG KHÔNG GIỚI HẠN Ở CÁC BẢO ĐẢM VỀ KHẢ NĂNG THƯƠNG MẠI, SỰ PHÙ HỢP CHO MỤC ĐÍCH CỤ THỂ VÀ KHÔNG VI PHẠM BẢN QUYỀN. TRONG MỌI TRƯỜNG HỢP, CÁC TÁC GIẢ HOẶC NGƯỜI GIỮ BẢN QUYỀN SẼ KHÔNG CHỊU TRÁCH NHIỆM ĐỐI VỚI BẤT KỲ KHIẾU NGHĨ, THIỆT HẠI HOẶC TRÁCH NHIỆM PHÁP LÝ NÀO KHÁC, CHO DÙ TRONG HÀNH ĐỘNG HỢP ĐỒNG, HÀNH VI SAI TRÁI HOẶC PHÁT SINH TỪ HOẶC LIÊN QUAN ĐẾN PHẦN MỀM HOẶC VIỆC SỬ DỤNG HOẶC CÁC GIAO DỊCH KHÁC LIÊN QUAN ĐẾN PHẦN MỀM.
+
 <img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
 
 <div align="center">
