@@ -115,11 +115,23 @@ npm install -g @kudoai/chatgpt.js
 
 ### API 金鑰
 
-#### <img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@7dc4431/assets/images/icons/providers/openrouter/icon32.png"> OpenRouter:
+支援的服務提供者：
 
-> **注意** _要取得免費的 OpenRouter API 金鑰： <https://openrouter.ai/settings/keys>_
+<!-- OPENROUTER -->
 
-<img height=135 width="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@0049334/assets/images/screenshots/openrouter-api-keys-dash.png">
+<details>
+
+<summary>
+    <img width=15 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js/assets/images/icons/providers/openrouter/icon32.png"> <b>OpenRouter</b> — 300+ models, dozens free
+</summary>
+
+<br>
+
+**1. 建立 API 金鑰：https://openrouter.ai/settings/keys**
+
+<img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/openrouter.png">
+
+**2. 將密鑰新增至環境變數：**
 
 ##### Windows:
 
@@ -132,6 +144,38 @@ setx OPENROUTER_API_KEY "sk-or-v1-8a69..."
 ```bash
 export OPENROUTER_API_KEY="sk-or-v1-8a69..."
 ```
+
+</details>
+
+<!-- GOOGLE AI -->
+
+<details>
+
+<summary>
+    <img width=15 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/icons/providers/googleai/icon32.png"> <b>Google AI</b> — Gemini 與 Gemma 模型
+</summary>
+
+<br>
+
+**1. 建立 API 金鑰： https://aistudio.google.com/api-keys**
+
+<img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/google-ai-studio.png">
+
+**2. 將密鑰新增至環境變數：**
+
+##### Windows:
+
+```bash
+setx GOOGLE_API_KEY "AIzaSyB..."
+```
+
+##### Mac/Linux:
+
+```bash
+export GOOGLE_API_KEY="AIzaSyB..."
+```
+
+</details>
 
 <hr>
 

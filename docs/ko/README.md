@@ -116,11 +116,23 @@ npm install -g @kudoai/chatgpt.js
 
 ### API 키
 
-#### <img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@7dc4431/assets/images/icons/providers/openrouter/icon32.png"> OpenRouter:
+지원 제공업체:
 
-> **메모** _무료 OpenRouter API 키를 받으려면 다음 단계를 따르세요: <https://openrouter.ai/settings/keys>_
+<!-- OPENROUTER -->
 
-<img height=135 width="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@0049334/assets/images/screenshots/openrouter-api-keys-dash.png">
+<details>
+
+<summary>
+    <img width=15 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js/assets/images/icons/providers/openrouter/icon32.png"> <b>OpenRouter</b> — 300개 이상의 모델, 수십 개 무료
+</summary>
+
+<br>
+
+**1. API 키 생성: https://openrouter.ai/settings/keys**
+
+<img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/openrouter.png">
+
+**2. 환경에 키 추가:**
 
 ##### Windows:
 
@@ -133,6 +145,38 @@ setx OPENROUTER_API_KEY "sk-or-v1-8a69..."
 ```bash
 export OPENROUTER_API_KEY="sk-or-v1-8a69..."
 ```
+
+</details>
+
+<!-- GOOGLE AI -->
+
+<details>
+
+<summary>
+    <img width=15 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/icons/providers/googleai/icon32.png"> <b>Google AI</b> — Gemini + Gemma 모델
+</summary>
+
+<br>
+
+**1. API 키 생성: https://aistudio.google.com/api-keys**
+
+<img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/google-ai-studio.png">
+
+**2. 환경에 키 추가:**
+
+##### Windows:
+
+```bash
+setx GOOGLE_API_KEY "AIzaSyB..."
+```
+
+##### Mac/Linux:
+
+```bash
+export GOOGLE_API_KEY="AIzaSyB..."
+```
+
+</details>
 
 <hr>
 

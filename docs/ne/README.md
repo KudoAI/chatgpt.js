@@ -116,11 +116,23 @@ npm install -g @kudoai/chatgpt.js
 
 ### API कुञ्जीहरू
 
-#### <img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@7dc4431/assets/images/icons/providers/openrouter/icon32.png"> OpenRouter:
+समर्थित प्रदायकहरू:
 
-> **नोट** _नि:शुल्क OpenRouter API कुञ्जी प्राप्त गर्न: <https://openrouter.ai/settings/keys>_
+<!-- OPENROUTER -->
 
-<img height=135 width="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@0049334/assets/images/screenshots/openrouter-api-keys-dash.png">
+<details>
+
+<summary>
+    <img width=15 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js/assets/images/icons/providers/openrouter/icon32.png"> <b>OpenRouter</b> — ३००+ मोडेलहरू, दर्जनौं नि:शुल्क
+</summary>
+
+<br>
+
+**1. API कुञ्जी सिर्जना गर्नुहोस्: https://openrouter.ai/settings/keys**
+
+<img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/openrouter.png">
+
+**2. वातावरणमा कुञ्जी थप्नुहोस्:**
 
 ##### Windows:
 
@@ -133,6 +145,38 @@ setx OPENROUTER_API_KEY "sk-or-v1-8a69..."
 ```bash
 export OPENROUTER_API_KEY="sk-or-v1-8a69..."
 ```
+
+</details>
+
+<!-- GOOGLE AI -->
+
+<details>
+
+<summary>
+    <img width=15 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/icons/providers/googleai/icon32.png"> <b>Google AI</b> — जेमिनी + जेम्मा मोडेलहरू
+</summary>
+
+<br>
+
+**1. API कुञ्जी सिर्जना गर्नुहोस्: https://aistudio.google.com/api-keys**
+
+<img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/google-ai-studio.png">
+
+**2. वातावरणमा कुञ्जी थप्नुहोस्:**
+
+##### Windows:
+
+```bash
+setx GOOGLE_API_KEY "AIzaSyB..."
+```
+
+##### Mac/Linux:
+
+```bash
+export GOOGLE_API_KEY="AIzaSyB..."
+```
+
+</details>
 
 <hr>
 

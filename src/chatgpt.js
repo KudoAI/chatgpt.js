@@ -13,6 +13,9 @@ const chatgpt = {
 
     endpoints: {
         assets: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js',
+        google: {
+            chat: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent'
+        },
         openai: {
             session: 'https://chatgpt.com/api/auth/session',
             chats: 'https://chatgpt.com/backend-api/conversations',
@@ -1533,24 +1536,36 @@ const chatgpt = {
     scrollToBottom() { try { chatgpt.getScrollBtn().click() } catch (err) { console.error(err.message) }},
 
     async send(userQuery, options = {}) {
-        const { provider = 'openrouter', stream = true, output = 'return', systemQuery = '', color = 'green' } = options
+        const {
+            provider = 'openrouter', // or 'google'
+            stream = true, // return streaming resp if possible, otherwise text
+            output = 'return', // or 'stdout'
+            systemQuery = '', // for systemPrompt
+            color = 'green' // for stdout
+        } = options
         const apiKey = chatgpt.config?.apiKeys?.[provider] || process.env[`${provider.toUpperCase()}_API_KEY`]
         if (typeof apiKey != 'string' || !apiKey) throw new Error('Missing API key for provider: ' + provider)
         const respColor = chatgpt.colors?.[color] || chatgpt.colors.green
-        const resp = await fetch(chatgpt.endpoints[provider].chat, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
-            body: JSON.stringify({
+        const url = chatgpt.endpoints[provider].chat +( provider == 'google' ? `?key=${apiKey}` : '' )
+        const headers = { 'Content-Type': 'application/json' }
+        if (provider == 'openrouter') headers.Authorization = `Bearer ${apiKey}`
+        const payload =
+            provider == 'google' ? {
+                contents: [{ parts: [{ text: systemQuery ? systemQuery + '\n\n' + userQuery : userQuery }]}]
+            } : {
                 model: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free', max_tokens: 500, stream,
                 messages: [{ role: 'system', content: systemQuery }, { role: 'user', content: userQuery }]
-            })
-        })
+            }
+        const resp = await fetch(url, { method: 'POST', headers, body: JSON.stringify(payload) })
         if (!resp.ok) {
             const err = await resp.json().catch(() => null)
             throw new Error(err?.error?.message || 'API error')
         }
-        if (!stream || !resp.body) {
-            const text = (await resp.json()).choices?.[0]?.message?.content
+        if (provider == 'google' || !stream || !resp.body) { // non-streaming
+            const data = await resp.json()
+            const text =
+                provider == 'google' ? data?.candidates?.[0]?.content?.parts?.map(part => part.text).join('')
+                                     : data.choices[0].message.content
             if (output == 'stdout') console.log(respColor + text + chatgpt.colors.reset)
             return text
         }

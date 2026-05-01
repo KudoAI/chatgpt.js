@@ -115,12 +115,23 @@ npm install -g @kudoai/chatgpt.js
 
 ### APIキー
 
-#### <img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@7dc4431/assets/images/icons/providers/openrouter/icon32.png"> OpenRouter:
+対応プロバイダー：
 
-> **注記** _無料の OpenRouter API キーを取得するには： <https://openrouter.ai/settings/keys>_
+<!-- OPENROUTER -->
 
+<details>
 
-<img height=135 width="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@0049334/assets/images/screenshots/openrouter-api-keys-dash.png">
+<summary>
+    <img width=15 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js/assets/images/icons/providers/openrouter/icon32.png"> <b>OpenRouter</b> — 300種類以上のモデル、そのうち数十種類は無料
+</summary>
+
+<br>
+
+**1. APIキーを作成: https://openrouter.ai/settings/keys**
+
+<img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/openrouter.png">
+
+**2. 環境にキーを追加:**
 
 ##### Windows:
 
@@ -133,6 +144,38 @@ setx OPENROUTER_API_KEY "sk-or-v1-8a69..."
 ```bash
 export OPENROUTER_API_KEY="sk-or-v1-8a69..."
 ```
+
+</details>
+
+<!-- GOOGLE AI -->
+
+<details>
+
+<summary>
+    <img width=15 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/icons/providers/googleai/icon32.png"> <b>Google AI</b> — Gemini + Gemma モデル
+</summary>
+
+<br>
+
+**1. APIキーを作成: https://aistudio.google.com/api-keys**
+
+<img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/google-ai-studio.png">
+
+**2. 環境にキーを追加:**
+
+##### Windows:
+
+```bash
+setx GOOGLE_API_KEY "AIzaSyB..."
+```
+
+##### Mac/Linux:
+
+```bash
+export GOOGLE_API_KEY="AIzaSyB..."
+```
+
+</details>
 
 <hr>
 

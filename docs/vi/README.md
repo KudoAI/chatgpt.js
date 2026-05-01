@@ -116,11 +116,23 @@ npm install -g @kudoai/chatgpt.js
 
 ### Khóa API
 
-#### <img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@7dc4431/assets/images/icons/providers/openrouter/icon32.png"> OpenRouter:
+Các nhà cung cấp được hỗ trợ:
 
-> **Ghi chú** _Để nhận khóa API OpenRouter miễn phí: <https://openrouter.ai/settings/keys>_
+<!-- OPENROUTER -->
 
-<img height=135 width="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@0049334/assets/images/screenshots/openrouter-api-keys-dash.png">
+<details>
+
+<summary>
+    <img width=15 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js/assets/images/icons/providers/openrouter/icon32.png"> <b>OpenRouter</b> — 300+ models, dozens free
+</summary>
+
+<br>
+
+**1. Tạo khóa API: https://openrouter.ai/settings/keys**
+
+<img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/openrouter.png">
+
+**2. Thêm khóa vào môi trường:**
 
 ##### Windows:
 
@@ -133,6 +145,38 @@ setx OPENROUTER_API_KEY "sk-or-v1-8a69..."
 ```bash
 export OPENROUTER_API_KEY="sk-or-v1-8a69..."
 ```
+
+</details>
+
+<!-- GOOGLE AI -->
+
+<details>
+
+<summary>
+    <img width=15 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/icons/providers/googleai/icon32.png"> <b>Google AI</b> — Các mô hình Gemini + Gemma
+</summary>
+
+<br>
+
+**1. Tạo khóa API: https://aistudio.google.com/api-keys**
+
+<img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/google-ai-studio.png">
+
+**2. Thêm khóa vào môi trường:**
+
+##### Windows:
+
+```bash
+setx GOOGLE_API_KEY "AIzaSyB..."
+```
+
+##### Mac/Linux:
+
+```bash
+export GOOGLE_API_KEY="AIzaSyB..."
+```
+
+</details>
 
 <hr>
 
