@@ -341,6 +341,16 @@ chatgpt --query "sup"  # or cjs -q sup
 [cac-edge]: https://microsoftedge.microsoft.com/addons/detail/chatgpt-auto-continue/kaicnimcjamamnlbaeaneofmdjibgepl
 [cac-readme]: https://github.com/adamlui/ai-web-extensions/tree/main/chatgpt-auto-continue/#readme
 
+<!-- IDEA CTA -->
+
+<hr>
+
+### 도서관 관련 아이디어나 요청 사항이 있으신가요?
+
+새 토론 생성: https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas
+
+<hr>
+
 <!-- CHATGPT AUTO REFRESH -->
 
 ### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=19 src="https://assets.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture>][car-readme] [ChatGPT 자동 새로고침 ↻][car-readme] &nbsp;[<img src="https://assets.chatgptautorefresh.com/images/badges/awesome/badge.svg">][awesome-chatgpt-userscripts]
@@ -356,16 +366,6 @@ ChatGPT 세션을 항상 최신 상태로 유지하여, 채팅 시간 제한 및
 
 [car-install]: https://github.com/adamlui/ai-web-extensions/tree/main/chatgpt-auto-refresh/#-installation
 [car-readme]: https://github.com/adamlui/ai-web-extensions/tree/main/chatgpt-auto-refresh/#readme
-
-<!-- IDEA CTA -->
-
-<hr>
-
-### 도서관 관련 아이디어나 요청 사항이 있으신가요?
-
-새 토론 생성: https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas
-
-<hr>
 
 <!-- CHATGPT AUTO-TALK -->
 
