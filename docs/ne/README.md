@@ -213,7 +213,7 @@ console.log(await chatgpt.send('sup'))
 })()
 ```
 
-#### <a href="#-terminal"><img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@37edc4d/assets/images/icons/terminal/blue-gradient/icon32.png"></a> Terminal:
+#### <a href="#-terminal"><img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@b30a348/assets/images/icons/terminal/black/icon32.png"></a> Terminal:
 
 ```bash
 chatgpt --query "sup"  # or cjs -q sup
