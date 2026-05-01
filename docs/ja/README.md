@@ -221,7 +221,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 その他のオプションや例については、詳細ユーザーガイドをご覧ください。
 
-<https://github.com/KudoAI/chatgpt.js/blob/v4.1.0/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.1.1/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -537,7 +537,7 @@ ChatGPTの応答を自動再生。
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/white/icon16.svg"><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/dark-gray/icon16.svg"></picture>
 **[最新リリース](https://github.com/KudoAI/chatgpt.js/releases)** /
-[ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/v4.1.0/docs/USERGUIDE.md) /
+[ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/v4.1.1/docs/USERGUIDE.md) /
 [サポートを受ける](https://github.com/KudoAI/chatgpt.js/issues) / 
 [議論](https://github.com/KudoAI/chatgpt.js/discussions) / 
 <a href="#top">トップに戻る ↑</a>
