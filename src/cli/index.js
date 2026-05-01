@@ -27,11 +27,8 @@
     // Get AI reply
     loader.start()
     try {
-        const resp = await chatgpt.send(cli.config.query, { output: 'stdout' })
-        loader.stop()
-        return resp
-    } finally {
-        loader.stop()
-    }
+        return await chatgpt.send(cli.config.query, { provider: 'google',
+            output: 'stdout', onLoadStart: () => loader.stop({ clear: false })})
+    } finally { loader.stop() }
 
 })()

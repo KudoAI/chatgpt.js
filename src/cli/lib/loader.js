@@ -40,13 +40,15 @@ module.exports = {
             process.once('exit', stop) // clean up if process exits unexpectedly
         }
 
-        function stop() {
+        function stop({ clear = true } = {}) {
             if (stopped) return
             stopped = true
             clearInterval(interval)
             interval = null
-            readline.cursorTo(process.stdout, 0)
-            readline.clearLine(process.stdout, 0)
+            if (clear) {
+                readline.cursorTo(process.stdout, 0)
+                readline.clearLine(process.stdout, 0)
+            }
         }
 
         return { start, stop }
