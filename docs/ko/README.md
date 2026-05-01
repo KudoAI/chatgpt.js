@@ -536,6 +536,7 @@ ChatGPT 응답 자동 재생.
 
 <div align="center">
 
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/white/icon16.svg"><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/dark-gray/icon16.svg"></picture>
 **[최신 릴리스](https://github.com/KudoAI/chatgpt.js/releases)** /
 [사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v4.0.2/docs/USERGUIDE.md) /
 [지원 받기](https://github.com/KudoAI/chatgpt.js/issues) /

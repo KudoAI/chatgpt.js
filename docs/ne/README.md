@@ -536,6 +536,7 @@ ChatGPT प्रतिक्रियाहरू स्वतः प्ले 
 
 <div align="center">
 
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/white/icon16.svg"><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/dark-gray/icon16.svg"></picture>
 **[पछिल्ला रिलिजहरू](https://github.com/KudoAI/chatgpt.js/releases)** /
 [यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v4.0.2/docs/USERGUIDE.md) /
 [समर्थन प्राप्त गर्नुहोस्](https://github.com/KudoAI/chatgpt.js/issues) / 

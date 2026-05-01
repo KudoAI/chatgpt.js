@@ -535,6 +535,7 @@ ChatGPT जवाबों को अपने-आप चलाएँ।
 
 <div align="center">
 
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/white/icon16.svg"><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/dark-gray/icon16.svg"></picture>
 **[हाल की रिलीज़](https://github.com/KudoAI/chatgpt.js/releases)** /
 [यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v4.0.2/docs/USERGUIDE.md) /
 [सहायता प्राप्त करें](https://github.com/KudoAI/chatgpt.js/issues) /
