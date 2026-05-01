@@ -340,16 +340,6 @@ chatgpt --query "sup"  # or cjs -q sup
 [cac-edge]: https://microsoftedge.microsoft.com/addons/detail/chatgpt-auto-continue/kaicnimcjamamnlbaeaneofmdjibgepl
 [cac-readme]: https://github.com/adamlui/ai-web-extensions/tree/main/chatgpt-auto-continue/#readme
 
-<!-- IDEA CTA -->
-
-<hr>
-
-### 図書館に関するアイデアやご要望はございますか？
-
-新しいディスカッションを作成: https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas
-
-<hr>
-
 <!-- CHATGPT AUTO REFRESH -->
 
 ### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=19 src="https://assets.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture>][car-readme] [ChatGPT 自動更新 ↻][car-readme] &nbsp;[<img src="https://assets.chatgptautorefresh.com/images/badges/awesome/badge.svg">][awesome-chatgpt-userscripts]
@@ -365,6 +355,16 @@ ChatGPT のセッションを常に最新の状態に保ち、チャットの時
 
 [car-install]: https://github.com/adamlui/ai-web-extensions/tree/main/chatgpt-auto-refresh/#-installation
 [car-readme]: https://github.com/adamlui/ai-web-extensions/tree/main/chatgpt-auto-refresh/#readme
+
+<!-- IDEA CTA -->
+
+<hr>
+
+### 図書館に関するアイデアやご要望はございますか？
+
+新しいディスカッションを作成: https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas
+
+<hr>
 
 <!-- CHATGPT AUTO-TALK -->
 
