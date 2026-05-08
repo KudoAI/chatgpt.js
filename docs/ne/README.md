@@ -261,7 +261,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 <!-- AUTOCLEAR CHATGPT HISTORY -->
 
-### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/autoclear-chatgpt-history@83f1921/assets/images/icons/openai/white/icon32.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/autoclear-chatgpt-history@83f1921/assets/images/icons/openai/black/icon32.png"></picture>][ach-readme] [अटोक्लियर च्याटजीपीटी इतिहास][ach-readme] &nbsp;[<img src="https://assets.autoclearchatgpt.com/images/badges/awesome/badge.svg">](https://github.com/awesome-scripts/awesome-userscripts#privacy)
+### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/autoclear-chatgpt-history@83f1921/assets/images/icons/openai/white/icon32.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/autoclear-chatgpt-history@83f1921/assets/images/icons/openai/black/icon32.png"></picture>][ach-readme] [अटोक्लियर च्याटजीपीटी इतिहास][ach-readme] &nbsp;[<img src="https://cdn.jsdelivr.net/gh/adamlui/autoclear-chatgpt-history@13b6a5d/assets/images/badges/awesome/badge.svg">](https://github.com/awesome-scripts/awesome-userscripts#privacy)
 
 <details>
     <summary>
@@ -312,7 +312,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 <!-- CHATGPT AUTO-CONTINUE -->
 
-### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-continue@7e2c739/assets/images/icons/app/white/icon32.png"><img height=20 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-continue@7e2c739/assets/images/icons/app/black/icon32.png"></picture>][cac-readme] [ChatGPT स्वतः जारी राख्नुहोस्][cac-readme] &nbsp;[<img src="https://assets.chatgptautocontinue.com/images/badges/awesome/badge.svg">][awesome-chatgpt-userscripts]
+### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-continue@7e2c739/assets/images/icons/app/white/icon32.png"><img height=20 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-continue@7e2c739/assets/images/icons/app/black/icon32.png"></picture>][cac-readme] [ChatGPT स्वतः जारी राख्नुहोस्][cac-readme] &nbsp;[<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-continue@dc6aae7/assets/images/badges/awesome/badge.svg">][awesome-chatgpt-userscripts]
 
 <details>
     <summary>
@@ -353,7 +353,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 <!-- CHATGPT AUTO REFRESH -->
 
-### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=19 src="https://assets.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture>][car-readme] [ChatGPT स्वतः रिफ्रेस ↻][car-readme] &nbsp;[<img src="https://assets.chatgptautorefresh.com/images/badges/awesome/badge.svg">][awesome-chatgpt-userscripts]
+### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-refresh@2514e1c/assets/images/icons/openai/white/icon32.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-refresh@2514e1c/assets/images/icons/openai/black/icon32.png"></picture>][car-readme] [ChatGPT स्वतः रिफ्रेस ↻][car-readme] &nbsp;[<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-refresh@2514e1c/assets/images/badges/awesome/badge.svg">][awesome-chatgpt-userscripts]
 
 च्याट समय सीमा + नेटवर्क त्रुटिहरू + क्लाउडफ्लेयर जाँचहरू हटाउँदै, ChatGPT सत्रहरूलाई ताजा राख्छ।
 
@@ -369,7 +369,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 <!-- CHATGPT AUTO-TALK -->
 
-### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautotalk.com/images/icons/openai/white/icon32.png"><img width=19 src="https://assets.chatgptautotalk.com/images/icons/openai/black/icon32.png"></picture>][cat-readme] [च्याटजीपीटी अटो-टक 📣][cat-readme] &nbsp;[<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@2f5a19c/assets/images/badges/awesome/badge.svg">][awesome-chatgpt-userscripts]
+### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@13d5f7b/assets/images/icons/openai/white/icon32.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@13d5f7b/assets/images/icons/openai/black/icon32.png"></picture>][cat-readme] [च्याटजीपीटी अटो-टक 📣][cat-readme] &nbsp;[<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@2f5a19c/assets/images/badges/awesome/badge.svg">][awesome-chatgpt-userscripts]
 
 ChatGPT प्रतिक्रियाहरू स्वतः प्ले गर्नुहोस्।
 
@@ -385,7 +385,7 @@ ChatGPT प्रतिक्रियाहरू स्वतः प्ले 
 
 <!-- CHATGPT INFINITY -->
 
-### [<img width=20 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity@c587927/assets/images/icons/infinity-symbol/circled/icon32.png">][ci-readme] [च्याटजीपीटी इन्फिनिटी][ci-readme] &nbsp;[<img height=20 src="https://assets.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png">][ci-chrome]
+### [<img width=20 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity@c587927/assets/images/icons/infinity-symbol/circled/icon32.png">][ci-readme] [च्याटजीपीटी इन्फिनिटी][ci-readme] &nbsp;[<img height=20 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity@7bc796d/assets/images/badges/chrome-web-store/featured-by-google/badge500x91.png">][ci-chrome]
 
 <details>
     <summary>
@@ -414,12 +414,12 @@ ChatGPT प्रतिक्रियाहरू स्वतः प्ले 
 [ci-chrome]: https://chromewebstore.google.com/detail/chatgpt-infinity/amikeononomkhphopbflomhnmdijjpmb?utm_source=github&utm_medium=referral&utm_content=ai-web-extensions-readme
 [ci-ff]: https://addons.mozilla.org/firefox/addon/chatgpt-infinity/?utm_source=github&utm_medium=referral&utm_content=ai-web-extensions-readme
 [ci-edge]: https://microsoftedge.microsoft.com/addons/detail/chatgpt-infinity/jgonecnbmehicpdpjkdekamhmlebfagb
-[ci-greasemonkey]: https://gm.chatgptinfinity.com
+[ci-greasemonkey]: https://raw.githubusercontent.com/adamlui/chatgpt-infinity/refs/heads/main/greasemonkey/chatgpt-infinity.user.js
 [ci-readme]: https://github.com/adamlui/ai-web-extensions/tree/main/chatgpt-infinity/#readme
 
 <!-- CHATGPT WIDESCREEN -->
 
-### [<img width=19 src="https://assets.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png">][cwm-readme] [च्याटजीपीटी वाइडस्क्रिन][cwm-readme] &nbsp;[<img height=20 src="https://assets.chatgptwidescreen.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png">][cwm-readme]
+### [<img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@82ef9ab/assets/images/icons/widescreen-robot-emoji/icon32.png">][cwm-readme] [च्याटजीपीटी वाइडस्क्रिन][cwm-readme] &nbsp;[<img height=20 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@82ef9ab/assets/images/badges/chrome-web-store/featured-by-google/badge500x91.png">][cwm-readme]
 
 <details>
     <summary>
@@ -448,7 +448,7 @@ ChatGPT प्रतिक्रियाहरू स्वतः प्ले 
 [cwm-chrome]: https://chromewebstore.google.com/detail/chatgpt-widescreen/jgnjpnmofkalfliddjelaciggjgnphgm?utm_source=github&utm_medium=referral&utm_content=ai-web-extensions-readme
 [cwm-ff]: https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/?utm_source=github&utm_medium=referral&utm_content=ai-web-extensions-readme
 [cwm-edge]: https://microsoftedge.microsoft.com/addons/detail/chatgpt-widescreen-mode/obnaaalnokmchdoagnhmllakaclaaooa
-[cwm-greasemonkey]: https://gm.chatgptwidescreen.com
+[cwm-greasemonkey]: https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/refs/heads/main/greasemonkey/chatgpt-widescreen.user.js
 [cwm-readme]: https://github.com/adamlui/ai-web-extensions/tree/main/chatgpt-widescreen/#readme
 
 <!-- DUCKDUCKGPT -->
