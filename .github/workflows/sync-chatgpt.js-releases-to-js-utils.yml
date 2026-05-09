@@ -14,8 +14,8 @@ jobs:
       - id: ksb-token
         uses: actions/create-github-app-token@v3.1.1
         with:
-          client-id: ${{ secrets.KSB_APP_ID }}
-          private-key: ${{ secrets.KSB_PRIVATE_KEY }}
+          client-id: ${{ secrets.KRB_APP_ID }}
+          private-key: ${{ secrets.KRB_PRIVATE_KEY }}
           owner: KudoAI
       - run: |
           RELEASE_TITLE="${{ github.event.release.name }}"
