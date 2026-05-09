@@ -16,7 +16,7 @@ jobs:
         with:
           client-id: ${{ secrets.KRB_APP_ID }}
           private-key: ${{ secrets.KRB_PRIVATE_KEY }}
-          owner: KudoAI
+          owner: adamlui
       - run: |
           RELEASE_TITLE="${{ github.event.release.name }}"
           RELEASE_TAG="${{ github.event.release.tag_name }}"
