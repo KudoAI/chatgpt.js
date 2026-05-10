@@ -80,15 +80,17 @@
     "@adamlui/minify.js": "^2.5.3",
     "@adamlui/scss-to-css": "^2.4.4",
     "@eslint/css": "^1.2.0",
+    "@eslint/js": "^10.0.1",
     "@eslint/json": "^1.2.0",
     "@eslint/markdown": "^8.0.1",
     "@html-eslint/eslint-plugin": "^0.60.0",
     "@html-eslint/parser": "^0.60.0",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "eslint": "^9.39.4",
-    "eslint-plugin-import": "^2.32.0",
+    "eslint": "^10.3.0",
+    "eslint-plugin-import-x": "^4.16.2",
     "eslint-plugin-regexp": "^3.1.0",
     "get-port": "^7.2.0",
+    "globals": "^17.6.0",
     "husky": "^9.1.7"
   }
 }
