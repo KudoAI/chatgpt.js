@@ -1494,7 +1494,7 @@ const chatgpt = {
         getFromDOM(pos) {
             const responseDivs = document.querySelectorAll('div[data-message-author-role=assistant]'),
                   strPos = pos.toString().toLowerCase()
-            let response = ''
+            let response
             if (!responseDivs.length) return console.error('No conversation found!')
             if (/last|final/.test(strPos)) // get last response
                 response = responseDivs[responseDivs.length - 1].textContent

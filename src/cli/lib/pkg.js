@@ -26,7 +26,6 @@ module.exports = {
                 .map(({ day: date, downloads }) => ({ date, downloads }))
 
         } else if (/^py/i.test(ecosystem)) { // fetch from endpoints.pepyProjects
-            let rows = []
             const pepyURL = `${endpoints.pepyProjects}/${pkgName}`
             log.info(`Fetching PyPI/mirror stats for ${pkgName}${
                 env.modes.debug ? ` from\n${log.colors.bw}${pepyURL}` : '' }...\n`)
@@ -40,7 +39,7 @@ module.exports = {
                     if (data[3]?.project) downloads = data[3].project.downloads
                 } catch (err) {}
             }
-            rows = Object.entries(downloads)
+            const rows = Object.entries(downloads)
                 .sort(([a], [b]) => new Date(b) - new Date(a)) // new ⇅ old
                 .slice(0, maxDays) // cap rows
                 .map(([date, data]) => ({ date, ...data }))
