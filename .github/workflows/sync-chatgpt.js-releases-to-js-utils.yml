@@ -12,7 +12,7 @@ jobs:
       contents: read
     steps:
       - id: ksb-token
-        uses: actions/create-github-app-token@v3.1.1
+        uses: actions/create-github-app-token@v3.2.0
         with:
           client-id: ${{ secrets.KRB_APP_ID }}
           private-key: ${{ secrets.KRB_PRIVATE_KEY }}
