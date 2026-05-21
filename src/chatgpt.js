@@ -1300,7 +1300,7 @@ const chatgpt = {
         const thisQuadrantQueue = notifyProps.queue[notificationDiv.quadrant]
         if (thisQuadrantQueue.length > 1) {
             try { // to move old notifications
-                for (const divId of thisQuadrantQueue.slice(0, -1)) { // exclude new div
+                for (const divID of thisQuadrantQueue.slice(0, -1)) { // exclude new div
                     const oldDiv = document.getElementById(divID) ; if (!oldDiv) break
                     const offsetProp = oldDiv.style.top ? 'top' : 'bottom' // pick property to change
                     const vOffset = +parseInt(oldDiv.style[offsetProp]) +5 + oldDiv.getBoundingClientRect().height
