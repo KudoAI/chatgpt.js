@@ -1,6 +1,6 @@
 // © 2023–2026 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
-// User guide: https://chatgptjs.org/userguide
+// User guide: https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@latest/dist/chatgpt.min.js
 
 const chatgpt = {
@@ -1384,7 +1384,7 @@ const chatgpt = {
                         + this[functionName[1]].name )),
                   isAsync = this[functionName[1]]?.constructor.name == 'AsyncFunction'
             console.log('%c>> %c' + ( isChatGptObjParent ? '' : `${functionName[0]}.%c`) + functionName[1]
-                    + ' - https://chatgptjs.org/userguide/' + /(?:.*\.)?(.*)/.exec(rootFunction)[1].toLowerCase() + ( isAsync ? '-async' : '' ) + '\n%c[%c'
+                    + ' - https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md/' + /(?:.*\.)?(.*)/.exec(rootFunction)[1].toLowerCase() + ( isAsync ? '-async' : '' ) + '\n%c[%c'
                 + ((( functionName[0] == 'chatgpt' && functionName[1] == this[functionName[1]].name ) || // parent is chatgpt + names match or
                     !isChatGptObjParent) // parent is chatgpt.obj
                         ? 'Function' : 'Alias of' ) + '%c: %c'
