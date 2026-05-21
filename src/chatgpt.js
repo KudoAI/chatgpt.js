@@ -855,7 +855,7 @@ const chatgpt = {
 
                     // Return by index if num, 'latest', or 'active' passed but not truly active
                     if (Number.isInteger(chatToGet) || chatToGet == 'latest' ||
-                            (chatToGet == 'active' && !new RegExp(`\/${re_chatID.source}$`).test(location.href))) {
+                            (chatToGet == 'active' && !new RegExp(`/${re_chatID.source}$`).test(location.href))) {
                         chatToGet = Number.isInteger(chatToGet) ? chatToGet : 0 // preserve index, otherwise get latest
                         if (chatToGet > data.length) // reject if index out-of-bounds
                             return reject(`🤖 chatgpt.js >> Chat with index ${ chatToGet +1 }`
