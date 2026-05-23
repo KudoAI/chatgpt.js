@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script automates:
-# >>> bump versions in manifests + READMEs + Greasemonkey starter script >>> commit bumps to Git
+# >>> bump versions in manifests + READMEs >>> commit bumps to Git
 # >>> build chatgpt.min.js to dist/ >>> update jsDelivr URLs for GH assets >>> commit build to Git
 # >>> publish to npm (optional)
 
@@ -40,23 +40,6 @@ sed -i \
     $(find docs -regex ".*/\(README\|USERGUIDE\)\.md") ./README.md
 echo "v$new_ver"
 
-echo -e "${BY}\nBumping versions in Greasemonkey starter...${BW}\n"
-sed -i "s|\(@require.*chatgpt\.js@\)[0-9.]\+|\1$new_ver|g" starters/greasemonkey/*.user.js
-echo "chatgpt.js v$new_ver"
-TODAY=$(date +'%Y.%-m.%-d') # YYYY.M.D format
-if grep -q "@version\s*${TODAY}$" starters/greasemonkey/*.user.js # exact match for $TODAY
-    then # bump to $TODAY.1
-        sed -i "s|\(@version\s*\).*$|\1$TODAY.1|" starters/greasemonkey/*.user.js
-elif grep -q "@version\s*${TODAY}" starters/greasemonkey/*.user.js # partial match for $TODAY
-    then # bump to $TODAY.n+1
-        last_ver=$(sed -n "/@version\s*${TODAY%.*}/{p;q}" starters/greasemonkey/*.user.js | grep -o '.$')
-        sed -i "s|\(@version\s*\).*$|\1$TODAY.$((last_ver + 1))|" starters/greasemonkey/*.user.js
-else # no match for $TODAY
-    # bump to $TODAY
-        sed -i "s|\(@version\s*\).*$|\1$TODAY|" starters/greasemonkey/*.user.js ; fi
-new_gm_ver=$(sed -n "s/.*@version\s*\(.*\)/\1/p" starters/greasemonkey/*.user.js)
-echo "chatgpt.js-greasemonkey-starter.user.js v$new_gm_ver"
-
 echo -e "${BY}\nChanging Git author/committer to kudo-sync-bot...\n${NC}"
 if [ -n "$GPG_KEYS_PATH" ] ; then
     KEY_PATH="$GPG_KEYS_PATH/kudo-sync-bot-private-key.asc"
@@ -74,8 +57,6 @@ git add package*.json
 git commit -n -m "Bumped versions in manifests to $new_ver" -S$KEY_ID
 git add "README.md" "./**/README.md" "./**/USERGUIDE.md"
 git commit -n -m "Bumped versions in jsDelivr URLs to $new_ver" -S$KEY_ID
-git add ./*greasemonkey-starter.user.js
-git commit -n -m "Bumped chatgpt.js to $new_ver" -S$KEY_ID
 
 echo -e "${BY}\nBuilding chatgpt.min.js...\n${NC}"
 bash utils/build.sh
