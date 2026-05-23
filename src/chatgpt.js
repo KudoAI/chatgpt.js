@@ -72,21 +72,20 @@ const chatgpt = {
             xhr.open('GET', personasJSON, true) ; xhr.send()
             xhr.onload = () => {
                 if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.')
-                const data = JSON.parse(xhr.responseText).personas
+                const personas = JSON.parse(xhr.responseText)
                 if (!persona) {
                     console.log('\n%c🤖 chatgpt.js personas\n',
                         'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold')
-                    for (const prompt of data) // list personas
-                        console.log(`%c${prompt.title}`, 'font-family: monospace ; font-size: larger ;')
+                    for (const prompt of personas) // list personas
+                        console.log(`%c${prompt}`, 'font-family: monospace ; font-size: larger ;')
                     return resolve()
                 }
-                const selectedPrompt = data.find(obj => obj.title.toLowerCase() == persona.toLowerCase())
-                if (!selectedPrompt)
+                const prompt = personas[persona].prompt
+                if (!prompt)
                     return reject(`🤖 chatgpt.js >> Persona '${persona}' was not found!`)
-                chatgpt.send(selectedPrompt.prompt, 'click')
-                console.info(`Loading ${persona} persona...`)
-                chatgpt.isIdle().then(() => console.info('Persona activated!'))
-                return resolve()
+                console.info(`Loading [${persona}] persona...`)
+                chatgpt.send(prompt, 'click')
+                chatgpt.isIdle().then(resolve(prompt))
             }
         })
     },
