@@ -66,10 +66,10 @@ const chatgpt = {
     actAs(persona) {
     // Prompts ChatGPT to act as a persona from https://github.com/KudoAI/chat-prompts/blob/main/personas.json
 
-        const promptsUrl = 'https://cdn.jsdelivr.net/gh/KudoAI/chat-prompts/dist/personas.min.json'
+        const personasJSON = 'https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.min.json'
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest()
-            xhr.open('GET', promptsUrl, true) ; xhr.send()
+            xhr.open('GET', personasJSON, true) ; xhr.send()
             xhr.onload = () => {
                 if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.')
                 const data = JSON.parse(xhr.responseText).personas
