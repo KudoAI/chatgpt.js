@@ -1533,7 +1533,7 @@ const chatgpt = {
     },
 
     reviewCode() { chatgpt.code.review() },
-    scrollToBottom() { try { chatgpt.getScrollBtn().click() } catch (err) { console.error(err.message) }},
+    scrollToBottom() { chatgpt.getScrollBtn()?.click() },
 
     async send(userQuery, options = {}) {
         const {
