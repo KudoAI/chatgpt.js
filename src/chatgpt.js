@@ -1537,6 +1537,7 @@ const chatgpt = {
 
     async send(userQuery, options = {}) {
         const {
+            env = 'frontend', // or 'backend'
             provider = 'openrouter', // or 'google'
             stream = true, // return streaming resp if possible, otherwise text
             onLoadStart = null,
@@ -1544,57 +1545,74 @@ const chatgpt = {
             systemQuery = '', // for systemPrompt
             color = 'green' // for stdout
         } = options
-        const apiKey = chatgpt.config?.apiKeys?.[provider] || process.env[`${provider.toUpperCase()}_API_KEY`]
-        if (typeof apiKey != 'string' || !apiKey) throw new Error('Missing API key for provider: ' + provider)
-        const respColor = chatgpt.colors?.[color] || chatgpt.colors.green
-        const url = chatgpt.endpoints[provider].chat +( provider == 'google' ? `?key=${apiKey}` : '' )
-        const headers = { 'Content-Type': 'application/json' }
-        if (provider == 'openrouter') headers.Authorization = `Bearer ${apiKey}`
-        const payload =
-            provider == 'google' ? {
-                contents: [{ parts: [{ text: systemQuery ? systemQuery + '\n\n' + userQuery : userQuery }]}]
-            } : {
-                model: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free', max_tokens: 500, stream,
-                messages: [{ role: 'system', content: systemQuery }, { role: 'user', content: userQuery }]
-            }
-        const resp = await fetch(url, { method: 'POST', headers, body: JSON.stringify(payload) })
-        if (!resp.ok) {
-            const err = await resp.json().catch(() => null)
-            throw new Error(err?.error?.message || 'API error')
-        }
-        if (provider == 'google' || !stream || !resp.body) { // non-streaming
-            const data = await resp.json()
-            const text =
-                provider == 'google' ? data?.candidates?.[0]?.content?.parts?.map(part => part.text).join('')
-                                     : data.choices[0].message.content
-            if (output == 'stdout') console.log(respColor + text + chatgpt.colors.reset)
-            return text
-        }
-        const reader = resp.body.getReader(), decoder = new TextDecoder()
-        let outputStr = '', activeColor = '', streamStarted = false
-        if (output == 'stdout') { process.stdout.write(respColor) ; activeColor = respColor }
-        while (true) {
-            const { done, value } = await reader.read()
-            if (done) break
-            for (const line of decoder.decode(value, { stream: true }).split('\n')) {
-                if (!line.startsWith('data: ')) continue
-                const json = line.slice(6).trim()
-                if (json == '[DONE]') {
-                    if (output == 'stdout') process.stdout.write(chatgpt.colors.reset + '\n')
-                    return outputStr
+
+        if (env == 'frontend') {
+            const textArea = chatgpt.getChatBox()
+            if (!textArea) return console.error('Chatbar element not found!')
+            const msgP = document.createElement('p') ; msgP.textContent = userQuery
+            textArea.querySelector('p').replaceWith(msgP)
+            textArea.dispatchEvent(new Event('input', { bubbles: true })) // enable send button
+            setTimeout(function delaySend() {
+                const sendBtn = chatgpt.getSendButton()
+                if (!sendBtn?.hasAttribute('disabled')) // send msg
+                    env.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendBtn.click()
+                        : textArea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }))
+                else setTimeout(delaySend, 222)
+            }, 222)
+
+        } else { // backend
+            const apiKey = chatgpt.config?.apiKeys?.[provider] || process.env[`${provider.toUpperCase()}_API_KEY`]
+            if (typeof apiKey != 'string' || !apiKey) throw new Error('Missing API key for provider: ' + provider)
+            const respColor = chatgpt.colors?.[color] || chatgpt.colors.green
+            const url = chatgpt.endpoints[provider].chat +( provider == 'google' ? `?key=${apiKey}` : '' )
+            const headers = { 'Content-Type': 'application/json' }
+            if (provider == 'openrouter') headers.Authorization = `Bearer ${apiKey}`
+            const payload =
+                provider == 'google' ? {
+                    contents: [{ parts: [{ text: systemQuery ? systemQuery + '\n\n' + userQuery : userQuery }]}]
+                } : {
+                    model: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free', max_tokens: 500, stream,
+                    messages: [{ role: 'system', content: systemQuery }, { role: 'user', content: userQuery }]
                 }
-                try {
-                    const token = JSON.parse(json).choices?.[0]?.delta?.content
-                    if (token) {
-                        if (!streamStarted) { streamStarted = true ; onLoadStart?.() }
-                        if (output == 'stdout') process.stdout.write(activeColor + token)
-                        outputStr += token
-                    }
-                } catch {}
+            const resp = await fetch(url, { method: 'POST', headers, body: JSON.stringify(payload) })
+            if (!resp.ok) {
+                const err = await resp.json().catch(() => null)
+                throw new Error(err?.error?.message || 'API error')
             }
+            if (provider == 'google' || !stream || !resp.body) { // non-streaming
+                const data = await resp.json()
+                const text =
+                    provider == 'google' ? data?.candidates?.[0]?.content?.parts?.map(part => part.text).join('')
+                                        : data.choices[0].message.content
+                if (output == 'stdout') console.log(respColor + text + chatgpt.colors.reset)
+                return text
+            }
+            const reader = resp.body.getReader(), decoder = new TextDecoder()
+            let outputStr = '', activeColor = '', streamStarted = false
+            if (output == 'stdout') { process.stdout.write(respColor) ; activeColor = respColor }
+            while (true) {
+                const { done, value } = await reader.read()
+                if (done) break
+                for (const line of decoder.decode(value, { stream: true }).split('\n')) {
+                    if (!line.startsWith('data: ')) continue
+                    const json = line.slice(6).trim()
+                    if (json == '[DONE]') {
+                        if (output == 'stdout') process.stdout.write(chatgpt.colors.reset + '\n')
+                        return outputStr
+                    }
+                    try {
+                        const token = JSON.parse(json).choices?.[0]?.delta?.content
+                        if (token) {
+                            if (!streamStarted) { streamStarted = true ; onLoadStart?.() }
+                            if (output == 'stdout') process.stdout.write(activeColor + token)
+                            outputStr += token
+                        }
+                    } catch {}
+                }
+            }
+            if (output == 'stdout') process.stdout.write(chatgpt.colors.reset + '\n')
+            return outputStr
         }
-        if (output == 'stdout') process.stdout.write(chatgpt.colors.reset + '\n')
-        return outputStr
     },
 
     sendInNewChat(msg) {
