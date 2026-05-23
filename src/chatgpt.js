@@ -1536,7 +1536,7 @@ const chatgpt = {
 
     async send(userQuery, options = {}) {
         const {
-            env = 'frontend', // or 'backend'
+            env = 'chatgpt', // or anything else for backend
             provider = 'openrouter', // or 'google'
             stream = true, // return streaming resp if possible, otherwise text
             onLoadStart = null,
@@ -1545,7 +1545,7 @@ const chatgpt = {
             color = 'green' // for stdout
         } = options
 
-        if (env == 'frontend') {
+        if (env == 'chatgpt') {
             const textArea = chatgpt.getChatBox()
             if (!textArea) return console.error('Chatbar element not found!')
             const msgP = document.createElement('p') ; msgP.textContent = userQuery
