@@ -56,7 +56,7 @@ echo -e "${BY}\nCommitting bumps to Git...\n${NC}"
 git add package*.json
 git commit -n -m "Bumped versions in manifests to $new_ver" -S$KEY_ID
 git add "README.md" "./**/README.md" "./**/USERGUIDE.md"
-git commit -n -m "Bumped versions in jsDelivr URLs to $new_ver" -S$KEY_ID
+git commit -n -m "Bumped chatgpt.js versions in URLs to $new_ver" -S$KEY_ID
 
 echo -e "${BY}\nBuilding chatgpt.min.js...\n${NC}"
 bash utils/build.sh
