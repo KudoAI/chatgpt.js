@@ -75,7 +75,7 @@ const chatgpt = {
                     if (xhr.status != 200) return reject('Request failed. Cannot retrieve prompts data.')
                     const prompt = JSON.parse(xhr.responseText)[persona].prompt
                     if (!prompt) return reject(`Persona '${persona}' was not found!`)
-                    if (verbose) console.info(`Loading [${persona}] persona...`)
+                    if (verbose) console.info(`Loading [${persona}] from ${personasURL.split('/').pop()}...`)
                     chatgpt.send(prompt, 'click')
                     chatgpt.isIdle().then(resolve(prompt))
                 }
