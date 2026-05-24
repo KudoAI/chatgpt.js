@@ -51,66 +51,33 @@ jobs:
             echo "Release does not exist"
           fi
 
-          # Download assets
-          if [[ "${{ github.event.action }}" == "published" ]] ; then
-            download_urls=$(echo "$RELEASE_JSON" | grep -o '"browser_download_url": ".*"' | cut -d '"' -f 4)
-            for url in $download_urls ; do
-              echo -e "Downloading $(basename "$url")..."
-              curl -LOs "$url"
-            done
-          fi
-
           # Append auto-sync trailer
           RELEASE_NOTES+="\n\n###### _Auto-synced from https://github.com/KudoAI/chatgpt.js/releases"
           RELEASE_NOTES+=" by [@kudo-sync-bot](https://github.com/kudo-sync-bot)_"
 
+          # Export token for gh CLI
+          export GH_TOKEN="${{ steps.krb-token.outputs.token }}"
+
           if [ "$RELEASE_EXISTS" = false ] ; then
             echo "Creating new release..."
-            create_release_url="https://api.github.com/repos/$TARGET_REPO/releases"
-            create_release_payload=$(
-              printf '{"tag_name": "%s","name": "%s","body": "%s"}' \
-                "$TARGET_RELEASE_TAG" "$TARGET_RELEASE_TITLE" "$RELEASE_NOTES")
-            create_release_resp=$(
-              curl -s -S -X POST -H "Authorization: Bearer ${{ steps.krb-token.outputs.token }}" \
-                   -H "Content-Type: application/json" -d "$create_release_payload" "$create_release_url")
-            if echo "$create_release_resp" | grep -q '"message"' ; then
-              echo "ERROR: Failed to create release: $create_release_resp"
-              exit 1
+            if [[ "${{ github.event.action }}" == "published" ]] && [ "$(ls -A assets 2>/dev/null)" ] ; then
+              gh release create "$TARGET_RELEASE_TAG" \
+                --repo "$TARGET_REPO" \
+                --title "$TARGET_RELEASE_TITLE" \
+                --notes "$RELEASE_NOTES" \
+                assets/*
+            else
+              gh release create "$TARGET_RELEASE_TAG" \
+                --repo "$TARGET_REPO" \
+                --title "$TARGET_RELEASE_TITLE" \
+                --notes "$RELEASE_NOTES"
             fi
-            upload_url=$(echo "$create_release_resp" | sed -nE 's|.*"upload_url": "(.*)".*|\1|p' | sed 's|{.*}||')
           else
             echo "Updating existing release..."
-            update_release_url="https://api.github.com/repos/$TARGET_REPO/releases/$TARGET_RELEASE_ID"
-            update_release_payload=$(
-              printf '{"name": "%s","body": "%s"}' \
-                "$TARGET_RELEASE_TITLE" "$RELEASE_NOTES")
-            patch_release_resp=$(
-              curl -s -S -X PATCH -H "Authorization: Bearer ${{ steps.krb-token.outputs.token }}" \
-                   -H "Content-Type: application/json" -d "$update_release_payload" "$update_release_url")
-            if echo "$patch_release_resp" | grep -q '"message"' ; then
-              echo "ERROR: Failed to update release: $patch_release_resp"
-              exit 1
-            fi
-            get_release_resp=$(curl -s -S -H "Authorization: Bearer ${{ steps.krb-token.outputs.token }}" \
-              "https://api.github.com/repos/$TARGET_REPO/releases/tags/$TARGET_RELEASE_TAG")
-            upload_url=$(echo "$get_release_resp" | sed -nE 's|.*"upload_url": "(.*)".*|\1|p' | sed 's|{.*}||')
-          fi
-
-          if [[ "${{ github.event.action }}" == "published" ]] ; then
-            echo "Uploading assets to release..."
-            if [ -z "$upload_url" ] ; then
-              echo "ERROR: Could not get upload URL. Skipping asset upload."
-            else
-              for url in $download_urls ; do
-                filename=$(basename "$url")
-                echo "Uploading $filename..."
-                curl -s -S --data-binary @"$filename" \
-                    -H "Authorization: Bearer ${{ steps.krb-token.outputs.token }}" \
-                    -H "Content-Type: application/octet-stream" \
-                    "$upload_url?name=$filename" \
-                      > /dev/null 2>&1
-              done
-            fi
+            gh release edit "$TARGET_RELEASE_TAG" \
+              --repo "$TARGET_REPO" \
+              --title "$TARGET_RELEASE_TITLE" \
+              --notes "$RELEASE_NOTES"
           fi
 
           echo "Release synced to $TARGET_REPO ($TARGET_RELEASE_TAG)!"
