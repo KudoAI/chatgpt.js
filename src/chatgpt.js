@@ -72,9 +72,9 @@ const chatgpt = {
                 const xhr = new XMLHttpRequest()
                 xhr.open('GET', personasURL, true) ; xhr.send()
                 xhr.onload = () => {
-                    if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.')
+                    if (xhr.status != 200) return reject('Request failed. Cannot retrieve prompts data.')
                     const prompt = JSON.parse(xhr.responseText)[persona].prompt
-                    if (!prompt) return reject(`🤖 chatgpt.js >> Persona '${persona}' was not found!`)
+                    if (!prompt) return reject(`Persona '${persona}' was not found!`)
                     if (verbose) console.info(`Loading [${persona}] persona...`)
                     chatgpt.send(prompt, 'click')
                     chatgpt.isIdle().then(resolve(prompt))
@@ -492,7 +492,7 @@ const chatgpt = {
                 xhr.setRequestHeader('Content-Type', 'application/json')
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
-                    if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot clear chats.')
+                    if (xhr.status != 200) return reject('Request failed. Cannot clear chats.')
                     console.info('Chats successfully cleared') ; resolve()
                 }
                 xhr.send(JSON.stringify({ is_visible: false }))
@@ -749,7 +749,7 @@ const chatgpt = {
             xhr.open('GET', chatgpt.endpoints.openai.session, true)
             xhr.setRequestHeader('Content-Type', 'application/json')
             xhr.onload = () => {
-                if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.')
+                if (xhr.status != 200) return reject('Request failed. Cannot retrieve access token.')
                 console.info(`Token expiration: ${
                     new Date(JSON.parse(xhr.responseText).expires).toLocaleString().replace(',', ' at')}`)
                 chatgpt.accessToken = {
@@ -785,7 +785,7 @@ const chatgpt = {
                     const data = JSON.parse(xhr.responseText).user, detailsToReturn = {}
                     for (const detail of details) detailsToReturn[detail] = data[detail]
                     return resolve(detailsToReturn)
-                } else return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve account details.')
+                } else return reject('Request failed. Cannot retrieve account details.')
             }
             xhr.send()
         })
@@ -839,9 +839,9 @@ const chatgpt = {
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
                     if (xhr.status != 200)
-                        return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.')
+                        return reject('Request failed. Cannot retrieve chat details.')
                     const data = JSON.parse(xhr.responseText).items
-                    if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.')
+                    if (data.length <= 0) return reject('Chat list is empty.')
                     const detailsToReturn = {}
 
                     // Return by index if num, 'latest', or 'active' passed but not truly active
@@ -849,7 +849,7 @@ const chatgpt = {
                             (chatToGet == 'active' && !new RegExp(`/${re_chatID.source}$`).test(location.href))) {
                         chatToGet = Number.isInteger(chatToGet) ? chatToGet : 0 // preserve index, otherwise get latest
                         if (chatToGet > data.length) // reject if index out-of-bounds
-                            return reject(`🤖 chatgpt.js >> Chat with index ${ chatToGet +1 }`
+                            return reject(`Chat with index ${ chatToGet +1 }`
                                 + ` is out of bounds. Only ${data.length} chats exist!`)
                         for (const detail of detailsToGet) detailsToReturn[detail] = data[chatToGet][detail]
                         return resolve(detailsToReturn)
@@ -865,7 +865,7 @@ const chatgpt = {
                     for (idx = 0 ; idx < data.length ; idx++) { // search for id/title to set chatFound flag
                         if (data[idx][chatIdentifier] == chatToGet) { chatFound = true ; break }}
                     if (!chatFound) // exit
-                        return reject(`🤖 chatgpt.js >> No chat with ${chatIdentifier} = ${chatToGet} found.`)
+                        return reject(`No chat with ${chatIdentifier} = ${chatToGet} found.`)
                     for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail]
                     return resolve(detailsToReturn)
                 }
@@ -881,7 +881,7 @@ const chatgpt = {
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
                         if (xhr.status != 200)
-                            return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat messages.')
+                            return reject('Request failed. Cannot retrieve chat messages.')
 
                         // Init const's
                         const data = JSON.parse(xhr.responseText).mapping // get chat messages
@@ -894,7 +894,7 @@ const chatgpt = {
                         userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time) // sort in chronological order
 
                         if (parseInt(msgToGet, 10) + 1 > userMessages.length) // reject if index out of bounds
-                            return reject(`🤖 chatgpt.js >> Message/response with index ${ msgToGet +1 }`
+                            return reject(`Message/response with index ${ msgToGet +1 }`
                                 + ` is out of bounds. Only ${userMessages.length} messages/responses exist!`)
 
                         // Fill [chatGPTMessages]
@@ -1096,11 +1096,11 @@ const chatgpt = {
                 xhr.onload = () => {
                     const responseData = JSON.parse(xhr.responseText)
                     if (xhr.status == 422)
-                        return reject('🤖 chatgpt.js >> Character limit exceeded. Custom instructions can have a maximum length of 1500 characters.')
+                        return reject('Character limit exceeded. Custom instructions can have a maximum length of 1500 characters.')
                     else if (xhr.status == 403 && responseData.detail.reason == 'content_policy')
-                        return reject('🤖 chatgpt.js >> ' + responseData.detail.description)
+                        return reject('' + responseData.detail.description)
                     else if (xhr.status != 200)
-                        return reject('🤖 chatgpt.js >> Request failed. Cannot contact custom instructions endpoint.')
+                        return reject('Request failed. Cannot contact custom instructions endpoint.')
                     console.info(`Custom instructions successfully contacted with method ${method}`)
                     return resolve(responseData || {}) // return response data no matter what the method is
                 }
@@ -1685,7 +1685,7 @@ const chatgpt = {
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
                         if (xhr.status != 200)
-                            return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat node.')
+                            return reject('Request failed. Cannot retrieve chat node.')
                         return resolve(JSON.parse(xhr.responseText).current_node) // chat messages until now
                     }
                     xhr.send()
@@ -1700,7 +1700,7 @@ const chatgpt = {
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
                         if (xhr.status != 200)
-                            return reject('🤖 chatgpt.js >> Request failed. Cannot initialize share chat.')
+                            return reject('Request failed. Cannot initialize share chat.')
                         return resolve(JSON.parse(xhr.responseText)) // return untouched data
                     }
                     xhr.send(JSON.stringify({ // request body
@@ -1718,7 +1718,7 @@ const chatgpt = {
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
                     if (xhr.status != 200)
-                        return reject('🤖 chatgpt.js >> Request failed. Cannot share chat.')
+                        return reject('Request failed. Cannot share chat.')
                     console.info(`Chat shared at '${data.share_url}'`)
                     return resolve() // the response has nothing useful
                 }
