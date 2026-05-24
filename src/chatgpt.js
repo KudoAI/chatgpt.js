@@ -963,8 +963,8 @@ const chatgpt = {
 
     getChatInput() { return chatgpt.getChatBox().firstChild.innerText },
     getContinueButton() { return document.querySelector(chatgpt.selectors.btns.continue) },
-    getErrorMsg() { return document.querySelector(`${chatgpt.selectors.errors.txt}:last-of-type`)?.innerText },
     getDictateButton() { return document.querySelector(chatgpt.selectors.btns.dictate) },
+    getErrorMsg() { return document.querySelector(`${chatgpt.selectors.errors.txt}:last-of-type`)?.innerText },
     getFooterDiv() { return chatgpt.footer.get() },
     getHeaderDiv() { return chatgpt.header.get() },
     getLastPrompt() { return chatgpt.getChatData('active', 'msg', 'user', 'latest') },
