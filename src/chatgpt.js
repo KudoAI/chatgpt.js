@@ -12,6 +12,7 @@ const chatgpt = {
     },
 
     endpoints: {
+        aipersonas: 'https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.min.json',
         assets: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js',
         google: {
             chat: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent'
@@ -65,11 +66,7 @@ const chatgpt = {
         ssgManifest: 'script[src*="_ssgManifest.js"]'
     },
 
-    actAs(persona, {
-        personasURL = 'https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.min.json',
-        verbose = false
-    } = {}) {
-
+    actAs(persona, { personasURL = chatgpt.endpoints.aipersonas, verbose = false } = {}) {
         return !persona ? console.error(`'persona' arg required by actAs()`)
             : new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest()
