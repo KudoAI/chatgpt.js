@@ -872,17 +872,19 @@ chatgpt.scrollToBottom()
 
 #### `send()`
 
-Sends a message via the ChatGPT interface (DOM) if available, otherwise sends it to the OpenRoute API and returns the response.
+Sends a message via the ChatGPT DOM or OpenRouter API and returns the response.
 
 Parameters:
 
 - `userQuery`: *(string)* — The message to send  
 - `options` *(optional object)*:
+  - `env`: *(string)* — Environment to use (default: `'chatgpt'`, all else uses back-end)
   - `provider`: *(string)* — API provider to use (default: `'openrouter'`)
   - `stream`: *(boolean)* — Whether to stream the response in real-time (default: `true`)
+  - `onLoadStart`: *(function)* — Optional callback when response starts loading
+  - `output`: *(string)* — Response output method (default: `'return'`, or 'stdout')
   - `systemQuery`: *(string)* — Optional system prompt to guide the response
   - `color`: *(string)* — Output color for CLI responses (default: `'green'`)
-  - `method`: *(string)* — DOM-only: `'click'` to simulate send button (useful for mobile)
 
 Exmample code:
 
