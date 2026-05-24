@@ -540,7 +540,7 @@ const chatgpt = {
                 })
                 await new Promise(resolve => // when reply starts generating
                     new MutationObserver((_, obs) => {
-                        if (chatgpt.getStopBtn()) { obs.disconnect() ; resolve() }
+                        if (chatgpt.getStopButton()) { obs.disconnect() ; resolve() }
                     }).observe(document.body, { childList: true, subtree: true })
                 )
                 const replyDivs = document.querySelectorAll(chatgpt.selectors.chatDivs.reply),
@@ -553,7 +553,7 @@ const chatgpt = {
                 return new Promise(resolve => // when code stops generating
                     new MutationObserver((_, obs) => {
                         if (lastReplyDiv?.querySelector('pre')?.nextElementSibling // code block not last child of reply div
-                            || !chatgpt.getStopBtn() // ...or reply outright stopped generating
+                            || !chatgpt.getStopButton() // ...or reply outright stopped generating
                         ) { obs.disconnect() ; resolve(true) }
                     }).observe(document.body, obsConfig)
                 )
@@ -1159,12 +1159,12 @@ const chatgpt = {
             })
             await new Promise(resolve => // when reply starts generating
                 new MutationObserver((_, obs) => {
-                    if (chatgpt.getStopBtn()) { obs.disconnect() ; resolve() }
+                    if (chatgpt.getStopButton()) { obs.disconnect() ; resolve() }
                 }).observe(document.body, obsConfig)
             )
             return new Promise(resolve => // when reply stops generating
                 new MutationObserver((_, obs) => {
-                    if (!chatgpt.getStopBtn()) { obs.disconnect() ; resolve(true) }
+                    if (!chatgpt.getStopButton()) { obs.disconnect() ; resolve(true) }
                 }).observe(document.body, obsConfig)
             )
         })()
@@ -1175,9 +1175,9 @@ const chatgpt = {
     async isLoaded(timeout = null) {
         const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
         const isLoadedPromise = new Promise(resolve => {
-            if (chatgpt.getNewChatBtn()) resolve(true)
+            if (chatgpt.getNewChatButton()) resolve(true)
             else new MutationObserver((_, obs) => {
-                if (chatgpt.getNewChatBtn()) { obs.disconnect() ; resolve(true) }
+                if (chatgpt.getNewChatButton()) { obs.disconnect() ; resolve(true) }
             }).observe(document.documentElement, { childList: true, subtree: true })
         })
         return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
@@ -1471,7 +1471,7 @@ const chatgpt = {
     async resend() { chatgpt.send(await chatgpt.getChatData('latest', 'msg', 'user', 'latest')) },
 
     response: {
-        continue() { try { chatgpt.getContinueBtn().click() } catch (err) { console.error(err.message) }},
+        continue() { try { chatgpt.getContinueButton().click() } catch (err) { console.error(err.message) }},
 
         get() {
             // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:
@@ -1528,12 +1528,12 @@ const chatgpt = {
         },
 
         getLast() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest') },
-        regenerate() { try { chatgpt.getRegenerateBtn().click() } catch (err) { console.error(err.message) }},
-        stopGenerating() { try { chatgpt.getStopBtn().click() } catch (err) { console.error(err.message) }}
+        regenerate() { try { chatgpt.getRegenerateButton().click() } catch (err) { console.error(err.message) }},
+        stopGenerating() { try { chatgpt.getStopButton().click() } catch (err) { console.error(err.message) }}
     },
 
     reviewCode() { chatgpt.code.review() },
-    scrollToBottom() { chatgpt.getScrollBtn()?.click() },
+    scrollToBottom() { chatgpt.getScrollToBottomButton()?.click() },
 
     async send(userQuery, options = {}) {
         const {
@@ -1617,7 +1617,7 @@ const chatgpt = {
 
     sendInNewChat(msg) {
         if (typeof msg != 'string') return console.error('Message must be a string!')
-        try { chatgpt.getNewChatBtn().click() } catch (err) { return console.error(err.message) }
+        try { chatgpt.getNewChatButton().click() } catch (err) { return console.error(err.message) }
         setTimeout(() => chatgpt.send(msg), 500)
     },
 
@@ -1792,7 +1792,7 @@ const chatgpt = {
         }
     },
 
-    startNewChat() { try { chatgpt.getNewChatBtn().click() } catch (err) { console.error(err.message) }},
+    startNewChat() { try { chatgpt.getNewChatButton().click() } catch (err) { console.error(err.message) }},
     stop() { chatgpt.response.stopGenerating() },
 
     async suggest(ideaType, details) {
