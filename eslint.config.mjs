@@ -47,12 +47,13 @@ export default [
         }
     },
     {
-        files: ['**/*.{ts,d.ts}'],
+        files: ['**/*.ts'],
         languageOptions: {
             parser: ts.parser, ecmaVersion: 'latest', sourceType: 'script',
+            parserOptions: { tsconfigRootDir: import.meta.dirname, project: false },
             globals: { ...globals.browser, ...globals.greasemonkey, ...globals.node, chatgpt: 'readonly' }
         },
-        plugins: { '@typescript-eslint': ts.plugin, 'js-styles': stylisticJS },
+        plugins: { 'typescript': ts.plugin, 'js-styles': stylisticJS },
         rules: {
             ...ts.configs.recommended.rules,
             'js-styles/no-trailing-spaces': 'error', // ...except at ends of lines
@@ -63,7 +64,7 @@ export default [
             'quotes': ['error', 'single', // enforce single quotes...
                 { 'allowTemplateLiterals': true }], // ...except backticks to avoid escaping quotes
             'comma-dangle': ['error', 'never'], // enforce no trailing commas in arrays or objects
-            'no-unused-vars': 'off', '@typescript-eslint/no-unused-vars': ['error', { 'caughtErrors': 'none' }]
+            'no-unused-vars': 'off', 'typescript/no-unused-vars': ['error', { 'caughtErrors': 'none' }]
         }
     },
     { files: ['**/chatgpt.js'], languageOptions: { globals: { chatgpt: 'off' }}},
