@@ -39,6 +39,7 @@
     "build:docs-js": "npm run build:js-docs",
     "build:css": "scss-to-css . dist",
     "bump:patch": "bash utils/bump.sh patch",
+    "bump:feat": "npm run bump:minor",
     "bump:minor": "bash utils/bump.sh minor",
     "bump:major": "bash utils/bump.sh major",
     "publish:patch": "bash utils/bump.sh patch --publish",
