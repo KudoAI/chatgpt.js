@@ -1538,10 +1538,10 @@ const chatgpt = {
 
     async send(userQuery, options = {}) {
         const {
-            env = 'chatgpt', // or anything else for backend
+            env = (typeof window != 'undefined' ? 'chatgpt' : 'backend'),
             provider = 'openrouter', // or 'google'
             stream = true, // return streaming resp if possible, otherwise text
-            onLoadStart = null,
+            onLoadStart = null, // cb on resp start loading
             output = 'return', // or 'stdout'
             systemQuery = '', // for systemPrompt
             color = 'green' // for stdout
