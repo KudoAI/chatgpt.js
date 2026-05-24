@@ -33,15 +33,16 @@ const chatgpt = {
         btns: {
             continue: 'button:has(svg > use[href$="#ee0f3c"])',
             createImage: 'button[data-testid=composer-button-create-image]',
-            dictate: 'button:has(use[href*=".svg#29f921"])', // https://imgur.com/a/mO1ZKbR
+            dictate: 'button:has(use[href$=".svg#29f921"])', // https://imgur.com/a/mO1ZKbR
             login: 'button[data-testid*=login]',
             menu: 'div[data-testid=accounts-profile-button]',
             newChat: 'a[href="/"]:has(svg),' // Pencil button (when logged in)
                    + 'button:has([d^="M3.06957"])', // Cycle Arrows button (in temp chat logged out)
             regen: 'button[data-testid*=regenerate],' // oval button in place of chatbar on errors
-                 + 'button:has(use[href$="sprites-core-k5zux585.svg#ec66f0"])', // 'Try again...' button below msg
-            scroll: 'button:has(use[href$="sprites-core-k5zux585.svg#ac89a7"])',
-            search: 'button[data-testid=composer-button-search]',
+                 + 'button:has(use[href$=".svg#ec66f0"])', // 'Try again...' button below msg
+            scroll: 'button:has(use[href$=".svg#ac89a7"])',
+            search: 'button[data-testid=composer-button-search]'
+                  + 'button:has(use[href$=".svg#ac6d36"])', // https://imgur.com/a/jpPiVAF
             send: 'button[data-testid=send-button]',
             sidebar: 'div[style*=-sidebar-width] button[data-testid=close-sidebar-button],'
                    + 'div[style*=-sidebar-rail-width] button[aria-controls=stage-slideover-sidebar]',
@@ -49,7 +50,7 @@ const chatgpt = {
             stop: 'button[data-testid=stop-button]',
             upload: 'div[data-testid=composer-action-file-upload],' // tall chatbar
                   + 'button#composer-plus-btn', // short chatbar
-            voice: 'button[data-testid*=composer-speech-button]'
+            voice: 'button[data-testid*=composer-speech-button], button:has(use[href$="svg#f8aa74"])'
         },
         chatDivs: {
             convo: 'div[class*=thread]', msg: 'div[data-message-author-role]',
