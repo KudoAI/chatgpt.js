@@ -1657,9 +1657,9 @@ const chatgpt = {
 
     async sentiment(text, entity) {
         for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-            return console.error(`Argument ${ i + 1 } must be a string.`)
+            return console.error(`Argument ${ i +1 } must be a string.`)
         chatgpt.send('What is the sentiment of the following text'
-            + ( entity ? ` towards the entity ${entity},` : '')
+            + ( entity ? ` towards the entity ${entity},` : '' )
             + ' from strongly negative to strongly positive?\n\n' + text )
         console.info('Analyzing sentiment...')
         await chatgpt.isIdle()
@@ -1673,8 +1673,8 @@ const chatgpt = {
     // method = [ 'alert'|'clipboard' ] (defaults to 'clipboard' if '' or unpassed)
 
         const validMethods = ['alert', 'notify', 'notification', 'clipboard', 'copy']
-        if (!validMethods.includes(method)) return console.error(
-            `Invalid method '${method}' passed. Valid methods are [${validMethods}].`)
+        if (!validMethods.includes(method))
+            return console.error(`Invalid method '${method}' passed. Valid methods are [${validMethods}].`)
 
         const getChatNode = token => {
             return new Promise((resolve, reject) => {
@@ -1684,12 +1684,13 @@ const chatgpt = {
                     xhr.setRequestHeader('Content-Type', 'application/json')
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
-                        if (xhr.status != 200)
-                            return reject('Request failed. Cannot retrieve chat node.')
-                        return resolve(JSON.parse(xhr.responseText).current_node) // chat messages until now
+                        return xhr.status != 200 ? reject('Request failed. Cannot retrieve chat node.')
+                             : resolve(JSON.parse(xhr.responseText).current_node) // chat msgs til now
                     }
                     xhr.send()
-        })})}
+                })
+            })
+        }
 
         const makeChatToShare = (token, node) => {
             return new Promise((resolve, reject) => {
@@ -1699,16 +1700,17 @@ const chatgpt = {
                     xhr.setRequestHeader('Content-Type', 'application/json')
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
-                        if (xhr.status != 200)
-                            return reject('Request failed. Cannot initialize share chat.')
-                        return resolve(JSON.parse(xhr.responseText)) // return untouched data
+                        return xhr.status != 200 ? reject('Request failed. Cannot initialize share chat.')
+                             : resolve(JSON.parse(xhr.responseText)) // return untouched data
                     }
                     xhr.send(JSON.stringify({ // request body
                         current_node_id: node, // by getChatNode
                         conversation_id: chat.id, // current chat id
                         is_anonymous: true // show user name in the conversation or not
                     }))
-        })})}
+                })
+            })
+        }
 
         const confirmShareChat = (token, data) => {
             return new Promise((resolve, reject) => {
@@ -1717,8 +1719,7 @@ const chatgpt = {
                 xhr.setRequestHeader('Content-Type', 'application/json')
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
-                    if (xhr.status != 200)
-                        return reject('Request failed. Cannot share chat.')
+                    if (xhr.status != 200) return reject('Request failed. Cannot share chat.')
                     console.info(`Chat shared at '${data.share_url}'`)
                     return resolve() // the response has nothing useful
                 }
@@ -1730,12 +1731,13 @@ const chatgpt = {
                     is_visible: data.is_visible,
                     is_anonymous: data.is_anonymous
                 }))
-        })}
+            })
+        }
 
-        return new Promise(resolve => {
-            chatgpt.getAccessToken().then(token => { // get access token
-                getChatNode(token).then(node => { // get chat node
-                    makeChatToShare(token, node).then(data => {
+        return new Promise(resolve =>
+            chatgpt.getAccessToken().then(token => // get access token
+                getChatNode(token).then(node => // get chat node
+                    makeChatToShare(token, node).then(data =>
                         confirmShareChat(token, data).then(() => {
                             if (['copy', 'clipboard'].includes(method)) navigator.clipboard.writeText(data.share_url)
                             else chatgpt.alert('🚀 Share link created!',
@@ -1744,7 +1746,11 @@ const chatgpt = {
                                 [ function openLink() { window.open(data.share_url, '_blank', 'noopener') },
                                     function copyLink() { navigator.clipboard.writeText(data.share_url) }])
                             resolve(data.share_url)
-        })})})})})
+                        })
+                    )
+                )
+            )
+        )
     },
 
     showFooter() { chatgpt.footer.show() },
@@ -1788,8 +1794,8 @@ const chatgpt = {
     stop() { chatgpt.response.stopGenerating() },
 
     async suggest(ideaType, details) {
-        if (!ideaType) return console.error('ideaType (1st argument) not supplied'
-            + `(e.g. 'gifts', 'names', 'recipes', etc.)`)
+        if (!ideaType)
+            return console.error(`ideaType (1st argument) not supplied (e.g. 'gifts', 'names', 'recipes', etc.)`)
         for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
             return console.error(`Argument ${ i + 1 } must be a string.`)
         chatgpt.send('Suggest some names. ' + ( details || '' ))
@@ -1850,8 +1856,7 @@ const chatgpt = {
     unminify() { chatgpt.code.unminify() },
 
     uuidv4() {
-        try {
-            // use native secure uuid generator when available
+        try { // to use native secure uuid generator
             return crypto.randomUUID()
         } catch(_e) {
             let d = new Date().getTime() // get current timestamp in ms (to ensure UUID uniqueness)
