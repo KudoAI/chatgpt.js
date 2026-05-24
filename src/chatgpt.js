@@ -33,6 +33,7 @@ const chatgpt = {
         btns: {
             continue: 'button:has(svg > use[href$="#ee0f3c"])',
             createImage: 'button[data-testid=composer-button-create-image]',
+            dictate: 'button:has(use[href^=.svg#29f921])', // https://imgur.com/a/mO1ZKbR
             login: 'button[data-testid*=login]',
             menu: 'div[data-testid=accounts-profile-button]',
             newChat: 'a[href="/"]:has(svg),' // Pencil button (when logged in)
