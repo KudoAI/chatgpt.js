@@ -1040,6 +1040,19 @@ continueBtn.click()
 
 #
 
+#### `getDictateButton()`
+
+Returns the button which allows you to dictate input.
+
+Example:
+
+```js
+const dictateBtn = chatgpt.getDictateButton()
+dictateBtn.click()
+```
+
+#
+
 #### `getFooterDiv()`
 
 Returns the footer div as an HTML element.
