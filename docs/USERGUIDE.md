@@ -74,6 +74,30 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
 
 ## General
 
+#### `actAs(persona)` `async`
+
+Asks ChatGPT to act as a given persona by sending its prompt, then resolves with that prompt string.
+
+Parameters:
+
+`persona`: A string being the key of the persona to load from the AI personas data.
+
+`options` (optional): An object with the following properties:
+
+- `personasURL`: A string being the URL to fetch the personas data from. Defaults to `chatgpt.endpoints.aipersonas`.
+- `verbose`: A boolean that logs which persona is being loaded when `true`. Defaults to `false`.
+
+Example:
+
+```js
+(async () => {
+    const prompt = await chatgpt.actAs('Linux Script Developer')
+    chatgpt.alert(prompt)
+})()
+```
+
+#
+
 #### `detectLanguage(text)` `async`
 
 Asks ChatGPT to detect the language of given text.
