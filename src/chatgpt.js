@@ -1134,7 +1134,7 @@ const chatgpt = {
         }
     },
 
-    isDarkMode() { return document.documentElement.classList.contains('dark') },
+    isDarkMode() { return chatgpt.settings.scheme.isDark() },
     isFullScreen() { return chatgpt.browser.isFullScreen() },
 
     async isIdle(timeout = null) {
@@ -1175,7 +1175,7 @@ const chatgpt = {
         return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
     },
 
-    isLightMode() { return document.documentElement.classList.contains('light') },
+    isLightMode() { return chatgpt.settings.scheme.isLight() },
     isTempChat() { return location.search == '?temporary-chat=true' },
     isTyping() { return !!this.getStopButton() },
     login() { window.location.href = 'https://chat.openai.com/auth/login' },
