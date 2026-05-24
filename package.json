@@ -25,7 +25,7 @@
     "chatgpt": "dist/cli/index.js",
     "cjs": "dist/cli/index.js"
   },
-  "types": "chatgpt.js.d.ts",
+  "types": "chatgpt.d.ts",
   "scripts": {
     "prepare": "husky",
     "dev:docs": "node utils/preview-docs",
