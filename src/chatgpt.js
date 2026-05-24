@@ -1874,5 +1874,5 @@ const chatgpt = {
 chatgpt.scheme = { ...chatgpt.settings.scheme } // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
 
 // Export chatgpt object
-try { window.chatgpt = chatgpt } catch (err) {} // for Greasemonkey
+try { window.chatgpt = chatgpt } catch (err) {} // for browser
 try { module.exports = chatgpt } catch (err) {} // for CommonJS
