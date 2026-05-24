@@ -65,31 +65,24 @@ const chatgpt = {
         ssgManifest: 'script[src*="_ssgManifest.js"]'
     },
 
-    actAs(persona) {
-    // Prompts ChatGPT to act as a persona from https://github.com/KudoAI/chat-prompts/blob/main/personas.json
+    actAs(persona, {
+        personasURL = 'https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.min.json',
+        verbose = false
+    } = {}) {
 
-        const personasJSON = 'https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.min.json'
-        return new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest()
-            xhr.open('GET', personasJSON, true) ; xhr.send()
-            xhr.onload = () => {
-                if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.')
-                const personas = JSON.parse(xhr.responseText)
-                if (!persona) {
-                    console.log('\n%c🤖 chatgpt.js personas\n',
-                        'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold')
-                    for (const prompt of personas) // list personas
-                        console.log(`%c${prompt}`, 'font-family: monospace ; font-size: larger ;')
-                    return resolve()
+        return !persona ? console.error(`'persona' arg required by actAs()`)
+            : new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest()
+                xhr.open('GET', personasURL, true) ; xhr.send()
+                xhr.onload = () => {
+                    if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.')
+                    const prompt = JSON.parse(xhr.responseText)[persona].prompt
+                    if (!prompt) return reject(`🤖 chatgpt.js >> Persona '${persona}' was not found!`)
+                    if (verbose) console.info(`Loading [${persona}] persona...`)
+                    chatgpt.send(prompt, 'click')
+                    chatgpt.isIdle().then(resolve(prompt))
                 }
-                const prompt = personas[persona].prompt
-                if (!prompt)
-                    return reject(`🤖 chatgpt.js >> Persona '${persona}' was not found!`)
-                console.info(`Loading [${persona}] persona...`)
-                chatgpt.send(prompt, 'click')
-                chatgpt.isIdle().then(resolve(prompt))
-            }
-        })
+            })
     },
 
     activateDarkMode() {
