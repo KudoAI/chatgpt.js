@@ -25,6 +25,7 @@
     "chatgpt": "dist/cli/index.js",
     "cjs": "dist/cli/index.js"
   },
+  "types": "chatgpt.js.d.ts",
   "scripts": {
     "prepare": "husky",
     "dev:docs": "node utils/preview-docs",
@@ -92,6 +93,7 @@
     "eslint-plugin-regexp": "^3.1.0",
     "get-port": "^7.2.0",
     "globals": "^17.6.0",
-    "husky": "^9.1.7"
+    "husky": "^9.1.7",
+    "typescript-eslint": "^8.59.4"
   }
 }
