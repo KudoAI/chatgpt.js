@@ -77,7 +77,7 @@ const chatgpt = {
                     if (!prompt) return reject(`Persona '${persona}' was not found!`)
                     if (verbose) console.info(`Loading [${persona}] from ${personasURL.split('/').pop()}...`)
                     chatgpt.send(prompt, 'click')
-                    chatgpt.isIdle().then(resolve(prompt))
+                    chatgpt.isIdle().then(() => resolve(prompt))
                 }
             })
     },
