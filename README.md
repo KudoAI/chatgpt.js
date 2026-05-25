@@ -127,7 +127,7 @@ Supported providers:
 
 <br>
 
-**1. Create API key: https://openrouter.ai/settings/keys**
+**1. Create API key: <a href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener noreferrer">https://openrouter.ai/settings/keys</a>**
 
 <img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/openrouter.png">
 
