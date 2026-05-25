@@ -16,14 +16,18 @@ BW="\033[1;97m" # bright white
 BUMP_TYPES=("major" "minor" "patch")
 old_ver=$(node -pe "require('./package.json').version")
 IFS='.' read -ra subvers <<< "$old_ver" # split old_ver into subvers array
-case $1 in # edit subvers based on version type
-    "patch") subvers[2]=$((subvers[2] + 1)) ;;
-    "minor") subvers[1]=$((subvers[1] + 1)) ; subvers[2]=0 ;;
-    "major") subvers[0]=$((subvers[0] + 1)) ; subvers[1]=0 ; subvers[2]=0 ;;
-    *) echo -e "\n${BR}Invalid bump type arg provided: $1${NC}" ;
-       echo -e "\n${BY}Valid args are: ${BUMP_TYPES[*]/#/--}${NC}" ;
-       exit 1 ;;
-esac
+for arg in "$@"; do
+    case "${arg#--}" in # edit subvers based on version type
+        "patch") subvers[2]=$((subvers[2] + 1)) ; break ;;
+        "minor") subvers[1]=$((subvers[1] + 1)) ; subvers[2]=0 ; break ;;
+        "major") subvers[0]=$((subvers[0] + 1)) ; subvers[1]=0 ; subvers[2]=0 ; break ;;
+    esac
+done
+if [[ "$new_ver" == "$old_ver" ]]; then
+    echo -e "\n${BR}Invalid bump type arg provided${NC}"
+    echo -e "\n${BY}Valid args are: ${BUMP_TYPES[*]/#/--}${NC}"
+    exit 1
+fi 
 new_ver=$(printf "%s.%s.%s" "${subvers[@]}")
 
 echo -e "${BY}Pulling latest changes from remote to sync local repository...${NC}\n"
