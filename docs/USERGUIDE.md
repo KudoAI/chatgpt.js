@@ -76,7 +76,7 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
 
 #### `actAs(persona)` `async`
 
-Asks ChatGPT to act as a given persona by sending its prompt, then resolves with that prompt string.
+Asks ChatGPT to act as a given persona by sending its prompt, then resolves with the prompt string.
 
 Parameters:
 
@@ -139,7 +139,7 @@ Example:
 
 #### `getUserLanguage()`
 
-Returns the user language as a string.
+Returns the user's language as a string.
 
 Example:
 
@@ -472,7 +472,7 @@ Parameters:
 
 `detail`: A string representing the account detail(s) that will be returned.
 
-Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single detail is passed, it will be returned as a string, if multiple are passed instead, the function will return an object with the requested details. If no details are passed, the function will return an object with all the available details.
+Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single detail is passed, it will be returned as a string, if multiple are passed, the function will return an object with the requested details. If no details are passed, the function will return an object with all the available details.
 
 ```js
 (async () => {
@@ -494,7 +494,7 @@ Can be the following: `email`, `id`, `image`, `name`, `picture`. If a single det
 
 #### `login()`
 
-Navs to login page.
+Navigates to login page.
 
 Example:
 
@@ -506,7 +506,7 @@ chatgpt.login()
 
 #### `logout()`
 
-Logs out the user from the website.
+Logs the user out from the website.
 
 Example:
 
@@ -743,7 +743,7 @@ chatgpt.alert(chatInput) // Example output: 'Hello from chatgpt.js!'
 
 #### `getErrorMsg()`
 
-Returns the error message (if any) of the last generation as a string.
+Returns the error message (if any) from the last generation as a string.
 
 Example:
 
@@ -790,7 +790,7 @@ If it's a new chat, see [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
 
 #### `getResponseFromAPI()` `async`
 
-Returns the Nth response ChatGPT has written in a Nth chat as a string.
+Returns the Nth response written by ChatGPT in the Nth chat, as a string.
 
 Parameters:
 
@@ -916,7 +916,7 @@ Parameters:
   - `systemQuery`: *(string)* — Optional system prompt to guide the response
   - `color`: *(string)* — Output color for CLI responses (default: `'green'`)
 
-Exmample code:
+Example code:
 
 
 ```js
@@ -1178,7 +1178,7 @@ scrollToBottomBtn.click()
 
 #### `getSendButton()`
 
-Returns the button which sends the message as an HTML element.
+Returns the button that sends the message as an HTML element.
 
 Example:
 
@@ -1191,7 +1191,7 @@ sendBtn.click()
 
 #### `getStopGeneratingButton()`
 
-Returns the button which stops the generation of ChatGPT's response as an HTML element.
+Returns the button that stops the generation of ChatGPT's response as an HTML element.
 
 Example:
 
@@ -1975,7 +1975,7 @@ API for interfacing with ChatGPT user settings.
 
 #
 
-#### `scheme()``api subset`
+#### `scheme()` `api subset`
 
 ##
 
