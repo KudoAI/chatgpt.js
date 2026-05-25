@@ -74,6 +74,30 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
 
 ## General
 
+#### `actAs(persona)` `async`
+
+Asks ChatGPT to act as a given persona by sending its prompt, then resolves with that prompt string.
+
+Parameters:
+
+`persona`: A string being the key of the persona to load from the AI personas data.
+
+`options` (optional): An object with the following properties:
+
+- `personasURL`: A string being the URL to fetch the personas data from. Defaults to `chatgpt.endpoints.aipersonas`.
+- `verbose`: A boolean that logs which persona is being loaded when `true`. Defaults to `false`.
+
+Example:
+
+```js
+(async () => {
+    const prompt = await chatgpt.actAs('Linux Script Developer')
+    chatgpt.alert(prompt)
+})()
+```
+
+#
+
 #### `detectLanguage(text)` `async`
 
 Asks ChatGPT to detect the language of given text.
@@ -306,6 +330,8 @@ const randomID = chatgpt.uuidv4()
 chatgpt.alert(randomID) // Example output: '239067d1-bcb8-4fd7-91eb-9ab94619b7b3'
 ```
 
+<a href="#top">Back to top ↑</a>
+
 ## Page theme
 
 #### `activateDarkMode()`
@@ -421,6 +447,8 @@ Example:
 chatgpt.notify({ msg: 'Hello, world!', position: 'top left', notifDuration: 3, shadow: 'on' })
 ```
 
+<a href="#top">Back to top ↑</a>
+
 ## User session
 
 #### `getAccessToken()` `async`
@@ -485,6 +513,8 @@ Example:
 ```js
 chatgpt.logout()
 ```
+
+<a href="#top">Back to top ↑</a>
 
 ## Chats
 
@@ -1000,6 +1030,8 @@ Example:
 chatgpt.stop()
 ```
 
+<a href="#top">Back to top ↑</a>
+
 ## DOM related
 
 #### `focusChatbar()`
@@ -1229,6 +1261,8 @@ Example:
 chatgpt.showHeader()
 ```
 
+<a href="#top">Back to top ↑</a>
+
 # Library APIs
 
 ## autoRefresh `api`
@@ -1275,6 +1309,8 @@ Example:
 const timeStamp = chatgpt.autoRefresh.nowTimeStamp()
 chatgpt.alert(timeStamp) // Example output: '1:56:25 PM'
 ```
+
+<a href="#top">Back to top ↑</a>
 
 ## browser `api`
 
@@ -1397,6 +1433,8 @@ if (chatgpt.browser.isMobile()) {
     // Do something
 }
 ```
+
+<a href="#top">Back to top ↑</a>
 
 ## code `api`
 
@@ -1638,6 +1676,8 @@ Example:
 })()
 ```
 
+<a href="#top">Back to top ↑</a>
+
 ## footer `api`
 
 API related to the footer.
@@ -1678,6 +1718,8 @@ Example:
 ```js
 chatgpt.footer.show()
 ```
+
+<a href="#top">Back to top ↑</a>
 
 ## header `api`
 
@@ -1720,6 +1762,8 @@ Example:
 chatgpt.header.show()
 ```
 
+<a href="#top">Back to top ↑</a>
+
 ## history `api`
 
 API related to the chat history.
@@ -1742,6 +1786,8 @@ Example:
     chatgpt.alert('ChatGPT history has finished loading.')
 })()
 ```
+
+<a href="#top">Back to top ↑</a>
 
 ## instructions `api`
 
@@ -1823,6 +1869,8 @@ Example:
 })()
 ```
 
+<a href="#top">Back to top ↑</a>
+
 ## menu `api`
 
 The small menu that shows up when clicking on the account button.
@@ -1862,6 +1910,8 @@ Example:
 ```js
 chatgpt.menu.close()
 ```
+
+<a href="#top">Back to top ↑</a>
 
 ## response `api`
 
@@ -1916,6 +1966,8 @@ See [chatgpt.regenerate](#regenerate)
 #### `stopGenerating()`
 
 See [chatgpt.stop](#stop)
+
+<a href="#top">Back to top ↑</a>
 
 ## settings `api`
 
@@ -1976,6 +2028,8 @@ Example:
 ```js
 chatgpt.settings.scheme.toggle()
 ```
+
+<a href="#top">Back to top ↑</a>
 
 ## sidebar `api`
 

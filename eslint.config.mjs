@@ -8,6 +8,7 @@ import json from '@eslint/json'
 import markdown from '@eslint/markdown'
 import regexp from 'eslint-plugin-regexp'
 import stylisticJS from '@stylistic/eslint-plugin'
+import ts from 'typescript-eslint'
 
 export default [
     { ignores: ['**/*sandbox*/', '**/dist/', '**/*.min.js', '**/package-lock.json', 'docs/**/*.min.css', 'docs/**/footer.html'] },
@@ -43,6 +44,27 @@ export default [
             'preserve-caught-error': 'off', // allow omit pass caught err as cause
             'import-x/no-named-as-default-member': 'off', // allow accessing named exports via default import
             'import-x/no-unresolved': ['error', { ignore: ['^(?:https?://)'] }] // allow dynamic imports from URLs
+        }
+    },
+    {
+        files: ['**/*.ts'],
+        languageOptions: {
+            parser: ts.parser, ecmaVersion: 'latest', sourceType: 'script',
+            parserOptions: { tsconfigRootDir: import.meta.dirname, project: false },
+            globals: { ...globals.browser, ...globals.greasemonkey, ...globals.node, chatgpt: 'readonly' }
+        },
+        plugins: { 'typescript': ts.plugin, 'js-styles': stylisticJS },
+        rules: {
+            ...ts.configs.recommended.rules,
+            'js-styles/no-trailing-spaces': 'error', // ...except at ends of lines
+            'js-styles/max-len': ['error', { 'code': 120, // limit lines to 120 chars except if containing...
+                'ignoreComments': true, 'ignoreStrings': true, // ...trailing/own-line comments, quoted strings...
+                'ignoreTemplateLiterals': true, 'ignoreRegExpLiterals': true }], // ...or template/regex literals
+            'js-styles/no-extra-semi': 'error', // disallow unnecessary semicolons
+            'quotes': ['error', 'single', // enforce single quotes...
+                { 'allowTemplateLiterals': true }], // ...except backticks to avoid escaping quotes
+            'comma-dangle': ['error', 'never'], // enforce no trailing commas in arrays or objects
+            'no-unused-vars': 'off', 'typescript/no-unused-vars': ['error', { 'caughtErrors': 'none' }]
         }
     },
     { files: ['**/chatgpt.js'], languageOptions: { globals: { chatgpt: 'off' }}},

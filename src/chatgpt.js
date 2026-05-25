@@ -72,10 +72,10 @@ const chatgpt = {
                 const xhr = new XMLHttpRequest()
                 xhr.open('GET', personasURL, true) ; xhr.send()
                 xhr.onload = () => {
-                    if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.')
+                    if (xhr.status != 200) return reject('Request failed. Cannot retrieve prompts data.')
                     const prompt = JSON.parse(xhr.responseText)[persona].prompt
-                    if (!prompt) return reject(`🤖 chatgpt.js >> Persona '${persona}' was not found!`)
-                    if (verbose) console.info(`Loading [${persona}] persona...`)
+                    if (!prompt) return reject(`Persona '${persona}' was not found!`)
+                    if (verbose) console.info(`Loading [${persona}] from ${personasURL.split('/').pop()}...`)
                     chatgpt.send(prompt, 'click')
                     chatgpt.isIdle().then(resolve(prompt))
                 }
@@ -166,7 +166,7 @@ const chatgpt = {
 
         // Create modal parent/children elems
         const modalContainer = document.createElement('div')
-        modalContainer.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now()
+        modalContainer.id = Math.floor(chatgpt.randomFloat() *1000000) + Date.now()
         modalContainer.classList.add('chatgpt-modal') // add class to main div
         const modal = document.createElement('div'),
               modalTitle = document.createElement('h2'),
@@ -399,7 +399,7 @@ const chatgpt = {
             // Run main activate routine
             this.toggle.refreshFrame()
             const scheduleRefreshes = interval => {
-                const randomDelay = Math.max(2, Math.floor(chatgpt.randomFloat() * 21 - 10)) // set random delay up to ±10 secs
+                const randomDelay = Math.max(2, Math.floor(chatgpt.randomFloat() *21 -10)) // set random delay up to ±10 secs
                 autoRefresh.isActive = setTimeout(() => {
                     const manifestScript = document.querySelector(chatgpt.selectors.ssgManifest)
                     if (manifestScript) {
@@ -407,7 +407,7 @@ const chatgpt = {
                         console.log(`↻ ChatGPT >> [${autoRefresh.nowTimeStamp()}] ChatGPT session refreshed`)
                     }
                     scheduleRefreshes(interval)
-                }, (interval + randomDelay) * 1000)
+                }, (interval + randomDelay) *1000)
             }
             scheduleRefreshes( interval ? parseInt(interval, 10) : 30 )
             console.log(`↻ ChatGPT >> [${chatgpt.autoRefresh.nowTimeStamp()}] Auto refresh activated`)
@@ -492,7 +492,7 @@ const chatgpt = {
                 xhr.setRequestHeader('Content-Type', 'application/json')
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
-                    if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot clear chats.')
+                    if (xhr.status != 200) return reject('Request failed. Cannot clear chats.')
                     console.info('Chats successfully cleared') ; resolve()
                 }
                 xhr.send(JSON.stringify({ is_visible: false }))
@@ -514,7 +514,7 @@ const chatgpt = {
 
         extract(msg) { // extract pure code from response (targets last block)
             const codeBlocks = msg.match(/(?<=```.*\n)[\s\S]*?(?=```)/g)
-            return codeBlocks ? codeBlocks[codeBlocks.length - 1] : msg
+            return codeBlocks ? codeBlocks[codeBlocks.length -1] : msg
         },
 
         async isIdle(timeout = null) {
@@ -535,7 +535,7 @@ const chatgpt = {
                     }).observe(document.body, { childList: true, subtree: true })
                 )
                 const replyDivs = document.querySelectorAll(chatgpt.selectors.chatDivs.reply),
-                      lastReplyDiv = replyDivs[replyDivs.length - 1]
+                      lastReplyDiv = replyDivs[replyDivs.length -1]
                 await new Promise(resolve => // when code starts generating
                     new MutationObserver((_, obs) => {
                         if (lastReplyDiv?.querySelector('pre')) { obs.disconnect() ; resolve() }
@@ -573,8 +573,9 @@ const chatgpt = {
 
         async refactor(code, objective) {
             if (!code) return console.error('Code (1st) argument not supplied. Pass some code!')
-            for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-                return console.error(`Argument ${ i + 1 } must be a string.`)
+            for (let i = 0 ; i < arguments.length ; i++)
+                if (typeof arguments[i] != 'string')
+                    return console.error(`Argument ${ i +1 } must be a string.`)
             chatgpt.send(`Refactor the following code for ${ objective || 'brevity' }:\n\n${code}`)
             console.info('Refactoring code...')
             await chatgpt.isIdle()
@@ -603,7 +604,7 @@ const chatgpt = {
             if (!prompt) return console.error('Prompt (1st) argument not supplied. Pass a prompt!')
             if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!')
             for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-                return console.error(`Argument ${ i + 1 } must be a string.`)
+                return console.error(`Argument ${ i +1 } must be a string.`)
             chatgpt.send(`${prompt}\n\nWrite this as code in ${outputLang}`)
             console.info('Writing code...')
             await chatgpt.isIdle()
@@ -644,7 +645,7 @@ const chatgpt = {
             // Format filename using date/time
             const now = new Date(),
                   day = now.getDate().toString().padStart(2, '0'),
-                  month = (now.getMonth() + 1).toString().padStart(2, '0'),
+                  month = (now.getMonth() +1).toString().padStart(2, '0'),
                   year = now.getFullYear(),
                   hour = now.getHours().toString().padStart(2, '0'),
                   minute = now.getMinutes().toString().padStart(2, '0')
@@ -749,7 +750,7 @@ const chatgpt = {
             xhr.open('GET', chatgpt.endpoints.openai.session, true)
             xhr.setRequestHeader('Content-Type', 'application/json')
             xhr.onload = () => {
-                if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.')
+                if (xhr.status != 200) return reject('Request failed. Cannot retrieve access token.')
                 console.info(`Token expiration: ${
                     new Date(JSON.parse(xhr.responseText).expires).toLocaleString().replace(',', ' at')}`)
                 chatgpt.accessToken = {
@@ -785,7 +786,7 @@ const chatgpt = {
                     const data = JSON.parse(xhr.responseText).user, detailsToReturn = {}
                     for (const detail of details) detailsToReturn[detail] = data[detail]
                     return resolve(detailsToReturn)
-                } else return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve account details.')
+                } else return reject('Request failed. Cannot retrieve account details.')
             }
             xhr.send()
         })
@@ -804,7 +805,7 @@ const chatgpt = {
         const validSenders = [ 'all', 'both', 'user', 'chatgpt' ]
         chatToGet = !chatToGet ? 'active' // if '' passed, set to active
                   : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
-                      ( parseInt(chatToGet, 10) == 0 ? 0 : parseInt(chatToGet, 10) - 1 ) // ...offset -1 or keep as 0
+                      ( parseInt(chatToGet, 10) == 0 ? 0 : parseInt(chatToGet, 10) -1 ) // ...offset -1 or keep as 0
                   : chatToGet // else preserve non-num string as 'active', 'latest' or title/id of chat to get
         detailsToGet = ['all', ''].includes(detailsToGet) ? // if '' or 'all' passed
                          validDetails.filter(detail => /^(?!all$|msg$).*/.test(detail)) // populate w/ [validDetails] except 'all' & 'msg'
@@ -812,7 +813,7 @@ const chatgpt = {
         sender = !sender ? 'all' // if '' or unpassed, set to 'all'
                : validSenders.includes(sender) ? sender : 'invalid' // else set to validSenders or 'invalid'
         msgToGet = Number.isInteger(msgToGet) || /^\d+$/.test(msgToGet) ? // if string/int num passed
-                     ( parseInt(msgToGet, 10) == 0 ? 0 : parseInt(msgToGet, 10) - 1 ) // ...offset -1 or keep as 0
+                     ( parseInt(msgToGet, 10) == 0 ? 0 : parseInt(msgToGet, 10) -1 ) // ...offset -1 or keep as 0
                  : ['all', 'latest'].includes(msgToGet.toLowerCase()) ? // else if 'all' or 'latest' passed
                      msgToGet.toLowerCase() // ...preserve it
                  : !msgToGet ? 'all' // else if '', set to 'all'
@@ -839,9 +840,9 @@ const chatgpt = {
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
                     if (xhr.status != 200)
-                        return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.')
+                        return reject('Request failed. Cannot retrieve chat details.')
                     const data = JSON.parse(xhr.responseText).items
-                    if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.')
+                    if (data.length <= 0) return reject('Chat list is empty.')
                     const detailsToReturn = {}
 
                     // Return by index if num, 'latest', or 'active' passed but not truly active
@@ -849,7 +850,7 @@ const chatgpt = {
                             (chatToGet == 'active' && !new RegExp(`/${re_chatID.source}$`).test(location.href))) {
                         chatToGet = Number.isInteger(chatToGet) ? chatToGet : 0 // preserve index, otherwise get latest
                         if (chatToGet > data.length) // reject if index out-of-bounds
-                            return reject(`🤖 chatgpt.js >> Chat with index ${ chatToGet +1 }`
+                            return reject(`Chat with index ${ chatToGet +1 }`
                                 + ` is out of bounds. Only ${data.length} chats exist!`)
                         for (const detail of detailsToGet) detailsToReturn[detail] = data[chatToGet][detail]
                         return resolve(detailsToReturn)
@@ -865,7 +866,7 @@ const chatgpt = {
                     for (idx = 0 ; idx < data.length ; idx++) { // search for id/title to set chatFound flag
                         if (data[idx][chatIdentifier] == chatToGet) { chatFound = true ; break }}
                     if (!chatFound) // exit
-                        return reject(`🤖 chatgpt.js >> No chat with ${chatIdentifier} = ${chatToGet} found.`)
+                        return reject(`No chat with ${chatIdentifier} = ${chatToGet} found.`)
                     for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail]
                     return resolve(detailsToReturn)
                 }
@@ -881,7 +882,7 @@ const chatgpt = {
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
                         if (xhr.status != 200)
-                            return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat messages.')
+                            return reject('Request failed. Cannot retrieve chat messages.')
 
                         // Init const's
                         const data = JSON.parse(xhr.responseText).mapping // get chat messages
@@ -893,8 +894,8 @@ const chatgpt = {
                                 userMessages.push({ id: data[key].id, msg: data[key].message })
                         userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time) // sort in chronological order
 
-                        if (parseInt(msgToGet, 10) + 1 > userMessages.length) // reject if index out of bounds
-                            return reject(`🤖 chatgpt.js >> Message/response with index ${ msgToGet +1 }`
+                        if (parseInt(msgToGet, 10) +1 > userMessages.length) // reject if index out of bounds
+                            return reject(`Message/response with index ${ msgToGet +1 }`
                                 + ` is out of bounds. Only ${userMessages.length} messages/responses exist!`)
 
                         // Fill [chatGPTMessages]
@@ -921,20 +922,20 @@ const chatgpt = {
                                 msgsToReturn.push(userMessages[userMessage].msg.content.parts[0])
                         else if (sender == 'chatgpt') // Fill [msgsToReturn] with ChatGPT responses
                             for (const chatGPTMessage of chatGPTMessages)
-                                msgsToReturn.push(msgToGet == 'latest' ? chatGPTMessages[chatGPTMessages.length - 1]
+                                msgsToReturn.push(msgToGet == 'latest' ? chatGPTMessages[chatGPTMessages.length -1]
                                                                        : chatGPTMessage )
                         else { // Fill [msgsToReturn] with objects of user messages and chatgpt response(s)
                             let i = 0
                             for (const message in userMessages) {
                                 msgsToReturn.push({
                                     user: userMessages[message].msg.content.parts[0],
-                                    chatgpt: msgToGet == 'latest' ? chatGPTMessages[i][chatGPTMessages[i].length - 1] : chatGPTMessages[i]
+                                    chatgpt: msgToGet == 'latest' ? chatGPTMessages[i][chatGPTMessages[i].length -1] : chatGPTMessages[i]
                                 })
                                 i++
                             }
                         }
                         return resolve(msgToGet == 'all' ? msgsToReturn // if 'all' passed, return array
-                                     : msgToGet == 'latest' ? msgsToReturn[msgsToReturn.length - 1] // else if 'latest' passed, return latest
+                                     : msgToGet == 'latest' ? msgsToReturn[msgsToReturn.length -1] // else if 'latest' passed, return latest
                                      : msgsToReturn[msgToGet] ) // else return element of array
 
                         function isUserMsgAncestor(msgID, targetUserID) {
@@ -1075,8 +1076,8 @@ const chatgpt = {
         sendRequest(method, token, body) {
         // INTERNAL METHOD
             // Validate args
-            for (let i = 0 ; i < arguments.length - 1 ; i++) if (typeof arguments[i] == 'string')
-                return console.error(`Argument ${ i + 1 } must be a string`)
+            for (let i = 0 ; i < arguments.length -1 ; i++) if (typeof arguments[i] == 'string')
+                return console.error(`Argument ${ i +1 } must be a string`)
             const validMethods = ['POST', 'GET']
             method = (method || '').trim().toUpperCase()
             if (!method || !validMethods.includes(method)) // reject if not valid method
@@ -1096,11 +1097,11 @@ const chatgpt = {
                 xhr.onload = () => {
                     const responseData = JSON.parse(xhr.responseText)
                     if (xhr.status == 422)
-                        return reject('🤖 chatgpt.js >> Character limit exceeded. Custom instructions can have a maximum length of 1500 characters.')
+                        return reject('Character limit exceeded. Custom instructions can have a maximum length of 1500 characters.')
                     else if (xhr.status == 403 && responseData.detail.reason == 'content_policy')
-                        return reject('🤖 chatgpt.js >> ' + responseData.detail.description)
+                        return reject('' + responseData.detail.description)
                     else if (xhr.status != 200)
-                        return reject('🤖 chatgpt.js >> Request failed. Cannot contact custom instructions endpoint.')
+                        return reject('Request failed. Cannot contact custom instructions endpoint.')
                     console.info(`Custom instructions successfully contacted with method ${method}`)
                     return resolve(responseData || {}) // return response data no matter what the method is
                 }
@@ -1209,7 +1210,7 @@ const chatgpt = {
 
         // Create/append notification div
         const notificationDiv = document.createElement('div') // make div
-        notificationDiv.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now()
+        notificationDiv.id = Math.floor(chatgpt.randomFloat() *1000000) + Date.now()
         notificationDiv.classList.add('chatgpt-notif')
         notificationDiv.textContent = msg // insert msg
         document.body.append(notificationDiv) // insert into DOM
@@ -1317,7 +1318,7 @@ const chatgpt = {
             notificationDiv.style.animation = `notif-zoom-fade-out ${fadeDuration}s ease-out`
             clearTimeout(dismissFuncTID)
         }
-        const dismissFuncTID = setTimeout(dismissNotif, hideDelay * 1000) // maintain visibility for `hideDelay` secs, then dismiss
+        const dismissFuncTID = setTimeout(dismissNotif, hideDelay *1000) // maintain visibility for `hideDelay` secs, then dismiss
         closeSVG.onclick = dismissNotif // add to close button clicks
 
         // Destroy notification
@@ -1489,7 +1490,7 @@ const chatgpt = {
             let response
             if (!responseDivs.length) return console.error('No conversation found!')
             if (/last|final/.test(strPos)) // get last response
-                response = responseDivs[responseDivs.length - 1].textContent
+                response = responseDivs[responseDivs.length -1].textContent
             else { // get nth response
                 const nthOfResponse = (
 
@@ -1513,7 +1514,7 @@ const chatgpt = {
                     + ( /teen(?:th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
 
                 )
-                response = responseDivs[nthOfResponse - 1].textContent
+                response = responseDivs[nthOfResponse -1].textContent
             }
             response = response.replace(/^ChatGPT(?:ChatGPT)?/, '') // strip sender name
             return response
@@ -1657,9 +1658,9 @@ const chatgpt = {
 
     async sentiment(text, entity) {
         for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-            return console.error(`Argument ${ i + 1 } must be a string.`)
+            return console.error(`Argument ${ i +1 } must be a string.`)
         chatgpt.send('What is the sentiment of the following text'
-            + ( entity ? ` towards the entity ${entity},` : '')
+            + ( entity ? ` towards the entity ${entity},` : '' )
             + ' from strongly negative to strongly positive?\n\n' + text )
         console.info('Analyzing sentiment...')
         await chatgpt.isIdle()
@@ -1673,8 +1674,8 @@ const chatgpt = {
     // method = [ 'alert'|'clipboard' ] (defaults to 'clipboard' if '' or unpassed)
 
         const validMethods = ['alert', 'notify', 'notification', 'clipboard', 'copy']
-        if (!validMethods.includes(method)) return console.error(
-            `Invalid method '${method}' passed. Valid methods are [${validMethods}].`)
+        if (!validMethods.includes(method))
+            return console.error(`Invalid method '${method}' passed. Valid methods are [${validMethods}].`)
 
         const getChatNode = token => {
             return new Promise((resolve, reject) => {
@@ -1684,12 +1685,13 @@ const chatgpt = {
                     xhr.setRequestHeader('Content-Type', 'application/json')
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
-                        if (xhr.status != 200)
-                            return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat node.')
-                        return resolve(JSON.parse(xhr.responseText).current_node) // chat messages until now
+                        return xhr.status != 200 ? reject('Request failed. Cannot retrieve chat node.')
+                             : resolve(JSON.parse(xhr.responseText).current_node) // chat msgs til now
                     }
                     xhr.send()
-        })})}
+                })
+            })
+        }
 
         const makeChatToShare = (token, node) => {
             return new Promise((resolve, reject) => {
@@ -1699,16 +1701,17 @@ const chatgpt = {
                     xhr.setRequestHeader('Content-Type', 'application/json')
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
-                        if (xhr.status != 200)
-                            return reject('🤖 chatgpt.js >> Request failed. Cannot initialize share chat.')
-                        return resolve(JSON.parse(xhr.responseText)) // return untouched data
+                        return xhr.status != 200 ? reject('Request failed. Cannot initialize share chat.')
+                             : resolve(JSON.parse(xhr.responseText)) // return untouched data
                     }
                     xhr.send(JSON.stringify({ // request body
                         current_node_id: node, // by getChatNode
                         conversation_id: chat.id, // current chat id
                         is_anonymous: true // show user name in the conversation or not
                     }))
-        })})}
+                })
+            })
+        }
 
         const confirmShareChat = (token, data) => {
             return new Promise((resolve, reject) => {
@@ -1717,8 +1720,7 @@ const chatgpt = {
                 xhr.setRequestHeader('Content-Type', 'application/json')
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
-                    if (xhr.status != 200)
-                        return reject('🤖 chatgpt.js >> Request failed. Cannot share chat.')
+                    if (xhr.status != 200) return reject('Request failed. Cannot share chat.')
                     console.info(`Chat shared at '${data.share_url}'`)
                     return resolve() // the response has nothing useful
                 }
@@ -1730,21 +1732,26 @@ const chatgpt = {
                     is_visible: data.is_visible,
                     is_anonymous: data.is_anonymous
                 }))
-        })}
+            })
+        }
 
-        return new Promise(resolve => {
-            chatgpt.getAccessToken().then(token => { // get access token
-                getChatNode(token).then(node => { // get chat node
-                    makeChatToShare(token, node).then(data => {
+        return new Promise(resolve =>
+            chatgpt.getAccessToken().then(token =>
+                getChatNode(token).then(node =>
+                    makeChatToShare(token, node).then(data =>
                         confirmShareChat(token, data).then(() => {
                             if (['copy', 'clipboard'].includes(method)) navigator.clipboard.writeText(data.share_url)
                             else chatgpt.alert('🚀 Share link created!',
                                 `"${data.title}" is available at: <a target="blank" rel="noopener" href="${
                                     data.share_url}">${data.share_url}</a>`,
                                 [ function openLink() { window.open(data.share_url, '_blank', 'noopener') },
-                                    function copyLink() { navigator.clipboard.writeText(data.share_url) }])
+                                  function copyLink() { navigator.clipboard.writeText(data.share_url) }])
                             resolve(data.share_url)
-        })})})})})
+                        })
+                    )
+                )
+            )
+        )
     },
 
     showFooter() { chatgpt.footer.show() },
@@ -1788,10 +1795,10 @@ const chatgpt = {
     stop() { chatgpt.response.stopGenerating() },
 
     async suggest(ideaType, details) {
-        if (!ideaType) return console.error('ideaType (1st argument) not supplied'
-            + `(e.g. 'gifts', 'names', 'recipes', etc.)`)
+        if (!ideaType)
+            return console.error(`ideaType (1st argument) not supplied (e.g. 'gifts', 'names', 'recipes', etc.)`)
         for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-            return console.error(`Argument ${ i + 1 } must be a string.`)
+            return console.error(`Argument ${ i +1 } must be a string.`)
         chatgpt.send('Suggest some names. ' + ( details || '' ))
         console.info(`Creating ${ideaType}...`)
         await chatgpt.isIdle()
@@ -1840,7 +1847,7 @@ const chatgpt = {
         if (!text) return console.error('Text (1st) argument not supplied. Pass some text!')
         if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!')
         for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-            return console.error(`Argument ${ i + 1 } must be a string!`)
+            return console.error(`Argument ${ i +1 } must be a string!`)
         chatgpt.send(`Translate the following text to ${outputLang}. Only reply with the translation.\n\n${text}`)
         console.info('Translating text...')
         await chatgpt.isIdle()
@@ -1850,14 +1857,13 @@ const chatgpt = {
     unminify() { chatgpt.code.unminify() },
 
     uuidv4() {
-        try {
-            // use native secure uuid generator when available
+        try { // to use native secure uuid generator
             return crypto.randomUUID()
         } catch(_e) {
             let d = new Date().getTime() // get current timestamp in ms (to ensure UUID uniqueness)
             const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
                 const r = ( // generate random nibble
-                    ( d + (window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) - 1))*16)%16 | 0 )
+                    ( d + (window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) -1))*16)%16 | 0 )
                 d = Math.floor(d/16) // correspond each UUID digit to unique 4-bit chunks of timestamp
                 return ( c == 'x' ? r : (r&0x3|0x8) ).toString(16) // generate random hexadecimal digit
             })
