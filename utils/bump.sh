@@ -33,11 +33,11 @@ echo ''
 echo -e "${BY}Bumping versions in package manifests...${BW}"
 npm version --no-git-tag-version "$new_ver"
 
-echo -e "${BY}\nBumping versions in READMEs...${BW}"
+echo -e "${BY}\nBumping versions in READMEs + chatgpt.d.ts...${BW}"
 sed -i \
     -e "s/\(chatgpt\(-\|\.js@\)\)[0-9]\+\(\.[0-9]\+\)\{2\}/\1$new_ver/g" `# jsDelivr URLs` \
-    -e "s|v[0-9]\+\.[0-9]\+\.[0-9]\+|v$new_ver|g" `# Minified Size shield link/src + userguide links` \
-    $(find docs -regex ".*/\(README\|USERGUIDE\)\.md") ./README.md
+    -e "s|v[0-9]\+\.[0-9]\+\.[0-9]\+|v$new_ver|g" `# version refs` \
+    $(find docs -regex ".*/\(README\|USERGUIDE\)\.md") ./README.md ./chatgpt.d.ts
 echo "v$new_ver"
 
 echo -e "${BY}\nChanging Git author/committer to kudo-sync-bot...\n${NC}"
