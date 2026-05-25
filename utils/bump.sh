@@ -23,7 +23,7 @@ for arg in "$@"; do
         "major") subvers[0]=$((subvers[0] + 1)) ; subvers[1]=0 ; subvers[2]=0 ; break ;;
     esac
 done
-if [[ "$new_ver" == "$old_ver" ]]; then
+if [[ "$new_ver" == "$old_ver" ]] ; then
     echo -e "\n${BR}Invalid bump type arg provided${NC}"
     echo -e "\n${BY}Valid args are: ${BUMP_TYPES[*]/#/--}${NC}"
     exit 1
