@@ -624,7 +624,7 @@ const chatgpt = {
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
 
-    execute() { chatgpt.code.execute() },
+    execute(code) { chatgpt.code.execute(code) },
 
     async exportChat(chatToGet, format) {
     // chatToGet = 'active' (default) | 'latest' | index|title|id of chat to get
