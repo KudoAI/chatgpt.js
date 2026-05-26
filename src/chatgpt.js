@@ -721,8 +721,12 @@ const chatgpt = {
         }
     },
 
-    extractCode() { chatgpt.code.extract() },
-    focusChatbar() { chatgpt.getChatBox()?.focus() },
+    extractCode() { 
+        chatgpt.code.extract() 
+    },
+    focusChatbar() { 
+        chatgpt.getChatBox()?.focus() 
+    },
 
     footer: {
         get() { return document.querySelector(chatgpt.selectors.footer) },
@@ -796,7 +800,9 @@ const chatgpt = {
         })
     },
 
-    getChatBox() { return document.getElementById('prompt-textarea') },
+    getChatBox() { 
+        return document.getElementById('prompt-textarea') 
+    },
 
     getChatData(chatToGet = 1, detailsToGet = 'all', sender = 'all', msgToGet = 'all') {
     // chatToGet = 'active' | 'latest' | index|title|id of chat to get (defaults to active OpenAI chat > latest chat)
@@ -991,8 +997,12 @@ const chatgpt = {
 
     header: {
         get() { return document.querySelector(chatgpt.selectors.header) },
-        hide() { chatgpt.header.get().style.display = 'none' },
-        show() { chatgpt.header.get().style.display = 'flex' }
+        hide() { 
+            chatgpt.header.get().style.display = 'none' 
+        },
+        show() { 
+            chatgpt.header.get().style.display = 'flex' 
+        }
     },
 
     hideFooter() { chatgpt.footer.hide() },
@@ -1187,8 +1197,12 @@ const chatgpt = {
             } catch (err) { console.error(err.message) }
         },
 
-        open() { document.querySelector(`${chatgpt.selectors.btns.menu}[aria-expanded="false"]`) && this.toggle() },
-        close() { document.querySelector(`${chatgpt.selectors.btns.menu}[aria-expanded="true"]`) && this.toggle() }
+        open() { 
+            document.querySelector(`${chatgpt.selectors.btns.menu}[aria-expanded="false"]`) && this.toggle() 
+        },
+        close() { 
+            document.querySelector(`${chatgpt.selectors.btns.menu}[aria-expanded="true"]`) && this.toggle() 
+        }
     },
 
     minify() { chatgpt.code.minify() },
