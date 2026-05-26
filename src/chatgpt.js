@@ -727,18 +727,22 @@ const chatgpt = {
     footer: {
         get() { return document.querySelector(chatgpt.selectors.footer) },
 
-        hide() {
+        hide({ preserveHeight = false } = {}) {
             const footer = chatgpt.footer.get()
-            if (!footer) return console.error('Footer element not found!')
-            if (footer.style.display == 'none') return console.info('Footer already hidden!')
-            footer.style.display = 'none'
+            if (!footer)
+                return console.error('Footer element not found!')
+            if (footer.style.display == 'none' || footer.style.opacity == '0')
+                return console.info('Footer already hidden!')
+            Object.assign(footer.style, preserveHeight ? { opacity: 0, height: '15px !important' } : { display: 'none' })
         },
 
         show() {
             const footer = chatgpt.footer.get()
-            if (!footer) return console.error('Footer element not found!')
-            if (footer.style.display == 'inherit') return console.info('Footer already shown!')
-            footer.style.display = 'inherit'
+            if (!footer)
+                return console.error('Footer element not found!')
+            if (footer.style.display == 'inherit' && footer.style.opacity != '0')
+                return console.info('Footer already shown!')
+            Object.assign(footer.style, { opacity: 'inherit', height: 'inherit', display: 'inherit' })
         }
     },
 
