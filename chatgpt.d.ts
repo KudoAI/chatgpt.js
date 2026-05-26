@@ -3,18 +3,6 @@
  * Based on: https://github.com/KudoAI/chatgpt.js
  */
 
-declare interface ChatGPTAccessToken {
-  token: string
-  expireDate: string
-}
-
-declare interface ChatGPTMenuAttrs {
-  icon?: string
-  label?: string
-  onclick?: (...args: any[]) => void
-  items?: Array<{ text: string, value: string }>
-}
-
 declare interface ChatGPT {
 
   colors: {
@@ -214,8 +202,6 @@ declare interface ChatGPT {
 
   menu: {
     elems: HTMLElement[]
-    addedEvent?: boolean
-    append(elem: 'button' | 'dropdown', attrs?: ChatGPTMenuAttrs): string
     close(): void
     open(): void
   }
@@ -309,21 +295,9 @@ declare interface ChatGPT {
   summarize(text: string): Promise<string>
   toggleScheme(): void
   translate(text: string, outputLang: string): Promise<string>
-  
   unminify(code?: string): Promise<string>
   uuidv4(): string
   writeCode(prompt?: string, outputLang?: string): Promise<string>
-
-  // Button actions
-  clickButton(btnIdentifier: string): void
-  getButton(btnIdentifier: string): HTMLElement | null
-
-  accessToken?: ChatGPTAccessToken
-  draggingModal?: HTMLElement
-  scheme: ChatGPTScheme
-
-  // Alias support
-  [key: string]: any
 }
 
 declare const chatgpt: ChatGPT
