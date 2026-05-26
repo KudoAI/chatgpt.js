@@ -971,16 +971,7 @@ const chatgpt = {
     getNewChatButton() { return document.querySelector(chatgpt.selectors.btns.newChat) },
     getNewChatLink() { return document.querySelector(chatgpt.selectors.links.newChat) },
     getRegenerateButton() { return document.querySelector(chatgpt.selectors.btns.regen) },
-
-    getResponse() {
-    // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:
-    // chatToGet = index|title|id of chat to get (defaults to latest if '' unpassed)
-    // responseToGet = index of response to get (defaults to latest if '' unpassed)
-    // regenResponseToGet = index of regenerated response to get (defaults to latest if '' unpassed)
-
-        return chatgpt.response.get(...arguments)
-    },
-
+    getResponse() { return chatgpt.response.get(...arguments) },
     getResponseFromAPI(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet) },
     getResponseFromDOM(pos) { return chatgpt.response.getFromDOM(pos) },
     getScrollToBottomButton() { return document.querySelector(chatgpt.selectors.btns.scroll) },
@@ -1876,6 +1867,5 @@ const chatgpt = {
 
 chatgpt.scheme = { ...chatgpt.settings.scheme } // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
 
-// Export chatgpt object
 try { window.chatgpt = chatgpt } catch (err) {} // for browser
 try { module.exports = chatgpt } catch (err) {} // for CommonJS
