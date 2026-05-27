@@ -188,7 +188,7 @@ Alias for [`chatgpt.footer.hide()`](#hide)
 
 #### `isDarkMode()`
 
-Alias for [`chatgpt.settings.scheme.isDark()`](#isdark-1)
+Alias for [`chatgpt.settings.scheme.isDark()`](#isdark )
 
 #
 
@@ -200,7 +200,7 @@ Alias for [`chatgpt.browser.isFullScreen()`](#isfullscreen-1)
 
 #### `isLightMode()`
 
-Alias for [`chatgpt.settings.scheme.isLight()`](#islight-1)
+Alias for [`chatgpt.settings.scheme.isLight()`](#islight)
 
 #
 
