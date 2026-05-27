@@ -624,7 +624,7 @@ const chatgpt = {
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
 
-    execute(code) { chatgpt.code.execute(code) },
+    execute(code) { return chatgpt.code.execute(code) },
 
     async exportChat(chatToGet, format) {
     // chatToGet = 'active' (default) | 'latest' | index|title|id of chat to get
@@ -721,12 +721,8 @@ const chatgpt = {
         }
     },
 
-    extractCode() { 
-        chatgpt.code.extract() 
-    },
-    focusChatbar() { 
-        chatgpt.getChatBox()?.focus() 
-    },
+    extractCode(msg) { return chatgpt.code.extract(msg) },
+    focusChatbar() { chatgpt.getChatBox()?.focus() },
 
     footer: {
         get() { return document.querySelector(chatgpt.selectors.footer) },
