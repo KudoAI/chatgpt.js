@@ -730,14 +730,14 @@ const chatgpt = {
         hide() {
             const footer = chatgpt.footer.get()
             if (!footer) return console.error('Footer element not found!')
-            if (footer.style.visibility == 'hidden') return console.info('Footer already hidden!')
+            if (footer.style.display == 'none') return console.info('Footer already hidden!')
             footer.style.display = 'none'
         },
 
         show() {
             const footer = chatgpt.footer.get()
             if (!footer) return console.error('Footer element not found!')
-            if (footer.style.visibility != 'hidden') return console.info('Footer already shown!')
+            if (footer.style.display != 'none') return console.info('Footer already shown!')
             footer.style.display = 'inherit'
         }
     },
