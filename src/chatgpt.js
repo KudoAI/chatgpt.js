@@ -721,7 +721,7 @@ const chatgpt = {
         }
     },
 
-    extractCode() { chatgpt.code.extract() },
+    extractCode(msg) { chatgpt.code.extract(msg) },
     focusChatbar() { chatgpt.getChatBox()?.focus() },
 
     footer: {
