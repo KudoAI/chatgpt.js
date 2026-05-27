@@ -98,6 +98,12 @@ Example:
 
 #
 
+#### `continue()`
+
+Alias for [`chatgpt.response.continue()`](#continue-1)
+
+#
+
 #### `detectLanguage(text)` `async`
 
 Asks ChatGPT to detect the language of given text.
@@ -121,19 +127,43 @@ Example:
 
 #### `execute()` `async`
 
-Asks ChatGPT to execute the given code.
+Alias for [`chatgpt.code.execute()`](#execute-async-1)
 
-Parameters:
+#
 
-`code`: A string being the code to execute.
+#### `extractCode()`
 
-Example:
+Alias for [`chatgpt.code.extract()`](#extract)
 
-```js
-(async () => {
-    chatgpt.alert(await chatgpt.execute('return 6 + 5')) // logs '11'
-})()
-```
+#
+
+#### `getFooterDiv()`
+
+Alias for [`chatgpt.footer.get()`](#get)
+
+#
+
+#### `getHeaderDiv()`
+
+Alias for [`chatgpt.header.get()`](#get-1)
+
+#
+
+#### `getResponse()`
+
+Alias for [`chatgpt.response.get()`](#get-2)
+
+#
+
+#### `getResponseFromAPI()` `async`
+
+Alias for [`chatgpt.response.getFromAPI()`](#getresponsefromapi-async)
+
+#
+
+#### `getResponseFromDOM()` `async`
+
+Alias for [`chatgpt.response.getFromDOM()`](#getresponsefromdom-async)
 
 #
 
@@ -150,17 +180,27 @@ chatgpt.alert(userLanguage) // Example output: 'en-US'
 
 #
 
+#### `hideFooter()`
+
+Alias for [`chatgpt.footer.hide()`](#hide)
+
+#
+
+#### `isDarkMode()`
+
+Alias for [`chatgpt.settings.scheme.isDark()`](#isdark-1)
+
+#
+
 #### `isFullScreen()`
 
-Returns a boolean value. `true` if the website is fullscreen and `false` otherwise.
+Alias for [`chatgpt.browser.isFullScreen()`](#isfullscreen-1)
 
-Example:
+#
 
-```js
-if (chatgpt.isFullScreen()) {
-    // Do something
-}
-```
+#### `isLightMode()`
+
+Alias for [`chatgpt.settings.scheme.isLight()`](#islight-1)
 
 #
 
@@ -197,6 +237,18 @@ if (chatgpt.isTempChat()) {
 
 #
 
+#### `minify()` `async`
+
+Alias for [`chatgpt.code.minify()`](#minify-async-1)
+
+#
+
+#### `obfuscate()` `async`
+
+Alias for [`chatgpt.code.obfuscate()`](#obfuscate-async-1)
+
+#
+
 #### `printAllFunctions()`
 
 Prints all the library functions to the console.
@@ -206,6 +258,24 @@ Example:
 ```js
 chatgpt.printAllFunctions()
 ```
+
+#
+
+#### `refactor()` `async`
+
+Alias for [`chatgpt.code.refactor()`](#refactor-async-1)
+
+#
+
+#### `regenerate()`
+
+Alias for [`chatgpt.response.regenerate()`](#regenerate-1)
+
+#
+
+#### `reviewCode()` `async`
+
+Alias for [`chatgpt.code.review()`](#review-async)
 
 #
 
@@ -235,6 +305,24 @@ Example:
     with the project. */
 })()
 ```
+
+#
+
+#### `setScheme()`
+
+Alias for [`chatgpt.scheme.set()`](#set)
+
+#
+
+#### `showFooter()`
+
+Alias for [`chatgpt.footer.show()`](#show)
+
+#
+
+#### `showHeader()`
+
+Alias for [`chatgpt.header.show()`](#show-1)
 
 #
 
@@ -300,6 +388,12 @@ Example:
 
 #
 
+#### `toggleScheme()`
+
+Alias for [`chatgpt.scheme.toggle()`](#toggle-1)
+
+#
+
 #### `translate()` `async`
 
 Asks ChatGPT to translate given text to a given language.
@@ -321,6 +415,12 @@ Example:
 
 #
 
+#### `unminify()` `async`
+
+Alias for [`chatgpt.code.unminify()`](#unminify-async-1)
+
+#
+
 #### `uuidv4()`
 
 Example:
@@ -329,6 +429,12 @@ Example:
 const randomID = chatgpt.uuidv4()
 chatgpt.alert(randomID) // Example output: '239067d1-bcb8-4fd7-91eb-9ab94619b7b3'
 ```
+
+#### `write()` `async`
+
+Alias for [`chatgpt.code.write()`](#write-async-1)
+
+#
 
 <a href="#top">Back to top ↑</a>
 
@@ -777,14 +883,6 @@ Returns the last ChatGPT response as a string.
     chatgpt.alert(response) // Example output: 'I am ChatGPT!'
 })()
 ```
-
-#
-
-#### `getResponse()`
-
-If it's a previously created chat, see [chatgpt.getResponseFromDOM](#getresponsefromdom)
-
-If it's a new chat, see [chatgpt.getResponseFromAPI](#getresponsefromapi-async)
 
 #
 
