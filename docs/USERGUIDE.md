@@ -146,7 +146,7 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
   - [`instructions`](#instructions-api): [`add()`](#add-async), [`clear()`](#clear-async), [`turnOff()`](#turnoff-async), [`turnOn()`](#turnon-async), [`toggle()`](#toggle-async)
   - [`menu`](#menu-api): [`toggle()`](#toggle), [`open()`](#open), [`close()`](#close)
   - [`response`](#response-api): [`continue()`](#continue), [`get()`](#get-2), [`getFromAPI()`](#getfromapi-async), [`getFromDOM()`](#getfromdom), [`getLast()`](#getlast-async), [`regenerate()`](#regenerate-1), [`stopGenerating()`](#stopgenerating)
-  - [`settings`](#settings-api): [`scheme()`](#scheme-api-subset)
+  - [`settings`](#settings-api): [`scheme`](#scheme-api-subset)
   - [`sidebar`](#sidebar-api): [`exists()`](#exists), [`isOn()`](#ison), [`isOff()`](#isoff), [`hide()`](#hide-2), [`show()`](#show-2), [`toggle()`](#toggle-2), [`isLoaded()`](#isloaded-async-2)
 
 > **Note**
@@ -2017,7 +2017,7 @@ API for interfacing with ChatGPT user settings.
 
 #
 
-#### `scheme()` `api subset`
+#### `scheme` `api subset`
 
 ##
 
