@@ -69,85 +69,85 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
 # 📖 Library methods
 
 - [General](#general)
-  - `actAs(persona)` `async`
-  - `detectLanguage(text)` `async`
-  - `getUserLanguage()`
-  - `isLoaded()` `async`
-  - `isTempChat()`
-  - `printAllFunctions()`
-  - `sentiment()` `async`
-  - `suggest()` `async`
-  - `summarize()` `async`
-  - `translate()` `async`
-  - `uuidv4()`
+  - [`actAs(persona)` `async`](#actaspersona-async)
+  - [`detectLanguage(text)` `async`](#detectlanguagetext-async)
+  - [`getUserLanguage()`](#getuserlanguage)
+  - [`isLoaded()` `async`](#isloaded-async)
+  - [`isTempChat()`](#istempchat)
+  - [`printAllFunctions()`](#printallfunctions)
+  - [`sentiment()` `async`](#sentiment-async)
+  - [`suggest()` `async`](#suggest-async)
+  - [`summarize()` `async`](#summarize-async)
+  - [`translate()` `async`](#translate-async)
+  - [`uuidv4()`](#uuidv4)
 - [Page theme](#page-theme)
-  - `activateDarkMode()`
-  - `activateLightMode()`
-  - `isDarkMode()`
-  - `isLightMode()`
-  - `toggleScheme()`
+  - [`activateDarkMode()`](#activatedarkmode)
+  - [`activateLightMode()`](#activatelightmode)
+  - [`isDarkMode()`](#isdarkmode)
+  - [`isLightMode()`](#islightmode)
+  - [`toggleScheme()`](#togglescheme)
 - [In-site notifications](#in-site-notifications)
-  - `alert()`
-  - `notify()`
+  - [`alert()`](#alert)
+  - [`notify()`](#notify)
 - [User session](#user-session)
-  - `getAccessToken()` `async`
-  - `getAccountDetails()` `async`
-  - `login()`
-  - `logout()`
+  - [`getAccessToken()` `async`](#getaccesstoken-async)
+  - [`getAccountDetails()` `async`](#getaccountdetails-async)
+  - [`login()`](#login)
+  - [`logout()`](#logout)
 - [Chats](#chats)
-  - `askAndGetReply()` `async`
-  - `clearChats()` `async`
-  - `exportChat()` `async`
-  - `getChatData()` `async`
-  - `getChatInput()`
-  - `getErrorMsg()`
-  - `getLastPrompt()` `async`
-  - `getLastResponse()` `async`
-  - `getResponseFromAPI()` `async`
-  - `getResponseFromDOM()`
-  - `isIdle()` `async`
-  - `isTyping()`
-  - `regenerate()`
-  - `resend()` `async`
-  - `scrollToBottom()`
-  - `send()`
-  - `sendInNewChat()`
-  - `setProvider()`
-  - `shareChat()` `async`
-  - `speak()`
-  - `startNewChat()`
-  - `stop()`
+  - [`askAndGetReply()` `async`](#askandgetreply-async)
+  - [`clearChats()` `async`](#clearchats-async)
+  - [`exportChat()` `async`](#exportchat-async)
+  - [`getChatData()` `async`](#getchatdata-async)
+  - [`getChatInput()`](#getchatinput)
+  - [`getErrorMsg()`](#geterrormsg)
+  - [`getLastPrompt()` `async`](#getlastprompt-async)
+  - [`getLastResponse()` `async`](#getlastresponse-async)
+  - [`getResponseFromAPI()` `async`](#getresponsefromapi-async)
+  - [`getResponseFromDOM()`](#getresponsefromdom)
+  - [`isIdle()` `async`](#isidle-async)
+  - [`isTyping()`](#istyping)
+  - [`regenerate()`](#regenerate)
+  - [`resend()` `async`](#resend-async)
+  - [`scrollToBottom()`](#scrolltobottom)
+  - [`send()`](#send)
+  - [`sendInNewChat()`](#sendinnewchat)
+  - [`setProvider()`](#setprovider)
+  - [`shareChat()` `async`](#sharechat-async)
+  - [`speak()`](#speak)
+  - [`startNewChat()`](#startnewchat)
+  - [`stop()`](#stop)
 - [DOM related](#dom-related)
-  - `focusChatbar()`
-  - `getChatBox()`
-  - `getContinueButton()`
-  - `getDictateButton()`
-  - `getFooterDiv()`
-  - `getHeaderDiv()`
-  - `getLoginButton()`
-  - `getNewChatButton()`
-  - `getNewChatLink()`
-  - `getRegenerateButton()`
-  - `getScrollToBottomButton()`
-  - `getSendButton()`
-  - `getStopGeneratingButton()`
-  - `getVoiceButton()`
-  - `hideFooter()`
-  - `hideHeader()`
-  - `showFooter()`
-  - `showHeader()`
+  - [`focusChatbar()`](#focuschatbar)
+  - [`getChatBox()`](#getchatbox)
+  - [`getContinueButton()`](#getcontinuebutton)
+  - [`getDictateButton()`](#getdictatebutton)
+  - [`getFooterDiv()`](#getfooterdiv)
+  - [`getHeaderDiv()`](#getheaderdiv)
+  - [`getLoginButton()`](#getloginbutton)
+  - [`getNewChatButton()`](#getnewchatbutton)
+  - [`getNewChatLink()`](#getnewchatlink)
+  - [`getRegenerateButton()`](#getregeneratebutton)
+  - [`getScrollToBottomButton()`](#getscrolltobottombutton)
+  - [`getSendButton()`](#getsendbutton)
+  - [`getStopGeneratingButton()`](#getstopgeneratingbutton)
+  - [`getVoiceButton()`](#getvoicebutton)
+  - [`hideFooter()`](#hidefooter)
+  - [`hideHeader()`](#hideheader)
+  - [`showFooter()`](#showfooter)
+  - [`showHeader()`](#showheader)
 - [Library APIs](#library-apis)
-  - [`autoRefresh`](#autorefresh-api): `activate()`, `deactivate()`, `nowTimeStamp()`
-  - [`browser`](#browser-api): `isLightMode()`, `isDarkMode()`, `isChromium()`, `isChrome()`, `isEdge()`, `isBrave()`, `isFirefox()`, `isFullScreen()`, `isMobile()`
-  - [`code`](#code-api): `minify()`, `execute()`, `extract()`, `isIdle()`, `obfuscate()`, `refactor()`, `review()`, `unminify()`, `write()`
-  - [`footer`](#footer-api): `get()`, `hide()`, `show()`
-  - [`header`](#header-api): `get()`, `hide()`, `show()`
-  - [`history`](#history-api): `isLoaded()`
-  - [`instructions`](#instructions-api): `add()`, `clear()`, `turnOff()`, `turnOn()`, `toggle()`
-  - [`menu`](#menu-api): `toggle()`, `open()`, `close()`
-  - [`response`](#response-api): `continue()`, `get()`, `getFromAPI()`, `getFromDOM()`, `getLast()`, `regenerate()`, `stopGenerating()`
-  - [`settings`](#settings-api): `scheme()`
-  - [`sidebar`](#sidebar-api): `exists()`, `isOn()`, `isOff()`, `hide()`, `show()`, `toggle()`, `isLoaded()`
+  - [`autoRefresh`](#autorefresh-api): [`activate()`](#activate), [`deactivate()`](#deactivate), [`nowTimeStamp()`](#nowtimestamp)
+  - [`browser`](#browser-api): [`isLightMode()`](#islightmode-1), [`isDarkMode()`](#isdarkmode-1), [`isChromium()`](#ischromium), [`isChrome()`](#ischrome), [`isEdge()`](#isedge), [`isBrave()`](#isbrave), [`isFirefox()`](#isfirefox), [`isFullScreen()`](#isfullscreen), [`isMobile()`](#ismobile)
+  - [`code`](#code-api): [`minify()`](#minify-async), [`execute()`](#execute-async), [`extract()`](#extract), [`isIdle()`](#isidle-async-1), [`obfuscate()`](#obfuscate-async), [`refactor()`](#refactor-async), [`review()`](#review-async), [`unminify()`](#unminify-async), [`write()`](#write-async)
+  - [`footer`](#footer-api): [`get()`](#get), [`hide()`](#hide), [`show()`](#show)
+  - [`header`](#header-api): [`get()`](#get-1), [`hide()`](#hide-1), [`show()`](#show-1)
+  - [`history`](#history-api): [`isLoaded()`](#isloaded-async-1)
+  - [`instructions`](#instructions-api): [`add()`](#add-async), [`clear()`](#clear-async), [`turnOff()`](#turnoff-async), [`turnOn()`](#turnon-async), [`toggle()`](#toggle-async)
+  - [`menu`](#menu-api): [`toggle()`](#toggle), [`open()`](#open), [`close()`](#close)
+  - [`response`](#response-api): [`continue()`](#continue), [`get()`](#get-2), [`getFromAPI()`](#getfromapi-async), [`getFromDOM()`](#getfromdom), [`getLast()`](#getlast-async), [`regenerate()`](#regenerate-1), [`stopGenerating()`](#stopgenerating)
+  - [`settings`](#settings-api): [`scheme()`](#scheme-api-subset)
+  - [`sidebar`](#sidebar-api): [`exists()`](#exists), [`isOn()`](#ison), [`isOff()`](#isoff), [`hide()`](#hide-2), [`show()`](#show-2), [`toggle()`](#toggle-2), [`isLoaded()`](#isloaded-async-2)
 
 <hr>
 
