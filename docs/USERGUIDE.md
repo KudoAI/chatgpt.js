@@ -68,7 +68,86 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
 
 # 📖 Library methods
 
-<strong>[General](#general) / [Page theme](#page-theme) / [Chats](#chats) / [DOM related](#dom-related) / [APIs](#library-apis)</strong>
+- [General](#general)
+  - `actAs(persona)` `async`
+  - `detectLanguage(text)` `async`
+  - `getUserLanguage()`
+  - `isLoaded()` `async`
+  - `isTempChat()`
+  - `printAllFunctions()`
+  - `sentiment()` `async`
+  - `suggest()` `async`
+  - `summarize()` `async`
+  - `translate()` `async`
+  - `uuidv4()`
+- [Page theme](#page-theme)
+  - `activateDarkMode()`
+  - `activateLightMode()`
+  - `isDarkMode()`
+  - `isLightMode()`
+  - `toggleScheme()`
+- [In-site notifications](#in-site-notifications)
+  - `alert()`
+  - `notify()`
+- [User session](#user-session)
+  - `getAccessToken()` `async`
+  - `getAccountDetails()` `async`
+  - `login()`
+  - `logout()`
+- [Chats](#chats)
+  - `askAndGetReply()` `async`
+  - `clearChats()` `async`
+  - `exportChat()` `async`
+  - `getChatData()` `async`
+  - `getChatInput()`
+  - `getErrorMsg()`
+  - `getLastPrompt()` `async`
+  - `getLastResponse()` `async`
+  - `getResponseFromAPI()` `async`
+  - `getResponseFromDOM()`
+  - `isIdle()` `async`
+  - `isTyping()`
+  - `regenerate()`
+  - `resend()` `async`
+  - `scrollToBottom()`
+  - `send()`
+  - `sendInNewChat()`
+  - `setProvider()`
+  - `shareChat()` `async`
+  - `speak()`
+  - `startNewChat()`
+  - `stop()`
+- [DOM related](#dom-related)
+  - `focusChatbar()`
+  - `getChatBox()`
+  - `getContinueButton()`
+  - `getDictateButton()`
+  - `getFooterDiv()`
+  - `getHeaderDiv()`
+  - `getLoginButton()`
+  - `getNewChatButton()`
+  - `getNewChatLink()`
+  - `getRegenerateButton()`
+  - `getScrollToBottomButton()`
+  - `getSendButton()`
+  - `getStopGeneratingButton()`
+  - `getVoiceButton()`
+  - `hideFooter()`
+  - `hideHeader()`
+  - `showFooter()`
+  - `showHeader()`
+- [Library APIs](#library-apis)
+  - [`autoRefresh`](#autorefresh-api): `activate()`, `deactivate()`, `nowTimeStamp()`
+  - [`browser`](#browser-api): `isLightMode()`, `isDarkMode()`, `isChromium()`, `isChrome()`, `isEdge()`, `isBrave()`, `isFirefox()`, `isFullScreen()`, `isMobile()`
+  - [`code`](#code-api): `minify()`, `execute()`, `extract()`, `isIdle()`, `obfuscate()`, `refactor()`, `review()`, `unminify()`, `write()`
+  - [`footer`](#footer-api): `get()`, `hide()`, `show()`
+  - [`header`](#header-api): `get()`, `hide()`, `show()`
+  - [`history`](#history-api): `isLoaded()`
+  - [`instructions`](#instructions-api): `add()`, `clear()`, `turnOff()`, `turnOn()`, `toggle()`
+  - [`menu`](#menu-api): `toggle()`, `open()`, `close()`
+  - [`response`](#response-api): `continue()`, `get()`, `getFromAPI()`, `getFromDOM()`, `getLast()`, `regenerate()`, `stopGenerating()`
+  - [`settings`](#settings-api): `scheme()`
+  - [`sidebar`](#sidebar-api): `exists()`, `isOn()`, `isOff()`, `hide()`, `show()`, `toggle()`, `isLoaded()`
 
 <hr>
 
