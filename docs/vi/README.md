@@ -347,7 +347,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 ### Bạn có ý tưởng hay yêu cầu nào dành cho thư viện không?
 
-Tạo thảo luận mới: https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas
+Tạo Issue mới: https://github.com/KudoAI/chatgpt.js/issues/new
 
 <hr>
 

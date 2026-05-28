@@ -346,7 +346,7 @@ For more options & examples, see the extended user guide:
 
 ### Have a library idea or request?
 
-Create a new discussion: https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas
+Create a new Issue: https://github.com/KudoAI/chatgpt.js/issues/new
 
 <hr>
 

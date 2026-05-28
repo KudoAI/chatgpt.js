@@ -347,7 +347,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 ### पुस्तकालयको कुनै विचार वा अनुरोध छ?
 
-नयाँ छलफल सिर्जना गर्नुहोस्: https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas
+नयाँ मुद्दा सिर्जना गर्नुहोस्: https://github.com/KudoAI/chatgpt.js/issues/new
 
 <hr>
 

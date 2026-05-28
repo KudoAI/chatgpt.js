@@ -346,7 +346,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 ### 有关于图书馆的想法或建议吗？
 
-发起新讨论：https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas
+创建新 Issue：https://github.com/KudoAI/chatgpt.js/issues/new
 
 <hr>
 
