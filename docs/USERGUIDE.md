@@ -150,7 +150,7 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
   - [`sidebar`](#sidebar-api): [`exists()`](#exists), [`isOn()`](#ison), [`isOff()`](#isoff), [`hide()`](#hide-2), [`show()`](#show-2), [`toggle()`](#toggle-2), [`isLoaded()`](#isloaded-async-2)
 
 > **Note**
-> Top-level aliases such as `chatgpt.minify()`, `chatgpt.execute()`, `chatgpt.extractCode()`, `chatgpt.setScheme()` and `chatgpt.scheme.*` are deprecated and planned for removal in v5.0.0. Use the canonical APIs such as `chatgpt.code.*`, `chatgpt.response.*` and `chatgpt.settings.scheme.*` instead.
+> Top-level aliases such as `chatgpt.minify()`, `chatgpt.execute()`, `chatgpt.extractCode()`, `chatgpt.setScheme()` and `chatgpt.scheme.*` are deprecated and planned for removal in v4.5.1. Use the canonical APIs such as `chatgpt.code.*`, `chatgpt.response.*` and `chatgpt.settings.scheme.*` instead.
 
 <hr>
 
