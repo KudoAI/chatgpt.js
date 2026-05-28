@@ -130,7 +130,7 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
   - [`getRegenerateButton()`](#getregeneratebutton)
   - [`getScrollToBottomButton()`](#getscrolltobottombutton)
   - [`getSendButton()`](#getsendbutton)
-  - [`getStopGeneratingButton()`](#getstopgeneratingbutton)
+  - [`getStopButton()`](#getstopbutton)
   - [`getVoiceButton()`](#getvoicebutton)
   - [`hideFooter()`](#hidefooter)
   - [`hideHeader()`](#hideheader)
