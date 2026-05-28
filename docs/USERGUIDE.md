@@ -70,6 +70,9 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
 
 <strong>[General](#general) / [Page theme](#page-theme) / [Chats](#chats) / [DOM related](#dom-related) / [APIs](#library-apis)</strong>
 
+> **Note**
+> Top-level aliases such as `chatgpt.minify()`, `chatgpt.execute()`, `chatgpt.extractCode()`, `chatgpt.setScheme()` and `chatgpt.scheme.*` are deprecated and planned for removal in v5.0.0. Use the canonical APIs such as `chatgpt.code.*`, `chatgpt.response.*` and `chatgpt.settings.scheme.*` instead.
+
 <hr>
 
 ## General
@@ -333,7 +336,7 @@ Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
 Example:
 
 ```js
-chatgpt.alert(chatgpt.settings.scheme.isDark()) // logs `true` or `false`
+chatgpt.alert(chatgpt.isDarkMode()) // logs `true` or `false`
 ```
 
 #
@@ -345,7 +348,7 @@ Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
 Example:
 
 ```js
-chatgpt.alert(chatgpt.settings.scheme.isDark()) // logs `true` or `false`
+chatgpt.alert(chatgpt.isLightMode()) // logs `true` or `false`
 ```
 
 #
@@ -1149,14 +1152,14 @@ sendBtn.click()
 
 #
 
-#### `getStopGeneratingButton()`
+#### `getStopButton()`
 
 Returns the button that stops the generation of ChatGPT's response as an HTML element.
 
 Example:
 
 ```js
-const stopBtn = chatgpt.getStopGeneratingButton()
+const stopBtn = chatgpt.getStopButton()
 stopBtn.click()
 ```
 
