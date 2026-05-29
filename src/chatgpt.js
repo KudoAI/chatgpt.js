@@ -68,19 +68,24 @@ const chatgpt = {
     },
 
     actAs(persona, { personasURL = chatgpt.endpoints.aipersonas, verbose = false } = {}) {
-        return !persona ? console.error(`'persona' arg required by actAs()`)
-            : new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest()
-                xhr.open('GET', personasURL, true) ; xhr.send()
-                xhr.onload = () => {
-                    if (xhr.status != 200) return reject('Request failed. Cannot retrieve prompts data.')
-                    const prompt = JSON.parse(xhr.responseText)[persona].prompt
-                    if (!prompt) return reject(`Persona '${persona}' was not found!`)
-                    if (verbose) console.info(`Loading [${persona}] from ${personasURL.split('/').pop()}...`)
-                    chatgpt.send(prompt)
-                    chatgpt.isIdle().then(() => resolve(prompt))
-                }
-            })
+        if (!chatgpt._validateArg({ arg: persona, type: 'string' })) return
+        if (chatgpt.env == 'backend') {
+            const prompt = require('@kudoai/ai-personas')[persona]?.prompt
+            if (!prompt) return console.error(`Persona '${persona}' was not found!`)
+            if (verbose) console.info(`Loading [${persona}] from ai-personas.json...\n\n${prompt}`)
+            chatgpt.send(prompt, { output: 'stdout' })
+        } else new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest()
+            xhr.open('GET', personasURL, true) ; xhr.send()
+            xhr.onload = () => {
+                if (xhr.status != 200) return reject('Request failed. Cannot retrieve prompts data.')
+                const prompt = JSON.parse(xhr.responseText)[persona]?.prompt
+                if (!prompt) return reject(`Persona '${persona}' was not found!`)
+                if (verbose) console.info(`Loading [${persona}] from ${personasURL.split('/').pop()}...\n\n${prompt}`)
+                chatgpt.send(prompt)
+                chatgpt.isIdle().then(() => resolve(prompt))
+            }
+        })
     },
 
     activateDarkMode() {
@@ -504,15 +509,8 @@ const chatgpt = {
     code: {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
-        _validateArg({ arg, type = 'string' }) {
-            return !arg ? !!console.error('Arg not supplied!')
-                 : ['lang', 'string'].includes(type) && typeof arg != 'string' ?
-                          !!console.error(`'${type}' arg must be a string!`)
-                 : true
-        },
-
         async execute(code) {
-            if (!chatgpt.code._validateArg({ arg: code, type: 'string' })) return
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Executing code...')
             const prompt = `Display the output as if you were terminal:\n\n${code}`
             let resp
@@ -564,7 +562,7 @@ const chatgpt = {
         },
 
         async minify(code) {
-            if (!chatgpt.code._validateArg({ arg: code, type: 'string' })) return
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Minifying code...')
             const prompt = `Minify the following code:\n\n${code}`
             let resp
@@ -577,7 +575,7 @@ const chatgpt = {
         },
 
         async obfuscate(code) {
-            if (!chatgpt.code._validateArg({ arg: code, type: 'string' })) return
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Obfuscating code...')
             const prompt = `Obfuscate the following code:\n\n${code}`
             let resp
@@ -590,7 +588,7 @@ const chatgpt = {
         },
 
         async refactor(code, objective) {
-            if (!chatgpt.code._validateArg({ arg: code, type: 'string' })) return
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             for (let i = 0 ; i < arguments.length ; i++)
                 if (typeof arguments[i] != 'string')
                     return console.error(`Argument ${ i +1 } must be a string.`)
@@ -606,7 +604,7 @@ const chatgpt = {
         },
 
         async review(code) {
-            if (!chatgpt.code._validateArg({ arg: code, type: 'string' })) return
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Reviewing code...')
             const prompt = `Review the following code:\n\n${code}`
             let resp
@@ -619,7 +617,7 @@ const chatgpt = {
         },
 
         async unminify(code) {
-            if (!chatgpt.code._validateArg({ arg: code, type: 'string' })) return
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Unminifying code...')
             const prompt = `Unminify the following code:\n\n${code}`
             let resp
@@ -632,8 +630,8 @@ const chatgpt = {
         },
 
         async write(prompt, outputLang) {
-            if (!chatgpt.code._validateArg({ arg: prompt, type: 'string' })) return
-            if (!chatgpt.code._validateArg({ arg: outputLang, type: 'lang' })) return
+            if (!chatgpt._validateArg({ arg: prompt, type: 'string' })) return
+            if (!chatgpt._validateArg({ arg: outputLang, type: 'lang' })) return
             console.info('Writing code...')
             prompt = `Write this as code in ${outputLang}: ${prompt}`
             let resp
@@ -1908,7 +1906,14 @@ const chatgpt = {
         }
     },
 
-    writeCode() { chatgpt.code.write() }
+    writeCode() { chatgpt.code.write() },
+
+    _validateArg({ arg, type = 'string' }) {
+        return !arg ? !!console.error('Arg not supplied!')
+                : ['lang', 'string'].includes(type) && typeof arg != 'string' ?
+                        !!console.error(`'${type}' arg must be a string!`)
+                : true
+    }
 }
 
 chatgpt.scheme = { ...chatgpt.settings.scheme } // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
