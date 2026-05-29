@@ -120,7 +120,7 @@ export default {
 - [General](#general)
   - [`actAs(persona)` `async`](#actaspersona-async)
   - [`detectLanguage(text)` `async`](#detectlanguagetext-async)
-  - [`getRandomnAnswer()` `async`](#getrandomanswer-async)
+  - [`getRandomnAnswer()` `async`](#getrandomanswer-parameters--async)
   - [`getUserLanguage()`](#getuserlanguage)
   - [`isLoaded()` `async`](#isloaded-async)
   - [`isTempChat()`](#istempchat)
