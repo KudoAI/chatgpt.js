@@ -803,8 +803,8 @@ const chatgpt = {
     // msgToGet = 'all' | 'latest' | index of msg to get (defaults to 'all', requires 2nd param = 'msg')
 
         // Init args
-        const validDetails = [ 'all', 'id', 'title', 'create_time', 'update_time', 'msg' ]
-        const validSenders = [ 'all', 'both', 'user', 'chatgpt' ]
+        const validDetails = [ 'all', 'id', 'title', 'create_time', 'update_time', 'msg' ],
+              validSenders = [ 'all', 'both', 'user', 'chatgpt' ]
         chatToGet = !chatToGet ? 'active' // if '' passed, set to active
                   : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
                       ( parseInt(chatToGet, 10) == 0 ? 0 : parseInt(chatToGet, 10) -1 ) // ...offset -1 or keep as 0
@@ -844,7 +844,8 @@ const chatgpt = {
                     if (xhr.status != 200)
                         return reject('Request failed. Cannot retrieve chat details.')
                     const data = JSON.parse(xhr.responseText).items
-                    if (data.length <= 0) return reject('Chat list is empty.')
+                    if (data.length <= 0)
+                        return reject('Chat list is empty.')
                     const detailsToReturn = {}
 
                     // Return by index if num, 'latest', or 'active' passed but not truly active
@@ -869,7 +870,8 @@ const chatgpt = {
                         if (data[idx][chatIdentifier] == chatToGet) { chatFound = true ; break }}
                     if (!chatFound) // exit
                         return reject(`No chat with ${chatIdentifier} = ${chatToGet} found.`)
-                    for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail]
+                    for (const detail of detailsToGet)
+                        detailsToReturn[detail] = data[idx][detail]
                     return resolve(detailsToReturn)
                 }
                 xhr.send()
@@ -910,9 +912,9 @@ const chatgpt = {
                             sub.sort((a, b) => a.create_time - b.create_time) // sort in chronological order
                             sub = sub.map(x => { // pull out msgs after sorting
                                 switch(x.content.content_type) {
-                                    case 'code': return x.content.text
-                                    case 'text': return x.content.parts[0]
-                                    default: return
+                                    case 'code' : return x.content.text
+                                    case 'text' : return x.content.parts[0]
+                                    default : return
                                 }
                             })
                             sub = sub.length == 1 ? sub[0] : sub // convert not regenerated responses to strings
@@ -952,7 +954,9 @@ const chatgpt = {
                         }
                     }
                     xhr.send()
-        })})}
+                })
+            })
+        }
 
         // Return chat data
         return new Promise(resolve => chatgpt.getAccessToken().then(token => {
