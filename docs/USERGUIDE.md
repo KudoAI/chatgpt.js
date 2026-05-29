@@ -66,6 +66,55 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
 
 <hr>
 
+## 💻 Command line usage
+
+The basic command is:
+
+```bash
+chatgpt  # or cjs
+```
+
+#
+
+### Options
+
+```
+Parameter options:
+ --q, --query "msg"          Query to send AI.
+ --ui-lang="code"            ISO 639-1 code of language to display UI in.
+ --config="path/to/file"     Load custom config file.
+
+Boolean options:
+ -V, --quiet                 Suppress all logging except errors.
+
+Commands:
+ -i, --init                  Create config file (in project root).
+ -h, --help                  Display help screen.
+ -v, --version               Show version number.
+     --stats                 Show npm stats.
+     --debug [targetKey]     Show debug logs.
+```
+
+#
+
+### Configuration file
+
+**chatgpt.js** can be customized using a `.chatgpt.config.mjs` or `.chatgpt.config.js` placed in your project root.
+
+Example defaults:
+
+```js
+export default {
+    provider: 'openrouter', // provider for chat API
+    uiLang: '',             // ISO 639-1 code of language to display UI in
+    quietMode: false        // suppress all logging except errors
+}
+```
+
+💡 Run `chatgpt init` to generate a template `.chatgpt.config.mjs` in your project root.
+
+<hr>
+
 # 📖 Library methods
 
 - [General](#general)
@@ -2193,7 +2242,9 @@ Example:
 })()
 ```
 
-<br><br>
+<br>
+
+<hr>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/white/icon16.svg"><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/dark-gray/icon16.svg"></picture>
 **[Latest releases](https://github.com/KudoAI/chatgpt.js/releases)** /
