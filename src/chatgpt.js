@@ -1344,26 +1344,24 @@ const chatgpt = {
                     .toString(16).substring(1).toUpperCase() // convert to hex
         })
 
-        // Create [functionNames]
-        const functionNames = []
+        // Create [fnNames]
+        const fnNames = []
         for (const prop in this) {
             if (typeof this[prop] == 'function') {
-                const chatgptIsParent = !Object.keys(this)
-                    .find(obj => Object.keys(this[obj]).includes(this[prop].name))
-                const functionParent = chatgptIsParent ? 'chatgpt' : 'other'
-                functionNames.push([functionParent, prop])
-            } else if (typeof this[prop] == 'object') {
-                for (const nestedProp in this[prop]) {
-                    if (typeof this[prop][nestedProp] == 'function') {
-                        functionNames.push([prop, nestedProp])
-        }}}}
-        functionNames.sort((a, b) => a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]))
+                const chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name))
+                fnNames.push([chatgptIsParent ? 'chatgpt' : 'other', prop])
+            } else if (typeof this[prop] == 'object')
+                for (const nestedProp in this[prop])
+                    if (typeof this[prop][nestedProp] == 'function')
+                        fnNames.push([prop, nestedProp])
+        }
+        fnNames.sort((a, b) => a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]))
 
         // Print methods
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches,
               baseFontStyles = 'font-family: monospace ; font-size: larger ;'
         console.log('\n%c🤖 chatgpt.js methods\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold')
-        for (const functionName of functionNames) {
+        for (const functionName of fnNames) {
             const isChatGptObjParent = /chatgpt|other/.test(functionName[0]),
                   rootFunction = ( functionName[0] == 'chatgpt' ? this[functionName[1]].name
                     : functionName[0] != 'other' ? functionName[0] + '.' + functionName[1]
