@@ -1017,6 +1017,17 @@ const chatgpt = {
     getSendButton() { return document.querySelector(chatgpt.selectors.btns.send) },
     getStopButton() { return document.querySelector(chatgpt.selectors.btns.stop) },
 
+    async getRandomAnswer({ replyLang = 'en' } = {}) {
+        const prompt = `Generate a single random question in ${replyLang} language on any topic, then answer it.`
+                        + `\nDon't type anything else.`
+        if (chatgpt.env == 'frontend') {
+            chatgpt.send(prompt)
+            await chatgpt.isIdle()
+            return await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+        } else
+            return await chatgpt.send(prompt)
+    },
+
     getUserLanguage() {
         return navigator.languages[0] || navigator.language || navigator.browserLanguage
             || navigator.systemLanguage || navigator.userLanguage || ''

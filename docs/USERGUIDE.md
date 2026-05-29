@@ -120,6 +120,7 @@ export default {
 - [General](#general)
   - [`actAs(persona)` `async`](#actaspersona-async)
   - [`detectLanguage(text)` `async`](#detectlanguagetext-async)
+  - [`getRandomnAnswer()` `async`](#getrandomanswer-async)
   - [`getUserLanguage()`](#getuserlanguage)
   - [`isLoaded()` `async`](#isloaded-async)
   - [`isTempChat()`](#istempchat)
@@ -247,6 +248,23 @@ Example:
     /* Alerts:
     Chinese (Traditional) */
 })()
+```
+
+#
+
+#### `getRandomAnswer({ parameters })` `async`
+
+Parameters:
+
+`replyLang`: Language to receive replies in.
+
+Generates an answer to a random question.
+
+Example:
+
+```js
+const userLanguage = chatgpt.getUserLanguage()
+chatgpt.alert(userLanguage) // Example output: 'en-US'
 ```
 
 #
