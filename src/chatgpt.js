@@ -1758,9 +1758,8 @@ const chatgpt = {
             const sidebar = (() => {
                 return chatgpt.sidebar.exists() ? document.querySelector(chatgpt.selectors.sidebar) : null })()
             if (!sidebar) { return console.error('Sidebar element not found!') || false }
-            else return chatgpt.browser.isMobile() ?
-                document.documentElement.style.overflow == 'hidden'
-              : sidebar.style.visibility != 'hidden' && parseInt(getComputedStyle(sidebar).width) > 150
+            else return chatgpt.browser.isMobile() ? document.documentElement.style.overflow == 'hidden'
+                      : sidebar.style.visibility != 'hidden' && parseInt(getComputedStyle(sidebar).width) > 150
         },
 
         async isLoaded(timeout = 5000) {
