@@ -505,22 +505,27 @@ const chatgpt = {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
         _validateArg({ arg, type = 'string' }) {
-            return !arg ? !!console.error(`${type}' arg not supplied!`)
+            return !arg ? !!console.error('Arg not supplied!')
                  : ['lang', 'string'].includes(type) && typeof arg != 'string' ?
                           !!console.error(`'${type}' arg must be a string!`)
                  : true
         },
 
         async execute(code) {
-            if (!this._validateArg({ arg: code, as: 'string' })) return
-            chatgpt.send('Display the output as if you were terminal:\n\n' + code)
+            if (!chatgpt.code._validateArg({ arg: code, type: 'string' })) return
             console.info('Executing code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+            const prompt = `Display the output as if you were terminal:\n\n${code}`
+            let resp
+            if (chatgpt.env == 'frontend') {
+                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            } else
+                resp = await chatgpt.send(prompt)
+            return chatgpt.code.extract(resp)
         },
 
         extract(msg) { // extract pure code from response (targets last block)
-            if (!this._validateArg({ arg: msg, as: 'string' })) return
+            if (!msg || typeof msg != 'string') return
             const codeBlocks = msg.match(/(?<=```.*\n)[\s\S]*?(?=```)/g)
             return codeBlocks ? codeBlocks[codeBlocks.length -1] : msg
         },
@@ -559,55 +564,85 @@ const chatgpt = {
         },
 
         async minify(code) {
-            if (!this._validateArg({ arg: code, as: 'string' })) return
-            chatgpt.send('Minify the following code:\n\n' + code)
+            if (!chatgpt.code._validateArg({ arg: code, type: 'string' })) return
             console.info('Minifying code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+            const prompt = `Minify the following code:\n\n${code}`
+            let resp
+            if (chatgpt.env == 'frontend') {
+                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            } else
+                resp = await chatgpt.send(prompt)
+            return chatgpt.code.extract(resp)
         },
 
         async obfuscate(code) {
-            if (!this._validateArg({ arg: code, as: 'string' })) return
-            chatgpt.send('Obfuscate the following code:\n\n' + code)
+            if (!chatgpt.code._validateArg({ arg: code, type: 'string' })) return
             console.info('Obfuscating code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+            const prompt = `Obfuscate the following code:\n\n${code}`
+            let resp
+            if (chatgpt.env == 'frontend') {
+                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            } else
+                resp = await chatgpt.send(prompt)
+            return chatgpt.code.extract(resp)
         },
 
         async refactor(code, objective) {
-            if (!this._validateArg({ arg: code, as: 'string' })) return
+            if (!chatgpt.code._validateArg({ arg: code, type: 'string' })) return
             for (let i = 0 ; i < arguments.length ; i++)
                 if (typeof arguments[i] != 'string')
                     return console.error(`Argument ${ i +1 } must be a string.`)
-            chatgpt.send(`Refactor the following code for ${ objective || 'brevity' }:\n\n${code}`)
             console.info('Refactoring code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+            const prompt = `Refactor the following code for ${ objective || 'brevity' }:\n\n${code}`
+            let resp
+            if (chatgpt.env == 'frontend') {
+                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            } else
+                resp = await chatgpt.send(prompt)
+            return chatgpt.code.extract(resp)
         },
 
         async review(code) {
-            if (!this._validateArg({ arg: code, as: 'string' })) return
-            chatgpt.send('Review the following code for me:\n\n' + code)
+            if (!chatgpt.code._validateArg({ arg: code, type: 'string' })) return
             console.info('Reviewing code...')
-            await chatgpt.isIdle()
-            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            const prompt = `Review the following code:\n\n${code}`
+            let resp
+            if (chatgpt.env == 'frontend') {
+                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            } else
+                resp = await chatgpt.send(prompt)
+            return chatgpt.code.extract(resp)
         },
 
         async unminify(code) {
-            if (!this._validateArg({ arg: code, as: 'string' })) return
-            chatgpt.send('Unminify the following code.:\n\n' + code)
+            if (!chatgpt.code._validateArg({ arg: code, type: 'string' })) return
             console.info('Unminifying code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+            const prompt = `Unminify the following code:\n\n${code}`
+            let resp
+            if (chatgpt.env == 'frontend') {
+                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            } else
+                resp = await chatgpt.send(prompt)
+            return chatgpt.code.extract(resp)
         },
 
         async write(prompt, outputLang) {
-            if (!this._validateArg({ arg: prompt, as: 'string' })) return
-            if (!this._validateArg({ arg: outputLang, as: 'lang' })) return
-            chatgpt.send(`${prompt}\n\nWrite this as code in ${outputLang}`)
+            if (!chatgpt.code._validateArg({ arg: prompt, type: 'string' })) return
+            if (!chatgpt.code._validateArg({ arg: outputLang, type: 'lang' })) return
             console.info('Writing code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+            prompt = `Write this as code in ${outputLang}: ${prompt}`
+            let resp
+            if (chatgpt.env == 'frontend') {
+                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            } else
+                resp = await chatgpt.send(prompt)
+            return chatgpt.code.extract(resp)
         }
     },
 
