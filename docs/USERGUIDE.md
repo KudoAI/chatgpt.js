@@ -89,6 +89,7 @@ Boolean options:
 
 Commands:
  -i, --init                  Create config file (in project root).
+ -j, --joke                  Tells a funny joke at random.
  -h, --help                  Display help screen.
  -v, --version               Show version number.
      --stats                 Show npm stats.
