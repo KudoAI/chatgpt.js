@@ -74,7 +74,7 @@ const chatgpt = {
             if (!prompt) return console.error(`Persona '${persona}' was not found!`)
             if (verbose) console.info(`Loading [${persona}] from ai-personas.json...\n\n${prompt}`)
             chatgpt.send(prompt, { output: 'stdout' })
-        } else new Promise((resolve, reject) => {
+        } else return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest()
             xhr.open('GET', personasURL, true) ; xhr.send()
             xhr.onload = () => {
@@ -85,6 +85,7 @@ const chatgpt = {
                 chatgpt.send(prompt)
                 chatgpt.isIdle().then(() => resolve(prompt))
             }
+            xhr.onerror = () => reject(`Network error fetching ${personasURL}`)
         })
     },
 
