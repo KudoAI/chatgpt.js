@@ -59,7 +59,7 @@
 
 ### 図書館
 
-#### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
+#### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
 
 プロジェクトのルートディレクトリから：
 
@@ -105,7 +105,7 @@ npm install @kudoai/chatgpt.js
 
 ### CLIアプリ
 
-#### <a href="#-nodejs-1"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
+#### <a href="#-nodejs-1"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
 
 ```bash
 npm install -g @kudoai/chatgpt.js
@@ -221,7 +221,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 その他のオプションや例については、詳細ユーザーガイドをご覧ください。
 
-<https://github.com/KudoAI/chatgpt.js/blob/v4.5.0/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.5.1/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -346,7 +346,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 ### 図書館に関するアイデアやご要望はございますか？
 
-新しいディスカッションを作成: https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas
+新しいIssueを作成: https://github.com/KudoAI/chatgpt.js/issues/new
 
 <hr>
 
@@ -537,7 +537,7 @@ ChatGPTの応答を自動再生。
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/white/icon16.svg"><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/dark-gray/icon16.svg"></picture>
 **[最新リリース](https://github.com/KudoAI/chatgpt.js/releases)** /
-[ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/v4.5.0/docs/USERGUIDE.md) /
+[ユーザーガイド](https://github.com/KudoAI/chatgpt.js/blob/v4.5.1/docs/USERGUIDE.md) /
 [サポートを受ける](https://github.com/KudoAI/chatgpt.js/issues) / 
 [議論](https://github.com/KudoAI/chatgpt.js/discussions) / 
 <a href="#top">トップに戻る ↑</a>

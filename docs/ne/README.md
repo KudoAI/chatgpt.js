@@ -59,7 +59,7 @@
 
 ### पुस्तकालय
 
-#### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
+#### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
 
 तपाईंको परियोजनाको मूलबाट:
 
@@ -106,7 +106,7 @@ npm install @kudoai/chatgpt.js
 
 ### CLI उपयोगिता
 
-#### <a href="#-nodejs-1"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
+#### <a href="#-nodejs-1"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
 
 ```bash
 npm install -g @kudoai/chatgpt.js
@@ -222,7 +222,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 थप विकल्पहरू र उदाहरणहरूको लागि, विस्तारित प्रयोगकर्ता गाइड हेर्नुहोस्:
 
-<https://github.com/KudoAI/chatgpt.js/blob/v4.5.0/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.5.1/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -347,7 +347,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 ### पुस्तकालयको कुनै विचार वा अनुरोध छ?
 
-नयाँ छलफल सिर्जना गर्नुहोस्: https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas
+नयाँ मुद्दा सिर्जना गर्नुहोस्: https://github.com/KudoAI/chatgpt.js/issues/new
 
 <hr>
 
@@ -538,7 +538,7 @@ ChatGPT प्रतिक्रियाहरू स्वतः प्ले 
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/white/icon16.svg"><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/dark-gray/icon16.svg"></picture>
 **[पछिल्ला रिलिजहरू](https://github.com/KudoAI/chatgpt.js/releases)** /
-[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v4.5.0/docs/USERGUIDE.md) /
+[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v4.5.1/docs/USERGUIDE.md) /
 [समर्थन प्राप्त गर्नुहोस्](https://github.com/KudoAI/chatgpt.js/issues) / 
 [चर्चा](https://github.com/KudoAI/chatgpt.js/discussions) / 
 <a href="#top">शीर्षमा जाऔं ↑</a>

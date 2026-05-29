@@ -59,7 +59,7 @@
 
 ### Library
 
-#### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
+#### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
 
 From your project root:
 
@@ -105,7 +105,7 @@ npm install @kudoai/chatgpt.js
 
 ### CLI app
 
-#### <a href="#-nodejs-1"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
+#### <a href="#-nodejs-1"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
 
 ```bash
 npm install -g @kudoai/chatgpt.js
@@ -214,14 +214,29 @@ console.log(await chatgpt.send('sup'))
 
 #### <a href="#-terminal"><img width=16 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@b30a348/assets/images/icons/terminal/black/icon32.png"></a> Terminal:
 
+After setting an API key, ask from your terminal:
+
 ```bash
 chatgpt --query "sup"  # or cjs -q sup
 # e.g. => Hey there! What's up?
 ```
 
+Use `--provider google` to use Google AI instead of the default OpenRouter provider:
+
+```bash
+chatgpt --provider google --query "Write a one-line git commit message"
+```
+
+To view all CLI options or create a local config file:
+
+```bash
+chatgpt --help
+chatgpt --init
+```
+
 For more options & examples, see the extended user guide:
 
-<https://github.com/KudoAI/chatgpt.js/blob/v4.5.0/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.5.1/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -346,7 +361,7 @@ For more options & examples, see the extended user guide:
 
 ### Have a library idea or request?
 
-Create a new discussion: https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas
+Create a new Issue: https://github.com/KudoAI/chatgpt.js/issues/new
 
 <hr>
 
@@ -537,7 +552,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/white/icon16.svg"><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/dark-gray/icon16.svg"></picture>
 **[Latest releases](https://github.com/KudoAI/chatgpt.js/releases)** /
-[Userguide](https://github.com/KudoAI/chatgpt.js/blob/v4.5.0/docs/USERGUIDE.md) /
+[Userguide](https://github.com/KudoAI/chatgpt.js/blob/v4.5.1/docs/USERGUIDE.md) /
 [Get support](https://github.com/KudoAI/chatgpt.js/issues) /
 [Discuss](https://github.com/KudoAI/chatgpt.js/discussions) /
 [Back to top ↑](#top)

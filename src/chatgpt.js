@@ -4,6 +4,7 @@
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@latest/dist/chatgpt.min.js
 
 const chatgpt = {
+    env: `${ typeof window != 'undefined' ? 'front' : 'back' }end`,
 
     colors: {
         orange: '\x1b[38;5;214m',
@@ -67,19 +68,25 @@ const chatgpt = {
     },
 
     actAs(persona, { personasURL = chatgpt.endpoints.aipersonas, verbose = false } = {}) {
-        return !persona ? console.error(`'persona' arg required by actAs()`)
-            : new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest()
-                xhr.open('GET', personasURL, true) ; xhr.send()
-                xhr.onload = () => {
-                    if (xhr.status != 200) return reject('Request failed. Cannot retrieve prompts data.')
-                    const prompt = JSON.parse(xhr.responseText)[persona].prompt
-                    if (!prompt) return reject(`Persona '${persona}' was not found!`)
-                    if (verbose) console.info(`Loading [${persona}] from ${personasURL.split('/').pop()}...`)
-                    chatgpt.send(prompt, 'click')
-                    chatgpt.isIdle().then(() => resolve(prompt))
-                }
-            })
+        if (!chatgpt._validateArg({ arg: persona, type: 'string' })) return
+        if (chatgpt.env == 'backend') {
+            const prompt = require('@kudoai/ai-personas')[persona]?.prompt
+            if (!prompt) return console.error(`Persona '${persona}' was not found!`)
+            if (verbose) console.info(`Loading [${persona}] from ai-personas.json...\n\n${prompt}`)
+            chatgpt.send(prompt, { output: 'stdout' })
+        } else return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest()
+            xhr.open('GET', personasURL, true) ; xhr.send()
+            xhr.onload = () => {
+                if (xhr.status != 200) return reject('Request failed. Cannot retrieve prompts data.')
+                const prompt = JSON.parse(xhr.responseText)[persona]?.prompt
+                if (!prompt) return reject(`Persona '${persona}' was not found!`)
+                if (verbose) console.info(`Loading [${persona}] from ${personasURL.split('/').pop()}...\n\n${prompt}`)
+                chatgpt.send(prompt)
+                chatgpt.isIdle().then(() => resolve(prompt))
+            }
+            xhr.onerror = () => reject(`Network error fetching ${personasURL}`)
+        })
     },
 
     activateDarkMode() {
@@ -278,13 +285,13 @@ const chatgpt = {
         modalButtons.classList.add('modal-buttons', 'no-mobile-tap-outline')
         if (btns) { // are supplied
             if (!Array.isArray(btns)) btns = [btns] // convert single button to array if necessary
-            btns.forEach((buttonFn) => { // create title-cased labels + attach listeners
+            btns.forEach((buttonFunc) => { // create title-cased labels + attach listeners
                 const button = document.createElement('button')
-                button.textContent = buttonFn.name
+                button.textContent = buttonFunc.name
                     .replace(/[_-]\w/g, match => match.slice(1).toUpperCase()) // convert snake/kebab to camel case
                     .replace(/([A-Z])/g, ' $1') // insert spaces
                     .replace(/^\w/, firstChar => firstChar.toUpperCase()) // capitalize first letter
-                button.onclick = () => { dismissAlert() ; buttonFn() }
+                button.onclick = () => { dismissAlert() ; buttonFunc() }
                 modalButtons.insertBefore(button, modalButtons.firstChild)
             })
         }
@@ -301,15 +308,15 @@ const chatgpt = {
         const checkboxDiv = document.createElement('div')
         if (checkbox) { // is supplied
             checkboxDiv.classList.add('checkbox-group')
-            const checkboxFn = checkbox, // assign the named function to checkboxFn
+            const checkboxFunc = checkbox, // assign the named function to checkboxFunc
                   checkboxInput = document.createElement('input')
-            checkboxInput.type = 'checkbox' ; checkboxInput.onchange = checkboxFn
+            checkboxInput.type = 'checkbox' ; checkboxInput.onchange = checkboxFunc
 
             // Create/show label
             const checkboxLabel = document.createElement('label')
-            checkboxLabel.onclick = () => { checkboxInput.checked = !checkboxInput.checked ; checkboxFn() }
-            checkboxLabel.textContent = checkboxFn.name[0].toUpperCase() // capitalize first char
-                + checkboxFn.name.slice(1) // format remaining chars
+            checkboxLabel.onclick = () => { checkboxInput.checked = !checkboxInput.checked ; checkboxFunc() }
+            checkboxLabel.textContent = checkboxFunc.name[0].toUpperCase() // capitalize first char
+                + checkboxFunc.name.slice(1) // format remaining chars
                     .replace(/([A-Z])/g, (match, letter) => ' ' + letter.toLowerCase()) // insert spaces, convert to lowercase
                     .replace(/\b(\w+)nt\b/gi, '$1n\'t') // insert apostrophe in 'nt' suffixes
                     .trim() // trim leading/trailing spaces
@@ -504,23 +511,26 @@ const chatgpt = {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
         async execute(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!')
-            if (typeof code != 'string') return console.error('Code argument must be a string!')
-            chatgpt.send('Display the output as if you were terminal:\n\n' + code)
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Executing code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+            const prompt = `Display the output as if you were terminal:\n\n${code}`
+            let resp
+            if (chatgpt.env == 'frontend') {
+                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            } else
+                resp = await chatgpt.send(prompt)
+            return chatgpt.code.extract(resp)
         },
 
         extract(msg) { // extract pure code from response (targets last block)
+            if (!msg || typeof msg != 'string') return
             const codeBlocks = msg.match(/(?<=```.*\n)[\s\S]*?(?=```)/g)
             return codeBlocks ? codeBlocks[codeBlocks.length -1] : msg
         },
 
         async isIdle(timeout = null) {
             const obsConfig = { childList: true, subtree: true }
-
-            // Create promises
             const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
             const isIdlePromise = (async () => {
                 await new Promise(resolve => { // when on convo page
@@ -549,66 +559,89 @@ const chatgpt = {
                     }).observe(document.body, obsConfig)
                 )
             })()
-
             return await (timeoutPromise ? Promise.race([isIdlePromise, timeoutPromise]) : isIdlePromise)
         },
 
         async minify(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!')
-            if (typeof code != 'string') return console.error('Code argument must be a string!')
-            chatgpt.send('Minify the following code:\n\n' + code)
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Minifying code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+            const prompt = `Minify the following code:\n\n${code}`
+            let resp
+            if (chatgpt.env == 'frontend') {
+                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            } else
+                resp = await chatgpt.send(prompt)
+            return chatgpt.code.extract(resp)
         },
 
         async obfuscate(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!')
-            if (typeof code != 'string') return console.error('Code argument must be a string!')
-            chatgpt.send('Obfuscate the following code:\n\n' + code)
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Obfuscating code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+            const prompt = `Obfuscate the following code:\n\n${code}`
+            let resp
+            if (chatgpt.env == 'frontend') {
+                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            } else
+                resp = await chatgpt.send(prompt)
+            return chatgpt.code.extract(resp)
         },
 
         async refactor(code, objective) {
-            if (!code) return console.error('Code (1st) argument not supplied. Pass some code!')
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             for (let i = 0 ; i < arguments.length ; i++)
                 if (typeof arguments[i] != 'string')
                     return console.error(`Argument ${ i +1 } must be a string.`)
-            chatgpt.send(`Refactor the following code for ${ objective || 'brevity' }:\n\n${code}`)
             console.info('Refactoring code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+            const prompt = `Refactor the following code for ${ objective || 'brevity' }:\n\n${code}`
+            let resp
+            if (chatgpt.env == 'frontend') {
+                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            } else
+                resp = await chatgpt.send(prompt)
+            return chatgpt.code.extract(resp)
         },
 
         async review(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!')
-            if (typeof code == 'string') return console.error('Code argument must be a string!')
-            chatgpt.send('Review the following code for me:\n\n' + code)
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Reviewing code...')
-            await chatgpt.isIdle()
-            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            const prompt = `Review the following code:\n\n${code}`
+            let resp
+            if (chatgpt.env == 'frontend') {
+                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            } else
+                resp = await chatgpt.send(prompt)
+            return chatgpt.code.extract(resp)
         },
 
         async unminify(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!')
-            if (typeof code != 'string') return console.error('Code argument must be a string!')
-            chatgpt.send('Unminify the following code.:\n\n' + code)
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Unminifying code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+            const prompt = `Unminify the following code:\n\n${code}`
+            let resp
+            if (chatgpt.env == 'frontend') {
+                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            } else
+                resp = await chatgpt.send(prompt)
+            return chatgpt.code.extract(resp)
         },
 
         async write(prompt, outputLang) {
-            if (!prompt) return console.error('Prompt (1st) argument not supplied. Pass a prompt!')
-            if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!')
-            for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-                return console.error(`Argument ${ i +1 } must be a string.`)
-            chatgpt.send(`${prompt}\n\nWrite this as code in ${outputLang}`)
+            if (!chatgpt._validateArg({ arg: prompt, type: 'string' })) return
+            if (!chatgpt._validateArg({ arg: outputLang, type: 'lang' })) return
             console.info('Writing code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+            prompt = `Write this as code in ${outputLang}: ${prompt}`
+            let resp
+            if (chatgpt.env == 'frontend') {
+                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            } else
+                resp = await chatgpt.send(prompt)
+            return chatgpt.code.extract(resp)
         }
     },
 
@@ -672,24 +705,22 @@ const chatgpt = {
 
         } else { // generate rich transcript + filename for HTML/MD/PDF export
 
-            // Fetch HTML transcript from OpenAI
-            const response = await fetch(await chatgpt.shareChat(chatToGet)),
-                  htmlContent = await response.text()
+            const htmlContent = await (await fetch(await chatgpt.shareChat(chatToGet))).text()
 
             // Format filename after <title>
             const parser = new DOMParser(),
-                  parsedHtml = parser.parseFromString(htmlContent, 'text/html')
-            filename = `${ parsedHtml.querySelector('title').textContent || 'ChatGPT conversation' }.html`
+                  parsedHTML = parser.parseFromString(htmlContent, 'text/html')
+            filename = `${ parsedHTML.querySelector('title').textContent || 'ChatGPT conversation' }.html`
 
             // Convert relative CSS paths to absolute ones
-            const cssLinks = parsedHtml.querySelectorAll('link[rel=stylesheet]')
+            const cssLinks = parsedHTML.querySelectorAll('link[rel=stylesheet]')
             cssLinks.forEach(link => {
                 const href = link.getAttribute('href')
                 if (href?.startsWith('/')) link.setAttribute('href', 'https://chat.openai.com' + href)
             })
 
             // Serialize updated HTML to string
-            transcript = new XMLSerializer().serializeToString(parsedHtml)
+            transcript = new XMLSerializer().serializeToString(parsedHTML)
         }
 
         // Export transcript
@@ -714,7 +745,7 @@ const chatgpt = {
                 transcript = mdMatch || transcript ; filename = filename.replace('.html', '.md')
             }
             const blob = new Blob([transcript],
-                { type: 'text/' + ( format == 'html' ? 'html' : format == 'md' ? 'markdown' : 'plain' )})
+                { type: 'text/' +( format == 'html' ? 'html' : format == 'md' ? 'markdown' : 'plain' )})
             const link = document.createElement('a'), blobURL = URL.createObjectURL(blob)
             link.href = blobURL ; link.download = filename ; document.body.append(link)
             link.click() ; document.body.removeChild(link) ; URL.revokeObjectURL(blobURL)
@@ -805,8 +836,8 @@ const chatgpt = {
     // msgToGet = 'all' | 'latest' | index of msg to get (defaults to 'all', requires 2nd param = 'msg')
 
         // Init args
-        const validDetails = [ 'all', 'id', 'title', 'create_time', 'update_time', 'msg' ]
-        const validSenders = [ 'all', 'both', 'user', 'chatgpt' ]
+        const validDetails = [ 'all', 'id', 'title', 'create_time', 'update_time', 'msg' ],
+              validSenders = [ 'all', 'both', 'user', 'chatgpt' ]
         chatToGet = !chatToGet ? 'active' // if '' passed, set to active
                   : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
                       ( parseInt(chatToGet, 10) == 0 ? 0 : parseInt(chatToGet, 10) -1 ) // ...offset -1 or keep as 0
@@ -846,7 +877,8 @@ const chatgpt = {
                     if (xhr.status != 200)
                         return reject('Request failed. Cannot retrieve chat details.')
                     const data = JSON.parse(xhr.responseText).items
-                    if (data.length <= 0) return reject('Chat list is empty.')
+                    if (data.length <= 0)
+                        return reject('Chat list is empty.')
                     const detailsToReturn = {}
 
                     // Return by index if num, 'latest', or 'active' passed but not truly active
@@ -871,7 +903,8 @@ const chatgpt = {
                         if (data[idx][chatIdentifier] == chatToGet) { chatFound = true ; break }}
                     if (!chatFound) // exit
                         return reject(`No chat with ${chatIdentifier} = ${chatToGet} found.`)
-                    for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail]
+                    for (const detail of detailsToGet)
+                        detailsToReturn[detail] = data[idx][detail]
                     return resolve(detailsToReturn)
                 }
                 xhr.send()
@@ -889,8 +922,8 @@ const chatgpt = {
                             return reject('Request failed. Cannot retrieve chat messages.')
 
                         // Init const's
-                        const data = JSON.parse(xhr.responseText).mapping // get chat messages
-                        const userMessages = [], chatGPTMessages = [], msgsToReturn = []
+                        const data = JSON.parse(xhr.responseText).mapping,  // get chat messages
+                              userMessages = [], chatGPTMessages = [], msgsToReturn = []
 
                         // Fill [userMessages]
                         for (const key in data)
@@ -912,9 +945,9 @@ const chatgpt = {
                             sub.sort((a, b) => a.create_time - b.create_time) // sort in chronological order
                             sub = sub.map(x => { // pull out msgs after sorting
                                 switch(x.content.content_type) {
-                                    case 'code': return x.content.text
-                                    case 'text': return x.content.parts[0]
-                                    default: return
+                                    case 'code' : return x.content.text
+                                    case 'text' : return x.content.parts[0]
+                                    default : return
                                 }
                             })
                             sub = sub.length == 1 ? sub[0] : sub // convert not regenerated responses to strings
@@ -954,7 +987,9 @@ const chatgpt = {
                         }
                     }
                     xhr.send()
-        })})}
+                })
+            })
+        }
 
         // Return chat data
         return new Promise(resolve => chatgpt.getAccessToken().then(token => {
@@ -1199,10 +1234,9 @@ const chatgpt = {
     menu: {
         toggle() {
             try {
-                const el = document.querySelector(chatgpt.selectors.btns.menu)
-                if (!el) return
+                const menuBtn = document.querySelector(chatgpt.selectors.btns.menu) ; if (!menuBtn) return
                 ['pointerdown','mousedown','pointerup','mouseup','click'].forEach(eventType =>
-                    el.dispatchEvent(new MouseEvent(eventType, { bubbles: true, cancelable: true, view: window })))
+                    menuBtn.dispatchEvent(new MouseEvent(eventType, { bubbles: true, cancelable: true, view: window })))
             } catch (err) { console.error(err.message) }
         },
 
@@ -1364,26 +1398,24 @@ const chatgpt = {
                     .toString(16).substring(1).toUpperCase() // convert to hex
         })
 
-        // Create [functionNames]
-        const functionNames = []
+        // Create [funcNames]
+        const funcNames = []
         for (const prop in this) {
             if (typeof this[prop] == 'function') {
-                const chatgptIsParent = !Object.keys(this)
-                    .find(obj => Object.keys(this[obj]).includes(this[prop].name))
-                const functionParent = chatgptIsParent ? 'chatgpt' : 'other'
-                functionNames.push([functionParent, prop])
-            } else if (typeof this[prop] == 'object') {
-                for (const nestedProp in this[prop]) {
-                    if (typeof this[prop][nestedProp] == 'function') {
-                        functionNames.push([prop, nestedProp])
-        }}}}
-        functionNames.sort((a, b) => a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]))
+                const chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name))
+                funcNames.push([chatgptIsParent ? 'chatgpt' : 'other', prop])
+            } else if (typeof this[prop] == 'object')
+                for (const nestedProp in this[prop])
+                    if (typeof this[prop][nestedProp] == 'function')
+                        funcNames.push([prop, nestedProp])
+        }
+        funcNames.sort((a, b) => a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]))
 
         // Print methods
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches,
               baseFontStyles = 'font-family: monospace ; font-size: larger ;'
         console.log('\n%c🤖 chatgpt.js methods\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold')
-        for (const functionName of functionNames) {
+        for (const functionName of funcNames) {
             const isChatGptObjParent = /chatgpt|other/.test(functionName[0]),
                   rootFunction = ( functionName[0] == 'chatgpt' ? this[functionName[1]].name
                     : functionName[0] != 'other' ? functionName[0] + '.' + functionName[1]
@@ -1542,18 +1574,17 @@ const chatgpt = {
     reviewCode() { chatgpt.code.review() },
     scrollToBottom() { chatgpt.getScrollToBottomButton()?.click() },
 
-    async send(userQuery, options = {}) {
-        const {
-            env = (typeof window != 'undefined' ? 'chatgpt' : 'backend'),
-            provider = 'openrouter', // or 'google'
-            stream = true, // return streaming resp if possible, otherwise text
-            onLoadStart = null, // cb on resp start loading
-            output = 'return', // or 'stdout'
-            systemQuery = '', // for systemPrompt
-            color = 'green' // for stdout
-        } = options
+    async send(userQuery, {
+        env = chatgpt.env,
+        provider = 'openrouter', // or 'google'
+        stream = true, // return streaming resp if possible, otherwise text
+        onLoadStart = null, // cb on resp start loading
+        output = 'return', // or 'stdout'
+        systemQuery = '', // for systemPrompt
+        color = 'green' // for stdout
+    } = {}) {
 
-        if (env == 'chatgpt') {
+        if (env == 'frontend') {
             const textArea = chatgpt.getChatBox()
             if (!textArea) return console.error('Chatbar element not found!')
             const msgP = document.createElement('p') ; msgP.textContent = userQuery
@@ -1562,7 +1593,7 @@ const chatgpt = {
             setTimeout(function delaySend() {
                 const sendBtn = chatgpt.getSendButton()
                 if (!sendBtn?.hasAttribute('disabled')) // send msg
-                    env.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendBtn.click()
+                    chatgpt.browser.isMobile() ? sendBtn.click()
                         : textArea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }))
                 else setTimeout(delaySend, 222)
             }, 222)
@@ -1570,9 +1601,9 @@ const chatgpt = {
         } else { // backend
             const apiKey = chatgpt.config?.apiKeys?.[provider] || process.env[`${provider.toUpperCase()}_API_KEY`]
             if (typeof apiKey != 'string' || !apiKey) throw new Error('Missing API key for provider: ' + provider)
-            const respColor = chatgpt.colors?.[color] || chatgpt.colors.green
-            const url = chatgpt.endpoints[provider].chat +( provider == 'google' ? `?key=${apiKey}` : '' )
-            const headers = { 'Content-Type': 'application/json' }
+            const respColor = chatgpt.colors?.[color] || chatgpt.colors.green,
+                  url = chatgpt.endpoints[provider].chat +( provider == 'google' ? `?key=${apiKey}` : '' ),
+                  headers = { 'Content-Type': 'application/json' }
             if (provider == 'openrouter') headers.Authorization = `Bearer ${apiKey}`
             const payload =
                 provider == 'google' ? {
@@ -1639,6 +1670,17 @@ const chatgpt = {
 
     settings: {
         scheme: {
+
+            activateDark() {
+                document.documentElement.classList.replace('light', 'dark')
+                document.documentElement.style.colorScheme = localStorage.theme = 'dark'
+            },
+
+            activateLight() {
+                document.documentElement.classList.replace('dark', 'light')
+                document.documentElement.style.colorScheme = localStorage.theme = 'light'
+            },
+
             isDark() { return document.documentElement.classList.contains('dark') },
             isLight() { return document.documentElement.classList.contains('light') },
 
@@ -1781,9 +1823,8 @@ const chatgpt = {
             const sidebar = (() => {
                 return chatgpt.sidebar.exists() ? document.querySelector(chatgpt.selectors.sidebar) : null })()
             if (!sidebar) { return console.error('Sidebar element not found!') || false }
-            else return chatgpt.browser.isMobile() ?
-                document.documentElement.style.overflow == 'hidden'
-              : sidebar.style.visibility != 'hidden' && parseInt(getComputedStyle(sidebar).width) > 150
+            else return chatgpt.browser.isMobile() ? document.documentElement.style.overflow == 'hidden'
+                      : sidebar.style.visibility != 'hidden' && parseInt(getComputedStyle(sidebar).width) > 150
         },
 
         async isLoaded(timeout = 5000) {
@@ -1873,11 +1914,11 @@ const chatgpt = {
     uuidv4() {
         try { // to use native secure uuid generator
             return crypto.randomUUID()
-        } catch(_e) {
+        } catch(err) {
             let d = new Date().getTime() // get current timestamp in ms (to ensure UUID uniqueness)
             const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
                 const r = ( // generate random nibble
-                    ( d + (window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) -1))*16)%16 | 0 )
+                    ( d +( window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) -1 ))*16)%16 | 0 )
                 d = Math.floor(d/16) // correspond each UUID digit to unique 4-bit chunks of timestamp
                 return ( c == 'x' ? r : (r&0x3|0x8) ).toString(16) // generate random hexadecimal digit
             })
@@ -1885,7 +1926,14 @@ const chatgpt = {
         }
     },
 
-    writeCode() { chatgpt.code.write() }
+    writeCode() { chatgpt.code.write() },
+
+    _validateArg({ arg, type = 'string' }) {
+        return !arg ? !!console.error('Arg not supplied!')
+                : ['lang', 'string'].includes(type) && typeof arg != 'string' ?
+                        !!console.error(`'${type}' arg must be a string!`)
+                : true
+    }
 }
 
 chatgpt.scheme = { ...chatgpt.settings.scheme } // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
