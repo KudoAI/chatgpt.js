@@ -887,8 +887,8 @@ const chatgpt = {
                             return reject('Request failed. Cannot retrieve chat messages.')
 
                         // Init const's
-                        const data = JSON.parse(xhr.responseText).mapping // get chat messages
-                        const userMessages = [], chatGPTMessages = [], msgsToReturn = []
+                        const data = JSON.parse(xhr.responseText).mapping,  // get chat messages
+                              userMessages = [], chatGPTMessages = [], msgsToReturn = []
 
                         // Fill [userMessages]
                         for (const key in data)
