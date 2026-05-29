@@ -503,10 +503,10 @@ const chatgpt = {
     code: {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
-        _validateArg({ arg, as = 'string' }) {
-            return !arg ? !!console.error(`${as}' arg not supplied!`)
-                 : ['lang', 'string'].includes(as) && typeof arg != 'string' ?
-                          !!console.error(`'${as}' arg must be a string!`)
+        _validateArg({ arg, type = 'string' }) {
+            return !arg ? !!console.error(`${type}' arg not supplied!`)
+                 : ['lang', 'string'].includes(type) && typeof arg != 'string' ?
+                          !!console.error(`'${type}' arg must be a string!`)
                  : true
         },
 
