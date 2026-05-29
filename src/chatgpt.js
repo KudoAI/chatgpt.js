@@ -503,14 +503,14 @@ const chatgpt = {
     code: {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
-        _validateCodeArg(code) {
-            return !code ? !!console.error('Code argument not supplied. Pass some code!')
-                 : typeof code != 'string' ? !!console.error('Code argument must be a string!')
+        _validateStrArg(arg) {
+            return !arg ? !!console.error('Argument not supplied. Pass a string!')
+                 : typeof arg != 'string' ? !!console.error('Argument must be a string!')
                  : true
         },
 
         async execute(code) {
-            if (!this._validateCodeArg(code)) return
+            if (!this._validateStrArg(code)) return
             chatgpt.send('Display the output as if you were terminal:\n\n' + code)
             console.info('Executing code...')
             await chatgpt.isIdle()
@@ -518,6 +518,7 @@ const chatgpt = {
         },
 
         extract(msg) { // extract pure code from response (targets last block)
+            if (!chatgpt.code._validateStrArg(msg)) return
             const codeBlocks = msg.match(/(?<=```.*\n)[\s\S]*?(?=```)/g)
             return codeBlocks ? codeBlocks[codeBlocks.length -1] : msg
         },
@@ -556,7 +557,7 @@ const chatgpt = {
         },
 
         async minify(code) {
-            if (!this._validateCodeArg(code)) return
+            if (!chatgpt.code._validateStrArg(code)) return
             chatgpt.send('Minify the following code:\n\n' + code)
             console.info('Minifying code...')
             await chatgpt.isIdle()
@@ -564,7 +565,7 @@ const chatgpt = {
         },
 
         async obfuscate(code) {
-            if (!this._validateCodeArg(code)) return
+            if (!chatgpt.code._validateStrArg(code)) return
             chatgpt.send('Obfuscate the following code:\n\n' + code)
             console.info('Obfuscating code...')
             await chatgpt.isIdle()
@@ -572,7 +573,7 @@ const chatgpt = {
         },
 
         async refactor(code, objective) {
-            if (!code) return console.error('Code (1st) argument not supplied. Pass some code!')
+            if (!chatgpt.code._validateStrArg(code)) return
             for (let i = 0 ; i < arguments.length ; i++)
                 if (typeof arguments[i] != 'string')
                     return console.error(`Argument ${ i +1 } must be a string.`)
@@ -583,7 +584,7 @@ const chatgpt = {
         },
 
         async review(code) {
-            if (!this._validateCodeArg(code)) return
+            if (!chatgpt.code._validateStrArg(code)) return
             chatgpt.send('Review the following code for me:\n\n' + code)
             console.info('Reviewing code...')
             await chatgpt.isIdle()
@@ -591,7 +592,7 @@ const chatgpt = {
         },
 
         async unminify(code) {
-            if (!this._validateCodeArg(code)) return
+            if (!chatgpt.code._validateStrArg(code)) return
             chatgpt.send('Unminify the following code.:\n\n' + code)
             console.info('Unminifying code...')
             await chatgpt.isIdle()
@@ -599,7 +600,7 @@ const chatgpt = {
         },
 
         async write(prompt, outputLang) {
-            if (!prompt) return console.error('Prompt (1st) argument not supplied. Pass a prompt!')
+            if (!chatgpt.code._validateStrArg(prompt)) return
             if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!')
             for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
                 return console.error(`Argument ${ i +1 } must be a string.`)
