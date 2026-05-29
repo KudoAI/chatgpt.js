@@ -215,9 +215,24 @@ console.log(await chatgpt.send('sup'))
 
 #### <a href="#-terminal"><img width=16 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@b30a348/assets/images/icons/terminal/black/icon32.png"></a> Terminal:
 
+Sau khi thiết lập khóa API, hãy thực hiện yêu cầu từ terminal của bạn:
+
 ```bash
-chatgpt --query "sup"  # or cjs -q sup
+chatgpt --query "sup"  # hoặc cjs -q sup
 # e.g. => Hey there! What's up?
+```
+
+Sử dụng `--provider google` để sử dụng Google AI thay vì nhà cung cấp mặc định OpenRouter:
+
+```bash
+chatgpt --provider google --query "Viết một thông điệp git commit chỉ với một dòng"
+```
+
+Để xem tất cả các tùy chọn CLI hoặc tạo tệp cấu hình cục bộ:
+
+```bash
+chatgpt --help
+chatgpt --init
 ```
 
 Để biết thêm các tùy chọn và ví dụ, vui lòng xem hướng dẫn sử dụng chi tiết:
