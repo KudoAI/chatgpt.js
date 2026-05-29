@@ -214,9 +214,24 @@ console.log(await chatgpt.send('sup'))
 
 #### <a href="#-terminal"><img width=16 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@b30a348/assets/images/icons/terminal/black/icon32.png"></a> Terminal:
 
+设置好 API 密钥后，在终端中发出请求：
+
 ```bash
-chatgpt --query "sup"  # or cjs -q sup
+chatgpt --query "sup"  # 或者 cjs -q sup
 # e.g. => Hey there! What's up?
+```
+
+使用 `--provider google` 即可使用 Google AI，而非默认的 OpenRouter 提供商：
+
+```bash
+chatgpt --provider google --query "写一条单行的 Git 提交信息"
+```
+
+若要查看所有 CLI 选项或创建本地配置文件：
+
+```bash
+chatgpt --help
+chatgpt --init
 ```
 
 如需更多选项及示例，请参阅扩展用户指南：

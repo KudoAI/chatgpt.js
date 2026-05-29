@@ -214,9 +214,24 @@ console.log(await chatgpt.send('sup'))
 
 #### <a href="#-terminal"><img width=16 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@b30a348/assets/images/icons/terminal/black/icon32.png"></a> Terminal:
 
+APIキーを設定した後、ターミナルから次のように問い合わせてください：
+
 ```bash
-chatgpt --query "sup"  # or cjs -q sup
+chatgpt --query "sup"  # または cjs -q sup
 # e.g. => Hey there! What's up?
+```
+
+デフォルトの OpenRouter プロバイダーの代わりに Google AI を使用するには、`--provider google` を指定します：
+
+```bash
+chatgpt --provider google --query "Gitのコミットメッセージを1行で書いてください。"
+```
+
+すべての CLI オプションを確認したり、ローカル設定ファイルを作成したりするには：
+
+```bash
+chatgpt --help
+chatgpt --init
 ```
 
 その他のオプションや例については、詳細ユーザーガイドをご覧ください。
