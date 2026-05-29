@@ -2196,5 +2196,8 @@ Example:
 <br>
 <br>
 
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/white/icon16.svg"><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/dark-gray/icon16.svg"></picture>
+**[Latest releases](https://github.com/KudoAI/chatgpt.js/releases)** /
 [Discuss](https://github.com/KudoAI/chatgpt.js/discussions) /
+[Get support](https://github.com/KudoAI/chatgpt.js/issues) /
 <a href="#top">Back to top ↑</a>
