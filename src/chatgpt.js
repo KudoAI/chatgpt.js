@@ -278,13 +278,13 @@ const chatgpt = {
         modalButtons.classList.add('modal-buttons', 'no-mobile-tap-outline')
         if (btns) { // are supplied
             if (!Array.isArray(btns)) btns = [btns] // convert single button to array if necessary
-            btns.forEach((buttonFn) => { // create title-cased labels + attach listeners
+            btns.forEach((buttonFunc) => { // create title-cased labels + attach listeners
                 const button = document.createElement('button')
-                button.textContent = buttonFn.name
+                button.textContent = buttonFunc.name
                     .replace(/[_-]\w/g, match => match.slice(1).toUpperCase()) // convert snake/kebab to camel case
                     .replace(/([A-Z])/g, ' $1') // insert spaces
                     .replace(/^\w/, firstChar => firstChar.toUpperCase()) // capitalize first letter
-                button.onclick = () => { dismissAlert() ; buttonFn() }
+                button.onclick = () => { dismissAlert() ; buttonFunc() }
                 modalButtons.insertBefore(button, modalButtons.firstChild)
             })
         }
@@ -301,15 +301,15 @@ const chatgpt = {
         const checkboxDiv = document.createElement('div')
         if (checkbox) { // is supplied
             checkboxDiv.classList.add('checkbox-group')
-            const checkboxFn = checkbox, // assign the named function to checkboxFn
+            const checkboxFunc = checkbox, // assign the named function to checkboxFunc
                   checkboxInput = document.createElement('input')
-            checkboxInput.type = 'checkbox' ; checkboxInput.onchange = checkboxFn
+            checkboxInput.type = 'checkbox' ; checkboxInput.onchange = checkboxFunc
 
             // Create/show label
             const checkboxLabel = document.createElement('label')
-            checkboxLabel.onclick = () => { checkboxInput.checked = !checkboxInput.checked ; checkboxFn() }
-            checkboxLabel.textContent = checkboxFn.name[0].toUpperCase() // capitalize first char
-                + checkboxFn.name.slice(1) // format remaining chars
+            checkboxLabel.onclick = () => { checkboxInput.checked = !checkboxInput.checked ; checkboxFunc() }
+            checkboxLabel.textContent = checkboxFunc.name[0].toUpperCase() // capitalize first char
+                + checkboxFunc.name.slice(1) // format remaining chars
                     .replace(/([A-Z])/g, (match, letter) => ' ' + letter.toLowerCase()) // insert spaces, convert to lowercase
                     .replace(/\b(\w+)nt\b/gi, '$1n\'t') // insert apostrophe in 'nt' suffixes
                     .trim() // trim leading/trailing spaces
@@ -1344,24 +1344,24 @@ const chatgpt = {
                     .toString(16).substring(1).toUpperCase() // convert to hex
         })
 
-        // Create [fnNames]
-        const fnNames = []
+        // Create [funcNames]
+        const funcNames = []
         for (const prop in this) {
             if (typeof this[prop] == 'function') {
                 const chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name))
-                fnNames.push([chatgptIsParent ? 'chatgpt' : 'other', prop])
+                funcNames.push([chatgptIsParent ? 'chatgpt' : 'other', prop])
             } else if (typeof this[prop] == 'object')
                 for (const nestedProp in this[prop])
                     if (typeof this[prop][nestedProp] == 'function')
-                        fnNames.push([prop, nestedProp])
+                        funcNames.push([prop, nestedProp])
         }
-        fnNames.sort((a, b) => a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]))
+        funcNames.sort((a, b) => a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]))
 
         // Print methods
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches,
               baseFontStyles = 'font-family: monospace ; font-size: larger ;'
         console.log('\n%c🤖 chatgpt.js methods\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold')
-        for (const functionName of fnNames) {
+        for (const functionName of funcNames) {
             const isChatGptObjParent = /chatgpt|other/.test(functionName[0]),
                   rootFunction = ( functionName[0] == 'chatgpt' ? this[functionName[1]].name
                     : functionName[0] != 'other' ? functionName[0] + '.' + functionName[1]
