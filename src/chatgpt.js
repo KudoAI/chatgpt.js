@@ -4,6 +4,7 @@
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@latest/dist/chatgpt.min.js
 
 const chatgpt = {
+    env: `${ typeof window != 'undefined' ? 'front' : 'back' }end`,
 
     colors: {
         orange: '\x1b[38;5;214m',
@@ -1521,7 +1522,7 @@ const chatgpt = {
     scrollToBottom() { chatgpt.getScrollToBottomButton()?.click() },
 
     async send(userQuery, {
-        env = (typeof window != 'undefined' ? 'chatgpt' : 'backend'),
+        env = chatgpt.env,
         provider = 'openrouter', // or 'google'
         stream = true, // return streaming resp if possible, otherwise text
         onLoadStart = null, // cb on resp start loading
@@ -1530,7 +1531,7 @@ const chatgpt = {
         color = 'green' // for stdout
     } = {}) {
 
-        if (env == 'chatgpt') {
+        if (env == 'frontend') {
             const textArea = chatgpt.getChatBox()
             if (!textArea) return console.error('Chatbar element not found!')
             const msgP = document.createElement('p') ; msgP.textContent = userQuery
@@ -1539,7 +1540,7 @@ const chatgpt = {
             setTimeout(function delaySend() {
                 const sendBtn = chatgpt.getSendButton()
                 if (!sendBtn?.hasAttribute('disabled')) // send msg
-                    env.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendBtn.click()
+                    chatgpt.browser.isMobile() ? sendBtn.click()
                         : textArea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }))
                 else setTimeout(delaySend, 222)
             }, 222)
