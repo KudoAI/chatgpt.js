@@ -712,7 +712,7 @@ const chatgpt = {
                 transcript = mdMatch || transcript ; filename = filename.replace('.html', '.md')
             }
             const blob = new Blob([transcript],
-                { type: 'text/' + ( format == 'html' ? 'html' : format == 'md' ? 'markdown' : 'plain' )})
+                { type: 'text/' +( format == 'html' ? 'html' : format == 'md' ? 'markdown' : 'plain' )})
             const link = document.createElement('a'), blobURL = URL.createObjectURL(blob)
             link.href = blobURL ; link.download = filename ; document.body.append(link)
             link.click() ; document.body.removeChild(link) ; URL.revokeObjectURL(blobURL)
