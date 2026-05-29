@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Cargar archivo de configuración personalizado" },
   "optionDesc_quiet": { "message": "Suprimir todos los registros excepto los errores" },
   "optionDesc_init": { "message": "Crear archivo de configuración (en la raíz del proyecto)" },
+  "optionDesc_joke": { "message": "Cuenta un chiste gracioso al azar" },
   "optionDesc_help": { "message": "Mostrar pantalla de ayuda" },
   "optionDesc_version": { "message": "Mostrar el número de versión" },
   "optionDesc_stats": { "message": "Mostrar estadísticas de npm" },

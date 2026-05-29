@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "טעינת קובץ תצורה מותאם אישית" },
   "optionDesc_quiet": { "message": "דיכוי כל רישומי הרישום למעט שגיאות" },
   "optionDesc_init": { "message": "צור קובץ תצורה (בשורש הפרויקט)" },
+  "optionDesc_joke": { "message": "מספר בדיחה מצחיקה באקראי" },
   "optionDesc_help": { "message": "הצג מסך עזרה" },
   "optionDesc_version": { "message": "גרסה" },
   "optionDesc_stats": { "message": "הצגת נתונים סטטיסטיים של npm" },

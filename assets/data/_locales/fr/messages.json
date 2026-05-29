@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Fichier de configuration personnalisé" },
   "optionDesc_quiet": { "message": "Supprimer tous les journaux sauf les erreurs" },
   "optionDesc_init": { "message": "Créer un fichier de configuration (dans la racine du projet)" },
+  "optionDesc_joke": { "message": "Raconte une blague amusante au hasard" },
   "optionDesc_help": { "message": "Affichage de l’aide" },
   "optionDesc_version": { "message": "Affiche le numéro de la version" },
   "optionDesc_stats": { "message": "Afficher les statistiques npm" },

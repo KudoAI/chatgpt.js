@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "カスタム構成ファイルを読み込む" },
   "optionDesc_quiet": { "message": "エラーを除くすべてのロギングを抑制" },
   "optionDesc_init": { "message": "構成ファイルを作成する（プロジェクトルート内）" },
+  "optionDesc_joke": { "message": "おかしな冗談をランダムに言う" },
   "optionDesc_help": { "message": "ヘルプ画面を表示" },
   "optionDesc_version": { "message": "バージョン番号" },
   "optionDesc_stats": { "message": "Npm統計を表示" },

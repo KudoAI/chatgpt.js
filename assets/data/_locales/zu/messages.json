@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Faka ifayela lokumisa eliqokiwe" },
   "optionDesc_quiet": { "message": "Cindezela konke ukungena ngemvume ngaphandle kwamaphutha" },
   "optionDesc_init": { "message": "Yakha ifayela lokuhlela (empandeni yephrojekthi)" },
+  "optionDesc_joke": { "message": "Ilandisa ihlaya elihlekisayo ngokungahleliwe" },
   "optionDesc_help": { "message": "Bonisa isikrini sosizo" },
   "optionDesc_version": { "message": "Veza inombolo yohlelo" },
   "optionDesc_stats": { "message": "Veza izibalo ze-npm" },

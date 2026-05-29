@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Lataa mukautettu asetustiedosto" },
   "optionDesc_quiet": { "message": "Poista kaikki kirjaukset paitsi virheet" },
   "optionDesc_init": { "message": "Luo konfigurointitiedosto (projektin juuressa)" },
+  "optionDesc_joke": { "message": "Kertoo hauskan vitsin sattumanvaraisesti" },
   "optionDesc_help": { "message": "Näytä ohjenäyttö" },
   "optionDesc_version": { "message": "Näyttää versionumeron" },
   "optionDesc_stats": { "message": "Näytä npm-tilastot" },

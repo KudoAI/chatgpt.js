@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "අභිරුචි සැකසුම් ගොනුව පූරණය කරන්න" },
   "optionDesc_quiet": { "message": "සියලු පිවිසුම් යටපත් කරන්න දෝෂ හැර" },
   "optionDesc_init": { "message": "සැකසුම් ගොනුව සාදන්න (ව් ‍ යාපෘති මූලය තුළ)" },
+  "optionDesc_joke": { "message": "Funny Joke at Random (විහිලුවක් අහඹු ලෙස)" },
   "optionDesc_help": { "message": "සහාය තිරය පෙන්වන්න" },
   "optionDesc_version": { "message": "වෙළුම අංකය" },
   "optionDesc_stats": { "message": "NPM සංඛ් ‍ යාලේඛන පෙන්වන්න" },

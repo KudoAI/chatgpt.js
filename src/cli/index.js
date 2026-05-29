@@ -26,10 +26,12 @@
 
     // Get AI reply
     loader.start()
+    const query = cli.config.joke ? 'Tell me a joke and make it funny.'
+                : cli.config.query
     try {
-        await chatgpt.send(cli.config.query, {
+        await chatgpt.send(query, {
             provider: cli.config.provider, output: 'stdout', onLoadStart: () => loader.stop({ clear: false })})
-        if (cli.config.query == 'hi') log.help()
+        if (/help|hi/.test(query)) log.help()
     } finally { loader.stop() }
 
 })()

@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "ብጁ ውቅር ፋይል ጫን" },
   "optionDesc_quiet": { "message": "ከስህተቶች በስተቀር ሁሉንም የመግቢያዎች መሙላት" },
   "optionDesc_init": { "message": "የውቅረት ፋይል ይፍጠሩ (በፕሮጀክት ሥር)" },
+  "optionDesc_joke": { "message": "በዘፈቀደ አስቂኝ ቀልድ ይናገራል" },
   "optionDesc_help": { "message": "የእገዛ ማያ ገጽ አሳይ" },
   "optionDesc_version": { "message": "የስሪት ቁጥርን አሳይ" },
   "optionDesc_stats": { "message": "Npm ስታቲስቲክስ አሳይ" },

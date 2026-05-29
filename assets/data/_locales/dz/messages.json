@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "རང་ལུགས་སྒྲིག་གཞི་ཡིག་སྣོད་འདི་ལོཌ་འབད།" },
   "optionDesc_quiet": { "message": "འཛོལ་བ་མ་གཏོགས་ གཞན་ག་ནི་ཡང་མ་འབད།" },
   "optionDesc_init": { "message": "Config file བཟོ་ (project rootནང་ལུ་)" },
+  "optionDesc_joke": { "message": "འཁྲབ་མདོག་ཅན་གྱི་ འཁྲབ་མདོག་ཅིག་" },
   "optionDesc_help": { "message": "གྲོགས་རམ་གི་མཐོང་སྣོད་སྟོན་" },
   "optionDesc_version": { "message": "འདྲ་ཕབ།" },
   "optionDesc_stats": { "message": "NMMགི་གནས་སྡུད་ཚུ་སྟོན།" },

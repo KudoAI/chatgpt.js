@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Mutare configuendum" },
   "optionDesc_quiet": { "message": "Omnes inscriptiones praeter errores supprime" },
   "optionDesc_init": { "message": "Crea fasciculum configurationis (in radice proiecti)" },
+  "optionDesc_joke": { "message": "Isti dicitur vazivazy in random" },
   "optionDesc_help": { "message": "Adiutorium ostende" },
   "optionDesc_version": { "message": "Numerum versionis monstra" },
   "optionDesc_stats": { "message": "Statisticas npm monstrare" },

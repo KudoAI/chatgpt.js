@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Hlaða inn sérsniðinni stilliskrá" },
   "optionDesc_quiet": { "message": "Slökkva á öllum innskráningum nema villum" },
   "optionDesc_init": { "message": "Búa til stillingarskrá (í frumtexta verkefnis)" },
+  "optionDesc_joke": { "message": "Segir fyndinn brandara af handahófi" },
   "optionDesc_help": { "message": "Birta hjálparskjá" },
   "optionDesc_version": { "message": "Útgáfunúmer" },
   "optionDesc_stats": { "message": "Sýna npm tölfræði" },

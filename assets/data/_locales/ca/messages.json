@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Carrega un fitxer de configuració personalitzat" },
   "optionDesc_quiet": { "message": "Suprimeix tot el registre, excepte els errors" },
   "optionDesc_init": { "message": "Crea un fitxer de configuració (a l'arrel del projecte)" },
+  "optionDesc_joke": { "message": "Explica una broma divertida a l'atzar" },
   "optionDesc_help": { "message": "Mostra la pantalla d'ajuda" },
   "optionDesc_version": { "message": "Mostra el número de versió" },
   "optionDesc_stats": { "message": "Mostra les estadístiques de npm" },

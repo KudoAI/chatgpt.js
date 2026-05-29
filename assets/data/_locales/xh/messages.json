@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Faka ifayile yokumisela ekhethekileyo" },
   "optionDesc_quiet": { "message": "Cima konke ukungena ngaphandle kweempazamo" },
   "optionDesc_init": { "message": "Yenza ifayile yoqwalaselo (kwingcambu yeprojekthi)" },
+  "optionDesc_joke": { "message": "Ixelela ihlaya elihlekisayo ngokungacwangciswanga" },
   "optionDesc_help": { "message": "Bonisa isikrini soncedo" },
   "optionDesc_version": { "message": "Inani Loguqulelo lomsebenzi" },
   "optionDesc_stats": { "message": "Bonisa izibalo ze-npm" },

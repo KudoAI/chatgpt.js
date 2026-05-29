@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Aangepast configuratiebestand laden" },
   "optionDesc_quiet": { "message": "Alle logboekregistraties onderdrukken, behalve fouten" },
   "optionDesc_init": { "message": "Configuratiebestand aanmaken (in projecthoofdmap)" },
+  "optionDesc_joke": { "message": "Vertelt willekeurig een grappige grap" },
   "optionDesc_help": { "message": "Hulpscherm weergeven" },
   "optionDesc_version": { "message": "Het versienummer tonen" },
   "optionDesc_stats": { "message": "Npm-statistieken weergeven" },

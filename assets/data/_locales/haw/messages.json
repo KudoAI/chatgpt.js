@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "E hoʻouka i ka faila hoʻonohonoho maʻamau" },
   "optionDesc_quiet": { "message": "Kāohi i ka hoʻopaʻa inoa a pau koe nā hewa" },
   "optionDesc_init": { "message": "E hana i ka faila hoʻonohonoho (ma ke kumu papahana)" },
+  "optionDesc_joke": { "message": "Haʻi i kahi ʻakaʻaka hoʻomākeʻaka ma kahi koho ʻole" },
   "optionDesc_help": { "message": "Hōʻike i ka pale kōkua" },
   "optionDesc_version": { "message": "Hōʻike i ka helu mana" },
   "optionDesc_stats": { "message": "Hōʻike i nā helu npm" },

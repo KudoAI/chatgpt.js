@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "دوديزه سازونې دوتنه لېښل" },
   "optionDesc_quiet": { "message": "د تېروتنو پرته ټول ننوتل (logging) پټ کړئ" },
   "optionDesc_init": { "message": "(د پروژې په ریښه کې) سازونې دوتنه جوړه کړئ" },
+  "optionDesc_joke": { "message": "په تصادفي ډول یوه مسخره ټوکه وایي" },
   "optionDesc_help": { "message": "د مرستې سکرین ښکاره کړئ" },
   "optionDesc_version": { "message": "د نسخې شمیره وښایاست" },
   "optionDesc_stats": { "message": "د npm احصایې ښکاره کړئ" },

@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "தனிப்பயன் உள்ளமைவு கோப்பை ஏற்றவும்" },
   "optionDesc_quiet": { "message": "பிழைகளைத் தவிர அனைத்து பதிவுகளையும் ஒடுக்கவும்" },
   "optionDesc_init": { "message": "கட்டமைப்பு கோப்பை உருவாக்கவும் (திட்ட மூலத்தில்)" },
+  "optionDesc_joke": { "message": "சீரற்ற முறையில் ஒரு வேடிக்கையான நகைச்சுவையைச் சொல்கிறது" },
   "optionDesc_help": { "message": "உதவித் திரையைக் காண்பி" },
   "optionDesc_version": { "message": "பதிப்பெண்" },
   "optionDesc_stats": { "message": "Npm புள்ளிவிவரங்களைக் காட்டு" },

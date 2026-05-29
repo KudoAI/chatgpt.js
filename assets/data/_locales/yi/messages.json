@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "לאָדן אייגענע קאָנפיג טעקע" },
   "optionDesc_quiet": { "message": "פאַרשטיקן אַלע לאָגינג אַחוץ ערראָרס" },
   "optionDesc_init": { "message": "שאַפֿן קאָנפֿיג טעקע (אין פּראָיעקט וואָרצל)" },
+  "optionDesc_joke": { "message": "דערציילט אַ קאָמישן וויץ אויף אַ צופֿעליקן אופֿן" },
   "optionDesc_help": { "message": "ווייַז הילף פאַרשטעלן" },
   "optionDesc_version": { "message": "ווייַזן ווערסיע נומער" },
   "optionDesc_stats": { "message": "ווייַזן npm סטאַטיסטיק" },

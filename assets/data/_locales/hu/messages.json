@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Egyéni konfigurációs fájl betöltése" },
   "optionDesc_quiet": { "message": "Az összes naplózás letiltása a hibák kivételével" },
   "optionDesc_init": { "message": "Konfigurációs fájl létrehozása (a projekt gyökerében)" },
+  "optionDesc_joke": { "message": "Véletlenszerűen mond el egy vicces viccet" },
   "optionDesc_help": { "message": "Súgó képernyő megjelenítése" },
   "optionDesc_version": { "message": "kiírja a verziószámot" },
   "optionDesc_stats": { "message": "NPM-statisztikák megjelenítése" },

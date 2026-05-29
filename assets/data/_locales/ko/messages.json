@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "사용자 지정 구성 파일 로드" },
   "optionDesc_quiet": { "message": "오류를 제외한 모든 로깅 억제" },
   "optionDesc_init": { "message": "구성 파일 만들기 (프로젝트 루트)" },
+  "optionDesc_joke": { "message": "무작위로 재미있는 농담을 들려준다." },
   "optionDesc_help": { "message": "도움말 화면 표시" },
   "optionDesc_version": { "message": "버전 넘버 보여주기" },
   "optionDesc_stats": { "message": "Npm 통계 표시" },

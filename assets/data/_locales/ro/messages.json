@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Încărcați fișierul de configurare personalizat" },
   "optionDesc_quiet": { "message": "Suprimați toate înregistrările, cu excepția erorilor" },
   "optionDesc_init": { "message": "Creați fișierul de configurare (în rădăcina proiectului)" },
+  "optionDesc_joke": { "message": "Spune o glumă amuzantă la întâmplare" },
   "optionDesc_help": { "message": "Afișați ecranul de ajutor" },
   "optionDesc_version": { "message": "Număr versiune" },
   "optionDesc_stats": { "message": "Afișați statisticile npm" },

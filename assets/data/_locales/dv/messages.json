@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "ކަސްޓަމް ކޮންފިގް ފައިލް ލޯޑް ކުރާށެވެ" },
   "optionDesc_quiet": { "message": "ކުށްތައް ފިޔަވައި އެހެން ހުރިހާ ލޮގިންއެއް ހުއްޓުވާ" },
   "optionDesc_init": { "message": "ކޮންފިގް ފައިލް އުފެއްދުން (ޕްރޮޖެކްޓް ރޫޓްގައި)" },
+  "optionDesc_joke": { "message": "ރެންޑަމްކޮށް މަޖާ ސަމާސާއެއް ކިޔައިދެއެވެ" },
   "optionDesc_help": { "message": "ހެލްޕް ސްކްރީން ޑިސްޕްލޭ ކުރޭ" },
   "optionDesc_version": { "message": "ވާޝަން ނަންބަރު ދައްކާ" },
   "optionDesc_stats": { "message": "npm ސްޓެޓިސްޓިކްސް ދައްކާށެވެ" },

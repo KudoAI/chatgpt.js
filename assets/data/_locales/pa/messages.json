@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "ਕਸਟਮ ਸੰਰਚਨਾ ਫਾਇਲ ਲੋਡ ਕਰੋ" },
   "optionDesc_quiet": { "message": "ਗਲਤੀਆਂ ਨੂੰ ਛੱਡ ਕੇ ਸਭ ਲਾਗਿੰਗ ਦਬਾਓ" },
   "optionDesc_init": { "message": "ਸੰਰਚਨਾ ਫਾਇਲ ਬਣਾਓ (ਪਰੋਜੈਕਟ ਰੂਟ ਵਿੱਚ)" },
+  "optionDesc_joke": { "message": "ਬੇਤਰਤੀਬੇ 'ਤੇ ਇੱਕ ਮਜ਼ਾਕੀਆ ਮਜ਼ਾਕ ਦੱਸਦਾ ਹੈ" },
   "optionDesc_help": { "message": "ਮੱਦਦ ਸਕਰੀਨ ਵੇਖੋ" },
   "optionDesc_version": { "message": "ਵਰਜਨ ਨੰਬਰ" },
   "optionDesc_stats": { "message": "Npm ਅੰਕੜੇ ਵੇਖੋ" },

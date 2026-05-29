@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Uta kōnae whirihoranga ritenga" },
   "optionDesc_quiet": { "message": "Tautoko i te logging katoa engari hapa" },
   "optionDesc_init": { "message": "Hangaia he konae whirihoranga (i roto i te pakiaka kaupapa)" },
+  "optionDesc_joke": { "message": "Korero i te ataata ataata i roto i te tūponotanga" },
   "optionDesc_help": { "message": "Whakaatuhia te mata awhina" },
   "optionDesc_version": { "message": "Whakaatuhia te tau putanga" },
   "optionDesc_stats": { "message": "Whakaaturia nga tatauranga npm" },

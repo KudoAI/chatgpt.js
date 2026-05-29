@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Muat file konfigurasi kustom" },
   "optionDesc_quiet": { "message": "Cegah semua pencatatan kecuali kesalahan" },
   "optionDesc_init": { "message": "Buat file konfigurasi (di root proyek)" },
+  "optionDesc_joke": { "message": "Menceritakan lelucon lucu secara acak" },
   "optionDesc_help": { "message": "Tampilkan layar bantuan" },
   "optionDesc_version": { "message": "Nomor Versi" },
   "optionDesc_stats": { "message": "Tampilkan statistik npm" },

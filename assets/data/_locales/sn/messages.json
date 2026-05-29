@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Load custom config file" },
   "optionDesc_quiet": { "message": "Dzvinyirira kutema matanda ese kunze kwekukanganisa" },
   "optionDesc_init": { "message": "Create config file (in project root)" },
+  "optionDesc_joke": { "message": "Inotaurira kuseka kuseka kusinganzwisisiki" },
   "optionDesc_help": { "message": "Ratidza chidzitiro chekubatsira" },
   "optionDesc_version": { "message": "Ratidza nhamba yeshanduro" },
   "optionDesc_stats": { "message": "Ratidza npm stats" },

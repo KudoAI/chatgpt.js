@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Laisa faele ya thulaganyo e e tlwaelegileng" },
   "optionDesc_quiet": { "message": "Go emisa dikgogo tsotlhe kwantle ga diphoso" },
   "optionDesc_init": { "message": "Tlhama faele ya thulaganyo (mo moding wa porojeke)" },
+  "optionDesc_joke": { "message": "E dira metlae e e tshegisang ka phopholetso" },
   "optionDesc_help": { "message": "Bontsha sekerini sa thuso" },
   "optionDesc_version": { "message": "Bontsha nomoro ya mofuta" },
   "optionDesc_stats": { "message": "SHOW NPM STATS" },

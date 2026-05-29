@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Загрузіць уласны файл канфігурацыі" },
   "optionDesc_quiet": { "message": "Спыніць усе журналы, акрамя памылак" },
   "optionDesc_init": { "message": "Стварыць файл канфігурацыі (у корані праекта)" },
+  "optionDesc_joke": { "message": "Распавядае смешны анекдот выпадкова" },
   "optionDesc_help": { "message": "Экран даведкі для адлюстравання" },
   "optionDesc_version": { "message": "Наяўныя экраны" },
   "optionDesc_stats": { "message": "Паказваць статыстыку NPM" },

@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Maxsus konfiguratsiya faylini yuklash" },
   "optionDesc_quiet": { "message": "Xatolardan tashqari barcha jurnallarni bostirish" },
   "optionDesc_init": { "message": "Konfiguratsiya faylini yarating (loyiha ildizida)" },
+  "optionDesc_joke": { "message": "Tasodifiy ravishda kulgili hazil aytadi" },
   "optionDesc_help": { "message": "Yordam ekranini ko'rsatish" },
   "optionDesc_version": { "message": "Boʻsh joy" },
   "optionDesc_stats": { "message": "npm statistikasini ko'rsatish" },

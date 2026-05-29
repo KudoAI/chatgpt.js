@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Բեռնել անհատականացված կոնֆիգուրացիոն ֆայլը" },
   "optionDesc_quiet": { "message": "Սեղմեք բոլոր տեղեկամատյանները, բացի սխալներից" },
   "optionDesc_init": { "message": "Ստեղծել կոնֆիգուրացիոն ֆայլ (նախագծի արմատում)" },
+  "optionDesc_joke": { "message": "Պատահական կատակ է անում" },
   "optionDesc_help": { "message": "Ցուցադրել օգնության էկրանը" },
   "optionDesc_version": { "message": "Ցույց տալ տարբերակի համարը" },
   "optionDesc_stats": { "message": "Ցույց տալ NPM վիճակագրությունը" },

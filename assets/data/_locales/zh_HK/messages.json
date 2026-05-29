@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "載入自訂組態檔" },
   "optionDesc_quiet": { "message": "禁止所有日誌記錄，錯誤除外" },
   "optionDesc_init": { "message": "創建配置文件（在項目根目錄中）" },
+  "optionDesc_joke": { "message": "隨便講個有趣的笑話" },
   "optionDesc_help": { "message": "顯示說明畫面" },
   "optionDesc_version": { "message": "版本編號" },
   "optionDesc_stats": { "message": "顯示npm統計資料" },

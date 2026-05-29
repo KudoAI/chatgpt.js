@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Load custom config file" },
   "optionDesc_quiet": { "message": "Suppress all logging except errors" },
   "optionDesc_init": { "message": "Create config file (in project root)" },
+  "optionDesc_joke": { "message": "Tells a funny joke at random" },
   "optionDesc_help": { "message": "Display help screen" },
   "optionDesc_version": { "message": "Show version number" },
   "optionDesc_stats": { "message": "Show npm stats" },

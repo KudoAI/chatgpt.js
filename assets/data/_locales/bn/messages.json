@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "কাস্টম কনফিগ ফাইল লোড করুন" },
   "optionDesc_quiet": { "message": "ত্রুটি ব্যতীত সমস্ত লগিং দমন করুন" },
   "optionDesc_init": { "message": "কনফিগ ফাইল তৈরি করুন (প্রজেক্ট রুটের মধ্যে)" },
+  "optionDesc_joke": { "message": "এলোমেলোভাবে একটি মজার রসিকতা বলে" },
   "optionDesc_help": { "message": "সহায়তা স্ক্রিন প্রদর্শন করুন" },
   "optionDesc_version": { "message": "বিক্রেতা সংখ্যা" },
   "optionDesc_stats": { "message": "Npm পরিসংখ্যান দেখান" },

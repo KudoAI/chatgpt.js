@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Benutzerdefinierte Konfigurationsdatei laden" },
   "optionDesc_quiet": { "message": "Alle Protokolle mit Ausnahme von Fehlern unterdrücken" },
   "optionDesc_init": { "message": "Konfigurationsdatei erstellen (im Projektstammverzeichnis)" },
+  "optionDesc_joke": { "message": "Erzählt zufällig einen lustigen Witz" },
   "optionDesc_help": { "message": "Hilfebildschirm anzeigen" },
   "optionDesc_version": { "message": "Versionsnummer anzeigen" },
   "optionDesc_stats": { "message": "Npm-Statistiken anzeigen" },

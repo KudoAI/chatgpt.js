@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Laadi kohandatud konfiguratsioonifail" },
   "optionDesc_quiet": { "message": "Tühista kogu logimine, välja arvatud vead" },
   "optionDesc_init": { "message": "Loo konfiguratsioonifail (projekti juurfailis)" },
+  "optionDesc_joke": { "message": "Räägib juhuslikult naljaka nalja" },
   "optionDesc_help": { "message": "Abi ekraani kuvamine" },
   "optionDesc_version": { "message": "Näitab versiooni" },
   "optionDesc_stats": { "message": "Näita npm statistikat" },

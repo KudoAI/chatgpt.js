@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Llwytho ffeil cyfluniad cyfaddas" },
   "optionDesc_quiet": { "message": "Atal pob cofnod ac eithrio gwallau" },
   "optionDesc_init": { "message": "Creu ffeil cyfluniad (yn wraidd y cywaith)" },
+  "optionDesc_joke": { "message": "Add a Funny Joke" },
   "optionDesc_help": { "message": "Dangos y sgrin gymorth" },
   "optionDesc_version": { "message": "Rhif fersiwn" },
   "optionDesc_stats": { "message": "Dangos ystadegau npm" },

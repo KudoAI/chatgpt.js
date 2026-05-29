@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "โหลดไฟล์การกำหนดค่าที่กำหนดเอง" },
   "optionDesc_quiet": { "message": "ระงับการบันทึกทั้งหมดยกเว้นข้อผิดพลาด" },
   "optionDesc_init": { "message": "สร้างไฟล์การกำหนดค่า (ในรูทโครงการ)" },
+  "optionDesc_joke": { "message": "เล่าเรื่องตลกแบบสุ่ม" },
   "optionDesc_help": { "message": "หน้าจอวิธีใช้การแสดงผล" },
   "optionDesc_version": { "message": "à¸à¸·à¹à¸­à¸à¸­à¸à¸£à¸°à¸à¸à¹à¸ªà¸à¸à¸à¸¥" },
   "optionDesc_stats": { "message": "แสดงสถิติ npm" },

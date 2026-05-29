@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "ഇഷ്ടാനുസൃത കോൺഫിഗറേഷൻ ഫയൽ ലോഡ് ചെയ്യുക" },
   "optionDesc_quiet": { "message": "പിശകുകൾ ഒഴികെ എല്ലാ ലോഗിംഗും അടിച്ചമർത്തുക" },
   "optionDesc_init": { "message": "കോൺഫിഗർ ഫയൽ സൃഷ്ടിക്കുക (പ്രോജക്റ്റ് റൂട്ടിൽ)" },
+  "optionDesc_joke": { "message": "ക്രമരഹിതമായ ഒരു തമാശ പറയുന്നു" },
   "optionDesc_help": { "message": "സഹായ സ്ക്രീൻ പ്രദർശിപ്പിക്കുക" },
   "optionDesc_version": { "message": "വില്‍പ്പനക്കാരനുള്ള സൂചകം" },
   "optionDesc_stats": { "message": "Npm സ്ഥിതിവിവരക്കണക്കുകൾ കാണിക്കുക" },

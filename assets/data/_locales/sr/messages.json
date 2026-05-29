@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Učitaj prilagođenu konfiguracionu datoteku" },
   "optionDesc_quiet": { "message": "Obustavi svu evidenciju osim grešaka" },
   "optionDesc_init": { "message": "Kreirajte konfiguracionu datoteku (u korenu projekta)" },
+  "optionDesc_joke": { "message": "Nasumično ispriča smešnu šalu" },
   "optionDesc_help": { "message": "Prikažite ekran za pomoć" },
   "optionDesc_version": { "message": "Исписује број верзије" },
   "optionDesc_stats": { "message": "Prikaži npm statistiku" },

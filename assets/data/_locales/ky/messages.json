@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Өзгөчө конфигурация файлын жүктөө" },
   "optionDesc_quiet": { "message": "Каталардан башка бардык жазууларды басуу" },
   "optionDesc_init": { "message": "Конфигурация файлын түзүү (долбоордун тамыры менен)" },
+  "optionDesc_joke": { "message": "Кокусунан күлкүлүү тамашаны айтып берет" },
   "optionDesc_help": { "message": "Жардам экранын көрсөтүү" },
   "optionDesc_version": { "message": "Версиянын номерин көрсөтүү" },
   "optionDesc_stats": { "message": "Көрсөтүү npm статистикасы" },

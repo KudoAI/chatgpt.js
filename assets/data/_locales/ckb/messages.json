@@ -51,6 +51,7 @@
   "optionDesc_config": { "message": "پەڕگەی ڕێکخستنی تایبەت باربکە" },
   "optionDesc_quiet": { "message": "سڕینەوەی هەموو هەڵەکان جگە لە هەڵەکان" },
   "optionDesc_init": { "message": "دروستکردنی پەڕگەی ڕێکخستن (لە ڕەگی پرۆژەدا)" },
+  "optionDesc_joke": { "message": "نوکته یه کی خۆش له سه ر پێکه نین" },
   "optionDesc_help": { "message": "پیشاندانی شاشەی یارمەتی" },
   "optionDesc_version": { "message": "ژمارەی وەشان پیشان بدە" },
   "optionDesc_stats": { "message": "دۆخی NPM پیشان بدە" },

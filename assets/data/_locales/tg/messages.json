@@ -45,6 +45,7 @@
   "optionDesc_config": { "message": "Боркунии файли танзимоти фармоишӣ" },
   "optionDesc_quiet": { "message": "Ғайри хатогӣ ҳамаи қайдкуниҳоро пахш кунед" },
   "optionDesc_init": { "message": "Эҷод кардани файли конфигуратсия (дар решаи лоиҳа)" },
+  "optionDesc_joke": { "message": "Таърих Бознигарии Давомнокии" },
   "optionDesc_help": { "message": "Намоиши экрани кӯмак" },
   "optionDesc_version": { "message": "Номер производителя" },
   "optionDesc_stats": { "message": "Намоиши омори npm" },
