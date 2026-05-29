@@ -81,8 +81,6 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
   - [`translate()` `async`](#translate-async)
   - [`uuidv4()`](#uuidv4)
 - [Page theme](#page-theme)
-  - [`activateDarkMode()`](#activatedarkmode)
-  - [`activateLightMode()`](#activatelightmode)
   - [`isDarkMode()`](#isdarkmode)
   - [`isLightMode()`](#islightmode)
   - [`toggleScheme()`](#togglescheme)
@@ -149,8 +147,11 @@ Since Google does not allow remote code, importing chatgpt.js locally is require
   - [`settings`](#settings-api): [`scheme`](#scheme-api-subset)
   - [`sidebar`](#sidebar-api): [`exists()`](#exists), [`isOn()`](#ison), [`isOff()`](#isoff), [`hide()`](#hide-2), [`show()`](#show-2), [`toggle()`](#toggle-2), [`isLoaded()`](#isloaded-async-2)
 
-> **Note**
-> Top-level aliases such as `chatgpt.minify()`, `chatgpt.execute()`, `chatgpt.extractCode()`, `chatgpt.setScheme()` and `chatgpt.scheme.*` are deprecated and planned for removal in v4.5.1. Use the canonical APIs such as `chatgpt.code.*`, `chatgpt.response.*` and `chatgpt.settings.scheme.*` instead.
+> [!WARNING]
+> 
+> **`activateDarkMode()` and `activateLightMode()` will be removed** in v5.0.0. Use `chatgpt.scheme.activateDark()` and `chatgpt.scheme.activateDark()` instead.
+>
+> **Top-level aliases will be removed** in v5.0.0 (e.g. `chatgpt.minify()`, `chatgpt.execute()`, `chatgpt.extractCode()`, `chatgpt.setScheme()` and `chatgpt.scheme.*`). Use the canonical APIs instead (e.g. `chatgpt.code.*`, `chatgpt.response.*` and `chatgpt.settings.scheme.*`)
 
 <hr>
 
@@ -383,30 +384,6 @@ chatgpt.alert(randomID) // Example output: '239067d1-bcb8-4fd7-91eb-9ab94619b7b3
 <a href="#top">Back to top ↑</a>
 
 ## Page theme
-
-#### `activateDarkMode()`
-
-Changes the website theme to dark mode.
-
-Example:
-
-```js
-chatgpt.activateDarkMode()
-```
-
-#
-
-#### `activateLightMode()`
-
-Changes the website theme to light mode.
-
-Example:
-
-```js
-chatgpt.activateLightMode()
-```
-
-#
 
 #### `isDarkMode()`
 
@@ -2018,6 +1995,30 @@ API for interfacing with ChatGPT user settings.
 #
 
 #### `scheme` `api subset`
+
+##
+
+#### `activateDark()`
+
+Changes the website theme to dark mode.
+
+Example:
+
+```js
+chatgpt.scheme.activateDark()
+```
+
+##
+
+#### `activateLight()`
+
+Changes the website theme to light mode.
+
+Example:
+
+```js
+chatgpt.scheme.activateLight()
+```
 
 ##
 

@@ -1652,6 +1652,17 @@ const chatgpt = {
 
     settings: {
         scheme: {
+
+            activateDark() {
+                document.documentElement.classList.replace('light', 'dark')
+                document.documentElement.style.colorScheme = localStorage.theme = 'dark'
+            },
+
+            activateLight() {
+                document.documentElement.classList.replace('dark', 'light')
+                document.documentElement.style.colorScheme = localStorage.theme = 'light'
+            },
+
             isDark() { return document.documentElement.classList.contains('dark') },
             isLight() { return document.documentElement.classList.contains('light') },
 
