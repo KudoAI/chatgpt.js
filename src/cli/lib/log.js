@@ -115,7 +115,7 @@ module.exports = {
         console.info(`\n${
             cli.msgs.info_moreHelp}, ${cli.msgs.info_type} ${
                 colors.bw}${cli.name.split('/')[1]} --<docs|help>${colors.nc} ${
-                cli.msgs.info_or} ${cli.msgs.info_visit}\n${colors.by}${cli.urls.docs}${colors.nc}`
+                cli.msgs.info_or} ${cli.msgs.info_visit}\n${colors.by}${cli.urls.docs.root}/#readme${colors.nc}`
         )
     },
 
