@@ -28,7 +28,7 @@
     loader.start()
     try {
         await chatgpt.send(cli.config.query, {
-            output: 'stdout', onLoadStart: () => loader.stop({ clear: false })})
+            provider: cli.config.provider, output: 'stdout', onLoadStart: () => loader.stop({ clear: false })})
         if (cli.config.query == 'hi') log.help()
     } finally { loader.stop() }
 
