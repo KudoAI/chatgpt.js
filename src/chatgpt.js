@@ -1520,16 +1520,15 @@ const chatgpt = {
     reviewCode() { chatgpt.code.review() },
     scrollToBottom() { chatgpt.getScrollToBottomButton()?.click() },
 
-    async send(userQuery, options = {}) {
-        const {
-            env = (typeof window != 'undefined' ? 'chatgpt' : 'backend'),
-            provider = 'openrouter', // or 'google'
-            stream = true, // return streaming resp if possible, otherwise text
-            onLoadStart = null, // cb on resp start loading
-            output = 'return', // or 'stdout'
-            systemQuery = '', // for systemPrompt
-            color = 'green' // for stdout
-        } = options
+    async send(userQuery, {
+        env = (typeof window != 'undefined' ? 'chatgpt' : 'backend'),
+        provider = 'openrouter', // or 'google'
+        stream = true, // return streaming resp if possible, otherwise text
+        onLoadStart = null, // cb on resp start loading
+        output = 'return', // or 'stdout'
+        systemQuery = '', // for systemPrompt
+        color = 'green' // for stdout
+    } = {}) {
 
         if (env == 'chatgpt') {
             const textArea = chatgpt.getChatBox()
@@ -1548,9 +1547,9 @@ const chatgpt = {
         } else { // backend
             const apiKey = chatgpt.config?.apiKeys?.[provider] || process.env[`${provider.toUpperCase()}_API_KEY`]
             if (typeof apiKey != 'string' || !apiKey) throw new Error('Missing API key for provider: ' + provider)
-            const respColor = chatgpt.colors?.[color] || chatgpt.colors.green
-            const url = chatgpt.endpoints[provider].chat +( provider == 'google' ? `?key=${apiKey}` : '' )
-            const headers = { 'Content-Type': 'application/json' }
+            const respColor = chatgpt.colors?.[color] || chatgpt.colors.green,
+                  url = chatgpt.endpoints[provider].chat +( provider == 'google' ? `?key=${apiKey}` : '' ),
+                  headers = { 'Content-Type': 'application/json' }
             if (provider == 'openrouter') headers.Authorization = `Bearer ${apiKey}`
             const payload =
                 provider == 'google' ? {
