@@ -1789,6 +1789,25 @@ API related to the chat history.
 
 #
 
+#### `deleteChat()` `async`
+
+Deletes a chat from ChatGPT history.
+
+Parameters:
+
+`chatToDelete` (optional): A string or integer representing the chat to delete. Can be `'active'`, `'latest'`, the index of a chat, the title of a chat or the ID of a chat. Defaults to `'active'`.
+
+Example:
+
+```js
+(async () => {
+    await chatgpt.history.deleteChat('active')
+    chatgpt.alert('Chat deleted.')
+})()
+```
+
+#
+
 #### `isLoaded()` `async`
 
 Resolves a promise when chat history has finished loading.

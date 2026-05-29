@@ -1034,6 +1034,25 @@ const chatgpt = {
     hideHeader() { chatgpt.header.hide() },
 
     history: {
+        deleteChat(chatToDelete = 'active') {
+            return new Promise((resolve, reject) =>
+                chatgpt.getAccessToken().then(token =>
+                    chatgpt.getChatData(chatToDelete, 'id').then(chat => {
+                        const xhr = new XMLHttpRequest()
+                        xhr.open('PATCH', `${chatgpt.endpoints.openai.chat}/${chat.id}`, true)
+                        xhr.setRequestHeader('Content-Type', 'application/json')
+                        xhr.setRequestHeader('Authorization', 'Bearer ' + token)
+                        xhr.onload = () => {
+                            if (xhr.status != 200)
+                                return reject('Request failed. Cannot delete chat.')
+                            return resolve(true)
+                        }
+                        xhr.send(JSON.stringify({ is_visible: false }))
+                    }).catch(reject)
+                ).catch(reject)
+            )
+        },
+
         async isLoaded(timeout = null) {
             const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
             const isLoadedPromise = new Promise(resolve => {
