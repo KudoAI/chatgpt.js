@@ -670,24 +670,22 @@ const chatgpt = {
 
         } else { // generate rich transcript + filename for HTML/MD/PDF export
 
-            // Fetch HTML transcript from OpenAI
-            const response = await fetch(await chatgpt.shareChat(chatToGet)),
-                  htmlContent = await response.text()
+            const htmlContent = await (await fetch(await chatgpt.shareChat(chatToGet))).text()
 
             // Format filename after <title>
             const parser = new DOMParser(),
-                  parsedHtml = parser.parseFromString(htmlContent, 'text/html')
-            filename = `${ parsedHtml.querySelector('title').textContent || 'ChatGPT conversation' }.html`
+                  parsedHTML = parser.parseFromString(htmlContent, 'text/html')
+            filename = `${ parsedHTML.querySelector('title').textContent || 'ChatGPT conversation' }.html`
 
             // Convert relative CSS paths to absolute ones
-            const cssLinks = parsedHtml.querySelectorAll('link[rel=stylesheet]')
+            const cssLinks = parsedHTML.querySelectorAll('link[rel=stylesheet]')
             cssLinks.forEach(link => {
                 const href = link.getAttribute('href')
                 if (href?.startsWith('/')) link.setAttribute('href', 'https://chat.openai.com' + href)
             })
 
             // Serialize updated HTML to string
-            transcript = new XMLSerializer().serializeToString(parsedHtml)
+            transcript = new XMLSerializer().serializeToString(parsedHTML)
         }
 
         // Export transcript
