@@ -1182,10 +1182,9 @@ const chatgpt = {
     menu: {
         toggle() {
             try {
-                const el = document.querySelector(chatgpt.selectors.btns.menu)
-                if (!el) return
+                const menuBtn = document.querySelector(chatgpt.selectors.btns.menu) ; if (!menuBtn) return
                 ['pointerdown','mousedown','pointerup','mouseup','click'].forEach(eventType =>
-                    el.dispatchEvent(new MouseEvent(eventType, { bubbles: true, cancelable: true, view: window })))
+                    menuBtn.dispatchEvent(new MouseEvent(eventType, { bubbles: true, cancelable: true, view: window })))
             } catch (err) { console.error(err.message) }
         },
 
