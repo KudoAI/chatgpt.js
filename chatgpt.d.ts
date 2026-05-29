@@ -173,6 +173,7 @@ declare interface ChatGPT {
   hideHeader(): void
 
   history: {
+    deleteChat(chatToDelete?: string | number): Promise<boolean>
     isLoaded(timeout?: number | null): Promise<boolean>
   }
 
