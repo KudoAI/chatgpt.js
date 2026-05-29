@@ -77,7 +77,7 @@ const chatgpt = {
                     const prompt = JSON.parse(xhr.responseText)[persona].prompt
                     if (!prompt) return reject(`Persona '${persona}' was not found!`)
                     if (verbose) console.info(`Loading [${persona}] from ${personasURL.split('/').pop()}...`)
-                    chatgpt.send(prompt, 'click')
+                    chatgpt.send(prompt)
                     chatgpt.isIdle().then(() => resolve(prompt))
                 }
             })
