@@ -519,8 +519,6 @@ const chatgpt = {
 
         async isIdle(timeout = null) {
             const obsConfig = { childList: true, subtree: true }
-
-            // Create promises
             const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
             const isIdlePromise = (async () => {
                 await new Promise(resolve => { // when on convo page
@@ -549,7 +547,6 @@ const chatgpt = {
                     }).observe(document.body, obsConfig)
                 )
             })()
-
             return await (timeoutPromise ? Promise.race([isIdlePromise, timeoutPromise]) : isIdlePromise)
         },
 
