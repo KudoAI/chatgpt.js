@@ -503,9 +503,14 @@ const chatgpt = {
     code: {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
+        _validateCodeArg(code) {
+            return !code ? !!console.error('Code argument not supplied. Pass some code!')
+                 : typeof code != 'string' ? !!console.error('Code argument must be a string!')
+                 : true
+        },
+
         async execute(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!')
-            if (typeof code != 'string') return console.error('Code argument must be a string!')
+            if (!this._validateCodeArg(code)) return
             chatgpt.send('Display the output as if you were terminal:\n\n' + code)
             console.info('Executing code...')
             await chatgpt.isIdle()
@@ -551,8 +556,7 @@ const chatgpt = {
         },
 
         async minify(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!')
-            if (typeof code != 'string') return console.error('Code argument must be a string!')
+            if (!this._validateCodeArg(code)) return
             chatgpt.send('Minify the following code:\n\n' + code)
             console.info('Minifying code...')
             await chatgpt.isIdle()
@@ -560,8 +564,7 @@ const chatgpt = {
         },
 
         async obfuscate(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!')
-            if (typeof code != 'string') return console.error('Code argument must be a string!')
+            if (!this._validateCodeArg(code)) return
             chatgpt.send('Obfuscate the following code:\n\n' + code)
             console.info('Obfuscating code...')
             await chatgpt.isIdle()
@@ -580,8 +583,7 @@ const chatgpt = {
         },
 
         async review(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!')
-            if (typeof code == 'string') return console.error('Code argument must be a string!')
+            if (!this._validateCodeArg(code)) return
             chatgpt.send('Review the following code for me:\n\n' + code)
             console.info('Reviewing code...')
             await chatgpt.isIdle()
@@ -589,8 +591,7 @@ const chatgpt = {
         },
 
         async unminify(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!')
-            if (typeof code != 'string') return console.error('Code argument must be a string!')
+            if (!this._validateCodeArg(code)) return
             chatgpt.send('Unminify the following code.:\n\n' + code)
             console.info('Unminifying code...')
             await chatgpt.isIdle()
