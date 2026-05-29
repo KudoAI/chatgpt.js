@@ -503,14 +503,15 @@ const chatgpt = {
     code: {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
-        _validateStrArg(arg) {
-            return !arg ? !!console.error('Argument not supplied. Pass a string!')
-                 : typeof arg != 'string' ? !!console.error('Argument must be a string!')
+        _validateArg({ arg, as = 'string' }) {
+            return !arg ? !!console.error(`${as}' arg not supplied!`)
+                 : ['lang', 'string'].includes(as) && typeof arg != 'string' ?
+                          !!console.error(`'${as}' arg must be a string!`)
                  : true
         },
 
         async execute(code) {
-            if (!this._validateStrArg(code)) return
+            if (!this._validateArg({ arg: code, as: 'string' })) return
             chatgpt.send('Display the output as if you were terminal:\n\n' + code)
             console.info('Executing code...')
             await chatgpt.isIdle()
@@ -518,7 +519,7 @@ const chatgpt = {
         },
 
         extract(msg) { // extract pure code from response (targets last block)
-            if (!chatgpt.code._validateStrArg(msg)) return
+            if (!this._validateArg({ arg: msg, as: 'string' })) return
             const codeBlocks = msg.match(/(?<=```.*\n)[\s\S]*?(?=```)/g)
             return codeBlocks ? codeBlocks[codeBlocks.length -1] : msg
         },
@@ -557,7 +558,7 @@ const chatgpt = {
         },
 
         async minify(code) {
-            if (!chatgpt.code._validateStrArg(code)) return
+            if (!this._validateArg({ arg: code, as: 'string' })) return
             chatgpt.send('Minify the following code:\n\n' + code)
             console.info('Minifying code...')
             await chatgpt.isIdle()
@@ -565,7 +566,7 @@ const chatgpt = {
         },
 
         async obfuscate(code) {
-            if (!chatgpt.code._validateStrArg(code)) return
+            if (!this._validateArg({ arg: code, as: 'string' })) return
             chatgpt.send('Obfuscate the following code:\n\n' + code)
             console.info('Obfuscating code...')
             await chatgpt.isIdle()
@@ -573,7 +574,7 @@ const chatgpt = {
         },
 
         async refactor(code, objective) {
-            if (!chatgpt.code._validateStrArg(code)) return
+            if (!this._validateArg({ arg: code, as: 'string' })) return
             for (let i = 0 ; i < arguments.length ; i++)
                 if (typeof arguments[i] != 'string')
                     return console.error(`Argument ${ i +1 } must be a string.`)
@@ -584,7 +585,7 @@ const chatgpt = {
         },
 
         async review(code) {
-            if (!chatgpt.code._validateStrArg(code)) return
+            if (!this._validateArg({ arg: code, as: 'string' })) return
             chatgpt.send('Review the following code for me:\n\n' + code)
             console.info('Reviewing code...')
             await chatgpt.isIdle()
@@ -592,7 +593,7 @@ const chatgpt = {
         },
 
         async unminify(code) {
-            if (!chatgpt.code._validateStrArg(code)) return
+            if (!this._validateArg({ arg: code, as: 'string' })) return
             chatgpt.send('Unminify the following code.:\n\n' + code)
             console.info('Unminifying code...')
             await chatgpt.isIdle()
@@ -600,10 +601,8 @@ const chatgpt = {
         },
 
         async write(prompt, outputLang) {
-            if (!chatgpt.code._validateStrArg(prompt)) return
-            if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!')
-            for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-                return console.error(`Argument ${ i +1 } must be a string.`)
+            if (!this._validateArg({ arg: prompt, as: 'string' })) return
+            if (!this._validateArg({ arg: outputLang, as: 'lang' })) return
             chatgpt.send(`${prompt}\n\nWrite this as code in ${outputLang}`)
             console.info('Writing code...')
             await chatgpt.isIdle()
