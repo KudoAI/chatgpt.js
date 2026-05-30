@@ -1587,7 +1587,7 @@ const chatgpt = {
 
     async send(userQuery, {
         env = chatgpt.env,
-        provider = 'openrouter', // or 'google'
+        provider = 'random', // or 'google' or 'openrouter'
         stream = true, // return streaming resp if possible, otherwise text
         onLoadStart = null, // cb on resp start loading
         output = 'return', // or 'stdout'
@@ -1610,6 +1610,14 @@ const chatgpt = {
             }, 222)
 
         } else { // backend
+            if (provider == 'random') {
+                const availProviders = ['google', 'openrouter'].filter(provider => {
+                    const key = chatgpt.config?.apiKeys?.[provider] || process.env[`${provider.toUpperCase()}_API_KEY`]
+                    return typeof key == 'string' && key
+                })
+                if (!availProviders.length) throw new Error('No providers with valid API keys available')
+                provider = availProviders[Math.floor(Math.random() * availProviders.length)]
+            }
             const apiKey = chatgpt.config?.apiKeys?.[provider] || process.env[`${provider.toUpperCase()}_API_KEY`]
             if (typeof apiKey != 'string' || !apiKey) throw new Error('Missing API key for provider: ' + provider)
             const respColor = chatgpt.colors?.[color] || chatgpt.colors.green,

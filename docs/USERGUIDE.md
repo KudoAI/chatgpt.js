@@ -996,7 +996,7 @@ Parameters:
 - `userQuery`: *(string)* — The message to send  
 - `options` *(optional object)*:
   - `env`: *(string)* — Environment to use (default: `'chatgpt'`, all else uses back-end)
-  - `provider`: *(string)* — API provider to use (default: `'openrouter'`)
+  - `provider`: *(string)* — API provider to use (default: `'random'`)
   - `stream`: *(boolean)* — Whether to stream the response in real-time (default: `true`)
   - `onLoadStart`: *(function)* — Optional callback when response starts loading
   - `output`: *(string)* — Response output method (default: `'return'`, or 'stdout')
