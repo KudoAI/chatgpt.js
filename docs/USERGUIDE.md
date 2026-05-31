@@ -200,9 +200,9 @@ export default {
 
 > [!WARNING]
 > 
-> **`activateDarkMode()` and `activateLightMode()` will be removed** in v4.6.0. Use `chatgpt.scheme.activateDark()` and `chatgpt.scheme.activateDark()` instead.
+> **`activateDarkMode()` and `activateLightMode()` will be removed** in v4.7.0. Use `chatgpt.scheme.activateDark()` and `chatgpt.scheme.activateDark()` instead.
 >
-> **Top-level aliases will be removed** in v4.6.0 (e.g. `chatgpt.minify()`, `chatgpt.execute()`, `chatgpt.extractCode()`, `chatgpt.setScheme()` and `chatgpt.scheme.*`). Use the canonical APIs instead (e.g. `chatgpt.code.*`, `chatgpt.response.*` and `chatgpt.settings.scheme.*`)
+> **Top-level aliases will be removed** in v4.7.0 (e.g. `chatgpt.minify()`, `chatgpt.execute()`, `chatgpt.extractCode()`, `chatgpt.setScheme()` and `chatgpt.scheme.*`). Use the canonical APIs instead (e.g. `chatgpt.code.*`, `chatgpt.response.*` and `chatgpt.settings.scheme.*`)
 
 <hr>
 
