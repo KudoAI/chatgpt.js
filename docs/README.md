@@ -59,7 +59,7 @@
 
 ### Library
 
-#### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@latest/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
+#### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
 
 From your project root:
 
@@ -157,7 +157,7 @@ export OPENROUTER_API_KEY="sk-or-v1-8a69..."
 
 <br>
 
-1. Create API key: [Google AI Studio API Keys](https://aistudio.google.com/api-keys)
+**1. Create API key:** [Google AI Studio API Keys](https://aistudio.google.com/api-keys)
 
 <img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/google-ai-studio.png">
 
