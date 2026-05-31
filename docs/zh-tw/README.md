@@ -157,7 +157,7 @@ export OPENROUTER_API_KEY="sk-or-v1-8a69..."
 
 <br>
 
-**1. 建立 API 金鑰： https://aistudio.google.com/api-keys**
+**1. 建立 API 金鑰：https://aistudio.google.com/api-keys**
 
 <img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/google-ai-studio.png">
 
