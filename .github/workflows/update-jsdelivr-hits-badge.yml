@@ -1,0 +1,33 @@
+name: Update jsDelivr hits badge
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 5 * * 1'
+
+jobs:
+  update-badge:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v6.0.2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: node utils/update-jsdelivr-hits-badge.js
+
+      - run: |
+          if git diff --quiet -- assets/data/jsdelivr-hits.json ; then
+            echo "Badge data already current."
+            exit 0
+          fi
+
+          git config user.name "kudo-sync-bot"
+          git config user.email "auto-sync@kudoai.com"
+          git add assets/data/jsdelivr-hits.json
+          git commit -m "Update jsDelivr hits badge [auto-sync]"
+          git push
