@@ -10,9 +10,16 @@ function formatNumber(number) {
 }
 
 function getRepoFromUrl(repoUrl = '') {
-    const match = repoUrl.match(/github\.com[:/](.+?)\/(.+?)(?:\.git)?$/)
-    if (!match) throw new Error(`Unable to parse repository from ${repoUrl}`)
-    return { owner: match[1], repo: match[2] }
+    const repoPath = repoUrl
+        .replace(/^git@github\.com:/, '')
+        .replace(/^https?:\/\/github\.com\//, '')
+        .replace(/^ssh:\/\/git@github\.com\//, '')
+        .replace(/\.git$/, '')
+
+    const [owner, repo] = repoPath.split('/')
+    if (!owner || !repo) throw new Error(`Unable to parse repository from ${repoUrl}`)
+
+    return { owner, repo }
 }
 
 async function fetchJson(url) {
