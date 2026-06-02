@@ -9,7 +9,7 @@ module.exports = {
     controls: {
         provider: { type: 'param', regex: /^--?p(?:rovider)?$/, defaultVal: 'openrouter' },
         query: { type: 'param', regex: /^--?(?:q|query|ask|send)?$/, defaultVal: 'hi' },
-        summarize: { type: 'param', valType: 'filepath', regex: /^--?summarize(?:[=\s].*|$)/ },
+        summarize: { type: 'param', valType: 'filepath', allowText: true, regex: /^--?summarize(?:[=\s].*|$)/ },
         uiLang: { type: 'param', valType: 'langCode', regex: /^--?ui[-_]?lang(?:[=\s].*|$)/ },
         config: { type: 'param', valType: 'filepath', regex: /^--?config(?:[=\s].*|$)/ },
         quietMode: { type: 'flag', regex: /^--?(?:V|quiet)?(?:[-_]?mode)?$/ },
@@ -118,8 +118,9 @@ module.exports = {
 
             if (ctrl.valType) ({
                 filepath() {
-                    if (configVal && !fs.existsSync(configVal))
-                        log.errorAndExit(`[${key}] ${cli.msgs.error_invalidFilepath}: ${configVal}`)
+                    if (configVal && !fs.existsSync(configVal)
+                        && (!ctrl.allowText || require('./string').looksLikePath(configVal))
+                    ) log.errorAndExit(`[${key}] ${cli.msgs.error_invalidFilepath}: ${configVal}`)
                 },
                 positiveInt() {
                     const numVal = parseInt(configVal, 10)
