@@ -34,7 +34,7 @@
     try {
         await chatgpt.send(query, {
             provider: cli.config.provider, output: 'stdout', onLoadStart: () => loader.stop({ clear: false })})
-        if (/help|hi/.test(query)) log.help()
+        if (/^(?:help|hi)$/.test(query)) log.help()
     } finally { loader.stop() }
 
 })()
