@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  update-badge:
+  update-jsd-shields:
     if: github.repository == 'KudoAI/chatgpt.js'
     runs-on: ubuntu-24.04
     permissions:
