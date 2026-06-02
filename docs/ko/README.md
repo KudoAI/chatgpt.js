@@ -47,7 +47,7 @@
 <a href="https://github.com/sindresorhus/awesome-chatgpt#javascript" target="_blank" rel="noopener">
     <img src="https://img.shields.io/badge/%EC%96%B8%EA%B8%89%EB%90%A8-Awesome-ff69b4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="#">
-    <img src="https://img.shields.io/badge/jsDelivr_%EC%9A%94%EC%B2%AD%EC%82%AC%ED%95%AD-2,000,000+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    <img src="https://img.shields.io/badge/jsDelivr_%EC%9A%94%EC%B2%AD%EC%82%AC%ED%95%AD-4,000,000+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 
 </div>
 
