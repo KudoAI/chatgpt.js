@@ -188,7 +188,7 @@ export default {
 - [Library APIs](#library-apis)
   - [`autoRefresh`](#autorefresh-api): [`activate()`](#activate), [`deactivate()`](#deactivate), [`nowTimeStamp()`](#nowtimestamp)
   - [`browser`](#browser-api): [`isLightMode()`](#islightmode-1), [`isDarkMode()`](#isdarkmode-1), [`isChromium()`](#ischromium), [`isChrome()`](#ischrome), [`isEdge()`](#isedge), [`isBrave()`](#isbrave), [`isFirefox()`](#isfirefox), [`isFullScreen()`](#isfullscreen), [`isMobile()`](#ismobile)
-  - [`code`](#code-api): [`minify()`](#minify-async), [`execute()`](#execute-async), [`extract()`](#extract), [`isIdle()`](#isidle-async-1), [`obfuscate()`](#obfuscate-async), [`refactor()`](#refactor-async), [`review()`](#review-async), [`unminify()`](#unminify-async), [`write()`](#write-async)
+  - [`code`](#code-api): [`debug()`](#debug-async), [`minify()`](#minify-async), [`execute()`](#execute-async), [`extract()`](#extract), [`isIdle()`](#isidle-async-1), [`obfuscate()`](#obfuscate-async), [`refactor()`](#refactor-async), [`review()`](#review-async), [`unminify()`](#unminify-async), [`write()`](#write-async)
   - [`footer`](#footer-api): [`get()`](#get), [`hide()`](#hide), [`show()`](#show)
   - [`header`](#header-api): [`get()`](#get-1), [`hide()`](#hide-1), [`show()`](#show-1)
   - [`history`](#history-api): [`isLoaded()`](#isloaded-async-1)
@@ -1524,6 +1524,33 @@ if (chatgpt.browser.isMobile()) {
 <a href="#top">Back to top ↑</a>
 
 ## code `api`
+
+#### `debug()` `async`
+
+Asks ChatGPT to debug the given code and return corrected code.
+
+Parameters:
+
+`code`: A string being the code to debug.
+
+Example:
+
+```js
+(async () => {
+    const debuggedCode = await chatgpt.code.debug(`
+        function add(a, b) {
+            return a - b
+        }`)
+    chatgpt.alert(debuggedCode)
+
+    /* Alerts:
+    function add(a, b) {
+        return a + b
+    } */
+})()
+```
+
+#
 
 #### `minify()` `async`
 

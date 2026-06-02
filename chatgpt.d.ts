@@ -92,6 +92,7 @@ declare interface ChatGPT {
   clearChats(): Promise<void>
 
   code: {
+    debug(code: string): Promise<string>
     execute(code: string): Promise<string>
     extract(msg?: string): string
     isIdle(timeout?: number | null): Promise<boolean>
