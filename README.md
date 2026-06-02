@@ -227,6 +227,12 @@ Use `--provider google` to use Google AI instead of the default OpenRouter provi
 chatgpt --provider google --query "Write a one-line git commit message"
 ```
 
+Ask and answer a random question:
+
+```bash
+chatgpt --random-answer
+```
+
 To view all CLI options or create a local config file:
 
 ```bash

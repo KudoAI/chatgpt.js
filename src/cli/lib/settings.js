@@ -14,6 +14,7 @@ module.exports = {
         quietMode: { type: 'flag', regex: /^--?(?:V|quiet)?(?:[-_]?mode)?$/ },
         init: { type: 'cmd', regex: /^-{0,2}i(?:nit)?$/ },
         joke: { type: 'cmd', regex: /^--?j(?:oke)?$/ },
+        randomAnswer: { type: 'cmd', regex: /^--?random[-_]?answer$/ },
         help: { type: 'cmd', regex: /^--?h(?:elp)?$/ },
         version: { type: 'cmd', regex: /^--?ve?r?s?i?o?n?$/ },
         stats: { type: 'cmd', regex: /^--?stats?$/ }

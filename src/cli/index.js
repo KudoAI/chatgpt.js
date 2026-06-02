@@ -26,7 +26,8 @@
 
     // Get AI reply
     loader.start()
-    const query = cli.config.joke ? 'Tell me a joke and make it funny.'
+    const query = cli.config.randomAnswer ? 'Generate a single random question on any topic, then answer it.'
+                : cli.config.joke ? 'Tell me a joke and make it funny.'
                 : cli.config.query
     try {
         await chatgpt.send(query, {
