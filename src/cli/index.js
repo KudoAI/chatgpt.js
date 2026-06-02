@@ -9,7 +9,8 @@
 
     // Import LIBS
     globalThis.log = require('./lib/log')
-    const chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
+    const fs = require('fs'),
+          chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
           loader = require('./lib/loader').create({ width: env.width })
 
     await init.cli()
@@ -27,6 +28,8 @@
     // Get AI reply
     loader.start()
     const query = cli.config.joke ? 'Tell me a joke and make it funny.'
+                : cli.config.summarize ? `Summarize the following file:\n\n${
+                    fs.readFileSync(cli.config.summarize, 'utf8') }`
                 : cli.config.query
     try {
         await chatgpt.send(query, {
