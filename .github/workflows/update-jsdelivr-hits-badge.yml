@@ -18,7 +18,43 @@ jobs:
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
       - run: |
-          fetch_total() { curl -fsSL "$1" | sed -n -E 's/.*"total":[[:space:]]*([0-9]+).*/\1/p' | head -1 }
+          fetch_year_total() {
+            local package=$1
+            local year=$2
+            local current_year=$(date +%Y)
+            local current_month=$(date +%-m)
+            if [ "$year" -eq "$current_year" ] ; then # total month stats
+              local total=0
+              for month in $(seq 1 $current_month); do
+                month_padded=$(printf "%02d" $month)
+                monthly=$(curl -fsSL "https://data.jsdelivr.com/v1/stats/packages/${package}?period=${year}-${month_padded}" | \
+                          sed -n -E 's/.*"total":[[:space:]]*([0-9]+).*/\1/p' | head -1)
+                if [ -n "$monthly" ] && [ "$monthly" -gt 0 ]; then
+                  total=$((total + monthly))
+                  echo "    $year-$month_padded: $monthly" >&2
+                fi
+              done
+              echo "$total"
+            else # get year stats
+              curl -fsSL "https://data.jsdelivr.com/v1/stats/packages/${package}?period=${year}" | \
+                sed -n -E 's/.*"total":[[:space:]]*([0-9]+).*/\1/p' | head -1
+            fi
+          }
+          
+          fetch_all_years() {
+            local package=$1
+            local current_year=$(date +%Y)
+            local total=0
+            for year in $(seq 2024 $current_year); do
+              yearly_hits=$(fetch_year_total "$package" "$year")
+              if [ -n "$yearly_hits" ] && [ "$yearly_hits" -gt 0 ]; then
+                echo "  $year: $yearly_hits" >&2
+                total=$((total + yearly_hits))
+              fi
+            done
+            echo $total
+          }
+          
           format_total() {
             local num=$1 ; first_digit="${num:0:1}" second_digit="${num:1:1}"
             second_digit_rounded=$(( second_digit < 5 ? 0 : 5 ))
@@ -43,8 +79,12 @@ jobs:
             else formatted_num="$num" ; fi # preserve <1K as is
             echo "$formatted_num"
           }
-          npm_hits=$(fetch_total "https://data.jsdelivr.com/v1/stats/packages/npm/@kudoai/chatgpt.js?period=year")
-          gh_hits=$(fetch_total "https://data.jsdelivr.com/v1/stats/packages/gh/KudoAI/chatgpt.js?period=year")
+          
+          echo "Fetching jsDelivr hits by year:"
+          echo "npm/@kudoai/chatgpt.js:"
+          npm_hits=$(fetch_all_years "npm/@kudoai/chatgpt.js")
+          echo "gh/KudoAI/chatgpt.js:"
+          gh_hits=$(fetch_all_years "gh/KudoAI/chatgpt.js")
           if [ -z "$npm_hits" ] || [ -z "$gh_hits" ] ; then
             echo "Error getting jsDelivr hits" ; exit 1 ; fi
           total_hits=$((npm_hits + gh_hits))
