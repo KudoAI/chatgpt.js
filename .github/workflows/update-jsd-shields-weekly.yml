@@ -91,7 +91,7 @@ jobs:
           formatted_total=$(format_total "$total_hits")
           echo "Combined jsDelivr hits: $formatted_total ($npm_hits npm + $gh_hits gh)"
           for readme in README.md docs/README.md ; do
-            sed -i -E "s|(badge/jsDelivr_Requests-)[0-9.,kmK+mM]+(-2bbbd8\.svg)|\1$formatted_total\2|Ig" "$readme" ; done
+            sed -i -E "s|(badge/).*(-2bbbd8\.svg)|\1$formatted_total\2|Ig" "$readme" ; done
           if git diff --quiet -- README.md docs/README.md ; then
             echo "jsDelivr hits badge already current."
           else
