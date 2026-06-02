@@ -41,7 +41,7 @@
   "helpSection_flags": { "message": "Config options" },
   "helpSection_cmds": { "message": "Commands" },
   "optionDesc_query": { "message": "Query to send AI" },
-  "optionDesc_summarize": { "message": "Summarize a file" },
+  "optionDesc_summarize": { "message": "Summarize a file's contents" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code of language to display UI in" },
   "optionDesc_config": { "message": "Load custom config file" },
   "optionDesc_quiet": { "message": "Suppress all logging except errors" },
