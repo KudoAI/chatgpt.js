@@ -45,6 +45,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1 code of language to display UI in" },
   "optionDesc_config": { "message": "Load custom config file" },
   "optionDesc_quiet": { "message": "Suppress all logging except errors" },
+  "optionDesc_plain": { "message": "Disable markdown rendering in AI responses" },
   "optionDesc_init": { "message": "Create config file (in project root)" },
   "optionDesc_joke": { "message": "Tells a funny joke at random" },
   "optionDesc_help": { "message": "Display help screen" },

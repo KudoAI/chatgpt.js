@@ -71,7 +71,8 @@ module.exports = {
             ],
             flags: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_flags}:${this.colors.nc}`,
-                ` -V, --quiet                 ${cli.msgs.optionDesc_quiet}.`
+                ` -V, --quiet                 ${cli.msgs.optionDesc_quiet}.`,
+                `     --plain                 ${cli.msgs.optionDesc_plain}.`
             ],
             cmds: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_cmds}:${this.colors.nc}`,
