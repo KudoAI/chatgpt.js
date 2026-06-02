@@ -1,0 +1,114 @@
+name: Update jsDelivr shield in READMEs
+
+on:
+  schedule:
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+
+jobs:
+  update-badge:
+    if: github.repository == 'KudoAI/chatgpt.js'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    env:
+      TZ: PST8PDT
+    steps:
+      - uses: actions/checkout@v6.0.2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+      - run: |
+          fetch_year_total() {
+            local package=$1
+            local year=$2
+            local current_year=$(date +%Y)
+            local current_month=$(date +%-m)
+            if [ "$year" -eq "$current_year" ] ; then # total month stats
+              local total=0
+              for month in $(seq 1 $current_month); do
+                month_padded=$(printf "%02d" $month)
+                monthly=$(curl -fsSL "https://data.jsdelivr.com/v1/stats/packages/${package}?period=${year}-${month_padded}" | \
+                          sed -n -E 's/.*"total":[[:space:]]*([0-9]+).*/\1/p' | head -1)
+                if [ -n "$monthly" ] && [ "$monthly" -gt 0 ]; then
+                  total=$((total + monthly))
+                  echo "    $year-$month_padded: $monthly" >&2
+                fi
+              done
+              echo "$total"
+            else # get year stats
+              curl -fsSL "https://data.jsdelivr.com/v1/stats/packages/${package}?period=${year}" | \
+                sed -n -E 's/.*"total":[[:space:]]*([0-9]+).*/\1/p' | head -1
+            fi
+          }
+          
+          fetch_all_years() {
+            local package=$1
+            local current_year=$(date +%Y)
+            local total=0
+            for year in $(seq 2024 $current_year); do
+              yearly_hits=$(fetch_year_total "$package" "$year")
+              if [ -n "$yearly_hits" ] && [ "$yearly_hits" -gt 0 ]; then
+                echo "  $year: $yearly_hits" >&2
+                total=$((total + yearly_hits))
+              fi
+            done
+            echo $total
+          }
+          
+          format_total() {
+            local num=$1 ; first_digit="${num:0:1}" second_digit="${num:1:1}"
+            second_digit_rounded=$(( second_digit < 5 ? 0 : 5 ))
+            if (( num >= 1000000000 )) ; then # 1B+ w/ one decimal place
+              formatted_num="$(( num / 1000000000 ))"
+              remainder=$(( (num % 1000000000) / 100000000 ))
+              if (( remainder != 0 )) ; then formatted_num+=".$remainder" ; fi
+              formatted_num+="B+"
+            elif (( num >= 10000000 )) ; then # abbr 10,000,000+ to 999,000,000+
+              formatted_num=$(printf "%'.f+" $((( num / 1000000 ) * 1000000 )))
+            elif (( num >= 1000000 )) ; then # abbr 1,000,000+ to 9,500,000+
+              formatted_num="${first_digit},${second_digit}00,000+"
+            elif (( num >= 100000 )) ; then # abbr 100,000+ to 950,000+
+              formatted_num="${first_digit}${second_digit_rounded}0,000+"
+            elif (( num >= 10000 )) ; then # abbr 10,000+ to 90,000+
+              formatted_num="${first_digit}0,000+"
+            elif (( num >= 1000 )) ; then # abbr 1K to 9.9K
+              formatted_num="$(( num / 1000 ))"
+              remainder=$(( (num % 1000) / 100 ))
+              if (( remainder != 0 )) ; then formatted_num+=".$remainder" ; fi
+              formatted_num+="K"
+            else formatted_num="$num" ; fi # preserve <1K as is
+            echo "$formatted_num"
+          }
+          
+          echo "Fetching jsDelivr hits by year:"
+          echo "npm/@kudoai/chatgpt.js:"
+          npm_hits=$(fetch_all_years "npm/@kudoai/chatgpt.js")
+          echo "gh/KudoAI/chatgpt.js:"
+          gh_hits=$(fetch_all_years "gh/KudoAI/chatgpt.js")
+          if [ -z "$npm_hits" ] || [ -z "$gh_hits" ] ; then
+            echo "Error getting jsDelivr hits" ; exit 1 ; fi
+          total_hits=$((npm_hits + gh_hits))
+          formatted_total=$(format_total "$total_hits")
+          echo "Combined jsDelivr hits: $formatted_total ($npm_hits npm + $gh_hits gh)"
+          for readme in README.md docs/README.md ; do
+            sed -i -E "s|(badge/jsDelivr_Requests-)[0-9.,kmK+mM]+(-2bbbd8\.svg)|\1$formatted_total\2|Ig" "$readme" ; done
+          if git diff --quiet -- README.md docs/README.md ; then
+            echo "jsDelivr hits badge already current."
+          else
+            echo "JSD_BADGE_UPDATED=true" >> $GITHUB_ENV
+          fi
+      - if: env.JSD_BADGE_UPDATED == 'true'
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PRIVATE_ID: ${{ secrets.GPG_PRIVATE_ID }}
+        run: |
+          gpg --batch --import <(echo "$GPG_PRIVATE_KEY")
+          git config --global commit.gpgsign true
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git config --global user.signingkey "$GPG_PRIVATE_ID"
+      - if: env.JSD_BADGE_UPDATED == 'true'
+        run: |
+          git add **README.md && git commit -n -m "Updated jsDelivr shield counter"
+          git pull --rebase
+          git push
