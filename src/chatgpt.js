@@ -510,6 +510,19 @@ const chatgpt = {
     code: {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
+        async debug(code) {
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
+            console.info('Debugging code...')
+            const prompt = `Debug the following code and return the corrected code:\n\n${code}`
+            let resp
+            if (chatgpt.env == 'frontend') {
+                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+            } else
+                resp = await chatgpt.send(prompt)
+            return chatgpt.code.extract(resp)
+        },
+
         async execute(code) {
             if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Executing code...')
