@@ -65,6 +65,7 @@ module.exports = {
             params: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_params}:${this.colors.nc}`,
                 ` -q, --query "msg"           ${cli.msgs.optionDesc_query}.`,
+                ` --summarize="path/to/file"  ${cli.msgs.optionDesc_summarize || 'Summarize a file'}.`,
                 ` --ui-lang="code"            ${cli.msgs.optionDesc_uiLang}.`,
                 ` --config="path/to/file"     ${cli.msgs.optionDesc_config}.`
             ],

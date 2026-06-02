@@ -9,6 +9,7 @@ module.exports = {
     controls: {
         provider: { type: 'param', regex: /^--?p(?:rovider)?$/, defaultVal: 'openrouter' },
         query: { type: 'param', regex: /^--?(?:q|query|ask|send)?$/, defaultVal: 'hi' },
+        summarize: { type: 'param', valType: 'filepath', regex: /^--?summarize(?:[=\s].*|$)/ },
         uiLang: { type: 'param', valType: 'langCode', regex: /^--?ui[-_]?lang(?:[=\s].*|$)/ },
         config: { type: 'param', valType: 'filepath', regex: /^--?config(?:[=\s].*|$)/ },
         quietMode: { type: 'flag', regex: /^--?(?:V|quiet)?(?:[-_]?mode)?$/ },
