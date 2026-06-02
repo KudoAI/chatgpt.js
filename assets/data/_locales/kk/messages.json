@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Параметрлерді теңшеу" },
   "helpSection_cmds": { "message": "Ақпараттық командалар" },
   "optionDesc_query": { "message": "ЖИ жіберу сұранысы" },
+  "optionDesc_summarize": { "message": "Файлдың мазмұнын қорытындылау" },
   "optionDesc_uiLang": { "message": "Пайдаланушы интерфейсін көрсету үшін ISO 639-1 тіл коды" },
   "optionDesc_config": { "message": "Теңшелетін конфигурация файлын жүктеу" },
   "optionDesc_quiet": { "message": "Қателерден басқа барлық жүйеге кіруді болдырмау" },

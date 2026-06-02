@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Konfig. asetukset" },
   "helpSection_cmds": { "message": "Tietokomennot" },
   "optionDesc_query": { "message": "Kysely tekoälyn lähettämiseksi" },
+  "optionDesc_summarize": { "message": "Yhteenveto tiedoston sisällöstä" },
   "optionDesc_uiLang": { "message": "Iso 639-1 -kielikoodi käyttöliittymän näyttämiseksi" },
   "optionDesc_config": { "message": "Lataa mukautettu asetustiedosto" },
   "optionDesc_quiet": { "message": "Poista kaikki kirjaukset paitsi virheet" },

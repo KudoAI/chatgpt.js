@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Konfigurációs beállítások" },
   "helpSection_cmds": { "message": "Információs parancsok" },
   "optionDesc_query": { "message": "AI küldésének lekérdezése" },
+  "optionDesc_summarize": { "message": "Foglalja össze a fájl tartalmát" },
   "optionDesc_uiLang": { "message": "A felhasználói felület megjelenítéséhez használt nyelv ISO 639-1 kódja" },
   "optionDesc_config": { "message": "Egyéni konfigurációs fájl betöltése" },
   "optionDesc_quiet": { "message": "Az összes naplózás letiltása a hibák kivételével" },

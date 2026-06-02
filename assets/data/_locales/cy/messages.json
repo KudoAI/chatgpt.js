@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Opsiynau ffurfweddu" },
   "helpSection_cmds": { "message": "Gorchmynion gwybodaeth" },
   "optionDesc_query": { "message": "Ymholiad i anfon at" },
+  "optionDesc_summarize": { "message": "Crynhoi cynnwys ffeil" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 cod iaith i ddangos UI yn" },
   "optionDesc_config": { "message": "Llwytho ffeil cyfluniad cyfaddas" },
   "optionDesc_quiet": { "message": "Atal pob cofnod ac eithrio gwallau" },

@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Opshon konfiská" },
   "helpSection_cmds": { "message": "Komandante di Informashon" },
   "optionDesc_query": { "message": "Reklama na AI" },
+  "optionDesc_summarize": { "message": "Resumiendo un archivo" },
   "optionDesc_uiLang": { "message": "Documente similare cu ISO 639-1 Code of Language" },
   "optionDesc_config": { "message": "Cargo Custom Config Archivo" },
   "optionDesc_quiet": { "message": "Tur Kuliner di Kuliner Kuliner" },

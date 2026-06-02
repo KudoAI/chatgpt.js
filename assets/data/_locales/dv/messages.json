@@ -43,6 +43,7 @@
   "helpSection_flags": { "message": "ކޮންފިގް އޮޕްޝަންސް" },
   "helpSection_cmds": { "message": "އިންފޯ ކޮމާންޑުތައް" },
   "optionDesc_query": { "message": "އޭއައި ފޮނުވަން ކިއުއަރީ" },
+  "optionDesc_summarize": { "message": "ފައިލެއްގެ ކޮންޓެންޓްތައް ޚުލާޞާކުރުން" },
   "optionDesc_uiLang": { "message": "ޔޫއައި ދައްކާލުމަށް އައިއެސްއޯ 639-1 ކޯޑް އޮފް ލޭންގުއޭޖް" },
   "optionDesc_config": { "message": "ކަސްޓަމް ކޮންފިގް ފައިލް ލޯޑް ކުރާށެވެ" },
   "optionDesc_quiet": { "message": "ކުށްތައް ފިޔަވައި އެހެން ހުރިހާ ލޮގިންއެއް ހުއްޓުވާ" },

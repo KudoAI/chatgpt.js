@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Stilla valkosti" },
   "helpSection_cmds": { "message": "Upplýsingaskipanir" },
   "optionDesc_query": { "message": "Fyrirspurn til að senda gervigreind" },
+  "optionDesc_summarize": { "message": "Taktu saman innihald skrár" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kóði tungumáls til að sýna notendaviðmót í" },
   "optionDesc_config": { "message": "Hlaða inn sérsniðinni stilliskrá" },
   "optionDesc_quiet": { "message": "Slökkva á öllum innskráningum nema villum" },

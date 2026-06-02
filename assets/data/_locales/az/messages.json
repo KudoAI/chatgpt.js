@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Seçimləri konfiqur" },
   "helpSection_cmds": { "message": "Məlumat əmrləri" },
   "optionDesc_query": { "message": "AI göndərmək üçün sorğu" },
+  "optionDesc_summarize": { "message": "Faylın məzmununu xülasə edin" },
   "optionDesc_uiLang": { "message": "İSO 639-1-də UI-nı göstərmək üçün dilin kodu" },
   "optionDesc_config": { "message": "Xüsusi konfiqurasiya faylını yükləyin" },
   "optionDesc_quiet": { "message": "Xətalardan başqa bütün girişləri bağlayın" },

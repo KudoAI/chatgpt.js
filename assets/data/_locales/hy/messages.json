@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Կարգավորումների ընտրանքներ" },
   "helpSection_cmds": { "message": "Տեղեկությունների հրամաններ" },
   "optionDesc_query": { "message": "Հարցում ՝ AI ուղարկելու համար" },
+  "optionDesc_summarize": { "message": "Ամփոփեք ֆայլի պարունակությունը" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 լեզվի կոդը UI - ում ցուցադրելու համար" },
   "optionDesc_config": { "message": "Բեռնել անհատականացված կոնֆիգուրացիոն ֆայլը" },
   "optionDesc_quiet": { "message": "Սեղմեք բոլոր տեղեկամատյանները, բացի սխալներից" },

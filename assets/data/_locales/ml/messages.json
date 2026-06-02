@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "കോൺഫിഗർ ഓപ്ഷനുകൾ" },
   "helpSection_cmds": { "message": "വിവര കമാന്‍ഡുകള്‍" },
   "optionDesc_query": { "message": "AI അയയ്‌ക്കാനുള്ള അന്വേഷണം" },
+  "optionDesc_summarize": { "message": "ഒരു ഫയലിന്റെ ഉള്ളടക്കങ്ങൾ സംഗ്രഹിക്കുക" },
   "optionDesc_uiLang": { "message": "യുഐ പ്രദർശിപ്പിക്കുന്നതിനുള്ള ISO 639-1 ഭാഷാ കോഡ്" },
   "optionDesc_config": { "message": "ഇഷ്ടാനുസൃത കോൺഫിഗറേഷൻ ഫയൽ ലോഡ് ചെയ്യുക" },
   "optionDesc_quiet": { "message": "പിശകുകൾ ഒഴികെ എല്ലാ ലോഗിംഗും അടിച്ചമർത്തുക" },

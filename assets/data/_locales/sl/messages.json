@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Možnosti konfiguracije" },
   "helpSection_cmds": { "message": "Info ukazi" },
   "optionDesc_query": { "message": "Poizvedba za pošiljanje umetne inteligence" },
+  "optionDesc_summarize": { "message": "Povzemite vsebino datoteke" },
   "optionDesc_uiLang": { "message": "Koda jezika ISO 639-1 za prikaz uporabniškega vmesnika v" },
   "optionDesc_config": { "message": "Naloži konfiguracijsko datoteko po meri" },
   "optionDesc_quiet": { "message": "Prepreči vse beleženje, razen napak" },

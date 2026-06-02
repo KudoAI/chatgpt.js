@@ -43,6 +43,7 @@
   "helpSection_flags": { "message": "Lungelelanisa izinto onokukhetha kuzo" },
   "helpSection_cmds": { "message": "Imiyalelo yenkcazelo" },
   "optionDesc_query": { "message": "Isicelo sokuthumela i-AI" },
+  "optionDesc_summarize": { "message": "Shwankathela okuqulethwe yifayile" },
   "optionDesc_uiLang": { "message": "Ikhowudi yolwimi ye-ISO 639-1 yokubonisa i-UI" },
   "optionDesc_config": { "message": "Faka ifayile yokumisela ekhethekileyo" },
   "optionDesc_quiet": { "message": "Cima konke ukungena ngaphandle kweempazamo" },

@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Параметри конфігурації" },
   "helpSection_cmds": { "message": "Інформаційні команди" },
   "optionDesc_query": { "message": "Запит на надсилання AI" },
+  "optionDesc_summarize": { "message": "Узагальнення вмісту файлу" },
   "optionDesc_uiLang": { "message": "Код мови ISO 639-1 для відображення інтерфейсу користувача" },
   "optionDesc_config": { "message": "Завантажити користувацький файл конфігурації" },
   "optionDesc_quiet": { "message": "Придушити всі журнали, крім помилок" },

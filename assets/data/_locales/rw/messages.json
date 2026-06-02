@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Amahitamo" },
   "helpSection_cmds": { "message": "Amabwiriza" },
   "optionDesc_query": { "message": "Kuri Kohereza" },
+  "optionDesc_summarize": { "message": "A Ibigize" },
   "optionDesc_uiLang": { "message": "Kode ya ISO 639-1 y'ururimi rwo kwerekanamo UI" },
   "optionDesc_config": { "message": "Kunoza IDOSIYE" },
   "optionDesc_quiet": { "message": "Kuraho ibiti byose usibye amakosa" },

@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Habee ikhtiyaarrada" },
   "helpSection_cmds": { "message": "Amarada Macluumaadka" },
   "optionDesc_query": { "message": "Codsi si aad u dirto AI" },
+  "optionDesc_summarize": { "message": "Soo koob waxyaabaha ku jira faylka" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code luqadda si ay u muujiyaan UI in" },
   "optionDesc_config": { "message": "U rar faylka qaabeynta caadada" },
   "optionDesc_quiet": { "message": "Xannib dhammaan gelitaanka marka laga reebo khaladaadka" },

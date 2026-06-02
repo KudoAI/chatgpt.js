@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Seçimleri Konfigur et" },
   "helpSection_cmds": { "message": "Öwrenme tabşyryklary" },
   "optionDesc_query": { "message": "Men ony ibermek isleýärin" },
+  "optionDesc_summarize": { "message": "Faýlyň mazmunyny gysgaça düşündir" },
   "optionDesc_uiLang": { "message": "ISO 639-1 dil kodyny görkezmek üçin" },
   "optionDesc_config": { "message": "Özgür konfigurasy faýly ýükle" },
   "optionDesc_quiet": { "message": "Ýalňyşlyklardan başga ähli ýalňyşlyklary ýok etmek" },

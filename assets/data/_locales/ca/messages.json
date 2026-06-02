@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Opcions de configuració" },
   "helpSection_cmds": { "message": "Ordres d'informació" },
   "optionDesc_query": { "message": "Consulta per enviar IA" },
+  "optionDesc_summarize": { "message": "Resumir el contingut d'un fitxer" },
   "optionDesc_uiLang": { "message": "Codi de llengua ISO 639-1 per mostrar la interfície d'usuari" },
   "optionDesc_config": { "message": "Carrega un fitxer de configuració personalitzat" },
   "optionDesc_quiet": { "message": "Suprimeix tot el registre, excepte els errors" },

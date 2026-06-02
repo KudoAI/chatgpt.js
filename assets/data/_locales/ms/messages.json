@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Pilihan konfigurasi" },
   "helpSection_cmds": { "message": "Perintah maklumat" },
   "optionDesc_query": { "message": "Pertanyaan untuk menghantar AI" },
+  "optionDesc_summarize": { "message": "Ringkaskan kandungan fail" },
   "optionDesc_uiLang": { "message": "Kod bahasa ISO 639-1 untuk memaparkan UI" },
   "optionDesc_config": { "message": "Muat fail konfigurasi tersuai" },
   "optionDesc_quiet": { "message": "Sekat semua pembalakan kecuali ralat" },

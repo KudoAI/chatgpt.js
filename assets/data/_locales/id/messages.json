@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Opsi konfigurasi" },
   "helpSection_cmds": { "message": "Perintah info" },
   "optionDesc_query": { "message": "Kueri untuk mengirim AI" },
+  "optionDesc_summarize": { "message": "Meringkas isi file" },
   "optionDesc_uiLang": { "message": "Kode bahasa ISO 639 -1 untuk menampilkan UI di" },
   "optionDesc_config": { "message": "Muat file konfigurasi kustom" },
   "optionDesc_quiet": { "message": "Cegah semua pencatatan kecuali kesalahan" },

@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Опции за конфигуриране" },
   "helpSection_cmds": { "message": "Команди за информация" },
   "optionDesc_query": { "message": "Заявка за изпращане на ИИ" },
+  "optionDesc_summarize": { "message": "Обобщете съдържанието на файла" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 код на езика за показване на потребителския интерфейс в" },
   "optionDesc_config": { "message": "Зареждане на персонализиран конфигурационен файл" },
   "optionDesc_quiet": { "message": "Потискане на всички записи, с изключение на грешките" },

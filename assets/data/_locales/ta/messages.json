@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "கட்டமைப்பு விருப்பங்கள்" },
   "helpSection_cmds": { "message": "தகவல் கட்டளைகள்" },
   "optionDesc_query": { "message": "AI ஐ அனுப்ப வினவல்" },
+  "optionDesc_summarize": { "message": "ஒரு கோப்பின் உள்ளடக்கங்களை சுருக்கவும்" },
   "optionDesc_uiLang": { "message": "UI ஐக் காண்பிக்க ISO 639-1 மொழிக் குறியீடு" },
   "optionDesc_config": { "message": "தனிப்பயன் உள்ளமைவு கோப்பை ஏற்றவும்" },
   "optionDesc_quiet": { "message": "பிழைகளைத் தவிர அனைத்து பதிவுகளையும் ஒடுக்கவும்" },

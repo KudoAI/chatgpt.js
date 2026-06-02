@@ -45,6 +45,7 @@
   "helpSection_flags": { "message": "Akpengba ye so mo lingbi ti sara" },
   "helpSection_cmds": { "message": "Aye so afa so a yeke nzoni e sara" },
   "optionDesc_query": { "message": "Mbi leke ti tokua mbeni mbeti na mo" },
+  "optionDesc_summarize": { "message": "Gbu li ti mo na ndo ti atënë so ayeke na yâ ti mbeni mbeti" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code ti yanga ti kodoro ti fa UI na" },
   "optionDesc_config": { "message": "Load Custom config faïl" },
   "optionDesc_quiet": { "message": "A yeke kanga lege na azo kue ti sara ye na lege ni ape me a yeke gi na lege ni" },

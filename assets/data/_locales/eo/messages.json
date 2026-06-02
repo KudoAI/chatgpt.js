@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Agordopcioj" },
   "helpSection_cmds": { "message": "Informkomandoj" },
   "optionDesc_query": { "message": "Demando por sendi al iu" },
+  "optionDesc_summarize": { "message": "Resumi la enhavon de dosiero" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kodo de lingvo por elmontri UI en" },
   "optionDesc_config": { "message": "Ŝargi propran agordodosieron" },
   "optionDesc_quiet": { "message": "Subpremi ĉiujn registradojn krom eraroj" },

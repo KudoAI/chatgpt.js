@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Set upp valmøguleikar" },
   "helpSection_cmds": { "message": "Upplýsingar boð" },
   "optionDesc_query": { "message": "Tað er ikki so lætt at fáa ein" },
+  "optionDesc_summarize": { "message": "Summarisera innihaldið av einum fíli" },
   "optionDesc_uiLang": { "message": "ISO 639-1 málkód at vísa UI í" },
   "optionDesc_config": { "message": "Legg til rættis konfiguratiónsfíla" },
   "optionDesc_quiet": { "message": "Undirskriva allar innmeldingar uttan feil" },

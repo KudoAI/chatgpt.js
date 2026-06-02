@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Konfiguratsiya parametrlari" },
   "helpSection_cmds": { "message": "Ma'lumot buyruqlari" },
   "optionDesc_query": { "message": "Sun'iy intellektni yuborish uchun so'rov" },
+  "optionDesc_summarize": { "message": "Fayl tarkibini umumlashtiring" },
   "optionDesc_uiLang": { "message": "UI ni ko'rsatish uchun ISO 639-1 til kodi" },
   "optionDesc_config": { "message": "Maxsus konfiguratsiya faylini yuklash" },
   "optionDesc_quiet": { "message": "Xatolardan tashqari barcha jurnallarni bostirish" },

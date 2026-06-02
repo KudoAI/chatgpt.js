@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Konfigim ol opsen" },
   "helpSection_cmds": { "message": "Toksave" },
   "optionDesc_query": { "message": "Mi laik bai yu salim mi i go" },
+  "optionDesc_summarize": { "message": "Toksave long ol samting i stap insait long wanpela fail" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kod bilong tokples bilong soim UI long" },
   "optionDesc_config": { "message": "Load custom config file" },
   "optionDesc_quiet": { "message": "Ol i save rausim olgeta tok i stap long en, tasol ol i no save mekim ol" },

@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Seadete valikud" },
   "helpSection_cmds": { "message": "Teabekäsud" },
   "optionDesc_query": { "message": "Tehisintellekti saatmise päring" },
+  "optionDesc_summarize": { "message": "Tee kokkuvõte faili sisust" },
   "optionDesc_uiLang": { "message": "ISO 639-1 keelekood kasutajaliidese kuvamiseks" },
   "optionDesc_config": { "message": "Laadi kohandatud konfiguratsioonifail" },
   "optionDesc_quiet": { "message": "Tühista kogu logimine, välja arvatud vead" },

@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Opcije konfiguracije" },
   "helpSection_cmds": { "message": "Komande za informacije" },
   "optionDesc_query": { "message": "Upit za slanje AI" },
+  "optionDesc_summarize": { "message": "Sažmite sadržaj datoteke" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kod jezika za prikaz korisničkog sučelja u" },
   "optionDesc_config": { "message": "Učitaj prilagođenu konfiguracijsku datoteku" },
   "optionDesc_quiet": { "message": "Zatvorite sve evidencije osim grešaka" },

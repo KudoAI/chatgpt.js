@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "د ترتیب انتخابونه" },
   "helpSection_cmds": { "message": "د معلوماتو امرونه" },
   "optionDesc_query": { "message": "د AI لیږلو پوښتنه" },
+  "optionDesc_summarize": { "message": "د دوتنې منځپانګې لنډیز کړئ" },
   "optionDesc_uiLang": { "message": "په کې د UI ښودلو لپاره د ISO 639-1 د ژبې کوډ" },
   "optionDesc_config": { "message": "دوديزه سازونې دوتنه لېښل" },
   "optionDesc_quiet": { "message": "د تېروتنو پرته ټول ننوتل (logging) پټ کړئ" },

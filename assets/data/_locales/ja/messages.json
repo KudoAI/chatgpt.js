@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "構成オプション" },
   "helpSection_cmds": { "message": "INFOコマンド" },
   "optionDesc_query": { "message": "AIを送信するためのクエリ" },
+  "optionDesc_summarize": { "message": "ファイルの内容を要約する" },
   "optionDesc_uiLang": { "message": "UIを表示する言語のISO 639 -1コード" },
   "optionDesc_config": { "message": "カスタム構成ファイルを読み込む" },
   "optionDesc_quiet": { "message": "エラーを除くすべてのロギングを抑制" },

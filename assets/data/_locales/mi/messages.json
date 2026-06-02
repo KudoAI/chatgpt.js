@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Kōwhiringa whirihora" },
   "helpSection_cmds": { "message": "Ngā Whakahau" },
   "optionDesc_query": { "message": "Te tono ki te tuku i a ia" },
+  "optionDesc_summarize": { "message": "Whakaahuahia te ihirangi o te kōnae" },
   "optionDesc_uiLang": { "message": "ISO 639-1 waehere reo ki te whakaatu UI i roto i" },
   "optionDesc_config": { "message": "Uta kōnae whirihoranga ritenga" },
   "optionDesc_quiet": { "message": "Tautoko i te logging katoa engari hapa" },

@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Filifiliga Config" },
   "helpSection_cmds": { "message": "Poloaiga Info" },
   "optionDesc_query": { "message": "Fesili e auina atu AI" },
+  "optionDesc_summarize": { "message": "Faʻamalamalamaina o le anotusi o se faila" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code o le gagana e faaali atu UI i" },
   "optionDesc_config": { "message": "Load patino config faila" },
   "optionDesc_quiet": { "message": "Suppress logging uma vagana ai mea sese" },

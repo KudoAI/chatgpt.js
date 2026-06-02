@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Možnosti konfigurácie" },
   "helpSection_cmds": { "message": "Informačné príkazy" },
   "optionDesc_query": { "message": "Požiadavka na odoslanie umelej inteligencie" },
+  "optionDesc_summarize": { "message": "Zhrňte obsah súboru" },
   "optionDesc_uiLang": { "message": "Kód jazyka ISO 639-1, v ktorom sa má zobraziť používateľské rozhranie" },
   "optionDesc_config": { "message": "Načítať vlastný konfiguračný súbor" },
   "optionDesc_quiet": { "message": "Potlačiť všetky protokoly okrem chýb" },

@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Параметры канфігурацыі" },
   "helpSection_cmds": { "message": "Інфармацыйныя каманды" },
   "optionDesc_query": { "message": "Запыт для адпраўкі ІІ" },
+  "optionDesc_summarize": { "message": "Падсумаваць змесціва файла" },
   "optionDesc_uiLang": { "message": "Код мовы ISO 639-1 для адлюстравання карыстацкага інтэрфейсу ў" },
   "optionDesc_config": { "message": "Загрузіць уласны файл канфігурацыі" },
   "optionDesc_quiet": { "message": "Спыніць усе журналы, акрамя памылак" },

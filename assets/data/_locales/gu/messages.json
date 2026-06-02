@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "રૂપરેખાંકન વિકલ્પો" },
   "helpSection_cmds": { "message": "માહિતી આદેશો" },
   "optionDesc_query": { "message": "AI મોકલવા માટે ક્વેરી" },
+  "optionDesc_summarize": { "message": "ફાઇલના સમાવિષ્ટોનો સારાંશ આપો" },
   "optionDesc_uiLang": { "message": "UI પ્રદર્શિત કરવા માટે ISO 639-1 કોડ ઓફ લેંગ્વેજ" },
   "optionDesc_config": { "message": "કસ્ટમ રૂપરેખાંકન ફાઇલ લોડ કરો" },
   "optionDesc_quiet": { "message": "ભૂલો સિવાય તમામ લોગીંગને દબાવો" },

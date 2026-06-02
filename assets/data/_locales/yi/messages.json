@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "קאָנפיגוראַציע אָפּציעס" },
   "helpSection_cmds": { "message": "אינפֿאָרמאַציע קאַמאַנדז" },
   "optionDesc_query": { "message": "אָנפֿרעג צו שיקן קינסטלעכע אינטעליגענץ" },
+  "optionDesc_summarize": { "message": "צוזאַמענפאַסן דעם אינהאַלט פֿון אַ טעקע" },
   "optionDesc_uiLang": { "message": "ISO 639-1 קאָד פֿון שפּראַך צו ווײַזן באַניצער־אינטערפֿייס אין" },
   "optionDesc_config": { "message": "לאָדן אייגענע קאָנפיג טעקע" },
   "optionDesc_quiet": { "message": "פאַרשטיקן אַלע לאָגינג אַחוץ ערראָרס" },
