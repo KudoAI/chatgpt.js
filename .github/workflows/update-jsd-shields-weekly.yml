@@ -90,15 +90,19 @@ jobs:
           total_hits=$((npm_hits + gh_hits))
           formatted_total=$(format_total "$total_hits")
           echo "Combined jsDelivr hits: $formatted_total ($npm_hits npm + $gh_hits gh)"
-          shopt -s globstar
-          for readme in **README.md ; do
-            sed -i -E "s|(badge/).*(-2bbbd8\.svg)|\1$formatted_total\2|Ig" "$readme" ; done
-          if git diff --quiet -- README.md docs/README.md ; then
-            echo "jsDelivr hits badge already current."
+          for readme in $(find . -name README.md) ; do
+            old_readme=$(<"$readme")
+            sed -i "s/\(badge\/[^-]*-\)[0-9.,KMBkmb+]\+\(-2bbbd8\)/\1${formatted_total}\2/gI" "$readme"
+            new_readme=$(<"$readme")
+            if [[ "$old_readme" != "$new_readme" ]] ; then
+              shields_updated=true ; echo "Updated: $readme" ; fi
+          done
+          if [ "$shields_updated" = true ] ; then
+            echo "SHIELDS_UPDATED=true" >> $GITHUB_ENV
           else
-            echo "JSD_BADGE_UPDATED=true" >> $GITHUB_ENV
+            echo "Shields already up-to-date"
           fi
-      - if: env.JSD_BADGE_UPDATED == 'true'
+      - if: env.SHIELDS_UPDATED == 'true'
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PRIVATE_ID: ${{ secrets.GPG_PRIVATE_ID }}
@@ -108,7 +112,7 @@ jobs:
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
           git config --global user.signingkey "$GPG_PRIVATE_ID"
-      - if: env.JSD_BADGE_UPDATED == 'true'
+      - if: env.SHIELDS_UPDATED == 'true'
         run: |
           shopt -s globstar
           git add **README.md && git commit -n -m "Updated jsDelivr shield counter"
