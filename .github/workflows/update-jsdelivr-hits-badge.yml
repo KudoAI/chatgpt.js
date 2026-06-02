@@ -1,9 +1,9 @@
-name: Update jsDelivr hits badge
+name: Update jsDelivr shield in READMEs
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '17 5 * * 1'
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
 
 jobs:
   update-badge:
@@ -13,46 +13,50 @@ jobs:
       contents: read
     env:
       TZ: PST8PDT
-
     steps:
       - uses: actions/checkout@v6.0.2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          path: KudoAI/chatgpt.js
-
       - run: |
-          cd "${{ github.workspace }}/KudoAI/chatgpt.js"
-
-          fetch_total() {
-            curl -fsSL "$1" | sed -n -E 's/.*"total":[[:space:]]*([0-9]+).*/\1/p' | head -1
-          }
-
+          fetch_total() { curl -fsSL "$1" | sed -n -E 's/.*"total":[[:space:]]*([0-9]+).*/\1/p' | head -1 }
           format_total() {
-            echo "$1" | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta'
+            local num=$1 ; first_digit="${num:0:1}" second_digit="${num:1:1}"
+            second_digit_rounded=$(( second_digit < 5 ? 0 : 5 ))
+            if (( num >= 1000000000 )) ; then # 1B+ w/ one decimal place
+              formatted_num="$(( num / 1000000000 ))"
+              remainder=$(( (num % 1000000000) / 100000000 ))
+              if (( remainder != 0 )) ; then formatted_num+=".$remainder" ; fi
+              formatted_num+="B+"
+            elif (( num >= 10000000 )) ; then # abbr 10,000,000+ to 999,000,000+
+              formatted_num=$(printf "%'.f+" $((( num / 1000000 ) * 1000000 )))
+            elif (( num >= 1000000 )) ; then # abbr 1,000,000+ to 9,500,000+
+              formatted_num="${first_digit},${second_digit}00,000+"
+            elif (( num >= 100000 )) ; then # abbr 100,000+ to 950,000+
+              formatted_num="${first_digit}${second_digit_rounded}0,000+"
+            elif (( num >= 10000 )) ; then # abbr 10,000+ to 90,000+
+              formatted_num="${first_digit}0,000+"
+            elif (( num >= 1000 )) ; then # abbr 1K to 9.9K
+              formatted_num="$(( num / 1000 ))"
+              remainder=$(( (num % 1000) / 100 ))
+              if (( remainder != 0 )) ; then formatted_num+=".$remainder" ; fi
+              formatted_num+="K"
+            else formatted_num="$num" ; fi # preserve <1K as is
+            echo "$formatted_num"
           }
-
           npm_hits=$(fetch_total "https://data.jsdelivr.com/v1/stats/packages/npm/@kudoai/chatgpt.js?period=year")
           gh_hits=$(fetch_total "https://data.jsdelivr.com/v1/stats/packages/gh/KudoAI/chatgpt.js?period=year")
-
           if [ -z "$npm_hits" ] || [ -z "$gh_hits" ] ; then
-            echo "Error getting jsDelivr hits"
-            exit 1
-          fi
-
+            echo "Error getting jsDelivr hits" ; exit 1 ; fi
           total_hits=$((npm_hits + gh_hits))
           formatted_total=$(format_total "$total_hits")
           echo "Combined jsDelivr hits: $formatted_total ($npm_hits npm + $gh_hits gh)"
-
           for readme in README.md docs/README.md ; do
-            sed -i -E "s|(badge/jsDelivr_Requests-)[0-9.,kmK+mM]+(-2bbbd8\.svg)|\1$formatted_total\2|Ig" "$readme"
-          done
-
+            sed -i -E "s|(badge/jsDelivr_Requests-)[0-9.,kmK+mM]+(-2bbbd8\.svg)|\1$formatted_total\2|Ig" "$readme" ; done
           if git diff --quiet -- README.md docs/README.md ; then
             echo "jsDelivr hits badge already current."
           else
             echo "JSD_BADGE_UPDATED=true" >> $GITHUB_ENV
           fi
-
       - if: env.JSD_BADGE_UPDATED == 'true'
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
@@ -63,11 +67,8 @@ jobs:
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
           git config --global user.signingkey "$GPG_PRIVATE_ID"
-
       - if: env.JSD_BADGE_UPDATED == 'true'
         run: |
-          cd "${{ github.workspace }}/KudoAI/chatgpt.js"
-          git add README.md docs/README.md
-          git commit -n -m "Updated jsDelivr shield counter [auto-sync]"
+          git add **README.md && git commit -n -m "Updated jsDelivr shield counter"
           git pull --rebase
           git push
