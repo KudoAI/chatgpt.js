@@ -115,6 +115,6 @@ jobs:
       - if: env.SHIELDS_UPDATED == 'true'
         run: |
           shopt -s globstar
-          git add **README.md && git commit -n -m "Updated jsDelivr shield counter"
+          git add . && git commit -n -m "Updated jsDelivr shield counter"
           git pull --rebase
           git push
