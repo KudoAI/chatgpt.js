@@ -612,8 +612,8 @@ const chatgpt = {
             if (!chatgpt._validateArg({ arg: prompt, type: 'string' })) return
             if (!chatgpt._validateArg({ arg: outputLang, type: 'lang' })) return
             console.info('Writing code...')
-            prompt = `Write this as code in ${outputLang}: ${prompt}`
-            const resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
+            const fullPrompt = `Write this as code in ${outputLang}: ${prompt}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](fullPrompt)
             return chatgpt.code.extract(resp)
         }
     },
