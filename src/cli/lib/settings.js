@@ -13,6 +13,7 @@ module.exports = {
         uiLang: { type: 'param', valType: 'langCode', regex: /^--?ui[-_]?lang(?:[=\s].*|$)/ },
         config: { type: 'param', valType: 'filepath', regex: /^--?config(?:[=\s].*|$)/ },
         quietMode: { type: 'flag', regex: /^--?(?:V|quiet)?(?:[-_]?mode)?$/ },
+        plainMode: { type: 'flag', regex: /^--?(?:plain|no[-_]?markdown)?$/ },
         init: { type: 'cmd', regex: /^-{0,2}i(?:nit)?$/ },
         joke: { type: 'cmd', regex: /^--?j(?:oke)?$/ },
         randomAnswer: { type: 'cmd', regex: /^--?r(?:andom[-_]?answer)?$/ },

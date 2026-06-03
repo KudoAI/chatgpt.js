@@ -12,6 +12,7 @@
     const fs = require('fs'),
           chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
           loader = require('./lib/loader').create({ width: env.width }),
+          markdown = require('./lib/markdown'),
           string = require('./lib/string')
 
     await init.cli()
@@ -34,9 +35,14 @@
                       string.looksLikePath(cli.config.summarize) ? fs.readFileSync(cli.config.summarize, 'utf8')
                     : cli.config.summarize }`
                 : cli.config.query
+    const useMarkdown = markdown.isEnabled()
     try {
-        await chatgpt.send(query, {
-            provider: cli.config.provider, output: 'stdout', onLoadStart: () => loader.stop({ clear: false })})
+        const reply = await chatgpt.send(query, {
+            provider: cli.config.provider,
+            output: useMarkdown ? 'return' : 'stdout',
+            onLoadStart: () => loader.stop({ clear: false })
+        })
+        if (useMarkdown && reply) console.log(markdown.render(reply))
         if (/^(?:help|hi)$/.test(query)) log.help()
     } finally { loader.stop() }
 
