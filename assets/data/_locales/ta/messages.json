@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "பிழைகளைத் தவிர அனைத்து பதிவுகளையும் ஒடுக்கவும்" },
   "optionDesc_init": { "message": "கட்டமைப்பு கோப்பை உருவாக்கவும் (திட்ட மூலத்தில்)" },
   "optionDesc_joke": { "message": "சீரற்ற முறையில் ஒரு வேடிக்கையான நகைச்சுவையைச் சொல்கிறது" },
+  "optionDesc_randomAnswer": { "message": "ஒரு சீரற்ற கேள்விக்கு பதிலளிக்கவும்" },
   "optionDesc_help": { "message": "உதவித் திரையைக் காண்பி" },
   "optionDesc_version": { "message": "பதிப்பெண்" },
   "optionDesc_stats": { "message": "Npm புள்ளிவிவரங்களைக் காட்டு" },

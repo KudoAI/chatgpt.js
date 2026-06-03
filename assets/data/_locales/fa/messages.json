@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "همه گزارش‌ها به جز خطاها را سرکوب کنید" },
   "optionDesc_init": { "message": "ایجاد فایل پیکربندی (در ریشه پروژه)" },
   "optionDesc_joke": { "message": "یک جوک خنده‌دار را اتفاقی تعریف می‌کند" },
+  "optionDesc_randomAnswer": { "message": "پاسخ به یک سوال تصادفی" },
   "optionDesc_help": { "message": "نمایش صفحه راهنما" },
   "optionDesc_version": { "message": "نمایش شماره نسخه" },
   "optionDesc_stats": { "message": "نمایش آمار npm" },

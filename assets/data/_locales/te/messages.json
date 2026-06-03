@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "లోపాలు మినహా అన్ని లాగింగ్ ‌ లను అణచివేయండి" },
   "optionDesc_init": { "message": "ఆకృతీకరణ ఫైల్ ‌ ను సృష్టించండి (ప్రాజెక్ట్ రూట్ ‌ లో)" },
   "optionDesc_joke": { "message": "యాదృచ్ఛికంగా ఫన్నీ జోక్ చెబుతుంది" },
+  "optionDesc_randomAnswer": { "message": "యాదృచ్ఛిక ప్రశ్నకు సమాధానం ఇవ్వండి" },
   "optionDesc_help": { "message": "సహాయక స్క్రీన్ ‌ ని ప్రదర్శించండి" },
   "optionDesc_version": { "message": "సంస్కరణ సంఖ్యను చూపించు" },
   "optionDesc_stats": { "message": "Npm గణాంకాలను చూపించు" },

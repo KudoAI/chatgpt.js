@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "အမှားအယွင်းများမှလွဲ ၍ လော့ဂ်အင်အားလုံးကိုဖိနှိပ်ပါ" },
   "optionDesc_init": { "message": "Config ဖိုင်ကိုဖန်တီးပါ (ပရောဂျက်အမြစ်တွင်)" },
   "optionDesc_joke": { "message": "ရယ်စရာ ဟာသတစ်ခုကို ကျပန်းပြောသည်" },
+  "optionDesc_randomAnswer": { "message": "ကျပန်းမေးခွန်းတစ်ခုကိုဖြေပါ" },
   "optionDesc_help": { "message": "အကူအညီ မျက်နှာပြင်ကို ပြသပါ" },
   "optionDesc_version": { "message": "ဗားရှင်းနံပါတ်" },
   "optionDesc_stats": { "message": "NPM ကိန်းဂဏန်းများကို ပြပါ" },

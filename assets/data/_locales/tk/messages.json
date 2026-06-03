@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Ýalňyşlyklardan başga ähli ýalňyşlyklary ýok etmek" },
   "optionDesc_init": { "message": "Konfigurasy faýlyny ýarat (projektiň köki bilen)" },
   "optionDesc_joke": { "message": "Ol bir gülümsüji gülümsüji" },
+  "optionDesc_randomAnswer": { "message": "Galyberse-de, bu soragyň jogabyny tap" },
   "optionDesc_help": { "message": "Yardam ekrany görkez" },
   "optionDesc_version": { "message": "VERSION NUMBERI" },
   "optionDesc_stats": { "message": "NPM ştatlaryny görkez" },

@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "त्रुटिहरू बाहेक सबै लगिङलाई दबाउनुहोस्" },
   "optionDesc_init": { "message": "कन्फिग फाइल सिर्जना गर्नुहोस् (परियोजना मूलमा)" },
   "optionDesc_joke": { "message": "अनियमित रूपमा एक हास्यास्पद मजाक बताउँछ" },
+  "optionDesc_randomAnswer": { "message": "अनियमित प्रश्नको जवाफ दिनुहोस्" },
   "optionDesc_help": { "message": "मद्दत स्क्रिन प्रदर्शन गर्नुहोस्" },
   "optionDesc_version": { "message": "à¤ªà¥à¤°à¤¦à¤°à¥à¤¶à¤¨à¤à¥ à¤¨à¤¾à¤®" },
   "optionDesc_stats": { "message": "Npm तथ्याङ्क देखाउनुहोस्" },

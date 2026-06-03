@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Подавление всех журналов, кроме ошибок" },
   "optionDesc_init": { "message": "Создание файла конфигурации (в корне проекта)" },
   "optionDesc_joke": { "message": "Рассказать забавную шутку наугад" },
+  "optionDesc_randomAnswer": { "message": "Ответьте на случайный вопрос" },
   "optionDesc_help": { "message": "Показать экран помощи" },
   "optionDesc_version": { "message": "Показать сведения о версии" },
   "optionDesc_stats": { "message": "Показать статистику npm" },

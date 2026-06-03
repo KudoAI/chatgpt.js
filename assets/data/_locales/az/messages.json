@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Xətalardan başqa bütün girişləri bağlayın" },
   "optionDesc_init": { "message": "Konfiqurasiya faylı yaradın (layihə kökündə)" },
   "optionDesc_joke": { "message": "Təsadüfi gülməli bir zarafat danışır" },
+  "optionDesc_randomAnswer": { "message": "Təsadüfi suala cavab verin" },
   "optionDesc_help": { "message": "Yardım ekranını göstər" },
   "optionDesc_version": { "message": "Versiya nömrəsini göstər" },
   "optionDesc_stats": { "message": "Gecə-gündüz statistikalarını göstər" },

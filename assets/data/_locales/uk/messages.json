@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Придушити всі журнали, крім помилок" },
   "optionDesc_init": { "message": "Створити файл конфігурації (в корені проекту)" },
   "optionDesc_joke": { "message": "Розповідає смішний жарт навмання" },
+  "optionDesc_randomAnswer": { "message": "Дайте відповідь на випадкове запитання" },
   "optionDesc_help": { "message": "Відобразити екран довідки" },
   "optionDesc_version": { "message": "Показати номер версії програми" },
   "optionDesc_stats": { "message": "Показати статистику npm" },

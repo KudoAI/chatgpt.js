@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Hatalar hariç tüm günlükleri bastır" },
   "optionDesc_init": { "message": "Yapılandırma dosyası oluştur (proje kök dizininde)" },
   "optionDesc_joke": { "message": "Rastgele komik bir fıkra anlatır" },
+  "optionDesc_randomAnswer": { "message": "Rastgele bir soruyu yanıtlayın" },
   "optionDesc_help": { "message": "Yardım ekranını görüntüle" },
   "optionDesc_version": { "message": "Versiyon Numarası" },
   "optionDesc_stats": { "message": "Npm istatistiklerini göster" },

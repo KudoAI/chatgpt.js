@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "បង្ក្រាបការកាប់ឈើទាំងអស់លើកលែងតែកំហុស" },
   "optionDesc_init": { "message": "បង្កើត ឯកសារ កំណត់ រចនា សម្ព័ន្ធ (នៅ ក្នុង root គម្រោង)" },
   "optionDesc_joke": { "message": "និយាយកំប្លែងគួរឱ្យអស់សំណើចដោយចៃដន្យ" },
+  "optionDesc_randomAnswer": { "message": "ឆ្លើយសំណួរចៃដន្យ" },
   "optionDesc_help": { "message": "បង្ហាញអេក្រង់ជំនួយ" },
   "optionDesc_version": { "message": "បង្ហាញលេខកំណែ" },
   "optionDesc_stats": { "message": "បង្ហាញ ស្ថិតិ npm" },

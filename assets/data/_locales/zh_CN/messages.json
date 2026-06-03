@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "禁止所有日志记录，错误除外" },
   "optionDesc_init": { "message": "创建配置文件（在项目根目录中）" },
   "optionDesc_joke": { "message": "随机讲一个有趣的笑话" },
+  "optionDesc_randomAnswer": { "message": "随机回答一个问题" },
   "optionDesc_help": { "message": "显示帮助屏幕" },
   "optionDesc_version": { "message": "显示版本号" },
   "optionDesc_stats": { "message": "显示npm统计数据" },

@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Siprime tout antre eksepte erè" },
   "optionDesc_init": { "message": "Kreye dosye config (nan rasin pwojè)" },
   "optionDesc_joke": { "message": "Di yon blag komik nan o aza/Rakonte yon blag komik" },
+  "optionDesc_randomAnswer": { "message": "Reponn yon kesyon o aza/Reponn yon kesyon" },
   "optionDesc_help": { "message": "Montre ekran èd" },
   "optionDesc_version": { "message": "Nimewo vèsyon" },
   "optionDesc_stats": { "message": "Montre stats npm" },

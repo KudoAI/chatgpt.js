@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Potlačiť všetky protokoly okrem chýb" },
   "optionDesc_init": { "message": "Vytvoriť konfiguračný súbor (v koreňovom adresári projektu)" },
   "optionDesc_joke": { "message": "Rozpráva náhodný vtip" },
+  "optionDesc_randomAnswer": { "message": "Odpovedzte na náhodnú otázku" },
   "optionDesc_help": { "message": "Zobraziť obrazovku pomocníka" },
   "optionDesc_version": { "message": "Číslo verzie" },
   "optionDesc_stats": { "message": "Zobraziť štatistiky npm" },

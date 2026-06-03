@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "ყველა ჟურნალის დაბლოკვა, შეცდომების გარდა" },
   "optionDesc_init": { "message": "კონფიგურაციის ფაილის შექმნა (პროექტის root-ში)" },
   "optionDesc_joke": { "message": "Შემთხვევით სასაცილო ხუმრობას ჰყვება" },
+  "optionDesc_randomAnswer": { "message": "Უპასუხეთ შემთხვევით დასმულ შეკითხვას" },
   "optionDesc_help": { "message": "დახმარების ეკრანის ჩვენება" },
   "optionDesc_version": { "message": "ვერსიის ნომერი" },
   "optionDesc_stats": { "message": "NPM სტატისტიკის ჩვენება" },

@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Wyłącz wszystkie rejestrowanie z wyjątkiem błędów" },
   "optionDesc_init": { "message": "Utwórz plik konfiguracyjny (w katalogu głównym projektu)" },
   "optionDesc_joke": { "message": "Opowiada śmieszny dowcip na chybił traf" },
+  "optionDesc_randomAnswer": { "message": "Odpowiedz na losowe pytanie" },
   "optionDesc_help": { "message": "Wyświetl ekran pomocy" },
   "optionDesc_version": { "message": "Podaje numer wersji programu" },
   "optionDesc_stats": { "message": "Pokaż statystyki npm" },

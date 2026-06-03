@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Subpremi ĉiujn registradojn krom eraroj" },
   "optionDesc_init": { "message": "Krei agordodosieron (en projekta radiko)" },
   "optionDesc_joke": { "message": "Amuza ŝerco ĉe hazarda" },
+  "optionDesc_randomAnswer": { "message": "Respondi hazardan demandon" },
   "optionDesc_help": { "message": "Montri helpekranon" },
   "optionDesc_version": { "message": "Nombro de Versio" },
   "optionDesc_stats": { "message": "Montri npm- statistikojn" },

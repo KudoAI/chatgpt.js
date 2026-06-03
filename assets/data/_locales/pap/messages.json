@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Tur Kuliner di Kuliner Kuliner" },
   "optionDesc_init": { "message": "Crear un archivo config (in proyecto root)" },
   "optionDesc_joke": { "message": "About Fun Joke At Random" },
+  "optionDesc_randomAnswer": { "message": "Responder a Pregunta Casual" },
   "optionDesc_help": { "message": "Foto di Help Screenshot" },
   "optionDesc_version": { "message": "Mustra number di vershon" },
   "optionDesc_stats": { "message": "Vashon NPM Stats" },

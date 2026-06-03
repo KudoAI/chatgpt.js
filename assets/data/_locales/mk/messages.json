@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Потисни ги сите евиденции освен грешките" },
   "optionDesc_init": { "message": "Создајте конфигурациска датотека (во коренот на проектот)" },
   "optionDesc_joke": { "message": "Раскажува смешен виц по случаен избор" },
+  "optionDesc_randomAnswer": { "message": "Одговорете на случајно прашање" },
   "optionDesc_help": { "message": "Прикажи екран за помош" },
   "optionDesc_version": { "message": "Број на производител" },
   "optionDesc_stats": { "message": "Прикажи статистика во npm" },
