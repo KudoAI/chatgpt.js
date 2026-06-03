@@ -41,9 +41,11 @@
   "helpSection_flags": { "message": "སྒྲིག་འཇུག" },
   "helpSection_cmds": { "message": "བརྡ་དོན་བཀའ་སློབ །" },
   "optionDesc_query": { "message": "ངས་ཁྱོད་ལ་བཏང་།" },
-  "optionDesc_summarize": { "message": "ཡིག་ཆ་ནང་དོན་མདོར་བསྡུས་པ" },
+  "optionDesc_summarize": { "message": "ཡིག་ཆ་དང་ཡིག་ཆ་བསྡུ་ལེན་བྱེད་པའི་ལམ་" },
   "optionDesc_uiLang": { "message": "ISO 639-1 སྐད་ཡིག་གི་ཁ་བྱང་།" },
-  "optionDesc_config": { "message": "རང་མོས་སྒྲིག་འཛུགས་ཡིག་ཆ་ཉར་བ" },
+  "optionDesc_config": {
+    "message": "རང་མོས་སྒྲིག་འཇུག་བྱས་ཚད ། ཐེངས་3 ལས་ཉུང་བ ། ཐོན་རིམ་5.7.1 ནང་དུ་ཚོད་ལྟ་བྱས་ཟིན །"
+  },
   "optionDesc_quiet": { "message": "འཛོལ་བ་མ་གཏོགས་གཞན་གྱི་མིང་ཐོ་ཚང་མ་ཕྱིར་འབུད་བྱེད་པ" },
   "optionDesc_init": { "message": "རིམ་སྒྲིག་ཡིག་ཆ་གསར་བཟོ། (ལས་གཞིའི་རྩ་བའི་ནང་)" },
   "optionDesc_joke": { "message": "ཤིན་ཏུ་ངོ་མཚར་ཅན་གྱི་གཏམ་གླེང །" },

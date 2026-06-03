@@ -41,9 +41,11 @@
   "helpSection_flags": { "message": "Opshon konfiská" },
   "helpSection_cmds": { "message": "Komandante di Informashon" },
   "optionDesc_query": { "message": "Reklama na AI" },
-  "optionDesc_summarize": { "message": "Resumiendo un archivo" },
+  "optionDesc_summarize": {
+    "message": "Página principal > Temas Variados > Resumen resumen resumen resumen resumen res"
+  },
   "optionDesc_uiLang": { "message": "Documente similare cu ISO 639-1 Code of Language" },
-  "optionDesc_config": { "message": "Cargo Custom Config Archivo" },
+  "optionDesc_config": { "message": "Archive for custom config Archive for cargo" },
   "optionDesc_quiet": { "message": "Tur Kuliner di Kuliner Kuliner" },
   "optionDesc_init": { "message": "Crear un archivo config (in proyecto root)" },
   "optionDesc_joke": { "message": "About Fun Joke At Random" },
