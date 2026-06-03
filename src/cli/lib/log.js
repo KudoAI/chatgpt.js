@@ -64,24 +64,24 @@ module.exports = {
             ],
             params: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_params}:${this.colors.nc}`,
-                ` -q, --query <msg>            ${cli.msgs.optionDesc_query}.`,
-                ` --summarize <filepath|text>  ${cli.msgs.optionDesc_summarize}.`,
-                ` --ui-lang <code>             ${cli.msgs.optionDesc_uiLang}.`,
-                ` --config <filepath>          ${cli.msgs.optionDesc_config}.`
+                ` -q, --query <msg>                ${cli.msgs.optionDesc_query}.`,
+                ` -s, --summarize <filepath|text>  ${cli.msgs.optionDesc_summarize}.`,
+                ` -u, --ui-lang <code>             ${cli.msgs.optionDesc_uiLang}.`,
+                ` -c, --config <filepath>          ${cli.msgs.optionDesc_config}.`
             ],
             flags: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_flags}:${this.colors.nc}`,
-                ` -V, --quiet                  ${cli.msgs.optionDesc_quiet}.`
+                ` -V, --quiet                      ${cli.msgs.optionDesc_quiet}.`
             ],
             cmds: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_cmds}:${this.colors.nc}`,
-                ` -i, --init                   ${cli.msgs.optionDesc_init}.`,
-                ` -j, --joke                   ${cli.msgs.optionDesc_joke}.`,
-                ` -r, --random-answer          ${cli.msgs.optionDesc_randomAnswer}.`,
-                ` -h, --help                   ${cli.msgs.optionDesc_help}.`,
-                ` -v, --version                ${cli.msgs.optionDesc_version}.`,
-                `     --stats                  ${cli.msgs.optionDesc_stats}.`,
-                `     --debug                  ${cli.msgs.optionDesc_debug}.`
+                ` -i, --init                       ${cli.msgs.optionDesc_init}.`,
+                ` -j, --joke                       ${cli.msgs.optionDesc_joke}.`,
+                ` -r, --random-answer              ${cli.msgs.optionDesc_randomAnswer}.`,
+                ` -h, --help                       ${cli.msgs.optionDesc_help}.`,
+                ` -v, --version                    ${cli.msgs.optionDesc_version}.`,
+                ` -S, --stats                      ${cli.msgs.optionDesc_stats}.`,
+                `     --debug                      ${cli.msgs.optionDesc_debug}.`
             ]
         }
         includeSections.forEach(section => // print valid arg elems

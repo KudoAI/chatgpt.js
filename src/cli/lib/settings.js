@@ -9,16 +9,16 @@ module.exports = {
     controls: {
         provider: { type: 'param', regex: /^--?p(?:rovider)?(?:[=\s].*|$)/, defaultVal: 'openrouter' },
         query: { type: 'param', regex: /^--?(?:q|query|ask|send)(?:[=\s].*|$)/, defaultVal: 'hi' },
-        summarize: { type: 'param', valType: 'filepath', allowText: true, regex: /^--?summarize(?:[=\s].*|$)/ },
-        uiLang: { type: 'param', valType: 'langCode', regex: /^--?ui[-_]?lang(?:[=\s].*|$)/ },
-        config: { type: 'param', valType: 'filepath', regex: /^--?config(?:[=\s].*|$)/ },
+        summarize: { type: 'param', valType: 'filepath', allowText: true, regex: /^--?s(?:ummarize)?(?:[=\s].*|$)/ },
+        uiLang: { type: 'param', valType: 'langCode', regex: /^--?u(?:i[-_]?lang)?(?:[=\s].*|$)/ },
+        config: { type: 'param', valType: 'filepath', regex: /^--?c(?:onfig)?(?:[=\s].*|$)/ },
         quietMode: { type: 'flag', regex: /^--?(?:V|quiet)(?:[-_]?mode)?$/ },
         init: { type: 'cmd', regex: /^-{0,2}i(?:nit)?$/ },
         joke: { type: 'cmd', regex: /^--?j(?:oke)?$/ },
         randomAnswer: { type: 'cmd', regex: /^--?r(?:andom[-_]?answer)?$/ },
         help: { type: 'cmd', regex: /^--?h(?:elp)?$/ },
         version: { type: 'cmd', regex: /^--?ve?r?s?i?o?n?$/ },
-        stats: { type: 'cmd', regex: /^--?stats?$/ }
+        stats: { type: 'cmd', regex: /^--?(?:S|stats?)$/ }
     },
 
     isNegKey(key) { return /^(?:no|disable|exclude)[A-Z]/.test(key) },

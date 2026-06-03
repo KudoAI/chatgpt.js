@@ -80,22 +80,22 @@ chatgpt  # or cjs
 
 ```
 Parameter options:
- -q, --query <msg>            Query to send AI.
- --summarize <filepath|text>  Path to file or text to summarize.
- --ui-lang <code>             ISO 639-1 code of language to display UI in.
- --config <filepath>          Path to custom config file to load.
+ -q, --query <msg>                Query to send AI.
+ -s, --summarize <filepath|text>  Path to file or text to summarize.
+ -u, --ui-lang <code>             ISO 639-1 code of language to display UI in.
+ -c, --config <filepath>          Path to custom config file to load.
 
 Boolean options:
- -V, --quiet                 Suppress all logging except errors.
+ -V, --quiet                      Suppress all logging except errors.
 
 Commands:
- -i, --init                  Create config file (in project root).
- -j, --joke                  Tells a funny joke at random.
- -r, --random-answer         Answer a random question.
- -h, --help                  Display help screen.
- -v, --version               Show version number.
-     --stats                 Show npm stats.
-     --debug [targetKey]     Show debug logs.
+ -i, --init                       Create config file (in project root).
+ -j, --joke                       Tells a funny joke at random.
+ -r, --random-answer              Answer a random question.
+ -h, --help                       Display help screen.
+ -v, --version                    Show version number.
+ -S, --stats                      Show npm stats.
+     --debug [targetKey]          Show debug logs.
 ```
 
 #
