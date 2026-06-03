@@ -516,7 +516,7 @@ const chatgpt = {
             const prompt = `Debug the following code and return the corrected code:\n\n${code}`
             let resp
             if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                chatgpt.send(prompt) ; await chatgpt.isIdle()
                 resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
             } else
                 resp = await chatgpt.send(prompt)
@@ -529,7 +529,7 @@ const chatgpt = {
             const prompt = `Display the output as if you were terminal:\n\n${code}`
             let resp
             if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                chatgpt.send(prompt) ; await chatgpt.isIdle()
                 resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
             } else
                 resp = await chatgpt.send(prompt)
@@ -581,7 +581,7 @@ const chatgpt = {
             const prompt = `Minify the following code:\n\n${code}`
             let resp
             if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                chatgpt.send(prompt) ; await chatgpt.isIdle()
                 resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
             } else
                 resp = await chatgpt.send(prompt)
@@ -594,7 +594,7 @@ const chatgpt = {
             const prompt = `Obfuscate the following code:\n\n${code}`
             let resp
             if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                chatgpt.send(prompt) ; await chatgpt.isIdle()
                 resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
             } else
                 resp = await chatgpt.send(prompt)
@@ -610,7 +610,7 @@ const chatgpt = {
             const prompt = `Refactor the following code for ${ objective || 'brevity' }:\n\n${code}`
             let resp
             if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                chatgpt.send(prompt) ; await chatgpt.isIdle()
                 resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
             } else
                 resp = await chatgpt.send(prompt)
@@ -623,7 +623,7 @@ const chatgpt = {
             const prompt = `Review the following code:\n\n${code}`
             let resp
             if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                chatgpt.send(prompt) ; await chatgpt.isIdle()
                 resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
             } else
                 resp = await chatgpt.send(prompt)
@@ -636,7 +636,7 @@ const chatgpt = {
             const prompt = `Unminify the following code:\n\n${code}`
             let resp
             if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                chatgpt.send(prompt) ; await chatgpt.isIdle()
                 resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
             } else
                 resp = await chatgpt.send(prompt)
@@ -650,7 +650,7 @@ const chatgpt = {
             prompt = `Write this as code in ${outputLang}: ${prompt}`
             let resp
             if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.chatgpt.isIdle()
+                chatgpt.send(prompt) ; await chatgpt.isIdle()
                 resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
             } else
                 resp = await chatgpt.send(prompt)
