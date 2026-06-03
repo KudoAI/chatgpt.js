@@ -85,7 +85,7 @@ module.exports = {
             if (/^[^-]|--?(?:config|debug)/.test(arg) && arg != 'init') continue
             const ctrlKey = Object.keys(this.controls).find(key => this.controls[key]?.regex?.test(arg))
             if (!ctrlKey && cli.msgs) log.errorAndExit(`[${arg}] ${cli.msgs.error_notRecognized}.`)
-            if (!inputCtrlKeys.includes(ctrlKey)) return // don't process env.args when load() specific keys
+            if (!inputCtrlKeys.includes(ctrlKey)) continue // don't process env.args when load() specific keys
             if (ctrlKey.startsWith('legacy_')) { log.argDoesNothing(arg) ; continue }
             const ctrl = this.controls[ctrlKey]
             if (ctrl.mode) // set cli.config.mode to mode name
