@@ -513,26 +513,16 @@ const chatgpt = {
         async debug(code) {
             if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Debugging code...')
-            const prompt = `Debug the following code and return the corrected code:\n\n${code}`
-            let resp
-            if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.isIdle()
-                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
-            } else
-                resp = await chatgpt.send(prompt)
+            const prompt = `Debug the following code and return the corrected code:\n\n${code}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
             return chatgpt.code.extract(resp)
         },
 
         async execute(code) {
             if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Executing code...')
-            const prompt = `Display the output as if you were terminal:\n\n${code}`
-            let resp
-            if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.isIdle()
-                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
-            } else
-                resp = await chatgpt.send(prompt)
+            const prompt = `Display the output as if you were terminal:\n\n${code}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
             return chatgpt.code.extract(resp)
         },
 
@@ -578,26 +568,16 @@ const chatgpt = {
         async minify(code) {
             if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Minifying code...')
-            const prompt = `Minify the following code:\n\n${code}`
-            let resp
-            if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.isIdle()
-                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
-            } else
-                resp = await chatgpt.send(prompt)
+            const prompt = `Minify the following code:\n\n${code}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
             return chatgpt.code.extract(resp)
         },
 
         async obfuscate(code) {
             if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Obfuscating code...')
-            const prompt = `Obfuscate the following code:\n\n${code}`
-            let resp
-            if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.isIdle()
-                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
-            } else
-                resp = await chatgpt.send(prompt)
+            const prompt = `Obfuscate the following code:\n\n${code}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
             return chatgpt.code.extract(resp)
         },
 
@@ -607,39 +587,24 @@ const chatgpt = {
                 if (typeof arguments[i] != 'string')
                     return console.error(`Argument ${ i +1 } must be a string.`)
             console.info('Refactoring code...')
-            const prompt = `Refactor the following code for ${ objective || 'brevity' }:\n\n${code}`
-            let resp
-            if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.isIdle()
-                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
-            } else
-                resp = await chatgpt.send(prompt)
+            const prompt = `Refactor the following code for ${ objective || 'brevity' }:\n\n${code}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
             return chatgpt.code.extract(resp)
         },
 
         async review(code) {
             if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Reviewing code...')
-            const prompt = `Review the following code:\n\n${code}`
-            let resp
-            if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.isIdle()
-                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
-            } else
-                resp = await chatgpt.send(prompt)
+            const prompt = `Review the following code:\n\n${code}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
             return chatgpt.code.extract(resp)
         },
 
         async unminify(code) {
             if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             console.info('Unminifying code...')
-            const prompt = `Unminify the following code:\n\n${code}`
-            let resp
-            if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.isIdle()
-                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
-            } else
-                resp = await chatgpt.send(prompt)
+            const prompt = `Unminify the following code:\n\n${code}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
             return chatgpt.code.extract(resp)
         },
 
@@ -648,12 +613,7 @@ const chatgpt = {
             if (!chatgpt._validateArg({ arg: outputLang, type: 'lang' })) return
             console.info('Writing code...')
             prompt = `Write this as code in ${outputLang}: ${prompt}`
-            let resp
-            if (chatgpt.env == 'frontend') {
-                chatgpt.send(prompt) ; await chatgpt.isIdle()
-                resp = await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
-            } else
-                resp = await chatgpt.send(prompt)
+            const resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
             return chatgpt.code.extract(resp)
         }
     },
