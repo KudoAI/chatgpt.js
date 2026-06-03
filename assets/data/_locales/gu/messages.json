@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "ભૂલો સિવાય તમામ લોગીંગને દબાવો" },
   "optionDesc_init": { "message": "રૂપરેખાંકન ફાઇલ બનાવો (પ્રોજેક્ટ રુટમાં)" },
   "optionDesc_joke": { "message": "રેન્ડમ સમયે એક રમૂજી મજાક કહે છે" },
+  "optionDesc_randomAnswer": { "message": "રેન્ડમ પ્રશ્નનો જવાબ આપો" },
   "optionDesc_help": { "message": "સહાય સ્ક્રીન પ્રદર્શિત કરો" },
   "optionDesc_version": { "message": "આવૃત્તિ ક્રમાંક" },
   "optionDesc_stats": { "message": "Npm આંકડાઓ બતાવો" },

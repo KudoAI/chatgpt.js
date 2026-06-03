@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Dölj all loggning utom fel" },
   "optionDesc_init": { "message": "Skapa konfigurationsfil (i projektets rot)" },
   "optionDesc_joke": { "message": "Berättar ett roligt skämt slumpmässigt" },
+  "optionDesc_randomAnswer": { "message": "Svara på en slumpmässig fråga" },
   "optionDesc_help": { "message": "Visa hjälpskärmen" },
   "optionDesc_version": { "message": "Visa versionsinformation" },
   "optionDesc_stats": { "message": "Visa npm-statistik" },

@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Pugngan ang tanan nga pag-log gawas sa mga sayup" },
   "optionDesc_init": { "message": "Paghimo file sa config (sa root sa proyekto)" },
   "optionDesc_joke": { "message": "Sultihi ang usa ka kataw-anan nga komedya sa random" },
+  "optionDesc_randomAnswer": { "message": "Tubaga ang usa ka sulagma nga pangutana" },
   "optionDesc_help": { "message": "Ipakita ang screen sa tabang" },
   "optionDesc_version": { "message": "Ipakita ang numero sa bersyon" },
   "optionDesc_stats": { "message": "Ipakita ang npm stats" },

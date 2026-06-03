@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Waqqaf il-logging kollu ħlief l-iżbalji" },
   "optionDesc_init": { "message": "Oħloq fajl tal-konfig (fl-għeruq tal-proġett)" },
   "optionDesc_joke": { "message": "Jgħid logħob umoruż b' mod każwali" },
+  "optionDesc_randomAnswer": { "message": "Wieġeb mistoqsija każwali" },
   "optionDesc_help": { "message": "Uri l-iskrin tal-għajnuna" },
   "optionDesc_version": { "message": "Version Number" },
   "optionDesc_stats": { "message": "Uri l-istatistika tal-NPM" },

@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Алдаанаас бусад бүх бүртгэлийг арилгах" },
   "optionDesc_init": { "message": "Тохиргооны файл үүсгэх (төслийн эхэнд)" },
   "optionDesc_joke": { "message": "Хөгжилтэй хошигнолыг санамсаргүй байдлаар өгнө" },
+  "optionDesc_randomAnswer": { "message": "Санамсаргүй асуултад хариулах" },
   "optionDesc_help": { "message": "Тусламжийн дэлгэцийг харуулах" },
   "optionDesc_version": { "message": "Хувилбарын дугаар" },
   "optionDesc_stats": { "message": "Npm статистикийг харуулах" },

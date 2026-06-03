@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Slėpti visus registravimus, išskyrus klaidas" },
   "optionDesc_init": { "message": "Sukurti konfigūracijos failą (projekto šaknyje)" },
   "optionDesc_joke": { "message": "Atsitiktinai pasakoja juokingą anekdotą" },
+  "optionDesc_randomAnswer": { "message": "Atsakyti į atsitiktinį klausimą" },
   "optionDesc_help": { "message": "Rodyti pagalbos ekraną" },
   "optionDesc_version": { "message": "Versijos numeris" },
   "optionDesc_stats": { "message": "Rodyti npm statistiką" },

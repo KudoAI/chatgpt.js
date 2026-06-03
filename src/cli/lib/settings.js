@@ -16,6 +16,7 @@ module.exports = {
         plainMode: { type: 'flag', regex: /^--?(?:plain|no[-_]?markdown)?$/ },
         init: { type: 'cmd', regex: /^-{0,2}i(?:nit)?$/ },
         joke: { type: 'cmd', regex: /^--?j(?:oke)?$/ },
+        randomAnswer: { type: 'cmd', regex: /^--?r(?:andom[-_]?answer)?$/ },
         help: { type: 'cmd', regex: /^--?h(?:elp)?$/ },
         version: { type: 'cmd', regex: /^--?ve?r?s?i?o?n?$/ },
         stats: { type: 'cmd', regex: /^--?stats?$/ }

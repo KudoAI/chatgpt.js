@@ -51,6 +51,7 @@
   "optionDesc_quiet": { "message": "Hemî têketinê ji bilî xeletiyan bişkînin" },
   "optionDesc_init": { "message": "Pelê mîhengkirinê biafirîne (di rootê projeyê de)" },
   "optionDesc_joke": { "message": "Bi tesadufî henekekî komik dibêje" },
+  "optionDesc_randomAnswer": { "message": "Bersiva pirseke rasthatî bide" },
   "optionDesc_help": { "message": "Dîmendera alîkariyê nîşan bide" },
   "optionDesc_version": { "message": "IRQ" },
   "optionDesc_stats": { "message": "Statîstîkên npm nîşan bide" },

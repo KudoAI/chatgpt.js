@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Xannib dhammaan gelitaanka marka laga reebo khaladaadka" },
   "optionDesc_init": { "message": "Samee faylka qaabeynta (ee xididka mashruuca)" },
   "optionDesc_joke": { "message": "U sheeg kaftan qosol leh si lama filaan ah" },
+  "optionDesc_randomAnswer": { "message": "Ka jawaab su 'aal aan caadi ahayn" },
   "optionDesc_help": { "message": "Muuji shaashadda caawinta" },
   "optionDesc_version": { "message": "Lambarka Nooca" },
   "optionDesc_stats": { "message": "Muuji tirakoobka npm" },

@@ -51,6 +51,7 @@
   "optionDesc_quiet": { "message": "A yeke kanga lege na azo kue ti sara ye na lege ni ape me a yeke gi na lege ni" },
   "optionDesc_init": { "message": "Create config file (na yâ ti projet root)" },
   "optionDesc_joke": { "message": "Broke As A Joke;" },
+  "optionDesc_randomAnswer": { "message": "Kiri tënë na mbeni hundango tënë so ayeke na lege ni ape" },
   "optionDesc_help": { "message": "A yeke mû maboko na azo ti bâ ndo na ndo ti écr" },
   "optionDesc_version": { "message": "Nombre de la version" },
   "optionDesc_stats": { "message": "A yeke fa na azo so ayeke na yâ ti kodoro ni so" },

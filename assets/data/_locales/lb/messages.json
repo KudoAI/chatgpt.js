@@ -47,6 +47,7 @@
   "optionDesc_quiet": { "message": "Ënnerdréckt all Umeldung ausser Feeler" },
   "optionDesc_init": { "message": "Konfiguratiounsdatei erstellen (am Projetwurzel)" },
   "optionDesc_joke": { "message": "Tells a funny ass joke at random" },
+  "optionDesc_randomAnswer": { "message": "Äntwert op eng zoufälleg Fro" },
   "optionDesc_help": { "message": "Hëllefsbildschierm uweisen" },
   "optionDesc_version": { "message": "Versiounsnummer uweisen" },
   "optionDesc_stats": { "message": "NPM-Statistiken uweisen" },
