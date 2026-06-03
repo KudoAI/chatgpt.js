@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "විකල්ප සකසන්න" },
   "helpSection_cmds": { "message": "තොරතුරු විධාන" },
   "optionDesc_query": { "message": "AI යැවීමට විමසුම" },
+  "optionDesc_summarize": { "message": "ගොනුවේ අන්තර්ගතය සාරාංශ කරන්න" },
   "optionDesc_uiLang": { "message": "ISO 639-1 භාෂා කේතය ප්රදර්ශනය කිරීමට UI" },
   "optionDesc_config": { "message": "අභිරුචි සැකසුම් ගොනුව පූරණය කරන්න" },
   "optionDesc_quiet": { "message": "සියලු පිවිසුම් යටපත් කරන්න දෝෂ හැර" },

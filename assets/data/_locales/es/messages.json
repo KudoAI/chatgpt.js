@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Opciones de configuración" },
   "helpSection_cmds": { "message": "Comandos de información" },
   "optionDesc_query": { "message": "Consulta para enviar IA" },
+  "optionDesc_summarize": { "message": "Resumir el contenido de un archivo" },
   "optionDesc_uiLang": { "message": "Código de idioma ISO 639-1 para mostrar la interfaz de usuario en" },
   "optionDesc_config": { "message": "Cargar archivo de configuración personalizado" },
   "optionDesc_quiet": { "message": "Suprimir todos los registros excepto los errores" },

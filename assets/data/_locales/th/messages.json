@@ -43,6 +43,7 @@
   "helpSection_flags": { "message": "ตัวเลือกการกำหนดค่า" },
   "helpSection_cmds": { "message": "คำสั่งข้อมูล" },
   "optionDesc_query": { "message": "สอบถามเพื่อส่ง AI" },
+  "optionDesc_summarize": { "message": "สรุปเนื้อหาของไฟล์" },
   "optionDesc_uiLang": { "message": "รหัสภาษา ISO 639 -1 เพื่อแสดง UI ใน" },
   "optionDesc_config": { "message": "โหลดไฟล์การกำหนดค่าที่กำหนดเอง" },
   "optionDesc_quiet": { "message": "ระงับการบันทึกทั้งหมดยกเว้นข้อผิดพลาด" },

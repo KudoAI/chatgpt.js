@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "ਸੰਰਚਨਾ ਚੋਣਾਂ" },
   "helpSection_cmds": { "message": "ਜਾਣਕਾਰੀ ਕਮਾਂਡਾਂ" },
   "optionDesc_query": { "message": "AI ਭੇਜਣ ਲਈ ਕਿਊਰੀ" },
+  "optionDesc_summarize": { "message": "ਇੱਕ ਫਾਇਲ ਦੀ ਸਮੱਗਰੀ ਸੰਖੇਪ ਕਰੋ" },
   "optionDesc_uiLang": { "message": "ਵਿੱਚ UI ਵੇਖਾਉਣ ਲਈ ਭਾਸ਼ਾ ਦਾ ISO 639-1 ਕੋਡ" },
   "optionDesc_config": { "message": "ਕਸਟਮ ਸੰਰਚਨਾ ਫਾਇਲ ਲੋਡ ਕਰੋ" },
   "optionDesc_quiet": { "message": "ਗਲਤੀਆਂ ਨੂੰ ਛੱਡ ਕੇ ਸਭ ਲਾਗਿੰਗ ਦਬਾਓ" },

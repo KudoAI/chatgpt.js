@@ -43,6 +43,7 @@
   "helpSection_flags": { "message": "སེལ་འཐུ་འབད།" },
   "helpSection_cmds": { "message": "བརྡ་དོན་གྱི་བཀའ་རྒྱ་" },
   "optionDesc_query": { "message": "བཏང་ནིའི་དོན་ལས་" },
+  "optionDesc_summarize": { "message": "ཡིག་སྣོད་ནང་དོན་ཚུ་ གསལ་བཀོད་འབད་" },
   "optionDesc_uiLang": { "message": "ཨའི་ཟ་ཨོ་༦༣༩-༡ གི་སྐད་ཡིག་གི་ལྡེ་མིག་འདི་ ཨའི་ཟ་ཨོ་༦༣༩-༡ ལུ་སྟོན་" },
   "optionDesc_config": { "message": "རང་ལུགས་སྒྲིག་གཞི་ཡིག་སྣོད་འདི་ལོཌ་འབད།" },
   "optionDesc_quiet": { "message": "འཛོལ་བ་མ་གཏོགས་ གཞན་ག་ནི་ཡང་མ་འབད།" },

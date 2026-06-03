@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "ಕಾನ್ಫಿಗರ್ ಆಯ್ಕೆಗಳು" },
   "helpSection_cmds": { "message": "ಮಾಹಿತಿ ಆಜ್ಞೆಗಳು" },
   "optionDesc_query": { "message": "AI ಕಳುಹಿಸಲು ಪ್ರಶ್ನೆ" },
+  "optionDesc_summarize": { "message": "ಫೈಲ್‌ನ ವಿಷಯಗಳನ್ನು ಸಂಕ್ಷಿಪ್ತಗೊಳಿಸಿ" },
   "optionDesc_uiLang": { "message": "UI ಅನ್ನು ಪ್ರದರ್ಶಿಸಲು ISO 639-1 ಭಾಷೆಯ ಸಂಕೇತ" },
   "optionDesc_config": { "message": "ಕಸ್ಟಮ್ ಕಾನ್ಫಿಗರೇಶನ್ ಫೈಲ್ ಅನ್ನು ಲೋಡ್ ಮಾಡಿ" },
   "optionDesc_quiet": { "message": "ದೋಷಗಳನ್ನು ಹೊರತುಪಡಿಸಿ ಎಲ್ಲಾ ಲಾಗಿಂಗ್ ಅನ್ನು ನಿಗ್ರಹಿಸಿ" },

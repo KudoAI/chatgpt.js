@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Safidin'ny kirakira" },
   "helpSection_cmds": { "message": "Baikon'ny fampahalalana" },
   "optionDesc_query": { "message": "Fangatahana handefa AI" },
+  "optionDesc_summarize": { "message": "Mamintina ny mpiatin'ny rakitra iray" },
   "optionDesc_uiLang": { "message": "ISO 639-1 fehezan-dalàna ny fiteny mba haneho UI in" },
   "optionDesc_config": { "message": "Maka ilay raki-kirakira safidy" },
   "optionDesc_quiet": { "message": "Hanafoana ny logging rehetra afa-tsy fahadisoana" },

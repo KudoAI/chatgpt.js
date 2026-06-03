@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Konzani zosankha" },
   "helpSection_cmds": { "message": "ZOKHUDZ" },
   "optionDesc_query": { "message": "Kufunsira kutumiza AI" },
+  "optionDesc_summarize": { "message": "Fotokozani mwachidule zomwe zili mu fayilo" },
   "optionDesc_uiLang": { "message": "ISO 639-1 malamulo chilankhulo kusonyeza UI mu" },
   "optionDesc_config": { "message": "Katundu mwambo config wapamwamba" },
   "optionDesc_quiet": { "message": "Kupondereza mitengo yonse kupatula zolakwika" },

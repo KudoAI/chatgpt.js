@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Konfigire opsyon yo" },
   "helpSection_cmds": { "message": "Kòmandman Enfòmasyon" },
   "optionDesc_query": { "message": "Mande pou voye AI" },
+  "optionDesc_summarize": { "message": "Rezime sa ki nan yon dosye" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kòd langaj pou montre UI nan" },
   "optionDesc_config": { "message": "Chaj dosye konfigirasyon koutim" },
   "optionDesc_quiet": { "message": "Siprime tout antre eksepte erè" },

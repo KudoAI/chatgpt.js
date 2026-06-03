@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Rulaganya dilo tse o ka tlhophang mo go" },
   "helpSection_cmds": { "message": "Ditaelo" },
   "optionDesc_query": { "message": "Query to send AI" },
+  "optionDesc_summarize": { "message": "Tlhalosa ka bokhutshwane diteng tsa faele" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code of language to display UI in" },
   "optionDesc_config": { "message": "Laisa faele ya thulaganyo e e tlwaelegileng" },
   "optionDesc_quiet": { "message": "Go emisa dikgogo tsotlhe kwantle ga diphoso" },

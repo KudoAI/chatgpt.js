@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Lungiselela ongakhetha kukho" },
   "helpSection_cmds": { "message": "Imiyalo yemininingwane" },
   "optionDesc_query": { "message": "Isicelo sokuthumela i-AI" },
+  "optionDesc_summarize": { "message": "Fingqa okuqukethwe yifayela" },
   "optionDesc_uiLang": { "message": "Ikhodi yolimi ye-ISO 639-1 yokubonisa i-UI ku-" },
   "optionDesc_config": { "message": "Faka ifayela lokumisa eliqokiwe" },
   "optionDesc_quiet": { "message": "Cindezela konke ukungena ngemvume ngaphandle kwamaphutha" },

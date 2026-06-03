@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Tùy chọn cấu hình" },
   "helpSection_cmds": { "message": "Lệnh thông tin" },
   "optionDesc_query": { "message": "Truy vấn để gửi AI" },
+  "optionDesc_summarize": { "message": "Tóm tắt nội dung của một tập tin" },
   "optionDesc_uiLang": { "message": "Mã ngôn ngữ ISO 639-1 để hiển thị giao diện người dùng trong" },
   "optionDesc_config": { "message": "Tải tệp cấu hình tùy chỉnh" },
   "optionDesc_quiet": { "message": "Chặn tất cả ghi nhật ký ngoại trừ lỗi" },

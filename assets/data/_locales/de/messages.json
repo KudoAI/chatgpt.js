@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Einstellungen bearbeiten" },
   "helpSection_cmds": { "message": "Info-Befehle" },
   "optionDesc_query": { "message": "Abfrage zum Senden von KI" },
+  "optionDesc_summarize": { "message": "Fassen Sie den Inhalt einer Datei zusammen" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Sprachcode zur Anzeige der Benutzeroberfläche in" },
   "optionDesc_config": { "message": "Benutzerdefinierte Konfigurationsdatei laden" },
   "optionDesc_quiet": { "message": "Alle Protokolle mit Ausnahme von Fehlern unterdrücken" },

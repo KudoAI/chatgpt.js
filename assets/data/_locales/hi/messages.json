@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "कॉन्फ़िगरेशन विकल्प" },
   "helpSection_cmds": { "message": "जानकारी कमांड" },
   "optionDesc_query": { "message": "AI भेजने के लिए क्वेरी" },
+  "optionDesc_summarize": { "message": "फ़ाइल की सामग्री को संक्षेप में बताएँ" },
   "optionDesc_uiLang": { "message": "यूआई प्रदर्शित करने के लिए भाषा का आईएसओ 639 -1 कोड" },
   "optionDesc_config": { "message": "कस्टम कॉन्फ़िगरेशन फ़ाइल लोड करें" },
   "optionDesc_quiet": { "message": "त्रुटियों को छोड़कर सभी लॉगिंग को दबाएं" },

@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Config opties" },
   "helpSection_cmds": { "message": "Info commando 's" },
   "optionDesc_query": { "message": "Vraag om AI te verzenden" },
+  "optionDesc_summarize": { "message": "De inhoud van een bestand samenvatten" },
   "optionDesc_uiLang": { "message": "ISO 639-1 taalcode om de gebruikersinterface weer te geven in" },
   "optionDesc_config": { "message": "Aangepast configuratiebestand laden" },
   "optionDesc_quiet": { "message": "Alle logboekregistraties onderdrukken, behalve fouten" },

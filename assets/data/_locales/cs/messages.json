@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "config(**options) [#]" },
   "helpSection_cmds": { "message": "Informační příkazy" },
   "optionDesc_query": { "message": "Dotaz na odeslání umělé inteligence" },
+  "optionDesc_summarize": { "message": "Shrnutí obsahu souboru" },
   "optionDesc_uiLang": { "message": "Kód jazyka ISO 639-1 pro zobrazení uživatelského rozhraní" },
   "optionDesc_config": { "message": "Načíst vlastní konfigurační soubor" },
   "optionDesc_quiet": { "message": "Potlačit veškeré protokolování kromě chyb" },

@@ -47,6 +47,7 @@
   "helpSection_flags": { "message": "هەڵبژاردنەکان ڕێکبخە" },
   "helpSection_cmds": { "message": "فەرمانەکانی زانیاری" },
   "optionDesc_query": { "message": "ناردنی ئه كاونت" },
+  "optionDesc_summarize": { "message": "پوختەی ناوەڕۆکی پەڕگەیەک" },
   "optionDesc_uiLang": { "message": "ئایزۆ 639-1 کۆدی زمان بۆ پیشاندانی UI" },
   "optionDesc_config": { "message": "پەڕگەی ڕێکخستنی تایبەت باربکە" },
   "optionDesc_quiet": { "message": "سڕینەوەی هەموو هەڵەکان جگە لە هەڵەکان" },

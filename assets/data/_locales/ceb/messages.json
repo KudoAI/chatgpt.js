@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Mga kapilian sa config" },
   "helpSection_cmds": { "message": "Mga mando sa info" },
   "optionDesc_query": { "message": "Себуано sa pagpadala sa usa ka [" },
+  "optionDesc_summarize": { "message": "I-summarize ang sulud sa usa ka file" },
   "optionDesc_uiLang": { "message": "ISO 639-1 nga kodigo sa sinultian aron ipakita ang UI sa" },
   "optionDesc_config": { "message": "I-load ang custom config file" },
   "optionDesc_quiet": { "message": "Pugngan ang tanan nga pag-log gawas sa mga sayup" },

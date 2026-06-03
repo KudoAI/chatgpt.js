@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Параметры Конфигурации" },
   "helpSection_cmds": { "message": "Информационные команды" },
   "optionDesc_query": { "message": "Запрос на отправку ИИ" },
+  "optionDesc_summarize": { "message": "Обобщение содержимого файла" },
   "optionDesc_uiLang": { "message": "Код языка ISO 639-1 для отображения пользовательского интерфейса" },
   "optionDesc_config": { "message": "Загрузить пользовательский файл конфигурации" },
   "optionDesc_quiet": { "message": "Подавление всех журналов, кроме ошибок" },

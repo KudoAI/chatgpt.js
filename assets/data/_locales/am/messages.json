@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "አማራጮችን ያዋቅሩ" },
   "helpSection_cmds": { "message": "መረጃ ትዕዛዞች" },
   "optionDesc_query": { "message": "AI ለመላክ ጥያቄ" },
+  "optionDesc_summarize": { "message": "የፋይል ይዘትን ማጠቃለያ" },
   "optionDesc_uiLang": { "message": "የ ISO 639-1 የቋንቋ ኮድ UI ን በ ውስጥ ለማሳየት" },
   "optionDesc_config": { "message": "ብጁ ውቅር ፋይል ጫን" },
   "optionDesc_quiet": { "message": "ከስህተቶች በስተቀር ሁሉንም የመግቢያዎች መሙላት" },

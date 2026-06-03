@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Opzioni Configurazione" },
   "helpSection_cmds": { "message": "Comandi info" },
   "optionDesc_query": { "message": "Query da inviare all'IA" },
+  "optionDesc_summarize": { "message": "Riepilogare il contenuto di un file" },
   "optionDesc_uiLang": { "message": "Codice ISO 639-1 della lingua in cui visualizzare l'interfaccia utente" },
   "optionDesc_config": { "message": "Carica il file di configurazione personalizzato" },
   "optionDesc_quiet": { "message": "Elimina tutte le registrazioni ad eccezione degli errori" },

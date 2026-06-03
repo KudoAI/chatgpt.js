@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "ኣማራጺታት ኣዳሊእካ" },
   "helpSection_cmds": { "message": "መምርሒታት ሓበሬታ" },
   "optionDesc_query": { "message": "AI ንምልኣኽ ሓተተ" },
+  "optionDesc_summarize": { "message": "ትሕዝቶ ፋይል ኣጉዲእካ" },
   "optionDesc_uiLang": { "message": "ISO 639-1 ኮድ ቋንቋ ኣብ" },
   "optionDesc_config": { "message": "ብውልቂ እተዳለወ ፋይል ኣንብር" },
   "optionDesc_quiet": { "message": "ጌጋታት እንተዘይኮይኑ ፡ ንዅሉ ምዝገባታት ኣጥፍእ" },

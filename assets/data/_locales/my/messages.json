@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "ရွေးချယ်စရာများကို စီစဉ်ပြင်ဆင်ပါ" },
   "helpSection_cmds": { "message": "သတင်းအချက်အလက်ဆိုင်ရာ ညွှန်ကြားချက်များ" },
   "optionDesc_query": { "message": "AI စေလွှတ်ရန်မေးမြန်းချက်" },
+  "optionDesc_summarize": { "message": "ဖိုင်တစ်ခုရဲ့ အကြောင်းအရာကို အကျဉ်းချုံးပါ" },
   "optionDesc_uiLang": { "message": "ISO ကို 639-1 ဘာသာစကားကုဒ် UI ကိုပြသရန်" },
   "optionDesc_config": { "message": "စိတ်ကြိုက် config ဖိုင်ကို ဖွင့်ပါ" },
   "optionDesc_quiet": { "message": "အမှားအယွင်းများမှလွဲ ၍ လော့ဂ်အင်အားလုံးကိုဖိနှိပ်ပါ" },

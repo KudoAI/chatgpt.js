@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "Nā koho hoʻonohonoho" },
   "helpSection_cmds": { "message": "Nā kauoha ʻike" },
   "optionDesc_query": { "message": "Nīnau e hoʻouna i ka AI" },
+  "optionDesc_summarize": { "message": "E hōʻuluʻulu i nā ʻike o kahi faila" },
   "optionDesc_uiLang": { "message": "ʻO ke code ʻōlelo ISO 639-1 e hōʻike i ka UI ma" },
   "optionDesc_config": { "message": "E hoʻouka i ka faila hoʻonohonoho maʻamau" },
   "optionDesc_quiet": { "message": "Kāohi i ka hoʻopaʻa inoa a pau koe nā hewa" },

@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "خيارات الإعداد" },
   "helpSection_cmds": { "message": "أوامر المعلومات" },
   "optionDesc_query": { "message": "استعلام لإرسال ذكاء اصطناعي" },
+  "optionDesc_summarize": { "message": "تلخيص محتويات الملف" },
   "optionDesc_uiLang": { "message": "رمز لغة ISO 639-1 لعرض واجهة المستخدم في" },
   "optionDesc_config": { "message": "تحميل ملف التكوين المخصص" },
   "optionDesc_quiet": { "message": "قم بإيقاف جميع عمليات التسجيل باستثناء الأخطاء" },

@@ -9,8 +9,10 @@
 
     // Import LIBS
     globalThis.log = require('./lib/log')
-    const chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
-          loader = require('./lib/loader').create({ width: env.width })
+    const fs = require('fs'),
+          chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
+          loader = require('./lib/loader').create({ width: env.width }),
+          string = require('./lib/string')
 
     await init.cli()
 
@@ -26,13 +28,16 @@
 
     // Get AI reply
     loader.start()
-    const query = cli.config.randomAnswer ? 'Generate a single random question on any topic, then answer it.'
-                : cli.config.joke ? 'Tell me a joke and make it funny.'
+    const query = cli.config.joke ? 'Tell me a joke and make it funny.'
+                : cli.config.randomAnswer ? 'Generate a single random question on any topic, then answer it.'
+                : cli.config.summarize ? `Summarize the following:\n\n${
+                      string.looksLikePath(cli.config.summarize) ? fs.readFileSync(cli.config.summarize, 'utf8')
+                    : cli.config.summarize }`
                 : cli.config.query
     try {
         await chatgpt.send(query, {
             provider: cli.config.provider, output: 'stdout', onLoadStart: () => loader.stop({ clear: false })})
-        if (/help|hi/.test(query)) log.help()
+        if (/^(?:help|hi)$/.test(query)) log.help()
     } finally { loader.stop() }
 
 })()

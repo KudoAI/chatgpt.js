@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "ຕົວເລືອກການຕັ້ງຄ່າ" },
   "helpSection_cmds": { "message": "ຄໍາສັ່ງ Info" },
   "optionDesc_query": { "message": "Query ເພື່ອສົ່ງ AI" },
+  "optionDesc_summarize": { "message": "ສະຫຼຸບເນື້ອໃນຂອງເອກະສານ" },
   "optionDesc_uiLang": { "message": "ISO 639-1 ລະຫັດພາສາທີ່ຈະສະແດງ UI ໃນ" },
   "optionDesc_config": { "message": "ໂຫຼດເອກະສານຕັ້ງຄ່າທີ່ກຳນົດເອງ" },
   "optionDesc_quiet": { "message": "ສະກັດກັ້ນການຕັດໄມ້ທັງໝົດ ຍົກເວັ້ນຂໍ້ຜິດພາດ" },

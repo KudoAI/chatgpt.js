@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "配置选项" },
   "helpSection_cmds": { "message": "信息命令" },
   "optionDesc_query": { "message": "发送AI查询" },
+  "optionDesc_summarize": { "message": "汇总文件的内容" },
   "optionDesc_uiLang": { "message": "用于显示UI的语言的ISO 639-1代码" },
   "optionDesc_config": { "message": "加载自定义配置文件" },
   "optionDesc_quiet": { "message": "禁止所有日志记录，错误除外" },

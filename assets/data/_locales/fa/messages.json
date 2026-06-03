@@ -41,6 +41,7 @@
   "helpSection_flags": { "message": "گزینه های پیکربندی" },
   "helpSection_cmds": { "message": "دستورات اطلاعاتی" },
   "optionDesc_query": { "message": "درخواست برای ارسال هوش مصنوعی" },
+  "optionDesc_summarize": { "message": "خلاصه کردن محتویات یک فایل" },
   "optionDesc_uiLang": { "message": "کد زبان ISO 639-1 برای نمایش رابط کاربری" },
   "optionDesc_config": { "message": "بارگذاری فایل پیکربندی سفارشی" },
   "optionDesc_quiet": { "message": "همه گزارش‌ها به جز خطاها را سرکوب کنید" },
