@@ -80,10 +80,10 @@ chatgpt  # or cjs
 
 ```
 Parameter options:
- --q, --query "msg"          Query to send AI.
- --summarize="path/to/file"  Summarize a file.
- --ui-lang="code"            ISO 639-1 code of language to display UI in.
- --config="path/to/file"     Load custom config file.
+ -q, --query <msg>            Query to send AI.
+ --summarize <filepath|text>  Path to file or text to summarize.
+ --ui-lang <code>             ISO 639-1 code of language to display UI in.
+ --config <filepath>          Path to custom config file to load.
 
 Boolean options:
  -V, --quiet                 Suppress all logging except errors.
