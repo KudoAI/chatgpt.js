@@ -45,10 +45,10 @@
             msgMaxChars: cli.config.msgMaxChars,
             turnsToPreserve: cli.config.turnsToPreserve
         })
-        const cleanedReply = messages.extractFromJSON(reply)
-        log.data(cleanedReply)
+        const parsedReply = messages.extractFromJSON(reply)
+        log.data(parsedReply)
         if (/^(?:help|hi)$/.test(query)) log.help()
-        cli.msgChain.push(currentMsg, { role: 'assistant', content: cleanedReply })
+        cli.msgChain.push(currentMsg, { role: 'assistant', content: parsedReply })
         messages.saveChain(cli.msgChain)
     } finally { loader.stop() }
 
