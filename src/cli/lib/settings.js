@@ -127,15 +127,15 @@ module.exports = {
                         && !fs.existsSync(configVal)
                     ) log.errorAndExit(`[${key}] ${cli.msgs.error_invalidFilepath}: ${configVal}`)
                 },
+                langCode() {
+                    if (configVal && !require('./language').validateLangCode(configVal))
+                        log.errorAndExit(`[${key}] ${cli.msgs.error_invalidLangCode}: ${configVal}`)
+                },
                 positiveInt() {
                     const numVal = parseInt(configVal, 10)
                     if (numVal && isNaN(numVal) || numVal < 1)
                         log.errorAndExit(`[${key}] ${cli.msgs.error_nonPositiveNum}: ${configVal}`)
                     cli.config[key] = numVal
-                },
-                langCode() {
-                    if (configVal && !require('./language').validateLangCode(configVal))
-                        log.errorAndExit(`[${key}] ${cli.msgs.error_invalidLangCode}: ${configVal}`)
                 }
             })[ctrl.valType]()
         }
