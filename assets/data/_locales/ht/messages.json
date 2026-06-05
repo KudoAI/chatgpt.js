@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Chemen nan dosye konfigirasyon koutim nan chaj" },
   "optionDesc_msgMaxChars": { "message": "Limit karaktè pou chak mesaj" },
   "optionDesc_turnsToPreserve": { "message": "Kantite vire pou prezève" },
+  "optionDesc_autoSuggest": { "message": "Oto-siksè pwochen aksyon AI nan fen repons CLI" },
   "optionDesc_quiet": { "message": "Siprime tout antre eksepte erè" },
   "optionDesc_init": { "message": "Kreye dosye config (nan rasin pwojè)" },
   "optionDesc_joke": { "message": "Di yon blag komik nan o aza/Rakonte yon blag komik" },

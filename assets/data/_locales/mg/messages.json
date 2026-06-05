@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Ny sori-dàlana ametrahana ny raki-kirakira kirakira halaina" },
   "optionDesc_msgMaxChars": { "message": "Isan'ny famerana ny marika isaky ny hafatra" },
   "optionDesc_turnsToPreserve": { "message": "Isan'ny fihenam-bidy ho arovana" },
+  "optionDesc_autoSuggest": { "message": "Fihetsiketsehana manaraka AI amin'ny faran'ny valintenin'ny CLI" },
   "optionDesc_quiet": { "message": "Hanafoana ny logging rehetra afa-tsy fahadisoana" },
   "optionDesc_init": { "message": "Mamorona raki-kirakira (ao amin'ny fototry ny tetikasa)" },
   "optionDesc_joke": { "message": "Hilaza ny hanihany mahatsikaiky amin'ny kisendrasendra" },

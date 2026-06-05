@@ -49,6 +49,9 @@
   "optionDesc_config": { "message": "ލޯޑް ކުރަން ކަސްޓަމް ކޮންފިގް ފައިލް އަށް ދާ މަގު" },
   "optionDesc_msgMaxChars": { "message": "މެސެޖަކަށް އަކުރު ލިމިޓް" },
   "optionDesc_turnsToPreserve": { "message": "ރައްކާތެރިކުރަންޖެހޭ ޓާންތަކުގެ އަދަދު" },
+  "optionDesc_autoSuggest": {
+    "message": "ސީއެލްއައި ރެސްޕޮންސް ނިމުމުން ދެން އޮންނަ އޭއައި އެކްޝަން އޮޓޯ ސަޖަސްޓް ކުރުން"
+  },
   "optionDesc_quiet": { "message": "ކުށްތައް ފިޔަވައި އެހެން ހުރިހާ ލޮގިންއެއް ހުއްޓުވާ" },
   "optionDesc_init": { "message": "ކޮންފިގް ފައިލް އުފެއްދުން (ޕްރޮޖެކްޓް ރޫޓްގައި)" },
   "optionDesc_joke": { "message": "ރެންޑަމްކޮށް މަޖާ ސަމާސާއެއް ކިޔައިދެއެވެ" },

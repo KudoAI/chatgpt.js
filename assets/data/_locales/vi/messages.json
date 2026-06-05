@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Đường dẫn đến tệp cấu hình tùy chỉnh để tải" },
   "optionDesc_msgMaxChars": { "message": "Giới hạn ký tự cho mỗi tin nhắn" },
   "optionDesc_turnsToPreserve": { "message": "Số lượt cần bảo quản" },
+  "optionDesc_autoSuggest": { "message": "Tự động đề xuất hành động AI tiếp theo khi kết thúc phản hồi CLI" },
   "optionDesc_quiet": { "message": "Chặn tất cả ghi nhật ký ngoại trừ lỗi" },
   "optionDesc_init": { "message": "Tạo tệp cấu hình (trong thư mục gốc của dự án)" },
   "optionDesc_joke": { "message": "Kể một câu chuyện hài hước một cách ngẫu nhiên" },

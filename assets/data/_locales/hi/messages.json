@@ -47,6 +47,9 @@
   "optionDesc_config": { "message": "लोड करने के लिए कस्टम कॉन्फ़िगरेशन फ़ाइल का पथ" },
   "optionDesc_msgMaxChars": { "message": "कैरेक्टर लिमिट प्रति मैसेज" },
   "optionDesc_turnsToPreserve": { "message": "संरक्षित करने के लिए मोड़ों की संख्या" },
+  "optionDesc_autoSuggest": {
+    "message": "सीएलआई (CLI) प्रतिक्रिया के अंत में अगली एआई (AI) कार्रवाई का स्वतः सुझाव दें"
+  },
   "optionDesc_quiet": { "message": "त्रुटियों को छोड़कर सभी लॉगिंग को दबाएं" },
   "optionDesc_init": { "message": "कॉन्फ़िगरेशन फ़ाइल बनाएँ (प्रोजेक्ट रूट में)" },
   "optionDesc_joke": { "message": "बेतरतीब ढंग से एक मज़ेदार चुटकुला सुनाता है" },

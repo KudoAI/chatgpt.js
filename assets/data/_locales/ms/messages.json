@@ -47,6 +47,9 @@
   "optionDesc_config": { "message": "Laluan ke fail konfigurasi tersuai untuk dimuatkan" },
   "optionDesc_msgMaxChars": { "message": "Had aksara bagi setiap mesej" },
   "optionDesc_turnsToPreserve": { "message": "Bilangan giliran untuk dikekalkan" },
+  "optionDesc_autoSuggest": {
+    "message": "Cadangkan tindakan AI seterusnya secara automatik pada akhir maklum balas CLI"
+  },
   "optionDesc_quiet": { "message": "Sekat semua pembalakan kecuali ralat" },
   "optionDesc_init": { "message": "Cipta fail konfigurasi (dalam akar projek)" },
   "optionDesc_joke": { "message": "Menceritakan jenaka lucu secara rawak" },

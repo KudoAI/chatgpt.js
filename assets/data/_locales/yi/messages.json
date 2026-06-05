@@ -47,6 +47,9 @@
   "optionDesc_config": { "message": "וועג צו אייגענעם קאנפיגאציע טעקע צו לאָדן" },
   "optionDesc_msgMaxChars": { "message": "כאַראַקטער לימיט פּער מעסעדזש" },
   "optionDesc_turnsToPreserve": { "message": "נומער פון דרייען צו באַוואָרן" },
+  "optionDesc_autoSuggest": {
+    "message": "אויטאָמאַטיש פֿאָרשלאָגן די קומענדיקע קינסטלעכע אינטעליגענץ אַקציע ביים סוף פֿון דער CLI ענטפֿער"
+  },
   "optionDesc_quiet": { "message": "פאַרשטיקן אַלע לאָגינג אַחוץ ערראָרס" },
   "optionDesc_init": { "message": "שאַפֿן קאָנפֿיג טעקע (אין פּראָיעקט וואָרצל)" },
   "optionDesc_joke": { "message": "דערציילט אַ קאָמישן וויץ אויף אַ צופֿעליקן אופֿן" },

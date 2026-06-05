@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "ផ្លូវ ទៅ ឯកសារ កំណត់ រចនា សម្ព័ន្ធ ផ្ទាល់ខ្លួន ដែល ត្រូវ ផ្ទុក" },
   "optionDesc_msgMaxChars": { "message": "ដែនកំណត់តួអក្សរក្នុងមួយសារ" },
   "optionDesc_turnsToPreserve": { "message": "ចំនួនវេនដើម្បីអភិរក្ស" },
+  "optionDesc_autoSuggest": { "message": "ដាក់ស្នើសកម្មភាព AI បន្ទាប់ដោយស្វ័យប្រវត្តិនៅចុងបញ្ចប់នៃការឆ្លើយតប CLI" },
   "optionDesc_quiet": { "message": "បង្ក្រាបការកាប់ឈើទាំងអស់លើកលែងតែកំហុស" },
   "optionDesc_init": { "message": "បង្កើត ឯកសារ កំណត់ រចនា សម្ព័ន្ធ (នៅ ក្នុង root គម្រោង)" },
   "optionDesc_joke": { "message": "និយាយកំប្លែងគួរឱ្យអស់សំណើចដោយចៃដន្យ" },

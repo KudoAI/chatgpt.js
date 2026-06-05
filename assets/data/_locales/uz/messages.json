@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Yuklanadigan maxsus konfiguratsiya fayliga yo'l" },
   "optionDesc_msgMaxChars": { "message": "Har bir xabar uchun belgilar chegarasi" },
   "optionDesc_turnsToPreserve": { "message": "Saqlash uchun navbatlar soni" },
+  "optionDesc_autoSuggest": { "message": "CLI javobi oxirida keyingi AI harakatini avtomatik ravishda taklif qilish" },
   "optionDesc_quiet": { "message": "Xatolardan tashqari barcha jurnallarni bostirish" },
   "optionDesc_init": { "message": "Konfiguratsiya faylini yarating (loyiha ildizida)" },
   "optionDesc_joke": { "message": "Tasodifiy ravishda kulgili hazil aytadi" },

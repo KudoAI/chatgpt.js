@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Fela Anikulapo Kuti Config file to load" },
   "optionDesc_msgMaxChars": { "message": "Ubutumwa bwa Mbila Nsuma pa Mbila Nsuma" },
   "optionDesc_turnsToPreserve": { "message": "Impendwa ya Butumikishi pa Kusunga" },
+  "optionDesc_autoSuggest": { "message": "Next articleIfya Kucita pa Kuwamya Amaofeshi ya Nte sha kwa Yehova" },
   "optionDesc_quiet": { "message": "Fela Anikulapo Kuti - Fela Anikulapo Kuti" },
   "optionDesc_init": { "message": "Panga failo iya mipangilwe (mu mushila wa mulimo)" },
   "optionDesc_joke": { "message": "Funny Joke At Random ukulele" },

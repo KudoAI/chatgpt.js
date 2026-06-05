@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "लोड गर्न अनुकूल कन्फिग फाइलको बाटो" },
   "optionDesc_msgMaxChars": { "message": "प्रति सन्देश क्यारेक्टर सीमा" },
   "optionDesc_turnsToPreserve": { "message": "संरक्षण गर्ने पालोहरूको संख्या" },
+  "optionDesc_autoSuggest": { "message": "CLI प्रतिक्रियाको अन्त्यमा अर्को AI कार्य स्वतः सुझाव दिनुहोस्" },
   "optionDesc_quiet": { "message": "त्रुटिहरू बाहेक सबै लगिङलाई दबाउनुहोस्" },
   "optionDesc_init": { "message": "कन्फिग फाइल सिर्जना गर्नुहोस् (परियोजना मूलमा)" },
   "optionDesc_joke": { "message": "अनियमित रूपमा एक हास्यास्पद मजाक बताउँछ" },

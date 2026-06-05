@@ -13,5 +13,6 @@ export default {
     uiLang: 'en',           // ISO 639-1 code of language to display UI in
     msgMaxChars: 250,       // char limit per msg
     turnsToPreserve: 3,     // # of turns to preserve (2 msgs/turn)
+    autoSuggest: true,      // auto-suggest next AI action at end of CLI response
     quietMode: false        // suppress all logging except errors
 }

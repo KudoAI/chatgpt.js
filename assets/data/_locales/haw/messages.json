@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Ala i ka faila hoʻonohonoho maʻamau e hoʻouka" },
   "optionDesc_msgMaxChars": { "message": "Ka palena o nā huapalapala no kēlā me kēia leka" },
   "optionDesc_turnsToPreserve": { "message": "Helu o nā huli e mālama ai" },
+  "optionDesc_autoSuggest": { "message": "Manaʻo aunoa i ka hana AI aʻe ma ka hopena o ka pane CLI" },
   "optionDesc_quiet": { "message": "Kāohi i ka hoʻopaʻa inoa a pau koe nā hewa" },
   "optionDesc_init": { "message": "E hana i ka faila hoʻonohonoho (ma ke kumu papahana)" },
   "optionDesc_joke": { "message": "Haʻi i kahi ʻakaʻaka hoʻomākeʻaka ma kahi koho ʻole" },

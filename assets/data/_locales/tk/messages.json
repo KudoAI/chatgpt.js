@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Özgür konfigurasiýa faýlyny ýüklemek üçin ýol" },
   "optionDesc_msgMaxChars": { "message": "Her bir habar üçin bir haryt limiti" },
   "optionDesc_turnsToPreserve": { "message": "Garawul diňi we Garawul diňi" },
+  "optionDesc_autoSuggest": { "message": "CLI reaksiýasynyň soňunda AI-niň indiki hereketini özbaşdak teklip ediň" },
   "optionDesc_quiet": { "message": "Ýalňyşlyklardan başga ähli ýalňyşlyklary ýok etmek" },
   "optionDesc_init": { "message": "Konfigurasy faýlyny ýarat (projektiň köki bilen)" },
   "optionDesc_joke": { "message": "Ol bir gülümsüji gülümsüji" },

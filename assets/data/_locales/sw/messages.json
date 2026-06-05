@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Nenda kwenye faili mahususi ya usanidi ili kupakia" },
   "optionDesc_msgMaxChars": { "message": "Kikomo cha herufi kwa kila ujumbe" },
   "optionDesc_turnsToPreserve": { "message": "Idadi ya zamu za kuhifadhi" },
+  "optionDesc_autoSuggest": { "message": "Pendekeza hatua inayofuata ya AI kiotomatiki mwishoni mwa mwitikio wa CLI" },
   "optionDesc_quiet": { "message": "Zima ukataji wote wa magogo isipokuwa hitilafu" },
   "optionDesc_init": { "message": "Unda faili ya usanidi (katika mizizi ya mradi)" },
   "optionDesc_joke": { "message": "Husimulia utani wa kuchekesha bila mpangilio" },

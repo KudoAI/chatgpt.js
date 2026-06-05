@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Роҳча барои боркунии файли танзимоти фармоишӣ" },
   "optionDesc_msgMaxChars": { "message": "Маҳдудияти аломат барои як иттилоот" },
   "optionDesc_turnsToPreserve": { "message": "Миқдори гардишҳо барои нигоҳдорӣ" },
+  "optionDesc_autoSuggest": { "message": "Name" },
   "optionDesc_quiet": { "message": "Ғайри хатогӣ ҳамаи қайдкуниҳоро пахш кунед" },
   "optionDesc_init": { "message": "Эҷод кардани файли конфигуратсия (дар решаи лоиҳа)" },
   "optionDesc_joke": { "message": "Таърих Бознигарии Давомнокии" },

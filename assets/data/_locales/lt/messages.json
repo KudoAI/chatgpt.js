@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Kelias iki pasirinktinio konfigūracijos failo įkėlimui" },
   "optionDesc_msgMaxChars": { "message": "Žinučių simbolių limitas" },
   "optionDesc_turnsToPreserve": { "message": "Išsaugotinų posūkių skaičius" },
+  "optionDesc_autoSuggest": { "message": "Pasibaigus CLI atsakymui, automatiškai siūlyti kitą AI veiksmą" },
   "optionDesc_quiet": { "message": "Slėpti visus registravimus, išskyrus klaidas" },
   "optionDesc_init": { "message": "Sukurti konfigūracijos failą (projekto šaknyje)" },
   "optionDesc_joke": { "message": "Atsitiktinai pasakoja juokingą anekdotą" },

@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Path to custom config file to load" },
   "optionDesc_msgMaxChars": { "message": "Muganhu wehunhu pameseji" },
   "optionDesc_turnsToPreserve": { "message": "Nhamba yekutendeuka kuchengetedza" },
+  "optionDesc_autoSuggest": { "message": "Auto-kuratidza inotevera AI chiito pakupera kweCLI mhinduro" },
   "optionDesc_quiet": { "message": "Dzvinyirira kutema matanda ese kunze kwekukanganisa" },
   "optionDesc_init": { "message": "Create config file (in project root)" },
   "optionDesc_joke": { "message": "Inotaurira kuseka kuseka kusinganzwisisiki" },

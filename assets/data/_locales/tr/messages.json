@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Yüklenecek özel yapılandırma dosyasının yolu" },
   "optionDesc_msgMaxChars": { "message": "Mesaj başına karakter limiti" },
   "optionDesc_turnsToPreserve": { "message": "Korunacak dönüş sayısı" },
+  "optionDesc_autoSuggest": { "message": "CLI yanıtının sonunda bir sonraki AI eylemini otomatik olarak öner" },
   "optionDesc_quiet": { "message": "Hatalar hariç tüm günlükleri bastır" },
   "optionDesc_init": { "message": "Yapılandırma dosyası oluştur (proje kök dizininde)" },
   "optionDesc_joke": { "message": "Rastgele komik bir fıkra anlatır" },

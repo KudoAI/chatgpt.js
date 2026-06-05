@@ -24,12 +24,15 @@
         chatgpt.setProvider(cli.config.provider, {
             key: process.env[`${cli.config.provider.toUpperCase()}_API_KEY`] })
 
-    const query = cli.config.joke ? 'Tell me a joke and make it funny.'
+    let query = cli.config.joke ? 'Tell me a joke and make it funny.'
                 : cli.config.randomAnswer ? 'Generate a single random question on any topic, then answer it.'
                 : cli.config.summarize ? `Summarize the following:\n\n${
                       string.looksLikePath(cli.config.summarize) ? fs.readFileSync(cli.config.summarize, 'utf8')
                     : cli.config.summarize }`
                 : cli.config.query
+    if (cli.config.autoSuggest && !/[?？]$/.test(query))
+        query +=
+            '\n\nThen, at the end of your response, ask user if they want you to do something related to the query.'
 
     loader.start()
     try { // to get/show AI reply

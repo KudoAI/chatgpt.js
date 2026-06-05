@@ -47,6 +47,9 @@
   "optionDesc_config": { "message": "Jidka si loo habeeyo faylka si loo raro" },
   "optionDesc_msgMaxChars": { "message": "Xadka astaamaha fariin kasta" },
   "optionDesc_turnsToPreserve": { "message": "Tirada soo noqnoqda si loo ilaaliyo" },
+  "optionDesc_autoSuggest": {
+    "message": "Next article Ra 'iisul Wasaare Khayre oo ka qeyb galay munaasabad lagu soo gabagabeynayay munaasabadda caleemo saarka Madaxweynaha Soomaaliya"
+  },
   "optionDesc_quiet": { "message": "Xannib dhammaan gelitaanka marka laga reebo khaladaadka" },
   "optionDesc_init": { "message": "Samee faylka qaabeynta (ee xididka mashruuca)" },
   "optionDesc_joke": { "message": "U sheeg kaftan qosol leh si lama filaan ah" },

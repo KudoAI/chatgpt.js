@@ -45,6 +45,9 @@
   "optionDesc_summarize": { "message": "المسار إلى ملف أو نص للتلخيص" },
   "optionDesc_uiLang": { "message": "رمز لغة ISO 639-1 لعرض واجهة المستخدم في" },
   "optionDesc_config": { "message": "المسار إلى ملف التكوين المخصص للتحميل" },
+  "optionDesc_autoSuggest": {
+    "message": "الاقتراح التلقائي لإجراء الذكاء الاصطناعي التالي في نهاية استجابة واجهة سطر الأوامر"
+  },
   "optionDesc_msgMaxChars": { "message": "حد الأحرف لكل رسالة" },
   "optionDesc_turnsToPreserve": { "message": "عدد الدورات التي يجب الحفاظ عليها" },
   "optionDesc_quiet": { "message": "قم بإيقاف جميع عمليات التسجيل باستثناء الأخطاء" },

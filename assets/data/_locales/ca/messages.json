@@ -47,6 +47,9 @@
   "optionDesc_config": { "message": "Camí al fitxer de configuració personalitzat per carregar" },
   "optionDesc_msgMaxChars": { "message": "Límit de caràcters per missatge" },
   "optionDesc_turnsToPreserve": { "message": "Nombre de torns a conservar" },
+  "optionDesc_autoSuggest": {
+    "message": "Suggerir automàticament la següent acció d'IA al final de la resposta de la CLI"
+  },
   "optionDesc_quiet": { "message": "Suprimeix tot el registre, excepte els errors" },
   "optionDesc_init": { "message": "Crea un fitxer de configuració (a l'arrel del projecte)" },
   "optionDesc_joke": { "message": "Explica una broma divertida a l'atzar" },

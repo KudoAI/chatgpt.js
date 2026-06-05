@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Шлях да наладжвальнага файла канфігурацыі для загрузкі" },
   "optionDesc_msgMaxChars": { "message": "Ліміт сімвалаў у паведамленні" },
   "optionDesc_turnsToPreserve": { "message": "Колькасць паваротаў для захавання" },
+  "optionDesc_autoSuggest": { "message": "Аўтаматычна прапаноўваць наступнае дзеянне ШІ у канцы адказу CLI" },
   "optionDesc_quiet": { "message": "Спыніць усе журналы, акрамя памылак" },
   "optionDesc_init": { "message": "Стварыць файл канфігурацыі (у корані праекта)" },
   "optionDesc_joke": { "message": "Распавядае смешны анекдот выпадкова" },

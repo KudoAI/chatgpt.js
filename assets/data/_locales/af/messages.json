@@ -45,6 +45,7 @@
   "optionDesc_summarize": { "message": "Pad na lêer of teks om op te som" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kode van taal te vertoon UI in" },
   "optionDesc_config": { "message": "Pad na pasgemaakte konfigurasielêer om te laai" },
+  "optionDesc_autoSuggest": { "message": "Outo-suggestie volgende AI-aksie aan die einde van CLI-reaksie" },
   "optionDesc_msgMaxChars": { "message": "Karakterlimiet per boodskap" },
   "optionDesc_turnsToPreserve": { "message": "Aantal draaie om te bewaar" },
   "optionDesc_quiet": { "message": "Onderdruk alle aanmelding behalwe foute" },

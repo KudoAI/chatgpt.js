@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Ачаалах тохиргооны файлын тохиргооны замыг өөрчлөх" },
   "optionDesc_msgMaxChars": { "message": "Зурвас тутамд тэмдэгтийн хязгаар" },
   "optionDesc_turnsToPreserve": { "message": "Хадгалах эргэлтийн тоо" },
+  "optionDesc_autoSuggest": { "message": "CLI хариултын төгсгөлд автоматаар шилжүүлэх дараагийн AI арга хэмжээ" },
   "optionDesc_quiet": { "message": "Алдаанаас бусад бүх бүртгэлийг арилгах" },
   "optionDesc_init": { "message": "Тохиргооны файл үүсгэх (төслийн эхэнд)" },
   "optionDesc_joke": { "message": "Хөгжилтэй хошигнолыг санамсаргүй байдлаар өгнө" },

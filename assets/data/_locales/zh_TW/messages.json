@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "要載入的自訂組態檔路徑" },
   "optionDesc_msgMaxChars": { "message": "每則訊息的字元數限制" },
   "optionDesc_turnsToPreserve": { "message": "要保留的回合數" },
+  "optionDesc_autoSuggest": { "message": "在CLI回應結束時自動建議下一個AI動作" },
   "optionDesc_quiet": { "message": "禁止所有日誌記錄，錯誤除外" },
   "optionDesc_init": { "message": "創建配置文件（在項目根目錄中）" },
   "optionDesc_joke": { "message": "隨便講個有趣的笑話" },

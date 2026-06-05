@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Sökväg till anpassad konfigurationsfil att ladda" },
   "optionDesc_msgMaxChars": { "message": "Teckengräns per meddelande" },
   "optionDesc_turnsToPreserve": { "message": "Antal varv att bevara" },
+  "optionDesc_autoSuggest": { "message": "Föreslå automatiskt nästa AI-åtgärd i slutet av CLI-svaret" },
   "optionDesc_quiet": { "message": "Dölj all loggning utom fel" },
   "optionDesc_init": { "message": "Skapa konfigurationsfil (i projektets rot)" },
   "optionDesc_joke": { "message": "Berättar ett roligt skämt slumpmässigt" },

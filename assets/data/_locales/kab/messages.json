@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Abrid n usebded n ufaylu i usebded" },
   "optionDesc_msgMaxChars": { "message": "Akaram n tbaḍnit s yizen" },
   "optionDesc_turnsToPreserve": { "message": "Adjectifs à Adjectifs" },
+  "optionDesc_autoSuggest": { "message": "Tags relatifs à \"CLI response\"" },
   "optionDesc_quiet": { "message": "Sizdeg akk tuccḍiwin anagar tuccḍiwin" },
   "optionDesc_init": { "message": "Snulfu afaylu n usebter (deg uẓar n usebter)" },
   "optionDesc_joke": { "message": "Yesssssssssssssssssss a joke" },

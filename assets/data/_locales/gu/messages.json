@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "લોડ કરવા માટે કસ્ટમ રૂપરેખાંકન ફાઇલનો પાથ" },
   "optionDesc_msgMaxChars": { "message": "સંદેશ દીઠ અક્ષર મર્યાદા" },
   "optionDesc_turnsToPreserve": { "message": "સાચવવા માટે વળાંકની સંખ્યા" },
+  "optionDesc_autoSuggest": { "message": "CLI પ્રતિસાદના અંતે આગામી AI ક્રિયા આપમેળે સૂચવો" },
   "optionDesc_quiet": { "message": "ભૂલો સિવાય તમામ લોગીંગને દબાવો" },
   "optionDesc_init": { "message": "રૂપરેખાંકન ફાઇલ બનાવો (પ્રોજેક્ટ રુટમાં)" },
   "optionDesc_joke": { "message": "રેન્ડમ સમયે એક રમૂજી મજાક કહે છે" },

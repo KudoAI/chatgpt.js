@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "ብውልቂ እተዳለወ ፋይል ንምስራሕ ዚሕግዝ መገዲ" },
   "optionDesc_msgMaxChars": { "message": "ኣብ ነፍሲ ወከፍ መልእኽቲ ዘሎ ናይ ጠባይ ገደብ" },
   "optionDesc_turnsToPreserve": { "message": "ናይ ምዕቃብ ናይ ምትሕልላፍ ቁጽሪ" },
+  "optionDesc_autoSuggest": { "message": "ኣብ መወዳእታ ናይ CLI መልሲ ናይ ርእሰ-ምእንቲ ስጉምቲ" },
   "optionDesc_quiet": { "message": "ጌጋታት እንተዘይኮይኑ ፡ ንዅሉ ምዝገባታት ኣጥፍእ" },
   "optionDesc_init": { "message": "ናይ ውህደት ፋይል ፍጠር (ኣብ ናይ ፕሮጀክት ሱር)" },
   "optionDesc_joke": { "message": "ብሃንደበት ዝስሕቕ ቀልዲ" },

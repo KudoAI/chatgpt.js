@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Ჩასატვირთი მორგებული კონფიგურაციის ფაილისკენ მიმავალი ბილი" },
   "optionDesc_msgMaxChars": { "message": "Სიმბოლოს ლიმიტი თითოეულ შეტყობინებაზე" },
   "optionDesc_turnsToPreserve": { "message": "Შესანარჩუნებელი ბრუნების რაოდენობა" },
+  "optionDesc_autoSuggest": { "message": "Ავტომატურად აირჩიეთ შემდეგი AI ქმედება CLI პასუხის დასასრულს" },
   "optionDesc_quiet": { "message": "ყველა ჟურნალის დაბლოკვა, შეცდომების გარდა" },
   "optionDesc_init": { "message": "კონფიგურაციის ფაილის შექმნა (პროექტის root-ში)" },
   "optionDesc_joke": { "message": "Შემთხვევით სასაცილო ხუმრობას ჰყვება" },

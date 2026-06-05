@@ -49,6 +49,7 @@
   "optionDesc_config": { "message": "རང་ལུགས་སྒྲིག་ཡིག་སྣོད་ལུ་སྣེ་ལེན་འབད་ནིའི་ལམ་" },
   "optionDesc_msgMaxChars": { "message": "འཕྲིན་དོན་རེ་རེ་ལུ་ ཡིག་འབྲུ་གི་ཚད་གཞི་" },
   "optionDesc_turnsToPreserve": { "message": "འོག་གི་ཤོག་ལེབ་ཚུ་ བསྡུ་སྒྲིག་འབད་ནིའི་དོན་ལས་ བསྡུ་སྒྲིག་འབད་ཨིན:" },
+  "optionDesc_autoSuggest": { "message": "CLIགི་ལན་འདེབས་ཀྱི་མཐའ་མ་ལུ་ AIགི་རིམ་པ་གཞན་ཅིག་ གྲོས་ཐག་ཆོད་" },
   "optionDesc_quiet": { "message": "འཛོལ་བ་མ་གཏོགས་ གཞན་ག་ནི་ཡང་མ་འབད།" },
   "optionDesc_init": { "message": "Config file བཟོ་ (project rootནང་ལུ་)" },
   "optionDesc_joke": { "message": "འཁྲབ་མདོག་ཅན་གྱི་ འཁྲབ་མདོག་ཅིག་" },

@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Caminho para o ficheiro de configuração personalizado a carregar" },
   "optionDesc_msgMaxChars": { "message": "Limite de caracteres por mensagem" },
   "optionDesc_turnsToPreserve": { "message": "Número de voltas a preservar" },
+  "optionDesc_autoSuggest": { "message": "Sugerir automaticamente a próxima ação de IA no final da resposta da CLI" },
   "optionDesc_quiet": { "message": "Suprimir todos os registos, exceto erros" },
   "optionDesc_init": { "message": "Criar ficheiro de configuração (na raiz do projeto)" },
   "optionDesc_joke": { "message": "Conta uma piada engraçada aleatoriamente" },

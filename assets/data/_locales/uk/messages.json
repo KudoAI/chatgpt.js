@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Шлях до користувацького файлу конфігурації для завантаження" },
   "optionDesc_msgMaxChars": { "message": "Обмеження кількості символів у повідомленні" },
   "optionDesc_turnsToPreserve": { "message": "Кількість обертів для збереження" },
+  "optionDesc_autoSuggest": { "message": "Автоматично пропонувати наступну дію ШІ наприкінці відповіді CLI" },
   "optionDesc_quiet": { "message": "Придушити всі журнали, крім помилок" },
   "optionDesc_init": { "message": "Створити файл конфігурації (в корені проекту)" },
   "optionDesc_joke": { "message": "Розповідає смішний жарт навмання" },

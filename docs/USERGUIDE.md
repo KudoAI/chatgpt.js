@@ -89,6 +89,7 @@ Parameter options:
  -c, --config <filepath>          Path to custom config file to load.
 
 Boolean options:
+ -a, --auto-suggest               Auto-suggest next AI action at end of CLI response.
  -V, --quiet                      Suppress all logging except errors.
 
 Commands:

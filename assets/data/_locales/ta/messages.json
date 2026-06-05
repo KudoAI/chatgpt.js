@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "ஏற்றுவதற்கான தனிப்பயன் உள்ளமைவு கோப்புக்கான பாதை" },
   "optionDesc_msgMaxChars": { "message": "ஒரு செய்திக்கு எழுத்து வரம்பு" },
   "optionDesc_turnsToPreserve": { "message": "பாதுகாப்பதற்கான திருப்பங்களின் எண்ணிக்கை" },
+  "optionDesc_autoSuggest": { "message": "CLI பதிலின் முடிவில் அடுத்த AI செயலைத் தானாகப் பரிந்துரைக்கவும்" },
   "optionDesc_quiet": { "message": "பிழைகளைத் தவிர அனைத்து பதிவுகளையும் ஒடுக்கவும்" },
   "optionDesc_init": { "message": "கட்டமைப்பு கோப்பை உருவாக்கவும் (திட்ட மூலத்தில்)" },
   "optionDesc_joke": { "message": "சீரற்ற முறையில் ஒரு வேடிக்கையான நகைச்சுவையைச் சொல்கிறது" },

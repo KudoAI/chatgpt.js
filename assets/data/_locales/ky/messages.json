@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Undo-type" },
   "optionDesc_msgMaxChars": { "message": "Undo-type" },
   "optionDesc_turnsToPreserve": { "message": "Сактоо үчүн кезектердин саны" },
+  "optionDesc_autoSuggest": { "message": "CLI жооп аягында Auto-сунуш кийинки AI иш-аракет" },
   "optionDesc_quiet": { "message": "Каталардан башка бардык жазууларды басуу" },
   "optionDesc_init": { "message": "Конфигурация файлын түзүү (долбоордун тамыры менен)" },
   "optionDesc_joke": { "message": "Кокусунан күлкүлүү тамашаны айтып берет" },

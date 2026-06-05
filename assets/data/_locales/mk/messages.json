@@ -47,6 +47,9 @@
   "optionDesc_config": { "message": "Патека до приспособена конфигурациска датотека за вчи" },
   "optionDesc_msgMaxChars": { "message": "Ограничување на знаци по порака" },
   "optionDesc_turnsToPreserve": { "message": "Број на свртувања за зачувување" },
+  "optionDesc_autoSuggest": {
+    "message": "Автоматски предложете следно дејство за вештачка интелигенција на крајот од одговорот на CLI"
+  },
   "optionDesc_quiet": { "message": "Потисни ги сите евиденции освен грешките" },
   "optionDesc_init": { "message": "Создајте конфигурациска датотека (во коренот на проектот)" },
   "optionDesc_joke": { "message": "Раскажува смешен виц по случаен избор" },

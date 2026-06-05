@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Te ara ki te kōnae whirihora ritenga ki utaina" },
   "optionDesc_msgMaxChars": { "message": "Te rohe o te tangata mo ia karere" },
   "optionDesc_turnsToPreserve": { "message": "Te maha o nga huringa hei tiaki" },
+  "optionDesc_autoSuggest": { "message": "Ko te mahi AI e whai ake nei i te mutunga o te whakautu a CLI" },
   "optionDesc_quiet": { "message": "Tautoko i te logging katoa engari hapa" },
   "optionDesc_init": { "message": "Hangaia he konae whirihoranga (i roto i te pakiaka kaupapa)" },
   "optionDesc_joke": { "message": "Korero i te ataata ataata i roto i te tūponotanga" },

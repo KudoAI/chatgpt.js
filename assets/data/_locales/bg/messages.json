@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Път до персонализиран конфигурационен файл за зареждане" },
   "optionDesc_msgMaxChars": { "message": "Ограничение на символите на съобщение" },
   "optionDesc_turnsToPreserve": { "message": "Брой завои за запазване" },
+  "optionDesc_autoSuggest": { "message": "Автоматично предлагане на следващо действие с ИИ в края на отговора на CLI" },
   "optionDesc_quiet": { "message": "Потискане на всички записи, с изключение на грешките" },
   "optionDesc_init": { "message": "Създаване на конфигурационен файл (в корена на проекта)" },
   "optionDesc_joke": { "message": "Разказва забавен виц на случаен принцип" },

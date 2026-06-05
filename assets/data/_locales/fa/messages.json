@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "مسیر فایل پیکربندی سفارشی برای بارگذاری" },
   "optionDesc_msgMaxChars": { "message": "محدودیت کاراکتر در هر پیام" },
   "optionDesc_turnsToPreserve": { "message": "تعداد نوبت‌ها برای حفظ" },
+  "optionDesc_autoSuggest": { "message": "پیشنهاد خودکار اقدام بعدی هوش مصنوعی در پایان پاسخ CLI" },
   "optionDesc_quiet": { "message": "همه گزارش‌ها به جز خطاها را سرکوب کنید" },
   "optionDesc_init": { "message": "ایجاد فایل پیکربندی (در ریشه پروژه)" },
   "optionDesc_joke": { "message": "یک جوک خنده‌دار را اتفاقی تعریف می‌کند" },

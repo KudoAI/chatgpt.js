@@ -47,6 +47,7 @@
   "optionDesc_config": { "message": "Kuri Kunoza IDOSIYE Kuri Ibirimo" },
   "optionDesc_msgMaxChars": { "message": "Ubutumwa" },
   "optionDesc_turnsToPreserve": { "message": "Bya Kuri" },
+  "optionDesc_autoSuggest": { "message": "Next Entry Ibizakwereka ko umukobwa mukundana aguca inyuma" },
   "optionDesc_quiet": { "message": "Kuraho ibiti byose usibye amakosa" },
   "optionDesc_init": { "message": "IDOSIYE in Umushinga Imizi" },
   "optionDesc_joke": { "message": "A ku" },
