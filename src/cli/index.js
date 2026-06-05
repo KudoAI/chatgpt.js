@@ -33,18 +33,18 @@
 
     loader.start()
     try { // to get/show AI reply
-        const currentMsg = { role: 'user', content: query }
-        const reply = await chatgpt.send('', {
+        const userQuery = { role: 'user', content: query }
+        const aiResp = await chatgpt.send('', {
             provider: cli.config.provider,
             onLoadStart: () => loader.stop({ clear: false }),
-            messages: [...cli.msgChain, currentMsg],
+            messages: [...cli.msgChain, userQuery],
             msgMaxChars: cli.config.msgMaxChars,
             turnsToPreserve: cli.config.turnsToPreserve
         })
-        const parsedReply = messages.extractFromJSON(reply)
+        const parsedReply = messages.extractFromJSON(aiResp)
         log.data(parsedReply)
         if (/^(?:help|hi)$/.test(query)) log.help()
-        cli.msgChain.push(currentMsg, { role: 'assistant', content: parsedReply })
+        cli.msgChain.push(userQuery, { role: 'assistant', content: parsedReply })
         messages.saveChain(cli.msgChain)
     } finally { loader.stop() }
 
