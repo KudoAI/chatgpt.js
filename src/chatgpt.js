@@ -1568,7 +1568,7 @@ const chatgpt = {
         color = 'green', // for stdout
         messages = null, // array of prev msgs to preserve context
         msgMaxChars = 0, // char limit per msg (default no limit)
-        turnsToPreserve = 0 // 2 msgs per turn (default no limit)
+        turnsToPreserve = 0 // # of turns to preserve (2 msgs/turn, default no limit)
     } = {}) {
 
         if (env == 'frontend') {
