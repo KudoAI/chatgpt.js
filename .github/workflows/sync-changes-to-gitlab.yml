@@ -13,7 +13,7 @@ jobs:
     env:
       TZ: PST8PDT
     steps:
-      - uses: actions/checkout@v6.0.2
+      - uses: actions/checkout@v6.0.3
         with:
           fetch-depth: 0
       - env:
