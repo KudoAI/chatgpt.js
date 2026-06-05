@@ -90,11 +90,13 @@ const chatgpt = {
     },
 
     activateDarkMode() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         document.documentElement.classList.replace('light', 'dark')
         document.documentElement.style.colorScheme = localStorage.theme = 'dark'
     },
 
     activateLightMode() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         document.documentElement.classList.replace('dark', 'light')
         document.documentElement.style.colorScheme = localStorage.theme = 'light'
     },
@@ -103,11 +105,10 @@ const chatgpt = {
     // [ title/msg = strings, btns = [named functions], checkbox = named function, width (px) = int ] = optional
     // * Spaces are inserted into button labels by parsing function names in camel/kebab/snake case
 
-        // Init env context
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         const scheme = chatgpt.settings.scheme.isDark() ? 'dark' : 'light',
               isMobile = chatgpt.browser.isMobile()
 
-        // Define event handlers
         const handlers = {
 
             dismiss: {
@@ -397,6 +398,7 @@ const chatgpt = {
 
     autoRefresh: {
         activate(interval) {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             if (this.isActive) // already running, do nothing
                 return console.log(
                     `↻ ChatGPT >> [${chatgpt.autoRefresh.nowTimeStamp()}] Auto refresh already active!`)
@@ -425,6 +427,7 @@ const chatgpt = {
         },
 
         deactivate() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             if (this.isActive) {
                 this.toggle.refreshFrame()
                 document.removeEventListener('visibilitychange', this.toggle.beacons)
@@ -446,6 +449,7 @@ const chatgpt = {
         toggle: {
 
             beacons() {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
                 if (chatgpt.autoRefresh.beaconID) {
                     clearInterval(chatgpt.autoRefresh.beaconID) ; chatgpt.autoRefresh.beaconID = null
                     console.log(`↻ ChatGPT >> [${chatgpt.autoRefresh.nowTimeStamp()}] Beacons de-activated`)
@@ -459,6 +463,7 @@ const chatgpt = {
             },
 
             refreshFrame() {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
                 let refreshFrame = document.querySelector('#refresh-frame')
                 if (refreshFrame) refreshFrame.remove()
                 else {
@@ -472,23 +477,53 @@ const chatgpt = {
 
     browser: {
 
-        isLightMode() { return window.matchMedia?.('(prefers-color-scheme: light)')?.matches },
-        isDarkMode() { return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches },
-        isChromium() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chromium') },
-        isChrome() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chrome') },
-        isEdge() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge') },
-        isBrave() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave') },
-        isFirefox() { return navigator.userAgent.includes('Firefox') },
+        isBrave() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave')
+        },
+
+        isChrome() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chrome')
+        },
+
+        isChromium() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chromium')
+        },
+
+        isDarkMode() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
+        },
+
+        isEdge() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge')
+        },
+
+        isFirefox() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return navigator.userAgent.includes('Firefox')
+        },
 
         isFullScreen() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             const userAgentStr = navigator.userAgent
             return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
                  : userAgentStr.includes('Firefox') ? window.fullScreen
                  : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen
         },
 
+        isLightMode() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return window.matchMedia?.('(prefers-color-scheme: light)')?.matches
+        },
+
         isMobile() {
-            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) }
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+        }
     },
 
     async clearChats() { // back-end method
@@ -631,7 +666,7 @@ const chatgpt = {
     },
 
     dictate() {
-        if (chatgpt.env != 'frontend') return console.error(`dictate() can only be used w/ the ChatGPT DOM`)
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         chatgpt.getDictateButton()?.click()
     },
 
@@ -731,12 +766,20 @@ const chatgpt = {
     },
 
     extractCode(msg) { return chatgpt.code.extract(msg) },
-    focusChatbar() { chatgpt.getChatBox()?.focus() },
+    focusChatbar() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        chatgpt.getChatBox()?.focus()
+    },
 
     footer: {
-        get() { return document.querySelector(chatgpt.selectors.footer) },
+
+        get() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return document.querySelector(chatgpt.selectors.footer)
+        },
 
         hide({ preserveHeight = false } = {}) {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             const footer = chatgpt.footer.get()
             if (!footer)
                 return console.error('Footer element not found!')
@@ -746,6 +789,7 @@ const chatgpt = {
         },
 
         show() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             const footer = chatgpt.footer.get()
             if (!footer)
                 return console.error('Footer element not found!')
@@ -805,7 +849,10 @@ const chatgpt = {
         })
     },
 
-    getChatBox() { return document.getElementById('prompt-textarea') },
+    getChatBox() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.getElementById('prompt-textarea')
+    },
 
     getChatData(chatToGet = 1, detailsToGet = 'all', sender = 'all', msgToGet = 'all') {
     // chatToGet = 'active' | 'latest' | index|title|id of chat to get (defaults to active OpenAI chat > latest chat)
@@ -976,28 +1023,73 @@ const chatgpt = {
         }))
     },
 
-    getChatInput() { return chatgpt.getChatBox().firstChild.innerText },
-    getContinueButton() { return document.querySelector(chatgpt.selectors.btns.continue) },
-    getDictateButton() { return document.querySelector(chatgpt.selectors.btns.dictate) },
-    getErrorMsg() { return document.querySelector(`${chatgpt.selectors.errors.txt}:last-of-type`)?.innerText },
+    getChatInput() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return chatgpt.getChatBox().firstChild.innerText
+    },
+
+    getContinueButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.continue)
+    },
+
+    getDictateButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.dictate)
+    },
+
+    getErrorMsg() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(`${chatgpt.selectors.errors.txt}:last-of-type`)?.innerText
+    },
+
     getFooterDiv() { return chatgpt.footer.get() },
     getHeaderDiv() { return chatgpt.header.get() },
     getLastPrompt() { return chatgpt.getChatData('active', 'msg', 'user', 'latest') },
     getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest') },
-    getLoginButton() { return document.querySelector(chatgpt.selectors.btns.login) },
-    getNewChatButton() { return document.querySelector(chatgpt.selectors.btns.newChat) },
-    getNewChatLink() { return document.querySelector(chatgpt.selectors.links.newChat) },
-    getRegenerateButton() { return document.querySelector(chatgpt.selectors.btns.regen) },
+
+    getLoginButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.login)
+    },
+
+    getNewChatButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.newChat)
+    },
+
+    getNewChatLink() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.links.newChat)
+    },
+
+    getRegenerateButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.regen)
+    },
+
     getResponse() { return chatgpt.response.get(...arguments) },
     getResponseFromAPI(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet) },
     getResponseFromDOM(pos) { return chatgpt.response.getFromDOM(pos) },
-    getScrollToBottomButton() { return document.querySelector(chatgpt.selectors.btns.scroll) },
-    getSendButton() { return document.querySelector(chatgpt.selectors.btns.send) },
-    getStopButton() { return document.querySelector(chatgpt.selectors.btns.stop) },
+
+    getScrollToBottomButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.scroll)
+    },
+
+    getSendButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.send)
+    },
+
+    getStopButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.stop)
+    },
 
     async getRandomAnswer({ replyLang = 'en' } = {}) {
         const prompt = `Generate a single random question in ${replyLang} language on any topic, then answer it.`
-                        + `\nDon't type anything else.`
+                     + `\nDon't type anything else.`
         if (chatgpt.env == 'frontend') {
             chatgpt.send(prompt)
             await chatgpt.isIdle()
@@ -1007,16 +1099,32 @@ const chatgpt = {
     },
 
     getUserLanguage() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         return navigator.languages[0] || navigator.language || navigator.browserLanguage
             || navigator.systemLanguage || navigator.userLanguage || ''
     },
 
-    getVoiceButton() { return document.querySelector(chatgpt.selectors.btns.voice) },
+    getVoiceButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.voice)
+    },
 
     header: {
-        get() { return document.querySelector(chatgpt.selectors.header) },
-        hide() { chatgpt.header.get().style.display = 'none' },
-        show() { chatgpt.header.get().style.display = 'flex' }
+
+        get() {
+             if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return document.querySelector(chatgpt.selectors.header)
+        },
+
+        hide() {
+             if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+             chatgpt.header.get().style.display = 'none'
+        },
+
+        show() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            chatgpt.header.get().style.display = 'flex'
+        }
     },
 
     hideFooter() { chatgpt.footer.hide() },
@@ -1043,6 +1151,7 @@ const chatgpt = {
         },
 
         async isLoaded(timeout = null) {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
             const isLoadedPromise = new Promise(resolve => {
                 if (document.querySelector(chatgpt.selectors.chatHistory)) resolve(true)
@@ -1177,6 +1286,7 @@ const chatgpt = {
     isFullScreen() { return chatgpt.browser.isFullScreen() },
 
     async isIdle(timeout = null) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         const obsConfig = { childList: true, subtree: true }
 
         // Create promises
@@ -1204,6 +1314,7 @@ const chatgpt = {
     },
 
     async isLoaded(timeout = null) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
         const isLoadedPromise = new Promise(resolve => {
             if (chatgpt.getNewChatButton()) resolve(true)
@@ -1215,13 +1326,28 @@ const chatgpt = {
     },
 
     isLightMode() { return chatgpt.settings.scheme.isLight() },
-    isTempChat() { return location.search == '?temporary-chat=true' },
+
+    isTempChat() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return location.search == '?temporary-chat=true'
+    },
+
     isTyping() { return !!this.getStopButton() },
-    login() { window.location.href = 'https://chat.openai.com/auth/login' },
-    logout() { window.location.href = 'https://chat.openai.com/auth/logout' },
+
+    login() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        window.location.href = 'https://chat.openai.com/auth/login'
+    },
+
+    logout() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        window.location.href = 'https://chat.openai.com/auth/logout'
+    },
 
     menu: {
+
         toggle() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             try {
                 const menuBtn = document.querySelector(chatgpt.selectors.btns.menu) ; if (!menuBtn) return
                 ['pointerdown','mousedown','pointerup','mouseup','click'].forEach(eventType =>
@@ -1229,13 +1355,21 @@ const chatgpt = {
             } catch (err) { console.error(err.message) }
         },
 
-        open() { document.querySelector(`${chatgpt.selectors.btns.menu}[aria-expanded="false"]`) && this.toggle() },
-        close() { document.querySelector(`${chatgpt.selectors.btns.menu}[aria-expanded="true"]`) && this.toggle() }
+        open() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            document.querySelector(`${chatgpt.selectors.btns.menu}[aria-expanded="false"]`) && this.toggle()
+        },
+
+        close() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            document.querySelector(`${chatgpt.selectors.btns.menu}[aria-expanded="true"]`) && this.toggle()
+        }
     },
 
     minify() { chatgpt.code.minify() },
 
     notify(...args) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         const scheme = chatgpt.settings.scheme.isDark() ? 'dark' : 'light'
         let msg, position, notifDuration, shadow, toast
         if (typeof args[0] == 'object' && !Array.isArray(args[0]))
@@ -1446,6 +1580,7 @@ const chatgpt = {
     regenerate() { chatgpt.response.regenerate() },
 
     renderHTML(node) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
               reAttrs = /(\S+)=['"]?((?:.(?!['"]?\s+\S+=|[>']))+.)['"]?/g, // eslint-disable-line
               nodeContent = node.childNodes
@@ -1499,7 +1634,11 @@ const chatgpt = {
     async resend() { chatgpt.send(await chatgpt.getChatData('latest', 'msg', 'user', 'latest')) },
 
     response: {
-        continue() { try { chatgpt.getContinueButton().click() } catch (err) { console.error(err.message) }},
+
+        continue() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            try { chatgpt.getContinueButton().click() } catch (err) { console.error(err.message) }
+        },
 
         get() {
             // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:
@@ -1520,6 +1659,7 @@ const chatgpt = {
         },
 
         getFromDOM(pos) {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             const responseDivs = document.querySelectorAll('div[data-message-author-role=assistant]'),
                   strPos = pos.toString().toLowerCase()
             let response
@@ -1556,12 +1696,24 @@ const chatgpt = {
         },
 
         getLast() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest') },
-        regenerate() { try { chatgpt.getRegenerateButton().click() } catch (err) { console.error(err.message) }},
-        stopGenerating() { try { chatgpt.getStopButton().click() } catch (err) { console.error(err.message) }}
+
+        regenerate() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            try { chatgpt.getRegenerateButton().click() } catch (err) { console.error(err.message) }
+        },
+
+        stopGenerating() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            try { chatgpt.getStopButton().click() } catch (err) { console.error(err.message) }
+        }
     },
 
     reviewCode() { chatgpt.code.review() },
-    scrollToBottom() { chatgpt.getScrollToBottomButton()?.click() },
+
+    scrollToBottom() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        chatgpt.getScrollToBottomButton()?.click()
+    },
 
     async send(userQuery, {
         env = chatgpt.env,
@@ -1681,6 +1833,7 @@ const chatgpt = {
     },
 
     sendInNewChat(msg) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         if (typeof msg != 'string') return console.error('Message must be a string!')
         try { chatgpt.getNewChatButton().click() } catch (err) { return console.error(err.message) }
         setTimeout(() => chatgpt.send(msg), 500)
@@ -1699,19 +1852,29 @@ const chatgpt = {
         scheme: {
 
             activateDark() {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
                 document.documentElement.classList.replace('light', 'dark')
                 document.documentElement.style.colorScheme = localStorage.theme = 'dark'
             },
 
             activateLight() {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
                 document.documentElement.classList.replace('dark', 'light')
                 document.documentElement.style.colorScheme = localStorage.theme = 'light'
             },
 
-            isDark() { return document.documentElement.classList.contains('dark') },
-            isLight() { return document.documentElement.classList.contains('light') },
+            isDark() {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+                return document.documentElement.classList.contains('dark')
+            },
+
+            isLight() {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+                return document.documentElement.classList.contains('light')
+            },
 
             set(value) {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
 
                 // Validate value
                 const validValues = ['dark', 'light', 'system']
@@ -1731,6 +1894,7 @@ const chatgpt = {
             },
 
             toggle() {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
                 const [schemeToRemove, schemeToAdd] = this.isDark() ? ['dark', 'light'] : ['light', 'dark']
                 document.documentElement.classList.replace(schemeToRemove, schemeToAdd)
                 document.documentElement.style.colorScheme = schemeToAdd
@@ -1740,6 +1904,7 @@ const chatgpt = {
     },
 
     async sentiment(text, entity) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
             return console.error(`Argument ${ i +1 } must be a string.`)
         chatgpt.send('What is the sentiment of the following text'
@@ -1841,20 +2006,19 @@ const chatgpt = {
     showHeader() { chatgpt.header.show() },
 
     sidebar: {
-        exists() { return !!chatgpt.getNewChatLink() },
-        hide() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!') },
-        show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!') },
-        isOff() { return !this.isOn() },
 
-        isOn() {
-            const sidebar = (() => {
-                return chatgpt.sidebar.exists() ? document.querySelector(chatgpt.selectors.sidebar) : null })()
-            if (!sidebar) { return console.error('Sidebar element not found!') || false }
-            else return chatgpt.browser.isMobile() ? document.documentElement.style.overflow == 'hidden'
-                      : sidebar.style.visibility != 'hidden' && parseInt(getComputedStyle(sidebar).width) > 150
+        exists() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return !!chatgpt.getNewChatLink()
+        },
+
+        hide() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            this.isOn() ? this.toggle() : console.info('Sidebar already hidden!')
         },
 
         async isLoaded(timeout = 5000) {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             await chatgpt.isLoaded()
             const timeoutPromise = new Promise(resolve => setTimeout(() => resolve(false), timeout))
             const isLoadedPromise = new Promise(resolve => {
@@ -1866,17 +2030,42 @@ const chatgpt = {
             return await Promise.race([isLoadedPromise, timeoutPromise])
         },
 
+        isOff() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return !this.isOn()
+        },
+
+        isOn() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            const sidebar = (() => {
+                return chatgpt.sidebar.exists() ? document.querySelector(chatgpt.selectors.sidebar) : null })()
+            if (!sidebar) { return console.error('Sidebar element not found!') || false }
+            else return chatgpt.browser.isMobile() ? document.documentElement.style.overflow == 'hidden'
+                      : sidebar.style.visibility != 'hidden' && parseInt(getComputedStyle(sidebar).width) > 150
+        },
+
+        show() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            this.isOff() ? this.toggle() : console.info('Sidebar already shown!')
+        },
+
         toggle() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             const sidebarToggle = document.querySelector(chatgpt.selectors.btns.sidebar)
             if (!sidebarToggle) console.error('Sidebar toggle not found!')
             sidebarToggle.click()
         }
     },
 
-    startNewChat() { try { chatgpt.getNewChatButton().click() } catch (err) { console.error(err.message) }},
+    startNewChat() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        try { chatgpt.getNewChatButton().click() } catch (err) { console.error(err.message) }
+    },
+
     stop() { chatgpt.response.stopGenerating() },
 
     async suggest(ideaType, details) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         if (!ideaType)
             return console.error(`ideaType (1st argument) not supplied (e.g. 'gifts', 'names', 'recipes', etc.)`)
         for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
@@ -1915,6 +2104,7 @@ const chatgpt = {
     },
 
     async summarize(text) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         if (!text) return console.error('Text (1st) argument not supplied. Pass some text!')
         if (typeof text != 'string') return console.error('Text argument must be a string!')
         chatgpt.send('Summarize the following text:\n\n' + text)
@@ -1926,6 +2116,7 @@ const chatgpt = {
     toggleScheme() { chatgpt.settings.scheme.toggle() },
 
     async translate(text, outputLang) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         if (!text) return console.error('Text (1st) argument not supplied. Pass some text!')
         if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!')
         for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
@@ -1960,6 +2151,16 @@ const chatgpt = {
                 : ['lang', 'string'].includes(type) && typeof arg != 'string' ?
                         !!console.error(`'${type}' arg must be a string!`)
                 : true
+    },
+
+    _validateEnv({ allowed = [] } = {}) {
+        const allowedEnvs = Array.isArray(allowed) ? allowed : [allowed]
+        if (!allowedEnvs.length || allowedEnvs.includes(chatgpt.env))
+            return true
+        else {
+            console.error(`This method can only be used in: ${allowedEnvs.join(' or ')} (current: ${chatgpt.env})`)
+            return false
+        }
     }
 }
 
