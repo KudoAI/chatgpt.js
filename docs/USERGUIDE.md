@@ -1004,9 +1004,11 @@ Parameters:
   - `output`: *(string)* — Response output method (default: `'return'`, or 'stdout')
   - `systemQuery`: *(string)* — Optional system prompt to guide the response
   - `color`: *(string)* — Output color for CLI responses (default: `'green'`)
+  - `messages`: *(array)* — Array of prev msgs to preserve context (default: `null`)
+  - `msgMaxChars`: *(integer)* — Char limit per msg (default: `0` = no limit)
+  - `turnsToPreserve`: *(integer)* — 2 msgs per turn (default: `0` = no limit)
 
 Example code:
-
 
 ```js
 chatgpt.send('Hello, world!')

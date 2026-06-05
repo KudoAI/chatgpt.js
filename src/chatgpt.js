@@ -1565,7 +1565,10 @@ const chatgpt = {
         onLoadStart = null, // cb on resp start loading
         output = 'return', // or 'stdout'
         systemQuery = '', // for systemPrompt
-        color = 'green' // for stdout
+        color = 'green', // for stdout
+        messages = null, // array of prev msgs to preserve context
+        msgMaxChars = 0, // char limit per msg (default no limit)
+        turnsToPreserve = 0 // 2 msgs per turn (default no limit)
     } = {}) {
 
         if (env == 'frontend') {
@@ -1597,13 +1600,37 @@ const chatgpt = {
                   url = chatgpt.endpoints[provider].chat +( provider == 'google' ? `?key=${apiKey}` : '' ),
                   headers = { 'Content-Type': 'application/json' }
             if (provider == 'openrouter') headers.Authorization = `Bearer ${apiKey}`
-            const payload =
-                provider == 'google' ? {
-                    contents: [{ parts: [{ text: systemQuery ? systemQuery + '\n\n' + userQuery : userQuery }]}]
-                } : {
-                    model: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free', max_tokens: 500, stream,
-                    messages: [{ role: 'system', content: systemQuery }, { role: 'user', content: userQuery }]
+            if (messages && turnsToPreserve > 0) messages = messages.slice(-turnsToPreserve *2)
+            let payload
+            if (provider == 'google') {
+                let contents
+                if (messages) {
+                    contents = messages.map(msg => {
+                        const role = msg.role == 'assistant' ? 'model'
+                                   : msg.role == 'system' ? 'user'
+                                   : msg.role
+                        let text = trunc(msg.content, msgMaxChars)
+                        if (msg.role == 'system') text = `[System Instructions] ${text}`
+                        return { parts: [{ text }], role }
+                    })
+                } else {
+                    const userContent = trunc(systemQuery ? `${systemQuery}\n\n${userQuery}` : userQuery, msgMaxChars)
+                    contents = [{ parts: [{ text: userContent }], role: 'user' }]
                 }
+                payload = { contents }
+            } else { // openrouter
+                let msgs = []
+                if (messages)
+                    msgs = messages.map(msg => ({ role: msg.role, content: trunc(msg.content, msgMaxChars)}))
+                else {
+                    if (systemQuery) msgs.push({ role: 'system', content: trunc(systemQuery, msgMaxChars) })
+                    msgs.push({ role: 'user', content: trunc(userQuery, msgMaxChars) })
+                }
+                payload = {
+                    model: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free',
+                    max_tokens: 500, stream, messages: msgs
+                }
+            }
             const resp = await fetch(url, { method: 'POST', headers, body: JSON.stringify(payload) })
             if (!resp.ok) {
                 const err = await resp.json().catch(() => null)
@@ -1613,7 +1640,7 @@ const chatgpt = {
                 const data = await resp.json()
                 const text =
                     provider == 'google' ? data?.candidates?.[0]?.content?.parts?.map(part => part.text).join('')
-                                        : data.choices[0].message.content
+                                         : data?.choices?.[0]?.message?.content
                 if (output == 'stdout') console.log(respColor + text + chatgpt.colors.reset)
                 return text
             }
@@ -1641,6 +1668,10 @@ const chatgpt = {
                 }
             }
             if (output == 'stdout') process.stdout.write(chatgpt.colors.reset + '\n')
+
+            function trunc(text, max) {
+                return max > 0 && typeof text == 'string' && text.length > max ? `${text.slice(0, max -3)}...` : text }
+
             return outputStr
         }
     },
