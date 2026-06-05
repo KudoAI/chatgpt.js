@@ -1018,6 +1018,7 @@ Parameters:
   - `messages`: *(array)* — Array of prev msgs to preserve context (default: `null`)
   - `msgMaxChars`: *(integer)* — Char limit per msg (default: `0` = no limit)
   - `turnsToPreserve`: *(integer)* — 2 msgs per turn (default: `0` = no limit)
+  - `maxTokens`: *(integer)* — max tokens to use (default: `null`)
 
 Example code:
 

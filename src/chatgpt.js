@@ -1573,7 +1573,8 @@ const chatgpt = {
         color = 'green', // for stdout
         messages = null, // array of prev msgs to preserve context
         msgMaxChars = 0, // char limit per msg (default no limit)
-        turnsToPreserve = 0 // # of turns to preserve (2 msgs/turn, default no limit)
+        turnsToPreserve = 0, // # of turns to preserve (2 msgs/turn, default no limit)
+        maxTokens = null // max tokens to use
     } = {}) {
 
         if (env == 'frontend') {
@@ -1620,7 +1621,9 @@ const chatgpt = {
                     const userContent = trunc(systemQuery ? `${systemQuery}\n\n${userQuery}` : userQuery, msgMaxChars)
                     contents = [{ parts: [{ text: userContent }], role: 'user' }]
                 }
-                payload = { contents }
+                const generationConfig = {}
+                if (maxTokens != null) generationConfig.maxOutputTokens = maxTokens
+                payload = { contents, generationConfig }
             } else { // openrouter
                 let msgs = []
                 if (messages)
@@ -1629,10 +1632,8 @@ const chatgpt = {
                     if (systemQuery) msgs.push({ role: 'system', content: trunc(systemQuery, msgMaxChars) })
                     msgs.push({ role: 'user', content: trunc(userQuery, msgMaxChars) })
                 }
-                payload = {
-                    model: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free',
-                    max_tokens: 500, stream, messages: msgs
-                }
+                payload = { model: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free', stream, messages: msgs }
+                if (maxTokens != null) payload.max_tokens = maxTokens
             }
             const resp = await fetch(url, { method: 'POST', headers, body: JSON.stringify(payload) })
             if (!resp.ok) {
