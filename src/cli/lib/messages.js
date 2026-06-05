@@ -5,6 +5,13 @@ const msgChainPath = path.join(
     process.env.XDG_CACHE_HOME || path.join(process.env.HOME || '~', '.cache'), 'chatgpt.js', 'msgChain.json')
 
 module.exports = {
+
+    extractFromText(str) {
+        if (typeof str != 'string') return str
+        const matches = [...str.matchAll(/(['"])text\1:\s*\1([^'"]*)\1/g)]
+        return matches.length > 0 ? matches.map(match => match[2]).join('') : str
+    },
+
     loadChain() {
         try {
             if (fs.existsSync(msgChainPath)) {

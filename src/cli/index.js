@@ -40,13 +40,14 @@
         const currentMsg = { role: 'user', content: query }
         const reply = await chatgpt.send('', {
             provider: cli.config.provider,
-            output: 'stdout',
             onLoadStart: () => loader.stop({ clear: false }),
             messages: [...cli.msgChain, currentMsg],
             msgMaxChars: cli.config.msgMaxChars,
             turnsToPreserve: cli.config.turnsToPreserve
         })
-        cli.msgChain.push(currentMsg, { role: 'assistant', content: reply })
+        const cleanedReply = messages.extractFromText(reply)
+        console.log(chatgpt.colors.green + cleanedReply + chatgpt.colors.reset)
+        cli.msgChain.push(currentMsg, { role: 'assistant', content: cleanedReply })
         messages.saveChain(cli.msgChain)
         if (/^(?:help|hi)$/.test(query)) log.help()
     } finally { loader.stop() }
