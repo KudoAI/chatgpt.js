@@ -656,8 +656,7 @@ const chatgpt = {
     continue() { chatgpt.response.continue() },
 
     async detectLanguage(text) {
-        if (!text) return console.error('Text argument not supplied. Pass some text!')
-        if (typeof text != 'string') return console.error('Text argument must be a string!')
+        if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
         chatgpt.send(`Detect the language of the following text:\n\n${text}`
             + '\n\nOnly respond with the name of the language')
         console.info('Reviewing text...')
@@ -1905,8 +1904,8 @@ const chatgpt = {
 
     async sentiment(text, entity) {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
-        for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-            return console.error(`Argument ${ i +1 } must be a string.`)
+        if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
+        if (!chatgpt._validateArg({ arg: entity, type: 'string' })) return
         chatgpt.send('What is the sentiment of the following text'
             + ( entity ? ` towards the entity ${entity},` : '' )
             + ' from strongly negative to strongly positive?\n\n' + text )
@@ -2105,8 +2104,7 @@ const chatgpt = {
 
     async summarize(text) {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
-        if (!text) return console.error('Text (1st) argument not supplied. Pass some text!')
-        if (typeof text != 'string') return console.error('Text argument must be a string!')
+        if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
         chatgpt.send('Summarize the following text:\n\n' + text)
         console.info('Summarizing text...')
         await chatgpt.isIdle()
@@ -2117,8 +2115,8 @@ const chatgpt = {
 
     async translate(text, outputLang) {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
-        if (!text) return console.error('Text (1st) argument not supplied. Pass some text!')
-        if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!')
+        if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
+        if (!chatgpt._validateArg({ arg: outputLang, type: 'lang' })) return
         for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
             return console.error(`Argument ${ i +1 } must be a string!`)
         chatgpt.send(`Translate the following text to ${outputLang}. Only reply with the translation.\n\n${text}`)
