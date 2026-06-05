@@ -127,6 +127,7 @@ export default {
 - [General](#general)
   - [`actAs(persona)` `async`](#actaspersona-async)
   - [`detectLanguage(text)` `async`](#detectlanguagetext-async)
+  - [`dictate()`](#dictate)
   - [`getRandomnAnswer()` `async`](#getrandomanswer-parameters--async)
   - [`getUserLanguage()`](#getuserlanguage)
   - [`isLoaded()` `async`](#isloaded-async)
@@ -256,6 +257,12 @@ Example:
     Chinese (Traditional) */
 })()
 ```
+
+#
+
+#### `dictate()`
+
+Opens dictation mode on ChatGPT.
 
 #
 

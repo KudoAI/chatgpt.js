@@ -630,6 +630,11 @@ const chatgpt = {
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
 
+    dictate() {
+        if (chatgpt.env != 'frontend') return console.error(`dictate() can only be used w/ the ChatGPT DOM`)
+        chatgpt.getDictateButton()?.click()
+    },
+
     execute(code) { return chatgpt.code.execute(code) },
 
     async exportChat(chatToGet, format) {
