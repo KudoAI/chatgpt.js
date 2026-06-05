@@ -129,7 +129,7 @@ module.exports = {
                 },
                 positiveInt() {
                     const numVal = parseInt(configVal, 10)
-                    if (isNaN(numVal) || numVal < 1)
+                    if (numVal && isNaN(numVal) || numVal < 1)
                         log.errorAndExit(`[${key}] ${cli.msgs.error_nonPositiveNum}: ${configVal}`)
                     cli.config[key] = numVal
                 },
