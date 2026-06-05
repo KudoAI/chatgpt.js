@@ -1572,8 +1572,8 @@ const chatgpt = {
         systemQuery = '', // for systemPrompt
         color = 'green', // for stdout
         messages = null, // array of prev msgs to preserve context
-        msgMaxChars = 0, // char limit per msg (default no limit)
-        turnsToPreserve = 0, // # of turns to preserve (2 msgs/turn, default no limit)
+        msgMaxChars = null, // char limit per msg
+        turnsToPreserve = null, // # of turns to preserve (2 msgs/turn)
         maxTokens = null // max tokens to use
     } = {}) {
 
