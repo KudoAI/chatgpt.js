@@ -435,10 +435,10 @@ const chatgpt = {
         },
 
         nowTimeStamp() {
-            const now = new Date()
-            const hours = now.getHours() % 12 || 12 // convert to 12h format
+            const now = new Date(), hours = now.getHours() % 12 || 12 // convert to 12h format
             let minutes = now.getMinutes(), seconds = now.getSeconds()
-            if (minutes < 10) minutes = '0' + minutes ; if (seconds < 10) seconds = '0' + seconds
+            if (minutes < 10) minutes = '0' + minutes
+            if (seconds < 10) seconds = '0' + seconds
             const meridiem = now.getHours() < 12 ? 'AM' : 'PM'
             return `${hours}:${minutes}:${seconds} ${meridiem}`
         },
