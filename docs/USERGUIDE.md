@@ -1017,7 +1017,7 @@ Parameters:
   - `systemQuery`: *(string)* — Optional system prompt to guide the response
   - `color`: *(string)* — Output color for CLI responses (default: `'green'`)
   - `messages`: *(array)* — Array of prev msgs to preserve context (default: `null`)
-  - `msgMaxChars`: *(integer)* — Char limit per msg (default: `null`)
+  - `maxChars`: *(integer)* — Char limit per msg (default: `null`)
   - `turnsToPreserve`: *(integer)* — 2 msgs per turn (default: `null`)
   - `maxTokens`: *(integer)* — max tokens to use (default: `null`)
 

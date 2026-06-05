@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Putanja do datoteke ili teksta za sumiranje" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kôd jezika za prikaz korisničkog interfejsa u" },
   "optionDesc_config": { "message": "Putanja do prilagođene konfiguracione datoteke za učitavanje" },
-  "optionDesc_msgMaxChars": { "message": "Ograničenje broja znakova po poruci" },
+  "optionDesc_maxChars": { "message": "Ograničenje broja znakova po poruci" },
   "optionDesc_maxTokens": { "message": "Maksimalan broj tokena za korišćenje" },
   "optionDesc_turnsToPreserve": { "message": "Broj obrtaja za čuvanje" },
   "optionDesc_noSuggest": {

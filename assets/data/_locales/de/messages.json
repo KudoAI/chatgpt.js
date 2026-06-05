@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Pfad zur Datei oder Text zur Zusammenfassung" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Sprachcode zur Anzeige der Benutzeroberfläche in" },
   "optionDesc_config": { "message": "Pfad zur benutzerdefinierten Konfigurationsdatei zum Laden" },
-  "optionDesc_msgMaxChars": { "message": "Zeichenlimit pro Nachricht" },
+  "optionDesc_maxChars": { "message": "Zeichenlimit pro Nachricht" },
   "optionDesc_maxTokens": { "message": "Max. zu verwendende Token" },
   "optionDesc_turnsToPreserve": { "message": "Anzahl der zu konservierenden Runden" },
   "optionDesc_noSuggest": { "message": "Nicht automatisch die nächste KI-Aktion am Ende der CLI-Antwort vorschlagen" },

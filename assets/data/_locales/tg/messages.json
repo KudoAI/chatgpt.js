@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Роҳча ба файл ё матн барои ҷамъбаст" },
   "optionDesc_uiLang": { "message": "ISO 639-1 рамзи забон барои намоиши UI дар" },
   "optionDesc_config": { "message": "Роҳча барои боркунии файли танзимоти фармоишӣ" },
-  "optionDesc_msgMaxChars": { "message": "Маҳдудияти аломат барои як иттилоот" },
+  "optionDesc_maxChars": { "message": "Маҳдудияти аломат барои як иттилоот" },
   "optionDesc_maxTokens": { "message": "Ð  Ð ° Ð ¼ Ð ¾ Ð ¸ Ñ" },
   "optionDesc_turnsToPreserve": { "message": "Миқдори гардишҳо барои нигоҳдорӣ" },
   "optionDesc_noSuggest": { "message": "Do not auto-suggest next AI action in the end of CLI response" },

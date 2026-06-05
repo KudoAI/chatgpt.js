@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Pad naar bestand of tekst om samen te vatten" },
   "optionDesc_uiLang": { "message": "ISO 639-1 taalcode om de gebruikersinterface weer te geven in" },
   "optionDesc_config": { "message": "Pad naar aangepast configuratiebestand om te laden" },
-  "optionDesc_msgMaxChars": { "message": "Tekenlimiet per bericht" },
+  "optionDesc_maxChars": { "message": "Tekenlimiet per bericht" },
   "optionDesc_maxTokens": { "message": "Maximaal te gebruiken tokens" },
   "optionDesc_turnsToPreserve": { "message": "Aantal te bewaren beurten" },
   "optionDesc_noSuggest": {

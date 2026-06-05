@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Път до файла или текст за обобщаване" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 код на езика за показване на потребителския интерфейс в" },
   "optionDesc_config": { "message": "Път до персонализиран конфигурационен файл за зареждане" },
-  "optionDesc_msgMaxChars": { "message": "Ограничение на символите на съобщение" },
+  "optionDesc_maxChars": { "message": "Ограничение на символите на съобщение" },
   "optionDesc_maxTokens": { "message": "Максимален брой жетони за използване" },
   "optionDesc_turnsToPreserve": { "message": "Брой завои за запазване" },
   "optionDesc_noSuggest": {

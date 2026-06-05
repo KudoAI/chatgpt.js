@@ -41,7 +41,7 @@
             provider: cli.config.provider,
             onLoadStart: () => loader.stop({ clear: false }),
             messages: [...cli.msgChain, userMsg],
-            msgMaxChars: cli.config.msgMaxChars,
+            maxChars: cli.config.maxChars,
             turnsToPreserve: cli.config.turnsToPreserve
         }
         if (cli.config.maxTokens) payload.maxTokens = cli.config.maxTokens

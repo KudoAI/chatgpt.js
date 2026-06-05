@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "خلاصہ کرنے کے لیے فائل یا متن کا راستہ" },
   "optionDesc_uiLang": { "message": "UI ظاہر کرنے کے لیے ISO 639-1 زبان کا کوڈ" },
   "optionDesc_config": { "message": "لوڈ کرنے کے لیے کسٹم کنفیگ فائل کا راستہ" },
-  "optionDesc_msgMaxChars": { "message": "فی پیغام کریکٹر کی حد" },
+  "optionDesc_maxChars": { "message": "فی پیغام کریکٹر کی حد" },
   "optionDesc_maxTokens": { "message": "استعمال کرنے کے لیے زیادہ سے زیادہ ٹوکنز" },
   "optionDesc_turnsToPreserve": { "message": "محفوظ کرنے کے لیے موڑ کی تعداد" },
   "optionDesc_noSuggest": { "message": "CLI کے جواب کے اختتام پر اگلی AI کارروائی کی خودکار تجویز نہ کریں" },

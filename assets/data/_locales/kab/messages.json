@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Abrid n ufaylu neɣ n uḍris i wakken ad ssiwḍeɣ" },
   "optionDesc_uiLang": { "message": "Tutlayt ISO 639-1 i wakken ad d-tban deg" },
   "optionDesc_config": { "message": "Abrid n usebded n ufaylu i usebded" },
-  "optionDesc_msgMaxChars": { "message": "Akaram n tbaḍnit s yizen" },
+  "optionDesc_maxChars": { "message": "Akaram n tbaḍnit s yizen" },
   "optionDesc_maxTokens": { "message": "Tags relatifs à \"max to use\"" },
   "optionDesc_turnsToPreserve": { "message": "Adjectifs à Adjectifs" },
   "optionDesc_noSuggest": { "message": "Next articleUr ttekki ara deg umezruy n tmaziɣt deg taggara n tmaziɣt" },

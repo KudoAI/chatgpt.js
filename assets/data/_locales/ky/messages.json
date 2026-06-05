@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Undo-type" },
   "optionDesc_uiLang": { "message": "ISO 639-1 тил коду UI көрсөтүү үчүн" },
   "optionDesc_config": { "message": "Undo-type" },
-  "optionDesc_msgMaxChars": { "message": "Undo-type" },
+  "optionDesc_maxChars": { "message": "Undo-type" },
   "optionDesc_maxTokens": { "message": "Колдонуу үчүн макс токендер" },
   "optionDesc_turnsToPreserve": { "message": "Сактоо үчүн кезектердин саны" },
   "optionDesc_noSuggest": { "message": "CLI жообунун аягында кийинки AI иш-аракетин автоматтык түрдө сунуштабаңыз" },

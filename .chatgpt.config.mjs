@@ -11,7 +11,7 @@
 export default {
     provider: 'random',     // provider for chat API
     uiLang: 'en',           // ISO 639-1 code of language to display UI in
-    msgMaxChars: 250,       // char limit per msg
+    maxChars: 250,       // char limit per msg
     maxTokens: null,        // max tokens to use
     turnsToPreserve: 3,     // # of turns to preserve (2 msgs/turn)
     noSuggest: false,       // don't auto-suggest next AI action at end of CLI response

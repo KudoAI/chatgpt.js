@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "נתיב לקובץ או לטקסט לסיכום" },
   "optionDesc_uiLang": { "message": "קוד שפה ISO 639 -1 להצגה בממשק המשתמש" },
   "optionDesc_config": { "message": "נתיב לטעינת קובץ תצורה מותאם אישית" },
-  "optionDesc_msgMaxChars": { "message": "מגבלת תווים לכל הודעה" },
+  "optionDesc_maxChars": { "message": "מגבלת תווים לכל הודעה" },
   "optionDesc_maxTokens": { "message": "מקסימום אסימונים לשימוש" },
   "optionDesc_turnsToPreserve": { "message": "מספר הפניות לשמירה" },
   "optionDesc_noSuggest": { "message": "אל תציע אוטומטית את פעולת הבינה המלאכותית הבאה בסוף תגובת ה - CLI" },

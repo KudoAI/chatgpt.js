@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Caminho para o ficheiro ou texto a resumir" },
   "optionDesc_uiLang": { "message": "Código ISO 639-1 do idioma para exibir a interface do usuário" },
   "optionDesc_config": { "message": "Caminho para o ficheiro de configuração personalizado a carregar" },
-  "optionDesc_msgMaxChars": { "message": "Limite de caracteres por mensagem" },
+  "optionDesc_maxChars": { "message": "Limite de caracteres por mensagem" },
   "optionDesc_maxTokens": { "message": "Máximo de tokens para usar" },
   "optionDesc_turnsToPreserve": { "message": "Número de voltas a preservar" },
   "optionDesc_noSuggest": { "message": "Não sugerir automaticamente a próxima ação de IA no final da resposta da CLI" },

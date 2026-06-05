@@ -1724,7 +1724,7 @@ const chatgpt = {
         systemQuery = '', // for systemPrompt
         color = 'green', // for stdout
         messages = null, // array of prev msgs to preserve context
-        msgMaxChars = null, // char limit per msg
+        maxChars = null, // char limit per msg
         turnsToPreserve = null, // # of turns to preserve (2 msgs/turn)
         maxTokens = null // max tokens to use
     } = {}) {
@@ -1765,12 +1765,12 @@ const chatgpt = {
                 if (messages) {
                     contents = messages.map(msg => {
                         const role = msg.role == 'assistant' ? 'model' : msg.role == 'system' ? 'user' : msg.role
-                        let text = trunc(msg.content, msgMaxChars)
+                        let text = trunc(msg.content, maxChars)
                         if (msg.role == 'system') text = `[System Instructions] ${text}`
                         return { parts: [{ text }], role }
                     })
                 } else {
-                    const userContent = trunc(systemQuery ? `${systemQuery}\n\n${userQuery}` : userQuery, msgMaxChars)
+                    const userContent = trunc(systemQuery ? `${systemQuery}\n\n${userQuery}` : userQuery, maxChars)
                     contents = [{ parts: [{ text: userContent }], role: 'user' }]
                 }
                 const generationConfig = {}
@@ -1779,10 +1779,10 @@ const chatgpt = {
             } else { // openrouter
                 let msgs = []
                 if (messages)
-                    msgs = messages.map(msg => ({ role: msg.role, content: trunc(msg.content, msgMaxChars)}))
+                    msgs = messages.map(msg => ({ role: msg.role, content: trunc(msg.content, maxChars)}))
                 else {
-                    if (systemQuery) msgs.push({ role: 'system', content: trunc(systemQuery, msgMaxChars) })
-                    msgs.push({ role: 'user', content: trunc(userQuery, msgMaxChars) })
+                    if (systemQuery) msgs.push({ role: 'system', content: trunc(systemQuery, maxChars) })
+                    msgs.push({ role: 'user', content: trunc(userQuery, maxChars) })
                 }
                 payload = { model: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free', stream, messages: msgs }
                 if (maxTokens != null) payload.max_tokens = maxTokens

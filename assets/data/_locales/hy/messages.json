@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Ճանապարհ դեպի ֆայլ կամ տեքստ ՝ ամփոփելու համար" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 լեզվի կոդը UI - ում ցուցադրելու համար" },
   "optionDesc_config": { "message": "Ուղի դեպի անհատականացված կոնֆիգուրացիոն ֆայլ ՝ բեռնելու համար" },
-  "optionDesc_msgMaxChars": { "message": "Նիշերի սահմանաչափը մեկ հաղորդագրության համար" },
+  "optionDesc_maxChars": { "message": "Նիշերի սահմանաչափը մեկ հաղորդագրության համար" },
   "optionDesc_maxTokens": { "message": "Օգտագործման առավելագույն նշաններ" },
   "optionDesc_turnsToPreserve": { "message": "Պահպանման շրջադարձերի քանակը" },
   "optionDesc_noSuggest": { "message": "Մի ավտոմատացրեք AI - ի հաջորդ գործողությունը CLI - ի պատասխանի վերջում" },

@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "ផ្លូវ ទៅ ឯកសារ ឬ អត្ថបទ ដែល ត្រូវ សង្ខេប" },
   "optionDesc_uiLang": { "message": "កូដភាសា ISO 639-1 ដើម្បីបង្ហាញ UI នៅក្នុង" },
   "optionDesc_config": { "message": "ផ្លូវ ទៅ ឯកសារ កំណត់ រចនា សម្ព័ន្ធ ផ្ទាល់ខ្លួន ដែល ត្រូវ ផ្ទុក" },
-  "optionDesc_msgMaxChars": { "message": "ដែនកំណត់តួអក្សរក្នុងមួយសារ" },
+  "optionDesc_maxChars": { "message": "ដែនកំណត់តួអក្សរក្នុងមួយសារ" },
   "optionDesc_maxTokens": { "message": "ថូខឹន អតិបរមា ដែល ត្រូវ ប្រើ" },
   "optionDesc_turnsToPreserve": { "message": "ចំនួនវេនដើម្បីអភិរក្ស" },
   "optionDesc_noSuggest": { "message": "កុំណែនាំសកម្មភាព AI បន្ទាប់ដោយស្វ័យប្រវត្តិនៅចុងបញ្ចប់នៃការឆ្លើយតប CLI" },

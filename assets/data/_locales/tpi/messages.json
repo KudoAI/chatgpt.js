@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Rot bilong kisim wanpela fail o tok i stap long en" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kod bilong tokples bilong soim UI long" },
   "optionDesc_config": { "message": "PATH long custom config file long load" },
-  "optionDesc_msgMaxChars": { "message": "Tok bilong ol man long olgeta tok" },
+  "optionDesc_maxChars": { "message": "Tok bilong ol man long olgeta tok" },
   "optionDesc_maxTokens": { "message": "Tik tok to use" },
   "optionDesc_turnsToPreserve": { "message": "Namba bilong ol rot bilong lukautim" },
   "optionDesc_noSuggest": {

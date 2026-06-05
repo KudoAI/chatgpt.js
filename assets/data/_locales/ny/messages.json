@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Njira yopita ku fayilo kapena malemba kuti afotokoze mwachidule" },
   "optionDesc_uiLang": { "message": "ISO 639-1 malamulo chilankhulo kusonyeza UI mu" },
   "optionDesc_config": { "message": "Njira yopita ku fayilo ya config kuti mutsegule" },
-  "optionDesc_msgMaxChars": { "message": "Chithunzi malire pa uthenga" },
+  "optionDesc_maxChars": { "message": "Chithunzi malire pa uthenga" },
   "optionDesc_maxTokens": { "message": "Max zizindikiro ntchito" },
   "optionDesc_turnsToPreserve": { "message": "Chiwerengero cha kutembenuka kuti asunge" },
   "optionDesc_noSuggest": { "message": "Musati auto-kupereka lotsatira AI kanthu kumapeto kwa CLI Poyankha" },

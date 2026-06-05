@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Sti til fil eller tekst som skal oppsummeres" },
   "optionDesc_uiLang": { "message": "ISO 639-1-kode for språk som skal vises brukergrensesnitt i" },
   "optionDesc_config": { "message": "Sti til tilpasset konfigurasjonsfil som skal lastes inn" },
-  "optionDesc_msgMaxChars": { "message": "Tegngrense per melding" },
+  "optionDesc_maxChars": { "message": "Tegngrense per melding" },
   "optionDesc_maxTokens": { "message": "Maksimalt antall tokener å bruke" },
   "optionDesc_turnsToPreserve": { "message": "Antall omdreininger som skal bevares" },
   "optionDesc_noSuggest": { "message": "Ikke foreslå neste AI-handling automatisk på slutten av CLI-svaret" },

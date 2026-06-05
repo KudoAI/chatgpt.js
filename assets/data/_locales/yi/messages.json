@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "דרך צום טעקע אדער טעקסט צו צוזאמענפאסן" },
   "optionDesc_uiLang": { "message": "ISO 639-1 קאָד פֿון שפּראַך צו ווײַזן באַניצער־אינטערפֿייס אין" },
   "optionDesc_config": { "message": "וועג צו אייגענעם קאנפיגאציע טעקע צו לאָדן" },
-  "optionDesc_msgMaxChars": { "message": "כאַראַקטער לימיט פּער מעסעדזש" },
+  "optionDesc_maxChars": { "message": "כאַראַקטער לימיט פּער מעסעדזש" },
   "optionDesc_maxTokens": { "message": "מאַקסימום טאָקענס צו נוצן" },
   "optionDesc_turnsToPreserve": { "message": "נומער פון דרייען צו באַוואָרן" },
   "optionDesc_noSuggest": {

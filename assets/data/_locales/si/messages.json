@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "සාරාංශ කිරීමට ගොනුව හෝ පෙළ සඳහා මාර්ගය" },
   "optionDesc_uiLang": { "message": "ISO 639-1 භාෂා කේතය ප්රදර්ශනය කිරීමට UI" },
   "optionDesc_config": { "message": "පූරණය සඳහා අභිරුචි සැකසුම් ගොනුව සඳහා මාර් ‍ ගය" },
-  "optionDesc_msgMaxChars": { "message": "පණිවිඩයකට අක්ෂර සීමාව" },
+  "optionDesc_maxChars": { "message": "පණිවිඩයකට අක්ෂර සීමාව" },
   "optionDesc_maxTokens": { "message": "භාවිතා කිරීමට උපරිම ටෝකන" },
   "optionDesc_turnsToPreserve": { "message": "සංරක්ෂණය කිරීමට හැරවුම් ගණන" },
   "optionDesc_noSuggest": { "message": "CLI ප් ‍ රතිචාරය අවසානයේ ඊළඟ AI ක් ‍ රියාව ස්වයංක් ‍ රීයව යෝජනා නොකරන්න" },

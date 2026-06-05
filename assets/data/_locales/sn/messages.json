@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Nzira kune faira kana zvinyorwa kupfupisa" },
   "optionDesc_uiLang": { "message": "ISO 639-1 remutauro kuratidza UI muna" },
   "optionDesc_config": { "message": "Path to custom config file to load" },
-  "optionDesc_msgMaxChars": { "message": "Muganhu wehunhu pameseji" },
+  "optionDesc_maxChars": { "message": "Muganhu wehunhu pameseji" },
   "optionDesc_maxTokens": { "message": "Max zviratidzo kushandisa" },
   "optionDesc_turnsToPreserve": { "message": "Nhamba yekutendeuka kuchengetedza" },
   "optionDesc_noSuggest": { "message": "Usataure auto-kuratidza inotevera AI chiito pakupera kweCLI mhinduro" },

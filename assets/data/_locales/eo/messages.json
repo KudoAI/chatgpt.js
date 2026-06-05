@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Vojo al dosiero aŭ teksto por resumi" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kodo de lingvo por elmontri UI en" },
   "optionDesc_config": { "message": "Ŝarĝendan agordodosieron" },
-  "optionDesc_msgMaxChars": { "message": "Signolimo por mesaĝo" },
+  "optionDesc_maxChars": { "message": "Signolimo por mesaĝo" },
   "optionDesc_maxTokens": { "message": "Uzendaj maks- ĵetonoj" },
   "optionDesc_turnsToPreserve": { "message": "Nombro da turnoj por konservi" },
   "optionDesc_noSuggest": { "message": "Ne aŭtomate sugestu sekvan AI-agon ĉe la fino de CLI-respondo" },

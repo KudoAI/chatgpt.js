@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Pad na lêer of teks om op te som" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kode van taal te vertoon UI in" },
   "optionDesc_config": { "message": "Pad na pasgemaakte konfigurasielêer om te laai" },
-  "optionDesc_msgMaxChars": { "message": "Karakterlimiet per boodskap" },
+  "optionDesc_maxChars": { "message": "Karakterlimiet per boodskap" },
   "optionDesc_maxTokens": { "message": "Maksimum tekens om te gebruik" },
   "optionDesc_turnsToPreserve": { "message": "Aantal draaie om te bewaar" },
   "optionDesc_noSuggest": {

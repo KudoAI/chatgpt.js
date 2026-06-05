@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Ruta al archivo o texto para resumir" },
   "optionDesc_uiLang": { "message": "Código de idioma ISO 639-1 para mostrar la interfaz de usuario en" },
   "optionDesc_config": { "message": "Ruta al archivo de configuración personalizado para cargar" },
-  "optionDesc_msgMaxChars": { "message": "Límite de caracteres por mensaje" },
+  "optionDesc_maxChars": { "message": "Límite de caracteres por mensaje" },
   "optionDesc_maxTokens": { "message": "Máximo de tokens a usar" },
   "optionDesc_turnsToPreserve": { "message": "Número de vueltas a conservar" },
   "optionDesc_noSuggest": {

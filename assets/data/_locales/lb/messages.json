@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Wege zu Datei oder Text um zu resumieren" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Code der Sprache um UI an zu zeigen" },
   "optionDesc_config": { "message": "Path zu personaliséierter Konfiguratiounsdatei fir ze lueden" },
-  "optionDesc_msgMaxChars": { "message": "Charaktergrenz pro Noriicht" },
+  "optionDesc_maxChars": { "message": "Charaktergrenz pro Noriicht" },
   "optionDesc_maxTokens": { "message": "Max Tokens fir ze benotzen" },
   "optionDesc_turnsToPreserve": { "message": "Zuel vun Ëmdréiunge fir ze konservéieren" },
   "optionDesc_noSuggest": { "message": "Don't auto-suggest nächster AI Aktioun um Enn vun der CLI Äntwert" },

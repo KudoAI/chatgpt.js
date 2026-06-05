@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Đường dẫn đến tệp hoặc văn bản để tóm tắt" },
   "optionDesc_uiLang": { "message": "Mã ngôn ngữ ISO 639-1 để hiển thị giao diện người dùng trong" },
   "optionDesc_config": { "message": "Đường dẫn đến tệp cấu hình tùy chỉnh để tải" },
-  "optionDesc_msgMaxChars": { "message": "Giới hạn ký tự cho mỗi tin nhắn" },
+  "optionDesc_maxChars": { "message": "Giới hạn ký tự cho mỗi tin nhắn" },
   "optionDesc_maxTokens": { "message": "Mã thông báo tối đa để sử dụng" },
   "optionDesc_turnsToPreserve": { "message": "Số lượt cần bảo quản" },
   "optionDesc_noSuggest": { "message": "Không tự động đề xuất hành động AI tiếp theo khi kết thúc phản hồi CLI" },

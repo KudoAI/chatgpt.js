@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "要約するファイルまたはテキストへのパス" },
   "optionDesc_uiLang": { "message": "UIを表示する言語のISO 639 -1コード" },
   "optionDesc_config": { "message": "読み込むカスタム構成ファイルへのパス" },
-  "optionDesc_msgMaxChars": { "message": "メッセージあたりの文字数制限" },
+  "optionDesc_maxChars": { "message": "メッセージあたりの文字数制限" },
   "optionDesc_maxTokens": { "message": "使用できるトークンの上限" },
   "optionDesc_turnsToPreserve": { "message": "保持するターン数" },
   "optionDesc_noSuggest": { "message": "CLI応答の最後に次のAIアクションを自動的に提案しない" },

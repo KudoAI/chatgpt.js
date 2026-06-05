@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Path to file or text to summarize" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code of language to display UI in" },
   "optionDesc_config": { "message": "Path to custom config file to load" },
-  "optionDesc_msgMaxChars": { "message": "Tekanyetso ya ditlhaka go ya ka molaetsa mongwe le mongwe" },
+  "optionDesc_maxChars": { "message": "Tekanyetso ya ditlhaka go ya ka molaetsa mongwe le mongwe" },
   "optionDesc_maxTokens": { "message": "MAX TOKENS GO O DIRISA" },
   "optionDesc_turnsToPreserve": { "message": "Palo ya diphetogo tse di tshwanelang go bolokiwa" },
   "optionDesc_noSuggest": { "message": "O seka wa buelela kgato e e latelang ya AI kwa bokhutlong jwa karabo ya CLI" },

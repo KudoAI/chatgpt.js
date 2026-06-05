@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "ਸੰਖੇਪ ਕਰਨ ਲਈ ਫਾਇਲ ਜਾਂ ਟੈਕਸਟ ਲਈ ਮਾਰਗ" },
   "optionDesc_uiLang": { "message": "ਵਿੱਚ UI ਵੇਖਾਉਣ ਲਈ ਭਾਸ਼ਾ ਦਾ ISO 639-1 ਕੋਡ" },
   "optionDesc_config": { "message": "ਲੋਡ ਕਰਨ ਲਈ ਕਸਟਮ ਸੰਰਚਨਾ ਫਾਇਲ ਲਈ ਮਾਰਗ" },
-  "optionDesc_msgMaxChars": { "message": "ਪ੍ਰਤੀ ਸੁਨੇਹਾ ਅੱਖਰ ਸੀਮਾ" },
+  "optionDesc_maxChars": { "message": "ਪ੍ਰਤੀ ਸੁਨੇਹਾ ਅੱਖਰ ਸੀਮਾ" },
   "optionDesc_maxTokens": { "message": "ਵਰਤਣ ਲਈ ਮੈਕਸ ਟੋਕਨ" },
   "optionDesc_turnsToPreserve": { "message": "ਸੰਭਾਲਣ ਲਈ ਮੋੜਾਂ ਦੀ ਗਿਣਤੀ" },
   "optionDesc_noSuggest": { "message": "CLI ਜਵਾਬ ਦੇ ਅੰਤ ਵਿੱਚ ਅਗਲੀ AI ਕਾਰਵਾਈ ਆਟੋਮੈਟਿਕ ਸੁਝਾਅ ਨਾ ਦਿਓ" },

@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Хураангуй болгох файл эсвэл текст рүү зам" },
   "optionDesc_uiLang": { "message": "UI-ийг харуулахын тулд ISO 639-1 хэлний код" },
   "optionDesc_config": { "message": "Ачаалах тохиргооны файлын тохиргооны замыг өөрчлөх" },
-  "optionDesc_msgMaxChars": { "message": "Зурвас тутамд тэмдэгтийн хязгаар" },
+  "optionDesc_maxChars": { "message": "Зурвас тутамд тэмдэгтийн хязгаар" },
   "optionDesc_maxTokens": { "message": "Хэрэглэх хамгийн их токенс" },
   "optionDesc_turnsToPreserve": { "message": "Хадгалах эргэлтийн тоо" },
   "optionDesc_noSuggest": { "message": "CLI хариултын төгсгөлд автоматаар сэжиглэж болохгүй" },

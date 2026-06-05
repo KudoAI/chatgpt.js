@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "مسیر فایل یا متن برای خلاصه کردن" },
   "optionDesc_uiLang": { "message": "کد زبان ISO 639-1 برای نمایش رابط کاربری" },
   "optionDesc_config": { "message": "مسیر فایل پیکربندی سفارشی برای بارگذاری" },
-  "optionDesc_msgMaxChars": { "message": "محدودیت کاراکتر در هر پیام" },
+  "optionDesc_maxChars": { "message": "محدودیت کاراکتر در هر پیام" },
   "optionDesc_maxTokens": { "message": "حداکثر توکن‌های قابل استفاده" },
   "optionDesc_turnsToPreserve": { "message": "تعداد نوبت‌ها برای حفظ" },
   "optionDesc_noSuggest": { "message": "در پایان پاسخ CLI، اقدام بعدی هوش مصنوعی را به طور خودکار پیشنهاد ندهید" },

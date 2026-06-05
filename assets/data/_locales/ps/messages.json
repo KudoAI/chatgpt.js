@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "د لنډیز لپاره د فایل یا متن ځای" },
   "optionDesc_uiLang": { "message": "په کې د UI ښودلو لپاره د ISO 639-1 د ژبې کوډ" },
   "optionDesc_config": { "message": "د بارولو لپاره د دوديز سازونې دوتنې يونلور" },
-  "optionDesc_msgMaxChars": { "message": "په هر پیغام کې د کرکټر محدودیت" },
+  "optionDesc_maxChars": { "message": "په هر پیغام کې د کرکټر محدودیت" },
   "optionDesc_maxTokens": { "message": "د کارولو لپاره اعظمي ټوکنونه" },
   "optionDesc_turnsToPreserve": { "message": "د ساتنې لپاره د نوبت شمېر" },
   "optionDesc_noSuggest": { "message": "د CLI ځواب په پای کې د راتلونکي AI عمل مه ټاکئ" },

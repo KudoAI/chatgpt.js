@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Қорытындылау үшін файлға немесе мәтінге жол" },
   "optionDesc_uiLang": { "message": "Пайдаланушы интерфейсін көрсету үшін ISO 639-1 тіл коды" },
   "optionDesc_config": { "message": "Жүктелетін теңшелетін конфигурация файлына жол" },
-  "optionDesc_msgMaxChars": { "message": "Хабар бойынша таңба шегі" },
+  "optionDesc_maxChars": { "message": "Хабар бойынша таңба шегі" },
   "optionDesc_maxTokens": { "message": "Қолдануға болатын максималды таңбалауыштар" },
   "optionDesc_turnsToPreserve": { "message": "Сақтауға арналған бұрылыстар саны" },
   "optionDesc_noSuggest": {

@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Kuri IDOSIYE Cyangwa Umwandiko Kuri Inshamake" },
   "optionDesc_uiLang": { "message": "Kode ya ISO 639-1 y'ururimi rwo kwerekanamo UI" },
   "optionDesc_config": { "message": "Kuri Kunoza IDOSIYE Kuri Ibirimo" },
-  "optionDesc_msgMaxChars": { "message": "Ubutumwa" },
+  "optionDesc_maxChars": { "message": "Ubutumwa" },
   "optionDesc_maxTokens": { "message": "Kuri Gukoresha" },
   "optionDesc_turnsToPreserve": { "message": "Bya Kuri" },
   "optionDesc_noSuggest": { "message": "Next articleNtuzacikwe na CECAFA izabera ku musozo" },

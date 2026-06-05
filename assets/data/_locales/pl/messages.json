@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Ścieżka do pliku lub tekstu do podsumowania" },
   "optionDesc_uiLang": { "message": "Kod języka ISO 639-1 do wyświetlania interfejsu użytkownika w" },
   "optionDesc_config": { "message": "Ścieżka do niestandardowego pliku konfiguracyjnego do załadowania" },
-  "optionDesc_msgMaxChars": { "message": "Limit znaków na wiadomość" },
+  "optionDesc_maxChars": { "message": "Limit znaków na wiadomość" },
   "optionDesc_maxTokens": { "message": "Maksymalna liczba tokenów do użycia" },
   "optionDesc_turnsToPreserve": { "message": "Liczba obrotów do zachowania" },
   "optionDesc_noSuggest": {

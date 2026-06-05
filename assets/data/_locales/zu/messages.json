@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Indlela eya kufayela noma embhalweni ukuze ufingqe" },
   "optionDesc_uiLang": { "message": "Ikhodi yolimi ye-ISO 639-1 yokubonisa i-UI ku-" },
   "optionDesc_config": { "message": "Indlela eya kufayela eliqokiwe lokulungisa ukuze ulayishe" },
-  "optionDesc_msgMaxChars": { "message": "Umkhawulo wezinhlamvu ngomyalezo ngamunye" },
+  "optionDesc_maxChars": { "message": "Umkhawulo wezinhlamvu ngomyalezo ngamunye" },
   "optionDesc_maxTokens": { "message": "Ubuningi bamathokheni ongawasebenzisa" },
   "optionDesc_turnsToPreserve": { "message": "Inani lezikhathi okufanele lilondolozwe" },
   "optionDesc_noSuggest": {

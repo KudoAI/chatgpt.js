@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Ny sori-dàlana atao anaty rakitra na soratra hofehezina" },
   "optionDesc_uiLang": { "message": "ISO 639-1 fehezan-dalàna ny fiteny mba haneho UI in" },
   "optionDesc_config": { "message": "Ny sori-dàlana ametrahana ny raki-kirakira kirakira halaina" },
-  "optionDesc_msgMaxChars": { "message": "Isan'ny famerana ny marika isaky ny hafatra" },
+  "optionDesc_maxChars": { "message": "Isan'ny famerana ny marika isaky ny hafatra" },
   "optionDesc_maxTokens": { "message": "Max famantarana hampiasaina" },
   "optionDesc_turnsToPreserve": { "message": "Isan'ny fihenam-bidy ho arovana" },
   "optionDesc_noSuggest": {

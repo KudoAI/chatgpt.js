@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Шлях до файлу або тексту для узагальнення" },
   "optionDesc_uiLang": { "message": "Код мови ISO 639-1 для відображення інтерфейсу користувача" },
   "optionDesc_config": { "message": "Шлях до користувацького файлу конфігурації для завантаження" },
-  "optionDesc_msgMaxChars": { "message": "Обмеження кількості символів у повідомленні" },
+  "optionDesc_maxChars": { "message": "Обмеження кількості символів у повідомленні" },
   "optionDesc_maxTokens": { "message": "Максимальна кількість токенів для використання" },
   "optionDesc_turnsToPreserve": { "message": "Кількість обертів для збереження" },
   "optionDesc_noSuggest": { "message": "Не пропонувати автоматично наступну дію ШІ наприкінці відповіді CLI" },

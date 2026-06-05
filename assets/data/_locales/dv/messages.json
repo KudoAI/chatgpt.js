@@ -47,7 +47,7 @@
   "optionDesc_summarize": { "message": "ފައިލް އަށް ނުވަތަ ޚުލާޞާ ކުރަން ޓެކްސްޓް އަށް ދާން އޮތް މަގު" },
   "optionDesc_uiLang": { "message": "ޔޫއައި ދައްކާލުމަށް އައިއެސްއޯ 639-1 ކޯޑް އޮފް ލޭންގުއޭޖް" },
   "optionDesc_config": { "message": "ލޯޑް ކުރަން ކަސްޓަމް ކޮންފިގް ފައިލް އަށް ދާ މަގު" },
-  "optionDesc_msgMaxChars": { "message": "މެސެޖަކަށް އަކުރު ލިމިޓް" },
+  "optionDesc_maxChars": { "message": "މެސެޖަކަށް އަކުރު ލިމިޓް" },
   "optionDesc_maxTokens": { "message": "ބޭނުން ކުރަން މެކްސް ޓޯކަންސް" },
   "optionDesc_turnsToPreserve": { "message": "ރައްކާތެރިކުރަންޖެހޭ ޓާންތަކުގެ އަދަދު" },
   "optionDesc_noSuggest": {

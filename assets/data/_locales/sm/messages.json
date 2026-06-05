@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Ala i le faila po o le mau e aotele ai" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code o le gagana e faaali atu UI i" },
   "optionDesc_config": { "message": "Auala e custom config faila e utaina" },
-  "optionDesc_msgMaxChars": { "message": "Faʻatapulaʻaina o uiga i le feʻau" },
+  "optionDesc_maxChars": { "message": "Faʻatapulaʻaina o uiga i le feʻau" },
   "optionDesc_maxTokens": { "message": "Max faailoga e faaaoga" },
   "optionDesc_turnsToPreserve": { "message": "Aofai o suiga e faasaoina" },
   "optionDesc_noSuggest": { "message": "Aua le tuʻuina atu le isi AI gaioiga i le faaiuga o le CLI tali" },

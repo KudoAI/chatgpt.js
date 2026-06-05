@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "ለማጠቃለል ወደ ፋይል ወይም ጽሑፍ መንገድ" },
   "optionDesc_uiLang": { "message": "የ ISO 639-1 የቋንቋ ኮድ UI ን በ ውስጥ ለማሳየት" },
   "optionDesc_config": { "message": "ለመጫን ፋይልን ለማዋቀር መንገድ" },
-  "optionDesc_msgMaxChars": { "message": "ቁምፊ ገደብ በአንድ መልዕክት" },
+  "optionDesc_maxChars": { "message": "ቁምፊ ገደብ በአንድ መልዕክት" },
   "optionDesc_maxTokens": { "message": "ማክስ ቶከኖች ለመጠቀም" },
   "optionDesc_turnsToPreserve": { "message": "ለማቆየት የሚዞሩ ብዛት" },
   "optionDesc_noSuggest": { "message": "በ CLI ምላሽ መጨረሻ ላይ በራስ-ሰር አይበልጡ" },

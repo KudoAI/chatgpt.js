@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Slóð að skrá eða texti til að draga saman" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kóði tungumáls til að sýna notendaviðmót í" },
   "optionDesc_config": { "message": "Slóð að sérsniðinni grunnstillingarskrá til að hlaða inn" },
-  "optionDesc_msgMaxChars": { "message": "Stafatakmörk fyrir hver skilaboð" },
+  "optionDesc_maxChars": { "message": "Stafatakmörk fyrir hver skilaboð" },
   "optionDesc_maxTokens": { "message": "Hámarksmerki til notkunar" },
   "optionDesc_turnsToPreserve": { "message": "Fjöldi skipta til að varðveita" },
   "optionDesc_noSuggest": { "message": "Ekki stinga sjálfkrafa upp á næstu gervigreindaraðgerð í lok CLI svars" },

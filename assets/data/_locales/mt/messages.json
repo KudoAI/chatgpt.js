@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Mogħdija għall-fajl jew test biex tiġbor fil-qosor" },
   "optionDesc_uiLang": { "message": "Kodiċi tal-lingwa ISO 639-1 biex turi l-UI fi" },
   "optionDesc_config": { "message": "Il-mogħdija għall-fajl tal-konfig personalizzat biex ittella'" },
-  "optionDesc_msgMaxChars": { "message": "Limitu tal-karattri għal kull messaġġ" },
+  "optionDesc_maxChars": { "message": "Limitu tal-karattri għal kull messaġġ" },
   "optionDesc_maxTokens": { "message": "Tokens massimi li għandek tuża" },
   "optionDesc_turnsToPreserve": { "message": "Numru ta' dawriet biex tippreserva" },
   "optionDesc_noSuggest": {

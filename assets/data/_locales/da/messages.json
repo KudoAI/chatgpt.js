@@ -45,7 +45,7 @@
   "optionDesc_summarize": { "message": "Sti til fil eller tekst, der skal opsummeres" },
   "optionDesc_uiLang": { "message": "ISO 639-1-kode for sprog til visning af brugergrænseflade i" },
   "optionDesc_config": { "message": "Sti til brugerdefineret konfigurationsfil, der skal indl" },
-  "optionDesc_msgMaxChars": { "message": "Tegngrænse pr. meddelelse" },
+  "optionDesc_maxChars": { "message": "Tegngrænse pr. meddelelse" },
   "optionDesc_maxTokens": { "message": "Maks. antal tokens, der skal bruges" },
   "optionDesc_turnsToPreserve": { "message": "Antal omdrejninger, der skal bevares" },
   "optionDesc_noSuggest": { "message": "Foreslå ikke automatisk næste AI-handling i slutningen af CLI-svaret" },

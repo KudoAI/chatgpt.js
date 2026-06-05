@@ -12,7 +12,7 @@ module.exports = {
         query: { type: 'param', regex: /^--?(?:q|query|ask|send)(?:[=\s].*|$)/, defaultVal: 'hi' },
         summarize: { type: 'param', valType: 'filepath', allowText: true, regex: /^--?s(?:ummarize)?(?:[=\s].*|$)/ },
         config: { type: 'param', valType: 'filepath', regex: /^--?c(?:onfig)?(?:[=\s].*|$)/ },
-        msgMaxChars: {
+        maxChars: {
             type: 'param', valType: 'positiveInt', regex: /^--?m(?:ax[-_]?chars)?(?:[=\s].*|$)/, defaultVal: 250 },
         maxTokens: {
             type: 'param', valType: 'positiveInt', regex: /^--(?:k|max[-_]?tokens)(?:[=\s].*|$)/, defaultVal: null },
