@@ -46,10 +46,10 @@
             turnsToPreserve: cli.config.turnsToPreserve
         })
         const cleanedReply = messages.extractFromJSON(reply)
-        console.log(chatgpt.colors.green + cleanedReply + chatgpt.colors.reset)
+        log.data(cleanedReply)
+        if (/^(?:help|hi)$/.test(query)) log.help()
         cli.msgChain.push(currentMsg, { role: 'assistant', content: cleanedReply })
         messages.saveChain(cli.msgChain)
-        if (/^(?:help|hi)$/.test(query)) log.help()
     } finally { loader.stop() }
 
 })()
