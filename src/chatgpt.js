@@ -2154,13 +2154,9 @@ const chatgpt = {
     },
 
     _validateEnv({ allowed = [] } = {}) {
-        const allowedEnvs = Array.isArray(allowed) ? allowed : [allowed]
-        if (!allowedEnvs.length || allowedEnvs.includes(chatgpt.env))
-            return true
-        else {
-            console.error(`This method can only be used in: ${allowedEnvs.join(' or ')} (current: ${chatgpt.env})`)
-            return false
-        }
+        const allowedEnvs = [].concat(allowed)
+        return !allowedEnvs.length || allowedEnvs.includes(chatgpt.env) ? true
+            : !!console.error(`This method can only be used in: ${allowedEnvs.join(' or ')} (current: ${chatgpt.env})`)
     }
 }
 
