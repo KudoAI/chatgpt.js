@@ -28,8 +28,8 @@
               : cli.config.randomAnswer ? 'Generate a single random question on any topic, then answer it.'
               : cli.config.summarize    ? `Summarize the following:\n\n${
                     string.looksLikePath(cli.config.summarize) ? fs.readFileSync(cli.config.summarize, 'utf8')
-                                        : cli.config.summarize }`
-              : cli.config.query
+                                                               : cli.config.summarize
+              }` : cli.config.query
     if (!cli.config.noSuggest && !/[?？]$/.test(query))
         query +=
             '\n\nThen, at the end of your response, ask user if they want you to do something related to the query.'
