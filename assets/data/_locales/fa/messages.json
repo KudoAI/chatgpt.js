@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "مسیر فایل یا متن برای خلاصه کردن" },
   "optionDesc_uiLang": { "message": "کد زبان ISO 639-1 برای نمایش رابط کاربری" },
   "optionDesc_config": { "message": "مسیر فایل پیکربندی سفارشی برای بارگذاری" },
+  "optionDesc_msgMaxChars": { "message": "محدودیت کاراکتر در هر پیام" },
+  "optionDesc_turnsToPreserve": { "message": "تعداد نوبت‌ها برای حفظ" },
   "optionDesc_quiet": { "message": "همه گزارش‌ها به جز خطاها را سرکوب کنید" },
   "optionDesc_init": { "message": "ایجاد فایل پیکربندی (در ریشه پروژه)" },
   "optionDesc_joke": { "message": "یک جوک خنده‌دار را اتفاقی تعریف می‌کند" },

@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Jalur ke file atau teks untuk diringkas" },
   "optionDesc_uiLang": { "message": "Kode bahasa ISO 639 -1 untuk menampilkan UI di" },
   "optionDesc_config": { "message": "Jalur ke file konfigurasi kustom untuk dimuat" },
+  "optionDesc_msgMaxChars": { "message": "Batas karakter per pesan" },
+  "optionDesc_turnsToPreserve": { "message": "Jumlah belokan untuk dipertahankan" },
   "optionDesc_quiet": { "message": "Cegah semua pencatatan kecuali kesalahan" },
   "optionDesc_init": { "message": "Buat file konfigurasi (di root proyek)" },
   "optionDesc_joke": { "message": "Menceritakan lelucon lucu secara acak" },

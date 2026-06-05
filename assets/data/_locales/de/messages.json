@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Pfad zur Datei oder Text zur Zusammenfassung" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Sprachcode zur Anzeige der Benutzeroberfläche in" },
   "optionDesc_config": { "message": "Pfad zur benutzerdefinierten Konfigurationsdatei zum Laden" },
+  "optionDesc_msgMaxChars": { "message": "Zeichenlimit pro Nachricht" },
+  "optionDesc_turnsToPreserve": { "message": "Anzahl der zu konservierenden Runden" },
   "optionDesc_quiet": { "message": "Alle Protokolle mit Ausnahme von Fehlern unterdrücken" },
   "optionDesc_init": { "message": "Konfigurationsdatei erstellen (im Projektstammverzeichnis)" },
   "optionDesc_joke": { "message": "Erzählt zufällig einen lustigen Witz" },

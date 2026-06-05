@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Διαδρομή προς αρχείο ή κείμενο για σύνοψη" },
   "optionDesc_uiLang": { "message": "Κωδικός γλώσσας ISO 639-1 για εμφάνιση διεπαφής χρήστη σε" },
   "optionDesc_config": { "message": "Διαδρομή προς προσαρμοσμένο αρχείο διαμόρφωσης για φόρτωση" },
+  "optionDesc_msgMaxChars": { "message": "Όριο χαρακτήρων ανά μήνυμα" },
+  "optionDesc_turnsToPreserve": { "message": "Αριθμός στροφών για διατήρηση" },
   "optionDesc_quiet": { "message": "Καταργήστε όλες τις καταγραφές εκτός από τα σφάλματα" },
   "optionDesc_init": { "message": "Δημιουργία αρχείου διαμόρφωσης (στη ρίζα του έργου)" },
   "optionDesc_joke": { "message": "Λέει ένα αστείο ανέκδοτο στην τύχη" },

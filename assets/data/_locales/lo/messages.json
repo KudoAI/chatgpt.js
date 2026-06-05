@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "ເສັ້ນທາງໄປຫາເອກະສານ ຫຼື ຂໍ້ຄວາມເພື່ອສະຫຼຸບ" },
   "optionDesc_uiLang": { "message": "ISO 639-1 ລະຫັດພາສາທີ່ຈະສະແດງ UI ໃນ" },
   "optionDesc_config": { "message": "ເສັ້ນທາງໄປແຟ້ມການຕັ້ງຄ່າທີ່ກຳນົດເອງເພື່ອໂຫຼດ" },
+  "optionDesc_msgMaxChars": { "message": "ຈຳກັດຕົວລະຄອນຕໍ່ຂໍ້ຄວາມ" },
+  "optionDesc_turnsToPreserve": { "message": "ຈໍາ ນວນ ຫມູນ ວຽນເພື່ອຮັກສາ" },
   "optionDesc_quiet": { "message": "ສະກັດກັ້ນການຕັດໄມ້ທັງໝົດ ຍົກເວັ້ນຂໍ້ຜິດພາດ" },
   "optionDesc_init": { "message": "ສ້າງໄຟລ໌ config (ໃນຮາກໂຄງການ)" },
   "optionDesc_joke": { "message": "ບອກເລື່ອງຕະຫລົກທີ່ ຫນ້າ ຕື່ນຕາຕື່ນໃຈໃນ Random" },

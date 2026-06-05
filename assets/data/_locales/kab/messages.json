@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Abrid n ufaylu neɣ n uḍris i wakken ad ssiwḍeɣ" },
   "optionDesc_uiLang": { "message": "Tutlayt ISO 639-1 i wakken ad d-tban deg" },
   "optionDesc_config": { "message": "Abrid n usebded n ufaylu i usebded" },
+  "optionDesc_msgMaxChars": { "message": "Akaram n tbaḍnit s yizen" },
+  "optionDesc_turnsToPreserve": { "message": "Adjectifs à Adjectifs" },
   "optionDesc_quiet": { "message": "Sizdeg akk tuccḍiwin anagar tuccḍiwin" },
   "optionDesc_init": { "message": "Snulfu afaylu n usebter (deg uẓar n usebter)" },
   "optionDesc_joke": { "message": "Yesssssssssssssssssss a joke" },

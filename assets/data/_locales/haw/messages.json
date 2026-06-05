@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Ala i ka faila a i ʻole kikokikona e hōʻuluʻulu manaʻo" },
   "optionDesc_uiLang": { "message": "ʻO ke code ʻōlelo ISO 639-1 e hōʻike i ka UI ma" },
   "optionDesc_config": { "message": "Ala i ka faila hoʻonohonoho maʻamau e hoʻouka" },
+  "optionDesc_msgMaxChars": { "message": "Ka palena o nā huapalapala no kēlā me kēia leka" },
+  "optionDesc_turnsToPreserve": { "message": "Helu o nā huli e mālama ai" },
   "optionDesc_quiet": { "message": "Kāohi i ka hoʻopaʻa inoa a pau koe nā hewa" },
   "optionDesc_init": { "message": "E hana i ka faila hoʻonohonoho (ma ke kumu papahana)" },
   "optionDesc_joke": { "message": "Haʻi i kahi ʻakaʻaka hoʻomākeʻaka ma kahi koho ʻole" },

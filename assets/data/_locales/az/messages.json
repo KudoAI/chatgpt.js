@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Xülasə etmək üçün fayla və ya mətnə gedən yol" },
   "optionDesc_uiLang": { "message": "İSO 639-1-də UI-nı göstərmək üçün dilin kodu" },
   "optionDesc_config": { "message": "Yükləmək üçün xüsusi konfiqurasiya faylına gedən yol" },
+  "optionDesc_msgMaxChars": { "message": "Hər mesaj üçün xarakter limiti" },
+  "optionDesc_turnsToPreserve": { "message": "Qorunmaq üçün növbələrin sayı" },
   "optionDesc_quiet": { "message": "Xətalardan başqa bütün girişləri bağlayın" },
   "optionDesc_init": { "message": "Konfiqurasiya faylı yaradın (layihə kökündə)" },
   "optionDesc_joke": { "message": "Təsadüfi gülməli bir zarafat danışır" },

@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Ala i le faila po o le mau e aotele ai" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code o le gagana e faaali atu UI i" },
   "optionDesc_config": { "message": "Auala e custom config faila e utaina" },
+  "optionDesc_msgMaxChars": { "message": "Faʻatapulaʻaina o uiga i le feʻau" },
+  "optionDesc_turnsToPreserve": { "message": "Aofai o suiga e faasaoina" },
   "optionDesc_quiet": { "message": "Suppress logging uma vagana ai mea sese" },
   "optionDesc_init": { "message": "Fausia config faila (i le galuega faatino root)" },
   "optionDesc_joke": { "message": "Taʻu atu se tausuaga malie i se mea e le masani ai" },

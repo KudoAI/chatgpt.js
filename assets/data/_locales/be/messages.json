@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Шлях да файла або тэксту для абагульнення" },
   "optionDesc_uiLang": { "message": "Код мовы ISO 639-1 для адлюстравання карыстацкага інтэрфейсу ў" },
   "optionDesc_config": { "message": "Шлях да наладжвальнага файла канфігурацыі для загрузкі" },
+  "optionDesc_msgMaxChars": { "message": "Ліміт сімвалаў у паведамленні" },
+  "optionDesc_turnsToPreserve": { "message": "Колькасць паваротаў для захавання" },
   "optionDesc_quiet": { "message": "Спыніць усе журналы, акрамя памылак" },
   "optionDesc_init": { "message": "Стварыць файл канфігурацыі (у корані праекта)" },
   "optionDesc_joke": { "message": "Распавядае смешны анекдот выпадкова" },

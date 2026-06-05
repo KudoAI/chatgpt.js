@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Път до файла или текст за обобщаване" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 код на езика за показване на потребителския интерфейс в" },
   "optionDesc_config": { "message": "Път до персонализиран конфигурационен файл за зареждане" },
+  "optionDesc_msgMaxChars": { "message": "Ограничение на символите на съобщение" },
+  "optionDesc_turnsToPreserve": { "message": "Брой завои за запазване" },
   "optionDesc_quiet": { "message": "Потискане на всички записи, с изключение на грешките" },
   "optionDesc_init": { "message": "Създаване на конфигурационен файл (в корена на проекта)" },
   "optionDesc_joke": { "message": "Разказва забавен виц на случаен принцип" },

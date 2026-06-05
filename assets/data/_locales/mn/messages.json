@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Хураангуй болгох файл эсвэл текст рүү зам" },
   "optionDesc_uiLang": { "message": "UI-ийг харуулахын тулд ISO 639-1 хэлний код" },
   "optionDesc_config": { "message": "Ачаалах тохиргооны файлын тохиргооны замыг өөрчлөх" },
+  "optionDesc_msgMaxChars": { "message": "Зурвас тутамд тэмдэгтийн хязгаар" },
+  "optionDesc_turnsToPreserve": { "message": "Хадгалах эргэлтийн тоо" },
   "optionDesc_quiet": { "message": "Алдаанаас бусад бүх бүртгэлийг арилгах" },
   "optionDesc_init": { "message": "Тохиргооны файл үүсгэх (төслийн эхэнд)" },
   "optionDesc_joke": { "message": "Хөгжилтэй хошигнолыг санамсаргүй байдлаар өгнө" },

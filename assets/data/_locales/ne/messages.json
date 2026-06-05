@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "संक्षेप गर्न फाइल वा पाठको बाटो" },
   "optionDesc_uiLang": { "message": "UI प्रदर्शन गर्न भाषाको ISO 639 -1 कोड" },
   "optionDesc_config": { "message": "लोड गर्न अनुकूल कन्फिग फाइलको बाटो" },
+  "optionDesc_msgMaxChars": { "message": "प्रति सन्देश क्यारेक्टर सीमा" },
+  "optionDesc_turnsToPreserve": { "message": "संरक्षण गर्ने पालोहरूको संख्या" },
   "optionDesc_quiet": { "message": "त्रुटिहरू बाहेक सबै लगिङलाई दबाउनुहोस्" },
   "optionDesc_init": { "message": "कन्फिग फाइल सिर्जना गर्नुहोस् (परियोजना मूलमा)" },
   "optionDesc_joke": { "message": "अनियमित रूपमा एक हास्यास्पद मजाक बताउँछ" },

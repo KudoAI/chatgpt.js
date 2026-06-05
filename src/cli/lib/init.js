@@ -1,4 +1,5 @@
 const language = require('./language'),
+      messages = require('./messages'),
       settings = require('./settings')
 
 module.exports = {
@@ -9,6 +10,7 @@ module.exports = {
         cli.msgs = await language.getMsgs(cli.lang = settings.load('uiLang') || (
             env.modes.debug ? language.generateRandomLang({ excludes: ['en'] }) : language.getSysLang() ))
         cli.urls.cliDocs ||= `${cli.urls.docs.root}/#-command-line-usage`
+        cli.msgChain = messages.loadChain()
         settings.load() // all keys to cli.config
     },
 

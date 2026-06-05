@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "ഫയലിലേക്കുള്ള പാത അല്ലെങ്കിൽ സംഗ്രഹിക്കാനുള്ള വാചകം" },
   "optionDesc_uiLang": { "message": "യുഐ പ്രദർശിപ്പിക്കുന്നതിനുള്ള ISO 639-1 ഭാഷാ കോഡ്" },
   "optionDesc_config": { "message": "ലോഡുചെയ്യാനുള്ള ഇച്ഛാനുസൃത കോൺഫിഗറേഷൻ ഫയലിലേക്കുള്ള പാത" },
+  "optionDesc_msgMaxChars": { "message": "ഓരോ സന്ദേശത്തിനും പ്രതീക പരിധി" },
+  "optionDesc_turnsToPreserve": { "message": "പ്രിസർവ് ചെയ്യുന്നതിനുള്ള ടേണുകളുടെ എണ്ണം" },
   "optionDesc_quiet": { "message": "പിശകുകൾ ഒഴികെ എല്ലാ ലോഗിംഗും അടിച്ചമർത്തുക" },
   "optionDesc_init": { "message": "കോൺഫിഗർ ഫയൽ സൃഷ്ടിക്കുക (പ്രോജക്റ്റ് റൂട്ടിൽ)" },
   "optionDesc_joke": { "message": "ക്രമരഹിതമായ ഒരു തമാശ പറയുന്നു" },

@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Mogħdija għall-fajl jew test biex tiġbor fil-qosor" },
   "optionDesc_uiLang": { "message": "Kodiċi tal-lingwa ISO 639-1 biex turi l-UI fi" },
   "optionDesc_config": { "message": "Il-mogħdija għall-fajl tal-konfig personalizzat biex ittella'" },
+  "optionDesc_msgMaxChars": { "message": "Limitu tal-karattri għal kull messaġġ" },
+  "optionDesc_turnsToPreserve": { "message": "Numru ta' dawriet biex tippreserva" },
   "optionDesc_quiet": { "message": "Waqqaf il-logging kollu ħlief l-iżbalji" },
   "optionDesc_init": { "message": "Oħloq fajl tal-konfig (fl-għeruq tal-proġett)" },
   "optionDesc_joke": { "message": "Jgħid logħob umoruż b' mod każwali" },

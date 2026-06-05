@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Fitxategirako bidea edo laburbiltzeko testua" },
   "optionDesc_uiLang": { "message": "ISO 639-1 UI bistaratzeko hizkuntzaren kodea" },
   "optionDesc_config": { "message": "Kargatzeko konfigurazio fitxategi pertsonalizatuaren bidea" },
+  "optionDesc_msgMaxChars": { "message": "Mezu bakoitzeko karaktere muga" },
+  "optionDesc_turnsToPreserve": { "message": "Gorde beharreko bira kopurua" },
   "optionDesc_quiet": { "message": "Ezabatu erregistro guztiak erroreak izan ezik" },
   "optionDesc_init": { "message": "Konfigurazio fitxategia sortu (proiektuaren erroan)" },
   "optionDesc_joke": { "message": "Txiste dibertigarri bat ausaz kontatzen du" },

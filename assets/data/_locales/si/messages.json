@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "සාරාංශ කිරීමට ගොනුව හෝ පෙළ සඳහා මාර්ගය" },
   "optionDesc_uiLang": { "message": "ISO 639-1 භාෂා කේතය ප්රදර්ශනය කිරීමට UI" },
   "optionDesc_config": { "message": "පූරණය සඳහා අභිරුචි සැකසුම් ගොනුව සඳහා මාර් ‍ ගය" },
+  "optionDesc_msgMaxChars": { "message": "පණිවිඩයකට අක්ෂර සීමාව" },
+  "optionDesc_turnsToPreserve": { "message": "සංරක්ෂණය කිරීමට හැරවුම් ගණන" },
   "optionDesc_quiet": { "message": "සියලු පිවිසුම් යටපත් කරන්න දෝෂ හැර" },
   "optionDesc_init": { "message": "සැකසුම් ගොනුව සාදන්න (ව් ‍ යාපෘති මූලය තුළ)" },
   "optionDesc_joke": { "message": "Funny Joke at Random (විහිලුවක් අහඹු ලෙස)" },

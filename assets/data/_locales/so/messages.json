@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Jidka faylka ama qoraalka si loo soo koobo" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code luqadda si ay u muujiyaan UI in" },
   "optionDesc_config": { "message": "Jidka si loo habeeyo faylka si loo raro" },
+  "optionDesc_msgMaxChars": { "message": "Xadka astaamaha fariin kasta" },
+  "optionDesc_turnsToPreserve": { "message": "Tirada soo noqnoqda si loo ilaaliyo" },
   "optionDesc_quiet": { "message": "Xannib dhammaan gelitaanka marka laga reebo khaladaadka" },
   "optionDesc_init": { "message": "Samee faylka qaabeynta (ee xididka mashruuca)" },
   "optionDesc_joke": { "message": "U sheeg kaftan qosol leh si lama filaan ah" },

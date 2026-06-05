@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Njira yopita ku fayilo kapena malemba kuti afotokoze mwachidule" },
   "optionDesc_uiLang": { "message": "ISO 639-1 malamulo chilankhulo kusonyeza UI mu" },
   "optionDesc_config": { "message": "Njira yopita ku fayilo ya config kuti mutsegule" },
+  "optionDesc_msgMaxChars": { "message": "Chithunzi malire pa uthenga" },
+  "optionDesc_turnsToPreserve": { "message": "Chiwerengero cha kutembenuka kuti asunge" },
   "optionDesc_quiet": { "message": "Kupondereza mitengo yonse kupatula zolakwika" },
   "optionDesc_init": { "message": "Pangani fayilo ya config (muzu wa polojekiti)" },
   "optionDesc_joke": { "message": "Uzani nthabwala yoseketsa mwachisawawa" },

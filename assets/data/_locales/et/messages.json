@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Faili või kokkuvõtva teksti tee" },
   "optionDesc_uiLang": { "message": "ISO 639-1 keelekood kasutajaliidese kuvamiseks" },
   "optionDesc_config": { "message": "Laaditava kohandatud konfiguratsioonifaili tee" },
+  "optionDesc_msgMaxChars": { "message": "Tähemärkide piirang sõnumi kohta" },
+  "optionDesc_turnsToPreserve": { "message": "Säilitatavate pöörete arv" },
   "optionDesc_quiet": { "message": "Tühista kogu logimine, välja arvatud vead" },
   "optionDesc_init": { "message": "Loo konfiguratsioonifail (projekti juurfailis)" },
   "optionDesc_joke": { "message": "Räägib juhuslikult naljaka nalja" },

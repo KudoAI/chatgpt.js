@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "要約するファイルまたはテキストへのパス" },
   "optionDesc_uiLang": { "message": "UIを表示する言語のISO 639 -1コード" },
   "optionDesc_config": { "message": "読み込むカスタム構成ファイルへのパス" },
+  "optionDesc_msgMaxChars": { "message": "メッセージあたりの文字数制限" },
+  "optionDesc_turnsToPreserve": { "message": "保持するターン数" },
   "optionDesc_quiet": { "message": "エラーを除くすべてのロギングを抑制" },
   "optionDesc_init": { "message": "構成ファイルを作成する（プロジェクトルート内）" },
   "optionDesc_joke": { "message": "おかしな冗談をランダムに言う" },

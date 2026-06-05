@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Path to file vel text to summarum" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Code of linguae ad exponibus UI in" },
   "optionDesc_config": { "message": "Path to custom config file to load" },
+  "optionDesc_msgMaxChars": { "message": "Character limit per message" },
+  "optionDesc_turnsToPreserve": { "message": "Numerum divendum ad conservarum" },
   "optionDesc_quiet": { "message": "Omnes inscriptiones praeter errores supprime" },
   "optionDesc_init": { "message": "Crea fasciculum configurationis (in radice proiecti)" },
   "optionDesc_joke": { "message": "Isti dicitur vazivazy in random" },

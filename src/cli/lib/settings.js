@@ -8,10 +8,13 @@ module.exports = {
 
     controls: {
         provider: { type: 'param', regex: /^--?p(?:rovider)?(?:[=\s].*|$)/, defaultVal: 'random' },
+        uiLang: { type: 'param', valType: 'langCode', regex: /^--?u(?:i[-_]?lang)?(?:[=\s].*|$)/ },
         query: { type: 'param', regex: /^--?(?:q|query|ask|send)(?:[=\s].*|$)/, defaultVal: 'hi' },
         summarize: { type: 'param', valType: 'filepath', allowText: true, regex: /^--?s(?:ummarize)?(?:[=\s].*|$)/ },
-        uiLang: { type: 'param', valType: 'langCode', regex: /^--?u(?:i[-_]?lang)?(?:[=\s].*|$)/ },
         config: { type: 'param', valType: 'filepath', regex: /^--?c(?:onfig)?(?:[=\s].*|$)/ },
+        msgMaxChars: {
+            type: 'param', valType: 'positiveInt', regex: /^--?m(?:ax[-_]?chars)?(?:[=\s].*|$)/, defaultVal: 250 },
+        turnsToPreserve: { type: 'param', valType: 'positiveInt', regex: /^--?t(?:urns)?(?:[=\s].*|$)/, defaultVal: 3 },
         quietMode: { type: 'flag', regex: /^--?(?:V|quiet)(?:[-_]?mode)?$/ },
         init: { type: 'cmd', regex: /^-{0,2}i(?:nit)?$/ },
         joke: { type: 'cmd', regex: /^--?j(?:oke)?$/ },

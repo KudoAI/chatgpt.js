@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Veg til fílu ella tekst at taka saman" },
   "optionDesc_uiLang": { "message": "ISO 639-1 málkód at vísa UI í" },
   "optionDesc_config": { "message": "Gøtur til vanligar konfiguratiónar fílu til at lata" },
+  "optionDesc_msgMaxChars": { "message": "Karaktermarki fyri boð" },
+  "optionDesc_turnsToPreserve": { "message": "Tali av umførum at varðveita" },
   "optionDesc_quiet": { "message": "Undirskriva allar innmeldingar uttan feil" },
   "optionDesc_init": { "message": "Skapa konfiguratiónsfíla (í verkætlanarorði)" },
   "optionDesc_joke": { "message": "Tað er ein stuttligur spøgur av tilvild" },

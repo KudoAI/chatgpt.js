@@ -47,6 +47,8 @@
   },
   "optionDesc_uiLang": { "message": "Documente similare cu ISO 639-1 Code of Language" },
   "optionDesc_config": { "message": "Archive for custom config Archive for cargo" },
+  "optionDesc_msgMaxChars": { "message": "Limitacion Por Mensaje" },
+  "optionDesc_turnsToPreserve": { "message": "Number of Rescues for Rescues" },
   "optionDesc_quiet": { "message": "Tur Kuliner di Kuliner Kuliner" },
   "optionDesc_init": { "message": "Crear un archivo config (in proyecto root)" },
   "optionDesc_joke": { "message": "About Fun Joke At Random" },

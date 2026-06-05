@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Rot bilong kisim wanpela fail o tok i stap long en" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kod bilong tokples bilong soim UI long" },
   "optionDesc_config": { "message": "PATH long custom config file long load" },
+  "optionDesc_msgMaxChars": { "message": "Tok bilong ol man long olgeta tok" },
+  "optionDesc_turnsToPreserve": { "message": "Namba bilong ol rot bilong lukautim" },
   "optionDesc_quiet": { "message": "Ol i save rausim olgeta tok i stap long en, tasol ol i no save mekim ol" },
   "optionDesc_init": { "message": "Kirap konfig file (long projek root)" },
   "optionDesc_joke": { "message": "Ol i save tok bilas long ol man i no gat gutpela tingting" },

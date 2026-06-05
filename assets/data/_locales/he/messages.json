@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "נתיב לקובץ או לטקסט לסיכום" },
   "optionDesc_uiLang": { "message": "קוד שפה ISO 639 -1 להצגה בממשק המשתמש" },
   "optionDesc_config": { "message": "נתיב לטעינת קובץ תצורה מותאם אישית" },
+  "optionDesc_msgMaxChars": { "message": "מגבלת תווים לכל הודעה" },
+  "optionDesc_turnsToPreserve": { "message": "מספר הפניות לשמירה" },
   "optionDesc_quiet": { "message": "דיכוי כל רישומי הרישום למעט שגיאות" },
   "optionDesc_init": { "message": "צור קובץ תצורה (בשורש הפרויקט)" },
   "optionDesc_joke": { "message": "מספר בדיחה מצחיקה באקראי" },

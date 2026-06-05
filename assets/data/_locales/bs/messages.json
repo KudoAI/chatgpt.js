@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Putanja do datoteke ili teksta za sumiranje" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kod jezika za prikaz korisničkog sučelja u" },
   "optionDesc_config": { "message": "Putanja do prilagođene konfiguracijske datoteke za učitavanje" },
+  "optionDesc_msgMaxChars": { "message": "Ograničenje broja znakova po poruci" },
+  "optionDesc_turnsToPreserve": { "message": "Broj obrtaja za očuvanje" },
   "optionDesc_quiet": { "message": "Zatvorite sve evidencije osim grešaka" },
   "optionDesc_init": { "message": "Kreirajte konfiguracijsku datoteku (u korijenu projekta)" },
   "optionDesc_joke": { "message": "Nasumično ispriča smiješnu šalu" },

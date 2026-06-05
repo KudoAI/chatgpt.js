@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Sti til fil eller tekst, der skal opsummeres" },
   "optionDesc_uiLang": { "message": "ISO 639-1-kode for sprog til visning af brugergrænseflade i" },
   "optionDesc_config": { "message": "Sti til brugerdefineret konfigurationsfil, der skal indl" },
+  "optionDesc_msgMaxChars": { "message": "Tegngrænse pr. meddelelse" },
+  "optionDesc_turnsToPreserve": { "message": "Antal omdrejninger, der skal bevares" },
   "optionDesc_quiet": { "message": "Undertrykke al logning undtagen fejl" },
   "optionDesc_init": { "message": "Opret konfigurationsfil (i projektroden)" },
   "optionDesc_joke": { "message": "Fortæller en sjov vittighed tilfældigt" },

@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "ফাইল বা পাঠ্যের সংক্ষিপ্তসার করার পথ" },
   "optionDesc_uiLang": { "message": "UI প্রদর্শনের জন্য ISO 639-1 ভাষার কোড" },
   "optionDesc_config": { "message": "লোড করার জন্য কাস্টম কনফিগ ফাইলের পাথ" },
+  "optionDesc_msgMaxChars": { "message": "প্রতি মেসেজের অক্ষরের সীমা" },
+  "optionDesc_turnsToPreserve": { "message": "সংরক্ষণ করার জন্য টার্নের সংখ্যা" },
   "optionDesc_quiet": { "message": "ত্রুটি ব্যতীত সমস্ত লগিং দমন করুন" },
   "optionDesc_init": { "message": "কনফিগ ফাইল তৈরি করুন (প্রজেক্ট রুটের মধ্যে)" },
   "optionDesc_joke": { "message": "এলোমেলোভাবে একটি মজার রসিকতা বলে" },

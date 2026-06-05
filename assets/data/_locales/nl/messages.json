@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Pad naar bestand of tekst om samen te vatten" },
   "optionDesc_uiLang": { "message": "ISO 639-1 taalcode om de gebruikersinterface weer te geven in" },
   "optionDesc_config": { "message": "Pad naar aangepast configuratiebestand om te laden" },
+  "optionDesc_msgMaxChars": { "message": "Tekenlimiet per bericht" },
+  "optionDesc_turnsToPreserve": { "message": "Aantal te bewaren beurten" },
   "optionDesc_quiet": { "message": "Alle logboekregistraties onderdrukken, behalve fouten" },
   "optionDesc_init": { "message": "Configuratiebestand aanmaken (in projecthoofdmap)" },
   "optionDesc_joke": { "message": "Vertelt willekeurig een grappige grap" },

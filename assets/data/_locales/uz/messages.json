@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Xulosa qilish uchun fayl yoki matnga yo'l" },
   "optionDesc_uiLang": { "message": "UI ni ko'rsatish uchun ISO 639-1 til kodi" },
   "optionDesc_config": { "message": "Yuklanadigan maxsus konfiguratsiya fayliga yo'l" },
+  "optionDesc_msgMaxChars": { "message": "Har bir xabar uchun belgilar chegarasi" },
+  "optionDesc_turnsToPreserve": { "message": "Saqlash uchun navbatlar soni" },
   "optionDesc_quiet": { "message": "Xatolardan tashqari barcha jurnallarni bostirish" },
   "optionDesc_init": { "message": "Konfiguratsiya faylini yarating (loyiha ildizida)" },
   "optionDesc_joke": { "message": "Tasodifiy ravishda kulgili hazil aytadi" },

@@ -65,9 +65,11 @@ module.exports = {
             params: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_params}:${this.colors.nc}`,
                 ` -p, --provider <provider>        ${cli.msgs.optionDesc_provider}.`,
+                ` -u, --ui-lang <code>             ${cli.msgs.optionDesc_uiLang}.`,
                 ` -q, --query <msg>                ${cli.msgs.optionDesc_query}.`,
                 ` -s, --summarize <filepath|text>  ${cli.msgs.optionDesc_summarize}.`,
-                ` -u, --ui-lang <code>             ${cli.msgs.optionDesc_uiLang}.`,
+                ` -m, --msg-max-chars <integer>    ${cli.msgs.optionDesc_msgMaxChars}.`,
+                ` -t, --turns <integer>            ${cli.msgs.optionDesc_turnsToPreserve}.`,
                 ` -c, --config <filepath>          ${cli.msgs.optionDesc_config}.`
             ],
             flags: [

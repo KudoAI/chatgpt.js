@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Cesta k súboru alebo textu na zhrnutie" },
   "optionDesc_uiLang": { "message": "Kód jazyka ISO 639-1, v ktorom sa má zobraziť používateľské rozhranie" },
   "optionDesc_config": { "message": "Cesta k vlastnému konfiguračnému súboru na načítanie" },
+  "optionDesc_msgMaxChars": { "message": "Obmedzenie počtu znakov na správu" },
+  "optionDesc_turnsToPreserve": { "message": "Počet zákrut na zachovanie" },
   "optionDesc_quiet": { "message": "Potlačiť všetky protokoly okrem chýb" },
   "optionDesc_init": { "message": "Vytvoriť konfiguračný súbor (v koreňovom adresári projektu)" },
   "optionDesc_joke": { "message": "Rozpráva náhodný vtip" },

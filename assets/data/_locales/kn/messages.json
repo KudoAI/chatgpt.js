@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "ಫೈಲ್‌ಗೆ ಮಾರ್ಗ ಅಥವಾ ಸಾರಾಂಶಕ್ಕೆ ಪಠ್ಯ" },
   "optionDesc_uiLang": { "message": "UI ಅನ್ನು ಪ್ರದರ್ಶಿಸಲು ISO 639-1 ಭಾಷೆಯ ಸಂಕೇತ" },
   "optionDesc_config": { "message": "ಲೋಡ್ ಮಾಡಲು ಕಸ್ಟಮ್ ಕಾನ್ಫಿಗರೇಶನ್ ಫೈಲ್‌ಗೆ ಮಾರ್ಗ" },
+  "optionDesc_msgMaxChars": { "message": "ಪ್ರತಿ ಸಂದೇಶಕ್ಕೆ ಅಕ್ಷರ ಮಿತಿ" },
+  "optionDesc_turnsToPreserve": { "message": "ಸಂರಕ್ಷಿಸಲು ತಿರುವುಗಳ ಸಂಖ್ಯೆ" },
   "optionDesc_quiet": { "message": "ದೋಷಗಳನ್ನು ಹೊರತುಪಡಿಸಿ ಎಲ್ಲಾ ಲಾಗಿಂಗ್ ಅನ್ನು ನಿಗ್ರಹಿಸಿ" },
   "optionDesc_init": { "message": "ಕಾನ್ಫಿಗರ್ ಫೈಲ್ ರಚಿಸಿ (ಪ್ರಾಜೆಕ್ಟ್ ಮೂಲದಲ್ಲಿ)" },
   "optionDesc_joke": { "message": "ಯಾದೃಚ್ಛಿಕವಾಗಿ ತಮಾಷೆಯ ಹಾಸ್ಯವನ್ನು ಹೇಳುತ್ತದೆ" },

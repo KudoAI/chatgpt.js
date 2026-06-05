@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Kelias iki failo arba teksto, kurį reikia apibendrinti" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kalbos kodas, skirtas vartotojo sąsajai rodyti" },
   "optionDesc_config": { "message": "Kelias iki pasirinktinio konfigūracijos failo įkėlimui" },
+  "optionDesc_msgMaxChars": { "message": "Žinučių simbolių limitas" },
+  "optionDesc_turnsToPreserve": { "message": "Išsaugotinų posūkių skaičius" },
   "optionDesc_quiet": { "message": "Slėpti visus registravimus, išskyrus klaidas" },
   "optionDesc_init": { "message": "Sukurti konfigūracijos failą (projekto šaknyje)" },
   "optionDesc_joke": { "message": "Atsitiktinai pasakoja juokingą anekdotą" },

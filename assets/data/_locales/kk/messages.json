@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Қорытындылау үшін файлға немесе мәтінге жол" },
   "optionDesc_uiLang": { "message": "Пайдаланушы интерфейсін көрсету үшін ISO 639-1 тіл коды" },
   "optionDesc_config": { "message": "Жүктелетін теңшелетін конфигурация файлына жол" },
+  "optionDesc_msgMaxChars": { "message": "Хабар бойынша таңба шегі" },
+  "optionDesc_turnsToPreserve": { "message": "Сақтауға арналған бұрылыстар саны" },
   "optionDesc_quiet": { "message": "Қателерден басқа барлық жүйеге кіруді болдырмау" },
   "optionDesc_init": { "message": "Конфигурация файлын құру (жоба түбірінде)" },
   "optionDesc_joke": { "message": "Кездейсоқ әзіл айтады" },

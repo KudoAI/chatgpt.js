@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Path to file or text to summarize" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code of language to display UI in" },
   "optionDesc_config": { "message": "Path to custom config file to load" },
+  "optionDesc_msgMaxChars": { "message": "Character limit per message" },
+  "optionDesc_turnsToPreserve": { "message": "Number of turns to preserve" },
   "optionDesc_quiet": { "message": "Suppress all logging except errors" },
   "optionDesc_init": { "message": "Create config file (in project root)" },
   "optionDesc_joke": { "message": "Tells a funny joke at random" },

@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Патека до датотеката или текст за сумирање" },
   "optionDesc_uiLang": { "message": "ISO 639-1 код на јазик за прикажување на UI во" },
   "optionDesc_config": { "message": "Патека до приспособена конфигурациска датотека за вчи" },
+  "optionDesc_msgMaxChars": { "message": "Ограничување на знаци по порака" },
+  "optionDesc_turnsToPreserve": { "message": "Број на свртувања за зачувување" },
   "optionDesc_quiet": { "message": "Потисни ги сите евиденции освен грешките" },
   "optionDesc_init": { "message": "Создајте конфигурациска датотека (во коренот на проектот)" },
   "optionDesc_joke": { "message": "Раскажува смешен виц по случаен избор" },

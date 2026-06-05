@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Yhteenvetotiedoston tai -tekstin polku" },
   "optionDesc_uiLang": { "message": "Iso 639-1 -kielikoodi käyttöliittymän näyttämiseksi" },
   "optionDesc_config": { "message": "Polku muokattuun ladattavaan asetustiedostoon" },
+  "optionDesc_msgMaxChars": { "message": "Merkkirajoitus viestiä kohden" },
+  "optionDesc_turnsToPreserve": { "message": "Säilytettävien kierrosten määrä" },
   "optionDesc_quiet": { "message": "Poista kaikki kirjaukset paitsi virheet" },
   "optionDesc_init": { "message": "Luo konfigurointitiedosto (projektin juuressa)" },
   "optionDesc_joke": { "message": "Kertoo hauskan vitsin sattumanvaraisesti" },

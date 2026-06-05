@@ -11,5 +11,7 @@
 export default {
     provider: 'random',     // provider for chat API
     uiLang: 'en',           // ISO 639-1 code of language to display UI in
+    msgMaxChars: 250,       // char limit per msg
+    turnsToPreserve: 3,     // 2 msgs per turn
     quietMode: false        // suppress all logging except errors
 }

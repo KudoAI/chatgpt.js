@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Az összegezendő fájl vagy szöveg elérési útja" },
   "optionDesc_uiLang": { "message": "A felhasználói felület megjelenítéséhez használt nyelv ISO 639-1 kódja" },
   "optionDesc_config": { "message": "A betöltendő egyéni konfigurációs fájl elérési útja" },
+  "optionDesc_msgMaxChars": { "message": "Karakterkorlát üzenetenként" },
+  "optionDesc_turnsToPreserve": { "message": "Megőrizendő fordulók száma" },
   "optionDesc_quiet": { "message": "Az összes naplózás letiltása a hibák kivételével" },
   "optionDesc_init": { "message": "Konfigurációs fájl létrehozása (a projekt gyökerében)" },
   "optionDesc_joke": { "message": "Véletlenszerűen mond el egy vicces viccet" },

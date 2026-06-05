@@ -81,9 +81,11 @@ chatgpt  # or cjs
 ```
 Parameter options:
  -p, --provider <provider>        Provider for chat API ('google', 'openrouter', or 'random')
+ -u, --ui-lang <code>             ISO 639-1 code of language to display UI in.
  -q, --query <msg>                Query to send AI.
  -s, --summarize <filepath|text>  Path to file or text to summarize.
- -u, --ui-lang <code>             ISO 639-1 code of language to display UI in.
+ -m, --msg-max-chars <integer>    Character limit per message.
+ -t, --turns <integer>            Number of turns to preserve.
  -c, --config <filepath>          Path to custom config file to load.
 
 Boolean options:

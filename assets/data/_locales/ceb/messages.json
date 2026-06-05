@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Dalan sa file o teksto sa pag-summarize" },
   "optionDesc_uiLang": { "message": "ISO 639-1 nga kodigo sa sinultian aron ipakita ang UI sa" },
   "optionDesc_config": { "message": "Pamaagi sa custom config file aron ma-load" },
+  "optionDesc_msgMaxChars": { "message": "Limitasyon sa karakter kada mensahe" },
+  "optionDesc_turnsToPreserve": { "message": "Gidaghanon sa mga turno aron mapreserbar" },
   "optionDesc_quiet": { "message": "Pugngan ang tanan nga pag-log gawas sa mga sayup" },
   "optionDesc_init": { "message": "Paghimo file sa config (sa root sa proyekto)" },
   "optionDesc_joke": { "message": "Sultihi ang usa ka kataw-anan nga komedya sa random" },

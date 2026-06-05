@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "ለማጠቃለል ወደ ፋይል ወይም ጽሑፍ መንገድ" },
   "optionDesc_uiLang": { "message": "የ ISO 639-1 የቋንቋ ኮድ UI ን በ ውስጥ ለማሳየት" },
   "optionDesc_config": { "message": "ለመጫን ፋይልን ለማዋቀር መንገድ" },
+  "optionDesc_msgMaxChars": { "message": "ቁምፊ ገደብ በአንድ መልዕክት" },
+  "optionDesc_turnsToPreserve": { "message": "ለማቆየት የሚዞሩ ብዛት" },
   "optionDesc_quiet": { "message": "ከስህተቶች በስተቀር ሁሉንም የመግቢያዎች መሙላት" },
   "optionDesc_init": { "message": "የውቅረት ፋይል ይፍጠሩ (በፕሮጀክት ሥር)" },
   "optionDesc_joke": { "message": "በዘፈቀደ አስቂኝ ቀልድ ይናገራል" },

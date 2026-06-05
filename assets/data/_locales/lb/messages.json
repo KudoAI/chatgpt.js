@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Wege zu Datei oder Text um zu resumieren" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Code der Sprache um UI an zu zeigen" },
   "optionDesc_config": { "message": "Path zu personaliséierter Konfiguratiounsdatei fir ze lueden" },
+  "optionDesc_msgMaxChars": { "message": "Charaktergrenz pro Noriicht" },
+  "optionDesc_turnsToPreserve": { "message": "Zuel vun Ëmdréiunge fir ze konservéieren" },
   "optionDesc_quiet": { "message": "Ënnerdréckt all Umeldung ausser Feeler" },
   "optionDesc_init": { "message": "Konfiguratiounsdatei erstellen (am Projetwurzel)" },
   "optionDesc_joke": { "message": "Tells a funny ass joke at random" },

@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Chemin d'accès au fichier ou au texte pour résumer" },
   "optionDesc_uiLang": { "message": "Code de langue ISO 639-1 pour afficher l'interface utilisateur dans" },
   "optionDesc_config": { "message": "Chemin d'accès au fichier de configuration personnalisé à charger" },
+  "optionDesc_msgMaxChars": { "message": "Limite de caractères par message" },
+  "optionDesc_turnsToPreserve": { "message": "Nombre de tours à préserver" },
   "optionDesc_quiet": { "message": "Supprimer tous les journaux sauf les erreurs" },
   "optionDesc_init": { "message": "Créer un fichier de configuration (dans la racine du projet)" },
   "optionDesc_joke": { "message": "Raconte une blague amusante au hasard" },

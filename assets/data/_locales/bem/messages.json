@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Fela Anikulapo Kuti - Fela Anikulapo Kuti" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Code of Language Ukulele Tabs in Ukulele Tabs" },
   "optionDesc_config": { "message": "Fela Anikulapo Kuti Config file to load" },
+  "optionDesc_msgMaxChars": { "message": "Ubutumwa bwa Mbila Nsuma pa Mbila Nsuma" },
+  "optionDesc_turnsToPreserve": { "message": "Impendwa ya Butumikishi pa Kusunga" },
   "optionDesc_quiet": { "message": "Fela Anikulapo Kuti - Fela Anikulapo Kuti" },
   "optionDesc_init": { "message": "Panga failo iya mipangilwe (mu mushila wa mulimo)" },
   "optionDesc_joke": { "message": "Funny Joke At Random ukulele" },

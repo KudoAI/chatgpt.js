@@ -45,6 +45,8 @@
   "optionDesc_summarize": { "message": "Percorso del file o testo da riepilogare" },
   "optionDesc_uiLang": { "message": "Codice ISO 639-1 della lingua in cui visualizzare l'interfaccia utente" },
   "optionDesc_config": { "message": "Percorso del file di configurazione personalizzato da caricare" },
+  "optionDesc_msgMaxChars": { "message": "Limite di caratteri per messaggio" },
+  "optionDesc_turnsToPreserve": { "message": "Numero di giri da preservare" },
   "optionDesc_quiet": { "message": "Elimina tutte le registrazioni ad eccezione degli errori" },
   "optionDesc_init": { "message": "Crea file di configurazione (nella radice del progetto)" },
   "optionDesc_joke": { "message": "Racconta una barzelletta divertente a caso" },
