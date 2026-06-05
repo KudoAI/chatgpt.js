@@ -119,8 +119,8 @@ module.exports = {
 
             if (ctrl.valType) ({
                 filepath() {
-                    if (configVal && !fs.existsSync(configVal)
-                        && (!ctrl.allowText || require('./string').looksLikePath(configVal))
+                    if (configVal && (!ctrl.allowText || require('./string').looksLikePath(configVal))
+                        && !fs.existsSync(configVal)
                     ) log.errorAndExit(`[${key}] ${cli.msgs.error_invalidFilepath}: ${configVal}`)
                 },
                 positiveInt() {
