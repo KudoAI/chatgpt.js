@@ -84,7 +84,7 @@ Parameter options:
  -u, --ui-lang <code>             ISO 639-1 code of language to display UI in.
  -q, --query <msg>                Query to send AI.
  -s, --summarize <filepath|text>  Path to file or text to summarize.
- -m, --msg-max-chars <integer>    Character limit per message.
+ -m, --max-chars <integer>        Character limit per message.
  -t, --turns <integer>            Number of turns to preserve.
  -c, --config <filepath>          Path to custom config file to load.
 
