@@ -47,8 +47,8 @@
   "optionDesc_config": { "message": "Ścieżka do niestandardowego pliku konfiguracyjnego do załadowania" },
   "optionDesc_msgMaxChars": { "message": "Limit znaków na wiadomość" },
   "optionDesc_turnsToPreserve": { "message": "Liczba obrotów do zachowania" },
-  "optionDesc_autoSuggest": {
-    "message": "Automatycznie sugeruj następne działanie sztucznej inteligencji pod koniec odpowiedzi CLI"
+  "optionDesc_noSuggest": {
+    "message": "Nie sugeruj automatycznie następnej akcji sztucznej inteligencji pod koniec odpowiedzi CLI"
   },
   "optionDesc_quiet": { "message": "Wyłącz wszystkie rejestrowanie z wyjątkiem błędów" },
   "optionDesc_init": { "message": "Utwórz plik konfiguracyjny (w katalogu głównym projektu)" },

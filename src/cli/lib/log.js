@@ -74,7 +74,7 @@ module.exports = {
             ],
             flags: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_flags}:${this.colors.nc}`,
-                ` -a, --auto-suggest               ${cli.msgs.optionDesc_autoSuggest}.`,
+                ` -a, --no-suggest                 ${cli.msgs.optionDesc_noSuggest}.`,
                 ` -V, --quiet                      ${cli.msgs.optionDesc_quiet}.`
             ],
             cmds: [

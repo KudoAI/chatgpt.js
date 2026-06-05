@@ -47,8 +47,8 @@
   "optionDesc_config": { "message": "Pot do konfiguracijske datoteke po meri za nalaganje" },
   "optionDesc_msgMaxChars": { "message": "Omejitev znakov na sporočilo" },
   "optionDesc_turnsToPreserve": { "message": "Število obratov za ohranitev" },
-  "optionDesc_autoSuggest": {
-    "message": "Samodejno predlagaj naslednje dejanje umetne inteligence na koncu odziva CLI"
+  "optionDesc_noSuggest": {
+    "message": "Ne predlagajte samodejno naslednjega dejanja umetne inteligence na koncu odgovora CLI"
   },
   "optionDesc_quiet": { "message": "Prepreči vse beleženje, razen napak" },
   "optionDesc_init": { "message": "Ustvari konfiguracijsko datoteko (v korenu projekta)" },

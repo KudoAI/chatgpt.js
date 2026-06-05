@@ -47,7 +47,9 @@
   "optionDesc_config": { "message": "PATH long custom config file long load" },
   "optionDesc_msgMaxChars": { "message": "Tok bilong ol man long olgeta tok" },
   "optionDesc_turnsToPreserve": { "message": "Namba bilong ol rot bilong lukautim" },
-  "optionDesc_autoSuggest": { "message": "Auto-suggest bihain AI wok long pinis bilong CLI bekim" },
+  "optionDesc_noSuggest": {
+    "message": "No ken toksave long ol samting bai kamap bihain long AI long pinis bilong bekim bilong CLI"
+  },
   "optionDesc_quiet": { "message": "Ol i save rausim olgeta tok i stap long en, tasol ol i no save mekim ol" },
   "optionDesc_init": { "message": "Kirap konfig file (long projek root)" },
   "optionDesc_joke": { "message": "Ol i save tok bilas long ol man i no gat gutpela tingting" },

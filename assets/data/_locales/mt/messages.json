@@ -47,7 +47,9 @@
   "optionDesc_config": { "message": "Il-mogħdija għall-fajl tal-konfig personalizzat biex ittella'" },
   "optionDesc_msgMaxChars": { "message": "Limitu tal-karattri għal kull messaġġ" },
   "optionDesc_turnsToPreserve": { "message": "Numru ta' dawriet biex tippreserva" },
-  "optionDesc_autoSuggest": { "message": "Awtomatikament issuġġerixxi azzjoni tal-IA li jmiss fi tmiem ir-rispons CLI" },
+  "optionDesc_noSuggest": {
+    "message": "Tissuġġerixxix awtomatikament l-azzjoni tal-IA li jmiss fi tmiem ir-rispons CLI"
+  },
   "optionDesc_quiet": { "message": "Waqqaf il-logging kollu ħlief l-iżbalji" },
   "optionDesc_init": { "message": "Oħloq fajl tal-konfig (fl-għeruq tal-proġett)" },
   "optionDesc_joke": { "message": "Jgħid logħob umoruż b' mod każwali" },

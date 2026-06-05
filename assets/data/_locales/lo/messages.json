@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "ເສັ້ນທາງໄປແຟ້ມການຕັ້ງຄ່າທີ່ກຳນົດເອງເພື່ອໂຫຼດ" },
   "optionDesc_msgMaxChars": { "message": "ຈຳກັດຕົວລະຄອນຕໍ່ຂໍ້ຄວາມ" },
   "optionDesc_turnsToPreserve": { "message": "ຈໍາ ນວນ ຫມູນ ວຽນເພື່ອຮັກສາ" },
-  "optionDesc_autoSuggest": { "message": "ສະເໜີການກະທຳ AI ຕໍ່ໄປໂດຍອັດຕະໂນມັດໃນຕອນທ້າຍຂອງການຕອບສະໜອງ CLI" },
+  "optionDesc_noSuggest": { "message": "ຢ່າແນະ ນໍາ ການກະ ທໍາ AI ຕໍ່ໄປໂດຍອັດຕະໂນມັດໃນຕອນທ້າຍຂອງການຕອບສະ ຫນອງ CLI" },
   "optionDesc_quiet": { "message": "ສະກັດກັ້ນການຕັດໄມ້ທັງໝົດ ຍົກເວັ້ນຂໍ້ຜິດພາດ" },
   "optionDesc_init": { "message": "ສ້າງໄຟລ໌ config (ໃນຮາກໂຄງການ)" },
   "optionDesc_joke": { "message": "ບອກເລື່ອງຕະຫລົກທີ່ ຫນ້າ ຕື່ນຕາຕື່ນໃຈໃນ Random" },

@@ -47,9 +47,7 @@
   "optionDesc_config": { "message": "Path to custom config file to load" },
   "optionDesc_msgMaxChars": { "message": "Tekanyetso ya ditlhaka go ya ka molaetsa mongwe le mongwe" },
   "optionDesc_turnsToPreserve": { "message": "Palo ya diphetogo tse di tshwanelang go bolokiwa" },
-  "optionDesc_autoSuggest": {
-    "message": "Go tshitshinya kgato e e latelang ya AI ka go itirisa kwa bokhutlong jwa karabo ya CLI"
-  },
+  "optionDesc_noSuggest": { "message": "O seka wa buelela kgato e e latelang ya AI kwa bokhutlong jwa karabo ya CLI" },
   "optionDesc_quiet": { "message": "Go emisa dikgogo tsotlhe kwantle ga diphoso" },
   "optionDesc_init": { "message": "Tlhama faele ya thulaganyo (mo moding wa porojeke)" },
   "optionDesc_joke": { "message": "E dira metlae e e tshegisang ka phopholetso" },

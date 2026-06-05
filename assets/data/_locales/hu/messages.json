@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "A betöltendő egyéni konfigurációs fájl elérési útja" },
   "optionDesc_msgMaxChars": { "message": "Karakterkorlát üzenetenként" },
   "optionDesc_turnsToPreserve": { "message": "Megőrizendő fordulók száma" },
-  "optionDesc_autoSuggest": { "message": "A CLI-válasz végén automatikusan javasolja a következő AI-műveletet" },
+  "optionDesc_noSuggest": { "message": "Ne javasolja automatikusan a következő MI-műveletet a CLI-válasz végén" },
   "optionDesc_quiet": { "message": "Az összes naplózás letiltása a hibák kivételével" },
   "optionDesc_init": { "message": "Konfigurációs fájl létrehozása (a projekt gyökerében)" },
   "optionDesc_joke": { "message": "Véletlenszerűen mond el egy vicces viccet" },

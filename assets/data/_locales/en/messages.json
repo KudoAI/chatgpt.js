@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "Path to custom config file to load" },
   "optionDesc_msgMaxChars": { "message": "Character limit per message" },
   "optionDesc_turnsToPreserve": { "message": "Number of turns to preserve" },
-  "optionDesc_autoSuggest": { "message": "Auto-suggest next AI action at end of CLI response" },
+  "optionDesc_noSuggest": { "message": "Don't auto-suggest next AI action at end of CLI response" },
   "optionDesc_quiet": { "message": "Suppress all logging except errors" },
   "optionDesc_init": { "message": "Create config file (in project root)" },
   "optionDesc_joke": { "message": "Tells a funny joke at random" },

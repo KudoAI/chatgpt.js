@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "Path zu personaliséierter Konfiguratiounsdatei fir ze lueden" },
   "optionDesc_msgMaxChars": { "message": "Charaktergrenz pro Noriicht" },
   "optionDesc_turnsToPreserve": { "message": "Zuel vun Ëmdréiunge fir ze konservéieren" },
-  "optionDesc_autoSuggest": { "message": "Auto-Suggest nächst AI Aktioun um Enn vun der CLI Äntwert" },
+  "optionDesc_noSuggest": { "message": "Don't auto-suggest nächster AI Aktioun um Enn vun der CLI Äntwert" },
   "optionDesc_quiet": { "message": "Ënnerdréckt all Umeldung ausser Feeler" },
   "optionDesc_init": { "message": "Konfiguratiounsdatei erstellen (am Projetwurzel)" },
   "optionDesc_joke": { "message": "Tells a funny ass joke at random" },

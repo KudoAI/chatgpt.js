@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "د بارولو لپاره د دوديز سازونې دوتنې يونلور" },
   "optionDesc_msgMaxChars": { "message": "په هر پیغام کې د کرکټر محدودیت" },
   "optionDesc_turnsToPreserve": { "message": "د ساتنې لپاره د نوبت شمېر" },
-  "optionDesc_autoSuggest": { "message": "د CLI ځواب په پای کې د آټو - سګنال راتلونکی AI عمل" },
+  "optionDesc_noSuggest": { "message": "د CLI ځواب په پای کې د راتلونکي AI عمل مه ټاکئ" },
   "optionDesc_quiet": { "message": "د تېروتنو پرته ټول ننوتل (logging) پټ کړئ" },
   "optionDesc_init": { "message": "(د پروژې په ریښه کې) سازونې دوتنه جوړه کړئ" },
   "optionDesc_joke": { "message": "په تصادفي ډول یوه مسخره ټوکه وایي" },

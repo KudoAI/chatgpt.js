@@ -47,8 +47,8 @@
   "optionDesc_config": { "message": "Жүктелетін теңшелетін конфигурация файлына жол" },
   "optionDesc_msgMaxChars": { "message": "Хабар бойынша таңба шегі" },
   "optionDesc_turnsToPreserve": { "message": "Сақтауға арналған бұрылыстар саны" },
-  "optionDesc_autoSuggest": {
-    "message": "CLI реакциясының соңында келесі жасанды интеллект әрекетін автоматты түрде ұсыну"
+  "optionDesc_noSuggest": {
+    "message": "CLI реакциясының соңында келесі жасанды интеллект әрекетін автоматты түрде ұсынбаңыз"
   },
   "optionDesc_quiet": { "message": "Қателерден басқа барлық жүйеге кіруді болдырмау" },
   "optionDesc_init": { "message": "Конфигурация файлын құру (жоба түбірінде)" },

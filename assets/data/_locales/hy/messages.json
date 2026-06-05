@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "Ուղի դեպի անհատականացված կոնֆիգուրացիոն ֆայլ ՝ բեռնելու համար" },
   "optionDesc_msgMaxChars": { "message": "Նիշերի սահմանաչափը մեկ հաղորդագրության համար" },
   "optionDesc_turnsToPreserve": { "message": "Պահպանման շրջադարձերի քանակը" },
-  "optionDesc_autoSuggest": { "message": "Ավտոմատացրեք AI - ի հաջորդ գործողությունը CLI - ի պատասխանի վերջում" },
+  "optionDesc_noSuggest": { "message": "Մի ավտոմատացրեք AI - ի հաջորդ գործողությունը CLI - ի պատասխանի վերջում" },
   "optionDesc_quiet": { "message": "Սեղմեք բոլոր տեղեկամատյանները, բացի սխալներից" },
   "optionDesc_init": { "message": "Ստեղծել կոնֆիգուրացիոն ֆայլ (նախագծի արմատում)" },
   "optionDesc_joke": { "message": "Պատահական կատակ է անում" },

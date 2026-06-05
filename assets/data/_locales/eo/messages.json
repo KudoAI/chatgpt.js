@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "Ŝarĝendan agordodosieron" },
   "optionDesc_msgMaxChars": { "message": "Signolimo por mesaĝo" },
   "optionDesc_turnsToPreserve": { "message": "Nombro da turnoj por konservi" },
-  "optionDesc_autoSuggest": { "message": "Aŭtomata sugesto de sekva AI-ago ĉe la fino de CLI- respondo" },
+  "optionDesc_noSuggest": { "message": "Ne aŭtomate sugestu sekvan AI-agon ĉe la fino de CLI-respondo" },
   "optionDesc_quiet": { "message": "Subpremi ĉiujn registradojn krom eraroj" },
   "optionDesc_init": { "message": "Krei agordodosieron (en projekta radiko)" },
   "optionDesc_joke": { "message": "Amuza ŝerco ĉe hazarda" },

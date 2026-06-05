@@ -47,7 +47,9 @@
   "optionDesc_config": { "message": "Pad naar aangepast configuratiebestand om te laden" },
   "optionDesc_msgMaxChars": { "message": "Tekenlimiet per bericht" },
   "optionDesc_turnsToPreserve": { "message": "Aantal te bewaren beurten" },
-  "optionDesc_autoSuggest": { "message": "Volgende AI-actie automatisch voorstellen aan het einde van CLI-respons" },
+  "optionDesc_noSuggest": {
+    "message": "Stel de volgende AI-actie niet automatisch voor aan het einde van de CLI-reactie"
+  },
   "optionDesc_quiet": { "message": "Alle logboekregistraties onderdrukken, behalve fouten" },
   "optionDesc_init": { "message": "Configuratiebestand aanmaken (in projecthoofdmap)" },
   "optionDesc_joke": { "message": "Vertelt willekeurig een grappige grap" },

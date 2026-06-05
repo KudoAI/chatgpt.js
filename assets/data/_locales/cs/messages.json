@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "Cesta k vlastnímu konfiguračnímu souboru k načtení" },
   "optionDesc_msgMaxChars": { "message": "Limit počtu znaků na zprávu" },
   "optionDesc_turnsToPreserve": { "message": "Počet otáček k uchování" },
-  "optionDesc_autoSuggest": { "message": "Automaticky navrhnout další akci AI na konci odpovědi CLI" },
+  "optionDesc_noSuggest": { "message": "Na konci odpovědi CLI automaticky nenavrhujte další akci AI" },
   "optionDesc_quiet": { "message": "Potlačit veškeré protokolování kromě chyb" },
   "optionDesc_init": { "message": "Vytvořit konfigurační soubor (v kořenovém adresáři projektu)" },
   "optionDesc_joke": { "message": "Vypráví náhodný vtip" },

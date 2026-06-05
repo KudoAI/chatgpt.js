@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "読み込むカスタム構成ファイルへのパス" },
   "optionDesc_msgMaxChars": { "message": "メッセージあたりの文字数制限" },
   "optionDesc_turnsToPreserve": { "message": "保持するターン数" },
-  "optionDesc_autoSuggest": { "message": "CLI応答の最後に次のAIアクションを自動提案" },
+  "optionDesc_noSuggest": { "message": "CLI応答の最後に次のAIアクションを自動的に提案しない" },
   "optionDesc_quiet": { "message": "エラーを除くすべてのロギングを抑制" },
   "optionDesc_init": { "message": "構成ファイルを作成する（プロジェクトルート内）" },
   "optionDesc_joke": { "message": "おかしな冗談をランダムに言う" },

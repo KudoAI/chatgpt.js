@@ -47,7 +47,9 @@
   "optionDesc_config": { "message": "Cesta k vlastnému konfiguračnému súboru na načítanie" },
   "optionDesc_msgMaxChars": { "message": "Obmedzenie počtu znakov na správu" },
   "optionDesc_turnsToPreserve": { "message": "Počet zákrut na zachovanie" },
-  "optionDesc_autoSuggest": { "message": "Automaticky navrhnúť ďalšiu akciu AI na konci odpovede CLI" },
+  "optionDesc_noSuggest": {
+    "message": "Na konci odpovede CLI automaticky nenavrhujte ďalšiu akciu umelej inteligencie"
+  },
   "optionDesc_quiet": { "message": "Potlačiť všetky protokoly okrem chýb" },
   "optionDesc_init": { "message": "Vytvoriť konfiguračný súbor (v koreňovom adresári projektu)" },
   "optionDesc_joke": { "message": "Rozpráva náhodný vtip" },

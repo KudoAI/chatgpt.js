@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "Gøtur til vanligar konfiguratiónar fílu til at lata" },
   "optionDesc_msgMaxChars": { "message": "Karaktermarki fyri boð" },
   "optionDesc_turnsToPreserve": { "message": "Tali av umførum at varðveita" },
-  "optionDesc_autoSuggest": { "message": "Auto-suggest næsta AI-tilgongd at enda av CLI-viðgerðini" },
+  "optionDesc_noSuggest": { "message": "Ikki sjálvvirkandi at leggja fram næsta AI-tilgongd at enda av CLI-viðgerðini" },
   "optionDesc_quiet": { "message": "Undirskriva allar innmeldingar uttan feil" },
   "optionDesc_init": { "message": "Skapa konfiguratiónsfíla (í verkætlanarorði)" },
   "optionDesc_joke": { "message": "Tað er ein stuttligur spøgur av tilvild" },

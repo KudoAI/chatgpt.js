@@ -47,8 +47,8 @@
   "optionDesc_config": { "message": "Jidka si loo habeeyo faylka si loo raro" },
   "optionDesc_msgMaxChars": { "message": "Xadka astaamaha fariin kasta" },
   "optionDesc_turnsToPreserve": { "message": "Tirada soo noqnoqda si loo ilaaliyo" },
-  "optionDesc_autoSuggest": {
-    "message": "Next article Ra 'iisul Wasaare Khayre oo ka qeyb galay munaasabad lagu soo gabagabeynayay munaasabadda caleemo saarka Madaxweynaha Soomaaliya"
+  "optionDesc_noSuggest": {
+    "message": "Next article {DAAWO MUQAALKA} Madaxweyne Xasan Sheekh oo ku baaqay in la joojiyo dagaalka ka socda Muqdisho"
   },
   "optionDesc_quiet": { "message": "Xannib dhammaan gelitaanka marka laga reebo khaladaadka" },
   "optionDesc_init": { "message": "Samee faylka qaabeynta (ee xididka mashruuca)" },

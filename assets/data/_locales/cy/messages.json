@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "Llwybr i ffeil cyfluniad cyfaddas i'w lwytho" },
   "optionDesc_msgMaxChars": { "message": "Cyfwng nodau fesul neges" },
   "optionDesc_turnsToPreserve": { "message": "Nifer y troeon i'w cadw" },
-  "optionDesc_autoSuggest": { "message": "Gweithredu AI nesaf awto - swaggest ar ddiwedd ymateb CLI" },
+  "optionDesc_noSuggest": { "message": "Chatbot peidiwch a thalu sut mae chatbots yn gweithio ar ddiwedd chatbot" },
   "optionDesc_quiet": { "message": "Atal pob cofnod ac eithrio gwallau" },
   "optionDesc_init": { "message": "Creu ffeil cyfluniad (yn wraidd y cywaith)" },
   "optionDesc_joke": { "message": "Add a Funny Joke" },

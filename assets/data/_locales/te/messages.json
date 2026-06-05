@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "లోడ్ చేయడానికి అనుకూలీకరించిన కాన్ఫిగరేషన్ ఫైల్ ‌ కు మార్గం" },
   "optionDesc_msgMaxChars": { "message": "ప్రతి సందేశానికి అక్షర పరిమితి" },
   "optionDesc_turnsToPreserve": { "message": "ప్రిజర్వ్ చేయడానికి మలుపుల సంఖ్య" },
-  "optionDesc_autoSuggest": { "message": "CLI ప్రతిస్పందన చివరిలో తదుపరి AI చర్యను స్వయంచాలకంగా సూచించండి" },
+  "optionDesc_noSuggest": { "message": "CLI ప్రతిస్పందన చివరిలో తదుపరి AI చర్యను స్వయంచాలకంగా సూచించవద్దు" },
   "optionDesc_quiet": { "message": "లోపాలు మినహా అన్ని లాగింగ్ ‌ లను అణచివేయండి" },
   "optionDesc_init": { "message": "ఆకృతీకరణ ఫైల్ ‌ ను సృష్టించండి (ప్రాజెక్ట్ రూట్ ‌ లో)" },
   "optionDesc_joke": { "message": "యాదృచ్ఛికంగా ఫన్నీ జోక్ చెబుతుంది" },

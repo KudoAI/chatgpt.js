@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "ਲੋਡ ਕਰਨ ਲਈ ਕਸਟਮ ਸੰਰਚਨਾ ਫਾਇਲ ਲਈ ਮਾਰਗ" },
   "optionDesc_msgMaxChars": { "message": "ਪ੍ਰਤੀ ਸੁਨੇਹਾ ਅੱਖਰ ਸੀਮਾ" },
   "optionDesc_turnsToPreserve": { "message": "ਸੰਭਾਲਣ ਲਈ ਮੋੜਾਂ ਦੀ ਗਿਣਤੀ" },
-  "optionDesc_autoSuggest": { "message": "CLI ਜਵਾਬ ਦੇ ਅੰਤ ਵਿੱਚ ਅਗਲੀ AI ਕਾਰਵਾਈ ਆਟੋਮੈਟਿਕ ਸੁਝਾਓ" },
+  "optionDesc_noSuggest": { "message": "CLI ਜਵਾਬ ਦੇ ਅੰਤ ਵਿੱਚ ਅਗਲੀ AI ਕਾਰਵਾਈ ਆਟੋਮੈਟਿਕ ਸੁਝਾਅ ਨਾ ਦਿਓ" },
   "optionDesc_quiet": { "message": "ਗਲਤੀਆਂ ਨੂੰ ਛੱਡ ਕੇ ਸਭ ਲਾਗਿੰਗ ਦਬਾਓ" },
   "optionDesc_init": { "message": "ਸੰਰਚਨਾ ਫਾਇਲ ਬਣਾਓ (ਪਰੋਜੈਕਟ ਰੂਟ ਵਿੱਚ)" },
   "optionDesc_joke": { "message": "ਬੇਤਰਤੀਬੇ 'ਤੇ ਇੱਕ ਮਜ਼ਾਕੀਆ ਮਜ਼ਾਕ ਦੱਸਦਾ ਹੈ" },

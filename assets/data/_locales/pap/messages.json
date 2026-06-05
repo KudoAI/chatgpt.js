@@ -49,7 +49,7 @@
   "optionDesc_config": { "message": "Archive for custom config Archive for cargo" },
   "optionDesc_msgMaxChars": { "message": "Limitacion Por Mensaje" },
   "optionDesc_turnsToPreserve": { "message": "Number of Rescues for Rescues" },
-  "optionDesc_autoSuggest": { "message": "Next articleGobierno di Aruba na final di accion" },
+  "optionDesc_noSuggest": { "message": "Next articleAruba no ta para keto na final di accion di CITGO" },
   "optionDesc_quiet": { "message": "Tur Kuliner di Kuliner Kuliner" },
   "optionDesc_init": { "message": "Crear un archivo config (in proyecto root)" },
   "optionDesc_joke": { "message": "About Fun Joke At Random" },

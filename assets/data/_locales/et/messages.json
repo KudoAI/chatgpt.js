@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "Laaditava kohandatud konfiguratsioonifaili tee" },
   "optionDesc_msgMaxChars": { "message": "Tähemärkide piirang sõnumi kohta" },
   "optionDesc_turnsToPreserve": { "message": "Säilitatavate pöörete arv" },
-  "optionDesc_autoSuggest": { "message": "Järgmise tehisintellekti toimingu automaatne soovitus CLI vastuse lõpus" },
+  "optionDesc_noSuggest": { "message": "Ära soovita CLI vastuse lõpus automaatselt järgmist tehisintellekti toimingut" },
   "optionDesc_quiet": { "message": "Tühista kogu logimine, välja arvatud vead" },
   "optionDesc_init": { "message": "Loo konfiguratsioonifail (projekti juurfailis)" },
   "optionDesc_joke": { "message": "Räägib juhuslikult naljaka nalja" },

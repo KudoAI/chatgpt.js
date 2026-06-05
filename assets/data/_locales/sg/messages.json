@@ -51,7 +51,9 @@
   "optionDesc_config": { "message": "Lege ti gue na ndo ti mbeni ndo so a yeke zia ni na ndo ti mbeni ndo so a yeke" },
   "optionDesc_msgMaxChars": { "message": "A yeke wara atënë ti yâ ti mbeti ni na yâ ti mbeni mbeti" },
   "optionDesc_turnsToPreserve": { "message": "Nombre de tours ti bata" },
-  "optionDesc_autoSuggest": { "message": "Auto-suggest next AI action na hunzingo ti kiringo tënë ti CLI" },
+  "optionDesc_noSuggest": {
+    "message": "Zia pëpe si mbeni ye so ayeke ga na peko ti tënë ti AI aga na nda ti tënë ti CLI"
+  },
   "optionDesc_quiet": { "message": "A yeke kanga lege na azo kue ti sara ye na lege ni ape me a yeke gi na lege ni" },
   "optionDesc_init": { "message": "Create config file (na yâ ti projet root)" },
   "optionDesc_joke": { "message": "Broke As A Joke;" },

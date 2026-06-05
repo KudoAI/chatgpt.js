@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "Calea către fișierul de configurare personalizat pentru încărcare" },
   "optionDesc_msgMaxChars": { "message": "Limită de caractere per mesaj" },
   "optionDesc_turnsToPreserve": { "message": "Număr de rotații de păstrat" },
-  "optionDesc_autoSuggest": { "message": "Sugerați automat următoarea acțiune AI la sfârșitul răspunsului CLI" },
+  "optionDesc_noSuggest": { "message": "Nu sugera automat următoarea acțiune AI la sfârșitul răspunsului CLI" },
   "optionDesc_quiet": { "message": "Suprimați toate înregistrările, cu excepția erorilor" },
   "optionDesc_init": { "message": "Creați fișierul de configurare (în rădăcina proiectului)" },
   "optionDesc_joke": { "message": "Spune o glumă amuzantă la întâmplare" },

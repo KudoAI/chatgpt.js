@@ -53,7 +53,9 @@
   "optionDesc_config": { "message": "ڕێچکە بۆ بارکردنی پەڕگەی ڕێکخستن بۆ بارکردن" },
   "optionDesc_msgMaxChars": { "message": "سنووردارکردنی کارەکتەر بۆ هەر پەیامێک" },
   "optionDesc_turnsToPreserve": { "message": "زیادکردنی هاوپۆل بۆ keep" },
-  "optionDesc_autoSuggest": { "message": "بڵاوکراوەی نوێترعێراق لە کۆتایی کاردانەوە بە ڕێککەوتنی ئەتۆمی" },
+  "optionDesc_noSuggest": {
+    "message": "هه ڵمه تی هه ڵوه شاندنه وه ی ئه نجوومه نی وه زیران له كۆتایی كۆبونه وه ی ئه نجومه نی وه زیران"
+  },
   "optionDesc_quiet": { "message": "سڕینەوەی هەموو هەڵەکان جگە لە هەڵەکان" },
   "optionDesc_init": { "message": "دروستکردنی پەڕگەی ڕێکخستن (لە ڕەگی پرۆژەدا)" },
   "optionDesc_joke": { "message": "نوکته یه کی خۆش له سه ر پێکه نین" },

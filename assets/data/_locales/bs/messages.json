@@ -47,8 +47,8 @@
   "optionDesc_config": { "message": "Putanja do prilagođene konfiguracijske datoteke za učitavanje" },
   "optionDesc_msgMaxChars": { "message": "Ograničenje broja znakova po poruci" },
   "optionDesc_turnsToPreserve": { "message": "Broj obrtaja za očuvanje" },
-  "optionDesc_autoSuggest": {
-    "message": "Automatski predložite sljedeću radnju umjetne inteligencije na kraju odgovora CLI-a"
+  "optionDesc_noSuggest": {
+    "message": "Nemojte automatski predlagati sljedeću radnju umjetne inteligencije na kraju odgovora CLI-a"
   },
   "optionDesc_quiet": { "message": "Zatvorite sve evidencije osim grešaka" },
   "optionDesc_init": { "message": "Kreirajte konfiguracijsku datoteku (u korijenu projekta)" },

@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "Yükləmək üçün xüsusi konfiqurasiya faylına gedən yol" },
   "optionDesc_msgMaxChars": { "message": "Hər mesaj üçün xarakter limiti" },
   "optionDesc_turnsToPreserve": { "message": "Qorunmaq üçün növbələrin sayı" },
-  "optionDesc_autoSuggest": { "message": "CLI cavabının sonunda avtomatik növbəti AI əməliyyatı təklif edin" },
+  "optionDesc_noSuggest": { "message": "CLI cavabının sonunda növbəti AI tədbirini avtomatik təklif etməyin" },
   "optionDesc_quiet": { "message": "Xətalardan başqa bütün girişləri bağlayın" },
   "optionDesc_init": { "message": "Konfiqurasiya faylı yaradın (layihə kökündə)" },
   "optionDesc_joke": { "message": "Təsadüfi gülməli bir zarafat danışır" },

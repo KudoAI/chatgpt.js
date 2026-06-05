@@ -49,7 +49,7 @@
   "optionDesc_config": { "message": "พาธไปยังไฟล์กำหนดค่าที่จะโหลด" },
   "optionDesc_msgMaxChars": { "message": "ขีดจำกัดตัวอักษรต่อข้อความ" },
   "optionDesc_turnsToPreserve": { "message": "จำนวนรอบที่จะรักษาไว้" },
-  "optionDesc_autoSuggest": { "message": "แนะนำอัตโนมัติการดำเนินการ AI ครั้งต่อไปในตอนท้ายของการตอบสนอง CLI" },
+  "optionDesc_noSuggest": { "message": "อย่าแนะนำการดำเนินการ AI ครั้งต่อไปโดยอัตโนมัติเมื่อสิ้นสุดการตอบกลับ CLI" },
   "optionDesc_quiet": { "message": "ระงับการบันทึกทั้งหมดยกเว้นข้อผิดพลาด" },
   "optionDesc_init": { "message": "สร้างไฟล์การกำหนดค่า (ในรูทโครงการ)" },
   "optionDesc_joke": { "message": "เล่าเรื่องตลกแบบสุ่ม" },

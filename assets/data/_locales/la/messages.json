@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "Path to custom config file to load" },
   "optionDesc_msgMaxChars": { "message": "Character limit per message" },
   "optionDesc_turnsToPreserve": { "message": "Numerum divendum ad conservarum" },
-  "optionDesc_autoSuggest": { "message": "Actione supe del CLI" },
+  "optionDesc_noSuggest": { "message": "NONTO GUNCTIS QUAE IN DE COLI REAL" },
   "optionDesc_quiet": { "message": "Omnes inscriptiones praeter errores supprime" },
   "optionDesc_init": { "message": "Crea fasciculum configurationis (in radice proiecti)" },
   "optionDesc_joke": { "message": "Isti dicitur vazivazy in random" },

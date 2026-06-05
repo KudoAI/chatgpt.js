@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "Путь к пользовательскому файлу конфигурации для загрузки" },
   "optionDesc_msgMaxChars": { "message": "Ограничение количества символов в сообщении" },
   "optionDesc_turnsToPreserve": { "message": "Количество оборотов для сохранения" },
-  "optionDesc_autoSuggest": { "message": "Автоматическое предложение следующего действия AI в конце ответа CLI" },
+  "optionDesc_noSuggest": { "message": "Не предлагать следующее действие ИИ автоматически в конце ответа CLI" },
   "optionDesc_quiet": { "message": "Подавление всех журналов, кроме ошибок" },
   "optionDesc_init": { "message": "Создание файла конфигурации (в корне проекта)" },
   "optionDesc_joke": { "message": "Рассказать забавную шутку наугад" },

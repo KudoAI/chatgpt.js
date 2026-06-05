@@ -47,7 +47,9 @@
   "optionDesc_config": { "message": "ဖွင့်ရန် စိတ်ကြိုက် config ဖိုင်အတွက် လမ်းကြောင်း" },
   "optionDesc_msgMaxChars": { "message": "မက်ဆေ့ချ်တစ်စောင်လျှင် အက္ခရာကန့်သတ်ချက်" },
   "optionDesc_turnsToPreserve": { "message": "ထိန်းသိမ်းရန် အလှည့်အရေအတွက်" },
-  "optionDesc_autoSuggest": { "message": "CLI တုံ့ပြန်မှုအဆုံးတွင် နောက်ထပ် AI လုပ်ဆောင်ချက်ကို အလိုအလျောက် အကြံပြုပါ" },
+  "optionDesc_noSuggest": {
+    "message": "CLI တုံ့ပြန်မှုအဆုံးတွင် နောက်ထပ် AI လုပ်ဆောင်ချက်ကို အလိုအလျောက်အကြံမပြုပါနှင့်"
+  },
   "optionDesc_quiet": { "message": "အမှားအယွင်းများမှလွဲ ၍ လော့ဂ်အင်အားလုံးကိုဖိနှိပ်ပါ" },
   "optionDesc_init": { "message": "Config ဖိုင်ကိုဖန်တီးပါ (ပရောဂျက်အမြစ်တွင်)" },
   "optionDesc_joke": { "message": "ရယ်စရာ ဟာသတစ်ခုကို ကျပန်းပြောသည်" },

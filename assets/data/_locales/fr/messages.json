@@ -47,8 +47,8 @@
   "optionDesc_config": { "message": "Chemin d'accès au fichier de configuration personnalisé à charger" },
   "optionDesc_msgMaxChars": { "message": "Limite de caractères par message" },
   "optionDesc_turnsToPreserve": { "message": "Nombre de tours à préserver" },
-  "optionDesc_autoSuggest": {
-    "message": "Suggérer automatiquement la prochaine action de l'IA à la fin de la réponse CLI"
+  "optionDesc_noSuggest": {
+    "message": "Ne pas suggérer automatiquement la prochaine action de l'IA à la fin de la réponse de la CLI"
   },
   "optionDesc_quiet": { "message": "Supprimer tous les journaux sauf les erreurs" },
   "optionDesc_init": { "message": "Créer un fichier de configuration (dans la racine du projet)" },

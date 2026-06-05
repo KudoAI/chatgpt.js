@@ -47,8 +47,8 @@
   "optionDesc_config": { "message": "Percorso del file di configurazione personalizzato da caricare" },
   "optionDesc_msgMaxChars": { "message": "Limite di caratteri per messaggio" },
   "optionDesc_turnsToPreserve": { "message": "Numero di giri da preservare" },
-  "optionDesc_autoSuggest": {
-    "message": "Suggerisci automaticamente la prossima azione AI alla fine della risposta CLI"
+  "optionDesc_noSuggest": {
+    "message": "Non suggerire automaticamente la prossima azione AI alla fine della risposta CLI"
   },
   "optionDesc_quiet": { "message": "Elimina tutte le registrazioni ad eccezione degli errori" },
   "optionDesc_init": { "message": "Crea file di configurazione (nella radice del progetto)" },

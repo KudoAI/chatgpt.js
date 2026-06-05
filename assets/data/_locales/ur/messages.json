@@ -47,7 +47,7 @@
   "optionDesc_config": { "message": "لوڈ کرنے کے لیے کسٹم کنفیگ فائل کا راستہ" },
   "optionDesc_msgMaxChars": { "message": "فی پیغام کریکٹر کی حد" },
   "optionDesc_turnsToPreserve": { "message": "محفوظ کرنے کے لیے موڑ کی تعداد" },
-  "optionDesc_autoSuggest": { "message": "CLI کے جواب کے اختتام پر اگلی AI کارروائی کی خودکار تجویز کریں" },
+  "optionDesc_noSuggest": { "message": "CLI کے جواب کے اختتام پر اگلی AI کارروائی کی خودکار تجویز نہ کریں" },
   "optionDesc_quiet": { "message": "غلطیوں کے علاوہ تمام لاگنگ کو دبائیں" },
   "optionDesc_init": { "message": "کنفیگ فائل بنائیں (پروجیکٹ روٹ میں)" },
   "optionDesc_joke": { "message": "بے ترتیب میں ایک مضحکہ خیز مذاق سناتا ہے" },
