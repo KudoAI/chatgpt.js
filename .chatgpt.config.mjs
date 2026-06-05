@@ -14,6 +14,6 @@ export default {
     msgMaxChars: 250,       // char limit per msg
     maxTokens: null,        // max tokens to use
     turnsToPreserve: 3,     // # of turns to preserve (2 msgs/turn)
-    autoSuggest: true,      // auto-suggest next AI action at end of CLI response
+    noSuggest: false,       // don't auto-suggest next AI action at end of CLI response
     quietMode: false        // suppress all logging except errors
 }
