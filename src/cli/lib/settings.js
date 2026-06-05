@@ -1,7 +1,7 @@
 const fs = require('fs'),
       path = require('path')
 
-;(globalThis.cli ??= {}).config = {}
+globalThis.cli.config = {}
 
 module.exports = {
     configFilename: '.chatgpt.config.mjs',
