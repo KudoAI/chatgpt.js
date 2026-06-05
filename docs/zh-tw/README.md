@@ -221,17 +221,16 @@ chatgpt --query "sup"  # 或者 cjs -q sup
 # e.g. => Hey there! What's up?
 ```
 
-使用 `--provider google` 參數可以啟用 Google AI 而不是預設的 OpenRouter 提供者：
+建立本機設定檔（自訂提供者等）：
 
 ```bash
-chatgpt --provider google --query "寫入一行 Git 提交資訊"
+chatgpt init
 ```
 
-若要查看所有 CLI 選項或建立本機設定檔：
+查看所有 CLI 選項：
 
 ```bash
 chatgpt --help
-chatgpt --init
 ```
 
 如需更多選項及範例，請參閱擴充使用者指南：

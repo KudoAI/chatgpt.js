@@ -221,23 +221,16 @@ chatgpt --query "sup"  # or cjs -q sup
 # e.g. => Hey there! What's up?
 ```
 
-Use `--provider google` to use Google AI instead of the default OpenRouter provider:
+Create local config file (customize provider, etc.):
 
 ```bash
-chatgpt --provider google --query "Write a one-line git commit message"
+chatgpt init
 ```
 
-Ask and answer a random question:
-
-```bash
-chatgpt --random-answer
-```
-
-To view all CLI options or create a local config file:
+View all CLI options:
 
 ```bash
 chatgpt --help
-chatgpt --init
 ```
 
 For more options & examples, see the extended user guide:

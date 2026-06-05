@@ -221,17 +221,16 @@ chatgpt --query "sup"  # または cjs -q sup
 # e.g. => Hey there! What's up?
 ```
 
-デフォルトの OpenRouter プロバイダーの代わりに Google AI を使用するには、`--provider google` を指定します：
+ローカル設定ファイルを作成する（プロバイダーのカスタマイズなど）：
 
 ```bash
-chatgpt --provider google --query "Gitのコミットメッセージを1行で書いてください。"
+chatgpt init
 ```
 
-すべての CLI オプションを確認したり、ローカル設定ファイルを作成したりするには：
+すべてのCLIオプションを表示する：
 
 ```bash
 chatgpt --help
-chatgpt --init
 ```
 
 その他のオプションや例については、詳細ユーザーガイドをご覧ください。
