@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Параметры Конфигурации" },
   "helpSection_flags": { "message": "Параметры Конфигурации" },
   "helpSection_cmds": { "message": "Информационные команды" },
+  "optionDesc_provider": { "message": "Провайдер API чата" },
   "optionDesc_query": { "message": "Запрос на отправку ИИ" },
   "optionDesc_summarize": { "message": "Путь к файлу или тексту для обобщения" },
   "optionDesc_uiLang": { "message": "Код языка ISO 639-1 для отображения пользовательского интерфейса" },

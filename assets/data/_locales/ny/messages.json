@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Konzani zosankha" },
   "helpSection_flags": { "message": "Konzani zosankha" },
   "helpSection_cmds": { "message": "ZOKHUDZ" },
+  "optionDesc_provider": { "message": "Wopereka macheza API" },
   "optionDesc_query": { "message": "Kufunsira kutumiza AI" },
   "optionDesc_summarize": { "message": "Njira yopita ku fayilo kapena malemba kuti afotokoze mwachidule" },
   "optionDesc_uiLang": { "message": "ISO 639-1 malamulo chilankhulo kusonyeza UI mu" },

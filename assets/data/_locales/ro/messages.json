@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Opțiuni de configurare" },
   "helpSection_flags": { "message": "Opțiuni de configurare" },
   "helpSection_cmds": { "message": "Comenzi Info" },
+  "optionDesc_provider": { "message": "Furnizor pentru chat API" },
   "optionDesc_query": { "message": "Interogare pentru a trimite AI" },
   "optionDesc_summarize": { "message": "Calea către fișier sau text de rezumat" },
   "optionDesc_uiLang": { "message": "Codul ISO 639-1 al limbii pentru afișarea UI în" },

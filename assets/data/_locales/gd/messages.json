@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Roghainnean a 'pharaiméadair" },
   "helpSection_flags": { "message": "Roghainnean rèiteachaidh" },
   "helpSection_cmds": { "message": "Àithnean fiosrachaidh" },
+  "optionDesc_provider": { "message": "Solaraiche airson API cabadaich" },
   "optionDesc_query": { "message": "Accueil > Accueil > To send ai" },
   "optionDesc_summarize": { "message": "An t - slighe gu faidhle no teacsa gus geàrr - chunntas a dhèanamh" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 Code of Language gus UI a thaisbeanadh ann an UI" },

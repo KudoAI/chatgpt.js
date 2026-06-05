@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "විකල්ප සකසන්න" },
   "helpSection_flags": { "message": "විකල්ප සකසන්න" },
   "helpSection_cmds": { "message": "තොරතුරු විධාන" },
+  "optionDesc_provider": { "message": "චැට් API සඳහා සපයන්නා" },
   "optionDesc_query": { "message": "AI යැවීමට විමසුම" },
   "optionDesc_summarize": { "message": "සාරාංශ කිරීමට ගොනුව හෝ පෙළ සඳහා මාර්ගය" },
   "optionDesc_uiLang": { "message": "ISO 639-1 භාෂා කේතය ප්රදර්ශනය කිරීමට UI" },

@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Možnosti parametrů" },
   "helpSection_flags": { "message": "config(**options) [#]" },
   "helpSection_cmds": { "message": "Informační příkazy" },
+  "optionDesc_provider": { "message": "Poskytovatel pro chat API" },
   "optionDesc_query": { "message": "Dotaz na odeslání umělé inteligence" },
   "optionDesc_summarize": { "message": "Cesta k souboru nebo textu pro shrnutí" },
   "optionDesc_uiLang": { "message": "Kód jazyka ISO 639-1 pro zobrazení uživatelského rozhraní" },

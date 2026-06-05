@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Config אָפּציעס" },
   "helpSection_flags": { "message": "קאָנפיגוראַציע אָפּציעס" },
   "helpSection_cmds": { "message": "אינפֿאָרמאַציע קאַמאַנדז" },
+  "optionDesc_provider": { "message": "פּראַוויידער פֿאַר טשאַט API" },
   "optionDesc_query": { "message": "אָנפֿרעג צו שיקן קינסטלעכע אינטעליגענץ" },
   "optionDesc_summarize": { "message": "דרך צום טעקע אדער טעקסט צו צוזאמענפאסן" },
   "optionDesc_uiLang": { "message": "ISO 639-1 קאָד פֿון שפּראַך צו ווײַזן באַניצער־אינטערפֿייס אין" },

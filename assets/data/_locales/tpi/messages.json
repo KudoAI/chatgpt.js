@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Konfigim ol opsen" },
   "helpSection_flags": { "message": "Konfigim ol opsen" },
   "helpSection_cmds": { "message": "Toksave" },
+  "optionDesc_provider": { "message": "Ol man i save mekim wok long ol samting bilong skin" },
   "optionDesc_query": { "message": "Mi laik bai yu salim mi i go" },
   "optionDesc_summarize": { "message": "Rot bilong kisim wanpela fail o tok i stap long en" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kod bilong tokples bilong soim UI long" },

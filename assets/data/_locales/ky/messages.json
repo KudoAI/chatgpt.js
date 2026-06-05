@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Параметр параметрлери" },
   "helpSection_flags": { "message": "Параметрлерди конфигурациял" },
   "helpSection_cmds": { "message": "Маалымат буйруктары" },
+  "optionDesc_provider": { "message": "Чат API үчүн камсыздоочу" },
   "optionDesc_query": { "message": "AI жөнөтүү үчүн суроо" },
   "optionDesc_summarize": { "message": "Undo-type" },
   "optionDesc_uiLang": { "message": "ISO 639-1 тил коду UI көрсөтүү үчүн" },

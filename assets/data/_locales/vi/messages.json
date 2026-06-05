@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Tùy chọn cấu hình" },
   "helpSection_flags": { "message": "Tùy chọn cấu hình" },
   "helpSection_cmds": { "message": "Lệnh thông tin" },
+  "optionDesc_provider": { "message": "Nhà cung cấp cho API trò chuyện" },
   "optionDesc_query": { "message": "Truy vấn để gửi AI" },
   "optionDesc_summarize": { "message": "Đường dẫn đến tệp hoặc văn bản để tóm tắt" },
   "optionDesc_uiLang": { "message": "Mã ngôn ngữ ISO 639-1 để hiển thị giao diện người dùng trong" },

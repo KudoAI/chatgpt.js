@@ -44,6 +44,7 @@
   "helpSection_params": { "message": "Akpengba ye so mo lingbi ti sara" },
   "helpSection_flags": { "message": "Akpengba ye so mo lingbi ti sara" },
   "helpSection_cmds": { "message": "Aye so afa so a yeke nzoni e sara" },
+  "optionDesc_provider": { "message": "Zo so ayeke mû maboko na azo ti sara lisoro na ndö ti Internet" },
   "optionDesc_query": { "message": "Mbi leke ti tokua mbeni mbeti na mo" },
   "optionDesc_summarize": { "message": "Lege ti faïl wala ti sara tënë na yâ ti atënë ni" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code ti yanga ti kodoro ti fa UI na" },

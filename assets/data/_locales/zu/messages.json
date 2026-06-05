@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Izinketho zepharamitha" },
   "helpSection_flags": { "message": "Lungiselela ongakhetha kukho" },
   "helpSection_cmds": { "message": "Imiyalo yemininingwane" },
+  "optionDesc_provider": { "message": "Umhlinzeki we-API yengxoxo" },
   "optionDesc_query": { "message": "Isicelo sokuthumela i-AI" },
   "optionDesc_summarize": { "message": "Indlela eya kufayela noma embhalweni ukuze ufingqe" },
   "optionDesc_uiLang": { "message": "Ikhodi yolimi ye-ISO 639-1 yokubonisa i-UI ku-" },

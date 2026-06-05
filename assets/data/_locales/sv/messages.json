@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Konfigurera alternativ" },
   "helpSection_flags": { "message": "Konfigurera alternativ" },
   "helpSection_cmds": { "message": "INFO-kommandon" },
+  "optionDesc_provider": { "message": "Leverantör för chatt-API" },
   "optionDesc_query": { "message": "Fråga för att skicka AI" },
   "optionDesc_summarize": { "message": "Sökväg till fil eller text för sammanfattning" },
   "optionDesc_uiLang": { "message": "ISO 639-1-kod för språk för att visa användargränssnitt i" },

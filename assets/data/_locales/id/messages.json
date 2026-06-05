@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Opsi parameter" },
   "helpSection_flags": { "message": "Opsi konfigurasi" },
   "helpSection_cmds": { "message": "Perintah info" },
+  "optionDesc_provider": { "message": "Penyedia api obrolan" },
   "optionDesc_query": { "message": "Kueri untuk mengirim AI" },
   "optionDesc_summarize": { "message": "Jalur ke file atau teks untuk diringkas" },
   "optionDesc_uiLang": { "message": "Kode bahasa ISO 639 -1 untuk menampilkan UI di" },

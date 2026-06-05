@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Պարամետրի տարբերակներ" },
   "helpSection_flags": { "message": "Կարգավորումների ընտրանքներ" },
   "helpSection_cmds": { "message": "Տեղեկությունների հրամաններ" },
+  "optionDesc_provider": { "message": "Չատի API - ի մատակարար" },
   "optionDesc_query": { "message": "Հարցում ՝ AI ուղարկելու համար" },
   "optionDesc_summarize": { "message": "Ճանապարհ դեպի ֆայլ կամ տեքստ ՝ ամփոփելու համար" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 լեզվի կոդը UI - ում ցուցադրելու համար" },

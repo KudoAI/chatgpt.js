@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Sanidi machaguo" },
   "helpSection_flags": { "message": "Sanidi machaguo" },
   "helpSection_cmds": { "message": "Amri za taarifa" },
+  "optionDesc_provider": { "message": "Mtoa huduma wa API ya gumzo" },
   "optionDesc_query": { "message": "Swali la kutuma AI" },
   "optionDesc_summarize": { "message": "PATH to file or text to summarize" },
   "optionDesc_uiLang": { "message": "Msimbo wa lugha wa ISO 639-1 kuonyesha UI katika" },

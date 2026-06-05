@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Għażliet tal-konfigurazzjoni" },
   "helpSection_flags": { "message": "Għażliet tal-konfigurazzjoni" },
   "helpSection_cmds": { "message": "Kmand tal-informazzjoni" },
+  "optionDesc_provider": { "message": "Fornitur għall-API taċ-chat" },
   "optionDesc_query": { "message": "Mistoqsija biex tibgħat l-AI" },
   "optionDesc_summarize": { "message": "Mogħdija għall-fajl jew test biex tiġbor fil-qosor" },
   "optionDesc_uiLang": { "message": "Kodiċi tal-lingwa ISO 639-1 biex turi l-UI fi" },

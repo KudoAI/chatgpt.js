@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Hindura amahitamo" },
   "helpSection_flags": { "message": "Amahitamo" },
   "helpSection_cmds": { "message": "Amabwiriza" },
+  "optionDesc_provider": { "message": "Kugirango" },
   "optionDesc_query": { "message": "Kuri Kohereza" },
   "optionDesc_summarize": { "message": "Kuri IDOSIYE Cyangwa Umwandiko Kuri Inshamake" },
   "optionDesc_uiLang": { "message": "Kode ya ISO 639-1 y'ururimi rwo kwerekanamo UI" },

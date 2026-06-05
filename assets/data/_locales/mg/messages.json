@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Safidy momba ny marika" },
   "helpSection_flags": { "message": "Safidin'ny kirakira" },
   "helpSection_cmds": { "message": "Baikon'ny fampahalalana" },
+  "optionDesc_provider": { "message": "Mpanome ny chat API" },
   "optionDesc_query": { "message": "Fangatahana handefa AI" },
   "optionDesc_summarize": { "message": "Ny sori-dàlana atao anaty rakitra na soratra hofehezina" },
   "optionDesc_uiLang": { "message": "ISO 639-1 fehezan-dalàna ny fiteny mba haneho UI in" },

@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "ਸੰਰਚਨਾ ਚੋਣਾਂ" },
   "helpSection_flags": { "message": "ਸੰਰਚਨਾ ਚੋਣਾਂ" },
   "helpSection_cmds": { "message": "ਜਾਣਕਾਰੀ ਕਮਾਂਡਾਂ" },
+  "optionDesc_provider": { "message": "ਚੈਟ API ਲਈ ਪ੍ਰਦਾਤਾ" },
   "optionDesc_query": { "message": "AI ਭੇਜਣ ਲਈ ਕਿਊਰੀ" },
   "optionDesc_summarize": { "message": "ਸੰਖੇਪ ਕਰਨ ਲਈ ਫਾਇਲ ਜਾਂ ਟੈਕਸਟ ਲਈ ਮਾਰਗ" },
   "optionDesc_uiLang": { "message": "ਵਿੱਚ UI ਵੇਖਾਉਣ ਲਈ ਭਾਸ਼ਾ ਦਾ ISO 639-1 ਕੋਡ" },

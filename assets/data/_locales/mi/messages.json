@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Kōwhiringa parameter" },
   "helpSection_flags": { "message": "Kōwhiringa whirihora" },
   "helpSection_cmds": { "message": "Ngā Whakahau" },
+  "optionDesc_provider": { "message": "Kaihoko mo te API korerorero" },
   "optionDesc_query": { "message": "Te tono ki te tuku i a ia" },
   "optionDesc_summarize": { "message": "Te ara ki te kōnae ranei kuputuhi ki te whakarāpopototanga" },
   "optionDesc_uiLang": { "message": "ISO 639-1 waehere reo ki te whakaatu UI i roto i" },

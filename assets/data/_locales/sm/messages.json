@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Filifiliga Config" },
   "helpSection_flags": { "message": "Filifiliga Config" },
   "helpSection_cmds": { "message": "Poloaiga Info" },
+  "optionDesc_provider": { "message": "Tuuina atu mo talatalanoaga API" },
   "optionDesc_query": { "message": "Fesili e auina atu AI" },
   "optionDesc_summarize": { "message": "Ala i le faila po o le mau e aotele ai" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code o le gagana e faaali atu UI i" },

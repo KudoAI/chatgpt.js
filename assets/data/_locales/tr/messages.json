@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Yapılandırma Seçenekleri" },
   "helpSection_flags": { "message": "Yapılandırma Seçenekleri" },
   "helpSection_cmds": { "message": "Bilgi komutları" },
+  "optionDesc_provider": { "message": "Sohbet API'si sağlayıcısı" },
   "optionDesc_query": { "message": "Yapay zeka gönderme sorgusu" },
   "optionDesc_summarize": { "message": "Dosya yolu veya özetlenecek metin" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 kullanıcı arayüzünü görüntülemek için dil kodu" },

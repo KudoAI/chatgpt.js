@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "ຕົວເລືອກພາລາມິເຕີ" },
   "helpSection_flags": { "message": "ຕົວເລືອກການຕັ້ງຄ່າ" },
   "helpSection_cmds": { "message": "ຄໍາສັ່ງ Info" },
+  "optionDesc_provider": { "message": "ຜູ້ໃຫ້ບໍລິການ ສໍາ ລັບ CHAT API" },
   "optionDesc_query": { "message": "Query ເພື່ອສົ່ງ AI" },
   "optionDesc_summarize": { "message": "ເສັ້ນທາງໄປຫາເອກະສານ ຫຼື ຂໍ້ຄວາມເພື່ອສະຫຼຸບ" },
   "optionDesc_uiLang": { "message": "ISO 639-1 ລະຫັດພາສາທີ່ຈະສະແດງ UI ໃນ" },

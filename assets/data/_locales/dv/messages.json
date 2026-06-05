@@ -42,6 +42,7 @@
   "helpSection_params": { "message": "ޕެރެމިޓަރ އޮޕްޝަންސް" },
   "helpSection_flags": { "message": "ކޮންފިގް އޮޕްޝަންސް" },
   "helpSection_cmds": { "message": "އިންފޯ ކޮމާންޑުތައް" },
+  "optionDesc_provider": { "message": "ޗެޓް އެޕީއައި އަށް ޕްރޮވައިޑަރ" },
   "optionDesc_query": { "message": "އޭއައި ފޮނުވަން ކިއުއަރީ" },
   "optionDesc_summarize": { "message": "ފައިލް އަށް ނުވަތަ ޚުލާޞާ ކުރަން ޓެކްސްޓް އަށް ދާން އޮތް މަގު" },
   "optionDesc_uiLang": { "message": "ޔޫއައި ދައްކާލުމަށް އައިއެސްއޯ 639-1 ކޯޑް އޮފް ލޭންގުއޭޖް" },

@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Parametrų parinktys" },
   "helpSection_flags": { "message": "Konfigūracijos parinktys" },
   "helpSection_cmds": { "message": "Informacijos komandos" },
+  "optionDesc_provider": { "message": "Pokalbių API teikėjas" },
   "optionDesc_query": { "message": "Užklausa DI siuntimui" },
   "optionDesc_summarize": { "message": "Kelias iki failo arba teksto, kurį reikia apibendrinti" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kalbos kodas, skirtas vartotojo sąsajai rodyti" },

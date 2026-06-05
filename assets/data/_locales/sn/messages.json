@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Ronga zvingasarudzwa" },
   "helpSection_flags": { "message": "Ronga zvingasarudzwa" },
   "helpSection_cmds": { "message": "Info mirairo" },
+  "optionDesc_provider": { "message": "Mupi wekukurukurirana API" },
   "optionDesc_query": { "message": "Mubvunzo kutumira AI" },
   "optionDesc_summarize": { "message": "Nzira kune faira kana zvinyorwa kupfupisa" },
   "optionDesc_uiLang": { "message": "ISO 639-1 remutauro kuratidza UI muna" },

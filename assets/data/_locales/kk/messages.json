@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Параметр опциялары" },
   "helpSection_flags": { "message": "Параметрлерді теңшеу" },
   "helpSection_cmds": { "message": "Ақпараттық командалар" },
+  "optionDesc_provider": { "message": "Чат API провайдері" },
   "optionDesc_query": { "message": "ЖИ жіберу сұранысы" },
   "optionDesc_summarize": { "message": "Қорытындылау үшін файлға немесе мәтінге жол" },
   "optionDesc_uiLang": { "message": "Пайдаланушы интерфейсін көрсету үшін ISO 639-1 тіл коды" },

@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Konfiguratsiya opsiyalari" },
   "helpSection_flags": { "message": "Konfiguratsiya parametrlari" },
   "helpSection_cmds": { "message": "Ma'lumot buyruqlari" },
+  "optionDesc_provider": { "message": "Chat API uchun provayder" },
   "optionDesc_query": { "message": "Sun'iy intellektni yuborish uchun so'rov" },
   "optionDesc_summarize": { "message": "Xulosa qilish uchun fayl yoki matnga yo'l" },
   "optionDesc_uiLang": { "message": "UI ni ko'rsatish uchun ISO 639-1 til kodi" },

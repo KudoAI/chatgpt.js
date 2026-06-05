@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Options de paramètres" },
   "helpSection_flags": { "message": "Options de configuration" },
   "helpSection_cmds": { "message": "Commandes info" },
+  "optionDesc_provider": { "message": "Fournisseur pour l'API de chat" },
   "optionDesc_query": { "message": "Requête à envoyer AI" },
   "optionDesc_summarize": { "message": "Chemin d'accès au fichier ou au texte pour résumer" },
   "optionDesc_uiLang": { "message": "Code de langue ISO 639-1 pour afficher l'interface utilisateur dans" },

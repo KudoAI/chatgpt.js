@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Parameterindstillinger" },
   "helpSection_flags": { "message": "Konfigurationsindstillinger" },
   "helpSection_cmds": { "message": "INFO-kommandoer" },
+  "optionDesc_provider": { "message": "Udbyder til chat-API" },
   "optionDesc_query": { "message": "Forespørgsel om at sende AI" },
   "optionDesc_summarize": { "message": "Sti til fil eller tekst, der skal opsummeres" },
   "optionDesc_uiLang": { "message": "ISO 639-1-kode for sprog til visning af brugergrænseflade i" },

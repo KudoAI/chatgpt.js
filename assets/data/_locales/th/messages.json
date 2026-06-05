@@ -42,6 +42,7 @@
   "helpSection_params": { "message": "ตัวเลือกการกำหนดค่า" },
   "helpSection_flags": { "message": "ตัวเลือกการกำหนดค่า" },
   "helpSection_cmds": { "message": "คำสั่งข้อมูล" },
+  "optionDesc_provider": { "message": "ผู้ให้บริการสำหรับ API การแชท" },
   "optionDesc_query": { "message": "สอบถามเพื่อส่ง AI" },
   "optionDesc_summarize": { "message": "เส้นทางไปยังไฟล์หรือข้อความเพื่อสรุป" },
   "optionDesc_uiLang": { "message": "รหัสภาษา ISO 639 -1 เพื่อแสดง UI ใน" },

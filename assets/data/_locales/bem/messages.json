@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Ifya kusalululapo" },
   "helpSection_flags": { "message": "Ifyakusalapo ifyakupanga" },
   "helpSection_cmds": { "message": "Ifyebo Fyabamo Lyonse" },
+  "optionDesc_provider": { "message": "Awkwafina for chat API" },
   "optionDesc_query": { "message": "Fela Anikulapo Kuti AI" },
   "optionDesc_summarize": { "message": "Fela Anikulapo Kuti - Fela Anikulapo Kuti" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Code of Language Ukulele Tabs in Ukulele Tabs" },

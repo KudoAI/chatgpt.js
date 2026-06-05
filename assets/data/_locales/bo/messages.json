@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "ཚད་འཇལ་བྱེད་ཀྱི་འདེམས་སྟངས" },
   "helpSection_flags": { "message": "སྒྲིག་འཇུག" },
   "helpSection_cmds": { "message": "བརྡ་དོན་བཀའ་སློབ །" },
+  "optionDesc_provider": { "message": "Chat API སྒྲིག་འཇུག་བྱས་ཚད ། ཐེངས་10 ལས་ཉུང་བ ། ཐོན་རིམ་5.7.1" },
   "optionDesc_query": { "message": "ངས་ཁྱོད་ལ་བཏང་།" },
   "optionDesc_summarize": { "message": "ཡིག་ཆ་དང་ཡིག་ཆ་བསྡུ་ལེན་བྱེད་པའི་ལམ་" },
   "optionDesc_uiLang": { "message": "ISO 639-1 སྐད་ཡིག་གི་ཁ་བྱང་།" },

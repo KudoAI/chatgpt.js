@@ -42,6 +42,7 @@
   "helpSection_params": { "message": "Lungelelanisa izinto onokukhetha kuzo" },
   "helpSection_flags": { "message": "Lungelelanisa izinto onokukhetha kuzo" },
   "helpSection_cmds": { "message": "Imiyalelo yenkcazelo" },
+  "optionDesc_provider": { "message": "Umnikezeli we-API yencoko" },
   "optionDesc_query": { "message": "Isicelo sokuthumela i-AI" },
   "optionDesc_summarize": { "message": "Indlela eya kwifayile okanye kwisicatshulwa ukuze ushwankathele" },
   "optionDesc_uiLang": { "message": "Ikhowudi yolwimi ye-ISO 639-1 yokubonisa i-UI" },

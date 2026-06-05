@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Opções de Configuração" },
   "helpSection_flags": { "message": "Opções de Configuração" },
   "helpSection_cmds": { "message": "Comandos de informação" },
+  "optionDesc_provider": { "message": "Fornecedor para API de chat" },
   "optionDesc_query": { "message": "Consulta para enviar IA" },
   "optionDesc_summarize": { "message": "Caminho para o ficheiro ou texto a resumir" },
   "optionDesc_uiLang": { "message": "Código ISO 639-1 do idioma para exibir a interface do usuário" },

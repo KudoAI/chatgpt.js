@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Opcje konfiguracji" },
   "helpSection_flags": { "message": "Opcje konfiguracji" },
   "helpSection_cmds": { "message": "Polecenia informacyjne" },
+  "optionDesc_provider": { "message": "Dostawca interfejsu API czatu" },
   "optionDesc_query": { "message": "Zapytanie o wysłanie sztucznej inteligencji" },
   "optionDesc_summarize": { "message": "Ścieżka do pliku lub tekstu do podsumowania" },
   "optionDesc_uiLang": { "message": "Kod języka ISO 639-1 do wyświetlania interfejsu użytkownika w" },

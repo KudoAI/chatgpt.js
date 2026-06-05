@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Опции за параметрите" },
   "helpSection_flags": { "message": "Опции за конфигуриране" },
   "helpSection_cmds": { "message": "Команди за информация" },
+  "optionDesc_provider": { "message": "Доставчик на приложен програмен интерфейс (API)" },
   "optionDesc_query": { "message": "Заявка за изпращане на ИИ" },
   "optionDesc_summarize": { "message": "Път до файла или текст за обобщаване" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 код на езика за показване на потребителския интерфейс в" },

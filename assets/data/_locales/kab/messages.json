@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Iɣewwaṛen n uzegrir" },
   "helpSection_flags": { "message": "Snifel isenfaren" },
   "helpSection_cmds": { "message": "Iɣewwaṛen n isefka" },
+  "optionDesc_provider": { "message": "Asebded i tmaziɣt API" },
   "optionDesc_query": { "message": "Affinez votre recherche pour amd" },
   "optionDesc_summarize": { "message": "Abrid n ufaylu neɣ n uḍris i wakken ad ssiwḍeɣ" },
   "optionDesc_uiLang": { "message": "Tutlayt ISO 639-1 i wakken ad d-tban deg" },

@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "पैरामीटर विकल्प" },
   "helpSection_flags": { "message": "कॉन्फ़िगरेशन विकल्प" },
   "helpSection_cmds": { "message": "जानकारी कमांड" },
+  "optionDesc_provider": { "message": "चैट एपीआई के लिए प्रदाता" },
   "optionDesc_query": { "message": "AI भेजने के लिए क्वेरी" },
   "optionDesc_summarize": { "message": "संक्षेप में फ़ाइल या टेक्स्ट का पथ" },
   "optionDesc_uiLang": { "message": "यूआई प्रदर्शित करने के लिए भाषा का आईएसओ 639 -1 कोड" },

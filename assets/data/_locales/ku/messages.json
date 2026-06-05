@@ -44,6 +44,7 @@
   "helpSection_params": { "message": "Vebijarkên parametreyan" },
   "helpSection_flags": { "message": "Vebijarkên mîhengkirinê" },
   "helpSection_cmds": { "message": "Fermanên agahdariyê" },
+  "optionDesc_provider": { "message": "Pêşkêşvan ji bo API-ya sohbetê" },
   "optionDesc_query": { "message": "Pirs ji bo şandina AI" },
   "optionDesc_summarize": { "message": "Riya pel an nivîsa ku were kurtkirin" },
   "optionDesc_uiLang": { "message": "Koda ISO 639-1 ya zimanê ji bo nîşandana UI-ê" },

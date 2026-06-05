@@ -46,6 +46,7 @@
   "helpSection_params": { "message": "هەڵبژاردنی پارامەتری" },
   "helpSection_flags": { "message": "هەڵبژاردنەکان ڕێکبخە" },
   "helpSection_cmds": { "message": "فەرمانەکانی زانیاری" },
+  "optionDesc_provider": { "message": "زیادکردنی هاوپۆل بۆ chat API" },
   "optionDesc_query": { "message": "ناردنی ئه كاونت" },
   "optionDesc_summarize": { "message": "پەڕگە یان پەڕگە بۆ پوختەکردن" },
   "optionDesc_uiLang": { "message": "ئایزۆ 639-1 کۆدی زمان بۆ پیشاندانی UI" },

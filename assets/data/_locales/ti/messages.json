@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "ኣማራጺታት ኣዳሊእካ" },
   "helpSection_flags": { "message": "ኣማራጺታት ኣዳሊእካ" },
   "helpSection_cmds": { "message": "መምርሒታት ሓበሬታ" },
+  "optionDesc_provider": { "message": "ናይ ቻት ኤፒአይ ኣከፋፋሊ" },
   "optionDesc_query": { "message": "AI ንምልኣኽ ሓተተ" },
   "optionDesc_summarize": { "message": "ናብ ፋይል ወይ ጽሑፍ ንምእታው ዚሕግዝ መገዲ" },
   "optionDesc_uiLang": { "message": "ISO 639-1 ኮድ ቋንቋ ኣብ" },

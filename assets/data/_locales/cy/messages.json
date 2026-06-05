@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Opsiynau paramedr" },
   "helpSection_flags": { "message": "Opsiynau ffurfweddu" },
   "helpSection_cmds": { "message": "Gorchmynion gwybodaeth" },
+  "optionDesc_provider": { "message": "Darparwr ar gyfer API sgwrsio" },
   "optionDesc_query": { "message": "Ymholiad i anfon at" },
   "optionDesc_summarize": { "message": "Y llwybr i ffeil neu destun i'w grynhoi" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 cod iaith i ddangos UI yn" },

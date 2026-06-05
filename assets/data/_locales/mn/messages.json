@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Параметерын сонголтууд" },
   "helpSection_flags": { "message": "Тохиргооны сонголтууд" },
   "helpSection_cmds": { "message": "Мэдээллийн командууд" },
+  "optionDesc_provider": { "message": "Чат API-ийн үйлчилгээ үзүүлэгч" },
   "optionDesc_query": { "message": "AI илгээх хүсэлт" },
   "optionDesc_summarize": { "message": "Хураангуй болгох файл эсвэл текст рүү зам" },
   "optionDesc_uiLang": { "message": "UI-ийг харуулахын тулд ISO 639-1 хэлний код" },

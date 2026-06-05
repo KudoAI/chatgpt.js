@@ -64,6 +64,7 @@ module.exports = {
             ],
             params: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_params}:${this.colors.nc}`,
+                ` -p, --provider <provider>        ${cli.msgs.optionDesc_provider}.`,
                 ` -q, --query <msg>                ${cli.msgs.optionDesc_query}.`,
                 ` -s, --summarize <filepath|text>  ${cli.msgs.optionDesc_summarize}.`,
                 ` -u, --ui-lang <code>             ${cli.msgs.optionDesc_uiLang}.`,

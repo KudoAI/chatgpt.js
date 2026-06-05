@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Možnosti konfiguracije" },
   "helpSection_flags": { "message": "Možnosti konfiguracije" },
   "helpSection_cmds": { "message": "Info ukazi" },
+  "optionDesc_provider": { "message": "Ponudnik za API za klepet" },
   "optionDesc_query": { "message": "Poizvedba za pošiljanje umetne inteligence" },
   "optionDesc_summarize": { "message": "Pot do datoteke ali besedila za povzemanje" },
   "optionDesc_uiLang": { "message": "Koda jezika ISO 639-1 za prikaz uporabniškega vmesnika v" },

@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Mga kapilian sa parameter" },
   "helpSection_flags": { "message": "Mga kapilian sa config" },
   "helpSection_cmds": { "message": "Mga mando sa info" },
+  "optionDesc_provider": { "message": "Provider alang sa chat API" },
   "optionDesc_query": { "message": "Себуано sa pagpadala sa usa ka [" },
   "optionDesc_summarize": { "message": "Dalan sa file o teksto sa pag-summarize" },
   "optionDesc_uiLang": { "message": "ISO 639-1 nga kodigo sa sinultian aron ipakita ang UI sa" },

@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "కాన్ఫిగర్ ఎంపికలు" },
   "helpSection_flags": { "message": "కాన్ఫిగర్ ఎంపికలు" },
   "helpSection_cmds": { "message": "సమాచార ఆదేశాలు" },
+  "optionDesc_provider": { "message": "చాట్ API కోసం ప్రొవైడర్" },
   "optionDesc_query": { "message": "AIని పంపడానికి ప్రశ్న" },
   "optionDesc_summarize": { "message": "ఫైల్ ‌ కు మార్గం లేదా సంగ్రహించడానికి టెక్స్ట్" },
   "optionDesc_uiLang": { "message": "UIని ప్రదర్శించడానికి ISO 639-1 భాషా కోడ్" },

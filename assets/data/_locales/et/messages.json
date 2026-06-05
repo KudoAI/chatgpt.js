@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Parameetri valikud" },
   "helpSection_flags": { "message": "Seadete valikud" },
   "helpSection_cmds": { "message": "Teabekäsud" },
+  "optionDesc_provider": { "message": "Vestluse API pakkuja" },
   "optionDesc_query": { "message": "Tehisintellekti saatmise päring" },
   "optionDesc_summarize": { "message": "Faili või kokkuvõtva teksti tee" },
   "optionDesc_uiLang": { "message": "ISO 639-1 keelekood kasutajaliidese kuvamiseks" },

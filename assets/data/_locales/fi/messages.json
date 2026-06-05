@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Parametrivaihtoehdot" },
   "helpSection_flags": { "message": "Konfig. asetukset" },
   "helpSection_cmds": { "message": "Tietokomennot" },
+  "optionDesc_provider": { "message": "Chat-sovellusliittymän tarjoaja" },
   "optionDesc_query": { "message": "Kysely tekoälyn lähettämiseksi" },
   "optionDesc_summarize": { "message": "Yhteenvetotiedoston tai -tekstin polku" },
   "optionDesc_uiLang": { "message": "Iso 639-1 -kielikoodi käyttöliittymän näyttämiseksi" },

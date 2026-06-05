@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Parametru opcijas" },
   "helpSection_flags": { "message": "Konfigurācijas opcijas" },
   "helpSection_cmds": { "message": "Informācijas komandas" },
+  "optionDesc_provider": { "message": "Tērzēšanas API nodrošinātājs" },
   "optionDesc_query": { "message": "Vaicājums, lai nosūtītu MI" },
   "optionDesc_summarize": { "message": "Ceļš uz apkopojamo failu vai tekstu" },
   "optionDesc_uiLang": { "message": "ISO 639-1 valodas kods, lai parādītu UI" },

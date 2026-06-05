@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Habee ikhtiyaarrada" },
   "helpSection_flags": { "message": "Habee ikhtiyaarrada" },
   "helpSection_cmds": { "message": "Amarada Macluumaadka" },
+  "optionDesc_provider": { "message": "Bixiyaha Wadahadalka API" },
   "optionDesc_query": { "message": "Codsi si aad u dirto AI" },
   "optionDesc_summarize": { "message": "Jidka faylka ama qoraalka si loo soo koobo" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code luqadda si ay u muujiyaan UI in" },

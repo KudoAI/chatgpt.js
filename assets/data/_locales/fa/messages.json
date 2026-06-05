@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "گزینه‌های پارامتر" },
   "helpSection_flags": { "message": "گزینه های پیکربندی" },
   "helpSection_cmds": { "message": "دستورات اطلاعاتی" },
+  "optionDesc_provider": { "message": "ارائه دهنده API چت" },
   "optionDesc_query": { "message": "درخواست برای ارسال هوش مصنوعی" },
   "optionDesc_summarize": { "message": "مسیر فایل یا متن برای خلاصه کردن" },
   "optionDesc_uiLang": { "message": "کد زبان ISO 639-1 برای نمایش رابط کاربری" },

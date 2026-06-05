@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Opsyon paramèt" },
   "helpSection_flags": { "message": "Konfigire opsyon yo" },
   "helpSection_cmds": { "message": "Kòmandman Enfòmasyon" },
+  "optionDesc_provider": { "message": "Founisè pou chat API" },
   "optionDesc_query": { "message": "Mande pou voye AI" },
   "optionDesc_summarize": { "message": "Chemen pou ranpli oswa tèks pou rezime" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kòd langaj pou montre UI nan" },

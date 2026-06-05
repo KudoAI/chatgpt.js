@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Valkostir færibreytna" },
   "helpSection_flags": { "message": "Stilla valkosti" },
   "helpSection_cmds": { "message": "Upplýsingaskipanir" },
+  "optionDesc_provider": { "message": "Þjónustuaðili fyrir API fyrir spjall" },
   "optionDesc_query": { "message": "Fyrirspurn til að senda gervigreind" },
   "optionDesc_summarize": { "message": "Slóð að skrá eða texti til að draga saman" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kóði tungumáls til að sýna notendaviðmót í" },

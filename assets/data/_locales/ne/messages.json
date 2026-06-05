@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "कन्फिग विकल्पहरू" },
   "helpSection_flags": { "message": "कन्फिग विकल्पहरू" },
   "helpSection_cmds": { "message": "सूचना आदेशहरू" },
+  "optionDesc_provider": { "message": "च्याट API का लागि प्रदायक" },
   "optionDesc_query": { "message": "AI पठाउनको लागि क्वेरी" },
   "optionDesc_summarize": { "message": "संक्षेप गर्न फाइल वा पाठको बाटो" },
   "optionDesc_uiLang": { "message": "UI प्रदर्शन गर्न भाषाको ISO 639 -1 कोड" },

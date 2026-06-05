@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Parameteroptiounen" },
   "helpSection_flags": { "message": "Optiounen konfiguréieren" },
   "helpSection_cmds": { "message": "Infobefehlungen" },
+  "optionDesc_provider": { "message": "Provider fir Chat API" },
   "optionDesc_query": { "message": "Query ze schécken AI" },
   "optionDesc_summarize": { "message": "Wege zu Datei oder Text um zu resumieren" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Code der Sprache um UI an zu zeigen" },

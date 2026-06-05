@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "אפשרויות פרמטר" },
   "helpSection_flags": { "message": "הגדר אופציות" },
   "helpSection_cmds": { "message": "פקודות מידע" },
+  "optionDesc_provider": { "message": "ספק עבור ממשק API של צ'אט" },
   "optionDesc_query": { "message": "שאילתה לשליחת בינה מלאכותית" },
   "optionDesc_summarize": { "message": "נתיב לקובץ או לטקסט לסיכום" },
   "optionDesc_uiLang": { "message": "קוד שפה ISO 639 -1 להצגה בממשק המשתמש" },

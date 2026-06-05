@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "設定選項" },
   "helpSection_flags": { "message": "設定選項" },
   "helpSection_cmds": { "message": "信息命令" },
+  "optionDesc_provider": { "message": "聊天API的提供商" },
   "optionDesc_query": { "message": "查詢以發送AI" },
   "optionDesc_summarize": { "message": "要匯總的檔案或文字路徑" },
   "optionDesc_uiLang": { "message": "用於顯示UI的語言ISO 639-1代碼" },

@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "প্যারামিটার বিকল্প" },
   "helpSection_flags": { "message": "কনফিগার অপশন" },
   "helpSection_cmds": { "message": "তথ্য কমান্ড" },
+  "optionDesc_provider": { "message": "চ্যাট API এর জন্য প্রদানকারী" },
   "optionDesc_query": { "message": "AI পাঠাতে কোয়েরি করুন" },
   "optionDesc_summarize": { "message": "ফাইল বা পাঠ্যের সংক্ষিপ্তসার করার পথ" },
   "optionDesc_uiLang": { "message": "UI প্রদর্শনের জন্য ISO 639-1 ভাষার কোড" },

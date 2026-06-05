@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "参数选项" },
   "helpSection_flags": { "message": "配置选项" },
   "helpSection_cmds": { "message": "信息命令" },
+  "optionDesc_provider": { "message": "聊天API的提供商" },
   "optionDesc_query": { "message": "发送AI查询" },
   "optionDesc_summarize": { "message": "要汇总的文件或文本的路径" },
   "optionDesc_uiLang": { "message": "用于显示UI的语言的ISO 639-1代码" },

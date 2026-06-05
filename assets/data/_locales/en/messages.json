@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Parameter options" },
   "helpSection_flags": { "message": "Config options" },
   "helpSection_cmds": { "message": "Commands" },
+  "optionDesc_provider": { "message": "Provider for chat API" },
   "optionDesc_query": { "message": "Query to send AI" },
   "optionDesc_summarize": { "message": "Path to file or text to summarize" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code of language to display UI in" },

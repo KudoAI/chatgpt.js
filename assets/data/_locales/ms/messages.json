@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Pilihan parameter" },
   "helpSection_flags": { "message": "Pilihan konfigurasi" },
   "helpSection_cmds": { "message": "Perintah maklumat" },
+  "optionDesc_provider": { "message": "Pembekal untuk api sembang" },
   "optionDesc_query": { "message": "Pertanyaan untuk menghantar AI" },
   "optionDesc_summarize": { "message": "Laluan ke fail atau teks untuk diringkaskan" },
   "optionDesc_uiLang": { "message": "Kod bahasa ISO 639-1 untuk memaparkan UI" },

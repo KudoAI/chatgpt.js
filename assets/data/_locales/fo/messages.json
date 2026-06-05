@@ -40,6 +40,7 @@
   "helpSection_params": { "message": "Parametrar valmøguleikar" },
   "helpSection_flags": { "message": "Set upp valmøguleikar" },
   "helpSection_cmds": { "message": "Upplýsingar boð" },
+  "optionDesc_provider": { "message": "Chat API-tilboð" },
   "optionDesc_query": { "message": "Tað er ikki so lætt at fáa ein" },
   "optionDesc_summarize": { "message": "Veg til fílu ella tekst at taka saman" },
   "optionDesc_uiLang": { "message": "ISO 639-1 málkód at vísa UI í" },
