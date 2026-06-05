@@ -32,7 +32,7 @@
                 : cli.config.query
 
     loader.start()
-    try { // to show AI reply
+    try { // to get/show AI reply
         const currentMsg = { role: 'user', content: query }
         const reply = await chatgpt.send('', {
             provider: cli.config.provider,
