@@ -45,7 +45,7 @@
             msgMaxChars: cli.config.msgMaxChars,
             turnsToPreserve: cli.config.turnsToPreserve
         })
-        const cleanedReply = messages.extractFromText(reply)
+        const cleanedReply = messages.extractFromJSON(reply)
         console.log(chatgpt.colors.green + cleanedReply + chatgpt.colors.reset)
         cli.msgChain.push(currentMsg, { role: 'assistant', content: cleanedReply })
         messages.saveChain(cli.msgChain)

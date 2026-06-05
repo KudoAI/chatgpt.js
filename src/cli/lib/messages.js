@@ -6,7 +6,7 @@ const msgChainPath = path.join(
 
 module.exports = {
 
-    extractFromText(str) {
+    extractFromJSON(str) {
         if (typeof str != 'string') return str
         const matches = [...str.matchAll(/(['"])text\1:\s*\1([^'"]*)\1/g)]
         return matches.length > 0 ? matches.map(match => match[2]).join('') : str
