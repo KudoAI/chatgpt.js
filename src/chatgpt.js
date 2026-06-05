@@ -1606,9 +1606,7 @@ const chatgpt = {
                 let contents
                 if (messages) {
                     contents = messages.map(msg => {
-                        const role = msg.role == 'assistant' ? 'model'
-                                   : msg.role == 'system' ? 'user'
-                                   : msg.role
+                        const role = msg.role == 'assistant' ? 'model' : msg.role == 'system' ? 'user' : msg.role
                         let text = trunc(msg.content, msgMaxChars)
                         if (msg.role == 'system') text = `[System Instructions] ${text}`
                         return { parts: [{ text }], role }
