@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "UI ஐக் காண்பிக்க ISO 639-1 மொழிக் குறியீடு" },
   "optionDesc_config": { "message": "ஏற்றுவதற்கான தனிப்பயன் உள்ளமைவு கோப்புக்கான பாதை" },
   "optionDesc_msgMaxChars": { "message": "ஒரு செய்திக்கு எழுத்து வரம்பு" },
+  "optionDesc_maxTokens": { "message": "பயன்படுத்த வேண்டிய அதிகபட்ச டோக்கன்கள்" },
   "optionDesc_turnsToPreserve": { "message": "பாதுகாப்பதற்கான திருப்பங்களின் எண்ணிக்கை" },
   "optionDesc_noSuggest": { "message": "CLI பதிலின் முடிவில் அடுத்த AI செயலைத் தானாகவே பரிந்துரைக்க வேண்டாம்" },
   "optionDesc_quiet": { "message": "பிழைகளைத் தவிர அனைத்து பதிவுகளையும் ஒடுக்கவும்" },

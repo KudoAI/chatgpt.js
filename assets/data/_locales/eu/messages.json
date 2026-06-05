@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1 UI bistaratzeko hizkuntzaren kodea" },
   "optionDesc_config": { "message": "Kargatzeko konfigurazio fitxategi pertsonalizatuaren bidea" },
   "optionDesc_msgMaxChars": { "message": "Mezu bakoitzeko karaktere muga" },
+  "optionDesc_maxTokens": { "message": "Erabiltzeko gehienezko token kopurua" },
   "optionDesc_turnsToPreserve": { "message": "Gorde beharreko bira kopurua" },
   "optionDesc_noSuggest": { "message": "Ez iradoki automatikoki hurrengo IA ekintza CLI erantzunaren amaieran" },
   "optionDesc_quiet": { "message": "Ezabatu erregistro guztiak erroreak izan ezik" },

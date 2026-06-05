@@ -48,6 +48,7 @@
   "optionDesc_uiLang": { "message": "Documente similare cu ISO 639-1 Code of Language" },
   "optionDesc_config": { "message": "Archive for custom config Archive for cargo" },
   "optionDesc_msgMaxChars": { "message": "Limitacion Por Mensaje" },
+  "optionDesc_maxTokens": { "message": "Tickets pa haci uso di" },
   "optionDesc_turnsToPreserve": { "message": "Number of Rescues for Rescues" },
   "optionDesc_noSuggest": { "message": "Next articleAruba no ta para keto na final di accion di CITGO" },
   "optionDesc_quiet": { "message": "Tur Kuliner di Kuliner Kuliner" },

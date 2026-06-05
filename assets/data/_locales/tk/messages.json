@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1 dil kodyny görkezmek üçin" },
   "optionDesc_config": { "message": "Özgür konfigurasiýa faýlyny ýüklemek üçin ýol" },
   "optionDesc_msgMaxChars": { "message": "Her bir habar üçin bir haryt limiti" },
+  "optionDesc_maxTokens": { "message": "Max tokens ulanmak üçin" },
   "optionDesc_turnsToPreserve": { "message": "Garawul diňi we Garawul diňi" },
   "optionDesc_noSuggest": { "message": "CLI reaksiýasynyň soňunda AI-niň indiki hereketini özbaşdak teklip etme" },
   "optionDesc_quiet": { "message": "Ýalňyşlyklardan başga ähli ýalňyşlyklary ýok etmek" },

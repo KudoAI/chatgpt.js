@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "यूआई प्रदर्शित करने के लिए भाषा का आईएसओ 639 -1 कोड" },
   "optionDesc_config": { "message": "लोड करने के लिए कस्टम कॉन्फ़िगरेशन फ़ाइल का पथ" },
   "optionDesc_msgMaxChars": { "message": "कैरेक्टर लिमिट प्रति मैसेज" },
+  "optionDesc_maxTokens": { "message": "इस्तेमाल करने के लिए अधिकतम टोकन" },
   "optionDesc_turnsToPreserve": { "message": "संरक्षित करने के लिए मोड़ों की संख्या" },
   "optionDesc_noSuggest": {
     "message": "सीएलआई (CLI) प्रतिक्रिया के अंत में अगली एआई (AI) कार्रवाई का स्वतः सुझाव न दें"

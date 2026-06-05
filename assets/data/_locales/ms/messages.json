@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "Kod bahasa ISO 639-1 untuk memaparkan UI" },
   "optionDesc_config": { "message": "Laluan ke fail konfigurasi tersuai untuk dimuatkan" },
   "optionDesc_msgMaxChars": { "message": "Had aksara bagi setiap mesej" },
+  "optionDesc_maxTokens": { "message": "Token maksimum untuk digunakan" },
   "optionDesc_turnsToPreserve": { "message": "Bilangan giliran untuk dikekalkan" },
   "optionDesc_noSuggest": {
     "message": "Jangan mencadangkan tindakan AI seterusnya secara automatik pada akhir maklum balas CLI"

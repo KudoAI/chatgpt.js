@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "Kode bahasa ISO 639 -1 untuk menampilkan UI di" },
   "optionDesc_config": { "message": "Jalur ke file konfigurasi kustom untuk dimuat" },
   "optionDesc_msgMaxChars": { "message": "Batas karakter per pesan" },
+  "optionDesc_maxTokens": { "message": "Token maksimum yang akan digunakan" },
   "optionDesc_turnsToPreserve": { "message": "Jumlah belokan untuk dipertahankan" },
   "optionDesc_noSuggest": {
     "message": "Jangan menyarankan tindakan AI berikutnya secara otomatis di akhir respons CLI"

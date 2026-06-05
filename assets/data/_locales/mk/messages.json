@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1 код на јазик за прикажување на UI во" },
   "optionDesc_config": { "message": "Патека до приспособена конфигурациска датотека за вчи" },
   "optionDesc_msgMaxChars": { "message": "Ограничување на знаци по порака" },
+  "optionDesc_maxTokens": { "message": "Максимален број на жетони за користење" },
   "optionDesc_turnsToPreserve": { "message": "Број на свртувања за зачувување" },
   "optionDesc_noSuggest": {
     "message": "Не предлагајте автоматско следно дејство за вештачка интелигенција на крајот од одговорот на CLI"

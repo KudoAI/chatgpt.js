@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639 -1 cod iaith i ddangos UI yn" },
   "optionDesc_config": { "message": "Llwybr i ffeil cyfluniad cyfaddas i'w lwytho" },
   "optionDesc_msgMaxChars": { "message": "Cyfwng nodau fesul neges" },
+  "optionDesc_maxTokens": { "message": "Uchafswm y tocynnau i'w defnyddio" },
   "optionDesc_turnsToPreserve": { "message": "Nifer y troeon i'w cadw" },
   "optionDesc_noSuggest": { "message": "Chatbot peidiwch a thalu sut mae chatbots yn gweithio ar ddiwedd chatbot" },
   "optionDesc_quiet": { "message": "Atal pob cofnod ac eithrio gwallau" },

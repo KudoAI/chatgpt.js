@@ -14,6 +14,8 @@ module.exports = {
         config: { type: 'param', valType: 'filepath', regex: /^--?c(?:onfig)?(?:[=\s].*|$)/ },
         msgMaxChars: {
             type: 'param', valType: 'positiveInt', regex: /^--?m(?:ax[-_]?chars)?(?:[=\s].*|$)/, defaultVal: 250 },
+        maxTokens: {
+            type: 'param', valType: 'positiveInt', regex: /^--(?:k|max[-_]?tokens)(?:[=\s].*|$)/, defaultVal: null },
         turnsToPreserve: { type: 'param', valType: 'positiveInt', regex: /^--?t(?:urns)?(?:[=\s].*|$)/, defaultVal: 3 },
         noSuggest: { type: 'flag', regex: /^--?(?:A|no[-_]?suggest)$/ },
         quietMode: { type: 'flag', regex: /^--?(?:V|quiet)(?:[-_]?mode)?$/ },

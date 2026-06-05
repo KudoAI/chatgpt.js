@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "Kód jazyka ISO 639-1 pro zobrazení uživatelského rozhraní" },
   "optionDesc_config": { "message": "Cesta k vlastnímu konfiguračnímu souboru k načtení" },
   "optionDesc_msgMaxChars": { "message": "Limit počtu znaků na zprávu" },
+  "optionDesc_maxTokens": { "message": "Maximální počet žetonů k použití" },
   "optionDesc_turnsToPreserve": { "message": "Počet otáček k uchování" },
   "optionDesc_noSuggest": { "message": "Na konci odpovědi CLI automaticky nenavrhujte další akci AI" },
   "optionDesc_quiet": { "message": "Potlačit veškeré protokolování kromě chyb" },

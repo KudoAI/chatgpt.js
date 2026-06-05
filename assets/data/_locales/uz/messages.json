@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "UI ni ko'rsatish uchun ISO 639-1 til kodi" },
   "optionDesc_config": { "message": "Yuklanadigan maxsus konfiguratsiya fayliga yo'l" },
   "optionDesc_msgMaxChars": { "message": "Har bir xabar uchun belgilar chegarasi" },
+  "optionDesc_maxTokens": { "message": "Foydalanish uchun maksimal tokenlar" },
   "optionDesc_turnsToPreserve": { "message": "Saqlash uchun navbatlar soni" },
   "optionDesc_noSuggest": { "message": "CLI javobi oxirida keyingi AI harakatini avtomatik ravishda taklif qilmang" },
   "optionDesc_quiet": { "message": "Xatolardan tashqari barcha jurnallarni bostirish" },

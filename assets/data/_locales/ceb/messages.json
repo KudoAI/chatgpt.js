@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1 nga kodigo sa sinultian aron ipakita ang UI sa" },
   "optionDesc_config": { "message": "Pamaagi sa custom config file aron ma-load" },
   "optionDesc_msgMaxChars": { "message": "Limitasyon sa karakter kada mensahe" },
+  "optionDesc_maxTokens": { "message": "Max tokens nga gamiton" },
   "optionDesc_turnsToPreserve": { "message": "Gidaghanon sa mga turno aron mapreserbar" },
   "optionDesc_noSuggest": { "message": "Ayaw pag-automate sa sunod nga aksyon sa AI sa katapusan sa tubag sa CLI" },
   "optionDesc_quiet": { "message": "Pugngan ang tanan nga pag-log gawas sa mga sayup" },

@@ -50,6 +50,7 @@
   "optionDesc_uiLang": { "message": "Koda ISO 639-1 ya zimanê ji bo nîşandana UI-ê" },
   "optionDesc_config": { "message": "Riya pelê mîhengkirina xwerû ji bo barkirinê" },
   "optionDesc_msgMaxChars": { "message": "Sînorê karakteran ji bo her peyamê" },
+  "optionDesc_maxTokens": { "message": "Hejmara herî zêde ya nîşanekan ji bo bikaranînê" },
   "optionDesc_turnsToPreserve": { "message": "Hejmara zivirînên ji bo parastinê" },
   "optionDesc_noSuggest": { "message": "Di dawiya bersiva CLI de çalakiya AI ya din bixweber pêşniyar neke" },
   "optionDesc_quiet": { "message": "Hemî têketinê ji bilî xeletiyan bişkînin" },

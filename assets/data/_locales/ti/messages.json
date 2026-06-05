@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1 ኮድ ቋንቋ ኣብ" },
   "optionDesc_config": { "message": "ብውልቂ እተዳለወ ፋይል ንምስራሕ ዚሕግዝ መገዲ" },
   "optionDesc_msgMaxChars": { "message": "ኣብ ነፍሲ ወከፍ መልእኽቲ ዘሎ ናይ ጠባይ ገደብ" },
+  "optionDesc_maxTokens": { "message": "ናይ ማክስ ምልክታት ንምጥቃም" },
   "optionDesc_turnsToPreserve": { "message": "ናይ ምዕቃብ ናይ ምትሕልላፍ ቁጽሪ" },
   "optionDesc_noSuggest": { "message": "ኣብ መወዳእታ ናይ CLI ምላሽ ናይ ቀጻሊ ስጉምቲ AI ኣይትውሰደሉ" },
   "optionDesc_quiet": { "message": "ጌጋታት እንተዘይኮይኑ ፡ ንዅሉ ምዝገባታት ኣጥፍእ" },

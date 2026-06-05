@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "Codice ISO 639-1 della lingua in cui visualizzare l'interfaccia utente" },
   "optionDesc_config": { "message": "Percorso del file di configurazione personalizzato da caricare" },
   "optionDesc_msgMaxChars": { "message": "Limite di caratteri per messaggio" },
+  "optionDesc_maxTokens": { "message": "Numero massimo di token da utilizzare" },
   "optionDesc_turnsToPreserve": { "message": "Numero di giri da preservare" },
   "optionDesc_noSuggest": {
     "message": "Non suggerire automaticamente la prossima azione AI alla fine della risposta CLI"

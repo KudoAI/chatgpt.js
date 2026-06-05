@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO ကို 639-1 ဘာသာစကားကုဒ် UI ကိုပြသရန်" },
   "optionDesc_config": { "message": "ဖွင့်ရန် စိတ်ကြိုက် config ဖိုင်အတွက် လမ်းကြောင်း" },
   "optionDesc_msgMaxChars": { "message": "မက်ဆေ့ချ်တစ်စောင်လျှင် အက္ခရာကန့်သတ်ချက်" },
+  "optionDesc_maxTokens": { "message": "အသုံးပြုရန် အများဆုံး တိုကင်များ" },
   "optionDesc_turnsToPreserve": { "message": "ထိန်းသိမ်းရန် အလှည့်အရေအတွက်" },
   "optionDesc_noSuggest": {
     "message": "CLI တုံ့ပြန်မှုအဆုံးတွင် နောက်ထပ် AI လုပ်ဆောင်ချက်ကို အလိုအလျောက်အကြံမပြုပါနှင့်"

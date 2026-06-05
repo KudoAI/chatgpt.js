@@ -85,6 +85,7 @@ Parameter options:
  -q, --query <msg>                Query to send AI.
  -s, --summarize <filepath|text>  Path to file or text to summarize.
  -m, --max-chars <integer>        Character limit per message.
+ -k, --max-tokens <integer>       Max tokens to use.
  -t, --turns <integer>            Number of turns to preserve.
  -c, --config <filepath>          Path to custom config file to load.
 

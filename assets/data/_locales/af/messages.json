@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1 kode van taal te vertoon UI in" },
   "optionDesc_config": { "message": "Pad na pasgemaakte konfigurasielêer om te laai" },
   "optionDesc_msgMaxChars": { "message": "Karakterlimiet per boodskap" },
+  "optionDesc_maxTokens": { "message": "Maksimum tekens om te gebruik" },
   "optionDesc_turnsToPreserve": { "message": "Aantal draaie om te bewaar" },
   "optionDesc_noSuggest": {
     "message": "Moenie die volgende AI-aksie outomaties voorstel aan die einde van die CLI-reaksie nie"

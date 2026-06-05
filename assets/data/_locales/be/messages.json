@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "Код мовы ISO 639-1 для адлюстравання карыстацкага інтэрфейсу ў" },
   "optionDesc_config": { "message": "Шлях да наладжвальнага файла канфігурацыі для загрузкі" },
   "optionDesc_msgMaxChars": { "message": "Ліміт сімвалаў у паведамленні" },
+  "optionDesc_maxTokens": { "message": "Максімальныя маркеры для выкарыстання" },
   "optionDesc_turnsToPreserve": { "message": "Колькасць паваротаў для захавання" },
   "optionDesc_noSuggest": { "message": "Не прапаноўвайце аўтаматычна наступнае дзеянне ШІ у канцы адказу CLI" },
   "optionDesc_quiet": { "message": "Спыніць усе журналы, акрамя памылак" },

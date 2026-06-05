@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1 waehere reo ki te whakaatu UI i roto i" },
   "optionDesc_config": { "message": "Te ara ki te kōnae whirihora ritenga ki utaina" },
   "optionDesc_msgMaxChars": { "message": "Te rohe o te tangata mo ia karere" },
+  "optionDesc_maxTokens": { "message": "Max tohu ki te whakamahi" },
   "optionDesc_turnsToPreserve": { "message": "Te maha o nga huringa hei tiaki" },
   "optionDesc_noSuggest": { "message": "Kaua e tuku aunoa i te mahi AI e whai ake nei i te mutunga o te whakautu CLI" },
   "optionDesc_quiet": { "message": "Tautoko i te logging katoa engari hapa" },

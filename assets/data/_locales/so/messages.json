@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1 code luqadda si ay u muujiyaan UI in" },
   "optionDesc_config": { "message": "Jidka si loo habeeyo faylka si loo raro" },
   "optionDesc_msgMaxChars": { "message": "Xadka astaamaha fariin kasta" },
+  "optionDesc_maxTokens": { "message": "Calaamadaha Max si ay u isticmaalaan" },
   "optionDesc_turnsToPreserve": { "message": "Tirada soo noqnoqda si loo ilaaliyo" },
   "optionDesc_noSuggest": {
     "message": "Next article {DAAWO MUQAALKA} Madaxweyne Xasan Sheekh oo ku baaqay in la joojiyo dagaalka ka socda Muqdisho"

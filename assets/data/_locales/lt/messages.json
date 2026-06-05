@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1 kalbos kodas, skirtas vartotojo sąsajai rodyti" },
   "optionDesc_config": { "message": "Kelias iki pasirinktinio konfigūracijos failo įkėlimui" },
   "optionDesc_msgMaxChars": { "message": "Žinučių simbolių limitas" },
+  "optionDesc_maxTokens": { "message": "Maks. naudojamų žetonų skaičius" },
   "optionDesc_turnsToPreserve": { "message": "Išsaugotinų posūkių skaičius" },
   "optionDesc_noSuggest": { "message": "Pasibaigus CLI atsakymui automatiškai nesiūlykite kito DI veiksmo" },
   "optionDesc_quiet": { "message": "Slėpti visus registravimus, išskyrus klaidas" },

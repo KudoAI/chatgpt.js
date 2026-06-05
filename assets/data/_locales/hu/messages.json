@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "A felhasználói felület megjelenítéséhez használt nyelv ISO 639-1 kódja" },
   "optionDesc_config": { "message": "A betöltendő egyéni konfigurációs fájl elérési útja" },
   "optionDesc_msgMaxChars": { "message": "Karakterkorlát üzenetenként" },
+  "optionDesc_maxTokens": { "message": "Maximálisan használható tokenek" },
   "optionDesc_turnsToPreserve": { "message": "Megőrizendő fordulók száma" },
   "optionDesc_noSuggest": { "message": "Ne javasolja automatikusan a következő MI-műveletet a CLI-válasz végén" },
   "optionDesc_quiet": { "message": "Az összes naplózás letiltása a hibák kivételével" },

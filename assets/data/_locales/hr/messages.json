@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1 kod jezika za prikaz korisničkog sučelja u" },
   "optionDesc_config": { "message": "Putanja do prilagođene konfiguracijske datoteke za učitavanje" },
   "optionDesc_msgMaxChars": { "message": "Ograničenje broja znakova po poruci" },
+  "optionDesc_maxTokens": { "message": "Maksimalan broj žetona za upotrebu" },
   "optionDesc_turnsToPreserve": { "message": "Broj okretaja za očuvanje" },
   "optionDesc_noSuggest": {
     "message": "Nemojte automatski predlagati sljedeću radnju umjetne inteligencije na kraju odgovora CLI-a"

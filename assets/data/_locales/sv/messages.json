@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1-kod för språk för att visa användargränssnitt i" },
   "optionDesc_config": { "message": "Sökväg till anpassad konfigurationsfil att ladda" },
   "optionDesc_msgMaxChars": { "message": "Teckengräns per meddelande" },
+  "optionDesc_maxTokens": { "message": "Max tokens att använda" },
   "optionDesc_turnsToPreserve": { "message": "Antal varv att bevara" },
   "optionDesc_noSuggest": { "message": "Föreslå inte automatiskt nästa AI-åtgärd i slutet av CLI-svaret" },
   "optionDesc_quiet": { "message": "Dölj all loggning utom fel" },

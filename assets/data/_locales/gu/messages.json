@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "UI પ્રદર્શિત કરવા માટે ISO 639-1 કોડ ઓફ લેંગ્વેજ" },
   "optionDesc_config": { "message": "લોડ કરવા માટે કસ્ટમ રૂપરેખાંકન ફાઇલનો પાથ" },
   "optionDesc_msgMaxChars": { "message": "સંદેશ દીઠ અક્ષર મર્યાદા" },
+  "optionDesc_maxTokens": { "message": "વાપરવા માટે મહત્તમ ટોકન્સ" },
   "optionDesc_turnsToPreserve": { "message": "સાચવવા માટે વળાંકની સંખ્યા" },
   "optionDesc_noSuggest": { "message": "CLI પ્રતિસાદના અંતે આગળની AI ક્રિયા આપમેળે સૂચવશો નહીં" },
   "optionDesc_quiet": { "message": "ભૂલો સિવાય તમામ લોગીંગને દબાવો" },

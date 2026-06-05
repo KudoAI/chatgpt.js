@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "UI ಅನ್ನು ಪ್ರದರ್ಶಿಸಲು ISO 639-1 ಭಾಷೆಯ ಸಂಕೇತ" },
   "optionDesc_config": { "message": "ಲೋಡ್ ಮಾಡಲು ಕಸ್ಟಮ್ ಕಾನ್ಫಿಗರೇಶನ್ ಫೈಲ್‌ಗೆ ಮಾರ್ಗ" },
   "optionDesc_msgMaxChars": { "message": "ಪ್ರತಿ ಸಂದೇಶಕ್ಕೆ ಅಕ್ಷರ ಮಿತಿ" },
+  "optionDesc_maxTokens": { "message": "ಬಳಸಲು ಗರಿಷ್ಠ ಟೋಕನ್‌ಗಳು" },
   "optionDesc_turnsToPreserve": { "message": "ಸಂರಕ್ಷಿಸಲು ತಿರುವುಗಳ ಸಂಖ್ಯೆ" },
   "optionDesc_noSuggest": { "message": "CLI ಪ್ರತಿಕ್ರಿಯೆಯ ಕೊನೆಯಲ್ಲಿ ಮುಂದಿನ AI ಕ್ರಿಯೆಯನ್ನು ಸ್ವಯಂ-ಸೂಚಿಸಬೇಡಿ" },
   "optionDesc_quiet": { "message": "ದೋಷಗಳನ್ನು ಹೊರತುಪಡಿಸಿ ಎಲ್ಲಾ ಲಾಗಿಂಗ್ ಅನ್ನು ನಿಗ್ರಹಿಸಿ" },

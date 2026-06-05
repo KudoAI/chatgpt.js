@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1 málkód at vísa UI í" },
   "optionDesc_config": { "message": "Gøtur til vanligar konfiguratiónar fílu til at lata" },
   "optionDesc_msgMaxChars": { "message": "Karaktermarki fyri boð" },
+  "optionDesc_maxTokens": { "message": "Max tokens at brúka" },
   "optionDesc_turnsToPreserve": { "message": "Tali av umførum at varðveita" },
   "optionDesc_noSuggest": { "message": "Ikki sjálvvirkandi at leggja fram næsta AI-tilgongd at enda av CLI-viðgerðini" },
   "optionDesc_quiet": { "message": "Undirskriva allar innmeldingar uttan feil" },

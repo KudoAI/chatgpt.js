@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "യുഐ പ്രദർശിപ്പിക്കുന്നതിനുള്ള ISO 639-1 ഭാഷാ കോഡ്" },
   "optionDesc_config": { "message": "ലോഡുചെയ്യാനുള്ള ഇച്ഛാനുസൃത കോൺഫിഗറേഷൻ ഫയലിലേക്കുള്ള പാത" },
   "optionDesc_msgMaxChars": { "message": "ഓരോ സന്ദേശത്തിനും പ്രതീക പരിധി" },
+  "optionDesc_maxTokens": { "message": "ഉപയോഗിക്കേണ്ട പരമാവധി ടോക്കണുകൾ" },
   "optionDesc_turnsToPreserve": { "message": "പ്രിസർവ് ചെയ്യുന്നതിനുള്ള ടേണുകളുടെ എണ്ണം" },
   "optionDesc_noSuggest": {
     "message": "CLI പ്രതികരണത്തിന്റെ അവസാനത്തിൽ അടുത്ത AI പ്രവർത്തനം യാന്ത്രികമായി നിർദ്ദേശിക്കരുത്"

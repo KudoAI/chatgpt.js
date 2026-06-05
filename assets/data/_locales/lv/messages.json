@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1 valodas kods, lai parādītu UI" },
   "optionDesc_config": { "message": "Ceļš uz ielādējamo pielāgoto konfigurācijas failu" },
   "optionDesc_msgMaxChars": { "message": "Rakstzīmju skaita ierobežojums vienam ziņojumam" },
+  "optionDesc_maxTokens": { "message": "Maksimālais izmantojamo žetonu skaits" },
   "optionDesc_turnsToPreserve": { "message": "Saglabājamo pagriezienu skaits" },
   "optionDesc_noSuggest": { "message": "CLI atbildes beigās automātiski neierosiniet nākamo MI darbību" },
   "optionDesc_quiet": { "message": "Aizliegt visu reģistrēšanu, izņemot kļūdas" },

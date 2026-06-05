@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1 kòd langaj pou montre UI nan" },
   "optionDesc_config": { "message": "Chemen nan dosye konfigirasyon koutim nan chaj" },
   "optionDesc_msgMaxChars": { "message": "Limit karaktè pou chak mesaj" },
+  "optionDesc_maxTokens": { "message": "Tiyo MAX pou itilize" },
   "optionDesc_turnsToPreserve": { "message": "Kantite vire pou prezève" },
   "optionDesc_noSuggest": { "message": "Pa oto-sèk pwochen aksyon AI nan fen repons CLI" },
   "optionDesc_quiet": { "message": "Siprime tout antre eksepte erè" },

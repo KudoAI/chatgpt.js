@@ -52,6 +52,7 @@
   "optionDesc_uiLang": { "message": "ئایزۆ 639-1 کۆدی زمان بۆ پیشاندانی UI" },
   "optionDesc_config": { "message": "ڕێچکە بۆ بارکردنی پەڕگەی ڕێکخستن بۆ بارکردن" },
   "optionDesc_msgMaxChars": { "message": "سنووردارکردنی کارەکتەر بۆ هەر پەیامێک" },
+  "optionDesc_maxTokens": { "message": "ماکس تۆکینز بۆ بەکارهێنان" },
   "optionDesc_turnsToPreserve": { "message": "زیادکردنی هاوپۆل بۆ keep" },
   "optionDesc_noSuggest": {
     "message": "هه ڵمه تی هه ڵوه شاندنه وه ی ئه نجوومه نی وه زیران له كۆتایی كۆبونه وه ی ئه نجومه نی وه زیران"

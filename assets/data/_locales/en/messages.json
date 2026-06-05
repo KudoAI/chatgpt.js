@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "ISO 639-1 code of language to display UI in" },
   "optionDesc_config": { "message": "Path to custom config file to load" },
   "optionDesc_msgMaxChars": { "message": "Character limit per message" },
+  "optionDesc_maxTokens": { "message": "Max tokens to use" },
   "optionDesc_turnsToPreserve": { "message": "Number of turns to preserve" },
   "optionDesc_noSuggest": { "message": "Don't auto-suggest next AI action at end of CLI response" },
   "optionDesc_quiet": { "message": "Suppress all logging except errors" },

@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "Kód jazyka ISO 639-1, v ktorom sa má zobraziť používateľské rozhranie" },
   "optionDesc_config": { "message": "Cesta k vlastnému konfiguračnému súboru na načítanie" },
   "optionDesc_msgMaxChars": { "message": "Obmedzenie počtu znakov na správu" },
+  "optionDesc_maxTokens": { "message": "Maximálny počet tokenov na použitie" },
   "optionDesc_turnsToPreserve": { "message": "Počet zákrut na zachovanie" },
   "optionDesc_noSuggest": {
     "message": "Na konci odpovede CLI automaticky nenavrhujte ďalšiu akciu umelej inteligencie"

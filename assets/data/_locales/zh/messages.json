@@ -46,6 +46,7 @@
   "optionDesc_uiLang": { "message": "用于显示UI的语言的ISO 639-1代码" },
   "optionDesc_config": { "message": "要加载的自定义配置文件的路径" },
   "optionDesc_msgMaxChars": { "message": "每封邮件的字符数限制" },
+  "optionDesc_maxTokens": { "message": "可使用的最大代币数" },
   "optionDesc_turnsToPreserve": { "message": "要保留的匝数" },
   "optionDesc_noSuggest": { "message": "不要在CLI响应结束时自动建议下一个AI操作" },
   "optionDesc_quiet": { "message": "禁止所有日志记录，错误除外" },
