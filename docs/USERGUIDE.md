@@ -130,6 +130,7 @@ export default {
   - [`actAs(persona)` `async`](#actaspersona-async)
   - [`detectLanguage(text)` `async`](#detectlanguagetext-async)
   - [`dictate()`](#dictate)
+  - [`getFortune()` `async`](#getfortune-parameters--async)
   - [`getRandomnAnswer()` `async`](#getrandomanswer-parameters--async)
   - [`getUserLanguage()`](#getuserlanguage)
   - [`isLoaded()` `async`](#isloaded-async)
@@ -265,6 +266,16 @@ Example:
 #### `dictate()`
 
 Opens dictation mode on ChatGPT.
+
+#
+
+#### `getFortune({ parameters })` `async`
+
+Tells your fortune.
+
+Parameters:
+
+`verbose`: Suppress console logging.
 
 #
 

@@ -1044,6 +1044,15 @@ const chatgpt = {
     },
 
     getFooterDiv() { return chatgpt.footer.get() },
+
+    async getFortune({ verbose = false } = {}) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        chatgpt.send('Tell me my fortune the length of a fortune cookie fortune.')
+        if (verbose) console.info('Generating fortune...')
+        await chatgpt.isIdle()
+        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+    },
+
     getHeaderDiv() { return chatgpt.header.get() },
     getLastPrompt() { return chatgpt.getChatData('active', 'msg', 'user', 'latest') },
     getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest') },
