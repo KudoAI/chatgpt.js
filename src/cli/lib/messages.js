@@ -8,8 +8,13 @@ module.exports = {
 
     extractFromJSON(str) {
         if (typeof str != 'string') return str
-        const matches = [...str.matchAll(/(['"])text\1:\s*\1([^'"]*)\1/g)]
-        return matches.length > 0 ? matches.map(match => match[2]).join('') : str
+        try {
+            const parsed = JSON.parse(str)
+            return Array.isArray(parsed) ? parsed.map(item => item.text?.trim()).filter(Boolean).join('') : str
+        } catch (err) {
+            const matches = [...str.matchAll(/(['"])text\1\s*:\s*(['"])(.*?)\2/gs)]
+            return matches.length ? matches.map(match => match[3]?.trim()).join('') : str
+        }
     },
 
     loadChain() {
