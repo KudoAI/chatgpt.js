@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Limite de caractères par message" },
   "optionDesc_maxTokens": { "message": "Maximum de jetons à utiliser" },
   "optionDesc_turnsToPreserve": { "message": "Nombre de tours à préserver" },
+  "optionDesc_copy": { "message": "Copier la réponse CLI dans le presse-papiers" },
   "optionDesc_noSuggest": {
     "message": "Ne pas suggérer automatiquement la prochaine action de l'IA à la fin de la réponse de la CLI"
   },

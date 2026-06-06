@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Hər mesaj üçün xarakter limiti" },
   "optionDesc_maxTokens": { "message": "İstifadə etmək üçün maksimum işarə" },
   "optionDesc_turnsToPreserve": { "message": "Qorunmaq üçün növbələrin sayı" },
+  "optionDesc_copy": { "message": "CLI cavabını mübadilə buferinə kopyalayın" },
   "optionDesc_noSuggest": { "message": "CLI cavabının sonunda növbəti AI tədbirini avtomatik təklif etməyin" },
   "optionDesc_quiet": { "message": "Xətalardan başqa bütün girişləri bağlayın" },
   "optionDesc_init": { "message": "Konfiqurasiya faylı yaradın (layihə kökündə)" },

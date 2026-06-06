@@ -51,6 +51,7 @@
   "optionDesc_maxChars": { "message": "Umda woonobumba kumyalezo ngamnye" },
   "optionDesc_maxTokens": { "message": "Ezona tokeni zininzi onokuzisebenzisa" },
   "optionDesc_turnsToPreserve": { "message": "Inani lamaxesha oza kuligcina" },
+  "optionDesc_copy": { "message": "Kopa impendulo ye-CLI kwiklipbhodi" },
   "optionDesc_noSuggest": {
     "message": "Sukucebisa ngokuzenzekelayo into elandelayo oyenzayo kwiAI ekupheleni kweCLI yokuphendula"
   },

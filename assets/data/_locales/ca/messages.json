@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Límit de caràcters per missatge" },
   "optionDesc_maxTokens": { "message": "Màx. de fitxes a utilitzar" },
   "optionDesc_turnsToPreserve": { "message": "Nombre de torns a conservar" },
+  "optionDesc_copy": { "message": "Copia la resposta de la CLI al porta-retalls" },
   "optionDesc_noSuggest": {
     "message": "No suggerir automàticament la següent acció d'IA al final de la resposta de la CLI"
   },

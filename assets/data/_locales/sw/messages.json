@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Kikomo cha herufi kwa kila ujumbe" },
   "optionDesc_maxTokens": { "message": "Kima cha juu cha tokeni za kutumia" },
   "optionDesc_turnsToPreserve": { "message": "Idadi ya zamu za kuhifadhi" },
+  "optionDesc_copy": { "message": "Nakili majibu ya CLI kwenye ubao wa kunakili" },
   "optionDesc_noSuggest": { "message": "Usipendekeze hatua inayofuata ya AI kiotomatiki mwishoni mwa mwitikio wa CLI" },
   "optionDesc_quiet": { "message": "Zima ukataji wote wa magogo isipokuwa hitilafu" },
   "optionDesc_init": { "message": "Unda faili ya usanidi (katika mizizi ya mradi)" },

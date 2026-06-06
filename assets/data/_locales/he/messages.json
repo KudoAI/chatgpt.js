@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "מגבלת תווים לכל הודעה" },
   "optionDesc_maxTokens": { "message": "מקסימום אסימונים לשימוש" },
   "optionDesc_turnsToPreserve": { "message": "מספר הפניות לשמירה" },
+  "optionDesc_copy": { "message": "העתקת תגובת CLI ללוח העריכה" },
   "optionDesc_noSuggest": { "message": "אל תציע אוטומטית את פעולת הבינה המלאכותית הבאה בסוף תגובת ה - CLI" },
   "optionDesc_quiet": { "message": "דיכוי כל רישומי הרישום למעט שגיאות" },
   "optionDesc_init": { "message": "צור קובץ תצורה (בשורש הפרויקט)" },

@@ -53,6 +53,7 @@
   "optionDesc_maxChars": { "message": "Sînorê karakteran ji bo her peyamê" },
   "optionDesc_maxTokens": { "message": "Hejmara herî zêde ya nîşanekan ji bo bikaranînê" },
   "optionDesc_turnsToPreserve": { "message": "Hejmara zivirînên ji bo parastinê" },
+  "optionDesc_copy": { "message": "Bersiva CLI li ser clipboardê kopî bike" },
   "optionDesc_noSuggest": { "message": "Di dawiya bersiva CLI de çalakiya AI ya din bixweber pêşniyar neke" },
   "optionDesc_quiet": { "message": "Hemî têketinê ji bilî xeletiyan bişkînin" },
   "optionDesc_init": { "message": "Pelê mîhengkirinê biafirîne (di rootê projeyê de)" },

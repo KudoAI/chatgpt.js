@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Tegngrænse pr. meddelelse" },
   "optionDesc_maxTokens": { "message": "Maks. antal tokens, der skal bruges" },
   "optionDesc_turnsToPreserve": { "message": "Antal omdrejninger, der skal bevares" },
+  "optionDesc_copy": { "message": "Kopier CLI-svar til udklipsholder" },
   "optionDesc_noSuggest": { "message": "Foreslå ikke automatisk næste AI-handling i slutningen af CLI-svaret" },
   "optionDesc_quiet": { "message": "Undertrykke al logning undtagen fejl" },
   "optionDesc_init": { "message": "Opret konfigurationsfil (i projektroden)" },

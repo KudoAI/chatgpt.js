@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Obmedzenie počtu znakov na správu" },
   "optionDesc_maxTokens": { "message": "Maximálny počet tokenov na použitie" },
   "optionDesc_turnsToPreserve": { "message": "Počet zákrut na zachovanie" },
+  "optionDesc_copy": { "message": "Kopírovať odpoveď CLI do schránky" },
   "optionDesc_noSuggest": {
     "message": "Na konci odpovede CLI automaticky nenavrhujte ďalšiu akciu umelej inteligencie"
   },

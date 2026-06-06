@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Limit znaków na wiadomość" },
   "optionDesc_maxTokens": { "message": "Maksymalna liczba tokenów do użycia" },
   "optionDesc_turnsToPreserve": { "message": "Liczba obrotów do zachowania" },
+  "optionDesc_copy": { "message": "Skopiuj odpowiedź CLI do schowka" },
   "optionDesc_noSuggest": {
     "message": "Nie sugeruj automatycznie następnej akcji sztucznej inteligencji pod koniec odpowiedzi CLI"
   },

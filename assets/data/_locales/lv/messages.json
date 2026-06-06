@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Rakstzīmju skaita ierobežojums vienam ziņojumam" },
   "optionDesc_maxTokens": { "message": "Maksimālais izmantojamo žetonu skaits" },
   "optionDesc_turnsToPreserve": { "message": "Saglabājamo pagriezienu skaits" },
+  "optionDesc_copy": { "message": "Kopēt CLI atbildi starpliktuvē" },
   "optionDesc_noSuggest": { "message": "CLI atbildes beigās automātiski neierosiniet nākamo MI darbību" },
   "optionDesc_quiet": { "message": "Aizliegt visu reģistrēšanu, izņemot kļūdas" },
   "optionDesc_init": { "message": "Izveidot konfigurācijas failu (projekta saknē)" },

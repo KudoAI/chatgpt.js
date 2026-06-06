@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Umkhawulo wezinhlamvu ngomyalezo ngamunye" },
   "optionDesc_maxTokens": { "message": "Ubuningi bamathokheni ongawasebenzisa" },
   "optionDesc_turnsToPreserve": { "message": "Inani lezikhathi okufanele lilondolozwe" },
+  "optionDesc_copy": { "message": "Kopisha impendulo ye-CLI ku-clipboard" },
   "optionDesc_noSuggest": {
     "message": "Ungasikiseli ngokuzenzakalelayo isenzo esilandelayo se-AI ekupheleni kokuphendula kwe-CLI"
   },

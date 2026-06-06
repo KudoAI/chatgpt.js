@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "প্রতি মেসেজের অক্ষরের সীমা" },
   "optionDesc_maxTokens": { "message": "ব্যবহার করার জন্য সর্বোচ্চ টোকেন" },
   "optionDesc_turnsToPreserve": { "message": "সংরক্ষণ করার জন্য টার্নের সংখ্যা" },
+  "optionDesc_copy": { "message": "ক্লিপবোর্ডে CLI প্রতিক্রিয়া অনুলিপি করুন" },
   "optionDesc_noSuggest": { "message": "CLI প্রতিক্রিয়ার শেষে পরবর্তী AI অ্যাকশনটি স্বয়ংক্রিয়ভাবে সুপারিশ করবেন না" },
   "optionDesc_quiet": { "message": "ত্রুটি ব্যতীত সমস্ত লগিং দমন করুন" },
   "optionDesc_init": { "message": "কনফিগ ফাইল তৈরি করুন (প্রজেক্ট রুটের মধ্যে)" },

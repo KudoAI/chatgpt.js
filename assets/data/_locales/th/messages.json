@@ -51,6 +51,7 @@
   "optionDesc_maxChars": { "message": "ขีดจำกัดตัวอักษรต่อข้อความ" },
   "optionDesc_maxTokens": { "message": "โทเค็นสูงสุดที่จะใช้" },
   "optionDesc_turnsToPreserve": { "message": "จำนวนรอบที่จะรักษาไว้" },
+  "optionDesc_copy": { "message": "คัดลอกคำตอบ CLI ไปยังคลิปบอร์ด" },
   "optionDesc_noSuggest": { "message": "อย่าแนะนำการดำเนินการ AI ครั้งต่อไปโดยอัตโนมัติเมื่อสิ้นสุดการตอบกลับ CLI" },
   "optionDesc_quiet": { "message": "ระงับการบันทึกทั้งหมดยกเว้นข้อผิดพลาด" },
   "optionDesc_init": { "message": "สร้างไฟล์การกำหนดค่า (ในรูทโครงการ)" },

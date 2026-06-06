@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "පණිවිඩයකට අක්ෂර සීමාව" },
   "optionDesc_maxTokens": { "message": "භාවිතා කිරීමට උපරිම ටෝකන" },
   "optionDesc_turnsToPreserve": { "message": "සංරක්ෂණය කිරීමට හැරවුම් ගණන" },
+  "optionDesc_copy": { "message": "CLI ප් ‍ රතිචාරය ක්ලිප්බෝඩයට පිටපත් කරන්න" },
   "optionDesc_noSuggest": { "message": "CLI ප් ‍ රතිචාරය අවසානයේ ඊළඟ AI ක් ‍ රියාව ස්වයංක් ‍ රීයව යෝජනා නොකරන්න" },
   "optionDesc_quiet": { "message": "සියලු පිවිසුම් යටපත් කරන්න දෝෂ හැර" },
   "optionDesc_init": { "message": "සැකසුම් ගොනුව සාදන්න (ව් ‍ යාපෘති මූලය තුළ)" },

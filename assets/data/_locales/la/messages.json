@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Character limit per message" },
   "optionDesc_maxTokens": { "message": "Max tokens usque" },
   "optionDesc_turnsToPreserve": { "message": "Numerum divendum ad conservarum" },
+  "optionDesc_copy": { "message": "Clipboarde replicare CLI" },
   "optionDesc_noSuggest": { "message": "NONTO GUNCTIS QUAE IN DE COLI REAL" },
   "optionDesc_quiet": { "message": "Omnes inscriptiones praeter errores supprime" },
   "optionDesc_init": { "message": "Crea fasciculum configurationis (in radice proiecti)" },

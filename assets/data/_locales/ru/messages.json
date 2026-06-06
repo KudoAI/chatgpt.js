@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Ограничение количества символов в сообщении" },
   "optionDesc_maxTokens": { "message": "Максимальное количество токенов для использования" },
   "optionDesc_turnsToPreserve": { "message": "Количество оборотов для сохранения" },
+  "optionDesc_copy": { "message": "Копировать ответ CLI в буфер обмена" },
   "optionDesc_noSuggest": { "message": "Не предлагать следующее действие ИИ автоматически в конце ответа CLI" },
   "optionDesc_quiet": { "message": "Подавление всех журналов, кроме ошибок" },
   "optionDesc_init": { "message": "Создание файла конфигурации (в корне проекта)" },

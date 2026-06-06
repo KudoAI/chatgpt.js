@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Limite de caracteres por mensagem" },
   "optionDesc_maxTokens": { "message": "Máximo de tokens para usar" },
   "optionDesc_turnsToPreserve": { "message": "Número de voltas a preservar" },
+  "optionDesc_copy": { "message": "Copiar resposta da CLI para a área de transferência" },
   "optionDesc_noSuggest": { "message": "Não sugerir automaticamente a próxima ação de IA no final da resposta da CLI" },
   "optionDesc_quiet": { "message": "Suprimir todos os registos, exceto erros" },
   "optionDesc_init": { "message": "Criar ficheiro de configuração (na raiz do projeto)" },

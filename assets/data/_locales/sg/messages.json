@@ -53,6 +53,7 @@
   "optionDesc_maxChars": { "message": "A yeke wara atënë ti yâ ti mbeti ni na yâ ti mbeni mbeti" },
   "optionDesc_maxTokens": { "message": "Max tokens ti sara kua na ni" },
   "optionDesc_turnsToPreserve": { "message": "Nombre de tours ti bata" },
+  "optionDesc_copy": { "message": "Kopi ti CLI ti kiringo tënë na clipboard" },
   "optionDesc_noSuggest": {
     "message": "Zia pëpe si mbeni ye so ayeke ga na peko ti tënë ti AI aga na nda ti tënë ti CLI"
   },

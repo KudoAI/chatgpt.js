@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Ограничување на знаци по порака" },
   "optionDesc_maxTokens": { "message": "Максимален број на жетони за користење" },
   "optionDesc_turnsToPreserve": { "message": "Број на свртувања за зачувување" },
+  "optionDesc_copy": { "message": "Копирајте го одговорот на CLI на таблата со исечоци" },
   "optionDesc_noSuggest": {
     "message": "Не предлагајте автоматско следно дејство за вештачка интелигенција на крајот од одговорот на CLI"
   },

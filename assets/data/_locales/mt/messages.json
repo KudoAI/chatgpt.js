@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Limitu tal-karattri għal kull messaġġ" },
   "optionDesc_maxTokens": { "message": "Tokens massimi li għandek tuża" },
   "optionDesc_turnsToPreserve": { "message": "Numru ta' dawriet biex tippreserva" },
+  "optionDesc_copy": { "message": "Ikkopja t-tweġiba tal-cli għall-klipboard" },
   "optionDesc_noSuggest": {
     "message": "Tissuġġerixxix awtomatikament l-azzjoni tal-IA li jmiss fi tmiem ir-rispons CLI"
   },

@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "ಪ್ರತಿ ಸಂದೇಶಕ್ಕೆ ಅಕ್ಷರ ಮಿತಿ" },
   "optionDesc_maxTokens": { "message": "ಬಳಸಲು ಗರಿಷ್ಠ ಟೋಕನ್‌ಗಳು" },
   "optionDesc_turnsToPreserve": { "message": "ಸಂರಕ್ಷಿಸಲು ತಿರುವುಗಳ ಸಂಖ್ಯೆ" },
+  "optionDesc_copy": { "message": "ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ CLI ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ನಕಲಿಸಿ" },
   "optionDesc_noSuggest": { "message": "CLI ಪ್ರತಿಕ್ರಿಯೆಯ ಕೊನೆಯಲ್ಲಿ ಮುಂದಿನ AI ಕ್ರಿಯೆಯನ್ನು ಸ್ವಯಂ-ಸೂಚಿಸಬೇಡಿ" },
   "optionDesc_quiet": { "message": "ದೋಷಗಳನ್ನು ಹೊರತುಪಡಿಸಿ ಎಲ್ಲಾ ಲಾಗಿಂಗ್ ಅನ್ನು ನಿಗ್ರಹಿಸಿ" },
   "optionDesc_init": { "message": "ಕಾನ್ಫಿಗರ್ ಫೈಲ್ ರಚಿಸಿ (ಪ್ರಾಜೆಕ್ಟ್ ಮೂಲದಲ್ಲಿ)" },

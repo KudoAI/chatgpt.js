@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Նիշերի սահմանաչափը մեկ հաղորդագրության համար" },
   "optionDesc_maxTokens": { "message": "Օգտագործման առավելագույն նշաններ" },
   "optionDesc_turnsToPreserve": { "message": "Պահպանման շրջադարձերի քանակը" },
+  "optionDesc_copy": { "message": "Պատճենեք CLI - ի պատասխանը շապիկին" },
   "optionDesc_noSuggest": { "message": "Մի ավտոմատացրեք AI - ի հաջորդ գործողությունը CLI - ի պատասխանի վերջում" },
   "optionDesc_quiet": { "message": "Սեղմեք բոլոր տեղեկամատյանները, բացի սխալներից" },
   "optionDesc_init": { "message": "Ստեղծել կոնֆիգուրացիոն ֆայլ (նախագծի արմատում)" },

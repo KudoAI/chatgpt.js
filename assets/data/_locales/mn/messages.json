@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Зурвас тутамд тэмдэгтийн хязгаар" },
   "optionDesc_maxTokens": { "message": "Хэрэглэх хамгийн их токенс" },
   "optionDesc_turnsToPreserve": { "message": "Хадгалах эргэлтийн тоо" },
+  "optionDesc_copy": { "message": "Түр санах ой руу CLI хариултыг хуулах" },
   "optionDesc_noSuggest": { "message": "CLI хариултын төгсгөлд автоматаар сэжиглэж болохгүй" },
   "optionDesc_quiet": { "message": "Алдаанаас бусад бүх бүртгэлийг арилгах" },
   "optionDesc_init": { "message": "Тохиргооны файл үүсгэх (төслийн эхэнд)" },

@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Chithunzi malire pa uthenga" },
   "optionDesc_maxTokens": { "message": "Max zizindikiro ntchito" },
   "optionDesc_turnsToPreserve": { "message": "Chiwerengero cha kutembenuka kuti asunge" },
+  "optionDesc_copy": { "message": "Lembani yankho la CLI ku clipboard" },
   "optionDesc_noSuggest": { "message": "Musati auto-kupereka lotsatira AI kanthu kumapeto kwa CLI Poyankha" },
   "optionDesc_quiet": { "message": "Kupondereza mitengo yonse kupatula zolakwika" },
   "optionDesc_init": { "message": "Pangani fayilo ya config (muzu wa polojekiti)" },

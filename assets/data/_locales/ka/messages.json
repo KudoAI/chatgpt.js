@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Სიმბოლოს ლიმიტი თითოეულ შეტყობინებაზე" },
   "optionDesc_maxTokens": { "message": "Გამოსაყენებელი მაქსიმალური ტოკენები" },
   "optionDesc_turnsToPreserve": { "message": "Შესანარჩუნებელი ბრუნების რაოდენობა" },
+  "optionDesc_copy": { "message": "Დააკოპირეთ CLI პასუხი გაცვლის ბუფერში" },
   "optionDesc_noSuggest": { "message": "CLI ‑ ის პასუხის დასასრულს ავტომატურად არ გამოაგზავნოთ შემდეგი AI ‑ ქმედება" },
   "optionDesc_quiet": { "message": "ყველა ჟურნალის დაბლოკვა, შეცდომების გარდა" },
   "optionDesc_init": { "message": "კონფიგურაციის ფაილის შექმნა (პროექტის root-ში)" },

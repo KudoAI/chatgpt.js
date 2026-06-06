@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Karaktermarki fyri boð" },
   "optionDesc_maxTokens": { "message": "Max tokens at brúka" },
   "optionDesc_turnsToPreserve": { "message": "Tali av umførum at varðveita" },
+  "optionDesc_copy": { "message": "Kopiera CLI svar til klippborð" },
   "optionDesc_noSuggest": { "message": "Ikki sjálvvirkandi at leggja fram næsta AI-tilgongd at enda av CLI-viðgerðini" },
   "optionDesc_quiet": { "message": "Undirskriva allar innmeldingar uttan feil" },
   "optionDesc_init": { "message": "Skapa konfiguratiónsfíla (í verkætlanarorði)" },

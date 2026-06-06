@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Ліміт сімвалаў у паведамленні" },
   "optionDesc_maxTokens": { "message": "Максімальныя маркеры для выкарыстання" },
   "optionDesc_turnsToPreserve": { "message": "Колькасць паваротаў для захавання" },
+  "optionDesc_copy": { "message": "Капіяваць адказ CLI у буфер абмену" },
   "optionDesc_noSuggest": { "message": "Не прапаноўвайце аўтаматычна наступнае дзеянне ШІ у канцы адказу CLI" },
   "optionDesc_quiet": { "message": "Спыніць усе журналы, акрамя памылак" },
   "optionDesc_init": { "message": "Стварыць файл канфігурацыі (у корані праекта)" },

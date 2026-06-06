@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "સંદેશ દીઠ અક્ષર મર્યાદા" },
   "optionDesc_maxTokens": { "message": "વાપરવા માટે મહત્તમ ટોકન્સ" },
   "optionDesc_turnsToPreserve": { "message": "સાચવવા માટે વળાંકની સંખ્યા" },
+  "optionDesc_copy": { "message": "ક્લિપબોર્ડ પર CLI પ્રતિસાદની નકલ કરો" },
   "optionDesc_noSuggest": { "message": "CLI પ્રતિસાદના અંતે આગળની AI ક્રિયા આપમેળે સૂચવશો નહીં" },
   "optionDesc_quiet": { "message": "ભૂલો સિવાય તમામ લોગીંગને દબાવો" },
   "optionDesc_init": { "message": "રૂપરેખાંકન ફાઇલ બનાવો (પ્રોજેક્ટ રુટમાં)" },

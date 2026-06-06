@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Tähemärkide piirang sõnumi kohta" },
   "optionDesc_maxTokens": { "message": "Maksimaalne kasutatavate märkide arv" },
   "optionDesc_turnsToPreserve": { "message": "Säilitatavate pöörete arv" },
+  "optionDesc_copy": { "message": "Kopeeri CLI vastus lõikelauale" },
   "optionDesc_noSuggest": { "message": "Ära soovita CLI vastuse lõpus automaatselt järgmist tehisintellekti toimingut" },
   "optionDesc_quiet": { "message": "Tühista kogu logimine, välja arvatud vead" },
   "optionDesc_init": { "message": "Loo konfiguratsioonifail (projekti juurfailis)" },

@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Ubutumwa bwa Mbila Nsuma pa Mbila Nsuma" },
   "optionDesc_maxTokens": { "message": "Max Topeka Topeka" },
   "optionDesc_turnsToPreserve": { "message": "Impendwa ya Butumikishi pa Kusunga" },
+  "optionDesc_copy": { "message": "Kopololeni CLI Response to clipboard" },
   "optionDesc_noSuggest": { "message": "Next articleIfya Kucita pa Kucita Ifya Kucita pa Kupwisha Imikalile ya Bantu" },
   "optionDesc_quiet": { "message": "Fela Anikulapo Kuti - Fela Anikulapo Kuti" },
   "optionDesc_init": { "message": "Panga failo iya mipangilwe (mu mushila wa mulimo)" },

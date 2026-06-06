@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Хабар бойынша таңба шегі" },
   "optionDesc_maxTokens": { "message": "Қолдануға болатын максималды таңбалауыштар" },
   "optionDesc_turnsToPreserve": { "message": "Сақтауға арналған бұрылыстар саны" },
+  "optionDesc_copy": { "message": "Алмасу буферіне CLI реакциясын көшіру" },
   "optionDesc_noSuggest": {
     "message": "CLI реакциясының соңында келесі жасанды интеллект әрекетін автоматты түрде ұсынбаңыз"
   },

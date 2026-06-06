@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "ഓരോ സന്ദേശത്തിനും പ്രതീക പരിധി" },
   "optionDesc_maxTokens": { "message": "ഉപയോഗിക്കേണ്ട പരമാവധി ടോക്കണുകൾ" },
   "optionDesc_turnsToPreserve": { "message": "പ്രിസർവ് ചെയ്യുന്നതിനുള്ള ടേണുകളുടെ എണ്ണം" },
+  "optionDesc_copy": { "message": "ക്ലിപ്പ്ബോർഡിലേക്ക് CLI പ്രതികരണം പകർത്തുക" },
   "optionDesc_noSuggest": {
     "message": "CLI പ്രതികരണത്തിന്റെ അവസാനത്തിൽ അടുത്ത AI പ്രവർത്തനം യാന്ത്രികമായി നിർദ്ദേശിക്കരുത്"
   },

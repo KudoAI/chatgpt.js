@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "په هر پیغام کې د کرکټر محدودیت" },
   "optionDesc_maxTokens": { "message": "د کارولو لپاره اعظمي ټوکنونه" },
   "optionDesc_turnsToPreserve": { "message": "د ساتنې لپاره د نوبت شمېر" },
+  "optionDesc_copy": { "message": "کلیپ بورډ ته د CLI ځواب کاپي کړئ" },
   "optionDesc_noSuggest": { "message": "د CLI ځواب په پای کې د راتلونکي AI عمل مه ټاکئ" },
   "optionDesc_quiet": { "message": "د تېروتنو پرته ټول ننوتل (logging) پټ کړئ" },
   "optionDesc_init": { "message": "(د پروژې په ریښه کې) سازونې دوتنه جوړه کړئ" },

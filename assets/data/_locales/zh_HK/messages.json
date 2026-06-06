@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "每則訊息的字元數限制" },
   "optionDesc_maxTokens": { "message": "可使用的最大代幣數量" },
   "optionDesc_turnsToPreserve": { "message": "要保留的回合數" },
+  "optionDesc_copy": { "message": "將CLI回應複製到剪貼簿" },
   "optionDesc_noSuggest": { "message": "不要在CLI回應結束時自動建議下一個AI動作" },
   "optionDesc_quiet": { "message": "禁止所有日誌記錄，錯誤除外" },
   "optionDesc_init": { "message": "創建配置文件（在項目根目錄中）" },

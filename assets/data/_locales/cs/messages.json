@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Limit počtu znaků na zprávu" },
   "optionDesc_maxTokens": { "message": "Maximální počet žetonů k použití" },
   "optionDesc_turnsToPreserve": { "message": "Počet otáček k uchování" },
+  "optionDesc_copy": { "message": "Kopírovat odpověď CLI do schránky" },
   "optionDesc_noSuggest": { "message": "Na konci odpovědi CLI automaticky nenavrhujte další akci AI" },
   "optionDesc_quiet": { "message": "Potlačit veškeré protokolování kromě chyb" },
   "optionDesc_init": { "message": "Vytvořit konfigurační soubor (v kořenovém adresáři projektu)" },

@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "ቁምፊ ገደብ በአንድ መልዕክት" },
   "optionDesc_maxTokens": { "message": "ማክስ ቶከኖች ለመጠቀም" },
   "optionDesc_turnsToPreserve": { "message": "ለማቆየት የሚዞሩ ብዛት" },
+  "optionDesc_copy": { "message": "ክሊፕቦርድ ወደ CLI ምላሽ ቅጂ" },
   "optionDesc_noSuggest": { "message": "በ CLI ምላሽ መጨረሻ ላይ በራስ-ሰር አይበልጡ" },
   "optionDesc_quiet": { "message": "ከስህተቶች በስተቀር ሁሉንም የመግቢያዎች መሙላት" },
   "optionDesc_init": { "message": "የውቅረት ፋይል ይፍጠሩ (በፕሮጀክት ሥር)" },

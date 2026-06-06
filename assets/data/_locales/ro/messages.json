@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Limită de caractere per mesaj" },
   "optionDesc_maxTokens": { "message": "Numărul maxim de jetoane de utilizat" },
   "optionDesc_turnsToPreserve": { "message": "Număr de rotații de păstrat" },
+  "optionDesc_copy": { "message": "Copiați răspunsul CLI în clipboard" },
   "optionDesc_noSuggest": { "message": "Nu sugera automat următoarea acțiune AI la sfârșitul răspunsului CLI" },
   "optionDesc_quiet": { "message": "Suprimați toate înregistrările, cu excepția erorilor" },
   "optionDesc_init": { "message": "Creați fișierul de configurare (în rădăcina proiectului)" },

@@ -51,6 +51,7 @@
   "optionDesc_maxChars": { "message": "འཕྲིན་ཡིག་རེ་རེའི་ཡིག་འབྲུ་ཚད་མ །" },
   "optionDesc_maxTokens": { "message": "ལག་ལེན་བྱེད་ཕྱིར་ལག་ལེན་བྱེད་ཕྱིར་ལག་ལེན་བྱེད་མཁན །" },
   "optionDesc_turnsToPreserve": { "message": "སྲུང་སྐྱོབ་བྱ་རྒྱུའི་འཁོར་ལོའི་གྲངས་འབོར །" },
+  "optionDesc_copy": { "message": "CLI ལན་འདེབས་དེ་clipboard ལ་འདྲ་བཤུ་བྱེད་པ" },
   "optionDesc_noSuggest": { "message": "CLI ལན་འདེབས་ཀྱི་མཐའ་མཚམས་སུ་AIགི་ལས་རིམ་གཞན་ཞིག་མ་བཀོད་ཅིག" },
   "optionDesc_quiet": { "message": "འཛོལ་བ་མ་གཏོགས་གཞན་གྱི་མིང་ཐོ་ཚང་མ་ཕྱིར་འབུད་བྱེད་པ" },
   "optionDesc_init": { "message": "རིམ་སྒྲིག་ཡིག་ཆ་གསར་བཟོ། (ལས་གཞིའི་རྩ་བའི་ནང་)" },

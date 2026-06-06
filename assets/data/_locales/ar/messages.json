@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "حد الأحرف لكل رسالة" },
   "optionDesc_maxTokens": { "message": "الحد الأقصى للرموز المراد استخدامها" },
   "optionDesc_turnsToPreserve": { "message": "عدد الدورات التي يجب الحفاظ عليها" },
+  "optionDesc_copy": { "message": "نسخ استجابة واجهة سطر الأوامر إلى الحافظة" },
   "optionDesc_noSuggest": {
     "message": "لا تقترح تلقائيًا إجراء الذكاء الاصطناعي التالي في نهاية استجابة واجهة سطر الأوامر"
   },

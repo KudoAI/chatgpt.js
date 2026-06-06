@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "ຈຳກັດຕົວລະຄອນຕໍ່ຂໍ້ຄວາມ" },
   "optionDesc_maxTokens": { "message": "Tokens ສູງສຸດທີ່ເຄຍທີ່ຈະນໍາໃຊ້" },
   "optionDesc_turnsToPreserve": { "message": "ຈໍາ ນວນ ຫມູນ ວຽນເພື່ອຮັກສາ" },
+  "optionDesc_copy": { "message": "ສຳເນົາຄຳຕອບ CLI ກັບຄລິບບອດ" },
   "optionDesc_noSuggest": { "message": "ຢ່າແນະ ນໍາ ການກະ ທໍາ AI ຕໍ່ໄປໂດຍອັດຕະໂນມັດໃນຕອນທ້າຍຂອງການຕອບສະ ຫນອງ CLI" },
   "optionDesc_quiet": { "message": "ສະກັດກັ້ນການຕັດໄມ້ທັງໝົດ ຍົກເວັ້ນຂໍ້ຜິດພາດ" },
   "optionDesc_init": { "message": "ສ້າງໄຟລ໌ config (ໃນຮາກໂຄງການ)" },

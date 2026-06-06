@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Žinučių simbolių limitas" },
   "optionDesc_maxTokens": { "message": "Maks. naudojamų žetonų skaičius" },
   "optionDesc_turnsToPreserve": { "message": "Išsaugotinų posūkių skaičius" },
+  "optionDesc_copy": { "message": "Kopijuoti CLI atsakymą į iškarpinę" },
   "optionDesc_noSuggest": { "message": "Pasibaigus CLI atsakymui automatiškai nesiūlykite kito DI veiksmo" },
   "optionDesc_quiet": { "message": "Slėpti visus registravimus, išskyrus klaidas" },
   "optionDesc_init": { "message": "Sukurti konfigūracijos failą (projekto šaknyje)" },

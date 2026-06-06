@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Ka palena o nā huapalapala no kēlā me kēia leka" },
   "optionDesc_maxTokens": { "message": "Nā hōʻailona kiʻekiʻe loa e hoʻohana ai" },
   "optionDesc_turnsToPreserve": { "message": "Helu o nā huli e mālama ai" },
+  "optionDesc_copy": { "message": "E kope i ka pane CLI i ka papapihi" },
   "optionDesc_noSuggest": { "message": "Mai hōʻike aunoa i ka hana AI aʻe ma ka hopena o ka pane CLI" },
   "optionDesc_quiet": { "message": "Kāohi i ka hoʻopaʻa inoa a pau koe nā hewa" },
   "optionDesc_init": { "message": "E hana i ka faila hoʻonohonoho (ma ke kumu papahana)" },

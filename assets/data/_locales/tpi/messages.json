@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Tok bilong ol man long olgeta tok" },
   "optionDesc_maxTokens": { "message": "Tik tok to use" },
   "optionDesc_turnsToPreserve": { "message": "Namba bilong ol rot bilong lukautim" },
+  "optionDesc_copy": { "message": "Kopiim tok bilong CLI long clipboard" },
   "optionDesc_noSuggest": {
     "message": "No ken toksave long ol samting bai kamap bihain long AI long pinis bilong bekim bilong CLI"
   },

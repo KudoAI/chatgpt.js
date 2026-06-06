@@ -51,6 +51,7 @@
   "optionDesc_maxChars": { "message": "Limitacion Por Mensaje" },
   "optionDesc_maxTokens": { "message": "Tickets pa haci uso di" },
   "optionDesc_turnsToPreserve": { "message": "Number of Rescues for Rescues" },
+  "optionDesc_copy": { "message": "Copia CLI Respuesta a Clipboard" },
   "optionDesc_noSuggest": { "message": "Next articleAruba no ta para keto na final di accion di CITGO" },
   "optionDesc_quiet": { "message": "Tur Kuliner di Kuliner Kuliner" },
   "optionDesc_init": { "message": "Crear un archivo config (in proyecto root)" },

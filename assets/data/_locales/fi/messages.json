@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Merkkirajoitus viestiä kohden" },
   "optionDesc_maxTokens": { "message": "Käytettävien polettien enimmäismäärä" },
   "optionDesc_turnsToPreserve": { "message": "Säilytettävien kierrosten määrä" },
+  "optionDesc_copy": { "message": "Kopioi CLI-vastaus leikepöydälle" },
   "optionDesc_noSuggest": {
     "message": "Älä ehdota automaattisesti seuraavaa tekoälytoimenpidettä CLI-vastauksen lopussa"
   },

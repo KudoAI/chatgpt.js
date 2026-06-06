@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Límite de caracteres por mensaje" },
   "optionDesc_maxTokens": { "message": "Máximo de tokens a usar" },
   "optionDesc_turnsToPreserve": { "message": "Número de vueltas a conservar" },
+  "optionDesc_copy": { "message": "Copiar la respuesta CLI al portapapeles" },
   "optionDesc_noSuggest": {
     "message": "No sugiera automáticamente la siguiente acción de IA al final de la respuesta de CLI"
   },

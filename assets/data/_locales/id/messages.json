@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Batas karakter per pesan" },
   "optionDesc_maxTokens": { "message": "Token maksimum yang akan digunakan" },
   "optionDesc_turnsToPreserve": { "message": "Jumlah belokan untuk dipertahankan" },
+  "optionDesc_copy": { "message": "Salin respons CLI ke clipboard" },
   "optionDesc_noSuggest": {
     "message": "Jangan menyarankan tindakan AI berikutnya secara otomatis di akhir respons CLI"
   },

@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Маҳдудияти аломат барои як иттилоот" },
   "optionDesc_maxTokens": { "message": "Ð  Ð ° Ð ¼ Ð ¾ Ð ¸ Ñ" },
   "optionDesc_turnsToPreserve": { "message": "Миқдори гардишҳо барои нигоҳдорӣ" },
+  "optionDesc_copy": { "message": "Ҷавоби CLI- ро ба силули мухобиротӣ нусхабардорӣ кунед" },
   "optionDesc_noSuggest": { "message": "Do not auto-suggest next AI action in the end of CLI response" },
   "optionDesc_quiet": { "message": "Ғайри хатогӣ ҳамаи қайдкуниҳоро пахш кунед" },
   "optionDesc_init": { "message": "Эҷод кардани файли конфигуратсия (дар решаи лоиҳа)" },

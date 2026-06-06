@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Teckengräns per meddelande" },
   "optionDesc_maxTokens": { "message": "Max tokens att använda" },
   "optionDesc_turnsToPreserve": { "message": "Antal varv att bevara" },
+  "optionDesc_copy": { "message": "Kopiera CLI-svar till urklipp" },
   "optionDesc_noSuggest": { "message": "Föreslå inte automatiskt nästa AI-åtgärd i slutet av CLI-svaret" },
   "optionDesc_quiet": { "message": "Dölj all loggning utom fel" },
   "optionDesc_init": { "message": "Skapa konfigurationsfil (i projektets rot)" },

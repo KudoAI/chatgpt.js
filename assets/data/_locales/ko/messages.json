@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "메시지당 글자 수 제한" },
   "optionDesc_maxTokens": { "message": "사용할 최대 토큰 수" },
   "optionDesc_turnsToPreserve": { "message": "보존할 턴 수" },
+  "optionDesc_copy": { "message": "CLI 응답을 클립보드에 복사" },
   "optionDesc_noSuggest": { "message": "CLI 응답이 끝날 때 다음 AI 작업을 자동 제안하지 마십시오" },
   "optionDesc_quiet": { "message": "오류를 제외한 모든 로깅 억제" },
   "optionDesc_init": { "message": "구성 파일 만들기 (프로젝트 루트)" },

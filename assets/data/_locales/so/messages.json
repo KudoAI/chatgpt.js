@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Xadka astaamaha fariin kasta" },
   "optionDesc_maxTokens": { "message": "Calaamadaha Max si ay u isticmaalaan" },
   "optionDesc_turnsToPreserve": { "message": "Tirada soo noqnoqda si loo ilaaliyo" },
+  "optionDesc_copy": { "message": "Nuqul ka jawaab CLI clipboard" },
   "optionDesc_noSuggest": {
     "message": "Next article {DAAWO MUQAALKA} Madaxweyne Xasan Sheekh oo ku baaqay in la joojiyo dagaalka ka socda Muqdisho"
   },

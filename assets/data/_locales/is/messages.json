@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Stafatakmörk fyrir hver skilaboð" },
   "optionDesc_maxTokens": { "message": "Hámarksmerki til notkunar" },
   "optionDesc_turnsToPreserve": { "message": "Fjöldi skipta til að varðveita" },
+  "optionDesc_copy": { "message": "Afrita CLI-svar á klemmuspjald" },
   "optionDesc_noSuggest": { "message": "Ekki stinga sjálfkrafa upp á næstu gervigreindaraðgerð í lok CLI svars" },
   "optionDesc_quiet": { "message": "Slökkva á öllum innskráningum nema villum" },
   "optionDesc_init": { "message": "Búa til stillingarskrá (í frumtexta verkefnis)" },

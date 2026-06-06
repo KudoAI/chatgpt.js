@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Mesaj başına karakter limiti" },
   "optionDesc_maxTokens": { "message": "Kullanılacak maksimum jeton" },
   "optionDesc_turnsToPreserve": { "message": "Korunacak dönüş sayısı" },
+  "optionDesc_copy": { "message": "CLI yanıtını panoya kopyala" },
   "optionDesc_noSuggest": {
     "message": "CLI yanıtının sonunda bir sonraki yapay zeka eylemini otomatik olarak önermeyin"
   },

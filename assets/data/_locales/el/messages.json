@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Όριο χαρακτήρων ανά μήνυμα" },
   "optionDesc_maxTokens": { "message": "Μέγιστος αριθμός μαρκών για χρήση" },
   "optionDesc_turnsToPreserve": { "message": "Αριθμός στροφών για διατήρηση" },
+  "optionDesc_copy": { "message": "Αντιγραφή απάντησης CLI στο πρόχειρο" },
   "optionDesc_noSuggest": {
     "message": "Μην προτείνετε αυτόματα την επόμενη ενέργεια τεχνητής νοημοσύνης στο τέλος της απόκρισης CLI"
   },

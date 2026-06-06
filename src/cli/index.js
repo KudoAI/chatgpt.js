@@ -9,6 +9,7 @@
     globalThis.log = require('./lib/log')
     const fs = require('fs'),
           chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
+          clipboardy = require('node-clipboardy'),
           loader = require('./lib/loader').create({ width: env.width }),
           messages = require('./lib/messages'),
           string = require('./lib/string')
@@ -52,6 +53,7 @@
         if (cli.config.maxTokens) payload.maxTokens = cli.config.maxTokens
         const parsedReply = messages.extractFromJSON(await chatgpt.send('', payload))
         if (/^(?:help|hi)$/.test(query)) log.help()
+        if (cli.config.copy && parsedReply) clipboardy.writeSync(parsedReply)
         cli.msgChain.push(userMsg, { role: 'assistant', content: parsedReply })
         messages.saveChain(cli.msgChain)
     } finally { loader.stop() }

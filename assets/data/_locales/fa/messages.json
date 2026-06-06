@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "محدودیت کاراکتر در هر پیام" },
   "optionDesc_maxTokens": { "message": "حداکثر توکن‌های قابل استفاده" },
   "optionDesc_turnsToPreserve": { "message": "تعداد نوبت‌ها برای حفظ" },
+  "optionDesc_copy": { "message": "کپی کردن پاسخ CLI به کلیپ بورد" },
   "optionDesc_noSuggest": { "message": "در پایان پاسخ CLI، اقدام بعدی هوش مصنوعی را به طور خودکار پیشنهاد ندهید" },
   "optionDesc_quiet": { "message": "همه گزارش‌ها به جز خطاها را سرکوب کنید" },
   "optionDesc_init": { "message": "ایجاد فایل پیکربندی (در ریشه پروژه)" },

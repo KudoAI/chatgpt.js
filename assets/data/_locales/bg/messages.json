@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Ограничение на символите на съобщение" },
   "optionDesc_maxTokens": { "message": "Максимален брой жетони за използване" },
   "optionDesc_turnsToPreserve": { "message": "Брой завои за запазване" },
+  "optionDesc_copy": { "message": "Копиране на отговора на CLI в клипборда" },
   "optionDesc_noSuggest": {
     "message": "Не предлагайте автоматично следващо действие с изкуствен интелект в края на отговора на CLI"
   },

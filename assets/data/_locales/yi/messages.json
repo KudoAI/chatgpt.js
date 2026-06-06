@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "כאַראַקטער לימיט פּער מעסעדזש" },
   "optionDesc_maxTokens": { "message": "מאַקסימום טאָקענס צו נוצן" },
   "optionDesc_turnsToPreserve": { "message": "נומער פון דרייען צו באַוואָרן" },
+  "optionDesc_copy": { "message": "קאפירן CLI ענטפער צום קליפּבאָרד" },
   "optionDesc_noSuggest": {
     "message": "נישט אויטאָמאַטיש פֿאָרשלאָגן די קומענדיקע קינסטלעכע אינטעליגענץ אַקציע ביים סוף פֿון דער CLI ענטפֿער"
   },

@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Omejitev znakov na sporočilo" },
   "optionDesc_maxTokens": { "message": "Največ žetonov za uporabo" },
   "optionDesc_turnsToPreserve": { "message": "Število obratov za ohranitev" },
+  "optionDesc_copy": { "message": "Kopiraj odgovor CLI v odložišče" },
   "optionDesc_noSuggest": {
     "message": "Ne predlagajte samodejno naslednjega dejanja umetne inteligence na koncu odgovora CLI"
   },

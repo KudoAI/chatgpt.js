@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Faʻatapulaʻaina o uiga i le feʻau" },
   "optionDesc_maxTokens": { "message": "Max faailoga e faaaoga" },
   "optionDesc_turnsToPreserve": { "message": "Aofai o suiga e faasaoina" },
+  "optionDesc_copy": { "message": "Kopi CLI tali i clipboard" },
   "optionDesc_noSuggest": { "message": "Aua le tuʻuina atu le isi AI gaioiga i le faaiuga o le CLI tali" },
   "optionDesc_quiet": { "message": "Suppress logging uma vagana ai mea sese" },
   "optionDesc_init": { "message": "Fausia config faila (i le galuega faatino root)" },

@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Tekanyetso ya ditlhaka go ya ka molaetsa mongwe le mongwe" },
   "optionDesc_maxTokens": { "message": "MAX TOKENS GO O DIRISA" },
   "optionDesc_turnsToPreserve": { "message": "Palo ya diphetogo tse di tshwanelang go bolokiwa" },
+  "optionDesc_copy": { "message": "Khopi ya CLI RESPONSE to clipboard" },
   "optionDesc_noSuggest": { "message": "O seka wa buelela kgato e e latelang ya AI kwa bokhutlong jwa karabo ya CLI" },
   "optionDesc_quiet": { "message": "Go emisa dikgogo tsotlhe kwantle ga diphoso" },
   "optionDesc_init": { "message": "Tlhama faele ya thulaganyo (mo moding wa porojeke)" },

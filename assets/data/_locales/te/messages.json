@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "ప్రతి సందేశానికి అక్షర పరిమితి" },
   "optionDesc_maxTokens": { "message": "ఉపయోగించడానికి గరిష్ట టోకెన్ ‌ లు" },
   "optionDesc_turnsToPreserve": { "message": "ప్రిజర్వ్ చేయడానికి మలుపుల సంఖ్య" },
+  "optionDesc_copy": { "message": "క్లిప్ ‌ బోర్డ్ ‌ కు CLI ప్రతిస్పందనను కాపీ చేయండి" },
   "optionDesc_noSuggest": { "message": "CLI ప్రతిస్పందన చివరిలో తదుపరి AI చర్యను స్వయంచాలకంగా సూచించవద్దు" },
   "optionDesc_quiet": { "message": "లోపాలు మినహా అన్ని లాగింగ్ ‌ లను అణచివేయండి" },
   "optionDesc_init": { "message": "ఆకృతీకరణ ఫైల్ ‌ ను సృష్టించండి (ప్రాజెక్ట్ రూట్ ‌ లో)" },

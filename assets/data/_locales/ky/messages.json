@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Undo-type" },
   "optionDesc_maxTokens": { "message": "Колдонуу үчүн макс токендер" },
   "optionDesc_turnsToPreserve": { "message": "Сактоо үчүн кезектердин саны" },
+  "optionDesc_copy": { "message": "Undo-type" },
   "optionDesc_noSuggest": { "message": "CLI жообунун аягында кийинки AI иш-аракетин автоматтык түрдө сунуштабаңыз" },
   "optionDesc_quiet": { "message": "Каталардан башка бардык жазууларды басуу" },
   "optionDesc_init": { "message": "Конфигурация файлын түзүү (долбоордун тамыры менен)" },

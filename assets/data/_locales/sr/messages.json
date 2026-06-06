@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Ograničenje broja znakova po poruci" },
   "optionDesc_maxTokens": { "message": "Maksimalan broj tokena za korišćenje" },
   "optionDesc_turnsToPreserve": { "message": "Broj obrtaja za čuvanje" },
+  "optionDesc_copy": { "message": "Kopirajte CLI odgovor u ostavu" },
   "optionDesc_noSuggest": {
     "message": "Nemojte automatski predlagati sledeću radnju veštačke inteligencije na kraju odgovora CLI"
   },

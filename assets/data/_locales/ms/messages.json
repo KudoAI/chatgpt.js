@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Had aksara bagi setiap mesej" },
   "optionDesc_maxTokens": { "message": "Token maksimum untuk digunakan" },
   "optionDesc_turnsToPreserve": { "message": "Bilangan giliran untuk dikekalkan" },
+  "optionDesc_copy": { "message": "Salin jawapan CLI ke papan klip" },
   "optionDesc_noSuggest": {
     "message": "Jangan mencadangkan tindakan AI seterusnya secara automatik pada akhir maklum balas CLI"
   },

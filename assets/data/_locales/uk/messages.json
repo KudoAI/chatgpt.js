@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Обмеження кількості символів у повідомленні" },
   "optionDesc_maxTokens": { "message": "Максимальна кількість токенів для використання" },
   "optionDesc_turnsToPreserve": { "message": "Кількість обертів для збереження" },
+  "optionDesc_copy": { "message": "Скопіювати відповідь CLI в буфер обміну" },
   "optionDesc_noSuggest": { "message": "Не пропонувати автоматично наступну дію ШІ наприкінці відповіді CLI" },
   "optionDesc_quiet": { "message": "Придушити всі журнали, крім помилок" },
   "optionDesc_init": { "message": "Створити файл конфігурації (в корені проекту)" },

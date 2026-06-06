@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Limitasyon sa karakter kada mensahe" },
   "optionDesc_maxTokens": { "message": "Max tokens nga gamiton" },
   "optionDesc_turnsToPreserve": { "message": "Gidaghanon sa mga turno aron mapreserbar" },
+  "optionDesc_copy": { "message": "Kopyaha ang tubag sa CLI sa clipboard" },
   "optionDesc_noSuggest": { "message": "Ayaw pag-automate sa sunod nga aksyon sa AI sa katapusan sa tubag sa CLI" },
   "optionDesc_quiet": { "message": "Pugngan ang tanan nga pag-log gawas sa mga sayup" },
   "optionDesc_init": { "message": "Paghimo file sa config (sa root sa proyekto)" },

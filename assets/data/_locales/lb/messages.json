@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Charaktergrenz pro Noriicht" },
   "optionDesc_maxTokens": { "message": "Max Tokens fir ze benotzen" },
   "optionDesc_turnsToPreserve": { "message": "Zuel vun Ëmdréiunge fir ze konservéieren" },
+  "optionDesc_copy": { "message": "CLI-Äntwert op Clipboard kopéieren" },
   "optionDesc_noSuggest": { "message": "Don't auto-suggest nächster AI Aktioun um Enn vun der CLI Äntwert" },
   "optionDesc_quiet": { "message": "Ënnerdréckt all Umeldung ausser Feeler" },
   "optionDesc_init": { "message": "Konfiguratiounsdatei erstellen (am Projetwurzel)" },

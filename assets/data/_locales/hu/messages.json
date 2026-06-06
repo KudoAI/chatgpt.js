@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Karakterkorlát üzenetenként" },
   "optionDesc_maxTokens": { "message": "Maximálisan használható tokenek" },
   "optionDesc_turnsToPreserve": { "message": "Megőrizendő fordulók száma" },
+  "optionDesc_copy": { "message": "CLI-válasz másolása a vágólapra" },
   "optionDesc_noSuggest": { "message": "Ne javasolja automatikusan a következő MI-műveletet a CLI-válasz végén" },
   "optionDesc_quiet": { "message": "Az összes naplózás letiltása a hibák kivételével" },
   "optionDesc_init": { "message": "Konfigurációs fájl létrehozása (a projekt gyökerében)" },

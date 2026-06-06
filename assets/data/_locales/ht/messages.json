@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Limit karaktè pou chak mesaj" },
   "optionDesc_maxTokens": { "message": "Tiyo MAX pou itilize" },
   "optionDesc_turnsToPreserve": { "message": "Kantite vire pou prezève" },
+  "optionDesc_copy": { "message": "Kopi repons CLI a clipboard" },
   "optionDesc_noSuggest": { "message": "Pa oto-sèk pwochen aksyon AI nan fen repons CLI" },
   "optionDesc_quiet": { "message": "Siprime tout antre eksepte erè" },
   "optionDesc_init": { "message": "Kreye dosye config (nan rasin pwojè)" },

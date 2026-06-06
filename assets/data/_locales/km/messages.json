@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "ដែនកំណត់តួអក្សរក្នុងមួយសារ" },
   "optionDesc_maxTokens": { "message": "ថូខឹន អតិបរមា ដែល ត្រូវ ប្រើ" },
   "optionDesc_turnsToPreserve": { "message": "ចំនួនវេនដើម្បីអភិរក្ស" },
+  "optionDesc_copy": { "message": "ចម្លង ការ ឆ្លើយ តប CLI ទៅ ក្ដារ តម្បៀត ខ្ទាស់" },
   "optionDesc_noSuggest": { "message": "កុំណែនាំសកម្មភាព AI បន្ទាប់ដោយស្វ័យប្រវត្តិនៅចុងបញ្ចប់នៃការឆ្លើយតប CLI" },
   "optionDesc_quiet": { "message": "បង្ក្រាបការកាប់ឈើទាំងអស់លើកលែងតែកំហុស" },
   "optionDesc_init": { "message": "បង្កើត ឯកសារ កំណត់ រចនា សម្ព័ន្ធ (នៅ ក្នុង root គម្រោង)" },

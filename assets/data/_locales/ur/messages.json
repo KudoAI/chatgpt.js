@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "فی پیغام کریکٹر کی حد" },
   "optionDesc_maxTokens": { "message": "استعمال کرنے کے لیے زیادہ سے زیادہ ٹوکنز" },
   "optionDesc_turnsToPreserve": { "message": "محفوظ کرنے کے لیے موڑ کی تعداد" },
+  "optionDesc_copy": { "message": "کلپ بورڈ پر CLI کا جواب کاپی کریں" },
   "optionDesc_noSuggest": { "message": "CLI کے جواب کے اختتام پر اگلی AI کارروائی کی خودکار تجویز نہ کریں" },
   "optionDesc_quiet": { "message": "غلطیوں کے علاوہ تمام لاگنگ کو دبائیں" },
   "optionDesc_init": { "message": "کنفیگ فائل بنائیں (پروجیکٹ روٹ میں)" },

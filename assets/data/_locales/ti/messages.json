@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "ኣብ ነፍሲ ወከፍ መልእኽቲ ዘሎ ናይ ጠባይ ገደብ" },
   "optionDesc_maxTokens": { "message": "ናይ ማክስ ምልክታት ንምጥቃም" },
   "optionDesc_turnsToPreserve": { "message": "ናይ ምዕቃብ ናይ ምትሕልላፍ ቁጽሪ" },
+  "optionDesc_copy": { "message": "CLI መልሲ ናብ ክሊፕቦርድ ቅዳሕ" },
   "optionDesc_noSuggest": { "message": "ኣብ መወዳእታ ናይ CLI ምላሽ ናይ ቀጻሊ ስጉምቲ AI ኣይትውሰደሉ" },
   "optionDesc_quiet": { "message": "ጌጋታት እንተዘይኮይኑ ፡ ንዅሉ ምዝገባታት ኣጥፍእ" },
   "optionDesc_init": { "message": "ናይ ውህደት ፋይል ፍጠር (ኣብ ናይ ፕሮጀክት ሱር)" },

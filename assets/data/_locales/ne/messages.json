@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "प्रति सन्देश क्यारेक्टर सीमा" },
   "optionDesc_maxTokens": { "message": "प्रयोग गरिने अधिकतम टोकनहरू" },
   "optionDesc_turnsToPreserve": { "message": "संरक्षण गर्ने पालोहरूको संख्या" },
+  "optionDesc_copy": { "message": "क्लिपबोर्डमा CLI प्रतिक्रिया प्रतिलिपि गर्नुहोस्" },
   "optionDesc_noSuggest": { "message": "CLI प्रतिक्रियाको अन्त्यमा अर्को AI कार्य स्वतः सुझाव नगर्नुहोस्" },
   "optionDesc_quiet": { "message": "त्रुटिहरू बाहेक सबै लगिङलाई दबाउनुहोस्" },
   "optionDesc_init": { "message": "कन्फिग फाइल सिर्जना गर्नुहोस् (परियोजना मूलमा)" },

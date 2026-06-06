@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Akaram n tbaḍnit s yizen" },
   "optionDesc_maxTokens": { "message": "Tags relatifs à \"max to use\"" },
   "optionDesc_turnsToPreserve": { "message": "Adjectifs à Adjectifs" },
+  "optionDesc_copy": { "message": "Kkes tiririt n CLI i uḍebsi" },
   "optionDesc_noSuggest": { "message": "Next articleUr ttekki ara deg umezruy n tmaziɣt deg taggara n tmaziɣt" },
   "optionDesc_quiet": { "message": "Sizdeg akk tuccḍiwin anagar tuccḍiwin" },
   "optionDesc_init": { "message": "Snulfu afaylu n usebter (deg uẓar n usebter)" },

@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "每封邮件的字符数限制" },
   "optionDesc_maxTokens": { "message": "可使用的最大代币数" },
   "optionDesc_turnsToPreserve": { "message": "要保留的匝数" },
+  "optionDesc_copy": { "message": "将CLI响应复制到剪贴板" },
   "optionDesc_noSuggest": { "message": "不要在CLI响应结束时自动建议下一个AI操作" },
   "optionDesc_quiet": { "message": "禁止所有日志记录，错误除外" },
   "optionDesc_init": { "message": "创建配置文件（在项目根目录中）" },

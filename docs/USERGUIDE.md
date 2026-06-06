@@ -91,6 +91,7 @@ Parameter options:
  -c, --config <filepath>          Path to custom config file to load.
 
 Boolean options:
+ -x, --copy                       Copy CLI response to clipboard.
  -A, --no-suggest                 Don't auto-suggest next AI action at end of CLI response.
  -V, --quiet                      Suppress all logging except errors.
 

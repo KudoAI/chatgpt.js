@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "ਪ੍ਰਤੀ ਸੁਨੇਹਾ ਅੱਖਰ ਸੀਮਾ" },
   "optionDesc_maxTokens": { "message": "ਵਰਤਣ ਲਈ ਮੈਕਸ ਟੋਕਨ" },
   "optionDesc_turnsToPreserve": { "message": "ਸੰਭਾਲਣ ਲਈ ਮੋੜਾਂ ਦੀ ਗਿਣਤੀ" },
+  "optionDesc_copy": { "message": "ਕਲਿੱਪਬੋਰਡ ਲਈ CLI ਜਵਾਬ ਕਾਪੀ ਕਰੋ" },
   "optionDesc_noSuggest": { "message": "CLI ਜਵਾਬ ਦੇ ਅੰਤ ਵਿੱਚ ਅਗਲੀ AI ਕਾਰਵਾਈ ਆਟੋਮੈਟਿਕ ਸੁਝਾਅ ਨਾ ਦਿਓ" },
   "optionDesc_quiet": { "message": "ਗਲਤੀਆਂ ਨੂੰ ਛੱਡ ਕੇ ਸਭ ਲਾਗਿੰਗ ਦਬਾਓ" },
   "optionDesc_init": { "message": "ਸੰਰਚਨਾ ਫਾਇਲ ਬਣਾਓ (ਪਰੋਜੈਕਟ ਰੂਟ ਵਿੱਚ)" },

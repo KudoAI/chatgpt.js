@@ -49,6 +49,7 @@
   "optionDesc_maxChars": { "message": "Mezu bakoitzeko karaktere muga" },
   "optionDesc_maxTokens": { "message": "Erabiltzeko gehienezko token kopurua" },
   "optionDesc_turnsToPreserve": { "message": "Gorde beharreko bira kopurua" },
+  "optionDesc_copy": { "message": "Kopiatu CLI erantzuna arbelean" },
   "optionDesc_noSuggest": { "message": "Ez iradoki automatikoki hurrengo IA ekintza CLI erantzunaren amaieran" },
   "optionDesc_quiet": { "message": "Ezabatu erregistro guztiak erroreak izan ezik" },
   "optionDesc_init": { "message": "Konfigurazio fitxategia sortu (proiektuaren erroan)" },
