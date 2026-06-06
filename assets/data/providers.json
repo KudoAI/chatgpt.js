@@ -30,10 +30,10 @@
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "nvidia/nemotron-nano-9b-v2:free",
         "nvidia/nemotron-nano-12b-v2-vl:free",
+        "openrouter/free",
         "openai/gpt-oss-120b:free",
         "openai/gpt-oss-20b:free",
         "openrouter/owl-alpha",
-        "openrouter/free",
         "poolside/laguna-m.1:free",
         "poolside/laguna-xs.2:free",
         "z-ai/glm-4.5-air:free"
