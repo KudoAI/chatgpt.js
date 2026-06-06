@@ -80,7 +80,7 @@ chatgpt  # or cjs
 
 ```
 Parameter options:
- -p, --provider <provider>        Provider for chat API ('google', 'openrouter', or 'random')
+ -p, --provider <provider>        Provider for chat API ('auto', 'google', or 'openrouter')
  -u, --ui-lang <code>             ISO 639-1 code of language to display UI in.
  -q, --query <msg>                Query to send AI.
  -s, --summarize <filepath|text>  Path to file or text to summarize.

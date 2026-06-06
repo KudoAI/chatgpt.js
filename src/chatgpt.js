@@ -1726,7 +1726,7 @@ const chatgpt = {
 
     async send(userQuery, {
         env = chatgpt.env,
-        provider = 'random', // or 'google' or 'openrouter'
+        provider = 'auto', // or 'google' or 'openrouter'
         stream = true, // return streaming resp if possible, otherwise text
         onLoadStart = null, // cb on resp start loading
         output = 'return', // or 'stdout'
@@ -1753,7 +1753,7 @@ const chatgpt = {
             }, 222)
 
         } else { // backend
-            if (provider == 'random') {
+            if (/^(?:auto|random)$/i.test(provider)) {
                 const availProviders = ['google', 'openrouter'].filter(provider => {
                     const key = chatgpt.config?.apiKeys?.[provider] || process.env[`${provider.toUpperCase()}_API_KEY`]
                     return typeof key == 'string' && key

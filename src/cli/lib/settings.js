@@ -7,7 +7,7 @@ module.exports = {
     configFilename: '.chatgpt.config.mjs',
 
     controls: {
-        provider: { type: 'param', regex: /^--?p(?:rovider)?(?:[=\s].*|$)/, defaultVal: 'random' },
+        provider: { type: 'param', regex: /^--?p(?:rovider)?(?:[=\s].*|$)/, defaultVal: 'auto' },
         uiLang: { type: 'param', valType: 'langCode', regex: /^--?u(?:i[-_]?lang)?(?:[=\s].*|$)/ },
         query: { type: 'param', regex: /^--?(?:q|query|ask|send)(?:[=\s].*|$)/, defaultVal: 'hi' },
         summarize: { type: 'param', valType: 'filepath', allowText: true, regex: /^--?s(?:ummarize)?(?:[=\s].*|$)/ },

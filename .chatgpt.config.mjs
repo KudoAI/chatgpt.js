@@ -11,7 +11,7 @@
 export default {
 
     // Param options
-    provider: 'random',  // provider for chat API (or 'google' or 'openrouter')
+    provider: 'auto',    // provider for chat API (or 'google' or 'openrouter')
     uiLang: 'en',        // ISO 639-1 code of language to display UI in
     maxChars: 250,       // char limit per msg
     maxTokens: null,     // max tokens to use
