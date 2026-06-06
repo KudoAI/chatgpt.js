@@ -1,4 +1,43 @@
-[
-  "google",
-  "openrouter"
-]
+{
+  "google": {
+    "endpoints": {
+      "chat": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent"
+    }
+  },
+  "openai": {
+    "endpoints": {
+      "chat": "https://chatgpt.com/backend-api/conversation",
+      "chats": "https://chatgpt.com/backend-api/conversations",
+      "instructions": "https://chatgpt.com/backend-api/user_system_messages",
+      "session": "https://chatgpt.com/api/auth/session",
+      "share": "https://chatgpt.com/backend-api/share",
+      "share_create": "https://chatgpt.com/backend-api/share/create"
+    }
+  },
+  "openrouter": {
+    "endpoints": {
+      "chat": "https://openrouter.ai/api/v1/chat/completions"
+    },
+    "models": {
+      "free": [
+        "bytedance-seed/seedream-4.5",
+        "google/gemma-4-26b-a4b-it:free",
+        "google/gemma-4-31b-it:free",
+        "moonshotai/kimi-k2.6:free",
+        "nvidia/nemotron-3-nano-30b-a3b:free",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "nvidia/nemotron-nano-9b-v2:free",
+        "nvidia/nemotron-nano-12b-v2-vl:free",
+        "openai/gpt-oss-120b:free",
+        "openai/gpt-oss-20b:free",
+        "openrouter/owl-alpha",
+        "openrouter/free",
+        "poolside/laguna-m.1:free",
+        "poolside/laguna-xs.2:free",
+        "z-ai/glm-4.5-air:free"
+      ]
+    }
+  }
+}
