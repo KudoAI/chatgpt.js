@@ -8,7 +8,7 @@
     "config": "https://github.com/KudoAI/chatgpt.js/blob/main/.chatgpt.config.mjs",
     "docs": {
       "license": "https://github.com/KudoAI/chatgpt.js/blob/main/docs/LICENSE.md",
-      "readme": "https://github.com/KudoAI/chatgpt.js/tree/main/docs/#readme",
+      "readme": "https://github.com/KudoAI/chatgpt.js/#readme",
       "root": "https://github.com/KudoAI/chatgpt.js/tree/main/docs"
     },
     "github": "https://github.com/KudoAI/chatgpt.js",
