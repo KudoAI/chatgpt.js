@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Chat-sovellusliittymän tarjoaja" },
   "optionDesc_query": { "message": "Kysely tekoälyn lähettämiseksi" },
   "optionDesc_summarize": { "message": "Yhteenvetotiedoston tai -tekstin polku" },
+  "optionDesc_ascii": { "message": "Renderöi valinnaisen aiheen ASCII-taide" },
   "optionDesc_uiLang": { "message": "Iso 639-1 -kielikoodi käyttöliittymän näyttämiseksi" },
   "optionDesc_config": { "message": "Polku muokattuun ladattavaan asetustiedostoon" },
   "optionDesc_maxChars": { "message": "Merkkirajoitus viestiä kohden" },

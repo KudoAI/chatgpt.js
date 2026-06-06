@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Furnizor pentru chat API" },
   "optionDesc_query": { "message": "Interogare pentru a trimite AI" },
   "optionDesc_summarize": { "message": "Calea către fișier sau text de rezumat" },
+  "optionDesc_ascii": { "message": "Redați arta ASCII a subiectului opțional" },
   "optionDesc_uiLang": { "message": "Codul ISO 639-1 al limbii pentru afișarea UI în" },
   "optionDesc_config": { "message": "Calea către fișierul de configurare personalizat pentru încărcare" },
   "optionDesc_maxChars": { "message": "Limită de caractere per mesaj" },

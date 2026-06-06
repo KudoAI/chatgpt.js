@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Verskaffer vir klets-API" },
   "optionDesc_query": { "message": "Navraag om AI te stuur" },
   "optionDesc_summarize": { "message": "Pad na lêer of teks om op te som" },
+  "optionDesc_ascii": { "message": "Gee ASCII kuns van opsionele onderwerp" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kode van taal te vertoon UI in" },
   "optionDesc_config": { "message": "Pad na pasgemaakte konfigurasielêer om te laai" },
   "optionDesc_maxChars": { "message": "Karakterlimiet per boodskap" },

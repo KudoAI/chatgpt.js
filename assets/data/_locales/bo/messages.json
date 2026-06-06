@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Chat API སྒྲིག་འཇུག་བྱས་ཚད ། ཐེངས་10 ལས་ཉུང་བ ། ཐོན་རིམ་5.7.1" },
   "optionDesc_query": { "message": "ངས་ཁྱོད་ལ་བཏང་།" },
   "optionDesc_summarize": { "message": "ཡིག་ཆ་དང་ཡིག་ཆ་བསྡུ་ལེན་བྱེད་པའི་ལམ་" },
+  "optionDesc_ascii": { "message": "ASCII སྒྱུ་རྩལ ། གདམ་ཁ་རྐྱབས་ཀྱི་གནད་དོན་" },
   "optionDesc_uiLang": { "message": "ISO 639-1 སྐད་ཡིག་གི་ཁ་བྱང་།" },
   "optionDesc_config": {
     "message": "རང་མོས་སྒྲིག་འཇུག་བྱས་ཚད ། ཐེངས་3 ལས་ཉུང་བ ། ཐོན་རིམ་5.7.1 ནང་དུ་ཚོད་ལྟ་བྱས་ཟིན །"

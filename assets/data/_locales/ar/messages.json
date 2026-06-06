@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "مزود لواجهة برمجة تطبيقات الدردشة" },
   "optionDesc_query": { "message": "استعلام لإرسال ذكاء اصطناعي" },
   "optionDesc_summarize": { "message": "المسار إلى ملف أو نص للتلخيص" },
+  "optionDesc_ascii": { "message": "تقديم مادة ASCII الاختيارية" },
   "optionDesc_uiLang": { "message": "رمز لغة ISO 639-1 لعرض واجهة المستخدم في" },
   "optionDesc_config": { "message": "المسار إلى ملف التكوين المخصص للتحميل" },
   "optionDesc_maxChars": { "message": "حد الأحرف لكل رسالة" },

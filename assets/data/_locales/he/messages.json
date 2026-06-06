@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "ספק עבור ממשק API של צ'אט" },
   "optionDesc_query": { "message": "שאילתה לשליחת בינה מלאכותית" },
   "optionDesc_summarize": { "message": "נתיב לקובץ או לטקסט לסיכום" },
+  "optionDesc_ascii": { "message": "עיבוד אמנות ASCII של נושא אופציונלי" },
   "optionDesc_uiLang": { "message": "קוד שפה ISO 639 -1 להצגה בממשק המשתמש" },
   "optionDesc_config": { "message": "נתיב לטעינת קובץ תצורה מותאם אישית" },
   "optionDesc_maxChars": { "message": "מגבלת תווים לכל הודעה" },

@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "چیٹ API کے لیے فراہم کنندہ" },
   "optionDesc_query": { "message": "AI بھیجنے کے لیے سوال" },
   "optionDesc_summarize": { "message": "خلاصہ کرنے کے لیے فائل یا متن کا راستہ" },
+  "optionDesc_ascii": { "message": "اختیاری مضمون کا ASCII آرٹ رینڈر کریں" },
   "optionDesc_uiLang": { "message": "UI ظاہر کرنے کے لیے ISO 639-1 زبان کا کوڈ" },
   "optionDesc_config": { "message": "لوڈ کرنے کے لیے کسٹم کنفیگ فائل کا راستہ" },
   "optionDesc_maxChars": { "message": "فی پیغام کریکٹر کی حد" },

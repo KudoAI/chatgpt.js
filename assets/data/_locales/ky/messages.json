@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Чат API үчүн камсыздоочу" },
   "optionDesc_query": { "message": "AI жөнөтүү үчүн суроо" },
   "optionDesc_summarize": { "message": "Undo-type" },
+  "optionDesc_ascii": { "message": "Кошумча предметтин ASCII искусствосун көрсөтүү" },
   "optionDesc_uiLang": { "message": "ISO 639-1 тил коду UI көрсөтүү үчүн" },
   "optionDesc_config": { "message": "Undo-type" },
   "optionDesc_maxChars": { "message": "Undo-type" },

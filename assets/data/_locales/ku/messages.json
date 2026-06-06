@@ -47,6 +47,7 @@
   "optionDesc_provider": { "message": "Pêşkêşvan ji bo API-ya sohbetê" },
   "optionDesc_query": { "message": "Pirs ji bo şandina AI" },
   "optionDesc_summarize": { "message": "Riya pel an nivîsa ku were kurtkirin" },
+  "optionDesc_ascii": { "message": "Hunera ASCII ya mijara bijarte nîşan bide" },
   "optionDesc_uiLang": { "message": "Koda ISO 639-1 ya zimanê ji bo nîşandana UI-ê" },
   "optionDesc_config": { "message": "Riya pelê mîhengkirina xwerû ji bo barkirinê" },
   "optionDesc_maxChars": { "message": "Sînorê karakteran ji bo her peyamê" },

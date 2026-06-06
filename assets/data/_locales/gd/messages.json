@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Solaraiche airson API cabadaich" },
   "optionDesc_query": { "message": "Accueil > Accueil > To send ai" },
   "optionDesc_summarize": { "message": "An t - slighe gu faidhle no teacsa gus geàrr - chunntas a dhèanamh" },
+  "optionDesc_ascii": { "message": "Santarcangelo di Romagna" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 Code of Language gus UI a thaisbeanadh ann an UI" },
   "optionDesc_config": { "message": "An t - slighe dhan fhaidhle rèiteachaidh gnàthaichte gus a luchdadh" },
   "optionDesc_maxChars": { "message": "Teorainn nan caractaran gach teachdaireachd" },

@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Provider for chat API" },
   "optionDesc_query": { "message": "QUERITI EXTREME AI" },
   "optionDesc_summarize": { "message": "Path to file vel text to summarum" },
+  "optionDesc_ascii": { "message": "Artium Renderis ASCII" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Code of linguae ad exponibus UI in" },
   "optionDesc_config": { "message": "Path to custom config file to load" },
   "optionDesc_maxChars": { "message": "Character limit per message" },

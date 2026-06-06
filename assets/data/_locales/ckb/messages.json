@@ -49,6 +49,7 @@
   "optionDesc_provider": { "message": "زیادکردنی هاوپۆل بۆ chat API" },
   "optionDesc_query": { "message": "ناردنی ئه كاونت" },
   "optionDesc_summarize": { "message": "پەڕگە یان پەڕگە بۆ پوختەکردن" },
+  "optionDesc_ascii": { "message": "Ckbwiki ھونەری ھەڵبژێردراو" },
   "optionDesc_uiLang": { "message": "ئایزۆ 639-1 کۆدی زمان بۆ پیشاندانی UI" },
   "optionDesc_config": { "message": "ڕێچکە بۆ بارکردنی پەڕگەی ڕێکخستن بۆ بارکردن" },
   "optionDesc_maxChars": { "message": "سنووردارکردنی کارەکتەر بۆ هەر پەیامێک" },

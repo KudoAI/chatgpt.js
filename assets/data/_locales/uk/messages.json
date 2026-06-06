@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Постачальник API чату" },
   "optionDesc_query": { "message": "Запит на надсилання AI" },
   "optionDesc_summarize": { "message": "Шлях до файлу або тексту для узагальнення" },
+  "optionDesc_ascii": { "message": "Відтворити ASCII-арт необов 'язкового предмета" },
   "optionDesc_uiLang": { "message": "Код мови ISO 639-1 для відображення інтерфейсу користувача" },
   "optionDesc_config": { "message": "Шлях до користувацького файлу конфігурації для завантаження" },
   "optionDesc_maxChars": { "message": "Обмеження кількості символів у повідомленні" },

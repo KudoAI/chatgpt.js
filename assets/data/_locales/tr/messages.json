@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Sohbet API'si sağlayıcısı" },
   "optionDesc_query": { "message": "Yapay zeka gönderme sorgusu" },
   "optionDesc_summarize": { "message": "Dosya yolu veya özetlenecek metin" },
+  "optionDesc_ascii": { "message": "İsteğe bağlı konunun ASCII sanatını işleyin" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 kullanıcı arayüzünü görüntülemek için dil kodu" },
   "optionDesc_config": { "message": "Yüklenecek özel yapılandırma dosyasının yolu" },
   "optionDesc_maxChars": { "message": "Mesaj başına karakter limiti" },

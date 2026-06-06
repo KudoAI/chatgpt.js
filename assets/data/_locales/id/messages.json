@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Penyedia api obrolan" },
   "optionDesc_query": { "message": "Kueri untuk mengirim AI" },
   "optionDesc_summarize": { "message": "Jalur ke file atau teks untuk diringkas" },
+  "optionDesc_ascii": { "message": "Render seni ASCII subjek opsional" },
   "optionDesc_uiLang": { "message": "Kode bahasa ISO 639 -1 untuk menampilkan UI di" },
   "optionDesc_config": { "message": "Jalur ke file konfigurasi kustom untuk dimuat" },
   "optionDesc_maxChars": { "message": "Batas karakter per pesan" },

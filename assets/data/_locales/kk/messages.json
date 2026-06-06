@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Чат API провайдері" },
   "optionDesc_query": { "message": "ЖИ жіберу сұранысы" },
   "optionDesc_summarize": { "message": "Қорытындылау үшін файлға немесе мәтінге жол" },
+  "optionDesc_ascii": { "message": "Қосымша пәннің ASCII өнерін көрсету" },
   "optionDesc_uiLang": { "message": "Пайдаланушы интерфейсін көрсету үшін ISO 639-1 тіл коды" },
   "optionDesc_config": { "message": "Жүктелетін теңшелетін конфигурация файлына жол" },
   "optionDesc_maxChars": { "message": "Хабар бойынша таңба шегі" },

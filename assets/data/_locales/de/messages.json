@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Anbieter für Chat-API" },
   "optionDesc_query": { "message": "Abfrage zum Senden von KI" },
   "optionDesc_summarize": { "message": "Pfad zur Datei oder Text zur Zusammenfassung" },
+  "optionDesc_ascii": { "message": "ASCII-Kunst des optionalen Fachs rendern" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Sprachcode zur Anzeige der Benutzeroberfläche in" },
   "optionDesc_config": { "message": "Pfad zur benutzerdefinierten Konfigurationsdatei zum Laden" },
   "optionDesc_maxChars": { "message": "Zeichenlimit pro Nachricht" },

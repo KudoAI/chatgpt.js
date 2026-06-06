@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Provider fir Chat API" },
   "optionDesc_query": { "message": "Query ze schécken AI" },
   "optionDesc_summarize": { "message": "Wege zu Datei oder Text um zu resumieren" },
+  "optionDesc_ascii": { "message": "Render ASCII Konscht vum fakultativen Thema" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Code der Sprache um UI an zu zeigen" },
   "optionDesc_config": { "message": "Path zu personaliséierter Konfiguratiounsdatei fir ze lueden" },
   "optionDesc_maxChars": { "message": "Charaktergrenz pro Noriicht" },

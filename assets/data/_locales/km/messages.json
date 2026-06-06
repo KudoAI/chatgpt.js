@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "អ្នកផ្តល់សេវាសម្រាប់ការជជែកកំសាន្ត API" },
   "optionDesc_query": { "message": "សំណួរដែលត្រូវផ្ញើ AI" },
   "optionDesc_summarize": { "message": "ផ្លូវ ទៅ ឯកសារ ឬ អត្ថបទ ដែល ត្រូវ សង្ខេប" },
+  "optionDesc_ascii": { "message": "បង្ហាញ សិល្បៈ ASCII នៃ ប្រធានបទ ស្រេចចិត្ត" },
   "optionDesc_uiLang": { "message": "កូដភាសា ISO 639-1 ដើម្បីបង្ហាញ UI នៅក្នុង" },
   "optionDesc_config": { "message": "ផ្លូវ ទៅ ឯកសារ កំណត់ រចនា សម្ព័ន្ធ ផ្ទាល់ខ្លួន ដែល ត្រូវ ផ្ទុក" },
   "optionDesc_maxChars": { "message": "ដែនកំណត់តួអក្សរក្នុងមួយសារ" },

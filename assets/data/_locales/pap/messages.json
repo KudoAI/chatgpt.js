@@ -45,6 +45,7 @@
   "optionDesc_summarize": {
     "message": "Página principal > Temas Variados > Resumen resumen resumen resumen resumen res"
   },
+  "optionDesc_ascii": { "message": "Asuncion Art of Optional Topic" },
   "optionDesc_uiLang": { "message": "Documente similare cu ISO 639-1 Code of Language" },
   "optionDesc_config": { "message": "Archive for custom config Archive for cargo" },
   "optionDesc_maxChars": { "message": "Limitacion Por Mensaje" },

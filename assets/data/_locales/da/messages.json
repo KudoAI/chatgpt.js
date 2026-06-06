@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Udbyder til chat-API" },
   "optionDesc_query": { "message": "Forespørgsel om at sende AI" },
   "optionDesc_summarize": { "message": "Sti til fil eller tekst, der skal opsummeres" },
+  "optionDesc_ascii": { "message": "Gengiv ASCII-kunst af valgfrit emne" },
   "optionDesc_uiLang": { "message": "ISO 639-1-kode for sprog til visning af brugergrænseflade i" },
   "optionDesc_config": { "message": "Sti til brugerdefineret konfigurationsfil, der skal indl" },
   "optionDesc_maxChars": { "message": "Tegngrænse pr. meddelelse" },

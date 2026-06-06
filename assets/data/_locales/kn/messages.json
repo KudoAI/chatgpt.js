@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "ಚಾಟ್ API ಗಾಗಿ ಒದಗಿಸುವವರು" },
   "optionDesc_query": { "message": "AI ಕಳುಹಿಸಲು ಪ್ರಶ್ನೆ" },
   "optionDesc_summarize": { "message": "ಫೈಲ್‌ಗೆ ಮಾರ್ಗ ಅಥವಾ ಸಾರಾಂಶಕ್ಕೆ ಪಠ್ಯ" },
+  "optionDesc_ascii": { "message": "ಐಚ್ಛಿಕ ವಿಷಯದ ASCII ಕಲೆಯನ್ನು ಒದಗಿಸಿ" },
   "optionDesc_uiLang": { "message": "UI ಅನ್ನು ಪ್ರದರ್ಶಿಸಲು ISO 639-1 ಭಾಷೆಯ ಸಂಕೇತ" },
   "optionDesc_config": { "message": "ಲೋಡ್ ಮಾಡಲು ಕಸ್ಟಮ್ ಕಾನ್ಫಿಗರೇಶನ್ ಫೈಲ್‌ಗೆ ಮಾರ್ಗ" },
   "optionDesc_maxChars": { "message": "ಪ್ರತಿ ಸಂದೇಶಕ್ಕೆ ಅಕ್ಷರ ಮಿತಿ" },

@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Fournisseur pour l'API de chat" },
   "optionDesc_query": { "message": "Requête à envoyer AI" },
   "optionDesc_summarize": { "message": "Chemin d'accès au fichier ou au texte pour résumer" },
+  "optionDesc_ascii": { "message": "Rendre l'art ASCII du sujet facultatif" },
   "optionDesc_uiLang": { "message": "Code de langue ISO 639-1 pour afficher l'interface utilisateur dans" },
   "optionDesc_config": { "message": "Chemin d'accès au fichier de configuration personnalisé à charger" },
   "optionDesc_maxChars": { "message": "Limite de caractères par message" },

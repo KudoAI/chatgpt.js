@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Nhà cung cấp cho API trò chuyện" },
   "optionDesc_query": { "message": "Truy vấn để gửi AI" },
   "optionDesc_summarize": { "message": "Đường dẫn đến tệp hoặc văn bản để tóm tắt" },
+  "optionDesc_ascii": { "message": "Kết xuất nghệ thuật ASCII của đối tượng tùy chọn" },
   "optionDesc_uiLang": { "message": "Mã ngôn ngữ ISO 639-1 để hiển thị giao diện người dùng trong" },
   "optionDesc_config": { "message": "Đường dẫn đến tệp cấu hình tùy chỉnh để tải" },
   "optionDesc_maxChars": { "message": "Giới hạn ký tự cho mỗi tin nhắn" },

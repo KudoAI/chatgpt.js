@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "அரட்டை APIக்கான வழங்குநர்" },
   "optionDesc_query": { "message": "AI ஐ அனுப்ப வினவல்" },
   "optionDesc_summarize": { "message": "கோப்புக்கான பாதை அல்லது சுருக்கமாக உரை" },
+  "optionDesc_ascii": { "message": "விருப்பமான ஆய்வுக்குட்படுநரின் ASCII கலையை வழங்குதல்" },
   "optionDesc_uiLang": { "message": "UI ஐக் காண்பிக்க ISO 639-1 மொழிக் குறியீடு" },
   "optionDesc_config": { "message": "ஏற்றுவதற்கான தனிப்பயன் உள்ளமைவு கோப்புக்கான பாதை" },
   "optionDesc_maxChars": { "message": "ஒரு செய்திக்கு எழுத்து வரம்பு" },

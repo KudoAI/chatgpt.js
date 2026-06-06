@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Чат API-ийн үйлчилгээ үзүүлэгч" },
   "optionDesc_query": { "message": "AI илгээх хүсэлт" },
   "optionDesc_summarize": { "message": "Хураангуй болгох файл эсвэл текст рүү зам" },
+  "optionDesc_ascii": { "message": "Нэмэлт субьектуудын Render ASCII урлаг" },
   "optionDesc_uiLang": { "message": "UI-ийг харуулахын тулд ISO 639-1 хэлний код" },
   "optionDesc_config": { "message": "Ачаалах тохиргооны файлын тохиргооны замыг өөрчлөх" },
   "optionDesc_maxChars": { "message": "Зурвас тутамд тэмдэгтийн хязгаар" },

@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Chat API uchun provayder" },
   "optionDesc_query": { "message": "Sun'iy intellektni yuborish uchun so'rov" },
   "optionDesc_summarize": { "message": "Xulosa qilish uchun fayl yoki matnga yo'l" },
+  "optionDesc_ascii": { "message": "Ixtiyoriy mavzuning ASCII rasmini renderlash" },
   "optionDesc_uiLang": { "message": "UI ni ko'rsatish uchun ISO 639-1 til kodi" },
   "optionDesc_config": { "message": "Yuklanadigan maxsus konfiguratsiya fayliga yo'l" },
   "optionDesc_maxChars": { "message": "Har bir xabar uchun belgilar chegarasi" },

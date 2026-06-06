@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Провайдер API чата" },
   "optionDesc_query": { "message": "Запрос на отправку ИИ" },
   "optionDesc_summarize": { "message": "Путь к файлу или тексту для обобщения" },
+  "optionDesc_ascii": { "message": "Визуализация ASCII-арта необязательного предмета" },
   "optionDesc_uiLang": { "message": "Код языка ISO 639-1 для отображения пользовательского интерфейса" },
   "optionDesc_config": { "message": "Путь к пользовательскому файлу конфигурации для загрузки" },
   "optionDesc_maxChars": { "message": "Ограничение количества символов в сообщении" },

@@ -45,6 +45,7 @@
   "optionDesc_provider": { "message": "ޗެޓް އެޕީއައި އަށް ޕްރޮވައިޑަރ" },
   "optionDesc_query": { "message": "އޭއައި ފޮނުވަން ކިއުއަރީ" },
   "optionDesc_summarize": { "message": "ފައިލް އަށް ނުވަތަ ޚުލާޞާ ކުރަން ޓެކްސްޓް އަށް ދާން އޮތް މަގު" },
+  "optionDesc_ascii": { "message": "އިޚްތިޔާރީ މާއްދާއެއްގެ އޭއެސްސީއައި އާޓް ރެންޑަރކުރުން" },
   "optionDesc_uiLang": { "message": "ޔޫއައި ދައްކާލުމަށް އައިއެސްއޯ 639-1 ކޯޑް އޮފް ލޭންގުއޭޖް" },
   "optionDesc_config": { "message": "ލޯޑް ކުރަން ކަސްޓަމް ކޮންފިގް ފައިލް އަށް ދާ މަގު" },
   "optionDesc_maxChars": { "message": "މެސެޖަކަށް އަކުރު ލިމިޓް" },

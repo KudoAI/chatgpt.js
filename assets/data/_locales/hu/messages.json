@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Csevegési API szolgáltatója" },
   "optionDesc_query": { "message": "AI küldésének lekérdezése" },
   "optionDesc_summarize": { "message": "Az összegezendő fájl vagy szöveg elérési útja" },
+  "optionDesc_ascii": { "message": "Opcionális téma ASCII-művészetének leképezése" },
   "optionDesc_uiLang": { "message": "A felhasználói felület megjelenítéséhez használt nyelv ISO 639-1 kódja" },
   "optionDesc_config": { "message": "A betöltendő egyéni konfigurációs fájl elérési útja" },
   "optionDesc_maxChars": { "message": "Karakterkorlát üzenetenként" },

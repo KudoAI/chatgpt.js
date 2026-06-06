@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Þjónustuaðili fyrir API fyrir spjall" },
   "optionDesc_query": { "message": "Fyrirspurn til að senda gervigreind" },
   "optionDesc_summarize": { "message": "Slóð að skrá eða texti til að draga saman" },
+  "optionDesc_ascii": { "message": "Render ASCII art of optional subject" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kóði tungumáls til að sýna notendaviðmót í" },
   "optionDesc_config": { "message": "Slóð að sérsniðinni grunnstillingarskrá til að hlaða inn" },
   "optionDesc_maxChars": { "message": "Stafatakmörk fyrir hver skilaboð" },

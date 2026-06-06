@@ -43,6 +43,7 @@
   "optionDesc_provider": { "message": "Founisè pou chat API" },
   "optionDesc_query": { "message": "Mande pou voye AI" },
   "optionDesc_summarize": { "message": "Chemen pou ranpli oswa tèks pou rezime" },
+  "optionDesc_ascii": { "message": "Lwe ASCII atizay nan sijè si ou vle" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kòd langaj pou montre UI nan" },
   "optionDesc_config": { "message": "Chemen nan dosye konfigirasyon koutim nan chaj" },
   "optionDesc_maxChars": { "message": "Limit karaktè pou chak mesaj" },
