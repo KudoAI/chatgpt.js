@@ -243,13 +243,14 @@ Example:
 
 #
 
-#### `detectLanguage(text)` `async`
+#### `detectLanguage(text, { parameters })` `async`
 
 Asks ChatGPT to detect the language of given text.
 
 Parameters:
 
 `text`: A string being the text to detect the language of.
+`verbose`: Suppress console logging.
 
 Example:
 
@@ -355,15 +356,15 @@ chatgpt.printAllFunctions()
 
 #
 
-#### `sentiment()` `async`
+#### `sentiment(text, entity, { parameters })` `async`
 
 Asks ChatGPT to analyze sentiment from a given text.
 
 Parameters:
 
 `text`: A string being the text to be analyzed.
-
 `entity` (optional): A string being the entity to analyze sentiment towards.
+`verbose`: Suppress console logging.
 
 Example:
 
@@ -427,13 +428,14 @@ Example:
 
 #
 
-#### `summarize()` `async`
+#### `summarize(text, { parameters })` `async`
 
 Asks ChatGPT to summarize given text.
 
 Parameters:
 
 `text`: A string being the text to be summarized.
+`verbose`: Suppress console logging.
 
 Example:
 
@@ -446,15 +448,15 @@ Example:
 
 #
 
-#### `translate()` `async`
+#### `translate(text, outputLang, { parameters })` `async`
 
 Asks ChatGPT to translate given text to a given language.
 
 Parameters:
 
 `text`: A string being the text to translate.
-
 `outputLang`: A string representing the output language of the translation.
+`verbose`: Suppress console logging.
 
 Example:
 
@@ -667,7 +669,7 @@ chatgpt.clearChats().then(() => chatgpt.alert('Chat history cleared!'))
 
 #
 
-#### `exportChat()` `async`
+#### `exportChat(chatToGet, format, { parameters })` `async`
 
 Exports a given chat as a file.
 
@@ -680,6 +682,8 @@ Can be the following: `active`, the current chat, `latest`, the latest chat in t
 `format` (optional): A string representing the format of the export file.
 
 Can be the following: `html`, `md`, `pdf` or `text`. Defaults to `html`.
+
+`verbose`: Suppress console logging.
 
 Example:
 
@@ -1555,13 +1559,14 @@ if (chatgpt.browser.isMobile()) {
 
 ## code `api`
 
-#### `debug()` `async`
+#### `debug(code, { parameters })` `async`
 
 Asks ChatGPT to debug the given code and return corrected code.
 
 Parameters:
 
 `code`: A string being the code to debug.
+`verbose`: Suppress console logging.
 
 Example:
 
@@ -1582,13 +1587,14 @@ Example:
 
 #
 
-#### `minify()` `async`
+#### `minify(code, { parameters })` `async`
 
 Asks ChatGPT to minify the given code.
 
 Parameters:
 
 `code`: A string being the code to be minified.
+`verbose`: Suppress console logging.
 
 Example:
 
@@ -1614,13 +1620,14 @@ Example:
 
 #
 
-#### `execute()` `async`
+#### `execute(code, { parameters })` `async`
 
 Asks ChatGPT to execute the given code.
 
 Parameters:
 
 `code`: A string being the code to execute.
+`verbose`: Suppress console logging.
 
 Example:
 
@@ -1689,13 +1696,14 @@ Example:
 
 #
 
-#### `obfuscate()` `async`
+#### `obfuscate(code, { parameters })` `async`
 
 Asks ChatGPT to obfuscate the given code.
 
 Parameters:
 
 `code`: A string being the code to obfuscate.
+`verbose`: Suppress console logging.
 
 Example:
 
@@ -1712,13 +1720,14 @@ Example:
 
 #
 
-#### `refactor()` `async`
+#### `refactor(code, { parameters })` `async`
 
 Asks ChatGPT to refactor the given code.
 
 Parameters:
 
 `code`: A string being the code to refactor.
+`verbose`: Suppress console logging.
 
 `objective` (optional): A string representing the objective of the refactoring. Defaults to `brevity`.
 
@@ -1742,13 +1751,14 @@ Example:
 
 #
 
-#### `review()` `async`
+#### `review(code, { parameters })` `async`
 
 Asks ChatGPT to review given code.
 
 Parameters:
 
 `code`: A string being the code to review.
+`verbose`: Suppress console logging.
 
 Example:
 
@@ -1763,13 +1773,14 @@ Example:
 
 #
 
-#### `unminify()` `async`
+#### `unminify(code, { parameters })` `async`
 
 Asks ChatGPT to unminify the given code.
 
 Parameters:
 
 `code`: A string being the code to unminify.
+`verbose`: Suppress console logging.
 
 Example:
 
@@ -1796,15 +1807,15 @@ Example:
 
 #
 
-#### `write()` `async`
+#### `write(prompt, outputLang, { parameters })` `async`
 
 Asks ChatGPT to write code given a prompt.
 
 Parameters:
 
 `prompt`: A string describing the code to generate.
-
 `outputLang`: A string representing the code language to generate the prompt with.
+`verbose`: Suppress console logging.
 
 Example:
 

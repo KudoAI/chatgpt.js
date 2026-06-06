@@ -546,17 +546,17 @@ const chatgpt = {
     code: {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
-        async debug(code) {
+        async debug(code, { verbose = false } = {}) {
             if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
-            console.info('Debugging code...')
+            if (verbose) console.info('Debugging code...')
             const prompt = `Debug the following code and return the corrected code:\n\n${code}`,
                   resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
             return chatgpt.code.extract(resp)
         },
 
-        async execute(code) {
+        async execute(code, { verbose = false } = {}) {
             if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
-            console.info('Executing code...')
+            if (verbose) console.info('Executing code...')
             const prompt = `Display the output as if you were terminal:\n\n${code}`,
                   resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
             return chatgpt.code.extract(resp)
@@ -601,53 +601,53 @@ const chatgpt = {
             return await (timeoutPromise ? Promise.race([isIdlePromise, timeoutPromise]) : isIdlePromise)
         },
 
-        async minify(code) {
+        async minify(code, { verbose = false } = {}) {
             if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
-            console.info('Minifying code...')
+            if (verbose) console.info('Minifying code...')
             const prompt = `Minify the following code:\n\n${code}`,
                   resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
             return chatgpt.code.extract(resp)
         },
 
-        async obfuscate(code) {
+        async obfuscate(code, { verbose = false } = {}) {
             if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
-            console.info('Obfuscating code...')
+            if (verbose) console.info('Obfuscating code...')
             const prompt = `Obfuscate the following code:\n\n${code}`,
                   resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
             return chatgpt.code.extract(resp)
         },
 
-        async refactor(code, objective) {
+        async refactor(code, objective, { verbose = false } = {}) {
             if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
             for (let i = 0 ; i < arguments.length ; i++)
                 if (typeof arguments[i] != 'string')
                     return console.error(`Argument ${ i +1 } must be a string.`)
-            console.info('Refactoring code...')
+            if (verbose) console.info('Refactoring code...')
             const prompt = `Refactor the following code for ${ objective || 'brevity' }:\n\n${code}`,
                   resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
             return chatgpt.code.extract(resp)
         },
 
-        async review(code) {
+        async review(code, { verbose = false } = {}) {
             if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
-            console.info('Reviewing code...')
+            if (verbose) console.info('Reviewing code...')
             const prompt = `Review the following code:\n\n${code}`,
                   resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
             return chatgpt.code.extract(resp)
         },
 
-        async unminify(code) {
+        async unminify(code, { verbose = false } = {}) {
             if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
-            console.info('Unminifying code...')
+            if (verbose) console.info('Unminifying code...')
             const prompt = `Unminify the following code:\n\n${code}`,
                   resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
             return chatgpt.code.extract(resp)
         },
 
-        async write(prompt, outputLang) {
+        async write(prompt, outputLang, { verbose = false } = {}) {
             if (!chatgpt._validateArg({ arg: prompt, type: 'string' })) return
             if (!chatgpt._validateArg({ arg: outputLang, type: 'lang' })) return
-            console.info('Writing code...')
+            if (verbose) console.info('Writing code...')
             const fullPrompt = `Write this as code in ${outputLang}: ${prompt}`,
                   resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](fullPrompt)
             return chatgpt.code.extract(resp)
@@ -656,11 +656,11 @@ const chatgpt = {
 
     continue() { chatgpt.response.continue() },
 
-    async detectLanguage(text) {
+    async detectLanguage(text, { verbose = false } = {}) {
         if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
         chatgpt.send(`Detect the language of the following text:\n\n${text}`
             + '\n\nOnly respond with the name of the language')
-        console.info('Reviewing text...')
+        if (verbose) console.info('Reviewing text...')
         await chatgpt.isIdle()
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
@@ -672,7 +672,7 @@ const chatgpt = {
 
     execute(code) { return chatgpt.code.execute(code) },
 
-    async exportChat(chatToGet, format) {
+    async exportChat(chatToGet, format, { verbose = false } = {}) {
     // chatToGet = 'active' (default) | 'latest' | index|title|id of chat to get
     // format = 'html' (default) | 'md' | 'pdf' | 'text'
 
@@ -684,7 +684,7 @@ const chatgpt = {
         format = format.toLowerCase() || 'html' // default to 'html' if unpassed
 
         // Create transcript + filename
-        console.info('Generating transcript...')
+        if (verbose) console.info('Generating transcript...')
         let transcript = '', filename
         if (/te?xt/.test(format)) { // generate plain transcript + filename for TXT export
 
@@ -737,7 +737,7 @@ const chatgpt = {
         }
 
         // Export transcript
-        console.info(`Exporting transcript as ${format.toUpperCase()}...`)
+        if (verbose) console.info(`Exporting transcript as ${format.toUpperCase()}...`)
         if (format == 'pdf') { // convert SVGs + launch PDF printer
 
             // Convert SVG icons to data URLs for proper PDF rendering
@@ -1912,14 +1912,14 @@ const chatgpt = {
         }
     },
 
-    async sentiment(text, entity) {
+    async sentiment(text, entity, { verbose = false } = {}) {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
         if (!chatgpt._validateArg({ arg: entity, type: 'string' })) return
         chatgpt.send('What is the sentiment of the following text'
             + ( entity ? ` towards the entity ${entity},` : '' )
             + ' from strongly negative to strongly positive?\n\n' + text )
-        console.info('Analyzing sentiment...')
+        if (verbose) console.info('Analyzing sentiment...')
         await chatgpt.isIdle()
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
@@ -2112,25 +2112,25 @@ const chatgpt = {
         } catch (err) { console.error(err) }
     },
 
-    async summarize(text) {
+    async summarize(text, { verbose = false } = {}) {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
         chatgpt.send('Summarize the following text:\n\n' + text)
-        console.info('Summarizing text...')
+        if (verbose) console.info('Summarizing text...')
         await chatgpt.isIdle()
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
 
     toggleScheme() { chatgpt.settings.scheme.toggle() },
 
-    async translate(text, outputLang) {
+    async translate(text, outputLang, { verbose = false } = {}) {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
         if (!chatgpt._validateArg({ arg: outputLang, type: 'lang' })) return
         for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
             return console.error(`Argument ${ i +1 } must be a string!`)
         chatgpt.send(`Translate the following text to ${outputLang}. Only reply with the translation.\n\n${text}`)
-        console.info('Translating text...')
+        if (verbose) console.info('Translating text...')
         await chatgpt.isIdle()
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
