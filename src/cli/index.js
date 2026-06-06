@@ -42,6 +42,8 @@
         const userMsg = { role: 'user', content: query }
         const payload = {
             provider: cli.config.provider,
+            output: 'stdout',
+            color: 'white',
             onLoadStart: () => loader.stop({ clear: false }),
             messages: [...cli.msgChain, userMsg],
             maxChars: cli.config.maxChars,
@@ -49,7 +51,6 @@
         }
         if (cli.config.maxTokens) payload.maxTokens = cli.config.maxTokens
         const parsedReply = messages.extractFromJSON(await chatgpt.send('', payload))
-        log.data(parsedReply)
         if (/^(?:help|hi)$/.test(query)) log.help()
         cli.msgChain.push(userMsg, { role: 'assistant', content: parsedReply })
         messages.saveChain(cli.msgChain)

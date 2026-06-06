@@ -9,6 +9,7 @@ const chatgpt = {
     colors: {
         orange: '\x1b[38;5;214m',
         green: '\x1b[92m',
+        white: '\x1b[38;2;255;255;255m',
         reset: '\x1b[0m'
     },
 
