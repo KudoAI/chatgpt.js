@@ -5,7 +5,7 @@
   "author": {
     "name": "KudoAI & contributors",
     "email": "contact@kudoai.com",
-    "url": "https://www.kudoai.com"
+    "url": "https://kudoai.com"
   },
   "homepage": "https://chatgpt.js.org",
   "license": "MIT",
@@ -53,6 +53,7 @@
   },
   "keywords": [
     "ai",
+    "agent",
     "artificial intelligence",
     "bot",
     "chat",
