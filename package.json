@@ -58,18 +58,20 @@
     "chat",
     "chatbot",
     "chatgpt",
+    "cli",
     "clientside",
     "conversational ai",
     "frontend",
+    "gemini",
+    "google ai",
     "gpt",
-    "gpt3",
-    "gpt4",
     "javascript",
     "library",
     "machine learning",
     "ml",
     "nlp",
-    "openai"
+    "openai",
+    "openrouter"
   ],
   "bugs": "https://github.com/KudoAI/chatgpt.js/issues",
   "dependencies": {
