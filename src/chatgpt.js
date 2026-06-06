@@ -1784,7 +1784,7 @@ const chatgpt = {
                     if (systemQuery) msgs.push({ role: 'system', content: trunc(systemQuery, maxChars) })
                     msgs.push({ role: 'user', content: trunc(userQuery, maxChars) })
                 }
-                payload = { model: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free', stream, messages: msgs }
+                payload = { model: 'openrouter/free', stream, messages: msgs }
                 if (maxTokens != null) payload.max_tokens = maxTokens
             }
             const resp = await fetch(url, { method: 'POST', headers, body: JSON.stringify(payload) })
