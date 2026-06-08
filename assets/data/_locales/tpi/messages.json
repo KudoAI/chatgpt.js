@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Ol man i save mekim wok long ol samting bilong skin" },
   "optionDesc_query": { "message": "Mi laik bai yu salim mi i go" },
   "optionDesc_summarize": { "message": "Rot bilong kisim wanpela fail o tok i stap long en" },
-  "optionDesc_ascii": { "message": "Ritim ASCII long ol samting bilong mekim wok" },
+  "optionDesc_asciiArt": { "message": "Ritim ASCII long ol samting bilong mekim wok" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kod bilong tokples bilong soim UI long" },
   "optionDesc_config": { "message": "PATH long custom config file long load" },
   "optionDesc_maxChars": { "message": "Tok bilong ol man long olgeta tok" },

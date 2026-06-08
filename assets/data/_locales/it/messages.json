@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Provider per chat API" },
   "optionDesc_query": { "message": "Query da inviare all'IA" },
   "optionDesc_summarize": { "message": "Percorso del file o testo da riepilogare" },
-  "optionDesc_ascii": { "message": "Render ASCII art of optional subject" },
+  "optionDesc_asciiArt": { "message": "Render ASCII art of optional subject" },
   "optionDesc_uiLang": { "message": "Codice ISO 639-1 della lingua in cui visualizzare l'interfaccia utente" },
   "optionDesc_config": { "message": "Percorso del file di configurazione personalizzato da caricare" },
   "optionDesc_maxChars": { "message": "Limite di caratteri per messaggio" },

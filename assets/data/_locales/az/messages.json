@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Söhbət API-si üçün təminatçı" },
   "optionDesc_query": { "message": "AI göndərmək üçün sorğu" },
   "optionDesc_summarize": { "message": "Xülasə etmək üçün fayla və ya mətnə gedən yol" },
-  "optionDesc_ascii": { "message": "ASCII incəsənətinin qeyri-məcburi predmetini göstərin" },
+  "optionDesc_asciiArt": { "message": "ASCII incəsənətinin qeyri-məcburi predmetini göstərin" },
   "optionDesc_uiLang": { "message": "İSO 639-1-də UI-nı göstərmək üçün dilin kodu" },
   "optionDesc_config": { "message": "Yükləmək üçün xüsusi konfiqurasiya faylına gedən yol" },
   "optionDesc_maxChars": { "message": "Hər mesaj üçün xarakter limiti" },

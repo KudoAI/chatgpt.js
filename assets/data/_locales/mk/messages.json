@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Давател на API за разговор" },
   "optionDesc_query": { "message": "Барање за испраќање вештачка интелигенција" },
   "optionDesc_summarize": { "message": "Патека до датотеката или текст за сумирање" },
-  "optionDesc_ascii": { "message": "Изложба на Ascii уметност на факултативен предмет" },
+  "optionDesc_asciiArt": { "message": "Изложба на Ascii уметност на факултативен предмет" },
   "optionDesc_uiLang": { "message": "ISO 639-1 код на јазик за прикажување на UI во" },
   "optionDesc_config": { "message": "Патека до приспособена конфигурациска датотека за вчи" },
   "optionDesc_maxChars": { "message": "Ограничување на знаци по порака" },

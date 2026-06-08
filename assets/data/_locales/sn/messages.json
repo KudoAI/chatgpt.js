@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Mupi wekukurukurirana API" },
   "optionDesc_query": { "message": "Mubvunzo kutumira AI" },
   "optionDesc_summarize": { "message": "Nzira kune faira kana zvinyorwa kupfupisa" },
-  "optionDesc_ascii": { "message": "Ratidza ASCII unyanzvi hwekuzvisarudzira nyaya" },
+  "optionDesc_asciiArt": { "message": "Ratidza ASCII unyanzvi hwekuzvisarudzira nyaya" },
   "optionDesc_uiLang": { "message": "ISO 639-1 remutauro kuratidza UI muna" },
   "optionDesc_config": { "message": "Path to custom config file to load" },
   "optionDesc_maxChars": { "message": "Muganhu wehunhu pameseji" },

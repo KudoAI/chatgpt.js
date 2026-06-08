@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "チャットAPIのプロバイダー" },
   "optionDesc_query": { "message": "AIを送信するためのクエリ" },
   "optionDesc_summarize": { "message": "要約するファイルまたはテキストへのパス" },
-  "optionDesc_ascii": { "message": "オプションのサブジェクトのASCIIアートをレンダリングする" },
+  "optionDesc_asciiArt": { "message": "オプションのサブジェクトのASCIIアートをレンダリングする" },
   "optionDesc_uiLang": { "message": "UIを表示する言語のISO 639 -1コード" },
   "optionDesc_config": { "message": "読み込むカスタム構成ファイルへのパス" },
   "optionDesc_maxChars": { "message": "メッセージあたりの文字数制限" },

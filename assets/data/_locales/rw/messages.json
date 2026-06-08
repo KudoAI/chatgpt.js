@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Kugirango" },
   "optionDesc_query": { "message": "Kuri Kohereza" },
   "optionDesc_summarize": { "message": "Kuri IDOSIYE Cyangwa Umwandiko Kuri Inshamake" },
-  "optionDesc_ascii": { "message": "Bya Bitari ngombwa Ikivugwaho" },
+  "optionDesc_asciiArt": { "message": "Bya Bitari ngombwa Ikivugwaho" },
   "optionDesc_uiLang": { "message": "Kode ya ISO 639-1 y'ururimi rwo kwerekanamo UI" },
   "optionDesc_config": { "message": "Kuri Kunoza IDOSIYE Kuri Ibirimo" },
   "optionDesc_maxChars": { "message": "Ubutumwa" },

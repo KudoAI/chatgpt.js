@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Leverantör för chatt-API" },
   "optionDesc_query": { "message": "Fråga för att skicka AI" },
   "optionDesc_summarize": { "message": "Sökväg till fil eller text för sammanfattning" },
-  "optionDesc_ascii": { "message": "Rendera ASCII-konst av valfritt ämne" },
+  "optionDesc_asciiArt": { "message": "Rendera ASCII-konst av valfritt ämne" },
   "optionDesc_uiLang": { "message": "ISO 639-1-kod för språk för att visa användargränssnitt i" },
   "optionDesc_config": { "message": "Sökväg till anpassad konfigurationsfil att ladda" },
   "optionDesc_maxChars": { "message": "Teckengräns per meddelande" },

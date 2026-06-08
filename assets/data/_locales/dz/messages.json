@@ -45,7 +45,7 @@
   "optionDesc_provider": { "message": "བལྟ་བཤལཔ་ཚུ་གི་དོན་ལུ་ བལྟ་བཤལཔ་" },
   "optionDesc_query": { "message": "བཏང་ནིའི་དོན་ལས་" },
   "optionDesc_summarize": { "message": "ཡིག་སྣོད་དང་ ཡིག་སྣོད་ཚུ་ བསྡུ་སྒྲིག་འབད་ནིའི་ལམ་" },
-  "optionDesc_ascii": { "message": "གདམ་ཁ་ ཁ་སྐོང་ཚུ་སྟོནམ་ཨིན།." },
+  "optionDesc_asciiArt": { "message": "གདམ་ཁ་ ཁ་སྐོང་ཚུ་སྟོནམ་ཨིན།." },
   "optionDesc_uiLang": { "message": "ཨའི་ཟ་ཨོ་༦༣༩-༡ གི་སྐད་ཡིག་གི་ལྡེ་མིག་འདི་ ཨའི་ཟ་ཨོ་༦༣༩-༡ ལུ་སྟོན་" },
   "optionDesc_config": { "message": "རང་ལུགས་སྒྲིག་ཡིག་སྣོད་ལུ་སྣེ་ལེན་འབད་ནིའི་ལམ་" },
   "optionDesc_maxChars": { "message": "འཕྲིན་དོན་རེ་རེ་ལུ་ ཡིག་འབྲུ་གི་ཚད་གཞི་" },

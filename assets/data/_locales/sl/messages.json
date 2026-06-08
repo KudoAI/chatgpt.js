@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Ponudnik za API za klepet" },
   "optionDesc_query": { "message": "Poizvedba za pošiljanje umetne inteligence" },
   "optionDesc_summarize": { "message": "Pot do datoteke ali besedila za povzemanje" },
-  "optionDesc_ascii": { "message": "Upodobi umetnost ASCII izbirnega predmeta" },
+  "optionDesc_asciiArt": { "message": "Upodobi umetnost ASCII izbirnega predmeta" },
   "optionDesc_uiLang": { "message": "Koda jezika ISO 639-1 za prikaz uporabniškega vmesnika v" },
   "optionDesc_config": { "message": "Pot do konfiguracijske datoteke po meri za nalaganje" },
   "optionDesc_maxChars": { "message": "Omejitev znakov na sporočilo" },

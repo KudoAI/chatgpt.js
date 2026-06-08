@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Таъминкунанда барои API чат" },
   "optionDesc_query": { "message": "Дархост барои фиристодани AI" },
   "optionDesc_summarize": { "message": "Роҳча ба файл ё матн барои ҷамъбаст" },
-  "optionDesc_ascii": { "message": "Рендер ASCII санъат субъекти ихтиёрӣ" },
+  "optionDesc_asciiArt": { "message": "Рендер ASCII санъат субъекти ихтиёрӣ" },
   "optionDesc_uiLang": { "message": "ISO 639-1 рамзи забон барои намоиши UI дар" },
   "optionDesc_config": { "message": "Роҳча барои боркунии файли танзимоти фармоишӣ" },
   "optionDesc_maxChars": { "message": "Маҳдудияти аломат барои як иттилоот" },

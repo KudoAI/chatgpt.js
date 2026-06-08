@@ -45,7 +45,7 @@
   "optionDesc_provider": { "message": "ผู้ให้บริการสำหรับ API การแชท" },
   "optionDesc_query": { "message": "สอบถามเพื่อส่ง AI" },
   "optionDesc_summarize": { "message": "เส้นทางไปยังไฟล์หรือข้อความเพื่อสรุป" },
-  "optionDesc_ascii": { "message": "RENDER ASCII ART of OPTIONAL SUBJECT" },
+  "optionDesc_asciiArt": { "message": "RENDER ASCII ART of OPTIONAL SUBJECT" },
   "optionDesc_uiLang": { "message": "รหัสภาษา ISO 639 -1 เพื่อแสดง UI ใน" },
   "optionDesc_config": { "message": "พาธไปยังไฟล์กำหนดค่าที่จะโหลด" },
   "optionDesc_maxChars": { "message": "ขีดจำกัดตัวอักษรต่อข้อความ" },

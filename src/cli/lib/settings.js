@@ -11,7 +11,7 @@ module.exports = {
         uiLang: { type: 'param', valType: 'langCode', regex: /^--?u(?:i[-_]?lang)?(?:[=\s].*|$)/ },
         query: { type: 'param', regex: /^--?(?:q|query|ask|send)(?:[=\s].*|$)/, defaultVal: 'hi' },
         summarize: { type: 'param', valType: 'filepath', allowText: true, regex: /^--?s(?:ummarize)?(?:[=\s].*|$)/ },
-        ascii: { type: 'param', regex: /^--?a(?:scii[-_]?(?:art)?)?(?:[=\s].*|$)/ },
+        ascii: { type: 'param', regex: /^--?a(?:scii[-_]?)?a(?:rt)?(?:[=\s].*|$)/ },
         config: { type: 'param', valType: 'filepath', regex: /^--?c(?:onfig)?(?:[=\s].*|$)/ },
         maxChars: {
             type: 'param', valType: 'positiveInt', regex: /^--?m(?:ax[-_]?chars)?(?:[=\s].*|$)/, defaultVal: 250 },

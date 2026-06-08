@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "चैट एपीआई के लिए प्रदाता" },
   "optionDesc_query": { "message": "AI भेजने के लिए क्वेरी" },
   "optionDesc_summarize": { "message": "संक्षेप में फ़ाइल या टेक्स्ट का पथ" },
-  "optionDesc_ascii": { "message": "वैकल्पिक विषय की ASCII कला प्रस्तुत करें" },
+  "optionDesc_asciiArt": { "message": "वैकल्पिक विषय की ASCII कला प्रस्तुत करें" },
   "optionDesc_uiLang": { "message": "यूआई प्रदर्शित करने के लिए भाषा का आईएसओ 639 -1 कोड" },
   "optionDesc_config": { "message": "लोड करने के लिए कस्टम कॉन्फ़िगरेशन फ़ाइल का पथ" },
   "optionDesc_maxChars": { "message": "कैरेक्टर लिमिट प्रति मैसेज" },

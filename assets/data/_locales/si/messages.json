@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "චැට් API සඳහා සපයන්නා" },
   "optionDesc_query": { "message": "AI යැවීමට විමසුම" },
   "optionDesc_summarize": { "message": "සාරාංශ කිරීමට ගොනුව හෝ පෙළ සඳහා මාර්ගය" },
-  "optionDesc_ascii": { "message": "විකල්ප විෂය පිළිබඳ ASCII කලාව ඉදිරිපත් කරන්න" },
+  "optionDesc_asciiArt": { "message": "විකල්ප විෂය පිළිබඳ ASCII කලාව ඉදිරිපත් කරන්න" },
   "optionDesc_uiLang": { "message": "ISO 639-1 භාෂා කේතය ප්රදර්ශනය කිරීමට UI" },
   "optionDesc_config": { "message": "පූරණය සඳහා අභිරුචි සැකසුම් ගොනුව සඳහා මාර් ‍ ගය" },
   "optionDesc_maxChars": { "message": "පණිවිඩයකට අක්ෂර සීමාව" },

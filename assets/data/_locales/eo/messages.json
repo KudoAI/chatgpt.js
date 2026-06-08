@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Provizanto por babilejo API" },
   "optionDesc_query": { "message": "Demando por sendi al iu" },
   "optionDesc_summarize": { "message": "Vojo al dosiero aŭ teksto por resumi" },
-  "optionDesc_ascii": { "message": "Make ASCII art of optional subject" },
+  "optionDesc_asciiArt": { "message": "Make ASCII art of optional subject" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kodo de lingvo por elmontri UI en" },
   "optionDesc_config": { "message": "Ŝarĝendan agordodosieron" },
   "optionDesc_maxChars": { "message": "Signolimo por mesaĝo" },

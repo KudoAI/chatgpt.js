@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Pembekal untuk api sembang" },
   "optionDesc_query": { "message": "Pertanyaan untuk menghantar AI" },
   "optionDesc_summarize": { "message": "Laluan ke fail atau teks untuk diringkaskan" },
-  "optionDesc_ascii": { "message": "Terapkan seni ASCII subjek pilihan" },
+  "optionDesc_asciiArt": { "message": "Terapkan seni ASCII subjek pilihan" },
   "optionDesc_uiLang": { "message": "Kod bahasa ISO 639-1 untuk memaparkan UI" },
   "optionDesc_config": { "message": "Laluan ke fail konfigurasi tersuai untuk dimuatkan" },
   "optionDesc_maxChars": { "message": "Had aksara bagi setiap mesej" },

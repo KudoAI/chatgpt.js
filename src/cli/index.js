@@ -30,9 +30,9 @@
               : cli.config.summarize ? `Summarize the following:\n\n${
                     string.looksLikePath(cli.config.summarize) ? fs.readFileSync(cli.config.summarize, 'utf8')
                                                                : cli.config.summarize }`
-              : cli.config.ascii ?
-                    `Render a single piece of ascii art of ${ typeof cli.config.ascii == 'string' ? cli.config.ascii
-                                                                                                  : 'a random thing' }.`
+              : cli.config.asciiArt ?
+                    `Render a single piece of ascii art of ${
+                        typeof cli.config.asciiArt == 'string' ? cli.config.asciiArt : 'a random thing' }.`
               : cli.config.query
     if (!cli.config.noSuggest)
         query += '\n\nThen, at the end of your response, ask user if they want you to do something related to the query'

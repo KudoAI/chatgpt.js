@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "চ্যাট API এর জন্য প্রদানকারী" },
   "optionDesc_query": { "message": "AI পাঠাতে কোয়েরি করুন" },
   "optionDesc_summarize": { "message": "ফাইল বা পাঠ্যের সংক্ষিপ্তসার করার পথ" },
-  "optionDesc_ascii": { "message": "ঐচ্ছিক অংশগ্রহণকারীর ASCII শিল্প ভাড়া করুন" },
+  "optionDesc_asciiArt": { "message": "ঐচ্ছিক অংশগ্রহণকারীর ASCII শিল্প ভাড়া করুন" },
   "optionDesc_uiLang": { "message": "UI প্রদর্শনের জন্য ISO 639-1 ভাষার কোড" },
   "optionDesc_config": { "message": "লোড করার জন্য কাস্টম কনফিগ ফাইলের পাথ" },
   "optionDesc_maxChars": { "message": "প্রতি মেসেজের অক্ষরের সীমা" },

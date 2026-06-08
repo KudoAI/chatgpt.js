@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "ارائه دهنده API چت" },
   "optionDesc_query": { "message": "درخواست برای ارسال هوش مصنوعی" },
   "optionDesc_summarize": { "message": "مسیر فایل یا متن برای خلاصه کردن" },
-  "optionDesc_ascii": { "message": "رندر کردن طرح ASCII از موضوع اختیاری" },
+  "optionDesc_asciiArt": { "message": "رندر کردن طرح ASCII از موضوع اختیاری" },
   "optionDesc_uiLang": { "message": "کد زبان ISO 639-1 برای نمایش رابط کاربری" },
   "optionDesc_config": { "message": "مسیر فایل پیکربندی سفارشی برای بارگذاری" },
   "optionDesc_maxChars": { "message": "محدودیت کاراکتر در هر پیام" },

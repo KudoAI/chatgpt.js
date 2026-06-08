@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Չատի API - ի մատակարար" },
   "optionDesc_query": { "message": "Հարցում ՝ AI ուղարկելու համար" },
   "optionDesc_summarize": { "message": "Ճանապարհ դեպի ֆայլ կամ տեքստ ՝ ամփոփելու համար" },
-  "optionDesc_ascii": { "message": "Ընտրովի առարկայի ASCII արվեստը" },
+  "optionDesc_asciiArt": { "message": "Ընտրովի առարկայի ASCII արվեստը" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 լեզվի կոդը UI - ում ցուցադրելու համար" },
   "optionDesc_config": { "message": "Ուղի դեպի անհատականացված կոնֆիգուրացիոն ֆայլ ՝ բեռնելու համար" },
   "optionDesc_maxChars": { "message": "Նիշերի սահմանաչափը մեկ հաղորդագրության համար" },

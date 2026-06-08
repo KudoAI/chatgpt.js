@@ -68,7 +68,7 @@ module.exports = {
                 ` -u, --ui-lang <code>             ${cli.msgs.optionDesc_uiLang}.`,
                 ` -q, --query <msg>                ${cli.msgs.optionDesc_query}.`,
                 ` -s, --summarize <filepath|text>  ${cli.msgs.optionDesc_summarize}.`,
-                ` -a, --ascii [subject]            ${cli.msgs.optionDesc_ascii}.`,
+                ` -a, --ascii-art [subject]        ${cli.msgs.optionDesc_asciiArt}.`,
                 ` -m, --max-chars <integer>        ${cli.msgs.optionDesc_maxChars}.`,
                 ` -k, --max-tokens <integer>       ${cli.msgs.optionDesc_maxTokens}.`,
                 ` -t, --turns <integer>            ${cli.msgs.optionDesc_turnsToPreserve}.`,
