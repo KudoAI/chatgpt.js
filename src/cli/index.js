@@ -53,7 +53,7 @@
         }
         if (cli.config.maxTokens) payload.maxTokens = cli.config.maxTokens
         const parsedReply = messages.extractFromJSON(await chatgpt.send('', payload))
-        if (/^(?:help|hi)$/.test(query)) log.help()
+        if (/^(?:help|hi)(?:\n|$)/.test(query)) log.help()
         if (cli.config.copy && parsedReply) clipboardy.writeSync(parsedReply)
         cli.msgChain.push(userMsg, { role: 'assistant', content: parsedReply })
         messages.saveChain(cli.msgChain)
