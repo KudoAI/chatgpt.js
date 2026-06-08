@@ -58,6 +58,6 @@
         if (cli.config.copy && parsedReply) clipboardy.writeSync(parsedReply)
         cli.msgChain.push(userMsg, { role: 'assistant', content: parsedReply })
         messages.saveChain(cli.msgChain)
-    } finally { loader.stop() }
+    } finally { loader.stop({ clear: true }) }
 
 })()
