@@ -55,8 +55,8 @@ jobs:
             echo $total
           }
           
-          format_total() { printf "%'d" "$1" }
-          
+          format_total() { printf "%'d" "$1"; }
+
           echo "Fetching jsDelivr hits by year:"
           echo "npm/@kudoai/chatgpt.js:"
           npm_hits=$(fetch_all_years "npm/@kudoai/chatgpt.js")
