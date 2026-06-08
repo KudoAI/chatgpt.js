@@ -43,7 +43,7 @@
     loader.start()
     try { // to get/show AI reply
         const userMsg = { role: 'user', content: query }
-        const payload = {
+        const sendConfig = {
             provider: cli.config.provider,
             output: 'stdout',
             color: 'white',
@@ -52,8 +52,8 @@
             maxChars: cli.config.maxChars,
             turnsToPreserve: cli.config.turnsToPreserve
         }
-        if (cli.config.maxTokens) payload.maxTokens = cli.config.maxTokens
-        const parsedReply = messages.extractFromJSON(await chatgpt.send('', payload))
+        if (cli.config.maxTokens) sendConfig.maxTokens = cli.config.maxTokens
+        const parsedReply = messages.extractFromJSON(await chatgpt.send('', sendConfig))
         if (/^(?:help|hi)(?:\n|$)/.test(query)) log.help()
         if (cli.config.copy && parsedReply) clipboardy.writeSync(parsedReply)
         cli.msgChain.push(userMsg, { role: 'assistant', content: parsedReply })
