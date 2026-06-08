@@ -55,6 +55,8 @@ jobs:
             echo $total
           }
           
+          format_total() { printf "%'d" "$1" }
+          
           echo "Fetching jsDelivr hits by year:"
           echo "npm/@kudoai/chatgpt.js:"
           npm_hits=$(fetch_all_years "npm/@kudoai/chatgpt.js")
@@ -63,10 +65,11 @@ jobs:
           if [ -z "$npm_hits" ] || [ -z "$gh_hits" ] ; then
             echo "Error getting jsDelivr hits" ; exit 1 ; fi
           total_hits=$((npm_hits + gh_hits))
-          echo "Combined jsDelivr hits: $total_hits ($npm_hits npm + $gh_hits gh)"
+          formatted_total=$(format_total "$total_hits")
+          echo "Combined jsDelivr hits: $formatted_total ($npm_hits npm + $gh_hits gh)"
           for readme in $(find . -name README.md) ; do
             old_readme=$(<"$readme")
-            sed -i "s/\(badge\/[^-]*-\)[0-9.,KMBkmb+]\+\(-2bbbd8\)/\1${total_hits}\2/gI" "$readme"
+            sed -i "s/\(badge\/[^-]*-\)[0-9.,KMBkmb+]\+\(-2bbbd8\)/\1${formatted_total}\2/gI" "$readme"
             new_readme=$(<"$readme")
             if [[ "$old_readme" != "$new_readme" ]] ; then
               shields_updated=true ; echo "Updated: $readme" ; fi
