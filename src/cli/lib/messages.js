@@ -1,8 +1,9 @@
 const fs = require('fs'),
-      path = require('path')
+      path = require('path'),
+      os = require('os')
 
 const msgChainPath = path.join(
-    process.env.XDG_CACHE_HOME || path.join(process.env.HOME || '~', '.cache'), 'chatgpt.js', 'msgChain.json')
+    process.env.XDG_CACHE_HOME || path.join(os.homedir(), '.cache'), 'chatgpt.js', 'msgChain.json')
 
 module.exports = {
 
@@ -22,8 +23,8 @@ module.exports = {
             if (fs.existsSync(msgChainPath)) {
                 const parsed = JSON.parse(fs.readFileSync(msgChainPath, 'utf8'))
                 return Array.isArray(parsed) ? parsed : []
-            }
-        } catch (err) { return [] }
+            } else return []
+        } catch (err) { log.warn(err.message) ; return [] }
     },
 
     saveChain(chain) {
