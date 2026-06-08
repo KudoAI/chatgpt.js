@@ -127,7 +127,7 @@ npm install -g @kudoai/chatgpt.js
 
 <br>
 
-**1. 创建 API 密钥：https://openrouter.ai/settings/keys**
+**1. 创建 API 密钥：<https://openrouter.ai/settings/keys>**
 
 <img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/openrouter.png">
 
@@ -157,7 +157,7 @@ export OPENROUTER_API_KEY="sk-or-v1-8a69..."
 
 <br>
 
-**1. 创建 API 密钥：https://aistudio.google.com/api-keys**
+**1. 创建 API 密钥：<https://aistudio.google.com/api-keys>**
 
 <img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/google-ai-studio.png">
 
