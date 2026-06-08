@@ -17,6 +17,8 @@
   "error_failedToFetchGlobalVer": { "message": "ގްލޯބަލް ވާޝަން ގެނައުމަށް ނާކާމިޔާބުވިއެވެ" },
   "error_failedToFetchSysLang": { "message": "ސިސްޓަމް ލޭންގުއޭޖް ގެނައުމަށް ނާކާމިޔާބުވިއެވެ" },
   "error_mustIncludePath": { "message": "ހިމަނަންވާނީ =މަގު" },
+  "error_notInGitRepo": { "message": "ގިޓް ރިޕޮޒިޓަރީއެއްގައި ނޫނެވެ. މި ކޮމާންޑް ގިޓް ރެޕޯއެއްގެ ތެރޭގައި ހިންގާށެވެ" },
+  "error_failedToReadGitDiff": { "message": "ގިޓް ޑިފް ކިޔަން ނާކާމިޔާބުވިއެވެ" },
   "error_failedToClearMsgChain": { "message": "މެސެޖް ޗޭން ސާފުކުރަން ނާކާމިޔާބުވިއެވެ" },
   "warn_configFileExists": { "message": "ކޮންފިގް ފައިލް މިހާރުވެސް އެބަހުއްޓެވެ" },
   "warn_remoteConfigNotFound": { "message": "ރިމޯޓް ކޮންފިގް ފައިލް ނުފެނެއެވެ" },
@@ -26,6 +28,9 @@
   "warn_hasBeenReplacedBy": { "message": "ގެ ބަދަލުގައި…" },
   "warn_andWillBeRemoved": { "message": "އަދި ނައްތާލެވޭނެއެވެ" },
   "warn_notFound": { "message": "ނުފެނޭ" },
+  "warn_noChanges": {
+    "message": "އެއްވެސް ބަދަލެއް ފާހަގަކުރެވިފައެއް ނުވެއެވެ. ފުރަތަމަ ފައިލްތައް ސްޓޭޖް ނުވަތަ ބަދަލުކުރުން"
+  },
   "warn_noMsgChainToClear": { "message": "ސާފުކުރަން މެސެޖް ޗޭނެއް ނެތެވެ" },
   "info_configFile": { "message": "ކޮންފިގް ފައިލް" },
   "info_exampleValidConfigFile": { "message": "މިސާލު ސައްހަ ކޮންފިގް ފައިލް" },
@@ -36,6 +41,7 @@
   "info_toCreateDefaultConfig": { "message": "ޑިފޯލްޓް ކޮންފިގް ފައިލް އުފެއްދުމަށްޓަކައެވެ" },
   "info_configFileCreated": { "message": "ކޮންފިގް ފައިލް އުފެދިއްޖެއެވެ" },
   "info_fetchingRemoteConfigFrom": { "message": "އިން ރިމޯޓް ކޮންފިގް ފައިލް ގެނައުން" },
+  "info_copiedToClipboard": { "message": "ކްލިޕްބޯޑަށް ކޮޕީކޮށްފައިވެއެވެ" },
   "info_msgChainCleared": { "message": "މެސެޖް ޗޭން ސާފުވެއްޖެއެވެ" },
   "tip_editToSetDefaults": { "message": "ޑިފޯލްޓްތައް ކަސްޓަމައިޒް ކުރުމަށް މި ފައިލް އެޑިޓް ކުރާށެވެ" },
   "tip_cliArgsPrioritized": {
@@ -62,6 +68,7 @@
   "optionDesc_init": { "message": "ކޮންފިގް ފައިލް އުފެއްދުން (ޕްރޮޖެކްޓް ރޫޓްގައި)" },
   "optionDesc_joke": { "message": "ރެންޑަމްކޮށް މަޖާ ސަމާސާއެއް ކިޔައިދެއެވެ" },
   "optionDesc_randomAnswer": { "message": "ރެންޑަމް ސުވާލަކަށް ޖަވާބު ދޭށެވެ" },
+  "optionDesc_commitMsg": { "message": "ބަދަލުތަކުން ގިޓް ކޮމިޓް މެސެޖު ޖެނެރޭޓްކޮށް ކްލިޕްބޯޑަށް ކޮޕީކުރުން" },
   "optionDesc_clear": { "message": "ކެޝްކޮށްފައިވާ މެސެޖް ޗޭން ސާފުކުރުން" },
   "optionDesc_help": { "message": "ހެލްޕް ސްކްރީން ޑިސްޕްލޭ ކުރޭ" },
   "optionDesc_version": { "message": "ވާޝަން ނަންބަރު ދައްކާ" },

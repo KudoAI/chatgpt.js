@@ -10,6 +10,7 @@
     const chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
           clipboardy = require('node-clipboardy'),
           fs = require('fs'),
+          git = require('./lib/git'),
           loader = require('./lib/loader').create({ width: env.width }),
           messages = require('./lib/messages'),
           string = require('./lib/string')
@@ -17,6 +18,7 @@
     await init.cli()
 
     if (cli.config.init) return init.configFile()
+    else if (cli.config.commitMsg) return await git.generateCommitMsg()
     else if (cli.config.clear) return messages.clearChain()
     else if (cli.config.help) return log.help()
     else if (cli.config.version) return log.version()

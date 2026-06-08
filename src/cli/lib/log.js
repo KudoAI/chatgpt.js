@@ -87,6 +87,7 @@ module.exports = {
                 ` -i, --init                       ${cli.msgs.optionDesc_init}.`,
                 ` -j, --joke                       ${cli.msgs.optionDesc_joke}.`,
                 ` -r, --random-answer              ${cli.msgs.optionDesc_randomAnswer}.`,
+                ` -g, --commit-msg                 ${cli.msgs.optionDesc_commitMsg}.`,
                 ` -C, --clear                      ${cli.msgs.optionDesc_clear}.`,
                 ` -h, --help                       ${cli.msgs.optionDesc_help}.`,
                 ` -v, --version                    ${cli.msgs.optionDesc_version}.`,

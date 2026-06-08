@@ -17,6 +17,10 @@
   "error_failedToFetchGlobalVer": { "message": "ကမ္ဘာလုံးဆိုင်ရာ ဗားရှင်းကို ရယူရန် မအောင်မြင်ပါ" },
   "error_failedToFetchSysLang": { "message": "စနစ်ဘာသာစကား ရယူရန် မအောင်မြင်ပါ" },
   "error_mustIncludePath": { "message": "ပါဝင်ရမည် =လမ်းကြောင်း" },
+  "error_notInGitRepo": {
+    "message": "Git Repository မှာတော့မဟုတ်ပါဘူး ။ ဒီ command ကို git repo တစ်ခုအတွင်းမှာ run ပါ"
+  },
+  "error_failedToReadGitDiff": { "message": "Git diff ကိုဖတ်ရန်မအောင်မြင်ပါ" },
   "error_failedToClearMsgChain": { "message": "မက်ဆေ့ချ် ကွင်းဆက်ကို ရှင်းလင်းရန် မအောင်မြင်ပါ" },
   "warn_configFileExists": { "message": "Config ဖိုင်ရှိပြီးသား" },
   "warn_remoteConfigNotFound": { "message": "အဝေးမှ config ဖိုင်ကိုရှာမတွေ့ပါ" },
@@ -26,6 +30,7 @@
   "warn_hasBeenReplacedBy": { "message": "အစားထိုးထားသည်" },
   "warn_andWillBeRemoved": { "message": "ဖယ်ရှားခြင်းခံရမည် ။" },
   "warn_notFound": { "message": "မတွေ့ပါ" },
+  "warn_noChanges": { "message": "အပြောင်းအလဲများ ရှာမတွေ့ပါ ။ ပထမအဆင့် သို့မဟုတ် ဖိုင်များကို ပြုပြင်ပါ" },
   "warn_noMsgChainToClear": { "message": "ရှင်းလင်းရန် မက်ဆေ့ချ် ကွင်းဆက် မရှိပါ" },
   "info_configFile": { "message": "ဖိုင်ကိုစီစဉ်ပါ" },
   "info_exampleValidConfigFile": { "message": "ဥပမာ မှန်ကန်သော config ဖိုင်" },
@@ -36,6 +41,7 @@
   "info_toCreateDefaultConfig": { "message": "အလိုအလျောက် config ဖိုင်ကိုဖန်တီးရန်" },
   "info_configFileCreated": { "message": "ဖန်တီးထားသောဖိုင်ကိုစီစဉ်ပါ" },
   "info_fetchingRemoteConfigFrom": { "message": "အဝေးမှ config ဖိုင်ကို ရယူနေသည်" },
+  "info_copiedToClipboard": { "message": "ကလစ်ဘုတ်သို့ ကူးယူထားသည်" },
   "info_msgChainCleared": { "message": "မက်ဆေ့ချ် ကွင်းဆက်ကို ရှင်းလင်းပြီးပါပြီ" },
   "tip_editToSetDefaults": { "message": "ပုံသေသတ်မှတ်ချက်များကို စိတ်ကြိုက်ပြုပြင်ရန် ဤဖိုင်ကို တည်းဖြတ်ပါ" },
   "tip_cliArgsPrioritized": { "message": "CLI အငြင်းပွားမှုသည် ဤတန်ဖိုးများကို အမြဲတမ်း ပယ်ဖျက်သည်" },
@@ -60,6 +66,9 @@
   "optionDesc_init": { "message": "Config ဖိုင်ကိုဖန်တီးပါ (ပရောဂျက်အမြစ်တွင်)" },
   "optionDesc_joke": { "message": "ရယ်စရာ ဟာသတစ်ခုကို ကျပန်းပြောသည်" },
   "optionDesc_randomAnswer": { "message": "ကျပန်းမေးခွန်းတစ်ခုကိုဖြေပါ" },
+  "optionDesc_commitMsg": {
+    "message": "အပြောင်းအလဲများမှ GIT COMMET မက်ဆေ့ချ်ကို ထုတ်ပေးပြီး ကလစ်ဘုတ်သို့ မိတ္တူကူးပါ"
+  },
   "optionDesc_clear": { "message": "သိမ်းဆည်းထားသော မက်ဆေ့ချ် ကွင်းဆက်ကို ရှင်းလင်းပါ" },
   "optionDesc_help": { "message": "အကူအညီ မျက်နှာပြင်ကို ပြသပါ" },
   "optionDesc_version": { "message": "ဗားရှင်းနံပါတ်" },

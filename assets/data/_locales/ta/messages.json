@@ -17,6 +17,8 @@
   "error_failedToFetchGlobalVer": { "message": "உலகளாவிய பதிப்பைப் பெற முடியவில்லை" },
   "error_failedToFetchSysLang": { "message": "கணினி மொழியைப் பெற முடியவில்லை" },
   "error_mustIncludePath": { "message": "கட்டாயம் சேர்க்க வேண்டும் =பாதை" },
+  "error_notInGitRepo": { "message": "கிட் களஞ்சியத்தில் இல்லை. இந்த கட்டளையை GIT ரெப்போவுக்குள் இயக்கவும்" },
+  "error_failedToReadGitDiff": { "message": "Git diff-ஐப் படிக்க முடியவில்லை" },
   "error_failedToClearMsgChain": { "message": "செய்திச் சங்கிலியை அழிக்க முடியவில்லை" },
   "warn_configFileExists": { "message": "கட்டமைப்பு கோப்பு ஏற்கனவே உள்ளது" },
   "warn_remoteConfigNotFound": { "message": "தொலைநிலை உள்ளமைவு கோப்பு காணப்படவில்லை" },
@@ -26,6 +28,9 @@
   "warn_hasBeenReplacedBy": { "message": "மாற்றப்பட்டது" },
   "warn_andWillBeRemoved": { "message": "மற்றும் அகற்றப்படும்" },
   "warn_notFound": { "message": "கிடைக்கவில்லை" },
+  "warn_noChanges": {
+    "message": "மாற்றங்கள் எதுவும் கண்டறியப்படவில்லை. முதலில் கோப்புகளை நிலைப்படுத்தவும் அல்லது மாற்றவும்"
+  },
   "warn_noMsgChainToClear": { "message": "அழிக்க செய்திச் சங்கிலி இல்லை" },
   "info_configFile": { "message": "கட்டமைப்பு கோப்பு" },
   "info_exampleValidConfigFile": { "message": "எடுத்துக்காட்டு செல்லுபடியாகும் உள்ளமைவு கோப்பு" },
@@ -36,6 +41,7 @@
   "info_toCreateDefaultConfig": { "message": "இயல்புநிலை உள்ளமைவு கோப்பை உருவாக்க" },
   "info_configFileCreated": { "message": "கட்டமைப்பு கோப்பு உருவாக்கப்பட்டது" },
   "info_fetchingRemoteConfigFrom": { "message": "இதிலிருந்து தொலைநிலை உள்ளமைவு கோப்பைப் பெறுகிறது" },
+  "info_copiedToClipboard": { "message": "கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது" },
   "info_msgChainCleared": { "message": "செய்திச் சங்கிலி அகற்றப்பட்டது" },
   "tip_editToSetDefaults": { "message": "இயல்புநிலையைத் தனிப்பயனாக்க இந்தக் கோப்பைத் திருத்தவும்" },
   "tip_cliArgsPrioritized": { "message": "CLI வாதங்கள் எப்போதும் இந்த மதிப்புகளை மீறுகின்றன" },
@@ -58,6 +64,9 @@
   "optionDesc_init": { "message": "கட்டமைப்பு கோப்பை உருவாக்கவும் (திட்ட மூலத்தில்)" },
   "optionDesc_joke": { "message": "சீரற்ற முறையில் ஒரு வேடிக்கையான நகைச்சுவையைச் சொல்கிறது" },
   "optionDesc_randomAnswer": { "message": "ஒரு சீரற்ற கேள்விக்கு பதிலளிக்கவும்" },
+  "optionDesc_commitMsg": {
+    "message": "மாற்றங்களிலிருந்து git உறுதி செய்தியை உருவாக்கி கிளிப்போர்டுக்கு நகலெடுக்கவும்"
+  },
   "optionDesc_clear": { "message": "தற்காலிக சேமிப்பு செய்திச் சங்கிலியைத் துடைக்கவும்" },
   "optionDesc_help": { "message": "உதவித் திரையைக் காண்பி" },
   "optionDesc_version": { "message": "பதிப்பெண்" },

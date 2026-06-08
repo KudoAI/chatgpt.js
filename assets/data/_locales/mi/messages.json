@@ -17,6 +17,10 @@
   "error_failedToFetchGlobalVer": { "message": "Kaore i taea te tango i te putanga o te ao" },
   "error_failedToFetchSysLang": { "message": "Kaore e taea te whakamahi i te reo o te pūnaha" },
   "error_mustIncludePath": { "message": "me whakauru =ara" },
+  "error_notInGitRepo": {
+    "message": "Ehara i te mea i roto i te whare putunga. Te whakahaere i tenei whakahau i roto i te Git Repo"
+  },
+  "error_failedToReadGitDiff": { "message": "E kore e taea e koe te pānui i te Git rerekē" },
   "error_failedToClearMsgChain": { "message": "Kaore i taea te whakakore i te mekameka karere" },
   "warn_configFileExists": { "message": "Kei te wātea te kōnae Config" },
   "warn_remoteConfigNotFound": { "message": "Ko te konae whakatakotoranga mamao kaore i kitea" },
@@ -26,6 +30,9 @@
   "warn_hasBeenReplacedBy": { "message": "kua whakakapihia e" },
   "warn_andWillBeRemoved": { "message": "a ka tangohia atu" },
   "warn_notFound": { "message": "Kaore i kitea" },
+  "warn_noChanges": {
+    "message": "Kaore he huringa i kitea. Te taahiraa, te whakarereke ranei i nga konae i te tuatahi"
+  },
   "warn_noMsgChainToClear": { "message": "Kaore he mekameka karere hei whakamarama" },
   "info_configFile": { "message": "Kōnae whirihora" },
   "info_exampleValidConfigFile": { "message": "Tauira kōnae config whaimana" },
@@ -36,6 +43,7 @@
   "info_toCreateDefaultConfig": { "message": "ki te hanga i te kōnae whirihora taunoa" },
   "info_configFileCreated": { "message": "Kōnae Config hanga" },
   "info_fetchingRemoteConfigFrom": { "message": "Whakawhiti i te konae whakatakotoranga mamao mai i" },
+  "info_copiedToClipboard": { "message": "Tārua ki te papapātuhi" },
   "info_msgChainCleared": { "message": "Whakakorea te mekameka karere" },
   "tip_editToSetDefaults": { "message": "Whakatika tenei kōnae ki te whakarite hapa" },
   "tip_cliArgsPrioritized": { "message": "Ko nga korero a te CLI e pa ana ki enei uara i nga wa katoa" },
@@ -58,6 +66,9 @@
   "optionDesc_init": { "message": "Hangaia he konae whirihoranga (i roto i te pakiaka kaupapa)" },
   "optionDesc_joke": { "message": "Korero i te ataata ataata i roto i te tūponotanga" },
   "optionDesc_randomAnswer": { "message": "Whakautu i te pātai tūponotanga" },
+  "optionDesc_commitMsg": {
+    "message": "Te whakaputa i te karere tuku git mai i nga huringa me te kape ki te papapātuhi"
+  },
   "optionDesc_clear": { "message": "He mekameka karere mārama" },
   "optionDesc_help": { "message": "Whakaatuhia te mata awhina" },
   "optionDesc_version": { "message": "Whakaatuhia te tau putanga" },
