@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "ไม่พบ" },
   "warn_noChanges": { "message": "ไม่พบการเปลี่ยนแปลงขั้นตอนหรือแก้ไขไฟล์ก่อน" },
   "warn_noMsgChainToClear": { "message": "ไม่มีห่วงโซ่ข้อความที่จะล้าง" },
+  "warn_failedToSaveMsgChain": { "message": "บันทึกสายโซ่ข้อความล้มเหลว" },
   "info_configFile": { "message": "ไฟล์การกำหนดค่า" },
   "info_exampleValidConfigFile": { "message": "ตัวอย่างไฟล์การกำหนดค่าที่ถูกต้อง" },
   "info_moreHelp": { "message": "หากต้องการความช่วยเหลือเพิ่มเติม" },

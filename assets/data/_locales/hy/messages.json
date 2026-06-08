@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Չի գտնվել" },
   "warn_noChanges": { "message": "Փոփոխություններ չեն հայտնաբերվել: Սկզբում ֆայլերը բեմադրեք կամ փոփոխեք" },
   "warn_noMsgChainToClear": { "message": "Հաղորդագրությունների շղթա չկա" },
+  "warn_failedToSaveMsgChain": { "message": "Չհաջողվեց պահել հաղորդագրությունների շղթան" },
   "info_configFile": { "message": "Կարգավորել ֆայլը" },
   "info_exampleValidConfigFile": { "message": "Վավեր կոնֆիգուրացիոն ֆայլի օրինակ" },
   "info_moreHelp": { "message": "Լրացուցիչ օգնության համար" },

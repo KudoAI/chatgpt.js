@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Niet gevonden" },
   "warn_noChanges": { "message": "Geen wijzigingen gedetecteerd. Bestanden eerst faseren of wijzigen" },
   "warn_noMsgChainToClear": { "message": "Geen berichtketen om te wissen" },
+  "warn_failedToSaveMsgChain": { "message": "Kon berichtenketen niet opslaan" },
   "info_configFile": { "message": "Configuratiebestand" },
   "info_exampleValidConfigFile": { "message": "Voorbeeld geldig configuratiebestand" },
   "info_moreHelp": { "message": "voor meer hulp" },

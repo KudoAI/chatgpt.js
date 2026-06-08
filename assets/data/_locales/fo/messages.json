@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Ikki funnið" },
   "warn_noChanges": { "message": "Ongar broytingar funnar. Skritt ella tillaga skrásetingar fyrst" },
   "warn_noMsgChainToClear": { "message": "Eingin skilaboðskæða at rudda" },
+  "warn_failedToSaveMsgChain": { "message": "Miseydnaðist at goyma boðskjal" },
   "info_configFile": { "message": "Konfigurera fílu" },
   "info_exampleValidConfigFile": { "message": "Dømi góð konfiguratiónsfíla" },
   "info_moreHelp": { "message": "Fyri at fáa meira hjálp" },

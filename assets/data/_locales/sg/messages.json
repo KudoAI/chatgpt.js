@@ -34,6 +34,7 @@
     "message": "Mbeni changement so a wara ni pëpe. A yeke kozo ti tene a changé wala a changé a-fichier ni"
   },
   "warn_noMsgChainToClear": { "message": "A yeke nzoni e sara ye na lege ni ape" },
+  "warn_failedToSaveMsgChain": { "message": "Won ti gba penalty lo throwing Gben Gben gben" },
   "info_configFile": { "message": "Faïl ti Config" },
   "info_exampleValidConfigFile": { "message": "Tapande ti faïl so ayeke na lege ni" },
   "info_moreHelp": { "message": "Ti mû maboko na mo" },

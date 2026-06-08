@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "ಕಂಡುಬಂದಿಲ್ಲ" },
   "warn_noChanges": { "message": "ಯಾವುದೇ ಬದಲಾವಣೆಗಳು ಪತ್ತೆಯಾಗಿಲ್ಲ. ಮೊದಲು ಫೈಲ್‌ಗಳನ್ನು ಹಂತ ಅಥವಾ ಮಾರ್ಪಡಿಸಿ" },
   "warn_noMsgChainToClear": { "message": "ತೆರವುಗೊಳಿಸಲು ಯಾವುದೇ ಸಂದೇಶ ಸರಪಳಿ ಇಲ್ಲ" },
+  "warn_failedToSaveMsgChain": { "message": "ಸಂದೇಶ ಸರಪಳಿಯನ್ನು ಉಳಿಸುವಲ್ಲಿ ವಿಫಲವಾಗಿದೆ" },
   "info_configFile": { "message": "ಕಾನ್ಫಿಗರ್ ಫೈಲ್" },
   "info_exampleValidConfigFile": { "message": "ಉದಾಹರಣೆ ಮಾನ್ಯ ಕಾನ್ಫಿಗರೇಶನ್ ಫೈಲ್" },
   "info_moreHelp": { "message": "ಹೆಚ್ಚಿನ ಸಹಾಯಕ್ಕಾಗಿ" },

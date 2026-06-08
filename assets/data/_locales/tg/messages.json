@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Ёфт нашуд" },
   "warn_noChanges": { "message": "Ягон тағирот ёфт нашуд. Марҳилаи ё тағйир додани файлҳо аввал" },
   "warn_noMsgChainToClear": { "message": "Ягон занҷири иттилоот нест, ки тоза карда шавад" },
+  "warn_failedToSaveMsgChain": { "message": "Занҷири иттилоот нигоҳ дошта нашуд" },
   "info_configFile": { "message": "Танзимоти файл" },
   "info_exampleValidConfigFile": { "message": "Намунаи файли конфигуратсияи дуруст" },
   "info_moreHelp": { "message": "Para sa karagdagang tul" },

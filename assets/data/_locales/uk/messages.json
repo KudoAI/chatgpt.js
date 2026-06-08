@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Не знайдено" },
   "warn_noChanges": { "message": "Змін не виявлено. Спочатку поставте або змініть файли" },
   "warn_noMsgChainToClear": { "message": "Немає ланцюжка повідомлень для очищення" },
+  "warn_failedToSaveMsgChain": { "message": "Не вдалося зберегти ланцюжок повідомлень" },
   "info_configFile": { "message": "Файл конфігурації" },
   "info_exampleValidConfigFile": { "message": "Приклад дійсного файлу конфігурації" },
   "info_moreHelp": { "message": "Додаткова допомога" },

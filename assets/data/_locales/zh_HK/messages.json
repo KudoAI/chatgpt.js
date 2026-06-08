@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "未找到" },
   "warn_noChanges": { "message": "未偵測到變更。請先暫存或修改檔案" },
   "warn_noMsgChainToClear": { "message": "沒有要清除的訊息鏈" },
+  "warn_failedToSaveMsgChain": { "message": "無法儲存訊息鏈" },
   "info_configFile": { "message": "配置文件" },
   "info_exampleValidConfigFile": { "message": "有效配置文件示例" },
   "info_moreHelp": { "message": "如需更多協助" },

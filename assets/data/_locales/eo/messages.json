@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Ne trovita" },
   "warn_noChanges": { "message": "@ info: whatsthis" },
   "warn_noMsgChainToClear": { "message": "@ info: whatsthis" },
+  "warn_failedToSaveMsgChain": { "message": "Fiaskis konservi mesaĝĉenon" },
   "info_configFile": { "message": "Agorddosiero" },
   "info_exampleValidConfigFile": { "message": "Ekzempla valida agordodosiero" },
   "info_moreHelp": { "message": "Por pli da helpo" },

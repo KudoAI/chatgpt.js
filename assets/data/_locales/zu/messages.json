@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Akutholakali" },
   "warn_noChanges": { "message": "Alukho ushintsho olutholakele. Isiteji noma ushintshe amafayela kuqala" },
   "warn_noMsgChainToClear": { "message": "Awukho umlayezo okufanele usule" },
+  "warn_failedToSaveMsgChain": { "message": "Yehlulekile ukugcina uchungechunge lwemiyalezo" },
   "info_configFile": { "message": "Lungiselela ifayela" },
   "info_exampleValidConfigFile": { "message": "Isibonelo sefayela elivumelekile lokumisa" },
   "info_moreHelp": { "message": "Ukuze uthole usizo olwengeziwe" },

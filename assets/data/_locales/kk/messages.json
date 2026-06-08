@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Табылған жоқ" },
   "warn_noChanges": { "message": "Өзгерістер анықталмады. Алдымен файлдарды кезеңге бөліңіз немесе өзгертіңіз" },
   "warn_noMsgChainToClear": { "message": "Өшіру үшін хабар тізбегі жоқ" },
+  "warn_failedToSaveMsgChain": { "message": "Хабар тізбегін сақтау сәтсіз аяқталды" },
   "info_configFile": { "message": "Файлды конфигурациялау" },
   "info_exampleValidConfigFile": { "message": "Мысал жарамды конфигурация файлы" },
   "info_moreHelp": { "message": "Қосымша көмек алу үшін" },

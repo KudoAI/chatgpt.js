@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Haijapatikana" },
   "warn_noChanges": { "message": "Hakuna mabadiliko yaliyogunduliwa. Weka hatua au urekebishe faili kwanza" },
   "warn_noMsgChainToClear": { "message": "Hakuna mlolongo wa ujumbe wa kufuta" },
+  "warn_failedToSaveMsgChain": { "message": "Imeshindwa kuhifadhi mlolongo wa ujumbe" },
   "info_configFile": { "message": "Sanidi faili" },
   "info_exampleValidConfigFile": { "message": "Mfano faili halali ya usanidi" },
   "info_moreHelp": { "message": "Kwa msaada zaidi" },

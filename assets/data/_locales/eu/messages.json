@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Ez da aurkitu" },
   "warn_noChanges": { "message": "Ez da aldaketarik detektatu. Lehenik fitxategiak eszenara eraman edo aldatu." },
   "warn_noMsgChainToClear": { "message": "Ez dago mezu-katerik garbitzeko" },
+  "warn_failedToSaveMsgChain": { "message": "Mezu-katea gordetzea huts egin da" },
   "info_configFile": { "message": "Konfigurazio fitxategia" },
   "info_exampleValidConfigFile": { "message": "Konfigurazio fitxategi baliodunaren adibidea" },
   "info_moreHelp": { "message": "Laguntza gehiagorako" },

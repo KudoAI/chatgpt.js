@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "ვერ მოიძებნა" },
   "warn_noChanges": { "message": "Ცვლილებები არ გამოვლენილა. ჯერ ფაილების დაყენება ან შეცვლა" },
   "warn_noMsgChainToClear": { "message": "Გასაწმენდი შეტყობინებების ჯაჭვი არ არის" },
+  "warn_failedToSaveMsgChain": { "message": "Შეტყობინებების ჯაჭვის შენახვა ვერ მოხერხდა" },
   "info_configFile": { "message": "კონფიგურაციის ფაილი" },
   "info_exampleValidConfigFile": { "message": "ვალიდური კონფიგურაციის ფაილის მაგალითი" },
   "info_moreHelp": { "message": "დამატებითი დახმარებისთვის" },

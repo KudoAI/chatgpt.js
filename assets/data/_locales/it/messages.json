@@ -32,6 +32,7 @@
   "warn_notFound": { "message": "Non trovato" },
   "warn_noChanges": { "message": "Nessuna modifica rilevata. Posiziona o modifica prima i file" },
   "warn_noMsgChainToClear": { "message": "Nessuna catena di messaggi da cancellare" },
+  "warn_failedToSaveMsgChain": { "message": "Impossibile salvare la catena di messaggi" },
   "info_configFile": { "message": "Config file" },
   "info_exampleValidConfigFile": { "message": "Esempio di file di configurazione valido" },
   "info_moreHelp": { "message": "Per ulteriore assistenza" },

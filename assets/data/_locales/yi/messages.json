@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "נישט געפֿונען" },
   "warn_noChanges": { "message": "קיין ענדערונגען נישט דעטעקטירט. שטעל אריין אדער מאדיפיציר די טעקעס ערשט." },
   "warn_noMsgChainToClear": { "message": "קיין מעסעדזש קייט צו ויסמעקן" },
+  "warn_failedToSaveMsgChain": { "message": "נישט געקענט ראַטעווען מעסעדזש קייט" },
   "info_configFile": { "message": "קאָנפיג טעקע" },
   "info_exampleValidConfigFile": { "message": "בייַשפּיל גילטיק קאָנפיג טעקע" },
   "info_moreHelp": { "message": "פֿאַר מער הילף" },

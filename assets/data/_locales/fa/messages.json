@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "یافت نشد" },
   "warn_noChanges": { "message": "هیچ تغییری شناسایی نشد. ابتدا فایل‌ها را مرحله‌بندی یا اصلاح کنید." },
   "warn_noMsgChainToClear": { "message": "زنجیره پیامی برای پاک کردن وجود ندارد" },
+  "warn_failedToSaveMsgChain": { "message": "ذخیره زنجیره پیام ناموفق بود" },
   "info_configFile": { "message": "فایل پیکربندی" },
   "info_exampleValidConfigFile": { "message": "نمونه فایل پیکربندی معتبر" },
   "info_moreHelp": { "message": "برای اطلاعات بیشتر بخوانید" },

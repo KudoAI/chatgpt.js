@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Tababwenepo" },
   "warn_noChanges": { "message": "No Comments on Mulebika fye amano ku fya kubomfya pa kutendeka ukubomfya amafilimu" },
   "warn_noMsgChainToClear": { "message": "No message line ukulele" },
+  "warn_failedToSaveMsgChain": { "message": "Tabalipo ne kupususha abapyungishi babo" },
   "info_configFile": { "message": "Config file" },
   "info_exampleValidConfigFile": { "message": "Ifilangililo fya fipe fya fipe fya fipe" },
   "info_moreHelp": { "message": "Ukwishibilapo nafimbi pa kwafwa" },

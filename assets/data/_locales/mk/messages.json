@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Не е пронајдено" },
   "warn_noChanges": { "message": "Не се откриени промени. Прво поставете или изменете ги датотеките" },
   "warn_noMsgChainToClear": { "message": "Нема синџир на пораки за бришење" },
+  "warn_failedToSaveMsgChain": { "message": "Не успеа да се зачува синџирот на пораки" },
   "info_configFile": { "message": "Конфигурирај датотека" },
   "info_exampleValidConfigFile": { "message": "Пример важечка конфигурациска датотека" },
   "info_moreHelp": { "message": "За повеќе помош" },

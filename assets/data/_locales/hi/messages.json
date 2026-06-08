@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "नहीं मिला" },
   "warn_noChanges": { "message": "कोई बदलाव नहीं पाया गया। पहले फ़ाइलों को स्टेज या संशोधित करें" },
   "warn_noMsgChainToClear": { "message": "साफ़ करने के लिए कोई मैसेज चेन नहीं है" },
+  "warn_failedToSaveMsgChain": { "message": "मैसेज चेन सेव नहीं किया जा सका" },
   "info_configFile": { "message": "कॉन्फ़िग फ़ाइल" },
   "info_exampleValidConfigFile": { "message": "उदाहरण मान्य कॉन्फ़िगरेशन फ़ाइल" },
   "info_moreHelp": { "message": "ज़्यादा मदद के लिए" },

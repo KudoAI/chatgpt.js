@@ -32,6 +32,7 @@
     "message": "Ma jiraan wax isbeddel ah oo la ogaaday. Heerka ama wax ka beddel faylasha marka hore"
   },
   "warn_noMsgChainToClear": { "message": "Ma jiro silsilad fariin ah oo lagu cadeeyo" },
+  "warn_failedToSaveMsgChain": { "message": "Ku guuldareystay in la badbaadiyo silsiladda fariinta" },
   "info_configFile": { "message": "Qalabaynta faylka" },
   "info_exampleValidConfigFile": { "message": "Tusaalaha faylka qaabeynta ansax ah" },
   "info_moreHelp": { "message": "Caawimaad dheeraad ah" },

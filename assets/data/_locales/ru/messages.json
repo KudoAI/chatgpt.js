@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Не найдено" },
   "warn_noChanges": { "message": "Изменений не обнаружено. Сначала создайте или измените файлы" },
   "warn_noMsgChainToClear": { "message": "Нет цепочки сообщений для очистки" },
+  "warn_failedToSaveMsgChain": { "message": "Не удалось сохранить цепочку сообщений" },
   "info_configFile": { "message": "Конфигурационный файл" },
   "info_exampleValidConfigFile": { "message": "Пример допустимого файла конфигурации" },
   "info_moreHelp": { "message": "Для получения дополнительной помощи читать" },

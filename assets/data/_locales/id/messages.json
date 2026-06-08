@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Tidak ditemukan" },
   "warn_noChanges": { "message": "Tidak ada perubahan yang terdeteksi. Tahap atau modifikasi file terlebih dahulu" },
   "warn_noMsgChainToClear": { "message": "Tidak ada rantai pesan untuk dihapus" },
+  "warn_failedToSaveMsgChain": { "message": "Gagal menyimpan rantai pesan" },
   "info_configFile": { "message": "File konfigurasi" },
   "info_exampleValidConfigFile": { "message": "Contoh file konfigurasi yang valid" },
   "info_moreHelp": { "message": "Untuk bantuan lebih lanjut" },

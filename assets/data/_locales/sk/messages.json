@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Nenájdené" },
   "warn_noChanges": { "message": "Neboli zistené žiadne zmeny. Najprv pripravte alebo upravte súbory" },
   "warn_noMsgChainToClear": { "message": "Žiadny reťazec správ na vymazanie" },
+  "warn_failedToSaveMsgChain": { "message": "Reťazec správ sa nepodarilo uložiť" },
   "info_configFile": { "message": "Konfiguračný súbor" },
   "info_exampleValidConfigFile": { "message": "Príklad platného konfiguračného súboru" },
   "info_moreHelp": { "message": "Ak potrebujete ďalšiu pomoc" },

@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "ਨਹੀਂ ਲੱਭਿਆ" },
   "warn_noChanges": { "message": "ਕੋਈ ਬਦਲਾਅ ਨਹੀਂ ਲੱਭੇ । ਪਹਿਲਾਂ ਫਾਈਲਾਂ ਨੂੰ ਸਟੇਜ ਜਾਂ ਸੋਧੋ" },
   "warn_noMsgChainToClear": { "message": "ਸਾਫ਼ ਕਰਨ ਲਈ ਕੋਈ ਸੁਨੇਹਾ ਚੇਨ ਨਹੀਂ ਹੈ" },
+  "warn_failedToSaveMsgChain": { "message": "ਸੁਨੇਹਾ ਚੇਨ ਸੰਭਾਲਣ ਲਈ ਫੇਲ੍ਹ ਹੈ" },
   "info_configFile": { "message": "ਫਾਇਲ ਸੰਰਚਨਾ" },
   "info_exampleValidConfigFile": { "message": "ਉਦਾਹਰਨ ਵੈਧ ਸੰਰਚਨਾ ਫਾਇਲ" },
   "info_moreHelp": { "message": "ਹੋਰ ਮਦਦ ਲਈ" },

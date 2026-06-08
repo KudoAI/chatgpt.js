@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Ni najdeno" },
   "warn_noChanges": { "message": "Ni zaznanih sprememb. Najprej pripravite ali spremenite datoteke" },
   "warn_noMsgChainToClear": { "message": "Ni verige sporočil za čiščenje" },
+  "warn_failedToSaveMsgChain": { "message": "Shranjevanje verige sporočil ni uspelo" },
   "info_configFile": { "message": "Konfiguracijska datoteka" },
   "info_exampleValidConfigFile": { "message": "Primer veljavne konfiguracijske datoteke" },
   "info_moreHelp": { "message": "Za več pomoči" },

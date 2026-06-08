@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "મળ્યું નથી" },
   "warn_noChanges": { "message": "કોઈ ફેરફારો મળ્યા નથી. પ્રથમ ફાઇલોને સ્ટેજ અથવા સંશોધિત કરો" },
   "warn_noMsgChainToClear": { "message": "સાફ કરવા માટે કોઈ મેસેજ ચેઇન નથી" },
+  "warn_failedToSaveMsgChain": { "message": "સંદેશા શૃંખલાને સંગ્રહવામાં નિષ્ફળતા" },
   "info_configFile": { "message": "રૂપરેખાંકન ફાઇલ" },
   "info_exampleValidConfigFile": { "message": "ઉદાહરણ માન્ય રૂપરેખાંકન ફાઇલ" },
   "info_moreHelp": { "message": "વધુ મદદ માટે" },

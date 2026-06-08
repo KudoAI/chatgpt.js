@@ -32,6 +32,7 @@
   "warn_notFound": { "message": "မတွေ့ပါ" },
   "warn_noChanges": { "message": "အပြောင်းအလဲများ ရှာမတွေ့ပါ ။ ပထမအဆင့် သို့မဟုတ် ဖိုင်များကို ပြုပြင်ပါ" },
   "warn_noMsgChainToClear": { "message": "ရှင်းလင်းရန် မက်ဆေ့ချ် ကွင်းဆက် မရှိပါ" },
+  "warn_failedToSaveMsgChain": { "message": "မက်ဆေ့ချ် ကွင်းဆက်ကို သိမ်းဆည်းရန် မအောင်မြင်ပါ" },
   "info_configFile": { "message": "ဖိုင်ကိုစီစဉ်ပါ" },
   "info_exampleValidConfigFile": { "message": "ဥပမာ မှန်ကန်သော config ဖိုင်" },
   "info_moreHelp": { "message": "နောက်ထပ်အကူအညီအတွက်" },

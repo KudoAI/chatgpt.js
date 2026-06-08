@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "No Found" },
   "warn_noChanges": { "message": "Modificar Archivos - Modificar Archivos" },
   "warn_noMsgChainToClear": { "message": "No Label To Clear" },
+  "warn_failedToSaveMsgChain": { "message": "No a logra scapa e cadena di mensahe" },
   "info_configFile": { "message": "Archivo confidencial" },
   "info_exampleValidConfigFile": { "message": "Documente similare cu Config File" },
   "info_moreHelp": { "message": "Pa mas ayudo" },

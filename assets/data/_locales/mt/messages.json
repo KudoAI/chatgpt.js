@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Ma nstabx" },
   "warn_noChanges": { "message": "L-ebda bidla maqbuda. L-ewwel stadju jew immodifika l-fajls" },
   "warn_noMsgChainToClear": { "message": "L-ebda katina tal-messaġġi biex tneħħi" },
+  "warn_failedToSaveMsgChain": { "message": "Ma rnexxilux issejvja l-katina tal-messaġġi" },
   "info_configFile": { "message": "Konfigurazzjoni tal-fajl" },
   "info_exampleValidConfigFile": { "message": "Eżempju ta' fajl validu tal-konfig" },
   "info_moreHelp": { "message": "Għal aktar għajnuna" },

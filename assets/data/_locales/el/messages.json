@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Δεν βρέθηκε" },
   "warn_noChanges": { "message": "Δεν εντοπίστηκαν αλλαγές. Σταδιοποιήστε ή τροποποιήστε πρώτα τα αρχεία" },
   "warn_noMsgChainToClear": { "message": "Δεν υπάρχει αλυσίδα μηνυμάτων για εκκαθάριση" },
+  "warn_failedToSaveMsgChain": { "message": "Αποτυχία αποθήκευσης αλυσίδας μηνυμάτων" },
   "info_configFile": { "message": "Αρχείο διαμόρφωσης" },
   "info_exampleValidConfigFile": { "message": "Παράδειγμα έγκυρου αρχείου διαμόρφωσης" },
   "info_moreHelp": { "message": "Για περισσότερη βοήθεια" },

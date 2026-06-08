@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Non atopado" },
   "warn_noChanges": { "message": "Non se detectaron cambios.Etapa ou modificar os ficheiros primeiro" },
   "warn_noMsgChainToClear": { "message": "Sen cadea de mensaxes que limpar" },
+  "warn_failedToSaveMsgChain": { "message": "Non foi posíbel gardar a cadea da mensaxe" },
   "info_configFile": { "message": "Ficheiro de configuración" },
   "info_exampleValidConfigFile": { "message": "Exemplo de ficheiro de configuración válido" },
   "info_moreHelp": { "message": "Para máis axuda" },

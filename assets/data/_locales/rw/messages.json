@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Ntibyabonetse" },
   "warn_noChanges": { "message": "Amahinduka Cyangwa Guhindura Idosiye Itangira" },
   "warn_noMsgChainToClear": { "message": "Ubutumwa Kuri Gusiba" },
+  "warn_failedToSaveMsgChain": { "message": "Kuri Kubika Ubutumwa" },
   "info_configFile": { "message": "IDOSIYE" },
   "info_exampleValidConfigFile": { "message": "Urugero Byemewe IDOSIYE" },
   "info_moreHelp": { "message": "Kubindi bisobanuro" },

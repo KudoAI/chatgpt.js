@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Олдсонгүй" },
   "warn_noChanges": { "message": "Ямар ч өөрчлөлт илрээгүй. Эхлээд үе шаттай файлуудыг өөрчлөх эсвэл өөрчлөх" },
   "warn_noMsgChainToClear": { "message": "Мессежний сүлжээ арилгах боломжгүй" },
+  "warn_failedToSaveMsgChain": { "message": "Зурвасын гинжин хэлхээг хадгалж чадсангүй" },
   "info_configFile": { "message": "Тохируулах файл" },
   "info_exampleValidConfigFile": { "message": "Хүчинтэй тохиргооны файлын жишээ" },
   "info_moreHelp": { "message": "Нэмэлт тусламж" },

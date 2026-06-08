@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Nerasta" },
   "warn_noChanges": { "message": "Pakeitimų neaptikta. Pirmiausia peržiūrėkite arba pakeiskite failus" },
   "warn_noMsgChainToClear": { "message": "Nėra pranešimų grandinės, kurią reikia išvalyti" },
+  "warn_failedToSaveMsgChain": { "message": "Nepavyko išsaugoti žinučių grandinės" },
   "info_configFile": { "message": "Konfigūracijos failas" },
   "info_exampleValidConfigFile": { "message": "VALID konfigūracijos failo pavyzdys" },
   "info_moreHelp": { "message": "Daugiau pagalbos" },

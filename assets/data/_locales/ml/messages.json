@@ -32,6 +32,7 @@
     "message": "മാറ്റങ്ങളൊന്നും കണ്ടെത്തിയില്ല. ആദ്യം ഫയലുകൾ സ്റ്റേജ് ചെയ്യുക അല്ലെങ്കിൽ പരിഷ്കരിക്കുക"
   },
   "warn_noMsgChainToClear": { "message": "മായ്ക്കാൻ സന്ദേശ ശൃംഖലയില്ല" },
+  "warn_failedToSaveMsgChain": { "message": "സന്ദേശ ശൃംഖല സംരക്ഷിക്കുന്നതിൽ പരാജയപ്പെട്ടു" },
   "info_configFile": { "message": "കോൺഫിഗർ ഫയൽ" },
   "info_exampleValidConfigFile": { "message": "സാധുവായ കോൺഫിഗറേഷൻ ഫയൽ ഉദാഹരണം" },
   "info_moreHelp": { "message": "കൂടുതൽ സഹായത്തിനായി" },

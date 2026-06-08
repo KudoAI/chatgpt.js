@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Ei leitud" },
   "warn_noChanges": { "message": "Muudatusi ei tuvastatud. Esmalt etapi või muuda faile" },
   "warn_noMsgChainToClear": { "message": "Tühjendamiseks pole ühtegi sõnumiketti" },
+  "warn_failedToSaveMsgChain": { "message": "Sõnumiketi salvestamine nurjus" },
   "info_configFile": { "message": "Konfiguratsioonifail" },
   "info_exampleValidConfigFile": { "message": "Kehtiva konfiguratsioonifaili näide" },
   "info_moreHelp": { "message": "Lisateabe saamiseks" },

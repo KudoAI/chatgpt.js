@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Bulunamadı" },
   "warn_noChanges": { "message": "Değişiklik algılanmadı. Önce dosyaları aşamalandırın veya değiştirin" },
   "warn_noMsgChainToClear": { "message": "Temizlenecek mesaj zinciri yok" },
+  "warn_failedToSaveMsgChain": { "message": "Mesaj zinciri kaydedilemedi" },
   "info_configFile": { "message": "Yapılandırma dosyası" },
   "info_exampleValidConfigFile": { "message": "Örnek geçerli yapılandırma dosyası" },
   "info_moreHelp": { "message": "Daha fazla yardım için" },

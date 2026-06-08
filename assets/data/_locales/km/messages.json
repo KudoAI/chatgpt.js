@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "រកមិនឃើញមាន" },
   "warn_noChanges": { "message": "រកមិនឃើញការផ្លាស់ប្តូរទេ ។ ដំណាក់កាល ឬកែប្រែឯកសារជាមុនសិន" },
   "warn_noMsgChainToClear": { "message": "គ្មានច្រវាក់សារដែលត្រូវជម្រះទេ" },
+  "warn_failedToSaveMsgChain": { "message": "បានបរាជ័យក្នុងការរក្សាទុកខ្សែសង្វាក់សារ" },
   "info_configFile": { "message": "កំណត់ រចនាសម្ព័ន្ធ ឯកសារ" },
   "info_exampleValidConfigFile": { "message": "ឯកសារកំណត់រចនាសម្ព័ន្ធត្រឹមត្រូវឧទាហរណ៍" },
   "info_moreHelp": { "message": "សម្រាប់ជំនួយបន្ថែម" },

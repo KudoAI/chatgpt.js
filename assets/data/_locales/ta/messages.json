@@ -32,6 +32,7 @@
     "message": "மாற்றங்கள் எதுவும் கண்டறியப்படவில்லை. முதலில் கோப்புகளை நிலைப்படுத்தவும் அல்லது மாற்றவும்"
   },
   "warn_noMsgChainToClear": { "message": "அழிக்க செய்திச் சங்கிலி இல்லை" },
+  "warn_failedToSaveMsgChain": { "message": "செய்திச் சங்கிலியைச் சேமிக்க முடியவில்லை" },
   "info_configFile": { "message": "கட்டமைப்பு கோப்பு" },
   "info_exampleValidConfigFile": { "message": "எடுத்துக்காட்டு செல்லுபடியாகும் உள்ளமைவு கோப்பு" },
   "info_moreHelp": { "message": "மேலும் உதவிக்கு" },

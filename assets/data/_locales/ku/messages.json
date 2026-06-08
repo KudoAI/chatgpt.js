@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Peyda nebû" },
   "warn_noChanges": { "message": "Guhertin nehatin dîtin. Pêşî pelan qonax bikin an biguherînin." },
   "warn_noMsgChainToClear": { "message": "Zincîra peyaman tune ku were paqijkirin" },
+  "warn_failedToSaveMsgChain": { "message": "Tomarkirina zincîra peyamê bi ser neket" },
   "info_configFile": { "message": "Pelê mîhengkirinê" },
   "info_exampleValidConfigFile": { "message": "Nimûneya pelê mîhengê ya derbasdar" },
   "info_moreHelp": { "message": "Ji bo bêtir alîkariyê" },

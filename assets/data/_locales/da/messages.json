@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Ikke fundet" },
   "warn_noChanges": { "message": "Der blev ikke registreret nogen ændringer. Trinvis eller rediger filer først" },
   "warn_noMsgChainToClear": { "message": "Ingen meddelelseskæde at rydde" },
+  "warn_failedToSaveMsgChain": { "message": "Kunne ikke gemme beskedkæden" },
   "info_configFile": { "message": "Konfigurationsfil" },
   "info_exampleValidConfigFile": { "message": "Eksempel på gyldig konfigurationsfil" },
   "info_moreHelp": { "message": "Få mere hjælp" },

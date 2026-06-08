@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "ບໍ່ພົບ" },
   "warn_noChanges": { "message": "ບໍ່ພົບການປ່ຽນແປງ. ດ່ານ ຫຼື ດັດແກ້ໄຟລ໌ກ່ອນ" },
   "warn_noMsgChainToClear": { "message": "ບໍ່ມີຕ່ອງໂສ້ຂໍ້ຄວາມທີ່ຈະແຈ້ງ" },
+  "warn_failedToSaveMsgChain": { "message": "ບັນທຶກຕ່ອງໂສ້ຂໍ້ຄວາມບໍ່ສຳເລັດ" },
   "info_configFile": { "message": "ໄຟລ໌ການຕັ້ງຄ່າ" },
   "info_exampleValidConfigFile": { "message": "ຕົວຢ່າງເອກະສານ config ທີ່ຖືກຕ້ອງ" },
   "info_moreHelp": { "message": "ສໍາ ລັບການຊ່ວຍເຫຼືອເພີ່ມເຕີມ" },

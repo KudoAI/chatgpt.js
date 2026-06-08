@@ -34,6 +34,7 @@
     "message": "Kaore he huringa i kitea. Te taahiraa, te whakarereke ranei i nga konae i te tuatahi"
   },
   "warn_noMsgChainToClear": { "message": "Kaore he mekameka karere hei whakamarama" },
+  "warn_failedToSaveMsgChain": { "message": "Kaore i taea te whakaora i te mekameka karere" },
   "info_configFile": { "message": "Kōnae whirihora" },
   "info_exampleValidConfigFile": { "message": "Tauira kōnae config whaimana" },
   "info_moreHelp": { "message": "Mō ētahi atu āwhina" },

@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Nenalezeno" },
   "warn_noChanges": { "message": "Nebyly zjištěny žádné změny. Nejprve připravte nebo upravte soubory" },
   "warn_noMsgChainToClear": { "message": "Žádný řetězec zpráv k vymazání" },
+  "warn_failedToSaveMsgChain": { "message": "Nepodařilo se uložit řetězec zpráv" },
   "info_configFile": { "message": "Konfigurační soubor" },
   "info_exampleValidConfigFile": { "message": "Příklad platného konfiguračního souboru" },
   "info_moreHelp": { "message": "Další pomoc" },

@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Pa jwenn" },
   "warn_noChanges": { "message": "Pa gen chanjman detekte. Etap oswa modifye dosye an premye" },
   "warn_noMsgChainToClear": { "message": "Pa gen chèn mesaj pou klè" },
+  "warn_failedToSaveMsgChain": { "message": "Echwe pou konsève pou chèn mesaj" },
   "info_configFile": { "message": "Konfigire dosye a" },
   "info_exampleValidConfigFile": { "message": "Egzanp dosye konfigirasyon ki valab" },
   "info_moreHelp": { "message": "Pou plis èd/Pour plus d '" },

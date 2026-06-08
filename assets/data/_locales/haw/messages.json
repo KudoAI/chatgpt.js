@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Loaʻa ʻole" },
   "warn_noChanges": { "message": "ʻAʻohe loli i ʻike ʻia. E hoʻonohonoho a hoʻololi paha i nā faila ma mua" },
   "warn_noMsgChainToClear": { "message": "ʻAʻohe kaulahao leka e hoʻomaʻemaʻe" },
+  "warn_failedToSaveMsgChain": { "message": "ʻAʻole i hiki ke mālama i ke kaulahao leka" },
   "info_configFile": { "message": "Waihona hoʻonohonoho" },
   "info_exampleValidConfigFile": { "message": "Laʻana o ka faila hoʻonohonoho kūpono" },
   "info_moreHelp": { "message": "No ke kōkua hou aku" },

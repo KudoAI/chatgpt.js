@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Fannst ekki" },
   "warn_noChanges": { "message": "Engar breytingar fundust. Stigaðu eða breyttu skrám fyrst" },
   "warn_noMsgChainToClear": { "message": "Engin skilaboðakeðja til að hreinsa" },
+  "warn_failedToSaveMsgChain": { "message": "Ekki tókst að vista skilaboðakeðju" },
   "info_configFile": { "message": "Stillingaskrá" },
   "info_exampleValidConfigFile": { "message": "Dæmi um gilda uppsetningarskrá" },
   "info_moreHelp": { "message": "Fyrir frekari aðstoð" },

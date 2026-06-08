@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Табылган жок" },
   "warn_noChanges": { "message": "Өзгөртүүлөр табылган жок. Биринчи баскычты басыңыз же файлдарды өзгөртүңүз" },
   "warn_noMsgChainToClear": { "message": "Тазалоо үчүн билдирүү чынжыры жок" },
+  "warn_failedToSaveMsgChain": { "message": "Кабар чынжыры сакталбады" },
   "info_configFile": { "message": "Файлды конфигурациялоо" },
   "info_exampleValidConfigFile": { "message": "Үлгү жарактуу конфигурация файлы" },
   "info_moreHelp": { "message": "Көбүрөөк маалымат алуу үчүн" },

@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Không tìm thấy" },
   "warn_noChanges": { "message": "Không có thay đổi nào được phát hiện. Giai đoạn hoặc sửa đổi tệp trước" },
   "warn_noMsgChainToClear": { "message": "Không có chuỗi tin nhắn để xóa" },
+  "warn_failedToSaveMsgChain": { "message": "Không thể lưu chuỗi tin nhắn" },
   "info_configFile": { "message": "Tệp cấu hình" },
   "info_exampleValidConfigFile": { "message": "Ví dụ về tệp cấu hình hợp lệ" },
   "info_moreHelp": { "message": "Để được trợ giúp thêm" },

@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "No s'ha trobat" },
   "warn_noChanges": { "message": "No s'han detectat canvis. Primer, organitza o modifica els fitxers" },
   "warn_noMsgChainToClear": { "message": "No hi ha cap cadena de missatges per esborrar" },
+  "warn_failedToSaveMsgChain": { "message": "No s'ha pogut desar la cadena de missatges" },
   "info_configFile": { "message": "Fitxer de configuració" },
   "info_exampleValidConfigFile": { "message": "Exemple de fitxer de configuració vàlid" },
   "info_moreHelp": { "message": "Per obtenir més ajuda" },

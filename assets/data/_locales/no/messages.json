@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Ikke funnet" },
   "warn_noChanges": { "message": "Ingen endringer oppdaget. Still inn eller endre filer først." },
   "warn_noMsgChainToClear": { "message": "Ingen meldingskjede å fjerne" },
+  "warn_failedToSaveMsgChain": { "message": "Kunne ikke lagre meldingskjeden" },
   "info_configFile": { "message": "Konfigurasjonsfil" },
   "info_exampleValidConfigFile": { "message": "Eksempel på gyldig konfigurasjonsfil" },
   "info_moreHelp": { "message": "For mer hjelp" },

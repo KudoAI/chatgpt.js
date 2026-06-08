@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Nije pronađeno" },
   "warn_noChanges": { "message": "Nisu otkrivene promjene. Prvo postavite ili izmijenite datoteke" },
   "warn_noMsgChainToClear": { "message": "Nema lanca poruka za brisanje" },
+  "warn_failedToSaveMsgChain": { "message": "Spremanje lanca poruka nije uspjelo" },
   "info_configFile": { "message": "Konfiguracijska datoteka" },
   "info_exampleValidConfigFile": { "message": "Primjer važeće konfiguracijske datoteke" },
   "info_moreHelp": { "message": "Za dodatnu pomoć" },

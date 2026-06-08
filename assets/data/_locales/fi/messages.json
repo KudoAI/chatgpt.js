@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Ei löytynyt" },
   "warn_noChanges": { "message": "Muutoksia ei havaittu. Vaihe tai muokkaa tiedostoja ensin" },
   "warn_noMsgChainToClear": { "message": "Ei poistettavaa viestiketjua" },
+  "warn_failedToSaveMsgChain": { "message": "Viestiketjun tallentaminen epäonnistui" },
   "info_configFile": { "message": "Konfigurointitiedosto" },
   "info_exampleValidConfigFile": { "message": "Esimerkki kelvollisesta asetustiedostosta" },
   "info_moreHelp": { "message": "Saat lisäohjeita" },

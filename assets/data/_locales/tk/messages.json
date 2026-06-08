@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Alymady" },
   "warn_noChanges": { "message": "Hiç bir üýtgeşik tapylmady. Ilki bilen faýllary aşama ýa-da üýtget" },
   "warn_noMsgChainToClear": { "message": "Açylmak üçin habar beriş zähmetleri ýok" },
+  "warn_failedToSaveMsgChain": { "message": "Mesej zähmetini saklamak başarmady" },
   "info_configFile": { "message": "Faýly Gaýd Et" },
   "info_exampleValidConfigFile": { "message": "Mysal geçerli konfigurasiýa faýly" },
   "info_moreHelp": { "message": "Köpräk kömek etmek üçin" },

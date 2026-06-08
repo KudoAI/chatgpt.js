@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Hittades inte" },
   "warn_noChanges": { "message": "Inga ändringar upptäcktes. Stage eller ändra filer först" },
   "warn_noMsgChainToClear": { "message": "Ingen meddelandekedja att rensa" },
+  "warn_failedToSaveMsgChain": { "message": "Det gick inte att spara meddelandekedjan" },
   "info_configFile": { "message": "Konfigurationsfil" },
   "info_exampleValidConfigFile": { "message": "Exempel på giltig konfigurationsfil" },
   "info_moreHelp": { "message": "För mer hjälp" },

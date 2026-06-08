@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Cha deach a lorg" },
   "warn_noChanges": { "message": "Cha deach atharrachaidhean a lorg. Ìre no atharraich faidhlichean an toiseach" },
   "warn_noMsgChainToClear": { "message": "No chainmail to clear" },
+  "warn_failedToSaveMsgChain": { "message": "Dh'fhàillig le sàbhaladh na slabhraidh teachdaireachd" },
   "info_configFile": { "message": "Faidhle rèiteachaidh" },
   "info_exampleValidConfigFile": { "message": "Faidhle rèiteachaidh dligheach mar eisimpleir" },
   "info_moreHelp": { "message": "Airson tuilleadh cuideachaidh" },

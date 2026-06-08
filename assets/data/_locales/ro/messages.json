@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Nu s-a găsit" },
   "warn_noChanges": { "message": "Nu au fost detectate modificări. Puneți în scenă sau modificați mai întâi fișierele" },
   "warn_noMsgChainToClear": { "message": "Niciun lanț de mesaje de șters" },
+  "warn_failedToSaveMsgChain": { "message": "Salvarea șirului de mesaje a eșuat" },
   "info_configFile": { "message": "Fișier de configurare" },
   "info_exampleValidConfigFile": { "message": "Exemplu de fișier de configurare valid" },
   "info_moreHelp": { "message": "Pentru mai mult ajutor" },

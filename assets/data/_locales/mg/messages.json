@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Tsy hita" },
   "warn_noChanges": { "message": "Tsy misy fanovana hita. Dingana na manova rakitra aloha" },
   "warn_noMsgChainToClear": { "message": "Tsy misy rojo hafatra hanadio" },
+  "warn_failedToSaveMsgChain": { "message": "Tsy afaka nandraikitra ilay rojom-panalahidy" },
   "info_configFile": { "message": "Rakitra fikirakirana" },
   "info_exampleValidConfigFile": { "message": "Ohatra ny raki-kirakira azo ekena" },
   "info_moreHelp": { "message": "Raha mila fanampiana bebe kokoa" },

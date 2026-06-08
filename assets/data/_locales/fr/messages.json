@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Introuvable" },
   "warn_noChanges": { "message": "Aucun changement détecté. Établissez ou modifiez d'abord les fichiers" },
   "warn_noMsgChainToClear": { "message": "Aucune chaîne de messages à effacer" },
+  "warn_failedToSaveMsgChain": { "message": "Échec de l'enregistrement de la chaîne de messages" },
   "info_configFile": { "message": "Fichier de configuration" },
   "info_exampleValidConfigFile": { "message": "Exemple de fichier de configuration valide" },
   "info_moreHelp": { "message": "Pour plus d’aide" },

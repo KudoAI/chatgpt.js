@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "غير موجود" },
   "warn_noChanges": { "message": "لم يتم اكتشاف أي تغييرات. قم بتنظيم الملفات أو تعديلها أولاً" },
   "warn_noMsgChainToClear": { "message": "لا توجد سلسلة رسائل لمسحها" },
+  "warn_failedToSaveMsgChain": { "message": "تعذر حفظ سلسلة الرسائل" },
   "info_configFile": { "message": "تكوين الملف" },
   "info_exampleValidConfigFile": { "message": "مثال على ملف تكوين صالح" },
   "info_moreHelp": { "message": "لمزيد من المساعدة" },

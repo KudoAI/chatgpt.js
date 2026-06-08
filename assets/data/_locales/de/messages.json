@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Nicht gefunden" },
   "warn_noChanges": { "message": "Keine Änderungen erkannt. Erstellen oder ändern Sie zuerst Dateien" },
   "warn_noMsgChainToClear": { "message": "Keine Nachrichtenkette zum Löschen" },
+  "warn_failedToSaveMsgChain": { "message": "Nachrichtenkette konnte nicht gespeichert werden" },
   "info_configFile": { "message": "Config file" },
   "info_exampleValidConfigFile": { "message": "Beispiel gültige Konfigurationsdatei" },
   "info_moreHelp": { "message": "Für weitere Hilfe" },

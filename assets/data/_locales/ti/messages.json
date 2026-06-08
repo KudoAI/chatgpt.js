@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "ኣይተረኽበን ።" },
   "warn_noChanges": { "message": "ዝኾነ ለውጢ ኣይተረኽበን ። ደረጃ ወይ ፈለማ ፋይላት ቀይር" },
   "warn_noMsgChainToClear": { "message": "ንምጽራይ ዝኾነ ናይ መልእኽቲ ሰንሰለት የለን ።" },
+  "warn_failedToSaveMsgChain": { "message": "ናይ መልእኽቲ ሰንሰለት ክዕቅብ ኣይከኣለን ።" },
   "info_configFile": { "message": "ፋይል ኣማዕብል" },
   "info_exampleValidConfigFile": { "message": "ኣብነት እሙን ናይ ውጥን ፋይል" },
   "info_moreHelp": { "message": "ዝያዳ ሓገዝ" },

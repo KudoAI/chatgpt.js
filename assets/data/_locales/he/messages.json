@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "לא נמצא" },
   "warn_noChanges": { "message": "לא זוהו שינויים. שלב או שנה קבצים תחילה" },
   "warn_noMsgChainToClear": { "message": "אין שרשרת הודעות כדי לנקות" },
+  "warn_failedToSaveMsgChain": { "message": "שמירת שרשרת ההודעות נכשלה" },
   "info_configFile": { "message": "קובץ תצורה" },
   "info_exampleValidConfigFile": { "message": "דוגמה לקובץ תצורה חוקי" },
   "info_moreHelp": { "message": "לקבלת עזרה נוספת" },

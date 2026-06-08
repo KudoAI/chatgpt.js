@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Wala nakit-an" },
   "warn_noChanges": { "message": "Wala 'y nakit-an nga mga pagbag-o. yugto o usba una ang mga file" },
   "warn_noMsgChainToClear": { "message": "Wala 'y kadena sa mensahe aron maklaro" },
+  "warn_failedToSaveMsgChain": { "message": "Napakyas sa pagluwas sa kadena sa mensahe" },
   "info_configFile": { "message": "Pag-configure sa file" },
   "info_exampleValidConfigFile": { "message": "Pananglitan balido nga config file" },
   "info_moreHelp": { "message": "Alang sa dugang nga tabang" },

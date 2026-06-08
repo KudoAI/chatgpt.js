@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "හමු නොවීය" },
   "warn_noChanges": { "message": "වෙනස්කම් කිසිවක් අනාවරණය නොවීය. පළමු අදියර හෝ ගොනු වෙනස් කරන්න" },
   "warn_noMsgChainToClear": { "message": "හිස් කිරීමට පණිවිඩ දම්වැලක් නැත" },
+  "warn_failedToSaveMsgChain": { "message": "පණිවිඩ දාමය සුරැකීමට අසමත් විය" },
   "info_configFile": { "message": "ගොනුව සකසන්න" },
   "info_exampleValidConfigFile": { "message": "නිදසුන වලංගු වින් ‍ යාස ගොනුව" },
   "info_moreHelp": { "message": "තවත් උදව් සඳහා" },

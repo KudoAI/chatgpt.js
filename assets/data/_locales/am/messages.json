@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "አልተገኘም" },
   "warn_noChanges": { "message": "ምንም ለውጦች አልተገኙም. ደረጃ ወይም መጀመሪያ ፋይሎችን ቀይር" },
   "warn_noMsgChainToClear": { "message": "ለማፅዳት ምንም የመልዕክት ሰንሰለት የለም" },
+  "warn_failedToSaveMsgChain": { "message": "የመልዕክት ሰንሰለት ማስቀመጥ አልተሳካም" },
   "info_configFile": { "message": "ፋይልን ያዋቅሩ" },
   "info_exampleValidConfigFile": { "message": "ምሳሌ ትክክለኛ የውቅረት ፋይል" },
   "info_moreHelp": { "message": "ለተጨማሪ እገዛ" },

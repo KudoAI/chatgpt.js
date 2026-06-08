@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Tidak ditemui" },
   "warn_noChanges": { "message": "Tiada perubahan dikesan. Peringkat atau ubah suai fail terlebih dahulu" },
   "warn_noMsgChainToClear": { "message": "Tiada rantaian mesej untuk dikosongkan" },
+  "warn_failedToSaveMsgChain": { "message": "Gagal menyimpan rantaian mesej" },
   "info_configFile": { "message": "Fail konfigurasi" },
   "info_exampleValidConfigFile": { "message": "Contoh fail konfigurasi yang sah" },
   "info_moreHelp": { "message": "Untuk bantuan lanjut" },

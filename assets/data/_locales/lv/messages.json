@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Nav atrasts" },
   "warn_noChanges": { "message": "Izmaiņas nav atrastas. Vispirms izveidojiet vai modificējiet failus" },
   "warn_noMsgChainToClear": { "message": "Nav ziņojumu ķēdes, ko notīrīt" },
+  "warn_failedToSaveMsgChain": { "message": "Neizdevās saglabāt ziņojumu ķēdi" },
   "info_configFile": { "message": "Konfigurācijas fails" },
   "info_exampleValidConfigFile": { "message": "Derīga konfigurācijas faila piemērs" },
   "info_moreHelp": { "message": "Lai saņemtu papildu palīdzību" },

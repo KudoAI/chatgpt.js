@@ -32,6 +32,7 @@
     "message": "Heç bir dəyişiklik aşkarlanmadı. Əvvəlcə faylları mərhələli şəkildə dəyişdirin və ya dəyişdir"
   },
   "warn_noMsgChainToClear": { "message": "Təmizləmək üçün heç bir mesaj zənciri yoxdur" },
+  "warn_failedToSaveMsgChain": { "message": "Mesaj zəncirini yaddaşda saxlamaq alınmadı" },
   "info_configFile": { "message": "Faylı konfiqur" },
   "info_exampleValidConfigFile": { "message": "Nümunə üçün etibarlı konfiqurasiya faylı" },
   "info_moreHelp": { "message": "Daha çox yardım üçün" },

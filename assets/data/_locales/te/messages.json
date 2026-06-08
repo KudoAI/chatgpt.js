@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "దొరకలేదు" },
   "warn_noChanges": { "message": "మార్పులు ఏవీ కనుగొనబడలేదు. మొదట ఫైల్ ‌ లను దశ లేదా సవరించండి" },
   "warn_noMsgChainToClear": { "message": "క్లియర్ చేయడానికి సందేశ గొలుసు లేదు" },
+  "warn_failedToSaveMsgChain": { "message": "సందేశ గొలుసును సేవ్ చేయడంలో విఫలమైంది" },
   "info_configFile": { "message": "ఆకృతీకరణ ఫైల్" },
   "info_exampleValidConfigFile": { "message": "ఉదాహరణ చెల్లుబాటు అయ్యే కాన్ఫిగరేషన్ ఫైల్" },
   "info_moreHelp": { "message": "మరింత సహాయం కోసం" },

@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Nie znaleziono" },
   "warn_noChanges": { "message": "Nie wykryto zmian. Najpierw wprowadź lub zmodyfikuj pliki" },
   "warn_noMsgChainToClear": { "message": "Brak łańcucha wiadomości do wyczyszczenia" },
+  "warn_failedToSaveMsgChain": { "message": "Nie udało się zapisać łańcucha wiadomości" },
   "info_configFile": { "message": "Plik konfiguracyjny" },
   "info_exampleValidConfigFile": { "message": "Przykład prawidłowego pliku konfiguracyjnego" },
   "info_moreHelp": { "message": ", aby otrzymali dalszą pomoc" },

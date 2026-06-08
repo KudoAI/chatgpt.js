@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "찾을 수 없음" },
   "warn_noChanges": { "message": "변경 사항이 감지되지 않았습니다. 먼저 파일을 스테이징하거나 수정하십시오" },
   "warn_noMsgChainToClear": { "message": "지울 메시지 체인 없음" },
+  "warn_failedToSaveMsgChain": { "message": "메시지 체인을 저장하지 못했습니다" },
   "info_configFile": { "message": "설정 파일" },
   "info_exampleValidConfigFile": { "message": "유효한 구성 파일의 예" },
   "info_moreHelp": { "message": "더 많은 도움 요청" },

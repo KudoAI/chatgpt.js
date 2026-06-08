@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Not found" },
   "warn_noChanges": { "message": "No changes detected. Stage or modify files first" },
   "warn_noMsgChainToClear": { "message": "No message chain to clear" },
+  "warn_failedToSaveMsgChain": { "message": "Failed to save message chain" },
   "info_configFile": { "message": "Config file" },
   "info_exampleValidConfigFile": { "message": "Example valid config file" },
   "info_moreHelp": { "message": "For more help" },

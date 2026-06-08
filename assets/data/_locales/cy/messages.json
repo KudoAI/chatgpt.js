@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Heb ei ganfod" },
   "warn_noChanges": { "message": "Heb ganfod unrhyw newidiadau. Llwyfan neu addasu ffeiliau yn gyntaf" },
   "warn_noMsgChainToClear": { "message": "Dim cadwyn negeseuon i'w chlirio" },
+  "warn_failedToSaveMsgChain": { "message": "Methwyd cadw cadwyn negeseuon" },
   "info_configFile": { "message": "Ffeil ffurfweddu" },
   "info_exampleValidConfigFile": { "message": "Enghraifft o ffeil cyfluniad dilys" },
   "info_moreHelp": { "message": "Am fwy o help" },

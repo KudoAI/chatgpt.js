@@ -32,6 +32,7 @@
   "warn_notFound": { "message": "Ayifumanekanga" },
   "warn_noChanges": { "message": "Akukho lutshintsho lufunyenweyo. Iqonga okanye utshintshe iifayile kuqala" },
   "warn_noMsgChainToClear": { "message": "Akukho myalezo ekufuneka ucocwe" },
+  "warn_failedToSaveMsgChain": { "message": "Ayikwazanga ukugcina imixokelelwano yemiyalezo" },
   "info_configFile": { "message": "Misela ifayile" },
   "info_exampleValidConfigFile": { "message": "Umzekelo wefayile echanileyo yokuqwalasela" },
   "info_moreHelp": { "message": "Ukuze ufumane uncedo olungakumbi" },

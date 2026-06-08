@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "No painim" },
   "warn_noChanges": { "message": "I no gat senis i kamap. Pastaim stadi o senisim ol fail" },
   "warn_noMsgChainToClear": { "message": "I no gat wanpela tok i stap long dispela hap" },
+  "warn_failedToSaveMsgChain": { "message": "I no gat rot long kisim bek dispela toksave" },
   "info_configFile": { "message": "Konfigim fail" },
   "info_exampleValidConfigFile": { "message": "Wanpela gutpela piksa bilong dispela fail" },
   "info_moreHelp": { "message": "Bilong helpim yu" },

@@ -41,6 +41,6 @@ module.exports = {
         try {
             fs.mkdirSync(path.dirname(msgChainPath), { recursive: true })
             fs.writeFileSync(msgChainPath, JSON.stringify(chain), 'utf8')
-        } catch (err) {}
+        } catch (err) { log.warn(`${cli.msgs.warn_failedToSaveMsgChain}: ${err.message}`) }
     }
 }

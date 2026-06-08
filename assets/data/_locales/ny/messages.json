@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Sanapezeke" },
   "warn_noChanges": { "message": "Palibe kusintha komwe kwapezeka. Gawo kapena kusintha mafayilo poyamba" },
   "warn_noMsgChainToClear": { "message": "Palibe unyolo uthenga kumveka" },
+  "warn_failedToSaveMsgChain": { "message": "Analephera kupulumutsa uthenga unyolo" },
   "info_configFile": { "message": "Sinthani fayilo" },
   "info_exampleValidConfigFile": { "message": "Chitsanzo chovomerezeka cha fayilo ya config" },
   "info_moreHelp": { "message": "Kuti muthandizidwe kwambiri" },

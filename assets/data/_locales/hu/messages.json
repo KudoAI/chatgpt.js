@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Nem található" },
   "warn_noChanges": { "message": "Nem észlelhető változás. Előbb indítsa el vagy módosítsa a fájlokat" },
   "warn_noMsgChainToClear": { "message": "Nincs törölhető üzenetlánc" },
+  "warn_failedToSaveMsgChain": { "message": "Üzenetlánc mentése sikertelen" },
   "info_configFile": { "message": "Konfigurációs fájl" },
   "info_exampleValidConfigFile": { "message": "Példa érvényes konfigurációs fájlra" },
   "info_moreHelp": { "message": "További segítségért" },

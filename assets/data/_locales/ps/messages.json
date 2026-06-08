@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "ونه موندل شو" },
   "warn_noChanges": { "message": "هیڅ بدلونونه ونه موندل شول. لومړی مرحله یا فایلونه تعدیل کړئ" },
   "warn_noMsgChainToClear": { "message": "د پاکولو لپاره د پیغام سلسله نشته" },
+  "warn_failedToSaveMsgChain": { "message": "د پیغام ځنځیر په خوندي کولو کې پاتې راغی" },
   "info_configFile": { "message": "دوتنه سازول" },
   "info_exampleValidConfigFile": { "message": "د اعتبار وړ ترتیب فایل مثال" },
   "info_moreHelp": { "message": "د نورې مرستې لپاره" },

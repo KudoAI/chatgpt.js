@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "পাওয়া যায়নি" },
   "warn_noChanges": { "message": "কোনও পরিবর্তন সনাক্ত করা যায়নি । প্রথমে ফাইলগুলি পর্যায় বা সংশোধন করুন" },
   "warn_noMsgChainToClear": { "message": "পরিষ্কার করার জন্য কোনও মেসেজ চেইন নেই" },
+  "warn_failedToSaveMsgChain": { "message": "মেসেজ চেইন সংরক্ষণ করতে ব্যর্থ হয়েছে" },
   "info_configFile": { "message": "ফাইল কনফিগার করুন" },
   "info_exampleValidConfigFile": { "message": "উদাহরণ বৈধ কনফিগ ফাইল" },
   "info_moreHelp": { "message": "আরও সাহায্যের জন্য" },

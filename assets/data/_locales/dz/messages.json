@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "མ་ཐོབ་" },
   "warn_noChanges": { "message": "འགྱུར་བཅོས་ག་ནི་ཡང་མ་བྱུང་. སྔོན་སྒྲིག་འབད་ ཡང་ན་ཡིག་སྣོད་ཚུ་འགྱུར་བཅོས་འབད་" },
   "warn_noMsgChainToClear": { "message": "ཁ་གསལ་གྱི་ལྕགས་ཐག་འདི་ ག་ཅི་ཡང་མ་བཏུབ།" },
+  "warn_failedToSaveMsgChain": { "message": "འཕྲིན་དོན་ལྡེ་མིག་ལུ་སྐྱབས་འབད་མ་ཚུགས་པས།" },
   "info_configFile": { "message": "སྒྲིག་འཇུག་བྱས་ཚད། ཐེངས་ 3 ལས་" },
   "info_exampleValidConfigFile": { "message": "དཔེ་སྒྲོམ་བདེན་པའི་སྒྲིག་གཞི་ཡིག་སྣོད་" },
   "info_moreHelp": { "message": "ཆ་རོགས་འབད་ནིའི་དོན་ལུ་" },

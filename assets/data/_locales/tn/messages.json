@@ -32,6 +32,7 @@
   "warn_notFound": { "message": "Ga e a bonwa" },
   "warn_noChanges": { "message": "Ga go na diphetogo dipe tse di lemogilweng. Kgato kgotsa go fetola difaele pele" },
   "warn_noMsgChainToClear": { "message": "Ga go na molaetsa o o tshwanelang go tlhapisiwa" },
+  "warn_failedToSaveMsgChain": { "message": "O reteletswe ke go boloka metseletsele ya molaetsa" },
   "info_configFile": { "message": "Rulaganya faele" },
   "info_exampleValidConfigFile": { "message": "Sekao sa faele e e amogelesegang ya" },
   "info_moreHelp": { "message": "Go bona thuso go ya pele" },

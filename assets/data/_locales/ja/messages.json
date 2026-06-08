@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "見つかりません" },
   "warn_noChanges": { "message": "変更は検出されませんでした。最初にファイルをステージングまたは変更してください" },
   "warn_noMsgChainToClear": { "message": "クリアするメッセージチェーンがありません" },
+  "warn_failedToSaveMsgChain": { "message": "メッセージチェーンの保存に失敗しました" },
   "info_configFile": { "message": "構成ファイル" },
   "info_exampleValidConfigFile": { "message": "有効な設定ファイルの例" },
   "info_moreHelp": { "message": "ヘルプをもっと読む" },

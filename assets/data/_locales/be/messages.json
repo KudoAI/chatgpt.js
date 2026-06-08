@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Не знойдзена" },
   "warn_noChanges": { "message": "Ніякіх зьменаў не выяўлена. Спачатку стадыяй або зьменай файлаў" },
   "warn_noMsgChainToClear": { "message": "Не ачышчаць ланцужок паведамленняў" },
+  "warn_failedToSaveMsgChain": { "message": "Немагчыма захаваць ланцужок паведамленняў" },
   "info_configFile": { "message": "Файл канфігурацыі" },
   "info_exampleValidConfigFile": { "message": "Дапушчальны прыклад файла канфігурацыі" },
   "info_moreHelp": { "message": "Для атрымання дадатковай дапамогі" },

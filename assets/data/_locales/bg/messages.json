@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Не е намерено" },
   "warn_noChanges": { "message": "Не са открити промени. Първо поставете или променете файловете" },
   "warn_noMsgChainToClear": { "message": "Няма верига за съобщения за изчистване" },
+  "warn_failedToSaveMsgChain": { "message": "Неуспешно запазване на веригата за съобщения" },
   "info_configFile": { "message": "Конфигуриране на файл" },
   "info_exampleValidConfigFile": { "message": "Примерен валиден конфигурационен файл" },
   "info_moreHelp": { "message": "За повече помощ" },

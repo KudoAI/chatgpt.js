@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Ulac-it" },
   "warn_noChanges": { "message": "Ulac ibeddilen yettwafen. Asebded neɣ ibeddilen imezwura" },
   "warn_noMsgChainToClear": { "message": "Ulac akaram n yizen akken ad yessizdeg" },
+  "warn_failedToSaveMsgChain": { "message": "Ur yeddi ara ad isellek asenfaṛ n yizen" },
   "info_configFile": { "message": "Snifel afaylu" },
   "info_exampleValidConfigFile": { "message": "Amedya n ufaylu yettwaxedmen" },
   "info_moreHelp": { "message": "I ugar n tallelt" },

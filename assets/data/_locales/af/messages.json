@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Nie gevind nie" },
   "warn_noChanges": { "message": "Geen veranderinge bespeur nie. Verhoog of wysig lêers eerste" },
   "warn_noMsgChainToClear": { "message": "Geen boodskapketting om skoon te maak nie" },
+  "warn_failedToSaveMsgChain": { "message": "Kon nie die boodskapketting stoor nie" },
   "info_configFile": { "message": "Konfigureer lêer" },
   "info_exampleValidConfigFile": { "message": "Voorbeeld geldige konfigurasielêer" },
   "info_moreHelp": { "message": "Vir meer hulp" },

@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "نہیں ملا" },
   "warn_noChanges": { "message": "کوئی تبدیلیوں کا پتہ نہیں چلا ۔ پہلے فائلوں کو مرحلہ وار یا ترمیم کریں" },
   "warn_noMsgChainToClear": { "message": "صاف کرنے کے لیے کوئی میسج چین نہیں ہے" },
+  "warn_failedToSaveMsgChain": { "message": "پیغام کا سلسلہ محفوظ کرنے میں ناکامی" },
   "info_configFile": { "message": "کنفیگ فائل" },
   "info_exampleValidConfigFile": { "message": "مثال کے طور پر درست کنفیگ فائل" },
   "info_moreHelp": { "message": "مزید مدد کے لیے" },

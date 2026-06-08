@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "E leʻi maua" },
   "warn_noChanges": { "message": "E leai ni suiga na maua. tulaga po o le suia o faila muamua" },
   "warn_noMsgChainToClear": { "message": "Leai se filifili savali e faʻamalamalama" },
+  "warn_failedToSaveMsgChain": { "message": "Leiloa e sefe ai le filifili o feau" },
   "info_configFile": { "message": "Faʻatulagaina o le faila" },
   "info_exampleValidConfigFile": { "message": "Faataitaiga aloaia config faila" },
   "info_moreHelp": { "message": "Mo nisi fesoasoani" },

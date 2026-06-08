@@ -32,6 +32,7 @@
     "message": "އެއްވެސް ބަދަލެއް ފާހަގަކުރެވިފައެއް ނުވެއެވެ. ފުރަތަމަ ފައިލްތައް ސްޓޭޖް ނުވަތަ ބަދަލުކުރުން"
   },
   "warn_noMsgChainToClear": { "message": "ސާފުކުރަން މެސެޖް ޗޭނެއް ނެތެވެ" },
+  "warn_failedToSaveMsgChain": { "message": "މެސެޖް ޗޭން ސޭވް ނުކުރެވުނެވެ" },
   "info_configFile": { "message": "ކޮންފިގް ފައިލް" },
   "info_exampleValidConfigFile": { "message": "މިސާލު ސައްހަ ކޮންފިގް ފައިލް" },
   "info_moreHelp": { "message": "އިތުރު އެހީއަށް" },

@@ -30,6 +30,7 @@
   "warn_notFound": { "message": "Net fonnt" },
   "warn_noChanges": { "message": "Keng Ännerungen detektéiert.Phase oder änneren Fichieren éischt" },
   "warn_noMsgChainToClear": { "message": "Keng Noriichtekette fir ze klären" },
+  "warn_failedToSaveMsgChain": { "message": "Noriichtekette konnt net gespäichert ginn" },
   "info_configFile": { "message": "Datei konfiguréieren" },
   "info_exampleValidConfigFile": { "message": "Beispill valabel Konfiguratiounsdatei" },
   "info_moreHelp": { "message": "Fir méi Hëllef" },

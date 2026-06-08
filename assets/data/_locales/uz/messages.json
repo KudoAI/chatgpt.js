@@ -32,6 +32,7 @@
     "message": "Hech qanday o'zgarish aniqlanmadi. Avval fayllarni bosqichma-bosqich o'zgartiring yoki tahrirlang"
   },
   "warn_noMsgChainToClear": { "message": "Tozalash uchun xabar zanjiri yo'q" },
+  "warn_failedToSaveMsgChain": { "message": "Xabarlar zanjiri saqlanmadi" },
   "info_configFile": { "message": "Konfiguratsiya fayli" },
   "info_exampleValidConfigFile": { "message": "Misol uchun amal qiluvchi konfiguratsiya fayli" },
   "info_moreHelp": { "message": "Ko'proq yordam uchun" },
