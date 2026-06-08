@@ -17,6 +17,7 @@
     await init.cli()
 
     if (cli.config.init) return init.configFile()
+    else if (cli.config.clear) return messages.clearChain()
     else if (cli.config.help) return log.help()
     else if (cli.config.version) return log.version()
     else if (cli.config.stats) return log.stats()

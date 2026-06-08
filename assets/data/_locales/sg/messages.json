@@ -17,6 +17,7 @@
   "error_failedToFetchGlobalVer": { "message": "A yeke na lege ni pëpe ti wara mbeni ye so ayeke na yâ ti dunia kue" },
   "error_failedToFetchSysLang": { "message": "A yeke nzoni e sara kua na kode ti kode ni ape" },
   "error_mustIncludePath": { "message": "a lingbi ti tene so a yeke na lege ni pëpe" },
+  "error_failedToClearMsgChain": { "message": "A yeke pëpe na yâ ti mbeni kete kamba ti tokua so ayeke polele" },
   "warn_configFileExists": { "message": "Faïl so ayeke dä awe" },
   "warn_remoteConfigNotFound": { "message": "Désolé Aucun résultat trouvé" },
   "warn_remoteConfigFailed": { "message": "Disable alert for Mbeni" },
@@ -25,6 +26,7 @@
   "warn_hasBeenReplacedBy": { "message": "a changé lo na" },
   "warn_andWillBeRemoved": { "message": "na fade a yeke zi ala" },
   "warn_notFound": { "message": "A wara lo pëpe" },
+  "warn_noMsgChainToClear": { "message": "A yeke nzoni e sara ye na lege ni ape" },
   "info_configFile": { "message": "Faïl ti Config" },
   "info_exampleValidConfigFile": { "message": "Tapande ti faïl so ayeke na lege ni" },
   "info_moreHelp": { "message": "Ti mû maboko na mo" },
@@ -36,6 +38,7 @@
   },
   "info_configFileCreated": { "message": "Faïl so a leke ni" },
   "info_fetchingRemoteConfigFrom": { "message": "Disable alert for Mbeni" },
+  "info_msgChainCleared": { "message": "A yeke na yâ ti mbeni kete kete kete kete kete kete kete kete" },
   "tip_editToSetDefaults": { "message": "Gbian faïl so ti leke ambeni ye so ayeke na lege ni ape" },
   "tip_cliArgsPrioritized": {
     "message": "A yeke lakue na lege ti atënë ti CLI si a yeke hon ndo ti aye so ayeke na yâ ti Bible"
@@ -61,6 +64,7 @@
   "optionDesc_init": { "message": "Create config file (na yâ ti projet root)" },
   "optionDesc_joke": { "message": "Broke As A Joke;" },
   "optionDesc_randomAnswer": { "message": "Kiri tënë na mbeni hundango tënë so ayeke na lege ni ape" },
+  "optionDesc_clear": { "message": "A yeke na yâ ti mbeni kete kamba ti tokua so a honde ni polele" },
   "optionDesc_help": { "message": "A yeke mû maboko na azo ti bâ ndo na ndo ti écr" },
   "optionDesc_version": { "message": "Nombre de la version" },
   "optionDesc_stats": { "message": "A yeke fa na azo so ayeke na yâ ti kodoro ni so" },

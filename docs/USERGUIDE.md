@@ -99,6 +99,7 @@ Commands:
  -i, --init                       Create config file (in project root).
  -j, --joke                       Tells a funny joke at random.
  -r, --random-answer              Answer a random question.
+ -C, --clear                      Clear cached message chain.
  -h, --help                       Display help screen.
  -v, --version                    Show version number.
  -S, --stats                      Show npm stats.

@@ -7,6 +7,16 @@ const msgChainPath = path.join(
 
 module.exports = {
 
+    clearChain() {
+        try {
+            if (fs.existsSync(msgChainPath)) {
+                fs.unlinkSync(msgChainPath)
+                return log.info(`${cli.msgs.info_msgChainCleared}!`)
+            } else
+                return log.warn(`${cli.msgs.warn_noMsgChainToClear}.`)
+        } catch (err) { return log.error(`${cli.msgs.error_failedToClearMsgChain}:`, err.message) }
+    },
+
     extractFromJSON(str) {
         if (typeof str != 'string') return str
         try {

@@ -24,6 +24,7 @@ module.exports = {
         init: { type: 'cmd', regex: /^-{0,2}i(?:nit)?$/ },
         joke: { type: 'cmd', regex: /^--?j(?:oke)?$/ },
         randomAnswer: { type: 'cmd', regex: /^--?r(?:andom[-_]?answer)?$/ },
+        clear: { type: 'cmd', regex: /^--?(?:C|clear?)$/ },
         help: { type: 'cmd', regex: /^--?h(?:elp)?$/ },
         version: { type: 'cmd', regex: /^--?ve?r?s?i?o?n?$/ },
         stats: { type: 'cmd', regex: /^--?(?:S|stats?)$/ }
