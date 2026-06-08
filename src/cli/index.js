@@ -34,7 +34,7 @@
                     `Render a single piece of ascii art of ${
                         typeof cli.config.asciiArt == 'string' ? cli.config.asciiArt : 'a random thing' }.`
               : cli.config.query
-    if (!cli.config.noSuggest)
+    if (!cli.config.noSuggest && query == cli.config.query)
         query += '\n\nThen, at the end of your response, ask user if they want you to do something related to the query'
               + ' except if you are already finishing your response w/ a question.'
     log.debug(`query = ${query }`)
