@@ -7,9 +7,9 @@
     init.env()
 
     globalThis.log = require('./lib/log')
-    const fs = require('fs'),
-          chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
+    const chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
           clipboardy = require('node-clipboardy'),
+          fs = require('fs'),
           loader = require('./lib/loader').create({ width: env.width }),
           messages = require('./lib/messages'),
           string = require('./lib/string')

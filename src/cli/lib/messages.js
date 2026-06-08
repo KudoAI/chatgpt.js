@@ -1,6 +1,6 @@
 const fs = require('fs'),
-      path = require('path'),
-      os = require('os')
+      os = require('os'),
+      path = require('path')
 
 const msgChainPath = path.join(
     process.env.XDG_CACHE_HOME || path.join(os.homedir(), '.cache'), 'chatgpt.js', 'msgChain.json')
