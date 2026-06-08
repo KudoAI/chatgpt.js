@@ -37,6 +37,7 @@
     if (!cli.config.noSuggest)
         query += '\n\nThen, at the end of your response, ask user if they want you to do something related to the query'
               + ' except if you are already finishing your response w/ a question.'
+    log.debug(`query: ${query }`)
 
     loader.start()
     try { // to get/show AI reply
