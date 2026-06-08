@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Awkwafina for chat API" },
   "optionDesc_query": { "message": "Fela Anikulapo Kuti AI" },
   "optionDesc_summarize": { "message": "Fela Anikulapo Kuti - Fela Anikulapo Kuti" },
-  "optionDesc_ascii": { "message": "Awkwafina Awkwafina Art" },
+  "optionDesc_asciiArt": { "message": "Awkwafina Awkwafina Art" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Code of Language Ukulele Tabs in Ukulele Tabs" },
   "optionDesc_config": { "message": "Fela Anikulapo Kuti Config file to load" },
   "optionDesc_maxChars": { "message": "Ubutumwa bwa Mbila Nsuma pa Mbila Nsuma" },

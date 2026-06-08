@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Leverandør for chat-API" },
   "optionDesc_query": { "message": "Spørsmål om å sende AI" },
   "optionDesc_summarize": { "message": "Sti til fil eller tekst som skal oppsummeres" },
-  "optionDesc_ascii": { "message": "Gjengi ASCII-grafikk av valgfritt emne" },
+  "optionDesc_asciiArt": { "message": "Gjengi ASCII-grafikk av valgfritt emne" },
   "optionDesc_uiLang": { "message": "ISO 639-1-kode for språk som skal vises brukergrensesnitt i" },
   "optionDesc_config": { "message": "Sti til tilpasset konfigurasjonsfil som skal lastes inn" },
   "optionDesc_maxChars": { "message": "Tegngrense per melding" },

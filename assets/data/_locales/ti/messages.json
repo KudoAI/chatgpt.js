@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "ናይ ቻት ኤፒአይ ኣከፋፋሊ" },
   "optionDesc_query": { "message": "AI ንምልኣኽ ሓተተ" },
   "optionDesc_summarize": { "message": "ናብ ፋይል ወይ ጽሑፍ ንምእታው ዚሕግዝ መገዲ" },
-  "optionDesc_ascii": { "message": "ናይ ምምራጽ ኣርእስቲ ናይ ASCII ስነ ጥበብ Render" },
+  "optionDesc_asciiArt": { "message": "ናይ ምምራጽ ኣርእስቲ ናይ ASCII ስነ ጥበብ Render" },
   "optionDesc_uiLang": { "message": "ISO 639-1 ኮድ ቋንቋ ኣብ" },
   "optionDesc_config": { "message": "ብውልቂ እተዳለወ ፋይል ንምስራሕ ዚሕግዝ መገዲ" },
   "optionDesc_maxChars": { "message": "ኣብ ነፍሲ ወከፍ መልእኽቲ ዘሎ ናይ ጠባይ ገደብ" },

@@ -11,7 +11,7 @@ module.exports = {
         uiLang: { type: 'param', valType: 'langCode', regex: /^--?u(?:i[-_]?lang)?(?:[=\s].*|$)/ },
         query: { type: 'param', regex: /^--?(?:q|query|ask|send)(?:[=\s].*|$)/, defaultVal: 'hi' },
         summarize: { type: 'param', valType: 'filepath', allowText: true, regex: /^--?s(?:ummarize)?(?:[=\s].*|$)/ },
-        ascii: { type: 'param', regex: /^--?a(?:scii[-_]?(?:art)?)?(?:[=\s].*|$)/ },
+        asciiArt: { type: 'param', regex: /^--?a(?:scii[-_]?)?a(?:rt)?(?:[=\s].*|$)/ },
         config: { type: 'param', valType: 'filepath', regex: /^--?c(?:onfig)?(?:[=\s].*|$)/ },
         maxChars: {
             type: 'param', valType: 'positiveInt', regex: /^--?m(?:ax[-_]?chars)?(?:[=\s].*|$)/, defaultVal: 250 },
@@ -40,7 +40,7 @@ module.exports = {
                 cli.config[key] ??= ctrl.defaultVal ?? ( ctrl.type == 'param' ? '' : false )
             })
             cli.defaultsSet = true
-            log.debug('All cli.config default vals set!')
+            log.debug('All cli.config default vals set!', { type: 'config' })
         }
 
         if (!cli.configPathTried) { // init config file path
@@ -84,7 +84,7 @@ module.exports = {
                     }
                     cli.config[key] = val
                 })
-                if (!arguments.length) log.debug('Config file loaded!')
+                if (!arguments.length) log.debug('Config file loaded!', { type: 'config' })
             } catch (err) {
                 log.configURLandExit(`${cli.msgs.error_failedToLoadConfigFile}:`, cli.configPath, `\n${err.message}`) }
 
@@ -108,10 +108,10 @@ module.exports = {
                     cli.config[ctrlKey] = true
             }
         }
-        if (!arguments.length) log.debug('Args parsed!')
+        if (!arguments.length) log.debug('Args parsed!', { type: 'config' })
 
         this.parseValidateConfig(inputCtrlKeys)
-        if (!arguments.length) log.debug('All cli.config vals parsed/validated!')
+        if (!arguments.length) log.debug('All cli.config vals parsed/validated!', { type: 'config' })
 
         return inputCtrlKeys.length == 1 ? cli.config[inputCtrlKeys[0]] : cli.config
     },

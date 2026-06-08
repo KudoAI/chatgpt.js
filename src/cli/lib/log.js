@@ -38,16 +38,18 @@ module.exports = {
         }
     },
 
-    debug(msg) {
+    debug(msg, { type } = {}) {
         if (!env.modes.debug) return
-        this.argIdx ??= env.args.findIndex(arg => /^--?(?:V|debug(?:[-_]?mode)?)$/.test(arg))
-        if (this.argIdx +1 < env.args.length && !env.args[this.argIdx +1].startsWith('-')) // use --debug [targetKey]
-            this.key ??= env.args[this.argIdx +1].replace('-', '_')
-        if (this.key)
-            this.val = cli.config[this.key] || `cli.config key "${this.key}" ${cli.msgs.warn_notFound.toLowerCase()}`
-        else
-            this.val = cli.config
-        msg += `\n${colors.gry}${JSON.stringify(this.val)}${colors.nc}`
+        if (type == 'config') { // append config data
+            this.argIdx ??= env.args.findIndex(arg => /^--?(?:V|debug(?:[-_]?mode)?)$/.test(arg))
+            if (this.argIdx +1 < env.args.length && !env.args[this.argIdx +1].startsWith('-')) // use --debug [targetKey]
+                this.key ??= env.args[this.argIdx +1].replace('-', '_')
+            if (this.key)
+                this.val = cli.config[this.key] || `cli.config key "${this.key}" ${cli.msgs.warn_notFound.toLowerCase()}`
+            else
+                this.val = cli.config
+            msg += `\n${colors.gry}${JSON.stringify(this.val)}${colors.nc}`
+        }
         console.debug(`\n${colors.by}DEBUG:`, msg, colors.nc)
     },
 
@@ -68,7 +70,7 @@ module.exports = {
                 ` -u, --ui-lang <code>             ${cli.msgs.optionDesc_uiLang}.`,
                 ` -q, --query <msg>                ${cli.msgs.optionDesc_query}.`,
                 ` -s, --summarize <filepath|text>  ${cli.msgs.optionDesc_summarize}.`,
-                ` -a, --ascii [subject]            ${cli.msgs.optionDesc_ascii}.`,
+                ` -a, --ascii-art [subject]        ${cli.msgs.optionDesc_asciiArt}.`,
                 ` -m, --max-chars <integer>        ${cli.msgs.optionDesc_maxChars}.`,
                 ` -k, --max-tokens <integer>       ${cli.msgs.optionDesc_maxTokens}.`,
                 ` -t, --turns <integer>            ${cli.msgs.optionDesc_turnsToPreserve}.`,

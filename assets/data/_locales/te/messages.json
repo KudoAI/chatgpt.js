@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "చాట్ API కోసం ప్రొవైడర్" },
   "optionDesc_query": { "message": "AIని పంపడానికి ప్రశ్న" },
   "optionDesc_summarize": { "message": "ఫైల్ ‌ కు మార్గం లేదా సంగ్రహించడానికి టెక్స్ట్" },
-  "optionDesc_ascii": { "message": "ఐచ్ఛిక విషయం యొక్క ASCII కళను అందించండి" },
+  "optionDesc_asciiArt": { "message": "ఐచ్ఛిక విషయం యొక్క ASCII కళను అందించండి" },
   "optionDesc_uiLang": { "message": "UIని ప్రదర్శించడానికి ISO 639-1 భాషా కోడ్" },
   "optionDesc_config": { "message": "లోడ్ చేయడానికి అనుకూలీకరించిన కాన్ఫిగరేషన్ ఫైల్ ‌ కు మార్గం" },
   "optionDesc_maxChars": { "message": "ప్రతి సందేశానికి అక్షర పరిమితి" },

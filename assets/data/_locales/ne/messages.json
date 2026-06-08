@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "च्याट API का लागि प्रदायक" },
   "optionDesc_query": { "message": "AI पठाउनको लागि क्वेरी" },
   "optionDesc_summarize": { "message": "संक्षेप गर्न फाइल वा पाठको बाटो" },
-  "optionDesc_ascii": { "message": "वैकल्पिक विषयको ASCII कला रेन्डर गर्नुहोस्" },
+  "optionDesc_asciiArt": { "message": "वैकल्पिक विषयको ASCII कला रेन्डर गर्नुहोस्" },
   "optionDesc_uiLang": { "message": "UI प्रदर्शन गर्न भाषाको ISO 639 -1 कोड" },
   "optionDesc_config": { "message": "लोड गर्न अनुकूल कन्फिग फाइलको बाटो" },
   "optionDesc_maxChars": { "message": "प्रति सन्देश क्यारेक्टर सीमा" },

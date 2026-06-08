@@ -84,7 +84,7 @@ Parameter options:
  -u, --ui-lang <code>             ISO 639-1 code of language to display UI in.
  -q, --query <msg>                Query to send AI.
  -s, --summarize <filepath|text>  Path to file or text to summarize.
- -a, --ascii [subject]            Render ASCII art of optional subject.
+ -a, --ascii-art [subject]        Render ASCII art of optional subject.
  -m, --max-chars <integer>        Character limit per message.
  -k, --max-tokens <integer>       Max tokens to use.
  -t, --turns <integer>            Number of turns to preserve.
@@ -211,9 +211,9 @@ export default {
 
 > [!WARNING]
 > 
-> **`activateDarkMode()` and `activateLightMode()` will be removed** in v4.8.0. Use `chatgpt.scheme.activateDark()` and `chatgpt.scheme.activateDark()` instead.
+> **`activateDarkMode()` and `activateLightMode()` will be removed** in v4.9.0. Use `chatgpt.scheme.activateDark()` and `chatgpt.scheme.activateDark()` instead.
 >
-> **Top-level aliases will be removed** in v4.8.0 (e.g. `chatgpt.minify()`, `chatgpt.execute()`, `chatgpt.extractCode()`, `chatgpt.setScheme()` and `chatgpt.scheme.*`). Use the canonical APIs instead (e.g. `chatgpt.code.*`, `chatgpt.response.*` and `chatgpt.settings.scheme.*`)
+> **Top-level aliases will be removed** in v4.9.0 (e.g. `chatgpt.minify()`, `chatgpt.execute()`, `chatgpt.extractCode()`, `chatgpt.setScheme()` and `chatgpt.scheme.*`). Use the canonical APIs instead (e.g. `chatgpt.code.*`, `chatgpt.response.*` and `chatgpt.settings.scheme.*`)
 
 <hr>
 

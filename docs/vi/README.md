@@ -47,7 +47,7 @@
 <a href="https://github.com/sindresorhus/awesome-chatgpt#javascript" target="_blank" rel="noopener">
     <img src="https://img.shields.io/badge/%C4%90%E1%BB%81_C%E1%BA%ADp_Trong-Awesome-ff69b4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="#">
-    <img src="https://img.shields.io/badge/y%C3%AAu_c%E1%BA%A7u_jsDelivr-4,000,000+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    <img src="https://img.shields.io/badge/y%C3%AAu_c%E1%BA%A7u_jsDelivr-4,111,734-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 
 </div>
 
@@ -128,7 +128,7 @@ Các nhà cung cấp được hỗ trợ:
 
 <br>
 
-**1. Tạo khóa API: https://openrouter.ai/settings/keys**
+**1. Tạo khóa API: <https://openrouter.ai/settings/keys>**
 
 <img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/openrouter.png">
 
@@ -158,7 +158,7 @@ export OPENROUTER_API_KEY="sk-or-v1-8a69..."
 
 <br>
 
-**1. Tạo khóa API: https://aistudio.google.com/api-keys**
+**1. Tạo khóa API: <https://aistudio.google.com/api-keys>**
 
 <img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/google-ai-studio.png">
 
@@ -236,7 +236,7 @@ chatgpt --help
 
 Để biết thêm các tùy chọn và ví dụ, vui lòng xem hướng dẫn sử dụng chi tiết:
 
-<https://github.com/KudoAI/chatgpt.js/blob/v4.8.0/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.9.0/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -552,7 +552,7 @@ PHẦN MỀM ĐƯỢC CUNG CẤP "NGUYÊN TRẠNG", KHÔNG CÓ BẢO ĐẢM NÀO
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/white/icon16.svg"><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/dark-gray/icon16.svg"></picture>
 **[Các bản phát hành mới nhất](https://github.com/KudoAI/chatgpt.js/releases)** /
-[Hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/v4.8.0/docs/USERGUIDE.md) /
+[Hướng dẫn sử dụng](https://github.com/KudoAI/chatgpt.js/blob/v4.9.0/docs/USERGUIDE.md) /
 [Nhận hỗ trợ](https://github.com/KudoAI/chatgpt.js/issues) /
 [Bàn luận](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#top">Trở lại đầu trang ↑</a>

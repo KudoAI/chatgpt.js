@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Proveïdor per a l'API de xat" },
   "optionDesc_query": { "message": "Consulta per enviar IA" },
   "optionDesc_summarize": { "message": "Ruta al fitxer o text per resumir" },
-  "optionDesc_ascii": { "message": "Render ASCII art de matèria optativa" },
+  "optionDesc_asciiArt": { "message": "Render ASCII art de matèria optativa" },
   "optionDesc_uiLang": { "message": "Codi de llengua ISO 639-1 per mostrar la interfície d'usuari" },
   "optionDesc_config": { "message": "Camí al fitxer de configuració personalitzat per carregar" },
   "optionDesc_maxChars": { "message": "Límit de caràcters per missatge" },

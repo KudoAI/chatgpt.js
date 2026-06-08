@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Provider alang sa chat API" },
   "optionDesc_query": { "message": "Себуано sa pagpadala sa usa ka [" },
   "optionDesc_summarize": { "message": "Dalan sa file o teksto sa pag-summarize" },
-  "optionDesc_ascii": { "message": "Render ASCII arte sa opsyonal nga hilisgutan" },
+  "optionDesc_asciiArt": { "message": "Render ASCII arte sa opsyonal nga hilisgutan" },
   "optionDesc_uiLang": { "message": "ISO 639-1 nga kodigo sa sinultian aron ipakita ang UI sa" },
   "optionDesc_config": { "message": "Pamaagi sa custom config file aron ma-load" },
   "optionDesc_maxChars": { "message": "Limitasyon sa karakter kada mensahe" },

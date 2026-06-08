@@ -30,13 +30,14 @@
               : cli.config.summarize ? `Summarize the following:\n\n${
                     string.looksLikePath(cli.config.summarize) ? fs.readFileSync(cli.config.summarize, 'utf8')
                                                                : cli.config.summarize }`
-              : cli.config.ascii ?
-                    `Render a single piece of ascii art of ${ typeof cli.config.ascii == 'string' ? cli.config.ascii
-                                                                                                  : 'a random thing' }.`
+              : cli.config.asciiArt ?
+                    `Render a single piece of ascii art of ${
+                        typeof cli.config.asciiArt == 'string' ? cli.config.asciiArt : 'a random thing' }.`
               : cli.config.query
-    if (!cli.config.noSuggest)
+    if (!cli.config.noSuggest && query == cli.config.query)
         query += '\n\nThen, at the end of your response, ask user if they want you to do something related to the query'
               + ' except if you are already finishing your response w/ a question.'
+    log.debug(`query = ${query }`)
 
     loader.start()
     try { // to get/show AI reply
@@ -52,7 +53,7 @@
         }
         if (cli.config.maxTokens) payload.maxTokens = cli.config.maxTokens
         const parsedReply = messages.extractFromJSON(await chatgpt.send('', payload))
-        if (/^(?:help|hi)$/.test(query)) log.help()
+        if (/^(?:help|hi)(?:\n|$)/.test(query)) log.help()
         if (cli.config.copy && parsedReply) clipboardy.writeSync(parsedReply)
         cli.msgChain.push(userMsg, { role: 'assistant', content: parsedReply })
         messages.saveChain(cli.msgChain)

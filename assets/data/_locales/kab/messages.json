@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Asebded i tmaziɣt API" },
   "optionDesc_query": { "message": "Affinez votre recherche pour amd" },
   "optionDesc_summarize": { "message": "Abrid n ufaylu neɣ n uḍris i wakken ad ssiwḍeɣ" },
-  "optionDesc_ascii": { "message": "Tags relatifs à \"optional subject\"" },
+  "optionDesc_asciiArt": { "message": "Tags relatifs à \"optional subject\"" },
   "optionDesc_uiLang": { "message": "Tutlayt ISO 639-1 i wakken ad d-tban deg" },
   "optionDesc_config": { "message": "Abrid n usebded n ufaylu i usebded" },
   "optionDesc_maxChars": { "message": "Akaram n tbaḍnit s yizen" },

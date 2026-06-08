@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Poskytovatel pro chat API" },
   "optionDesc_query": { "message": "Dotaz na odeslání umělé inteligence" },
   "optionDesc_summarize": { "message": "Cesta k souboru nebo textu pro shrnutí" },
-  "optionDesc_ascii": { "message": "Vykreslit ASCII umění volitelného předmětu" },
+  "optionDesc_asciiArt": { "message": "Vykreslit ASCII umění volitelného předmětu" },
   "optionDesc_uiLang": { "message": "Kód jazyka ISO 639-1 pro zobrazení uživatelského rozhraní" },
   "optionDesc_config": { "message": "Cesta k vlastnímu konfiguračnímu souboru k načtení" },
   "optionDesc_maxChars": { "message": "Limit počtu znaků na zprávu" },

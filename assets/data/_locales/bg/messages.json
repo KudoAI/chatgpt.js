@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Доставчик на приложен програмен интерфейс (API)" },
   "optionDesc_query": { "message": "Заявка за изпращане на ИИ" },
   "optionDesc_summarize": { "message": "Път до файла или текст за обобщаване" },
-  "optionDesc_ascii": { "message": "Предоставяне на ASCII изкуство на незадължителен предмет" },
+  "optionDesc_asciiArt": { "message": "Предоставяне на ASCII изкуство на незадължителен предмет" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 код на езика за показване на потребителския интерфейс в" },
   "optionDesc_config": { "message": "Път до персонализиран конфигурационен файл за зареждане" },
   "optionDesc_maxChars": { "message": "Ограничение на символите на съобщение" },

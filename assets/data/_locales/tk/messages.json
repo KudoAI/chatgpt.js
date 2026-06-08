@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Çat API-niň paýlaýan" },
   "optionDesc_query": { "message": "Men ony ibermek isleýärin" },
   "optionDesc_summarize": { "message": "Faýlyň ýa-da metiniň ýoluny gysgaça düşündirmek üçin" },
-  "optionDesc_ascii": { "message": "ASCII sanaty saýlap-seçen tema" },
+  "optionDesc_asciiArt": { "message": "ASCII sanaty saýlap-seçen tema" },
   "optionDesc_uiLang": { "message": "ISO 639-1 dil kodyny görkezmek üçin" },
   "optionDesc_config": { "message": "Özgür konfigurasiýa faýlyny ýüklemek üçin ýol" },
   "optionDesc_maxChars": { "message": "Her bir habar üçin bir haryt limiti" },

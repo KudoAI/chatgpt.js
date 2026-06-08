@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Dobavljač API-ja za chat" },
   "optionDesc_query": { "message": "Upit za slanje AI" },
   "optionDesc_summarize": { "message": "Putanja do datoteke ili teksta za sumiranje" },
-  "optionDesc_ascii": { "message": "Iscrtajte ASCII umjetnost neobaveznog predmeta" },
+  "optionDesc_asciiArt": { "message": "Iscrtajte ASCII umjetnost neobaveznog predmeta" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kod jezika za prikaz korisničkog sučelja u" },
   "optionDesc_config": { "message": "Putanja do prilagođene konfiguracijske datoteke za učitavanje" },
   "optionDesc_maxChars": { "message": "Ograničenje broja znakova po poruci" },

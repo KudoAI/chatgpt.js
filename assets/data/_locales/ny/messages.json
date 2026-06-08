@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Wopereka macheza API" },
   "optionDesc_query": { "message": "Kufunsira kutumiza AI" },
   "optionDesc_summarize": { "message": "Njira yopita ku fayilo kapena malemba kuti afotokoze mwachidule" },
-  "optionDesc_ascii": { "message": "Render ASCII luso la nkhani yosankha" },
+  "optionDesc_asciiArt": { "message": "Render ASCII luso la nkhani yosankha" },
   "optionDesc_uiLang": { "message": "ISO 639-1 malamulo chilankhulo kusonyeza UI mu" },
   "optionDesc_config": { "message": "Njira yopita ku fayilo ya config kuti mutsegule" },
   "optionDesc_maxChars": { "message": "Chithunzi malire pa uthenga" },

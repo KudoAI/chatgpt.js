@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "פּראַוויידער פֿאַר טשאַט API" },
   "optionDesc_query": { "message": "אָנפֿרעג צו שיקן קינסטלעכע אינטעליגענץ" },
   "optionDesc_summarize": { "message": "דרך צום טעקע אדער טעקסט צו צוזאמענפאסן" },
-  "optionDesc_ascii": { "message": "רענדער ASCII קונסט פון אפציאנעלן סוביעקט" },
+  "optionDesc_asciiArt": { "message": "רענדער ASCII קונסט פון אפציאנעלן סוביעקט" },
   "optionDesc_uiLang": { "message": "ISO 639-1 קאָד פֿון שפּראַך צו ווײַזן באַניצער־אינטערפֿייס אין" },
   "optionDesc_config": { "message": "וועג צו אייגענעם קאנפיגאציע טעקע צו לאָדן" },
   "optionDesc_maxChars": { "message": "כאַראַקטער לימיט פּער מעסעדזש" },

@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Chat API-tilboð" },
   "optionDesc_query": { "message": "Tað er ikki so lætt at fáa ein" },
   "optionDesc_summarize": { "message": "Veg til fílu ella tekst at taka saman" },
-  "optionDesc_ascii": { "message": "Ger ASCII listina av valligum evnum" },
+  "optionDesc_asciiArt": { "message": "Ger ASCII listina av valligum evnum" },
   "optionDesc_uiLang": { "message": "ISO 639-1 málkód at vísa UI í" },
   "optionDesc_config": { "message": "Gøtur til vanligar konfiguratiónar fílu til at lata" },
   "optionDesc_maxChars": { "message": "Karaktermarki fyri boð" },

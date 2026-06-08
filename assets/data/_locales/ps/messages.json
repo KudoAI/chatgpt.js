@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "د چیټ API لپاره چمتو کونکی" },
   "optionDesc_query": { "message": "د AI لیږلو پوښتنه" },
   "optionDesc_summarize": { "message": "د لنډیز لپاره د فایل یا متن ځای" },
-  "optionDesc_ascii": { "message": "د Render ASCII د اختیاري موضوع هنر" },
+  "optionDesc_asciiArt": { "message": "د Render ASCII د اختیاري موضوع هنر" },
   "optionDesc_uiLang": { "message": "په کې د UI ښودلو لپاره د ISO 639-1 د ژبې کوډ" },
   "optionDesc_config": { "message": "د بارولو لپاره د دوديز سازونې دوتنې يونلور" },
   "optionDesc_maxChars": { "message": "په هر پیغام کې د کرکټر محدودیت" },

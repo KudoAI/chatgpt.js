@@ -43,7 +43,7 @@
   "optionDesc_provider": { "message": "Bixiyaha Wadahadalka API" },
   "optionDesc_query": { "message": "Codsi si aad u dirto AI" },
   "optionDesc_summarize": { "message": "Jidka faylka ama qoraalka si loo soo koobo" },
-  "optionDesc_ascii": { "message": "Farshaxanka Render ASCII ee mawduuca ikhtiyaarka ah" },
+  "optionDesc_asciiArt": { "message": "Farshaxanka Render ASCII ee mawduuca ikhtiyaarka ah" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code luqadda si ay u muujiyaan UI in" },
   "optionDesc_config": { "message": "Jidka si loo habeeyo faylka si loo raro" },
   "optionDesc_maxChars": { "message": "Xadka astaamaha fariin kasta" },

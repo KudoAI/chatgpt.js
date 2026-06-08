@@ -47,7 +47,7 @@
 <a href="https://github.com/sindresorhus/awesome-chatgpt#javascript" target="_blank" rel="noopener">
     <img src="https://img.shields.io/badge/%E4%B8%AD%E6%8F%90%E5%88%B0-Awesome-ff69b4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="#">
-    <img src="https://img.shields.io/badge/jsDelivr_請求-4,000,000+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    <img src="https://img.shields.io/badge/jsDelivr_請求-4,111,734-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 </div>
 
 <br>
@@ -127,7 +127,7 @@ npm install -g @kudoai/chatgpt.js
 
 <br>
 
-**1. 建立 API 金鑰：https://openrouter.ai/settings/keys**
+**1. 建立 API 金鑰：<https://openrouter.ai/settings/keys>**
 
 <img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/openrouter.png">
 
@@ -157,7 +157,7 @@ export OPENROUTER_API_KEY="sk-or-v1-8a69..."
 
 <br>
 
-**1. 建立 API 金鑰：https://aistudio.google.com/api-keys**
+**1. 建立 API 金鑰：<https://aistudio.google.com/api-keys>**
 
 <img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/google-ai-studio.png">
 
@@ -235,7 +235,7 @@ chatgpt --help
 
 如需更多選項及範例，請參閱擴充使用者指南：
 
-<https://github.com/KudoAI/chatgpt.js/blob/v4.8.0/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.9.0/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -551,7 +551,7 @@ chatgpt --help
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/white/icon16.svg"><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/dark-gray/icon16.svg"></picture>
 **[최신 릴리스](https://github.com/KudoAI/chatgpt.js/releases)** /
-[用戶指南](https://github.com/KudoAI/chatgpt.js/blob/v4.8.0/docs/USERGUIDE.md) /
+[用戶指南](https://github.com/KudoAI/chatgpt.js/blob/v4.9.0/docs/USERGUIDE.md) /
 [지원 받기](https://github.com/KudoAI/chatgpt.js/issues) /
 [討論](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#top">回到頂部 ↑</a>
