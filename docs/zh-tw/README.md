@@ -214,11 +214,22 @@ console.log(await chatgpt.send('sup'))
 
 #### <a href="#-terminal"><img width=16 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@b30a348/assets/images/icons/terminal/black/icon32.png"></a> Terminal:
 
-設定好 API 金鑰後，從終端發出請求：
+設定 API 金鑰後，即可透過終端進行控制：
 
 ```bash
 chatgpt --query "sup"  # 或者 cjs -q sup
 # e.g. => Hey there! What's up?
+
+chatgpt --ascii-art "cat"  # 或者 cjs --aa cat
+# e.g. =>
+#
+#       |\      _,,,---,,_
+# ZZZzz /,`.-'`'    -.  ;-;;,_
+#      |,4-  ) )-,_. ,\ (  `'-'
+#     '---''(_/--'  `-'\_)
+
+chatgpt --commit-msg  # 或者 cjs -g (在 git 倉庫中)
+# e.g. => feat: add `--ascii-art` CLI cmd
 ```
 
 建立本機設定檔（自訂提供者等）：

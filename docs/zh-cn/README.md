@@ -214,11 +214,22 @@ console.log(await chatgpt.send('sup'))
 
 #### <a href="#-terminal"><img width=16 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@b30a348/assets/images/icons/terminal/black/icon32.png"></a> Terminal:
 
-设置好 API 密钥后，在终端中发出请求：
+设置 API 密钥后，即可通过终端进行控制：
 
 ```bash
 chatgpt --query "sup"  # 或者 cjs -q sup
 # e.g. => Hey there! What's up?
+
+chatgpt --ascii-art "cat"  # 或者 cjs --aa cat
+# e.g. =>
+#
+#       |\      _,,,---,,_
+# ZZZzz /,`.-'`'    -.  ;-;;,_
+#      |,4-  ) )-,_. ,\ (  `'-'
+#     '---''(_/--'  `-'\_)
+
+chatgpt --commit-msg  # 或者 cjs -g (在 git 仓库中)
+# e.g. => feat: add `--ascii-art` CLI cmd
 ```
 
 创建本地配置文件（自定义提供程序等）：

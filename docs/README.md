@@ -214,11 +214,22 @@ console.log(await chatgpt.send('sup'))
 
 #### <a href="#-terminal"><img width=16 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@b30a348/assets/images/icons/terminal/black/icon32.png"></a> Terminal:
 
-After setting an API key, ask from your terminal:
+After setting an API key, control from your terminal:
 
 ```bash
 chatgpt --query "sup"  # or cjs -q sup
 # e.g. => Hey there! What's up?
+
+chatgpt --ascii-art "cat"  # or cjs --aa cat
+# e.g. =>
+#
+#       |\      _,,,---,,_
+# ZZZzz /,`.-'`'    -.  ;-;;,_
+#      |,4-  ) )-,_. ,\ (  `'-'
+#     '---''(_/--'  `-'\_)
+
+chatgpt --commit-msg  # or cjs -g (in a git repo)
+# e.g. => feat: add `--ascii-art` CLI cmd
 ```
 
 Create local config file (customize provider, etc.):

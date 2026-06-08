@@ -215,23 +215,22 @@ console.log(await chatgpt.send('sup'))
 
 #### <a href="#-terminal"><img width=16 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@b30a348/assets/images/icons/terminal/black/icon32.png"></a> Terminal:
 
-API 키를 설정한 후, 터미널에서 요청하십시오:
+API 키를 설정한 후, 터미널에서 제어하세요:
 
 ```bash
 chatgpt --query "sup"  # 또는 cjs -q sup
 # e.g. => Hey there! What's up?
-```
 
-로컬 설정 파일 생성 (프로바이더 사용자 지정 등):
+chatgpt --ascii-art "cat"  # 또는 cjs --aa cat
+# e.g. =>
+#
+#       |\      _,,,---,,_
+# ZZZzz /,`.-'`'    -.  ;-;;,_
+#      |,4-  ) )-,_. ,\ (  `'-'
+#     '---''(_/--'  `-'\_)
 
-```bash
-chatgpt init
-```
-
-모든 CLI 옵션 보기:
-
-```bash
-chatgpt --help
+chatgpt --commit-msg  # 또는 cjs -g (git 저장소에서)
+# e.g. => feat: add `--ascii-art` CLI cmd
 ```
 
 더 많은 옵션과 예시는 확장 사용자 가이드를 참조하십시오.

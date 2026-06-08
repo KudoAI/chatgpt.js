@@ -215,11 +215,22 @@ console.log(await chatgpt.send('sup'))
 
 #### <a href="#-terminal"><img width=16 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@b30a348/assets/images/icons/terminal/black/icon32.png"></a> Terminal:
 
-Sau khi thiết lập khóa API, hãy thực hiện yêu cầu từ terminal của bạn:
+Sau khi thiết lập khóa API, hãy điều khiển từ terminal của bạn:
 
 ```bash
 chatgpt --query "sup"  # hoặc cjs -q sup
 # e.g. => Hey there! What's up?
+
+chatgpt --ascii-art "cat"  # hoặc cjs --aa cat
+# e.g. =>
+#
+#       |\      _,,,---,,_
+# ZZZzz /,`.-'`'    -.  ;-;;,_
+#      |,4-  ) )-,_. ,\ (  `'-'
+#     '---''(_/--'  `-'\_)
+
+chatgpt --commit-msg  # hoặc cjs -g (trong một kho lưu trữ git)
+# e.g. => feat: add `--ascii-art` CLI cmd
 ```
 
 Tạo tệp cấu hình cục bộ (tùy chỉnh nhà cung cấp, v.v.):
