@@ -55,31 +55,6 @@ jobs:
             echo $total
           }
           
-          format_total() {
-            local num=$1 ; first_digit="${num:0:1}" second_digit="${num:1:1}"
-            second_digit_rounded=$(( second_digit < 5 ? 0 : 5 ))
-            if (( num >= 1000000000 )) ; then # 1B+ w/ one decimal place
-              formatted_num="$(( num / 1000000000 ))"
-              remainder=$(( (num % 1000000000) / 100000000 ))
-              if (( remainder != 0 )) ; then formatted_num+=".$remainder" ; fi
-              formatted_num+="B+"
-            elif (( num >= 10000000 )) ; then # abbr 10,000,000+ to 999,000,000+
-              formatted_num=$(printf "%'.f+" $((( num / 1000000 ) * 1000000 )))
-            elif (( num >= 1000000 )) ; then # abbr 1,000,000+ to 9,500,000+
-              formatted_num="${first_digit},${second_digit}00,000+"
-            elif (( num >= 100000 )) ; then # abbr 100,000+ to 950,000+
-              formatted_num="${first_digit}${second_digit_rounded}0,000+"
-            elif (( num >= 10000 )) ; then # abbr 10,000+ to 90,000+
-              formatted_num="${first_digit}0,000+"
-            elif (( num >= 1000 )) ; then # abbr 1K to 9.9K
-              formatted_num="$(( num / 1000 ))"
-              remainder=$(( (num % 1000) / 100 ))
-              if (( remainder != 0 )) ; then formatted_num+=".$remainder" ; fi
-              formatted_num+="K"
-            else formatted_num="$num" ; fi # preserve <1K as is
-            echo "$formatted_num"
-          }
-          
           echo "Fetching jsDelivr hits by year:"
           echo "npm/@kudoai/chatgpt.js:"
           npm_hits=$(fetch_all_years "npm/@kudoai/chatgpt.js")
@@ -88,11 +63,10 @@ jobs:
           if [ -z "$npm_hits" ] || [ -z "$gh_hits" ] ; then
             echo "Error getting jsDelivr hits" ; exit 1 ; fi
           total_hits=$((npm_hits + gh_hits))
-          formatted_total=$(format_total "$total_hits")
-          echo "Combined jsDelivr hits: $formatted_total ($npm_hits npm + $gh_hits gh)"
+          echo "Combined jsDelivr hits: $total_hits ($npm_hits npm + $gh_hits gh)"
           for readme in $(find . -name README.md) ; do
             old_readme=$(<"$readme")
-            sed -i "s/\(badge\/[^-]*-\)[0-9.,KMBkmb+]\+\(-2bbbd8\)/\1${formatted_total}\2/gI" "$readme"
+            sed -i "s/\(badge\/[^-]*-\)[0-9.,KMBkmb+]\+\(-2bbbd8\)/\1${total_hits}\2/gI" "$readme"
             new_readme=$(<"$readme")
             if [[ "$old_readme" != "$new_readme" ]] ; then
               shields_updated=true ; echo "Updated: $readme" ; fi
