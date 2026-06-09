@@ -127,9 +127,10 @@ module.exports = {
 
     helpDocsCmdsDocsURL() {
         console.info(`\n${
-            cli.msgs.info_moreHelp}, ${cli.msgs.info_type} ${
+            cli.msgs?.info_moreHelp || 'For more help' }, ${ cli.msgs?.info_type || 'type' } ${
                 colors.bw}${cli.name.split('/')[1]} --<docs|help>${colors.nc} ${
-                cli.msgs.info_or} ${cli.msgs.info_visit}\n${colors.by}${cli.urls.docs.root}/#readme${colors.nc}`
+                cli.msgs?.info_or || 'or' } ${ cli.msgs?.info_visit || 'visit' }\n${
+                colors.by}${cli.urls.docs.root}/#readme${colors.nc}`
         )
     },
 
