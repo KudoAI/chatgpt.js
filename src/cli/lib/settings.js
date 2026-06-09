@@ -134,7 +134,7 @@ module.exports = {
             if (ctrl.parser && !ctrl.parsed) {
                 cli.config[key] = ctrl.parser(configVal) ; ctrl.parsed = true }
 
-            if (ctrl.valRequired != false && configVal == true)
+            if (ctrl.type == 'param' && ctrl.valRequired != false && configVal === true)
                 log.errorAndExit(`[${key}] ${ cli.msgs?.error_requiresVal || 'requires a value' }.`)
 
             if (ctrl.valType) ({
