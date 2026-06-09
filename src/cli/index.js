@@ -8,6 +8,7 @@
 
     globalThis.log = require('./lib/log')
     const chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
+        { resolveSrc } = require('./lib/resolver'),
           run = require('../lib/run')
 
     await init.cli()
@@ -22,14 +23,12 @@
 
     let query = cli.config.joke ? 'Tell me a joke and make it funny.'
               : cli.config.randomAnswer ? 'Generate a single random question on any topic, then answer it.'
-              : cli.config.summarize ? `Summarize the following:\n\n${
-                    require('./lib/string').looksLikePath(cli.config.summarize)
-                        ? require('fs').readFileSync(cli.config.summarize, 'utf8')
-                        : cli.config.summarize }`
+              : cli.config.summarize ? `Summarize the following:\n\n${await resolveSrc(cli.config.summarize)}`
               : cli.config.asciiArt ?
                     `Render a single piece of ascii art of ${
                         typeof cli.config.asciiArt == 'string' ? cli.config.asciiArt : 'a random thing' }.`
-              : cli.msgs.query_hi
+              : await (cli.config.query === true || !cli.config.query ? cli.msgs.query_hi
+              : resolveSrc(cli.config.query))
     if (!cli.config.noSuggest && typeof query == 'string' && query == cli.config.query)
         query += '\n\nThen, at the end of your response, ask user if they want you to do something related to the query'
               + ' except if you are already finishing your response w/ a question.'

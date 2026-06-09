@@ -1,5 +1,6 @@
 const fs = require('fs'),
-      path = require('path')
+      path = require('path'),
+      string = require('../../lib/string')
 
 ;(globalThis.cli ??= {}).config = {}
 
@@ -110,12 +111,15 @@ module.exports = {
             if (ctrl.mode) // set cli.config.mode to mode name
                 cli.config.mode = ctrlKey.replace(/mode$/i, '').toLowerCase()
             else { // init flag/param/cmd cli.config[ctrlKey] val
-                if (ctrl.type == 'param')
-                    cli.config[ctrlKey] =
-                        arg.includes('=') ? arg.split('=')[1]?.trim() || '' // =val
-                      : (i +1 < env.args.length && !env.args[i +1].startsWith('-')) ? env.args[++i] // dashless val
-                      : true // val-less --param passed
-                else // flag/cmd
+                if (ctrl.type == 'param') {
+                    const rawVal = arg.includes('=') ? arg.split('=')[1]?.trim() || ''
+                                 : (i +1 < env.args.length && !env.args[i +1].startsWith('-')) ? env.args[++i]
+                                 : true // val-less --param passed
+                    if (typeof rawVal == 'string' && string.looksLikeURL(rawVal))
+                        cli.config[ctrlKey] = { type: 'url', value: rawVal }
+                    else
+                        cli.config[ctrlKey] = rawVal
+                } else // flag/cmd
                     cli.config[ctrlKey] = true
             }
         }
@@ -139,7 +143,8 @@ module.exports = {
 
             if (ctrl.valType) ({
                 filepath() {
-                    if (configVal && (!ctrl.allowText || require('../../lib/string').looksLikePath(configVal))
+                    if (typeof configVal == 'object' && configVal.type == 'url') return
+                    if (configVal && (!ctrl.allowText || string.looksLikePath(configVal))
                         && !fs.existsSync(configVal)
                     ) log.errorAndExit(`[${key}] ${
                         cli.msgs?.error_invalidFilepath || 'must be a valid existing file path. Got' }: ${configVal}`)
