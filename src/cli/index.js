@@ -34,9 +34,11 @@
               + ' except if you are already finishing your response w/ a question.'
     log.debug(`query = ${query}`)
 
+    if (new RegExp(`^(?:help|${cli.msgs.query_hi})(?:\n|$)`).test(query)) {
+        log.help() ; log.break() }
+
     await run.query(query, { copy: cli.config.copy })
     if (chatgpt.lastProvider) log.debug(`Provider used: ${chatgpt.lastProvider}`)
     if (chatgpt.lastModel) log.debug(`Model used: ${chatgpt.lastModel}`)
-    if (new RegExp(`^(?:help|${cli.msgs.query_hi})(?:\n|$)`).test(query)) log.help()
 
 })()
