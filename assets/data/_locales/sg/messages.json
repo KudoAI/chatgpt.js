@@ -35,6 +35,9 @@
   },
   "warn_noMsgChainToClear": { "message": "A yeke nzoni e sara ye na lege ni ape" },
   "warn_failedToSaveMsgChain": { "message": "Won ti gba penalty lo throwing Gben Gben gben" },
+  "warn_unknownCmd": { "message": "Mbeni zo so a hinga lo pëpe" },
+  "warn_forAvailRun": { "message": "a yeke na lege ni ti tene a sara kua na mbeni" },
+  "data_slashCmds": { "message": "hirondelle commandes" },
   "info_configFile": { "message": "Faïl ti Config" },
   "info_exampleValidConfigFile": { "message": "Tapande ti faïl so ayeke na lege ni" },
   "info_moreHelp": { "message": "Ti mû maboko na mo" },
@@ -48,6 +51,7 @@
   "info_fetchingRemoteConfigFrom": { "message": "Disable alert for Mbeni" },
   "info_copiedToClipboard": { "message": "Gbu li ti mo na ndo ti clipboard" },
   "info_msgChainCleared": { "message": "A yeke na yâ ti mbeni kete kete kete kete kete kete kete kete" },
+  "info_current": { "message": "Ngbene ye na ngoi ti e" },
   "tip_editToSetDefaults": { "message": "Gbian faïl so ti leke ambeni ye so ayeke na lege ni ape" },
   "tip_cliArgsPrioritized": {
     "message": "A yeke lakue na lege ti atënë ti CLI si a yeke hon ndo ti aye so ayeke na yâ ti Bible"
@@ -71,6 +75,7 @@
   },
   "optionDesc_quiet": { "message": "A yeke kanga lege na azo kue ti sara ye na lege ni ape me a yeke gi na lege ni" },
   "optionDesc_init": { "message": "Create config file (na yâ ti projet root)" },
+  "optionDesc_interactive": { "message": "Interactive mode ti kiri na peko" },
   "optionDesc_joke": { "message": "Broke As A Joke;" },
   "optionDesc_randomAnswer": { "message": "Kiri tënë na mbeni hundango tënë so ayeke na lege ni ape" },
   "optionDesc_commitMsg": {

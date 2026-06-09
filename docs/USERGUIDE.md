@@ -97,6 +97,7 @@ Boolean options:
 
 Commands:
  -i, --init                       Create config file (in project root).
+ -I, --interactive                Enter interactive REPL mode.
  -j, --joke                       Tells a funny joke at random.
  -r, --random-answer              Answer a random question.
  -g, --commit-msg                 Generate git commit message from changes and copy to clipboard.

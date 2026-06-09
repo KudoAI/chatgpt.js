@@ -23,6 +23,7 @@ module.exports = {
         noSuggest: { type: 'flag', regex: /^--?(?:A|no[-_]?suggest)$/ },
         quietMode: { type: 'flag', regex: /^--?(?:V|quiet)(?:[-_]?mode)?$/ },
         init: { type: 'cmd', regex: /^-{0,2}i(?:nit)?$/ },
+        interactive: { type: 'cmd', regex: /^--?(?:I|interactive)(?:[-_]?mode)?$/ },
         joke: { type: 'cmd', regex: /^--?j(?:oke)?$/ },
         randomAnswer: { type: 'cmd', regex: /^--?r(?:andom[-_]?answer)?$/ },
         commitMsg: { type: 'cmd', regex: /^--?(?:g|commit[-_]?me?ss?a?ge?)$/ },
@@ -132,7 +133,7 @@ module.exports = {
 
             if (ctrl.valType) ({
                 filepath() {
-                    if (configVal && (!ctrl.allowText || require('./string').looksLikePath(configVal))
+                    if (configVal && (!ctrl.allowText || require('../../lib/string').looksLikePath(configVal))
                         && !fs.existsSync(configVal)
                     ) log.errorAndExit(`[${key}] ${
                         cli.msgs?.error_invalidFilepath || 'must be a valid existing file path. Got' }: ${configVal}`)

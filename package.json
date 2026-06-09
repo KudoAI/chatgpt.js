@@ -70,6 +70,7 @@
     "google ai",
     "gpt",
     "gpt-5",
+    "interactive",
     "javascript",
     "kudoai",
     "library",
@@ -79,7 +80,8 @@
     "nlp",
     "nvidia",
     "openai",
-    "openrouter"
+    "openrouter",
+    "repl"
   ],
   "bugs": "https://github.com/KudoAI/chatgpt.js/issues",
   "dependencies": {

@@ -1,7 +1,7 @@
 const colors = require('./color'),
     { getDownloads, getVer } = require('./pkg'),
       settings = require('./settings'),
-      string = require('./string')
+      string = require('../../lib/string')
 
 const nextMajVer = require('../../../package.json').version.replace(/^(\d+)\..*/, (_, major) => `${ +major +1 }.0.0`)
 
