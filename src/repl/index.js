@@ -5,7 +5,7 @@
 const { start } = require('./lib/start')
 
 if (require.main == module) {
-    globalThis.log = require('../cli/lib/log')
+    globalThis.log = require('../lib/log')
     const init = require('../cli/lib/init')
     init.env()
     init.cli().then(start)

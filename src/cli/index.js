@@ -6,7 +6,7 @@
     const init = require('./lib/init')
     init.env()
 
-    globalThis.log = require('./lib/log')
+    globalThis.log = require('../lib/log')
     const chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
         { resolveSrc } = require('./lib/resolver'),
           run = require('../lib/run')
