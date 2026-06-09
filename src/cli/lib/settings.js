@@ -5,6 +5,7 @@ const fs = require('fs'),
 
 module.exports = {
     configFilename: '.chatgpt.config.mjs',
+    configOnlyKeys: ['autoClear'],
 
     controls: {
         provider: { type: 'param', regex: /^--?p(?:rovider)?(?:[=\s].*|$)/, defaultVal: 'auto' },
@@ -73,13 +74,14 @@ module.exports = {
                 ;(arguments.length ? inputCtrlKeys : Object.keys(fileConfig)).forEach(key => {
                     if (!(key in fileConfig)) return
                     const val = fileConfig[key], ctrl = this.controls[key]
-                    if (!ctrl) {
-                        if (this.configFileKeyWhitelist && !this.configFileKeyWhitelist.includes(key))
+                    if (!ctrl) { // allow config-only keys
+                        if (module.exports.configOnlyKeys?.includes(key)) return cli.config[key] = val
+                        else if (this.configFileKeyWhitelist && !this.configFileKeyWhitelist.includes(key))
                             log.invalidConfigKey(key)
                         return
                     } else if (key.startsWith('legacy_') && ctrl.replacedBy) {
                         if (this.isNegKey(key) != this.isNegKey(ctrl.replacedBy))
-                            cli.config[ctrl.replacedBy] = !val  // assign opposite val to current key
+                            cli.config[ctrl.replacedBy] = !val // assign opposite val to current key
                         else // assign direct val to current key
                             cli.config[ctrl.replacedBy] = val
                         return log.configKeyReplacedBy(key, ctrl.replacedBy, val)

@@ -6,6 +6,7 @@ const msgChainPath = path.join(
     process.env.XDG_CACHE_HOME || path.join(os.homedir(), '.cache'), 'chatgpt.js', 'msgChain.json')
 
 module.exports = {
+    chainPath: msgChainPath,
 
     clearChain() {
         try {

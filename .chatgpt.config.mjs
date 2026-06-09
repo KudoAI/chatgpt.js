@@ -20,5 +20,6 @@ export default {
     // Flags
     copy: false,         // copy CLI response to clipboard
     noSuggest: false,    // don't auto-suggest next AI action at end of CLI response
-    quietMode: false     // suppress all logging except errors
+    quietMode: false,    // suppress all logging except errors
+    autoClear: true      // auto-clear msg chain cache on new terminal sessions
 }
