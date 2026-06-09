@@ -36,6 +36,8 @@
     log.debug(`query = ${query}`)
 
     await run.query(query, { copy: cli.config.copy })
+    if (chatgpt.lastProvider) log.debug(`Provider used: ${chatgpt.lastProvider}`)
+    if (chatgpt.lastModel) log.debug(`Model used: ${chatgpt.lastModel}`)
     if (/^(?:help|hi)(?:\n|$)/.test(query)) log.help()
 
 })()
