@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "דיכוי כל רישומי הרישום למעט שגיאות" },
   "optionDesc_init": { "message": "צור קובץ תצורה (בשורש הפרויקט)" },
   "optionDesc_interactive": { "message": "הזן מצב שחזור אינטראקטיבי" },
-  "optionDesc_joke": { "message": "מספר בדיחה מצחיקה באקראי" },
+  "optionDesc_joke": { "message": "לספר בדיחה" },
   "optionDesc_fortune": { "message": "ספרו את מזלכם" },
   "optionDesc_randomAnswer": { "message": "לענות על שאלה אקראית" },
   "optionDesc_commitMsg": { "message": "צור הודעת git commit משינויים והעתק ללוח" },

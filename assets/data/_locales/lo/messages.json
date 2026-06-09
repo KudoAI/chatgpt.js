@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "ສະກັດກັ້ນການຕັດໄມ້ທັງໝົດ ຍົກເວັ້ນຂໍ້ຜິດພາດ" },
   "optionDesc_init": { "message": "ສ້າງໄຟລ໌ config (ໃນຮາກໂຄງການ)" },
   "optionDesc_interactive": { "message": "ປ້ອນໂໝດສົ່ງຄືນແບບໂຕ້ຕອບ" },
-  "optionDesc_joke": { "message": "ບອກເລື່ອງຕະຫລົກທີ່ ຫນ້າ ຕື່ນຕາຕື່ນໃຈໃນ Random" },
+  "optionDesc_joke": { "message": "Tell a Joke ພາສາອັງກິດ" },
   "optionDesc_fortune": { "message": "ບອກຄວາມຮັ່ງມີຂອງທ່ານ" },
   "optionDesc_randomAnswer": { "message": "ຕອບຄຳຖາມແບບສຸ່ມ" },
   "optionDesc_commitMsg": { "message": "ສ້າງຂໍ້ຄວາມຜູກມັດ git ຈາກການປ່ຽນແປງແລະສໍາເນົາກັບ clipboard" },

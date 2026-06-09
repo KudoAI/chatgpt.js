@@ -73,7 +73,7 @@
   "optionDesc_quiet": { "message": "Cuir às do gach logadh ach a - mhàin mearachdan" },
   "optionDesc_init": { "message": "Cruthaich faidhle rèiteachaidh (ann am freumh a 'phròiseict)" },
   "optionDesc_interactive": { "message": "Cuir a - steach am modh atharrais eadar - ghnìomhach" },
-  "optionDesc_joke": { "message": "Ag innse joke èibhinn aig Random" },
+  "optionDesc_joke": { "message": "Abair fealla - dhà" },
   "optionDesc_fortune": { "message": "Innis dha do bhuannachd" },
   "optionDesc_randomAnswer": { "message": "Freagairt gu Random" },
   "optionDesc_commitMsg": { "message": "Generate git commit message from changes and copy to clipboard" },

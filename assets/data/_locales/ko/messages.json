@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "오류를 제외한 모든 로깅 억제" },
   "optionDesc_init": { "message": "구성 파일 만들기 (프로젝트 루트)" },
   "optionDesc_interactive": { "message": "대화형 REPL 모드로 전환" },
-  "optionDesc_joke": { "message": "무작위로 재미있는 농담을 들려준다." },
+  "optionDesc_joke": { "message": "농담을 해보세요" },
   "optionDesc_fortune": { "message": "재산에 대해 말하기" },
   "optionDesc_randomAnswer": { "message": "무작위 질문에 답하기" },
   "optionDesc_commitMsg": { "message": "변경 사항에서 git 커밋 메시지를 생성하고 클립보드에 복사" },

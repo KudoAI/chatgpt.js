@@ -73,7 +73,7 @@
   "optionDesc_quiet": { "message": "Καταργήστε όλες τις καταγραφές εκτός από τα σφάλματα" },
   "optionDesc_init": { "message": "Δημιουργία αρχείου διαμόρφωσης (στη ρίζα του έργου)" },
   "optionDesc_interactive": { "message": "Είσοδος στη λειτουργία ΔΙΑΔΡΑΣΤΙΚΗΣ ΑΝΑΠΑΡΑΓΩΓΗΣ" },
-  "optionDesc_joke": { "message": "Λέει ένα αστείο ανέκδοτο στην τύχη" },
+  "optionDesc_joke": { "message": "Πες ένα ανέκδοτο" },
   "optionDesc_fortune": { "message": "Πείτε την τύχη σας" },
   "optionDesc_randomAnswer": { "message": "Απαντήστε σε μια τυχαία ερώτηση" },
   "optionDesc_commitMsg": { "message": "Δημιουργία μηνύματος υποβολής git από αλλαγές και αντιγραφή στο πρόχειρο" },

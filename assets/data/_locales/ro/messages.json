@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Suprimați toate înregistrările, cu excepția erorilor" },
   "optionDesc_init": { "message": "Creați fișierul de configurare (în rădăcina proiectului)" },
   "optionDesc_interactive": { "message": "Intrați în modul DE replicare interactivă" },
-  "optionDesc_joke": { "message": "Spune o glumă amuzantă la întâmplare" },
+  "optionDesc_joke": { "message": "Spune o glumă" },
   "optionDesc_fortune": { "message": "Spune-ți norocul" },
   "optionDesc_randomAnswer": { "message": "Răspunde la o întrebare aleatorie" },
   "optionDesc_commitMsg": { "message": "Generați mesajul de comitere git din modificări și copiați în clipboard" },

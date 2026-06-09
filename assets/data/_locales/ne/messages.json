@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "त्रुटिहरू बाहेक सबै लगिङलाई दबाउनुहोस्" },
   "optionDesc_init": { "message": "कन्फिग फाइल सिर्जना गर्नुहोस् (परियोजना मूलमा)" },
   "optionDesc_interactive": { "message": "अन्तरक्रियात्मक आरईपी मोड प्रविष्ट गर्नुहोस्" },
-  "optionDesc_joke": { "message": "अनियमित रूपमा एक हास्यास्पद मजाक बताउँछ" },
+  "optionDesc_joke": { "message": "जोक भन्नुहोस्" },
   "optionDesc_fortune": { "message": "आफ्नो भाग्य बताउनुहोस्" },
   "optionDesc_randomAnswer": { "message": "अनियमित प्रश्नको जवाफ दिनुहोस्" },
   "optionDesc_commitMsg": {

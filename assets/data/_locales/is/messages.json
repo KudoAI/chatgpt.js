@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Slökkva á öllum innskráningum nema villum" },
   "optionDesc_init": { "message": "Búa til stillingarskrá (í frumtexta verkefnis)" },
   "optionDesc_interactive": { "message": "Sláðu inn gagnvirkan REPL HAM" },
-  "optionDesc_joke": { "message": "Segir fyndinn brandara af handahófi" },
+  "optionDesc_joke": { "message": "Segðu brandara" },
   "optionDesc_fortune": { "message": "Segðu frá auðæfum þínum" },
   "optionDesc_randomAnswer": { "message": "Svaraðu handahófskenndri spurningu" },
   "optionDesc_commitMsg": { "message": "Mynda git fremja skilaboð frá breytingum og afrita á klemmuspjald" },

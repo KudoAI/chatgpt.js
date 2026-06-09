@@ -73,7 +73,7 @@
   "optionDesc_quiet": { "message": "Supprimer tous les journaux sauf les erreurs" },
   "optionDesc_init": { "message": "Créer un fichier de configuration (dans la racine du projet)" },
   "optionDesc_interactive": { "message": "Entrer en mode REPL INTERACTIF" },
-  "optionDesc_joke": { "message": "Raconte une blague amusante au hasard" },
+  "optionDesc_joke": { "message": "Raconter une blague" },
   "optionDesc_fortune": { "message": "Racontez votre fortune" },
   "optionDesc_randomAnswer": { "message": "Répondez à une question au hasard" },
   "optionDesc_commitMsg": {

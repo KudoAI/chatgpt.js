@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "ত্রুটি ব্যতীত সমস্ত লগিং দমন করুন" },
   "optionDesc_init": { "message": "কনফিগ ফাইল তৈরি করুন (প্রজেক্ট রুটের মধ্যে)" },
   "optionDesc_interactive": { "message": "ইন্টারেক্টিভ আরএল মোড প্রবেশ করান" },
-  "optionDesc_joke": { "message": "এলোমেলোভাবে একটি মজার রসিকতা বলে" },
+  "optionDesc_joke": { "message": "একটি রসিকতা বলুন" },
   "optionDesc_fortune": { "message": "আপনার ভাগ্য বলুন" },
   "optionDesc_randomAnswer": { "message": "একটি এলোমেলো প্রশ্নের উত্তর দিন" },
   "optionDesc_commitMsg": { "message": "পরিবর্তনগুলি থেকে গিট কমিট বার্তা তৈরি করুন এবং ক্লিপবোর্ডে অনুলিপি করুন" },

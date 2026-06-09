@@ -73,7 +73,7 @@
   "optionDesc_quiet": { "message": "Potlačiť všetky protokoly okrem chýb" },
   "optionDesc_init": { "message": "Vytvoriť konfiguračný súbor (v koreňovom adresári projektu)" },
   "optionDesc_interactive": { "message": "Vstúpiť do režimu INTERAKTÍVNEHO DOPĹŇANIA" },
-  "optionDesc_joke": { "message": "Rozpráva náhodný vtip" },
+  "optionDesc_joke": { "message": "Povedzte vtip" },
   "optionDesc_fortune": { "message": "Povedzte o svojom šťastí" },
   "optionDesc_randomAnswer": { "message": "Odpovedzte na náhodnú otázku" },
   "optionDesc_commitMsg": { "message": "Vygenerovať správu o odovzdaní git zo zmien a skopírovať do schránky" },

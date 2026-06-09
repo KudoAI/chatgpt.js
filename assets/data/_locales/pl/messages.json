@@ -73,7 +73,7 @@
   "optionDesc_quiet": { "message": "Wyłącz wszystkie rejestrowanie z wyjątkiem błędów" },
   "optionDesc_init": { "message": "Utwórz plik konfiguracyjny (w katalogu głównym projektu)" },
   "optionDesc_interactive": { "message": "Wejdź w interaktywny tryb wymiany" },
-  "optionDesc_joke": { "message": "Opowiada śmieszny dowcip na chybił traf" },
+  "optionDesc_joke": { "message": "Opowiedz dowcip" },
   "optionDesc_fortune": { "message": "Przepowiedz swoją przyszłość" },
   "optionDesc_randomAnswer": { "message": "Odpowiedz na losowe pytanie" },
   "optionDesc_commitMsg": { "message": "Wygeneruj wiadomość zatwierdzającą git ze zmian i skopiuj do schowka" },

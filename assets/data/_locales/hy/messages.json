@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Սեղմեք բոլոր տեղեկամատյանները, բացի սխալներից" },
   "optionDesc_init": { "message": "Ստեղծել կոնֆիգուրացիոն ֆայլ (նախագծի արմատում)" },
   "optionDesc_interactive": { "message": "Մուտքագրեք ինտերակտիվ ԿՐԿՆՕՐԻՆԱԿՄԱՆ ՌԵԺԻՄ" },
-  "optionDesc_joke": { "message": "Պատահական կատակ է անում" },
+  "optionDesc_joke": { "message": "Կատակել" },
   "optionDesc_fortune": { "message": "Հայտնեք ձեր բախտը" },
   "optionDesc_randomAnswer": { "message": "Պատասխանել պատահական հարցին" },
   "optionDesc_commitMsg": { "message": "Ստեղծեք git commit հաղորդագրություն փոփոխություններից և պատճենեք աքսեսուար" },

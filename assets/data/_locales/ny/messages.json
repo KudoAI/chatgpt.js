@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Kupondereza mitengo yonse kupatula zolakwika" },
   "optionDesc_init": { "message": "Pangani fayilo ya config (muzu wa polojekiti)" },
   "optionDesc_interactive": { "message": "Lowani njira yolumikizirana ya repl" },
-  "optionDesc_joke": { "message": "Uzani nthabwala yoseketsa mwachisawawa" },
+  "optionDesc_joke": { "message": "Uzani nthabwala" },
   "optionDesc_fortune": { "message": "Uzani mwayi wanu" },
   "optionDesc_randomAnswer": { "message": "Yankhani funso mwachisawawa" },
   "optionDesc_commitMsg": {

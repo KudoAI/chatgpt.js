@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Каталардан башка бардык жазууларды басуу" },
   "optionDesc_init": { "message": "Конфигурация файлын түзүү (долбоордун тамыры менен)" },
   "optionDesc_interactive": { "message": "Интерактивдүү алмаштыруу режимин киргизүү" },
-  "optionDesc_joke": { "message": "Кокусунан күлкүлүү тамашаны айтып берет" },
+  "optionDesc_joke": { "message": "Анекдот айтуу" },
   "optionDesc_fortune": { "message": "Өзүңүздүн байлыгыңызды айтыңыз" },
   "optionDesc_randomAnswer": { "message": "Кокустук суроого жооп берүү" },
   "optionDesc_commitMsg": {

@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Chặn tất cả ghi nhật ký ngoại trừ lỗi" },
   "optionDesc_init": { "message": "Tạo tệp cấu hình (trong thư mục gốc của dự án)" },
   "optionDesc_interactive": { "message": "Vào chế độ REPL tương tác" },
-  "optionDesc_joke": { "message": "Kể một câu chuyện hài hước một cách ngẫu nhiên" },
+  "optionDesc_joke": { "message": "Kể chuyện cười" },
   "optionDesc_fortune": { "message": "Kể về vận may của bạn" },
   "optionDesc_randomAnswer": { "message": "Trả lời một câu hỏi ngẫu nhiên" },
   "optionDesc_commitMsg": { "message": "Tạo tin nhắn cam kết git từ các thay đổi và sao chép vào khay nhớ tạm" },

@@ -73,7 +73,7 @@
   "optionDesc_quiet": { "message": "Hanafoana ny logging rehetra afa-tsy fahadisoana" },
   "optionDesc_init": { "message": "Mamorona raki-kirakira (ao amin'ny fototry ny tetikasa)" },
   "optionDesc_interactive": { "message": "Fomban'ny REPL interactif" },
-  "optionDesc_joke": { "message": "Hilaza ny hanihany mahatsikaiky amin'ny kisendrasendra" },
+  "optionDesc_joke": { "message": "Ilazao vazivazy" },
   "optionDesc_fortune": { "message": "Lazao ny harenanao" },
   "optionDesc_randomAnswer": { "message": "Mamaly fanontaniana kisendrasendra" },
   "optionDesc_commitMsg": {

@@ -73,7 +73,7 @@
   "optionDesc_quiet": { "message": "Потискане на всички записи, с изключение на грешките" },
   "optionDesc_init": { "message": "Създаване на конфигурационен файл (в корена на проекта)" },
   "optionDesc_interactive": { "message": "Влизане в интерактивен РЕЖИМ на презаре" },
-  "optionDesc_joke": { "message": "Разказва забавен виц на случаен принцип" },
+  "optionDesc_joke": { "message": "Разкажете виц" },
   "optionDesc_fortune": { "message": "Разкажете съдбата си" },
   "optionDesc_randomAnswer": { "message": "Отговорете на случаен въпрос" },
   "optionDesc_commitMsg": { "message": "Генериране на git commit съобщение от промените и копиране в клипборда" },

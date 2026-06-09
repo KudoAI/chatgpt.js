@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Atal pob cofnod ac eithrio gwallau" },
   "optionDesc_init": { "message": "Creu ffeil cyfluniad (yn wraidd y cywaith)" },
   "optionDesc_interactive": { "message": "Rhowch y modd ailgyflwyno rhyngweithiol" },
-  "optionDesc_joke": { "message": "Add a Funny Joke" },
+  "optionDesc_joke": { "message": "Add a Joke" },
   "optionDesc_fortune": { "message": "Dywedwch wrth eich ffortiwn" },
   "optionDesc_randomAnswer": { "message": "Ateb cwestiwn ar hap" },
   "optionDesc_commitMsg": { "message": "Creu neges traddodi git o newidiadau a chopïo i'r clipfwrdd" },

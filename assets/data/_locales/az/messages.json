@@ -73,7 +73,7 @@
   "optionDesc_quiet": { "message": "Xətalardan başqa bütün girişləri bağlayın" },
   "optionDesc_init": { "message": "Konfiqurasiya faylı yaradın (layihə kökündə)" },
   "optionDesc_interactive": { "message": "İnteraktiv pul köçürmə REJİMİNİ daxil edin" },
-  "optionDesc_joke": { "message": "Təsadüfi gülməli bir zarafat danışır" },
+  "optionDesc_joke": { "message": "Zarafatla danışın" },
   "optionDesc_fortune": { "message": "Bəxtinizi deyin" },
   "optionDesc_randomAnswer": { "message": "Təsadüfi suala cavab verin" },
   "optionDesc_commitMsg": { "message": "Dəyişikliklərdən git öhdəliyi mesajı yaradın və mübadilə buferinə kopyalayın" },

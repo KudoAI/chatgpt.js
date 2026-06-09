@@ -73,7 +73,7 @@
   "optionDesc_quiet": { "message": "Zatvorite sve evidencije osim grešaka" },
   "optionDesc_init": { "message": "Kreirajte konfiguracijsku datoteku (u korijenu projekta)" },
   "optionDesc_interactive": { "message": "Uđite u interaktivni način rada REPL" },
-  "optionDesc_joke": { "message": "Nasumično ispriča smiješnu šalu" },
+  "optionDesc_joke": { "message": "Ispričajte vic" },
   "optionDesc_fortune": { "message": "Ispričajte svoju sudbinu" },
   "optionDesc_randomAnswer": { "message": "Odgovorite na nasumično pitanje" },
   "optionDesc_commitMsg": { "message": "Generišite git poruku urezivanja iz promjena i kopirajte u međuspremnik" },

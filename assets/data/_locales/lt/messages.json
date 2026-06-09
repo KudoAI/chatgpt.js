@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Slėpti visus registravimus, išskyrus klaidas" },
   "optionDesc_init": { "message": "Sukurti konfigūracijos failą (projekto šaknyje)" },
   "optionDesc_interactive": { "message": "Įjungti interaktyvų REPLIKAVIMO REŽIMĄ" },
-  "optionDesc_joke": { "message": "Atsitiktinai pasakoja juokingą anekdotą" },
+  "optionDesc_joke": { "message": "Papasakokite anekdotą" },
   "optionDesc_fortune": { "message": "Papasakokite savo likimą" },
   "optionDesc_randomAnswer": { "message": "Atsakyti į atsitiktinį klausimą" },
   "optionDesc_commitMsg": { "message": "Generuoti „git commit“ pranešimą iš pakeitimų ir kopijuoti į iškarpinę" },

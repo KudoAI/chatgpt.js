@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Zima ukataji wote wa magogo isipokuwa hitilafu" },
   "optionDesc_init": { "message": "Unda faili ya usanidi (katika mizizi ya mradi)" },
   "optionDesc_interactive": { "message": "Weka hali ya MAINGILIANO ya repl" },
-  "optionDesc_joke": { "message": "Husimulia utani wa kuchekesha bila mpangilio" },
+  "optionDesc_joke": { "message": "Mwambie mzaha" },
   "optionDesc_fortune": { "message": "Mwambie utajiri wako" },
   "optionDesc_randomAnswer": { "message": "Jibu swali la kiholela" },
   "optionDesc_commitMsg": {

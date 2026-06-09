@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Dzvinyirira kutema matanda ese kunze kwekukanganisa" },
   "optionDesc_init": { "message": "Create config file (in project root)" },
   "optionDesc_interactive": { "message": "Enter dyidzana REPL muoti" },
-  "optionDesc_joke": { "message": "Inotaurira kuseka kuseka kusinganzwisisiki" },
+  "optionDesc_joke": { "message": "Udza manyemwe" },
   "optionDesc_fortune": { "message": "Udza mhanza yako" },
   "optionDesc_randomAnswer": { "message": "Pindura mubvunzo usinganzwisisike" },
   "optionDesc_commitMsg": { "message": "Gadzira git commit message from changes and copy to clipboard" },

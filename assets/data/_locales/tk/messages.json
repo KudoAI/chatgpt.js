@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Ýalňyşlyklardan başga ähli ýalňyşlyklary ýok etmek" },
   "optionDesc_init": { "message": "Konfigurasy faýlyny ýarat (projektiň köki bilen)" },
   "optionDesc_interactive": { "message": "Interaktiv üýtgeşik moduna gir" },
-  "optionDesc_joke": { "message": "Ol bir gülümsüji gülümsüji" },
+  "optionDesc_joke": { "message": "Ýene bir şaka" },
   "optionDesc_fortune": { "message": "Öz şan-şöhratyňy aýt" },
   "optionDesc_randomAnswer": { "message": "Galyberse-de, bu soragyň jogabyny tap" },
   "optionDesc_commitMsg": { "message": "Özgertmelerden git commit habaryny ýarat we klipbordda nusga et" },

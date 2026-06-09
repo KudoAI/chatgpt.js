@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Подавление всех журналов, кроме ошибок" },
   "optionDesc_init": { "message": "Создание файла конфигурации (в корне проекта)" },
   "optionDesc_interactive": { "message": "Войти в интерактивный режим REPL" },
-  "optionDesc_joke": { "message": "Рассказать забавную шутку наугад" },
+  "optionDesc_joke": { "message": "Расскажите анекдот" },
   "optionDesc_fortune": { "message": "Рассказать о своей судьбе" },
   "optionDesc_randomAnswer": { "message": "Ответьте на случайный вопрос" },
   "optionDesc_commitMsg": { "message": "Создать сообщение фиксации git из изменений и скопировать в буфер обмена" },

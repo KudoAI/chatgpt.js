@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "ભૂલો સિવાય તમામ લોગીંગને દબાવો" },
   "optionDesc_init": { "message": "રૂપરેખાંકન ફાઇલ બનાવો (પ્રોજેક્ટ રુટમાં)" },
   "optionDesc_interactive": { "message": "ઇન્ટરેક્ટિવ રેપ્લ મોડ દાખલ કરો" },
-  "optionDesc_joke": { "message": "રેન્ડમ સમયે એક રમૂજી મજાક કહે છે" },
+  "optionDesc_joke": { "message": "એક મજાક કહો" },
   "optionDesc_fortune": { "message": "તમારી સંપત્તિ જણાવો" },
   "optionDesc_randomAnswer": { "message": "રેન્ડમ પ્રશ્નનો જવાબ આપો" },
   "optionDesc_commitMsg": { "message": "ફેરફારોમાંથી git કમિટ મેસેજ જનરેટ કરો અને ક્લિપબોર્ડ પર કૉપિ કરો" },

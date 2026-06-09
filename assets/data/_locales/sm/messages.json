@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Suppress logging uma vagana ai mea sese" },
   "optionDesc_init": { "message": "Fausia config faila (i le galuega faatino root)" },
   "optionDesc_interactive": { "message": "Ulufale fegalegaleaiga REPL mode" },
-  "optionDesc_joke": { "message": "Taʻu atu se tausuaga malie i se mea e le masani ai" },
+  "optionDesc_joke": { "message": "Taʻu atu se tausuaga" },
   "optionDesc_fortune": { "message": "Taʻu atu i lou tamaoaiga" },
   "optionDesc_randomAnswer": { "message": "Tali se fesili faafuasei" },
   "optionDesc_commitMsg": { "message": "Fausia git tautino savali mai suiga ma kopi i clipboard" },

@@ -73,7 +73,7 @@
   "optionDesc_quiet": { "message": "Suprimeix tot el registre, excepte els errors" },
   "optionDesc_init": { "message": "Crea un fitxer de configuració (a l'arrel del projecte)" },
   "optionDesc_interactive": { "message": "Accedeix al mode DE replica interactiva" },
-  "optionDesc_joke": { "message": "Explica una broma divertida a l'atzar" },
+  "optionDesc_joke": { "message": "Explica una broma" },
   "optionDesc_fortune": { "message": "Explica la teva fortuna" },
   "optionDesc_randomAnswer": { "message": "Respon una pregunta aleatòria" },
   "optionDesc_commitMsg": {

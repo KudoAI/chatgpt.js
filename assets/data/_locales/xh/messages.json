@@ -75,7 +75,7 @@
   "optionDesc_quiet": { "message": "Cima konke ukungena ngaphandle kweempazamo" },
   "optionDesc_init": { "message": "Yenza ifayile yoqwalaselo (kwingcambu yeprojekthi)" },
   "optionDesc_interactive": { "message": "Faka imowudi YOKUBUYISELA ESEBENZISANAYO" },
-  "optionDesc_joke": { "message": "Ixelela ihlaya elihlekisayo ngokungacwangciswanga" },
+  "optionDesc_joke": { "message": "Chaza into ehlekisayo" },
   "optionDesc_fortune": { "message": "Chaza ithamsanqa lakho" },
   "optionDesc_randomAnswer": { "message": "Phendula umbuzo ongacwangciswanga" },
   "optionDesc_commitMsg": { "message": "Yenza umyalezo we-git commit ovela kutshintsho uze ukope uye kwiklipbhodi" },

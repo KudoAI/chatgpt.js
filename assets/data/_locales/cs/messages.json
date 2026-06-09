@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Potlačit veškeré protokolování kromě chyb" },
   "optionDesc_init": { "message": "Vytvořit konfigurační soubor (v kořenovém adresáři projektu)" },
   "optionDesc_interactive": { "message": "Vstoupit do interaktivního režimu replikace" },
-  "optionDesc_joke": { "message": "Vypráví náhodný vtip" },
+  "optionDesc_joke": { "message": "Vyprávěj vtip" },
   "optionDesc_fortune": { "message": "Prozraď své štěstí" },
   "optionDesc_randomAnswer": { "message": "Odpovězte na náhodnou otázku" },
   "optionDesc_commitMsg": { "message": "Vygenerovat zprávu o revizi git ze změn a zkopírovat do schránky" },

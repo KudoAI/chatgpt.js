@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "禁止所有日志记录，错误除外" },
   "optionDesc_init": { "message": "创建配置文件（在项目根目录中）" },
   "optionDesc_interactive": { "message": "进入交互式REPL模式" },
-  "optionDesc_joke": { "message": "随机讲一个有趣的笑话" },
+  "optionDesc_joke": { "message": "讲个笑话" },
   "optionDesc_fortune": { "message": "告诉你的命运" },
   "optionDesc_randomAnswer": { "message": "随机回答一个问题" },
   "optionDesc_commitMsg": { "message": "根据更改生成git提交消息并复制到剪贴板" },

@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "បង្ក្រាបការកាប់ឈើទាំងអស់លើកលែងតែកំហុស" },
   "optionDesc_init": { "message": "បង្កើត ឯកសារ កំណត់ រចនា សម្ព័ន្ធ (នៅ ក្នុង root គម្រោង)" },
   "optionDesc_interactive": { "message": "បញ្ចូលម៉ូដ REPL អន្តរកម្ម" },
-  "optionDesc_joke": { "message": "និយាយកំប្លែងគួរឱ្យអស់សំណើចដោយចៃដន្យ" },
+  "optionDesc_joke": { "message": "ប្រាប់រឿងកំប្លែង" },
   "optionDesc_fortune": { "message": "ប្រាប់ពីទ្រព្យសម្បត្តិរបស់អ្នក" },
   "optionDesc_randomAnswer": { "message": "ឆ្លើយសំណួរចៃដន្យ" },
   "optionDesc_commitMsg": { "message": "បង្កើត សារ ភ្ជាប់ git ពី ការ ផ្លាស់ប្ដូរ និង ចម្លង ទៅ ក្ដារ តម្បៀត ខ្ទាស់" },

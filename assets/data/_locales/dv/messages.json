@@ -77,7 +77,7 @@
   "optionDesc_quiet": { "message": "ކުށްތައް ފިޔަވައި އެހެން ހުރިހާ ލޮގިންއެއް ހުއްޓުވާ" },
   "optionDesc_init": { "message": "ކޮންފިގް ފައިލް އުފެއްދުން (ޕްރޮޖެކްޓް ރޫޓްގައި)" },
   "optionDesc_interactive": { "message": "އިންޓަރެކްޓިވް ރިޕްލް މޯޑަށް ވަދެވޭނެއެވެ" },
-  "optionDesc_joke": { "message": "ރެންޑަމްކޮށް މަޖާ ސަމާސާއެއް ކިޔައިދެއެވެ" },
+  "optionDesc_joke": { "message": "ސަމާސާއެއް ކިޔާދީބަލަ" },
   "optionDesc_fortune": { "message": "ތިމާގެ ނަސީބު ކިޔައިދީބަލަ" },
   "optionDesc_randomAnswer": { "message": "ރެންޑަމް ސުވާލަކަށް ޖަވާބު ދޭށެވެ" },
   "optionDesc_commitMsg": { "message": "ބަދަލުތަކުން ގިޓް ކޮމިޓް މެސެޖު ޖެނެރޭޓްކޮށް ކްލިޕްބޯޑަށް ކޮޕީކުރުން" },

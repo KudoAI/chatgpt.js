@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "ದೋಷಗಳನ್ನು ಹೊರತುಪಡಿಸಿ ಎಲ್ಲಾ ಲಾಗಿಂಗ್ ಅನ್ನು ನಿಗ್ರಹಿಸಿ" },
   "optionDesc_init": { "message": "ಕಾನ್ಫಿಗರ್ ಫೈಲ್ ರಚಿಸಿ (ಪ್ರಾಜೆಕ್ಟ್ ಮೂಲದಲ್ಲಿ)" },
   "optionDesc_interactive": { "message": "ಸಂವಾದಾತ್ಮಕ REPL ಮೋಡ್ ನಮೂದಿಸಿ" },
-  "optionDesc_joke": { "message": "ಯಾದೃಚ್ಛಿಕವಾಗಿ ತಮಾಷೆಯ ಹಾಸ್ಯವನ್ನು ಹೇಳುತ್ತದೆ" },
+  "optionDesc_joke": { "message": "ಒಂದು ತಮಾಷೆ ಹೇಳಿ" },
   "optionDesc_fortune": { "message": "ನಿಮ್ಮ ಅದೃಷ್ಟವನ್ನು ತಿಳಿಸಿ" },
   "optionDesc_randomAnswer": { "message": "ಯಾದೃಚ್ಛಿಕ ಪ್ರಶ್ನೆಗೆ ಉತ್ತರಿಸಿ" },
   "optionDesc_commitMsg": { "message": "ಬದಲಾವಣೆಗಳಿಂದ git ಬದ್ಧತೆಯ ಸಂದೇಶವನ್ನು ರಚಿಸಿ ಮತ್ತು ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಿ" },

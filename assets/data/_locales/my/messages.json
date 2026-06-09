@@ -75,7 +75,7 @@
   "optionDesc_quiet": { "message": "အမှားအယွင်းများမှလွဲ ၍ လော့ဂ်အင်အားလုံးကိုဖိနှိပ်ပါ" },
   "optionDesc_init": { "message": "Config ဖိုင်ကိုဖန်တီးပါ (ပရောဂျက်အမြစ်တွင်)" },
   "optionDesc_interactive": { "message": "အပြန်အလှန်အကျိုးသက်ရောက်မှုရှိသော REL မုဒ်ကိုထည့်ပါ" },
-  "optionDesc_joke": { "message": "ရယ်စရာ ဟာသတစ်ခုကို ကျပန်းပြောသည်" },
+  "optionDesc_joke": { "message": "ဟာသတစ်ခုပြောပါ" },
   "optionDesc_fortune": { "message": "သင္ ၏ ကံၾကမၼာကို ေျပာျပပါ" },
   "optionDesc_randomAnswer": { "message": "ကျပန်းမေးခွန်းတစ်ခုကိုဖြေပါ" },
   "optionDesc_commitMsg": {

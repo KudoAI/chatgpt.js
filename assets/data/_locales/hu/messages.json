@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Az összes naplózás letiltása a hibák kivételével" },
   "optionDesc_init": { "message": "Konfigurációs fájl létrehozása (a projekt gyökerében)" },
   "optionDesc_interactive": { "message": "Lépjen be az INTERAKTÍV replikálási mód" },
-  "optionDesc_joke": { "message": "Véletlenszerűen mond el egy vicces viccet" },
+  "optionDesc_joke": { "message": "Mondj egy viccet" },
   "optionDesc_fortune": { "message": "Mondd el a jövődet" },
   "optionDesc_randomAnswer": { "message": "Véletlenszerű kérdés megválaszolása" },
   "optionDesc_commitMsg": { "message": "Hozzon létre Git commit üzenetet a változásokból, és másolja a vágólapra" },

@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Tühista kogu logimine, välja arvatud vead" },
   "optionDesc_init": { "message": "Loo konfiguratsioonifail (projekti juurfailis)" },
   "optionDesc_interactive": { "message": "Sisene INTERAKTIIVSESSE REPL-REŽIIMI" },
-  "optionDesc_joke": { "message": "Räägib juhuslikult naljaka nalja" },
+  "optionDesc_joke": { "message": "Räägi nalja" },
   "optionDesc_fortune": { "message": "Räägi oma varandusest" },
   "optionDesc_randomAnswer": { "message": "Vasta juhuslikule küsimusele" },
   "optionDesc_commitMsg": { "message": "Loo muudatustest giti kinnitussõnum ja kopeeri lõikelauale" },

@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Undertrykke al logning undtagen fejl" },
   "optionDesc_init": { "message": "Opret konfigurationsfil (i projektroden)" },
   "optionDesc_interactive": { "message": "Gå ind i INTERAKTIV REFL-TILSTAND" },
-  "optionDesc_joke": { "message": "Fortæller en sjov vittighed tilfældigt" },
+  "optionDesc_joke": { "message": "Fortæl en vittighed" },
   "optionDesc_fortune": { "message": "Fortæl din formue" },
   "optionDesc_randomAnswer": { "message": "Besvar et tilfældigt spørgsmål" },
   "optionDesc_commitMsg": { "message": "Generer git commit besked fra ændringer og kopier til udklipsholder" },

@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Придушити всі журнали, крім помилок" },
   "optionDesc_init": { "message": "Створити файл конфігурації (в корені проекту)" },
   "optionDesc_interactive": { "message": "Увійти в інтерактивний РЕЖИМ REPL" },
-  "optionDesc_joke": { "message": "Розповідає смішний жарт навмання" },
+  "optionDesc_joke": { "message": "Розкажіть жарт" },
   "optionDesc_fortune": { "message": "Розкажіть про своє щастя" },
   "optionDesc_randomAnswer": { "message": "Дайте відповідь на випадкове запитання" },
   "optionDesc_commitMsg": { "message": "Згенерувати git-повідомлення про фіксацію змін і скопіювати в буфер обміну" },

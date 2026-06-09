@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Pugngan ang tanan nga pag-log gawas sa mga sayup" },
   "optionDesc_init": { "message": "Paghimo file sa config (sa root sa proyekto)" },
   "optionDesc_interactive": { "message": "Pagsulod sa interactive REPL mode" },
-  "optionDesc_joke": { "message": "Sultihi ang usa ka kataw-anan nga komedya sa random" },
+  "optionDesc_joke": { "message": "Sultihi ang usa ka joke" },
   "optionDesc_fortune": { "message": "Isulti ang imong kapalaran" },
   "optionDesc_randomAnswer": { "message": "Tubaga ang usa ka sulagma nga pangutana" },
   "optionDesc_commitMsg": { "message": "Paghimo mensahe sa git commit gikan sa mga pagbag-o ug pagkopya sa clipboard" },

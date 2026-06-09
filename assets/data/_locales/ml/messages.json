@@ -75,7 +75,7 @@
   "optionDesc_quiet": { "message": "പിശകുകൾ ഒഴികെ എല്ലാ ലോഗിംഗും അടിച്ചമർത്തുക" },
   "optionDesc_init": { "message": "കോൺഫിഗർ ഫയൽ സൃഷ്ടിക്കുക (പ്രോജക്റ്റ് റൂട്ടിൽ)" },
   "optionDesc_interactive": { "message": "ഇന്ററാക്ടീവ് റീപ് മോഡ് നൽകുക" },
-  "optionDesc_joke": { "message": "ക്രമരഹിതമായ ഒരു തമാശ പറയുന്നു" },
+  "optionDesc_joke": { "message": "ഒരു തമാശ പറയൂ" },
   "optionDesc_fortune": { "message": "നിങ്ങളുടെ ഭാഗ്യം പറയുക" },
   "optionDesc_randomAnswer": { "message": "ഒരു ക്രമരഹിതമായ ചോദ്യത്തിന് ഉത്തരം നൽകുക" },
   "optionDesc_commitMsg": {

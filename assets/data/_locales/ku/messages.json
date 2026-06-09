@@ -75,7 +75,7 @@
   "optionDesc_quiet": { "message": "Hemî têketinê ji bilî xeletiyan bişkînin" },
   "optionDesc_init": { "message": "Pelê mîhengkirinê biafirîne (di rootê projeyê de)" },
   "optionDesc_interactive": { "message": "Bikeve moda REPL ya înteraktîf" },
-  "optionDesc_joke": { "message": "Bi tesadufî henekekî komik dibêje" },
+  "optionDesc_joke": { "message": "Henek bêje" },
   "optionDesc_fortune": { "message": "Bextê xwe bêje" },
   "optionDesc_randomAnswer": { "message": "Bersiva pirseke rasthatî bide" },
   "optionDesc_commitMsg": { "message": "Peyama git commit ji guhertinan çêbike û li clipboardê kopî bike" },

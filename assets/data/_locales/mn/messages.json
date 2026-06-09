@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Алдаанаас бусад бүх бүртгэлийг арилгах" },
   "optionDesc_init": { "message": "Тохиргооны файл үүсгэх (төслийн эхэнд)" },
   "optionDesc_interactive": { "message": "Интерактив репл горимыг оруулна уу" },
-  "optionDesc_joke": { "message": "Хөгжилтэй хошигнолыг санамсаргүй байдлаар өгнө" },
+  "optionDesc_joke": { "message": "Онигоо хэл" },
   "optionDesc_fortune": { "message": "Аз завшаанаа хэлээрэй" },
   "optionDesc_randomAnswer": { "message": "Санамсаргүй асуултад хариулах" },
   "optionDesc_commitMsg": { "message": "Өөрчлөлтөөс мэдэгдэж, товчлуур руу хуулах" },

@@ -73,7 +73,7 @@
   "optionDesc_quiet": { "message": "Poista kaikki kirjaukset paitsi virheet" },
   "optionDesc_init": { "message": "Luo konfigurointitiedosto (projektin juuressa)" },
   "optionDesc_interactive": { "message": "Siirry INTERAKTIIVISEEN REPL-TILAAN" },
-  "optionDesc_joke": { "message": "Kertoo hauskan vitsin sattumanvaraisesti" },
+  "optionDesc_joke": { "message": "Kerro vitsi" },
   "optionDesc_fortune": { "message": "Kerro kohtalosi" },
   "optionDesc_randomAnswer": { "message": "Vastaa satunnaiseen kysymykseen" },
   "optionDesc_commitMsg": { "message": "Luo git-toimitusviesti muutoksista ja kopioi leikepöydälle" },

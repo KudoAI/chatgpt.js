@@ -73,7 +73,7 @@
   "optionDesc_quiet": { "message": "Tur Kuliner di Kuliner Kuliner" },
   "optionDesc_init": { "message": "Crear un archivo config (in proyecto root)" },
   "optionDesc_interactive": { "message": "Entrando na Moda Interactiva" },
-  "optionDesc_joke": { "message": "About Fun Joke At Random" },
+  "optionDesc_joke": { "message": "Reklama na Joke" },
   "optionDesc_fortune": { "message": "Contá tu fortuna" },
   "optionDesc_randomAnswer": { "message": "Responder a Pregunta Casual" },
   "optionDesc_commitMsg": { "message": "SimpanSimpan Informe de Cambio Y Copia Untuk Nanti" },

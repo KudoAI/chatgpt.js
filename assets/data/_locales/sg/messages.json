@@ -81,7 +81,7 @@
   "optionDesc_quiet": { "message": "A yeke kanga lege na azo kue ti sara ye na lege ni ape me a yeke gi na lege ni" },
   "optionDesc_init": { "message": "Create config file (na yâ ti projet root)" },
   "optionDesc_interactive": { "message": "Interactive mode ti kiri na peko" },
-  "optionDesc_joke": { "message": "Broke As A Joke;" },
+  "optionDesc_joke": { "message": "Told You So A Joke" },
   "optionDesc_fortune": { "message": "Fa na mbi mosoro ti mo" },
   "optionDesc_randomAnswer": { "message": "Kiri tënë na mbeni hundango tënë so ayeke na lege ni ape" },
   "optionDesc_commitMsg": {

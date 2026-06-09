@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "ਗਲਤੀਆਂ ਨੂੰ ਛੱਡ ਕੇ ਸਭ ਲਾਗਿੰਗ ਦਬਾਓ" },
   "optionDesc_init": { "message": "ਸੰਰਚਨਾ ਫਾਇਲ ਬਣਾਓ (ਪਰੋਜੈਕਟ ਰੂਟ ਵਿੱਚ)" },
   "optionDesc_interactive": { "message": "ਇੰਟਰਐਕਟਿਵ ਰੀਪ ਮੋਡ ਦਿਓ" },
-  "optionDesc_joke": { "message": "ਬੇਤਰਤੀਬੇ 'ਤੇ ਇੱਕ ਮਜ਼ਾਕੀਆ ਮਜ਼ਾਕ ਦੱਸਦਾ ਹੈ" },
+  "optionDesc_joke": { "message": "ਇੱਕ ਮਜ਼ਾਕ ਦੱਸੋ" },
   "optionDesc_fortune": { "message": "ਆਪਣੀ ਕਿਸਮਤ ਦੱਸੋ" },
   "optionDesc_randomAnswer": { "message": "ਇੱਕ ਬੇਤਰਤੀਬੇ ਸਵਾਲ ਦਾ ਜਵਾਬ ਦਿਓ" },
   "optionDesc_commitMsg": { "message": "ਤਬਦੀਲੀਆਂ ਤੋਂ ਜੀਆਈਟੀ ਕਮਿਟ ਸੁਨੇਹਾ ਤਿਆਰ ਕਰੋ ਅਤੇ ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ" },

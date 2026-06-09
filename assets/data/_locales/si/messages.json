@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "සියලු පිවිසුම් යටපත් කරන්න දෝෂ හැර" },
   "optionDesc_init": { "message": "සැකසුම් ගොනුව සාදන්න (ව් ‍ යාපෘති මූලය තුළ)" },
   "optionDesc_interactive": { "message": "අන්තර්ක් ‍ රියාකාරී REL ප් ‍ රකාරය ඇතුළත් කරන්න" },
-  "optionDesc_joke": { "message": "Funny Joke at Random (විහිලුවක් අහඹු ලෙස)" },
+  "optionDesc_joke": { "message": "විහිළුවක් කියන්න" },
   "optionDesc_fortune": { "message": "ඔබේ ධනය පවසන්න" },
   "optionDesc_randomAnswer": { "message": "අහඹු ප් ‍ රශ්නයකට පිළිතුරු දෙන්න" },
   "optionDesc_commitMsg": { "message": "Generate git commit message from changes and copy to clipboard" },

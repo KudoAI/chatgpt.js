@@ -73,7 +73,7 @@
   "optionDesc_quiet": { "message": "त्रुटियों को छोड़कर सभी लॉगिंग को दबाएं" },
   "optionDesc_init": { "message": "कॉन्फ़िगरेशन फ़ाइल बनाएँ (प्रोजेक्ट रूट में)" },
   "optionDesc_interactive": { "message": "इंटरैक्टिव आरईपी मोड दर्ज करें" },
-  "optionDesc_joke": { "message": "बेतरतीब ढंग से एक मज़ेदार चुटकुला सुनाता है" },
+  "optionDesc_joke": { "message": "एक चुटकुला सुनाएँ" },
   "optionDesc_fortune": { "message": "अपनी किस्मत बताएँ" },
   "optionDesc_randomAnswer": { "message": "किसी बेतरतीब सवाल का जवाब दें" },
   "optionDesc_commitMsg": { "message": "परिवर्तनों से git कमिट मैसेज जनरेट करें और क्लिपबोर्ड पर कॉपी करें" },

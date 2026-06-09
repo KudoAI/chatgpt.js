@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "ከስህተቶች በስተቀር ሁሉንም የመግቢያዎች መሙላት" },
   "optionDesc_init": { "message": "የውቅረት ፋይል ይፍጠሩ (በፕሮጀክት ሥር)" },
   "optionDesc_interactive": { "message": "በይነተገናኝ የምላሽ ሁነታ ያስገቡ" },
-  "optionDesc_joke": { "message": "በዘፈቀደ አስቂኝ ቀልድ ይናገራል" },
+  "optionDesc_joke": { "message": "ቀልድ ይንገሩ" },
   "optionDesc_fortune": { "message": "ብልጽግናህን ንገረው" },
   "optionDesc_randomAnswer": { "message": "የዘፈቀደ ጥያቄ ይመልሱ" },
   "optionDesc_commitMsg": { "message": "GIT ከለውጥ መልዕክትን ይፍጠሩ እና ወደ ክሊፕቦርድ ይቅዱ" },

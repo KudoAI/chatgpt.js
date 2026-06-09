@@ -71,7 +71,7 @@
   "optionDesc_quiet": { "message": "Ғайри хатогӣ ҳамаи қайдкуниҳоро пахш кунед" },
   "optionDesc_init": { "message": "Эҷод кардани файли конфигуратсия (дар решаи лоиҳа)" },
   "optionDesc_interactive": { "message": "Вориди режими ҷавобии интерактивӣ" },
-  "optionDesc_joke": { "message": "Таърих Бознигарии Давомнокии" },
+  "optionDesc_joke": { "message": "Бигӯ масхара" },
   "optionDesc_fortune": { "message": "Ба сарвати худ бигӯед" },
   "optionDesc_randomAnswer": { "message": "Ҷавоб ба саволи тасодуфӣ" },
   "optionDesc_commitMsg": { "message": "Name" },
