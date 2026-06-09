@@ -86,6 +86,7 @@ module.exports = {
             cmds: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_cmds}:${this.colors.nc}`,
                 ` -i, --init                           ${cli.msgs.optionDesc_init}.`,
+                ` -I, --interactive                    ${cli.msgs.optionDesc_interactive}.`,
                 ` -j, --joke                           ${cli.msgs.optionDesc_joke}.`,
                 ` -r, --random-answer                  ${cli.msgs.optionDesc_randomAnswer}.`,
                 ` -g, --commit-msg                     ${cli.msgs.optionDesc_commitMsg}.`,
