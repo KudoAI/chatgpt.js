@@ -230,7 +230,7 @@ chatgpt --ascii-art "cat"  # hoặc cjs --aa cat
 #     '---''(_/--'  `-'\_)
 
 chatgpt --commit-msg  # hoặc cjs -g (trong một kho lưu trữ git)
-# e.g. => feat: add `--ascii-art` CLI cmd
+# e.g. => feat: add `--ascii-art` cli cmd
 ```
 
 Tạo tệp cấu hình cục bộ (tùy chỉnh nhà cung cấp, v.v.):

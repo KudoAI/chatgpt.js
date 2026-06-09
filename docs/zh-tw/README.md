@@ -229,7 +229,7 @@ chatgpt --ascii-art "cat"  # 或者 cjs --aa cat
 #     '---''(_/--'  `-'\_)
 
 chatgpt --commit-msg  # 或者 cjs -g (在 git 倉庫中)
-# e.g. => feat: add `--ascii-art` CLI cmd
+# e.g. => feat: add `--ascii-art` cli cmd
 ```
 
 建立本機設定檔（自訂提供者等）：

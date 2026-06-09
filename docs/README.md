@@ -229,7 +229,7 @@ chatgpt --ascii-art "cat"  # or cjs --aa cat
 #     '---''(_/--'  `-'\_)
 
 chatgpt --commit-msg  # or cjs -g (in a git repo)
-# e.g. => feat: add `--ascii-art` CLI cmd
+# e.g. => feat: add `--ascii-art` cli cmd
 ```
 
 Create local config file (customize provider, etc.):

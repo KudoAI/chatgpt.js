@@ -229,7 +229,7 @@ chatgpt --ascii-art "cat"  # または cjs --aa cat
 #     '---''(_/--'  `-'\_)
 
 chatgpt --commit-msg  # または cjs -g (gitリポジトリ内)
-# 例 => feat: add `--ascii-art` CLI cmd
+# 例 => feat: add `--ascii-art` cli cmd
 ```
 
 その他のオプションや例については、詳細ユーザーガイドをご覧ください。
