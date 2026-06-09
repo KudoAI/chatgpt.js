@@ -4,7 +4,11 @@
       "chat": "https://generativelanguage.googleapis.com/v1beta/models"
     },
     "models": {
-      "free": { "gemini-3.1-flash-lite-preview:generateContent": { "modes": ["text"] }}
+      "free": {
+        "gemini-3.1-flash-lite-preview:generateContent": { // https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-lite
+          "inputTypes": ["text", "image", "video", "audio", "pdf"], "outputTypes": ["text"], "urlContext": true
+        },
+      }
     }
   },
   "openrouter": {
