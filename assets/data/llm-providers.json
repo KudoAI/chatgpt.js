@@ -7,16 +7,6 @@
       "free": { "gemini-3.1-flash-lite-preview:generateContent": { "modes": ["text"] }}
     }
   },
-  "openai": {
-    "endpoints": {
-      "chat": "https://chatgpt.com/backend-api/conversation",
-      "chats": "https://chatgpt.com/backend-api/conversations",
-      "instructions": "https://chatgpt.com/backend-api/user_system_messages",
-      "session": "https://chatgpt.com/api/auth/session",
-      "share": "https://chatgpt.com/backend-api/share",
-      "shareCreate": "https://chatgpt.com/backend-api/share/create"
-    }
-  },
   "openrouter": {
     "endpoints": {
       "chat": "https://openrouter.ai/api/v1/chat/completions"
