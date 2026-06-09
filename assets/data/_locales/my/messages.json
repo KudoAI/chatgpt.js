@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "ဒေသတွင်း အထုပ်ဗားရှင်းကို ဖတ်ရှုရာတွင် ချို့ယွင်းချက်ရှိသည်" },
   "error_notRecognized": { "message": "အသိအမှတ်မပြုပါ" },
   "error_nonPositiveNum": { "message": "0 ကိုသာ အသံုးျပဳႏိုင္ပါသည္ ။" },
+  "error_requiresVal": { "message": "တန်ဖိုးတစ်ခု လိုအပ်သည်" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL မမှန်ကန်ပါ" },

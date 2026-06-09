@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "טעות ביי לייענען לאקאלע פעקעדזש ווערסיע" },
   "error_notRecognized": { "message": "נישט דערקענט" },
   "error_nonPositiveNum": { "message": "אַרגומענט קען נאָר זײַן > 0" },
+  "error_requiresVal": { "message": "פארלאנגט א ווערט" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "אומגילטיק URL" },

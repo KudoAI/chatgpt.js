@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Read Comentario Biblico Con Ap Pake Version" },
   "error_notRecognized": { "message": "no Reconocido" },
   "error_nonPositiveNum": { "message": "por Soledad > 0" },
+  "error_requiresVal": { "message": "mester di un balor" },
   "error_invalidFilepath": { "message": "mester ta un kaminda di archivo eksistente bálido. Tabatin" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Invalididad URL" },

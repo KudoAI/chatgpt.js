@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "مقامی پیکج ورژن پڑھنے میں خرابی" },
   "error_notRecognized": { "message": "پہچانا نہیں گیا" },
   "error_nonPositiveNum": { "message": "دلیل صرف > 0 ہو سکتی ہے" },
+  "error_requiresVal": { "message": "قدر کی ضرورت ہے" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "غلط URL" },

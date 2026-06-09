@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "ས་གནས་ཀྱི་སྦྲེལ་མཐུད ། ཀློག་རྒྱུ་ནོར་འཁྲུལ་བྱུང་འདུག" },
   "error_notRecognized": { "message": "ངོ་མི་ཤེས་པ" },
   "error_nonPositiveNum": { "message": "གྲོས་བསྡུར་བྱེད་ནུས་པ་གཅིག་པུ་> 0" },
+  "error_requiresVal": { "message": "ཚད་གཞི་ཞིག་གཏན་འབེབས་བྱེད་དགོས །" },
   "error_invalidFilepath": { "message": "གནས་ཡོད་པའི་ཡིག་ཆ་ལམ་ངེས་པར་དུ་གནས་དགོས་པ" },
   "error_invalidLangCode": { "message": "སྐད་ཡིག་གི་མིང་།" },
   "error_invalidURL": { "message": "མ་འོས་པའི་དྲ་ཚིགས །" },

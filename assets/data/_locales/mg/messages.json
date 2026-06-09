@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Nisy olana teo am-pamakiana ny kinovan'ny fonosana an-toerana" },
   "error_notRecognized": { "message": "tsy fantatra" },
   "error_nonPositiveNum": { "message": "tsy misy fotoana… Tohiny" },
+  "error_requiresVal": { "message": "mitaky sanda" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL diso" },

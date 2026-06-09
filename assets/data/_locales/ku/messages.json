@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Çewtiya xwendina guhertoya pakêta herêmî" },
   "error_notRecognized": { "message": "nayê naskirin" },
   "error_nonPositiveNum": { "message": "arguman tenê dikare > 0 be" },
+  "error_requiresVal": { "message": "nirxek hewce dike" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL ya nederbasdar" },

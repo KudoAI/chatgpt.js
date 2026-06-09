@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "ލޯކަލް ޕެކޭޖް ވަރޝަން ކިޔުމުގައި ގޯހެއް" },
   "error_notRecognized": { "message": "ޤަބޫލުނުކުރެވޭ" },
   "error_nonPositiveNum": { "message": "އަރގިއުމެންޓް ވާނީ ހަމައެކަނި > 0 އަށެވެ" },
+  "error_requiresVal": { "message": "ބޭނުންވަނީ އަގެވެ" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "ސައްހަ ނޫން ޔޫއާރްއެލް" },

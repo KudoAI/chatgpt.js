@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Khalad akhrinta nooca xirmada maxalliga ah" },
   "error_notRecognized": { "message": "aan la aqoonsaneyn" },
   "error_nonPositiveNum": { "message": "doodu waxay noqon kartaa oo kaliya > 0" },
+  "error_requiresVal": { "message": "waxay u baahan tahay qiime" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Mareeg aan sax ahayn" },

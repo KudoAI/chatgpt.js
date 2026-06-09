@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Bipasha Basu Local Package Version" },
   "error_notRecognized": { "message": "tabeshiba" },
   "error_nonPositiveNum": { "message": "fela Anikulapo Kuti > 0" },
+  "error_requiresVal": { "message": "akabila Value" },
   "error_invalidFilepath": { "message": "fela Anikulapo Kuti Fela Anikulapo Kuti" },
   "error_invalidLangCode": { "message": "ilembo lya lulimi ulushaba na maka" },
   "error_invalidURL": { "message": "URL yabula amaka" },

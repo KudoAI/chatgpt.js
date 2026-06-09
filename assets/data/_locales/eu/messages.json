@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Errorea tokiko paketearen bertsioa irakurtzean" },
   "error_notRecognized": { "message": "EZ DA EZAGUTZEN" },
   "error_nonPositiveNum": { "message": "argumentua 0 baino gehiago izan daiteke" },
+  "error_requiresVal": { "message": "balio bat behar du" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Baliogabeko URLa" },

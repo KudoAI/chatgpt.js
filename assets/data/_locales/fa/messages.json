@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "خطا در خواندن نسخه بسته محلی" },
   "error_notRecognized": { "message": "شناخته نشده است" },
   "error_nonPositiveNum": { "message": "آرگومان فقط می‌تواند بزرگتر از ۰ باشد" },
+  "error_requiresVal": { "message": "نیاز به یک مقدار دارد" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL نامعتبر است" },

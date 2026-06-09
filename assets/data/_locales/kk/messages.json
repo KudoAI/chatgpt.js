@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Жергілікті пакет нұсқасын оқу қатесі" },
   "error_notRecognized": { "message": "мойындалмады" },
   "error_nonPositiveNum": { "message": "аргумент тек > 0 болуы мүмкін" },
+  "error_requiresVal": { "message": "мәнді қажет етеді" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Жарамсыз URL" },

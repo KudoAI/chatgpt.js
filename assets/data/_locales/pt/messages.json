@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Erro ao ler a versão do pacote local" },
   "error_notRecognized": { "message": "Não é reconhecida" },
   "error_nonPositiveNum": { "message": "argumento só pode ser > 0" },
+  "error_requiresVal": { "message": "requer um valor" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Endereço inválido" },

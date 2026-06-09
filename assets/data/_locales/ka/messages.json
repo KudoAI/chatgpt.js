@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "შეცდომა ლოკალური პაკეტის ვერსიის წაკითხვისას მოხდა" },
   "error_notRecognized": { "message": "ფაილის ტიპი ამოუცნობია" },
   "error_nonPositiveNum": { "message": "არგუმენტი შეიძლება იყოს მხოლოდ > 0" },
+  "error_requiresVal": { "message": "მოითხოვს მნიშვნელობას" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "არასწორი URL" },

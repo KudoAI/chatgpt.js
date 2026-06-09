@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Yerli paket versiyasını oxuyarkən xəta baş verdi" },
   "error_notRecognized": { "message": "tanınmayıb" },
   "error_nonPositiveNum": { "message": "arqument yalnız > 0 ola bilər" },
+  "error_requiresVal": { "message": "dəyər tələb edir" },
   "error_invalidFilepath": { "message": "düzgün mövcud fayl yolu olmalıdır. Anladım" },
   "error_invalidLangCode": { "message": "etibarsız dil kodudur" },
   "error_invalidURL": { "message": "Yanlış URL" },

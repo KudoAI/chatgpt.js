@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "உள்ளூர் பேக்கேஜ் பதிப்பைப் படிப்பதில் பிழை" },
   "error_notRecognized": { "message": "அடையாளம் காணப்படவில்லை" },
   "error_nonPositiveNum": { "message": "வாதம் > 0 ஆக மட்டுமே இருக்க முடியும்" },
+  "error_requiresVal": { "message": "ஒரு மதிப்பு தேவை" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "கோப்புப் பெயர் தவறு" },

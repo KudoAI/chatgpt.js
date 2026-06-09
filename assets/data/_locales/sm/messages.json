@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Faitau sese le lomiga afifi i le lotoifale" },
   "error_notRecognized": { "message": "e le o iloa" },
   "error_nonPositiveNum": { "message": "finauga e mafai ona na o > 0" },
+  "error_requiresVal": { "message": "manaomia se taua" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL Invalid" },

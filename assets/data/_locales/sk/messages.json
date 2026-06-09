@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Chyba pri čítaní lokálnej verzie balíka" },
   "error_notRecognized": { "message": "Kód nebol rozpoznaný" },
   "error_nonPositiveNum": { "message": "argument môže byť iba > 0" },
+  "error_requiresVal": { "message": "vyžaduje hodnotu" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Neplatná adresa URL" },

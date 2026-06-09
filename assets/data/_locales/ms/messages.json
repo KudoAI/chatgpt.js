@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Ralat membaca versi pakej tempatan" },
   "error_notRecognized": { "message": "Tidak dikonsikan semula" },
   "error_nonPositiveNum": { "message": "argumen hanya boleh > 0" },
+  "error_requiresVal": { "message": "memerlukan nilai" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL tidak sah" },

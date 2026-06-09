@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "로컬 패키지 버전을 읽는 중 오류 발생" },
   "error_notRecognized": { "message": "인식할 수 없는 파일" },
   "error_nonPositiveNum": { "message": "인수는 > 0이어야 합니다" },
+  "error_requiresVal": { "message": "값 필요" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "잘못된 주소" },

@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "ናይ ከባቢ ፓኬጅ ቅጅል ምንባብ ጌጋ" },
   "error_notRecognized": { "message": "ኣይተፈልጠን ።" },
   "error_nonPositiveNum": { "message": "እቲ ክርክር > 0 ጥራይ እዩ ክኸውን ዝኽእል" },
+  "error_requiresVal": { "message": "ዋጋ የድልዮ" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "ዘይቕቡል URL" },

@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Орон нутгийн багцын хувилбарыг уншихад алдаа гарлаа" },
   "error_notRecognized": { "message": "тодорхойгүй" },
   "error_nonPositiveNum": { "message": "аргумент нь зөвхөн > 0 байж болно" },
+  "error_requiresVal": { "message": "үнэ цэнийг шаарддаг" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Хүчингүй URL" },

@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Lasot lokālās pakotnes versiju, radās kļūda" },
   "error_notRecognized": { "message": "Nav atpazīts" },
   "error_nonPositiveNum": { "message": "arguments var būt tikai > 0" },
+  "error_requiresVal": { "message": "nepieciešama vērtība" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "NederÄ«gs URI:% 1" },

@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "ಸ್ಥಳೀಯ ಪ್ಯಾಕೇಜ್ ಆವೃತ್ತಿಯನ್ನು ಓದುವಲ್ಲಿ ದೋಷ" },
   "error_notRecognized": { "message": "ಗುರುತಿಸಲಾಗಿಲ್ಲ" },
   "error_nonPositiveNum": { "message": "ಆರ್ಗ್ಯುಮೆಂಟ್ ಕೇವಲ > 0 ಆಗಿರಬಹುದು" },
+  "error_requiresVal": { "message": "ಮೌಲ್ಯದ ಅಗತ್ಯವಿದೆ" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "ಅಮಾನ್ಯ URL" },

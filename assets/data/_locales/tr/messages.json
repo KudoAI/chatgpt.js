@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Yerel paket sürümü okunurken hata oluştu" },
   "error_notRecognized": { "message": "tanınmamış" },
   "error_nonPositiveNum": { "message": "argüman sadece > 0 olabilir" },
+  "error_requiresVal": { "message": "bir değer gerektirir" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Adres geçersiz" },

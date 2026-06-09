@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Lỗi khi đọc phiên bản gói cục bộ" },
   "error_notRecognized": { "message": "không được công nhận" },
   "error_nonPositiveNum": { "message": "đối số chỉ có thể là > 0" },
+  "error_requiresVal": { "message": "yêu cầu một giá trị" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL không hợp lệ" },

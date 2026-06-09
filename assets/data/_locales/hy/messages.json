@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Չհաջողվեց կարդալ տեղական փաթեթի տարբերակը" },
   "error_notRecognized": { "message": "ճանաչված չէ" },
   "error_nonPositiveNum": { "message": "փաստարկը կարող է լինել միայն > 0" },
+  "error_requiresVal": { "message": "պահանջում է արժեք" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Անվավեր URL" },

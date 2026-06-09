@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Kanganiso pakuverenga vhezheni yepakeji yemuno" },
   "error_notRecognized": { "message": "haizivikanwe" },
   "error_nonPositiveNum": { "message": "nharo kunogona chete > 0" },
+  "error_requiresVal": { "message": "inoda kukosha" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL isiriyo" },

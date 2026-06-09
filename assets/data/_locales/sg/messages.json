@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Mbeni ye so ayeke na lege ni ape ayeke so a yeke diko ni na yâ ti ambeti" },
   "error_notRecognized": { "message": "a hinga lo pëpe" },
   "error_nonPositiveNum": { "message": "tënë ni alingbi ti duti gi > 0" },
+  "error_requiresVal": { "message": "e yeke na bezoin ti mbeni ye so ayeke kota ye mingi" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL so ayeke na lege ni ape" },

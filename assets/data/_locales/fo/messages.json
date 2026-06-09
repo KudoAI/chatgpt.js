@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Feilur við at lesa lokalu pakkaútgávu" },
   "error_notRecognized": { "message": "ikki viðurkennd" },
   "error_nonPositiveNum": { "message": "argument kann bert vera > 0" },
+  "error_requiresVal": { "message": "tað krevur eitt virði" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Ógildugt URL" },

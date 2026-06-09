@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "पैकेज का लोकल वर्ज़न पढ़ने में गड़बड़ी हुई" },
   "error_notRecognized": { "message": "पहचाना नहीं गया" },
   "error_nonPositiveNum": { "message": "तर्क केवल > 0 हो सकता है" },
+  "error_requiresVal": { "message": "एक मान की आवश्यकता है" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "अमान्य URL" },

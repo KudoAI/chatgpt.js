@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Hitilafu wakati wa kusoma toleo la kifurushi cha" },
   "error_notRecognized": { "message": "haijatambuliwa" },
   "error_nonPositiveNum": { "message": "hoja inaweza tu kuwa > 0" },
+  "error_requiresVal": { "message": "inahitaji thamani" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL si sahihi" },

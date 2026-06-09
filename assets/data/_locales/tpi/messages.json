@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Ol i no inap ritim ol tok bilong ples" },
   "error_notRecognized": { "message": "ol i no save" },
   "error_nonPositiveNum": { "message": "i no gat wanpela samting i stap long dispela hap" },
+  "error_requiresVal": { "message": "yumi mas kisim gutpela samting" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Ol URL i no stret" },

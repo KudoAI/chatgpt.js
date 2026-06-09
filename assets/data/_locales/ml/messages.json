@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "ലോക്കൽ പാക്കേജ് പതിപ്പ് വായിക്കുന്നതിൽ പിശക്" },
   "error_notRecognized": { "message": "തിരിച്ചറിഞ്ഞിട്ടില്ല" },
   "error_nonPositiveNum": { "message": "ആർഗ്യുമെന്റിന് > 0 മാത്രമേ ആകാൻ കഴിയൂ" },
+  "error_requiresVal": { "message": "ഒരു മൂല്യം ആവശ്യമാണ്" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "തെറ്റായ സ്ക്രിപ്റ്റ് നിര്‍ദ്ദേശം" },

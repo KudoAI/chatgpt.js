@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Fout met lees van plaaslike pakketweergawe" },
   "error_notRecognized": { "message": "nie erken nie" },
   "error_nonPositiveNum": { "message": "argument kan net wees > 0" },
+  "error_requiresVal": { "message": "behoefte aan waarde" },
   "error_invalidFilepath": { "message": "moet 'n geldige bestaande lêerpad wees. Het" },
   "error_invalidLangCode": { "message": "is 'n ongeldige taal kode" },
   "error_invalidURL": { "message": "Ongeldige URL" },

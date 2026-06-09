@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Kesalahan membaca versi paket lokal" },
   "error_notRecognized": { "message": "tidak diakui" },
   "error_nonPositiveNum": { "message": "argumen hanya bisa > 0" },
+  "error_requiresVal": { "message": "membutuhkan nilai" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL Tidak Valid" },

@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "读取本地包版本时出错" },
   "error_notRecognized": { "message": "未识别出" },
   "error_nonPositiveNum": { "message": "参数只能大于0" },
+  "error_requiresVal": { "message": "需要一个值" },
   "error_invalidFilepath": { "message": "必须是有效的现有文件路径。已获取" },
   "error_invalidLangCode": { "message": "无效的语言代码" },
   "error_invalidURL": { "message": "无效网址" },

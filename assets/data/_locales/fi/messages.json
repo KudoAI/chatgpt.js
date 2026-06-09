@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Virhe paikallisen paketin version lukemisessa" },
   "error_notRecognized": { "message": "ei tunnistettu" },
   "error_nonPositiveNum": { "message": "argumentti voi olla vain > 0" },
+  "error_requiresVal": { "message": "vaatii arvon" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Virheellinen URL" },

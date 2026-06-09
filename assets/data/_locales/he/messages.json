@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "שגיאה בקריאת גרסת החבילה המקומית" },
   "error_notRecognized": { "message": "לא מזוהה" },
   "error_nonPositiveNum": { "message": "הארגומנט יכול להיות רק > 0" },
+  "error_requiresVal": { "message": "נדרש ערך" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "כתובת לא תקפה" },

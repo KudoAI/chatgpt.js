@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "เกิดข้อผิดพลาดในการอ่านเวอร์ชันแพคเก" },
   "error_notRecognized": { "message": "ไม่ได้รับการยอมรับ" },
   "error_nonPositiveNum": { "message": "อาร์กิวเมนต์สามารถเป็น > 0 เท่านั้น" },
+  "error_requiresVal": { "message": "ต้องมีค่า" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL ไม่ถูกต้อง" },

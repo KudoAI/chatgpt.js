@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Σφάλμα κατά την ανάγνωση της τοπικής έκδοσης πακέτου" },
   "error_notRecognized": { "message": "που δεν αναγνωρίζονται" },
   "error_nonPositiveNum": { "message": "το όρισμα μπορεί να είναι μόνο > 0" },
+  "error_requiresVal": { "message": "απαιτεί μια τιμή" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Μη έγκυρo URL" },

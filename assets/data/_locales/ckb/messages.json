@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "هەڵە لە خوێندنەوەی پاکێجی ناوخۆیی" },
   "error_notRecognized": { "message": "نەناسراوە" },
   "error_nonPositiveNum": { "message": "دەتوانن باشتر بێژەی بکەن ؟ یا بە زاراوەیەکی تر ؟ بێژە کردنی λ0" },
+  "error_requiresVal": { "message": "پێویستی بە بەهایە" },
   "error_invalidFilepath": { "message": "پێویستە ڕێڕەوێکی پەڕگەیی گونجاو بێت" },
   "error_invalidLangCode": { "message": "کۆدی زمانی ناتەواو" },
   "error_invalidURL": { "message": "URLی نەگونجاو" },

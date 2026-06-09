@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Mahalliy paket versiyasini o'qishda xatolik yuz berdi" },
   "error_notRecognized": { "message": "aniqlanmadi" },
   "error_nonPositiveNum": { "message": "argument faqat > 0 bo'lishi mumkin" },
+  "error_requiresVal": { "message": "qiymat talab qiladi" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "KDE qopchiq xizmati" },

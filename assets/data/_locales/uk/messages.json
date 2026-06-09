@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Помилка читання версії локального пакета" },
   "error_notRecognized": { "message": "не розпізнаний" },
   "error_nonPositiveNum": { "message": "аргумент може бути лише > 0" },
+  "error_requiresVal": { "message": "вимагає значення" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Недійсна URL-адреса" },

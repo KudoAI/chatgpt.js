@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Chyba při čtení místní verze balíčku" },
   "error_notRecognized": { "message": "\"Nerozpoznáno\"" },
   "error_nonPositiveNum": { "message": "argument může být pouze > 0" },
+  "error_requiresVal": { "message": "vyžaduje hodnotu" },
   "error_invalidFilepath": { "message": "musí být platná existující cesta k souboru. Mám" },
   "error_invalidLangCode": { "message": "je neplatný jazykový kód" },
   "error_invalidURL": { "message": "Neplatná adresa URL" },

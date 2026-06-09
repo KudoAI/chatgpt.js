@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Mearachd a 'leughadh dreach ionadail a' phacaid" },
   "error_notRecognized": { "message": "gun aithneachadh" },
   "error_nonPositiveNum": { "message": "chan urrainn dha a bhith ach 0" },
+  "error_requiresVal": { "message": "tha feum air luach" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL neo-dhligheach" },

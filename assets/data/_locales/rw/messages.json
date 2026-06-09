@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Porogaramu Verisiyo" },
   "error_notRecognized": { "message": "ntibimenyekana" },
   "error_nonPositiveNum": { "message": "ishobora gusanga ari 0" },
+  "error_requiresVal": { "message": "a Agaciro" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL itemewe" },

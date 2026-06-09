@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "સ્થાનિક પેકેજ સંસ્કરણ વાંચવામાં ભૂલ" },
   "error_notRecognized": { "message": "ઓળખી શકાયું નથી" },
   "error_nonPositiveNum": { "message": "દલીલ ફક્ત > 0 હોઈ શકે છે" },
+  "error_requiresVal": { "message": "મૂલ્યની જરૂર છે" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "અયોગ્ય URL" },

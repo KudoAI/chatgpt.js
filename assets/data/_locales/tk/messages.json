@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Ýerli paket nusgasyny okamakda ýalňyşlyk" },
   "error_notRecognized": { "message": "alymady" },
   "error_nonPositiveNum": { "message": "mysal üçin, 1 sany diňe 1 sany bilen deňeşdirilýär" },
+  "error_requiresVal": { "message": "olar bir gymmatly zady talap edýärler" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Ýalan URL" },

@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "స్థానిక ప్యాకేజీ సంస్కరణను చదవడంలో లోపం" },
   "error_notRecognized": { "message": "గుర్తించబడలేదు" },
   "error_nonPositiveNum": { "message": "ఆర్గ్యుమెంట్ > 0 మాత్రమే ఉంటుంది" },
+  "error_requiresVal": { "message": "విలువ అవసరం" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "చెల్లని URL" },

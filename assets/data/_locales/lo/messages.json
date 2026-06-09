@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "ຜິດພາດໃນການອ່ານລຸ້ນແພັກເກັດໃນທ້ອງຖິ່ນ" },
   "error_notRecognized": { "message": "ບໍ່ຮັບຮູ້" },
   "error_nonPositiveNum": { "message": "ການໂຕ້ຖຽງສາມາດເປັນພຽງແຕ່ > 0" },
+  "error_requiresVal": { "message": "ຮຽກຮ້ອງໃຫ້ມີຄຸນຄ່າ" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL ບໍ່ຖືກຕ້ອງ" },

@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "स्थानीय प्याकेज संस्करण पढ्दा त्रुटि" },
   "error_notRecognized": { "message": "पहिचान नगरिएको" },
   "error_nonPositiveNum": { "message": "तर्क > 0 मात्र हुन सक्छ" },
+  "error_requiresVal": { "message": "एउटा मान चाहिन्छ" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "अवैध यू आर एल" },

@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Phoso fa o bala mofuta wa pakana ya mo lefelong la lona" },
   "error_notRecognized": { "message": "ga a itsiwe" },
   "error_nonPositiveNum": { "message": "ngangisano e ka nna > 0 fela" },
+  "error_requiresVal": { "message": "e tlhoka boleng" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL e e sa siamang" },

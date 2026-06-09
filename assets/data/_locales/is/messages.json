@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Villa við að lesa staðbundna pakkaútgáfu" },
   "error_notRecognized": { "message": "ekki viðurkennt" },
   "error_nonPositiveNum": { "message": "frumbreyta getur aðeins verið > 0" },
+  "error_requiresVal": { "message": "krefst gildis" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Ógild slóð" },

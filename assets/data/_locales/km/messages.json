@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "កំហុស ក្នុង ការ អាន កំណែ កញ្ចប់ មូលដ្ឋាន" },
   "error_notRecognized": { "message": "មិនត្រឹមត្រូវ" },
   "error_nonPositiveNum": { "message": "អាគុយម៉ង់អាចមានតែ > 0" },
+  "error_requiresVal": { "message": "តម្រូវឱ្យមានតម្លៃ" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL មិនត្រឹមត្រូវ" },

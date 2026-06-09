@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Hiba a helyi csomagverzió olvasásakor" },
   "error_notRecognized": { "message": "nem felismerhető" },
   "error_nonPositiveNum": { "message": "argumentum csak > 0 lehet" },
+  "error_requiresVal": { "message": "értéket igényel" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Hibás URL cím" },

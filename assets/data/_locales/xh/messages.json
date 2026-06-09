@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Impazamo yokufunda uhlobo lwephakheji yasekuhlaleni" },
   "error_notRecognized": { "message": "ayibonakali" },
   "error_nonPositiveNum": { "message": "impikiswano inokuba > 0 kuphela" },
+  "error_requiresVal": { "message": "ifuna ixabiso" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": {

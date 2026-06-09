@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Erè lekti vèsyon pakè lokal yo" },
   "error_notRecognized": { "message": "pa rekonèt/pa rekonèt" },
   "error_nonPositiveNum": { "message": "agiman ka sèlman > 0" },
+  "error_requiresVal": { "message": "mande pou yon valè/demande d '" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL ki pa valab" },

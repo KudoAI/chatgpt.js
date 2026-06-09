@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "ローカルパッケージバージョンの読み取り中にエラーが発生しまし" },
   "error_notRecognized": { "message": "認識されていない" },
   "error_nonPositiveNum": { "message": "引数は0以上にする必要があります" },
+  "error_requiresVal": { "message": "値が必要です" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "無効な URL" },

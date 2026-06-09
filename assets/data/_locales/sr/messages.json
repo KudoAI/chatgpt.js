@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Greška pri čitanju verzije lokalnog paketa" },
   "error_notRecognized": { "message": "nije prepoznato" },
   "error_nonPositiveNum": { "message": "argument može biti samo > 0" },
+  "error_requiresVal": { "message": "zahteva vrednost" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Pogrešan URL" },

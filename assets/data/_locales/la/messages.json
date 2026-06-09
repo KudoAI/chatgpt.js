@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Version fenestrare pergere pergere" },
   "error_notRecognized": { "message": "nullus homo" },
   "error_nonPositiveNum": { "message": "argumentum tantum > 0 esse potest" },
+  "error_requiresVal": { "message": "cumque value" },
   "error_invalidFilepath": { "message": "adiquam valida existuntur. Got" },
   "error_invalidLangCode": { "message": "étiquette maliquam linguae" },
   "error_invalidURL": { "message": "Invalidum URL" },

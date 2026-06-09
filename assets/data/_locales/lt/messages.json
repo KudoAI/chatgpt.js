@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Klaida skaitant vietinio paketo versiją" },
   "error_notRecognized": { "message": "neatpažintas" },
   "error_nonPositiveNum": { "message": "argumentas gali būti tik > 0" },
+  "error_requiresVal": { "message": "reikia reikšmės" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Neteisingas URL" },

@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Tuccḍa taɣuri n uḍebsi amezwaru" },
   "error_notRecognized": { "message": "ur yettwassnen ara" },
   "error_nonPositiveNum": { "message": "izmir Izmir > 0" },
+  "error_requiresVal": { "message": "teḥwaǧ azal" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL mačči d tarameγtut" },

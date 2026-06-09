@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Памылка чытання версіі лакальнага пакета" },
   "error_notRecognized": { "message": "Не прызнана" },
   "error_nonPositiveNum": { "message": "аргумент можа быць толькі > 0" },
+  "error_requiresVal": { "message": "патрабуе значэння" },
   "error_invalidFilepath": { "message": "павінен быць сапраўдны існуючы шлях файла" },
   "error_invalidLangCode": { "message": "з 'яўляецца няправільным кодам мовы" },
   "error_invalidURL": { "message": "& Месцазнаходжанне" },

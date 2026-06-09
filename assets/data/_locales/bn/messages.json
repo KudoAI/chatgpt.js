@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "স্থানীয় প্যাকেজ সংস্করণ পড়তে ত্রুটি" },
   "error_notRecognized": { "message": "স্বীকৃত নয়" },
   "error_nonPositiveNum": { "message": "যুক্তি শুধুমাত্র হতে পারে > 0" },
+  "error_requiresVal": { "message": "একটি মান প্রয়োজন" },
   "error_invalidFilepath": { "message": "অবশ্যই একটি বৈধ বিদ্যমান ফাইল পাথ হতে হবে । পেয়েছেন" },
   "error_invalidLangCode": { "message": "একটি অবৈধ ভাষা কোড" },
   "error_invalidURL": { "message": "অবৈধ ইউ- আর- এল" },

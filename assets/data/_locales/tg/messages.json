@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Хатогӣ дар хондани версияи бастаи локалӣ" },
   "error_notRecognized": { "message": "эътироф нашудааст" },
   "error_nonPositiveNum": { "message": "argument can be only > 0" },
+  "error_requiresVal": { "message": "nangangailangan ng halaga" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL- и нодуруст" },

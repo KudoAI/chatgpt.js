@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Sayup sa pagbasa sa lokal nga bersyon sa pakete" },
   "error_notRecognized": { "message": "wala mailhi" },
   "error_nonPositiveNum": { "message": "argumento lang ang pwede > 0" },
+  "error_requiresVal": { "message": "nagkinahanglan og usa ka bili" },
   "error_invalidFilepath": { "message": "kinahanglan nga usa ka balido nga kasamtangan nga file path.GOT" },
   "error_invalidLangCode": { "message": "usa ka Dili Maayo nga Kodigo sa Pinulongan" },
   "error_invalidURL": { "message": "Dili balido nga URL" },

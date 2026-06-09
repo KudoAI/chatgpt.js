@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Te pānui i te putanga o te kohinga ā-rohe" },
   "error_notRecognized": { "message": "e kore e mohiotia" },
   "error_nonPositiveNum": { "message": "ka taea e te tautohetohe anake > 0" },
+  "error_requiresVal": { "message": "e hiahiatia ana he uara" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "PRO Muhu" },

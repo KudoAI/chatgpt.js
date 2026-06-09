@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Fel vid läsning av lokal paketversion" },
   "error_notRecognized": { "message": "ej värderade" },
   "error_nonPositiveNum": { "message": "argument kan bara vara > 0" },
+  "error_requiresVal": { "message": "kräver ett värde" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "Ogiltig URL" },

@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "خطأ في قراءة إصدار الحزمة المحلية" },
   "error_notRecognized": { "message": "غير معترف بها" },
   "error_nonPositiveNum": { "message": "يمكن أن تكون الوسيطة > 0 فقط" },
+  "error_requiresVal": { "message": "تتطلب قيمة" },
   "error_invalidFilepath": { "message": "يجب أن يكون مسار ملف موجود صالح. حصلت" },
   "error_invalidLangCode": { "message": "هو رمز لغة غير صالح" },
   "error_invalidURL": { "message": "الرابط غير صحيح" },
