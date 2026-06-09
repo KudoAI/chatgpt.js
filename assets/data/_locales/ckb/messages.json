@@ -50,6 +50,9 @@
   "info_copiedToClipboard": { "message": "کۆپی ‌ کراوه ‌ بۆ سه ‌ ر کلیپبۆرد" },
   "info_msgChainCleared": { "message": "زنجیرەی پەیام پاککرایەوە" },
   "info_current": { "message": "هەنووکە" },
+  "info_startingInteractiveMode": { "message": "دەستپێکردنی شێوازی کارلێک" },
+  "info_forCmds": { "message": "بۆ فەرمانەکان" },
+  "info_toQuit": { "message": "بۆ وازهێنان" },
   "tip_editToSetDefaults": { "message": "دەستکاریی ئەم پەڕگەیە بکە بۆ دەستکاریکردنی پێشێلکارییەکان" },
   "tip_cliArgsPrioritized": { "message": "قاسملوو هەمیشە ئەو بەهایانە" },
   "helpSection_usage": {

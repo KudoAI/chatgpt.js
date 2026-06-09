@@ -46,6 +46,9 @@
   "info_copiedToClipboard": { "message": "གློག་ཐག་ར་བ་ལུ་འདྲ་བཤུས་འབད།" },
   "info_msgChainCleared": { "message": "བརྡ་འཕྲིན་གྱི་ལྡེ་མིག་ཚུ་གཙང་མ་བཟོ།" },
   "info_current": { "message": "ད་ལྟོའི་" },
+  "info_startingInteractiveMode": { "message": "འབྲེལ་འདྲིས་ཀྱི་རྣམ་ཐར།" },
+  "info_forCmds": { "message": "བཀའ་རྒྱ་ཚུ་" },
+  "info_toQuit": { "message": "བཀོག་བཞག་" },
   "tip_editToSetDefaults": { "message": "འདི་བཟུམ་གྱི་ཡིག་སྣོད་ཚུ་ རང་ལུགས་སྒྲིག་ནི་གི་དོན་ལུ་ བསྒྱུར་བཅོས་འབད་" },
   "tip_cliArgsPrioritized": {
     "message": "CLIགི་རྩོད་གཞི་ཚུ་ ཨ་རྟག་རང་ གོང་གསལ་གྱི་གོང་ཚད་ཚུ་ལས་བརྒལ་ཏེ་ འགྱོ་དོ་ཡོདཔ་ཨིན།"

@@ -52,6 +52,9 @@
   "info_copiedToClipboard": { "message": "Gbu li ti mo na ndo ti clipboard" },
   "info_msgChainCleared": { "message": "A yeke na yâ ti mbeni kete kete kete kete kete kete kete kete" },
   "info_current": { "message": "Ngbene ye na ngoi ti e" },
+  "info_startingInteractiveMode": { "message": "Lege ti sarango lisoro" },
+  "info_forCmds": { "message": "na yâ ti commandement" },
+  "info_toQuit": { "message": "ti o ti wa tẹlẹ" },
   "tip_editToSetDefaults": { "message": "Gbian faïl so ti leke ambeni ye so ayeke na lege ni ape" },
   "tip_cliArgsPrioritized": {
     "message": "A yeke lakue na lege ti atënë ti CLI si a yeke hon ndo ti aye so ayeke na yâ ti Bible"
