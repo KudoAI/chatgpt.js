@@ -19,25 +19,24 @@
       "chat": "https://openrouter.ai/api/v1/chat/completions"
     },
     "models": {
-      "free": [
-        "bytedance-seed/seedream-4.5",
-        "google/gemma-4-26b-a4b-it:free",
-        "google/gemma-4-31b-it:free",
-        "moonshotai/kimi-k2.6:free",
-        "nvidia/nemotron-3-nano-30b-a3b:free",
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-        "nvidia/nemotron-3-super-120b-a12b:free",
-        "nvidia/nemotron-3-ultra-550b-a55b:free",
-        "nvidia/nemotron-nano-9b-v2:free",
-        "nvidia/nemotron-nano-12b-v2-vl:free",
-        "openai/gpt-oss-120b:free",
-        "openai/gpt-oss-20b:free",
-        "openrouter/free",
-        "openrouter/owl-alpha",
-        "poolside/laguna-m.1:free",
-        "poolside/laguna-xs.2:free",
-        "z-ai/glm-4.5-air:free"
-      ]
+      "free": {
+        "bytedance-seed/seedream-4.5": { "modes": ["text"] },
+        "google/gemma-4-26b-a4b-it:free": { "modes": ["text"] },
+        "google/gemma-4-31b-it:free": { "modes": ["text"] },
+        "moonshotai/kimi-k2.6:free": { "modes": ["text"] },
+        "nvidia/nemotron-3-nano-30b-a3b:free": { "modes": ["text"] },
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": { "modes": ["text", "image", "video", "audio"] },
+        "nvidia/nemotron-3-super-120b-a12b:free": { "modes": ["text"] },
+        "nvidia/nemotron-3-ultra-550b-a55b:free": { "modes": ["text"] },
+        "nvidia/nemotron-nano-9b-v2:free": { "modes": ["text"] },
+        "nvidia/nemotron-nano-12b-v2-vl:free": { "modes": ["text", "image", "video"] },
+        "openai/gpt-oss-120b:free": { "modes": ["text"] },
+        "openrouter/free": { "modes": ["text"] },
+        "openrouter/owl-alpha": { "modes": ["text"] },
+        "poolside/laguna-m.1:free": { "modes": ["text"] },
+        "poolside/laguna-xs.2:free": { "modes": ["text"] },
+        "z-ai/glm-4.5-air:free": { "modes": ["text"] }
+      }
     }
   }
 }
