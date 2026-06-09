@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Ճանապարհ դեպի ֆայլ կամ տեքստ ՝ ամփոփելու համար" },
   "optionDesc_asciiArt": { "message": "Ընտրովի առարկայի ASCII արվեստը" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 լեզվի կոդը UI - ում ցուցադրելու համար" },
+  "optionDesc_replyLang": { "message": "Լեզու, որտեղ ԱԻ - ն կպատասխանի" },
   "optionDesc_config": { "message": "Ուղի դեպի անհատականացված կոնֆիգուրացիոն ֆայլ ՝ բեռնելու համար" },
   "optionDesc_maxChars": { "message": "Նիշերի սահմանաչափը մեկ հաղորդագրության համար" },
   "optionDesc_maxTokens": { "message": "Օգտագործման առավելագույն նշաններ" },

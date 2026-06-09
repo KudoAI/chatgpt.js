@@ -69,6 +69,7 @@
   "optionDesc_summarize": { "message": "Lege ti faïl wala ti sara tënë na yâ ti atënë ni" },
   "optionDesc_asciiArt": { "message": "A yeke na lege ti kode ti fango tënë ti kodoro ti Israël." },
   "optionDesc_uiLang": { "message": "ISO 639-1 code ti yanga ti kodoro ti fa UI na" },
+  "optionDesc_replyLang": { "message": "Yanga ti awambongi ayeke mû maboko na e ti kiri tënë na" },
   "optionDesc_config": { "message": "Lege ti gue na ndo ti mbeni ndo so a yeke zia ni na ndo ti mbeni ndo so a yeke" },
   "optionDesc_maxChars": { "message": "A yeke wara atënë ti yâ ti mbeti ni na yâ ti mbeni mbeti" },
   "optionDesc_maxTokens": { "message": "Max tokens ti sara kua na ni" },

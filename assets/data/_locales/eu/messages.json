@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Fitxategirako bidea edo laburbiltzeko testua" },
   "optionDesc_asciiArt": { "message": "Aukerako ikasgaiaren ASCII artea errendatu" },
   "optionDesc_uiLang": { "message": "ISO 639-1 UI bistaratzeko hizkuntzaren kodea" },
+  "optionDesc_replyLang": { "message": "IAk erantzuteko erabilitako hizkuntza" },
   "optionDesc_config": { "message": "Kargatzeko konfigurazio fitxategi pertsonalizatuaren bidea" },
   "optionDesc_maxChars": { "message": "Mezu bakoitzeko karaktere muga" },
   "optionDesc_maxTokens": { "message": "Erabiltzeko gehienezko token kopurua" },

@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Kuri IDOSIYE Cyangwa Umwandiko Kuri Inshamake" },
   "optionDesc_asciiArt": { "message": "Bya Bitari ngombwa Ikivugwaho" },
   "optionDesc_uiLang": { "message": "Kode ya ISO 639-1 y'ururimi rwo kwerekanamo UI" },
+  "optionDesc_replyLang": { "message": "Nandikeshwara to atabira" },
   "optionDesc_config": { "message": "Kuri Kunoza IDOSIYE Kuri Ibirimo" },
   "optionDesc_maxChars": { "message": "Ubutumwa" },
   "optionDesc_maxTokens": { "message": "Kuri Gukoresha" },

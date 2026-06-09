@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Ścieżka do pliku lub tekstu do podsumowania" },
   "optionDesc_asciiArt": { "message": "Renderuj grafikę ASCII przedmiotu fakultatywnego" },
   "optionDesc_uiLang": { "message": "Kod języka ISO 639-1 do wyświetlania interfejsu użytkownika w" },
+  "optionDesc_replyLang": { "message": "Język, w którym sztuczna inteligencja ma odpowiadać" },
   "optionDesc_config": { "message": "Ścieżka do niestandardowego pliku konfiguracyjnego do załadowania" },
   "optionDesc_maxChars": { "message": "Limit znaków na wiadomość" },
   "optionDesc_maxTokens": { "message": "Maksymalna liczba tokenów do użycia" },

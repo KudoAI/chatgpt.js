@@ -63,6 +63,7 @@
   "optionDesc_summarize": { "message": "ཡིག་སྣོད་དང་ ཡིག་སྣོད་ཚུ་ བསྡུ་སྒྲིག་འབད་ནིའི་ལམ་" },
   "optionDesc_asciiArt": { "message": "གདམ་ཁ་ ཁ་སྐོང་ཚུ་སྟོནམ་ཨིན།." },
   "optionDesc_uiLang": { "message": "ཨའི་ཟ་ཨོ་༦༣༩-༡ གི་སྐད་ཡིག་གི་ལྡེ་མིག་འདི་ ཨའི་ཟ་ཨོ་༦༣༩-༡ ལུ་སྟོན་" },
+  "optionDesc_replyLang": { "message": "ཁྱོད་ཀྱིས་ལན་སླབ་དགོ་པའི་སྐད་ཡིག་འདི་" },
   "optionDesc_config": { "message": "རང་ལུགས་སྒྲིག་ཡིག་སྣོད་ལུ་སྣེ་ལེན་འབད་ནིའི་ལམ་" },
   "optionDesc_maxChars": { "message": "འཕྲིན་དོན་རེ་རེ་ལུ་ ཡིག་འབྲུ་གི་ཚད་གཞི་" },
   "optionDesc_maxTokens": { "message": "ལག་ལེན་འཐབ་ནིའི་དོན་ལུ་ ཚད་མཐོའི་རྟགས་ཚུ་" },

@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Cesta k súboru alebo textu na zhrnutie" },
   "optionDesc_asciiArt": { "message": "Vykresliť ASCII umenie voliteľného predmetu" },
   "optionDesc_uiLang": { "message": "Kód jazyka ISO 639-1, v ktorom sa má zobraziť používateľské rozhranie" },
+  "optionDesc_replyLang": { "message": "Jazyk, v ktorom má AI odpovedať" },
   "optionDesc_config": { "message": "Cesta k vlastnému konfiguračnému súboru na načítanie" },
   "optionDesc_maxChars": { "message": "Obmedzenie počtu znakov na správu" },
   "optionDesc_maxTokens": { "message": "Maximálny počet tokenov na použitie" },

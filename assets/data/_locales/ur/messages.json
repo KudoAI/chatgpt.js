@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "خلاصہ کرنے کے لیے فائل یا متن کا راستہ" },
   "optionDesc_asciiArt": { "message": "اختیاری مضمون کا ASCII آرٹ رینڈر کریں" },
   "optionDesc_uiLang": { "message": "UI ظاہر کرنے کے لیے ISO 639-1 زبان کا کوڈ" },
+  "optionDesc_replyLang": { "message": "AI کو جواب دینے کے لیے زبان" },
   "optionDesc_config": { "message": "لوڈ کرنے کے لیے کسٹم کنفیگ فائل کا راستہ" },
   "optionDesc_maxChars": { "message": "فی پیغام کریکٹر کی حد" },
   "optionDesc_maxTokens": { "message": "استعمال کرنے کے لیے زیادہ سے زیادہ ٹوکنز" },

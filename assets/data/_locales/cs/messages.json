@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Cesta k souboru nebo textu pro shrnutí" },
   "optionDesc_asciiArt": { "message": "Vykreslit ASCII umění volitelného předmětu" },
   "optionDesc_uiLang": { "message": "Kód jazyka ISO 639-1 pro zobrazení uživatelského rozhraní" },
+  "optionDesc_replyLang": { "message": "Jazyk, ve kterém má umělá inteligence odpovědět" },
   "optionDesc_config": { "message": "Cesta k vlastnímu konfiguračnímu souboru k načtení" },
   "optionDesc_maxChars": { "message": "Limit počtu znaků na zprávu" },
   "optionDesc_maxTokens": { "message": "Maximální počet žetonů k použití" },

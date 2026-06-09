@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Pfad zur Datei oder Text zur Zusammenfassung" },
   "optionDesc_asciiArt": { "message": "ASCII-Kunst des optionalen Fachs rendern" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Sprachcode zur Anzeige der Benutzeroberfläche in" },
+  "optionDesc_replyLang": { "message": "Sprache, in der die KI antworten kann" },
   "optionDesc_config": { "message": "Pfad zur benutzerdefinierten Konfigurationsdatei zum Laden" },
   "optionDesc_maxChars": { "message": "Zeichenlimit pro Nachricht" },
   "optionDesc_maxTokens": { "message": "Max. zu verwendende Token" },

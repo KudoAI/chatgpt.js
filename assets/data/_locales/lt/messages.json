@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Kelias iki failo arba teksto, kurį reikia apibendrinti" },
   "optionDesc_asciiArt": { "message": "Atvaizduoti ASCII pasirenkamo dalyko meną" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kalbos kodas, skirtas vartotojo sąsajai rodyti" },
+  "optionDesc_replyLang": { "message": "Kalba, kuria DI turi atsakyti" },
   "optionDesc_config": { "message": "Kelias iki pasirinktinio konfigūracijos failo įkėlimui" },
   "optionDesc_maxChars": { "message": "Žinučių simbolių limitas" },
   "optionDesc_maxTokens": { "message": "Maks. naudojamų žetonų skaičius" },

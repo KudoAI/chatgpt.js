@@ -63,6 +63,7 @@
   "optionDesc_summarize": { "message": "Xulosa qilish uchun fayl yoki matnga yo'l" },
   "optionDesc_asciiArt": { "message": "Ixtiyoriy mavzuning ASCII rasmini renderlash" },
   "optionDesc_uiLang": { "message": "UI ni ko'rsatish uchun ISO 639-1 til kodi" },
+  "optionDesc_replyLang": { "message": "Sun'iy intellekt javob beradigan til" },
   "optionDesc_config": { "message": "Yuklanadigan maxsus konfiguratsiya fayliga yo'l" },
   "optionDesc_maxChars": { "message": "Har bir xabar uchun belgilar chegarasi" },
   "optionDesc_maxTokens": { "message": "Foydalanish uchun maksimal tokenlar" },

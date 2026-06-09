@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Calea către fișier sau text de rezumat" },
   "optionDesc_asciiArt": { "message": "Redați arta ASCII a subiectului opțional" },
   "optionDesc_uiLang": { "message": "Codul ISO 639-1 al limbii pentru afișarea UI în" },
+  "optionDesc_replyLang": { "message": "Limba în care AI poate răspunde" },
   "optionDesc_config": { "message": "Calea către fișierul de configurare personalizat pentru încărcare" },
   "optionDesc_maxChars": { "message": "Limită de caractere per mesaj" },
   "optionDesc_maxTokens": { "message": "Numărul maxim de jetoane de utilizat" },

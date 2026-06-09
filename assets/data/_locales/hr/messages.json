@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Put do datoteke ili teksta za sažimanje" },
   "optionDesc_asciiArt": { "message": "Iscrtajte ASCII umjetnost neobaveznog predmeta" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kod jezika za prikaz korisničkog sučelja u" },
+  "optionDesc_replyLang": { "message": "Jezik na kojem umjetna inteligencija može odgovoriti" },
   "optionDesc_config": { "message": "Putanja do prilagođene konfiguracijske datoteke za učitavanje" },
   "optionDesc_maxChars": { "message": "Ograničenje broja znakova po poruci" },
   "optionDesc_maxTokens": { "message": "Maksimalan broj žetona za upotrebu" },

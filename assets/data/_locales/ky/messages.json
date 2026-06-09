@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Undo-type" },
   "optionDesc_asciiArt": { "message": "Кошумча предметтин ASCII искусствосун көрсөтүү" },
   "optionDesc_uiLang": { "message": "ISO 639-1 тил коду UI көрсөтүү үчүн" },
+  "optionDesc_replyLang": { "message": "Жооп берүүчү AI үчүн тил" },
   "optionDesc_config": { "message": "Undo-type" },
   "optionDesc_maxChars": { "message": "Undo-type" },
   "optionDesc_maxTokens": { "message": "Колдонуу үчүн макс токендер" },

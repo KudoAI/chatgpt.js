@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Διαδρομή προς αρχείο ή κείμενο για σύνοψη" },
   "optionDesc_asciiArt": { "message": "Απόδοση ASCII τέχνης προαιρετικού μαθήματος" },
   "optionDesc_uiLang": { "message": "Κωδικός γλώσσας ISO 639-1 για εμφάνιση διεπαφής χρήστη σε" },
+  "optionDesc_replyLang": { "message": "Γλώσσα στην οποία μπορεί να απαντήσει η τεχνητή νοημοσύνη" },
   "optionDesc_config": { "message": "Διαδρομή προς προσαρμοσμένο αρχείο διαμόρφωσης για φόρτωση" },
   "optionDesc_maxChars": { "message": "Όριο χαρακτήρων ανά μήνυμα" },
   "optionDesc_maxTokens": { "message": "Μέγιστος αριθμός μαρκών για χρήση" },

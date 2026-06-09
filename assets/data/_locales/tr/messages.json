@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Dosya yolu veya özetlenecek metin" },
   "optionDesc_asciiArt": { "message": "İsteğe bağlı konunun ASCII sanatını işleyin" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 kullanıcı arayüzünü görüntülemek için dil kodu" },
+  "optionDesc_replyLang": { "message": "Yapay zekanın yanıtlayacağı dil" },
   "optionDesc_config": { "message": "Yüklenecek özel yapılandırma dosyasının yolu" },
   "optionDesc_maxChars": { "message": "Mesaj başına karakter limiti" },
   "optionDesc_maxTokens": { "message": "Kullanılacak maksimum jeton" },

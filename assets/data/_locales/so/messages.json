@@ -63,6 +63,7 @@
   "optionDesc_summarize": { "message": "Jidka faylka ama qoraalka si loo soo koobo" },
   "optionDesc_asciiArt": { "message": "Farshaxanka Render ASCII ee mawduuca ikhtiyaarka ah" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code luqadda si ay u muujiyaan UI in" },
+  "optionDesc_replyLang": { "message": "Luuqada loogu talagalay AI si looga jawaabo" },
   "optionDesc_config": { "message": "Jidka si loo habeeyo faylka si loo raro" },
   "optionDesc_maxChars": { "message": "Xadka astaamaha fariin kasta" },
   "optionDesc_maxTokens": { "message": "Calaamadaha Max si ay u isticmaalaan" },

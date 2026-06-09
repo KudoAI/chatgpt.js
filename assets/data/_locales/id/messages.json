@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Jalur ke file atau teks untuk diringkas" },
   "optionDesc_asciiArt": { "message": "Render seni ASCII subjek opsional" },
   "optionDesc_uiLang": { "message": "Kode bahasa ISO 639 -1 untuk menampilkan UI di" },
+  "optionDesc_replyLang": { "message": "Bahasa untuk AI membalas dalam" },
   "optionDesc_config": { "message": "Jalur ke file konfigurasi kustom untuk dimuat" },
   "optionDesc_maxChars": { "message": "Batas karakter per pesan" },
   "optionDesc_maxTokens": { "message": "Token maksimum yang akan digunakan" },

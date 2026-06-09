@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "સારાંશ આપવા માટે ફાઇલ અથવા ટેક્સ્ટનો પાથ" },
   "optionDesc_asciiArt": { "message": "વૈકલ્પિક વિષયની ASCII આર્ટ રેન્ડર કરો" },
   "optionDesc_uiLang": { "message": "UI પ્રદર્શિત કરવા માટે ISO 639-1 કોડ ઓફ લેંગ્વેજ" },
+  "optionDesc_replyLang": { "message": "AI ને જવાબ આપવા માટે ભાષા" },
   "optionDesc_config": { "message": "લોડ કરવા માટે કસ્ટમ રૂપરેખાંકન ફાઇલનો પાથ" },
   "optionDesc_maxChars": { "message": "સંદેશ દીઠ અક્ષર મર્યાદા" },
   "optionDesc_maxTokens": { "message": "વાપરવા માટે મહત્તમ ટોકન્સ" },

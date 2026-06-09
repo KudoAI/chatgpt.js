@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Роҳча ба файл ё матн барои ҷамъбаст" },
   "optionDesc_asciiArt": { "message": "Рендер ASCII санъат субъекти ихтиёрӣ" },
   "optionDesc_uiLang": { "message": "ISO 639-1 рамзи забон барои намоиши UI дар" },
+  "optionDesc_replyLang": { "message": "Забон барои AI барои ҷавоб додан дар" },
   "optionDesc_config": { "message": "Роҳча барои боркунии файли танзимоти фармоишӣ" },
   "optionDesc_maxChars": { "message": "Маҳдудияти аломат барои як иттилоот" },
   "optionDesc_maxTokens": { "message": "Ð  Ð ° Ð ¼ Ð ¾ Ð ¸ Ñ" },

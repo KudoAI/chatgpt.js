@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Az összegezendő fájl vagy szöveg elérési útja" },
   "optionDesc_asciiArt": { "message": "Opcionális téma ASCII-művészetének leképezése" },
   "optionDesc_uiLang": { "message": "A felhasználói felület megjelenítéséhez használt nyelv ISO 639-1 kódja" },
+  "optionDesc_replyLang": { "message": "A mesterséges intelligencia válaszának nyelve" },
   "optionDesc_config": { "message": "A betöltendő egyéni konfigurációs fájl elérési útja" },
   "optionDesc_maxChars": { "message": "Karakterkorlát üzenetenként" },
   "optionDesc_maxTokens": { "message": "Maximálisan használható tokenek" },

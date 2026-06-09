@@ -63,6 +63,7 @@
   "optionDesc_summarize": { "message": "Xülasə etmək üçün fayla və ya mətnə gedən yol" },
   "optionDesc_asciiArt": { "message": "ASCII incəsənətinin qeyri-məcburi predmetini göstərin" },
   "optionDesc_uiLang": { "message": "İSO 639-1-də UI-nı göstərmək üçün dilin kodu" },
+  "optionDesc_replyLang": { "message": "Cavab vermək üçün AI dili" },
   "optionDesc_config": { "message": "Yükləmək üçün xüsusi konfiqurasiya faylına gedən yol" },
   "optionDesc_maxChars": { "message": "Hər mesaj üçün xarakter limiti" },
   "optionDesc_maxTokens": { "message": "İstifadə etmək üçün maksimum işarə" },

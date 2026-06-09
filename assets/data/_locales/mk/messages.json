@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Патека до датотеката или текст за сумирање" },
   "optionDesc_asciiArt": { "message": "Изложба на Ascii уметност на факултативен предмет" },
   "optionDesc_uiLang": { "message": "ISO 639-1 код на јазик за прикажување на UI во" },
+  "optionDesc_replyLang": { "message": "Јазик на кој ВИ може да одговори" },
   "optionDesc_config": { "message": "Патека до приспособена конфигурациска датотека за вчи" },
   "optionDesc_maxChars": { "message": "Ограничување на знаци по порака" },
   "optionDesc_maxTokens": { "message": "Максимален број на жетони за користење" },

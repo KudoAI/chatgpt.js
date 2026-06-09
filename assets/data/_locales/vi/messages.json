@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Đường dẫn đến tệp hoặc văn bản để tóm tắt" },
   "optionDesc_asciiArt": { "message": "Kết xuất nghệ thuật ASCII của đối tượng tùy chọn" },
   "optionDesc_uiLang": { "message": "Mã ngôn ngữ ISO 639-1 để hiển thị giao diện người dùng trong" },
+  "optionDesc_replyLang": { "message": "Ngôn ngữ để AI trả lời trong" },
   "optionDesc_config": { "message": "Đường dẫn đến tệp cấu hình tùy chỉnh để tải" },
   "optionDesc_maxChars": { "message": "Giới hạn ký tự cho mỗi tin nhắn" },
   "optionDesc_maxTokens": { "message": "Mã thông báo tối đa để sử dụng" },

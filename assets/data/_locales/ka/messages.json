@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Ფაილის ან ტექსტის შეჯამების ბილიკი" },
   "optionDesc_asciiArt": { "message": "Არასავალდებულო სუბიექტის ASCII ხელოვნების რენდერი" },
   "optionDesc_uiLang": { "message": "ISO 639-1 ენის კოდი UI-ს საჩვენებლად" },
+  "optionDesc_replyLang": { "message": "Ენა ხელოვნური ინტელექტისთვის პასუხის გასაცემად" },
   "optionDesc_config": { "message": "Ჩასატვირთი მორგებული კონფიგურაციის ფაილისკენ მიმავალი ბილი" },
   "optionDesc_maxChars": { "message": "Სიმბოლოს ლიმიტი თითოეულ შეტყობინებაზე" },
   "optionDesc_maxTokens": { "message": "Გამოსაყენებელი მაქსიმალური ტოკენები" },

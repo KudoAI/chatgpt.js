@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Veg til fílu ella tekst at taka saman" },
   "optionDesc_asciiArt": { "message": "Ger ASCII listina av valligum evnum" },
   "optionDesc_uiLang": { "message": "ISO 639-1 málkód at vísa UI í" },
+  "optionDesc_replyLang": { "message": "Tað er ikki neyðugt at seta seg í samband við" },
   "optionDesc_config": { "message": "Gøtur til vanligar konfiguratiónar fílu til at lata" },
   "optionDesc_maxChars": { "message": "Karaktermarki fyri boð" },
   "optionDesc_maxTokens": { "message": "Max tokens at brúka" },

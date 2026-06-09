@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Slóð að skrá eða texti til að draga saman" },
   "optionDesc_asciiArt": { "message": "Render ASCII art of optional subject" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kóði tungumáls til að sýna notendaviðmót í" },
+  "optionDesc_replyLang": { "message": "Tungumál fyrir gervigreind til að svara á" },
   "optionDesc_config": { "message": "Slóð að sérsniðinni grunnstillingarskrá til að hlaða inn" },
   "optionDesc_maxChars": { "message": "Stafatakmörk fyrir hver skilaboð" },
   "optionDesc_maxTokens": { "message": "Hámarksmerki til notkunar" },

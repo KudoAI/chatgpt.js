@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Ala i ka faila a i ʻole kikokikona e hōʻuluʻulu manaʻo" },
   "optionDesc_asciiArt": { "message": "Hoʻopuka i ke kiʻi ASCII o ke kumuhana koho" },
   "optionDesc_uiLang": { "message": "ʻO ke code ʻōlelo ISO 639-1 e hōʻike i ka UI ma" },
+  "optionDesc_replyLang": { "message": "ʻŌlelo no AI e pane mai ai" },
   "optionDesc_config": { "message": "Ala i ka faila hoʻonohonoho maʻamau e hoʻouka" },
   "optionDesc_maxChars": { "message": "Ka palena o nā huapalapala no kēlā me kēia leka" },
   "optionDesc_maxTokens": { "message": "Nā hōʻailona kiʻekiʻe loa e hoʻohana ai" },

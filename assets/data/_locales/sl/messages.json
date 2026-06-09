@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Pot do datoteke ali besedila za povzemanje" },
   "optionDesc_asciiArt": { "message": "Upodobi umetnost ASCII izbirnega predmeta" },
   "optionDesc_uiLang": { "message": "Koda jezika ISO 639-1 za prikaz uporabniškega vmesnika v" },
+  "optionDesc_replyLang": { "message": "Jezik, v katerem naj umetna inteligenca odgovori v" },
   "optionDesc_config": { "message": "Pot do konfiguracijske datoteke po meri za nalaganje" },
   "optionDesc_maxChars": { "message": "Omejitev znakov na sporočilo" },
   "optionDesc_maxTokens": { "message": "Največ žetonov za uporabo" },

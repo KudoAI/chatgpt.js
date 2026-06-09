@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Sti til fil eller tekst som skal oppsummeres" },
   "optionDesc_asciiArt": { "message": "Gjengi ASCII-grafikk av valgfritt emne" },
   "optionDesc_uiLang": { "message": "ISO 639-1-kode for språk som skal vises brukergrensesnitt i" },
+  "optionDesc_replyLang": { "message": "Språk som AI skal bruke til å svare" },
   "optionDesc_config": { "message": "Sti til tilpasset konfigurasjonsfil som skal lastes inn" },
   "optionDesc_maxChars": { "message": "Tegngrense per melding" },
   "optionDesc_maxTokens": { "message": "Maksimalt antall tokener å bruke" },

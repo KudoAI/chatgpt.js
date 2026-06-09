@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "ಫೈಲ್‌ಗೆ ಮಾರ್ಗ ಅಥವಾ ಸಾರಾಂಶಕ್ಕೆ ಪಠ್ಯ" },
   "optionDesc_asciiArt": { "message": "ಐಚ್ಛಿಕ ವಿಷಯದ ASCII ಕಲೆಯನ್ನು ಒದಗಿಸಿ" },
   "optionDesc_uiLang": { "message": "UI ಅನ್ನು ಪ್ರದರ್ಶಿಸಲು ISO 639-1 ಭಾಷೆಯ ಸಂಕೇತ" },
+  "optionDesc_replyLang": { "message": "ಪ್ರತ್ಯುತ್ತರಿಸಲು AI ಗಾಗಿ ಭಾಷೆ" },
   "optionDesc_config": { "message": "ಲೋಡ್ ಮಾಡಲು ಕಸ್ಟಮ್ ಕಾನ್ಫಿಗರೇಶನ್ ಫೈಲ್‌ಗೆ ಮಾರ್ಗ" },
   "optionDesc_maxChars": { "message": "ಪ್ರತಿ ಸಂದೇಶಕ್ಕೆ ಅಕ್ಷರ ಮಿತಿ" },
   "optionDesc_maxTokens": { "message": "ಬಳಸಲು ಗರಿಷ್ಠ ಟೋಕನ್‌ಗಳು" },

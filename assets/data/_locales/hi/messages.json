@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "संक्षेप में फ़ाइल या टेक्स्ट का पथ" },
   "optionDesc_asciiArt": { "message": "वैकल्पिक विषय की ASCII कला प्रस्तुत करें" },
   "optionDesc_uiLang": { "message": "यूआई प्रदर्शित करने के लिए भाषा का आईएसओ 639 -1 कोड" },
+  "optionDesc_replyLang": { "message": "जवाब देने के लिए AI की भाषा" },
   "optionDesc_config": { "message": "लोड करने के लिए कस्टम कॉन्फ़िगरेशन फ़ाइल का पथ" },
   "optionDesc_maxChars": { "message": "कैरेक्टर लिमिट प्रति मैसेज" },
   "optionDesc_maxTokens": { "message": "इस्तेमाल करने के लिए अधिकतम टोकन" },

@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "संक्षेप गर्न फाइल वा पाठको बाटो" },
   "optionDesc_asciiArt": { "message": "वैकल्पिक विषयको ASCII कला रेन्डर गर्नुहोस्" },
   "optionDesc_uiLang": { "message": "UI प्रदर्शन गर्न भाषाको ISO 639 -1 कोड" },
+  "optionDesc_replyLang": { "message": "AI को जवाफ दिने भाषा" },
   "optionDesc_config": { "message": "लोड गर्न अनुकूल कन्फिग फाइलको बाटो" },
   "optionDesc_maxChars": { "message": "प्रति सन्देश क्यारेक्टर सीमा" },
   "optionDesc_maxTokens": { "message": "प्रयोग गरिने अधिकतम टोकनहरू" },

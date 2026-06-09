@@ -29,9 +29,13 @@
                         typeof cli.config.asciiArt == 'string' ? cli.config.asciiArt : 'a random thing' }.`
               : await (cli.config.query === true || !cli.config.query ? cli.msgs.query_hi
               : resolveSrc(cli.config.query))
-    if (!cli.config.noSuggest && typeof query == 'string' && query == cli.config.query)
-        query += '\n\nThen, at the end of your response, ask user if they want you to do something related to the query'
-              + ' except if you are already finishing your response w/ a question.'
+    if (typeof query == 'string' ) {
+        if (!cli.config.noSuggest && query == cli.config.query)
+            query += '\n\nThen, at the end of your response, ask user if they want you to do something related to the query'
+                  + ' except if you are already finishing your response w/ a question.'
+        if (cli.config.replyLang && env.supports.unicode)
+            query += `\n\nRespond in '${cli.config.replyLang}' language.`
+    }
     log.debug(`query = ${query}`)
 
     if (new RegExp(`^(?:help|${cli.msgs.query_hi})(?:\n|$)`).test(query)) {

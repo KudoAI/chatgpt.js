@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Қорытындылау үшін файлға немесе мәтінге жол" },
   "optionDesc_asciiArt": { "message": "Қосымша пәннің ASCII өнерін көрсету" },
   "optionDesc_uiLang": { "message": "Пайдаланушы интерфейсін көрсету үшін ISO 639-1 тіл коды" },
+  "optionDesc_replyLang": { "message": "Жауап беру үшін жасанды интеллект тілі" },
   "optionDesc_config": { "message": "Жүктелетін теңшелетін конфигурация файлына жол" },
   "optionDesc_maxChars": { "message": "Хабар бойынша таңба шегі" },
   "optionDesc_maxTokens": { "message": "Қолдануға болатын максималды таңбалауыштар" },

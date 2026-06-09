@@ -11,6 +11,7 @@ module.exports = {
     controls: {
         provider: { type: 'param', regex: /^--?p(?:rovider)?(?:[=\s].*|$)/, defaultVal: 'auto' },
         uiLang: { type: 'param', valType: 'langCode', regex: /^--?u(?:i[-_]?lang)?(?:[=\s].*|$)/ },
+        replyLang: { type: 'param', valType: 'langCode', regex: /^--?(?:L|reply[-_]?lang(?:uage)?)?(?:[=\s].*|$)/ },
         query: {
             type: 'param', valRequired: false,
             regex: /^--?(?:q|query|ask|send)(?:[=\s].*|$)/, get defaultVal() { return cli.msgs.query_hi }

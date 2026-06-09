@@ -63,6 +63,7 @@
   },
   "optionDesc_asciiArt": { "message": "Asuncion Art of Optional Topic" },
   "optionDesc_uiLang": { "message": "Documente similare cu ISO 639-1 Code of Language" },
+  "optionDesc_replyLang": { "message": "Idioma pa duna un man den" },
   "optionDesc_config": { "message": "Archive for custom config Archive for cargo" },
   "optionDesc_maxChars": { "message": "Limitacion Por Mensaje" },
   "optionDesc_maxTokens": { "message": "Tickets pa haci uso di" },

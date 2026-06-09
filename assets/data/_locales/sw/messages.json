@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "PATH to file or text to summarize" },
   "optionDesc_asciiArt": { "message": "Toa sanaa ya ASCII ya mada ya hiari" },
   "optionDesc_uiLang": { "message": "Msimbo wa lugha wa ISO 639-1 kuonyesha UI katika" },
+  "optionDesc_replyLang": { "message": "Lugha ya AI kujibu katika" },
   "optionDesc_config": { "message": "Nenda kwenye faili mahususi ya usanidi ili kupakia" },
   "optionDesc_maxChars": { "message": "Kikomo cha herufi kwa kila ujumbe" },
   "optionDesc_maxTokens": { "message": "Kima cha juu cha tokeni za kutumia" },

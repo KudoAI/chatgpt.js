@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Faili või kokkuvõtva teksti tee" },
   "optionDesc_asciiArt": { "message": "Valikulise teema ASCII-kunstiteose renderdamine" },
   "optionDesc_uiLang": { "message": "ISO 639-1 keelekood kasutajaliidese kuvamiseks" },
+  "optionDesc_replyLang": { "message": "Keel, milles tehisintellekt vastab" },
   "optionDesc_config": { "message": "Laaditava kohandatud konfiguratsioonifaili tee" },
   "optionDesc_maxChars": { "message": "Tähemärkide piirang sõnumi kohta" },
   "optionDesc_maxTokens": { "message": "Maksimaalne kasutatavate märkide arv" },

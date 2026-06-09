@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "要匯總的檔案或文字路徑" },
   "optionDesc_asciiArt": { "message": "呈現可選主題的ASCII藝術" },
   "optionDesc_uiLang": { "message": "用於顯示UI的語言ISO 639-1代碼" },
+  "optionDesc_replyLang": { "message": "AI回覆的語言" },
   "optionDesc_config": { "message": "要載入的自訂組態檔路徑" },
   "optionDesc_maxChars": { "message": "每則訊息的字元數限制" },
   "optionDesc_maxTokens": { "message": "可使用的最大代幣數量" },

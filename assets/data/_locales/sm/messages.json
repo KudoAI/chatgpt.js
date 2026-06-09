@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Ala i le faila po o le mau e aotele ai" },
   "optionDesc_asciiArt": { "message": "Render ASCII faatufugaga o mataupu filifilia" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code o le gagana e faaali atu UI i" },
+  "optionDesc_replyLang": { "message": "Gagana mo AI e tali atu i" },
   "optionDesc_config": { "message": "Auala e custom config faila e utaina" },
   "optionDesc_maxChars": { "message": "Faʻatapulaʻaina o uiga i le feʻau" },
   "optionDesc_maxTokens": { "message": "Max faailoga e faaaoga" },

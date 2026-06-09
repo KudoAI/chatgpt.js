@@ -63,6 +63,7 @@
   "optionDesc_summarize": { "message": "Path to file or text to summarize" },
   "optionDesc_asciiArt": { "message": "E fa setshwantsho sa ASCII sa motsayakarolo yo o ikgethelang" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code of language to display UI in" },
+  "optionDesc_replyLang": { "message": "Puo ya gore AI e arabe ka" },
   "optionDesc_config": { "message": "Path to custom config file to load" },
   "optionDesc_maxChars": { "message": "Tekanyetso ya ditlhaka go ya ka molaetsa mongwe le mongwe" },
   "optionDesc_maxTokens": { "message": "MAX TOKENS GO O DIRISA" },

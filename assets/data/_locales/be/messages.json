@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Шлях да файла або тэксту для абагульнення" },
   "optionDesc_asciiArt": { "message": "Прадастаўленне ASCII-мастацтва неабавязковага прадмета" },
   "optionDesc_uiLang": { "message": "Код мовы ISO 639-1 для адлюстравання карыстацкага інтэрфейсу ў" },
+  "optionDesc_replyLang": { "message": "Мова для адказу ў ІІ" },
   "optionDesc_config": { "message": "Шлях да наладжвальнага файла канфігурацыі для загрузкі" },
   "optionDesc_maxChars": { "message": "Ліміт сімвалаў у паведамленні" },
   "optionDesc_maxTokens": { "message": "Максімальныя маркеры для выкарыстання" },

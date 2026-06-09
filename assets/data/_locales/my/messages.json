@@ -63,6 +63,7 @@
   "optionDesc_summarize": { "message": "အကျဉ်းချုံးရန် ဖိုင် သို့မဟုတ် စာသားသို့ လမ်းကြောင်း" },
   "optionDesc_asciiArt": { "message": "ရွေးချယ်နိုင်သောဘာသာရပ် ၏ ASCII အနုပညာကိုတင်ပြပါ" },
   "optionDesc_uiLang": { "message": "ISO ကို 639-1 ဘာသာစကားကုဒ် UI ကိုပြသရန်" },
+  "optionDesc_replyLang": { "message": "ဉာဏ်ရည်တုအတွက် ဖြေဆိုရမည့် ဘာသာစကား" },
   "optionDesc_config": { "message": "ဖွင့်ရန် စိတ်ကြိုက် config ဖိုင်အတွက် လမ်းကြောင်း" },
   "optionDesc_maxChars": { "message": "မက်ဆေ့ချ်တစ်စောင်လျှင် အက္ခရာကန့်သတ်ချက်" },
   "optionDesc_maxTokens": { "message": "အသုံးပြုရန် အများဆုံး တိုကင်များ" },

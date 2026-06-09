@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "An t - slighe gu faidhle no teacsa gus geàrr - chunntas a dhèanamh" },
   "optionDesc_asciiArt": { "message": "Santarcangelo di Romagna" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 Code of Language gus UI a thaisbeanadh ann an UI" },
+  "optionDesc_replyLang": { "message": "Freagairt gu AKA" },
   "optionDesc_config": { "message": "An t - slighe dhan fhaidhle rèiteachaidh gnàthaichte gus a luchdadh" },
   "optionDesc_maxChars": { "message": "Teorainn nan caractaran gach teachdaireachd" },
   "optionDesc_maxTokens": { "message": "Max tokens airson a chleachdadh" },

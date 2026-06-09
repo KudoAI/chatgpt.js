@@ -65,6 +65,7 @@
   "optionDesc_summarize": { "message": "Riya pel an nivîsa ku were kurtkirin" },
   "optionDesc_asciiArt": { "message": "Hunera ASCII ya mijara bijarte nîşan bide" },
   "optionDesc_uiLang": { "message": "Koda ISO 639-1 ya zimanê ji bo nîşandana UI-ê" },
+  "optionDesc_replyLang": { "message": "Zimanê ku AI pê bersiv bide" },
   "optionDesc_config": { "message": "Riya pelê mîhengkirina xwerû ji bo barkirinê" },
   "optionDesc_maxChars": { "message": "Sînorê karakteran ji bo her peyamê" },
   "optionDesc_maxTokens": { "message": "Hejmara herî zêde ya nîşanekan ji bo bikaranînê" },

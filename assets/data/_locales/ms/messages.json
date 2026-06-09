@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Laluan ke fail atau teks untuk diringkaskan" },
   "optionDesc_asciiArt": { "message": "Terapkan seni ASCII subjek pilihan" },
   "optionDesc_uiLang": { "message": "Kod bahasa ISO 639-1 untuk memaparkan UI" },
+  "optionDesc_replyLang": { "message": "Bahasa untuk AI menjawab dalam" },
   "optionDesc_config": { "message": "Laluan ke fail konfigurasi tersuai untuk dimuatkan" },
   "optionDesc_maxChars": { "message": "Had aksara bagi setiap mesej" },
   "optionDesc_maxTokens": { "message": "Token maksimum untuk digunakan" },

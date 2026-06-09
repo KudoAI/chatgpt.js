@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Път до файла или текст за обобщаване" },
   "optionDesc_asciiArt": { "message": "Предоставяне на ASCII изкуство на незадължителен предмет" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 код на езика за показване на потребителския интерфейс в" },
+  "optionDesc_replyLang": { "message": "Език, на който изкуственият интелект да отговаря" },
   "optionDesc_config": { "message": "Път до персонализиран конфигурационен файл за зареждане" },
   "optionDesc_maxChars": { "message": "Ограничение на символите на съобщение" },
   "optionDesc_maxTokens": { "message": "Максимален брой жетони за използване" },

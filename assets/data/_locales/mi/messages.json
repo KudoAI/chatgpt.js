@@ -65,6 +65,7 @@
   "optionDesc_summarize": { "message": "Te ara ki te kōnae ranei kuputuhi ki te whakarāpopototanga" },
   "optionDesc_asciiArt": { "message": "Render ASCII toi o te kaupapa kōwhiringa" },
   "optionDesc_uiLang": { "message": "ISO 639-1 waehere reo ki te whakaatu UI i roto i" },
+  "optionDesc_replyLang": { "message": "Te reo mo te AI ki te whakautu i roto i" },
   "optionDesc_config": { "message": "Te ara ki te kōnae whirihora ritenga ki utaina" },
   "optionDesc_maxChars": { "message": "Te rohe o te tangata mo ia karere" },
   "optionDesc_maxTokens": { "message": "Max tohu ki te whakamahi" },

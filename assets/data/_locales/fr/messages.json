@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Chemin d'accès au fichier ou au texte pour résumer" },
   "optionDesc_asciiArt": { "message": "Rendre l'art ASCII du sujet facultatif" },
   "optionDesc_uiLang": { "message": "Code de langue ISO 639-1 pour afficher l'interface utilisateur dans" },
+  "optionDesc_replyLang": { "message": "Langue dans laquelle l'IA doit répondre" },
   "optionDesc_config": { "message": "Chemin d'accès au fichier de configuration personnalisé à charger" },
   "optionDesc_maxChars": { "message": "Limite de caractères par message" },
   "optionDesc_maxTokens": { "message": "Maximum de jetons à utiliser" },

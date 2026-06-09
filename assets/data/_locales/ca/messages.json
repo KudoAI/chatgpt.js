@@ -61,6 +61,7 @@
   "optionDesc_summarize": { "message": "Ruta al fitxer o text per resumir" },
   "optionDesc_asciiArt": { "message": "Render ASCII art de matèria optativa" },
   "optionDesc_uiLang": { "message": "Codi de llengua ISO 639-1 per mostrar la interfície d'usuari" },
+  "optionDesc_replyLang": { "message": "Idioma en què la IA pot respondre" },
   "optionDesc_config": { "message": "Camí al fitxer de configuració personalitzat per carregar" },
   "optionDesc_maxChars": { "message": "Límit de caràcters per missatge" },
   "optionDesc_maxTokens": { "message": "Màx. de fitxes a utilitzar" },
