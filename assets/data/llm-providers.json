@@ -14,7 +14,7 @@
       "instructions": "https://chatgpt.com/backend-api/user_system_messages",
       "session": "https://chatgpt.com/api/auth/session",
       "share": "https://chatgpt.com/backend-api/share",
-      "share_create": "https://chatgpt.com/backend-api/share/create"
+      "shareCreate": "https://chatgpt.com/backend-api/share/create"
     }
   },
   "openrouter": {
