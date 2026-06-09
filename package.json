@@ -80,7 +80,8 @@
     "nvidia",
     "openai",
     "openrouter",
-    "repl"
+    "repl",
+    "tui"
   ],
   "bugs": "https://github.com/KudoAI/chatgpt.js/issues",
   "dependencies": {
