@@ -14,10 +14,12 @@ const chatgpt = {
     },
 
     endpoints: {
-        aipersonas: 'https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.min.json',
         assets: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js',
         google: {
             chat: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent'
+        },
+        kudoai: {
+            aipersonas: 'https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.min.json'
         },
         openai: {
             session: 'https://chatgpt.com/api/auth/session',
@@ -68,7 +70,7 @@ const chatgpt = {
         ssgManifest: 'script[src*="_ssgManifest.js"]'
     },
 
-    actAs(persona, { personasURL = chatgpt.endpoints.aipersonas, verbose = false } = {}) {
+    actAs(persona, { personasURL = chatgpt.endpoints.kudoai.aipersonas, verbose = false } = {}) {
         if (!chatgpt._validateArg({ arg: persona, type: 'string' })) return
         if (chatgpt.env == 'backend') {
             const prompt = require('@kudoai/ai-personas')[persona]?.prompt
