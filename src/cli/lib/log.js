@@ -66,33 +66,33 @@ module.exports = {
             ],
             params: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_params}:${this.colors.nc}`,
-                ` -p, --provider <provider>        ${cli.msgs.optionDesc_provider}.`,
-                ` -u, --ui-lang <code>             ${cli.msgs.optionDesc_uiLang}.`,
-                ` -q, --query <msg>                ${cli.msgs.optionDesc_query}.`,
-                ` -s, --summarize <filepath|text>  ${cli.msgs.optionDesc_summarize}.`,
-                ` -a, --ascii-art [subject]        ${cli.msgs.optionDesc_asciiArt}.`,
-                ` -m, --max-chars <integer>        ${cli.msgs.optionDesc_maxChars}.`,
-                ` -k, --max-tokens <integer>       ${cli.msgs.optionDesc_maxTokens}.`,
-                ` -t, --turns <integer>            ${cli.msgs.optionDesc_turnsToPreserve}.`,
-                ` -c, --config <filepath>          ${cli.msgs.optionDesc_config}.`
+                ` -p, --provider <provider>            ${cli.msgs.optionDesc_provider}.`,
+                ` -u, --ui-lang <code>                 ${cli.msgs.optionDesc_uiLang}.`,
+                ` -q, --query <msg>                    ${cli.msgs.optionDesc_query}.`,
+                ` -s, --summarize <filepath|text|url>  ${cli.msgs.optionDesc_summarize}.`,
+                ` -a, --ascii-art [subject]            ${cli.msgs.optionDesc_asciiArt}.`,
+                ` -m, --max-chars <integer>            ${cli.msgs.optionDesc_maxChars}.`,
+                ` -k, --max-tokens <integer>           ${cli.msgs.optionDesc_maxTokens}.`,
+                ` -t, --turns <integer>                ${cli.msgs.optionDesc_turnsToPreserve}.`,
+                ` -c, --config <filepath|url>          ${cli.msgs.optionDesc_config}.`
             ],
             flags: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_flags}:${this.colors.nc}`,
-                ` -x, --copy                       ${cli.msgs.optionDesc_copy}.`,
-                ` -A, --no-suggest                 ${cli.msgs.optionDesc_noSuggest}.`,
-                ` -V, --quiet                      ${cli.msgs.optionDesc_quiet}.`
+                ` -x, --copy                           ${cli.msgs.optionDesc_copy}.`,
+                ` -A, --no-suggest                     ${cli.msgs.optionDesc_noSuggest}.`,
+                ` -V, --quiet                          ${cli.msgs.optionDesc_quiet}.`
             ],
             cmds: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_cmds}:${this.colors.nc}`,
-                ` -i, --init                       ${cli.msgs.optionDesc_init}.`,
-                ` -j, --joke                       ${cli.msgs.optionDesc_joke}.`,
-                ` -r, --random-answer              ${cli.msgs.optionDesc_randomAnswer}.`,
-                ` -g, --commit-msg                 ${cli.msgs.optionDesc_commitMsg}.`,
-                ` -C, --clear                      ${cli.msgs.optionDesc_clear}.`,
-                ` -h, --help                       ${cli.msgs.optionDesc_help}.`,
-                ` -v, --version                    ${cli.msgs.optionDesc_version}.`,
-                ` -S, --stats                      ${cli.msgs.optionDesc_stats}.`,
-                `     --debug                      ${cli.msgs.optionDesc_debug}.`
+                ` -i, --init                           ${cli.msgs.optionDesc_init}.`,
+                ` -j, --joke                           ${cli.msgs.optionDesc_joke}.`,
+                ` -r, --random-answer                  ${cli.msgs.optionDesc_randomAnswer}.`,
+                ` -g, --commit-msg                     ${cli.msgs.optionDesc_commitMsg}.`,
+                ` -C, --clear                          ${cli.msgs.optionDesc_clear}.`,
+                ` -h, --help                           ${cli.msgs.optionDesc_help}.`,
+                ` -v, --version                        ${cli.msgs.optionDesc_version}.`,
+                ` -S, --stats                          ${cli.msgs.optionDesc_stats}.`,
+                `     --debug                          ${cli.msgs.optionDesc_debug}.`
             ]
         }
         includeSections.forEach(section => // print valid arg elems
