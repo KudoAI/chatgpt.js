@@ -9,7 +9,8 @@
           "inputTypes": ["audio", "image", "pdf", "text", "video"], "outputTypes": ["text"], "urlContext": true
         },
       }
-    }
+    },
+    "requiresAPIkey": true
   },
   "openrouter": {
     "endpoints": {
@@ -92,6 +93,7 @@
           "strengths": ["agentic"]
         },
       }
-    }
+    },
+    "requiresAPIkey": true
   }
 }
