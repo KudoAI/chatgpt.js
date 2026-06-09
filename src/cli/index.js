@@ -8,17 +8,13 @@
 
     globalThis.log = require('./lib/log')
     const chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
-          loader = require('./lib/loader').create({ width: env.width }),
-          messages = require('./lib/messages')
+          run = require('../lib/run')
 
     await init.cli()
 
-    if (cli.config.init) return init.configFile()
-    else if (cli.config.commitMsg) return await require('./lib/git').generateCommitMsg()
-    else if (cli.config.clear) return messages.clearChain()
-    else if (cli.config.help) return log.help()
-    else if (cli.config.version) return log.version()
-    else if (cli.config.stats) return log.stats()
+    for (const cmd of ['init', 'commitMsg', 'clear', 'help', 'version', 'stats'])
+        if (cli.config[cmd]) return run[cmd]()
+    if (cli.config.interactive) return require('../repl').start()
 
     if (!chatgpt.config?.apiKeys?.[cli.config.provider])
         chatgpt.setProvider(cli.config.provider, {
@@ -39,24 +35,9 @@
               + ' except if you are already finishing your response w/ a question.'
     log.debug(`query = ${query}`)
 
-    loader.start()
-    try { // to get/show AI reply
-        const userMsg = { role: 'user', content: query }
-        const sendConfig = {
-            provider: cli.config.provider,
-            output: 'stdout',
-            color: 'white',
-            onLoadStart: () => loader.stop({ clear: false }),
-            messages: [...cli.msgChain, userMsg],
-            maxChars: cli.config.maxChars,
-            turnsToPreserve: cli.config.turnsToPreserve
-        }
-        if (cli.config.maxTokens) sendConfig.maxTokens = cli.config.maxTokens
-        const parsedReply = messages.extractFromJSON(await chatgpt.send('', sendConfig))
-        if (/^(?:help|hi)(?:\n|$)/.test(query)) log.help()
-        if (cli.config.copy && parsedReply) require('node-clipboardy').clipboardy.writeSync(parsedReply)
-        cli.msgChain.push(userMsg, { role: 'assistant', content: parsedReply })
-        messages.saveChain(cli.msgChain)
-    } finally { loader.stop({ clear: true }) }
+    await run.query(query, { copy: cli.config.copy })
+    if (chatgpt.lastProvider) log.debug(`Provider used: ${chatgpt.lastProvider}`)
+    if (chatgpt.lastModel) log.debug(`Model used: ${chatgpt.lastModel}`)
+    if (/^(?:help|hi)(?:\n|$)/.test(query)) log.help()
 
 })()

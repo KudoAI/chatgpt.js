@@ -1,7 +1,7 @@
 const { execSync } = require('child_process'),
         fs = require('fs'),
         language = require('./language'),
-        messages = require('./messages'),
+        messages = require('../../lib/messages'),
         path = require('path'),
         settings = require('./settings')
 

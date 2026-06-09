@@ -220,7 +220,7 @@ console.log(await chatgpt.send('sup'))
 chatgpt --query "sup"  # 或者 cjs -q sup
 # e.g. => Hey there! What's up?
 
-chatgpt --ascii-art "cat"  # 或者 cjs --aa cat
+chatgpt --ascii-art "cat"  # 或者 cjs -a cat
 # e.g. =>
 #
 #       |\      _,,,---,,_

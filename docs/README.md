@@ -220,7 +220,7 @@ After setting an API key, control from your terminal:
 chatgpt --query "sup"  # or cjs -q sup
 # e.g. => Hey there! What's up?
 
-chatgpt --ascii-art "cat"  # or cjs --aa cat
+chatgpt --ascii-art "cat"  # or cjs -a cat
 # e.g. =>
 #
 #       |\      _,,,---,,_
