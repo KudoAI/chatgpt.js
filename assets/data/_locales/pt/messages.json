@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Criar ficheiro de configuração (na raiz do projeto)" },
   "optionDesc_interactive": { "message": "Entrar no modo REPL INTERATIVO" },
   "optionDesc_joke": { "message": "Conta uma piada engraçada aleatoriamente" },
+  "optionDesc_fortune": { "message": "Conte a sua sorte" },
   "optionDesc_randomAnswer": { "message": "Responda a uma pergunta aleatória" },
   "optionDesc_commitMsg": {
     "message": "Gere a mensagem git commit a partir das alterações e copie para a área de transferência"

@@ -76,6 +76,7 @@
   "optionDesc_init": { "message": "Samee faylka qaabeynta (ee xididka mashruuca)" },
   "optionDesc_interactive": { "message": "Gali habka falcelinta is-dhexgalka" },
   "optionDesc_joke": { "message": "U sheeg kaftan qosol leh si lama filaan ah" },
+  "optionDesc_fortune": { "message": "U sheeg maalkaaga" },
   "optionDesc_randomAnswer": { "message": "Ka jawaab su 'aal aan caadi ahayn" },
   "optionDesc_commitMsg": { "message": "Samee fariin git ah oo ka timaada isbeddelada iyo nuqul ilaa clipboard" },
   "optionDesc_clear": { "message": "Clear silsilad fariin cached" },

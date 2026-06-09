@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Loo konfiguratsioonifail (projekti juurfailis)" },
   "optionDesc_interactive": { "message": "Sisene INTERAKTIIVSESSE REPL-REŽIIMI" },
   "optionDesc_joke": { "message": "Räägib juhuslikult naljaka nalja" },
+  "optionDesc_fortune": { "message": "Räägi oma varandusest" },
   "optionDesc_randomAnswer": { "message": "Vasta juhuslikule küsimusele" },
   "optionDesc_commitMsg": { "message": "Loo muudatustest giti kinnitussõnum ja kopeeri lõikelauale" },
   "optionDesc_clear": { "message": "Tühjenda vahemällu salvestatud sõnumikett" },

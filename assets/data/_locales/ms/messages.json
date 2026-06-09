@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Cipta fail konfigurasi (dalam akar projek)" },
   "optionDesc_interactive": { "message": "Masukkan mod REPL INTERAKTIF" },
   "optionDesc_joke": { "message": "Menceritakan jenaka lucu secara rawak" },
+  "optionDesc_fortune": { "message": "Beritahu nasib anda" },
   "optionDesc_randomAnswer": { "message": "Jawab soalan rawak" },
   "optionDesc_commitMsg": { "message": "Jana mesej komitmen git daripada perubahan dan salin ke papan keratan" },
   "optionDesc_clear": { "message": "Kosongkan rantaian mesej yang dicache" },

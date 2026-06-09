@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Konfiguratiounsdatei erstellen (am Projetwurzel)" },
   "optionDesc_interactive": { "message": "Interaktiv Rep Modus aginn" },
   "optionDesc_joke": { "message": "Tells a funny ass joke at random" },
+  "optionDesc_fortune": { "message": "Sot Äre Verméigen" },
   "optionDesc_randomAnswer": { "message": "Äntwert op eng zoufälleg Fro" },
   "optionDesc_commitMsg": { "message": "Generéiere Git Engagement Message vun Ännerungen a kopéieren op Clipboard" },
   "optionDesc_clear": { "message": "Kloer verstoppte Noriichtekette" },

@@ -92,21 +92,22 @@ Parameter options:
  -c, --config <filepath|url>          Path to custom config file to load.
 
 Boolean options:
- -x, --copy                       Copy CLI response to clipboard.
- -A, --no-suggest                 Don't auto-suggest next AI action at end of CLI response.
- -V, --quiet                      Suppress all logging except errors.
+ -x, --copy                           Copy CLI response to clipboard.
+ -A, --no-suggest                     Don't auto-suggest next AI action at end of CLI response.
+ -V, --quiet                          Suppress all logging except errors.
 
 Commands:
- -i, --init                       Create config file (in project root).
- -I, --interactive                Enter interactive REPL mode.
- -j, --joke                       Tells a funny joke at random.
- -r, --random-answer              Answer a random question.
- -g, --commit-msg                 Generate git commit message from changes and copy to clipboard.
- -C, --clear                      Clear cached message chain.
- -h, --help                       Display help screen.
- -v, --version                    Show version number.
- -S, --stats                      Show npm stats.
-     --debug [targetKey]          Show debug logs.
+ -i, --init                           Create config file (in project root).
+ -I, --interactive                    Enter interactive REPL mode.
+ -j, --joke                           Tells a funny joke at random.
+ -f, --fortune                        Tell your fortune.
+ -r, --random-answer                  Answer a random question.
+ -g, --commit-msg                     Generate git commit message from changes and copy to clipboard.
+ -C, --clear                          Clear cached message chain.
+ -h, --help                           Display help screen.
+ -v, --version                        Show version number.
+ -S, --stats                          Show npm stats.
+     --debug [targetKey]              Show debug logs.
 ```
 
 #

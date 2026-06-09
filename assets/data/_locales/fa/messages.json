@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "ایجاد فایل پیکربندی (در ریشه پروژه)" },
   "optionDesc_interactive": { "message": "حالت REPL تعاملی را وارد کنید" },
   "optionDesc_joke": { "message": "یک جوک خنده‌دار را اتفاقی تعریف می‌کند" },
+  "optionDesc_fortune": { "message": "فال خود را بگویید" },
   "optionDesc_randomAnswer": { "message": "پاسخ به یک سوال تصادفی" },
   "optionDesc_commitMsg": { "message": "ایجاد پیام کامیت گیت از تغییرات و کپی کردن آن در کلیپ‌بورد" },
   "optionDesc_clear": { "message": "زنجیره پیام‌های ذخیره‌شده را پاک کنید" },

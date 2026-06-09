@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Crear un ficheiro de configuración (na raíz do proxecto)" },
   "optionDesc_interactive": { "message": "Entrar en modo REPL interactivo" },
   "optionDesc_joke": { "message": "Conta unha broma divertida ao azar" },
+  "optionDesc_fortune": { "message": "Dille á túa fortuna" },
   "optionDesc_randomAnswer": { "message": "Responde a unha pregunta aleatoria" },
   "optionDesc_commitMsg": { "message": "Xerar a mensaxe do comité git desde os cambios e copiar no portarretallos" },
   "optionDesc_clear": { "message": "Cadea de mensaxes en caché limpa" },

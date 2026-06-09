@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Создајте конфигурациска датотека (во коренот на проектот)" },
   "optionDesc_interactive": { "message": "Влезете во интерактивен РЕЖИМ на повторување" },
   "optionDesc_joke": { "message": "Раскажува смешен виц по случаен избор" },
+  "optionDesc_fortune": { "message": "Кажете му на вашето богатство" },
   "optionDesc_randomAnswer": { "message": "Одговорете на случајно прашање" },
   "optionDesc_commitMsg": { "message": "Генерирајте git commit порака од промените и копирајте на таблата со исечоци" },
   "optionDesc_clear": { "message": "Исчисти кеширан синџир на пораки" },

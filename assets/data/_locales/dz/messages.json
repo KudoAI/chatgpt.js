@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Config file བཟོ་ (project rootནང་ལུ་)" },
   "optionDesc_interactive": { "message": "འབྲེལ་འདྲིས་ལན་འཇལ་ནིའི་རྣམ་ཐར།" },
   "optionDesc_joke": { "message": "འཁྲབ་མདོག་ཅན་གྱི་ འཁྲབ་མདོག་ཅིག་" },
+  "optionDesc_fortune": { "message": "ཁོ་གིས་ང་ལུ་ ཁོ་གི་རྒྱུ་ནོར་སླབ་འོང་" },
   "optionDesc_randomAnswer": { "message": "དྲི་བ་འདི་ལན་རྐྱང་རྐྱང་རྐྱང་" },
   "optionDesc_commitMsg": { "message": "འགྱུར་བཅོས་ལས་ བརྡ་འཕྲིན་ཚུ་ git བསྒྲུབས་ཏེ་ clipboard ལུ་འདྲ་བཤུས་རྐྱབས།" },
   "optionDesc_clear": { "message": "གསང་བཞག་ཡོད་པའི་ བརྡ་འཕྲིན་བཀྲམ་སྤེལ་འབད་ཐབས།" },

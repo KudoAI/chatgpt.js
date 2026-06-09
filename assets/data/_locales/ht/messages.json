@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Kreye dosye config (nan rasin pwojè)" },
   "optionDesc_interactive": { "message": "Antre nan mòd REPL entèaktif" },
   "optionDesc_joke": { "message": "Di yon blag komik nan o aza/Rakonte yon blag komik" },
+  "optionDesc_fortune": { "message": "Di fòtin ou/Dites votre" },
   "optionDesc_randomAnswer": { "message": "Reponn yon kesyon o aza/Reponn yon kesyon" },
   "optionDesc_commitMsg": { "message": "Jenere git komèt mesaj soti nan chanjman ak kopi nan clipboard" },
   "optionDesc_clear": { "message": "Klè kachèt chèn mesaj/klè kachèt chèn mesaj" },

@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Unda faili ya usanidi (katika mizizi ya mradi)" },
   "optionDesc_interactive": { "message": "Weka hali ya MAINGILIANO ya repl" },
   "optionDesc_joke": { "message": "Husimulia utani wa kuchekesha bila mpangilio" },
+  "optionDesc_fortune": { "message": "Mwambie utajiri wako" },
   "optionDesc_randomAnswer": { "message": "Jibu swali la kiholela" },
   "optionDesc_commitMsg": {
     "message": "Tengeneza ujumbe wa kujizatiti kutoka kwa mabadiliko na unakili hadi ubao wa kunakili"

@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Crear archivo de configuración (en la raíz del proyecto)" },
   "optionDesc_interactive": { "message": "Entrar en el modo de réplica interac" },
   "optionDesc_joke": { "message": "Cuenta un chiste gracioso al azar" },
+  "optionDesc_fortune": { "message": "Dile a tu fortuna" },
   "optionDesc_randomAnswer": { "message": "Responde a una pregunta aleatoria" },
   "optionDesc_commitMsg": {
     "message": "Generar mensaje de confirmación de git a partir de los cambios y copiar al portapapeles"

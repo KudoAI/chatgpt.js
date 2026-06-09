@@ -30,6 +30,7 @@ module.exports = {
         init: { type: 'cmd', regex: /^-{0,2}i(?:nit)?$/ },
         interactive: { type: 'cmd', regex: /^--?(?:I|interactive)(?:[-_]?mode)?$/ },
         joke: { type: 'cmd', regex: /^--?j(?:oke)?$/ },
+        fortune: { type: 'cmd', regex: /^--?f(?:ortune)?$/ },
         randomAnswer: { type: 'cmd', regex: /^--?r(?:andom[-_]?answer)?$/ },
         commitMsg: { type: 'cmd', regex: /^--?(?:g|commit[-_]?me?ss?a?ge?)$/ },
         clear: { type: 'cmd', regex: /^--?(?:C|clear?)$/ },

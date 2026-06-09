@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Crea fasciculum configurationis (in radice proiecti)" },
   "optionDesc_interactive": { "message": "Modus replus interactivis" },
   "optionDesc_joke": { "message": "Isti dicitur vazivazy in random" },
+  "optionDesc_fortune": { "message": "Dicitur vobis tua" },
   "optionDesc_randomAnswer": { "message": "POSESES RECTAMVE OMNIBUS" },
   "optionDesc_commitMsg": { "message": "GAME GIT OMNEM EXCUATIONES AC CONSTATIONES AC CONFIGATIONES ET SOCII TABLEARI" },
   "optionDesc_clear": { "message": "Alcun civitas messi" },

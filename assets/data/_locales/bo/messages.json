@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "རིམ་སྒྲིག་ཡིག་ཆ་གསར་བཟོ། (ལས་གཞིའི་རྩ་བའི་ནང་)" },
   "optionDesc_interactive": { "message": "འབྲེལ་བ་ཡོད་པའི་ལན་འདེབས་ཐབས་ལམ་ནང་འཇུག་པ" },
   "optionDesc_joke": { "message": "ཤིན་ཏུ་ངོ་མཚར་ཅན་གྱི་གཏམ་གླེང །" },
+  "optionDesc_fortune": { "message": "ཁྱོད་ཀྱི་རྒྱུ་ནོར་གྱི་སྐོར་ང་ལ་ཤོད་ཅིག" },
   "optionDesc_randomAnswer": { "message": "ལན་སློག ལན་སློག" },
   "optionDesc_commitMsg": { "message": "འདྲ་བཤུ་ནས་ཡིག་ཆ་འདྲ་བཤུ་ནས་ཡིག་ཆ་འདྲ་བཤུ་བྱེད་པ" },
   "optionDesc_clear": { "message": "གསང་བའི་བང་ཆེན་དྲ་བ །" },

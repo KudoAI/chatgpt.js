@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Konfigurationsdatei erstellen (im Projektstammverzeichnis)" },
   "optionDesc_interactive": { "message": "Interaktiven Antwortmodus aufrufen" },
   "optionDesc_joke": { "message": "Erzählt zufällig einen lustigen Witz" },
+  "optionDesc_fortune": { "message": "Erzählen Sie Ihr Glück" },
   "optionDesc_randomAnswer": { "message": "Beantworte eine zufällige Frage" },
   "optionDesc_commitMsg": {
     "message": "Generieren Sie eine Git Commit-Nachricht aus Änderungen und kopieren Sie sie in die Zwischenablage"

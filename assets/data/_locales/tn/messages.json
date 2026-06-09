@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Tlhama faele ya thulaganyo (mo moding wa porojeke)" },
   "optionDesc_interactive": { "message": "Tsenya mokgwa wa go tsenya tirisanommogo" },
   "optionDesc_joke": { "message": "E dira metlae e e tshegisang ka phopholetso" },
+  "optionDesc_fortune": { "message": "Bolelela letlotlo la gago" },
   "optionDesc_randomAnswer": { "message": "Araba potso ka go phopholetsa" },
   "optionDesc_commitMsg": { "message": "Generate git commit message from changes and copy to clipboard" },
   "optionDesc_clear": { "message": "Clear cached message chain" },

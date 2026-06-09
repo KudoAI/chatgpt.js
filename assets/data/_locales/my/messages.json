@@ -76,6 +76,7 @@
   "optionDesc_init": { "message": "Config ဖိုင်ကိုဖန်တီးပါ (ပရောဂျက်အမြစ်တွင်)" },
   "optionDesc_interactive": { "message": "အပြန်အလှန်အကျိုးသက်ရောက်မှုရှိသော REL မုဒ်ကိုထည့်ပါ" },
   "optionDesc_joke": { "message": "ရယ်စရာ ဟာသတစ်ခုကို ကျပန်းပြောသည်" },
+  "optionDesc_fortune": { "message": "သင္ ၏ ကံၾကမၼာကို ေျပာျပပါ" },
   "optionDesc_randomAnswer": { "message": "ကျပန်းမေးခွန်းတစ်ခုကိုဖြေပါ" },
   "optionDesc_commitMsg": {
     "message": "အပြောင်းအလဲများမှ GIT COMMET မက်ဆေ့ချ်ကို ထုတ်ပေးပြီး ကလစ်ဘုတ်သို့ မိတ္တူကူးပါ"

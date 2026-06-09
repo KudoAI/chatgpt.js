@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "IDOSIYE in Umushinga Imizi" },
   "optionDesc_interactive": { "message": "Biganira Gusubiramo Ubwoko" },
   "optionDesc_joke": { "message": "A ku" },
+  "optionDesc_fortune": { "message": "Bye bye fortune" },
   "optionDesc_randomAnswer": { "message": "A" },
   "optionDesc_commitMsg": { "message": "Ubutumwa Bivuye Amahinduka Na Gukoporora Kuri Ububikokoporora" },
   "optionDesc_clear": { "message": "Ubutumwa Urusobetudirishya" },

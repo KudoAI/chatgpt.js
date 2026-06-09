@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Panga failo iya mipangilwe (mu mushila wa mulimo)" },
   "optionDesc_interactive": { "message": "Ingilileni mu nshila ya kulonganinamo" },
   "optionDesc_joke": { "message": "Funny Joke At Random ukulele" },
+  "optionDesc_fortune": { "message": "Yulanda Fuente" },
   "optionDesc_randomAnswer": { "message": "Reply Akanksha Akanksha" },
   "optionDesc_commitMsg": { "message": "Tumina Tumina Tumina Tumina Tumina Tumina Tumina Tumina Tumina Tumina Tumina" },
   "optionDesc_clear": { "message": "Ukulele Messages Chain" },

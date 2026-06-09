@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Yapılandırma dosyası oluştur (proje kök dizininde)" },
   "optionDesc_interactive": { "message": "Etkileşimli değiştirme MODUNA GİRİN" },
   "optionDesc_joke": { "message": "Rastgele komik bir fıkra anlatır" },
+  "optionDesc_fortune": { "message": "Falına bak" },
   "optionDesc_randomAnswer": { "message": "Rastgele bir soruyu yanıtlayın" },
   "optionDesc_commitMsg": { "message": "Değişikliklerden git işleme mesajı oluşturun ve panoya kopyalayın" },
   "optionDesc_clear": { "message": "Önbelleğe alınmış mesaj zincirini temiz" },

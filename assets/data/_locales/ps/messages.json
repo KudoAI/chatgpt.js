@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "(د پروژې په ریښه کې) سازونې دوتنه جوړه کړئ" },
   "optionDesc_interactive": { "message": "د متقابل REPL حالت دننه کړئ" },
   "optionDesc_joke": { "message": "په تصادفي ډول یوه مسخره ټوکه وایي" },
+  "optionDesc_fortune": { "message": "خپلې قسمت ووایاست" },
   "optionDesc_randomAnswer": { "message": "تصادفي پوښتنې ته ځواب ورکړئ" },
   "optionDesc_commitMsg": { "message": "د بدلونونو څخه د لارښوونې پیغام تولید کړئ او کلیپ بورډ ته یې کاپي کړئ" },
   "optionDesc_clear": { "message": "د کیچ پیغام ځنځیر پاک کړئ" },

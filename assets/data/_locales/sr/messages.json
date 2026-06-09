@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Kreirajte konfiguracionu datoteku (u korenu projekta)" },
   "optionDesc_interactive": { "message": "Uđite u interaktivni REŽIM ponovnog slanja" },
   "optionDesc_joke": { "message": "Nasumično ispriča smešnu šalu" },
+  "optionDesc_fortune": { "message": "Ispričajte svoju sudbinu" },
   "optionDesc_randomAnswer": { "message": "Odgovorite na nasumično pitanje" },
   "optionDesc_commitMsg": { "message": "Generišite git poruku obavezivanja iz promena i kopirajte u ostavu" },
   "optionDesc_clear": { "message": "Obriši keširani lanac poruka" },

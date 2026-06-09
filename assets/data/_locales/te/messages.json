@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "ఆకృతీకరణ ఫైల్ ‌ ను సృష్టించండి (ప్రాజెక్ట్ రూట్ ‌ లో)" },
   "optionDesc_interactive": { "message": "ఇంటరాక్టివ్ రీప్లే మోడ్ ‌ ను నమోదు చేయండి" },
   "optionDesc_joke": { "message": "యాదృచ్ఛికంగా ఫన్నీ జోక్ చెబుతుంది" },
+  "optionDesc_fortune": { "message": "మీ అదృష్టాన్ని చెప్పండి" },
   "optionDesc_randomAnswer": { "message": "యాదృచ్ఛిక ప్రశ్నకు సమాధానం ఇవ్వండి" },
   "optionDesc_commitMsg": {
     "message": "మార్పుల నుండి git కమిట్ సందేశాన్ని రూపొందించండి మరియు క్లిప్ ‌ బోర్డ్ ‌ కు కాపీ చేయండి"

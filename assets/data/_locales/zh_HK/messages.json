@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "創建配置文件（在項目根目錄中）" },
   "optionDesc_interactive": { "message": "進入互動式REPL模式" },
   "optionDesc_joke": { "message": "隨便講個有趣的笑話" },
+  "optionDesc_fortune": { "message": "告訴你的命運" },
   "optionDesc_randomAnswer": { "message": "隨機回答一個問題" },
   "optionDesc_commitMsg": { "message": "根據變更產生git提交訊息並複製到剪貼簿" },
   "optionDesc_clear": { "message": "清除快取訊息鏈" },

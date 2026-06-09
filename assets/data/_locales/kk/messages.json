@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Конфигурация файлын құру (жоба түбірінде)" },
   "optionDesc_interactive": { "message": "Интерактивті ауыстыру режимін енгізіңіз" },
   "optionDesc_joke": { "message": "Кездейсоқ әзіл айтады" },
+  "optionDesc_fortune": { "message": "Өз байлығыңызды айтыңыз" },
   "optionDesc_randomAnswer": { "message": "Кездейсоқ сұраққа жауап беру" },
   "optionDesc_commitMsg": { "message": "Өзгерістерден git commit хабарын жасау және алмасу буферіне көшіру" },
   "optionDesc_clear": { "message": "Кэштелген хабарлар тізбегін тазалау" },

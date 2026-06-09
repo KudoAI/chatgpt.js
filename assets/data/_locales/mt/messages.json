@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Oħloq fajl tal-konfig (fl-għeruq tal-proġett)" },
   "optionDesc_interactive": { "message": "Daħħal il-modalità REPLIK INTERATTIVA" },
   "optionDesc_joke": { "message": "Jgħid logħob umoruż b' mod każwali" },
+  "optionDesc_fortune": { "message": "Għid ix-xorti tiegħek" },
   "optionDesc_randomAnswer": { "message": "Wieġeb mistoqsija każwali" },
   "optionDesc_commitMsg": { "message": "Iġġenera messaġġ GIT COMMIT mill-bidliet u kkopja għall-klipbord" },
   "optionDesc_clear": { "message": "Neħħi l-katina tal-messaġġi cached" },

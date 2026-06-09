@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "שאַפֿן קאָנפֿיג טעקע (אין פּראָיעקט וואָרצל)" },
   "optionDesc_interactive": { "message": "אַרייַן אינטעראַקטיוו REPL מאָדע" },
   "optionDesc_joke": { "message": "דערציילט אַ קאָמישן וויץ אויף אַ צופֿעליקן אופֿן" },
+  "optionDesc_fortune": { "message": "זאָג דיין מזל" },
   "optionDesc_randomAnswer": { "message": "ענטפֿערט ​​אַ צופֿעליקע פֿראַגע" },
   "optionDesc_commitMsg": { "message": "שאַפֿן אַ גיט קאָמיט מעסעדזש פֿון ענדערונגען און קאָפּירן צום קליפּבאָרד" },
   "optionDesc_clear": { "message": "ויסמעקן קאַשט מעסעדזש קייט" },

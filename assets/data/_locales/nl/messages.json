@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Configuratiebestand aanmaken (in projecthoofdmap)" },
   "optionDesc_interactive": { "message": "Ga naar interactieve REPL-modus" },
   "optionDesc_joke": { "message": "Vertelt willekeurig een grappige grap" },
+  "optionDesc_fortune": { "message": "Vertel je fortuin" },
   "optionDesc_randomAnswer": { "message": "Een willekeurige vraag beantwoorden" },
   "optionDesc_commitMsg": { "message": "Genereer git commit bericht van wijzigingen en kopieer naar klembord" },
   "optionDesc_clear": { "message": "Berichtketen in cache wissen" },

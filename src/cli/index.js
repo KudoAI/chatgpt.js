@@ -22,13 +22,13 @@
             key: process.env[`${cli.config.provider.toUpperCase()}_API_KEY`] })
 
     let query = cli.config.joke ? 'Tell me a joke and make it funny.'
+              : cli.config.fortune ? 'Tell me my fortune the length of a fortune cookie paper.'
               : cli.config.randomAnswer ? 'Generate a single random question on any topic, then answer it.'
               : cli.config.summarize ? `Summarize the following:\n\n${await resolveSrc(cli.config.summarize)}`
-              : cli.config.asciiArt ?
-                    `Render a single piece of ascii art of ${
-                        typeof cli.config.asciiArt == 'string' ? cli.config.asciiArt : 'a random thing' }.`
-              : await (cli.config.query === true || !cli.config.query ? cli.msgs.query_hi
-              : resolveSrc(cli.config.query))
+              : cli.config.asciiArt ? `Render a single piece of ascii art of ${
+                    typeof cli.config.asciiArt == 'string' ? cli.config.asciiArt : 'a random thing' }.`
+              : await (
+                    cli.config.query === true || !cli.config.query ? cli.msgs.query_hi : resolveSrc(cli.config.query))
     if (typeof query == 'string' ) {
         if (!cli.config.noSuggest && query == cli.config.query)
             query += '\n\nThen, at the end of your response, ask user if they want you to do something related to the query'

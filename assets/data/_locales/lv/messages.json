@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Izveidot konfigurācijas failu (projekta saknē)" },
   "optionDesc_interactive": { "message": "Ieiet interaktīvās REPLICĒŠANAS REŽĪMĀ" },
   "optionDesc_joke": { "message": "Izklāsta smieklīgu joku pēc nejaušības principa" },
+  "optionDesc_fortune": { "message": "Pastāstiet savu bagātību" },
   "optionDesc_randomAnswer": { "message": "Atbildiet uz nejauši izvēlētu jautājumu" },
   "optionDesc_commitMsg": { "message": "Ģenerējiet Git nosūtīšanas ziņojumu no izmaiņām un kopējiet starpliktuvē" },
   "optionDesc_clear": { "message": "Notīrīt kešoto ziņojumu ķēdi" },

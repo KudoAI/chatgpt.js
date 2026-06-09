@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Konfigurazio fitxategia sortu (proiektuaren erroan)" },
   "optionDesc_interactive": { "message": "Sartu REPL modu interaktiboan" },
   "optionDesc_joke": { "message": "Txiste dibertigarri bat ausaz kontatzen du" },
+  "optionDesc_fortune": { "message": "Esan zure zoria" },
   "optionDesc_randomAnswer": { "message": "Ausazko galdera bati erantzun" },
   "optionDesc_commitMsg": { "message": "Sortu git commit mezua aldaketetatik eta kopiatu arbelean" },
   "optionDesc_clear": { "message": "Garbitu cacheko mezu-katea" },

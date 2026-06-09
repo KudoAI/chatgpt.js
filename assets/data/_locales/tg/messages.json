@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Эҷод кардани файли конфигуратсия (дар решаи лоиҳа)" },
   "optionDesc_interactive": { "message": "Вориди режими ҷавобии интерактивӣ" },
   "optionDesc_joke": { "message": "Таърих Бознигарии Давомнокии" },
+  "optionDesc_fortune": { "message": "Ба сарвати худ бигӯед" },
   "optionDesc_randomAnswer": { "message": "Ҷавоб ба саволи тасодуфӣ" },
   "optionDesc_commitMsg": { "message": "Name" },
   "optionDesc_clear": { "message": "Пок кардани занҷири иттилооти ниҳонӣ" },

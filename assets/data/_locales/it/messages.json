@@ -76,6 +76,7 @@
   "optionDesc_init": { "message": "Crea file di configurazione (nella radice del progetto)" },
   "optionDesc_interactive": { "message": "Entra in modalità REPL INTER" },
   "optionDesc_joke": { "message": "Racconta una barzelletta divertente a caso" },
+  "optionDesc_fortune": { "message": "Racconta la tua fortuna" },
   "optionDesc_randomAnswer": { "message": "Rispondi a una domanda casuale" },
   "optionDesc_commitMsg": { "message": "Genera un messaggio di commit git dalle modifiche e copialo negli appunti" },
   "optionDesc_clear": { "message": "Cancella la catena di messaggi nella cache" },

@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "கட்டமைப்பு கோப்பை உருவாக்கவும் (திட்ட மூலத்தில்)" },
   "optionDesc_interactive": { "message": "ஊடாடும் நிரப்பு பயன்முறையை உள்ளிடவும்" },
   "optionDesc_joke": { "message": "சீரற்ற முறையில் ஒரு வேடிக்கையான நகைச்சுவையைச் சொல்கிறது" },
+  "optionDesc_fortune": { "message": "உங்கள் அதிர்ஷ்டத்தை சொல்லுங்கள்" },
   "optionDesc_randomAnswer": { "message": "ஒரு சீரற்ற கேள்விக்கு பதிலளிக்கவும்" },
   "optionDesc_commitMsg": {
     "message": "மாற்றங்களிலிருந்து git உறுதி செய்தியை உருவாக்கி கிளிப்போர்டுக்கு நகலெடுக்கவும்"

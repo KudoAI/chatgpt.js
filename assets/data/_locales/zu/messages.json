@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Yakha ifayela lokuhlela (empandeni yephrojekthi)" },
   "optionDesc_interactive": { "message": "Faka imodi YOKUPHINDA USEBENZISANE" },
   "optionDesc_joke": { "message": "Ilandisa ihlaya elihlekisayo ngokungahleliwe" },
+  "optionDesc_fortune": { "message": "Tshela inhlanhla yakho" },
   "optionDesc_randomAnswer": { "message": "Phendula umbuzo ongahleliwe" },
   "optionDesc_commitMsg": {
     "message": "Yenza umlayezo we-git uzibophezele ovela ezinguqukweni bese ukopisha uye ebhodini"

@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "สร้างไฟล์การกำหนดค่า (ในรูทโครงการ)" },
   "optionDesc_interactive": { "message": "เข้าสู่โหมดแทนที่แบบโต้ตอบ" },
   "optionDesc_joke": { "message": "เล่าเรื่องตลกแบบสุ่ม" },
+  "optionDesc_fortune": { "message": "ดูดวงของคุณ" },
   "optionDesc_randomAnswer": { "message": "ตอบคำถามแบบสุ่ม" },
   "optionDesc_commitMsg": { "message": "สร้างข้อความ GIT commit จากการเปลี่ยนแปลงและคัดลอกไปยังคลิปบอร์ด" },
   "optionDesc_clear": { "message": "ล้างลำดับข้อความที่แคชไว้" },

@@ -76,6 +76,7 @@
   "optionDesc_init": { "message": "Hangaia he konae whirihoranga (i roto i te pakiaka kaupapa)" },
   "optionDesc_interactive": { "message": "Whakauru i te aratau REPL whakawhitiwhiti" },
   "optionDesc_joke": { "message": "Korero i te ataata ataata i roto i te tūponotanga" },
+  "optionDesc_fortune": { "message": "Korero i to koutou taonga" },
   "optionDesc_randomAnswer": { "message": "Whakautu i te pātai tūponotanga" },
   "optionDesc_commitMsg": {
     "message": "Te whakaputa i te karere tuku git mai i nga huringa me te kape ki te papapātuhi"

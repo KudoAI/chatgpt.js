@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Snulfu afaylu n usebter (deg uẓar n usebter)" },
   "optionDesc_interactive": { "message": "Sekcem talɣut n uḍebsi" },
   "optionDesc_joke": { "message": "Yesssssssssssssssssss a joke" },
+  "optionDesc_fortune": { "message": "Ini-yas i ugerruj-ik" },
   "optionDesc_randomAnswer": { "message": "Tiririt ɣef tuttriwin -..." },
   "optionDesc_commitMsg": { "message": "Snulfu izen n git seg ibeddilen n usebded n tvidyut" },
   "optionDesc_clear": { "message": "Sfeḍ asenfar n yizen yettwakksen" },

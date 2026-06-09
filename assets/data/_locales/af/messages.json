@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Skep konfigurasielêer (in projekwortel)" },
   "optionDesc_interactive": { "message": "Invoer interaktiewe REPL modus" },
   "optionDesc_joke": { "message": "Vertel 'n snaakse grap na willekeur" },
+  "optionDesc_fortune": { "message": "Vertel jou fortuin" },
   "optionDesc_randomAnswer": { "message": "Beantwoord 'n ewekansige vraag" },
   "optionDesc_commitMsg": { "message": "Genereer git pleeg boodskap van veranderinge en kopieer na knipbord" },
   "optionDesc_clear": { "message": "Maak 'n verborge boodskapketting skoon" },

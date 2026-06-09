@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "კონფიგურაციის ფაილის შექმნა (პროექტის root-ში)" },
   "optionDesc_interactive": { "message": "Შეიყვანეთ ინტერაქტიული რეპრეზენტაციის რეჟიმი" },
   "optionDesc_joke": { "message": "Შემთხვევით სასაცილო ხუმრობას ჰყვება" },
+  "optionDesc_fortune": { "message": "Შეატყობინეთ თქვენი ბედი" },
   "optionDesc_randomAnswer": { "message": "Უპასუხეთ შემთხვევით დასმულ შეკითხვას" },
   "optionDesc_commitMsg": { "message": "Შექმენით git commit შეტყობინება ცვლილებებიდან და დააკოპირეთ გაცვლის ბუფერში" },
   "optionDesc_clear": { "message": "Ქეშირებული შეტყობინებების ჯაჭვის გასუფთავება" },

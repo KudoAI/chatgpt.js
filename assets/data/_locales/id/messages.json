@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Buat file konfigurasi (di root proyek)" },
   "optionDesc_interactive": { "message": "Masuk ke mode REPL INTERAKTIF" },
   "optionDesc_joke": { "message": "Menceritakan lelucon lucu secara acak" },
+  "optionDesc_fortune": { "message": "Beri tahu keberuntungan Anda" },
   "optionDesc_randomAnswer": { "message": "Jawab pertanyaan acak" },
   "optionDesc_commitMsg": { "message": "Buat pesan commit git dari perubahan dan salin ke clipboard" },
   "optionDesc_clear": { "message": "Bersihkan rantai pesan yang di - cache" },

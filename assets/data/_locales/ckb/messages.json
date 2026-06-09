@@ -80,6 +80,7 @@
   "optionDesc_init": { "message": "دروستکردنی پەڕگەی ڕێکخستن (لە ڕەگی پرۆژەدا)" },
   "optionDesc_interactive": { "message": "دۆخی وەڵامدانەوە بە کارلێک داخڵ بکە" },
   "optionDesc_joke": { "message": "نوکته یه کی خۆش له سه ر پێکه نین" },
+  "optionDesc_fortune": { "message": "بە سامانی خۆت بڵێ" },
   "optionDesc_randomAnswer": { "message": "وەڵامدانەوەی پرسیارێکی هەڕەمەکی" },
   "optionDesc_commitMsg": { "message": "دروستکردنی پەیامی پابەندبوونی git لە گۆڕانکارییەکان و کۆپی کردن بۆ کلیپبۆرد" },
   "optionDesc_clear": { "message": "زنجیره ی په ‌ یامی شاراوه ‌ ی ڕوون" },

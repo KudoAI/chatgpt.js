@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Cruthaich faidhle rèiteachaidh (ann am freumh a 'phròiseict)" },
   "optionDesc_interactive": { "message": "Cuir a - steach am modh atharrais eadar - ghnìomhach" },
   "optionDesc_joke": { "message": "Ag innse joke èibhinn aig Random" },
+  "optionDesc_fortune": { "message": "Innis dha do bhuannachd" },
   "optionDesc_randomAnswer": { "message": "Freagairt gu Random" },
   "optionDesc_commitMsg": { "message": "Generate git commit message from changes and copy to clipboard" },
   "optionDesc_clear": { "message": "Falamhaich an t - slabhraidh teachdaireachd a tha san tasgadan" },

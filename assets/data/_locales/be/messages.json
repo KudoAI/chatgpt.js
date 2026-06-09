@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Стварыць файл канфігурацыі (у корані праекта)" },
   "optionDesc_interactive": { "message": "Увядзіце інтэрактыўны рэжым REPL" },
   "optionDesc_joke": { "message": "Распавядае смешны анекдот выпадкова" },
+  "optionDesc_fortune": { "message": "Раскажы пра сваё багацце" },
   "optionDesc_randomAnswer": { "message": "Адказаць на выпадковае пытанне" },
   "optionDesc_commitMsg": { "message": "Стварыць паведамленне GIT COMMIT са зменаў і скапіяваць у буфер абмену" },
   "optionDesc_clear": { "message": "Ачысціць кэшаваны ланцужок паведамленняў" },

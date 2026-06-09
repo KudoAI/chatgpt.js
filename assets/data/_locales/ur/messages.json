@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "کنفیگ فائل بنائیں (پروجیکٹ روٹ میں)" },
   "optionDesc_interactive": { "message": "انٹرایکٹو ریپ موڈ درج کریں" },
   "optionDesc_joke": { "message": "بے ترتیب میں ایک مضحکہ خیز مذاق سناتا ہے" },
+  "optionDesc_fortune": { "message": "اپنی خوش قسمتی بتائیں" },
   "optionDesc_randomAnswer": { "message": "کسی بے ترتیب سوال کا جواب دیں" },
   "optionDesc_commitMsg": { "message": "تبدیلیوں سے git COMMIT پیغام تیار کریں اور کلپ بورڈ پر کاپی کریں" },
   "optionDesc_clear": { "message": "کیشڈ میسج چین صاف کریں" },

@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Opprett konfigurasjonsfil (i prosjektroten)" },
   "optionDesc_interactive": { "message": "Gå inn i interaktiv REPL-modus" },
   "optionDesc_joke": { "message": "Forteller en morsom vits tilfeldig" },
+  "optionDesc_fortune": { "message": "Spå din spådom" },
   "optionDesc_randomAnswer": { "message": "Svar på et tilfeldig spørsmål" },
   "optionDesc_commitMsg": { "message": "Generer git commit-melding fra endringer og kopier til utklippstavlen" },
   "optionDesc_clear": { "message": "Tøm bufret meldingskjede" },

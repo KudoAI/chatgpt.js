@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Skapa konfiguratiónsfíla (í verkætlanarorði)" },
   "optionDesc_interactive": { "message": "Inniheldur interaktivt rep stilla" },
   "optionDesc_joke": { "message": "Tað er ein stuttligur spøgur av tilvild" },
+  "optionDesc_fortune": { "message": "Sig frá tínum ríkidømi" },
   "optionDesc_randomAnswer": { "message": "At svara einum tilvildarligum spurningi" },
   "optionDesc_commitMsg": { "message": "Git gevur boð frá broytingum og kopierar til klippborð" },
   "optionDesc_clear": { "message": "Rætt goymd boðskjal" },

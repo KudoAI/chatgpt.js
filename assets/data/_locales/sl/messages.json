@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Ustvari konfiguracijsko datoteko (v korenu projekta)" },
   "optionDesc_interactive": { "message": "Vstopite v interaktivni način REPL" },
   "optionDesc_joke": { "message": "Naključno pripoveduje smešno šalo" },
+  "optionDesc_fortune": { "message": "Povejte svojo usodo" },
   "optionDesc_randomAnswer": { "message": "Odgovorite na naključno vprašanje" },
   "optionDesc_commitMsg": { "message": "Ustvari sporočilo git pošiljanje iz sprememb in kopiraj v odložišče" },
   "optionDesc_clear": { "message": "Počisti predpomnjeno verigo sporočil" },

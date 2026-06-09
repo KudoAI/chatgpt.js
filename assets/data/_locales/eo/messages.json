@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "Krei agordodosieron (en projekta radiko)" },
   "optionDesc_interactive": { "message": "Enmeti interaktivan repl-reĝimon" },
   "optionDesc_joke": { "message": "Amuza ŝerco ĉe hazarda" },
+  "optionDesc_fortune": { "message": "Diru al mi vian sorton" },
   "optionDesc_randomAnswer": { "message": "Respondi hazardan demandon" },
   "optionDesc_commitMsg": { "message": "Generi gitan transigan mesaĝon de ŝanĝoj kaj kopii al poŝo" },
   "optionDesc_clear": { "message": "Forviŝi kaŝmemoran mesaĝĉenon" },

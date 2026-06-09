@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Mamorona raki-kirakira (ao amin'ny fototry ny tetikasa)" },
   "optionDesc_interactive": { "message": "Fomban'ny REPL interactif" },
   "optionDesc_joke": { "message": "Hilaza ny hanihany mahatsikaiky amin'ny kisendrasendra" },
+  "optionDesc_fortune": { "message": "Lazao ny harenanao" },
   "optionDesc_randomAnswer": { "message": "Mamaly fanontaniana kisendrasendra" },
   "optionDesc_commitMsg": {
     "message": "Hiteraka filazana ataon'ny git avy amin'ny fanovana ary ny kopia mankany amin'ny fanindri-taratasy"

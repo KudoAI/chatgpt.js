@@ -72,6 +72,7 @@
   "optionDesc_init": { "message": "E hana i ka faila hoʻonohonoho (ma ke kumu papahana)" },
   "optionDesc_interactive": { "message": "E komo i ke ʻano REPL pili" },
   "optionDesc_joke": { "message": "Haʻi i kahi ʻakaʻaka hoʻomākeʻaka ma kahi koho ʻole" },
+  "optionDesc_fortune": { "message": "E haʻi i kou waiwai" },
   "optionDesc_randomAnswer": { "message": "E pane i kahi nīnau kaulele" },
   "optionDesc_commitMsg": { "message": "Hoʻopuka i ka leka git commit mai nā loli a kope i ka clipboard" },
   "optionDesc_clear": { "message": "Holoi i ke kaulahao leka i hūnā ʻia" },

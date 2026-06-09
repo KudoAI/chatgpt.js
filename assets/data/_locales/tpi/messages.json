@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Kirap konfig file (long projek root)" },
   "optionDesc_interactive": { "message": "Toksave long ol samting i kamap long rot bilong rot" },
   "optionDesc_joke": { "message": "Ol i save tok bilas long ol man i no gat gutpela tingting" },
+  "optionDesc_fortune": { "message": "Tokim gutpela samting bilong yu" },
   "optionDesc_randomAnswer": { "message": "Toksave long wanpela askim" },
   "optionDesc_commitMsg": { "message": "Git i save mekim tok long ol senis na kopim long clipboard" },
   "optionDesc_clear": { "message": "Toksave long ol samting i stap hait" },

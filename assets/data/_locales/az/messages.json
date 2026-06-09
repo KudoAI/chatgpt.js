@@ -74,6 +74,7 @@
   "optionDesc_init": { "message": "Konfiqurasiya faylı yaradın (layihə kökündə)" },
   "optionDesc_interactive": { "message": "İnteraktiv pul köçürmə REJİMİNİ daxil edin" },
   "optionDesc_joke": { "message": "Təsadüfi gülməli bir zarafat danışır" },
+  "optionDesc_fortune": { "message": "Bəxtinizi deyin" },
   "optionDesc_randomAnswer": { "message": "Təsadüfi suala cavab verin" },
   "optionDesc_commitMsg": { "message": "Dəyişikliklərdən git öhdəliyi mesajı yaradın və mübadilə buferinə kopyalayın" },
   "optionDesc_clear": { "message": "Keşlənmiş mesaj zəncirini təmizləyin" },
