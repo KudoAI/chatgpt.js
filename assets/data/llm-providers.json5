@@ -13,22 +13,38 @@
     },
     "models": {
       "free": {
-        "bytedance-seed/seedream-4.5": { "modes": ["text"] },
-        "google/gemma-4-26b-a4b-it:free": { "modes": ["text"] },
-        "google/gemma-4-31b-it:free": { "modes": ["text"] },
-        "moonshotai/kimi-k2.6:free": { "modes": ["text"] },
-        "nvidia/nemotron-3-nano-30b-a3b:free": { "modes": ["text"] },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": { "modes": ["text", "image", "video", "audio"] },
-        "nvidia/nemotron-3-super-120b-a12b:free": { "modes": ["text"] },
-        "nvidia/nemotron-3-ultra-550b-a55b:free": { "modes": ["text"] },
-        "nvidia/nemotron-nano-9b-v2:free": { "modes": ["text"] },
-        "nvidia/nemotron-nano-12b-v2-vl:free": { "modes": ["text", "image", "video"] },
-        "openai/gpt-oss-120b:free": { "modes": ["text"] },
-        "openrouter/free": { "modes": ["text"] },
-        "openrouter/owl-alpha": { "modes": ["text"] },
-        "poolside/laguna-m.1:free": { "modes": ["text"] },
-        "poolside/laguna-xs.2:free": { "modes": ["text"] },
-        "z-ai/glm-4.5-air:free": { "modes": ["text"] }
+        "bytedance-seed/seedream-4.5": { // https://openrouter.ai/bytedance-seed/seedream-4.5
+          "inputTypes": ["text", "image"], "outputTypes": ["text"], "releaseDate": "2025-12-23" },
+        "google/gemma-4-26b-a4b-it:free": { // https://openrouter.ai/google/gemma-4-26b-a4b-it:free
+          "inputTypes": ["text", "image", "video"], "outputTypes": ["text"], "releaseDate": "2026-04-03" },
+        "google/gemma-4-31b-it:free": { // https://openrouter.ai/google/gemma-4-31b-it:free
+          "inputTypes": ["text", "image", "video"], "outputTypes": ["text"], "releaseDate": "2026-04-02" },
+        "moonshotai/kimi-k2.6:free": { // https://openrouter.ai/moonshotai/kimi-k2.6:free
+          "inputTypes": ["text", "image"], "outputTypes": ["text"], "releaseDate": "2026-04-20" },
+        "nvidia/nemotron-3-nano-30b-a3b:free": {// https://openrouter.ai/nvidia/nemotron-3-nano-30b-a3b
+          "inputTypes": ["text", "image", "video"], "outputTypes": ["text"], "releaseDate": "2025-12-15" },
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": { // https://openrouter.ai/nvidia/nemotron-3-nano-30b-a3b:free
+          "inputTypes": ["text"], "outputTypes": ["text"], "releaseDate": "2025-12-14" },
+        "nvidia/nemotron-3-super-120b-a12b:free": { // https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b:free
+          "inputTypes": ["text"], "outputTypes": ["text"], "releaseDate": "2026-03-11" },
+        "nvidia/nemotron-3-ultra-550b-a55b:free": { // https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:free
+          "inputTypes": ["text"], "outputTypes": ["text"], "releaseDate": "2026-06-03" },
+        "nvidia/nemotron-nano-9b-v2:free": { // https://openrouter.ai/nvidia/nemotron-nano-9b-v2:free
+          "inputTypes": ["text"], "outputTypes": ["text"], "releaseDate": "2025-09-05" },
+        "nvidia/nemotron-nano-12b-v2-vl:free": { // https://openrouter.ai/nvidia/nemotron-nano-12b-v2-vl:free
+          "inputTypes": ["text", "image", "video"], "outputTypes": ["text"], "releaseDate": "2025-10-28" },
+        "openai/gpt-oss-120b:free": { // https://openrouter.ai/openai/gpt-oss-120b:free
+          "inputTypes": ["text"], "outputTypes": ["text"], "releaseDate": "2025-08-05" },
+        "openrouter/free": { // https://openrouter.ai/openrouter/free
+          "inputTypes": ["text"], "outputTypes": ["text"] },
+        "openrouter/owl-alpha": { // https://openrouter.ai/openrouter/owl-alpha
+          "inputTypes": ["text"], "outputTypes": ["text"], "releaseDate": "2026-04-08" },
+        "poolside/laguna-m.1:free": { // https://openrouter.ai/poolside/laguna-m.1:free
+          "inputTypes": ["text"], "outputTypes": ["text"], "releaseDate": "2026-04-28" },
+        "poolside/laguna-xs.2:free": { // https://openrouter.ai/poolside/laguna-xs.2:free
+          "inputTypes": ["text"], "outputTypes": ["text"], "releaseDate": "2026-04-28" },
+        "z-ai/glm-4.5-air:free": { // https://openrouter.ai/z-ai/glm-4.5-air:free
+          "inputTypes": ["text"], "outputTypes": ["text"], "releaseDate": "2025-07-25" },
       }
     }
   }
