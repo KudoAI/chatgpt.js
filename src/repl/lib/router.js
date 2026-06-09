@@ -16,8 +16,7 @@ async function route(cmd, args, rl) {
         case 'ascii' : case 'art' : case 'a' :
             await run.asciiArt(args.join(' ') || null) ; break
         case 'summarize' : case 'sum' : case 's' : {
-            if (!args.length)
-                return log.warn(`${cli.msgs.helpSection_usage}: /summarize <text|filepath|url>`)
+            if (!args.length) return log.warn(`${cli.msgs.helpSection_usage}: /summarize <text|filepath|url>`)
             await run.summarize(args.join(' '))
             break
         } case 'stats' :
@@ -40,8 +39,8 @@ async function route(cmd, args, rl) {
             else { cli.config.maxChars = newMax ; log.success(`maxChars set to ${cli.config.maxChars}`) }
             break
         } case 'maxtokens' : case 'mt' : {
-            if (!args.length) return log.info(`${cli.msgs.info_current}
-                maxTokens: ${cli.config.maxTokens || 'unlimited'}`)
+            if (!args.length)
+                return log.info(`${cli.msgs.info_current} maxTokens: ${cli.config.maxTokens || 'unlimited'}`)
             const newTokens = parseInt(args[0], 10)
             if (isNaN(newTokens) || newTokens < 1) log.error(`maxTokens ${cli.msgs.error_nonPositiveNum}`)
             else { cli.config.maxTokens = newTokens ; log.success(`maxTokens set to ${cli.config.maxTokens}`) }
