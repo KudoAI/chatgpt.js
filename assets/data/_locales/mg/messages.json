@@ -81,5 +81,6 @@
   "optionDesc_help": { "message": "Asehoy ny efijerin'ny toro-làlana" },
   "optionDesc_version": { "message": "Asehoy ny isan'ny kinova" },
   "optionDesc_stats": { "message": "Asehoy ny stats npm" },
-  "optionDesc_debug": { "message": "Asehoy ny raki-tatitry ny debugging" }
+  "optionDesc_debug": { "message": "Asehoy ny raki-tatitry ny debugging" },
+  "query_hi": { "message": "hi" }
 }

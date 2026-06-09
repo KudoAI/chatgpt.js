@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Prikažite ekran za pomoć" },
   "optionDesc_version": { "message": "Исписује број верзије" },
   "optionDesc_stats": { "message": "Prikaži npm statistiku" },
-  "optionDesc_debug": { "message": "Prikaži evidencije otklanjanja grešaka" }
+  "optionDesc_debug": { "message": "Prikaži evidencije otklanjanja grešaka" },
+  "query_hi": { "message": "hi" }
 }

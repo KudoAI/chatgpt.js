@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Hilfebildschirm anzeigen" },
   "optionDesc_version": { "message": "Versionsnummer anzeigen" },
   "optionDesc_stats": { "message": "Npm-Statistiken anzeigen" },
-  "optionDesc_debug": { "message": "Debug-Protokolle anzeigen" }
+  "optionDesc_debug": { "message": "Debug-Protokolle anzeigen" },
+  "query_hi": { "message": "hi" }
 }

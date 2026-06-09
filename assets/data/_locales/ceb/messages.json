@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Ipakita ang screen sa tabang" },
   "optionDesc_version": { "message": "Ipakita ang numero sa bersyon" },
   "optionDesc_stats": { "message": "Ipakita ang npm stats" },
-  "optionDesc_debug": { "message": "Ipakita ang debug logs" }
+  "optionDesc_debug": { "message": "Ipakita ang debug logs" },
+  "query_hi": { "message": "hi" }
 }

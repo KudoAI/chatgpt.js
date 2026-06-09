@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "დახმარების ეკრანის ჩვენება" },
   "optionDesc_version": { "message": "ვერსიის ნომერი" },
   "optionDesc_stats": { "message": "NPM სტატისტიკის ჩვენება" },
-  "optionDesc_debug": { "message": "Გამართვის ჟურნალების ჩვენება" }
+  "optionDesc_debug": { "message": "Გამართვის ჟურნალების ჩვენება" },
+  "query_hi": { "message": "გამარჯობა" }
 }

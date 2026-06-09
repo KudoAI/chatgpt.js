@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Dangos y sgrin gymorth" },
   "optionDesc_version": { "message": "Rhif fersiwn" },
   "optionDesc_stats": { "message": "Dangos ystadegau npm" },
-  "optionDesc_debug": { "message": "Dangos cofnodion datnamu" }
+  "optionDesc_debug": { "message": "Dangos cofnodion datnamu" },
+  "query_hi": { "message": "hi" }
 }

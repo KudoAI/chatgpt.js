@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "সহায়তা স্ক্রিন প্রদর্শন করুন" },
   "optionDesc_version": { "message": "বিক্রেতা সংখ্যা" },
   "optionDesc_stats": { "message": "Npm পরিসংখ্যান দেখান" },
-  "optionDesc_debug": { "message": "ডিবাগ লগগুলি দেখান" }
+  "optionDesc_debug": { "message": "ডিবাগ লগগুলি দেখান" },
+  "query_hi": { "message": "হাই" }
 }

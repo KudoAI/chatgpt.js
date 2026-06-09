@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Montre ekran èd" },
   "optionDesc_version": { "message": "Nimewo vèsyon" },
   "optionDesc_stats": { "message": "Montre stats npm" },
-  "optionDesc_debug": { "message": "Montre mòso bwa debogaj" }
+  "optionDesc_debug": { "message": "Montre mòso bwa debogaj" },
+  "query_hi": { "message": "hi" }
 }

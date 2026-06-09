@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "ヘルプ画面を表示" },
   "optionDesc_version": { "message": "バージョン番号" },
   "optionDesc_stats": { "message": "Npm統計を表示" },
-  "optionDesc_debug": { "message": "デバッグログを表示" }
+  "optionDesc_debug": { "message": "デバッグログを表示" },
+  "query_hi": { "message": "こんにちは" }
 }

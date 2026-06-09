@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Ցուցադրել օգնության էկրանը" },
   "optionDesc_version": { "message": "Ցույց տալ տարբերակի համարը" },
   "optionDesc_stats": { "message": "Ցույց տալ NPM վիճակագրությունը" },
-  "optionDesc_debug": { "message": "Ցույց տալ կարգաբերման մատյանները" }
+  "optionDesc_debug": { "message": "Ցույց տալ կարգաբերման մատյանները" },
+  "query_hi": { "message": "ողջույն" }
 }

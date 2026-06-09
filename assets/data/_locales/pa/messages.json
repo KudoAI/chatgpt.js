@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "ਮੱਦਦ ਸਕਰੀਨ ਵੇਖੋ" },
   "optionDesc_version": { "message": "ਵਰਜਨ ਨੰਬਰ" },
   "optionDesc_stats": { "message": "Npm ਅੰਕੜੇ ਵੇਖੋ" },
-  "optionDesc_debug": { "message": "ਡੀਬੱਗ ਲਾਗ ਵੇਖੋ" }
+  "optionDesc_debug": { "message": "ਡੀਬੱਗ ਲਾਗ ਵੇਖੋ" },
+  "query_hi": { "message": "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ" }
 }

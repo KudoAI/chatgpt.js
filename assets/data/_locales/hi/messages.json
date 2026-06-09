@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "सहायता स्क्रीन दिखाएँ" },
   "optionDesc_version": { "message": "संस्करण संख्या" },
   "optionDesc_stats": { "message": "एनपीएम आंकड़े दिखाएँ" },
-  "optionDesc_debug": { "message": "डिबग लॉग दिखाएँ" }
+  "optionDesc_debug": { "message": "डिबग लॉग दिखाएँ" },
+  "query_hi": { "message": "नमस्ते" }
 }

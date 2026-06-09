@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Afișați ecranul de ajutor" },
   "optionDesc_version": { "message": "Număr versiune" },
   "optionDesc_stats": { "message": "Afișați statisticile npm" },
-  "optionDesc_debug": { "message": "Afișează jurnalele de depanare" }
+  "optionDesc_debug": { "message": "Afișează jurnalele de depanare" },
+  "query_hi": { "message": "bună" }
 }

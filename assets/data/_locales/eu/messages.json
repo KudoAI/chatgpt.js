@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Bistaratu laguntza-pantaila" },
   "optionDesc_version": { "message": "Bertsio zenbakia" },
   "optionDesc_stats": { "message": "Erakutsi npm estatistikak" },
-  "optionDesc_debug": { "message": "Erakutsi arazketa-erregistroak" }
+  "optionDesc_debug": { "message": "Erakutsi arazketa-erregistroak" },
+  "query_hi": { "message": "kaixo" }
 }

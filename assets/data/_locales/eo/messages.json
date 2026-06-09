@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Montri helpekranon" },
   "optionDesc_version": { "message": "Nombro de Versio" },
   "optionDesc_stats": { "message": "Montri npm- statistikojn" },
-  "optionDesc_debug": { "message": "Montri sencimigajn protokolojn" }
+  "optionDesc_debug": { "message": "Montri sencimigajn protokolojn" },
+  "query_hi": { "message": "saluton" }
 }

@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Vertoon hulp skerm" },
   "optionDesc_version": { "message": "Naam van die Vertoon" },
   "optionDesc_stats": { "message": "Vertoon npm-statistieke" },
-  "optionDesc_debug": { "message": "Wys ontfoutlogboeke" }
+  "optionDesc_debug": { "message": "Wys ontfoutlogboeke" },
+  "query_hi": { "message": "hallo" }
 }

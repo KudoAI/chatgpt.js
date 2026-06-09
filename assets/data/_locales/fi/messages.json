@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Näytä ohjenäyttö" },
   "optionDesc_version": { "message": "Näyttää versionumeron" },
   "optionDesc_stats": { "message": "Näytä npm-tilastot" },
-  "optionDesc_debug": { "message": "Näytä virheenkorjauslokit" }
+  "optionDesc_debug": { "message": "Näytä virheenkorjauslokit" },
+  "query_hi": { "message": "hi" }
 }

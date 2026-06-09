@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Tampilkan layar bantuan" },
   "optionDesc_version": { "message": "Nomor Versi" },
   "optionDesc_stats": { "message": "Tampilkan statistik npm" },
-  "optionDesc_debug": { "message": "Tampilkan log debug" }
+  "optionDesc_debug": { "message": "Tampilkan log debug" },
+  "query_hi": { "message": "hai" }
 }

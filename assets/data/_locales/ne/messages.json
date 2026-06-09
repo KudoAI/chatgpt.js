@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "मद्दत स्क्रिन प्रदर्शन गर्नुहोस्" },
   "optionDesc_version": { "message": "à¤ªà¥à¤°à¤¦à¤°à¥à¤¶à¤¨à¤à¥ à¤¨à¤¾à¤®" },
   "optionDesc_stats": { "message": "Npm तथ्याङ्क देखाउनुहोस्" },
-  "optionDesc_debug": { "message": "डिबग लगहरू देखाउनुहोस्" }
+  "optionDesc_debug": { "message": "डिबग लगहरू देखाउनुहोस्" },
+  "query_hi": { "message": "नमस्ते" }
 }

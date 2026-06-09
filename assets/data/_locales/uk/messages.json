@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Відобразити екран довідки" },
   "optionDesc_version": { "message": "Показати номер версії програми" },
   "optionDesc_stats": { "message": "Показати статистику npm" },
-  "optionDesc_debug": { "message": "Показати журнали налагодження" }
+  "optionDesc_debug": { "message": "Показати журнали налагодження" },
+  "query_hi": { "message": "привіт" }
 }

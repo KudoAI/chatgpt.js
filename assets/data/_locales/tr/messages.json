@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Yardım ekranını görüntüle" },
   "optionDesc_version": { "message": "Versiyon Numarası" },
   "optionDesc_stats": { "message": "Npm istatistiklerini göster" },
-  "optionDesc_debug": { "message": "Hata ayıklama günlüklerini göster" }
+  "optionDesc_debug": { "message": "Hata ayıklama günlüklerini göster" },
+  "query_hi": { "message": "hi" }
 }

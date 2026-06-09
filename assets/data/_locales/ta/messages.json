@@ -81,5 +81,6 @@
   "optionDesc_help": { "message": "உதவித் திரையைக் காண்பி" },
   "optionDesc_version": { "message": "பதிப்பெண்" },
   "optionDesc_stats": { "message": "Npm புள்ளிவிவரங்களைக் காட்டு" },
-  "optionDesc_debug": { "message": "பிழைத்திருத்த பதிவுகளைக் காண்பி" }
+  "optionDesc_debug": { "message": "பிழைத்திருத்த பதிவுகளைக் காண்பி" },
+  "query_hi": { "message": "வணக்கம்" }
 }

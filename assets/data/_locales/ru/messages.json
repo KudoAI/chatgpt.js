@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Показать экран помощи" },
   "optionDesc_version": { "message": "Показать сведения о версии" },
   "optionDesc_stats": { "message": "Показать статистику npm" },
-  "optionDesc_debug": { "message": "Показать журналы отладки" }
+  "optionDesc_debug": { "message": "Показать журналы отладки" },
+  "query_hi": { "message": "привет" }
 }

@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Painim piksa bilong helpim" },
   "optionDesc_version": { "message": "Tokim namba bilong Baibel" },
   "optionDesc_stats": { "message": "Toksave long ol statis bilong PNG" },
-  "optionDesc_debug": { "message": "Toksave long ol liklik hap bilong en" }
+  "optionDesc_debug": { "message": "Toksave long ol liklik hap bilong en" },
+  "query_hi": { "message": "hallo" }
 }

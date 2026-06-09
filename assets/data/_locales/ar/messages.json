@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "عرض شاشة المساعدة" },
   "optionDesc_version": { "message": "رقم الإصدار" },
   "optionDesc_stats": { "message": "عرض إحصائيات npm" },
-  "optionDesc_debug": { "message": "عرض سجلات التصحيح" }
+  "optionDesc_debug": { "message": "عرض سجلات التصحيح" },
+  "query_hi": { "message": "مرحبًا" }
 }

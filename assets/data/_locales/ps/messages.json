@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "د مرستې سکرین ښکاره کړئ" },
   "optionDesc_version": { "message": "د نسخې شمیره وښایاست" },
   "optionDesc_stats": { "message": "د npm احصایې ښکاره کړئ" },
-  "optionDesc_debug": { "message": "کړاوتمبونې خبرالونه ښودل" }
+  "optionDesc_debug": { "message": "کړاوتمبونې خبرالونه ښودل" },
+  "query_hi": { "message": "سلام" }
 }
