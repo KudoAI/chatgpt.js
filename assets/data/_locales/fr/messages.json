@@ -81,5 +81,6 @@
   "optionDesc_help": { "message": "Affichage de l’aide" },
   "optionDesc_version": { "message": "Affiche le numéro de la version" },
   "optionDesc_stats": { "message": "Afficher les statistiques npm" },
-  "optionDesc_debug": { "message": "Afficher les journaux de débogage" }
+  "optionDesc_debug": { "message": "Afficher les journaux de débogage" },
+  "query_hi": { "message": "hi" }
 }

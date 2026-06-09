@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "સહાય સ્ક્રીન પ્રદર્શિત કરો" },
   "optionDesc_version": { "message": "આવૃત્તિ ક્રમાંક" },
   "optionDesc_stats": { "message": "Npm આંકડાઓ બતાવો" },
-  "optionDesc_debug": { "message": "ડિબગ લોગ્સ બતાવો" }
+  "optionDesc_debug": { "message": "ડિબગ લોગ્સ બતાવો" },
+  "query_hi": { "message": "hi" }
 }

@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Erekana ubufasha bwa ecran" },
   "optionDesc_version": { "message": "Erekana nimero ya verisiyo" },
   "optionDesc_stats": { "message": "Sitatisitiki" },
-  "optionDesc_debug": { "message": "Kosora amakosa" }
+  "optionDesc_debug": { "message": "Kosora amakosa" },
+  "query_hi": { "message": "hi" }
 }

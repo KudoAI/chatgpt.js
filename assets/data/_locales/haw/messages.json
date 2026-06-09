@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Hōʻike i ka pale kōkua" },
   "optionDesc_version": { "message": "Hōʻike i ka helu mana" },
   "optionDesc_stats": { "message": "Hōʻike i nā helu npm" },
-  "optionDesc_debug": { "message": "Hōʻike i nā moʻolelo debug" }
+  "optionDesc_debug": { "message": "Hōʻike i nā moʻolelo debug" },
+  "query_hi": { "message": "Aloha" }
 }

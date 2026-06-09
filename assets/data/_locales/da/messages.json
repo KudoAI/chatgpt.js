@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Vis hjælpeskærm" },
   "optionDesc_version": { "message": "Vis versionsnummer" },
   "optionDesc_stats": { "message": "Vis npm-statistik" },
-  "optionDesc_debug": { "message": "Vis fejlretningslogge" }
+  "optionDesc_debug": { "message": "Vis fejlretningslogge" },
+  "query_hi": { "message": "hej" }
 }

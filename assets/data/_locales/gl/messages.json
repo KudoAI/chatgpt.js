@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Mostrar a pantalla de axuda" },
   "optionDesc_version": { "message": "Número de versión" },
   "optionDesc_stats": { "message": "Mostrar as estatísticas de npm" },
-  "optionDesc_debug": { "message": "Mostrar os rexistros de depuración" }
+  "optionDesc_debug": { "message": "Mostrar os rexistros de depuración" },
+  "query_hi": { "message": "ola" }
 }

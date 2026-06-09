@@ -29,8 +29,8 @@
               : cli.config.asciiArt ?
                     `Render a single piece of ascii art of ${
                         typeof cli.config.asciiArt == 'string' ? cli.config.asciiArt : 'a random thing' }.`
-              : cli.config.query
-    if (!cli.config.noSuggest && query == cli.config.query)
+              : cli.msgs.query_hi
+    if (!cli.config.noSuggest && typeof query == 'string' && query == cli.config.query)
         query += '\n\nThen, at the end of your response, ask user if they want you to do something related to the query'
               + ' except if you are already finishing your response w/ a question.'
     log.debug(`query = ${query}`)
@@ -38,6 +38,6 @@
     await run.query(query, { copy: cli.config.copy })
     if (chatgpt.lastProvider) log.debug(`Provider used: ${chatgpt.lastProvider}`)
     if (chatgpt.lastModel) log.debug(`Model used: ${chatgpt.lastModel}`)
-    if (/^(?:help|hi)(?:\n|$)/.test(query)) log.help()
+    if (new RegExp(`^(?:help|${cli.msgs.query_hi})(?:\n|$)`).test(query)) log.help()
 
 })()

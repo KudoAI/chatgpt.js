@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Foto di Help Screenshot" },
   "optionDesc_version": { "message": "Mustra number di vershon" },
   "optionDesc_stats": { "message": "Vashon NPM Stats" },
-  "optionDesc_debug": { "message": "Inicio › Debug Logs › Actividad" }
+  "optionDesc_debug": { "message": "Inicio › Debug Logs › Actividad" },
+  "query_hi": { "message": "halo" }
 }

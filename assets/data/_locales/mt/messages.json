@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Uri l-iskrin tal-għajnuna" },
   "optionDesc_version": { "message": "Version Number" },
   "optionDesc_stats": { "message": "Uri l-istatistika tal-NPM" },
-  "optionDesc_debug": { "message": "Uri r-reġistri tad-debugs" }
+  "optionDesc_debug": { "message": "Uri r-reġistri tad-debugs" },
+  "query_hi": { "message": "hi" }
 }

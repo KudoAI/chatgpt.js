@@ -83,5 +83,6 @@
   "optionDesc_help": { "message": "ހެލްޕް ސްކްރީން ޑިސްޕްލޭ ކުރޭ" },
   "optionDesc_version": { "message": "ވާޝަން ނަންބަރު ދައްކާ" },
   "optionDesc_stats": { "message": "npm ސްޓެޓިސްޓިކްސް ދައްކާށެވެ" },
-  "optionDesc_debug": { "message": "ޑީބަގް ލޮގްތައް ދައްކާށެވެ" }
+  "optionDesc_debug": { "message": "ޑީބަގް ލޮގްތައް ދައްކާށެވެ" },
+  "query_hi": { "message": "އައްސަލާމް ޢަލައިކުމް" }
 }

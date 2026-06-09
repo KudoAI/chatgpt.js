@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Прикажи екран за помош" },
   "optionDesc_version": { "message": "Број на производител" },
   "optionDesc_stats": { "message": "Прикажи статистика во npm" },
-  "optionDesc_debug": { "message": "Прикажи дневници за отстранување грешки" }
+  "optionDesc_debug": { "message": "Прикажи дневници за отстранување грешки" },
+  "query_hi": { "message": "здраво" }
 }

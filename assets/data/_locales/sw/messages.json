@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Onyesha skrini ya usaidizi" },
   "optionDesc_version": { "message": "Onyesha nambari ya toleo" },
   "optionDesc_stats": { "message": "Onyesha takwimu za npm" },
-  "optionDesc_debug": { "message": "Onyesha kumbukumbu za hitilafu" }
+  "optionDesc_debug": { "message": "Onyesha kumbukumbu za hitilafu" },
+  "query_hi": { "message": "habari" }
 }

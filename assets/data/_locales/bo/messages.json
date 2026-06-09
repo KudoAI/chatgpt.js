@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "རོགས་རམ་བརྙན་རིས་མངོན་འཆར" },
   "optionDesc_version": { "message": "ཤོག་ངོས་ཀྱི་གྲངས་ཀ་སྟོན་པ" },
   "optionDesc_stats": { "message": "NMརྩིས་ཁྲིད །" },
-  "optionDesc_debug": { "message": "འགོ་འཛུགས་ཐོ་འགོད་མངོན་འཆར (_D)" }
+  "optionDesc_debug": { "message": "འགོ་འཛུགས་ཐོ་འགོད་མངོན་འཆར (_D)" },
+  "query_hi": { "message": "སྐུ་ཚེ །" }
 }

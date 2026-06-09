@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Hëllefsbildschierm uweisen" },
   "optionDesc_version": { "message": "Versiounsnummer uweisen" },
   "optionDesc_stats": { "message": "NPM-Statistiken uweisen" },
-  "optionDesc_debug": { "message": "Entfälteg Logbicher uweisen" }
+  "optionDesc_debug": { "message": "Entfälteg Logbicher uweisen" },
+  "query_hi": { "message": "salut" }
 }

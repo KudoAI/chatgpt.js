@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Prikažite zaslon za pomoć" },
   "optionDesc_version": { "message": "Verzioniranje softvera" },
   "optionDesc_stats": { "message": "Prikaži npm statistike" },
-  "optionDesc_debug": { "message": "Prikaži zapisnike otklanjanja pogrešaka" }
+  "optionDesc_debug": { "message": "Prikaži zapisnike otklanjanja pogrešaka" },
+  "query_hi": { "message": "hi" }
 }

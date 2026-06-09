@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Yardım ekranını göstər" },
   "optionDesc_version": { "message": "Versiya nömrəsini göstər" },
   "optionDesc_stats": { "message": "Gecə-gündüz statistikalarını göstər" },
-  "optionDesc_debug": { "message": "Xəta ayıqlama jurnallarını göstər" }
+  "optionDesc_debug": { "message": "Xəta ayıqlama jurnallarını göstər" },
+  "query_hi": { "message": "salam" }
 }

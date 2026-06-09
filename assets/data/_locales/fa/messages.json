@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "نمایش صفحه راهنما" },
   "optionDesc_version": { "message": "نمایش شماره نسخه" },
   "optionDesc_stats": { "message": "نمایش آمار npm" },
-  "optionDesc_debug": { "message": "نمایش گزارش‌های اشکال‌زدایی" }
+  "optionDesc_debug": { "message": "نمایش گزارش‌های اشکال‌زدایی" },
+  "query_hi": { "message": "سلام" }
 }

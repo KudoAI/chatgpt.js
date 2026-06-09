@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "显示帮助屏幕" },
   "optionDesc_version": { "message": "显示版本号" },
   "optionDesc_stats": { "message": "显示npm统计数据" },
-  "optionDesc_debug": { "message": "显示调试日志" }
+  "optionDesc_debug": { "message": "显示调试日志" },
+  "query_hi": { "message": "您好" }
 }

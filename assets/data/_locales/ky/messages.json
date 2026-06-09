@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Жардам экранын көрсөтүү" },
   "optionDesc_version": { "message": "Версиянын номерин көрсөтүү" },
   "optionDesc_stats": { "message": "Көрсөтүү npm статистикасы" },
-  "optionDesc_debug": { "message": "Dialogs-action" }
+  "optionDesc_debug": { "message": "Dialogs-action" },
+  "query_hi": { "message": "салам" }
 }

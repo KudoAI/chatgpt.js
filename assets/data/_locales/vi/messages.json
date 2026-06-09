@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Hiển thị màn hình trợ giúp" },
   "optionDesc_version": { "message": "Số Phiên bản" },
   "optionDesc_stats": { "message": "Hiển thị số liệu thống kê npm" },
-  "optionDesc_debug": { "message": "Hiển thị nhật ký gỡ lỗi" }
+  "optionDesc_debug": { "message": "Hiển thị nhật ký gỡ lỗi" },
+  "query_hi": { "message": "xin chào" }
 }

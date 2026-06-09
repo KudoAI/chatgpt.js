@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Намоиши экрани кӯмак" },
   "optionDesc_version": { "message": "Номер производителя" },
   "optionDesc_stats": { "message": "Намоиши омори npm" },
-  "optionDesc_debug": { "message": "Намоиши сабти хатогиҳо" }
+  "optionDesc_debug": { "message": "Намоиши сабти хатогиҳо" },
+  "query_hi": { "message": "салом" }
 }

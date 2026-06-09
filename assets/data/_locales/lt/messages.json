@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Rodyti pagalbos ekraną" },
   "optionDesc_version": { "message": "Versijos numeris" },
   "optionDesc_stats": { "message": "Rodyti npm statistiką" },
-  "optionDesc_debug": { "message": "Rodyti derinimo žurnalus" }
+  "optionDesc_debug": { "message": "Rodyti derinimo žurnalus" },
+  "query_hi": { "message": "sveiki" }
 }

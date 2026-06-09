@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Onetsani zenera lothandizira" },
   "optionDesc_version": { "message": "Onetsani nambala ya mtundu" },
   "optionDesc_stats": { "message": "Onetsani ziwerengero za npm" },
-  "optionDesc_debug": { "message": "Onetsani zolemba za debug" }
+  "optionDesc_debug": { "message": "Onetsani zolemba za debug" },
+  "query_hi": { "message": "m 'bale" }
 }

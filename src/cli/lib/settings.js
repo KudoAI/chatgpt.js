@@ -10,7 +10,10 @@ module.exports = {
     controls: {
         provider: { type: 'param', regex: /^--?p(?:rovider)?(?:[=\s].*|$)/, defaultVal: 'auto' },
         uiLang: { type: 'param', valType: 'langCode', regex: /^--?u(?:i[-_]?lang)?(?:[=\s].*|$)/ },
-        query: { type: 'param', valRequired: false, regex: /^--?(?:q|query|ask|send)(?:[=\s].*|$)/, defaultVal: 'hi' },
+        query: {
+            type: 'param', valRequired: false,
+            regex: /^--?(?:q|query|ask|send)(?:[=\s].*|$)/, get defaultVal() { return cli.msgs.query_hi }
+        },
         summarize: { type: 'param', valType: 'filepath', allowText: true, regex: /^--?s(?:ummarize)?(?:[=\s].*|$)/ },
         asciiArt: { type: 'param', valRequired: false, regex: /^--?a(?:scii[-_]?)?a(?:rt)?(?:[=\s].*|$)/ },
         config: { type: 'param', valType: 'filepath', regex: /^--?c(?:onfig)?(?:[=\s].*|$)/ },

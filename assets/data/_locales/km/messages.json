@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "បង្ហាញអេក្រង់ជំនួយ" },
   "optionDesc_version": { "message": "បង្ហាញលេខកំណែ" },
   "optionDesc_stats": { "message": "បង្ហាញ ស្ថិតិ npm" },
-  "optionDesc_debug": { "message": "បង្ហាញ កំណត់ ហេតុ បំបាត់ កំហុស" }
+  "optionDesc_debug": { "message": "បង្ហាញ កំណត់ ហេតុ បំបាត់ កំហុស" },
+  "query_hi": { "message": "សួស្តី" }
 }

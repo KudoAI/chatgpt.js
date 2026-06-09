@@ -81,5 +81,6 @@
   "optionDesc_help": { "message": "Bonisa isikrini soncedo" },
   "optionDesc_version": { "message": "Inani Loguqulelo lomsebenzi" },
   "optionDesc_stats": { "message": "Bonisa izibalo ze-npm" },
-  "optionDesc_debug": { "message": "Bonisa ii-logs ze-debug" }
+  "optionDesc_debug": { "message": "Bonisa ii-logs ze-debug" },
+  "query_hi": { "message": "molo" }
 }

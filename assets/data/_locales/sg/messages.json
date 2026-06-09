@@ -89,5 +89,6 @@
   "optionDesc_help": { "message": "A yeke mû maboko na azo ti bâ ndo na ndo ti écr" },
   "optionDesc_version": { "message": "Nombre de la version" },
   "optionDesc_stats": { "message": "A yeke fa na azo so ayeke na yâ ti kodoro ni so" },
-  "optionDesc_debug": { "message": "A yeke sara si azo abâ so a yeke nzoni ti sara ye na lege ti" }
+  "optionDesc_debug": { "message": "A yeke sara si azo abâ so a yeke nzoni ti sara ye na lege ti" },
+  "query_hi": { "message": "mbi yeke na ngia" }
 }

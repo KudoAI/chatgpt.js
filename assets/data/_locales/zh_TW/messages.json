@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "顯示說明畫面" },
   "optionDesc_version": { "message": "版本編號" },
   "optionDesc_stats": { "message": "顯示npm統計資料" },
-  "optionDesc_debug": { "message": "顯示偵錯記錄" }
+  "optionDesc_debug": { "message": "顯示偵錯記錄" },
+  "query_hi": { "message": "您好" }
 }

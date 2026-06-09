@@ -81,5 +81,6 @@
   "optionDesc_help": { "message": "Bonisa isikrini sosizo" },
   "optionDesc_version": { "message": "Veza inombolo yohlelo" },
   "optionDesc_stats": { "message": "Veza izibalo ze-npm" },
-  "optionDesc_debug": { "message": "Bonisa amarekhodi okulungisa iphutha" }
+  "optionDesc_debug": { "message": "Bonisa amarekhodi okulungisa iphutha" },
+  "query_hi": { "message": "sawubona" }
 }

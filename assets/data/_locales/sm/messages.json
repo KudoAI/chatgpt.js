@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Faaali atu le lau fesoasoani" },
   "optionDesc_version": { "message": "Faaali atu le numera o le lomiga" },
   "optionDesc_stats": { "message": "Faaali atu npm fuainumera" },
-  "optionDesc_debug": { "message": "Faaali atu logs debug" }
+  "optionDesc_debug": { "message": "Faaali atu logs debug" },
+  "query_hi": { "message": "talofa" }
 }

@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Vís hjálparskjá" },
   "optionDesc_version": { "message": "Vís útgávu nr" },
   "optionDesc_stats": { "message": "Vís NPM-statistikkar" },
-  "optionDesc_debug": { "message": "Vís upploysingarloggar" }
+  "optionDesc_debug": { "message": "Vís upploysingarloggar" },
+  "query_hi": { "message": "hallo" }
 }

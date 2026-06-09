@@ -83,5 +83,6 @@
   "optionDesc_help": { "message": "Whakaatuhia te mata awhina" },
   "optionDesc_version": { "message": "Whakaatuhia te tau putanga" },
   "optionDesc_stats": { "message": "Whakaaturia nga tatauranga npm" },
-  "optionDesc_debug": { "message": "Whakaatu logs debug" }
+  "optionDesc_debug": { "message": "Whakaatu logs debug" },
+  "query_hi": { "message": "hi" }
 }

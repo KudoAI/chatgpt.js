@@ -81,5 +81,6 @@
   "optionDesc_help": { "message": "Visualizza la schermata di aiuto" },
   "optionDesc_version": { "message": "Mostra il numero di versione" },
   "optionDesc_stats": { "message": "Mostra statistiche npm" },
-  "optionDesc_debug": { "message": "Mostra registri di debug" }
+  "optionDesc_debug": { "message": "Mostra registri di debug" },
+  "query_hi": { "message": "ciao" }
 }
