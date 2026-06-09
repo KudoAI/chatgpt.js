@@ -221,7 +221,7 @@ API 키를 설정한 후, 터미널에서 제어하세요:
 chatgpt --query "sup"  # 또는 cjs -q sup
 # e.g. => Hey there! What's up?
 
-chatgpt --ascii-art "cat"  # 또는 cjs --aa cat
+chatgpt --ascii-art "cat"  # 또는 cjs -a cat
 # e.g. =>
 #
 #       |\      _,,,---,,_

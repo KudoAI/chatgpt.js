@@ -221,7 +221,7 @@ Sau khi thiết lập khóa API, hãy điều khiển từ terminal của bạn:
 chatgpt --query "sup"  # hoặc cjs -q sup
 # e.g. => Hey there! What's up?
 
-chatgpt --ascii-art "cat"  # hoặc cjs --aa cat
+chatgpt --ascii-art "cat"  # hoặc cjs -a cat
 # e.g. =>
 #
 #       |\      _,,,---,,_
