@@ -250,7 +250,7 @@ Parameters:
 
 `options` (optional): An object with the following properties:
 
-- `personasURL`: A string being the URL to fetch the personas data from. Defaults to `chatgpt.endpoints.aipersonas`.
+- `personasURL`: A string being the URL to fetch the personas data from. Defaults to `chatgpt.endpoints.kudoai.personas`.
 - `verbose`: A boolean that logs which persona is being loaded when `true`. Defaults to `false`.
 
 Example:
