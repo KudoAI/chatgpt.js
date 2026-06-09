@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "సహాయక స్క్రీన్ ‌ ని ప్రదర్శించండి" },
   "optionDesc_version": { "message": "సంస్కరణ సంఖ్యను చూపించు" },
   "optionDesc_stats": { "message": "Npm గణాంకాలను చూపించు" },
-  "optionDesc_debug": { "message": "డీబగ్ లాగ్ ‌ లను చూపించు" }
+  "optionDesc_debug": { "message": "డీబగ్ లాగ్ ‌ లను చూపించు" },
+  "query_hi": { "message": "హాయ్" }
 }

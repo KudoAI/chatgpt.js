@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Анықтама экранын көрсету" },
   "optionDesc_version": { "message": "Нұсқасының нөмірі" },
   "optionDesc_stats": { "message": "NPM статистикасын көрсету" },
-  "optionDesc_debug": { "message": "Қадамдастыру журналдарын көрсету" }
+  "optionDesc_debug": { "message": "Қадамдастыру журналдарын көрсету" },
+  "query_hi": { "message": "сәлем" }
 }

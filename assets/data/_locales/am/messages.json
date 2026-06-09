@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "የእገዛ ማያ ገጽ አሳይ" },
   "optionDesc_version": { "message": "የስሪት ቁጥርን አሳይ" },
   "optionDesc_stats": { "message": "Npm ስታቲስቲክስ አሳይ" },
-  "optionDesc_debug": { "message": "የዴቡግ ምዝግብ ማስታወሻዎችን አሳይ" }
+  "optionDesc_debug": { "message": "የዴቡግ ምዝግብ ማስታወሻዎችን አሳይ" },
+  "query_hi": { "message": "ጤና ይስጥልኝ" }
 }

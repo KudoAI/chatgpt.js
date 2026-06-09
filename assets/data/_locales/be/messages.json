@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Экран даведкі для адлюстравання" },
   "optionDesc_version": { "message": "Наяўныя экраны" },
   "optionDesc_stats": { "message": "Паказваць статыстыку NPM" },
-  "optionDesc_debug": { "message": "Паказваць часопісы адладкі" }
+  "optionDesc_debug": { "message": "Паказваць часопісы адладкі" },
+  "query_hi": { "message": "прывітанне" }
 }

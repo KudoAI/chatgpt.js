@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Seall sgrìn na cobhair" },
   "optionDesc_version": { "message": "Seall àireamh an tionndaidh" },
   "optionDesc_stats": { "message": "Seall staitistig npm" },
-  "optionDesc_debug": { "message": "Seall logaichean dì - bhugachaidh" }
+  "optionDesc_debug": { "message": "Seall logaichean dì - bhugachaidh" },
+  "query_hi": { "message": "hi" }
 }

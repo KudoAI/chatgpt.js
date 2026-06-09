@@ -17,7 +17,7 @@ async function route(cmd, args, rl) {
             await run.asciiArt(args.join(' ') || null) ; break
         case 'summarize' : case 'sum' : case 's' : {
             if (!args.length)
-                return log.warn(`${cli.msgs.helpSection_usage}: /summarize <text ${cli.msgs.info_or} filepath>`)
+                return log.warn(`${cli.msgs.helpSection_usage}: /summarize <text|filepath|url>`)
             await run.summarize(args.join(' '))
             break
         } case 'stats' :

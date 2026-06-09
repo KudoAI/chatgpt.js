@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Тусламжийн дэлгэцийг харуулах" },
   "optionDesc_version": { "message": "Хувилбарын дугаар" },
   "optionDesc_stats": { "message": "Npm статистикийг харуулах" },
-  "optionDesc_debug": { "message": "Дибагын логуудыг харуулах" }
+  "optionDesc_debug": { "message": "Дибагын логуудыг харуулах" },
+  "query_hi": { "message": "халх" }
 }

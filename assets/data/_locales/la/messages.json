@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Adiutorium ostende" },
   "optionDesc_version": { "message": "Numerum versionis monstra" },
   "optionDesc_stats": { "message": "Statisticas npm monstrare" },
-  "optionDesc_debug": { "message": "Monstra acta depurationis" }
+  "optionDesc_debug": { "message": "Monstra acta depurationis" },
+  "query_hi": { "message": "hi" }
 }

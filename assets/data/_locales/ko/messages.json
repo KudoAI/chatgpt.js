@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "도움말 화면 표시" },
   "optionDesc_version": { "message": "버전 넘버 보여주기" },
   "optionDesc_stats": { "message": "Npm 통계 표시" },
-  "optionDesc_debug": { "message": "디버그 로그 표시" }
+  "optionDesc_debug": { "message": "디버그 로그 표시" },
+  "query_hi": { "message": "안녕하세요" }
 }

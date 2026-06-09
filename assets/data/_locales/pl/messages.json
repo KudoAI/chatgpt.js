@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "Wyświetl ekran pomocy" },
   "optionDesc_version": { "message": "Podaje numer wersji programu" },
   "optionDesc_stats": { "message": "Pokaż statystyki npm" },
-  "optionDesc_debug": { "message": "Pokaż dzienniki debugowania" }
+  "optionDesc_debug": { "message": "Pokaż dzienniki debugowania" },
+  "query_hi": { "message": "hi" }
 }

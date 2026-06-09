@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Parādīt palīdzības ekrānu" },
   "optionDesc_version": { "message": "Versijas numurs" },
   "optionDesc_stats": { "message": "Rādīt npm statistiku" },
-  "optionDesc_debug": { "message": "Rādīt atkļūdošanas žurnālus" }
+  "optionDesc_debug": { "message": "Rādīt atkļūdošanas žurnālus" },
+  "query_hi": { "message": "čau" }
 }

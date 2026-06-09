@@ -79,5 +79,6 @@
   "optionDesc_help": { "message": "ווייַז הילף פאַרשטעלן" },
   "optionDesc_version": { "message": "ווייַזן ווערסיע נומער" },
   "optionDesc_stats": { "message": "ווייַזן npm סטאַטיסטיק" },
-  "optionDesc_debug": { "message": "ווייַזן דיבאַג לאָגס" }
+  "optionDesc_debug": { "message": "ווייַזן דיבאַג לאָגס" },
+  "query_hi": { "message": "העלא" }
 }

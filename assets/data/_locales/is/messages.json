@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Birta hjálparskjá" },
   "optionDesc_version": { "message": "Útgáfunúmer" },
   "optionDesc_stats": { "message": "Sýna npm tölfræði" },
-  "optionDesc_debug": { "message": "Sýna aflúsunarannála" }
+  "optionDesc_debug": { "message": "Sýna aflúsunarannála" },
+  "query_hi": { "message": "hæ" }
 }

@@ -83,5 +83,6 @@
   "optionDesc_help": { "message": "အကူအညီ မျက်နှာပြင်ကို ပြသပါ" },
   "optionDesc_version": { "message": "ဗားရှင်းနံပါတ်" },
   "optionDesc_stats": { "message": "NPM ကိန်းဂဏန်းများကို ပြပါ" },
-  "optionDesc_debug": { "message": "Debug မှတ်တမ်းများကိုပြပါ" }
+  "optionDesc_debug": { "message": "Debug မှတ်တမ်းများကိုပြပါ" },
+  "query_hi": { "message": "မင်္ဂလာပါ" }
 }

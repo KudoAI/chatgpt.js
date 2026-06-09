@@ -81,5 +81,6 @@
   "optionDesc_help": { "message": "Dîmendera alîkariyê nîşan bide" },
   "optionDesc_version": { "message": "IRQ" },
   "optionDesc_stats": { "message": "Statîstîkên npm nîşan bide" },
-  "optionDesc_debug": { "message": "Tomarên çareserkirina çewtiyan nîşan bide" }
+  "optionDesc_debug": { "message": "Tomarên çareserkirina çewtiyan nîşan bide" },
+  "query_hi": { "message": "Slav" }
 }

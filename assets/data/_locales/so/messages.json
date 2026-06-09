@@ -81,5 +81,6 @@
   "optionDesc_help": { "message": "Muuji shaashadda caawinta" },
   "optionDesc_version": { "message": "Lambarka Nooca" },
   "optionDesc_stats": { "message": "Muuji tirakoobka npm" },
-  "optionDesc_debug": { "message": "Muuji diiwaanka debug" }
+  "optionDesc_debug": { "message": "Muuji diiwaanka debug" },
+  "query_hi": { "message": "hi" }
 }

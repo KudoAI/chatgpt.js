@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Abi ekraani kuvamine" },
   "optionDesc_version": { "message": "Näitab versiooni" },
   "optionDesc_stats": { "message": "Näita npm statistikat" },
-  "optionDesc_debug": { "message": "Näita silumislogisid" }
+  "optionDesc_debug": { "message": "Näita silumislogisid" },
+  "query_hi": { "message": "hi" }
 }

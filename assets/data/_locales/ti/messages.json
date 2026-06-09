@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "ናይ ሓገዝ ስክሪን ኣርኢ" },
   "optionDesc_version": { "message": "ናይ ቅጅል ቁጽሪ ኣርኢ" },
   "optionDesc_stats": { "message": "NPM ስታቲስቲክስ ኣርኢ" },
-  "optionDesc_debug": { "message": "ናይ ዲቡግ መዝገብ ኣርኢ" }
+  "optionDesc_debug": { "message": "ናይ ዲቡግ መዝገብ ኣርኢ" },
+  "query_hi": { "message": "ሰላም" }
 }

@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Zobrazit obrazovku nápovědy" },
   "optionDesc_version": { "message": "Zobrazí číslo verze" },
   "optionDesc_stats": { "message": "Zobrazit statistiky npm" },
-  "optionDesc_debug": { "message": "Zobrazit protokoly ladění" }
+  "optionDesc_debug": { "message": "Zobrazit protokoly ladění" },
+  "query_hi": { "message": "ahoj" }
 }

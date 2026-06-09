@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "הצג מסך עזרה" },
   "optionDesc_version": { "message": "גרסה" },
   "optionDesc_stats": { "message": "הצגת נתונים סטטיסטיים של npm" },
-  "optionDesc_debug": { "message": "הצג יומני איתור באגים" }
+  "optionDesc_debug": { "message": "הצג יומני איתור באגים" },
+  "query_hi": { "message": "היי" }
 }

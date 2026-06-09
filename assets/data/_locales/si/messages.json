@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "සහාය තිරය පෙන්වන්න" },
   "optionDesc_version": { "message": "වෙළුම අංකය" },
   "optionDesc_stats": { "message": "NPM සංඛ් ‍ යාලේඛන පෙන්වන්න" },
-  "optionDesc_debug": { "message": "නිවැරදිකරණ ලඝු-සටහන් පෙන්වන්න" }
+  "optionDesc_debug": { "message": "නිවැරදිකරණ ලඝු-සටහන් පෙන්වන්න" },
+  "query_hi": { "message": "ආයුබෝවන්" }
 }

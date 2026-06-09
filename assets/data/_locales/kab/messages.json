@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Sken allen n tallelt" },
   "optionDesc_version": { "message": "Sken uṭṭun n usebter" },
   "optionDesc_stats": { "message": "Sken istekkiyen npm" },
-  "optionDesc_debug": { "message": "Sken ifuyla imezwura" }
+  "optionDesc_debug": { "message": "Sken ifuyla imezwura" },
+  "query_hi": { "message": "azul" }
 }

@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Yardam ekrany görkez" },
   "optionDesc_version": { "message": "VERSION NUMBERI" },
   "optionDesc_stats": { "message": "NPM ştatlaryny görkez" },
-  "optionDesc_debug": { "message": "Hata loglaryny görkez" }
+  "optionDesc_debug": { "message": "Hata loglaryny görkez" },
+  "query_hi": { "message": "salam" }
 }

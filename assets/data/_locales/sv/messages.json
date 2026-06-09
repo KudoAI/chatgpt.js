@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Visa hjälpskärmen" },
   "optionDesc_version": { "message": "Visa versionsinformation" },
   "optionDesc_stats": { "message": "Visa npm-statistik" },
-  "optionDesc_debug": { "message": "Visa felsökningsloggar" }
+  "optionDesc_debug": { "message": "Visa felsökningsloggar" },
+  "query_hi": { "message": "hej" }
 }

@@ -77,5 +77,6 @@
   "optionDesc_help": { "message": "Súgó képernyő megjelenítése" },
   "optionDesc_version": { "message": "kiírja a verziószámot" },
   "optionDesc_stats": { "message": "NPM-statisztikák megjelenítése" },
-  "optionDesc_debug": { "message": "Hibakeresési naplók megjelenítése" }
+  "optionDesc_debug": { "message": "Hibakeresési naplók megjelenítése" },
+  "query_hi": { "message": "szia" }
 }
