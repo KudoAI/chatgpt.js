@@ -6,6 +6,7 @@
   "error_readingLocalPkgVer": { "message": "Mbeni ye so ayeke na lege ni ape ayeke so a yeke diko ni na yâ ti ambeti" },
   "error_notRecognized": { "message": "a hinga lo pëpe" },
   "error_nonPositiveNum": { "message": "tënë ni alingbi ti duti gi > 0" },
+  "error_requiresVal": { "message": "e yeke na bezoin ti mbeni ye so ayeke kota ye mingi" },
   "error_invalidFilepath": { "message": "must be a valid existing file path. Got" },
   "error_invalidLangCode": { "message": "is an invalid language code" },
   "error_invalidURL": { "message": "URL so ayeke na lege ni ape" },
@@ -35,6 +36,9 @@
   },
   "warn_noMsgChainToClear": { "message": "A yeke nzoni e sara ye na lege ni ape" },
   "warn_failedToSaveMsgChain": { "message": "Won ti gba penalty lo throwing Gben Gben gben" },
+  "warn_unknownCmd": { "message": "Mbeni zo so a hinga lo pëpe" },
+  "warn_forAvailRun": { "message": "a yeke na lege ni ti tene a sara kua na mbeni" },
+  "data_slashCmds": { "message": "hirondelle commandes" },
   "info_configFile": { "message": "Faïl ti Config" },
   "info_exampleValidConfigFile": { "message": "Tapande ti faïl so ayeke na lege ni" },
   "info_moreHelp": { "message": "Ti mû maboko na mo" },
@@ -48,6 +52,10 @@
   "info_fetchingRemoteConfigFrom": { "message": "Disable alert for Mbeni" },
   "info_copiedToClipboard": { "message": "Gbu li ti mo na ndo ti clipboard" },
   "info_msgChainCleared": { "message": "A yeke na yâ ti mbeni kete kete kete kete kete kete kete kete" },
+  "info_current": { "message": "Ngbene ye na ngoi ti e" },
+  "info_startingInteractiveMode": { "message": "Lege ti sarango lisoro" },
+  "info_forCmds": { "message": "na yâ ti commandement" },
+  "info_toQuit": { "message": "ti o ti wa tẹlẹ" },
   "tip_editToSetDefaults": { "message": "Gbian faïl so ti leke ambeni ye so ayeke na lege ni ape" },
   "tip_cliArgsPrioritized": {
     "message": "A yeke lakue na lege ti atënë ti CLI si a yeke hon ndo ti aye so ayeke na yâ ti Bible"
@@ -71,6 +79,7 @@
   },
   "optionDesc_quiet": { "message": "A yeke kanga lege na azo kue ti sara ye na lege ni ape me a yeke gi na lege ni" },
   "optionDesc_init": { "message": "Create config file (na yâ ti projet root)" },
+  "optionDesc_interactive": { "message": "Interactive mode ti kiri na peko" },
   "optionDesc_joke": { "message": "Broke As A Joke;" },
   "optionDesc_randomAnswer": { "message": "Kiri tënë na mbeni hundango tënë so ayeke na lege ni ape" },
   "optionDesc_commitMsg": {

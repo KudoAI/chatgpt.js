@@ -1761,6 +1761,7 @@ const chatgpt = {
                 if (!availProviders.length) throw new Error('No providers with valid API keys available')
                 provider = availProviders[Math.floor(Math.random() * availProviders.length)]
             }
+            chatgpt.lastProvider = provider
             const apiKey = chatgpt.config?.apiKeys?.[provider] || process.env[`${provider.toUpperCase()}_API_KEY`]
             if (typeof apiKey != 'string' || !apiKey) throw new Error('Missing API key for provider: ' + provider)
             const respColor = chatgpt.colors?.[color] || chatgpt.colors.green,
@@ -1803,6 +1804,7 @@ const chatgpt = {
             }
             if (provider == 'google' || !stream || !resp.body) { // non-streaming
                 const data = await resp.json()
+                chatgpt.lastModel = data.model
                 const text =
                     provider == 'google' ? data?.candidates?.[0]?.content?.parts?.map(part => part.text).join('')
                                          : data?.choices?.[0]?.message?.content
@@ -1823,7 +1825,9 @@ const chatgpt = {
                         return outputStr
                     }
                     try {
-                        const token = JSON.parse(json).choices?.[0]?.delta?.content
+                        const parsed = JSON.parse(json)
+                        if (parsed.model) chatgpt.lastModel = parsed.model
+                        const token = parsed.choices?.[0]?.delta?.content
                         if (token) {
                             if (!streamStarted) { streamStarted = true ; onLoadStart?.() }
                             if (output == 'stdout') process.stdout.write(activeColor + token)

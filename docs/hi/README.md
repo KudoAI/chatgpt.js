@@ -220,7 +220,7 @@ API की (key) सेट करने के बाद, अपने टर्
 chatgpt --query "sup"  # या cjs -q sup
 # e.g. => Hey there! What's up?
 
-chatgpt --ascii-art "cat"  # या cjs --aa cat
+chatgpt --ascii-art "cat"  # या cjs -a cat
 # e.g. =>
 #
 #       |\      _,,,---,,_

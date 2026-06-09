@@ -10,9 +10,9 @@ module.exports = {
     controls: {
         provider: { type: 'param', regex: /^--?p(?:rovider)?(?:[=\s].*|$)/, defaultVal: 'auto' },
         uiLang: { type: 'param', valType: 'langCode', regex: /^--?u(?:i[-_]?lang)?(?:[=\s].*|$)/ },
-        query: { type: 'param', regex: /^--?(?:q|query|ask|send)(?:[=\s].*|$)/, defaultVal: 'hi' },
+        query: { type: 'param', valRequired: false, regex: /^--?(?:q|query|ask|send)(?:[=\s].*|$)/, defaultVal: 'hi' },
         summarize: { type: 'param', valType: 'filepath', allowText: true, regex: /^--?s(?:ummarize)?(?:[=\s].*|$)/ },
-        asciiArt: { type: 'param', regex: /^--?a(?:scii[-_]?)?a(?:rt)?(?:[=\s].*|$)/ },
+        asciiArt: { type: 'param', valRequired: false, regex: /^--?a(?:scii[-_]?)?a(?:rt)?(?:[=\s].*|$)/ },
         config: { type: 'param', valType: 'filepath', regex: /^--?c(?:onfig)?(?:[=\s].*|$)/ },
         maxChars: {
             type: 'param', valType: 'positiveInt', regex: /^--?m(?:ax[-_]?chars)?(?:[=\s].*|$)/, defaultVal: 250 },
@@ -23,6 +23,7 @@ module.exports = {
         noSuggest: { type: 'flag', regex: /^--?(?:A|no[-_]?suggest)$/ },
         quietMode: { type: 'flag', regex: /^--?(?:V|quiet)(?:[-_]?mode)?$/ },
         init: { type: 'cmd', regex: /^-{0,2}i(?:nit)?$/ },
+        interactive: { type: 'cmd', regex: /^--?(?:I|interactive)(?:[-_]?mode)?$/ },
         joke: { type: 'cmd', regex: /^--?j(?:oke)?$/ },
         randomAnswer: { type: 'cmd', regex: /^--?r(?:andom[-_]?answer)?$/ },
         commitMsg: { type: 'cmd', regex: /^--?(?:g|commit[-_]?me?ss?a?ge?)$/ },
@@ -130,9 +131,12 @@ module.exports = {
             if (ctrl.parser && !ctrl.parsed) {
                 cli.config[key] = ctrl.parser(configVal) ; ctrl.parsed = true }
 
+            if (ctrl.valRequired != false && configVal == true)
+                log.errorAndExit(`[${key}] ${ cli.msgs?.error_requiresVal || 'requires a value' }.`)
+
             if (ctrl.valType) ({
                 filepath() {
-                    if (configVal && (!ctrl.allowText || require('./string').looksLikePath(configVal))
+                    if (configVal && (!ctrl.allowText || require('../../lib/string').looksLikePath(configVal))
                         && !fs.existsSync(configVal)
                     ) log.errorAndExit(`[${key}] ${
                         cli.msgs?.error_invalidFilepath || 'must be a valid existing file path. Got' }: ${configVal}`)

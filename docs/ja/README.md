@@ -220,7 +220,7 @@ APIキーを設定した後、ターミナルから操作します：
 chatgpt --query "sup"  # または cjs -q sup
 # e.g. => Hey there! What's up?
 
-chatgpt --ascii-art "cat"  # または cjs --aa cat
+chatgpt --ascii-art "cat"  # または cjs -a cat
 # 例 =>
 #
 #       |\      _,,,---,,_
