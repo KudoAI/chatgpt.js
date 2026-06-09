@@ -63,7 +63,7 @@ async function route(cmd, args, rl) {
 function showHelp() {
     log.help(['header', 'usage', 'params', 'flags', 'cmds'])
     log.data(`\n  REPL ${cli.msgs.data_slashCmds}: /help, /exit, /clear, /joke, /random, /ascii [subject]`)
-    log.data('  /summarize <text|file>, /stats, /version, /commit, /init')
+    log.data('  /summarize <text|file|url>, /stats, /version, /commit, /init')
     log.data('  /provider <name>, /maxchars <num>, /maxtokens <num>, /turns <num>')
 }
 
