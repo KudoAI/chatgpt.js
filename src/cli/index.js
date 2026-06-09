@@ -8,17 +8,13 @@
 
     globalThis.log = require('./lib/log')
     const chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
-          clipboardy = require('node-clipboardy'),
-          fs = require('fs'),
-          git = require('./lib/git'),
           loader = require('./lib/loader').create({ width: env.width }),
-          messages = require('./lib/messages'),
-          string = require('./lib/string')
+          messages = require('./lib/messages')
 
     await init.cli()
 
     if (cli.config.init) return init.configFile()
-    else if (cli.config.commitMsg) return await git.generateCommitMsg()
+    else if (cli.config.commitMsg) return await require('./lib/git').generateCommitMsg()
     else if (cli.config.clear) return messages.clearChain()
     else if (cli.config.help) return log.help()
     else if (cli.config.version) return log.version()
@@ -31,8 +27,9 @@
     let query = cli.config.joke ? 'Tell me a joke and make it funny.'
               : cli.config.randomAnswer ? 'Generate a single random question on any topic, then answer it.'
               : cli.config.summarize ? `Summarize the following:\n\n${
-                    string.looksLikePath(cli.config.summarize) ? fs.readFileSync(cli.config.summarize, 'utf8')
-                                                               : cli.config.summarize }`
+                    require('./lib/string').looksLikePath(cli.config.summarize)
+                        ? require('fs').readFileSync(cli.config.summarize, 'utf8')
+                        : cli.config.summarize }`
               : cli.config.asciiArt ?
                     `Render a single piece of ascii art of ${
                         typeof cli.config.asciiArt == 'string' ? cli.config.asciiArt : 'a random thing' }.`
@@ -57,7 +54,7 @@
         if (cli.config.maxTokens) sendConfig.maxTokens = cli.config.maxTokens
         const parsedReply = messages.extractFromJSON(await chatgpt.send('', sendConfig))
         if (/^(?:help|hi)(?:\n|$)/.test(query)) log.help()
-        if (cli.config.copy && parsedReply) clipboardy.writeSync(parsedReply)
+        if (cli.config.copy && parsedReply) require('node-clipboardy').clipboardy.writeSync(parsedReply)
         cli.msgChain.push(userMsg, { role: 'assistant', content: parsedReply })
         messages.saveChain(cli.msgChain)
     } finally { loader.stop({ clear: true }) }
