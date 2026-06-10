@@ -27,8 +27,7 @@
               : cli.config.summarize ? `Summarize the following:\n\n${await resolveSrc(cli.config.summarize)}`
               : cli.config.asciiArt ? `Render a single piece of ascii art of ${
                     typeof cli.config.asciiArt == 'string' ? cli.config.asciiArt : 'a random thing' }.`
-              : await (
-                    cli.config.query === true || !cli.config.query ? cli.msgs.query_hi : resolveSrc(cli.config.query))
+              : await (cli.config.query === true || !cli.config.query ? cli.msgs.query_hi : cli.config.query)
     if (typeof query == 'string' ) {
         if (!cli.config.noSuggest && query == cli.config.query)
             query += '\n\nThen, at the end of your response, ask user if they want you to do something related to the query'
