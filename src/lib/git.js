@@ -1,6 +1,6 @@
 module.exports = {
     async generateCommitMsg() {
-        const chatgpt = require(`../../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
+        const chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
               clipboardy = require('node-clipboardy'),
             { execSync } = require('child_process'),
               loader = require('./loader').create({ width: env.width }),
