@@ -54,12 +54,13 @@ module.exports = {
         }
 
         if (!cli.configPathTried) { // init config file path
-            const configArg = env.args.find(arg => this.controls.config.regex.test(arg))
-
-            if (configArg) { // resolve input path, then validate
-                if (!/=/.test(configArg))
-                    log.errorAndExit(`[${configArg}] ${ cli.msgs?.error_mustIncludePath || 'must include =path' }`)
-                const inputPath = configArg.split('=')[1]
+            const configIdx = env.args.findIndex(arg => this.controls.config.regex.test(arg)),
+                  configArg = configIdx !== -1 ? env.args[configIdx] : null
+            if (configArg) {
+                const inputPath = configArg.includes('=') ? configArg.split('=')[1]?.trim() || ''
+                                : (configIdx +1 < env.args.length && !env.args[configIdx +1].startsWith('-')) ?
+                                    env.args[configIdx +1]
+                                : ''
                 cli.configPath = path.isAbsolute(inputPath) ? inputPath : path.resolve(process.cwd(), inputPath)
                 if (!fs.existsSync(cli.configPath))
                     log.configURLandExit(
