@@ -10,7 +10,7 @@ module.exports = {
 	},
 
 	clear() { return messages.clearChain() },
-	commitMsg() { return require('./lib/git').generateCommitMsg() },
+	commitMsg() { return require('./git').generateCommitMsg() },
 	help() { log.help() },
 	init() { return require('../cli/lib/init').configFile() },
 	joke() { return this.query('Tell me a joke and make it funny.') },
