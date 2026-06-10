@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Mistoqsija biex tibgħat l-AI" },
   "optionDesc_summarize": { "message": "Mogħdija għall-fajl jew test biex tiġbor fil-qosor" },
   "optionDesc_asciiArt": { "message": "Jagħti l-arti ASCII tas-suġġett mhux obbligatorju" },
+  "optionDesc_commitMsgExample": { "message": "Eżempju jimpenja msg għal --impenja-msg għar-referenza" },
   "optionDesc_uiLang": { "message": "Kodiċi tal-lingwa ISO 639-1 biex turi l-UI fi" },
   "optionDesc_replyLang": { "message": "Lingwa biex l-AI twieġeb" },
   "optionDesc_config": { "message": "Il-mogħdija għall-fajl tal-konfig personalizzat biex ittella'" },

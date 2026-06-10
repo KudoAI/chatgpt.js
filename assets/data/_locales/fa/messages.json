@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "درخواست برای ارسال هوش مصنوعی" },
   "optionDesc_summarize": { "message": "مسیر فایل یا متن برای خلاصه کردن" },
   "optionDesc_asciiArt": { "message": "رندر کردن طرح ASCII از موضوع اختیاری" },
+  "optionDesc_commitMsgExample": { "message": "مثال commit msg برای ارجاع به --commit-msg" },
   "optionDesc_uiLang": { "message": "کد زبان ISO 639-1 برای نمایش رابط کاربری" },
   "optionDesc_replyLang": { "message": "زبانی برای پاسخ دادن هوش مصنوعی" },
   "optionDesc_config": { "message": "مسیر فایل پیکربندی سفارشی برای بارگذاری" },

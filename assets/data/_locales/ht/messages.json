@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Mande pou voye AI" },
   "optionDesc_summarize": { "message": "Chemen pou ranpli oswa tèks pou rezime" },
   "optionDesc_asciiArt": { "message": "Lwe ASCII atizay nan sijè si ou vle" },
+  "optionDesc_commitMsgExample": { "message": "Egzanp komèt msg pou ---commit-msg pou referans" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kòd langaj pou montre UI nan" },
   "optionDesc_replyLang": { "message": "Lang pou AI reponn nan" },
   "optionDesc_config": { "message": "Chemen nan dosye konfigirasyon koutim nan chaj" },

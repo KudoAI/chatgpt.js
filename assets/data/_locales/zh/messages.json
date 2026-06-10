@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "发送AI查询" },
   "optionDesc_summarize": { "message": "要汇总的文件或文本的路径" },
   "optionDesc_asciiArt": { "message": "渲染可选主题的ASCII艺术" },
+  "optionDesc_commitMsgExample": { "message": "用于引用--commit-msg的提交消息示例" },
   "optionDesc_uiLang": { "message": "用于显示UI的语言的ISO 639-1代码" },
   "optionDesc_replyLang": { "message": "AI回复的语言" },
   "optionDesc_config": { "message": "要加载的自定义配置文件的路径" },

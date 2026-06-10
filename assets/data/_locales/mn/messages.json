@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "AI илгээх хүсэлт" },
   "optionDesc_summarize": { "message": "Хураангуй болгох файл эсвэл текст рүү зам" },
   "optionDesc_asciiArt": { "message": "Нэмэлт субьектуудын Render ASCII урлаг" },
+  "optionDesc_commitMsgExample": { "message": "-commit-msg-ийн жишээлбэл:" },
   "optionDesc_uiLang": { "message": "UI-ийг харуулахын тулд ISO 639-1 хэлний код" },
   "optionDesc_replyLang": { "message": "AI-д хариулах хэл" },
   "optionDesc_config": { "message": "Ачаалах тохиргооны файлын тохиргооны замыг өөрчлөх" },

@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "AI жөнөтүү үчүн суроо" },
   "optionDesc_summarize": { "message": "Undo-type" },
   "optionDesc_asciiArt": { "message": "Кошумча предметтин ASCII искусствосун көрсөтүү" },
+  "optionDesc_commitMsgExample": { "message": "--commit-msg шилтеме үчүн мисал msg тапшыруу" },
   "optionDesc_uiLang": { "message": "ISO 639-1 тил коду UI көрсөтүү үчүн" },
   "optionDesc_replyLang": { "message": "Жооп берүүчү AI үчүн тил" },
   "optionDesc_config": { "message": "Undo-type" },

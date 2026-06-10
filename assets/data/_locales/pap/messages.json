@@ -62,6 +62,7 @@
     "message": "Página principal > Temas Variados > Resumen resumen resumen resumen resumen res"
   },
   "optionDesc_asciiArt": { "message": "Asuncion Art of Optional Topic" },
+  "optionDesc_commitMsgExample": { "message": "Recomendacion para msg - Recomendacion para msg" },
   "optionDesc_uiLang": { "message": "Documente similare cu ISO 639-1 Code of Language" },
   "optionDesc_replyLang": { "message": "Idioma pa duna un man den" },
   "optionDesc_config": { "message": "Archive for custom config Archive for cargo" },

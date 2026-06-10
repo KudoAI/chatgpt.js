@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Vraag om AI te verzenden" },
   "optionDesc_summarize": { "message": "Pad naar bestand of tekst om samen te vatten" },
   "optionDesc_asciiArt": { "message": "Render ASCII-kunst van optioneel vak" },
+  "optionDesc_commitMsgExample": { "message": "Voorbeeld commit msg for --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "ISO 639-1 taalcode om de gebruikersinterface weer te geven in" },
   "optionDesc_replyLang": { "message": "Taal voor AI om te reageren in" },
   "optionDesc_config": { "message": "Pad naar aangepast configuratiebestand om te laden" },

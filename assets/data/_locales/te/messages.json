@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "AIని పంపడానికి ప్రశ్న" },
   "optionDesc_summarize": { "message": "ఫైల్ ‌ కు మార్గం లేదా సంగ్రహించడానికి టెక్స్ట్" },
   "optionDesc_asciiArt": { "message": "ఐచ్ఛిక విషయం యొక్క ASCII కళను అందించండి" },
+  "optionDesc_commitMsgExample": { "message": "ఉదాహరణ కోసం msg చేయండి --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "UIని ప్రదర్శించడానికి ISO 639-1 భాషా కోడ్" },
   "optionDesc_replyLang": { "message": "AI లో ప్రత్యుత్తరం ఇవ్వడానికి భాష" },
   "optionDesc_config": { "message": "లోడ్ చేయడానికి అనుకూలీకరించిన కాన్ఫిగరేషన్ ఫైల్ ‌ కు మార్గం" },

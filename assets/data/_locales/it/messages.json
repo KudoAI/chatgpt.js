@@ -62,6 +62,7 @@
   "optionDesc_query": { "message": "Query da inviare all'IA" },
   "optionDesc_summarize": { "message": "Percorso del file o testo da riepilogare" },
   "optionDesc_asciiArt": { "message": "Render ASCII art of optional subject" },
+  "optionDesc_commitMsgExample": { "message": "Esempio di messaggio di commit per --commit-msg al riferimento" },
   "optionDesc_uiLang": { "message": "Codice ISO 639-1 della lingua in cui visualizzare l'interfaccia utente" },
   "optionDesc_replyLang": { "message": "Lingua in cui l'IA può rispondere" },
   "optionDesc_config": { "message": "Percorso del file di configurazione personalizzato da caricare" },

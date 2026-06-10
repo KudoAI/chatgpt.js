@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "ЖИ жіберу сұранысы" },
   "optionDesc_summarize": { "message": "Қорытындылау үшін файлға немесе мәтінге жол" },
   "optionDesc_asciiArt": { "message": "Қосымша пәннің ASCII өнерін көрсету" },
+  "optionDesc_commitMsgExample": { "message": "---commit-msg үшін -commit-msg сілтемесін енгізіңіз" },
   "optionDesc_uiLang": { "message": "Пайдаланушы интерфейсін көрсету үшін ISO 639-1 тіл коды" },
   "optionDesc_replyLang": { "message": "Жауап беру үшін жасанды интеллект тілі" },
   "optionDesc_config": { "message": "Жүктелетін теңшелетін конфигурация файлына жол" },

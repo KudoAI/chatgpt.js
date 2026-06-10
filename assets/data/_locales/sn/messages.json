@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Mubvunzo kutumira AI" },
   "optionDesc_summarize": { "message": "Nzira kune faira kana zvinyorwa kupfupisa" },
   "optionDesc_asciiArt": { "message": "Ratidza ASCII unyanzvi hwekuzvisarudzira nyaya" },
+  "optionDesc_commitMsgExample": { "message": "Muenzaniso ita meseji ye --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "ISO 639-1 remutauro kuratidza UI muna" },
   "optionDesc_replyLang": { "message": "Mutauro weAI kupindura mu" },
   "optionDesc_config": { "message": "Path to custom config file to load" },

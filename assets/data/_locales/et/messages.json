@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Tehisintellekti saatmise päring" },
   "optionDesc_summarize": { "message": "Faili või kokkuvõtva teksti tee" },
   "optionDesc_asciiArt": { "message": "Valikulise teema ASCII-kunstiteose renderdamine" },
+  "optionDesc_commitMsgExample": { "message": "Viite --commit-msg saatmise sõnumite näide" },
   "optionDesc_uiLang": { "message": "ISO 639-1 keelekood kasutajaliidese kuvamiseks" },
   "optionDesc_replyLang": { "message": "Keel, milles tehisintellekt vastab" },
   "optionDesc_config": { "message": "Laaditava kohandatud konfiguratsioonifaili tee" },

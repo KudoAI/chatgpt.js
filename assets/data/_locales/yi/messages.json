@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "אָנפֿרעג צו שיקן קינסטלעכע אינטעליגענץ" },
   "optionDesc_summarize": { "message": "דרך צום טעקע אדער טעקסט צו צוזאמענפאסן" },
   "optionDesc_asciiArt": { "message": "רענדער ASCII קונסט פון אפציאנעלן סוביעקט" },
+  "optionDesc_commitMsgExample": { "message": "בייַשפּיל קאָמיט מעסעדזש פֿאַר --commit-msg צו רעפֿערענץ" },
   "optionDesc_uiLang": { "message": "ISO 639-1 קאָד פֿון שפּראַך צו ווײַזן באַניצער־אינטערפֿייס אין" },
   "optionDesc_replyLang": { "message": "שפּראַך פֿאַר קינסטלעכער אינטעליגענץ צו ענטפֿערן אין" },
   "optionDesc_config": { "message": "וועג צו אייגענעם קאנפיגאציע טעקע צו לאָדן" },

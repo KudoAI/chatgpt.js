@@ -62,6 +62,7 @@
   "optionDesc_query": { "message": "AI göndərmək üçün sorğu" },
   "optionDesc_summarize": { "message": "Xülasə etmək üçün fayla və ya mətnə gedən yol" },
   "optionDesc_asciiArt": { "message": "ASCII incəsənətinin qeyri-məcburi predmetini göstərin" },
+  "optionDesc_commitMsgExample": { "message": "--commit-msg istinad etmək üçün nümunə götürün" },
   "optionDesc_uiLang": { "message": "İSO 639-1-də UI-nı göstərmək üçün dilin kodu" },
   "optionDesc_replyLang": { "message": "Cavab vermək üçün AI dili" },
   "optionDesc_config": { "message": "Yükləmək üçün xüsusi konfiqurasiya faylına gedən yol" },

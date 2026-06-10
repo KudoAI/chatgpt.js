@@ -13,8 +13,10 @@ module.exports = {
             if (!diff.trim()) diff = execSync('git diff', { encoding: 'utf8' })
             if (!diff.trim()) return log.warn(cli.msgs.warn_noChanges)
         } catch (err) { return log.error(cli.msgs.error_failedToReadGitDiff) }
-        const prompt = 'Generate a concise, conventional commit message (e.g. "docs: updated shields")'
-                     + `based on this diff:\n\n${diff.slice(0, 3000)}`
+        const prompt = 'Generate a concise, conventional commit message'
+                     + ` (formatted like "${ cli.config.commitMsgExample || 'docs: updated shields' }")`
+                     + ` based on this diff:\n\n${diff.slice(0, 3000)}`
+        log.debug(`prompt = ${prompt}`)
         loader.start()
         try {
             const reply = await chatgpt.send(prompt, { provider: cli.config.provider, output: 'string' }),

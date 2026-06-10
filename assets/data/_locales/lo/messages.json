@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Query ເພື່ອສົ່ງ AI" },
   "optionDesc_summarize": { "message": "ເສັ້ນທາງໄປຫາເອກະສານ ຫຼື ຂໍ້ຄວາມເພື່ອສະຫຼຸບ" },
   "optionDesc_asciiArt": { "message": "Render ASCII ສິນລະປະຂອງຫົວຂໍ້ທາງເລືອກ" },
+  "optionDesc_commitMsgExample": { "message": "ຕົວຢ່າງການດຳເນີນການ msg ສໍາລັບ --commit-msg ເພື່ອອ້າງອີງ" },
   "optionDesc_uiLang": { "message": "ISO 639-1 ລະຫັດພາສາທີ່ຈະສະແດງ UI ໃນ" },
   "optionDesc_replyLang": { "message": "ພາສາ ສໍາ ລັບ AI ເພື່ອຕອບສະ ຫນອງ ໃນ" },
   "optionDesc_config": { "message": "ເສັ້ນທາງໄປແຟ້ມການຕັ້ງຄ່າທີ່ກຳນົດເອງເພື່ອໂຫຼດ" },

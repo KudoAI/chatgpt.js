@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Query to send AI" },
   "optionDesc_summarize": { "message": "Path to file or text to summarize" },
   "optionDesc_asciiArt": { "message": "Render ASCII art of optional subject" },
+  "optionDesc_commitMsgExample": { "message": "Example msg for --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code of language to display UI in" },
   "optionDesc_replyLang": { "message": "Language for AI to reply in" },
   "optionDesc_config": { "message": "Path to custom config file to load" },

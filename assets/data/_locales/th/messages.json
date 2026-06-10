@@ -62,6 +62,7 @@
   "optionDesc_query": { "message": "สอบถามเพื่อส่ง AI" },
   "optionDesc_summarize": { "message": "เส้นทางไปยังไฟล์หรือข้อความเพื่อสรุป" },
   "optionDesc_asciiArt": { "message": "RENDER ASCII ART of OPTIONAL SUBJECT" },
+  "optionDesc_commitMsgExample": { "message": "ตัวอย่าง commit msg for -- commit-msg to reference" },
   "optionDesc_uiLang": { "message": "รหัสภาษา ISO 639 -1 เพื่อแสดง UI ใน" },
   "optionDesc_replyLang": { "message": "ภาษาที่ AI ตอบกลับ" },
   "optionDesc_config": { "message": "พาธไปยังไฟล์กำหนดค่าที่จะโหลด" },

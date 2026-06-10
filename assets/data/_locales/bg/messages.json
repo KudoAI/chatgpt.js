@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Заявка за изпращане на ИИ" },
   "optionDesc_summarize": { "message": "Път до файла или текст за обобщаване" },
   "optionDesc_asciiArt": { "message": "Предоставяне на ASCII изкуство на незадължителен предмет" },
+  "optionDesc_commitMsgExample": { "message": "Пример commit msg за -- commit - msg към справка" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 код на езика за показване на потребителския интерфейс в" },
   "optionDesc_replyLang": { "message": "Език, на който изкуственият интелект да отговаря" },
   "optionDesc_config": { "message": "Път до персонализиран конфигурационен файл за зареждане" },

@@ -17,6 +17,7 @@ export default {
     maxChars: 250,       // char limit per msg
     maxTokens: null,     // max tokens to use
     turnsToPreserve: 3,  // # of turns to preserve (2 msgs/turn)
+    commitMsgExample: 'docs: updated shields',
 
     // Flags
     copy: false,         // copy CLI response to clipboard

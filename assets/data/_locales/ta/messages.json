@@ -62,6 +62,7 @@
   "optionDesc_query": { "message": "AI ஐ அனுப்ப வினவல்" },
   "optionDesc_summarize": { "message": "கோப்புக்கான பாதை அல்லது சுருக்கமாக உரை" },
   "optionDesc_asciiArt": { "message": "விருப்பமான ஆய்வுக்குட்படுநரின் ASCII கலையை வழங்குதல்" },
+  "optionDesc_commitMsgExample": { "message": "எடுத்துக்காட்டாக, --commit-msg to reference க்கு msg ஐ அர்ப்பணிக்கவும்" },
   "optionDesc_uiLang": { "message": "UI ஐக் காண்பிக்க ISO 639-1 மொழிக் குறியீடு" },
   "optionDesc_replyLang": { "message": "AI இல் பதிலளிக்க வேண்டிய மொழி" },
   "optionDesc_config": { "message": "ஏற்றுவதற்கான தனிப்பயன் உள்ளமைவு கோப்புக்கான பாதை" },

@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "שאילתה לשליחת בינה מלאכותית" },
   "optionDesc_summarize": { "message": "נתיב לקובץ או לטקסט לסיכום" },
   "optionDesc_asciiArt": { "message": "עיבוד אמנות ASCII של נושא אופציונלי" },
+  "optionDesc_commitMsgExample": { "message": "דוגמה להתחייבות msg עבור --mit - msg להתייחסות" },
   "optionDesc_uiLang": { "message": "קוד שפה ISO 639 -1 להצגה בממשק המשתמש" },
   "optionDesc_replyLang": { "message": "שפה שבה הבינה המלאכותית יכולה לענות" },
   "optionDesc_config": { "message": "נתיב לטעינת קובץ תצורה מותאם אישית" },

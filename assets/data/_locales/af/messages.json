@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Navraag om AI te stuur" },
   "optionDesc_summarize": { "message": "Pad na lêer of teks om op te som" },
   "optionDesc_asciiArt": { "message": "Gee ASCII kuns van opsionele onderwerp" },
+  "optionDesc_commitMsgExample": { "message": "Voorbeeld pleeg msg vir --commit-msg om te verwys" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kode van taal te vertoon UI in" },
   "optionDesc_replyLang": { "message": "Taal vir AI om in te antwoord" },
   "optionDesc_config": { "message": "Pad na pasgemaakte konfigurasielêer om te laai" },

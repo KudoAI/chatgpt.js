@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "ངས་ཁྱོད་ལ་བཏང་།" },
   "optionDesc_summarize": { "message": "ཡིག་ཆ་དང་ཡིག་ཆ་བསྡུ་ལེན་བྱེད་པའི་ལམ་" },
   "optionDesc_asciiArt": { "message": "ASCII སྒྱུ་རྩལ ། གདམ་ཁ་རྐྱབས་ཀྱི་གནད་དོན་" },
+  "optionDesc_commitMsgExample": { "message": "དཔེར་ན ། msgstr \"msgstr\" གི་དོན་ལུ་msgstr \"" },
   "optionDesc_uiLang": { "message": "ISO 639-1 སྐད་ཡིག་གི་ཁ་བྱང་།" },
   "optionDesc_replyLang": { "message": "སྐད་ཡིག་གིས་ལན་འདེབས་བྱེད་ཐུབ །" },
   "optionDesc_config": {

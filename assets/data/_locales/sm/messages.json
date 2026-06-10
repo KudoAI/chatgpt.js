@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Fesili e auina atu AI" },
   "optionDesc_summarize": { "message": "Ala i le faila po o le mau e aotele ai" },
   "optionDesc_asciiArt": { "message": "Render ASCII faatufugaga o mataupu filifilia" },
+  "optionDesc_commitMsgExample": { "message": "Faataitaiga faia msg mo --commit-msg i faasino" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code o le gagana e faaali atu UI i" },
   "optionDesc_replyLang": { "message": "Gagana mo AI e tali atu i" },
   "optionDesc_config": { "message": "Auala e custom config faila e utaina" },

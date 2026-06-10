@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Fela Anikulapo Kuti AI" },
   "optionDesc_summarize": { "message": "Fela Anikulapo Kuti - Fela Anikulapo Kuti" },
   "optionDesc_asciiArt": { "message": "Awkwafina Awkwafina Art" },
+  "optionDesc_commitMsgExample": { "message": "Sekai ni shite shiawase wa ---commit-msg to reference" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Code of Language Ukulele Tabs in Ukulele Tabs" },
   "optionDesc_replyLang": { "message": "Ludimi lwa kwasukapo mu" },
   "optionDesc_config": { "message": "Fela Anikulapo Kuti Config file to load" },

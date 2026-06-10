@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Interogare pentru a trimite AI" },
   "optionDesc_summarize": { "message": "Calea către fișier sau text de rezumat" },
   "optionDesc_asciiArt": { "message": "Redați arta ASCII a subiectului opțional" },
+  "optionDesc_commitMsgExample": { "message": "Exemplu de comitere msg pentru --commit-msg la referință" },
   "optionDesc_uiLang": { "message": "Codul ISO 639-1 al limbii pentru afișarea UI în" },
   "optionDesc_replyLang": { "message": "Limba în care AI poate răspunde" },
   "optionDesc_config": { "message": "Calea către fișierul de configurare personalizat pentru încărcare" },

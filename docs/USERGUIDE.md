@@ -86,6 +86,7 @@ Parameter options:
  -q, --query <msg>                    Query to send AI.
  -s, --summarize <filepath|text|url>  Path to file or text to summarize.
  -a, --ascii-art [subject]            Render ASCII art of optional subject.
+ -G, --commit-msg-example <msg>       Example msg for --commit-msg to reference.
  -m, --max-chars <integer>            Character limit per message.
  -k, --max-tokens <integer>           Max tokens to use.
  -t, --turns <integer>                Number of turns to preserve.

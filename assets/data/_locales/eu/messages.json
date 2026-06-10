@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "AI bidaltzeko kontsulta" },
   "optionDesc_summarize": { "message": "Fitxategirako bidea edo laburbiltzeko testua" },
   "optionDesc_asciiArt": { "message": "Aukerako ikasgaiaren ASCII artea errendatu" },
+  "optionDesc_commitMsgExample": { "message": "--commit-msg erreferentziarako commit mezuaren adibidea" },
   "optionDesc_uiLang": { "message": "ISO 639-1 UI bistaratzeko hizkuntzaren kodea" },
   "optionDesc_replyLang": { "message": "IAk erantzuteko erabilitako hizkuntza" },
   "optionDesc_config": { "message": "Kargatzeko konfigurazio fitxategi pertsonalizatuaren bidea" },

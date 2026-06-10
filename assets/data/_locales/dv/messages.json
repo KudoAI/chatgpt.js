@@ -64,6 +64,7 @@
   "optionDesc_query": { "message": "އޭއައި ފޮނުވަން ކިއުއަރީ" },
   "optionDesc_summarize": { "message": "ފައިލް އަށް ނުވަތަ ޚުލާޞާ ކުރަން ޓެކްސްޓް އަށް ދާން އޮތް މަގު" },
   "optionDesc_asciiArt": { "message": "އިޚްތިޔާރީ މާއްދާއެއްގެ އޭއެސްސީއައި އާޓް ރެންޑަރކުރުން" },
+  "optionDesc_commitMsgExample": { "message": "މިސާލު ރެފަރެންސް އަށް --commit-msg އަށް ކޮމިޓް އެމްއެސްޖީ" },
   "optionDesc_uiLang": { "message": "ޔޫއައި ދައްކާލުމަށް އައިއެސްއޯ 639-1 ކޯޑް އޮފް ލޭންގުއޭޖް" },
   "optionDesc_replyLang": { "message": "އޭއައި އިން ޖަވާބު ދޭން ބޭނުންކުރާ ބަހެވެ" },
   "optionDesc_config": { "message": "ލޯޑް ކުރަން ކަސްޓަމް ކޮންފިގް ފައިލް އަށް ދާ މަގު" },

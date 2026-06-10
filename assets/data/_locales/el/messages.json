@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Ερώτημα για αποστολή τεχνητής νοημοσύνης" },
   "optionDesc_summarize": { "message": "Διαδρομή προς αρχείο ή κείμενο για σύνοψη" },
   "optionDesc_asciiArt": { "message": "Απόδοση ASCII τέχνης προαιρετικού μαθήματος" },
+  "optionDesc_commitMsgExample": { "message": "Παράδειγμα υποβολής msg για --commit-msg για αναφορά" },
   "optionDesc_uiLang": { "message": "Κωδικός γλώσσας ISO 639-1 για εμφάνιση διεπαφής χρήστη σε" },
   "optionDesc_replyLang": { "message": "Γλώσσα στην οποία μπορεί να απαντήσει η τεχνητή νοημοσύνη" },
   "optionDesc_config": { "message": "Διαδρομή προς προσαρμοσμένο αρχείο διαμόρφωσης για φόρτωση" },

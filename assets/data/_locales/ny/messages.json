@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Kufunsira kutumiza AI" },
   "optionDesc_summarize": { "message": "Njira yopita ku fayilo kapena malemba kuti afotokoze mwachidule" },
   "optionDesc_asciiArt": { "message": "Render ASCII luso la nkhani yosankha" },
+  "optionDesc_commitMsgExample": { "message": "Chitsanzo kudzipereka msg kwa --commit-msg kutchula" },
   "optionDesc_uiLang": { "message": "ISO 639-1 malamulo chilankhulo kusonyeza UI mu" },
   "optionDesc_replyLang": { "message": "Chilankhulo cha AI kuyankha mu" },
   "optionDesc_config": { "message": "Njira yopita ku fayilo ya config kuti mutsegule" },

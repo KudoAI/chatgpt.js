@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "AI ለመላክ ጥያቄ" },
   "optionDesc_summarize": { "message": "ለማጠቃለል ወደ ፋይል ወይም ጽሑፍ መንገድ" },
   "optionDesc_asciiArt": { "message": "አማራጭ ርዕሰ ጉዳይ Render ASCII ጥበብ" },
+  "optionDesc_commitMsgExample": { "message": "ምሳሌ msg ን ለ --commit-msg ለማጣቀሻ ያዋቅሩ" },
   "optionDesc_uiLang": { "message": "የ ISO 639-1 የቋንቋ ኮድ UI ን በ ውስጥ ለማሳየት" },
   "optionDesc_replyLang": { "message": "ቋንቋ ለ AI በ ውስጥ መልስ ለመስጠት" },
   "optionDesc_config": { "message": "ለመጫን ፋይልን ለማዋቀር መንገድ" },

@@ -18,6 +18,7 @@ module.exports = {
         },
         summarize: { type: 'param', valType: 'filepath', allowText: true, regex: /^--?s(?:ummarize)?(?:[=\s].*|$)/ },
         asciiArt: { type: 'param', valRequired: false, regex: /^--?a(?:scii[-_]?)?a(?:rt)?(?:[=\s].*|$)/ },
+        commitMsgExample: { type: 'param', regex: /^--?(?:G|commit[-_]?me?ss?a?ge?[-_]?example)$/ },
         config: { type: 'param', valType: 'filepath', regex: /^--?c(?:onfig)?(?:[=\s].*|$)/ },
         maxChars: {
             type: 'param', valType: 'positiveInt', regex: /^--?m(?:ax[-_]?chars)?(?:[=\s].*|$)/, defaultVal: 250 },

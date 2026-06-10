@@ -66,6 +66,7 @@
   "optionDesc_query": { "message": "ناردنی ئه كاونت" },
   "optionDesc_summarize": { "message": "پەڕگە یان پەڕگە بۆ پوختەکردن" },
   "optionDesc_asciiArt": { "message": "Ckbwiki ھونەری ھەڵبژێردراو" },
+  "optionDesc_commitMsgExample": { "message": "Msg تۆمارکردنی گۆکردنی Msg [ms] دەزانن چۆن \"Msg\" بێژە بکەن ؟" },
   "optionDesc_uiLang": { "message": "ئایزۆ 639-1 کۆدی زمان بۆ پیشاندانی UI" },
   "optionDesc_replyLang": { "message": "هاوبەشکردنی بێژەی A بە ئینتەرلینگوا:" },
   "optionDesc_config": { "message": "ڕێچکە بۆ بارکردنی پەڕگەی ڕێکخستن بۆ بارکردن" },

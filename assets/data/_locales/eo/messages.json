@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Demando por sendi al iu" },
   "optionDesc_summarize": { "message": "Vojo al dosiero aŭ teksto por resumi" },
   "optionDesc_asciiArt": { "message": "Make ASCII art of optional subject" },
+  "optionDesc_commitMsgExample": { "message": "Example msg for --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kodo de lingvo por elmontri UI en" },
   "optionDesc_replyLang": { "message": "Lingvo por respondi en" },
   "optionDesc_config": { "message": "Ŝarĝendan agordodosieron" },

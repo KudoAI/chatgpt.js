@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Дархост барои фиристодани AI" },
   "optionDesc_summarize": { "message": "Роҳча ба файл ё матн барои ҷамъбаст" },
   "optionDesc_asciiArt": { "message": "Рендер ASCII санъат субъекти ихтиёрӣ" },
+  "optionDesc_commitMsgExample": { "message": "Намунаи ӯҳдадор msg барои --commit-msg ба истинод" },
   "optionDesc_uiLang": { "message": "ISO 639-1 рамзи забон барои намоиши UI дар" },
   "optionDesc_replyLang": { "message": "Забон барои AI барои ҷавоб додан дар" },
   "optionDesc_config": { "message": "Роҳча барои боркунии файли танзимоти фармоишӣ" },

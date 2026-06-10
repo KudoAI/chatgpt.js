@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Tað er ikki so lætt at fáa ein" },
   "optionDesc_summarize": { "message": "Veg til fílu ella tekst at taka saman" },
   "optionDesc_asciiArt": { "message": "Ger ASCII listina av valligum evnum" },
+  "optionDesc_commitMsgExample": { "message": "Dømi um at seta msg í samband við -commit-msg til tilvísing" },
   "optionDesc_uiLang": { "message": "ISO 639-1 málkód at vísa UI í" },
   "optionDesc_replyLang": { "message": "Tað er ikki neyðugt at seta seg í samband við" },
   "optionDesc_config": { "message": "Gøtur til vanligar konfiguratiónar fílu til at lata" },

@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "د AI لیږلو پوښتنه" },
   "optionDesc_summarize": { "message": "د لنډیز لپاره د فایل یا متن ځای" },
   "optionDesc_asciiArt": { "message": "د Render ASCII د اختیاري موضوع هنر" },
+  "optionDesc_commitMsgExample": { "message": "د --commit - msg لپاره د مراجعې لپاره د تګ راتګ بېلګه" },
   "optionDesc_uiLang": { "message": "په کې د UI ښودلو لپاره د ISO 639-1 د ژبې کوډ" },
   "optionDesc_replyLang": { "message": "د AI لپاره ژبه د ځواب ویلو لپاره" },
   "optionDesc_config": { "message": "د بارولو لپاره د دوديز سازونې دوتنې يونلور" },

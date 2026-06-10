@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Kueri untuk mengirim AI" },
   "optionDesc_summarize": { "message": "Jalur ke file atau teks untuk diringkas" },
   "optionDesc_asciiArt": { "message": "Render seni ASCII subjek opsional" },
+  "optionDesc_commitMsgExample": { "message": "Contoh commit msg untuk -- commit - msg untuk referensi" },
   "optionDesc_uiLang": { "message": "Kode bahasa ISO 639 -1 untuk menampilkan UI di" },
   "optionDesc_replyLang": { "message": "Bahasa untuk AI membalas dalam" },
   "optionDesc_config": { "message": "Jalur ke file konfigurasi kustom untuk dimuat" },

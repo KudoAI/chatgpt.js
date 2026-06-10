@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Zapytanie o wysłanie sztucznej inteligencji" },
   "optionDesc_summarize": { "message": "Ścieżka do pliku lub tekstu do podsumowania" },
   "optionDesc_asciiArt": { "message": "Renderuj grafikę ASCII przedmiotu fakultatywnego" },
+  "optionDesc_commitMsgExample": { "message": "Przykład commit msg for --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "Kod języka ISO 639-1 do wyświetlania interfejsu użytkownika w" },
   "optionDesc_replyLang": { "message": "Język, w którym sztuczna inteligencja ma odpowiadać" },
   "optionDesc_config": { "message": "Ścieżka do niestandardowego pliku konfiguracyjnego do załadowania" },

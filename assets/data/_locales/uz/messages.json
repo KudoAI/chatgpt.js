@@ -62,6 +62,7 @@
   "optionDesc_query": { "message": "Sun'iy intellektni yuborish uchun so'rov" },
   "optionDesc_summarize": { "message": "Xulosa qilish uchun fayl yoki matnga yo'l" },
   "optionDesc_asciiArt": { "message": "Ixtiyoriy mavzuning ASCII rasmini renderlash" },
+  "optionDesc_commitMsgExample": { "message": "--commit-msg uchun havola qilish uchun commit msg misoli" },
   "optionDesc_uiLang": { "message": "UI ni ko'rsatish uchun ISO 639-1 til kodi" },
   "optionDesc_replyLang": { "message": "Sun'iy intellekt javob beradigan til" },
   "optionDesc_config": { "message": "Yuklanadigan maxsus konfiguratsiya fayliga yo'l" },

@@ -62,6 +62,7 @@
   "optionDesc_query": { "message": "Codsi si aad u dirto AI" },
   "optionDesc_summarize": { "message": "Jidka faylka ama qoraalka si loo soo koobo" },
   "optionDesc_asciiArt": { "message": "Farshaxanka Render ASCII ee mawduuca ikhtiyaarka ah" },
+  "optionDesc_commitMsgExample": { "message": "Tusaale u samee msg for --commit-msg in tixraac" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code luqadda si ay u muujiyaan UI in" },
   "optionDesc_replyLang": { "message": "Luuqada loogu talagalay AI si looga jawaabo" },
   "optionDesc_config": { "message": "Jidka si loo habeeyo faylka si loo raro" },

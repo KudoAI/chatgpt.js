@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Forespørgsel om at sende AI" },
   "optionDesc_summarize": { "message": "Sti til fil eller tekst, der skal opsummeres" },
   "optionDesc_asciiArt": { "message": "Gengiv ASCII-kunst af valgfrit emne" },
+  "optionDesc_commitMsgExample": { "message": "Eksempel på commit msg for --commit-msg til reference" },
   "optionDesc_uiLang": { "message": "ISO 639-1-kode for sprog til visning af brugergrænseflade i" },
   "optionDesc_replyLang": { "message": "Sprog, som AI skal svare på" },
   "optionDesc_config": { "message": "Sti til brugerdefineret konfigurationsfil, der skal indl" },

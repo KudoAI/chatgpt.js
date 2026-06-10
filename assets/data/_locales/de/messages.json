@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Abfrage zum Senden von KI" },
   "optionDesc_summarize": { "message": "Pfad zur Datei oder Text zur Zusammenfassung" },
   "optionDesc_asciiArt": { "message": "ASCII-Kunst des optionalen Fachs rendern" },
+  "optionDesc_commitMsgExample": { "message": "Example msg for --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Sprachcode zur Anzeige der Benutzeroberfläche in" },
   "optionDesc_replyLang": { "message": "Sprache, in der die KI antworten kann" },
   "optionDesc_config": { "message": "Pfad zur benutzerdefinierten Konfigurationsdatei zum Laden" },

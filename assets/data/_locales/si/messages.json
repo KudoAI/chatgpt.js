@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "AI යැවීමට විමසුම" },
   "optionDesc_summarize": { "message": "සාරාංශ කිරීමට ගොනුව හෝ පෙළ සඳහා මාර්ගය" },
   "optionDesc_asciiArt": { "message": "විකල්ප විෂය පිළිබඳ ASCII කලාව ඉදිරිපත් කරන්න" },
+  "optionDesc_commitMsgExample": { "message": "Commit-msg to reference" },
   "optionDesc_uiLang": { "message": "ISO 639-1 භාෂා කේතය ප්රදර්ශනය කිරීමට UI" },
   "optionDesc_replyLang": { "message": "AI සඳහා ප් ‍ රතිචාර දැක්වීමට භාෂාව" },
   "optionDesc_config": { "message": "පූරණය සඳහා අභිරුචි සැකසුම් ගොනුව සඳහා මාර් ‍ ගය" },

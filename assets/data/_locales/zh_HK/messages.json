@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "查詢以發送AI" },
   "optionDesc_summarize": { "message": "要匯總的檔案或文字路徑" },
   "optionDesc_asciiArt": { "message": "呈現可選主題的ASCII藝術" },
+  "optionDesc_commitMsgExample": { "message": "要引用的--commit-msg的提交消息示例" },
   "optionDesc_uiLang": { "message": "用於顯示UI的語言ISO 639-1代碼" },
   "optionDesc_replyLang": { "message": "AI回覆的語言" },
   "optionDesc_config": { "message": "要載入的自訂組態檔路徑" },

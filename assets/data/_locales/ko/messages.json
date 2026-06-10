@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "AI 전송 쿼리" },
   "optionDesc_summarize": { "message": "요약할 파일 또는 텍스트 경로" },
   "optionDesc_asciiArt": { "message": "선택 과목의 ASCII 아트 렌더링" },
+  "optionDesc_commitMsgExample": { "message": "--commit-msg를 참조하도록 커밋하는 msg 예제" },
   "optionDesc_uiLang": { "message": "UI를 표시할 언어의 ISO 639-1 코드" },
   "optionDesc_replyLang": { "message": "AI가 회신할 언어" },
   "optionDesc_config": { "message": "로드할 사용자 지정 구성 파일 경로" },

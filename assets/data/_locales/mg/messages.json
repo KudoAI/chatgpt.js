@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Fangatahana handefa AI" },
   "optionDesc_summarize": { "message": "Ny sori-dàlana atao anaty rakitra na soratra hofehezina" },
   "optionDesc_asciiArt": { "message": "Render ASCII zavakanto ny tsy voatery foto-kevitra" },
+  "optionDesc_commitMsgExample": { "message": "Msg for -commit-msg to reference" },
   "optionDesc_uiLang": { "message": "ISO 639-1 fehezan-dalàna ny fiteny mba haneho UI in" },
   "optionDesc_replyLang": { "message": "Teny ho an'ny AI mba hamaly" },
   "optionDesc_config": { "message": "Ny sori-dàlana ametrahana ny raki-kirakira kirakira halaina" },

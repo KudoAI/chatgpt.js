@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "AI पठाउनको लागि क्वेरी" },
   "optionDesc_summarize": { "message": "संक्षेप गर्न फाइल वा पाठको बाटो" },
   "optionDesc_asciiArt": { "message": "वैकल्पिक विषयको ASCII कला रेन्डर गर्नुहोस्" },
+  "optionDesc_commitMsgExample": { "message": "सन्दर्भमा -- commit - msg का लागि उदाहरण commit msg" },
   "optionDesc_uiLang": { "message": "UI प्रदर्शन गर्न भाषाको ISO 639 -1 कोड" },
   "optionDesc_replyLang": { "message": "AI को जवाफ दिने भाषा" },
   "optionDesc_config": { "message": "लोड गर्न अनुकूल कन्फिग फाइलको बाटो" },

@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "AIを送信するためのクエリ" },
   "optionDesc_summarize": { "message": "要約するファイルまたはテキストへのパス" },
   "optionDesc_asciiArt": { "message": "オプションのサブジェクトのASCIIアートをレンダリングする" },
+  "optionDesc_commitMsgExample": { "message": "参照する-- commit - msgのコミットメッセージの例" },
   "optionDesc_uiLang": { "message": "UIを表示する言語のISO 639 -1コード" },
   "optionDesc_replyLang": { "message": "AIが返信するための言語" },
   "optionDesc_config": { "message": "読み込むカスタム構成ファイルへのパス" },

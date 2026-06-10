@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Consulta para enviar IA" },
   "optionDesc_summarize": { "message": "Rota ao arquivo ou texto a resumir" },
   "optionDesc_asciiArt": { "message": "ARTE RENDIDO ASCII de asignatura optativa" },
+  "optionDesc_commitMsgExample": { "message": "Exemplo de commit msg para ---commit-msg a referencia" },
   "optionDesc_uiLang": { "message": "ISO 639-1 código de idioma para mostrar UI en" },
   "optionDesc_replyLang": { "message": "Idioma para IA para responder en" },
   "optionDesc_config": { "message": "Rota ao ficheiro de configuración personalizado a cargar" },

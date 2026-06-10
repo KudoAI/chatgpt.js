@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Accueil > Accueil > To send ai" },
   "optionDesc_summarize": { "message": "An t - slighe gu faidhle no teacsa gus geàrr - chunntas a dhèanamh" },
   "optionDesc_asciiArt": { "message": "Santarcangelo di Romagna" },
+  "optionDesc_commitMsgExample": { "message": "Example msg for -- commit - msg to reference" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 Code of Language gus UI a thaisbeanadh ann an UI" },
   "optionDesc_replyLang": { "message": "Freagairt gu AKA" },
   "optionDesc_config": { "message": "An t - slighe dhan fhaidhle rèiteachaidh gnàthaichte gus a luchdadh" },

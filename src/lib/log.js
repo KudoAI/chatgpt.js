@@ -72,6 +72,7 @@ module.exports = {
                 ` -q, --query <msg>                    ${cli.msgs.optionDesc_query}.`,
                 ` -s, --summarize <filepath|text|url>  ${cli.msgs.optionDesc_summarize}.`,
                 ` -a, --ascii-art [subject]            ${cli.msgs.optionDesc_asciiArt}.`,
+                ` -G, --commit-msg-example <msg>       ${cli.msgs.optionDesc_commitMsgExample}.`,
                 ` -m, --max-chars <integer>            ${cli.msgs.optionDesc_maxChars}.`,
                 ` -k, --max-tokens <integer>           ${cli.msgs.optionDesc_maxTokens}.`,
                 ` -t, --turns <integer>                ${cli.msgs.optionDesc_turnsToPreserve}.`,

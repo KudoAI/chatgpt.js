@@ -64,6 +64,7 @@
   "optionDesc_query": { "message": "Te tono ki te tuku i a ia" },
   "optionDesc_summarize": { "message": "Te ara ki te kōnae ranei kuputuhi ki te whakarāpopototanga" },
   "optionDesc_asciiArt": { "message": "Render ASCII toi o te kaupapa kōwhiringa" },
+  "optionDesc_commitMsgExample": { "message": "Tauira whakatapua msg mō --commit-msg ki tohutoro" },
   "optionDesc_uiLang": { "message": "ISO 639-1 waehere reo ki te whakaatu UI i roto i" },
   "optionDesc_replyLang": { "message": "Te reo mo te AI ki te whakautu i roto i" },
   "optionDesc_config": { "message": "Te ara ki te kōnae whirihora ritenga ki utaina" },

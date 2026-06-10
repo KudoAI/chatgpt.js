@@ -60,6 +60,7 @@
   "optionDesc_query": { "message": "Poizvedba za pošiljanje umetne inteligence" },
   "optionDesc_summarize": { "message": "Pot do datoteke ali besedila za povzemanje" },
   "optionDesc_asciiArt": { "message": "Upodobi umetnost ASCII izbirnega predmeta" },
+  "optionDesc_commitMsgExample": { "message": "Primer pošiljanja sporočila za --commit-msg na referenco" },
   "optionDesc_uiLang": { "message": "Koda jezika ISO 639-1 za prikaz uporabniškega vmesnika v" },
   "optionDesc_replyLang": { "message": "Jezik, v katerem naj umetna inteligenca odgovori v" },
   "optionDesc_config": { "message": "Pot do konfiguracijske datoteke po meri za nalaganje" },
