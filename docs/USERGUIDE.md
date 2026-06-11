@@ -84,13 +84,13 @@ Parameter options:
  -u, --ui-lang <code>                 ISO 639-1 code of language to display UI in.
  -L, --reply-lang <text>              Language for AI to reply in.
  -q, --query <msg>                    Query to send AI.
- -s, --summarize <filepath|text|url>  Path to file or text to summarize.
+ -s, --summarize <filepath|text|url>  Path or URL to file or text to summarize.
  -a, --ascii-art [subject]            Render ASCII art of optional subject.
  -G, --commit-msg-example <msg>       Example msg for --commit-msg to reference.
  -m, --max-chars <integer>            Character limit per message.
  -k, --max-tokens <integer>           Max tokens to use.
  -t, --turns <integer>                Number of turns to preserve.
- -c, --config <filepath|url>          Path to custom config file to load.
+ -c, --config <filepath|url>          Path or URL to custom config file to load.
 
 Boolean options:
  -x, --copy                           Copy CLI response to clipboard.
