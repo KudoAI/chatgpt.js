@@ -18,7 +18,7 @@ async function testMaxTokens(provider, tokenLimit) {
         console.log(`✅ Response received in ${elapsed}ms`)
         console.log(`📝 Response length: ${characterCount} characters`)
         console.log(`🔢 Estimated tokens: ~${estimatedTokens}`)
-        console.log(`🎯 Token limit set: ${tokenLimit === null ? 'none (API default)' : tokenLimit}`)
+        console.log(`🎯 Token limit set: ${ tokenLimit == null ? 'none (API default)' : tokenLimit }`)
         if (tokenLimit != null && estimatedTokens > tokenLimit)
             console.log(`⚠️  WARNING: Response (~${estimatedTokens} tokens) exceeded limit (${tokenLimit} tokens)`)
         else if (tokenLimit != null && estimatedTokens <= tokenLimit)
