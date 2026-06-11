@@ -9,6 +9,7 @@ module.exports = {
 
     async cli() {
         Object.assign(globalThis.cli ??= {}, require(`${env.paths.libData}/package-data.json`))
+        cli.msgs = await language.getMsgs('en')
         cli.msgs = await language.getMsgs(cli.lang = await settings.load('uiLang') || (
             env.modes.debug ? language.generateRandomLang({ excludes: ['en'] }) : language.getSysLang() ))
         cli.urls.cliDocs ||= `${cli.urls.docs.root}/#-command-line-usage`

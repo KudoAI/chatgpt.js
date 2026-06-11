@@ -67,17 +67,14 @@ module.exports = {
                 if (string.looksLikeURL(inputPath)) {
                     const resp = await data.fetch(inputPath)
                     if (!resp.ok)
-                        log.errorAndExit(
-                            `${ cli.msgs?.error_failedToLoadConfigFile || 'Failed to fetch config from URL' }: ${
-                                inputPath} (${resp.status})`)
+                        log.errorAndExit(`${cli.msgs.error_failedToLoadConfigFile}: ${inputPath} (${resp.status})`)
                     const tmpFile = path.join(os.tmpdir(), `cli-config-${Date.now()}.js`)
                     await data.atomicWrite(tmpFile, await resp.text())
                     cli.configPath = tmpFile
                 } else {
                     cli.configPath = path.isAbsolute(inputPath) ? inputPath : path.resolve(process.cwd(), inputPath)
                     if (!fs.existsSync(cli.configPath))
-                        log.configURLandExit(
-                            `${ cli.msgs?.error_configFileNotFound || 'Config file not found' }:`, cli.configPath)
+                        log.configURLandExit(`${cli.msgs.error_configFileNotFound}:`, cli.configPath)
                 }
 
             } else // auto-discover .config.[mc]?js file
@@ -93,8 +90,7 @@ module.exports = {
             try {
                 const mod = require(cli.configPath), fileConfig = mod?.default ?? mod
                 if (!fileConfig || typeof fileConfig != 'object')
-                    log.configURLandExit(
-                        `${ cli.msgs?.error_invalidConfigFile || 'Config file must export an object' }.`)
+                    log.configURLandExit(`${cli.msgs.error_invalidConfigFile}.`)
                 ;(arguments.length ? inputCtrlKeys : Object.keys(fileConfig)).forEach(key => {
                     if (!(key in fileConfig)) return
                     const val = fileConfig[key], ctrl = this.controls[key]
@@ -114,14 +110,13 @@ module.exports = {
                 })
                 if (!arguments.length) log.debug('Config file loaded!', { type: 'config' })
             } catch (err) {
-                log.configURLandExit(`${ cli.msgs?.error_failedToLoadConfigFile || 'Failed to load config file' }:`,
-                    cli.configPath, `\n${err.message}`) }
+                log.configURLandExit(`${cli.msgs.error_failedToLoadConfigFile}:`, cli.configPath, `\n${err.message}`) }
 
         for (let i = 0 ; i < env.args.length ; i++) { // load from CLI arg (overriding config file loads)
             const arg = env.args[i]
             if (/^[^-]|--?(?:config|debug)/.test(arg) && arg != 'init') continue
             const ctrlKey = Object.keys(this.controls).find(key => this.controls[key]?.regex?.test(arg))
-            if (!ctrlKey) log.errorAndExit(`[${arg}] ${ cli.msgs?.error_notRecognized || 'not recognized' }.`)
+            if (!ctrlKey) log.errorAndExit(`[${arg}] ${cli.msgs.error_notRecognized}.`)
             if (!inputCtrlKeys.includes(ctrlKey)) continue // don't process env.args when load() specific keys
             if (ctrlKey.startsWith('legacy_')) { log.argDoesNothing(arg) ; continue }
             const ctrl = this.controls[ctrlKey]
@@ -156,7 +151,7 @@ module.exports = {
                 cli.config[key] = ctrl.parser(configVal) ; ctrl.parsed = true }
 
             if (ctrl.type == 'param' && ctrl.valRequired != false && configVal === true)
-                log.errorAndExit(`[${key}] ${ cli.msgs?.error_requiresVal || 'requires a value' }.`)
+                log.errorAndExit(`[${key}] ${ cli.msgs.error_requiresVal || 'requires a value' }.`)
 
             if (ctrl.valType) ({
                 filepath() {
@@ -164,18 +159,16 @@ module.exports = {
                     if (configVal && (!ctrl.allowText || string.looksLikePath(configVal))
                         && !fs.existsSync(configVal)
                     ) log.errorAndExit(`[${key}] ${
-                        cli.msgs?.error_invalidFilepath || 'must be a valid existing file path. Got' }: ${configVal}`)
+                        cli.msgs.error_invalidFilepath || 'must be a valid existing file path. Got' }: ${configVal}`)
                 },
                 langCode() {
                     if (configVal && !require('./language').validateLangCode(configVal))
-                        log.errorAndExit(`[${key}] ${
-                            cli.msgs?.error_invalidLangCode || 'is an invalid language code' }: ${configVal}`)
+                        log.errorAndExit(`[${key}] ${cli.msgs.error_invalidLangCode}: ${configVal}`)
                 },
                 positiveInt() {
                     const numVal = parseInt(configVal, 10)
                     if (numVal && isNaN(numVal) || numVal < 1)
-                        log.errorAndExit(`[${key}] ${
-                            cli.msgs?.error_nonPositiveNum || 'argument can only be > 0' }: ${configVal}`)
+                        log.errorAndExit(`[${key}] ${cli.msgs.error_nonPositiveNum}: ${configVal}`)
                     cli.config[key] = numVal
                 }
             })[ctrl.valType]()
