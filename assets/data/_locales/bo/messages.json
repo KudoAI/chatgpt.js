@@ -17,7 +17,6 @@
   "error_failedToLoadConfigFile": { "message": "རིམ་སྒྲིག་ཡིག་ཆ་མངོན་འཇུག་བྱེད་མ་ཐུབ།" },
   "error_failedToFetchGlobalVer": { "message": "འཛམ་གླིང་གི་འགྲེལ་བཤད་འཚོལ་མ་ཐུབ་པ" },
   "error_failedToFetchSysLang": { "message": "ལམ་ལུགས་སྐད་ཡིག་ཐོབ་མ་ཐུབ་པ" },
-  "error_mustIncludePath": { "message": "ཕྱོགས་སྟོན་་་་གཙོ་ངོས ། \"རྩོམ་རིག\"" },
   "error_notInGitRepo": { "message": "ཟ་ཁང་དུ་མི་འདུག བཀའ་འདི་git repo ནང་འཇུག་བྱེད་པ" },
   "error_failedToReadGitDiff": { "message": "Git diff ལ་ཀློག་མི་ཐུབ་པ" },
   "error_failedToClearMsgChain": { "message": "འཕྲིན་ཡིག་གི་སྐུད་པ་གཙང་མ་བཟོ་བར་མ་ཐུབ་པ" },
@@ -58,13 +57,13 @@
   "helpSection_cmds": { "message": "བརྡ་དོན་བཀའ་སློབ །" },
   "optionDesc_provider": { "message": "Chat API སྒྲིག་འཇུག་བྱས་ཚད ། ཐེངས་10 ལས་ཉུང་བ ། ཐོན་རིམ་5.7.1" },
   "optionDesc_query": { "message": "ངས་ཁྱོད་ལ་བཏང་།" },
-  "optionDesc_summarize": { "message": "ཡིག་ཆ་དང་ཡིག་ཆ་བསྡུ་ལེན་བྱེད་པའི་ལམ་" },
+  "optionDesc_summarize": { "message": "ཡིག་ཆ་དང་ཡིག་ཆ་འདོར་བའི་ལམ་དང་URL" },
   "optionDesc_asciiArt": { "message": "ASCII སྒྱུ་རྩལ ། གདམ་ཁ་རྐྱབས་ཀྱི་གནད་དོན་" },
-  "optionDesc_commitMsgExample": { "message": "དཔེར་ན ། msgstr \"msgstr\" གི་དོན་ལུ་msgstr \"" },
+  "optionDesc_commitMsgExample": { "message": "དཔེར་ན ། msgstr \"msgstr\"" },
   "optionDesc_uiLang": { "message": "ISO 639-1 སྐད་ཡིག་གི་ཁ་བྱང་།" },
   "optionDesc_replyLang": { "message": "སྐད་ཡིག་གིས་ལན་འདེབས་བྱེད་ཐུབ །" },
   "optionDesc_config": {
-    "message": "རང་མོས་སྒྲིག་འཇུག་བྱས་ཚད ། ཐེངས་3 ལས་ཉུང་བ ། ཐོན་རིམ་5.7.1 ནང་དུ་ཚོད་ལྟ་བྱས་ཟིན །"
+    "message": "རང་མོས་སྒྲིག་འཇུག་བྱས་ཚད ། ས་ཡ 1 + ཐོན་རིམ་5.7.1 ནང་དུ་ཚོད་ལྟ་བྱས་ཟིན ། ལོ 3 སྔོན་ལ་གསར་བཅོས་བྱས"
   },
   "optionDesc_maxChars": { "message": "འཕྲིན་ཡིག་རེ་རེའི་ཡིག་འབྲུ་ཚད་མ །" },
   "optionDesc_maxTokens": { "message": "ལག་ལེན་བྱེད་ཕྱིར་ལག་ལེན་བྱེད་ཕྱིར་ལག་ལེན་བྱེད་མཁན །" },

@@ -17,7 +17,6 @@
   "error_failedToLoadConfigFile": { "message": "Config ဖိုင်ကိုဖွင့်ရန်မအောင်မြင်ပါ" },
   "error_failedToFetchGlobalVer": { "message": "ကမ္ဘာလုံးဆိုင်ရာ ဗားရှင်းကို ရယူရန် မအောင်မြင်ပါ" },
   "error_failedToFetchSysLang": { "message": "စနစ်ဘာသာစကား ရယူရန် မအောင်မြင်ပါ" },
-  "error_mustIncludePath": { "message": "ပါဝင်ရမည် =လမ်းကြောင်း" },
   "error_notInGitRepo": {
     "message": "Git Repository မှာတော့မဟုတ်ပါဘူး ။ ဒီ command ကို git repo တစ်ခုအတွင်းမှာ run ပါ"
   },
@@ -60,12 +59,12 @@
   "helpSection_cmds": { "message": "သတင်းအချက်အလက်ဆိုင်ရာ ညွှန်ကြားချက်များ" },
   "optionDesc_provider": { "message": "Chat API အတွက် ပံ့ပိုးသူ" },
   "optionDesc_query": { "message": "AI စေလွှတ်ရန်မေးမြန်းချက်" },
-  "optionDesc_summarize": { "message": "အကျဉ်းချုံးရန် ဖိုင် သို့မဟုတ် စာသားသို့ လမ်းကြောင်း" },
+  "optionDesc_summarize": { "message": "အနှစ်ချုပ်ရန် ဖိုင် သို့မဟုတ် စာသားအတွက် လမ်းကြောင်း သို့မဟုတ် URL" },
   "optionDesc_asciiArt": { "message": "ရွေးချယ်နိုင်သောဘာသာရပ် ၏ ASCII အနုပညာကိုတင်ပြပါ" },
-  "optionDesc_commitMsgExample": { "message": "--commit-msg ကို ကိုးကားရန်အတွက် နမူနာ ကတိကဝတ် မက်ဆေ့ချ်" },
+  "optionDesc_commitMsgExample": { "message": "ရည်ညွှန်းရန် --commit-msg အတွက် ဥပမာ msg" },
   "optionDesc_uiLang": { "message": "ISO ကို 639-1 ဘာသာစကားကုဒ် UI ကိုပြသရန်" },
   "optionDesc_replyLang": { "message": "ဉာဏ်ရည်တုအတွက် ဖြေဆိုရမည့် ဘာသာစကား" },
-  "optionDesc_config": { "message": "ဖွင့်ရန် စိတ်ကြိုက် config ဖိုင်အတွက် လမ်းကြောင်း" },
+  "optionDesc_config": { "message": "ဖွင့်ရန် လမ်းကြောင်း သို့မဟုတ် URL ကို စိတ်ကြိုက် config ဖိုင်" },
   "optionDesc_maxChars": { "message": "မက်ဆေ့ချ်တစ်စောင်လျှင် အက္ခရာကန့်သတ်ချက်" },
   "optionDesc_maxTokens": { "message": "အသုံးပြုရန် အများဆုံး တိုကင်များ" },
   "optionDesc_turnsToPreserve": { "message": "ထိန်းသိမ်းရန် အလှည့်အရေအတွက်" },

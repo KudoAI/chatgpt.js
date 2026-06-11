@@ -17,7 +17,6 @@
   "error_failedToLoadConfigFile": { "message": "Kaore i taea te utaina i te konae whirihora" },
   "error_failedToFetchGlobalVer": { "message": "Kaore i taea te tango i te putanga o te ao" },
   "error_failedToFetchSysLang": { "message": "Kaore e taea te whakamahi i te reo o te pūnaha" },
-  "error_mustIncludePath": { "message": "me whakauru =ara" },
   "error_notInGitRepo": {
     "message": "Ehara i te mea i roto i te whare putunga. Te whakahaere i tenei whakahau i roto i te Git Repo"
   },
@@ -62,12 +61,12 @@
   "helpSection_cmds": { "message": "Ngā Whakahau" },
   "optionDesc_provider": { "message": "Kaihoko mo te API korerorero" },
   "optionDesc_query": { "message": "Te tono ki te tuku i a ia" },
-  "optionDesc_summarize": { "message": "Te ara ki te kōnae ranei kuputuhi ki te whakarāpopototanga" },
+  "optionDesc_summarize": { "message": "He ara, he URL rānei hei tuhi, hei kuputuhi rānei hei whakarāpopototanga" },
   "optionDesc_asciiArt": { "message": "Render ASCII toi o te kaupapa kōwhiringa" },
-  "optionDesc_commitMsgExample": { "message": "Tauira whakatapua msg mō --commit-msg ki tohutoro" },
+  "optionDesc_commitMsgExample": { "message": "Tauira msg mo --commit-msg ki te tohutoro" },
   "optionDesc_uiLang": { "message": "ISO 639-1 waehere reo ki te whakaatu UI i roto i" },
   "optionDesc_replyLang": { "message": "Te reo mo te AI ki te whakautu i roto i" },
-  "optionDesc_config": { "message": "Te ara ki te kōnae whirihora ritenga ki utaina" },
+  "optionDesc_config": { "message": "Ara URL ranei ki te kōnae whirihora ritenga ki utaina" },
   "optionDesc_maxChars": { "message": "Te rohe o te tangata mo ia karere" },
   "optionDesc_maxTokens": { "message": "Max tohu ki te whakamahi" },
   "optionDesc_turnsToPreserve": { "message": "Te maha o nga huringa hei tiaki" },

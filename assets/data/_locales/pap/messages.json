@@ -17,7 +17,6 @@
   "error_failedToLoadConfigFile": { "message": "No Cargo Config Archive" },
   "error_failedToFetchGlobalVer": { "message": "No Te Creas Tan Importante Version Global" },
   "error_failedToFetchSysLang": { "message": "No a logra yega na e sistema di idioma" },
-  "error_mustIncludePath": { "message": "contenido =Camino" },
   "error_notInGitRepo": { "message": "No Into a Git Repository. Cogiendo En Un Git Repository" },
   "error_failedToReadGitDiff": { "message": "No te lo pierdas di Git Diff" },
   "error_failedToClearMsgChain": { "message": "Falta un mensaje claro" },
@@ -59,13 +58,13 @@
   "optionDesc_provider": { "message": "Programacion para chat api" },
   "optionDesc_query": { "message": "Reklama na AI" },
   "optionDesc_summarize": {
-    "message": "Página principal > Temas Variados > Resumen resumen resumen resumen resumen res"
+    "message": "Página principal > Temas Variados > Resumen resumen resumen resumen resumen resumen resumen res"
   },
   "optionDesc_asciiArt": { "message": "Asuncion Art of Optional Topic" },
-  "optionDesc_commitMsgExample": { "message": "Recomendacion para msg - Recomendacion para msg" },
+  "optionDesc_commitMsgExample": { "message": "Página principal > Ciencia > Memoria Memoria Memoria Memoria" },
   "optionDesc_uiLang": { "message": "Documente similare cu ISO 639-1 Code of Language" },
   "optionDesc_replyLang": { "message": "Idioma pa duna un man den" },
-  "optionDesc_config": { "message": "Archive for custom config Archive for cargo" },
+  "optionDesc_config": { "message": "Página principal > Ciencia > Cargo Cargo Cargo Cargo Cargo" },
   "optionDesc_maxChars": { "message": "Limitacion Por Mensaje" },
   "optionDesc_maxTokens": { "message": "Tickets pa haci uso di" },
   "optionDesc_turnsToPreserve": { "message": "Number of Rescues for Rescues" },

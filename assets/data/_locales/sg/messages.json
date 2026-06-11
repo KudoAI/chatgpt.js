@@ -17,7 +17,6 @@
   "error_failedToLoadConfigFile": { "message": "A yeke na lege ni pëpe ti tene mo zia lê ti mo na ndo ti mbeni ye" },
   "error_failedToFetchGlobalVer": { "message": "A yeke na lege ni pëpe ti wara mbeni ye so ayeke na yâ ti dunia kue" },
   "error_failedToFetchSysLang": { "message": "A yeke nzoni e sara kua na kode ti kode ni ape" },
-  "error_mustIncludePath": { "message": "a lingbi ti tene so a yeke na lege ni pëpe" },
   "error_notInGitRepo": {
     "message": "Wala na ko frequency, as in blank na lang. A yeke na yâ ti mbeni kete kete kete kete kete kete kete kete kete"
   },
@@ -66,12 +65,12 @@
   "helpSection_cmds": { "message": "Aye so afa so a yeke nzoni e sara" },
   "optionDesc_provider": { "message": "Zo so ayeke mû maboko na azo ti sara lisoro na ndö ti Internet" },
   "optionDesc_query": { "message": "Mbi leke ti tokua mbeni mbeti na mo" },
-  "optionDesc_summarize": { "message": "Lege ti faïl wala ti sara tënë na yâ ti atënë ni" },
+  "optionDesc_summarize": { "message": "Lege wala URL ti faïl wala text ti tene a sara tënë ni na nduru tënë" },
   "optionDesc_asciiArt": { "message": "A yeke na lege ti kode ti fango tënë ti kodoro ti Israël." },
-  "optionDesc_commitMsgExample": { "message": "Tapande ti mungo maboko na msg teti --commit-msg ti sara tënë" },
+  "optionDesc_commitMsgExample": { "message": "Tapande msg for --commit-msg ti sara tënë" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code ti yanga ti kodoro ti fa UI na" },
   "optionDesc_replyLang": { "message": "Yanga ti awambongi ayeke mû maboko na e ti kiri tënë na" },
-  "optionDesc_config": { "message": "Lege ti gue na ndo ti mbeni ndo so a yeke zia ni na ndo ti mbeni ndo so a yeke" },
+  "optionDesc_config": { "message": "Lege wala URL ti faïl ti faïl ti faïl" },
   "optionDesc_maxChars": { "message": "A yeke wara atënë ti yâ ti mbeti ni na yâ ti mbeni mbeti" },
   "optionDesc_maxTokens": { "message": "Max tokens ti sara kua na ni" },
   "optionDesc_turnsToPreserve": { "message": "Nombre de tours ti bata" },

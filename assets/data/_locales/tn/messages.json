@@ -17,7 +17,6 @@
   "error_failedToLoadConfigFile": { "message": "O reteletswe ke go louta faele ya config" },
   "error_failedToFetchGlobalVer": { "message": "O reteletswe ke go batla mofuta wa lefatshe ka bophara" },
   "error_failedToFetchSysLang": { "message": "O reteletswe ke go batla puo ya tsamaiso" },
-  "error_mustIncludePath": { "message": "e tshwanetse go akaretsa = tsela" },
   "error_notInGitRepo": {
     "message": "Eseng mo lefelong la go bolokela dilo. Go tsamaisa taelo eno mo teng ga git repo"
   },
@@ -60,12 +59,12 @@
   "helpSection_cmds": { "message": "Ditaelo" },
   "optionDesc_provider": { "message": "Motlamedi wa motlotlo wa API" },
   "optionDesc_query": { "message": "Query to send AI" },
-  "optionDesc_summarize": { "message": "Path to file or text to summarize" },
+  "optionDesc_summarize": { "message": "Path or URL to file or text to summarize" },
   "optionDesc_asciiArt": { "message": "E fa setshwantsho sa ASCII sa motsayakarolo yo o ikgethelang" },
   "optionDesc_commitMsgExample": { "message": "Example msg for --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code of language to display UI in" },
   "optionDesc_replyLang": { "message": "Puo ya gore AI e arabe ka" },
-  "optionDesc_config": { "message": "Path to custom config file to load" },
+  "optionDesc_config": { "message": "Path or URL to custom config file to load" },
   "optionDesc_maxChars": { "message": "Tekanyetso ya ditlhaka go ya ka molaetsa mongwe le mongwe" },
   "optionDesc_maxTokens": { "message": "MAX TOKENS GO O DIRISA" },
   "optionDesc_turnsToPreserve": { "message": "Palo ya diphetogo tse di tshwanelang go bolokiwa" },
