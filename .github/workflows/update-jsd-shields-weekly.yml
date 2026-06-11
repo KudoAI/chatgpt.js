@@ -69,7 +69,7 @@ jobs:
           echo "Combined jsDelivr hits: $formatted_total ($npm_hits npm + $gh_hits gh)"
           for readme in $(find . -name README.md) ; do
             old_readme=$(<"$readme")
-            sed -i -E "s/(badge\/[^-]*-)[^-]*(-2bbbd8)/\1${formatted_total}\2/" "$readme"
+            sed -i -E "s/(badge\/[^-]*-)[^-]*(-2bbbd8)/\1${formatted_total}+\2/" "$readme"
             new_readme=$(<"$readme")
             if [[ "$old_readme" != "$new_readme" ]] ; then
               shields_updated=true ; echo "Updated: $readme" ; fi
