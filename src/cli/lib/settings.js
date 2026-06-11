@@ -1,4 +1,6 @@
-const fs = require('fs'),
+const data = require('./data'),
+      fs = require('fs'),
+      os = require('os'),
       path = require('path'),
       string = require('../../lib/string')
 
@@ -42,7 +44,7 @@ module.exports = {
 
     isNegKey(key) { return /^(?:no|disable|exclude)[A-Z]/.test(key) },
 
-    load(ctrlKeys = Object.keys(this.controls)) {
+    async load(ctrlKeys = Object.keys(this.controls)) {
         const inputCtrlKeys = [].concat(ctrlKeys) // force array
 
         if (!cli.defaultsSet && !arguments.length) { // init all defaults on arg-less load()
@@ -56,16 +58,27 @@ module.exports = {
 
         if (!cli.configPathTried) { // init config file path
             const configIdx = env.args.findIndex(arg => this.controls.config.regex.test(arg)),
-                  configArg = configIdx !== -1 ? env.args[configIdx] : null
+                  configArg = configIdx != -1 ? env.args[configIdx] : null
             if (configArg) {
                 const inputPath = configArg.includes('=') ? configArg.split('=')[1]?.trim() || ''
                                 : (configIdx +1 < env.args.length && !env.args[configIdx +1].startsWith('-')) ?
                                     env.args[configIdx +1]
                                 : ''
-                cli.configPath = path.isAbsolute(inputPath) ? inputPath : path.resolve(process.cwd(), inputPath)
-                if (!fs.existsSync(cli.configPath))
-                    log.configURLandExit(
-                        `${ cli.msgs?.error_configFileNotFound || 'Config file not found' }:`, cli.configPath)
+                if (string.looksLikeURL(inputPath)) {
+                    const resp = await data.fetch(inputPath)
+                    if (!resp.ok)
+                        log.errorAndExit(
+                            `${ cli.msgs?.error_failedToLoadConfigFile || 'Failed to fetch config from URL' }: ${
+                                inputPath} (${resp.status})`)
+                    const tmpFile = path.join(os.tmpdir(), `cli-config-${Date.now()}.js`)
+                    await data.atomicWrite(tmpFile, await resp.text())
+                    cli.configPath = tmpFile
+                } else {
+                    cli.configPath = path.isAbsolute(inputPath) ? inputPath : path.resolve(process.cwd(), inputPath)
+                    if (!fs.existsSync(cli.configPath))
+                        log.configURLandExit(
+                            `${ cli.msgs?.error_configFileNotFound || 'Config file not found' }:`, cli.configPath)
+                }
 
             } else // auto-discover .config.[mc]?js file
                 for (const configExt of ['.mjs', '.cjs', '.js']) {

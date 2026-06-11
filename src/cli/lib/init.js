@@ -9,10 +9,10 @@ module.exports = {
 
     async cli() {
         Object.assign(globalThis.cli ??= {}, require(`${env.paths.libData}/package-data.json`))
-        cli.msgs = await language.getMsgs(cli.lang = settings.load('uiLang') || (
+        cli.msgs = await language.getMsgs(cli.lang = await settings.load('uiLang') || (
             env.modes.debug ? language.generateRandomLang({ excludes: ['en'] }) : language.getSysLang() ))
         cli.urls.cliDocs ||= `${cli.urls.docs.root}/#-command-line-usage`
-        settings.load() // all keys to cli.config
+        await settings.load() // all keys to cli.config
         if (cli.config.autoClear) {
             const sessionFile = path.join(path.dirname(messages.chainPath), 'session.id')
             let currentSession
