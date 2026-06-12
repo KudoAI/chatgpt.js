@@ -65,9 +65,9 @@ async function route(cmd, args, rl) {
         case 'exit' : case 'quit' : case 'q' :
             rl.close() ; process.exit(0) ; break
         case 'uilang' : case 'u' :
-            run.uilang(args[0]) ; break
+            run.uiLang(args[0]) ; break
         case 'replylang' : case 'rl' :
-            run.replylang(args.join(' ')) ; break
+            run.replyLang(args.join(' ')) ; break
         case 'commitmsgexample' : case 'cm' :
             run.commitMsgExample(args.join(' ')) ; break
         case 'config' : case 'cfg' : {

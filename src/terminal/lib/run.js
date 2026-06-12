@@ -75,14 +75,14 @@ module.exports = {
 
     version() { log.version() },
 
-    async uilang(code) {
+    async uiLang(code) {
         if (!code) return log.info(`${cli.msgs.info_current} uiLang: ${ cli.config.uiLang || cli.msgs.info_notSet }`)
         if (cli.lang != code) cli.msgs = await require('./language').getMsgs(code)
         cli.lang = cli.config.uiLang = code
         log.success(`${cli.msgs.success_uiLang} ${cli.msgs.success_setTo} ${cli.config.uiLang}`)
     },
 
-    replylang(text) {
+    replyLang(text) {
         if (!text)
 			return log.info(`${cli.msgs.info_current} replyLang: ${ cli.config.replyLang || cli.msgs.info_notSet }`)
         cli.config.replyLang = text
