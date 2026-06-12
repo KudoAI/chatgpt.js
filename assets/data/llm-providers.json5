@@ -6,7 +6,8 @@
     "models": {
       "free": {
         "gemini-3.1-flash-lite-preview:generateContent": { // https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-lite
-          "inputTypes": ["audio", "image", "pdf", "text", "video"], "outputTypes": ["text"], "urlContext": true
+          "inputTypes": ["audio", "image", "pdf", "text", "video"], "outputTypes": ["text"],
+          "strengths": ["coding", "urlContext"]
         },
       }
     },
