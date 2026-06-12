@@ -275,7 +275,7 @@ Asks ChatGPT to detect the language of given text.
 Parameters:
 
 `text`: A string being the text to detect the language of.
-`verbose`: Suppress console logging.
+`verbose`: Show console logging (default: `false`).
 
 Example:
 
@@ -302,7 +302,7 @@ Tells your fortune.
 
 Parameters:
 
-`verbose`: Suppress console logging.
+`verbose`: Show console logging (default: `false`).
 
 #
 
@@ -419,7 +419,7 @@ Parameters:
 
 `text`: A string being the text to be analyzed.
 `entity` (optional): A string being the entity to analyze sentiment towards.
-`verbose`: Suppress console logging.
+`verbose`: Show console logging (default: `false`).
 
 Example:
 
@@ -490,7 +490,7 @@ Asks ChatGPT to summarize given text.
 Parameters:
 
 `text`: A string being the text to be summarized.
-`verbose`: Suppress console logging.
+`verbose`: Show console logging (default: `false`).
 
 Example:
 
@@ -511,7 +511,7 @@ Parameters:
 
 `text`: A string being the text to translate.
 `outputLang`: A string representing the output language of the translation.
-`verbose`: Suppress console logging.
+`verbose`: Show console logging (default: `false`).
 
 Example:
 
@@ -738,7 +738,7 @@ Can be the following: `active`, the current chat, `latest`, the latest chat in t
 
 Can be the following: `html`, `md`, `pdf` or `text`. Defaults to `html`.
 
-`verbose`: Suppress console logging.
+`verbose`: Show console logging (default: `false`).
 
 Example:
 
@@ -1621,7 +1621,7 @@ Asks ChatGPT to debug the given code and return corrected code.
 Parameters:
 
 `code`: A string being the code to debug.
-`verbose`: Suppress console logging.
+`verbose`: Show console logging (default: `false`).
 
 Example:
 
@@ -1649,7 +1649,7 @@ Asks ChatGPT to minify the given code.
 Parameters:
 
 `code`: A string being the code to be minified.
-`verbose`: Suppress console logging.
+`verbose`: Show console logging (default: `false`).
 
 Example:
 
@@ -1682,7 +1682,7 @@ Asks ChatGPT to execute the given code.
 Parameters:
 
 `code`: A string being the code to execute.
-`verbose`: Suppress console logging.
+`verbose`: Show console logging (default: `false`).
 
 Example:
 
@@ -1758,7 +1758,7 @@ Asks ChatGPT to obfuscate the given code.
 Parameters:
 
 `code`: A string being the code to obfuscate.
-`verbose`: Suppress console logging.
+`verbose`: Show console logging (default: `false`).
 
 Example:
 
@@ -1782,7 +1782,7 @@ Asks ChatGPT to refactor the given code.
 Parameters:
 
 `code`: A string being the code to refactor.
-`verbose`: Suppress console logging.
+`verbose`: Show console logging (default: `false`).
 
 `objective` (optional): A string representing the objective of the refactoring. Defaults to `brevity`.
 
@@ -1813,7 +1813,7 @@ Asks ChatGPT to review given code.
 Parameters:
 
 `code`: A string being the code to review.
-`verbose`: Suppress console logging.
+`verbose`: Show console logging (default: `false`).
 
 Example:
 
@@ -1835,7 +1835,7 @@ Asks ChatGPT to unminify the given code.
 Parameters:
 
 `code`: A string being the code to unminify.
-`verbose`: Suppress console logging.
+`verbose`: Show console logging (default: `false`).
 
 Example:
 
@@ -1870,7 +1870,7 @@ Parameters:
 
 `prompt`: A string describing the code to generate.
 `outputLang`: A string representing the code language to generate the prompt with.
-`verbose`: Suppress console logging.
+`verbose`: Show console logging (default: `false`).
 
 Example:
 
