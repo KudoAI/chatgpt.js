@@ -6,7 +6,7 @@ const messages = require('../../lib/messages'),
 module.exports = {
     async start() {
         log.info(`${cli.msgs.info_startingInteractiveMode}. ${
-            cli.msgs.info_type} '/help' ${cli.msgs.info_forCmds}, '/exit' ${cli.msgs.toQuit}.`)
+            cli.msgs.info_type} '/help' ${cli.msgs.info_forCmds}, '/exit' ${cli.msgs.info_toQuit}.`)
         const rl = readline.createInterface({
             input: process.stdin,
             output: process.stdout,
