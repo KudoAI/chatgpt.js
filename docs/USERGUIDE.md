@@ -150,7 +150,7 @@ export default {
   - [`detectLanguage(text)` `async`](#detectlanguagetext--parameters--async--dom-only)
   - [`dictate()`](#dictate--dom-only)
   - [`getFortune()` `async`](#getfortune-parameters--async--dom-only)
-  - [`getRandomnAnswer()` `async`](#getrandomanswer-parameters--async--universal)
+  - [`getRandomAnswer()` `async`](#getrandomanswer-parameters--async--universal)
   - [`getUserLanguage()`](#getuserlanguage--dom-only)
   - [`isLoaded()` `async`](#isloaded-async--dom-only)
   - [`isTempChat()`](#istempchat--dom-only)
