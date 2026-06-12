@@ -1,7 +1,8 @@
-const messages = require('../../lib/messages'),
-      readline = require('readline/promises'),
-    { route } = require('./router'),
-      run = require('../../lib/run')
+const { build: buildQuery } = require('../../lib/query'),
+        messages = require('../../lib/messages'),
+        readline = require('readline/promises'),
+      { route } = require('./router'),
+        run = require('../../lib/run')
 
 module.exports = {
     async start() {
@@ -24,7 +25,7 @@ module.exports = {
                       args = parts.slice(1)
                 await route(cmd, args, rl)
             } else
-                await run.query(input)
+                await run.query(buildQuery(input, cli.config, env.supports.unicode))
             rl.prompt()
         }
     }

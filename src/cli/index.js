@@ -7,9 +7,10 @@
     init.env()
 
     globalThis.log = require('../lib/log')
-    const chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
-        { resolveSrc } = require('./lib/resolver'),
-          run = require('../lib/run')
+    const { build: buildQuery } = require('../lib/query'),
+            chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
+          { resolveSrc } = require('./lib/resolver'),
+            run = require('../lib/run')
 
     await init.cli()
 
@@ -29,13 +30,9 @@
                     typeof cli.config.asciiArt == 'string' ? cli.config.asciiArt : 'a random thing' }.`
               : cli.config.query && typeof cli.config.query == 'string' ? cli.config.query
               : cli.msgs.query_hi
-    if (typeof query == 'string' ) {
-        if (!cli.config.noSuggest && query == cli.config.query)
-            query += '\n\nThen, at the end of your response, ask user if they want you to do something related to the query'
-                  + ' except if you are already finishing your response w/ a question.'
-        if (cli.config.replyLang && env.supports.unicode)
-            query += `\n\nRespond in '${cli.config.replyLang}' language.`
-    }
+
+    if (typeof query == 'string')
+        query = buildQuery(query)
 
     if (new RegExp(`^(?:help|${cli.msgs.query_hi})(?:\n|$)`).test(query)) {
         log.help() ; log.break() }
