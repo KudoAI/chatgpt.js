@@ -71,9 +71,11 @@
     "message": "بەکارھێنان، بەکارھاتن، بەکارھاتوو، ڕێبازی بەکارھێنانی وتنەکان\n[رۆژنامەوانی]: بەکاربردن، بەکارھێنان"
   },
   "helpSection_params": { "message": "هەڵبژاردنی پارامەتری" },
+  "helpSection_msgChainOptions": { "message": "بژاردەکانی زنجیرەی ئێم ئێس" },
   "helpSection_flags": { "message": "ئاڵاکان" },
   "helpSection_gitOptions": { "message": "فەرمانەکان / بژاردەکان" },
-  "helpSection_cmds": { "message": "فەرمانەکانی زانیاری" },
+  "helpSection_funCmds": { "message": "فەرمانە خۆشەکان" },
+  "helpSection_appCmds": { "message": "فەرمانەکانی ئەپڵیکەیشن" },
   "optionDesc_provider": { "message": "زیادکردنی هاوپۆل بۆ chat API" },
   "optionDesc_query": { "message": "ناردنی ئه كاونت" },
   "optionDesc_summarize": { "message": "ڕاستاندنی file or text گۆکردنەکان" },

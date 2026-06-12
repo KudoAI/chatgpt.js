@@ -53,7 +53,9 @@ module.exports = {
         console.debug(`\n${colors.by}DEBUG:`, msg, colors.nc)
     },
 
-    help(includeSections = ['header', 'usage', 'params', 'flags', 'gitOptions', 'cmds']) {
+    help(includeSections = [
+        'header', 'usage', 'params', 'msgChainOptions', 'flags', 'gitOptions', 'funCmds', 'appCmds'
+    ]) {
         cli.prefix = `${this.colors.tlBG}${this.colors.blk} ${cli.name.replace(/^@[^/]+\//, '')} ${this.colors.nc} `
         const helpSections = {
             header: [
@@ -71,11 +73,14 @@ module.exports = {
                 ` -L, --reply-lang <code|name>         ${cli.msgs.optionDesc_replyLang}.`,
                 ` -q, --query <msg>                    ${cli.msgs.optionDesc_query}.`,
                 ` -s, --summarize <filepath|text|url>  ${cli.msgs.optionDesc_summarize}.`,
-                ` -a, --ascii-art [subject]            ${cli.msgs.optionDesc_asciiArt}.`,
+                ` -c, --config <filepath|url>          ${cli.msgs.optionDesc_config}.`
+            ],
+            msgChainOptions: [
+                `\n${this.colors.bw}o ${cli.msgs.helpSection_msgChainOptions.toLowerCase()}:${this.colors.nc}`,
                 ` -m, --max-chars <integer>            ${cli.msgs.optionDesc_maxChars}.`,
                 ` -k, --max-tokens <integer>           ${cli.msgs.optionDesc_maxTokens}.`,
                 ` -t, --turns <integer>                ${cli.msgs.optionDesc_turnsToPreserve}.`,
-                ` -c, --config <filepath|url>          ${cli.msgs.optionDesc_config}.`
+                ` -C, --clear                          ${cli.msgs.optionDesc_clear}.`
             ],
             flags: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_flags.toLowerCase()}:${this.colors.nc}`,
@@ -89,14 +94,17 @@ module.exports = {
                 ` -G, --commit-msg-example <msg>       ${cli.msgs.optionDesc_commitMsgExample}.`,
                 ` -d, --diff                           ${cli.msgs.optionDesc_diff}.`
             ],
-            cmds: [
-                `\n${this.colors.bw}o ${cli.msgs.helpSection_cmds.toLowerCase()}:${this.colors.nc}`,
+            funCmds: [
+                `\n${this.colors.bw}o ${cli.msgs.helpSection_funCmds.toLowerCase()}:${this.colors.nc}`,
+                ` -a, --ascii-art [subject]            ${cli.msgs.optionDesc_asciiArt}.`,
+                ` -f, --fortune                        ${cli.msgs.optionDesc_fortune}.`,
+                ` -j, --joke                           ${cli.msgs.optionDesc_joke}.`,
+                ` -r, --random-answer                  ${cli.msgs.optionDesc_randomAnswer}.`
+            ],
+            appCmds: [
+                `\n${this.colors.bw}o ${cli.msgs.helpSection_appCmds.toLowerCase()}:${this.colors.nc}`,
                 ` -i, --init                           ${cli.msgs.optionDesc_init}.`,
                 ` -I, --interactive                    ${cli.msgs.optionDesc_interactive}.`,
-                ` -j, --joke                           ${cli.msgs.optionDesc_joke}.`,
-                ` -f, --fortune                        ${cli.msgs.optionDesc_fortune}.`,
-                ` -r, --random-answer                  ${cli.msgs.optionDesc_randomAnswer}.`,
-                ` -C, --clear                          ${cli.msgs.optionDesc_clear}.`,
                 ` -h, --help                           ${cli.msgs.optionDesc_help}.`,
                 ` -v, --version                        ${cli.msgs.optionDesc_version}.`,
                 ` -S, --stats                          ${cli.msgs.optionDesc_stats}.`,
