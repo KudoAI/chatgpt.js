@@ -1,0 +1,96 @@
+name: Update jsDelivr shield in READMEs
+
+on:
+  schedule:
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+
+jobs:
+  update-jsd-shields:
+    if: github.repository == 'KudoAI/chatgpt.js'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    env:
+      TZ: PST8PDT
+    steps:
+      - uses: actions/checkout@v6.0.3
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+      - run: |
+          fetch_year_total() {
+            local package=$1
+            local year=$2
+            local current_year=$(date +%Y)
+            local current_month=$(date +%-m)
+            if [ "$year" -eq "$current_year" ] ; then # total month stats
+              local total=0
+              for month in $(seq 1 $current_month); do
+                month_padded=$(printf "%02d" $month)
+                monthly=$(curl -fsSL "https://data.jsdelivr.com/v1/stats/packages/${package}?period=${year}-${month_padded}" | \
+                          sed -n -E 's/.*"total":[[:space:]]*([0-9]+).*/\1/p' | head -1)
+                if [ -n "$monthly" ] && [ "$monthly" -gt 0 ]; then
+                  total=$((total + monthly))
+                  echo "    $year-$month_padded: $monthly" >&2
+                fi
+              done
+              echo "$total"
+            else # get year stats
+              curl -fsSL "https://data.jsdelivr.com/v1/stats/packages/${package}?period=${year}" | \
+                sed -n -E 's/.*"total":[[:space:]]*([0-9]+).*/\1/p' | head -1
+            fi
+          }
+          
+          fetch_all_years() {
+            local package=$1
+            local current_year=$(date +%Y)
+            local total=0
+            for year in $(seq 2024 $current_year); do
+              yearly_hits=$(fetch_year_total "$package" "$year")
+              if [ -n "$yearly_hits" ] && [ "$yearly_hits" -gt 0 ]; then
+                echo "  $year: $yearly_hits" >&2
+                total=$((total + yearly_hits))
+              fi
+            done
+            echo $total
+          }
+          
+          format_total() { LC_NUMERIC=en_US.UTF-8 printf "%'d" "$1"; }
+
+          echo "Fetching jsDelivr hits by year:"
+          echo "npm/@kudoai/chatgpt.js:"
+          npm_hits=$(fetch_all_years "npm/@kudoai/chatgpt.js")
+          echo "gh/KudoAI/chatgpt.js:"
+          gh_hits=$(fetch_all_years "gh/KudoAI/chatgpt.js")
+          if [ -z "$npm_hits" ] || [ -z "$gh_hits" ] ; then
+            echo "Error getting jsDelivr hits" ; exit 1 ; fi
+          total_hits=$((npm_hits + gh_hits))
+          formatted_total=$(format_total "$total_hits")
+          echo "Combined jsDelivr hits: $formatted_total ($npm_hits npm + $gh_hits gh)"
+          for readme in $(find . -name README.md) ; do
+            old_readme=$(<"$readme")
+            sed -i -E "s/(badge\/[^-]*-)[^-]*(-2bbbd8)/\1${formatted_total}+\2/" "$readme"
+            new_readme=$(<"$readme")
+            if [[ "$old_readme" != "$new_readme" ]] ; then
+              shields_updated=true ; echo "Updated: $readme" ; fi
+          done
+          if [ "$shields_updated" = true ] ; then
+            echo "SHIELDS_UPDATED=true" >> $GITHUB_ENV
+          else
+            echo "Shields already up-to-date"
+          fi
+      - if: env.SHIELDS_UPDATED == 'true'
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PRIVATE_ID: ${{ secrets.GPG_PRIVATE_ID }}
+        run: |
+          gpg --batch --import <(echo "$GPG_PRIVATE_KEY")
+          git config --global commit.gpgsign true
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git config --global user.signingkey "$GPG_PRIVATE_ID"
+      - if: env.SHIELDS_UPDATED == 'true'
+        run: |
+          git add . && git commit -n -m "Updated jsDelivr shield counter"
+          git pull --rebase
+          git push

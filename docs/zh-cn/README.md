@@ -47,7 +47,7 @@
 <a href="https://github.com/sindresorhus/awesome-chatgpt#javascript" target="_blank" rel="noopener">
     <img src="https://img.shields.io/badge/%E4%B8%AD%E6%8F%90%E5%88%B0-Awesome-ff69b4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="#">
-    <img src="https://img.shields.io/badge/jsDelivr_%E8%AF%B7%E6%B1%82-2,000,000+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    <img src="https://img.shields.io/badge/jsDelivr_%E8%AF%B7%E6%B1%82-4,111,734+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 </div>
 
 <br>
@@ -58,7 +58,7 @@
 
 ### 图书馆
 
-#### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
+#### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
 
 从项目根目录：
 
@@ -105,7 +105,7 @@ npm install @kudoai/chatgpt.js
 
 ### CLI 实用程序
 
-#### <a href="#-nodejs-1"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh//adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
+#### <a href="#-nodejs-1"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
 
 ```bash
 npm install -g @kudoai/chatgpt.js
@@ -115,11 +115,23 @@ npm install -g @kudoai/chatgpt.js
 
 ### API 密钥
 
-#### <img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@7dc4431/assets/images/icons/providers/openrouter/icon32.png"> OpenRouter:
+支持的服务提供商：
 
-> **注意** _要获取免费的 OpenRouter API 密钥： <https://openrouter.ai/settings/keys>_
+<!-- OPENROUTER -->
 
-<img height=135 width="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@0049334/assets/images/screenshots/openrouter-api-keys-dash.png">
+<details>
+
+<summary>
+    <img width=15 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js/assets/images/icons/providers/openrouter/icon32.png"> <b>OpenRouter</b> — 300+ models, dozens free
+</summary>
+
+<br>
+
+**1. 创建 API 密钥：<https://openrouter.ai/settings/keys>**
+
+<img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/openrouter.png">
+
+**2. 将密钥添加到环境变量：**
 
 ##### Windows:
 
@@ -132,6 +144,38 @@ setx OPENROUTER_API_KEY "sk-or-v1-8a69..."
 ```bash
 export OPENROUTER_API_KEY="sk-or-v1-8a69..."
 ```
+
+</details>
+
+<!-- GOOGLE AI -->
+
+<details>
+
+<summary>
+    <img width=15 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/icons/providers/googleai/icon32.png"> <b>Google AI</b> — Gemini 与 Gemma 模型
+</summary>
+
+<br>
+
+**1. 创建 API 密钥：<https://aistudio.google.com/api-keys>**
+
+<img height=135 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e188cf7/assets/images/screenshots/api-provider-dashes/google-ai-studio.png">
+
+**2. 将密钥添加到环境变量：**
+
+##### Windows:
+
+```bash
+setx GOOGLE_API_KEY "AIzaSyB..."
+```
+
+##### Mac/Linux:
+
+```bash
+export GOOGLE_API_KEY="AIzaSyB..."
+```
+
+</details>
 
 <hr>
 
@@ -168,16 +212,41 @@ console.log(await chatgpt.send('sup'))
 })()
 ```
 
-#### <a href="#-terminal"><img width=15 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@37edc4d/assets/images/icons/terminal/blue-gradient/icon32.png"></a> Terminal:
+#### <a href="#-terminal"><img width=16 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@b30a348/assets/images/icons/terminal/black/icon32.png"></a> Terminal:
+
+设置 API 密钥后，即可通过终端进行控制：
 
 ```bash
-chatgpt --query "sup"  # or cjs -q sup
+chatgpt --query "sup"  # 或者 cjs -q sup
 # e.g. => Hey there! What's up?
+
+chatgpt --ascii-art "cat"  # 或者 cjs -a cat
+# e.g. =>
+#
+#       |\      _,,,---,,_
+# ZZZzz /,`.-'`'    -.  ;-;;,_
+#      |,4-  ) )-,_. ,\ (  `'-'
+#     '---''(_/--'  `-'\_)
+
+chatgpt --commit-msg  # 或者 cjs -g (在 git 仓库中)
+# e.g. => feat: add `--ascii-art` cli cmd
 ```
 
-扩展用户指南：
+创建本地配置文件（自定义提供程序等）：
 
-<https://github.com/KudoAI/chatgpt.js/blob/v4.0.2/docs/USERGUIDE.md>
+```bash
+chatgpt init
+```
+
+查看所有 CLI 选项： 
+
+```bash
+chatgpt --help
+```
+
+如需更多选项及示例，请参阅扩展用户指南：
+
+<https://github.com/KudoAI/chatgpt.js/blob/v4.12.0/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -216,7 +285,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 <!-- AUTOCLEAR CHATGPT HISTORY -->
 
-### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/autoclear-chatgpt-history@83f1921/assets/images/icons/openai/white/icon32.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/autoclear-chatgpt-history@83f1921/assets/images/icons/openai/black/icon32.png"></picture>][ach-readme] [自动清除 ChatGPT 历史记录][ach-readme] &nbsp;[<img src="https://assets.autoclearchatgpt.com/images/badges/awesome/badge.svg">](https://github.com/awesome-scripts/awesome-userscripts#privacy)
+### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/autoclear-chatgpt-history@83f1921/assets/images/icons/openai/white/icon32.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/autoclear-chatgpt-history@83f1921/assets/images/icons/openai/black/icon32.png"></picture>][ach-readme] [自动清除 ChatGPT 历史记录][ach-readme] &nbsp;[<img src="https://cdn.jsdelivr.net/gh/adamlui/autoclear-chatgpt-history@13b6a5d/assets/images/badges/awesome/badge.svg">](https://github.com/awesome-scripts/awesome-userscripts#privacy)
 
 <details>
     <summary>
@@ -267,7 +336,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 <!-- CHATGPT AUTO-CONTINUE -->
 
-### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-continue@7e2c739/assets/images/icons/app/white/icon32.png"><img height=20 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-continue@7e2c739/assets/images/icons/app/black/icon32.png"></picture>][cac-readme] [ChatGPT 自动续写][cac-readme] &nbsp;[<img src="https://assets.chatgptautocontinue.com/images/badges/awesome/badge.svg">][awesome-chatgpt-userscripts]
+### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-continue@7e2c739/assets/images/icons/app/white/icon32.png"><img height=20 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-continue@7e2c739/assets/images/icons/app/black/icon32.png"></picture>][cac-readme] [ChatGPT 自动续写][cac-readme] &nbsp;[<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-continue@dc6aae7/assets/images/badges/awesome/badge.svg">][awesome-chatgpt-userscripts]
 
 <details>
     <summary>
@@ -302,13 +371,13 @@ chatgpt --query "sup"  # or cjs -q sup
 
 ### 有关于图书馆的想法或建议吗？
 
-发起新讨论：https://github.com/KudoAI/chatgpt.js/discussions/new?category=ideas
+创建新 Issue：https://github.com/KudoAI/chatgpt.js/issues/new
 
 <hr>
 
 <!-- CHATGPT AUTO REFRESH -->
 
-### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautorefresh.com/images/icons/openai/white/icon32.png"><img width=19 src="https://assets.chatgptautorefresh.com/images/icons/openai/black/icon32.png"></picture>][car-readme] [ChatGPT 自动刷新 ↻][car-readme] &nbsp;[<img src="https://assets.chatgptautorefresh.com/images/badges/awesome/badge.svg">][awesome-chatgpt-userscripts]
+### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-refresh@2514e1c/assets/images/icons/openai/white/icon32.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-refresh@2514e1c/assets/images/icons/openai/black/icon32.png"></picture>][car-readme] [ChatGPT 自动刷新 ↻][car-readme] &nbsp;[<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-refresh@2514e1c/assets/images/badges/awesome/badge.svg">][awesome-chatgpt-userscripts]
 
 保持 ChatGPT 会话常新，彻底消除聊天时长限制、网络错误及 Cloudflare 验证。
 
@@ -324,7 +393,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 <!-- CHATGPT AUTO-TALK -->
 
-### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptautotalk.com/images/icons/openai/white/icon32.png"><img width=19 src="https://assets.chatgptautotalk.com/images/icons/openai/black/icon32.png"></picture>][cat-readme] [ChatGPT 自动对话 📣][cat-readme] &nbsp;[<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@2f5a19c/assets/images/badges/awesome/badge.svg">][awesome-chatgpt-userscripts]
+### [<picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@13d5f7b/assets/images/icons/openai/white/icon32.png"><img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@13d5f7b/assets/images/icons/openai/black/icon32.png"></picture>][cat-readme] [ChatGPT 自动对话 📣][cat-readme] &nbsp;[<img src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-auto-talk@2f5a19c/assets/images/badges/awesome/badge.svg">][awesome-chatgpt-userscripts]
 
 自动播放 ChatGPT 回复。
 
@@ -340,7 +409,7 @@ chatgpt --query "sup"  # or cjs -q sup
 
 <!-- CHATGPT INFINITY -->
 
-### [<img width=20 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity@c587927/assets/images/icons/infinity-symbol/circled/icon32.png">][ci-readme] [ChatGPT 无限][ci-readme] &nbsp;[<img height=20 src="https://assets.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png">][ci-chrome]
+### [<img width=20 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity@c587927/assets/images/icons/infinity-symbol/circled/icon32.png">][ci-readme] [ChatGPT 无限][ci-readme] &nbsp;[<img height=20 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity@7bc796d/assets/images/badges/chrome-web-store/featured-by-google/badge500x91.png">][ci-chrome]
 
 <details>
     <summary>
@@ -369,12 +438,12 @@ chatgpt --query "sup"  # or cjs -q sup
 [ci-chrome]: https://chromewebstore.google.com/detail/chatgpt-infinity/amikeononomkhphopbflomhnmdijjpmb?utm_source=github&utm_medium=referral&utm_content=ai-web-extensions-readme
 [ci-ff]: https://addons.mozilla.org/firefox/addon/chatgpt-infinity/?utm_source=github&utm_medium=referral&utm_content=ai-web-extensions-readme
 [ci-edge]: https://microsoftedge.microsoft.com/addons/detail/chatgpt-infinity/jgonecnbmehicpdpjkdekamhmlebfagb
-[ci-greasemonkey]: https://gm.chatgptinfinity.com
+[ci-greasemonkey]: https://raw.githubusercontent.com/adamlui/chatgpt-infinity/refs/heads/main/greasemonkey/chatgpt-infinity.user.js
 [ci-readme]: https://github.com/adamlui/ai-web-extensions/tree/main/chatgpt-infinity/#readme
 
 <!-- CHATGPT WIDESCREEN -->
 
-### [<img width=19 src="https://assets.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png">][cwm-readme] [ChatGPT 宽屏模式][cwm-readme] &nbsp;[<img height=20 src="https://assets.chatgptwidescreen.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png">][cwm-readme]
+### [<img width=19 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@82ef9ab/assets/images/icons/widescreen-robot-emoji/icon32.png">][cwm-readme] [ChatGPT 宽屏模式][cwm-readme] &nbsp;[<img height=20 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@82ef9ab/assets/images/badges/chrome-web-store/featured-by-google/badge500x91.png">][cwm-readme]
 
 <details>
     <summary>
@@ -403,7 +472,7 @@ chatgpt --query "sup"  # or cjs -q sup
 [cwm-chrome]: https://chromewebstore.google.com/detail/chatgpt-widescreen/jgnjpnmofkalfliddjelaciggjgnphgm?utm_source=github&utm_medium=referral&utm_content=ai-web-extensions-readme
 [cwm-ff]: https://addons.mozilla.org/firefox/addon/chatgpt-widescreen/?utm_source=github&utm_medium=referral&utm_content=ai-web-extensions-readme
 [cwm-edge]: https://microsoftedge.microsoft.com/addons/detail/chatgpt-widescreen-mode/obnaaalnokmchdoagnhmllakaclaaooa
-[cwm-greasemonkey]: https://gm.chatgptwidescreen.com
+[cwm-greasemonkey]: https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/refs/heads/main/greasemonkey/chatgpt-widescreen.user.js
 [cwm-readme]: https://github.com/adamlui/ai-web-extensions/tree/main/chatgpt-widescreen/#readme
 
 <!-- DUCKDUCKGPT -->
@@ -473,12 +542,27 @@ chatgpt --query "sup"  # or cjs -q sup
 
 欢迎大家踊跃投稿！
 
+<hr>
+
+## 🏛️ 许可证
+
+### MIT 许可证
+
+**版权所有 © 2023–2026 [KudoAI](https://github.com/KudoAI) 及贡献者**
+
+特此免费授予任何获得本软件及相关文档文件副本（以下简称“软件”）的人士许可，允许其不受限制地处理本软件，包括但不限于使用、复制、修改、合并、发布、分发、再许可及/或销售本软件副本的权利，并允许获授本软件的人士按此行事，但须符合以下条件：
+
+上述版权声明及本许可声明应包含在本软件的所有副本或实质性部分中。
+
+本软件按“原样”提供，不附带任何明示或暗示的担保，包括但不限于适销性、特定用途适用性及不侵权的担保。在任何情况下，作者或版权持有人均不对因本软件或本软件的使用及其他处理行为而引起或与之相关的任何索赔、损害或其他责任承担责任，无论该等责任是基于合同、侵权或其他法律依据。
+
 <img height=10px width="100%" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/separators/gradient-aqua.png">
 
 <div align="center">
 
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/white/icon16.svg"><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/dark-gray/icon16.svg"></picture>
 **[最新发布](https://github.com/KudoAI/chatgpt.js/releases)** /
-[用户指南](https://github.com/KudoAI/chatgpt.js/blob/v4.0.2/docs/USERGUIDE.md) /
+[用户指南](https://github.com/KudoAI/chatgpt.js/blob/v4.12.0/docs/USERGUIDE.md) /
 [获取支持](https://github.com/KudoAI/chatgpt.js/issues) / 
 [讨论](https://github.com/KudoAI/chatgpt.js/discussions) / 
 <a href="#top">返回顶部 ↑</a>

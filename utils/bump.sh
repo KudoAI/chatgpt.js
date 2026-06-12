@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script automates:
-# >>> bump versions in manifests + READMEs + Greasemonkey starter script >>> commit bumps to Git
+# >>> bump versions in manifests + READMEs >>> commit bumps to Git
 # >>> build chatgpt.min.js to dist/ >>> update jsDelivr URLs for GH assets >>> commit build to Git
 # >>> publish to npm (optional)
 
@@ -16,14 +16,18 @@ BW="\033[1;97m" # bright white
 BUMP_TYPES=("major" "minor" "patch")
 old_ver=$(node -pe "require('./package.json').version")
 IFS='.' read -ra subvers <<< "$old_ver" # split old_ver into subvers array
-case $1 in # edit subvers based on version type
-    "patch") subvers[2]=$((subvers[2] + 1)) ;;
-    "minor") subvers[1]=$((subvers[1] + 1)) ; subvers[2]=0 ;;
-    "major") subvers[0]=$((subvers[0] + 1)) ; subvers[1]=0 ; subvers[2]=0 ;;
-    *) echo -e "\n${BR}Invalid bump type arg provided: $1${NC}" ;
-       echo -e "\n${BY}Valid args are: ${BUMP_TYPES[*]/#/--}${NC}" ;
-       exit 1 ;;
-esac
+for arg in "$@"; do
+    case "${arg#--}" in # edit subvers based on version type
+        "patch") subvers[2]=$((subvers[2] + 1)) ; break ;;
+        "minor") subvers[1]=$((subvers[1] + 1)) ; subvers[2]=0 ; break ;;
+        "major") subvers[0]=$((subvers[0] + 1)) ; subvers[1]=0 ; subvers[2]=0 ; break ;;
+    esac
+done
+if [[ "$new_ver" == "$old_ver" ]] ; then
+    echo -e "\n${BR}Invalid bump type arg provided${NC}"
+    echo -e "\n${BY}Valid args are: ${BUMP_TYPES[*]/#/--}${NC}"
+    exit 1
+fi 
 new_ver=$(printf "%s.%s.%s" "${subvers[@]}")
 
 echo -e "${BY}Pulling latest changes from remote to sync local repository...${NC}\n"
@@ -33,29 +37,12 @@ echo ''
 echo -e "${BY}Bumping versions in package manifests...${BW}"
 npm version --no-git-tag-version "$new_ver"
 
-echo -e "${BY}\nBumping versions in READMEs...${BW}"
+echo -e "${BY}\nBumping versions in READMEs + chatgpt.d.ts...${BW}"
 sed -i \
     -e "s/\(chatgpt\(-\|\.js@\)\)[0-9]\+\(\.[0-9]\+\)\{2\}/\1$new_ver/g" `# jsDelivr URLs` \
-    -e "s|v[0-9]\+\.[0-9]\+\.[0-9]\+|v$new_ver|g" `# Minified Size shield link/src + userguide links` \
-    $(find docs -regex ".*/\(README\|USERGUIDE\)\.md") ./README.md
+    -e "s|v[0-9]\+\.[0-9]\+\.[0-9]\+|v$new_ver|g" `# version refs` \
+    $(find docs -regex ".*/\(README\|USERGUIDE\)\.md") ./README.md ./chatgpt.d.ts
 echo "v$new_ver"
-
-echo -e "${BY}\nBumping versions in Greasemonkey starter...${BW}\n"
-sed -i "s|\(@require.*chatgpt\.js@\)[0-9.]\+|\1$new_ver|g" starters/greasemonkey/*.user.js
-echo "chatgpt.js v$new_ver"
-TODAY=$(date +'%Y.%-m.%-d') # YYYY.M.D format
-if grep -q "@version\s*${TODAY}$" starters/greasemonkey/*.user.js # exact match for $TODAY
-    then # bump to $TODAY.1
-        sed -i "s|\(@version\s*\).*$|\1$TODAY.1|" starters/greasemonkey/*.user.js
-elif grep -q "@version\s*${TODAY}" starters/greasemonkey/*.user.js # partial match for $TODAY
-    then # bump to $TODAY.n+1
-        last_ver=$(sed -n "/@version\s*${TODAY%.*}/{p;q}" starters/greasemonkey/*.user.js | grep -o '.$')
-        sed -i "s|\(@version\s*\).*$|\1$TODAY.$((last_ver + 1))|" starters/greasemonkey/*.user.js
-else # no match for $TODAY
-    # bump to $TODAY
-        sed -i "s|\(@version\s*\).*$|\1$TODAY|" starters/greasemonkey/*.user.js ; fi
-new_gm_ver=$(sed -n "s/.*@version\s*\(.*\)/\1/p" starters/greasemonkey/*.user.js)
-echo "chatgpt.js-greasemonkey-starter.user.js v$new_gm_ver"
 
 echo -e "${BY}\nChanging Git author/committer to kudo-sync-bot...\n${NC}"
 if [ -n "$GPG_KEYS_PATH" ] ; then
@@ -72,10 +59,8 @@ export GIT_COMMITTER_EMAIL="auto-sync@kudoai.com"
 echo -e "${BY}\nCommitting bumps to Git...\n${NC}"
 git add package*.json
 git commit -n -m "Bumped versions in manifests to $new_ver" -S$KEY_ID
-git add "README.md" "./**/README.md" "./**/USERGUIDE.md"
-git commit -n -m "Bumped versions in jsDelivr URLs to $new_ver" -S$KEY_ID
-git add ./*greasemonkey-starter.user.js
-git commit -n -m "Bumped chatgpt.js to $new_ver" -S$KEY_ID
+git add "chatgpt.d.ts" "README.md" "./**/README.md" "./**/USERGUIDE.md"
+git commit -n -m "Bumped chatgpt.js versions in URLs to $new_ver" -S$KEY_ID
 
 echo -e "${BY}\nBuilding chatgpt.min.js...\n${NC}"
 bash utils/build.sh

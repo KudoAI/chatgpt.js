@@ -1,0 +1,142 @@
+require('../cli/lib/init').env()
+
+const messages = require('./messages')
+
+module.exports = {
+
+    asciiArt(subject) {
+        const subjectText = subject && typeof subject == 'string' ? subject : 'a random thing'
+        return this.query(`Render a single piece of ascii art of ${subjectText}.`)
+    },
+
+    clear() { return messages.clearChain() },
+    commitMsg() { return require('./git').generateCommitMsg() },
+
+    fortune() {
+        const { replyLang } = cli.config
+        let query = 'Tell me my fortune the length of a fortune cookie paper.'
+        if (!replyLang.startsWith('zh') && env.supports.unicode
+            || !require('non-latin-locales').includes(replyLang.split('_')[0])
+        ) query +=`\n\nRespond in simplified Chinese, then translate it literally to ${
+            replyLang || 'en' } on the line below it.`
+        return this.query(query)
+    },
+
+    help() { log.help() },
+    init() { return require('../cli/lib/init').configFile() },
+    joke() { return this.query('Tell me a joke and make it funny.') },
+
+    async query(query, options = {}) {
+        const chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
+              loader = require('./loader').create({ width: env.width })
+
+        if (!chatgpt.config?.apiKeys?.[cli.config.provider])
+            chatgpt.setProvider(cli.config.provider, {
+                key: process.env[`${cli.config.provider.toUpperCase()}_API_KEY`] })
+
+        const finalQuery = options.query || query
+		log.debug(`query = ${finalQuery}`)
+
+        const sendConfig = {
+            provider: options.provider || cli.config.provider,
+            output: 'stdout',
+            color: 'white',
+            onLoadStart: () => loader.stop({ clear: false }),
+            messages: [...cli.msgChain, { role: 'user', content: finalQuery }],
+            maxChars: options.maxChars || cli.config.maxChars,
+            turnsToPreserve: options.turnsToPreserve || cli.config.turnsToPreserve
+        }
+        if (options.maxTokens) sendConfig.maxTokens = options.maxTokens
+        else if (cli.config.maxTokens) sendConfig.maxTokens = cli.config.maxTokens
+
+        loader.start()
+        try { // to get/show AI reply
+            const parsedReply = messages.extractFromJSON(await chatgpt.send('', sendConfig))
+            if (options.copy || cli.config.copy) require('node-clipboardy').writeSync(parsedReply)
+            cli.msgChain.push({ role: 'user', content: finalQuery }, { role: 'assistant', content: parsedReply })
+            messages.saveChain(cli.msgChain)
+			if (chatgpt.lastProvider) log.debug(`Provider used: ${chatgpt.lastProvider}`)
+        	if (chatgpt.lastModel) log.debug(`Model used: ${chatgpt.lastModel}`)
+            return parsedReply
+        } finally { loader.stop({ clear: true }) }
+    },
+
+    randomAnswer() { return this.query('Generate a single random question on any topic, then answer it.') },
+    stats() { log.stats() },
+
+    summarize(textOrPath) {
+        const content = require('./string').looksLikePath(textOrPath)
+            ? require('fs').readFileSync(textOrPath, 'utf8') : textOrPath
+        return this.query(`Summarize the following:\n\n${content}`)
+    },
+
+    version() { log.version() },
+
+    uilang(code) {
+        if (!code) return log.info(`${cli.msgs.info_current} uiLang: ${ cli.config.uiLang || cli.msgs.info_notSet }`)
+        cli.config.uiLang = code
+        log.success(`${cli.msgs.success_uiLang} ${cli.msgs.success_setTo} ${cli.config.uiLang}`)
+    },
+
+    replylang(text) {
+        if (!text)
+			return log.info(`${cli.msgs.info_current} replyLang: ${ cli.config.replyLang || cli.msgs.info_notSet }`)
+        cli.config.replyLang = text
+        log.success(`${cli.msgs.success_replyLang} ${cli.msgs.success_setTo} ${cli.config.replyLang}`)
+    },
+
+    commitMsgExample(example) {
+        if (!example)
+			return log.info(
+				`${cli.msgs.info_current} commitMsgExample: ${ cli.config.commitMsgExample || cli.msgs.info_notSet }`)
+        cli.config.commitMsgExample = example
+        log.success(`${cli.msgs.success_commitMsgExample} ${cli.msgs.success_setTo}: "${cli.config.commitMsgExample}"`)
+    },
+
+    async loadConfig(configPath) {
+        if (!configPath) return log.warn(`${cli.msgs.helpSection_usage}: /config <filepath|url>`)
+        const resolvedPath = require('path').resolve(configPath)
+        try {
+            Object.assign(cli.config, require(resolvedPath))
+            log.success(`${cli.msgs.configLoadedFrom} ${resolvedPath}`)
+        } catch (err) {
+            log.error(`${cli.msgs.error_failedToLoadConfigFile}: ${err.message}`)
+        }
+    },
+
+    toggleCopy(arg) {
+        if (arg == undefined) cli.config.copy = !cli.config.copy
+        else if (arg.toLowerCase() == 'on') cli.config.copy = true
+        else if (arg.toLowerCase() == 'off') cli.config.copy = false
+        else return log.error(
+			`${cli.msgs.error_use} /copy [on|off] ${cli.msgs.info_or} ${cli.msgs.error_noArgToToggle}`)
+        log.success(`${cli.msgs.success_copyToClipboard} ${cli.config.copy ? 'enabled' : 'disabled'}`)
+    },
+
+    toggleNoSuggest(arg) {
+        if (arg == undefined) cli.config.noSuggest = !cli.config.noSuggest
+        else if (arg.toLowerCase() == 'on') cli.config.noSuggest = true
+        else if (arg.toLowerCase() == 'off') cli.config.noSuggest = false
+        else return log.error(
+			`${cli.msgs.error_use} /nosuggest [on|off] ${cli.msgs.info_or} ${cli.msgs.error_noArgToToggle}`)
+        log.success(`${cli.msgs.success_autoSuggest} ${cli.config.noSuggest ? 'disabled' : 'enabled'}`)
+    },
+
+    toggleQuiet(arg) {
+        if (arg == undefined) cli.config.quiet = !cli.config.quiet
+        else if (arg.toLowerCase() == 'on') cli.config.quiet = true
+        else if (arg.toLowerCase() == 'off') cli.config.quiet = false
+        else return log.error(
+			`${cli.msgs.error_use} /quiet [on|off] ${cli.msgs.info_or} ${cli.msgs.error_noArgToToggle}`)
+        log.success(`${cli.msgs.success_quietMode} ${cli.config.quiet ? 'enabled' : 'disabled'}`)
+    },
+
+    toggleDebug(arg) {
+        if (arg == undefined) env.modes.debug = !env.modes.debug
+        else if (arg.toLowerCase() == 'on') env.modes.debug = true
+        else if (arg.toLowerCase() == 'off') env.modes.debug = false
+        else return log.error(
+			`${cli.msgs.error_use} /debug [on|off] ${cli.msgs.info_or} ${cli.msgs.error_noArgToToggle}`)
+        log.success(`${cli.msgs.success_debugLogs} ${env.modes.debug ? 'enabled' : 'disabled'}`)
+    }
+}

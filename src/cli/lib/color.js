@@ -2,7 +2,7 @@ const color = module.exports = {
     nc: '\x1b[0m',
     hex: {
         br: '#ff0000',  by: '#ffff00',  bo: '#ffa500',   bg: '#00ff00',
-        bw: '#ffffff', gry: '#808080', blk: '#000000', tlBG: '#008080'
+        bw: '#ffffff', gry: '#808080', blk: '#000000', tlBG: '#00ffff'
     },
     schemes: {
         get default() {
@@ -28,4 +28,9 @@ const color = module.exports = {
 }
 
 for (const hexKey of Object.keys(color.hex)) // add color[hexKey] getters that return ANSI
-    Object.defineProperty(color, hexKey, { get: () => color.hexToANSI(color.hex[hexKey]) })
+    Object.defineProperty(color, hexKey, {
+        get: () => {
+            const ansi = color.hexToANSI(color.hex[hexKey])
+            return hexKey.endsWith('BG') ? ansi.replace('[38;', '[48;') : ansi
+        }
+    })

@@ -1,16 +1,17 @@
-import js from '@eslint/js'
-import globals from 'globals'
 import css from '@eslint/css'
+import globals from 'globals'
 import html from '@html-eslint/eslint-plugin'
 import htmlParser from '@html-eslint/parser'
-import importPlugin from 'eslint-plugin-import'
+import importPlugin from 'eslint-plugin-import-x'
+import js from '@eslint/js'
 import json from '@eslint/json'
 import markdown from '@eslint/markdown'
 import regexp from 'eslint-plugin-regexp'
 import stylisticJS from '@stylistic/eslint-plugin'
+import ts from 'typescript-eslint'
 
 export default [
-    { ignores: ['**/*.min.js', '**/package-lock.json', 'docs/**/*.min.css', 'docs/**/footer.html'] },
+    { ignores: ['**/*sandbox*/', '**/dist/', '**/*.min.js', '**/package-lock.json', 'docs/**/*.min.css', 'docs/**/footer.html'] },
     {
         files: ['**/*.{js,mjs}'],
         languageOptions: {
@@ -22,7 +23,7 @@ export default [
                 ui: 'readonly'
             }
         },
-        plugins: { 'import': importPlugin, 'js-styles': stylisticJS, regexp },
+        plugins: { 'import-x': importPlugin, 'js-styles': stylisticJS, regexp },
         rules: {
             ...js.configs.recommended.rules,
             ...importPlugin.flatConfigs.recommended.rules,
@@ -39,11 +40,31 @@ export default [
             'no-constant-condition': 'off', // allow constant conditions
             'no-empty': 'off', // allow empty blocks
             'no-inner-declarations': 'off', // allow function declarations anywhere
-            'no-useless-escape': 'off', // allow all escape chars cause ESLint sucks at detecting truly useless ones
             'no-unused-vars': ['error', { 'caughtErrors': 'none' }], // allow unused named args in catch blocks
-            'import/no-named-as-default-member': 'off', // allow accessing named exports via default import
-            'import/no-unresolved': ['error', { ignore: ['^(?:https?://)'] }] // allow dynamic imports from URLs...
-                // ...maintainer refuses to support (https://github.com/import-js/eslint-plugin-import/issues/3118)
+            'preserve-caught-error': 'off', // allow omit pass caught err as cause
+            'import-x/no-named-as-default-member': 'off', // allow accessing named exports via default import
+            'import-x/no-unresolved': ['error', { ignore: ['^(?:https?://)'] }] // allow dynamic imports from URLs
+        }
+    },
+    {
+        files: ['**/*.ts'],
+        languageOptions: {
+            parser: ts.parser, ecmaVersion: 'latest', sourceType: 'script',
+            parserOptions: { tsconfigRootDir: import.meta.dirname, project: false },
+            globals: { ...globals.browser, ...globals.greasemonkey, ...globals.node, chatgpt: 'readonly' }
+        },
+        plugins: { 'typescript': ts.plugin, 'js-styles': stylisticJS },
+        rules: {
+            ...ts.configs.recommended.rules,
+            'js-styles/no-trailing-spaces': 'error', // ...except at ends of lines
+            'js-styles/max-len': ['error', { 'code': 120, // limit lines to 120 chars except if containing...
+                'ignoreComments': true, 'ignoreStrings': true, // ...trailing/own-line comments, quoted strings...
+                'ignoreTemplateLiterals': true, 'ignoreRegExpLiterals': true }], // ...or template/regex literals
+            'js-styles/no-extra-semi': 'error', // disallow unnecessary semicolons
+            'quotes': ['error', 'single', // enforce single quotes...
+                { 'allowTemplateLiterals': true }], // ...except backticks to avoid escaping quotes
+            'comma-dangle': ['error', 'never'], // enforce no trailing commas in arrays or objects
+            'no-unused-vars': 'off', 'typescript/no-unused-vars': ['error', { 'caughtErrors': 'none' }]
         }
     },
     { files: ['**/chatgpt.js'], languageOptions: { globals: { chatgpt: 'off' }}},

@@ -53,7 +53,7 @@ module.exports = {
         if (!langCode.startsWith('en')) { // fetch non-English msgs from jsDelivr
             if (require('non-latin-locales').includes(langCode.split('_')[0]) && !env.supports.unicode)
                 return msgs // EN ones
-            const msgBaseURL = `${require('./jsdelivr').getCommitURL(cli.commitHashes.locales)}/_locales`
+            const msgBaseURL = `${require('./jsdelivr').getCommitURL(cli.commitHashes.locales)}/assets/data/_locales`
             let msgURL = `${msgBaseURL}/${langCode}/messages.json`, msgFetchesTried = 0
             while (msgFetchesTried < 3)
                 try { // fetch remote msgs

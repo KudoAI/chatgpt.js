@@ -1,25 +1,33 @@
 // © 2023–2026 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
-// User guide: https://chatgptjs.org/userguide
+// User guide: https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@latest/dist/chatgpt.min.js
 
 const chatgpt = {
+    env: `${ typeof window != 'undefined' ? 'front' : 'back' }end`,
 
     colors: {
         orange: '\x1b[38;5;214m',
         green: '\x1b[92m',
+        white: '\x1b[38;2;255;255;255m',
         reset: '\x1b[0m'
     },
 
     endpoints: {
         assets: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js',
+        google: {
+            chat: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent'
+        },
+        kudoai: {
+            personas: 'https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.min.json'
+        },
         openai: {
-            session: 'https://chatgpt.com/api/auth/session',
-            chats: 'https://chatgpt.com/backend-api/conversations',
             chat: 'https://chatgpt.com/backend-api/conversation',
-            share_create: 'https://chatgpt.com/backend-api/share/create',
+            chats: 'https://chatgpt.com/backend-api/conversations',
+            instructions: 'https://chatgpt.com/backend-api/user_system_messages',
+            session: 'https://chatgpt.com/api/auth/session',
             share: 'https://chatgpt.com/backend-api/share',
-            instructions: 'https://chatgpt.com/backend-api/user_system_messages'
+            shareCreate: 'https://chatgpt.com/backend-api/share/create'
         },
         openrouter: {
             chat: 'https://openrouter.ai/api/v1/chat/completions'
@@ -30,14 +38,16 @@ const chatgpt = {
         btns: {
             continue: 'button:has(svg > use[href$="#ee0f3c"])',
             createImage: 'button[data-testid=composer-button-create-image]',
+            dictate: 'button:has(use[href$=".svg#29f921"])', // https://imgur.com/a/mO1ZKbR
             login: 'button[data-testid*=login]',
             menu: 'div[data-testid=accounts-profile-button]',
             newChat: 'a[href="/"]:has(svg),' // Pencil button (when logged in)
                    + 'button:has([d^="M3.06957"])', // Cycle Arrows button (in temp chat logged out)
             regen: 'button[data-testid*=regenerate],' // oval button in place of chatbar on errors
-                 + 'button:has(use[href$="sprites-core-k5zux585.svg#ec66f0"])', // 'Try again...' button below msg
-            scroll: 'button:has(use[href$="sprites-core-k5zux585.svg#ac89a7"])',
-            search: 'button[data-testid=composer-button-search]',
+                 + 'button:has(use[href$=".svg#ec66f0"])', // 'Try again...' button below msg
+            scroll: 'button:has(use[href$=".svg#ac89a7"])',
+            search: 'button[data-testid=composer-button-search]'
+                  + 'button:has(use[href$=".svg#ac6d36"])', // https://imgur.com/a/jpPiVAF
             send: 'button[data-testid=send-button]',
             sidebar: 'div[style*=-sidebar-width] button[data-testid=close-sidebar-button],'
                    + 'div[style*=-sidebar-rail-width] button[aria-controls=stage-slideover-sidebar]',
@@ -45,7 +55,7 @@ const chatgpt = {
             stop: 'button[data-testid=stop-button]',
             upload: 'div[data-testid=composer-action-file-upload],' // tall chatbar
                   + 'button#composer-plus-btn', // short chatbar
-            voice: 'button[data-testid*=composer-speech-button]'
+            voice: 'button[data-testid*=composer-speech-button], button:has(use[href$="svg#f8aa74"])'
         },
         chatDivs: {
             convo: 'div[class*=thread]', msg: 'div[data-message-author-role]',
@@ -60,40 +70,36 @@ const chatgpt = {
         ssgManifest: 'script[src*="_ssgManifest.js"]'
     },
 
-    actAs(persona) {
-    // Prompts ChatGPT to act as a persona from https://github.com/KudoAI/chat-prompts/blob/main/personas.json
-
-        const promptsUrl = 'https://cdn.jsdelivr.net/gh/KudoAI/chat-prompts/dist/personas.min.json'
-        return new Promise((resolve, reject) => {
+    actAs(persona, { personasURL = chatgpt.endpoints.kudoai.personas, verbose = false } = {}) {
+        if (!chatgpt._validateArg({ arg: persona, type: 'string' })) return
+        if (chatgpt.env == 'backend') {
+            const prompt = require('@kudoai/ai-personas')[persona]?.prompt
+            if (!prompt) return console.error(`Persona '${persona}' was not found!`)
+            if (verbose) console.info(`Loading [${persona}] from ai-personas.json...\n\n${prompt}`)
+            chatgpt.send(prompt, { output: 'stdout' })
+        } else return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest()
-            xhr.open('GET', promptsUrl, true) ; xhr.send()
+            xhr.open('GET', personasURL, true) ; xhr.send()
             xhr.onload = () => {
-                if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve prompts data.')
-                const data = JSON.parse(xhr.responseText).personas
-                if (!persona) {
-                    console.log('\n%c🤖 chatgpt.js personas\n',
-                        'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold')
-                    for (const prompt of data) // list personas
-                        console.log(`%c${prompt.title}`, 'font-family: monospace ; font-size: larger ;')
-                    return resolve()
-                }
-                const selectedPrompt = data.find(obj => obj.title.toLowerCase() == persona.toLowerCase())
-                if (!selectedPrompt)
-                    return reject(`🤖 chatgpt.js >> Persona '${persona}' was not found!`)
-                chatgpt.send(selectedPrompt.prompt, 'click')
-                console.info(`Loading ${persona} persona...`)
-                chatgpt.isIdle().then(() => console.info('Persona activated!'))
-                return resolve()
+                if (xhr.status != 200) return reject('Request failed. Cannot retrieve prompts data.')
+                const prompt = JSON.parse(xhr.responseText)[persona]?.prompt
+                if (!prompt) return reject(`Persona '${persona}' was not found!`)
+                if (verbose) console.info(`Loading [${persona}] from ${personasURL.split('/').pop()}...\n\n${prompt}`)
+                chatgpt.send(prompt)
+                chatgpt.isIdle().then(() => resolve(prompt))
             }
+            xhr.onerror = () => reject(`Network error fetching ${personasURL}`)
         })
     },
 
     activateDarkMode() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         document.documentElement.classList.replace('light', 'dark')
         document.documentElement.style.colorScheme = localStorage.theme = 'dark'
     },
 
     activateLightMode() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         document.documentElement.classList.replace('dark', 'light')
         document.documentElement.style.colorScheme = localStorage.theme = 'light'
     },
@@ -102,11 +108,10 @@ const chatgpt = {
     // [ title/msg = strings, btns = [named functions], checkbox = named function, width (px) = int ] = optional
     // * Spaces are inserted into button labels by parsing function names in camel/kebab/snake case
 
-        // Init env context
-        const scheme = chatgpt.isDarkMode() ? 'dark' : 'light',
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        const scheme = chatgpt.settings.scheme.isDark() ? 'dark' : 'light',
               isMobile = chatgpt.browser.isMobile()
 
-        // Define event handlers
         const handlers = {
 
             dismiss: {
@@ -172,7 +177,7 @@ const chatgpt = {
 
         // Create modal parent/children elems
         const modalContainer = document.createElement('div')
-        modalContainer.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now()
+        modalContainer.id = Math.floor(chatgpt.randomFloat() *1000000) + Date.now()
         modalContainer.classList.add('chatgpt-modal') // add class to main div
         const modal = document.createElement('div'),
               modalTitle = document.createElement('h2'),
@@ -284,13 +289,13 @@ const chatgpt = {
         modalButtons.classList.add('modal-buttons', 'no-mobile-tap-outline')
         if (btns) { // are supplied
             if (!Array.isArray(btns)) btns = [btns] // convert single button to array if necessary
-            btns.forEach((buttonFn) => { // create title-cased labels + attach listeners
+            btns.forEach((buttonFunc) => { // create title-cased labels + attach listeners
                 const button = document.createElement('button')
-                button.textContent = buttonFn.name
+                button.textContent = buttonFunc.name
                     .replace(/[_-]\w/g, match => match.slice(1).toUpperCase()) // convert snake/kebab to camel case
                     .replace(/([A-Z])/g, ' $1') // insert spaces
                     .replace(/^\w/, firstChar => firstChar.toUpperCase()) // capitalize first letter
-                button.onclick = () => { dismissAlert() ; buttonFn() }
+                button.onclick = () => { dismissAlert() ; buttonFunc() }
                 modalButtons.insertBefore(button, modalButtons.firstChild)
             })
         }
@@ -307,15 +312,15 @@ const chatgpt = {
         const checkboxDiv = document.createElement('div')
         if (checkbox) { // is supplied
             checkboxDiv.classList.add('checkbox-group')
-            const checkboxFn = checkbox, // assign the named function to checkboxFn
+            const checkboxFunc = checkbox, // assign the named function to checkboxFunc
                   checkboxInput = document.createElement('input')
-            checkboxInput.type = 'checkbox' ; checkboxInput.onchange = checkboxFn
+            checkboxInput.type = 'checkbox' ; checkboxInput.onchange = checkboxFunc
 
             // Create/show label
             const checkboxLabel = document.createElement('label')
-            checkboxLabel.onclick = () => { checkboxInput.checked = !checkboxInput.checked ; checkboxFn() }
-            checkboxLabel.textContent = checkboxFn.name[0].toUpperCase() // capitalize first char
-                + checkboxFn.name.slice(1) // format remaining chars
+            checkboxLabel.onclick = () => { checkboxInput.checked = !checkboxInput.checked ; checkboxFunc() }
+            checkboxLabel.textContent = checkboxFunc.name[0].toUpperCase() // capitalize first char
+                + checkboxFunc.name.slice(1) // format remaining chars
                     .replace(/([A-Z])/g, (match, letter) => ' ' + letter.toLowerCase()) // insert spaces, convert to lowercase
                     .replace(/\b(\w+)nt\b/gi, '$1n\'t') // insert apostrophe in 'nt' suffixes
                     .trim() // trim leading/trailing spaces
@@ -333,7 +338,7 @@ const chatgpt = {
         const closeSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path')
         closeSVGpath.setAttribute('fill-rule', 'evenodd')
         closeSVGpath.setAttribute('clip-rule', 'evenodd')
-        closeSVGpath.setAttribute('fill', chatgpt.isDarkMode() ? 'white' : 'black')
+        closeSVGpath.setAttribute('fill', chatgpt.settings.scheme.isDark() ? 'white' : 'black')
         closeSVGpath.setAttribute('d', 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z')
         closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG)
 
@@ -396,6 +401,7 @@ const chatgpt = {
 
     autoRefresh: {
         activate(interval) {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             if (this.isActive) // already running, do nothing
                 return console.log(
                     `↻ ChatGPT >> [${chatgpt.autoRefresh.nowTimeStamp()}] Auto refresh already active!`)
@@ -405,7 +411,7 @@ const chatgpt = {
             // Run main activate routine
             this.toggle.refreshFrame()
             const scheduleRefreshes = interval => {
-                const randomDelay = Math.max(2, Math.floor(chatgpt.randomFloat() * 21 - 10)) // set random delay up to ±10 secs
+                const randomDelay = Math.max(2, Math.floor(chatgpt.randomFloat() *21 -10)) // set random delay up to ±10 secs
                 autoRefresh.isActive = setTimeout(() => {
                     const manifestScript = document.querySelector(chatgpt.selectors.ssgManifest)
                     if (manifestScript) {
@@ -413,7 +419,7 @@ const chatgpt = {
                         console.log(`↻ ChatGPT >> [${autoRefresh.nowTimeStamp()}] ChatGPT session refreshed`)
                     }
                     scheduleRefreshes(interval)
-                }, (interval + randomDelay) * 1000)
+                }, (interval + randomDelay) *1000)
             }
             scheduleRefreshes( interval ? parseInt(interval, 10) : 30 )
             console.log(`↻ ChatGPT >> [${chatgpt.autoRefresh.nowTimeStamp()}] Auto refresh activated`)
@@ -424,6 +430,7 @@ const chatgpt = {
         },
 
         deactivate() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             if (this.isActive) {
                 this.toggle.refreshFrame()
                 document.removeEventListener('visibilitychange', this.toggle.beacons)
@@ -434,10 +441,10 @@ const chatgpt = {
         },
 
         nowTimeStamp() {
-            const now = new Date()
-            const hours = now.getHours() % 12 || 12 // convert to 12h format
+            const now = new Date(), hours = now.getHours() % 12 || 12 // convert to 12h format
             let minutes = now.getMinutes(), seconds = now.getSeconds()
-            if (minutes < 10) minutes = '0' + minutes ; if (seconds < 10) seconds = '0' + seconds
+            if (minutes < 10) minutes = '0' + minutes
+            if (seconds < 10) seconds = '0' + seconds
             const meridiem = now.getHours() < 12 ? 'AM' : 'PM'
             return `${hours}:${minutes}:${seconds} ${meridiem}`
         },
@@ -445,6 +452,7 @@ const chatgpt = {
         toggle: {
 
             beacons() {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
                 if (chatgpt.autoRefresh.beaconID) {
                     clearInterval(chatgpt.autoRefresh.beaconID) ; chatgpt.autoRefresh.beaconID = null
                     console.log(`↻ ChatGPT >> [${chatgpt.autoRefresh.nowTimeStamp()}] Beacons de-activated`)
@@ -458,6 +466,7 @@ const chatgpt = {
             },
 
             refreshFrame() {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
                 let refreshFrame = document.querySelector('#refresh-frame')
                 if (refreshFrame) refreshFrame.remove()
                 else {
@@ -471,23 +480,53 @@ const chatgpt = {
 
     browser: {
 
-        isLightMode() { return window.matchMedia?.('(prefers-color-scheme: light)')?.matches },
-        isDarkMode() { return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches },
-        isChromium() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chromium') },
-        isChrome() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chrome') },
-        isEdge() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge') },
-        isBrave() { return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave') },
-        isFirefox() { return navigator.userAgent.includes('Firefox') },
+        isBrave() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave')
+        },
+
+        isChrome() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chrome')
+        },
+
+        isChromium() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Chromium')
+        },
+
+        isDarkMode() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
+        },
+
+        isEdge() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return !!JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge')
+        },
+
+        isFirefox() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return navigator.userAgent.includes('Firefox')
+        },
 
         isFullScreen() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             const userAgentStr = navigator.userAgent
             return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
                  : userAgentStr.includes('Firefox') ? window.fullScreen
                  : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen
         },
 
+        isLightMode() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return window.matchMedia?.('(prefers-color-scheme: light)')?.matches
+        },
+
         isMobile() {
-            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) }
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+        }
     },
 
     async clearChats() { // back-end method
@@ -498,7 +537,7 @@ const chatgpt = {
                 xhr.setRequestHeader('Content-Type', 'application/json')
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
-                    if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot clear chats.')
+                    if (xhr.status != 200) return reject('Request failed. Cannot clear chats.')
                     console.info('Chats successfully cleared') ; resolve()
                 }
                 xhr.send(JSON.stringify({ is_visible: false }))
@@ -509,24 +548,30 @@ const chatgpt = {
     code: {
     // Tip: Use template literals for easier passing of code arguments. Ensure backticks and `$`s are escaped (using `\`)
 
-        async execute(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!')
-            if (typeof code != 'string') return console.error('Code argument must be a string!')
-            chatgpt.send('Display the output as if you were terminal:\n\n' + code)
-            console.info('Executing code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+        async debug(code, { verbose = false } = {}) {
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
+            if (verbose) console.info('Debugging code...')
+            const prompt = `Debug the following code and return the corrected code:\n\n${code}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
+            return chatgpt.code.extract(resp)
+        },
+
+        async execute(code, { verbose = false } = {}) {
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
+            if (verbose) console.info('Executing code...')
+            const prompt = `Display the output as if you were terminal:\n\n${code}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
+            return chatgpt.code.extract(resp)
         },
 
         extract(msg) { // extract pure code from response (targets last block)
+            if (!msg || typeof msg != 'string') return
             const codeBlocks = msg.match(/(?<=```.*\n)[\s\S]*?(?=```)/g)
-            return codeBlocks ? codeBlocks[codeBlocks.length - 1] : msg
+            return codeBlocks ? codeBlocks[codeBlocks.length -1] : msg
         },
 
         async isIdle(timeout = null) {
             const obsConfig = { childList: true, subtree: true }
-
-            // Create promises
             const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
             const isIdlePromise = (async () => {
                 await new Promise(resolve => { // when on convo page
@@ -537,11 +582,11 @@ const chatgpt = {
                 })
                 await new Promise(resolve => // when reply starts generating
                     new MutationObserver((_, obs) => {
-                        if (chatgpt.getStopBtn()) { obs.disconnect() ; resolve() }
+                        if (chatgpt.getStopButton()) { obs.disconnect() ; resolve() }
                     }).observe(document.body, { childList: true, subtree: true })
                 )
                 const replyDivs = document.querySelectorAll(chatgpt.selectors.chatDivs.reply),
-                      lastReplyDiv = replyDivs[replyDivs.length - 1]
+                      lastReplyDiv = replyDivs[replyDivs.length -1]
                 await new Promise(resolve => // when code starts generating
                     new MutationObserver((_, obs) => {
                         if (lastReplyDiv?.querySelector('pre')) { obs.disconnect() ; resolve() }
@@ -550,88 +595,86 @@ const chatgpt = {
                 return new Promise(resolve => // when code stops generating
                     new MutationObserver((_, obs) => {
                         if (lastReplyDiv?.querySelector('pre')?.nextElementSibling // code block not last child of reply div
-                            || !chatgpt.getStopBtn() // ...or reply outright stopped generating
+                            || !chatgpt.getStopButton() // ...or reply outright stopped generating
                         ) { obs.disconnect() ; resolve(true) }
                     }).observe(document.body, obsConfig)
                 )
             })()
-
             return await (timeoutPromise ? Promise.race([isIdlePromise, timeoutPromise]) : isIdlePromise)
         },
 
-        async minify(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!')
-            if (typeof code != 'string') return console.error('Code argument must be a string!')
-            chatgpt.send('Minify the following code:\n\n' + code)
-            console.info('Minifying code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+        async minify(code, { verbose = false } = {}) {
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
+            if (verbose) console.info('Minifying code...')
+            const prompt = `Minify the following code:\n\n${code}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
+            return chatgpt.code.extract(resp)
         },
 
-        async obfuscate(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!')
-            if (typeof code != 'string') return console.error('Code argument must be a string!')
-            chatgpt.send('Obfuscate the following code:\n\n' + code)
-            console.info('Obfuscating code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+        async obfuscate(code, { verbose = false } = {}) {
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
+            if (verbose) console.info('Obfuscating code...')
+            const prompt = `Obfuscate the following code:\n\n${code}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
+            return chatgpt.code.extract(resp)
         },
 
-        async refactor(code, objective) {
-            if (!code) return console.error('Code (1st) argument not supplied. Pass some code!')
-            for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-                return console.error(`Argument ${ i + 1 } must be a string.`)
-            chatgpt.send(`Refactor the following code for ${ objective || 'brevity' }:\n\n${code}`)
-            console.info('Refactoring code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+        async refactor(code, objective, { verbose = false } = {}) {
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
+            for (let i = 0 ; i < arguments.length ; i++)
+                if (typeof arguments[i] != 'string')
+                    return console.error(`Argument ${ i +1 } must be a string.`)
+            if (verbose) console.info('Refactoring code...')
+            const prompt = `Refactor the following code for ${ objective || 'brevity' }:\n\n${code}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
+            return chatgpt.code.extract(resp)
         },
 
-        async review(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!')
-            if (typeof code == 'string') return console.error('Code argument must be a string!')
-            chatgpt.send('Review the following code for me:\n\n' + code)
-            console.info('Reviewing code...')
-            await chatgpt.isIdle()
-            return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+        async review(code, { verbose = false } = {}) {
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
+            if (verbose) console.info('Reviewing code...')
+            const prompt = `Review the following code:\n\n${code}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
+            return chatgpt.code.extract(resp)
         },
 
-        async unminify(code) {
-            if (!code) return console.error('Code argument not supplied. Pass some code!')
-            if (typeof code != 'string') return console.error('Code argument must be a string!')
-            chatgpt.send('Unminify the following code.:\n\n' + code)
-            console.info('Unminifying code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+        async unminify(code, { verbose = false } = {}) {
+            if (!chatgpt._validateArg({ arg: code, type: 'string' })) return
+            if (verbose) console.info('Unminifying code...')
+            const prompt = `Unminify the following code:\n\n${code}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](prompt)
+            return chatgpt.code.extract(resp)
         },
 
-        async write(prompt, outputLang) {
-            if (!prompt) return console.error('Prompt (1st) argument not supplied. Pass a prompt!')
-            if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!')
-            for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-                return console.error(`Argument ${ i + 1 } must be a string.`)
-            chatgpt.send(`${prompt}\n\nWrite this as code in ${outputLang}`)
-            console.info('Writing code...')
-            await chatgpt.isIdle()
-            return chatgpt.code.extract(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+        async write(prompt, outputLang, { verbose = false } = {}) {
+            if (!chatgpt._validateArg({ arg: prompt, type: 'string' })) return
+            if (!chatgpt._validateArg({ arg: outputLang, type: 'lang' })) return
+            if (verbose) console.info('Writing code...')
+            const fullPrompt = `Write this as code in ${outputLang}: ${prompt}`,
+                  resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](fullPrompt)
+            return chatgpt.code.extract(resp)
         }
     },
 
     continue() { chatgpt.response.continue() },
 
-    async detectLanguage(text) {
-        if (!text) return console.error('Text argument not supplied. Pass some text!')
-        if (typeof text != 'string') return console.error('Text argument must be a string!')
+    async detectLanguage(text, { verbose = false } = {}) {
+        if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
         chatgpt.send(`Detect the language of the following text:\n\n${text}`
             + '\n\nOnly respond with the name of the language')
-        console.info('Reviewing text...')
+        if (verbose) console.info('Reviewing text...')
         await chatgpt.isIdle()
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
 
-    execute() { chatgpt.code.execute() },
+    dictate() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        chatgpt.getDictateButton()?.click()
+    },
 
-    async exportChat(chatToGet, format) {
+    execute(code) { return chatgpt.code.execute(code) },
+
+    async exportChat(chatToGet, format, { verbose = false } = {}) {
     // chatToGet = 'active' (default) | 'latest' | index|title|id of chat to get
     // format = 'html' (default) | 'md' | 'pdf' | 'text'
 
@@ -643,14 +686,14 @@ const chatgpt = {
         format = format.toLowerCase() || 'html' // default to 'html' if unpassed
 
         // Create transcript + filename
-        console.info('Generating transcript...')
+        if (verbose) console.info('Generating transcript...')
         let transcript = '', filename
         if (/te?xt/.test(format)) { // generate plain transcript + filename for TXT export
 
             // Format filename using date/time
             const now = new Date(),
                   day = now.getDate().toString().padStart(2, '0'),
-                  month = (now.getMonth() + 1).toString().padStart(2, '0'),
+                  month = (now.getMonth() +1).toString().padStart(2, '0'),
                   year = now.getFullYear(),
                   hour = now.getHours().toString().padStart(2, '0'),
                   minute = now.getMinutes().toString().padStart(2, '0')
@@ -677,28 +720,26 @@ const chatgpt = {
 
         } else { // generate rich transcript + filename for HTML/MD/PDF export
 
-            // Fetch HTML transcript from OpenAI
-            const response = await fetch(await chatgpt.shareChat(chatToGet)),
-                  htmlContent = await response.text()
+            const htmlContent = await (await fetch(await chatgpt.shareChat(chatToGet))).text()
 
             // Format filename after <title>
             const parser = new DOMParser(),
-                  parsedHtml = parser.parseFromString(htmlContent, 'text/html')
-            filename = `${ parsedHtml.querySelector('title').textContent || 'ChatGPT conversation' }.html`
+                  parsedHTML = parser.parseFromString(htmlContent, 'text/html')
+            filename = `${ parsedHTML.querySelector('title').textContent || 'ChatGPT conversation' }.html`
 
             // Convert relative CSS paths to absolute ones
-            const cssLinks = parsedHtml.querySelectorAll('link[rel=stylesheet]')
+            const cssLinks = parsedHTML.querySelectorAll('link[rel=stylesheet]')
             cssLinks.forEach(link => {
                 const href = link.getAttribute('href')
                 if (href?.startsWith('/')) link.setAttribute('href', 'https://chat.openai.com' + href)
             })
 
             // Serialize updated HTML to string
-            transcript = new XMLSerializer().serializeToString(parsedHtml)
+            transcript = new XMLSerializer().serializeToString(parsedHTML)
         }
 
         // Export transcript
-        console.info(`Exporting transcript as ${format.toUpperCase()}...`)
+        if (verbose) console.info(`Exporting transcript as ${format.toUpperCase()}...`)
         if (format == 'pdf') { // convert SVGs + launch PDF printer
 
             // Convert SVG icons to data URLs for proper PDF rendering
@@ -719,31 +760,44 @@ const chatgpt = {
                 transcript = mdMatch || transcript ; filename = filename.replace('.html', '.md')
             }
             const blob = new Blob([transcript],
-                { type: 'text/' + ( format == 'html' ? 'html' : format == 'md' ? 'markdown' : 'plain' )})
+                { type: 'text/' +( format == 'html' ? 'html' : format == 'md' ? 'markdown' : 'plain' )})
             const link = document.createElement('a'), blobURL = URL.createObjectURL(blob)
             link.href = blobURL ; link.download = filename ; document.body.append(link)
             link.click() ; document.body.removeChild(link) ; URL.revokeObjectURL(blobURL)
         }
     },
 
-    extractCode() { chatgpt.code.extract() },
-    focusChatbar() { chatgpt.getChatBox()?.focus() },
+    extractCode(msg) { return chatgpt.code.extract(msg) },
+    focusChatbar() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        chatgpt.getChatBox()?.focus()
+    },
 
     footer: {
-        get() { return document.querySelector(chatgpt.selectors.footer) },
 
-        hide() {
+        get() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return document.querySelector(chatgpt.selectors.footer)
+        },
+
+        hide({ preserveHeight = false } = {}) {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             const footer = chatgpt.footer.get()
-            if (!footer) return console.error('Footer element not found!')
-            if (footer.style.visibility == 'hidden') return console.info('Footer already hidden!')
-            footer.style.display = 'none'
+            if (!footer)
+                return console.error('Footer element not found!')
+            if (footer.style.display == 'none' || footer.style.opacity == '0')
+                return console.info('Footer already hidden!')
+            Object.assign(footer.style, preserveHeight ? { opacity: 0, height: '15px !important' } : { display: 'none' })
         },
 
         show() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             const footer = chatgpt.footer.get()
-            if (!footer) return console.error('Footer element not found!')
-            if (footer.style.visibility != 'hidden') return console.info('Footer already shown!')
-            footer.style.display = 'inherit'
+            if (!footer)
+                return console.error('Footer element not found!')
+            if (footer.style.display == 'inherit' && footer.style.opacity != '0')
+                return console.info('Footer already shown!')
+            Object.assign(footer.style, { opacity: 'inherit', height: 'inherit', display: 'inherit' })
         }
     },
 
@@ -755,7 +809,7 @@ const chatgpt = {
             xhr.open('GET', chatgpt.endpoints.openai.session, true)
             xhr.setRequestHeader('Content-Type', 'application/json')
             xhr.onload = () => {
-                if (xhr.status != 200) return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve access token.')
+                if (xhr.status != 200) return reject('Request failed. Cannot retrieve access token.')
                 console.info(`Token expiration: ${
                     new Date(JSON.parse(xhr.responseText).expires).toLocaleString().replace(',', ' at')}`)
                 chatgpt.accessToken = {
@@ -791,13 +845,16 @@ const chatgpt = {
                     const data = JSON.parse(xhr.responseText).user, detailsToReturn = {}
                     for (const detail of details) detailsToReturn[detail] = data[detail]
                     return resolve(detailsToReturn)
-                } else return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve account details.')
+                } else return reject('Request failed. Cannot retrieve account details.')
             }
             xhr.send()
         })
     },
 
-    getChatBox() { return document.getElementById('prompt-textarea') },
+    getChatBox() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.getElementById('prompt-textarea')
+    },
 
     getChatData(chatToGet = 1, detailsToGet = 'all', sender = 'all', msgToGet = 'all') {
     // chatToGet = 'active' | 'latest' | index|title|id of chat to get (defaults to active OpenAI chat > latest chat)
@@ -806,11 +863,11 @@ const chatgpt = {
     // msgToGet = 'all' | 'latest' | index of msg to get (defaults to 'all', requires 2nd param = 'msg')
 
         // Init args
-        const validDetails = [ 'all', 'id', 'title', 'create_time', 'update_time', 'msg' ]
-        const validSenders = [ 'all', 'both', 'user', 'chatgpt' ]
+        const validDetails = [ 'all', 'id', 'title', 'create_time', 'update_time', 'msg' ],
+              validSenders = [ 'all', 'both', 'user', 'chatgpt' ]
         chatToGet = !chatToGet ? 'active' // if '' passed, set to active
                   : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
-                      ( parseInt(chatToGet, 10) == 0 ? 0 : parseInt(chatToGet, 10) - 1 ) // ...offset -1 or keep as 0
+                      ( parseInt(chatToGet, 10) == 0 ? 0 : parseInt(chatToGet, 10) -1 ) // ...offset -1 or keep as 0
                   : chatToGet // else preserve non-num string as 'active', 'latest' or title/id of chat to get
         detailsToGet = ['all', ''].includes(detailsToGet) ? // if '' or 'all' passed
                          validDetails.filter(detail => /^(?!all$|msg$).*/.test(detail)) // populate w/ [validDetails] except 'all' & 'msg'
@@ -818,7 +875,7 @@ const chatgpt = {
         sender = !sender ? 'all' // if '' or unpassed, set to 'all'
                : validSenders.includes(sender) ? sender : 'invalid' // else set to validSenders or 'invalid'
         msgToGet = Number.isInteger(msgToGet) || /^\d+$/.test(msgToGet) ? // if string/int num passed
-                     ( parseInt(msgToGet, 10) == 0 ? 0 : parseInt(msgToGet, 10) - 1 ) // ...offset -1 or keep as 0
+                     ( parseInt(msgToGet, 10) == 0 ? 0 : parseInt(msgToGet, 10) -1 ) // ...offset -1 or keep as 0
                  : ['all', 'latest'].includes(msgToGet.toLowerCase()) ? // else if 'all' or 'latest' passed
                      msgToGet.toLowerCase() // ...preserve it
                  : !msgToGet ? 'all' // else if '', set to 'all'
@@ -845,17 +902,18 @@ const chatgpt = {
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
                     if (xhr.status != 200)
-                        return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat details.')
+                        return reject('Request failed. Cannot retrieve chat details.')
                     const data = JSON.parse(xhr.responseText).items
-                    if (data.length <= 0) return reject('🤖 chatgpt.js >> Chat list is empty.')
+                    if (data.length <= 0)
+                        return reject('Chat list is empty.')
                     const detailsToReturn = {}
 
                     // Return by index if num, 'latest', or 'active' passed but not truly active
                     if (Number.isInteger(chatToGet) || chatToGet == 'latest' ||
-                            (chatToGet == 'active' && !new RegExp(`\/${re_chatID.source}$`).test(location.href))) {
+                            (chatToGet == 'active' && !new RegExp(`/${re_chatID.source}$`).test(location.href))) {
                         chatToGet = Number.isInteger(chatToGet) ? chatToGet : 0 // preserve index, otherwise get latest
                         if (chatToGet > data.length) // reject if index out-of-bounds
-                            return reject(`🤖 chatgpt.js >> Chat with index ${ chatToGet +1 }`
+                            return reject(`Chat with index ${ chatToGet +1 }`
                                 + ` is out of bounds. Only ${data.length} chats exist!`)
                         for (const detail of detailsToGet) detailsToReturn[detail] = data[chatToGet][detail]
                         return resolve(detailsToReturn)
@@ -871,8 +929,9 @@ const chatgpt = {
                     for (idx = 0 ; idx < data.length ; idx++) { // search for id/title to set chatFound flag
                         if (data[idx][chatIdentifier] == chatToGet) { chatFound = true ; break }}
                     if (!chatFound) // exit
-                        return reject(`🤖 chatgpt.js >> No chat with ${chatIdentifier} = ${chatToGet} found.`)
-                    for (const detail of detailsToGet) detailsToReturn[detail] = data[idx][detail]
+                        return reject(`No chat with ${chatIdentifier} = ${chatToGet} found.`)
+                    for (const detail of detailsToGet)
+                        detailsToReturn[detail] = data[idx][detail]
                     return resolve(detailsToReturn)
                 }
                 xhr.send()
@@ -887,11 +946,11 @@ const chatgpt = {
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
                         if (xhr.status != 200)
-                            return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat messages.')
+                            return reject('Request failed. Cannot retrieve chat messages.')
 
                         // Init const's
-                        const data = JSON.parse(xhr.responseText).mapping // get chat messages
-                        const userMessages = [], chatGPTMessages = [], msgsToReturn = []
+                        const data = JSON.parse(xhr.responseText).mapping,  // get chat messages
+                              userMessages = [], chatGPTMessages = [], msgsToReturn = []
 
                         // Fill [userMessages]
                         for (const key in data)
@@ -899,8 +958,8 @@ const chatgpt = {
                                 userMessages.push({ id: data[key].id, msg: data[key].message })
                         userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time) // sort in chronological order
 
-                        if (parseInt(msgToGet, 10) + 1 > userMessages.length) // reject if index out of bounds
-                            return reject(`🤖 chatgpt.js >> Message/response with index ${ msgToGet +1 }`
+                        if (parseInt(msgToGet, 10) +1 > userMessages.length) // reject if index out of bounds
+                            return reject(`Message/response with index ${ msgToGet +1 }`
                                 + ` is out of bounds. Only ${userMessages.length} messages/responses exist!`)
 
                         // Fill [chatGPTMessages]
@@ -913,9 +972,9 @@ const chatgpt = {
                             sub.sort((a, b) => a.create_time - b.create_time) // sort in chronological order
                             sub = sub.map(x => { // pull out msgs after sorting
                                 switch(x.content.content_type) {
-                                    case 'code': return x.content.text
-                                    case 'text': return x.content.parts[0]
-                                    default: return
+                                    case 'code' : return x.content.text
+                                    case 'text' : return x.content.parts[0]
+                                    default : return
                                 }
                             })
                             sub = sub.length == 1 ? sub[0] : sub // convert not regenerated responses to strings
@@ -927,20 +986,20 @@ const chatgpt = {
                                 msgsToReturn.push(userMessages[userMessage].msg.content.parts[0])
                         else if (sender == 'chatgpt') // Fill [msgsToReturn] with ChatGPT responses
                             for (const chatGPTMessage of chatGPTMessages)
-                                msgsToReturn.push(msgToGet == 'latest' ? chatGPTMessages[chatGPTMessages.length - 1]
+                                msgsToReturn.push(msgToGet == 'latest' ? chatGPTMessages[chatGPTMessages.length -1]
                                                                        : chatGPTMessage )
                         else { // Fill [msgsToReturn] with objects of user messages and chatgpt response(s)
                             let i = 0
                             for (const message in userMessages) {
                                 msgsToReturn.push({
                                     user: userMessages[message].msg.content.parts[0],
-                                    chatgpt: msgToGet == 'latest' ? chatGPTMessages[i][chatGPTMessages[i].length - 1] : chatGPTMessages[i]
+                                    chatgpt: msgToGet == 'latest' ? chatGPTMessages[i][chatGPTMessages[i].length -1] : chatGPTMessages[i]
                                 })
                                 i++
                             }
                         }
                         return resolve(msgToGet == 'all' ? msgsToReturn // if 'all' passed, return array
-                                     : msgToGet == 'latest' ? msgsToReturn[msgsToReturn.length - 1] // else if 'latest' passed, return latest
+                                     : msgToGet == 'latest' ? msgsToReturn[msgsToReturn.length -1] // else if 'latest' passed, return latest
                                      : msgsToReturn[msgToGet] ) // else return element of array
 
                         function isUserMsgAncestor(msgID, targetUserID) {
@@ -955,7 +1014,9 @@ const chatgpt = {
                         }
                     }
                     xhr.send()
-        })})}
+                })
+            })
+        }
 
         // Return chat data
         return new Promise(resolve => chatgpt.getAccessToken().then(token => {
@@ -964,51 +1025,144 @@ const chatgpt = {
         }))
     },
 
-    getChatInput() { return chatgpt.getChatBox().firstChild.innerText },
-    getContinueButton() { return document.querySelector(chatgpt.selectors.btns.continue) },
-    getErrorMsg() { return document.querySelector(`${chatgpt.selectors.errors.txt}:last-of-type`)?.innerText },
+    getChatInput() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return chatgpt.getChatBox().firstChild.innerText
+    },
+
+    getContinueButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.continue)
+    },
+
+    getDictateButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.dictate)
+    },
+
+    getErrorMsg() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(`${chatgpt.selectors.errors.txt}:last-of-type`)?.innerText
+    },
+
     getFooterDiv() { return chatgpt.footer.get() },
+
+    async getFortune({ verbose = false } = {}) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        chatgpt.send('Tell me my fortune the length of a fortune cookie fortune.')
+        if (verbose) console.info('Generating fortune...')
+        await chatgpt.isIdle()
+        return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+    },
+
     getHeaderDiv() { return chatgpt.header.get() },
     getLastPrompt() { return chatgpt.getChatData('active', 'msg', 'user', 'latest') },
     getLastResponse() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest') },
-    getLoginButton() { return document.querySelector(chatgpt.selectors.btns.login) },
-    getNewChatButton() { return document.querySelector(chatgpt.selectors.btns.newChat) },
-    getNewChatLink() { return document.querySelector(chatgpt.selectors.links.newChat) },
-    getRegenerateButton() { return document.querySelector(chatgpt.selectors.btns.regen) },
 
-    getResponse() {
-    // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:
-    // chatToGet = index|title|id of chat to get (defaults to latest if '' unpassed)
-    // responseToGet = index of response to get (defaults to latest if '' unpassed)
-    // regenResponseToGet = index of regenerated response to get (defaults to latest if '' unpassed)
-
-        return chatgpt.response.get(...arguments)
+    getLoginButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.login)
     },
 
+    getNewChatButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.newChat)
+    },
+
+    getNewChatLink() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.links.newChat)
+    },
+
+    getRegenerateButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.regen)
+    },
+
+    getResponse() { return chatgpt.response.get(...arguments) },
     getResponseFromAPI(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet) },
     getResponseFromDOM(pos) { return chatgpt.response.getFromDOM(pos) },
-    getScrollToBottomButton() { return document.querySelector(chatgpt.selectors.btns.scroll) },
-    getSendButton() { return document.querySelector(chatgpt.selectors.btns.send) },
-    getStopButton() { return document.querySelector(chatgpt.selectors.btns.stop) },
+
+    getScrollToBottomButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.scroll)
+    },
+
+    getSendButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.send)
+    },
+
+    getStopButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.stop)
+    },
+
+    async getRandomAnswer({ replyLang = 'en' } = {}) {
+        const prompt = `Generate a single random question in ${replyLang} language on any topic, then answer it.`
+                     + `\nDon't type anything else.`
+        if (chatgpt.env == 'frontend') {
+            chatgpt.send(prompt)
+            await chatgpt.isIdle()
+            return await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+        } else
+            return await chatgpt.send(prompt)
+    },
 
     getUserLanguage() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         return navigator.languages[0] || navigator.language || navigator.browserLanguage
             || navigator.systemLanguage || navigator.userLanguage || ''
     },
 
-    getVoiceButton() { return document.querySelector(chatgpt.selectors.btns.voice) },
+    getVoiceButton() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return document.querySelector(chatgpt.selectors.btns.voice)
+    },
 
     header: {
-        get() { return document.querySelector(chatgpt.selectors.header) },
-        hide() { chatgpt.header.get().style.display = 'none' },
-        show() { chatgpt.header.get().style.display = 'flex' }
+
+        get() {
+             if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return document.querySelector(chatgpt.selectors.header)
+        },
+
+        hide() {
+             if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+             chatgpt.header.get().style.display = 'none'
+        },
+
+        show() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            chatgpt.header.get().style.display = 'flex'
+        }
     },
 
     hideFooter() { chatgpt.footer.hide() },
     hideHeader() { chatgpt.header.hide() },
 
     history: {
+        deleteChat(chatToDelete = 'active') {
+            return new Promise((resolve, reject) =>
+                chatgpt.getAccessToken().then(token =>
+                    chatgpt.getChatData(chatToDelete, 'id').then(chat => {
+                        const xhr = new XMLHttpRequest()
+                        xhr.open('PATCH', `${chatgpt.endpoints.openai.chat}/${chat.id}`, true)
+                        xhr.setRequestHeader('Content-Type', 'application/json')
+                        xhr.setRequestHeader('Authorization', 'Bearer ' + token)
+                        xhr.onload = () => {
+                            if (xhr.status != 200)
+                                return reject('Request failed. Cannot delete chat.')
+                            return resolve(true)
+                        }
+                        xhr.send(JSON.stringify({ is_visible: false }))
+                    }).catch(reject)
+                ).catch(reject)
+            )
+        },
+
         async isLoaded(timeout = null) {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
             const isLoadedPromise = new Promise(resolve => {
                 if (document.querySelector(chatgpt.selectors.chatHistory)) resolve(true)
@@ -1080,8 +1234,8 @@ const chatgpt = {
         sendRequest(method, token, body) {
         // INTERNAL METHOD
             // Validate args
-            for (let i = 0 ; i < arguments.length - 1 ; i++) if (typeof arguments[i] == 'string')
-                return console.error(`Argument ${ i + 1 } must be a string`)
+            for (let i = 0 ; i < arguments.length -1 ; i++) if (typeof arguments[i] == 'string')
+                return console.error(`Argument ${ i +1 } must be a string`)
             const validMethods = ['POST', 'GET']
             method = (method || '').trim().toUpperCase()
             if (!method || !validMethods.includes(method)) // reject if not valid method
@@ -1101,11 +1255,11 @@ const chatgpt = {
                 xhr.onload = () => {
                     const responseData = JSON.parse(xhr.responseText)
                     if (xhr.status == 422)
-                        return reject('🤖 chatgpt.js >> Character limit exceeded. Custom instructions can have a maximum length of 1500 characters.')
+                        return reject('Character limit exceeded. Custom instructions can have a maximum length of 1500 characters.')
                     else if (xhr.status == 403 && responseData.detail.reason == 'content_policy')
-                        return reject('🤖 chatgpt.js >> ' + responseData.detail.description)
+                        return reject('' + responseData.detail.description)
                     else if (xhr.status != 200)
-                        return reject('🤖 chatgpt.js >> Request failed. Cannot contact custom instructions endpoint.')
+                        return reject('Request failed. Cannot contact custom instructions endpoint.')
                     console.info(`Custom instructions successfully contacted with method ${method}`)
                     return resolve(responseData || {}) // return response data no matter what the method is
                 }
@@ -1139,10 +1293,11 @@ const chatgpt = {
         }
     },
 
-    isDarkMode() { return document.documentElement.classList.contains('dark') },
+    isDarkMode() { return chatgpt.settings.scheme.isDark() },
     isFullScreen() { return chatgpt.browser.isFullScreen() },
 
     async isIdle(timeout = null) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         const obsConfig = { childList: true, subtree: true }
 
         // Create promises
@@ -1156,12 +1311,12 @@ const chatgpt = {
             })
             await new Promise(resolve => // when reply starts generating
                 new MutationObserver((_, obs) => {
-                    if (chatgpt.getStopBtn()) { obs.disconnect() ; resolve() }
+                    if (chatgpt.getStopButton()) { obs.disconnect() ; resolve() }
                 }).observe(document.body, obsConfig)
             )
             return new Promise(resolve => // when reply stops generating
                 new MutationObserver((_, obs) => {
-                    if (!chatgpt.getStopBtn()) { obs.disconnect() ; resolve(true) }
+                    if (!chatgpt.getStopButton()) { obs.disconnect() ; resolve(true) }
                 }).observe(document.body, obsConfig)
             )
         })()
@@ -1170,40 +1325,63 @@ const chatgpt = {
     },
 
     async isLoaded(timeout = null) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         const timeoutPromise = timeout ? new Promise(resolve => setTimeout(() => resolve(false), timeout)) : null
         const isLoadedPromise = new Promise(resolve => {
-            if (chatgpt.getNewChatBtn()) resolve(true)
+            if (chatgpt.getNewChatButton()) resolve(true)
             else new MutationObserver((_, obs) => {
-                if (chatgpt.getNewChatBtn()) { obs.disconnect() ; resolve(true) }
+                if (chatgpt.getNewChatButton()) { obs.disconnect() ; resolve(true) }
             }).observe(document.documentElement, { childList: true, subtree: true })
         })
         return await ( timeoutPromise ? Promise.race([isLoadedPromise, timeoutPromise]) : isLoadedPromise )
     },
 
-    isLightMode() { return document.documentElement.classList.contains('light') },
-    isTempChat() { return location.search == '?temporary-chat=true' },
+    isLightMode() { return chatgpt.settings.scheme.isLight() },
+
+    isTempChat() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        return location.search == '?temporary-chat=true'
+    },
+
     isTyping() { return !!this.getStopButton() },
-    login() { window.location.href = 'https://chat.openai.com/auth/login' },
-    logout() { window.location.href = 'https://chat.openai.com/auth/logout' },
+
+    login() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        window.location.href = 'https://chat.openai.com/auth/login'
+    },
+
+    logout() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        window.location.href = 'https://chat.openai.com/auth/logout'
+    },
 
     menu: {
+
         toggle() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             try {
-                const el = document.querySelector(chatgpt.selectors.btns.menu)
-                if (!el) return
+                const menuBtn = document.querySelector(chatgpt.selectors.btns.menu) ; if (!menuBtn) return
                 ['pointerdown','mousedown','pointerup','mouseup','click'].forEach(eventType =>
-                    el.dispatchEvent(new MouseEvent(eventType, { bubbles: true, cancelable: true, view: window })))
+                    menuBtn.dispatchEvent(new MouseEvent(eventType, { bubbles: true, cancelable: true, view: window })))
             } catch (err) { console.error(err.message) }
         },
 
-        open() { document.querySelector(`${chatgpt.selectors.btns.menu}[aria-expanded="false"]`) && this.toggle() },
-        close() { document.querySelector(`${chatgpt.selectors.btns.menu}[aria-expanded="true"]`) && this.toggle() }
+        open() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            document.querySelector(`${chatgpt.selectors.btns.menu}[aria-expanded="false"]`) && this.toggle()
+        },
+
+        close() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            document.querySelector(`${chatgpt.selectors.btns.menu}[aria-expanded="true"]`) && this.toggle()
+        }
     },
 
     minify() { chatgpt.code.minify() },
 
     notify(...args) {
-        const scheme = chatgpt.isDarkMode() ? 'dark' : 'light'
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        const scheme = chatgpt.settings.scheme.isDark() ? 'dark' : 'light'
         let msg, position, notifDuration, shadow, toast
         if (typeof args[0] == 'object' && !Array.isArray(args[0]))
             ({ msg, position, notifDuration, shadow, toast } = args[0])
@@ -1214,7 +1392,7 @@ const chatgpt = {
 
         // Create/append notification div
         const notificationDiv = document.createElement('div') // make div
-        notificationDiv.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now()
+        notificationDiv.id = Math.floor(chatgpt.randomFloat() *1000000) + Date.now()
         notificationDiv.classList.add('chatgpt-notif')
         notificationDiv.textContent = msg // insert msg
         document.body.append(notificationDiv) // insert into DOM
@@ -1297,10 +1475,10 @@ const chatgpt = {
         const thisQuadrantQueue = notifyProps.queue[notificationDiv.quadrant]
         if (thisQuadrantQueue.length > 1) {
             try { // to move old notifications
-                for (const divId of thisQuadrantQueue.slice(0, -1)) { // exclude new div
-                    const oldDiv = document.getElementById(divId),
-                          offsetProp = oldDiv.style.top ? 'top' : 'bottom', // pick property to change
-                          vOffset = +parseInt(oldDiv.style[offsetProp]) +5 + oldDiv.getBoundingClientRect().height
+                for (const divID of thisQuadrantQueue.slice(0, -1)) { // exclude new div
+                    const oldDiv = document.getElementById(divID) ; if (!oldDiv) continue
+                    const offsetProp = oldDiv.style.top ? 'top' : 'bottom' // pick property to change
+                    const vOffset = +parseInt(oldDiv.style[offsetProp]) +5 + oldDiv.getBoundingClientRect().height
                     oldDiv.style[offsetProp] = `${vOffset}px` // change prop
                 }
             } catch (err) { console.warn('Failed to re-position notification:', err) }
@@ -1308,7 +1486,7 @@ const chatgpt = {
 
         // Show notification
         setTimeout(() => {
-            notificationDiv.style.opacity = chatgpt.isDarkMode() ? 0.8 : 0.67 // show msg
+            notificationDiv.style.opacity = chatgpt.settings.scheme.isDark() ? 0.8 : 0.67 // show msg
             notificationDiv.style.transform = 'translateX(0)' // bring from off-screen
             notificationDiv.style.transition = 'transform 0.15s ease, opacity 0.15s ease'
         }, 10)
@@ -1322,7 +1500,7 @@ const chatgpt = {
             notificationDiv.style.animation = `notif-zoom-fade-out ${fadeDuration}s ease-out`
             clearTimeout(dismissFuncTID)
         }
-        const dismissFuncTID = setTimeout(dismissNotif, hideDelay * 1000) // maintain visibility for `hideDelay` secs, then dismiss
+        const dismissFuncTID = setTimeout(dismissNotif, hideDelay *1000) // maintain visibility for `hideDelay` secs, then dismiss
         closeSVG.onclick = dismissNotif // add to close button clicks
 
         // Destroy notification
@@ -1354,26 +1532,24 @@ const chatgpt = {
                     .toString(16).substring(1).toUpperCase() // convert to hex
         })
 
-        // Create [functionNames]
-        const functionNames = []
+        // Create [funcNames]
+        const funcNames = []
         for (const prop in this) {
             if (typeof this[prop] == 'function') {
-                const chatgptIsParent = !Object.keys(this)
-                    .find(obj => Object.keys(this[obj]).includes(this[prop].name))
-                const functionParent = chatgptIsParent ? 'chatgpt' : 'other'
-                functionNames.push([functionParent, prop])
-            } else if (typeof this[prop] == 'object') {
-                for (const nestedProp in this[prop]) {
-                    if (typeof this[prop][nestedProp] == 'function') {
-                        functionNames.push([prop, nestedProp])
-        }}}}
-        functionNames.sort((a, b) => a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]))
+                const chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name))
+                funcNames.push([chatgptIsParent ? 'chatgpt' : 'other', prop])
+            } else if (typeof this[prop] == 'object')
+                for (const nestedProp in this[prop])
+                    if (typeof this[prop][nestedProp] == 'function')
+                        funcNames.push([prop, nestedProp])
+        }
+        funcNames.sort((a, b) => a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]))
 
         // Print methods
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches,
               baseFontStyles = 'font-family: monospace ; font-size: larger ;'
         console.log('\n%c🤖 chatgpt.js methods\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold')
-        for (const functionName of functionNames) {
+        for (const functionName of funcNames) {
             const isChatGptObjParent = /chatgpt|other/.test(functionName[0]),
                   rootFunction = ( functionName[0] == 'chatgpt' ? this[functionName[1]].name
                     : functionName[0] != 'other' ? functionName[0] + '.' + functionName[1]
@@ -1381,7 +1557,7 @@ const chatgpt = {
                         + this[functionName[1]].name )),
                   isAsync = this[functionName[1]]?.constructor.name == 'AsyncFunction'
             console.log('%c>> %c' + ( isChatGptObjParent ? '' : `${functionName[0]}.%c`) + functionName[1]
-                    + ' - https://chatgptjs.org/userguide/' + /(?:.*\.)?(.*)/.exec(rootFunction)[1].toLowerCase() + ( isAsync ? '-async' : '' ) + '\n%c[%c'
+                    + ' - https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md/' + /(?:.*\.)?(.*)/.exec(rootFunction)[1].toLowerCase() + ( isAsync ? '-async' : '' ) + '\n%c[%c'
                 + ((( functionName[0] == 'chatgpt' && functionName[1] == this[functionName[1]].name ) || // parent is chatgpt + names match or
                     !isChatGptObjParent) // parent is chatgpt.obj
                         ? 'Function' : 'Alias of' ) + '%c: %c'
@@ -1415,6 +1591,7 @@ const chatgpt = {
     regenerate() { chatgpt.response.regenerate() },
 
     renderHTML(node) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
               reAttrs = /(\S+)=['"]?((?:.(?!['"]?\s+\S+=|[>']))+.)['"]?/g, // eslint-disable-line
               nodeContent = node.childNodes
@@ -1468,7 +1645,11 @@ const chatgpt = {
     async resend() { chatgpt.send(await chatgpt.getChatData('latest', 'msg', 'user', 'latest')) },
 
     response: {
-        continue() { try { chatgpt.getContinueBtn().click() } catch (err) { console.error(err.message) }},
+
+        continue() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            try { chatgpt.getContinueButton().click() } catch (err) { console.error(err.message) }
+        },
 
         get() {
             // * Returns response via DOM by index arg if OpenAI chat page is active, otherwise uses API w/ following args:
@@ -1489,12 +1670,13 @@ const chatgpt = {
         },
 
         getFromDOM(pos) {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             const responseDivs = document.querySelectorAll('div[data-message-author-role=assistant]'),
                   strPos = pos.toString().toLowerCase()
-            let response = ''
+            let response
             if (!responseDivs.length) return console.error('No conversation found!')
             if (/last|final/.test(strPos)) // get last response
-                response = responseDivs[responseDivs.length - 1].textContent
+                response = responseDivs[responseDivs.length -1].textContent
             else { // get nth response
                 const nthOfResponse = (
 
@@ -1518,71 +1700,157 @@ const chatgpt = {
                     + ( /teen(?:th)?$/.test(strPos) ? 10 : 0 ) // + 10 if -teen/teenth
 
                 )
-                response = responseDivs[nthOfResponse - 1].textContent
+                response = responseDivs[nthOfResponse -1].textContent
             }
             response = response.replace(/^ChatGPT(?:ChatGPT)?/, '') // strip sender name
             return response
         },
 
         getLast() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest') },
-        regenerate() { try { chatgpt.getRegenerateBtn().click() } catch (err) { console.error(err.message) }},
-        stopGenerating() { try { chatgpt.getStopBtn().click() } catch (err) { console.error(err.message) }}
+
+        regenerate() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            try { chatgpt.getRegenerateButton().click() } catch (err) { console.error(err.message) }
+        },
+
+        stopGenerating() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            try { chatgpt.getStopButton().click() } catch (err) { console.error(err.message) }
+        }
     },
 
     reviewCode() { chatgpt.code.review() },
-    scrollToBottom() { try { chatgpt.getScrollBtn().click() } catch (err) { console.error(err.message) }},
 
-    async send(userQuery, options = {}) {
-        const { provider = 'openrouter', stream = true, output = 'return', systemQuery = '', color = 'green' } = options
-        const apiKey = chatgpt.config?.apiKeys?.[provider] || process.env[`${provider.toUpperCase()}_API_KEY`]
-        if (typeof apiKey != 'string' || !apiKey) throw new Error('Missing API key for provider: ' + provider)
-        const respColor = chatgpt.colors?.[color] || chatgpt.colors.green
-        const resp = await fetch(chatgpt.endpoints[provider].chat, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
-            body: JSON.stringify({
-                model: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free', max_tokens: 500, stream,
-                messages: [{ role: 'system', content: systemQuery }, { role: 'user', content: userQuery }]
-            })
-        })
-        if (!resp.ok) {
-            const err = await resp.json().catch(() => null)
-            throw new Error(err?.error?.message || 'API error')
-        }
-        if (!stream || !resp.body) {
-            const text = (await resp.json()).choices?.[0]?.message?.content
-            if (output == 'stdout') console.log(respColor + text + chatgpt.colors.reset)
-            return text
-        }
-        const reader = resp.body.getReader(), decoder = new TextDecoder()
-        let outputStr = ''
-        if (output == 'stdout') process.stdout.write(respColor)
-        while (true) {
-            const { done, value } = await reader.read()
-            if (done) break
-            for (const line of decoder.decode(value, { stream: true }).split('\n')) {
-                if (!line.startsWith('data: ')) continue
-                const json = line.slice(6).trim()
-                if (json == '[DONE]') {
-                    if (output == 'stdout') process.stdout.write(chatgpt.colors.reset + '\n')
-                    return outputStr
-                }
-                try {
-                    const token = JSON.parse(json).choices?.[0]?.delta?.content
-                    if (token) {
-                        if (output == 'stdout') process.stdout.write(token)
-                        outputStr += token
-                    }
-                } catch {}
+    scrollToBottom() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        chatgpt.getScrollToBottomButton()?.click()
+    },
+
+    async send(userQuery, {
+        env = chatgpt.env,
+        provider = 'auto', // or 'google' or 'openrouter'
+        stream = true, // return streaming resp if possible, otherwise text
+        onLoadStart = null, // cb on resp start loading
+        output = 'return', // or 'stdout'
+        systemQuery = '', // for systemPrompt
+        color = 'green', // for stdout
+        messages = null, // array of prev msgs to preserve context
+        maxChars = null, // char limit per msg
+        turnsToPreserve = null, // # of turns to preserve (2 msgs/turn)
+        maxTokens = null // max tokens to use
+    } = {}) {
+
+        if (env == 'frontend') {
+            const textArea = chatgpt.getChatBox()
+            if (!textArea) return console.error('Chatbar element not found!')
+            const msgP = document.createElement('p') ; msgP.textContent = userQuery
+            textArea.querySelector('p').replaceWith(msgP)
+            textArea.dispatchEvent(new Event('input', { bubbles: true })) // enable send button
+            setTimeout(function delaySend() {
+                const sendBtn = chatgpt.getSendButton()
+                if (!sendBtn?.hasAttribute('disabled')) // send msg
+                    chatgpt.browser.isMobile() ? sendBtn.click()
+                        : textArea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }))
+                else setTimeout(delaySend, 222)
+            }, 222)
+
+        } else { // backend
+            if (/^(?:auto|random)$/i.test(provider)) {
+                const availProviders = ['google', 'openrouter'].filter(provider => {
+                    const key = chatgpt.config?.apiKeys?.[provider] || process.env[`${provider.toUpperCase()}_API_KEY`]
+                    return typeof key == 'string' && key
+                })
+                if (!availProviders.length) throw new Error('No providers with valid API keys available')
+                provider = availProviders[Math.floor(Math.random() * availProviders.length)]
             }
+            chatgpt.lastProvider = provider
+            const apiKey = chatgpt.config?.apiKeys?.[provider] || process.env[`${provider.toUpperCase()}_API_KEY`]
+            if (typeof apiKey != 'string' || !apiKey) throw new Error('Missing API key for provider: ' + provider)
+            const respColor = chatgpt.colors?.[color] || chatgpt.colors.green,
+                  url = chatgpt.endpoints[provider].chat +( provider == 'google' ? `?key=${apiKey}` : '' ),
+                  headers = { 'Content-Type': 'application/json' }
+            if (provider == 'openrouter') headers.Authorization = `Bearer ${apiKey}`
+            if (messages && turnsToPreserve > 0) messages = messages.slice(-turnsToPreserve *2)
+            let payload
+            if (provider == 'google') {
+                let contents
+                if (messages) {
+                    contents = messages.map(msg => {
+                        const role = msg.role == 'assistant' ? 'model' : msg.role == 'system' ? 'user' : msg.role
+                        let text = trunc(msg.content, maxChars)
+                        if (msg.role == 'system') text = `[System Instructions] ${text}`
+                        return { parts: [{ text }], role }
+                    })
+                } else {
+                    const userContent = trunc(systemQuery ? `${systemQuery}\n\n${userQuery}` : userQuery, maxChars)
+                    contents = [{ parts: [{ text: userContent }], role: 'user' }]
+                }
+                const generationConfig = {}
+                if (maxTokens != null) generationConfig.maxOutputTokens = maxTokens
+                payload = { contents, generationConfig }
+            } else { // openrouter
+                let msgs = []
+                if (messages)
+                    msgs = messages.map(msg => ({ role: msg.role, content: trunc(msg.content, maxChars)}))
+                else {
+                    if (systemQuery) msgs.push({ role: 'system', content: trunc(systemQuery, maxChars) })
+                    msgs.push({ role: 'user', content: trunc(userQuery, maxChars) })
+                }
+                payload = { model: 'openrouter/free', stream, messages: msgs }
+                if (maxTokens != null) payload.max_tokens = maxTokens
+            }
+            const resp = await fetch(url, { method: 'POST', headers, body: JSON.stringify(payload) })
+            if (!resp.ok) {
+                const err = await resp.json().catch(() => null)
+                throw new Error(err?.error?.message || 'API error')
+            }
+            if (provider == 'google' || !stream || !resp.body) { // non-streaming
+                const data = await resp.json()
+                chatgpt.lastModel = data.model
+                const text =
+                    provider == 'google' ? data?.candidates?.[0]?.content?.parts?.map(part => part.text).join('')
+                                         : data?.choices?.[0]?.message?.content
+                if (output == 'stdout') console.log(respColor + text + chatgpt.colors.reset)
+                return text
+            }
+            const reader = resp.body.getReader(), decoder = new TextDecoder()
+            let outputStr = '', activeColor = '', streamStarted = false
+            if (output == 'stdout') { process.stdout.write(respColor) ; activeColor = respColor }
+            while (true) {
+                const { done, value } = await reader.read()
+                if (done) break
+                for (const line of decoder.decode(value, { stream: true }).split('\n')) {
+                    if (!line.startsWith('data: ')) continue
+                    const json = line.slice(6).trim()
+                    if (json == '[DONE]') {
+                        if (output == 'stdout') process.stdout.write(chatgpt.colors.reset + '\n')
+                        return outputStr
+                    }
+                    try {
+                        const parsed = JSON.parse(json)
+                        if (parsed.model) chatgpt.lastModel = parsed.model
+                        const token = parsed.choices?.[0]?.delta?.content
+                        if (token) {
+                            if (!streamStarted) { streamStarted = true ; onLoadStart?.() }
+                            if (output == 'stdout') process.stdout.write(activeColor + token)
+                            outputStr += token
+                        }
+                    } catch {}
+                }
+            }
+            if (output == 'stdout') process.stdout.write(chatgpt.colors.reset + '\n')
+
+            function trunc(text, max) {
+                return max > 0 && typeof text == 'string' && text.length > max ? `${text.slice(0, max -3)}...` : text }
+
+            return outputStr
         }
-        if (output == 'stdout') process.stdout.write(chatgpt.colors.reset + '\n')
-        return outputStr
     },
 
     sendInNewChat(msg) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         if (typeof msg != 'string') return console.error('Message must be a string!')
-        try { chatgpt.getNewChatBtn().click() } catch (err) { return console.error(err.message) }
+        try { chatgpt.getNewChatButton().click() } catch (err) { return console.error(err.message) }
         setTimeout(() => chatgpt.send(msg), 500)
     },
 
@@ -1597,10 +1865,31 @@ const chatgpt = {
 
     settings: {
         scheme: {
-            isDark() { return document.documentElement.classList.contains('dark') },
-            isLight() { return document.documentElement.classList.contains('light') },
+
+            activateDark() {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+                document.documentElement.classList.replace('light', 'dark')
+                document.documentElement.style.colorScheme = localStorage.theme = 'dark'
+            },
+
+            activateLight() {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+                document.documentElement.classList.replace('dark', 'light')
+                document.documentElement.style.colorScheme = localStorage.theme = 'light'
+            },
+
+            isDark() {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+                return document.documentElement.classList.contains('dark')
+            },
+
+            isLight() {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+                return document.documentElement.classList.contains('light')
+            },
 
             set(value) {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
 
                 // Validate value
                 const validValues = ['dark', 'light', 'system']
@@ -1620,6 +1909,7 @@ const chatgpt = {
             },
 
             toggle() {
+                if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
                 const [schemeToRemove, schemeToAdd] = this.isDark() ? ['dark', 'light'] : ['light', 'dark']
                 document.documentElement.classList.replace(schemeToRemove, schemeToAdd)
                 document.documentElement.style.colorScheme = schemeToAdd
@@ -1628,13 +1918,14 @@ const chatgpt = {
         }
     },
 
-    async sentiment(text, entity) {
-        for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-            return console.error(`Argument ${ i + 1 } must be a string.`)
+    async sentiment(text, entity, { verbose = false } = {}) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
+        if (!chatgpt._validateArg({ arg: entity, type: 'string' })) return
         chatgpt.send('What is the sentiment of the following text'
-            + ( entity ? ` towards the entity ${entity},` : '')
+            + ( entity ? ` towards the entity ${entity},` : '' )
             + ' from strongly negative to strongly positive?\n\n' + text )
-        console.info('Analyzing sentiment...')
+        if (verbose) console.info('Analyzing sentiment...')
         await chatgpt.isIdle()
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
@@ -1646,8 +1937,8 @@ const chatgpt = {
     // method = [ 'alert'|'clipboard' ] (defaults to 'clipboard' if '' or unpassed)
 
         const validMethods = ['alert', 'notify', 'notification', 'clipboard', 'copy']
-        if (!validMethods.includes(method)) return console.error(
-            `Invalid method '${method}' passed. Valid methods are [${validMethods}].`)
+        if (!validMethods.includes(method))
+            return console.error(`Invalid method '${method}' passed. Valid methods are [${validMethods}].`)
 
         const getChatNode = token => {
             return new Promise((resolve, reject) => {
@@ -1657,31 +1948,33 @@ const chatgpt = {
                     xhr.setRequestHeader('Content-Type', 'application/json')
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
-                        if (xhr.status != 200)
-                            return reject('🤖 chatgpt.js >> Request failed. Cannot retrieve chat node.')
-                        return resolve(JSON.parse(xhr.responseText).current_node) // chat messages until now
+                        return xhr.status != 200 ? reject('Request failed. Cannot retrieve chat node.')
+                             : resolve(JSON.parse(xhr.responseText).current_node) // chat msgs til now
                     }
                     xhr.send()
-        })})}
+                })
+            })
+        }
 
         const makeChatToShare = (token, node) => {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest()
                 chatgpt.getChatData(chatToGet).then(chat => {
-                    xhr.open('POST', chatgpt.endpoints.openai.share_create, true)
+                    xhr.open('POST', chatgpt.endpoints.openai.shareCreate, true)
                     xhr.setRequestHeader('Content-Type', 'application/json')
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
-                        if (xhr.status != 200)
-                            return reject('🤖 chatgpt.js >> Request failed. Cannot initialize share chat.')
-                        return resolve(JSON.parse(xhr.responseText)) // return untouched data
+                        return xhr.status != 200 ? reject('Request failed. Cannot initialize share chat.')
+                             : resolve(JSON.parse(xhr.responseText)) // return untouched data
                     }
                     xhr.send(JSON.stringify({ // request body
                         current_node_id: node, // by getChatNode
                         conversation_id: chat.id, // current chat id
                         is_anonymous: true // show user name in the conversation or not
                     }))
-        })})}
+                })
+            })
+        }
 
         const confirmShareChat = (token, data) => {
             return new Promise((resolve, reject) => {
@@ -1690,8 +1983,7 @@ const chatgpt = {
                 xhr.setRequestHeader('Content-Type', 'application/json')
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 xhr.onload = () => {
-                    if (xhr.status != 200)
-                        return reject('🤖 chatgpt.js >> Request failed. Cannot share chat.')
+                    if (xhr.status != 200) return reject('Request failed. Cannot share chat.')
                     console.info(`Chat shared at '${data.share_url}'`)
                     return resolve() // the response has nothing useful
                 }
@@ -1703,42 +1995,45 @@ const chatgpt = {
                     is_visible: data.is_visible,
                     is_anonymous: data.is_anonymous
                 }))
-        })}
+            })
+        }
 
-        return new Promise(resolve => {
-            chatgpt.getAccessToken().then(token => { // get access token
-                getChatNode(token).then(node => { // get chat node
-                    makeChatToShare(token, node).then(data => {
+        return new Promise(resolve =>
+            chatgpt.getAccessToken().then(token =>
+                getChatNode(token).then(node =>
+                    makeChatToShare(token, node).then(data =>
                         confirmShareChat(token, data).then(() => {
                             if (['copy', 'clipboard'].includes(method)) navigator.clipboard.writeText(data.share_url)
                             else chatgpt.alert('🚀 Share link created!',
                                 `"${data.title}" is available at: <a target="blank" rel="noopener" href="${
                                     data.share_url}">${data.share_url}</a>`,
                                 [ function openLink() { window.open(data.share_url, '_blank', 'noopener') },
-                                    function copyLink() { navigator.clipboard.writeText(data.share_url) }])
+                                  function copyLink() { navigator.clipboard.writeText(data.share_url) }])
                             resolve(data.share_url)
-        })})})})})
+                        })
+                    )
+                )
+            )
+        )
     },
 
     showFooter() { chatgpt.footer.show() },
     showHeader() { chatgpt.header.show() },
 
     sidebar: {
-        exists() { return !!chatgpt.getNewChatLink() },
-        hide() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!') },
-        show() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!') },
-        isOff() { return !this.isOn() },
 
-        isOn() {
-            const sidebar = (() => {
-                return chatgpt.sidebar.exists() ? document.querySelector(chatgpt.selectors.sidebar) : null })()
-            if (!sidebar) { return console.error('Sidebar element not found!') || false }
-            else return chatgpt.browser.isMobile() ?
-                document.documentElement.style.overflow == 'hidden'
-              : sidebar.style.visibility != 'hidden' && parseInt(getComputedStyle(sidebar).width) > 150
+        exists() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return !!chatgpt.getNewChatLink()
+        },
+
+        hide() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            this.isOn() ? this.toggle() : console.info('Sidebar already hidden!')
         },
 
         async isLoaded(timeout = 5000) {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             await chatgpt.isLoaded()
             const timeoutPromise = new Promise(resolve => setTimeout(() => resolve(false), timeout))
             const isLoadedPromise = new Promise(resolve => {
@@ -1750,21 +2045,46 @@ const chatgpt = {
             return await Promise.race([isLoadedPromise, timeoutPromise])
         },
 
+        isOff() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            return !this.isOn()
+        },
+
+        isOn() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            const sidebar = (() => {
+                return chatgpt.sidebar.exists() ? document.querySelector(chatgpt.selectors.sidebar) : null })()
+            if (!sidebar) { return console.error('Sidebar element not found!') || false }
+            else return chatgpt.browser.isMobile() ? document.documentElement.style.overflow == 'hidden'
+                      : sidebar.style.visibility != 'hidden' && parseInt(getComputedStyle(sidebar).width) > 150
+        },
+
+        show() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+            this.isOff() ? this.toggle() : console.info('Sidebar already shown!')
+        },
+
         toggle() {
+            if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
             const sidebarToggle = document.querySelector(chatgpt.selectors.btns.sidebar)
             if (!sidebarToggle) console.error('Sidebar toggle not found!')
             sidebarToggle.click()
         }
     },
 
-    startNewChat() { try { chatgpt.getNewChatBtn().click() } catch (err) { console.error(err.message) }},
+    startNewChat() {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        try { chatgpt.getNewChatButton().click() } catch (err) { console.error(err.message) }
+    },
+
     stop() { chatgpt.response.stopGenerating() },
 
     async suggest(ideaType, details) {
-        if (!ideaType) return console.error('ideaType (1st argument) not supplied'
-            + `(e.g. 'gifts', 'names', 'recipes', etc.)`)
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        if (!ideaType)
+            return console.error(`ideaType (1st argument) not supplied (e.g. 'gifts', 'names', 'recipes', etc.)`)
         for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-            return console.error(`Argument ${ i + 1 } must be a string.`)
+            return console.error(`Argument ${ i +1 } must be a string.`)
         chatgpt.send('Suggest some names. ' + ( details || '' ))
         console.info(`Creating ${ideaType}...`)
         await chatgpt.isIdle()
@@ -1798,24 +2118,25 @@ const chatgpt = {
         } catch (err) { console.error(err) }
     },
 
-    async summarize(text) {
-        if (!text) return console.error('Text (1st) argument not supplied. Pass some text!')
-        if (typeof text != 'string') return console.error('Text argument must be a string!')
+    async summarize(text, { verbose = false } = {}) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
         chatgpt.send('Summarize the following text:\n\n' + text)
-        console.info('Summarizing text...')
+        if (verbose) console.info('Summarizing text...')
         await chatgpt.isIdle()
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
 
     toggleScheme() { chatgpt.settings.scheme.toggle() },
 
-    async translate(text, outputLang) {
-        if (!text) return console.error('Text (1st) argument not supplied. Pass some text!')
-        if (!outputLang) return console.error('outputLang (2nd) argument not supplied. Pass a language!')
+    async translate(text, outputLang, { verbose = false } = {}) {
+        if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
+        if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
+        if (!chatgpt._validateArg({ arg: outputLang, type: 'lang' })) return
         for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-            return console.error(`Argument ${ i + 1 } must be a string!`)
+            return console.error(`Argument ${ i +1 } must be a string!`)
         chatgpt.send(`Translate the following text to ${outputLang}. Only reply with the translation.\n\n${text}`)
-        console.info('Translating text...')
+        if (verbose) console.info('Translating text...')
         await chatgpt.isIdle()
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
     },
@@ -1823,14 +2144,13 @@ const chatgpt = {
     unminify() { chatgpt.code.unminify() },
 
     uuidv4() {
-        try {
-            // use native secure uuid generator when available
+        try { // to use native secure uuid generator
             return crypto.randomUUID()
-        } catch(_e) {
+        } catch(err) {
             let d = new Date().getTime() // get current timestamp in ms (to ensure UUID uniqueness)
             const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
                 const r = ( // generate random nibble
-                    ( d + (window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) - 1))*16)%16 | 0 )
+                    ( d +( window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) -1 ))*16)%16 | 0 )
                 d = Math.floor(d/16) // correspond each UUID digit to unique 4-bit chunks of timestamp
                 return ( c == 'x' ? r : (r&0x3|0x8) ).toString(16) // generate random hexadecimal digit
             })
@@ -1838,24 +2158,23 @@ const chatgpt = {
         }
     },
 
-    writeCode() { chatgpt.code.write() }
+    writeCode() { chatgpt.code.write() },
+
+    _validateArg({ arg, type = 'string' }) {
+        return !arg ? !!console.error('Arg not supplied!')
+                : ['lang', 'string'].includes(type) && typeof arg != 'string' ?
+                        !!console.error(`'${type}' arg must be a string!`)
+                : true
+    },
+
+    _validateEnv({ allowed = [] } = {}) {
+        const allowedEnvs = [].concat(allowed)
+        return !allowedEnvs.length || allowedEnvs.includes(chatgpt.env) ? true
+            : !!console.error(`This method can only be used in: ${allowedEnvs.join(' or ')} (current: ${chatgpt.env})`)
+    }
 }
 
 chatgpt.scheme = { ...chatgpt.settings.scheme } // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
 
-// Prefix console logs w/ '🤖 chatgpt.js >> '
-const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info
-console.error = (...args) => {
-    if (typeof args[0] == 'string') {
-        if (!args[0].startsWith(consolePrefix)) ogError(consolePrefix + args[0], ...args.slice(1))
-        else ogError(...args)
-    } else ogError(consolePrefix, ...args)
-}
-console.info = (msg) => {
-    if (!msg.startsWith(consolePrefix)) ogInfo(consolePrefix + msg)
-    else ogInfo(msg)
-}
-
-// Export chatgpt object
-try { window.chatgpt = chatgpt } catch (err) {} // for Greasemonkey
+try { window.chatgpt = chatgpt } catch (err) {} // for browser
 try { module.exports = chatgpt } catch (err) {} // for CommonJS
