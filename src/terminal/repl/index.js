@@ -35,7 +35,7 @@ async function start() {
 }
 
 if (require.main == module) {
-    const init = require('../cli/lib/init')
+    const init = require('../lib/init')
     init.env()
     init.cli().then(start)
 }

@@ -1,4 +1,4 @@
-const language = require('../cli/lib/language'),
+const language = require('./language'),
       nonLatinLocales = require('non-latin-locales'),
       settings = require('./settings')
 

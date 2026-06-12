@@ -1,7 +1,8 @@
-require('../cli/lib/init').env()
-
 const git = require('./git'),
+      init = require('./init'),
       messages = require('./messages')
+
+init.env()
 
 module.exports = {
 
@@ -25,7 +26,7 @@ module.exports = {
     },
 
     help() { log.help() },
-    init() { return require('../cli/lib/init').configFile() },
+    init() { return init.configFile() },
     joke() { return this.query('Tell me a joke and make it funny.') },
 
     async query(query, options = {}) {

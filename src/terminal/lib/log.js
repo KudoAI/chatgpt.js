@@ -1,5 +1,5 @@
-const colors = require('../cli/lib/color'),
-    { getDownloads, getVer } = require('../cli/lib/pkg'),
+const colors = require('./color'),
+    { getDownloads, getVer } = require('./pkg'),
       settings = require('./settings'),
       string = require('./string')
 

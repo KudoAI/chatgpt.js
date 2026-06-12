@@ -1,4 +1,4 @@
-const data = require('../cli/lib/data'),
+const data = require('./data'),
       fs = require('fs'),
       os = require('os'),
       path = require('path'),
@@ -163,7 +163,7 @@ module.exports = {
                         cli.msgs.error_invalidFilepath || 'must be a valid existing file path. Got' }: ${configVal}`)
                 },
                 langCode() {
-                    if (configVal && !require('../cli/lib/language').validateLangCode(configVal))
+                    if (configVal && !require('./language').validateLangCode(configVal))
                         log.errorAndExit(`[${key}] ${cli.msgs.error_invalidLangCode}: ${configVal}`)
                 },
                 positiveInt() {

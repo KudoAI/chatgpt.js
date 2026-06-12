@@ -3,13 +3,13 @@
 (async () => {
     'use strict'
 
-    const init = require('./lib/init')
+    const init = require('../lib/init')
     init.env()
 
     globalThis.log = require('../lib/log')
     const { build: buildQuery } = require('../lib/query'),
             chatgpt = require(`../../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
-          { resolveSrc } = require('./lib/resolver'),
+          { resolveSrc } = require('../lib/resolver'),
             run = require('../lib/run')
 
     await init.cli()

@@ -1,9 +1,9 @@
 const { execSync } = require('child_process'),
         fs = require('fs'),
         language = require('./language'),
-        messages = require('../../lib/messages'),
+        messages = require('./messages'),
         path = require('path'),
-        settings = require('../../lib/settings')
+        settings = require('./settings')
 
 module.exports = {
 
@@ -74,6 +74,6 @@ module.exports = {
             width: process.stdout.columns || 80
         })
         env.modes.debug = env.args.some(arg => /^--?(?:V|debug(?:[-_]?mode)?)$/.test(arg))
-        env.paths = { libData: `../../../${ env.modes.dev ? '..' : 'data' }` }
+        env.paths = { libData: `../../${ env.modes.dev ? '..' : 'data' }` }
     }
 }
