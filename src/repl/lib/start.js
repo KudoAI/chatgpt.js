@@ -25,7 +25,7 @@ module.exports = {
                       args = parts.slice(1)
                 await route(cmd, args, rl)
             } else
-                await run.query(buildQuery(input, cli.config, env.supports.unicode))
+                await run.query(buildQuery(input))
             rl.prompt()
         }
     }
