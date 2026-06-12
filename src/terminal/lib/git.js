@@ -1,10 +1,10 @@
+const chatgpt = require(`../../chatgpt${ env.modes.dev ? '' : '.min' }.js`), /* eslint-disable-line */
+      loader = require('./loader').create({ width: env.width }),
+      messages = require('./messages')
+
 module.exports = {
 
     async generateCommitMsg({ includeDiff = false } = {}) {
-        const chatgpt = require(`../../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
-              clipboardy = require('node-clipboardy'),
-              loader = require('./loader').create({ width: env.width }),
-              messages = require('./messages')
         let diff
         try { diff = this.getDiff() } catch (err) { return log.error(err.message) }
         const commitPrompt = 'Generate a concise, conventional commit message'
@@ -24,7 +24,7 @@ module.exports = {
                 msg += `\n\n${humanDiff}`
             }
             console.log(msg)
-            clipboardy.writeSync(msg)
+            require('node-clipboardy').writeSync(msg)
             log.info(`${cli.msgs.info_copiedToClipboard}.`)
         } finally { loader.stop() }
     },
@@ -43,9 +43,6 @@ module.exports = {
     },
 
     async printDiff() {
-        const chatgpt = require(`../../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
-              loader = require('./loader').create({ width: env.width }),
-              messages = require('./messages')
         let diff
         try { diff = this.getDiff() } catch (err) { return log.error(err.message) }
         const prompt = `Summarize the following git diff changes in plain, human-readable language (max 30 words):\n\n${
