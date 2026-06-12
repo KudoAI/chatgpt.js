@@ -61,11 +61,11 @@ module.exports = {
                 `${cli.prefix}${cli.msgs.prefix_source}: ${cli.urls.src}`
             ],
             usage: [
-                `\n${this.colors.bw}o ${cli.msgs.helpSection_usage}:${this.colors.nc}`,
+                `\n${this.colors.bw}o ${cli.msgs.helpSection_usage.toLowerCase()}:${this.colors.nc}`,
                 ` ${this.colors.bw}» ${this.colors.bg}${cli.cmdFormat}${this.colors.nc}`
             ],
             params: [
-                `\n${this.colors.bw}o ${cli.msgs.helpSection_params}:${this.colors.nc}`,
+                `\n${this.colors.bw}o ${cli.msgs.helpSection_params.toLowerCase()}:${this.colors.nc}`,
                 ` -p, --provider <provider>            ${cli.msgs.optionDesc_provider}.`,
                 ` -u, --ui-lang <code>                 ${cli.msgs.optionDesc_uiLang}.`,
                 ` -L, --reply-lang <code|name>         ${cli.msgs.optionDesc_replyLang}.`,
@@ -78,19 +78,19 @@ module.exports = {
                 ` -c, --config <filepath|url>          ${cli.msgs.optionDesc_config}.`
             ],
             flags: [
-                `\n${this.colors.bw}o ${cli.msgs.helpSection_flags}:${this.colors.nc}`,
+                `\n${this.colors.bw}o ${cli.msgs.helpSection_flags.toLowerCase()}:${this.colors.nc}`,
                 ` -x, --copy                           ${cli.msgs.optionDesc_copy}.`,
                 ` -A, --no-suggest                     ${cli.msgs.optionDesc_noSuggest}.`,
                 ` -V, --quiet                          ${cli.msgs.optionDesc_quiet}.`
             ],
             gitOptions: [
-                `\n${this.colors.bw}o ${cli.msgs.helpSection_gitOptions}:${this.colors.nc}`,
+                `\n${this.colors.bw}o ${cli.msgs.helpSection_gitOptions.toLowerCase()}:${this.colors.nc}`,
                 ` -g, --commit-msg                     ${cli.msgs.optionDesc_commitMsg}.`,
                 ` -G, --commit-msg-example <msg>       ${cli.msgs.optionDesc_commitMsgExample}.`,
                 ` -d, --diff                           ${cli.msgs.optionDesc_diff}.`
             ],
             cmds: [
-                `\n${this.colors.bw}o ${cli.msgs.helpSection_cmds}:${this.colors.nc}`,
+                `\n${this.colors.bw}o ${cli.msgs.helpSection_cmds.toLowerCase()}:${this.colors.nc}`,
                 ` -i, --init                           ${cli.msgs.optionDesc_init}.`,
                 ` -I, --interactive                    ${cli.msgs.optionDesc_interactive}.`,
                 ` -j, --joke                           ${cli.msgs.optionDesc_joke}.`,
