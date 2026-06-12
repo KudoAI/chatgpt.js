@@ -6,9 +6,11 @@
     "models": {
       "free": {
         "gemini-3.1-flash-lite-preview:generateContent": { // https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-lite
-          "inputTypes": ["audio", "image", "pdf", "text", "video"], "outputTypes": ["text"],
-          "strengths": ["coding", "urlContext"]
-        },
+          "dataTypes": { "input": ["audio", "image", "pdf", "text", "video"], "outoput": ["text"] },
+          "date": { "update": "2026-05", "knowledgeCutoff": "2025-01" },
+          "strengths": ["coding", "urlContext"],
+          "tokenLimit": { "input": 1048576, "output": 65536 }
+        }
       }
     },
     "requiresAPIkey": true
@@ -20,15 +22,31 @@
     "models": {
       "free": {
         "cognitivecomputations/dolphin-mistral-24b-venice-edition:free": { // https://openrouter.ai/cognitivecomputations/dolphin-mistral-24b-venice-edition:free
-          "inputTypes": ["image", "text"], "outputTypes": ["text"], "releaseDate": "2025-07-09" },
-        "bytedance-seed/seedream-4.5": { // https://openrouter.ai/bytedance-seed/seedream-4.5
-          "inputTypes": ["image", "text"], "outputTypes": ["text"], "releaseDate": "2025-12-23" },
+          "dataTypes": { "input": ["text"], "output": ["text"] },
+          "date": { "release": "2025-07-09", "knowledgeCutoff": "2024-04" },
+          "strengths": ["uncensored"],
+          "tokenLimit": { "output": 32800 }
+        },
+        "https://openrouter.ai/bytedance-seed/seedream-4.5:free": { // https://openrouter.ai/https://openrouter.ai/bytedance-seed/seedream-4.5:free
+          "dataTypes": { "input": ["image", "text"], "output": ["image"] },
+          "date": { "release": "2025-12-23" },
+          "strengths": ["artistic"]
+        },
         "google/gemma-4-26b-a4b-it:free": { // https://openrouter.ai/google/gemma-4-26b-a4b-it:free
-          "inputTypes": ["image", "text", "video"], "outputTypes": ["text"], "releaseDate": "2026-04-03" },
+          "inputTypes": ["image", "text", "video"], "outputTypes": ["text"],
+          "date": { "release": "2026-04-03" },
+          "strengths": ["reasoning"],
+          "tokenLimit": { "output": 32800 }
+        },
         "google/gemma-4-31b-it:free": { // https://openrouter.ai/google/gemma-4-31b-it:free
-          "inputTypes": ["image", "text", "video"], "outputTypes": ["text"], "releaseDate": "2026-04-02" },
+          "inputTypes": ["image", "text", "video"], "outputTypes": ["text"],
+          "date": { "release": "2026-04-02" },
+          "strengths": ["coding", "multilingual", "reasoning"],
+          "tokenLimit": { "output": 32800 }
+        },
         "moonshotai/kimi-k2.6:free": { // https://openrouter.ai/moonshotai/kimi-k2.6:free
-          "inputTypes": ["image", "text"], "outputTypes": ["text"], "releaseDate": "2026-04-20",
+          "inputTypes": ["image", "text"], "outputTypes": ["text"],
+          "date": { "release": "2026-04-20" },
           "strengths": ["agentic", "coding"]
         },
         "liquid/lfm-2.5-1.2b-instruct": { // https://openrouter.ai/liquid/lfm-2.5-1.2b-instruct
