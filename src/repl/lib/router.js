@@ -11,6 +11,8 @@ async function route(cmd, args, rl) {
             run.clear() ; break
         case 'joke' : case 'j' :
             await run.joke() ; break
+        case 'fortune' : case 'f' :
+            await run.fortune() ; break
         case 'random' : case 'r' :
             await run.randomAnswer() ; break
         case 'ascii' : case 'art' : case 'a' :
@@ -19,7 +21,7 @@ async function route(cmd, args, rl) {
             if (!args.length) return log.warn(`${cli.msgs.helpSection_usage}: /summarize <text|filepath|url>`)
             await run.summarize(args.join(' '))
             break
-        } case 'stats' :
+        } case 'stats':
             await run.stats() ; break
         case 'version' : case 'v' :
             run.version() ; break
@@ -62,7 +64,7 @@ async function route(cmd, args, rl) {
 
 function showHelp() {
     log.help(['header', 'usage', 'params', 'flags', 'cmds'])
-    log.data(`\n  REPL ${cli.msgs.data_slashCmds}: /help, /exit, /clear, /joke, /random, /ascii [subject]`)
+    log.data(`\n  REPL ${cli.msgs.data_slashCmds}: /help, /exit, /clear, /joke, /fortune, /random, /ascii [subject]`)
     log.data('  /summarize <text|file|url>, /stats, /version, /commit, /init')
     log.data('  /provider <name>, /maxchars <num>, /maxtokens <num>, /turns <num>')
 }

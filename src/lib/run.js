@@ -11,6 +11,7 @@ module.exports = {
 
 	clear() { return messages.clearChain() },
 	commitMsg() { return require('./git').generateCommitMsg() },
+	fortune() { return this.query('Tell me my fortune the length of a fortune cookie paper.') },
 	help() { log.help() },
 	init() { return require('../cli/lib/init').configFile() },
 	joke() { return this.query('Tell me a joke and make it funny.') },
