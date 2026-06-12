@@ -82,7 +82,7 @@ chatgpt  # or cjs
 Parameter options:
  -p, --provider <provider>            Provider for chat API ('auto', 'google', or 'openrouter')
  -u, --ui-lang <code>                 ISO 639-1 code of language to display UI in.
- -L, --reply-lang <text>              Language for AI to reply in.
+ -L, --reply-lang <code|name>         Language for AI to reply in.
  -q, --query <msg>                    Query to send AI.
  -s, --summarize <filepath|text|url>  Path or URL to file or text to summarize.
  -a, --ascii-art [subject]            Render ASCII art of optional subject.
