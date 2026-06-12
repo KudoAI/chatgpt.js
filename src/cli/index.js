@@ -36,13 +36,10 @@
         if (cli.config.replyLang && env.supports.unicode)
             query += `\n\nRespond in '${cli.config.replyLang}' language.`
     }
-    log.debug(`query = ${query}`)
 
     if (new RegExp(`^(?:help|${cli.msgs.query_hi})(?:\n|$)`).test(query)) {
         log.help() ; log.break() }
 
     await run.query(query, { copy: cli.config.copy })
-    if (chatgpt.lastProvider) log.debug(`Provider used: ${chatgpt.lastProvider}`)
-    if (chatgpt.lastModel) log.debug(`Model used: ${chatgpt.lastModel}`)
 
 })()

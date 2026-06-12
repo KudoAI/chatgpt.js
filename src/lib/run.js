@@ -25,6 +25,8 @@ module.exports = {
                 key: process.env[`${cli.config.provider.toUpperCase()}_API_KEY`] })
 
         const finalQuery = options.query || query
+		log.debug(`query = ${finalQuery}`)
+
         const sendConfig = {
             provider: options.provider || cli.config.provider,
             output: 'stdout',
@@ -43,6 +45,8 @@ module.exports = {
             if (options.copy || cli.config.copy) require('node-clipboardy').writeSync(parsedReply)
             cli.msgChain.push({ role: 'user', content: finalQuery }, { role: 'assistant', content: parsedReply })
             messages.saveChain(cli.msgChain)
+			if (chatgpt.lastProvider) log.debug(`Provider used: ${chatgpt.lastProvider}`)
+        	if (chatgpt.lastModel) log.debug(`Model used: ${chatgpt.lastModel}`)
             return parsedReply
         } finally { loader.stop({ clear: true }) }
     },
