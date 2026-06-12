@@ -3,20 +3,20 @@
 (async () => {
     'use strict'
 
-    const init = require('../lib/init')
+    const init = require('./lib/init')
     init.env()
 
-    globalThis.log = require('../lib/log')
-    const { build: buildQuery } = require('../lib/query'),
+    globalThis.log = require('./lib/log')
+    const { build: buildQuery } = require('./lib/query'),
             chatgpt = require(`../../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
-          { resolveSrc } = require('../lib/resolver'),
-            run = require('../lib/run')
+          { resolveSrc } = require('./lib/resolver'),
+            run = require('./lib/run')
 
     await init.cli()
 
     for (const cmd of ['init', 'commitMsg', 'diff', 'clear', 'help', 'version', 'stats'])
         if (cli.config[cmd]) return run[cmd]()
-    if (cli.config.interactive) return require('../repl').start()
+    if (cli.config.interactive) return require('./repl').start()
 
     if (!chatgpt.config?.apiKeys?.[cli.config.provider])
         chatgpt.setProvider(cli.config.provider, {

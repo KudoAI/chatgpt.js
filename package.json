@@ -21,11 +21,11 @@
     "docs/**/*.md"
   ],
   "bin": {
-    "chatgpt-js": "dist/terminal/cli/index.js",
-    "chatgpt.js": "dist/terminal/cli/index.js",
-    "chatgpt": "dist/terminal/cli/index.js",
-    "cjs": "dist/terminal/cli/index.js",
-    "gpt": "dist/terminal/cli/index.js"
+    "chatgpt-js": "dist/terminal/cli.js",
+    "chatgpt.js": "dist/terminal/cli.js",
+    "chatgpt": "dist/terminal/cli.js",
+    "cjs": "dist/terminal/cli.js",
+    "gpt": "dist/terminal/cli.js"
   },
   "types": "chatgpt.d.ts",
   "scripts": {
