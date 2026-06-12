@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "ប្រាប់ពីទ្រព្យសម្បត្តិរបស់អ្នក" },
   "optionDesc_randomAnswer": { "message": "ឆ្លើយសំណួរចៃដន្យ" },
   "optionDesc_commitMsg": { "message": "បង្កើត សារ ភ្ជាប់ git ពី ការ ផ្លាស់ប្ដូរ និង ចម្លង ទៅ ក្ដារ តម្បៀត ខ្ទាស់" },
+  "optionDesc_diff": {
+    "message": "បង្កើត git diff ដែល អាច អាន បាន របស់ មនុស្ស ហើយ បន្ថែម ទៅ -- compmit- msg ប្រសិន បើ បាន ឆ្លង កាត់"
+  },
   "optionDesc_clear": { "message": "ជម្រះ ខ្សែសង្វាក់ សារ ឃ្លាំង សម្ងាត់" },
   "optionDesc_help": { "message": "បង្ហាញអេក្រង់ជំនួយ" },
   "optionDesc_version": { "message": "បង្ហាញលេខកំណែ" },

@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "Dicitur vobis tua" },
   "optionDesc_randomAnswer": { "message": "POSESES RECTAMVE OMNIBUS" },
   "optionDesc_commitMsg": { "message": "GAME GIT OMNEM EXCUATIONES AC CONSTATIONES AC CONFIGATIONES ET SOCII TABLEARI" },
+  "optionDesc_diff": { "message": "Diffus human-readable git et appendas to --commit-msg, si transvita" },
   "optionDesc_clear": { "message": "Alcun civitas messi" },
   "optionDesc_help": { "message": "Adiutorium ostende" },
   "optionDesc_version": { "message": "Numerum versionis monstra" },

@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "Розкажіть про своє щастя" },
   "optionDesc_randomAnswer": { "message": "Дайте відповідь на випадкове запитання" },
   "optionDesc_commitMsg": { "message": "Згенерувати git-повідомлення про фіксацію змін і скопіювати в буфер обміну" },
+  "optionDesc_diff": {
+    "message": "Створіть читабельну для людини різницю git і додайте до --commit-msg, якщо вона пройдена"
+  },
   "optionDesc_clear": { "message": "Очистити кешований ланцюжок повідомлень" },
   "optionDesc_help": { "message": "Відобразити екран довідки" },
   "optionDesc_version": { "message": "Показати номер версії програми" },

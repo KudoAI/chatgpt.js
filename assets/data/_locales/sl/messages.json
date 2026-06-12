@@ -89,6 +89,7 @@
   "optionDesc_fortune": { "message": "Povejte svojo usodo" },
   "optionDesc_randomAnswer": { "message": "Odgovorite na naključno vprašanje" },
   "optionDesc_commitMsg": { "message": "Ustvari sporočilo git pošiljanje iz sprememb in kopiraj v odložišče" },
+  "optionDesc_diff": { "message": "Ustvari človeku berljivo git diff in dodaj v --commit-msg, če je opravljen" },
   "optionDesc_clear": { "message": "Počisti predpomnjeno verigo sporočil" },
   "optionDesc_help": { "message": "Prikaži zaslon za pomoč" },
   "optionDesc_version": { "message": "Prikaži številko različice" },

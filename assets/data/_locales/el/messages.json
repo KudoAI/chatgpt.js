@@ -89,6 +89,9 @@
   "optionDesc_fortune": { "message": "Πείτε την τύχη σας" },
   "optionDesc_randomAnswer": { "message": "Απαντήστε σε μια τυχαία ερώτηση" },
   "optionDesc_commitMsg": { "message": "Δημιουργία μηνύματος υποβολής git από αλλαγές και αντιγραφή στο πρόχειρο" },
+  "optionDesc_diff": {
+    "message": "Δημιουργήστε αναγνώσιμο από τον άνθρωπο git diff και προσαρτήστε στο --commit-msg εάν περάσει"
+  },
   "optionDesc_clear": { "message": "Εκκαθάριση αλυσίδας μηνυμάτων στην κρυφή μνήμη" },
   "optionDesc_help": { "message": "Εμφάνιση οθόνης βοήθειας" },
   "optionDesc_version": { "message": "Αριθμός έκδοσης" },

@@ -95,6 +95,7 @@
   "optionDesc_fortune": { "message": "بە سامانی خۆت بڵێ" },
   "optionDesc_randomAnswer": { "message": "وەڵامدانەوەی پرسیارێکی هەڕەمەکی" },
   "optionDesc_commitMsg": { "message": "دروستکردنی پەیامی پابەندبوونی git لە گۆڕانکارییەکان و کۆپی کردن بۆ کلیپبۆرد" },
+  "optionDesc_diff": { "message": "به خێرهاتی بۆ هه ژماری admin_msgstr" },
   "optionDesc_clear": { "message": "زنجیره ی په ‌ یامی شاراوه ‌ ی ڕوون" },
   "optionDesc_help": { "message": "پیشاندانی شاشەی یارمەتی" },
   "optionDesc_version": { "message": "ژمارەی وەشان پیشان بدە" },

@@ -89,6 +89,9 @@
   "optionDesc_fortune": { "message": "Кажете му на вашето богатство" },
   "optionDesc_randomAnswer": { "message": "Одговорете на случајно прашање" },
   "optionDesc_commitMsg": { "message": "Генерирајте git commit порака од промените и копирајте на таблата со исечоци" },
+  "optionDesc_diff": {
+    "message": "Генерирање на git diff што може да се чита од човек и додавање на -- commit-msg ако е поминато"
+  },
   "optionDesc_clear": { "message": "Исчисти кеширан синџир на пораки" },
   "optionDesc_help": { "message": "Прикажи екран за помош" },
   "optionDesc_version": { "message": "Број на производител" },

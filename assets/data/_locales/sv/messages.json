@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "Berätta om din förmögenhet" },
   "optionDesc_randomAnswer": { "message": "Svara på en slumpmässig fråga" },
   "optionDesc_commitMsg": { "message": "Generera git commit-meddelande från ändringar och kopiera till urklipp" },
+  "optionDesc_diff": { "message": "Generera mänskligt läsbar git diff och bifoga till --commit-msg om godkänd" },
   "optionDesc_clear": { "message": "Rensa cachad meddelandekedja" },
   "optionDesc_help": { "message": "Visa hjälpskärmen" },
   "optionDesc_version": { "message": "Visa versionsinformation" },

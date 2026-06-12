@@ -89,6 +89,7 @@
   "optionDesc_fortune": { "message": "Tokim gutpela samting bilong yu" },
   "optionDesc_randomAnswer": { "message": "Toksave long wanpela askim" },
   "optionDesc_commitMsg": { "message": "Git i save mekim tok long ol senis na kopim long clipboard" },
+  "optionDesc_diff": { "message": "Generate human-readable git diff and add to --commit-msg if passed" },
   "optionDesc_clear": { "message": "Toksave long ol samting i stap hait" },
   "optionDesc_help": { "message": "Painim piksa bilong helpim" },
   "optionDesc_version": { "message": "Tokim namba bilong Baibel" },

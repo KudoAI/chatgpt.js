@@ -89,6 +89,7 @@
   "optionDesc_fortune": { "message": "Ispričaj svoju sudbinu" },
   "optionDesc_randomAnswer": { "message": "Odgovorite na nasumično pitanje" },
   "optionDesc_commitMsg": { "message": "Generirajte poruku git commit iz promjena i kopirajte u međuspremnik" },
+  "optionDesc_diff": { "message": "Generirajte git diff čitljiv za ljude i dodajte u --commit-msg ako prođe" },
   "optionDesc_clear": { "message": "Izbriši predmemorirani lanac poruka" },
   "optionDesc_help": { "message": "Prikažite zaslon za pomoć" },
   "optionDesc_version": { "message": "Verzioniranje softvera" },

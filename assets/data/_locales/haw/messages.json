@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "E haʻi i kou waiwai" },
   "optionDesc_randomAnswer": { "message": "E pane i kahi nīnau kaulele" },
   "optionDesc_commitMsg": { "message": "Hoʻopuka i ka leka git commit mai nā loli a kope i ka clipboard" },
+  "optionDesc_diff": {
+    "message": "Hoʻoulu i ka git diff hiki ke heluhelu ʻia e ke kanaka a hoʻohui i --commit-msg inā i hala"
+  },
   "optionDesc_clear": { "message": "Holoi i ke kaulahao leka i hūnā ʻia" },
   "optionDesc_help": { "message": "Hōʻike i ka pale kōkua" },
   "optionDesc_version": { "message": "Hōʻike i ka helu mana" },

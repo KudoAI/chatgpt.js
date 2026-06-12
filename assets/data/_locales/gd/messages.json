@@ -89,6 +89,9 @@
   "optionDesc_fortune": { "message": "Innis dha do bhuannachd" },
   "optionDesc_randomAnswer": { "message": "Freagairt gu Random" },
   "optionDesc_commitMsg": { "message": "Generate git commit message from changes and copy to clipboard" },
+  "optionDesc_diff": {
+    "message": "Cruthaich git diff a ghabhas leughadh le daoine agus ceangail ri -- commit - msg ma thèid a thoirt seachad"
+  },
   "optionDesc_clear": { "message": "Falamhaich an t - slabhraidh teachdaireachd a tha san tasgadan" },
   "optionDesc_help": { "message": "Seall sgrìn na cobhair" },
   "optionDesc_version": { "message": "Seall àireamh an tionndaidh" },

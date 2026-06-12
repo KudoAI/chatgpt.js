@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "Შეატყობინეთ თქვენი ბედი" },
   "optionDesc_randomAnswer": { "message": "Უპასუხეთ შემთხვევით დასმულ შეკითხვას" },
   "optionDesc_commitMsg": { "message": "Შექმენით git commit შეტყობინება ცვლილებებიდან და დააკოპირეთ გაცვლის ბუფერში" },
+  "optionDesc_diff": {
+    "message": "Გენერირება ადამიანის მიერ წაკითხვადი git diff და დანართი --commit-msg-ზე, თუ გადაცემულია"
+  },
   "optionDesc_clear": { "message": "Ქეშირებული შეტყობინებების ჯაჭვის გასუფთავება" },
   "optionDesc_help": { "message": "დახმარების ეკრანის ჩვენება" },
   "optionDesc_version": { "message": "ვერსიის ნომერი" },

@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "Mondd el a jövődet" },
   "optionDesc_randomAnswer": { "message": "Véletlenszerű kérdés megválaszolása" },
   "optionDesc_commitMsg": { "message": "Hozzon létre Git commit üzenetet a változásokból, és másolja a vágólapra" },
+  "optionDesc_diff": {
+    "message": "Hozzon létre ember által olvasható git diff-t, és hozzáfűzi a --commit-msg-hez, ha sikeres"
+  },
   "optionDesc_clear": { "message": "Gyorsítótárazott üzenetlánc törlése" },
   "optionDesc_help": { "message": "Súgó képernyő megjelenítése" },
   "optionDesc_version": { "message": "kiírja a verziószámot" },

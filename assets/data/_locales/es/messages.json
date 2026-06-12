@@ -91,6 +91,7 @@
   "optionDesc_commitMsg": {
     "message": "Generar mensaje de confirmación de git a partir de los cambios y copiar al portapapeles"
   },
+  "optionDesc_diff": { "message": "Generar git diff legible por humanos y añadir a --commit-msg si se aprueba" },
   "optionDesc_clear": { "message": "Borrar cadena de mensajes en caché" },
   "optionDesc_help": { "message": "Mostrar pantalla de ayuda" },
   "optionDesc_version": { "message": "Mostrar el número de versión" },

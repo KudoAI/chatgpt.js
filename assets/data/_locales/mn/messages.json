@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "Аз завшаанаа хэлээрэй" },
   "optionDesc_randomAnswer": { "message": "Санамсаргүй асуултад хариулах" },
   "optionDesc_commitMsg": { "message": "Өөрчлөлтөөс мэдэгдэж, товчлуур руу хуулах" },
+  "optionDesc_diff": {
+    "message": "Хүний уншиж болох GIT diff үүсгэж, дамжуулсан тохиолдолд --commit-msg-д хавсралт хийнэ үү"
+  },
   "optionDesc_clear": { "message": "Кэшт зурвасын гинжийг арилгах" },
   "optionDesc_help": { "message": "Тусламжийн дэлгэцийг харуулах" },
   "optionDesc_version": { "message": "Хувилбарын дугаар" },

@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "Udza mhanza yako" },
   "optionDesc_randomAnswer": { "message": "Pindura mubvunzo usinganzwisisike" },
   "optionDesc_commitMsg": { "message": "Gadzira git commit message from changes and copy to clipboard" },
+  "optionDesc_diff": { "message": "Gadzira munhu-kuverengwa git diff uye kuwedzera kuti --commit-msg kana vakapfuura" },
   "optionDesc_clear": { "message": "Clear cached mashoko cheni" },
   "optionDesc_help": { "message": "Ratidza chidzitiro chekubatsira" },
   "optionDesc_version": { "message": "Ratidza nhamba yeshanduro" },

@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "Ini-yas i ugerruj-ik" },
   "optionDesc_randomAnswer": { "message": "Tiririt ɣef tuttriwin -..." },
   "optionDesc_commitMsg": { "message": "Snulfu izen n git seg ibeddilen n usebded n tvidyut" },
+  "optionDesc_diff": { "message": "Affinez votre recherche pour --commit-msg if tagged" },
   "optionDesc_clear": { "message": "Sfeḍ asenfar n yizen yettwakksen" },
   "optionDesc_help": { "message": "Sken allen n tallelt" },
   "optionDesc_version": { "message": "Sken uṭṭun n usebter" },

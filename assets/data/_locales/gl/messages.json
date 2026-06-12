@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "Dille á túa fortuna" },
   "optionDesc_randomAnswer": { "message": "Responde a unha pregunta aleatoria" },
   "optionDesc_commitMsg": { "message": "Xerar a mensaxe do comité git desde os cambios e copiar no portarretallos" },
+  "optionDesc_diff": { "message": "Xerar git diff lexíbel por humanos e engadir a -- commmit-msg se pasa" },
   "optionDesc_clear": { "message": "Cadea de mensaxes en caché limpa" },
   "optionDesc_help": { "message": "Mostrar a pantalla de axuda" },
   "optionDesc_version": { "message": "Número de versión" },

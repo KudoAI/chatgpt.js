@@ -89,6 +89,7 @@
   "optionDesc_commitMsg": {
     "message": "Өзгөртүүлөрдөн жана алмашуу буферине көчүрүүдөн git commit билдирүүсүн жаратуу"
   },
+  "optionDesc_diff": { "message": "Адам окуй турган git diff түзүү жана өтсө --commit-msg тиркемеси" },
   "optionDesc_clear": { "message": "Кэштештирилген билдирүү чынжырын тазалоо" },
   "optionDesc_help": { "message": "Жардам экранын көрсөтүү" },
   "optionDesc_version": { "message": "Версиянын номерин көрсөтүү" },

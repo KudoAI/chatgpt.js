@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "ንሃብትኻ ንገሮ" },
   "optionDesc_randomAnswer": { "message": "ብሃንደበት ንዝቐረበ ሕቶ መልሲ ምሃብ" },
   "optionDesc_commitMsg": { "message": "መልእኽቲ ካብ ለውጢ ፈጢርካ ናብ ክሊፕቦርድ ኮፒ ግበር" },
+  "optionDesc_diff": { "message": "ሰብ ክነበብ ዝኽእል ጂት ዝተፈላለየ ፈጢሩ -commit-msg እንተተመሓላለፈ" },
   "optionDesc_clear": { "message": "ጽሩይ ናይ መልእኽቲ ሰንሰለት" },
   "optionDesc_help": { "message": "ናይ ሓገዝ ስክሪን ኣርኢ" },
   "optionDesc_version": { "message": "ናይ ቅጅል ቁጽሪ ኣርኢ" },

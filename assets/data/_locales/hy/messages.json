@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "Հայտնեք ձեր բախտը" },
   "optionDesc_randomAnswer": { "message": "Պատասխանել պատահական հարցին" },
   "optionDesc_commitMsg": { "message": "Ստեղծեք git commit հաղորդագրություն փոփոխություններից և պատճենեք աքսեսուար" },
+  "optionDesc_diff": {
+    "message": "Ստեղծեք մարդու կողմից ընթեռնելի git diff և ավելացրեք --commit - msg - ին, եթե փոխանցվի"
+  },
   "optionDesc_clear": { "message": "Մաքրել գաղտնագրված հաղորդագրությունների շղթան" },
   "optionDesc_help": { "message": "Ցուցադրել օգնության էկրանը" },
   "optionDesc_version": { "message": "Ցույց տալ տարբերակի համարը" },

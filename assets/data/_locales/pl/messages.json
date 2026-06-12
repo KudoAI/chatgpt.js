@@ -89,6 +89,9 @@
   "optionDesc_fortune": { "message": "Przepowiedz swoją przyszłość" },
   "optionDesc_randomAnswer": { "message": "Odpowiedz na losowe pytanie" },
   "optionDesc_commitMsg": { "message": "Wygeneruj wiadomość zatwierdzającą git ze zmian i skopiuj do schowka" },
+  "optionDesc_diff": {
+    "message": "Wygeneruj czytelny dla człowieka git diff i dołącz do --commit-msg, jeśli zostanie zaliczony"
+  },
   "optionDesc_clear": { "message": "Wyczyść łańcuch wiadomości w pamięci podręcznej" },
   "optionDesc_help": { "message": "Wyświetl ekran pomocy" },
   "optionDesc_version": { "message": "Podaje numer wersji programu" },

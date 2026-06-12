@@ -36,6 +36,7 @@ module.exports = {
         fortune: { type: 'cmd', regex: /^--?f(?:ortune)?$/ },
         randomAnswer: { type: 'cmd', regex: /^--?r(?:andom[-_]?answer)?$/ },
         commitMsg: { type: 'cmd', regex: /^--?(?:g|commit[-_]?me?ss?a?ge?)$/ },
+        diff: { type: 'flag', regex: /^--?d(?:iff)?$/ },
         clear: { type: 'cmd', regex: /^--?(?:C|clear?)$/ },
         help: { type: 'cmd', regex: /^--?h(?:elp)?$/ },
         version: { type: 'cmd', regex: /^--?ve?r?s?i?o?n?$/ },

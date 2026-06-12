@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "خپلې قسمت ووایاست" },
   "optionDesc_randomAnswer": { "message": "تصادفي پوښتنې ته ځواب ورکړئ" },
   "optionDesc_commitMsg": { "message": "د بدلونونو څخه د لارښوونې پیغام تولید کړئ او کلیپ بورډ ته یې کاپي کړئ" },
+  "optionDesc_diff": {
+    "message": "د انسان د لوستلو وړ جذب توپیر تولید کړئ او که چیرې تېر شي نو --commit - MSG ته ضمیمه وکړئ"
+  },
   "optionDesc_clear": { "message": "د کیچ پیغام ځنځیر پاک کړئ" },
   "optionDesc_help": { "message": "د مرستې سکرین ښکاره کړئ" },
   "optionDesc_version": { "message": "د نسخې شمیره وښایاست" },

@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "ನಿಮ್ಮ ಅದೃಷ್ಟವನ್ನು ತಿಳಿಸಿ" },
   "optionDesc_randomAnswer": { "message": "ಯಾದೃಚ್ಛಿಕ ಪ್ರಶ್ನೆಗೆ ಉತ್ತರಿಸಿ" },
   "optionDesc_commitMsg": { "message": "ಬದಲಾವಣೆಗಳಿಂದ git ಬದ್ಧತೆಯ ಸಂದೇಶವನ್ನು ರಚಿಸಿ ಮತ್ತು ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಿ" },
+  "optionDesc_diff": { "message": "ಮಾನವ-ಓದಬಲ್ಲ GIT ವ್ಯತ್ಯಾಸವನ್ನು ರಚಿಸಿ ಮತ್ತು ಅಂಗೀಕರಿಸಿದರೆ --commit-msg ಗೆ ಸೇರಿಸಿ" },
   "optionDesc_clear": { "message": "ಕ್ಯಾಶ್ ಮಾಡಿದ ಸಂದೇಶ ಸರಪಳಿಯನ್ನು ತೆರವುಗೊಳಿಸಿ" },
   "optionDesc_help": { "message": "ಸಹಾಯ ಪರದೆಯನ್ನು ಪ್ರದರ್ಶಿಸಿ" },
   "optionDesc_version": { "message": "à²®à²¾à²°à²¾à²à²à²¾à²° à²¬à²¿à²¡à³à²à²¡à³ à²¸à²à²à³à²¯à³" },

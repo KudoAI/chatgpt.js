@@ -89,6 +89,7 @@
   "optionDesc_fortune": { "message": "Vertel jou fortuin" },
   "optionDesc_randomAnswer": { "message": "Beantwoord 'n ewekansige vraag" },
   "optionDesc_commitMsg": { "message": "Genereer git pleeg boodskap van veranderinge en kopieer na knipbord" },
+  "optionDesc_diff": { "message": "Genereer mensleesbare git diff en voeg by --commit-msg indien geslaag" },
   "optionDesc_clear": { "message": "Maak 'n verborge boodskapketting skoon" },
   "optionDesc_help": { "message": "Vertoon hulp skerm" },
   "optionDesc_version": { "message": "Naam van die Vertoon" },

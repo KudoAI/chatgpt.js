@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "ਆਪਣੀ ਕਿਸਮਤ ਦੱਸੋ" },
   "optionDesc_randomAnswer": { "message": "ਇੱਕ ਬੇਤਰਤੀਬੇ ਸਵਾਲ ਦਾ ਜਵਾਬ ਦਿਓ" },
   "optionDesc_commitMsg": { "message": "ਤਬਦੀਲੀਆਂ ਤੋਂ ਜੀਆਈਟੀ ਕਮਿਟ ਸੁਨੇਹਾ ਤਿਆਰ ਕਰੋ ਅਤੇ ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ" },
+  "optionDesc_diff": { "message": "-- commit-msg, if passed" },
   "optionDesc_clear": { "message": "ਕੈਸ਼ ਸੁਨੇਹਾ ਚੇਨ ਸਾਫ਼ ਕਰੋ" },
   "optionDesc_help": { "message": "ਮੱਦਦ ਸਕਰੀਨ ਵੇਖੋ" },
   "optionDesc_version": { "message": "ਵਰਜਨ ਨੰਬਰ" },

@@ -89,6 +89,7 @@
   "optionDesc_fortune": { "message": "Beritahu nasib anda" },
   "optionDesc_randomAnswer": { "message": "Jawab soalan rawak" },
   "optionDesc_commitMsg": { "message": "Jana mesej komitmen git daripada perubahan dan salin ke papan keratan" },
+  "optionDesc_diff": { "message": "Jana diff git yang boleh dibaca manusia dan tambah ke --commit-msg jika lulus" },
   "optionDesc_clear": { "message": "Kosongkan rantaian mesej yang dicache" },
   "optionDesc_help": { "message": "Papar skrin bantuan" },
   "optionDesc_version": { "message": "Nombor Versi" },

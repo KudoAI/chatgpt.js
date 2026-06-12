@@ -91,6 +91,9 @@
   "optionDesc_commitMsg": {
     "message": "Générer un message de validation git à partir des modifications et le copier dans le presse-papiers"
   },
+  "optionDesc_diff": {
+    "message": "Générer un diff git lisible par l'homme et l'ajouter à --commit-msg s'il est adopté"
+  },
   "optionDesc_clear": { "message": "Effacer la chaîne de messages en cache" },
   "optionDesc_help": { "message": "Affichage de l’aide" },
   "optionDesc_version": { "message": "Affiche le numéro de la version" },

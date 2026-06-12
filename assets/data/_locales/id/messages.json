@@ -89,6 +89,9 @@
   "optionDesc_fortune": { "message": "Beri tahu keberuntungan Anda" },
   "optionDesc_randomAnswer": { "message": "Jawab pertanyaan acak" },
   "optionDesc_commitMsg": { "message": "Buat pesan commit git dari perubahan dan salin ke clipboard" },
+  "optionDesc_diff": {
+    "message": "Hasilkan git diff yang dapat dibaca manusia dan tambahkan ke -- commit - msg jika lulus"
+  },
   "optionDesc_clear": { "message": "Bersihkan rantai pesan yang di - cache" },
   "optionDesc_help": { "message": "Tampilkan layar bantuan" },
   "optionDesc_version": { "message": "Nomor Versi" },

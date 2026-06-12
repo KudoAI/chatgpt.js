@@ -99,6 +99,9 @@
   "optionDesc_commitMsg": {
     "message": "GIGI TI E TI CHRÉTIEN Gbu li ti mo na ndo ti aye so ayeke changé nga na ndo ti clipboard"
   },
+  "optionDesc_diff": {
+    "message": "Git so zo alingbi ti diko ni ayeke kangbi na a zia ni na --commit-msg tongana a hon"
+  },
   "optionDesc_clear": { "message": "A yeke na yâ ti mbeni kete kamba ti tokua so a honde ni polele" },
   "optionDesc_help": { "message": "A yeke mû maboko na azo ti bâ ndo na ndo ti écr" },
   "optionDesc_version": { "message": "Nombre de la version" },

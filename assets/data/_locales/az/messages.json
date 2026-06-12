@@ -89,6 +89,7 @@
   "optionDesc_fortune": { "message": "Bəxtinizi deyin" },
   "optionDesc_randomAnswer": { "message": "Təsadüfi suala cavab verin" },
   "optionDesc_commitMsg": { "message": "Dəyişikliklərdən git öhdəliyi mesajı yaradın və mübadilə buferinə kopyalayın" },
+  "optionDesc_diff": { "message": "İnsan tərəfindən oxunan gitləri fərqləndirin və keçdikdə --commit-msg-ə əlavə edin" },
   "optionDesc_clear": { "message": "Keşlənmiş mesaj zəncirini təmizləyin" },
   "optionDesc_help": { "message": "Yardım ekranını göstər" },
   "optionDesc_version": { "message": "Versiya nömrəsini göstər" },

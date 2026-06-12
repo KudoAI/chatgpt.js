@@ -52,6 +52,8 @@ async function route(cmd, args, rl) {
             await run.randomAnswer() ; break
         case 'commit' : case 'g' :
             await run.commitMsg() ; break
+        case 'diff' : case 'd' :
+            await run.diff() ; break
         case 'clear' : case 'c' :
             run.clear() ; break
         case 'help' : case 'h' :
@@ -76,7 +78,8 @@ async function route(cmd, args, rl) {
             run.toggleCopy(args[0]) ; break
         case 'nosuggest' : case 'ns' :
             run.toggleNoSuggest(args[0]) ; break
-        case 'quiet' : run.toggleQuiet(args[0]) ; break
+        case 'quiet':
+            run.toggleQuiet(args[0]) ; break
         case 'debug' : case 'dbg' :
             run.toggleDebug(args[0]) ; break
         default:
@@ -88,7 +91,7 @@ async function route(cmd, args, rl) {
 function showHelp() {
     log.help(['header', 'usage', 'params', 'flags', 'cmds'])
     log.data(`\n  REPL ${cli.msgs.data_slashCmds}: /help, /exit, /clear, /joke, /fortune, /random, /ascii [subject]`)
-    log.data('  /summarize <text|file|url>, /stats, /version, /commit, /init')
+    log.data('  /summarize <text|file|url>, /stats, /version, /commit, /diff, /init')
     log.data('  /provider <name>, /maxchars <num>, /maxtokens <num>, /turns <num>')
     log.data('  /uilang <code>, /replylang <text>, /commitmsgexample <msg>')
     log.data('  /config <filepath|url>, /copy [on|off], /nosuggest [on|off]')

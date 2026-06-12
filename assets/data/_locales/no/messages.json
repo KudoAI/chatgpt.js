@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "Spå din spådom" },
   "optionDesc_randomAnswer": { "message": "Svar på et tilfeldig spørsmål" },
   "optionDesc_commitMsg": { "message": "Generer git commit-melding fra endringer og kopier til utklippstavlen" },
+  "optionDesc_diff": { "message": "Generer menneskelig lesbar git diff og legg til --commit-msg hvis bestått" },
   "optionDesc_clear": { "message": "Tøm bufret meldingskjede" },
   "optionDesc_help": { "message": "Vis hjelpeskjermen" },
   "optionDesc_version": { "message": "Versjonsnummer" },

@@ -14,7 +14,7 @@
 
     await init.cli()
 
-    for (const cmd of ['init', 'commitMsg', 'clear', 'help', 'version', 'stats'])
+    for (const cmd of ['init', 'commitMsg', 'diff', 'clear', 'help', 'version', 'stats'])
         if (cli.config[cmd]) return run[cmd]()
     if (cli.config.interactive) return require('../repl').start()
 

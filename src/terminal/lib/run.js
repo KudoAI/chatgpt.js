@@ -1,6 +1,7 @@
 require('../cli/lib/init').env()
 
-const messages = require('./messages')
+const git = require('./git'),
+      messages = require('./messages')
 
 module.exports = {
 
@@ -10,7 +11,8 @@ module.exports = {
     },
 
     clear() { return messages.clearChain() },
-    commitMsg() { return require('./git').generateCommitMsg() },
+    commitMsg() { return git.generateCommitMsg({ includeDiff: cli.config.diff }) },
+    diff() { return git.printDiff() },
 
     fortune() {
         const { replyLang } = cli.config

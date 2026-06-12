@@ -91,6 +91,7 @@
   "optionDesc_fortune": { "message": "Racconta la tua fortuna" },
   "optionDesc_randomAnswer": { "message": "Rispondi a una domanda casuale" },
   "optionDesc_commitMsg": { "message": "Genera un messaggio di commit git dalle modifiche e copialo negli appunti" },
+  "optionDesc_diff": { "message": "Genera diff git leggibile e aggiungi a --commit-msg se superato" },
   "optionDesc_clear": { "message": "Cancella la catena di messaggi nella cache" },
   "optionDesc_help": { "message": "Visualizza la schermata di aiuto" },
   "optionDesc_version": { "message": "Mostra il numero di versione" },

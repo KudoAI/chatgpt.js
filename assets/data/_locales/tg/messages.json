@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "Ба сарвати худ бигӯед" },
   "optionDesc_randomAnswer": { "message": "Ҷавоб ба саволи тасодуфӣ" },
   "optionDesc_commitMsg": { "message": "Name" },
+  "optionDesc_diff": {
+    "message": "Эҷод кардани диффузори гити хонданашавандаи инсонӣ ва замима ба --commit-msg, агар гузарад"
+  },
   "optionDesc_clear": { "message": "Пок кардани занҷири иттилооти ниҳонӣ" },
   "optionDesc_help": { "message": "Намоиши экрани кӯмак" },
   "optionDesc_version": { "message": "Номер производителя" },

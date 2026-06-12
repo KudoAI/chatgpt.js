@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "Segðu frá auðæfum þínum" },
   "optionDesc_randomAnswer": { "message": "Svaraðu handahófskenndri spurningu" },
   "optionDesc_commitMsg": { "message": "Mynda git fremja skilaboð frá breytingum og afrita á klemmuspjald" },
+  "optionDesc_diff": {
+    "message": "Búðu til git diff sem hægt er að lesa úr mönnum og bættu við --commit-msg ef það er samþykkt"
+  },
   "optionDesc_clear": { "message": "Hreinsa skyndiminnisskilaboðakeðju" },
   "optionDesc_help": { "message": "Birta hjálparskjá" },
   "optionDesc_version": { "message": "Útgáfunúmer" },

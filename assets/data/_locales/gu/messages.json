@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "તમારી સંપત્તિ જણાવો" },
   "optionDesc_randomAnswer": { "message": "રેન્ડમ પ્રશ્નનો જવાબ આપો" },
   "optionDesc_commitMsg": { "message": "ફેરફારોમાંથી git કમિટ મેસેજ જનરેટ કરો અને ક્લિપબોર્ડ પર કૉપિ કરો" },
+  "optionDesc_diff": { "message": "માનવ-વાંચી શકાય તેવું git diff જનરેટ કરો અને જો પાસ થાય તો --commit-msg માં ઉમેરો" },
   "optionDesc_clear": { "message": "કેશ્ડ મેસેજ ચેઇન સાફ કરો" },
   "optionDesc_help": { "message": "સહાય સ્ક્રીન પ્રદર્શિત કરો" },
   "optionDesc_version": { "message": "આવૃત્તિ ક્રમાંક" },

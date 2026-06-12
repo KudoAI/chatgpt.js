@@ -89,6 +89,7 @@
   "optionDesc_fortune": { "message": "Povedzte o svojom šťastí" },
   "optionDesc_randomAnswer": { "message": "Odpovedzte na náhodnú otázku" },
   "optionDesc_commitMsg": { "message": "Vygenerovať správu o odovzdaní git zo zmien a skopírovať do schránky" },
+  "optionDesc_diff": { "message": "Generovať ľudsky čitateľný git diff a pripojiť k --commit-msg, ak prešiel" },
   "optionDesc_clear": { "message": "Vymazať reťazec správ vo vyrovnávacej" },
   "optionDesc_help": { "message": "Zobraziť obrazovku pomocníka" },
   "optionDesc_version": { "message": "Číslo verzie" },

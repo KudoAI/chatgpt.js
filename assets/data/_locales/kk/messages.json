@@ -89,6 +89,7 @@
   "optionDesc_fortune": { "message": "Өз байлығыңызды айтыңыз" },
   "optionDesc_randomAnswer": { "message": "Кездейсоқ сұраққа жауап беру" },
   "optionDesc_commitMsg": { "message": "Өзгерістерден git commit хабарын жасау және алмасу буферіне көшіру" },
+  "optionDesc_diff": { "message": "Адам оқитын git diff генерациялау және өткен жағдайда --commit-msg қосымшасы" },
   "optionDesc_clear": { "message": "Кэштелген хабарлар тізбегін тазалау" },
   "optionDesc_help": { "message": "Анықтама экранын көрсету" },
   "optionDesc_version": { "message": "Нұсқасының нөмірі" },

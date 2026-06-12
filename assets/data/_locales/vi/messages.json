@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "Kể về vận may của bạn" },
   "optionDesc_randomAnswer": { "message": "Trả lời một câu hỏi ngẫu nhiên" },
   "optionDesc_commitMsg": { "message": "Tạo tin nhắn cam kết git từ các thay đổi và sao chép vào khay nhớ tạm" },
+  "optionDesc_diff": {
+    "message": "Tạo git diff có thể đọc được của con người và thêm vào --commit-msg nếu được thông qua"
+  },
   "optionDesc_clear": { "message": "Xóa chuỗi tin nhắn được lưu trong bộ nhớ cache" },
   "optionDesc_help": { "message": "Hiển thị màn hình trợ giúp" },
   "optionDesc_version": { "message": "Số Phiên bản" },

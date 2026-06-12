@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "فال خود را بگویید" },
   "optionDesc_randomAnswer": { "message": "پاسخ به یک سوال تصادفی" },
   "optionDesc_commitMsg": { "message": "ایجاد پیام کامیت گیت از تغییرات و کپی کردن آن در کلیپ‌بورد" },
+  "optionDesc_diff": {
+    "message": "ایجاد git diff قابل خواندن توسط انسان و اضافه کردن آن به --commit-msg در صورت ارسال"
+  },
   "optionDesc_clear": { "message": "زنجیره پیام‌های ذخیره‌شده را پاک کنید" },
   "optionDesc_help": { "message": "نمایش صفحه راهنما" },
   "optionDesc_version": { "message": "نمایش شماره نسخه" },

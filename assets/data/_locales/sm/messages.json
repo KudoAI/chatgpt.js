@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "Taʻu atu i lou tamaoaiga" },
   "optionDesc_randomAnswer": { "message": "Tali se fesili faafuasei" },
   "optionDesc_commitMsg": { "message": "Fausia git tautino savali mai suiga ma kopi i clipboard" },
+  "optionDesc_diff": {
+    "message": "Fausiaina o git e mafai ona faitau i tagata eseese ma faʻaopoopo i --commit-msg pe a pasia"
+  },
   "optionDesc_clear": { "message": "Manino filifili savali cached" },
   "optionDesc_help": { "message": "Faaali atu le lau fesoasoani" },
   "optionDesc_version": { "message": "Faaali atu le numera o le lomiga" },

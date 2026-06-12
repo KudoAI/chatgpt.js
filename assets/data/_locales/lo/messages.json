@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "ບອກຄວາມຮັ່ງມີຂອງທ່ານ" },
   "optionDesc_randomAnswer": { "message": "ຕອບຄຳຖາມແບບສຸ່ມ" },
   "optionDesc_commitMsg": { "message": "ສ້າງຂໍ້ຄວາມຜູກມັດ git ຈາກການປ່ຽນແປງແລະສໍາເນົາກັບ clipboard" },
+  "optionDesc_diff": { "message": "ສ້າງ git diff ທີ່ສາມາດອ່ານໄດ້ຂອງມະນຸດແລະຕິດກັບ --commit-msg ຖ້າຜ່ານ" },
   "optionDesc_clear": { "message": "ລ້າງຕ່ອງໂສ້ຂໍ້ຄວາມ cached" },
   "optionDesc_help": { "message": "ສະແດງໜ້າຈໍຊ່ວຍເຫຼືອ" },
   "optionDesc_version": { "message": "ໝາຍເລກຮຸ່ນ" },

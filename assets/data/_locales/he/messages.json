@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "ספרו את מזלכם" },
   "optionDesc_randomAnswer": { "message": "לענות על שאלה אקראית" },
   "optionDesc_commitMsg": { "message": "צור הודעת git commit משינויים והעתק ללוח" },
+  "optionDesc_diff": { "message": "צור git diff קריא לאדם וצרף ל --mit - msg אם עבר" },
   "optionDesc_clear": { "message": "ניקוי שרשרת ההודעות השמורות במטמון" },
   "optionDesc_help": { "message": "הצג מסך עזרה" },
   "optionDesc_version": { "message": "גרסה" },

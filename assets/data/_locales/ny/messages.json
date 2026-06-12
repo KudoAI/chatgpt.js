@@ -89,6 +89,7 @@
   "optionDesc_commitMsg": {
     "message": "Kupanga git kudzipereka uthenga kuchokera kusintha ndi kukopera kuti clipboard"
   },
+  "optionDesc_diff": { "message": "Pangani anthu-kuwerenga git diff ndi append kuti --commit-msg ngati adadutsa" },
   "optionDesc_clear": { "message": "Chotsani posungira uthenga unyolo" },
   "optionDesc_help": { "message": "Onetsani zenera lothandizira" },
   "optionDesc_version": { "message": "Onetsani nambala ya mtundu" },

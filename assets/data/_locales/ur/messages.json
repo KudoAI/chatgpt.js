@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "اپنی خوش قسمتی بتائیں" },
   "optionDesc_randomAnswer": { "message": "کسی بے ترتیب سوال کا جواب دیں" },
   "optionDesc_commitMsg": { "message": "تبدیلیوں سے git COMMIT پیغام تیار کریں اور کلپ بورڈ پر کاپی کریں" },
+  "optionDesc_diff": {
+    "message": "انسانی پڑھنے کے قابل git diff پیدا کریں اور پاس ہونے پر -- commit - msg میں شامل کریں"
+  },
   "optionDesc_clear": { "message": "کیشڈ میسج چین صاف کریں" },
   "optionDesc_help": { "message": "مدد کی اسکرین ڈسپلے کریں" },
   "optionDesc_version": { "message": "ورژن نمبر دکھائیں" },

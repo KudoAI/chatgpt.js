@@ -89,6 +89,9 @@
   "optionDesc_fortune": { "message": "Għid ix-xorti tiegħek" },
   "optionDesc_randomAnswer": { "message": "Wieġeb mistoqsija każwali" },
   "optionDesc_commitMsg": { "message": "Iġġenera messaġġ GIT COMMIT mill-bidliet u kkopja għall-klipbord" },
+  "optionDesc_diff": {
+    "message": "Iġġenera differenza fil-git li tinqara mill-bniedem u mehmuż ma' --commit-msg jekk mgħoddi"
+  },
   "optionDesc_clear": { "message": "Neħħi l-katina tal-messaġġi cached" },
   "optionDesc_help": { "message": "Uri l-iskrin tal-għajnuna" },
   "optionDesc_version": { "message": "Version Number" },

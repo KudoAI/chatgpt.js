@@ -91,6 +91,7 @@
   "optionDesc_commitMsg": {
     "message": "Hiteraka filazana ataon'ny git avy amin'ny fanovana ary ny kopia mankany amin'ny fanindri-taratasy"
   },
+  "optionDesc_diff": { "message": "Niteraka olombelona-namaky git diff sy ampiharo amin'ny --commit-msg raha lasa" },
   "optionDesc_clear": { "message": "Foano ny rojo fandefasan-kafatra" },
   "optionDesc_help": { "message": "Asehoy ny efijerin'ny toro-làlana" },
   "optionDesc_version": { "message": "Asehoy ny isan'ny kinova" },

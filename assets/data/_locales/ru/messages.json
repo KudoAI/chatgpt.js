@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "Рассказать о своей судьбе" },
   "optionDesc_randomAnswer": { "message": "Ответьте на случайный вопрос" },
   "optionDesc_commitMsg": { "message": "Создать сообщение фиксации git из изменений и скопировать в буфер обмена" },
+  "optionDesc_diff": { "message": "Создайте удобочитаемый git diff и добавьте в --commit-msg, если передано" },
   "optionDesc_clear": { "message": "Очистить кэшированную цепочку сообщений" },
   "optionDesc_help": { "message": "Показать экран помощи" },
   "optionDesc_version": { "message": "Показать сведения о версии" },

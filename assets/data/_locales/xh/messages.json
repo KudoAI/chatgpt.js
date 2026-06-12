@@ -91,6 +91,7 @@
   "optionDesc_fortune": { "message": "Chaza ithamsanqa lakho" },
   "optionDesc_randomAnswer": { "message": "Phendula umbuzo ongacwangciswanga" },
   "optionDesc_commitMsg": { "message": "Yenza umyalezo we-git commit ovela kutshintsho uze ukope uye kwiklipbhodi" },
+  "optionDesc_diff": { "message": "Yenza i-git diff efundeka ngumntu uze ufake --commit-msg ukuba idlulisiwe" },
   "optionDesc_clear": { "message": "Cacisa imiyalezo efihliweyo" },
   "optionDesc_help": { "message": "Bonisa isikrini soncedo" },
   "optionDesc_version": { "message": "Inani Loguqulelo lomsebenzi" },

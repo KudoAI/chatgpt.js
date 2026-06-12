@@ -93,6 +93,7 @@
   "optionDesc_commitMsg": {
     "message": "အပြောင်းအလဲများမှ GIT COMMET မက်ဆေ့ချ်ကို ထုတ်ပေးပြီး ကလစ်ဘုတ်သို့ မိတ္တူကူးပါ"
   },
+  "optionDesc_diff": { "message": "လူဖတ်နိုင်သော ဂျီတီ ကွာခြားချက်ကို ထုတ်လုပ်ပြီး --commit-msg သို့ ပေါင်းထည့်ပါ" },
   "optionDesc_clear": { "message": "သိမ်းဆည်းထားသော မက်ဆေ့ချ် ကွင်းဆက်ကို ရှင်းလင်းပါ" },
   "optionDesc_help": { "message": "အကူအညီ မျက်နှာပြင်ကို ပြသပါ" },
   "optionDesc_version": { "message": "ဗားရှင်းနံပါတ်" },

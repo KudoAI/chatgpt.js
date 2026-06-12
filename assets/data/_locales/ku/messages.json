@@ -91,6 +91,9 @@
   "optionDesc_fortune": { "message": "Bextê xwe bêje" },
   "optionDesc_randomAnswer": { "message": "Bersiva pirseke rasthatî bide" },
   "optionDesc_commitMsg": { "message": "Peyama git commit ji guhertinan çêbike û li clipboardê kopî bike" },
+  "optionDesc_diff": {
+    "message": "Git diff-a ku ji hêla mirovan ve tê xwendin çêbike û heke were derbaskirin lê zêde bike --commit-msg"
+  },
   "optionDesc_clear": { "message": "Zincîra peyamên keşkirî paqij bike" },
   "optionDesc_help": { "message": "Dîmendera alîkariyê nîşan bide" },
   "optionDesc_version": { "message": "IRQ" },

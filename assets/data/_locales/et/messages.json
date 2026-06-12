@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "Räägi oma varandusest" },
   "optionDesc_randomAnswer": { "message": "Vasta juhuslikule küsimusele" },
   "optionDesc_commitMsg": { "message": "Loo muudatustest giti kinnitussõnum ja kopeeri lõikelauale" },
+  "optionDesc_diff": { "message": "Genereeri inimesele loetav git diff ja lisa --commit-msg, kui see on läbitud" },
   "optionDesc_clear": { "message": "Tühjenda vahemällu salvestatud sõnumikett" },
   "optionDesc_help": { "message": "Abi ekraani kuvamine" },
   "optionDesc_version": { "message": "Näitab versiooni" },

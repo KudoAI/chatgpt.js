@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "Esan zure zoria" },
   "optionDesc_randomAnswer": { "message": "Ausazko galdera bati erantzun" },
   "optionDesc_commitMsg": { "message": "Sortu git commit mezua aldaketetatik eta kopiatu arbelean" },
+  "optionDesc_diff": {
+    "message": "Sortu gizakiek irakur dezaketen git diff-ak eta erantsi --commit-msg-ri gaindituta badago"
+  },
   "optionDesc_clear": { "message": "Garbitu cacheko mezu-katea" },
   "optionDesc_help": { "message": "Bistaratu laguntza-pantaila" },
   "optionDesc_version": { "message": "Bertsio zenbakia" },

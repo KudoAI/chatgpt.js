@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "Bye bye fortune" },
   "optionDesc_randomAnswer": { "message": "A" },
   "optionDesc_commitMsg": { "message": "Ubutumwa Bivuye Amahinduka Na Gukoporora Kuri Ububikokoporora" },
+  "optionDesc_diff": { "message": "- na Kongeraho... Kuri - - - NIBA" },
   "optionDesc_clear": { "message": "Ubutumwa Urusobetudirishya" },
   "optionDesc_help": { "message": "Erekana ubufasha bwa ecran" },
   "optionDesc_version": { "message": "Erekana nimero ya verisiyo" },

@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "Pastāstiet savu bagātību" },
   "optionDesc_randomAnswer": { "message": "Atbildiet uz nejauši izvēlētu jautājumu" },
   "optionDesc_commitMsg": { "message": "Ģenerējiet Git nosūtīšanas ziņojumu no izmaiņām un kopējiet starpliktuvē" },
+  "optionDesc_diff": {
+    "message": "Ģenerējiet cilvēkam salasāmu git diff un pievienojiet --commit-msg, ja tas ir nokārtots"
+  },
   "optionDesc_clear": { "message": "Notīrīt kešoto ziņojumu ķēdi" },
   "optionDesc_help": { "message": "Parādīt palīdzības ekrānu" },
   "optionDesc_version": { "message": "Versijas numurs" },

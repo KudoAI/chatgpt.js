@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "Раскажы пра сваё багацце" },
   "optionDesc_randomAnswer": { "message": "Адказаць на выпадковае пытанне" },
   "optionDesc_commitMsg": { "message": "Стварыць паведамленне GIT COMMIT са зменаў і скапіяваць у буфер абмену" },
+  "optionDesc_diff": {
+    "message": "Стварыць дыферэнцыял для чытання чалавекам і дадаць да -- commit-msg, калі ён пройдзены"
+  },
   "optionDesc_clear": { "message": "Ачысціць кэшаваны ланцужок паведамленняў" },
   "optionDesc_help": { "message": "Экран даведкі для адлюстравання" },
   "optionDesc_version": { "message": "Наяўныя экраны" },

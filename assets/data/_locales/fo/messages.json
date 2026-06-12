@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "Sig frá tínum ríkidømi" },
   "optionDesc_randomAnswer": { "message": "At svara einum tilvildarligum spurningi" },
   "optionDesc_commitMsg": { "message": "Git gevur boð frá broytingum og kopierar til klippborð" },
+  "optionDesc_diff": { "message": "Gera mannliga lesbar git diff og leggja til --commit-msg, um tað er liðugt" },
   "optionDesc_clear": { "message": "Rætt goymd boðskjal" },
   "optionDesc_help": { "message": "Vís hjálparskjá" },
   "optionDesc_version": { "message": "Vís útgávu nr" },

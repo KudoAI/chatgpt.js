@@ -89,6 +89,7 @@
   "optionDesc_fortune": { "message": "अपनी किस्मत बताएँ" },
   "optionDesc_randomAnswer": { "message": "किसी बेतरतीब सवाल का जवाब दें" },
   "optionDesc_commitMsg": { "message": "परिवर्तनों से git कमिट मैसेज जनरेट करें और क्लिपबोर्ड पर कॉपी करें" },
+  "optionDesc_diff": { "message": "मानव - पठनीय git diff जेनरेट करें और पास होने पर --commit - msg में जोड़ें" },
   "optionDesc_clear": { "message": "कैश्ड मैसेज चेन साफ़ करें" },
   "optionDesc_help": { "message": "सहायता स्क्रीन दिखाएँ" },
   "optionDesc_version": { "message": "संस्करण संख्या" },

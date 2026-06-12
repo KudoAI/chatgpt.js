@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "Spune-ți norocul" },
   "optionDesc_randomAnswer": { "message": "Răspunde la o întrebare aleatorie" },
   "optionDesc_commitMsg": { "message": "Generați mesajul de comitere git din modificări și copiați în clipboard" },
+  "optionDesc_diff": {
+    "message": "Generați git diff care poate fi citit de om și adăugați la --commit-msg dacă este trecut"
+  },
   "optionDesc_clear": { "message": "Ștergeți lanțul de mesaje din cache" },
   "optionDesc_help": { "message": "Afișați ecranul de ajutor" },
   "optionDesc_version": { "message": "Număr versiune" },

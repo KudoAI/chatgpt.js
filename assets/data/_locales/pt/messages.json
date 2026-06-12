@@ -89,6 +89,7 @@
   "optionDesc_commitMsg": {
     "message": "Gere a mensagem git commit a partir das alterações e copie para a área de transferência"
   },
+  "optionDesc_diff": { "message": "Gere o 'git diff' legível por humanos e acrescente a '--commit-msg' se aprovado" },
   "optionDesc_clear": { "message": "Limpar cadeia de mensagens em cache" },
   "optionDesc_help": { "message": "Mostrar ecrã de ajuda" },
   "optionDesc_version": { "message": "Mostra o número da versão" },

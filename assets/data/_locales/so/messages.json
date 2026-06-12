@@ -91,6 +91,9 @@
   "optionDesc_fortune": { "message": "U sheeg maalkaaga" },
   "optionDesc_randomAnswer": { "message": "Ka jawaab su 'aal aan caadi ahayn" },
   "optionDesc_commitMsg": { "message": "Samee fariin git ah oo ka timaada isbeddelada iyo nuqul ilaa clipboard" },
+  "optionDesc_diff": {
+    "message": "Samee git aadanaha la aqrin karo oo kala duwan oo ku dheji --commit-msg haddii la dhaafo"
+  },
   "optionDesc_clear": { "message": "Clear silsilad fariin cached" },
   "optionDesc_help": { "message": "Muuji shaashadda caawinta" },
   "optionDesc_version": { "message": "Lambarka Nooca" },

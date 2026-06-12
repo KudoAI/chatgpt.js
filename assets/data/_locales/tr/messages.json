@@ -89,6 +89,9 @@
   "optionDesc_fortune": { "message": "Falına bak" },
   "optionDesc_randomAnswer": { "message": "Rastgele bir soruyu yanıtlayın" },
   "optionDesc_commitMsg": { "message": "Değişikliklerden git işleme mesajı oluşturun ve panoya kopyalayın" },
+  "optionDesc_diff": {
+    "message": "İnsan tarafından okunabilir git diff oluşturun ve geçilirse -- commit - msg'ye ekleyin"
+  },
   "optionDesc_clear": { "message": "Önbelleğe alınmış mesaj zincirini temiz" },
   "optionDesc_help": { "message": "Yardım ekranını görüntüle" },
   "optionDesc_version": { "message": "Versiyon Numarası" },

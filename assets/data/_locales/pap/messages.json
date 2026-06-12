@@ -89,6 +89,7 @@
   "optionDesc_fortune": { "message": "Contá tu fortuna" },
   "optionDesc_randomAnswer": { "message": "Responder a Pregunta Casual" },
   "optionDesc_commitMsg": { "message": "SimpanSimpan Informe de Cambio Y Copia Untuk Nanti" },
+  "optionDesc_diff": { "message": "Crear un comentario para Git Diff & Add To - Commit-msg If Passed" },
   "optionDesc_clear": { "message": "Un po 'di cachete" },
   "optionDesc_help": { "message": "Foto di Help Screenshot" },
   "optionDesc_version": { "message": "Mustra number di vershon" },

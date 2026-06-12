@@ -89,6 +89,9 @@
   "optionDesc_commitMsg": {
     "message": "Generieren Sie eine Git Commit-Nachricht aus Änderungen und kopieren Sie sie in die Zwischenablage"
   },
+  "optionDesc_diff": {
+    "message": "Von Menschen lesbares Git-Diff generieren und an --commit-msg anhängen, wenn bestanden"
+  },
   "optionDesc_clear": { "message": "Zwischengespeicherte Nachrichtenkette löschen" },
   "optionDesc_help": { "message": "Hilfebildschirm anzeigen" },
   "optionDesc_version": { "message": "Versionsnummer anzeigen" },

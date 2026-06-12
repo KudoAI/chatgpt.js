@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "Papasakokite savo likimą" },
   "optionDesc_randomAnswer": { "message": "Atsakyti į atsitiktinį klausimą" },
   "optionDesc_commitMsg": { "message": "Generuoti „git commit“ pranešimą iš pakeitimų ir kopijuoti į iškarpinę" },
+  "optionDesc_diff": { "message": "Generuokite žmonėms suprantamą git diff ir pridėkite prie --commit-msg, jei praėjo" },
   "optionDesc_clear": { "message": "Išvalyti talpykloje saugomų žinučių grandinę" },
   "optionDesc_help": { "message": "Rodyti pagalbos ekraną" },
   "optionDesc_version": { "message": "Versijos numeris" },

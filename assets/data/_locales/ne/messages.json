@@ -89,6 +89,7 @@
   "optionDesc_commitMsg": {
     "message": "परिवर्तनहरूबाट git कमिट सन्देश उत्पन्न गर्नुहोस् र क्लिपबोर्डमा प्रतिलिपि बनाउनुहोस्"
   },
+  "optionDesc_diff": { "message": "मानव - पठनीय git diff उत्पन्न गर्नुहोस् र पास भएमा -- commit - msg मा जोड्नुहोस्" },
   "optionDesc_clear": { "message": "क्यास गरिएको सन्देश चेन खाली गर्नुहोस्" },
   "optionDesc_help": { "message": "मद्दत स्क्रिन प्रदर्शन गर्नुहोस्" },
   "optionDesc_version": { "message": "à¤ªà¥à¤°à¤¦à¤°à¥à¤¶à¤¨à¤à¥ à¤¨à¤¾à¤®" },

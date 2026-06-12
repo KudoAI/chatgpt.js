@@ -91,6 +91,7 @@
   "optionDesc_commitMsg": {
     "message": "Genera un missatge de confirmació de git a partir dels canvis i copia-ho al porta-retalls"
   },
+  "optionDesc_diff": { "message": "Genera git diff llegible per a persones i afegeix-lo a --commit-msg si s'aprova" },
   "optionDesc_clear": { "message": "Esborra la cadena de missatges emmagatzemada" },
   "optionDesc_help": { "message": "Mostra la pantalla d'ajuda" },
   "optionDesc_version": { "message": "Mostra el número de versió" },

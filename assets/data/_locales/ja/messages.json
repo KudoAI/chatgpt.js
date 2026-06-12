@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "あなたの幸運を伝えましょう" },
   "optionDesc_randomAnswer": { "message": "ランダムな質問に答える" },
   "optionDesc_commitMsg": { "message": "変更からgitコミットメッセージを生成し、クリップボードにコピーする" },
+  "optionDesc_diff": { "message": "人間が読めるgit diffを生成し、渡された場合は-- commit - msgに追加します" },
   "optionDesc_clear": { "message": "キャッシュされたメッセージチェーンをクリア" },
   "optionDesc_help": { "message": "ヘルプ画面を表示" },
   "optionDesc_version": { "message": "バージョン番号" },

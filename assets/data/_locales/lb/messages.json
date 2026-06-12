@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "Sot Äre Verméigen" },
   "optionDesc_randomAnswer": { "message": "Äntwert op eng zoufälleg Fro" },
   "optionDesc_commitMsg": { "message": "Generéiere Git Engagement Message vun Ännerungen a kopéieren op Clipboard" },
+  "optionDesc_diff": { "message": "Generéiere mënschlech liesbar git diff an append op --commit-msg wann passéiert" },
   "optionDesc_clear": { "message": "Kloer verstoppte Noriichtekette" },
   "optionDesc_help": { "message": "Hëllefsbildschierm uweisen" },
   "optionDesc_version": { "message": "Versiounsnummer uweisen" },

@@ -91,6 +91,9 @@
   "optionDesc_commitMsg": {
     "message": "மாற்றங்களிலிருந்து git உறுதி செய்தியை உருவாக்கி கிளிப்போர்டுக்கு நகலெடுக்கவும்"
   },
+  "optionDesc_diff": {
+    "message": "மனிதனால் படிக்கக்கூடிய GIT வேறுபாட்டை உருவாக்கி, தேர்ச்சி பெற்றால் --commit-msg உடன் சேர்க்கவும்"
+  },
   "optionDesc_clear": { "message": "தற்காலிக சேமிப்பு செய்திச் சங்கிலியைத் துடைக்கவும்" },
   "optionDesc_help": { "message": "உதவித் திரையைக் காண்பி" },
   "optionDesc_version": { "message": "பதிப்பெண்" },

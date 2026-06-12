@@ -104,6 +104,7 @@ Commands:
  -f, --fortune                        Tell your fortune.
  -r, --random-answer                  Answer a random question.
  -g, --commit-msg                     Generate git commit message from changes and copy to clipboard.
+ -d, --diff                           Generate human-readable git diff and append to --commit-msg if passesd.
  -C, --clear                          Clear cached message chain.
  -h, --help                           Display help screen.
  -v, --version                        Show version number.

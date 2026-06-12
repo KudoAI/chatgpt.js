@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "ብልጽግናህን ንገረው" },
   "optionDesc_randomAnswer": { "message": "የዘፈቀደ ጥያቄ ይመልሱ" },
   "optionDesc_commitMsg": { "message": "GIT ከለውጥ መልዕክትን ይፍጠሩ እና ወደ ክሊፕቦርድ ይቅዱ" },
+  "optionDesc_diff": { "message": "የሰው ሊነበብ የሚችል ጂት ይለያያል እና ከተሻገረ ወደ -commit-msg ይተግብሩ" },
   "optionDesc_clear": { "message": "የታሸገ የመልዕክት ሰንሰለት አጽዳ" },
   "optionDesc_help": { "message": "የእገዛ ማያ ገጽ አሳይ" },
   "optionDesc_version": { "message": "የስሪት ቁጥርን አሳይ" },

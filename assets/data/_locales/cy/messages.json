@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "Dywedwch wrth eich ffortiwn" },
   "optionDesc_randomAnswer": { "message": "Ateb cwestiwn ar hap" },
   "optionDesc_commitMsg": { "message": "Creu neges traddodi git o newidiadau a chopïo i'r clipfwrdd" },
+  "optionDesc_diff": { "message": "Cynhyrchu git diff darllenadwy dynol ac atodi at -- commit - msg os caiff ei basio" },
   "optionDesc_clear": { "message": "Clirio'r gadwyn negeseuon yn y storfa" },
   "optionDesc_help": { "message": "Dangos y sgrin gymorth" },
   "optionDesc_version": { "message": "Rhif fersiwn" },

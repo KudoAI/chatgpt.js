@@ -93,6 +93,9 @@
   "optionDesc_fortune": { "message": "ތިމާގެ ނަސީބު ކިޔައިދީބަލަ" },
   "optionDesc_randomAnswer": { "message": "ރެންޑަމް ސުވާލަކަށް ޖަވާބު ދޭށެވެ" },
   "optionDesc_commitMsg": { "message": "ބަދަލުތަކުން ގިޓް ކޮމިޓް މެސެޖު ޖެނެރޭޓްކޮށް ކްލިޕްބޯޑަށް ކޮޕީކުރުން" },
+  "optionDesc_diff": {
+    "message": "އިންސާނުން ކިޔޭނެ ގިޓް ޑިފް ޖެނެރޭޓްކޮށް ފާސްވެއްޖެނަމަ --commit-msg އަށް އެޕެންޑް ކުރާށެވެ"
+  },
   "optionDesc_clear": { "message": "ކެޝްކޮށްފައިވާ މެސެޖް ޗޭން ސާފުކުރުން" },
   "optionDesc_help": { "message": "ހެލްޕް ސްކްރީން ޑިސްޕްލޭ ކުރޭ" },
   "optionDesc_version": { "message": "ވާޝަން ނަންބަރު ދައްކާ" },

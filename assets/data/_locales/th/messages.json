@@ -89,6 +89,7 @@
   "optionDesc_fortune": { "message": "ดูดวงของคุณ" },
   "optionDesc_randomAnswer": { "message": "ตอบคำถามแบบสุ่ม" },
   "optionDesc_commitMsg": { "message": "สร้างข้อความ GIT commit จากการเปลี่ยนแปลงและคัดลอกไปยังคลิปบอร์ด" },
+  "optionDesc_diff": { "message": "สร้าง git diff ที่มนุษย์อ่านได้และผนวกเข้ากับ -- commit-msg หากผ่าน" },
   "optionDesc_clear": { "message": "ล้างลำดับข้อความที่แคชไว้" },
   "optionDesc_help": { "message": "หน้าจอวิธีใช้การแสดงผล" },
   "optionDesc_version": { "message": "à¸à¸·à¹à¸­à¸à¸­à¸à¸£à¸°à¸à¸à¹à¸ªà¸à¸à¸à¸¥" },

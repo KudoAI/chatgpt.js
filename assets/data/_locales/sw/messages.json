@@ -89,6 +89,9 @@
   "optionDesc_commitMsg": {
     "message": "Tengeneza ujumbe wa kujizatiti kutoka kwa mabadiliko na unakili hadi ubao wa kunakili"
   },
+  "optionDesc_diff": {
+    "message": "Tengeneza tofauti inayoweza kusomwa na binadamu na uambatishe kwa --commit-msg ikiwa imepitishwa"
+  },
   "optionDesc_clear": { "message": "Futa mlolongo wa ujumbe uliofichwa" },
   "optionDesc_help": { "message": "Onyesha skrini ya usaidizi" },
   "optionDesc_version": { "message": "Onyesha nambari ya toleo" },

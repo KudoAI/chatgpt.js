@@ -89,6 +89,9 @@
   "optionDesc_fortune": { "message": "أخبر عن ثروتك" },
   "optionDesc_randomAnswer": { "message": "الإجابة على سؤال عشوائي" },
   "optionDesc_commitMsg": { "message": "إنشاء رسالة git commit من التغييرات والنسخ إلى الحافظة" },
+  "optionDesc_diff": {
+    "message": "إنشاء فرق بوابة قابل للقراءة من قبل الإنسان وإلحاقه بـ - الالتزام - msg إذا تم اجتيازه"
+  },
   "optionDesc_clear": { "message": "مسح سلسلة الرسائل المخزنة مؤقتًا" },
   "optionDesc_help": { "message": "عرض شاشة المساعدة" },
   "optionDesc_version": { "message": "رقم الإصدار" },

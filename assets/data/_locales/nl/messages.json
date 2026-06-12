@@ -89,6 +89,9 @@
   "optionDesc_fortune": { "message": "Vertel je fortuin" },
   "optionDesc_randomAnswer": { "message": "Een willekeurige vraag beantwoorden" },
   "optionDesc_commitMsg": { "message": "Genereer git commit bericht van wijzigingen en kopieer naar klembord" },
+  "optionDesc_diff": {
+    "message": "Genereer voor mensen leesbare git diff en voeg toe aan --commit-msg indien geslaagd"
+  },
   "optionDesc_clear": { "message": "Berichtketen in cache wissen" },
   "optionDesc_help": { "message": "Hulpscherm weergeven" },
   "optionDesc_version": { "message": "Het versienummer tonen" },

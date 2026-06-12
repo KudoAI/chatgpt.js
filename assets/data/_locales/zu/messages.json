@@ -91,6 +91,7 @@
   "optionDesc_commitMsg": {
     "message": "Yenza umlayezo we-git uzibophezele ovela ezinguqukweni bese ukopisha uye ebhodini"
   },
+  "optionDesc_diff": { "message": "Khiqiza i-git diff efundeka ngabantu bese ufaka ku- --commit-msg uma idlulisiwe" },
   "optionDesc_clear": { "message": "Sula uchungechunge lwemiyalezo efihliwe" },
   "optionDesc_help": { "message": "Bonisa isikrini sosizo" },
   "optionDesc_version": { "message": "Veza inombolo yohlelo" },

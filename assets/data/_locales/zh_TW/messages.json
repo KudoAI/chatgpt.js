@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "告訴你的命運" },
   "optionDesc_randomAnswer": { "message": "隨機回答一個問題" },
   "optionDesc_commitMsg": { "message": "根據變更產生git提交訊息並複製到剪貼簿" },
+  "optionDesc_diff": { "message": "生成人類可讀的git diff並在傳遞時附加到--commit-msg" },
   "optionDesc_clear": { "message": "清除快取訊息鏈" },
   "optionDesc_help": { "message": "顯示說明畫面" },
   "optionDesc_version": { "message": "版本編號" },

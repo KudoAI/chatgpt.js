@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "Isulti ang imong kapalaran" },
   "optionDesc_randomAnswer": { "message": "Tubaga ang usa ka sulagma nga pangutana" },
   "optionDesc_commitMsg": { "message": "Paghimo mensahe sa git commit gikan sa mga pagbag-o ug pagkopya sa clipboard" },
+  "optionDesc_diff": { "message": "Generate human-readable git diff ug apend sa --commit-msg kon milabay" },
   "optionDesc_clear": { "message": "Tin-aw nga natago nga kadena sa mensahe" },
   "optionDesc_help": { "message": "Ipakita ang screen sa tabang" },
   "optionDesc_version": { "message": "Ipakita ang numero sa bersyon" },

@@ -93,6 +93,9 @@
   "optionDesc_commitMsg": {
     "message": "Te whakaputa i te karere tuku git mai i nga huringa me te kape ki te papapātuhi"
   },
+  "optionDesc_diff": {
+    "message": "Te whakaputa i te kutikuti tangata e taea te pānui rerekē, me te faaite ki --commit-msg ki te haere"
+  },
   "optionDesc_clear": { "message": "He mekameka karere mārama" },
   "optionDesc_help": { "message": "Whakaatuhia te mata awhina" },
   "optionDesc_version": { "message": "Whakaatuhia te tau putanga" },

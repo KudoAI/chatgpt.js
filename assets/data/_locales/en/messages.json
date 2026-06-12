@@ -87,6 +87,7 @@
   "optionDesc_fortune": { "message": "Tell your fortune" },
   "optionDesc_randomAnswer": { "message": "Answer a random question" },
   "optionDesc_commitMsg": { "message": "Generate git commit message from changes and copy to clipboard" },
+  "optionDesc_diff": { "message": "Generate human-readable git diff and append to --commit-msg if passed" },
   "optionDesc_clear": { "message": "Clear cached message chain" },
   "optionDesc_help": { "message": "Display help screen" },
   "optionDesc_version": { "message": "Show version number" },

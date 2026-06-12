@@ -87,6 +87,9 @@
   "optionDesc_fortune": { "message": "ඔබේ ධනය පවසන්න" },
   "optionDesc_randomAnswer": { "message": "අහඹු ප් ‍ රශ්නයකට පිළිතුරු දෙන්න" },
   "optionDesc_commitMsg": { "message": "Generate git commit message from changes and copy to clipboard" },
+  "optionDesc_diff": {
+    "message": "--commit-msg වෙත --commit-msg සම්මත කළහොත් --commit-msg වෙත ඇමිණීම සඳහා මානව කියවිය හැකි git diff උත්පාදනය කරන්න"
+  },
   "optionDesc_clear": { "message": "හැංගූ පණිවිඩ දාමය හිස් කරන්න" },
   "optionDesc_help": { "message": "සහාය තිරය පෙන්වන්න" },
   "optionDesc_version": { "message": "වෙළුම අංකය" },

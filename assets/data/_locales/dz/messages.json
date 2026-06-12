@@ -89,6 +89,7 @@
   "optionDesc_fortune": { "message": "ཁོ་གིས་ང་ལུ་ ཁོ་གི་རྒྱུ་ནོར་སླབ་འོང་" },
   "optionDesc_randomAnswer": { "message": "དྲི་བ་འདི་ལན་རྐྱང་རྐྱང་རྐྱང་" },
   "optionDesc_commitMsg": { "message": "འགྱུར་བཅོས་ལས་ བརྡ་འཕྲིན་ཚུ་ git བསྒྲུབས་ཏེ་ clipboard ལུ་འདྲ་བཤུས་རྐྱབས།" },
+  "optionDesc_diff": { "message": "མི་གིས་ལྷག་ཚུགས་པའི་ git diff བཟོ་ནི་དང་ --commit-msg སྦྲེལ་གཏང་པ་ཅིན་" },
   "optionDesc_clear": { "message": "གསང་བཞག་ཡོད་པའི་ བརྡ་འཕྲིན་བཀྲམ་སྤེལ་འབད་ཐབས།" },
   "optionDesc_help": { "message": "གྲོགས་རམ་གི་མཐོང་སྣོད་སྟོན་" },
   "optionDesc_version": { "message": "འདྲ་ཕབ།" },
