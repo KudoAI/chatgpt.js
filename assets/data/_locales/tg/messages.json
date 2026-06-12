@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Аргументҳои CLI ҳамеша ин арзишҳоро бартарӣ медиҳанд" },
   "helpSection_usage": { "message": "Истифодабарӣ" },
   "helpSection_params": { "message": "Танзими имконот" },
-  "helpSection_flags": { "message": "Танзими имконот" },
+  "helpSection_flags": { "message": "Парчамҳо" },
   "helpSection_cmds": { "message": "Фармонҳои иттилоотӣ" },
   "optionDesc_provider": { "message": "Таъминкунанда барои API чат" },
   "optionDesc_query": { "message": "Дархост барои фиристодани AI" },

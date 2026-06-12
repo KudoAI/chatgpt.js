@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI argumenti vienmēr ignorē šīs vērtības" },
   "helpSection_usage": { "message": "Lietojums" },
   "helpSection_params": { "message": "Parametru opcijas" },
-  "helpSection_flags": { "message": "Konfigurācijas opcijas" },
+  "helpSection_flags": { "message": "Karodziņi" },
   "helpSection_cmds": { "message": "Informācijas komandas" },
   "optionDesc_provider": { "message": "Tērzēšanas API nodrošinātājs" },
   "optionDesc_query": { "message": "Vaicājums, lai nosūtītu MI" },

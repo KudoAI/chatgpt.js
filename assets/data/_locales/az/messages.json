@@ -67,7 +67,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI arqumentləri həmişə bu dəyərləri üstələyir" },
   "helpSection_usage": { "message": "İsmarış" },
   "helpSection_params": { "message": "Parametr seçimləri" },
-  "helpSection_flags": { "message": "Seçimləri konfiqur" },
+  "helpSection_flags": { "message": "Bayraqlar" },
   "helpSection_cmds": { "message": "Məlumat əmrləri" },
   "optionDesc_provider": { "message": "Söhbət API-si üçün təminatçı" },
   "optionDesc_query": { "message": "AI göndərmək üçün sorğu" },

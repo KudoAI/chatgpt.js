@@ -67,7 +67,7 @@
   "tip_cliArgsPrioritized": { "message": "Doodda CLI had iyo jeer waxay dhaaftaa qiyamkan" },
   "helpSection_usage": { "message": "Isticmaalka" },
   "helpSection_params": { "message": "Habee ikhtiyaarrada" },
-  "helpSection_flags": { "message": "Habee ikhtiyaarrada" },
+  "helpSection_flags": { "message": "Calanka" },
   "helpSection_cmds": { "message": "Amarada Macluumaadka" },
   "optionDesc_provider": { "message": "Bixiyaha Wadahadalka API" },
   "optionDesc_query": { "message": "Codsi si aad u dirto AI" },

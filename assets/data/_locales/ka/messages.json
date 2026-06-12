@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI არგუმენტები ყოველთვის უპირატესობას ანიჭებს ამ მნიშვნელობებს" },
   "helpSection_usage": { "message": "გამოყენება" },
   "helpSection_params": { "message": "პარამეტრის პარამეტრები" },
-  "helpSection_flags": { "message": "Კონფიგურაციის პარამეტრები" },
+  "helpSection_flags": { "message": "Დროშები" },
   "helpSection_cmds": { "message": "ბრძანებები" },
   "optionDesc_provider": { "message": "Სასაუბრო API-ს მომწოდებელი" },
   "optionDesc_query": { "message": "Მოთხოვნა AI-ს გასაგზავნად" },

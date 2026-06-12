@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Els arguments CLI sempre anul·len aquests valors" },
   "helpSection_usage": { "message": "Ús" },
   "helpSection_params": { "message": "Opcions de paràmetres" },
-  "helpSection_flags": { "message": "Opcions de configuració" },
+  "helpSection_flags": { "message": "Banderes" },
   "helpSection_cmds": { "message": "Ordres d'informació" },
   "optionDesc_provider": { "message": "Proveïdor per a l'API de xat" },
   "optionDesc_query": { "message": "Consulta per enviar IA" },

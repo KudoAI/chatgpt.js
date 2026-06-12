@@ -71,7 +71,7 @@
     "message": "بەکارھێنان، بەکارھاتن، بەکارھاتوو، ڕێبازی بەکارھێنانی وتنەکان\n[رۆژنامەوانی]: بەکاربردن، بەکارھێنان"
   },
   "helpSection_params": { "message": "هەڵبژاردنی پارامەتری" },
-  "helpSection_flags": { "message": "هەڵبژاردنەکان ڕێکبخە" },
+  "helpSection_flags": { "message": "ئاڵاکان" },
   "helpSection_cmds": { "message": "فەرمانەکانی زانیاری" },
   "optionDesc_provider": { "message": "زیادکردنی هاوپۆل بۆ chat API" },
   "optionDesc_query": { "message": "ناردنی ئه كاونت" },

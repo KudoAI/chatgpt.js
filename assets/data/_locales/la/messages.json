@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Argumenta CLI semper hos valores superant." },
   "helpSection_usage": { "message": "Usus" },
   "helpSection_params": { "message": "Optiones parametrorum" },
-  "helpSection_flags": { "message": "Praeferentiae" },
+  "helpSection_flags": { "message": "Paginae" },
   "helpSection_cmds": { "message": "Info commandes" },
   "optionDesc_provider": { "message": "Provider for chat API" },
   "optionDesc_query": { "message": "QUERITI EXTREME AI" },

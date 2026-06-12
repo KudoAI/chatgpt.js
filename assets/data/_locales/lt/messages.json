@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI argumentai visada nepaiso šių reikšmių" },
   "helpSection_usage": { "message": "Naudojimasis" },
   "helpSection_params": { "message": "Parametrų parinktys" },
-  "helpSection_flags": { "message": "Konfigūracijos parinktys" },
+  "helpSection_flags": { "message": "Vėliavos" },
   "helpSection_cmds": { "message": "Informacijos komandos" },
   "optionDesc_provider": { "message": "Pokalbių API teikėjas" },
   "optionDesc_query": { "message": "Užklausa DI siuntimui" },

@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "អាគុយម៉ង់ CLI តែងតែ បដិសេធ តម្លៃ ទាំងនេះ" },
   "helpSection_usage": { "message": "ការប្រើប្រាស់" },
   "helpSection_params": { "message": "ជម្រើសប៉ារ៉ាម៉ែត្រ" },
-  "helpSection_flags": { "message": "ជម្រើសកំណត់រចនាសម្ព័ន្ធ" },
+  "helpSection_flags": { "message": "ទង់" },
   "helpSection_cmds": { "message": "ពាក្យបញ្ជាព័ត៌មាន" },
   "optionDesc_provider": { "message": "អ្នកផ្តល់សេវាសម្រាប់ការជជែកកំសាន្ត API" },
   "optionDesc_query": { "message": "សំណួរដែលត្រូវផ្ញើ AI" },

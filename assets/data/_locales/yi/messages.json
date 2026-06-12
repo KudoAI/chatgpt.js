@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI אַרגומענטן איבערשרייַבן שטענדיק די ווערטן" },
   "helpSection_usage": { "message": "באַניץ" },
   "helpSection_params": { "message": "Config אָפּציעס" },
-  "helpSection_flags": { "message": "קאָנפיגוראַציע אָפּציעס" },
+  "helpSection_flags": { "message": "פאָנען" },
   "helpSection_cmds": { "message": "אינפֿאָרמאַציע קאַמאַנדז" },
   "optionDesc_provider": { "message": "פּראַוויידער פֿאַר טשאַט API" },
   "optionDesc_query": { "message": "אָנפֿרעג צו שיקן קינסטלעכע אינטעליגענץ" },

@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Makakatanwa eCLI anogara achikurira tsika idzi" },
   "helpSection_usage": { "message": "Kushandiswa" },
   "helpSection_params": { "message": "Ronga zvingasarudzwa" },
-  "helpSection_flags": { "message": "Ronga zvingasarudzwa" },
+  "helpSection_flags": { "message": "Mireza" },
   "helpSection_cmds": { "message": "Info mirairo" },
   "optionDesc_provider": { "message": "Mupi wekukurukurirana API" },
   "optionDesc_query": { "message": "Mubvunzo kutumira AI" },

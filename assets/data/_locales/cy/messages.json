@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Mae ymresymiadau CLI bob amser yn diystyru'r gwerthoedd hyn" },
   "helpSection_usage": { "message": "Defnydd" },
   "helpSection_params": { "message": "Opsiynau paramedr" },
-  "helpSection_flags": { "message": "Opsiynau ffurfweddu" },
+  "helpSection_flags": { "message": "Baneri" },
   "helpSection_cmds": { "message": "Gorchmynion gwybodaeth" },
   "optionDesc_provider": { "message": "Darparwr ar gyfer API sgwrsio" },
   "optionDesc_query": { "message": "Ymholiad i anfon at" },

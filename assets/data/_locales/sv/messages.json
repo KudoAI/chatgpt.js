@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI-argument åsidosätter alltid dessa värden" },
   "helpSection_usage": { "message": "Användning" },
   "helpSection_params": { "message": "Konfigurera alternativ" },
-  "helpSection_flags": { "message": "Konfigurera alternativ" },
+  "helpSection_flags": { "message": "Flaggor" },
   "helpSection_cmds": { "message": "INFO-kommandon" },
   "optionDesc_provider": { "message": "Leverantör för chatt-API" },
   "optionDesc_query": { "message": "Fråga för att skicka AI" },

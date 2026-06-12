@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI ಆರ್ಗ್ಯುಮೆಂಟ್‌ಗಳು ಯಾವಾಗಲೂ ಈ ಮೌಲ್ಯಗಳನ್ನು ಅತಿಕ್ರಮಿಸುತ್ತವೆ" },
   "helpSection_usage": { "message": "ಬಳಕೆ" },
   "helpSection_params": { "message": "ಪ್ಯಾರಾಮೀಟರ್ ಆಯ್ಕೆಗಳು" },
-  "helpSection_flags": { "message": "ಕಾನ್ಫಿಗರ್ ಆಯ್ಕೆಗಳು" },
+  "helpSection_flags": { "message": "ಧ್ವಜಗಳು" },
   "helpSection_cmds": { "message": "ಮಾಹಿತಿ ಆಜ್ಞೆಗಳು" },
   "optionDesc_provider": { "message": "ಚಾಟ್ API ಗಾಗಿ ಒದಗಿಸುವವರು" },
   "optionDesc_query": { "message": "AI ಕಳುಹಿಸಲು ಪ್ರಶ್ನೆ" },

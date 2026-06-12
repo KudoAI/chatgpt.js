@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI వాదనలు ఎల్లప్పుడూ ఈ విలువలను భర్తీ చేస్తాయి" },
   "helpSection_usage": { "message": "వినిమయం" },
   "helpSection_params": { "message": "కాన్ఫిగర్ ఎంపికలు" },
-  "helpSection_flags": { "message": "కాన్ఫిగర్ ఎంపికలు" },
+  "helpSection_flags": { "message": "జెండాలు" },
   "helpSection_cmds": { "message": "సమాచార ఆదేశాలు" },
   "optionDesc_provider": { "message": "చాట్ API కోసం ప్రొవైడర్" },
   "optionDesc_query": { "message": "AIని పంపడానికి ప్రశ్న" },

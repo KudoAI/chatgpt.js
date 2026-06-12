@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI参数始终覆盖这些值" },
   "helpSection_usage": { "message": "使用量" },
   "helpSection_params": { "message": "配置选项" },
-  "helpSection_flags": { "message": "配置选项" },
+  "helpSection_flags": { "message": "标记" },
   "helpSection_cmds": { "message": "信息命令" },
   "optionDesc_provider": { "message": "聊天API的提供商" },
   "optionDesc_query": { "message": "发送AI查询" },

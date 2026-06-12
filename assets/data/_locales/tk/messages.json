@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI jedelleri hemişe bu gymmatlary äsgermezlik edýär" },
   "helpSection_usage": { "message": "Uzaklyk" },
   "helpSection_params": { "message": "Seçimleri Konfigur et" },
-  "helpSection_flags": { "message": "Seçimleri Konfigur et" },
+  "helpSection_flags": { "message": "Bayraklar" },
   "helpSection_cmds": { "message": "Öwrenme tabşyryklary" },
   "optionDesc_provider": { "message": "Çat API-niň paýlaýan" },
   "optionDesc_query": { "message": "Men ony ibermek isleýärin" },

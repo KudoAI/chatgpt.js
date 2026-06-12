@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI rök hníga alltaf að þessum gildum" },
   "helpSection_usage": { "message": "Notkun" },
   "helpSection_params": { "message": "Valkostir færibreytna" },
-  "helpSection_flags": { "message": "Stilla valkosti" },
+  "helpSection_flags": { "message": "Flögg" },
   "helpSection_cmds": { "message": "Upplýsingaskipanir" },
   "optionDesc_provider": { "message": "Þjónustuaðili fyrir API fyrir spjall" },
   "optionDesc_query": { "message": "Fyrirspurn til að senda gervigreind" },

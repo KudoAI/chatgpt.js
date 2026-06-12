@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "እቲ ክርክር ነዚ እሴታት እዚ ወትሩ ይሓልፎ" },
   "helpSection_usage": { "message": "ኣጠቓቕማ" },
   "helpSection_params": { "message": "ኣማራጺታት ኣዳሊእካ" },
-  "helpSection_flags": { "message": "ኣማራጺታት ኣዳሊእካ" },
+  "helpSection_flags": { "message": "ባንዴራታት" },
   "helpSection_cmds": { "message": "መምርሒታት ሓበሬታ" },
   "optionDesc_provider": { "message": "ናይ ቻት ኤፒአይ ኣከፋፋሊ" },
   "optionDesc_query": { "message": "AI ንምልኣኽ ሓተተ" },

@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Niverimberina tao amin'ireo soatoavina ireo ny diarin'ny CLI" },
   "helpSection_usage": { "message": "Ny teny niverimberina" },
   "helpSection_params": { "message": "Safidy momba ny marika" },
-  "helpSection_flags": { "message": "Safidin'ny kirakira" },
+  "helpSection_flags": { "message": "SAINA" },
   "helpSection_cmds": { "message": "Baikon'ny fampahalalana" },
   "optionDesc_provider": { "message": "Mpanome ny chat API" },
   "optionDesc_query": { "message": "Fangatahana handefa AI" },

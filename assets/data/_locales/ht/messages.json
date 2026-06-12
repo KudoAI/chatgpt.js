@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Agiman CLI toujou pase sou valè sa yo" },
   "helpSection_usage": { "message": "usage/itilize/itilizasyon/utilisation" },
   "helpSection_params": { "message": "Opsyon paramèt" },
-  "helpSection_flags": { "message": "Konfigire opsyon yo" },
+  "helpSection_flags": { "message": "Drapo" },
   "helpSection_cmds": { "message": "Kòmandman Enfòmasyon" },
   "optionDesc_provider": { "message": "Founisè pou chat API" },
   "optionDesc_query": { "message": "Mande pou voye AI" },

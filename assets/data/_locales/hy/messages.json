@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI - ի փաստարկները միշտ անտեսում են այս արժեքները" },
   "helpSection_usage": { "message": "օգտագործում" },
   "helpSection_params": { "message": "Պարամետրի տարբերակներ" },
-  "helpSection_flags": { "message": "Կարգավորումների ընտրանքներ" },
+  "helpSection_flags": { "message": "Դրոշներ" },
   "helpSection_cmds": { "message": "Տեղեկությունների հրամաններ" },
   "optionDesc_provider": { "message": "Չատի API - ի մատակարար" },
   "optionDesc_query": { "message": "Հարցում ՝ AI ուղարկելու համար" },

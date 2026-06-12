@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Isebtar i yellan ddaw-a sɛan aseɣwen ɣer CLI" },
   "helpSection_usage": { "message": "Aseqdec" },
   "helpSection_params": { "message": "Iɣewwaṛen n uzegrir" },
-  "helpSection_flags": { "message": "Snifel isenfaren" },
+  "helpSection_flags": { "message": "Iɣewwaṛen" },
   "helpSection_cmds": { "message": "Iɣewwaṛen n isefka" },
   "optionDesc_provider": { "message": "Asebded i tmaziɣt API" },
   "optionDesc_query": { "message": "Affinez votre recherche pour amd" },

@@ -67,7 +67,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI வாதங்கள் எப்போதும் இந்த மதிப்புகளை மீறுகின்றன" },
   "helpSection_usage": { "message": "பயன்பாடு" },
   "helpSection_params": { "message": "கட்டமைப்பு விருப்பங்கள்" },
-  "helpSection_flags": { "message": "கட்டமைப்பு விருப்பங்கள்" },
+  "helpSection_flags": { "message": "கொடிகள்" },
   "helpSection_cmds": { "message": "தகவல் கட்டளைகள்" },
   "optionDesc_provider": { "message": "அரட்டை APIக்கான வழங்குநர்" },
   "optionDesc_query": { "message": "AI ஐ அனுப்ப வினவல்" },

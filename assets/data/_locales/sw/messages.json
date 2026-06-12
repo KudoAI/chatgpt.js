@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Hoja za CLI kila wakati zinabatilisha maadili haya" },
   "helpSection_usage": { "message": "Matumizi" },
   "helpSection_params": { "message": "Sanidi machaguo" },
-  "helpSection_flags": { "message": "Sanidi machaguo" },
+  "helpSection_flags": { "message": "Bendera" },
   "helpSection_cmds": { "message": "Amri za taarifa" },
   "optionDesc_provider": { "message": "Mtoa huduma wa API ya gumzo" },
   "optionDesc_query": { "message": "Swali la kutuma AI" },

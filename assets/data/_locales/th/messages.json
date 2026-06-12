@@ -67,7 +67,7 @@
   "tip_cliArgsPrioritized": { "message": "อาร์กิวเมนต์ CLI แทนที่ค่าเหล่านี้เสมอ" },
   "helpSection_usage": { "message": "การใช้งาน" },
   "helpSection_params": { "message": "ตัวเลือกการกำหนดค่า" },
-  "helpSection_flags": { "message": "ตัวเลือกการกำหนดค่า" },
+  "helpSection_flags": { "message": "ธง" },
   "helpSection_cmds": { "message": "คำสั่งข้อมูล" },
   "optionDesc_provider": { "message": "ผู้ให้บริการสำหรับ API การแชท" },
   "optionDesc_query": { "message": "สอบถามเพื่อส่ง AI" },

@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Argumen CLI selalu mengesampingkan nilai - nilai ini" },
   "helpSection_usage": { "message": "Cara Pakai" },
   "helpSection_params": { "message": "Opsi parameter" },
-  "helpSection_flags": { "message": "Opsi konfigurasi" },
+  "helpSection_flags": { "message": "Bendera" },
   "helpSection_cmds": { "message": "Perintah info" },
   "optionDesc_provider": { "message": "Penyedia api obrolan" },
   "optionDesc_query": { "message": "Kueri untuk mengirim AI" },

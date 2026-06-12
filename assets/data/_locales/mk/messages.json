@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Аргументите на CLI секогаш ги надминуваат овие вредности" },
   "helpSection_usage": { "message": "Употреба" },
   "helpSection_params": { "message": "Опции за параметри" },
-  "helpSection_flags": { "message": "Конфигурирајте ги опциите" },
+  "helpSection_flags": { "message": "Знамиња" },
   "helpSection_cmds": { "message": "Информативни команди" },
   "optionDesc_provider": { "message": "Давател на API за разговор" },
   "optionDesc_query": { "message": "Барање за испраќање вештачка интелигенција" },

@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Argumentele CLI suprascriu întotdeauna aceste valori" },
   "helpSection_usage": { "message": "Utilizare" },
   "helpSection_params": { "message": "Opțiuni de configurare" },
-  "helpSection_flags": { "message": "Opțiuni de configurare" },
+  "helpSection_flags": { "message": "Steaguri" },
   "helpSection_cmds": { "message": "Comenzi Info" },
   "optionDesc_provider": { "message": "Furnizor pentru chat API" },
   "optionDesc_query": { "message": "Interogare pentru a trimite AI" },

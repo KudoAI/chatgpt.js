@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Izimpikiswano ze-CLI zihlala zichitha lezi zindinganiso" },
   "helpSection_usage": { "message": "Ukusetshenziswa" },
   "helpSection_params": { "message": "Izinketho zepharamitha" },
-  "helpSection_flags": { "message": "Lungiselela ongakhetha kukho" },
+  "helpSection_flags": { "message": "Amafulegi" },
   "helpSection_cmds": { "message": "Imiyalo yemininingwane" },
   "optionDesc_provider": { "message": "Umhlinzeki we-API yengxoxo" },
   "optionDesc_query": { "message": "Isicelo sokuthumela i-AI" },

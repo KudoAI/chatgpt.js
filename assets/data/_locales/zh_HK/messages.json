@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI引數總是會覆寫這些值" },
   "helpSection_usage": { "message": "用途" },
   "helpSection_params": { "message": "設定選項" },
-  "helpSection_flags": { "message": "設定選項" },
+  "helpSection_flags": { "message": "旗幟" },
   "helpSection_cmds": { "message": "信息命令" },
   "optionDesc_provider": { "message": "聊天API的提供商" },
   "optionDesc_query": { "message": "查詢以發送AI" },

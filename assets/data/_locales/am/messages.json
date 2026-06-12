@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "የ CLI ክርክሮች ሁል ጊዜ እነዚህን እሴቶች ያሸንፋሉ" },
   "helpSection_usage": { "message": "መልዕክት" },
   "helpSection_params": { "message": "የፓራሜትር አማራጮች" },
-  "helpSection_flags": { "message": "አማራጮችን ያዋቅሩ" },
+  "helpSection_flags": { "message": "ባንዲራዎች" },
   "helpSection_cmds": { "message": "መረጃ ትዕዛዞች" },
   "optionDesc_provider": { "message": "የውይይት ኤፒአይ አቅራቢ" },
   "optionDesc_query": { "message": "AI ለመላክ ጥያቄ" },

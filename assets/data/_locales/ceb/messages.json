@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Ang mga argumento sa CLI kanunay nga nag-override sa kini nga mga kantidad" },
   "helpSection_usage": { "message": "Usage" },
   "helpSection_params": { "message": "Mga kapilian sa parameter" },
-  "helpSection_flags": { "message": "Mga kapilian sa config" },
+  "helpSection_flags": { "message": "Flags - Flags" },
   "helpSection_cmds": { "message": "Mga mando sa info" },
   "optionDesc_provider": { "message": "Provider alang sa chat API" },
   "optionDesc_query": { "message": "Себуано sa pagpadala sa usa ka [" },

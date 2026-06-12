@@ -67,7 +67,7 @@
   "tip_cliArgsPrioritized": { "message": "Gli argomenti CLI sovrascrivono sempre questi valori" },
   "helpSection_usage": { "message": "Utilizzo" },
   "helpSection_params": { "message": "Opzioni dei parametri" },
-  "helpSection_flags": { "message": "Opzioni Configurazione" },
+  "helpSection_flags": { "message": "Bandiere" },
   "helpSection_cmds": { "message": "Comandi info" },
   "optionDesc_provider": { "message": "Provider per chat API" },
   "optionDesc_query": { "message": "Query da inviare all'IA" },

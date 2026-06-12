@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Impaka za CLI zihora zirenga ku ndangagaciro" },
   "helpSection_usage": { "message": "Ikoreshwa" },
   "helpSection_params": { "message": "Hindura amahitamo" },
-  "helpSection_flags": { "message": "Amahitamo" },
+  "helpSection_flags": { "message": "Amabendera" },
   "helpSection_cmds": { "message": "Amabwiriza" },
   "optionDesc_provider": { "message": "Kugirango" },
   "optionDesc_query": { "message": "Kuri Kohereza" },

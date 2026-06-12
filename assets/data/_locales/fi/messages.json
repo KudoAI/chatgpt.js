@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI-argumentit ohittavat aina nämä arvot" },
   "helpSection_usage": { "message": "Käyttö" },
   "helpSection_params": { "message": "Parametrivaihtoehdot" },
-  "helpSection_flags": { "message": "Konfig. asetukset" },
+  "helpSection_flags": { "message": "Liput" },
   "helpSection_cmds": { "message": "Tietokomennot" },
   "optionDesc_provider": { "message": "Chat-sovellusliittymän tarjoaja" },
   "optionDesc_query": { "message": "Kysely tekoälyn lähettämiseksi" },

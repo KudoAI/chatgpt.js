@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Argumenty CLI vždy prepíšu tieto hodnoty" },
   "helpSection_usage": { "message": "Využívanie" },
   "helpSection_params": { "message": "Možnosti konfigurácie" },
-  "helpSection_flags": { "message": "Možnosti konfigurácie" },
+  "helpSection_flags": { "message": "Vlajky" },
   "helpSection_cmds": { "message": "Informačné príkazy" },
   "optionDesc_provider": { "message": "Poskytovateľ pre chat API" },
   "optionDesc_query": { "message": "Požiadavka na odoslanie umelej inteligencie" },

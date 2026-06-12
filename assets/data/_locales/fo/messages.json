@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI argumentir altíð ignorera hesi virðir" },
   "helpSection_usage": { "message": "Brúka" },
   "helpSection_params": { "message": "Parametrar valmøguleikar" },
-  "helpSection_flags": { "message": "Set upp valmøguleikar" },
+  "helpSection_flags": { "message": "Flagg" },
   "helpSection_cmds": { "message": "Upplýsingar boð" },
   "optionDesc_provider": { "message": "Chat API-tilboð" },
   "optionDesc_query": { "message": "Tað er ikki so lætt at fáa ein" },

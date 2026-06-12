@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI દલીલો હંમેશા આ મૂલ્યોને ઓવરરાઇડ કરે છે" },
   "helpSection_usage": { "message": "વપરાશ" },
   "helpSection_params": { "message": "પરિમાણ વિકલ્પો" },
-  "helpSection_flags": { "message": "રૂપરેખાંકન વિકલ્પો" },
+  "helpSection_flags": { "message": "ફ્લેગ્સ" },
   "helpSection_cmds": { "message": "માહિતી આદેશો" },
   "optionDesc_provider": { "message": "ચેટ API માટે પ્રદાતા" },
   "optionDesc_query": { "message": "AI મોકલવા માટે ક્વેરી" },

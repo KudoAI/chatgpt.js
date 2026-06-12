@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI আর্গুমেন্টগুলি সর্বদা এই মানগুলিকে ওভাররাইড করে" },
   "helpSection_usage": { "message": "ব্যবহার" },
   "helpSection_params": { "message": "প্যারামিটার বিকল্প" },
-  "helpSection_flags": { "message": "কনফিগার অপশন" },
+  "helpSection_flags": { "message": "পতাকা" },
   "helpSection_cmds": { "message": "তথ্য কমান্ড" },
   "optionDesc_provider": { "message": "চ্যাট API এর জন্য প্রদানকারী" },
   "optionDesc_query": { "message": "AI পাঠাতে কোয়েরি করুন" },

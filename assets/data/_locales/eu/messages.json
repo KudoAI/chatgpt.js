@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI argumentuek beti gainidazten dituzte balio hauek" },
   "helpSection_usage": { "message": "Erabilpena" },
   "helpSection_params": { "message": "Parametroen aukerak" },
-  "helpSection_flags": { "message": "Konfigurazio aukerak" },
+  "helpSection_flags": { "message": "Banderak" },
   "helpSection_cmds": { "message": "Informazio komandoak" },
   "optionDesc_provider": { "message": "Txat APIaren hornitzailea" },
   "optionDesc_query": { "message": "AI bidaltzeko kontsulta" },

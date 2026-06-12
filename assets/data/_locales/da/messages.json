@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI-argumenter tilsidesætter altid disse værdier" },
   "helpSection_usage": { "message": "Anvendelse" },
   "helpSection_params": { "message": "Parameterindstillinger" },
-  "helpSection_flags": { "message": "Konfigurationsindstillinger" },
+  "helpSection_flags": { "message": "Flag" },
   "helpSection_cmds": { "message": "INFO-kommandoer" },
   "optionDesc_provider": { "message": "Udbyder til chat-API" },
   "optionDesc_query": { "message": "Forespørgsel om at sende AI" },

@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI-argumenten overschrijven altijd deze waarden" },
   "helpSection_usage": { "message": "Gebruik" },
   "helpSection_params": { "message": "Config opties" },
-  "helpSection_flags": { "message": "Config opties" },
+  "helpSection_flags": { "message": "Vlaggen" },
   "helpSection_cmds": { "message": "Info commando 's" },
   "optionDesc_provider": { "message": "Provider voor chat-API" },
   "optionDesc_query": { "message": "Vraag om AI te verzenden" },

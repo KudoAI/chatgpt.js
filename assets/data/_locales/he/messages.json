@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "ארגומנטים של CLI תמיד גוברים על ערכים אלה" },
   "helpSection_usage": { "message": "שימוש" },
   "helpSection_params": { "message": "אפשרויות פרמטר" },
-  "helpSection_flags": { "message": "הגדר אופציות" },
+  "helpSection_flags": { "message": "דגלים" },
   "helpSection_cmds": { "message": "פקודות מידע" },
   "optionDesc_provider": { "message": "ספק עבור ממשק API של צ'אט" },
   "optionDesc_query": { "message": "שאילתה לשליחת בינה מלאכותית" },

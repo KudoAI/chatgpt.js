@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Mitsutso ya CLI nthawi zonse imanyalanyaza mfundo izi" },
   "helpSection_usage": { "message": "Ntchito" },
   "helpSection_params": { "message": "Konzani zosankha" },
-  "helpSection_flags": { "message": "Konzani zosankha" },
+  "helpSection_flags": { "message": "Mbendera" },
   "helpSection_cmds": { "message": "ZOKHUDZ" },
   "optionDesc_provider": { "message": "Wopereka macheza API" },
   "optionDesc_query": { "message": "Kufunsira kutumiza AI" },

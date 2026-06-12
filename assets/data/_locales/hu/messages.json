@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "A CLI argumentumok mindig felülírják ezeket az értékeket" },
   "helpSection_usage": { "message": "Felhasználás" },
   "helpSection_params": { "message": "Paraméteropciók" },
-  "helpSection_flags": { "message": "Konfigurációs beállítások" },
+  "helpSection_flags": { "message": "Zászlók" },
   "helpSection_cmds": { "message": "Információs parancsok" },
   "optionDesc_provider": { "message": "Csevegési API szolgáltatója" },
   "optionDesc_query": { "message": "AI küldésének lekérdezése" },

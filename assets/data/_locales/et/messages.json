@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI argumendid alistavad alati need väärtused" },
   "helpSection_usage": { "message": "Kasutus" },
   "helpSection_params": { "message": "Parameetri valikud" },
-  "helpSection_flags": { "message": "Seadete valikud" },
+  "helpSection_flags": { "message": "Lipud" },
   "helpSection_cmds": { "message": "Teabekäsud" },
   "optionDesc_provider": { "message": "Vestluse API pakkuja" },
   "optionDesc_query": { "message": "Tehisintellekti saatmise päring" },

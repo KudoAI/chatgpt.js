@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI තර්ක සෑම විටම මෙම අගයන් අභිබවා යයි" },
   "helpSection_usage": { "message": "භාවිතය" },
   "helpSection_params": { "message": "විකල්ප සකසන්න" },
-  "helpSection_flags": { "message": "විකල්ප සකසන්න" },
+  "helpSection_flags": { "message": "ලාංඡන" },
   "helpSection_cmds": { "message": "තොරතුරු විධාන" },
   "optionDesc_provider": { "message": "චැට් API සඳහා සපයන්නා" },
   "optionDesc_query": { "message": "AI යැවීමට විමසුම" },

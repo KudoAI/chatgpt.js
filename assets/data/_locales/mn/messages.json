@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI аргументууд нь үргэлж эдгээр утгуудыг хэтрүүлэн хэрэглэдэг" },
   "helpSection_usage": { "message": "Хэрэглээ" },
   "helpSection_params": { "message": "Параметерын сонголтууд" },
-  "helpSection_flags": { "message": "Тохиргооны сонголтууд" },
+  "helpSection_flags": { "message": "Далбаа" },
   "helpSection_cmds": { "message": "Мэдээллийн командууд" },
   "optionDesc_provider": { "message": "Чат API-ийн үйлчилгээ үзүүлэгч" },
   "optionDesc_query": { "message": "AI илгээх хүсэлт" },

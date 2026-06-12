@@ -69,7 +69,7 @@
   "tip_cliArgsPrioritized": { "message": "Ko nga korero a te CLI e pa ana ki enei uara i nga wa katoa" },
   "helpSection_usage": { "message": "Whakamahia" },
   "helpSection_params": { "message": "Kōwhiringa parameter" },
-  "helpSection_flags": { "message": "Kōwhiringa whirihora" },
+  "helpSection_flags": { "message": "Ngā haki" },
   "helpSection_cmds": { "message": "Ngā Whakahau" },
   "optionDesc_provider": { "message": "Kaihoko mo te API korerorero" },
   "optionDesc_query": { "message": "Te tono ki te tuku i a ia" },

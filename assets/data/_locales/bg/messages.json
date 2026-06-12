@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI аргументите винаги заменят тези стойности" },
   "helpSection_usage": { "message": "Използван" },
   "helpSection_params": { "message": "Опции за параметрите" },
-  "helpSection_flags": { "message": "Опции за конфигуриране" },
+  "helpSection_flags": { "message": "Флагове" },
   "helpSection_cmds": { "message": "Команди за информация" },
   "optionDesc_provider": { "message": "Доставчик на приложен програмен интерфейс (API)" },
   "optionDesc_query": { "message": "Заявка за изпращане на ИИ" },

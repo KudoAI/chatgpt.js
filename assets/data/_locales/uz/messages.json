@@ -67,7 +67,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI argumentlari har doim bu qiymatlarni bekor qiladi" },
   "helpSection_usage": { "message": "FoydalanilganVisible items on device information columns (enable_BAR_disable)" },
   "helpSection_params": { "message": "Konfiguratsiya opsiyalari" },
-  "helpSection_flags": { "message": "Konfiguratsiya parametrlari" },
+  "helpSection_flags": { "message": "Bayroqlar" },
   "helpSection_cmds": { "message": "Ma'lumot buyruqlari" },
   "optionDesc_provider": { "message": "Chat API uchun provayder" },
   "optionDesc_query": { "message": "Sun'iy intellektni yuborish uchun so'rov" },

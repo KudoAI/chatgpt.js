@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI Argumenter iwwerschreiden ëmmer dës Wäerter" },
   "helpSection_usage": { "message": "Benotzung" },
   "helpSection_params": { "message": "Parameteroptiounen" },
-  "helpSection_flags": { "message": "Optiounen konfiguréieren" },
+  "helpSection_flags": { "message": "Fändelen" },
   "helpSection_cmds": { "message": "Infobefehlungen" },
   "optionDesc_provider": { "message": "Provider fir Chat API" },
   "optionDesc_query": { "message": "Query ze schécken AI" },

@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI तर्कहरूले सधैं यी मानहरूलाई ओभरराइड गर्दछ" },
   "helpSection_usage": { "message": "प्रयोग" },
   "helpSection_params": { "message": "कन्फिग विकल्पहरू" },
-  "helpSection_flags": { "message": "कन्फिग विकल्पहरू" },
+  "helpSection_flags": { "message": "झण्डाहरू" },
   "helpSection_cmds": { "message": "सूचना आदेशहरू" },
   "optionDesc_provider": { "message": "च्याट API का लागि प्रदायक" },
   "optionDesc_query": { "message": "AI पठाउनको लागि क्वेरी" },

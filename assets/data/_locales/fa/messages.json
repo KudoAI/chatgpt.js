@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "آرگومان‌های CLI همیشه این مقادیر را لغو می‌کنند" },
   "helpSection_usage": { "message": "کاربرد" },
   "helpSection_params": { "message": "گزینه‌های پارامتر" },
-  "helpSection_flags": { "message": "گزینه های پیکربندی" },
+  "helpSection_flags": { "message": "پرچم‌ها" },
   "helpSection_cmds": { "message": "دستورات اطلاعاتی" },
   "optionDesc_provider": { "message": "ارائه دهنده API چت" },
   "optionDesc_query": { "message": "درخواست برای ارسال هوش مصنوعی" },

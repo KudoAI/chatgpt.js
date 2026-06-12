@@ -67,7 +67,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI ആർഗ്യുമെന്റുകൾ എല്ലായ്പ്പോഴും ഈ മൂല്യങ്ങളെ അസാധുവാക്കുന്നു" },
   "helpSection_usage": { "message": "ഉപയോഗം" },
   "helpSection_params": { "message": "പാരാമീറ്റർ ഓപ്ഷനുകൾ" },
-  "helpSection_flags": { "message": "കോൺഫിഗർ ഓപ്ഷനുകൾ" },
+  "helpSection_flags": { "message": "പതാകകൾ" },
   "helpSection_cmds": { "message": "വിവര കമാന്‍ഡുകള്‍" },
   "optionDesc_provider": { "message": "ചാറ്റ് API-നുള്ള ദാതാവ്" },
   "optionDesc_query": { "message": "AI അയയ്‌ക്കാനുള്ള അന്വേഷണം" },

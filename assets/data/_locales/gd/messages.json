@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Tha argamaidean CLI an - còmhnaidh a 'dol thairis air na luachan sin" },
   "helpSection_usage": { "message": "Cleachdadh" },
   "helpSection_params": { "message": "Roghainnean a 'pharaiméadair" },
-  "helpSection_flags": { "message": "Roghainnean rèiteachaidh" },
+  "helpSection_flags": { "message": "Brataichean" },
   "helpSection_cmds": { "message": "Àithnean fiosrachaidh" },
   "optionDesc_provider": { "message": "Solaraiche airson API cabadaich" },
   "optionDesc_query": { "message": "Accueil > Accueil > To send ai" },

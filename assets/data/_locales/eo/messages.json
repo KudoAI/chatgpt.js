@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI-argumentoj ĉiam superregas tiujn valorojn" },
   "helpSection_usage": { "message": "Uzado" },
   "helpSection_params": { "message": "Parametraj opcioj" },
-  "helpSection_flags": { "message": "Agordopcioj" },
+  "helpSection_flags": { "message": "Flagoj" },
   "helpSection_cmds": { "message": "Informkomandoj" },
   "optionDesc_provider": { "message": "Provizanto por babilejo API" },
   "optionDesc_query": { "message": "Demando por sendi al iu" },

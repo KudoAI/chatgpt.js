@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "CLI ਆਰਗੂਮੈਂਟ ਹਮੇਸ਼ਾ ਇਹਨਾਂ ਮੁੱਲਾਂ ਨੂੰ ਅਣਡਿੱਠਾ ਕਰਦੇ ਹਨ" },
   "helpSection_usage": { "message": "ਵਰਤੋਂ" },
   "helpSection_params": { "message": "ਸੰਰਚਨਾ ਚੋਣਾਂ" },
-  "helpSection_flags": { "message": "ਸੰਰਚਨਾ ਚੋਣਾਂ" },
+  "helpSection_flags": { "message": "ਨਿਸ਼ਾਨ" },
   "helpSection_cmds": { "message": "ਜਾਣਕਾਰੀ ਕਮਾਂਡਾਂ" },
   "optionDesc_provider": { "message": "ਚੈਟ API ਲਈ ਪ੍ਰਦਾਤਾ" },
   "optionDesc_query": { "message": "AI ਭੇਜਣ ਲਈ ਕਿਊਰੀ" },

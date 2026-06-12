@@ -65,7 +65,7 @@
   "tip_cliArgsPrioritized": { "message": "Ol tok bilong CLI i save daunim ol dispela mak" },
   "helpSection_usage": { "message": "Yusim" },
   "helpSection_params": { "message": "Konfigim ol opsen" },
-  "helpSection_flags": { "message": "Konfigim ol opsen" },
+  "helpSection_flags": { "message": "Banner" },
   "helpSection_cmds": { "message": "Toksave" },
   "optionDesc_provider": { "message": "Ol man i save mekim wok long ol samting bilong skin" },
   "optionDesc_query": { "message": "Mi laik bai yu salim mi i go" },
