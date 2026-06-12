@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Gebruik" },
   "helpSection_params": { "message": "Parameter opsies" },
   "helpSection_flags": { "message": "Vlae" },
+  "helpSection_gitOptions": { "message": "git-opsies" },
   "helpSection_cmds": { "message": "Inligtingopdragte" },
   "optionDesc_provider": { "message": "Verskaffer vir klets-API" },
   "optionDesc_query": { "message": "Navraag om AI te stuur" },

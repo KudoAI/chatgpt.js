@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Anwendung" },
   "helpSection_params": { "message": "Parameteroptionen" },
   "helpSection_flags": { "message": "Flaggen" },
+  "helpSection_gitOptions": { "message": "git options" },
   "helpSection_cmds": { "message": "Info-Befehle" },
   "optionDesc_provider": { "message": "Anbieter für Chat-API" },
   "optionDesc_query": { "message": "Abfrage zum Senden von KI" },

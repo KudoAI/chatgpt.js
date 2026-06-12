@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Penggunaan" },
   "helpSection_params": { "message": "Pilihan parameter" },
   "helpSection_flags": { "message": "Bendera" },
+  "helpSection_gitOptions": { "message": "pilihan git" },
   "helpSection_cmds": { "message": "Perintah maklumat" },
   "optionDesc_provider": { "message": "Pembekal untuk api sembang" },
   "optionDesc_query": { "message": "Pertanyaan untuk menghantar AI" },

@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Faʻaaogaina" },
   "helpSection_params": { "message": "Filifiliga Config" },
   "helpSection_flags": { "message": "Faʻailoga" },
+  "helpSection_gitOptions": { "message": "filifiliga git" },
   "helpSection_cmds": { "message": "Poloaiga Info" },
   "optionDesc_provider": { "message": "Tuuina atu mo talatalanoaga API" },
   "optionDesc_query": { "message": "Fesili e auina atu AI" },

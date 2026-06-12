@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "መልዕክት" },
   "helpSection_params": { "message": "የፓራሜትር አማራጮች" },
   "helpSection_flags": { "message": "ባንዲራዎች" },
+  "helpSection_gitOptions": { "message": "git አማራጮች" },
   "helpSection_cmds": { "message": "መረጃ ትዕዛዞች" },
   "optionDesc_provider": { "message": "የውይይት ኤፒአይ አቅራቢ" },
   "optionDesc_query": { "message": "AI ለመላክ ጥያቄ" },

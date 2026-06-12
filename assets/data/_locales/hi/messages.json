@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "उपयोग" },
   "helpSection_params": { "message": "पैरामीटर विकल्प" },
   "helpSection_flags": { "message": "फ़्लैग" },
+  "helpSection_gitOptions": { "message": "गिट विकल्प" },
   "helpSection_cmds": { "message": "जानकारी कमांड" },
   "optionDesc_provider": { "message": "चैट एपीआई के लिए प्रदाता" },
   "optionDesc_query": { "message": "AI भेजने के लिए क्वेरी" },

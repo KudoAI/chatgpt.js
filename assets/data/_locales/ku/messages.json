@@ -70,6 +70,7 @@
   "helpSection_usage": { "message": "RûpelkerName" },
   "helpSection_params": { "message": "Vebijarkên parametreyan" },
   "helpSection_flags": { "message": "Ala" },
+  "helpSection_gitOptions": { "message": "vebijarkên git" },
   "helpSection_cmds": { "message": "Fermanên agahdariyê" },
   "optionDesc_provider": { "message": "Pêşkêşvan ji bo API-ya sohbetê" },
   "optionDesc_query": { "message": "Pirs ji bo şandina AI" },

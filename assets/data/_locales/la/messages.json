@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Usus" },
   "helpSection_params": { "message": "Optiones parametrorum" },
   "helpSection_flags": { "message": "Paginae" },
+  "helpSection_gitOptions": { "message": "git options" },
   "helpSection_cmds": { "message": "Info commandes" },
   "optionDesc_provider": { "message": "Provider for chat API" },
   "optionDesc_query": { "message": "QUERITI EXTREME AI" },

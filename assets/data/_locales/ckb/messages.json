@@ -72,6 +72,7 @@
   },
   "helpSection_params": { "message": "هەڵبژاردنی پارامەتری" },
   "helpSection_flags": { "message": "ئاڵاکان" },
+  "helpSection_gitOptions": { "message": "هەڵبژاردنەکانی git" },
   "helpSection_cmds": { "message": "فەرمانەکانی زانیاری" },
   "optionDesc_provider": { "message": "زیادکردنی هاوپۆل بۆ chat API" },
   "optionDesc_query": { "message": "ناردنی ئه كاونت" },

@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Matumizi" },
   "helpSection_params": { "message": "Sanidi machaguo" },
   "helpSection_flags": { "message": "Bendera" },
+  "helpSection_gitOptions": { "message": "machaguo ya git" },
   "helpSection_cmds": { "message": "Amri za taarifa" },
   "optionDesc_provider": { "message": "Mtoa huduma wa API ya gumzo" },
   "optionDesc_query": { "message": "Swali la kutuma AI" },

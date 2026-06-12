@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Gebruik" },
   "helpSection_params": { "message": "Config opties" },
   "helpSection_flags": { "message": "Vlaggen" },
+  "helpSection_gitOptions": { "message": "git options" },
   "helpSection_cmds": { "message": "Info commando 's" },
   "optionDesc_provider": { "message": "Provider voor chat-API" },
   "optionDesc_query": { "message": "Vraag om AI te verzenden" },

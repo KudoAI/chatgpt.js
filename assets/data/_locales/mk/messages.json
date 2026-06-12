@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Употреба" },
   "helpSection_params": { "message": "Опции за параметри" },
   "helpSection_flags": { "message": "Знамиња" },
+  "helpSection_gitOptions": { "message": "git-опции" },
   "helpSection_cmds": { "message": "Информативни команди" },
   "optionDesc_provider": { "message": "Давател на API за разговор" },
   "optionDesc_query": { "message": "Барање за испраќање вештачка интелигенција" },

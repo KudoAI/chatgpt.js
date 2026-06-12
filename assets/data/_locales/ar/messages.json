@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "الإستخدام" },
   "helpSection_params": { "message": "خيارات المعلمة" },
   "helpSection_flags": { "message": "الأعلام" },
+  "helpSection_gitOptions": { "message": "خيارات git" },
   "helpSection_cmds": { "message": "أوامر المعلومات" },
   "optionDesc_provider": { "message": "مزود لواجهة برمجة تطبيقات الدردشة" },
   "optionDesc_query": { "message": "استعلام لإرسال ذكاء اصطناعي" },

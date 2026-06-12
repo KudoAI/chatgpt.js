@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Benotzung" },
   "helpSection_params": { "message": "Parameteroptiounen" },
   "helpSection_flags": { "message": "Fändelen" },
+  "helpSection_gitOptions": { "message": "git Optiounen" },
   "helpSection_cmds": { "message": "Infobefehlungen" },
   "optionDesc_provider": { "message": "Provider fir Chat API" },
   "optionDesc_query": { "message": "Query ze schécken AI" },

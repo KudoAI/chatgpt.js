@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Công dụng" },
   "helpSection_params": { "message": "Tùy chọn cấu hình" },
   "helpSection_flags": { "message": "Cờ" },
+  "helpSection_gitOptions": { "message": "tùy chọn git" },
   "helpSection_cmds": { "message": "Lệnh thông tin" },
   "optionDesc_provider": { "message": "Nhà cung cấp cho API trò chuyện" },
   "optionDesc_query": { "message": "Truy vấn để gửi AI" },

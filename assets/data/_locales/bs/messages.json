@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Upotreba" },
   "helpSection_params": { "message": "i opcije parametara" },
   "helpSection_flags": { "message": "Zastavice" },
+  "helpSection_gitOptions": { "message": "git opcije" },
   "helpSection_cmds": { "message": "Komande za informacije" },
   "optionDesc_provider": { "message": "Dobavljač API-ja za chat" },
   "optionDesc_query": { "message": "Upit za slanje AI" },

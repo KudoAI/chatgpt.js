@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "ኣጠቓቕማ" },
   "helpSection_params": { "message": "ኣማራጺታት ኣዳሊእካ" },
   "helpSection_flags": { "message": "ባንዴራታት" },
+  "helpSection_gitOptions": { "message": "ኣማራጺታት GIT" },
   "helpSection_cmds": { "message": "መምርሒታት ሓበሬታ" },
   "optionDesc_provider": { "message": "ናይ ቻት ኤፒአይ ኣከፋፋሊ" },
   "optionDesc_query": { "message": "AI ንምልኣኽ ሓተተ" },

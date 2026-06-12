@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "వినిమయం" },
   "helpSection_params": { "message": "కాన్ఫిగర్ ఎంపికలు" },
   "helpSection_flags": { "message": "జెండాలు" },
+  "helpSection_gitOptions": { "message": "గిట్ ఎంపికలు" },
   "helpSection_cmds": { "message": "సమాచార ఆదేశాలు" },
   "optionDesc_provider": { "message": "చాట్ API కోసం ప్రొవైడర్" },
   "optionDesc_query": { "message": "AIని పంపడానికి ప్రశ్న" },

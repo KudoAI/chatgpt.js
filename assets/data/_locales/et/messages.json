@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Kasutus" },
   "helpSection_params": { "message": "Parameetri valikud" },
   "helpSection_flags": { "message": "Lipud" },
+  "helpSection_gitOptions": { "message": "giti valikud" },
   "helpSection_cmds": { "message": "Teabekäsud" },
   "optionDesc_provider": { "message": "Vestluse API pakkuja" },
   "optionDesc_query": { "message": "Tehisintellekti saatmise päring" },

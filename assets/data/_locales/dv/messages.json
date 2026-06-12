@@ -70,6 +70,7 @@
   "helpSection_usage": { "message": "ބޭނުންކުރުން" },
   "helpSection_params": { "message": "ޕެރެމިޓަރ އޮޕްޝަންސް" },
   "helpSection_flags": { "message": "ދިދަތަކެވެ" },
+  "helpSection_gitOptions": { "message": "ގިޓް އޮޕްޝަންސް" },
   "helpSection_cmds": { "message": "އިންފޯ ކޮމާންޑުތައް" },
   "optionDesc_provider": { "message": "ޗެޓް އެޕީއައި އަށް ޕްރޮވައިޑަރ" },
   "optionDesc_query": { "message": "އޭއައި ފޮނުވަން ކިއުއަރީ" },

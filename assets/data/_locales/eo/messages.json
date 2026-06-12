@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Uzado" },
   "helpSection_params": { "message": "Parametraj opcioj" },
   "helpSection_flags": { "message": "Flagoj" },
+  "helpSection_gitOptions": { "message": "git- opcioj" },
   "helpSection_cmds": { "message": "Informkomandoj" },
   "optionDesc_provider": { "message": "Provizanto por babilejo API" },
   "optionDesc_query": { "message": "Demando por sendi al iu" },

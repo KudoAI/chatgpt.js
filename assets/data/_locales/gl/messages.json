@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Uso" },
   "helpSection_params": { "message": "Opcións de parámetro" },
   "helpSection_flags": { "message": "Bandeiras" },
+  "helpSection_gitOptions": { "message": "opcións de git" },
   "helpSection_cmds": { "message": "Comandos de información" },
   "optionDesc_provider": { "message": "Fornecedor para API do chat" },
   "optionDesc_query": { "message": "Consulta para enviar IA" },

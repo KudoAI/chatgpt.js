@@ -68,6 +68,7 @@
   "helpSection_usage": { "message": "Umyalezo" },
   "helpSection_params": { "message": "Lungelelanisa izinto onokukhetha kuzo" },
   "helpSection_flags": { "message": "Iiflegi" },
+  "helpSection_gitOptions": { "message": "izinto onokuzikhetha ze-git" },
   "helpSection_cmds": { "message": "Imiyalelo yenkcazelo" },
   "optionDesc_provider": { "message": "Umnikezeli we-API yencoko" },
   "optionDesc_query": { "message": "Isicelo sokuthumela i-AI" },

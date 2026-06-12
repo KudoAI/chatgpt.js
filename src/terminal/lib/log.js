@@ -53,7 +53,7 @@ module.exports = {
         console.debug(`\n${colors.by}DEBUG:`, msg, colors.nc)
     },
 
-    help(includeSections = ['header', 'usage', 'params', 'flags', 'cmds']) {
+    help(includeSections = ['header', 'usage', 'params', 'flags', 'gitOptions', 'cmds']) {
         cli.prefix = `${this.colors.tlBG}${this.colors.blk} ${cli.name.replace(/^@[^/]+\//, '')} ${this.colors.nc} `
         const helpSections = {
             header: [
@@ -72,8 +72,6 @@ module.exports = {
                 ` -q, --query <msg>                    ${cli.msgs.optionDesc_query}.`,
                 ` -s, --summarize <filepath|text|url>  ${cli.msgs.optionDesc_summarize}.`,
                 ` -a, --ascii-art [subject]            ${cli.msgs.optionDesc_asciiArt}.`,
-                ` -G, --commit-msg-example <msg>       ${cli.msgs.optionDesc_commitMsgExample}.`,
-                ` -d, --diff                           ${cli.msgs.optionDesc_diff}.`,
                 ` -m, --max-chars <integer>            ${cli.msgs.optionDesc_maxChars}.`,
                 ` -k, --max-tokens <integer>           ${cli.msgs.optionDesc_maxTokens}.`,
                 ` -t, --turns <integer>                ${cli.msgs.optionDesc_turnsToPreserve}.`,
@@ -85,6 +83,12 @@ module.exports = {
                 ` -A, --no-suggest                     ${cli.msgs.optionDesc_noSuggest}.`,
                 ` -V, --quiet                          ${cli.msgs.optionDesc_quiet}.`
             ],
+            gitOptions: [
+                `\n${this.colors.bw}o ${cli.msgs.helpSection_gitOptions}:${this.colors.nc}`,
+                ` -g, --commit-msg                     ${cli.msgs.optionDesc_commitMsg}.`,
+                ` -G, --commit-msg-example <msg>       ${cli.msgs.optionDesc_commitMsgExample}.`,
+                ` -d, --diff                           ${cli.msgs.optionDesc_diff}.`
+            ],
             cmds: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_cmds}:${this.colors.nc}`,
                 ` -i, --init                           ${cli.msgs.optionDesc_init}.`,
@@ -92,7 +96,6 @@ module.exports = {
                 ` -j, --joke                           ${cli.msgs.optionDesc_joke}.`,
                 ` -f, --fortune                        ${cli.msgs.optionDesc_fortune}.`,
                 ` -r, --random-answer                  ${cli.msgs.optionDesc_randomAnswer}.`,
-                ` -g, --commit-msg                     ${cli.msgs.optionDesc_commitMsg}.`,
                 ` -C, --clear                          ${cli.msgs.optionDesc_clear}.`,
                 ` -h, --help                           ${cli.msgs.optionDesc_help}.`,
                 ` -v, --version                        ${cli.msgs.optionDesc_version}.`,

@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Käyttö" },
   "helpSection_params": { "message": "Parametrivaihtoehdot" },
   "helpSection_flags": { "message": "Liput" },
+  "helpSection_gitOptions": { "message": "git-asetukset" },
   "helpSection_cmds": { "message": "Tietokomennot" },
   "optionDesc_provider": { "message": "Chat-sovellusliittymän tarjoaja" },
   "optionDesc_query": { "message": "Kysely tekoälyn lähettämiseksi" },

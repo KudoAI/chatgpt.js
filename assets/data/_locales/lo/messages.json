@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "ການນຳໃຊ້" },
   "helpSection_params": { "message": "ຕົວເລືອກພາລາມິເຕີ" },
   "helpSection_flags": { "message": "ທຸງ" },
+  "helpSection_gitOptions": { "message": "ທາງເລືອກ git" },
   "helpSection_cmds": { "message": "ຄໍາສັ່ງ Info" },
   "optionDesc_provider": { "message": "ຜູ້ໃຫ້ບໍລິການ ສໍາ ລັບ CHAT API" },
   "optionDesc_query": { "message": "Query ເພື່ອສົ່ງ AI" },

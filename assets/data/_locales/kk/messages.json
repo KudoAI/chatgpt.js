@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "ТолуыName" },
   "helpSection_params": { "message": "Параметр опциялары" },
   "helpSection_flags": { "message": "Тулар" },
+  "helpSection_gitOptions": { "message": "git options" },
   "helpSection_cmds": { "message": "Ақпараттық командалар" },
   "optionDesc_provider": { "message": "Чат API провайдері" },
   "optionDesc_query": { "message": "ЖИ жіберу сұранысы" },

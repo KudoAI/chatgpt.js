@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Cara Pakai" },
   "helpSection_params": { "message": "Opsi parameter" },
   "helpSection_flags": { "message": "Bendera" },
+  "helpSection_gitOptions": { "message": "opsi git" },
   "helpSection_cmds": { "message": "Perintah info" },
   "optionDesc_provider": { "message": "Penyedia api obrolan" },
   "optionDesc_query": { "message": "Kueri untuk mengirim AI" },

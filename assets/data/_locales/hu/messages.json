@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Felhasználás" },
   "helpSection_params": { "message": "Paraméteropciók" },
   "helpSection_flags": { "message": "Zászlók" },
+  "helpSection_gitOptions": { "message": "git opciók" },
   "helpSection_cmds": { "message": "Információs parancsok" },
   "optionDesc_provider": { "message": "Csevegési API szolgáltatója" },
   "optionDesc_query": { "message": "AI küldésének lekérdezése" },

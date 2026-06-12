@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Uso" },
   "helpSection_params": { "message": "Opshon konfiská" },
   "helpSection_flags": { "message": "Flags" },
+  "helpSection_gitOptions": { "message": "git Options" },
   "helpSection_cmds": { "message": "Komandante di Informashon" },
   "optionDesc_provider": { "message": "Programacion para chat api" },
   "optionDesc_query": { "message": "Reklama na AI" },

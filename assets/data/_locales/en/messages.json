@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Usage" },
   "helpSection_params": { "message": "Parameter options" },
   "helpSection_flags": { "message": "Flags" },
+  "helpSection_gitOptions": { "message": "git options" },
   "helpSection_cmds": { "message": "Commands" },
   "optionDesc_provider": { "message": "Provider for chat API" },
   "optionDesc_query": { "message": "Query to send AI" },

@@ -74,6 +74,7 @@
   "helpSection_usage": { "message": "Use of ti vs. tu" },
   "helpSection_params": { "message": "Akpengba ye so mo lingbi ti sara" },
   "helpSection_flags": { "message": "Mbi Flags" },
+  "helpSection_gitOptions": { "message": "yeke git options" },
   "helpSection_cmds": { "message": "Aye so afa so a yeke nzoni e sara" },
   "optionDesc_provider": { "message": "Zo so ayeke mû maboko na azo ti sara lisoro na ndö ti Internet" },
   "optionDesc_query": { "message": "Mbi leke ti tokua mbeni mbeti na mo" },

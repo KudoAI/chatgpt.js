@@ -66,6 +66,7 @@
   "helpSection_usage": { "message": "Используется" },
   "helpSection_params": { "message": "Параметры Конфигурации" },
   "helpSection_flags": { "message": "Флаги" },
+  "helpSection_gitOptions": { "message": "git options" },
   "helpSection_cmds": { "message": "Информационные команды" },
   "optionDesc_provider": { "message": "Провайдер API чата" },
   "optionDesc_query": { "message": "Запрос на отправку ИИ" },
