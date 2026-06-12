@@ -151,6 +151,7 @@ export default {
   - [`dictate()`](#dictate--dom-only)
   - [`getFortune()` `async`](#getfortune-parameters--async--dom-only)
   - [`getRandomAnswer()` `async`](#getrandomanswer-parameters--async--universal)
+  - [`getRelated(query)` `async`](#getrelatedquery--parameters--async--universal)
   - [`getUserLanguage()`](#getuserlanguage--dom-only)
   - [`isLoaded()` `async`](#isloaded-async--dom-only)
   - [`isTempChat()`](#istempchat--dom-only)
@@ -318,6 +319,36 @@ Example:
 ```js
 const userLanguage = chatgpt.getUserLanguage()
 chatgpt.alert(userLanguage) // Example output: 'en-US'
+```
+
+#
+
+#### `getRelated(query, { parameters })` `async` 🔄 Universal
+
+Parameters:
+
+`qty`: Number of related queries to return (default: `10`).
+`verbose`: Show console logging (default: `false`).
+
+Returns array of queries related to `query`.
+
+Example:
+
+```js
+console.log(await chatgpt.getRelated('Who is obama?', { verbose: true }))
+
+/* e.g. =>
+
+getRelated() > Getting related queries...
+getRelated() > Arrayifying related queries...
+[
+  'What is Barack Obama’s current occupation?',
+  'How many terms did Barack Obama serve as U.S. President?',
+  'What political party does Barack Obama belong to?',
+  'What are some of Barack Obama’s major policy achievements?',
+  'Where was Barack Obama born?'
+]
+*/
 ```
 
 #

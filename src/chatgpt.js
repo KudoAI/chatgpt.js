@@ -1079,6 +1079,26 @@ const chatgpt = {
         return document.querySelector(chatgpt.selectors.btns.regen)
     },
 
+    async getRelated(query, { qty = 10, verbose = false } = {}) {
+        const prompt = `Generate a numbered list of ${qty} queries related to this one:\n\n"${query}"\n\n`
+        if (verbose) console.log(`getRelated() > Getting related queries...`)
+        if (chatgpt.env == 'frontend') {
+            chatgpt.send(prompt)
+            await chatgpt.isIdle()
+            return arrayify(await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'))
+        } else
+            return arrayify(await chatgpt.send(prompt))
+
+        /* eslint-disable regexp/no-super-linear-backtracking */
+        function arrayify(strList) { // for get.related() calls
+            if (verbose) console.log('getRelated() > Arrayifying related queries...')
+            return (strList.trim().match(/^\d+\.?\s*([^\n]+?)(?=\n|\\n|$)/gm) || [])
+                .slice(0, qty) // limit to 1st 5
+                .map(match => match.replace(/\*\*/g, '') // strip markdown boldenings
+                    .replace(/^['"]*(?:\d+\.?\s*)?['"]*(.*?)['"]*$/g, '$1')) // strip numbering + quotes
+        } /* eslint-enable regexp/no-super-linear-backtracking */
+    },
+
     getResponse() { return chatgpt.response.get(...arguments) },
     getResponseFromAPI(chatToGet, responseToGet) { return chatgpt.response.getFromAPI(chatToGet, responseToGet) },
     getResponseFromDOM(pos) { return chatgpt.response.getFromDOM(pos) },

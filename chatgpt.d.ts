@@ -107,6 +107,7 @@ declare interface ChatGPT {
   continue(): void
   detectLanguage(text: string): Promise<string>
   dictate(): void
+  getRelated(query: string, options?: { qty?: number; verbose?: boolean }): Promise<string[]>
   execute(code: string): Promise<string>
 
   exportChat(
