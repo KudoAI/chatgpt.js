@@ -1,5 +1,5 @@
 /**
- * TypeScript definitions for chatgpt.js v4.12.1
+ * TypeScript definitions for chatgpt.js v4.13.0
  * Based on: https://github.com/KudoAI/chatgpt.js
  */
 
