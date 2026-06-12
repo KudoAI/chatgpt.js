@@ -48,7 +48,7 @@ module.exports = {
         if (env.msgs && langCode == cli.lang) return env.msgs // don't re-fetch same msgs
 
         let msgs = data.flatten( // local ones
-            require(`../../${ env.modes.dev ? '../assets/data/_locales/en' : 'data' }/messages.json`))
+            require(`../../../${ env.modes.dev ? '../assets/data/_locales/en' : 'data' }/messages.json`))
 
         if (!langCode.startsWith('en')) { // fetch non-English msgs from jsDelivr
             if (require('non-latin-locales').includes(langCode.split('_')[0]) && !env.supports.unicode)

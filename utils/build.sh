@@ -4,9 +4,7 @@ mkdir -p dist/data
 
 cp assets/data/_locales/en/messages.json dist/data/messages.json
 cp package-data.json dist/data/package-data.json
-cp -r src/cli dist/
-cp -r src/repl dist/
-cp -r src/lib dist/
+cp -r src/terminal dist/
 
 minify-js src/chatgpt.js ../dist/chatgpt.min.js --comment=" \
 © 2023–2026 KudoAI & contributors under the MIT license.\n \

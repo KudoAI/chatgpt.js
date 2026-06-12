@@ -27,7 +27,7 @@ module.exports = {
     joke() { return this.query('Tell me a joke and make it funny.') },
 
     async query(query, options = {}) {
-        const chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
+        const chatgpt = require(`../../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
               loader = require('./loader').create({ width: env.width })
 
         if (!chatgpt.config?.apiKeys?.[cli.config.provider])

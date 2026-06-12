@@ -3,7 +3,7 @@ const colors = require('../cli/lib/color'),
       settings = require('../cli/lib/settings'),
       string = require('./string')
 
-const nextMajVer = require('../../package.json').version.replace(/^(\d+)\..*/, (_, major) => `${ +major +1 }.0.0`)
+const nextMajVer = require('../../../package.json').version.replace(/^(\d+)\..*/, (_, major) => `${ +major +1 }.0.0`)
 
 module.exports = {
     colors,
