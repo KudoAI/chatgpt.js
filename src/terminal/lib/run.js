@@ -1,6 +1,7 @@
 const fs = require('fs'),
       git = require('./git'),
       init = require('./init'),
+      language = require('./language'),
       messages = require('./messages')
 
 init.env()
@@ -77,7 +78,7 @@ module.exports = {
 
     async uiLang(code) {
         if (!code) return log.info(`${cli.msgs.info_current} uiLang: ${ cli.config.uiLang || cli.msgs.info_notSet }`)
-        if (cli.lang != code) cli.msgs = await require('./language').getMsgs(code)
+        cli.msgs = await language.getMsgs(code)
         cli.lang = cli.config.uiLang = code
         log.success(`${cli.msgs.success_uiLang} ${cli.msgs.success_setTo} ${cli.config.uiLang}`)
     },
@@ -99,10 +100,15 @@ module.exports = {
 
     async loadConfig(configPath) {
         if (!configPath) return log.warn(`${cli.msgs.helpSection_usage}: /config <filepath|url>`)
-        const resolvedPath = require('path').resolve(configPath)
+        const cleanedPath = configPath.replace(/^(['"])(.*)\1$/, '$2')
         try {
-            Object.assign(cli.config, require(resolvedPath))
-            log.success(`${cli.msgs.configLoadedFrom} ${resolvedPath}`)
+            const { text } = await require('./resolver').resolveSrc(cleanedPath),
+                    tmpFile = require('path').join(require('os').tmpdir(), `cli-config-${Date.now()}.mjs`)
+            fs.writeFileSync(tmpFile, text)
+            const mod = await import(require('url').pathToFileURL(tmpFile).href)
+            Object.assign(cli.config, mod.default || mod)
+            if (cli.config.uiLang) cli.msgs = await language.getMsgs(cli.config.uiLang)
+            log.success(`${cli.msgs.configLoadedFrom || 'Config loaded from'} ${cleanedPath}`)
         } catch (err) {
             log.error(`${cli.msgs.error_failedToLoadConfigFile}: ${err.message}`)
         }

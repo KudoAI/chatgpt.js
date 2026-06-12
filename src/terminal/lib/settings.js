@@ -65,17 +65,19 @@ module.exports = {
                                 : (configIdx +1 < env.args.length && !env.args[configIdx +1].startsWith('-')) ?
                                     env.args[configIdx +1]
                                 : ''
-                if (string.looksLikeURL(inputPath)) {
-                    const resp = await data.fetch(inputPath)
-                    if (!resp.ok)
-                        log.errorAndExit(`${cli.msgs.error_failedToLoadConfigFile}: ${inputPath} (${resp.status})`)
-                    const tmpFile = path.join(os.tmpdir(), `cli-config-${Date.now()}.js`)
-                    data.atomicWrite(tmpFile, await resp.text())
-                    cli.configPath = tmpFile
-                } else {
-                    cli.configPath = path.isAbsolute(inputPath) ? inputPath : path.resolve(process.cwd(), inputPath)
-                    if (!fs.existsSync(cli.configPath))
-                        log.configURLandExit(`${cli.msgs.error_configFileNotFound}:`, cli.configPath)
+                try {
+                    const { text, type } = await require('./resolver').resolveSrc(inputPath)
+                    if (type == 'url') {
+                        const tmpFile = path.join(os.tmpdir(), `cli-config-${Date.now()}.js`)
+                        data.atomicWrite(tmpFile, text)
+                        cli.configPath = tmpFile
+                    } else {
+                        cli.configPath = path.isAbsolute(inputPath) ? inputPath : path.resolve(process.cwd(), inputPath)
+                        if (type == 'path' && !fs.existsSync(cli.configPath))
+                             log.configURLandExit(`${cli.msgs.error_configFileNotFound}:`, cli.configPath)
+                    }
+                } catch (err) {
+                    log.configURLandExit(`${cli.msgs.error_failedToLoadConfigFile}: ${inputPath}\n${err.message}`)
                 }
 
             } else // auto-discover .config.[mc]?js file
@@ -125,13 +127,10 @@ module.exports = {
                 cli.config.mode = ctrlKey.replace(/mode$/i, '').toLowerCase()
             else { // init flag/param/cmd cli.config[ctrlKey] val
                 if (ctrl.type == 'param') {
-                    const rawVal = arg.includes('=') ? arg.split('=')[1]?.trim() || ''
-                                 : (i +1 < env.args.length && !env.args[i +1].startsWith('-')) ? env.args[++i]
-                                 : true // val-less --param passed
-                    if (typeof rawVal == 'string' && string.looksLikeURL(rawVal))
-                        cli.config[ctrlKey] = { type: 'url', value: rawVal }
-                    else
-                        cli.config[ctrlKey] = rawVal
+                    const ctrlVal = arg.includes('=') ? arg.split('=')[1]?.trim() || ''
+                                  : (i +1 < env.args.length && !env.args[i +1].startsWith('-')) ? env.args[++i]
+                                  : true // val-less --param passed
+                    cli.config[ctrlKey] = ctrlVal
                 } else // flag/cmd
                     cli.config[ctrlKey] = true
             }
