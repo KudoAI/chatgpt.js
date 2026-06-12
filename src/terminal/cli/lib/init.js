@@ -3,7 +3,7 @@ const { execSync } = require('child_process'),
         language = require('./language'),
         messages = require('../../lib/messages'),
         path = require('path'),
-        settings = require('./settings')
+        settings = require('../../lib/settings')
 
 module.exports = {
 

@@ -18,7 +18,7 @@ module.exports = {
         const { replyLang } = cli.config
         let query = 'Tell me my fortune the length of a fortune cookie paper.'
         if (!replyLang.startsWith('zh') && env.supports.unicode
-            || !require('non-latin-locales').includes(replyLang.split('_')[0])
+            || replyLang && !require('non-latin-locales').includes(replyLang.split('_')[0])
         ) query +=`\n\nRespond in simplified Chinese, then translate it literally to ${
             replyLang || 'en' } on the line below it.`
         return this.query(query)
