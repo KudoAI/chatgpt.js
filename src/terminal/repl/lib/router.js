@@ -61,7 +61,7 @@ async function route(cmd, args, rl) {
         case 'version' : case 'v' :
             run.version() ; break
         case 'stats':
-            await run.stats() ; break
+            run.stats() ; break
         case 'exit' : case 'quit' : case 'q' :
             rl.close() ; process.exit(0) ; break
         case 'uilang' : case 'u' :

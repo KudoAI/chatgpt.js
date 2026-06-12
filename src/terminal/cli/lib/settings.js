@@ -70,7 +70,7 @@ module.exports = {
                     if (!resp.ok)
                         log.errorAndExit(`${cli.msgs.error_failedToLoadConfigFile}: ${inputPath} (${resp.status})`)
                     const tmpFile = path.join(os.tmpdir(), `cli-config-${Date.now()}.js`)
-                    await data.atomicWrite(tmpFile, await resp.text())
+                    data.atomicWrite(tmpFile, await resp.text())
                     cli.configPath = tmpFile
                 } else {
                     cli.configPath = path.isAbsolute(inputPath) ? inputPath : path.resolve(process.cwd(), inputPath)
