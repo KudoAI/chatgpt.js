@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "استعمال" },
   "helpSection_params": { "message": "کنفیگ کے اختیارات" },
   "helpSection_flags": { "message": "جھنڈے" },
-  "helpSection_gitOptions": { "message": "git کے اختیارات" },
+  "helpSection_gitOptions": { "message": "git کمانڈز / آپشنز" },
   "helpSection_cmds": { "message": "معلومات کے احکامات" },
   "optionDesc_provider": { "message": "چیٹ API کے لیے فراہم کنندہ" },
   "optionDesc_query": { "message": "AI بھیجنے کے لیے سوال" },

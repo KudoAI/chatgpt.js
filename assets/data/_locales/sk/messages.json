@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Využívanie" },
   "helpSection_params": { "message": "Možnosti konfigurácie" },
   "helpSection_flags": { "message": "Vlajky" },
-  "helpSection_gitOptions": { "message": "možnosti systému git" },
+  "helpSection_gitOptions": { "message": "príkazy / možnosti git" },
   "helpSection_cmds": { "message": "Informačné príkazy" },
   "optionDesc_provider": { "message": "Poskytovateľ pre chat API" },
   "optionDesc_query": { "message": "Požiadavka na odoslanie umelej inteligencie" },

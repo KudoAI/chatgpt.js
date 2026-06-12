@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Колдонулушу" },
   "helpSection_params": { "message": "Параметр параметрлери" },
   "helpSection_flags": { "message": "Желектер" },
-  "helpSection_gitOptions": { "message": "кетүү параметрлери" },
+  "helpSection_gitOptions": { "message": "git буйруктары / параметрлери" },
   "helpSection_cmds": { "message": "Маалымат буйруктары" },
   "optionDesc_provider": { "message": "Чат API үчүн камсыздоочу" },
   "optionDesc_query": { "message": "AI жөнөтүү үчүн суроо" },

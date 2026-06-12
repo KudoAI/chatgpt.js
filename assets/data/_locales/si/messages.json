@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "භාවිතය" },
   "helpSection_params": { "message": "විකල්ප සකසන්න" },
   "helpSection_flags": { "message": "ලාංඡන" },
-  "helpSection_gitOptions": { "message": "git අභිප් ‍ රේත" },
+  "helpSection_gitOptions": { "message": "git විධාන / විකල්ප" },
   "helpSection_cmds": { "message": "තොරතුරු විධාන" },
   "optionDesc_provider": { "message": "චැට් API සඳහා සපයන්නා" },
   "optionDesc_query": { "message": "AI යැවීමට විමසුම" },

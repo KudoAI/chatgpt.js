@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Χρήση" },
   "helpSection_params": { "message": "Επιλογές παραμέτρων" },
   "helpSection_flags": { "message": "Σημαίες" },
-  "helpSection_gitOptions": { "message": "επιλογές git" },
+  "helpSection_gitOptions": { "message": "git εντολές / επιλογές" },
   "helpSection_cmds": { "message": "Εντολές πληροφοριών" },
   "optionDesc_provider": { "message": "Πάροχος για API συνομιλίας" },
   "optionDesc_query": { "message": "Ερώτημα για αποστολή τεχνητής νοημοσύνης" },

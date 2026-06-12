@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Erabilpena" },
   "helpSection_params": { "message": "Parametroen aukerak" },
   "helpSection_flags": { "message": "Banderak" },
-  "helpSection_gitOptions": { "message": "git aukerak" },
+  "helpSection_gitOptions": { "message": "git komandoak / aukerak" },
   "helpSection_cmds": { "message": "Informazio komandoak" },
   "optionDesc_provider": { "message": "Txat APIaren hornitzailea" },
   "optionDesc_query": { "message": "AI bidaltzeko kontsulta" },

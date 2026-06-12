@@ -68,7 +68,7 @@
   "helpSection_usage": { "message": "การใช้งาน" },
   "helpSection_params": { "message": "ตัวเลือกการกำหนดค่า" },
   "helpSection_flags": { "message": "ธง" },
-  "helpSection_gitOptions": { "message": "ตัวเลือก git" },
+  "helpSection_gitOptions": { "message": "คำสั่ง/ตัวเลือก git" },
   "helpSection_cmds": { "message": "คำสั่งข้อมูล" },
   "optionDesc_provider": { "message": "ผู้ให้บริการสำหรับ API การแชท" },
   "optionDesc_query": { "message": "สอบถามเพื่อส่ง AI" },

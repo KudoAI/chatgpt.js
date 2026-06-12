@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "བཀོལ་སྤྱོད །" },
   "helpSection_params": { "message": "ཚད་འཇལ་བྱེད་ཀྱི་འདེམས་སྟངས" },
   "helpSection_flags": { "message": "དར་ཆགས །" },
-  "helpSection_gitOptions": { "message": "gIT གདམ་ཁ་རྐྱབས །" },
+  "helpSection_gitOptions": { "message": "git བཀའ་སློབ །/ གདམ་ཁ་ རྐྱབས །" },
   "helpSection_cmds": { "message": "བརྡ་དོན་བཀའ་སློབ །" },
   "optionDesc_provider": { "message": "Chat API སྒྲིག་འཇུག་བྱས་ཚད ། ཐེངས་10 ལས་ཉུང་བ ། ཐོན་རིམ་5.7.1" },
   "optionDesc_query": { "message": "ངས་ཁྱོད་ལ་བཏང་།" },

@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Хэрэглээ" },
   "helpSection_params": { "message": "Параметерын сонголтууд" },
   "helpSection_flags": { "message": "Далбаа" },
-  "helpSection_gitOptions": { "message": "git сонголтууд" },
+  "helpSection_gitOptions": { "message": "git командууд / сонголтууд" },
   "helpSection_cmds": { "message": "Мэдээллийн командууд" },
   "optionDesc_provider": { "message": "Чат API-ийн үйлчилгээ үзүүлэгч" },
   "optionDesc_query": { "message": "AI илгээх хүсэлт" },

@@ -68,7 +68,7 @@
   "helpSection_usage": { "message": "İsmarış" },
   "helpSection_params": { "message": "Parametr seçimləri" },
   "helpSection_flags": { "message": "Bayraqlar" },
-  "helpSection_gitOptions": { "message": "git seçimləri" },
+  "helpSection_gitOptions": { "message": "git əmrləri / seçimləri" },
   "helpSection_cmds": { "message": "Məlumat əmrləri" },
   "optionDesc_provider": { "message": "Söhbət API-si üçün təminatçı" },
   "optionDesc_query": { "message": "AI göndərmək üçün sorğu" },

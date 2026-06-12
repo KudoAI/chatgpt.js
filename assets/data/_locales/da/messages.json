@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Anvendelse" },
   "helpSection_params": { "message": "Parameterindstillinger" },
   "helpSection_flags": { "message": "Flag" },
-  "helpSection_gitOptions": { "message": "git muligheder" },
+  "helpSection_gitOptions": { "message": "git kommandoer/indstillinger" },
   "helpSection_cmds": { "message": "INFO-kommandoer" },
   "optionDesc_provider": { "message": "Udbyder til chat-API" },
   "optionDesc_query": { "message": "Forespørgsel om at sende AI" },

@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Ny teny niverimberina" },
   "helpSection_params": { "message": "Safidy momba ny marika" },
   "helpSection_flags": { "message": "SAINA" },
-  "helpSection_gitOptions": { "message": "safidin'ny git" },
+  "helpSection_gitOptions": { "message": "baiko/ safidy ny git" },
   "helpSection_cmds": { "message": "Baikon'ny fampahalalana" },
   "optionDesc_provider": { "message": "Mpanome ny chat API" },
   "optionDesc_query": { "message": "Fangatahana handefa AI" },

@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Uporaba" },
   "helpSection_params": { "message": "Parametri opcija BLM" },
   "helpSection_flags": { "message": "Zastavice" },
-  "helpSection_gitOptions": { "message": "git options" },
+  "helpSection_gitOptions": { "message": "git naredbe / opcije" },
   "helpSection_cmds": { "message": "Info naredbe" },
   "optionDesc_provider": { "message": "Davatelj API-ja za chat" },
   "optionDesc_query": { "message": "Upit za slanje umjetne inteligencije" },

@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "کارونه" },
   "helpSection_params": { "message": "د ترتیب انتخابونه" },
   "helpSection_flags": { "message": "جنډې" },
-  "helpSection_gitOptions": { "message": "د ګیټ اختیارونه" },
+  "helpSection_gitOptions": { "message": "د GIT کمانډونه / اختیارونه" },
   "helpSection_cmds": { "message": "د معلوماتو امرونه" },
   "optionDesc_provider": { "message": "د چیټ API لپاره چمتو کونکی" },
   "optionDesc_query": { "message": "د AI لیږلو پوښتنه" },

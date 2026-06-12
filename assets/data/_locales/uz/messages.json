@@ -68,7 +68,7 @@
   "helpSection_usage": { "message": "FoydalanilganVisible items on device information columns (enable_BAR_disable)" },
   "helpSection_params": { "message": "Konfiguratsiya opsiyalari" },
   "helpSection_flags": { "message": "Bayroqlar" },
-  "helpSection_gitOptions": { "message": "git imkoniyatlari" },
+  "helpSection_gitOptions": { "message": "git buyruqlari/variantlari" },
   "helpSection_cmds": { "message": "Ma'lumot buyruqlari" },
   "optionDesc_provider": { "message": "Chat API uchun provayder" },
   "optionDesc_query": { "message": "Sun'iy intellektni yuborish uchun so'rov" },

@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Naudojimasis" },
   "helpSection_params": { "message": "Parametrų parinktys" },
   "helpSection_flags": { "message": "Vėliavos" },
-  "helpSection_gitOptions": { "message": "git parinktys" },
+  "helpSection_gitOptions": { "message": "git komandos / parinktys" },
   "helpSection_cmds": { "message": "Informacijos komandos" },
   "optionDesc_provider": { "message": "Pokalbių API teikėjas" },
   "optionDesc_query": { "message": "Užklausa DI siuntimui" },

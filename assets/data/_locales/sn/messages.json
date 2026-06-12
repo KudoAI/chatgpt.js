@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Kushandiswa" },
   "helpSection_params": { "message": "Ronga zvingasarudzwa" },
   "helpSection_flags": { "message": "Mireza" },
-  "helpSection_gitOptions": { "message": "zVINOKOSHA" },
+  "helpSection_gitOptions": { "message": "gIT mirairo / zvingasarudzwa" },
   "helpSection_cmds": { "message": "Info mirairo" },
   "optionDesc_provider": { "message": "Mupi wekukurukurirana API" },
   "optionDesc_query": { "message": "Mubvunzo kutumira AI" },

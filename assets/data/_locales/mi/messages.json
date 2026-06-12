@@ -70,7 +70,7 @@
   "helpSection_usage": { "message": "Whakamahia" },
   "helpSection_params": { "message": "Kōwhiringa parameter" },
   "helpSection_flags": { "message": "Ngā haki" },
-  "helpSection_gitOptions": { "message": "kōwhiringa git" },
+  "helpSection_gitOptions": { "message": "whakahau git/ kōwhiringa" },
   "helpSection_cmds": { "message": "Ngā Whakahau" },
   "optionDesc_provider": { "message": "Kaihoko mo te API korerorero" },
   "optionDesc_query": { "message": "Te tono ki te tuku i a ia" },

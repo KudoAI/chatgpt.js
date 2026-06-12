@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Raba" },
   "helpSection_params": { "message": "Možnosti konfiguracije" },
   "helpSection_flags": { "message": "Zastave" },
-  "helpSection_gitOptions": { "message": "git options" },
+  "helpSection_gitOptions": { "message": "git ukazi / možnosti" },
   "helpSection_cmds": { "message": "Info ukazi" },
   "optionDesc_provider": { "message": "Ponudnik za API za klepet" },
   "optionDesc_query": { "message": "Poizvedba za pošiljanje umetne inteligence" },

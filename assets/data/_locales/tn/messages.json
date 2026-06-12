@@ -68,7 +68,7 @@
   "helpSection_usage": { "message": "Tiriso" },
   "helpSection_params": { "message": "Rulaganya dilo tse o ka tlhophang mo go" },
   "helpSection_flags": { "message": "Folaga" },
-  "helpSection_gitOptions": { "message": "dilo tse o ka tlhophang mo go" },
+  "helpSection_gitOptions": { "message": "ditaelo / dilo tse o ka tlhophang mo go tsone" },
   "helpSection_cmds": { "message": "Ditaelo" },
   "optionDesc_provider": { "message": "Motlamedi wa motlotlo wa API" },
   "optionDesc_query": { "message": "Query to send AI" },

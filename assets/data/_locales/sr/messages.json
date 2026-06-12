@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Korišćenje" },
   "helpSection_params": { "message": "Opcije konfiguracije" },
   "helpSection_flags": { "message": "Zastavice" },
-  "helpSection_gitOptions": { "message": "git opcije" },
+  "helpSection_gitOptions": { "message": "git komande / opcije" },
   "helpSection_cmds": { "message": "Info komande" },
   "optionDesc_provider": { "message": "Dobavljač API-ja za ćaskanje" },
   "optionDesc_query": { "message": "Upit za slanje veštačke inteligencije" },

@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "کاربرد" },
   "helpSection_params": { "message": "گزینه‌های پارامتر" },
   "helpSection_flags": { "message": "پرچم‌ها" },
-  "helpSection_gitOptions": { "message": "گزینه‌های گیت" },
+  "helpSection_gitOptions": { "message": "دستورات/گزینه‌های گیت" },
   "helpSection_cmds": { "message": "دستورات اطلاعاتی" },
   "optionDesc_provider": { "message": "ارائه دهنده API چت" },
   "optionDesc_query": { "message": "درخواست برای ارسال هوش مصنوعی" },

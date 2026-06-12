@@ -68,7 +68,7 @@
   "helpSection_usage": { "message": "Isticmaalka" },
   "helpSection_params": { "message": "Habee ikhtiyaarrada" },
   "helpSection_flags": { "message": "Calanka" },
-  "helpSection_gitOptions": { "message": "fursadaha git" },
+  "helpSection_gitOptions": { "message": "amarrada git/ fursadaha" },
   "helpSection_cmds": { "message": "Amarada Macluumaadka" },
   "optionDesc_provider": { "message": "Bixiyaha Wadahadalka API" },
   "optionDesc_query": { "message": "Codsi si aad u dirto AI" },

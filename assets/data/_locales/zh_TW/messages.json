@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "用途" },
   "helpSection_params": { "message": "參數選項" },
   "helpSection_flags": { "message": "旗幟" },
-  "helpSection_gitOptions": { "message": "git選項" },
+  "helpSection_gitOptions": { "message": "git命令/選項" },
   "helpSection_cmds": { "message": "信息命令" },
   "optionDesc_provider": { "message": "聊天API的提供商" },
   "optionDesc_query": { "message": "查詢以發送AI" },

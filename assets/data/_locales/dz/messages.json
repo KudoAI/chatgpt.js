@@ -68,7 +68,7 @@
   "helpSection_usage": { "message": "ལག་ལེན་འཐབ་ཐབས།" },
   "helpSection_params": { "message": "ཚད་འཇལ་ནིའི་ གདམ་ཁ་" },
   "helpSection_flags": { "message": "པདྨ་དགའ་ཚལ་" },
-  "helpSection_gitOptions": { "message": "གདམ་ཁ་ཚུ་ git" },
+  "helpSection_gitOptions": { "message": "git བཀའ་རྒྱ་ / གདམ་ཁ་" },
   "helpSection_cmds": { "message": "བརྡ་དོན་གྱི་བཀའ་རྒྱ་" },
   "optionDesc_provider": { "message": "བལྟ་བཤལཔ་ཚུ་གི་དོན་ལུ་ བལྟ་བཤལཔ་" },
   "optionDesc_query": { "message": "བཏང་ནིའི་དོན་ལས་" },

@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Kullanım" },
   "helpSection_params": { "message": "Yapılandırma Seçenekleri" },
   "helpSection_flags": { "message": "Bayraklar" },
-  "helpSection_gitOptions": { "message": "git seçenekleri" },
+  "helpSection_gitOptions": { "message": "git komutları / seçenekleri" },
   "helpSection_cmds": { "message": "Bilgi komutları" },
   "optionDesc_provider": { "message": "Sohbet API'si sağlayıcısı" },
   "optionDesc_query": { "message": "Yapay zeka gönderme sorgusu" },

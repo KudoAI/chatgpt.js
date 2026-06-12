@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Defnydd" },
   "helpSection_params": { "message": "Opsiynau paramedr" },
   "helpSection_flags": { "message": "Baneri" },
-  "helpSection_gitOptions": { "message": "opsiynau git" },
+  "helpSection_gitOptions": { "message": "gorchmynion / opsiynau git" },
   "helpSection_cmds": { "message": "Gorchmynion gwybodaeth" },
   "optionDesc_provider": { "message": "Darparwr ar gyfer API sgwrsio" },
   "optionDesc_query": { "message": "Ymholiad i anfon at" },

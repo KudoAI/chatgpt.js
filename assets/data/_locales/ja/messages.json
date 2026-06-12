@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "使用法" },
   "helpSection_params": { "message": "パラメータオプション" },
   "helpSection_flags": { "message": "フラグ" },
-  "helpSection_gitOptions": { "message": "gitオプション" },
+  "helpSection_gitOptions": { "message": "gitコマンド/オプション" },
   "helpSection_cmds": { "message": "INFOコマンド" },
   "optionDesc_provider": { "message": "チャットAPIのプロバイダー" },
   "optionDesc_query": { "message": "AIを送信するためのクエリ" },

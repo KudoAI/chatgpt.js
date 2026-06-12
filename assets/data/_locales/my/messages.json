@@ -68,7 +68,7 @@
   "helpSection_usage": { "message": "အသုံးပြုမှု့" },
   "helpSection_params": { "message": "ရွေးချယ်စရာများကို စီစဉ်ပြင်ဆင်ပါ" },
   "helpSection_flags": { "message": "အလံများ" },
-  "helpSection_gitOptions": { "message": "git ရွေးချယ်စရာများ" },
+  "helpSection_gitOptions": { "message": "git အမိန့်များ / ရွေးချယ်စရာများ" },
   "helpSection_cmds": { "message": "သတင်းအချက်အလက်ဆိုင်ရာ ညွှန်ကြားချက်များ" },
   "optionDesc_provider": { "message": "Chat API အတွက် ပံ့ပိုးသူ" },
   "optionDesc_query": { "message": "AI စေလွှတ်ရန်မေးမြန်းချက်" },

@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Użu" },
   "helpSection_params": { "message": "Għażliet tal-konfigurazzjoni" },
   "helpSection_flags": { "message": "Bnadar" },
-  "helpSection_gitOptions": { "message": "għażliet git" },
+  "helpSection_gitOptions": { "message": "kmand / għażliet ta' git" },
   "helpSection_cmds": { "message": "Kmand tal-informazzjoni" },
   "optionDesc_provider": { "message": "Fornitur għall-API taċ-chat" },
   "optionDesc_query": { "message": "Mistoqsija biex tibgħat l-AI" },

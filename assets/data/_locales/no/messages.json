@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Bruk" },
   "helpSection_params": { "message": "Konfigurasjonsalternativer" },
   "helpSection_flags": { "message": "Flagg" },
-  "helpSection_gitOptions": { "message": "git-alternativer" },
+  "helpSection_gitOptions": { "message": "git-kommandoer / -alternativer" },
   "helpSection_cmds": { "message": "Info kommandoer" },
   "optionDesc_provider": { "message": "Leverandør for chat-API" },
   "optionDesc_query": { "message": "Spørsmål om å sende AI" },

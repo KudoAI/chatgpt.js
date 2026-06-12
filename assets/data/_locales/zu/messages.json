@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Ukusetshenziswa" },
   "helpSection_params": { "message": "Izinketho zepharamitha" },
   "helpSection_flags": { "message": "Amafulegi" },
-  "helpSection_gitOptions": { "message": "ongakhetha kukho kwe-git" },
+  "helpSection_gitOptions": { "message": "imiyalo ye-git / ongakhetha kukho" },
   "helpSection_cmds": { "message": "Imiyalo yemininingwane" },
   "optionDesc_provider": { "message": "Umhlinzeki we-API yengxoxo" },
   "optionDesc_query": { "message": "Isicelo sokuthumela i-AI" },

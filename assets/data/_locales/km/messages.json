@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "ការប្រើប្រាស់" },
   "helpSection_params": { "message": "ជម្រើសប៉ារ៉ាម៉ែត្រ" },
   "helpSection_flags": { "message": "ទង់" },
-  "helpSection_gitOptions": { "message": "ជម្រើស git" },
+  "helpSection_gitOptions": { "message": "ពាក្យបញ្ជា git / ជម្រើស" },
   "helpSection_cmds": { "message": "ពាក្យបញ្ជាព័ត៌មាន" },
   "optionDesc_provider": { "message": "អ្នកផ្តល់សេវាសម្រាប់ការជជែកកំសាន្ត API" },
   "optionDesc_query": { "message": "សំណួរដែលត្រូវផ្ញើ AI" },

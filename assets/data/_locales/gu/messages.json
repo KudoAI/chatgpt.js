@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "વપરાશ" },
   "helpSection_params": { "message": "પરિમાણ વિકલ્પો" },
   "helpSection_flags": { "message": "ફ્લેગ્સ" },
-  "helpSection_gitOptions": { "message": "git વિકલ્પો" },
+  "helpSection_gitOptions": { "message": "git આદેશો / વિકલ્પો" },
   "helpSection_cmds": { "message": "માહિતી આદેશો" },
   "optionDesc_provider": { "message": "ચેટ API માટે પ્રદાતા" },
   "optionDesc_query": { "message": "AI મોકલવા માટે ક્વેરી" },

@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Ntchito" },
   "helpSection_params": { "message": "Konzani zosankha" },
   "helpSection_flags": { "message": "Mbendera" },
-  "helpSection_gitOptions": { "message": "zosankha za GIT" },
+  "helpSection_gitOptions": { "message": "git malamulo / options" },
   "helpSection_cmds": { "message": "ZOKHUDZ" },
   "optionDesc_provider": { "message": "Wopereka macheza API" },
   "optionDesc_query": { "message": "Kufunsira kutumiza AI" },

@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Yusim" },
   "helpSection_params": { "message": "Konfigim ol opsen" },
   "helpSection_flags": { "message": "Banner" },
-  "helpSection_gitOptions": { "message": "git opsen" },
+  "helpSection_gitOptions": { "message": "tik tok / Options" },
   "helpSection_cmds": { "message": "Toksave" },
   "optionDesc_provider": { "message": "Ol man i save mekim wok long ol samting bilong skin" },
   "optionDesc_query": { "message": "Mi laik bai yu salim mi i go" },

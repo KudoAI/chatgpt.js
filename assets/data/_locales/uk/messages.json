@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Використання" },
   "helpSection_params": { "message": "Параметри конфігурації" },
   "helpSection_flags": { "message": "Прапорці" },
-  "helpSection_gitOptions": { "message": "параметри git" },
+  "helpSection_gitOptions": { "message": "git-команди/ параметри" },
   "helpSection_cmds": { "message": "Інформаційні команди" },
   "optionDesc_provider": { "message": "Постачальник API чату" },
   "optionDesc_query": { "message": "Запит на надсилання AI" },

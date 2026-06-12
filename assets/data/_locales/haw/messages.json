@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Hoʻohana" },
   "helpSection_params": { "message": "Nā koho palena" },
   "helpSection_flags": { "message": "Nā hae" },
-  "helpSection_gitOptions": { "message": "nā koho git" },
+  "helpSection_gitOptions": { "message": "nā kauoha / koho git" },
   "helpSection_cmds": { "message": "Nā kauoha ʻike" },
   "optionDesc_provider": { "message": "Mea hoʻolako no ka API kamaʻilio" },
   "optionDesc_query": { "message": "Nīnau e hoʻouna i ka AI" },

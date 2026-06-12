@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "Выкарыстанне" },
   "helpSection_params": { "message": "Параметры параметраў" },
   "helpSection_flags": { "message": "Сцягі" },
-  "helpSection_gitOptions": { "message": "параметры git" },
+  "helpSection_gitOptions": { "message": "каманды / параметры git" },
   "helpSection_cmds": { "message": "Інфармацыйныя каманды" },
   "optionDesc_provider": { "message": "Правайдэр API чата" },
   "optionDesc_query": { "message": "Запыт для адпраўкі ІІ" },

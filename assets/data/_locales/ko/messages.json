@@ -66,7 +66,7 @@
   "helpSection_usage": { "message": "사용" },
   "helpSection_params": { "message": "매개 변수 옵션" },
   "helpSection_flags": { "message": "플래그" },
-  "helpSection_gitOptions": { "message": "git 옵션" },
+  "helpSection_gitOptions": { "message": "git 명령어/옵션" },
   "helpSection_cmds": { "message": "정보 명령" },
   "optionDesc_provider": { "message": "채팅 API 제공업체" },
   "optionDesc_query": { "message": "AI 전송 쿼리" },
