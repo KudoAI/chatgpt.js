@@ -30,8 +30,7 @@
                     typeof cli.config.asciiArt == 'string' ? cli.config.asciiArt : 'a random thing' }.`
               : cli.config.query && typeof cli.config.query == 'string' ? cli.config.query
               : cli.msgs.query_hi
-
-    if (typeof query == 'string')
+    if (query == cli.config.query)
         query = buildQuery(query)
 
     if (new RegExp(`^(?:help|${cli.msgs.query_hi})(?:\n|$)`).test(query)) {

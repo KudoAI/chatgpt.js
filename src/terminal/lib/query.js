@@ -5,7 +5,7 @@ function build(baseQuery) {
     if (typeof baseQuery != 'string') return baseQuery
     const { replyLang } = cli.config
     let query = baseQuery
-    if (!cli.config.noSuggest && query == cli.config.query)
+    if (!cli.config.noSuggest)
         query += '\n\nThen, at the end of your response, ask user if they want you to do something related to the query'
               + ' except if you are already finishing your response w/ a question.'
     if (cli.config.fortune && !replyLang.startsWith('zh')
