@@ -31,8 +31,8 @@ async function start() {
         if (!input) { rl.prompt() ; continue }
         if (input.startsWith('/')) {
             const parts = input.slice(1).split(/\s+/),
-                    cmd = parts[0].toLowerCase(),
-                    args = parts.slice(1)
+                  cmd = parts[0].toLowerCase(),
+                  args = parts.slice(1)
             await route(cmd, args, rl)
         } else
             await run.query(buildQuery(input))
