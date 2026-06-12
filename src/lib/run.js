@@ -56,5 +56,73 @@ module.exports = {
         return this.query(`Summarize the following:\n\n${content}`)
     },
 
-    version() { log.version() }
+    version() { log.version() },
+
+    uilang(code) {
+        if (!code) return log.info(`${cli.msgs.info_current} uiLang: ${ cli.config.uiLang || cli.msgs.info_notSet }`)
+        cli.config.uiLang = code
+        log.success(`${cli.msgs.success_uiLang} ${cli.msgs.success_setTo} ${cli.config.uiLang}`)
+    },
+
+    replylang(text) {
+        if (!text)
+			return log.info(`${cli.msgs.info_current} replyLang: ${ cli.config.replyLang || cli.msgs.info_notSet }`)
+        cli.config.replyLang = text
+        log.success(`${cli.msgs.success_replyLang} ${cli.msgs.success_setTo} ${cli.config.replyLang}`)
+    },
+
+    commitMsgExample(example) {
+        if (!example)
+			return log.info(
+				`${cli.msgs.info_current} commitMsgExample: ${ cli.config.commitMsgExample || cli.msgs.info_notSet }`)
+        cli.config.commitMsgExample = example
+        log.success(`${cli.msgs.success_commitMsgExample} ${cli.msgs.success_setTo}: "${cli.config.commitMsgExample}"`)
+    },
+
+    async loadConfig(configPath) {
+        if (!configPath) return log.warn(`${cli.msgs.helpSection_usage}: /config <filepath|url>`)
+        const resolvedPath = require('path').resolve(configPath)
+        try {
+            Object.assign(cli.config, require(resolvedPath))
+            log.success(`${cli.msgs.configLoadedFrom} ${resolvedPath}`)
+        } catch (err) {
+            log.error(`${cli.msgs.error_failedToLoadConfigFile}: ${err.message}`)
+        }
+    },
+
+    toggleCopy(arg) {
+        if (arg == undefined) cli.config.copy = !cli.config.copy
+        else if (arg.toLowerCase() == 'on') cli.config.copy = true
+        else if (arg.toLowerCase() == 'off') cli.config.copy = false
+        else return log.error(
+			`${cli.msgs.error_use} /copy [on|off] ${cli.msgs.info_or} ${cli.msgs.error_noArgToToggle}`)
+        log.success(`${cli.msgs.success_copyToClipboard} ${cli.config.copy ? 'enabled' : 'disabled'}`)
+    },
+
+    toggleNoSuggest(arg) {
+        if (arg == undefined) cli.config.noSuggest = !cli.config.noSuggest
+        else if (arg.toLowerCase() == 'on') cli.config.noSuggest = true
+        else if (arg.toLowerCase() == 'off') cli.config.noSuggest = false
+        else return log.error(
+			`${cli.msgs.error_use} /nosuggest [on|off] ${cli.msgs.info_or} ${cli.msgs.error_noArgToToggle}`)
+        log.success(`${cli.msgs.success_autoSuggest} ${cli.config.noSuggest ? 'disabled' : 'enabled'}`)
+    },
+
+    toggleQuiet(arg) {
+        if (arg == undefined) cli.config.quiet = !cli.config.quiet
+        else if (arg.toLowerCase() == 'on') cli.config.quiet = true
+        else if (arg.toLowerCase() == 'off') cli.config.quiet = false
+        else return log.error(
+			`${cli.msgs.error_use} /quiet [on|off] ${cli.msgs.info_or} ${cli.msgs.error_noArgToToggle}`)
+        log.success(`${cli.msgs.success_quietMode} ${cli.config.quiet ? 'enabled' : 'disabled'}`)
+    },
+
+    toggleDebug(arg) {
+        if (arg == undefined) env.modes.debug = !env.modes.debug
+        else if (arg.toLowerCase() == 'on') env.modes.debug = true
+        else if (arg.toLowerCase() == 'off') env.modes.debug = false
+        else return log.error(
+			`${cli.msgs.error_use} /debug [on|off] ${cli.msgs.info_or} ${cli.msgs.error_noArgToToggle}`)
+        log.success(`${cli.msgs.success_debugLogs} ${env.modes.debug ? 'enabled' : 'disabled'}`)
+    }
 }
