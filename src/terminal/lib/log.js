@@ -104,7 +104,7 @@ module.exports = {
             ]
         }
         includeSections.forEach(section => // print valid arg elems
-            helpSections[section]?.forEach(line => printHelpMsg(line, /header|usage/.test(section) ? 1 : 29)))
+            helpSections[section]?.forEach(line => printHelpMsg(line, /header|usage/.test(section) ? 1 : 38)))
         console.info(`\n${cli.msgs.info_moreHelp}, ${
             cli.msgs.info_visit}: ${this.colors.bw}${cli.urls.cliDocs}${this.colors.nc}`)
 
