@@ -235,7 +235,7 @@ chatgpt --commit-msg  # 또는 cjs -g (git 저장소에서)
 
 더 많은 옵션과 예시는 확장 사용자 가이드를 참조하십시오.
 
-<https://github.com/KudoAI/chatgpt.js/blob/v4.11.0/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.12.0/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -551,7 +551,7 @@ ChatGPT 응답 자동 재생.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/white/icon16.svg"><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/dark-gray/icon16.svg"></picture>
 **[최신 릴리스](https://github.com/KudoAI/chatgpt.js/releases)** /
-[사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v4.11.0/docs/USERGUIDE.md) /
+[사용자 가이드](https://github.com/KudoAI/chatgpt.js/blob/v4.12.0/docs/USERGUIDE.md) /
 [지원 받기](https://github.com/KudoAI/chatgpt.js/issues) /
 [토론](https://github.com/KudoAI/chatgpt.js/discussions) /
 <a href="#top">상단으로 ↑</a>
