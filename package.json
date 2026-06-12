@@ -24,7 +24,8 @@
     "chatgpt-js": "dist/cli/index.js",
     "chatgpt.js": "dist/cli/index.js",
     "chatgpt": "dist/cli/index.js",
-    "cjs": "dist/cli/index.js"
+    "cjs": "dist/cli/index.js",
+    "gpt": "dist/cli/index.js"
   },
   "types": "chatgpt.d.ts",
   "scripts": {
