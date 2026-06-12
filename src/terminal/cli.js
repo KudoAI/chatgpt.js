@@ -8,7 +8,7 @@
 
     globalThis.log = require('./lib/log')
     const { build: buildQuery } = require('./lib/query'),
-            chatgpt = require(`../../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
+            chatgpt = require(`../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
           { resolveSrc } = require('./lib/resolver'),
             run = require('./lib/run')
 
