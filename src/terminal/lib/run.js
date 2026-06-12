@@ -13,7 +13,7 @@ module.exports = {
 
     clear() { return messages.clearChain() },
     commitMsg() { return git.generateCommitMsg({ includeDiff: cli.config.diff }) },
-    diff() { return git.printDiff() },
+    diff() { return git.diff.print() },
 
     fortune() {
         const { replyLang } = cli.config
