@@ -9,12 +9,6 @@ const { build: buildQuery } = require('../lib/query'),
       { route } = require('./lib/router'),
         run = require('../lib/run')
 
-if (require.main == module) {
-    const init = require('../cli/lib/init')
-    init.env()
-    init.cli().then(start)
-}
-
 async function start() {
     log.info(`${cli.msgs.info_startingInteractiveMode}. ${
         cli.msgs.info_type} '/help' ${cli.msgs.info_forCmds}, '/exit' ${cli.msgs.info_toQuit}.`)
@@ -38,6 +32,12 @@ async function start() {
             await run.query(buildQuery(input))
         rl.prompt()
     }
+}
+
+if (require.main == module) {
+    const init = require('../cli/lib/init')
+    init.env()
+    init.cli().then(start)
 }
 
 module.exports = { start }
