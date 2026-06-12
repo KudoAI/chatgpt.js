@@ -9,7 +9,7 @@ function build(baseQuery) {
         query += '\n\nThen, at the end of your response, ask user if they want you to do something related to the query'
               + ' except if you are already finishing your response w/ a question.'
     if (cli.config.fortune && !replyLang.startsWith('zh')
-        && env.supports.unicode || !nonLatinLocales.includes(replyLang.split('_')[0])
+        && (env.supports.unicode || !nonLatinLocales.includes(replyLang.split('_')[0]))
     ) query +=`\n\nRespond in simplified Chinese, then translate it literally to ${
                     replyLang || 'en' } on the line below it.`
     if (replyLang) {
