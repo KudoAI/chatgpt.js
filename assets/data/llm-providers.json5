@@ -49,14 +49,17 @@
           "date": { "release": "2026-04-20" },
           "strengths": ["agentic", "coding"]
         },
-        "liquid/lfm-2.5-1.2b-instruct": { // https://openrouter.ai/liquid/lfm-2.5-1.2b-instruct
-          "dataTypes": { "input": ["text"], "output": ["text"] },
-          "date": { "release": "2026-01-20" }
-        },
-        "liquid/lfm-2.5-1.2b-thinking": { // https://openrouter.ai/liquid/lfm-2.5-1.2b-thinking
+        "liquid/lfm-2.5-1.2b-instruct:free": { // https://openrouter.ai/liquid/lfm-2.5-1.2b-instruct:free
           "dataTypes": { "input": ["text"], "output": ["text"] },
           "date": { "release": "2026-01-20" },
-          "strengths": ["agentic"]
+          "strengths": ["speed"],
+          "tokenLimit": { "output": 32800 }
+        },
+        "liquid/lfm-2.5-1.2b-thinking:free": { // https://openrouter.ai/liquid/lfm-2.5-1.2b-thinking:free
+          "dataTypes": { "input": ["text"], "output": ["text"] },
+          "date": { "release": "2026-01-20" },
+          "strengths": ["agentic", "data extraction", "reasoning"],
+          "tokenLimit": { "output": 32800 }
         },
         "meta-llama/llama-3.2-3b-instruct:free": { // https://openrouter.ai/meta-llama/llama-3.2-3b-instruct:free
           "dataTypes": { "input": ["text"], "output": ["text"] },
