@@ -1,4 +1,5 @@
-const git = require('./git'),
+const fs = require('fs'),
+      git = require('./git'),
       init = require('./init'),
       messages = require('./messages')
 
@@ -68,16 +69,16 @@ module.exports = {
     stats() { log.stats() },
 
     summarize(textOrPath) {
-        const content = require('./string').looksLikePath(textOrPath)
-            ? require('fs').readFileSync(textOrPath, 'utf8') : textOrPath
+        const content = require('./string').looksLikePath(textOrPath) ? fs.readFileSync(textOrPath, 'utf8') : textOrPath
         return this.query(`Summarize the following:\n\n${content}`)
     },
 
     version() { log.version() },
 
-    uilang(code) {
+    async uilang(code) {
         if (!code) return log.info(`${cli.msgs.info_current} uiLang: ${ cli.config.uiLang || cli.msgs.info_notSet }`)
-        cli.config.uiLang = code
+        if (cli.lang != code) cli.msgs = await require('./language').getMsgs(code)
+        cli.lang = cli.config.uiLang = code
         log.success(`${cli.msgs.success_uiLang} ${cli.msgs.success_setTo} ${cli.config.uiLang}`)
     },
 
