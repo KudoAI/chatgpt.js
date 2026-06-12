@@ -11,7 +11,17 @@ module.exports = {
 
     clear() { return messages.clearChain() },
     commitMsg() { return require('./git').generateCommitMsg() },
-    fortune() { return this.query('Tell me my fortune the length of a fortune cookie paper.') },
+
+    fortune() {
+        const { replyLang } = cli.config
+        let query = 'Tell me my fortune the length of a fortune cookie paper.'
+        if (!replyLang.startsWith('zh') && env.supports.unicode
+            || !require('non-latin-locales').includes(replyLang.split('_')[0])
+        ) query +=`\n\nRespond in simplified Chinese, then translate it literally to ${
+            replyLang || 'en' } on the line below it.`
+        return this.query(query)
+    },
+
     help() { log.help() },
     init() { return require('../cli/lib/init').configFile() },
     joke() { return this.query('Tell me a joke and make it funny.') },
