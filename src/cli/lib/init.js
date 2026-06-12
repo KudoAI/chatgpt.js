@@ -14,7 +14,7 @@ module.exports = {
             env.modes.debug ? language.generateRandomLang({ excludes: ['en'] }) : language.getSysLang() ))
         cli.urls.cliDocs ||= `${cli.urls.docs.root}/#-command-line-usage`
         await settings.load() // all keys to cli.config
-        if (cli.config.autoClear) {
+        if (cli.config.autoClear !== false) {
             const sessionFile = path.join(path.dirname(messages.chainPath), 'session.id')
             let currentSession
             if (process.env.WT_SESSION) currentSession = `wt:${process.env.WT_SESSION}`
