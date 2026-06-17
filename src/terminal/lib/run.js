@@ -100,20 +100,24 @@ module.exports = {
 
     async loadConfig(configPath) {
         if (!configPath) return log.warn(`${cli.msgs.helpSection_usage}: /config <filepath|url>`)
-        const cleanedPath = configPath.replace(/^(['"])(.*)\1$/, '$2')
+        const fs = require('fs').promises,
+              cleanedPath = configPath.replace(/^(['"])(.*)\1$/, '$2')
+        let tmpDir
         try {
-            const { text } = await require('./resolver').resolveSrc(cleanedPath)
-            const tmpFileObj = require('tmp').fileSync({
-                mode: 0o600, keep: false, discardDescriptor: true, prefix: 'cli-config-', postfix: '.mjs' })
-            const tmpFile = tmpFileObj.name
-            fs.writeFileSync(tmpFile, text)
+            const os = require('os'),
+                  path = require('path'),
+                { text } = await require('./resolver').resolveSrc(cleanedPath)
+            tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'cli-config-'))
+            const tmpFile = path.join(tmpDir, 'config.mjs')
+            await fs.writeFile(tmpFile, text, { mode: 0o600 })
             const mod = await import(require('url').pathToFileURL(tmpFile).href)
             Object.assign(cli.config, mod.default || mod)
             if (cli.config.uiLang) cli.msgs = await language.getMsgs(cli.config.uiLang)
             log.success(`${cli.msgs.configLoadedFrom || 'Config loaded from'} ${cleanedPath}`)
-            tmpFileObj.removeCallback()
         } catch (err) {
             log.error(`${cli.msgs.error_failedToLoadConfigFile}: ${err.message}`)
+        } finally {
+            if (tmpDir) try { await fs.rm(tmpDir, { recursive: true, force: true }) } catch (err) {}
         }
     },
 
