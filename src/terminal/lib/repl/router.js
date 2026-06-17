@@ -1,5 +1,4 @@
-const run = require('../run'),
-      string = require('../string')
+const run = require('../run')
 
 module.exports = async (cmd, args, rl) => {
     switch (cmd) {
@@ -90,6 +89,6 @@ module.exports = async (cmd, args, rl) => {
             run.toggleDebug(args[0]) ; break
         default:
             log.warn(`${cli.msgs.warn_unknownCmd}: /${cmd}. ${
-                string.toTitleCase(cli.msgs.info_type)} /help ${cli.msgs.warn_forAvailRun}.`)
+                require('../string').toTitleCase(cli.msgs.info_type)} /help ${cli.msgs.warn_forAvailRun}.`)
     }
 }
