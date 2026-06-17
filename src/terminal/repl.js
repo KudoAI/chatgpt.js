@@ -4,12 +4,12 @@
 
 env.mode = 'repl'
 
-globalThis.log = require('../lib/log')
-const { build: buildQuery } = require('../lib/query'),
-        messages = require('../lib/messages'),
+globalThis.log = require('./lib/log')
+const { build: buildQuery } = require('./lib/query'),
+        messages = require('./lib/messages'),
         readline = require('readline/promises'),
       { route } = require('./lib/router'),
-        run = require('../lib/run')
+        run = require('./lib/run')
 
 async function start() {
     log.info(`${cli.msgs.info_startingInteractiveMode}. ${
@@ -33,7 +33,7 @@ async function start() {
 }
 
 if (require.main == module) {
-    const init = require('../lib/init')
+    const init = require('./lib/init')
     init.env()
     init.cli().then(start)
 }

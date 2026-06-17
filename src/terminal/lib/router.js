@@ -1,5 +1,5 @@
-const run = require('../../lib/run'),
-      string = require('../../lib/string')
+const run = require('./run'),
+      string = require('./string')
 
 async function route(cmd, args, rl) {
     switch (cmd) {
@@ -59,7 +59,7 @@ async function route(cmd, args, rl) {
         case 'clear' : case 'c' :
             run.clear() ; break
         case 'help' : case 'h' :
-            log.data(require('../../templates/help')) ; break
+            log.data(require('../templates/help')) ; break
         case 'version' : case 'v' :
             run.version() ; break
         case 'stats':
