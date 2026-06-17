@@ -89,7 +89,6 @@ async function route(cmd, args, rl) {
 }
 
 function showHelp() {
-    // Full help output in pretty format (bold headers, indented options)
     log.data(`  \x1b[1m${cli.msgs.helpSection_params.toLowerCase()}:\x1b[0m
     -p, --provider <provider>            Provider for chat API.
     -u, --ui-lang <code>                 ISO 639-1 code of language to display UI in.
