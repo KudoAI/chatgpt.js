@@ -768,6 +768,7 @@ const chatgpt = {
     },
 
     extractCode(msg) { return chatgpt.code.extract(msg) },
+
     focusChatbar() {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         chatgpt.getChatBox()?.focus()
@@ -1074,6 +1075,17 @@ const chatgpt = {
         return document.querySelector(chatgpt.selectors.links.newChat)
     },
 
+    async getRandomAnswer({ replyLang = 'en' } = {}) {
+        const prompt = `Generate a single random question in ${replyLang} language on any topic, then answer it.`
+                     + `\nDon't type anything else.`
+        if (chatgpt.env == 'frontend') {
+            chatgpt.send(prompt)
+            await chatgpt.isIdle()
+            return await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
+        } else
+            return await chatgpt.send(prompt)
+    },
+
     getRegenerateButton() {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         return document.querySelector(chatgpt.selectors.btns.regen)
@@ -1116,17 +1128,6 @@ const chatgpt = {
     getStopButton() {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         return document.querySelector(chatgpt.selectors.btns.stop)
-    },
-
-    async getRandomAnswer({ replyLang = 'en' } = {}) {
-        const prompt = `Generate a single random question in ${replyLang} language on any topic, then answer it.`
-                     + `\nDon't type anything else.`
-        if (chatgpt.env == 'frontend') {
-            chatgpt.send(prompt)
-            await chatgpt.isIdle()
-            return await chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
-        } else
-            return await chatgpt.send(prompt)
     },
 
     getUserLanguage() {
@@ -1211,13 +1212,13 @@ const chatgpt = {
 
             return new Promise(resolve => {
                 chatgpt.getAccessToken().then(async token => {
-                    const instructionsData = await this.fetchData()
+                    const instructionsData = await this._fetchData()
 
                     // Concatenate old instructions with new instruction
                     if (target == 'user') instructionsData.about_user_message += instruction
                     else if (target == 'chatgpt') instructionsData.about_model_message += instruction
 
-                    await this.sendRequest('POST', token, instructionsData)
+                    await this._sendRequest('POST', token, instructionsData)
                     return resolve()
                 })
             })
@@ -1233,26 +1234,25 @@ const chatgpt = {
 
             return new Promise(resolve => {
                 chatgpt.getAccessToken().then(async token => {
-                    const instructionsData = await this.fetchData()
+                    const instructionsData = await this._fetchData()
 
                     // Clear target's instructions
                     if (target == 'user') instructionsData.about_user_message = ''
                     else if (target == 'chatgpt') instructionsData.about_model_message = ''
 
-                    await this.sendRequest('POST', token, instructionsData)
+                    await this._sendRequest('POST', token, instructionsData)
                     return resolve()
                 })})
         },
 
-        fetchData() {
-        // INTERNAL METHOD
+        _fetchData() {
             return new Promise(resolve =>
                 chatgpt.getAccessToken().then(async token =>
-                    resolve(await this.sendRequest('GET', token)))) // return API data
+                    resolve(await this._sendRequest('GET', token)))) // return API data
         },
 
-        sendRequest(method, token, body) {
-        // INTERNAL METHOD
+        _sendRequest(method, token, body) {
+
             // Validate args
             for (let i = 0 ; i < arguments.length -1 ; i++) if (typeof arguments[i] == 'string')
                 return console.error(`Argument ${ i +1 } must be a string`)
@@ -1289,24 +1289,24 @@ const chatgpt = {
 
         turnOff() {
             return new Promise(resolve => chatgpt.getAccessToken().then(async token => {
-                const instructionsData = await this.fetchData()
+                const instructionsData = await this._fetchData()
                 instructionsData.enabled = false
-                await this.sendRequest('POST', token, instructionsData)
+                await this._sendRequest('POST', token, instructionsData)
                 return resolve()
             }))
         },
 
         turnOn() {
             return new Promise(resolve => chatgpt.getAccessToken().then(async token => {
-                const instructionsData = await this.fetchData()
+                const instructionsData = await this._fetchData()
                 instructionsData.enabled = true
-                await this.sendRequest('POST', token, instructionsData)
+                await this._sendRequest('POST', token, instructionsData)
                 return resolve()
             }))
         },
 
         toggle() {
-            return new Promise(resolve => this.fetchData().then(async instructionsData => {
+            return new Promise(resolve => this._fetchData().then(async instructionsData => {
                 await (instructionsData.enabled ? this.turnOff() : this.turnOn())
                 return resolve()
             }))
