@@ -14,10 +14,15 @@ export default {
     provider: 'auto',    // provider for chat API (or 'google' or 'openrouter')
     uiLang: 'en',        // ISO 639-1 code of language to display UI in
     replyLang: '',       // language for AI to reply in
+    config: '',          // path or URL to custom config file to load
+
+    // Msg chain options
     maxChars: 250,       // char limit per msg
     maxTokens: null,     // max tokens to use
     turnsToPreserve: 3,  // # of turns to preserve (2 msgs/turn)
-    commitMsgExample: 'docs: updated shields',
+
+    // Git options
+    commitMsgExample: 'docs: updated shields', // for --commit-msg to reference
 
     // Flags
     copy: false,         // copy CLI response to clipboard
