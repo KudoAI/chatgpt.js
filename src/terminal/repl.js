@@ -8,7 +8,7 @@ globalThis.log = require('./lib/log')
 const { build: buildQuery } = require('./lib/query'),
         messages = require('./lib/messages'),
         readline = require('readline/promises'),
-      { route } = require('./lib/repl/router'),
+        router = require('./lib/repl/router'),
         run = require('./lib/run')
 
 async function start() {
@@ -25,7 +25,7 @@ async function start() {
             const parts = input.slice(1).split(/\s+/),
                   cmd = parts[0].toLowerCase(),
                   args = parts.slice(1)
-            await route(cmd, args, rl)
+            await router(cmd, args, rl)
         } else
             await run.query(buildQuery(input))
         rl.prompt()

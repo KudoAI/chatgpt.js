@@ -1,7 +1,7 @@
 const run = require('../run'),
       string = require('../string')
 
-async function route(cmd, args, rl) {
+module.exports = async (cmd, args, rl) => {
     switch (cmd) {
         case 'provider' : {
             if (!args.length) return log.info(`${cli.msgs.info_current} provider: ${cli.config.provider}`)
@@ -93,5 +93,3 @@ async function route(cmd, args, rl) {
                 string.toTitleCase(cli.msgs.info_type)} /help ${cli.msgs.warn_forAvailRun}.`)
     }
 }
-
-module.exports = { route }
