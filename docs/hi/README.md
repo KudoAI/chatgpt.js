@@ -217,10 +217,10 @@ console.log(await chatgpt.send('sup'))
 API की (key) सेट करने के बाद, अपने टर्मिनल से कंट्रोल करें:
 
 ```bash
-chatgpt --query "sup"  # या cjs -q sup
+chatgpt --query "sup"  # या gpt -q sup
 # e.g. => Hey there! What's up?
 
-chatgpt --ascii-art "cat"  # या cjs -a cat
+chatgpt --ascii-art "cat"  # या gpt -a cat
 # e.g. =>
 #
 #       |\      _,,,---,,_
@@ -228,7 +228,7 @@ chatgpt --ascii-art "cat"  # या cjs -a cat
 #      |,4-  ) )-,_. ,\ (  `'-'
 #     '---''(_/--'  `-'\_)
 
-chatgpt --commit-msg  # या cjs -g (गिट रिपो में)
+chatgpt --commit-msg  # या gpt -g (गिट रिपो में)
 # e.g. => feat: add `--ascii-art` cli cmd
 ```
 

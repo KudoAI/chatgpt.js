@@ -218,10 +218,10 @@ console.log(await chatgpt.send('sup'))
 API 키를 설정한 후, 터미널에서 제어하세요:
 
 ```bash
-chatgpt --query "sup"  # 또는 cjs -q sup
+chatgpt --query "sup"  # 또는 gpt -q sup
 # e.g. => Hey there! What's up?
 
-chatgpt --ascii-art "cat"  # 또는 cjs -a cat
+chatgpt --ascii-art "cat"  # 또는 gpt -a cat
 # e.g. =>
 #
 #       |\      _,,,---,,_
@@ -229,7 +229,7 @@ chatgpt --ascii-art "cat"  # 또는 cjs -a cat
 #      |,4-  ) )-,_. ,\ (  `'-'
 #     '---''(_/--'  `-'\_)
 
-chatgpt --commit-msg  # 또는 cjs -g (git 저장소에서)
+chatgpt --commit-msg  # 또는 gpt -g (git 저장소에서)
 # e.g. => feat: add `--ascii-art` cli cmd
 ```
 

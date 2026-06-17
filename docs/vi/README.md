@@ -218,10 +218,10 @@ console.log(await chatgpt.send('sup'))
 Sau khi thiết lập khóa API, hãy điều khiển từ terminal của bạn:
 
 ```bash
-chatgpt --query "sup"  # hoặc cjs -q sup
+chatgpt --query "sup"  # hoặc gpt -q sup
 # e.g. => Hey there! What's up?
 
-chatgpt --ascii-art "cat"  # hoặc cjs -a cat
+chatgpt --ascii-art "cat"  # hoặc gpt -a cat
 # e.g. =>
 #
 #       |\      _,,,---,,_
@@ -229,7 +229,7 @@ chatgpt --ascii-art "cat"  # hoặc cjs -a cat
 #      |,4-  ) )-,_. ,\ (  `'-'
 #     '---''(_/--'  `-'\_)
 
-chatgpt --commit-msg  # hoặc cjs -g (trong một kho lưu trữ git)
+chatgpt --commit-msg  # hoặc gpt -g (trong một kho lưu trữ git)
 # e.g. => feat: add `--ascii-art` cli cmd
 ```
 

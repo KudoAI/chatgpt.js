@@ -217,10 +217,10 @@ console.log(await chatgpt.send('sup'))
 設定 API 金鑰後，即可透過終端進行控制：
 
 ```bash
-chatgpt --query "sup"  # 或者 cjs -q sup
+chatgpt --query "sup"  # 或者 gpt -q sup
 # e.g. => Hey there! What's up?
 
-chatgpt --ascii-art "cat"  # 或者 cjs -a cat
+chatgpt --ascii-art "cat"  # 或者 gpt -a cat
 # e.g. =>
 #
 #       |\      _,,,---,,_
@@ -228,7 +228,7 @@ chatgpt --ascii-art "cat"  # 或者 cjs -a cat
 #      |,4-  ) )-,_. ,\ (  `'-'
 #     '---''(_/--'  `-'\_)
 
-chatgpt --commit-msg  # 或者 cjs -g (在 git 倉庫中)
+chatgpt --commit-msg  # 或者 gpt -g (在 git 倉庫中)
 # e.g. => feat: add `--ascii-art` cli cmd
 ```
 

@@ -217,10 +217,10 @@ console.log(await chatgpt.send('sup'))
 After setting an API key, control from your terminal:
 
 ```bash
-chatgpt --query "sup"  # or cjs -q sup
+chatgpt --query "sup"  # or gpt -q sup
 # e.g. => Hey there! What's up?
 
-chatgpt --ascii-art "cat"  # or cjs -a cat
+chatgpt --ascii-art "cat"  # or gpt -a cat
 # e.g. =>
 #
 #       |\      _,,,---,,_
@@ -228,7 +228,7 @@ chatgpt --ascii-art "cat"  # or cjs -a cat
 #      |,4-  ) )-,_. ,\ (  `'-'
 #     '---''(_/--'  `-'\_)
 
-chatgpt --commit-msg  # or cjs -g (in a git repo)
+chatgpt --commit-msg  # or gpt -g (in a git repo)
 # e.g. => feat: add `--ascii-art` cli cmd
 ```
 

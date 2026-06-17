@@ -218,10 +218,10 @@ console.log(await chatgpt.send('sup'))
 API कुञ्जी सेट गरेपछि, आफ्नो टर्मिनलबाट नियन्त्रण गर्नुहोस्:
 
 ```bash
-chatgpt --query "sup"  # वा cjs -q sup
+chatgpt --query "sup"  # वा gpt -q sup
 # e.g. => Hey there! What's up?
 
-chatgpt --ascii-art "cat"  # वा cjs -a cat
+chatgpt --ascii-art "cat"  # वा gpt -a cat
 # e.g. =>
 #
 #       |\      _,,,---,,_
@@ -229,7 +229,7 @@ chatgpt --ascii-art "cat"  # वा cjs -a cat
 #      |,4-  ) )-,_. ,\ (  `'-'
 #     '---''(_/--'  `-'\_)
 
-chatgpt --commit-msg  # वा cjs -g (git रिपोमा)
+chatgpt --commit-msg  # वा gpt -g (git रिपोमा)
 # e.g. => feat: add `--ascii-art` cli cmd
 ```
 

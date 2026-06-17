@@ -217,10 +217,10 @@ console.log(await chatgpt.send('sup'))
 APIキーを設定した後、ターミナルから操作します：
 
 ```bash
-chatgpt --query "sup"  # または cjs -q sup
+chatgpt --query "sup"  # または gpt -q sup
 # e.g. => Hey there! What's up?
 
-chatgpt --ascii-art "cat"  # または cjs -a cat
+chatgpt --ascii-art "cat"  # または gpt -a cat
 # 例 =>
 #
 #       |\      _,,,---,,_
@@ -228,7 +228,7 @@ chatgpt --ascii-art "cat"  # または cjs -a cat
 #      |,4-  ) )-,_. ,\ (  `'-'
 #     '---''(_/--'  `-'\_)
 
-chatgpt --commit-msg  # または cjs -g (gitリポジトリ内)
+chatgpt --commit-msg  # または gpt -g (gitリポジトリ内)
 # 例 => feat: add `--ascii-art` cli cmd
 ```
 
