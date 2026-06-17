@@ -1,22 +1,20 @@
 const { bw, nc } = log.colors
 
-module.exports = (() => {
+function buildSlashCmdsBlock() {
+    const lines = [] ; let currentLine = '    '
+    require('../components/slash-cmds').forEach((cmd, i) => {
+        const segment = (i ? ', ' : '') + cmd
+        if (currentLine.length + segment.length > (process.stdout.columns || 80) -4) {
+            lines.push(currentLine)
+            currentLine = `    ${cmd}`
+        } else
+            currentLine += segment
+    })
+    if (currentLine.trim()) lines.push(currentLine)
+    return lines.join('\n')
+}
 
-    function buildSlashCmdsBlock() {
-        const lines = [] ; let currentLine = '    '
-        require('../components/slash-cmds').forEach((cmd, i) => {
-            const segment = (i ? ', ' : '') + cmd
-            if (currentLine.length + segment.length > (process.stdout.columns || 80) -4) {
-                lines.push(currentLine)
-                currentLine = `    ${cmd}`
-            } else
-                currentLine += segment
-        })
-        if (currentLine.trim()) lines.push(currentLine)
-        return lines.join('\n')
-    }
-
-    return (
+module.exports = (() =>
 `  ${bw}${cli.msgs.helpSection_params.toLowerCase()}:${nc}
    -p, --provider <provider>            ${cli.msgs.optionDesc_provider}.
    -u, --ui-lang <code>                 ${cli.msgs.optionDesc_uiLang}.
@@ -59,6 +57,6 @@ module.exports = (() => {
    -S, --stats                          ${cli.msgs.optionDesc_stats}.
        --debug                          ${cli.msgs.optionDesc_debug}.
 ${ env.mode == 'repl' ? `\n  ${bw}REPL ${cli.msgs.data_slashCmds}:${nc}\n${buildSlashCmdsBlock()}\n` : '' }
-${cli.msgs.info_moreHelp}, ${cli.msgs.info_visit}: ${bw}${cli.urls.cliDocs}${nc}\n`
-    )
-})()
+${cli.msgs.info_moreHelp}, ${cli.msgs.info_visit}: ${bw}${cli.urls.cliDocs}${nc}
+`
+)()
