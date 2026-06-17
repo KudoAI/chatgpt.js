@@ -131,6 +131,6 @@
     "get-port": "^7.2.0",
     "globals": "^17.6.0",
     "husky": "^9.1.7",
-    "typescript-eslint": "^8.61.0"
+    "typescript-eslint": "^8.61.1"
   }
 }
