@@ -1,6 +1,22 @@
 const { bw, nc } = log.colors
 
-module.exports = (() =>
+module.exports = (() => {
+
+    function buildSlashCmdsBlock() {
+        const lines = [] ; let currentLine = '    '
+        require('../components/slash-cmds').forEach((cmd, i) => {
+            const segment = (i ? ', ' : '') + cmd
+            if (currentLine.length + segment.length > (process.stdout.columns || 80) -4) {
+                lines.push(currentLine)
+                currentLine = `    ${cmd}`
+            } else
+                currentLine += segment
+        })
+        if (currentLine.trim()) lines.push(currentLine)
+        return lines.join('\n')
+    }
+
+    return (
 `  ${bw}${cli.msgs.helpSection_params.toLowerCase()}:${nc}
    -p, --provider <provider>            ${cli.msgs.optionDesc_provider}.
    -u, --ui-lang <code>                 ${cli.msgs.optionDesc_uiLang}.
@@ -42,13 +58,7 @@ module.exports = (() =>
    -v, --version                        ${cli.msgs.optionDesc_version}.
    -S, --stats                          ${cli.msgs.optionDesc_stats}.
        --debug                          ${cli.msgs.optionDesc_debug}.
-${ env.mode == 'repl' ? `\n  ${bw}REPL ${cli.msgs.data_slashCmds}:${nc}
-    /help, /exit, /init, /clear, /joke, /fortune, /random, /actas <persona>, /ascii [subject]
-    /summarize <text|file|url>, /stats, /version, /commitmsg, /diff, /sentiment <text|file|url>
-    /provider <name>, /maxchars <num>, /maxtokens <num>, /turns <num>
-    /uilang <code>, /replylang <text>, /commitmsgexample <msg>
-    /config <filepath|url>, /copy [on|off], /nosuggest [on|off]
-    /quiet [on|off], /debug [on|off]
-` : '' }
-${cli.msgs.info_moreHelp}, ${cli.msgs.info_visit}: ${bw}${cli.urls.cliDocs}${nc}
-`)()
+${ env.mode == 'repl' ? `\n  ${bw}REPL ${cli.msgs.data_slashCmds}:${nc}\n${buildSlashCmdsBlock()}\n` : '' }
+${cli.msgs.info_moreHelp}, ${cli.msgs.info_visit}: ${bw}${cli.urls.cliDocs}${nc}\n`
+    )
+})()
