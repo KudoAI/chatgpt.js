@@ -53,79 +53,56 @@ module.exports = {
         console.debug(`\n${colors.by}DEBUG:`, msg, colors.nc)
     },
 
-    help(includeSections = [
-        'header', 'usage', 'params', 'msgChainOptions', 'flags', 'gitOptions', 'funCmds', 'appCmds'
-    ]) {
-        cli.prefix = `${this.colors.tlBG}${this.colors.blk} ${cli.name.replace(/^@[^/]+\//, '')} ${this.colors.nc} `
-        const helpSections = {
-            header: [
-                `\n├ ${cli.prefix}${cli.msgs.pkg_copyright}.`,
-                `${cli.prefix}${cli.msgs.prefix_source}: ${cli.urls.src}`
-            ],
-            usage: [
-                `\n${this.colors.bw}o ${cli.msgs.helpSection_usage.toLowerCase()}:${this.colors.nc}`,
-                ` ${this.colors.bw}» ${this.colors.bg}${cli.cmdFormat}${this.colors.nc}`
-            ],
-            params: [
-                `\n${this.colors.bw}o ${cli.msgs.helpSection_params.toLowerCase()}:${this.colors.nc}`,
-                ` -p, --provider <provider>            ${cli.msgs.optionDesc_provider}.`,
-                ` -u, --ui-lang <code>                 ${cli.msgs.optionDesc_uiLang}.`,
-                ` -L, --reply-lang <code|name>         ${cli.msgs.optionDesc_replyLang}.`,
-                ` -q, --query <msg>                    ${cli.msgs.optionDesc_query}.`,
-                ` -s, --summarize <filepath|text|url>  ${cli.msgs.optionDesc_summarize}.`,
-                ` -c, --config <filepath|url>          ${cli.msgs.optionDesc_config}.`
-            ],
-            msgChainOptions: [
-                `\n${this.colors.bw}o ${cli.msgs.helpSection_msgChainOptions.toLowerCase()}:${this.colors.nc}`,
-                ` -m, --max-chars <integer>            ${cli.msgs.optionDesc_maxChars}.`,
-                ` -k, --max-tokens <integer>           ${cli.msgs.optionDesc_maxTokens}.`,
-                ` -t, --turns <integer>                ${cli.msgs.optionDesc_turnsToPreserve}.`,
-                ` -C, --clear                          ${cli.msgs.optionDesc_clear}.`
-            ],
-            flags: [
-                `\n${this.colors.bw}o ${cli.msgs.helpSection_flags.toLowerCase()}:${this.colors.nc}`,
-                ` -x, --copy                           ${cli.msgs.optionDesc_copy}.`,
-                ` -A, --no-suggest                     ${cli.msgs.optionDesc_noSuggest}.`,
-                ` -V, --quiet                          ${cli.msgs.optionDesc_quiet}.`
-            ],
-            gitOptions: [
-                `\n${this.colors.bw}o ${cli.msgs.helpSection_gitOptions.toLowerCase()}:${this.colors.nc}`,
-                ` -g, --commit-msg                     ${cli.msgs.optionDesc_commitMsg}.`,
-                ` -G, --commit-msg-example <msg>       ${cli.msgs.optionDesc_commitMsgExample}.`,
-                ` -d, --diff                           ${cli.msgs.optionDesc_diff}.`
-            ],
-            funCmds: [
-                `\n${this.colors.bw}o ${cli.msgs.helpSection_funCmds.toLowerCase()}:${this.colors.nc}`,
-                ` -P, --act-as <persona>               ${cli.msgs.optionDesc_actAs}`,
-                ` -a, --ascii-art [subject]            ${cli.msgs.optionDesc_asciiArt}.`,
-                ` -f, --fortune                        ${cli.msgs.optionDesc_fortune}.`,
-                ` -j, --joke                           ${cli.msgs.optionDesc_joke}.`,
-                ` -r, --random-answer                  ${cli.msgs.optionDesc_randomAnswer}.`
-            ],
-            appCmds: [
-                `\n${this.colors.bw}o ${cli.msgs.helpSection_appCmds.toLowerCase()}:${this.colors.nc}`,
-                ` -i, --init                           ${cli.msgs.optionDesc_init}.`,
-                ` -I, --interactive                    ${cli.msgs.optionDesc_interactive}.`,
-                ` -h, --help                           ${cli.msgs.optionDesc_help}.`,
-                ` -v, --version                        ${cli.msgs.optionDesc_version}.`,
-                ` -S, --stats                          ${cli.msgs.optionDesc_stats}.`,
-                `     --debug                          ${cli.msgs.optionDesc_debug}.`
-            ]
+    help() {
+        const toolName = cli.name.replace(/^@[^/]+\//, ''),
+              copyright = cli.msgs.pkg_copyright,
+              idx = copyright.indexOf('KudoAI'),
+              firstPart = copyright.slice(0, idx).trim(),
+              secondPart = copyright.slice(idx),
+              restOfFirst = firstPart.replace(toolName, '').trimStart()
+
+        // Header
+        cli.prefix = `${this.colors.tlBG}${this.colors.blk} ${toolName} ${this.colors.nc}`
+        console.log('|')
+        console.log(`├ ${cli.prefix} ${restOfFirst}`)
+        console.log(`|  ${secondPart}`)
+        console.log(`| ${cli.prefix} ${cli.msgs.prefix_source}:`)
+        console.log(`|  ${cli.urls.src}`)
+        console.log('|')
+
+        // Usage
+        console.log(`${this.colors.bw}o ${cli.msgs.helpSection_usage.toLowerCase()}:${this.colors.nc}`)
+        printHelpMsg(` ${this.colors.bw}» ${this.colors.bg}${cli.cmdFormat}${this.colors.nc}`, 1)
+        console.log('|')
+
+        // Template sections
+        const templateLines = require('../templates/help').trimEnd().split('\n')
+        for (let i = 0 ; i < templateLines.length ; i++) {
+            let line = templateLines[i]
+            if (line.startsWith('  ')) line = line.slice(2)
+            const trimmed = line.trimStart()
+            if (!trimmed) {
+                let nextNonEmpty
+                for (let j = i + 1 ; j < templateLines.length; j++)
+                    if (templateLines[j].trim()) { nextNonEmpty = templateLines[j].trimStart() ; break }
+                console.log(nextNonEmpty && nextNonEmpty.startsWith(cli.msgs.info_moreHelp) ? '' : '|')
+                continue
+            }
+            if (/^\\x1b\[1m|^REPL\b/.test(trimmed)) {
+                console.log(this.colors.bw + 'o ' + trimmed)
+                continue
+            } else if (/^\s*[-/]/.test(line)) {
+                printHelpMsg(line, 38)
+                continue
+            }
+            console.log(trimmed)
         }
-        includeSections.forEach(section => // print valid arg elems
-            helpSections[section]?.forEach(line => printHelpMsg(line, /header|usage/.test(section) ? 1 : 38)))
-        console.info(`\n${cli.msgs.info_moreHelp}, ${
-            cli.msgs.info_visit}: ${this.colors.bw}${cli.urls.cliDocs}${this.colors.nc}`)
 
-        function printHelpMsg(msg, indent) { // wrap msg + indent 2nd+ lines
-            const terminalWidth = process.stdout.columns || 80,
-                  words = msg.match(/\S+|\s+/g),
-                  lines = [], prefix = '| '
-
-            // Split msg into lines of appropriate lengths
+        function printHelpMsg(msg, indent) {
+            const lines = [], prefix = '| '
             let currentLine = ''
-            words.forEach(word => {
-                const lineLength = terminalWidth -( !lines.length ? 0 : indent )
+            msg.match(/\S+|\s+/g).forEach(word => {
+                const lineLength = process.stdout.columns || 80 - (!lines.length ? 0 : indent)
                 if (currentLine.length + prefix.length + word.length > lineLength) { // cap/store it
                     lines.push(!lines.length ? currentLine : currentLine.trimStart())
                     currentLine = ''
@@ -133,8 +110,6 @@ module.exports = {
                 currentLine += word
             })
             lines.push(!lines.length ? currentLine : currentLine.trimStart())
-
-            // Print formatted msg
             lines.forEach((line, idx) => console.info(prefix +(
                 idx == 0 ? line // print 1st line unindented
                     : ' '.repeat(indent) + line // print subsequent lines indented

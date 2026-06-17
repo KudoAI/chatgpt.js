@@ -2,6 +2,8 @@
 
 'use strict'
 
+env.mode = 'repl'
+
 globalThis.log = require('../lib/log')
 const { build: buildQuery } = require('../lib/query'),
         messages = require('../lib/messages'),
