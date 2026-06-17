@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "МСГ гинжин сонголтууд" },
   "helpSection_flags": { "message": "Далбаа" },
   "helpSection_gitOptions": { "message": "git командууд / сонголтууд" },
+  "helpSection_dataCmds": { "message": "Өгөгдлийн командууд" },
   "helpSection_funCmds": { "message": "Хөгжилтэй командууд" },
   "helpSection_appCmds": { "message": "Апп командууд" },
   "optionDesc_provider": { "message": "Чат API-ийн үйлчилгээ үзүүлэгч" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "Хүний уншиж болох GIT diff үүсгэж, дамжуулсан тохиолдолд --commit-msg-д хавсралт хийнэ үү"
   },
+  "optionDesc_sentiment": { "message": "Мэдрэмжийг дүн шинжилгээ хийх зам эсвэл URL файл эсвэл текст рүү" },
   "optionDesc_clear": { "message": "Кэшт зурвасын гинжийг арилгах" },
   "optionDesc_help": { "message": "Тусламжийн дэлгэцийг харуулах" },
   "optionDesc_version": { "message": "Хувилбарын дугаар" },

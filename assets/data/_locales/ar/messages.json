@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "خيارات سلسلة الرسائل" },
   "helpSection_flags": { "message": "الأعلام" },
   "helpSection_gitOptions": { "message": "أوامر / خيارات git" },
+  "helpSection_dataCmds": { "message": "أوامر البيانات" },
   "helpSection_funCmds": { "message": "أوامر المرح" },
   "helpSection_appCmds": { "message": "أوامر التطبيق" },
   "optionDesc_provider": { "message": "مزود لواجهة برمجة تطبيقات الدردشة" },
@@ -98,6 +99,7 @@
   "optionDesc_diff": {
     "message": "إنشاء فرق بوابة قابل للقراءة من قبل الإنسان وإلحاقه بـ - الالتزام - msg إذا تم اجتيازه"
   },
+  "optionDesc_sentiment": { "message": "المسار أو عنوان URL للملف أو النص لتحليل معنويات" },
   "optionDesc_clear": { "message": "مسح سلسلة الرسائل المخزنة مؤقتًا" },
   "optionDesc_help": { "message": "عرض شاشة المساعدة" },
   "optionDesc_version": { "message": "رقم الإصدار" },

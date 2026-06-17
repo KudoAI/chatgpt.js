@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Izinketho ze-Msg chain" },
   "helpSection_flags": { "message": "Amafulegi" },
   "helpSection_gitOptions": { "message": "imiyalo ye-git / ongakhetha kukho" },
+  "helpSection_dataCmds": { "message": "Imiyalo yedatha" },
   "helpSection_funCmds": { "message": "Imiyalo ejabulisayo" },
   "helpSection_appCmds": { "message": "Imiyalo ye-app" },
   "optionDesc_provider": { "message": "Umhlinzeki we-API yengxoxo" },
@@ -98,6 +99,7 @@
     "message": "Yenza umlayezo we-git uzibophezele ovela ezinguqukweni bese ukopisha uye ebhodini"
   },
   "optionDesc_diff": { "message": "Khiqiza i-git diff efundeka ngabantu bese ufaka ku- --commit-msg uma idlulisiwe" },
+  "optionDesc_sentiment": { "message": "Indlela noma i-URL eya kufayela noma embhalweni ukuze uhlaziye umuzwa we" },
   "optionDesc_clear": { "message": "Sula uchungechunge lwemiyalezo efihliwe" },
   "optionDesc_help": { "message": "Bonisa isikrini sosizo" },
   "optionDesc_version": { "message": "Veza inombolo yohlelo" },

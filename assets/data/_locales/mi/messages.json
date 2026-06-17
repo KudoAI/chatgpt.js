@@ -72,6 +72,7 @@
   "helpSection_msgChainOptions": { "message": "Kōwhiringa mekameka Msg" },
   "helpSection_flags": { "message": "Ngā haki" },
   "helpSection_gitOptions": { "message": "whakahau git/ kōwhiringa" },
+  "helpSection_dataCmds": { "message": "Whakahau Raraunga" },
   "helpSection_funCmds": { "message": "Ngā whakahau whakangahau" },
   "helpSection_appCmds": { "message": "Whakahau App" },
   "optionDesc_provider": { "message": "Kaihoko mo te API korerorero" },
@@ -101,6 +102,9 @@
   },
   "optionDesc_diff": {
     "message": "Te whakaputa i te kutikuti tangata e taea te pānui rerekē, me te faaite ki --commit-msg ki te haere"
+  },
+  "optionDesc_sentiment": {
+    "message": "Te ara, te URL ranei ki te tuhi, te kuputuhi ranei ki te wetewete i te whakaaro o"
   },
   "optionDesc_clear": { "message": "He mekameka karere mārama" },
   "optionDesc_help": { "message": "Whakaatuhia te mata awhina" },

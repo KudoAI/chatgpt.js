@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Nachrichtenketten-Optionen" },
   "helpSection_flags": { "message": "Flaggen" },
   "helpSection_gitOptions": { "message": "git commands / options" },
+  "helpSection_dataCmds": { "message": "Datenbefehle" },
   "helpSection_funCmds": { "message": "Lustige Befehle" },
   "helpSection_appCmds": { "message": "App-Befehle" },
   "optionDesc_provider": { "message": "Anbieter für Chat-API" },
@@ -98,6 +99,7 @@
   "optionDesc_diff": {
     "message": "Von Menschen lesbares Git-Diff generieren und an --commit-msg anhängen, wenn bestanden"
   },
+  "optionDesc_sentiment": { "message": "Pfad oder URL zu Datei oder Text zur Analyse der Stimmung von" },
   "optionDesc_clear": { "message": "Zwischengespeicherte Nachrichtenkette löschen" },
   "optionDesc_help": { "message": "Hilfebildschirm anzeigen" },
   "optionDesc_version": { "message": "Versionsnummer anzeigen" },

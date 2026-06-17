@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Opțiuni lanț Msg" },
   "helpSection_flags": { "message": "Steaguri" },
   "helpSection_gitOptions": { "message": "comenzi / opțiuni git" },
+  "helpSection_dataCmds": { "message": "Comenzi de date" },
   "helpSection_funCmds": { "message": "Comenzi distractive" },
   "helpSection_appCmds": { "message": "Comenzi aplicație" },
   "optionDesc_provider": { "message": "Furnizor pentru chat API" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "Generați git diff care poate fi citit de om și adăugați la --commit-msg dacă este trecut"
   },
+  "optionDesc_sentiment": { "message": "Calea sau URL-ul către fișier sau text pentru a analiza sentimentul" },
   "optionDesc_clear": { "message": "Ștergeți lanțul de mesaje din cache" },
   "optionDesc_help": { "message": "Afișați ecranul de ajutor" },
   "optionDesc_version": { "message": "Număr versiune" },

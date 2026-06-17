@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Msg چین آپشنز" },
   "helpSection_flags": { "message": "جھنڈے" },
   "helpSection_gitOptions": { "message": "git کمانڈز / آپشنز" },
+  "helpSection_dataCmds": { "message": "ڈیٹا کمانڈز" },
   "helpSection_funCmds": { "message": "تفریحی کمانڈز" },
   "helpSection_appCmds": { "message": "ایپ کے احکامات" },
   "optionDesc_provider": { "message": "چیٹ API کے لیے فراہم کنندہ" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "انسانی پڑھنے کے قابل git diff پیدا کریں اور پاس ہونے پر -- commit - msg میں شامل کریں"
   },
+  "optionDesc_sentiment": { "message": "کے جذبات کا تجزیہ کرنے کے لئے فائل یا متن کا راستہ یا URL" },
   "optionDesc_clear": { "message": "کیشڈ میسج چین صاف کریں" },
   "optionDesc_help": { "message": "مدد کی اسکرین ڈسپلے کریں" },
   "optionDesc_version": { "message": "ورژن نمبر دکھائیں" },

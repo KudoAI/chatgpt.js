@@ -76,6 +76,7 @@
   "helpSection_msgChainOptions": { "message": "Msg chain aye na" },
   "helpSection_flags": { "message": "Mbi Flags" },
   "helpSection_gitOptions": { "message": "hirondelle/Hirondelle" },
+  "helpSection_dataCmds": { "message": "Aye so a hunda ti tene a sara ni" },
   "helpSection_funCmds": { "message": "A yeke nzoni ti tene ala sara kua na" },
   "helpSection_appCmds": { "message": "App command ti" },
   "optionDesc_provider": { "message": "Zo so ayeke mû maboko na azo ti sara lisoro na ndö ti Internet" },
@@ -108,6 +109,7 @@
   "optionDesc_diff": {
     "message": "Git so zo alingbi ti diko ni ayeke kangbi na a zia ni na --commit-msg tongana a hon"
   },
+  "optionDesc_sentiment": { "message": "Lege wala URL ti fa wala ti sara tënë ti atënë ti bê ti zo" },
   "optionDesc_clear": { "message": "A yeke na yâ ti mbeni kete kamba ti tokua so a honde ni polele" },
   "optionDesc_help": { "message": "A yeke mû maboko na azo ti bâ ndo na ndo ti écr" },
   "optionDesc_version": { "message": "Nombre de la version" },

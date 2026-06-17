@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Għażliet tal-katina MSG" },
   "helpSection_flags": { "message": "Bnadar" },
   "helpSection_gitOptions": { "message": "kmand / għażliet ta' git" },
+  "helpSection_dataCmds": { "message": "Kmandi tad-dejta" },
   "helpSection_funCmds": { "message": "Kmandi divertenti" },
   "helpSection_appCmds": { "message": "Kmandi tal-app" },
   "optionDesc_provider": { "message": "Fornitur għall-API taċ-chat" },
@@ -98,6 +99,7 @@
   "optionDesc_diff": {
     "message": "Iġġenera differenza fil-git li tinqara mill-bniedem u mehmuż ma' --commit-msg jekk mgħoddi"
   },
+  "optionDesc_sentiment": { "message": "Mogħdija jew URL għall-fajl jew test biex tanalizza s-sentiment ta'" },
   "optionDesc_clear": { "message": "Neħħi l-katina tal-messaġġi cached" },
   "optionDesc_help": { "message": "Uri l-iskrin tal-għajnuna" },
   "optionDesc_version": { "message": "Version Number" },

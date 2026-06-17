@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Msg chain options" },
   "helpSection_flags": { "message": "Brataichean" },
   "helpSection_gitOptions": { "message": "òrdughan GIT/ Roghainnean" },
+  "helpSection_dataCmds": { "message": "Àithnean dàta" },
   "helpSection_funCmds": { "message": "Orduighean spòrsail" },
   "helpSection_appCmds": { "message": "Àithnean na h - aplacaid" },
   "optionDesc_provider": { "message": "Solaraiche airson API cabadaich" },
@@ -98,6 +99,7 @@
   "optionDesc_diff": {
     "message": "Cruthaich git diff a ghabhas leughadh le daoine agus ceangail ri -- commit - msg ma thèid a thoirt seachad"
   },
+  "optionDesc_sentiment": { "message": "Slighe no URL gu faidhle no teacsa gus anailis a dhèanamh air faireachdainn" },
   "optionDesc_clear": { "message": "Falamhaich an t - slabhraidh teachdaireachd a tha san tasgadan" },
   "optionDesc_help": { "message": "Seall sgrìn na cobhair" },
   "optionDesc_version": { "message": "Seall àireamh an tionndaidh" },

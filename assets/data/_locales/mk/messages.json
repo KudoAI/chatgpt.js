@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Опции за синџирот за пораки" },
   "helpSection_flags": { "message": "Знамиња" },
   "helpSection_gitOptions": { "message": "git команди / опции" },
+  "helpSection_dataCmds": { "message": "Команди за податоци" },
   "helpSection_funCmds": { "message": "Забавни команди" },
   "helpSection_appCmds": { "message": "Команди на апликацијата" },
   "optionDesc_provider": { "message": "Давател на API за разговор" },
@@ -98,6 +99,7 @@
   "optionDesc_diff": {
     "message": "Генерирање на git diff што може да се чита од човек и додавање на -- commit-msg ако е поминато"
   },
+  "optionDesc_sentiment": { "message": "Патека или URL-адреса до датотека или текст за да се анализира чувството на" },
   "optionDesc_clear": { "message": "Исчисти кеширан синџир на пораки" },
   "optionDesc_help": { "message": "Прикажи екран за помош" },
   "optionDesc_version": { "message": "Број на производител" },

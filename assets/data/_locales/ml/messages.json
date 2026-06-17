@@ -70,6 +70,7 @@
   "helpSection_msgChainOptions": { "message": "Msg ചെയിൻ ഓപ്ഷനുകൾ" },
   "helpSection_flags": { "message": "പതാകകൾ" },
   "helpSection_gitOptions": { "message": "git കമാൻഡുകൾ / ഓപ്ഷനുകൾ" },
+  "helpSection_dataCmds": { "message": "ഡാറ്റാ കമാന്‍ഡുകള്‍" },
   "helpSection_funCmds": { "message": "രസകരമായ കമാൻഡുകൾ" },
   "helpSection_appCmds": { "message": "ആപ്പ് കമാൻഡുകൾ" },
   "optionDesc_provider": { "message": "ചാറ്റ് API-നുള്ള ദാതാവ്" },
@@ -101,6 +102,9 @@
   },
   "optionDesc_diff": {
     "message": "ഹ്യൂമൻ-റീഡബിൾ ഗിറ്റ് ഡിഫ് സൃഷ്ടിക്കുകയും പാസായാൽ --commit-msg-ലേക്ക് കൂട്ടിച്ചേർക്കുകയും ചെയ്യുക"
+  },
+  "optionDesc_sentiment": {
+    "message": "ഫയലിലേക്കുള്ള പാത അല്ലെങ്കിൽ URL അല്ലെങ്കിൽ വികാരത്തെ വിശകലനം ചെയ്യുന്നതിനുള്ള വാചകം"
   },
   "optionDesc_clear": { "message": "കാഷെ ചെയ്ത സന്ദേശ ശൃംഖല മായ്‌ക്കുക" },
   "optionDesc_help": { "message": "സഹായ സ്ക്രീൻ പ്രദർശിപ്പിക്കുക" },

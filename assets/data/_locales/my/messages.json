@@ -70,6 +70,7 @@
   "helpSection_msgChainOptions": { "message": "Msg ကွင်းဆက်ရွေးချယ်စရာများ" },
   "helpSection_flags": { "message": "အလံများ" },
   "helpSection_gitOptions": { "message": "git အမိန့်များ / ရွေးချယ်စရာများ" },
+  "helpSection_dataCmds": { "message": "ဒေတာအမိန့်များ" },
   "helpSection_funCmds": { "message": "Fun အမိန့်များ" },
   "helpSection_appCmds": { "message": "အက်ပလီကေးရှင်း ညွှန်ကြားချက်များ" },
   "optionDesc_provider": { "message": "Chat API အတွက် ပံ့ပိုးသူ" },
@@ -100,6 +101,9 @@
     "message": "အပြောင်းအလဲများမှ GIT COMMET မက်ဆေ့ချ်ကို ထုတ်ပေးပြီး ကလစ်ဘုတ်သို့ မိတ္တူကူးပါ"
   },
   "optionDesc_diff": { "message": "လူဖတ်နိုင်သော ဂျီတီ ကွာခြားချက်ကို ထုတ်လုပ်ပြီး --commit-msg သို့ ပေါင်းထည့်ပါ" },
+  "optionDesc_sentiment": {
+    "message": "ခံစားချက်ကို ခွဲခြမ်းစိတ်ဖြာရန် ဖိုင် သို့မဟုတ် စာသားအတွက် လမ်းကြောင်း သို့မဟုတ် URL"
+  },
   "optionDesc_clear": { "message": "သိမ်းဆည်းထားသော မက်ဆေ့ချ် ကွင်းဆက်ကို ရှင်းလင်းပါ" },
   "optionDesc_help": { "message": "အကူအညီ မျက်နှာပြင်ကို ပြသပါ" },
   "optionDesc_version": { "message": "ဗားရှင်းနံပါတ်" },

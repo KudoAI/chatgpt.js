@@ -70,6 +70,7 @@
   "helpSection_msgChainOptions": { "message": "Xabarlar zanjiri variantlari" },
   "helpSection_flags": { "message": "Bayroqlar" },
   "helpSection_gitOptions": { "message": "git buyruqlari/variantlari" },
+  "helpSection_dataCmds": { "message": "Ma'lumotlar buyruqlari" },
   "helpSection_funCmds": { "message": "Qiziqarli buyruqlar" },
   "helpSection_appCmds": { "message": "Ilova buyruqlari" },
   "optionDesc_provider": { "message": "Chat API uchun provayder" },
@@ -98,6 +99,7 @@
   "optionDesc_diff": {
     "message": "Odam o'qiy oladigan git diff ni yarating va agar o'tkazilsa, --commit-msg ga qo'shing"
   },
+  "optionDesc_sentiment": { "message": "Fikr-mulohazalarni tahlil qilish uchun faylga yo'l yoki URL yoki matn" },
   "optionDesc_clear": { "message": "Keshlangan xabarlar zanjirini tozalash" },
   "optionDesc_help": { "message": "Yordam ekranini ko'rsatish" },
   "optionDesc_version": { "message": "Boʻsh joy" },

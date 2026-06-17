@@ -28,6 +28,7 @@ module.exports = {
         maxTokens: {
             type: 'param', valType: 'positiveInt', regex: /^--(?:k|max[-_]?tokens)(?:[=\s].*|$)/, defaultVal: null },
         turnsToPreserve: { type: 'param', valType: 'positiveInt', regex: /^--?t(?:urns)?(?:[=\s].*|$)/, defaultVal: 3 },
+        sentiment: { type: 'param', regex: /^--?(?:T|sentiment)?(?:[=\s].*|$)/ },
         copy: { type: 'flag', regex: /^--?(?:x|copy)$/ },
         noSuggest: { type: 'flag', regex: /^--?(?:A|no[-_]?suggest)$/ },
         quietMode: { type: 'flag', regex: /^--?(?:V|quiet)(?:[-_]?mode)?$/ },

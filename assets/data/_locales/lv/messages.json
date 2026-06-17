@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Ziņojumu ķēdes opcijas" },
   "helpSection_flags": { "message": "Karodziņi" },
   "helpSection_gitOptions": { "message": "git komandas / opcijas" },
+  "helpSection_dataCmds": { "message": "Datu komandas" },
   "helpSection_funCmds": { "message": "Jautrās komandas" },
   "helpSection_appCmds": { "message": "Lietotnes komandas" },
   "optionDesc_provider": { "message": "Tērzēšanas API nodrošinātājs" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "Ģenerējiet cilvēkam salasāmu git diff un pievienojiet --commit-msg, ja tas ir nokārtots"
   },
+  "optionDesc_sentiment": { "message": "Ceļš vai URL uz failu vai tekstu, lai analizētu sentimentu" },
   "optionDesc_clear": { "message": "Notīrīt kešoto ziņojumu ķēdi" },
   "optionDesc_help": { "message": "Parādīt palīdzības ekrānu" },
   "optionDesc_version": { "message": "Versijas numurs" },

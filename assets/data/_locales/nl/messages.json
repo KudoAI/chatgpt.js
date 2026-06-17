@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Msg-ketenopties" },
   "helpSection_flags": { "message": "Vlaggen" },
   "helpSection_gitOptions": { "message": "git commando's / opties" },
+  "helpSection_dataCmds": { "message": "Gegevensopdrachten" },
   "helpSection_funCmds": { "message": "Leuke opdrachten" },
   "helpSection_appCmds": { "message": "App-opdrachten" },
   "optionDesc_provider": { "message": "Provider voor chat-API" },
@@ -98,6 +99,7 @@
   "optionDesc_diff": {
     "message": "Genereer voor mensen leesbare git diff en voeg toe aan --commit-msg indien geslaagd"
   },
+  "optionDesc_sentiment": { "message": "Pad of URL naar bestand of tekst om het sentiment van" },
   "optionDesc_clear": { "message": "Berichtketen in cache wissen" },
   "optionDesc_help": { "message": "Hulpscherm weergeven" },
   "optionDesc_version": { "message": "Het versienummer tonen" },

@@ -72,6 +72,7 @@
   "helpSection_msgChainOptions": { "message": "އެމްއެސްޖީ ޗޭން އޮޕްޝަންސް" },
   "helpSection_flags": { "message": "ދިދަތަކެވެ" },
   "helpSection_gitOptions": { "message": "git ކޮމާންޑްސް / އޮޕްޝަންސް" },
+  "helpSection_dataCmds": { "message": "ޑޭޓާ ކޮމާންޑްސް" },
   "helpSection_funCmds": { "message": "މަޖާ އަމުރުތަކެކެވެ" },
   "helpSection_appCmds": { "message": "އެޕް ކޮމާންޑްތަކެވެ" },
   "optionDesc_provider": { "message": "ޗެޓް އެޕީއައި އަށް ޕްރޮވައިޑަރ" },
@@ -101,6 +102,9 @@
   "optionDesc_commitMsg": { "message": "ބަދަލުތަކުން ގިޓް ކޮމިޓް މެސެޖު ޖެނެރޭޓްކޮށް ކްލިޕްބޯޑަށް ކޮޕީކުރުން" },
   "optionDesc_diff": {
     "message": "އިންސާނުން ކިޔޭނެ ގިޓް ޑިފް ޖެނެރޭޓްކޮށް ފާސްވެއްޖެނަމަ --commit-msg އަށް އެޕެންޑް ކުރާށެވެ"
+  },
+  "optionDesc_sentiment": {
+    "message": "ފައިލް ކުރުމަށް މަގު ނުވަތަ ޔޫ.އާރް.އެލް ނުވަތަ ސެންޓިމެންޓް ތަޙުލީލު ކުރުމަށް ޓެކްސްޓް"
   },
   "optionDesc_clear": { "message": "ކެޝްކޮށްފައިވާ މެސެޖް ޗޭން ސާފުކުރުން" },
   "optionDesc_help": { "message": "ހެލްޕް ސްކްރީން ޑިސްޕްލޭ ކުރޭ" },

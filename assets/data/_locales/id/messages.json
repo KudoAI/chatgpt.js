@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Opsi rantai Msg" },
   "helpSection_flags": { "message": "Bendera" },
   "helpSection_gitOptions": { "message": "perintah / opsi git" },
+  "helpSection_dataCmds": { "message": "Perintah data" },
   "helpSection_funCmds": { "message": "Perintah menyenangkan" },
   "helpSection_appCmds": { "message": "Perintah aplikasi" },
   "optionDesc_provider": { "message": "Penyedia api obrolan" },
@@ -98,6 +99,7 @@
   "optionDesc_diff": {
     "message": "Hasilkan git diff yang dapat dibaca manusia dan tambahkan ke -- commit - msg jika lulus"
   },
+  "optionDesc_sentiment": { "message": "Jalur atau URL ke file atau teks untuk menganalisis sentimen" },
   "optionDesc_clear": { "message": "Bersihkan rantai pesan yang di - cache" },
   "optionDesc_help": { "message": "Tampilkan layar bantuan" },
   "optionDesc_version": { "message": "Nomor Versi" },

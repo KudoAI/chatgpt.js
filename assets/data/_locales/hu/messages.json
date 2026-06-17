@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Msg lánc opciók" },
   "helpSection_flags": { "message": "Zászlók" },
   "helpSection_gitOptions": { "message": "git parancsok / opciók" },
+  "helpSection_dataCmds": { "message": "Adatparancsok" },
   "helpSection_funCmds": { "message": "Fun parancsok" },
   "helpSection_appCmds": { "message": "Alkalmazásparancsok" },
   "optionDesc_provider": { "message": "Csevegési API szolgáltatója" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "Hozzon létre ember által olvasható git diff-t, és hozzáfűzi a --commit-msg-hez, ha sikeres"
   },
+  "optionDesc_sentiment": { "message": "A fájl vagy szöveg elérési útja vagy URL-je a" },
   "optionDesc_clear": { "message": "Gyorsítótárazott üzenetlánc törlése" },
   "optionDesc_help": { "message": "Súgó képernyő megjelenítése" },
   "optionDesc_version": { "message": "kiírja a verziószámot" },

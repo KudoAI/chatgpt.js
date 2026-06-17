@@ -70,6 +70,7 @@
   "helpSection_msgChainOptions": { "message": "Xulashooyinka silsiladda Msg" },
   "helpSection_flags": { "message": "Calanka" },
   "helpSection_gitOptions": { "message": "amarrada git/ fursadaha" },
+  "helpSection_dataCmds": { "message": "Amarrada xogta" },
   "helpSection_funCmds": { "message": "Amarada madadaalada" },
   "helpSection_appCmds": { "message": "Amarada APP" },
   "optionDesc_provider": { "message": "Bixiyaha Wadahadalka API" },
@@ -100,6 +101,7 @@
   "optionDesc_diff": {
     "message": "Samee git aadanaha la aqrin karo oo kala duwan oo ku dheji --commit-msg haddii la dhaafo"
   },
+  "optionDesc_sentiment": { "message": "Jidka ama URL si aad u xareysato ama u qorto si aad u falanqeyso dareenka" },
   "optionDesc_clear": { "message": "Clear silsilad fariin cached" },
   "optionDesc_help": { "message": "Muuji shaashadda caawinta" },
   "optionDesc_version": { "message": "Lambarka Nooca" },

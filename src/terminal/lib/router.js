@@ -12,6 +12,10 @@ async function route(cmd, args, rl) {
             if (!args.length) return log.warn(`${cli.msgs.helpSection_usage}: /summarize <text|filepath|url>`)
             await run.summarize(args.join(' '))
             break
+        } case 'sentiment' : case 'sen' : case 'T' : {
+            if (!args.length) return log.warn(`${cli.msgs.helpSection_usage}: /sentiment <text|filepath|url>`)
+            await run.sentiment(args.join(' '))
+            break
         } case 'actas' : case 'persona' : case 'aa' :
             await run.actAs(args.join(' ') || null) ; break
         case 'ascii' : case 'art' : case 'a' :

@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Safidin'ny rojo MSG" },
   "helpSection_flags": { "message": "SAINA" },
   "helpSection_gitOptions": { "message": "baiko/ safidy ny git" },
+  "helpSection_dataCmds": { "message": "Baikon'ny data" },
   "helpSection_funCmds": { "message": "Baiko mahafinaritra" },
   "helpSection_appCmds": { "message": "Baikon'ny rindranasa" },
   "optionDesc_provider": { "message": "Mpanome ny chat API" },
@@ -98,6 +99,7 @@
     "message": "Hiteraka filazana ataon'ny git avy amin'ny fanovana ary ny kopia mankany amin'ny fanindri-taratasy"
   },
   "optionDesc_diff": { "message": "Niteraka olombelona-namaky git diff sy ampiharo amin'ny --commit-msg raha lasa" },
+  "optionDesc_sentiment": { "message": "Làlana na URL alefa na lahatsoratra handalinana ny fihetseham-po" },
   "optionDesc_clear": { "message": "Foano ny rojo fandefasan-kafatra" },
   "optionDesc_help": { "message": "Asehoy ny efijerin'ny toro-làlana" },
   "optionDesc_version": { "message": "Asehoy ny isan'ny kinova" },

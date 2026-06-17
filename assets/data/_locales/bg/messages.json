@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Опции за веригата за съобщения" },
   "helpSection_flags": { "message": "Флагове" },
   "helpSection_gitOptions": { "message": "git команди / опции" },
+  "helpSection_dataCmds": { "message": "Команди за данни" },
   "helpSection_funCmds": { "message": "Забавни команди" },
   "helpSection_appCmds": { "message": "Команди на приложението" },
   "optionDesc_provider": { "message": "Доставчик на приложен програмен интерфейс (API)" },
@@ -98,6 +99,7 @@
   "optionDesc_diff": {
     "message": "Генериране на четлив за човека git diff и добавяне към -- commit - msg, ако е преминал"
   },
+  "optionDesc_sentiment": { "message": "Път или url адрес към файл или текст за анализ на настроенията" },
   "optionDesc_clear": { "message": "Изчистване на кешираната верига за съобщения" },
   "optionDesc_help": { "message": "Показване на помощния екран" },
   "optionDesc_version": { "message": "Version Number" },

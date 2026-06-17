@@ -70,6 +70,7 @@
   "helpSection_msgChainOptions": { "message": "MSG CHAINE OPTIONS" },
   "helpSection_flags": { "message": "Folaga" },
   "helpSection_gitOptions": { "message": "ditaelo / dilo tse o ka tlhophang mo go tsone" },
+  "helpSection_dataCmds": { "message": "Ditaelo tsa tshedimosetso" },
   "helpSection_funCmds": { "message": "Ditaelo tse di monate" },
   "helpSection_appCmds": { "message": "DITAELO TSA APP" },
   "optionDesc_provider": { "message": "Motlamedi wa motlotlo wa API" },
@@ -98,6 +99,7 @@
   "optionDesc_diff": {
     "message": "Go dira gore go nne le dilo tse di farologaneng tse di ka balwang ke batho mme o bo o tlaleletsa go --commit-msg fa e le gore o fetile"
   },
+  "optionDesc_sentiment": { "message": "PATH or URL to file or text to analysis sentiment of" },
   "optionDesc_clear": { "message": "Clear cached message chain" },
   "optionDesc_help": { "message": "Bontsha sekerini sa thuso" },
   "optionDesc_version": { "message": "Bontsha nomoro ya mofuta" },

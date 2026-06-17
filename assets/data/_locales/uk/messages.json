@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Параметри ланцюга повідомлень" },
   "helpSection_flags": { "message": "Прапорці" },
   "helpSection_gitOptions": { "message": "git-команди/ параметри" },
+  "helpSection_dataCmds": { "message": "Команди даних" },
   "helpSection_funCmds": { "message": "Веселі команди" },
   "helpSection_appCmds": { "message": "Команди додатка" },
   "optionDesc_provider": { "message": "Постачальник API чату" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "Створіть читабельну для людини різницю git і додайте до --commit-msg, якщо вона пройдена"
   },
+  "optionDesc_sentiment": { "message": "Шлях або URL-адреса до файлу або тексту для аналізу настроїв" },
   "optionDesc_clear": { "message": "Очистити кешований ланцюжок повідомлень" },
   "optionDesc_help": { "message": "Відобразити екран довідки" },
   "optionDesc_version": { "message": "Показати номер версії програми" },

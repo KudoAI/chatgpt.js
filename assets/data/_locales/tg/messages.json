@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Имконоти занҷири Msg" },
   "helpSection_flags": { "message": "Парчамҳо" },
   "helpSection_gitOptions": { "message": "фармонҳо / параметрҳои git" },
+  "helpSection_dataCmds": { "message": "Фармонҳои иттилоот" },
   "helpSection_funCmds": { "message": "Фармонҳои шавқовар" },
   "helpSection_appCmds": { "message": "Фармонҳои барнома" },
   "optionDesc_provider": { "message": "Таъминкунанда барои API чат" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "Эҷод кардани диффузори гити хонданашавандаи инсонӣ ва замима ба --commit-msg, агар гузарад"
   },
+  "optionDesc_sentiment": { "message": "Роҳча ё URL ба файл ё матн барои таҳлили эҳсосот" },
   "optionDesc_clear": { "message": "Пок кардани занҷири иттилооти ниҳонӣ" },
   "optionDesc_help": { "message": "Намоиши экрани кӯмак" },
   "optionDesc_version": { "message": "Номер производителя" },

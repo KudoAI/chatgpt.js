@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "د Msg ځنځیر اختیارونه" },
   "helpSection_flags": { "message": "جنډې" },
   "helpSection_gitOptions": { "message": "د GIT کمانډونه / اختیارونه" },
+  "helpSection_dataCmds": { "message": "د معلوماتو امرونه" },
   "helpSection_funCmds": { "message": "په زړه پورې کمانډونه" },
   "helpSection_appCmds": { "message": "د اپلیکیشن امرونه" },
   "optionDesc_provider": { "message": "د چیټ API لپاره چمتو کونکی" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "د انسان د لوستلو وړ جذب توپیر تولید کړئ او که چیرې تېر شي نو --commit - MSG ته ضمیمه وکړئ"
   },
+  "optionDesc_sentiment": { "message": "د احساساتو تحلیل کولو لپاره لاره یا URL فایل کولو یا متن کولو لپاره" },
   "optionDesc_clear": { "message": "د کیچ پیغام ځنځیر پاک کړئ" },
   "optionDesc_help": { "message": "د مرستې سکرین ښکاره کړئ" },
   "optionDesc_version": { "message": "د نسخې شمیره وښایاست" },

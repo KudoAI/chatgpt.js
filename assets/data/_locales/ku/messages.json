@@ -72,6 +72,7 @@
   "helpSection_msgChainOptions": { "message": "Vebijarkên zincîra MSG" },
   "helpSection_flags": { "message": "Ala" },
   "helpSection_gitOptions": { "message": "ferman / vebijarkên git" },
+  "helpSection_dataCmds": { "message": "Fermanên daneyan" },
   "helpSection_funCmds": { "message": "Fermanên kêfxweş" },
   "helpSection_appCmds": { "message": "Fermanên sepanê" },
   "optionDesc_provider": { "message": "Pêşkêşvan ji bo API-ya sohbetê" },
@@ -100,6 +101,7 @@
   "optionDesc_diff": {
     "message": "Git diff-a ku ji hêla mirovan ve tê xwendin çêbike û heke were derbaskirin lê zêde bike --commit-msg"
   },
+  "optionDesc_sentiment": { "message": "Rê an URL bo pel an nivîsê ji bo analîzkirina hestê" },
   "optionDesc_clear": { "message": "Zincîra peyamên keşkirî paqij bike" },
   "optionDesc_help": { "message": "Dîmendera alîkariyê nîşan bide" },
   "optionDesc_version": { "message": "IRQ" },

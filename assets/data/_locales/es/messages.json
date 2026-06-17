@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Opciones de cadena de Msg" },
   "helpSection_flags": { "message": "Banderas" },
   "helpSection_gitOptions": { "message": "git comandos / opciones" },
+  "helpSection_dataCmds": { "message": "Comandos de datos" },
   "helpSection_funCmds": { "message": "Comandos divertidos" },
   "helpSection_appCmds": { "message": "Comandos de la aplicación" },
   "optionDesc_provider": { "message": "Proveedor para API de chat" },
@@ -98,6 +99,7 @@
     "message": "Generar mensaje de confirmación de git a partir de los cambios y copiar al portapapeles"
   },
   "optionDesc_diff": { "message": "Generar git diff legible por humanos y añadir a --commit-msg si se aprueba" },
+  "optionDesc_sentiment": { "message": "Ruta o URL al archivo o texto para analizar el sentimiento de" },
   "optionDesc_clear": { "message": "Borrar cadena de mensajes en caché" },
   "optionDesc_help": { "message": "Mostrar pantalla de ayuda" },
   "optionDesc_version": { "message": "Mostrar el número de versión" },

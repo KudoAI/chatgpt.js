@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Options de la chaîne Msg" },
   "helpSection_flags": { "message": "Drapeaux" },
   "helpSection_gitOptions": { "message": "Commandes et options git" },
+  "helpSection_dataCmds": { "message": "Commandes de données" },
   "helpSection_funCmds": { "message": "Commandes amusantes" },
   "helpSection_appCmds": { "message": "Commandes de l'application" },
   "optionDesc_provider": { "message": "Fournisseur pour l'API de chat" },
@@ -100,6 +101,7 @@
   "optionDesc_diff": {
     "message": "Générer un diff git lisible par l'homme et l'ajouter à --commit-msg s'il est adopté"
   },
+  "optionDesc_sentiment": { "message": "Chemin ou URL vers le fichier ou le texte pour analyser le sentiment de" },
   "optionDesc_clear": { "message": "Effacer la chaîne de messages en cache" },
   "optionDesc_help": { "message": "Affichage de l’aide" },
   "optionDesc_version": { "message": "Affiche le numéro de la version" },

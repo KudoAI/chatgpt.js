@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Opções de cadeia Msg" },
   "helpSection_flags": { "message": "Bandeiras" },
   "helpSection_gitOptions": { "message": "comandos / opções git" },
+  "helpSection_dataCmds": { "message": "Comandos de dados" },
   "helpSection_funCmds": { "message": "Comandos divertidos" },
   "helpSection_appCmds": { "message": "Comandos da aplicação" },
   "optionDesc_provider": { "message": "Fornecedor para API de chat" },
@@ -96,6 +97,7 @@
     "message": "Gere a mensagem git commit a partir das alterações e copie para a área de transferência"
   },
   "optionDesc_diff": { "message": "Gere o 'git diff' legível por humanos e acrescente a '--commit-msg' se aprovado" },
+  "optionDesc_sentiment": { "message": "Caminho ou URL para arquivo ou texto para analisar o sentimento de" },
   "optionDesc_clear": { "message": "Limpar cadeia de mensagens em cache" },
   "optionDesc_help": { "message": "Mostrar ecrã de ajuda" },
   "optionDesc_version": { "message": "Mostra o número da versão" },

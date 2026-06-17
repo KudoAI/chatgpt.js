@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Nā koho kaulahao leka" },
   "helpSection_flags": { "message": "Nā hae" },
   "helpSection_gitOptions": { "message": "nā kauoha / koho git" },
+  "helpSection_dataCmds": { "message": "Nā kauoha ʻikepili" },
   "helpSection_funCmds": { "message": "Nā kauoha leʻaleʻa" },
   "helpSection_appCmds": { "message": "Nā kauoha polokalamu" },
   "optionDesc_provider": { "message": "Mea hoʻolako no ka API kamaʻilio" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "Hoʻoulu i ka git diff hiki ke heluhelu ʻia e ke kanaka a hoʻohui i --commit-msg inā i hala"
   },
+  "optionDesc_sentiment": { "message": "Ala a i ʻole URL i ka faila a i ʻole kikokikona e kālailai i ka manaʻo o" },
   "optionDesc_clear": { "message": "Holoi i ke kaulahao leka i hūnā ʻia" },
   "optionDesc_help": { "message": "Hōʻike i ka pale kōkua" },
   "optionDesc_version": { "message": "Hōʻike i ka helu mana" },

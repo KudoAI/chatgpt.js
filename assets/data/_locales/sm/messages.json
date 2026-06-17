@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Msg filifili filifiliga" },
   "helpSection_flags": { "message": "Faʻailoga" },
   "helpSection_gitOptions": { "message": "git poloaiga / filifiliga" },
+  "helpSection_dataCmds": { "message": "Faʻatonuga Faʻamatalaga" },
   "helpSection_funCmds": { "message": "Poloaiga malie" },
   "helpSection_appCmds": { "message": "Poloaiga o le App" },
   "optionDesc_provider": { "message": "Tuuina atu mo talatalanoaga API" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "Fausiaina o git e mafai ona faitau i tagata eseese ma faʻaopoopo i --commit-msg pe a pasia"
   },
+  "optionDesc_sentiment": { "message": "Auala po o le URL e faila po o le mau e iloilo ai lagona o" },
   "optionDesc_clear": { "message": "Manino filifili savali cached" },
   "optionDesc_help": { "message": "Faaali atu le lau fesoasoani" },
   "optionDesc_version": { "message": "Faaali atu le numera o le lomiga" },

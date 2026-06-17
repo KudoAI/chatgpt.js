@@ -70,6 +70,7 @@
   "helpSection_msgChainOptions": { "message": "Msg சங்கிலி விருப்பங்கள்" },
   "helpSection_flags": { "message": "கொடிகள்" },
   "helpSection_gitOptions": { "message": "git கட்டளைகள் / விருப்பங்கள்" },
+  "helpSection_dataCmds": { "message": "தரவு கட்டளைகள்" },
   "helpSection_funCmds": { "message": "வேடிக்கையான கட்டளைகள்" },
   "helpSection_appCmds": { "message": "ஆப் கட்டளைகள்" },
   "optionDesc_provider": { "message": "அரட்டை APIக்கான வழங்குநர்" },
@@ -100,6 +101,7 @@
   "optionDesc_diff": {
     "message": "மனிதனால் படிக்கக்கூடிய GIT வேறுபாட்டை உருவாக்கி, தேர்ச்சி பெற்றால் --commit-msg உடன் சேர்க்கவும்"
   },
+  "optionDesc_sentiment": { "message": "கோப்புக்கான பாதை அல்லது URL அல்லது உணர்வை பகுப்பாய்வு செய்ய உரை" },
   "optionDesc_clear": { "message": "தற்காலிக சேமிப்பு செய்திச் சங்கிலியைத் துடைக்கவும்" },
   "optionDesc_help": { "message": "உதவித் திரையைக் காண்பி" },
   "optionDesc_version": { "message": "பதிப்பெண்" },

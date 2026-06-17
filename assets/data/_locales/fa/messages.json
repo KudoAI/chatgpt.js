@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "گزینه‌های زنجیره پیام‌رسان" },
   "helpSection_flags": { "message": "پرچم‌ها" },
   "helpSection_gitOptions": { "message": "دستورات/گزینه‌های گیت" },
+  "helpSection_dataCmds": { "message": "دستورات داده" },
   "helpSection_funCmds": { "message": "دستورات سرگرم کننده" },
   "helpSection_appCmds": { "message": "دستورات برنامه" },
   "optionDesc_provider": { "message": "ارائه دهنده API چت" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "ایجاد git diff قابل خواندن توسط انسان و اضافه کردن آن به --commit-msg در صورت ارسال"
   },
+  "optionDesc_sentiment": { "message": "مسیر یا URL برای فایل یا متن برای تحلیل احساسات" },
   "optionDesc_clear": { "message": "زنجیره پیام‌های ذخیره‌شده را پاک کنید" },
   "optionDesc_help": { "message": "نمایش صفحه راهنما" },
   "optionDesc_version": { "message": "نمایش شماره نسخه" },

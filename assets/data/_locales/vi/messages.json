@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Tùy chọn chuỗi tin nhắn" },
   "helpSection_flags": { "message": "Cờ" },
   "helpSection_gitOptions": { "message": "lệnh / tùy chọn git" },
+  "helpSection_dataCmds": { "message": "Lệnh dữ liệu" },
   "helpSection_funCmds": { "message": "Các lệnh thú vị" },
   "helpSection_appCmds": { "message": "Lệnh ứng dụng" },
   "optionDesc_provider": { "message": "Nhà cung cấp cho API trò chuyện" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "Tạo git diff có thể đọc được của con người và thêm vào --commit-msg nếu được thông qua"
   },
+  "optionDesc_sentiment": { "message": "Đường dẫn hoặc URL đến tệp hoặc văn bản để phân tích tình cảm của" },
   "optionDesc_clear": { "message": "Xóa chuỗi tin nhắn được lưu trong bộ nhớ cache" },
   "optionDesc_help": { "message": "Hiển thị màn hình trợ giúp" },
   "optionDesc_version": { "message": "Số Phiên bản" },

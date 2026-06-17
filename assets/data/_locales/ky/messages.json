@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Msg чынжыр параметрлери" },
   "helpSection_flags": { "message": "Желектер" },
   "helpSection_gitOptions": { "message": "git буйруктары / параметрлери" },
+  "helpSection_dataCmds": { "message": "Маалымат буйруктары" },
   "helpSection_funCmds": { "message": "Көңүлдүү буйруктар" },
   "helpSection_appCmds": { "message": "Колдонмо буйруктары" },
   "optionDesc_provider": { "message": "Чат API үчүн камсыздоочу" },
@@ -96,6 +97,7 @@
     "message": "Өзгөртүүлөрдөн жана алмашуу буферине көчүрүүдөн git commit билдирүүсүн жаратуу"
   },
   "optionDesc_diff": { "message": "Адам окуй турган git diff түзүү жана өтсө --commit-msg тиркемеси" },
+  "optionDesc_sentiment": { "message": "Сезимдерди талдоо үчүн файлга же текстке жол же URL" },
   "optionDesc_clear": { "message": "Кэштештирилген билдирүү чынжырын тазалоо" },
   "optionDesc_help": { "message": "Жардам экранын көрсөтүү" },
   "optionDesc_version": { "message": "Версиянын номерин көрсөтүү" },

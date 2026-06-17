@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Msg unyolo options" },
   "helpSection_flags": { "message": "Mbendera" },
   "helpSection_gitOptions": { "message": "git malamulo / options" },
+  "helpSection_dataCmds": { "message": "Data akulamula" },
   "helpSection_funCmds": { "message": "Malamulo osangalatsa" },
   "helpSection_appCmds": { "message": "Malamulo App" },
   "optionDesc_provider": { "message": "Wopereka macheza API" },
@@ -96,6 +97,7 @@
     "message": "Kupanga git kudzipereka uthenga kuchokera kusintha ndi kukopera kuti clipboard"
   },
   "optionDesc_diff": { "message": "Pangani anthu-kuwerenga git diff ndi append kuti --commit-msg ngati adadutsa" },
+  "optionDesc_sentiment": { "message": "Njira kapena URL kuti fayilo kapena malemba kuti afufuze malingaliro a" },
   "optionDesc_clear": { "message": "Chotsani posungira uthenga unyolo" },
   "optionDesc_help": { "message": "Onetsani zenera lothandizira" },
   "optionDesc_version": { "message": "Onetsani nambala ya mtundu" },

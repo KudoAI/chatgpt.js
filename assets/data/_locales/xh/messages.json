@@ -70,6 +70,7 @@
   "helpSection_msgChainOptions": { "message": "Iindlela ze-Msg chain onokukhetha kuzo" },
   "helpSection_flags": { "message": "Iiflegi" },
   "helpSection_gitOptions": { "message": "imiyalelo / izinto onokukhetha kuzo" },
+  "helpSection_dataCmds": { "message": "Imiyalelo yedatha" },
   "helpSection_funCmds": { "message": "Imiyalelo yokuzonwabisa" },
   "helpSection_appCmds": { "message": "Imiyalelo ye-app" },
   "optionDesc_provider": { "message": "Umnikezeli we-API yencoko" },
@@ -98,6 +99,9 @@
   "optionDesc_randomAnswer": { "message": "Phendula umbuzo ongacwangciswanga" },
   "optionDesc_commitMsg": { "message": "Yenza umyalezo we-git commit ovela kutshintsho uze ukope uye kwiklipbhodi" },
   "optionDesc_diff": { "message": "Yenza i-git diff efundeka ngumntu uze ufake --commit-msg ukuba idlulisiwe" },
+  "optionDesc_sentiment": {
+    "message": "Indlela okanye i-URL yokufaka ifayile okanye isicatshulwa ukuhlalutya imvakalelo ye"
+  },
   "optionDesc_clear": { "message": "Cacisa imiyalezo efihliweyo" },
   "optionDesc_help": { "message": "Bonisa isikrini soncedo" },
   "optionDesc_version": { "message": "Inani Loguqulelo lomsebenzi" },

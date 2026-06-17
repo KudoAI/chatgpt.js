@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Mesaj zinciri seçenekleri" },
   "helpSection_flags": { "message": "Bayraklar" },
   "helpSection_gitOptions": { "message": "git komutları / seçenekleri" },
+  "helpSection_dataCmds": { "message": "Veri komutları" },
   "helpSection_funCmds": { "message": "Eğlenceli komutlar" },
   "helpSection_appCmds": { "message": "Uygulama komutları" },
   "optionDesc_provider": { "message": "Sohbet API'si sağlayıcısı" },
@@ -98,6 +99,7 @@
   "optionDesc_diff": {
     "message": "İnsan tarafından okunabilir git diff oluşturun ve geçilirse -- commit - msg'ye ekleyin"
   },
+  "optionDesc_sentiment": { "message": "Dosyanın yolu veya URL'si veya duyarlılığını analiz etmek için metin" },
   "optionDesc_clear": { "message": "Önbelleğe alınmış mesaj zincirini temiz" },
   "optionDesc_help": { "message": "Yardım ekranını görüntüle" },
   "optionDesc_version": { "message": "Versiyon Numarası" },

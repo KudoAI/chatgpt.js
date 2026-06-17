@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Msg ჯაჭვის პარამეტრები" },
   "helpSection_flags": { "message": "Დროშები" },
   "helpSection_gitOptions": { "message": "git ბრძანებები / პარამეტრები" },
+  "helpSection_dataCmds": { "message": "Მონაცემთა ბრძანებები" },
   "helpSection_funCmds": { "message": "Სახალისო ბრძანებები" },
   "helpSection_appCmds": { "message": "Აპის ბრძანებები" },
   "optionDesc_provider": { "message": "Სასაუბრო API-ს მომწოდებელი" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "Გენერირება ადამიანის მიერ წაკითხვადი git diff და დანართი --commit-msg-ზე, თუ გადაცემულია"
   },
+  "optionDesc_sentiment": { "message": "Ბილიკი ან URL ფაილის ან ტექსტის გასაანალიზებლად" },
   "optionDesc_clear": { "message": "Ქეშირებული შეტყობინებების ჯაჭვის გასუფთავება" },
   "optionDesc_help": { "message": "დახმარების ეკრანის ჩვენება" },
   "optionDesc_version": { "message": "ვერსიის ნომერი" },

@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Параметры ланцуга MSG" },
   "helpSection_flags": { "message": "Сцягі" },
   "helpSection_gitOptions": { "message": "каманды / параметры git" },
+  "helpSection_dataCmds": { "message": "Каманды даных" },
   "helpSection_funCmds": { "message": "Забаўляльныя каманды" },
   "helpSection_appCmds": { "message": "Каманды праграмы" },
   "optionDesc_provider": { "message": "Правайдэр API чата" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "Стварыць дыферэнцыял для чытання чалавекам і дадаць да -- commit-msg, калі ён пройдзены"
   },
+  "optionDesc_sentiment": { "message": "Шлях або URL да файла або тэксту для аналізу настрою" },
   "optionDesc_clear": { "message": "Ачысціць кэшаваны ланцужок паведамленняў" },
   "optionDesc_help": { "message": "Экран даведкі для адлюстравання" },
   "optionDesc_version": { "message": "Наяўныя экраны" },

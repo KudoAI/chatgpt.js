@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Msg గొలుసు ఎంపికలు" },
   "helpSection_flags": { "message": "జెండాలు" },
   "helpSection_gitOptions": { "message": "git ఆదేశాలు / ఎంపికలు" },
+  "helpSection_dataCmds": { "message": "డేటా ఆదేశాలు" },
   "helpSection_funCmds": { "message": "ఫన్ కమాండ్ ‌ లు" },
   "helpSection_appCmds": { "message": "యాప్ ఆదేశాలు" },
   "optionDesc_provider": { "message": "చాట్ API కోసం ప్రొవైడర్" },
@@ -97,6 +98,9 @@
   },
   "optionDesc_diff": {
     "message": "హ్యూమన్-రీడబుల్ గిట్ డిఫ్ఫెక్ట్ ‌ ను సృష్టించండి మరియు పాస్ అయితే --commit-msg కి జోడించండి"
+  },
+  "optionDesc_sentiment": {
+    "message": "యొక్క సెంటిమెంట్ ‌ ను విశ్లేషించడానికి ఫైల్ చేయడానికి మార్గం లేదా URL లేదా టెక్స్ట్"
   },
   "optionDesc_clear": { "message": "కాష్ చేసిన సందేశ గొలుసును క్లియర్ చేయండి" },
   "optionDesc_help": { "message": "సహాయక స్క్రీన్ ‌ ని ప్రదర్శించండి" },

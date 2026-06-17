@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "מעסעדזש קייט אָפּציעס" },
   "helpSection_flags": { "message": "פאָנען" },
   "helpSection_gitOptions": { "message": "גיט קאמאנדעס / אפציעס" },
+  "helpSection_dataCmds": { "message": "דאַטן באַפֿעלן" },
   "helpSection_funCmds": { "message": "שפּאַסיקע באַפֿעלן" },
   "helpSection_appCmds": { "message": "אַפּ קאָמאַנדעס" },
   "optionDesc_provider": { "message": "פּראַוויידער פֿאַר טשאַט API" },
@@ -98,6 +99,7 @@
   "optionDesc_diff": {
     "message": "שאַפֿן מענטשלעך-לייענבארן גיט דיפערענץ און צולייגן צו --commit-msg אויב דורכגעגאנגען"
   },
+  "optionDesc_sentiment": { "message": "דרך אדער URL צו טעקע אדער טעקסט צו אנאליזירן סענטימענט פון" },
   "optionDesc_clear": { "message": "ויסמעקן קאַשט מעסעדזש קייט" },
   "optionDesc_help": { "message": "ווייַז הילף פאַרשטעלן" },
   "optionDesc_version": { "message": "ווייַזן ווערסיע נומער" },

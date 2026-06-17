@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Valkostir SMS-keðju" },
   "helpSection_flags": { "message": "Flögg" },
   "helpSection_gitOptions": { "message": "git skipanir / valkostir" },
+  "helpSection_dataCmds": { "message": "Gagnaskipanir" },
   "helpSection_funCmds": { "message": "Skemmtilegar skipanir" },
   "helpSection_appCmds": { "message": "Skipanir í appi" },
   "optionDesc_provider": { "message": "Þjónustuaðili fyrir API fyrir spjall" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "Búðu til git diff sem hægt er að lesa úr mönnum og bættu við --commit-msg ef það er samþykkt"
   },
+  "optionDesc_sentiment": { "message": "Slóð eða vefslóð að skrá eða texta til að greina viðhorf" },
   "optionDesc_clear": { "message": "Hreinsa skyndiminnisskilaboðakeðju" },
   "optionDesc_help": { "message": "Birta hjálparskjá" },
   "optionDesc_version": { "message": "Útgáfunúmer" },

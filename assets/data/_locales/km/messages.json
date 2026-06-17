@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "ជម្រើសខ្សែសង្វាក់ MSG" },
   "helpSection_flags": { "message": "ទង់" },
   "helpSection_gitOptions": { "message": "ពាក្យបញ្ជា git / ជម្រើស" },
+  "helpSection_dataCmds": { "message": "ពាក្យបញ្ជាទិន្នន័យ" },
   "helpSection_funCmds": { "message": "ពាក្យបញ្ជាសប្បាយៗ" },
   "helpSection_appCmds": { "message": "ពាក្យបញ្ជាកម្មវិធី" },
   "optionDesc_provider": { "message": "អ្នកផ្តល់សេវាសម្រាប់ការជជែកកំសាន្ត API" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "បង្កើត git diff ដែល អាច អាន បាន របស់ មនុស្ស ហើយ បន្ថែម ទៅ -- compmit- msg ប្រសិន បើ បាន ឆ្លង កាត់"
   },
+  "optionDesc_sentiment": { "message": "ផ្លូវ ឬ URL ទៅ ឯកសារ ឬ អត្ថបទ ដើម្បី វិភាគ អារម្មណ៍ របស់" },
   "optionDesc_clear": { "message": "ជម្រះ ខ្សែសង្វាក់ សារ ឃ្លាំង សម្ងាត់" },
   "optionDesc_help": { "message": "បង្ហាញអេក្រង់ជំនួយ" },
   "optionDesc_version": { "message": "បង្ហាញលេខកំណែ" },

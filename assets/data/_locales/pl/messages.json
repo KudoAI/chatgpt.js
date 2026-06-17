@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Opcje łańcucha komunikatów" },
   "helpSection_flags": { "message": "Flagi" },
   "helpSection_gitOptions": { "message": "polecenia / opcje git" },
+  "helpSection_dataCmds": { "message": "Polecenia danych" },
   "helpSection_funCmds": { "message": "Zabawne polecenia" },
   "helpSection_appCmds": { "message": "Polecenia aplikacji" },
   "optionDesc_provider": { "message": "Dostawca interfejsu API czatu" },
@@ -98,6 +99,7 @@
   "optionDesc_diff": {
     "message": "Wygeneruj czytelny dla człowieka git diff i dołącz do --commit-msg, jeśli zostanie zaliczony"
   },
+  "optionDesc_sentiment": { "message": "Ścieżka lub adres URL do pliku lub tekstu do analizy sentymentu" },
   "optionDesc_clear": { "message": "Wyczyść łańcuch wiadomości w pamięci podręcznej" },
   "optionDesc_help": { "message": "Wyświetl ekran pomocy" },
   "optionDesc_version": { "message": "Podaje numer wersji programu" },

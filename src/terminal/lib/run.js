@@ -2,7 +2,8 @@ const fs = require('fs'),
       git = require('./git'),
       init = require('./init'),
       language = require('./language'),
-      messages = require('./messages')
+      messages = require('./messages'),
+      string = require('./string')
 
 init.env()
 
@@ -69,10 +70,16 @@ module.exports = {
     },
 
     randomAnswer() { return this.query('Generate a single random question on any topic, then answer it.') },
+
+    sentiment(textOrPath) {
+        const content = string.looksLikePath(textOrPath) ? fs.readFileSync(textOrPath, 'utf8') : textOrPath
+        return this.query(`Analyze the sentiment of the following:\n\n${content}`)
+    },
+
     stats() { log.stats() },
 
     summarize(textOrPath) {
-        const content = require('./string').looksLikePath(textOrPath) ? fs.readFileSync(textOrPath, 'utf8') : textOrPath
+        const content = string.looksLikePath(textOrPath) ? fs.readFileSync(textOrPath, 'utf8') : textOrPath
         return this.query(`Summarize the following:\n\n${content}`)
     },
 

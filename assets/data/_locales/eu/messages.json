@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Mezu-katearen aukerak" },
   "helpSection_flags": { "message": "Banderak" },
   "helpSection_gitOptions": { "message": "git komandoak / aukerak" },
+  "helpSection_dataCmds": { "message": "Datu-komandoak" },
   "helpSection_funCmds": { "message": "Agindu dibertigarriak" },
   "helpSection_appCmds": { "message": "Aplikazioaren komandoak" },
   "optionDesc_provider": { "message": "Txat APIaren hornitzailea" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "Sortu gizakiek irakur dezaketen git diff-ak eta erantsi --commit-msg-ri gaindituta badago"
   },
+  "optionDesc_sentiment": { "message": "Fitxategiaren edo testuaren bidea edo URLa sentimendua aztertzeko" },
   "optionDesc_clear": { "message": "Garbitu cacheko mezu-katea" },
   "optionDesc_help": { "message": "Bistaratu laguntza-pantaila" },
   "optionDesc_version": { "message": "Bertsio zenbakia" },

@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Msg շղթայի տարբերակներ" },
   "helpSection_flags": { "message": "Դրոշներ" },
   "helpSection_gitOptions": { "message": "git հրամաններ / ընտրանքներ" },
+  "helpSection_dataCmds": { "message": "Տվյալների հրամաններ" },
   "helpSection_funCmds": { "message": "Զվարճալի հրամաններ" },
   "helpSection_appCmds": { "message": "Հավելվածի հրամաններ" },
   "optionDesc_provider": { "message": "Չատի API - ի մատակարար" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "Ստեղծեք մարդու կողմից ընթեռնելի git diff և ավելացրեք --commit - msg - ին, եթե փոխանցվի"
   },
+  "optionDesc_sentiment": { "message": "Ուղին կամ URL - ը դեպի ֆայլ կամ տեքստ ՝ վերլուծելու համար" },
   "optionDesc_clear": { "message": "Մաքրել գաղտնագրված հաղորդագրությունների շղթան" },
   "optionDesc_help": { "message": "Ցուցադրել օգնության էկրանը" },
   "optionDesc_version": { "message": "Ցույց տալ տարբերակի համարը" },

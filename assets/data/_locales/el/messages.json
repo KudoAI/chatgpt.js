@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Επιλογές αλυσίδας Msg" },
   "helpSection_flags": { "message": "Σημαίες" },
   "helpSection_gitOptions": { "message": "git εντολές / επιλογές" },
+  "helpSection_dataCmds": { "message": "Εντολές δεδομένων" },
   "helpSection_funCmds": { "message": "Εντολές διασκέδασης" },
   "helpSection_appCmds": { "message": "Εντολές εφαρμογής" },
   "optionDesc_provider": { "message": "Πάροχος για API συνομιλίας" },
@@ -97,6 +98,9 @@
   "optionDesc_commitMsg": { "message": "Δημιουργία μηνύματος υποβολής git από αλλαγές και αντιγραφή στο πρόχειρο" },
   "optionDesc_diff": {
     "message": "Δημιουργήστε αναγνώσιμο από τον άνθρωπο git diff και προσαρτήστε στο --commit-msg εάν περάσει"
+  },
+  "optionDesc_sentiment": {
+    "message": "Διαδρομή ή διεύθυνση URL για το αρχείο ή το κείμενο για την ανάλυση του συναισθήματος του"
   },
   "optionDesc_clear": { "message": "Εκκαθάριση αλυσίδας μηνυμάτων στην κρυφή μνήμη" },
   "optionDesc_help": { "message": "Εμφάνιση οθόνης βοήθειας" },

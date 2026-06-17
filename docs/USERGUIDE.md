@@ -102,7 +102,10 @@ git commands / options:
  -g, --commit-msg                     Generate git commit message from changes and copy to clipboard.
  -G, --commit-msg-example <msg>       Example msg for --commit-msg to reference.
  -d, --diff                           Generate human-readable git diff and append to --commit-msg if
-                                       passed.
+                                      passed.
+
+Data commands:
+ -T, --sentiment                      Path or URL to file or text to analyze sentiment of.
 
 Fun commands:
  -P, --act-as <persona>               Act as persona from https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json

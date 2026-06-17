@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Msg දාම විකල්ප" },
   "helpSection_flags": { "message": "ලාංඡන" },
   "helpSection_gitOptions": { "message": "git විධාන / විකල්ප" },
+  "helpSection_dataCmds": { "message": "දත්ත විධාන" },
   "helpSection_funCmds": { "message": "විනෝදාත්මක විධාන" },
   "helpSection_appCmds": { "message": "යෙදුම් විධාන" },
   "optionDesc_provider": { "message": "චැට් API සඳහා සපයන්නා" },
@@ -96,6 +97,7 @@
   "optionDesc_diff": {
     "message": "--commit-msg වෙත --commit-msg සම්මත කළහොත් --commit-msg වෙත ඇමිණීම සඳහා මානව කියවිය හැකි git diff උත්පාදනය කරන්න"
   },
+  "optionDesc_sentiment": { "message": "හැගීම් විශ්ලේෂණය කිරීමට ගොනුවකට හෝ පෙළකට මාර් ‍ ගය හෝ URL" },
   "optionDesc_clear": { "message": "හැංගූ පණිවිඩ දාමය හිස් කරන්න" },
   "optionDesc_help": { "message": "සහාය තිරය පෙන්වන්න" },
   "optionDesc_version": { "message": "වෙළුම අංකය" },

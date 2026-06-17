@@ -68,6 +68,7 @@
   "helpSection_msgChainOptions": { "message": "Msg चेन विकल्पहरू" },
   "helpSection_flags": { "message": "झण्डाहरू" },
   "helpSection_gitOptions": { "message": "git आदेश / विकल्पहरू" },
+  "helpSection_dataCmds": { "message": "डाटा आदेशहरू" },
   "helpSection_funCmds": { "message": "रमाइलो आदेशहरू" },
   "helpSection_appCmds": { "message": "एप आदेशहरू" },
   "optionDesc_provider": { "message": "च्याट API का लागि प्रदायक" },
@@ -96,6 +97,7 @@
     "message": "परिवर्तनहरूबाट git कमिट सन्देश उत्पन्न गर्नुहोस् र क्लिपबोर्डमा प्रतिलिपि बनाउनुहोस्"
   },
   "optionDesc_diff": { "message": "मानव - पठनीय git diff उत्पन्न गर्नुहोस् र पास भएमा -- commit - msg मा जोड्नुहोस्" },
+  "optionDesc_sentiment": { "message": "फाइल गर्नको लागि मार्ग वा URL वा पाठको भावनाको विश्लेषण गर्न" },
   "optionDesc_clear": { "message": "क्यास गरिएको सन्देश चेन खाली गर्नुहोस्" },
   "optionDesc_help": { "message": "मद्दत स्क्रिन प्रदर्शन गर्नुहोस्" },
   "optionDesc_version": { "message": "à¤ªà¥à¤°à¤¦à¤°à¥à¤¶à¤¨à¤à¥ à¤¨à¤¾à¤®" },
