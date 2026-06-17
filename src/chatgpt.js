@@ -1246,6 +1246,31 @@ const chatgpt = {
                 })})
         },
 
+        turnOff() {
+            return new Promise(resolve => chatgpt.getAccessToken().then(async token => {
+                const instructionsData = await this._fetchData()
+                instructionsData.enabled = false
+                await this._sendRequest('POST', token, instructionsData)
+                return resolve()
+            }))
+        },
+
+        turnOn() {
+            return new Promise(resolve => chatgpt.getAccessToken().then(async token => {
+                const instructionsData = await this._fetchData()
+                instructionsData.enabled = true
+                await this._sendRequest('POST', token, instructionsData)
+                return resolve()
+            }))
+        },
+
+        toggle() {
+            return new Promise(resolve => this._fetchData().then(async instructionsData => {
+                await (instructionsData.enabled ? this.turnOff() : this.turnOn())
+                return resolve()
+            }))
+        },
+
         _fetchData() {
             return new Promise(resolve =>
                 chatgpt.getAccessToken().then(async token =>
@@ -1286,31 +1311,6 @@ const chatgpt = {
                 }
                 xhr.send(JSON.stringify(body) || '') // if body is passed send it, else just send the request
             })
-        },
-
-        turnOff() {
-            return new Promise(resolve => chatgpt.getAccessToken().then(async token => {
-                const instructionsData = await this._fetchData()
-                instructionsData.enabled = false
-                await this._sendRequest('POST', token, instructionsData)
-                return resolve()
-            }))
-        },
-
-        turnOn() {
-            return new Promise(resolve => chatgpt.getAccessToken().then(async token => {
-                const instructionsData = await this._fetchData()
-                instructionsData.enabled = true
-                await this._sendRequest('POST', token, instructionsData)
-                return resolve()
-            }))
-        },
-
-        toggle() {
-            return new Promise(resolve => this._fetchData().then(async instructionsData => {
-                await (instructionsData.enabled ? this.turnOff() : this.turnOn())
-                return resolve()
-            }))
         }
     },
 
@@ -2169,7 +2169,7 @@ const chatgpt = {
             return crypto.randomUUID()
         } catch(err) {
             let d = new Date().getTime() // get current timestamp in ms (to ensure UUID uniqueness)
-            const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+            const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
                 const r = ( // generate random nibble
                     ( d +( window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) -1 ))*16)%16 | 0 )
                 d = Math.floor(d/16) // correspond each UUID digit to unique 4-bit chunks of timestamp
