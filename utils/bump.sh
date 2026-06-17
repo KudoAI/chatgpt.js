@@ -41,7 +41,7 @@ echo -e "${BY}\nBumping versions in READMEs + chatgpt.d.ts...${BW}"
 sed -i \
     -e "s/\(chatgpt\(-\|\.js@\)\)[0-9]\+\(\.[0-9]\+\)\{2\}/\1$new_ver/g" `# jsDelivr URLs` \
     -e "s|v[0-9]\+\.[0-9]\+\.[0-9]\+|v$new_ver|g" `# version refs` \
-    $(find docs -regex ".*/\(README\|USERGUIDE\)\.md") ./README.md ./chatgpt.d.ts
+    $(find docs -name "README.md") ./README.md ./chatgpt.d.ts
 echo "v$new_ver"
 
 echo -e "${BY}\nChanging Git author/committer to kudo-sync-bot...\n${NC}"
