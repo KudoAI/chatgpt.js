@@ -22,7 +22,7 @@ export default {
     turnsToPreserve: 3,  // # of turns to preserve (2 msgs/turn)
 
     // Git options
-    commitMsgExample: 'docs: updated shields', // for --commit-msg to reference
+    commitMsgExample: 'docs: updated shields', // for <--|/>commit-msg to ref
 
     // Flags
     copy: false,         // copy CLI response to clipboard
