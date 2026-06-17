@@ -8,8 +8,9 @@
         "gemini-3.1-flash-lite-preview:generateContent": { // https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-lite
           "dataTypes": { "input": ["audio", "image", "pdf", "text", "video"], "output": ["text"] },
           "date": { "update": "2026-05", "knowledgeCutoff": "2025-01" },
-          "strengths": ["coding", "urlContext"],
-          "tokenLimit": { "input": 1048576, "output": 65536 }
+          "strengths": ["coding"],
+          "tokenLimit": { "input": 1048576, "output": 65536 },
+          "urlContext": true
         }
       }
     },
@@ -81,45 +82,54 @@
           "date": { "release": "2024-08-15" },
           "strengths": ["agentic", "reasoning"]
         },
-        "nvidia/llama-nemotron-embed-vl-1b-v2:free": {// https://openrouter.ai/nvidia/llama-nemotron-embed-vl-1b-v2:free
+        "nvidia/llama-nemotron-embed-vl-1b-v2:free": { // https://openrouter.ai/nvidia/llama-nemotron-embed-vl-1b-v2:free
           "dataTypes": { "input": ["image", "text"], "output": ["embedding"] },
-          "date": { "release": "2026-02-25" }
+          "date": { "release": "2026-02-25" },
+          "strengths": ["multimodal"]
         },
-        "nvidia/nemotron-3-nano-30b-a3b:free": {// https://openrouter.ai/nvidia/nemotron-3-nano-30b-a3b:free
-          "dataTypes": { "input": ["image", "text", "video"], "output": ["text"] },
-          "date": { "release": "2025-12-15" }
+        "nvidia/nemotron-3-nano-30b-a3b:free": { // https://openrouter.ai/nvidia/nemotron-3-nano-30b-a3b:free
+          "dataTypes": { "input": ["text"], "output": ["text"] },
+          "date": { "release": "2025-12-14" },
+          "strengths": ["agentic"]
         },
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": { // https://openrouter.ai/nvidia/nemotron-3-nano-30b-a3b:free
           "dataTypes": { "input": ["text"], "output": ["text"] },
-          "date": { "release": "2025-12-14" }
+          "date": { "release": "2025-12-14" },
+          "strengths": ["agentic"]
         },
         "nvidia/nemotron-3-super-120b-a12b:free": { // https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b:free
           "dataTypes": { "input": ["text"], "output": ["text"] },
-          "date": { "release": "2026-03-11" }
+          "date": { "release": "2026-03-11" },
+          "strengths": ["agentic", "cross-document", "reasoning"]
         },
         "nvidia/nemotron-3-ultra-550b-a55b:free": { // https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:free
           "dataTypes": { "input": ["text"], "output": ["text"] },
-          "date": { "release": "2026-06-03" }
+          "date": { "release": "2026-06-03" },
+          "strengths": ["agentic", "coding", "deep resesarch", "orchestration", "reasoning"]
         },
         "nvidia/nemotron-3.5-content-safety:free": { // https://openrouter.ai/nvidia/nemotron-3.5-content-safety-20260604:free
           "dataTypes": { "input": ["image", "text"], "output": ["text"] },
-          "date": { "release": "2026-06-04" }
+          "date": { "release": "2026-06-04" },
+          "strengths": ["classification", "moderation", "reasoning"]
         },
         "nvidia/nemotron-nano-9b-v2:free": { // https://openrouter.ai/nvidia/nemotron-nano-9b-v2:free
           "dataTypes": { "input": ["text"], "output": ["text"] },
-          "date": { "release": "2025-09-05" }
+          "date": { "release": "2025-09-05", "knowledgeCutoff": "2025-03" },
+          "strengths": ["reasoning"]
         },
         "nvidia/nemotron-nano-12b-v2-vl:free": { // https://openrouter.ai/nvidia/nemotron-nano-12b-v2-vl:free
           "dataTypes": { "input": ["image", "text", "video"], "output": ["text"] },
-          "date": { "release": "2025-10-28" }
+          "date": { "release": "2025-10-28" },
+          "strengths": ["multimodal", "reasoning"]
         },
         "openai/gpt-oss-20b:free": { // https://openrouter.ai/openai/gpt-oss-20b:free
           "dataTypes": { "input": ["text"], "output": ["text"] },
-          "date": { "release": "2025-08-05" }
+          "date": { "release": "2025-08-05", "knowledgeCutoff": "2024-06" },
+          "strengths": ["agentic", "reasoning"]
         },
         "openai/gpt-oss-120b:free": { // https://openrouter.ai/openai/gpt-oss-120b:free
           "dataTypes": { "input": ["text"], "output": ["text"] },
-          "date": { "release": "2025-08-05" },
+          "date": { "release": "2025-08-05", "knowledgeCutoff": "2024-06" },
           "strengths": ["agentic", "reasoning"]
         },
         "openrouter/free": { // https://openrouter.ai/openrouter/free
@@ -133,11 +143,13 @@
         },
         "poolside/laguna-m.1:free": { // https://openrouter.ai/poolside/laguna-m.1:free
           "dataTypes": { "input": ["text"], "output": ["text"] },
-          "date": { "release": "2026-04-28" }
+          "date": { "release": "2026-04-28" },
+          "strengths": ["agentic", "coding", "reasoning"]
         },
         "poolside/laguna-xs.2:free": { // https://openrouter.ai/poolside/laguna-xs.2:free
           "dataTypes": { "input": ["text"], "output": ["text"] },
           "date": { "release": "2026-04-28" },
+          "strengths": ["agentic", "coding", "reasoning"]
         },
         "qwen/qwen3-coder:free": { // https://openrouter.ai/qwen/qwen3-coder:free
           "dataTypes": { "input": ["text"], "output": ["text"] },
