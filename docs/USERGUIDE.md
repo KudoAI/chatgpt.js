@@ -85,31 +85,38 @@ Parameter options:
  -L, --reply-lang <code|name>         Language for AI to reply in.
  -q, --query <msg>                    Query to send AI.
  -s, --summarize <filepath|text|url>  Path or URL to file or text to summarize.
- -a, --ascii-art [subject]            Render ASCII art of optional subject.
- -G, --commit-msg-example <msg>       Example msg for --commit-msg to reference.
+ -c, --config <filepath|url>          Path or URL to custom config file to load.
+
+Msg chain options:
  -m, --max-chars <integer>            Character limit per message.
  -k, --max-tokens <integer>           Max tokens to use.
  -t, --turns <integer>                Number of turns to preserve.
- -c, --config <filepath|url>          Path or URL to custom config file to load.
+ -C, --clear                          Clear cached message chain.
 
-Boolean options:
+Flags:
  -x, --copy                           Copy CLI response to clipboard.
  -A, --no-suggest                     Don't auto-suggest next AI action at end of CLI response.
  -V, --quiet                          Suppress all logging except errors.
 
-Commands:
+git commands / options:
+ -g, --commit-msg                     Generate git commit message from changes and copy to clipboard.
+ -G, --commit-msg-example <msg>       Example msg for --commit-msg to reference.
+ -d, --diff                           Generate human-readable git diff and append to --commit-msg if
+                                       passed.
+
+Fun commands:
+ -a, --ascii-art [subject]            Render ASCII art of optional subject.
+ -f, --fortune                        Tell your fortune.
+ -j, --joke                           Tell a joke.
+ -r, --random-answer                  Answer a random question.
+
+App commands:
  -i, --init                           Create config file (in project root).
  -I, --interactive                    Enter interactive REPL mode.
- -j, --joke                           Tell a joke.
- -f, --fortune                        Tell your fortune.
- -r, --random-answer                  Answer a random question.
- -g, --commit-msg                     Generate git commit message from changes and copy to clipboard.
- -d, --diff                           Generate human-readable git diff and append to --commit-msg if passesd.
- -C, --clear                          Clear cached message chain.
  -h, --help                           Display help screen.
  -v, --version                        Show version number.
  -S, --stats                          Show npm stats.
-     --debug [targetKey]              Show debug logs.
+     --debug                          Show debug logs.
 ```
 
 #
