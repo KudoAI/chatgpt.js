@@ -68,7 +68,7 @@ module.exports = {
                                     env.args[configIdx +1]
                                 : ''
                 try {
-                    const { text, type } = await require('./resolver').resolveSrc(inputPath)
+                    const { text, type } = await require('./resolver')(inputPath)
                     if (type == 'url') {
                         const tmpFile = path.join(os.tmpdir(), `cli-config-${Date.now()}.js`)
                         data.atomicWrite(tmpFile, text)

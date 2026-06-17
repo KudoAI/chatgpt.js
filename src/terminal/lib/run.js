@@ -115,7 +115,7 @@ module.exports = {
         try {
             const os = require('os'),
                   path = require('path'),
-                { text } = await require('./resolver').resolveSrc(cleanedPath)
+                { text } = await require('./resolver')(cleanedPath)
             tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'cli-config-'))
             const tmpFile = path.join(tmpDir, 'config.mjs')
             await fs.writeFile(tmpFile, text, { mode: 0o600 })
