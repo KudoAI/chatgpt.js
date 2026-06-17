@@ -1102,14 +1102,14 @@ const chatgpt = {
         } else
             return arrayify(await chatgpt.send(prompt))
 
-        /* eslint-disable regexp/no-super-linear-backtracking */
         function arrayify(strList) { // for get.related() calls
             if (verbose) console.log('getRelated() > Arrayifying related queries...')
-            return (strList.trim().match(/^\d+\.?\s*([^\n]+?)(?=\n|\\n|$)/gm) || [])
+            return (strList.trim().match(/^\d+\.?\s*((?:(?!\n|\\n).)*)/gm) || [])
                 .slice(0, qty) // limit to 1st 5
                 .map(match => match.replace(/\*\*/g, '') // strip markdown boldenings
-                    .replace(/^['"]*(?:\d+\.?\s*)?['"]*(.*?)['"]*$/g, '$1')) // strip numbering + quotes
-        } /* eslint-enable regexp/no-super-linear-backtracking */
+                    .replace(/^['"]*(?:\d+\.?\s*)?['"]*/, '') // strip leading number + quotes
+                    .replace(/['"]*$/, '')) // strip trailing quotes
+        }
     },
 
     getResponse() { return chatgpt.response.get(...arguments) },
