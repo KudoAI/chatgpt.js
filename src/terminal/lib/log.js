@@ -96,7 +96,7 @@ module.exports = {
             ],
             funCmds: [
                 `\n${this.colors.bw}o ${cli.msgs.helpSection_funCmds.toLowerCase()}:${this.colors.nc}`,
-                ` -P, --act-as <persona>               ${cli.msgs.optionDesc_actAs}.`,
+                ` -P, --act-as <persona>               ${cli.msgs.optionDesc_actAs}`,
                 ` -a, --ascii-art [subject]            ${cli.msgs.optionDesc_asciiArt}.`,
                 ` -f, --fortune                        ${cli.msgs.optionDesc_fortune}.`,
                 ` -j, --joke                           ${cli.msgs.optionDesc_joke}.`,

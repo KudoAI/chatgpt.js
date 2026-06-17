@@ -116,7 +116,7 @@ function showHelp() {
     -d, --diff                           ${cli.msgs.optionDesc_diff}.
 
   \x1b[1m${cli.msgs.helpSection_funCmds.toLowerCase()}:\x1b[0m
-    -P, --act-as <persona>               ${cli.msgs.optionDesc_actAs}.
+    -P, --act-as <persona>               ${cli.msgs.optionDesc_actAs}
     -a, --ascii-art [subject]            ${cli.msgs.optionDesc_asciiArt}.
     -f, --fortune                        ${cli.msgs.optionDesc_fortune},
     -j, --joke                           ${cli.msgs.optionDesc_joke}.
