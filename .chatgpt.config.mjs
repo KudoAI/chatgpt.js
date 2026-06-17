@@ -21,7 +21,7 @@ export default {
     maxTokens: null,     // max tokens to use
     turnsToPreserve: 3,  // # of turns to preserve (2 msgs/turn)
 
-    // Git options
+    // git options
     commitMsgExample: 'docs: updated shields', // for <--|/>commit-msg to ref
 
     // Flags
