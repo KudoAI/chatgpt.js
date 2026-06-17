@@ -63,11 +63,13 @@
         },
         "meta-llama/llama-3.2-3b-instruct:free": { // https://openrouter.ai/meta-llama/llama-3.2-3b-instruct:free
           "dataTypes": { "input": ["text"], "output": ["text"] },
-          "date": { "release": "2024-12-06" }
+          "date": { "release": "2024-12-06", "knowledgeCutoff": "2023-12" },
+          "strengths": ["dialogue generation", "multilingual", "reasoning", "summarization"]
         },
         "meta-llama/llama-3.3-70b-instruct:free": { // https://openrouter.ai/meta-llama/llama-3.3-70b-instruct:free
           "dataTypes": { "input": ["text"], "output": ["text"] },
-          "date": { "release": "2024-09-24" }
+          "date": { "release": "2024-12-06", "knowledgeCutoff": "2023-12" },
+          "strengths": ["dialogue generation", "multilingual"]
         },
         "nex-agi/nex-n2-pro": { // https://openrouter.ai/nex-agi/nex-n2-pro
           "dataTypes": { "input": ["image", "text"], "output": ["text"] },
