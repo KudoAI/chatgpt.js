@@ -2195,7 +2195,7 @@ const chatgpt = {
     }
 }
 
-chatgpt.scheme = { ...chatgpt.settings.scheme } // copy `chatgpt.settings.scheme` methods into `chatgpt.scheme`
+chatgpt.scheme = { ...chatgpt.settings.scheme } // copy chatgpt.settings.scheme methods into chatgpt.scheme
 
 try { window.chatgpt = chatgpt } catch (err) {} // for browser
 try { module.exports = chatgpt } catch (err) {} // for CommonJS
