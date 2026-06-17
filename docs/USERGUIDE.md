@@ -161,10 +161,6 @@ export default {
   - [`summarize()` `async`](#summarizetext--parameters--async--dom-only)
   - [`translate()` `async`](#translatetext-outputlang--parameters--async--dom-only)
   - [`uuidv4()`](#uuidv4--universal)
-- [Page theme](#page-theme)
-  - [`isDarkMode()`](#isdarkmode--dom-only)
-  - [`isLightMode()`](#islightmode--dom-only)
-  - [`toggleScheme()`](#togglescheme--dom-only)
 - [In-site notifications](#in-site-notifications)
   - [`alert()`](#alert--dom-only)
   - [`notify()`](#notify--dom-only)
@@ -182,8 +178,6 @@ export default {
   - [`getErrorMsg()`](#geterrormsg--dom-only)
   - [`getLastPrompt()` `async`](#getlastprompt-async--universal)
   - [`getLastResponse()` `async`](#getlastresponse-async--universal)
-  - [`getResponseFromAPI()` `async`](#getresponsefromapi-async--universal)
-  - [`getResponseFromDOM()`](#getresponsefromdom--dom-only)
   - [`isIdle()` `async`](#isidle-async--dom-only)
   - [`isTyping()`](#istyping--dom-only)
   - [`regenerate()`](#regenerate--dom-only)
@@ -201,8 +195,6 @@ export default {
   - [`getChatBox()`](#getchatbox--dom-only)
   - [`getContinueButton()`](#getcontinuebutton--dom-only)
   - [`getDictateButton()`](#getdictatebutton--dom-only)
-  - [`getFooterDiv()`](#getfooterdiv--dom-only)
-  - [`getHeaderDiv()`](#getheaderdiv--dom-only)
   - [`getLoginButton()`](#getloginbutton--dom-only)
   - [`getNewChatButton()`](#getnewchatbutton--dom-only)
   - [`getNewChatLink()`](#getnewchatlink--dom-only)
@@ -211,13 +203,9 @@ export default {
   - [`getSendButton()`](#getsendbutton--dom-only)
   - [`getStopButton()`](#getstopbutton--dom-only)
   - [`getVoiceButton()`](#getvoicebutton--dom-only)
-  - [`hideFooter()`](#hidefooter--dom-only)
-  - [`hideHeader()`](#hideheader--dom-only)
-  - [`showFooter()`](#showfooter--dom-only)
-  - [`showHeader()`](#showheader--dom-only)
 - [Library APIs](#library-apis)
   - [`autoRefresh`](#autorefresh-api): [`activate()`](#activate--dom-only), [`deactivate()`](#deactivate--dom-only), [`nowTimeStamp()`](#nowtimestamp--universal)
-  - [`browser`](#browser-api): [`isLightMode()`](#islightmode--dom-only-1), [`isDarkMode()`](#isdarkmode--dom-only-1), [`isChromium()`](#ischromium--dom-only), [`isChrome()`](#ischrome--dom-only), [`isEdge()`](#isedge--dom-only), [`isBrave()`](#isbrave--dom-only), [`isFirefox()`](#isfirefox--dom-only), [`isFullScreen()`](#isfullscreen--dom-only), [`isMobile()`](#ismobile--dom-only)
+  - [`browser`](#browser-api): [`isLightMode()`](#islightmode--dom-only), [`isDarkMode()`](#isdarkmode--dom-only), [`isChromium()`](#ischromium--dom-only), [`isChrome()`](#ischrome--dom-only), [`isEdge()`](#isedge--dom-only), [`isBrave()`](#isbrave--dom-only), [`isFirefox()`](#isfirefox--dom-only), [`isFullScreen()`](#isfullscreen--dom-only), [`isMobile()`](#ismobile--dom-only)
   - [`code`](#code-api): [`debug()`](#debugcode--parameters--async--universal), [`minify()`](#minifycode--parameters--async--universal), [`execute()`](#executecode--parameters--async--universal), [`extract()`](#extract--universal), [`isIdle()`](#isidle-async--dom-only-1), [`obfuscate()`](#obfuscatecode--parameters--async--universal), [`refactor()`](#refactorcode--parameters--async--universal), [`review()`](#reviewcode--parameters--async--universal), [`unminify()`](#unminifycode--parameters--async--universal), [`write()`](#writeprompt-outputlang--parameters--async--universal)
   - [`footer`](#footer-api): [`get()`](#get--dom-only), [`hide()`](#hide--dom-only), [`show()`](#show--dom-only)
   - [`header`](#header-api): [`get()`](#get--dom-only-1), [`hide()`](#hide--dom-only-1), [`show()`](#show--dom-only-1)
@@ -230,9 +218,9 @@ export default {
 
 > [!WARNING]
 > 
-> **`activateDarkMode()` and `activateLightMode()` will be removed** in v4.14.2. Use `chatgpt.scheme.activateDark()` and `chatgpt.scheme.activateDark()` instead.
+> **`activateDarkMode()` and `activateLightMode()` will be removed** in v5.0.0. Use `chatgpt.scheme.activateDark()` and `chatgpt.scheme.activateDark()` instead.
 >
-> **Top-level aliases will be removed** in v4.14.2 (e.g. `chatgpt.minify()`, `chatgpt.execute()`, `chatgpt.extractCode()`, `chatgpt.setScheme()` and `chatgpt.scheme.*`). Use the canonical APIs instead (e.g. `chatgpt.code.*`, `chatgpt.response.*` and `chatgpt.settings.scheme.*`)
+> **Top-level aliases will be removed** in v5.0.0 (`continue()`, `execute()`, `extractCode()`, `getFooterDiv()`, `getHeaderDiv()`, `getResponse()`, `getResponseFromAPI()`, `getResponseFromDOM()`, `hideFooter()`, `isDarkMode()`, `isFullScreen()`, `isLightMode()`, `minify()`, `obfuscate()`, `refactor()`, `regenerate()`, `reviewCode()`, `setScheme()`, `showFooter()`, `showHeader()`, `toggleScheme()`, `unminify()`, `write()`, `scheme` API subset). Use the canonical APIs instead (e.g. `chatgpt.code.*`, `chatgpt.response.*` and `chatgpt.settings.scheme.*`)
 
 <hr>
 
@@ -534,42 +522,6 @@ chatgpt.alert(randomID) // Example output: '239067d1-bcb8-4fd7-91eb-9ab94619b7b3
 ```
 
 <a href="#top">Back to top ↑</a>
-
-## Page theme
-
-#### `isDarkMode()` 🌐 DOM only
-
-Returns a boolean value. `true` if the theme is dark mode, `false` otherwise.
-
-Example:
-
-```js
-chatgpt.alert(chatgpt.isDarkMode()) // logs `true` or `false`
-```
-
-#
-
-#### `isLightMode()` 🌐 DOM only
-
-Returns a boolean value. `true` if the theme is light mode, `false` otherwise.
-
-Example:
-
-```js
-chatgpt.alert(chatgpt.isLightMode()) // logs `true` or `false`
-```
-
-#
-
-#### `toggleScheme()` 🌐 DOM only
-
-Toggles the theme between light and dark mode.
-
-Example:
-
-```js
-chatgpt.toggleScheme()
-```
 
 ## In-site notifications
 
@@ -961,49 +913,6 @@ Returns the last ChatGPT response as a string.
 
 #
 
-#### `getResponseFromAPI()` `async` 🔄 Universal
-
-Returns the Nth response written by ChatGPT in the Nth chat, as a string.
-
-Parameters:
-
-`chatToGet` (optional): A number representing the index of the chat to get the response from. Defaults to `latest`.
-
-`responseToGet` (optional): A number representing the index of the response to get. Defaults to `latest`.
-
-Example:
-
-```js
-(async () => {
-    const response = chatgpt.getResponseFromAPI()
-    chatgpt.alert(response) // Example output: 'Hello from ChatGPT!'
-})()
-```
-
-#
-
-#### `getResponseFromDOM()` 🌐 DOM only
-
-Returns the Nth response ChatGPT has written as a string.
-
-Parameters:
-
-`pos`: A string or integer representing the position of the wanted response.
-
-Example:
-
-```js
-var fifthResp
-
-fifthResp = chatgpt.getResponseFromDOM(5) // Returns the 5th response
-fifthResp = chatgpt.getResponseFromDOM('fifth') // Also returns the 5th response
-fifthResp = chatgpt.getResponseFromDOM('five') // Returns the 5th response too
-
-chatgpt.alert(fifthResp) // Example output: 'Hello from ChatGPT!'
-```
-
-#
-
 #### `isIdle()` `async` 🌐 DOM only
 
 Resolves a promise when ChatGPT has finished generating a response.
@@ -1261,32 +1170,6 @@ dictateBtn.click()
 
 #
 
-#### `getFooterDiv()` 🌐 DOM only
-
-Returns the footer div as an HTML element.
-
-Example:
-
-```js
-const footerDiv = chatgpt.getFooterDiv()
-footerDiv.style.padding = '15px' // make the footer taller
-```
-
-#
-
-#### `getHeaderDiv()` 🌐 DOM only
-
-Returns the header div as an HTML element.
-
-Example:
-
-```js
-const headerDiv = chatgpt.getHeaderDiv()
-headerDiv.style.display = none // hide the header
-```
-
-#
-
 #### `getLoginButton()` 🌐 DOM only
 
 Returns the login button as an HTML element.
@@ -1387,54 +1270,6 @@ Example:
 ```js
 const voiceBtn = chatgpt.getVoiceButton()
 getVoiceButton.click() // activates Voice mode
-```
-
-#
-
-#### `hideFooter()` 🌐 DOM only
-
-Hides the footer div.
-
-Example:
-
-```js
-chatgpt.hideFooter()
-```
-
-#
-
-#### `hideHeader()` 🌐 DOM only
-
-Hides the header div.
-
-Example:
-
-```js
-chatgpt.hideHeader()
-```
-
-#
-
-#### `showFooter()` 🌐 DOM only
-
-Shows the footer div if hidden.
-
-Example:
-
-```js
-chatgpt.showFooter()
-```
-
-#
-
-#### `showHeader()` 🌐 DOM only
-
-Shows the header div if hidden.
-
-Example:
-
-```js
-chatgpt.showHeader()
 ```
 
 <a href="#top">Back to top ↑</a>
@@ -2162,21 +1997,52 @@ chatgpt.response.continue()
 
 #### `get()` 🔄 Universal
 
-If it's a previously created chat, see [chatgpt.getResponseFromDOM](#getresponsefromdom--dom-only)
+If it's a previously created chat, see [chatgpt.response.getFromDOM](#getfromdom--dom-only)
 
-If it's a new chat, see [chatgpt.getResponseFromAPI](#getresponsefromapi-async--universal)
+If it's a new chat, see [chatgpt.response.getFromAPI](#getfromapi-async--universal)
 
 #
 
 #### `getFromAPI()` `async` 🔄 Universal
 
-See [chatgpt.getResponseFromAPI](#getresponsefromapi-async--universal)
+Returns the Nth response written by ChatGPT in the Nth chat, as a string.
+
+Parameters:
+
+`chatToGet` (optional): A number representing the index of the chat to get the response from. Defaults to `latest`.
+
+`responseToGet` (optional): A number representing the index of the response to get. Defaults to `latest`.
+
+Example:
+
+```js
+(async () => {
+    const response = chatgpt.response.getFromAPI()
+    chatgpt.alert(response) // Example output: 'Hello from ChatGPT!'
+})()
+```
 
 #
 
 #### `getFromDOM()` 🌐 DOM only
 
-See [chatgpt.getResponseFromDOM](#getresponsefromdom--dom-only)
+Returns the Nth response ChatGPT has written as a string.
+
+Parameters:
+
+`pos`: A string or integer representing the position of the wanted response.
+
+Example:
+
+```js
+var fifthResp
+
+fifthResp = chatgpt.response.getFromDOM(5) // Returns the 5th response
+fifthResp = chatgpt.response.getFromDOM('fifth') // Also returns the 5th response
+fifthResp = chatgpt.response.getFromDOM('five') // Returns the 5th response too
+
+chatgpt.alert(fifthResp) // Example output: 'Hello from ChatGPT!'
+```
 
 #
 
@@ -2240,7 +2106,7 @@ Example:
 
 ```js
 chatgpt.alert(chatgpt.settings.scheme.isDark()) // logs `true` or `false`
-````
+```
 
 ##
 
@@ -2252,7 +2118,7 @@ Example:
 
 ```js
 chatgpt.alert(chatgpt.settings.scheme.isLight()) // logs `true` or `false`
-````
+```
 
 ##
 
