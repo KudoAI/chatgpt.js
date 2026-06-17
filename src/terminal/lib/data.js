@@ -3,8 +3,14 @@ module.exports = {
     atomicWrite(filePath, data, encoding = 'utf8') { // to prevent TOCTOU
         const fs = require('fs'),
               path = require('path'),
-              tmpPath = path.join(path.dirname(filePath), `.${path.basename(filePath)}.tmp`)
-        fs.writeFileSync(tmpPath, data, encoding) ; fs.renameSync(tmpPath, filePath)
+              tmpDir = fs.mkdtempSync(path.join(path.dirname(filePath), '.tmp-')),
+              tmpPath = path.join(tmpDir, 'file')
+        try {
+            fs.writeFileSync(tmpPath, data, { encoding, mode: 0o600 })
+            fs.renameSync(tmpPath, filePath)
+        } finally {
+            fs.rmSync(tmpDir, { recursive: true, force: true })
+        }
     },
 
     fetch(url) { // to support Node.js < v21
