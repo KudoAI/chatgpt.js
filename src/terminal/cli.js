@@ -25,7 +25,7 @@
     let query = cli.config.joke ? 'Tell me a joke and make it funny.'
               : cli.config.fortune ? 'Tell me my fortune the length of a fortune cookie paper.'
               : cli.config.randomAnswer ? 'Generate a single random question on any topic, then answer it.'
-              : cli.config.summarize ? `Summarize the following:\n\n${await resolveSrc(cli.config.summarize)}`
+              : cli.config.summarize ? `Summarize the following:\n\n${(await resolveSrc(cli.config.summarize)).text}`
               : cli.config.sentiment ?
                     `Analyze the sentiment of the following:\n\n${(await resolveSrc(cli.config.sentiment)).text}`
               : cli.config.actAs ? require('@kudoai/ai-personas')[cli.config.actAs]?.prompt
