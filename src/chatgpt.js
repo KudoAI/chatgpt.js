@@ -1202,48 +1202,34 @@ const chatgpt = {
         add(instruction, target) {
             if (!instruction) return console.error('Please provide an instruction')
             if (typeof instruction != 'string') return console.error('Instruction must be a string')
-            const validTargets = ['user', 'chatgpt'] // valid targets
+            const validTargets = ['user', 'chatgpt']
             if (!target) return console.error('Please provide a valid target!')
             if (typeof target != 'string') return console.error('Target must be a string')
-            target = target.toLowerCase() // lowercase target
+            target = target.toLowerCase()
             if (!validTargets.includes(target))
                 return console.error(`Invalid target ${target}. Valid targets are [${validTargets}]`)
-
-            instruction = `\n\n${instruction}` // add 2 newlines to the new instruction
-
-            return new Promise(resolve => {
-                chatgpt.getAccessToken().then(async token => {
-                    const instructionsData = await this._fetchData()
-
-                    // Concatenate old instructions with new instruction
-                    if (target == 'user') instructionsData.about_user_message += instruction
-                    else if (target == 'chatgpt') instructionsData.about_model_message += instruction
-
-                    await this._sendRequest('POST', token, instructionsData)
-                    return resolve()
-                })
-            })
+            instruction = `\n\n${instruction}`
+            return new Promise(resolve => chatgpt.getAccessToken().then(async token => {
+                const instructionsData = await this._fetchData()
+                instructionsData[`about_${ target == 'user' ? 'user' : 'model' }_message`] += instruction
+                await this._sendRequest('POST', token, instructionsData)
+                return resolve()
+            }))
         },
 
         clear(target) {
-            const validTargets = ['user', 'chatgpt'] // valid targets
+            const validTargets = ['user', 'chatgpt']
             if (!target) return console.error('Please provide a valid target!')
             if (typeof target != 'string') return console.error('Target must be a string')
-            target = target.toLowerCase() // lowercase target
+            target = target.toLowerCase()
             if (!validTargets.includes(target))
                 return console.error(`Invalid target ${target}. Valid targets are [${validTargets}]`)
-
-            return new Promise(resolve => {
-                chatgpt.getAccessToken().then(async token => {
-                    const instructionsData = await this._fetchData()
-
-                    // Clear target's instructions
-                    if (target == 'user') instructionsData.about_user_message = ''
-                    else if (target == 'chatgpt') instructionsData.about_model_message = ''
-
-                    await this._sendRequest('POST', token, instructionsData)
-                    return resolve()
-                })})
+            return new Promise(resolve => chatgpt.getAccessToken().then(async token => {
+                const instructionsData = await this._fetchData()
+                instructionsData[`about_${ target == 'user' ? 'user' : 'model' }_message`] = ''
+                await this._sendRequest('POST', token, instructionsData)
+                return resolve()
+            }))
         },
 
         turnOff() {
@@ -1278,8 +1264,6 @@ const chatgpt = {
         },
 
         _sendRequest(method, token, body) {
-
-            // Validate args
             for (let i = 0 ; i < arguments.length -1 ; i++) if (typeof arguments[i] == 'string')
                 return console.error(`Argument ${ i +1 } must be a string`)
             const validMethods = ['POST', 'GET']
@@ -1289,15 +1273,12 @@ const chatgpt = {
             if (!token) return console.error('Please provide a valid access token!')
             if (body && typeof body != 'object') // reject if body is passed but not an object
                 return console.error(`Invalid body data type. Got ${ typeof body }, expected object`)
-
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest()
                 xhr.open(method, chatgpt.endpoints.openai.instructions, true)
-                // Set headers
                 xhr.setRequestHeader('Accept-Language', 'en-US')
                 xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                 if (method == 'POST') xhr.setRequestHeader('Content-Type', 'application/json')
-
                 xhr.onload = () => {
                     const responseData = JSON.parse(xhr.responseText)
                     if (xhr.status == 422)
