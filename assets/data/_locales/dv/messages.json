@@ -77,6 +77,9 @@
   "optionDesc_provider": { "message": "ޗެޓް އެޕީއައި އަށް ޕްރޮވައިޑަރ" },
   "optionDesc_query": { "message": "އޭއައި ފޮނުވަން ކިއުއަރީ" },
   "optionDesc_summarize": { "message": "ފައިލް ކުރުމަށް މަގު ނުވަތަ ޔޫ.އާރް.އެލް ނުވަތަ ޚުލާޞާ ކުރަން ޓެކްސްޓް" },
+  "optionDesc_actAs": {
+    "message": "https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json އިން ޕެރްސޯނާގެ ގޮތުގައި ހަރަކާތްތެރިވުން"
+  },
   "optionDesc_asciiArt": { "message": "އިޚްތިޔާރީ މާއްދާއެއްގެ އޭއެސްސީއައި އާޓް ރެންޑަރކުރުން" },
   "optionDesc_commitMsgExample": { "message": "ރެފަރެންސް އަށް --commit-msg އަށް މިސާލު msg" },
   "optionDesc_uiLang": { "message": "ޔޫއައި ދައްކާލުމަށް އައިއެސްއޯ 639-1 ކޯޑް އޮފް ލޭންގުއޭޖް" },

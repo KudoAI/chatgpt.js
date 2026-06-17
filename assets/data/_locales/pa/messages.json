@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "ਚੈਟ API ਲਈ ਪ੍ਰਦਾਤਾ" },
   "optionDesc_query": { "message": "AI ਭੇਜਣ ਲਈ ਕਿਊਰੀ" },
   "optionDesc_summarize": { "message": "ਸਾਰ ਦੇਣ ਲਈ ਫਾਇਲ ਜਾਂ ਟੈਕਸਟ ਲਈ ਮਾਰਗ ਜਾਂ URL" },
+  "optionDesc_actAs": {
+    "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas@1/dist/ai-personas.json ਤੋਂ ਵਿਅਕਤੀ ਵਜੋਂ ਕੰਮ ਕਰੋ"
+  },
   "optionDesc_asciiArt": { "message": "ਰੈਂਡਰ ਅਖ਼ਤਿਆਰੀ ਵਿਸ਼ੇ ਦੀ ASCII ਕਲਾ" },
   "optionDesc_commitMsgExample": { "message": "--commit-msg ਲਈ ਉਦਾਹਰਨ msg to reference" },
   "optionDesc_uiLang": { "message": "ਵਿੱਚ UI ਵੇਖਾਉਣ ਲਈ ਭਾਸ਼ਾ ਦਾ ISO 639-1 ਕੋਡ" },

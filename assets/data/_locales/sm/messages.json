@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Tuuina atu mo talatalanoaga API" },
   "optionDesc_query": { "message": "Fesili e auina atu AI" },
   "optionDesc_summarize": { "message": "Auala po o le URL e faila po o le mau e aotele ai" },
+  "optionDesc_actAs": {
+    "message": "Galuega e pei o persona maihttps://cdn.jsdelivr.net/npm/@ kudoai/ai-personas @1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Render ASCII faatufugaga o mataupu filifilia" },
   "optionDesc_commitMsgExample": { "message": "Faataitaiga msg mo --commit-msg i faasino" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code o le gagana e faaali atu UI i" },

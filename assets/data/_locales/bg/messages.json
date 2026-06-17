@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Доставчик на приложен програмен интерфейс (API)" },
   "optionDesc_query": { "message": "Заявка за изпращане на ИИ" },
   "optionDesc_summarize": { "message": "Път или url адрес към файл или текст за обобщаване" },
+  "optionDesc_actAs": {
+    "message": "Действайте като персона от https://cdn.jsdelivr.net/npm/ @kudoai/ai -personas @1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Предоставяне на ASCII изкуство на незадължителен предмет" },
   "optionDesc_commitMsgExample": { "message": "Пример за msg за -- commit - msg към справка" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 код на езика за показване на потребителския интерфейс в" },

@@ -75,6 +75,9 @@
   "optionDesc_provider": { "message": "Bixiyaha Wadahadalka API" },
   "optionDesc_query": { "message": "Codsi si aad u dirto AI" },
   "optionDesc_summarize": { "message": "Jidka ama URL si aad u xareysato ama u qorto si aad u soo koobto" },
+  "optionDesc_actAs": {
+    "message": "Ka shaqee shakhsi ahaan https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Farshaxanka Render ASCII ee mawduuca ikhtiyaarka ah" },
   "optionDesc_commitMsgExample": { "message": "Tusaalaha msg ee --commit-msg si loo tixraaco" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code luqadda si ay u muujiyaan UI in" },

@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "ספק עבור ממשק API של צ'אט" },
   "optionDesc_query": { "message": "שאילתה לשליחת בינה מלאכותית" },
   "optionDesc_summarize": { "message": "נתיב או כתובת URL לקובץ או לטקסט לסיכום" },
+  "optionDesc_actAs": {
+    "message": "פעל כאישיות מ - https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "עיבוד אמנות ASCII של נושא אופציונלי" },
   "optionDesc_commitMsgExample": { "message": "דוגמה ל - msg עבור --mit - msg לסימוכין" },
   "optionDesc_uiLang": { "message": "קוד שפה ISO 639 -1 להצגה בממשק המשתמש" },

@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "អ្នកផ្តល់សេវាសម្រាប់ការជជែកកំសាន្ត API" },
   "optionDesc_query": { "message": "សំណួរដែលត្រូវផ្ញើ AI" },
   "optionDesc_summarize": { "message": "ផ្លូវ ឬ URL ទៅ ឯកសារ ឬ អត្ថបទ ដើម្បី សង្ខេប" },
+  "optionDesc_actAs": {
+    "message": "ធ្វើជាបុគ្គលពី https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "បង្ហាញ សិល្បៈ ASCII នៃ ប្រធានបទ ស្រេចចិត្ត" },
   "optionDesc_commitMsgExample": { "message": "ឧទាហរណ៍ msg សម្រាប់ -- compmit-msg ទៅ សេចក្ដីយោង" },
   "optionDesc_uiLang": { "message": "កូដភាសា ISO 639-1 ដើម្បីបង្ហាញ UI នៅក្នុង" },

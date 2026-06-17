@@ -73,6 +73,7 @@
   "optionDesc_provider": { "message": "Provizanto por babilejo API" },
   "optionDesc_query": { "message": "Demando por sendi al iu" },
   "optionDesc_summarize": { "message": "Pado aŭ URL al dosiero aŭ teksto por resumi" },
+  "optionDesc_actAs": { "message": "@ kudoai/ai-personas@1/dist/ai-personas.json" },
   "optionDesc_asciiArt": { "message": "Make ASCII art of optional subject" },
   "optionDesc_commitMsgExample": { "message": "Ekzemplo de msg por --commit-msg al referenco" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kodo de lingvo por elmontri UI en" },

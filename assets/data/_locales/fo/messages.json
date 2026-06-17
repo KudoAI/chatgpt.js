@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Chat API-tilboð" },
   "optionDesc_query": { "message": "Tað er ikki so lætt at fáa ein" },
   "optionDesc_summarize": { "message": "Vegur ella URL til fílu ella tekst at taka saman" },
+  "optionDesc_actAs": {
+    "message": "Ver sum persónur frá https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Ger ASCII listina av valligum evnum" },
   "optionDesc_commitMsgExample": { "message": "Dømi msg fyri -commit-msg til tilvísing" },
   "optionDesc_uiLang": { "message": "ISO 639-1 málkód at vísa UI í" },

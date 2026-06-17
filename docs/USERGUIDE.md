@@ -105,6 +105,7 @@ git commands / options:
                                        passed.
 
 Fun commands:
+ -P, --act-as <persona>               Act as persona from https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json
  -a, --ascii-art [subject]            Render ASCII art of optional subject.
  -f, --fortune                        Tell your fortune.
  -j, --joke                           Tell a joke.

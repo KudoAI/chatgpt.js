@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Proveïdor per a l'API de xat" },
   "optionDesc_query": { "message": "Consulta per enviar IA" },
   "optionDesc_summarize": { "message": "Camí o URL al fitxer o text per resumir" },
+  "optionDesc_actAs": {
+    "message": "Actuar com a persona des dehttps://cdn.jsdelivr.net/npm/@ kudoai/ai-personas @1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Render ASCII art de matèria optativa" },
   "optionDesc_commitMsgExample": { "message": "Exemple de msg per a --commit-msg com a referència" },
   "optionDesc_uiLang": { "message": "Codi de llengua ISO 639-1 per mostrar la interfície d'usuari" },

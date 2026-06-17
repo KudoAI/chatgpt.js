@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Таъминкунанда барои API чат" },
   "optionDesc_query": { "message": "Дархост барои фиристодани AI" },
   "optionDesc_summarize": { "message": "Роҳча ё URL ба файл ё матн барои ҷамъбаст" },
+  "optionDesc_actAs": {
+    "message": "Амал ҳамчун persona аз https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Рендер ASCII санъат субъекти ихтиёрӣ" },
   "optionDesc_commitMsgExample": { "message": "Намунаи msg барои --commit-msg барои истинод" },
   "optionDesc_uiLang": { "message": "ISO 639-1 рамзи забон барои намоиши UI дар" },

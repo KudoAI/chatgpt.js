@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Давател на API за разговор" },
   "optionDesc_query": { "message": "Барање за испраќање вештачка интелигенција" },
   "optionDesc_summarize": { "message": "Патека или URL-адреса до датотеката или текст за сумирање" },
+  "optionDesc_actAs": {
+    "message": "Однесувајте се како личност одhttps://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Изложба на Ascii уметност на факултативен предмет" },
   "optionDesc_commitMsgExample": { "message": "Пример msg за -- commit-msg на референца" },
   "optionDesc_uiLang": { "message": "ISO 639-1 код на јазик за прикажување на UI во" },

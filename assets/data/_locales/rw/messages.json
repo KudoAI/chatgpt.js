@@ -73,6 +73,7 @@
   "optionDesc_provider": { "message": "Kugirango" },
   "optionDesc_query": { "message": "Kuri Kohereza" },
   "optionDesc_summarize": { "message": "Cyangwa Kuri IDOSIYE Cyangwa Umwandiko Kuri Inshamake" },
+  "optionDesc_actAs": { "message": "Nka Bivuye https://cdn.jsdelivr.net/npm/ @kudoai/ai-personas @1///a-personas.json" },
   "optionDesc_asciiArt": { "message": "Bya Bitari ngombwa Ikivugwaho" },
   "optionDesc_commitMsgExample": { "message": "Urugero kugirango commit-msg Kuri Indango" },
   "optionDesc_uiLang": { "message": "Kode ya ISO 639-1 y'ururimi rwo kwerekanamo UI" },

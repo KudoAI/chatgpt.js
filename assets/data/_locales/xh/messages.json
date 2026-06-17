@@ -75,6 +75,9 @@
   "optionDesc_provider": { "message": "Umnikezeli we-API yencoko" },
   "optionDesc_query": { "message": "Isicelo sokuthumela i-AI" },
   "optionDesc_summarize": { "message": "Indlela okanye i-URL yokufaka okanye yokubhaliweyo ukuze ushwankathele" },
+  "optionDesc_actAs": {
+    "message": "Yenza njengomntu ovela https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Nika ubugcisa be-ASCII bomxholo onganyanzelekanga" },
   "optionDesc_commitMsgExample": { "message": "Umzekelo womyalezo we- --commit-msg kwireferensi" },
   "optionDesc_uiLang": { "message": "Ikhowudi yolwimi ye-ISO 639-1 yokubonisa i-UI" },

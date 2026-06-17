@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Wopereka macheza API" },
   "optionDesc_query": { "message": "Kufunsira kutumiza AI" },
   "optionDesc_summarize": { "message": "Njira kapena URL kuti fayilo kapena malemba kuti afotokoze mwachidule" },
+  "optionDesc_actAs": {
+    "message": "Chitani monga munthu kuchokera https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Render ASCII luso la nkhani yosankha" },
   "optionDesc_commitMsgExample": { "message": "Chitsanzo msg kwa --commit-msg kutchula" },
   "optionDesc_uiLang": { "message": "ISO 639-1 malamulo chilankhulo kusonyeza UI mu" },

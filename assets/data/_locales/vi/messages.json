@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Nhà cung cấp cho API trò chuyện" },
   "optionDesc_query": { "message": "Truy vấn để gửi AI" },
   "optionDesc_summarize": { "message": "Đường dẫn hoặc URL đến tệp hoặc văn bản để tóm tắt" },
+  "optionDesc_actAs": {
+    "message": "Đóng vai trò là nhân vật từ https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas @1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Kết xuất nghệ thuật ASCII của đối tượng tùy chọn" },
   "optionDesc_commitMsgExample": { "message": "Ví dụ msg cho --commit-msg để tham khảo" },
   "optionDesc_uiLang": { "message": "Mã ngôn ngữ ISO 639-1 để hiển thị giao diện người dùng trong" },

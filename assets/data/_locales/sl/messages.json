@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Ponudnik za API za klepet" },
   "optionDesc_query": { "message": "Poizvedba za pošiljanje umetne inteligence" },
   "optionDesc_summarize": { "message": "Pot ali URL do datoteke ali besedila za povzemanje" },
+  "optionDesc_actAs": {
+    "message": "Delujte kot oseba iz https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Upodobi umetnost ASCII izbirnega predmeta" },
   "optionDesc_commitMsgExample": { "message": "Primer msg za --commit-msg na referenco" },
   "optionDesc_uiLang": { "message": "Koda jezika ISO 639-1 za prikaz uporabniškega vmesnika v" },

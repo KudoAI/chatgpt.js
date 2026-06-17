@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Umhlinzeki we-API yengxoxo" },
   "optionDesc_query": { "message": "Isicelo sokuthumela i-AI" },
   "optionDesc_summarize": { "message": "Indlela noma i-URL eya kufayela noma embhalweni ukuze ifingqe" },
+  "optionDesc_actAs": {
+    "message": "Zenzele ubuntu kusuka ku-https://cdn.jsdelivr.net/npm/ @kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Nikeza ubuciko be-ASCII besihloko ozikhethela sona" },
   "optionDesc_commitMsgExample": { "message": "Umyalezo oyisibonelo we- --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "Ikhodi yolimi ye-ISO 639-1 yokubonisa i-UI ku-" },

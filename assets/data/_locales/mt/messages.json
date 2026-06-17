@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Fornitur għall-API taċ-chat" },
   "optionDesc_query": { "message": "Mistoqsija biex tibgħat l-AI" },
   "optionDesc_summarize": { "message": "Mogħdija jew URL biex tiffajlja jew tibgħat messaġġ fil-qosor" },
+  "optionDesc_actAs": {
+    "message": "Aġixxi bħala persuna minn https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Jagħti l-arti ASCII tas-suġġett mhux obbligatorju" },
   "optionDesc_commitMsgExample": { "message": "Eżempju ta' msg għal --commit-msg għar-referenza" },
   "optionDesc_uiLang": { "message": "Kodiċi tal-lingwa ISO 639-1 biex turi l-UI fi" },

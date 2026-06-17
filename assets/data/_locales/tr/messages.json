@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Sohbet API'si sağlayıcısı" },
   "optionDesc_query": { "message": "Yapay zeka gönderme sorgusu" },
   "optionDesc_summarize": { "message": "Dosyanın yolu veya URL'si veya özetlenecek metin" },
+  "optionDesc_actAs": {
+    "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/ai - persons @1/dist/ai-personas.json adresinden persona olarak hareket edin"
+  },
   "optionDesc_asciiArt": { "message": "İsteğe bağlı konunun ASCII sanatını işleyin" },
   "optionDesc_commitMsgExample": { "message": "-- commit - msg için başvuruya örnek msg" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 kullanıcı arayüzünü görüntülemek için dil kodu" },

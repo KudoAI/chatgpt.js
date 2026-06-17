@@ -77,6 +77,9 @@
   "optionDesc_provider": { "message": "Pêşkêşvan ji bo API-ya sohbetê" },
   "optionDesc_query": { "message": "Pirs ji bo şandina AI" },
   "optionDesc_summarize": { "message": "Rê an URL bo pel an nivîsa ku were kurtkirin" },
+  "optionDesc_actAs": {
+    "message": "Wekî persona ji https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json tevbigerin."
+  },
   "optionDesc_asciiArt": { "message": "Hunera ASCII ya mijara bijarte nîşan bide" },
   "optionDesc_commitMsgExample": { "message": "Nimûneya peyamê ji bo --commit-msg bo referansê" },
   "optionDesc_uiLang": { "message": "Koda ISO 639-1 ya zimanê ji bo nîşandana UI-ê" },

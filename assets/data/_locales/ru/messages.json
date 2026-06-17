@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Провайдер API чата" },
   "optionDesc_query": { "message": "Запрос на отправку ИИ" },
   "optionDesc_summarize": { "message": "Путь или URL-адрес к файлу или тексту для обобщения" },
+  "optionDesc_actAs": {
+    "message": "Действуйте как персона с https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Визуализация ASCII-арта необязательного предмета" },
   "optionDesc_commitMsgExample": { "message": "Пример сообщения для --commit-msg по ссылке" },
   "optionDesc_uiLang": { "message": "Код языка ISO 639-1 для отображения пользовательского интерфейса" },

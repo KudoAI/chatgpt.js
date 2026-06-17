@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Სასაუბრო API-ს მომწოდებელი" },
   "optionDesc_query": { "message": "Მოთხოვნა AI-ს გასაგზავნად" },
   "optionDesc_summarize": { "message": "Ბილიკი ან URL ფაილის ან ტექსტის შესაჯამებლად" },
+  "optionDesc_actAs": {
+    "message": "Იმოქმედეთ, როგორც პიროვნება https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json-დან"
+  },
   "optionDesc_asciiArt": { "message": "Არასავალდებულო სუბიექტის ASCII ხელოვნების რენდერი" },
   "optionDesc_commitMsgExample": { "message": "Მაგალითი msg --commit-msg-ვის შედარებაზე" },
   "optionDesc_uiLang": { "message": "ISO 639-1 ენის კოდი UI-ს საჩვენებლად" },

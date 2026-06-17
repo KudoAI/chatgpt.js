@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "ಚಾಟ್ API ಗಾಗಿ ಒದಗಿಸುವವರು" },
   "optionDesc_query": { "message": "AI ಕಳುಹಿಸಲು ಪ್ರಶ್ನೆ" },
   "optionDesc_summarize": { "message": "ಫೈಲ್‌ಗೆ ಮಾರ್ಗ ಅಥವಾ URL ಅಥವಾ ಸಾರಾಂಶಕ್ಕೆ ಪಠ್ಯ" },
+  "optionDesc_actAs": {
+    "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas@1/dist/ai-personas.json ನಿಂದ ವ್ಯಕ್ತಿತ್ವವಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸಿ"
+  },
   "optionDesc_asciiArt": { "message": "ಐಚ್ಛಿಕ ವಿಷಯದ ASCII ಕಲೆಯನ್ನು ಒದಗಿಸಿ" },
   "optionDesc_commitMsgExample": { "message": "ಉದಾಹರಣೆ msg ಗಾಗಿ --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "UI ಅನ್ನು ಪ್ರದರ್ಶಿಸಲು ISO 639-1 ಭಾಷೆಯ ಸಂಕೇತ" },

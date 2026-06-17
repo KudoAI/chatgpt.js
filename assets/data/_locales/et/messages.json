@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Vestluse API pakkuja" },
   "optionDesc_query": { "message": "Tehisintellekti saatmise päring" },
   "optionDesc_summarize": { "message": "Faili või teksti tee või URL kokkuvõtmiseks" },
+  "optionDesc_actAs": {
+    "message": "Tegutse isikuna aadressilt https://cdn.jsdelivr.net/npm/ @kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Valikulise teema ASCII-kunstiteose renderdamine" },
   "optionDesc_commitMsgExample": { "message": "Näidissõnum viitele --commit-msg" },
   "optionDesc_uiLang": { "message": "ISO 639-1 keelekood kasutajaliidese kuvamiseks" },

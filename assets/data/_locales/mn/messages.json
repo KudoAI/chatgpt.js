@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Чат API-ийн үйлчилгээ үзүүлэгч" },
   "optionDesc_query": { "message": "AI илгээх хүсэлт" },
   "optionDesc_summarize": { "message": "Дүгнэлт хийх зам эсвэл URL файл эсвэл текст рүү чиглэнэ" },
+  "optionDesc_actAs": {
+    "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/a-personas@1/dist/ai-personas.json -аас хувь хүний хувьд ажиллах"
+  },
   "optionDesc_asciiArt": { "message": "Нэмэлт субьектуудын Render ASCII урлаг" },
   "optionDesc_commitMsgExample": { "message": "-commit-msg-ийн жишээлбэл:" },
   "optionDesc_uiLang": { "message": "UI-ийг харуулахын тулд ISO 639-1 хэлний код" },

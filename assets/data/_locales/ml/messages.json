@@ -75,6 +75,9 @@
   "optionDesc_provider": { "message": "ചാറ്റ് API-നുള്ള ദാതാവ്" },
   "optionDesc_query": { "message": "AI അയയ്‌ക്കാനുള്ള അന്വേഷണം" },
   "optionDesc_summarize": { "message": "ഫയലിലേക്കുള്ള പാത അല്ലെങ്കിൽ URL അല്ലെങ്കിൽ സംഗ്രഹിക്കാനുള്ള വാചകം" },
+  "optionDesc_actAs": {
+    "message": "Https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json-ൽ നിന്നുള്ള വ്യക്തിത്വമായി പ്രവർത്തിക്കുക"
+  },
   "optionDesc_asciiArt": { "message": "ഓപ്ഷണൽ വിഷയത്തിന്റെ ASCII ആർട്ട് റെൻഡർ ചെയ്യുക" },
   "optionDesc_commitMsgExample": { "message": "--commit-msg to reference-നുള്ള ഉദാഹരണം msg" },
   "optionDesc_uiLang": { "message": "യുഐ പ്രദർശിപ്പിക്കുന്നതിനുള്ള ISO 639-1 ഭാഷാ കോഡ്" },

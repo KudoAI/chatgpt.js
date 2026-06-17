@@ -81,6 +81,9 @@
   "optionDesc_provider": { "message": "Zo so ayeke mû maboko na azo ti sara lisoro na ndö ti Internet" },
   "optionDesc_query": { "message": "Mbi leke ti tokua mbeni mbeti na mo" },
   "optionDesc_summarize": { "message": "Lege wala URL ti faïl wala text ti tene a sara tënë ni na nduru tënë" },
+  "optionDesc_actAs": {
+    "message": "Sara ye tongana zo ti https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "A yeke na lege ti kode ti fango tënë ti kodoro ti Israël." },
   "optionDesc_commitMsgExample": { "message": "Tapande msg for --commit-msg ti sara tënë" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code ti yanga ti kodoro ti fa UI na" },

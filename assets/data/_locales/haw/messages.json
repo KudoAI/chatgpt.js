@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Mea hoʻolako no ka API kamaʻilio" },
   "optionDesc_query": { "message": "Nīnau e hoʻouna i ka AI" },
   "optionDesc_summarize": { "message": "Ala a i ʻole URL i ka faila a i ʻole kikokikona e hōʻuluʻulu manaʻo" },
+  "optionDesc_actAs": {
+    "message": "E hana ma ke ʻano he persona mai https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Hoʻopuka i ke kiʻi ASCII o ke kumuhana koho" },
   "optionDesc_commitMsgExample": { "message": "Laʻana leka no --commit-msg i ka kuhikuhi" },
   "optionDesc_uiLang": { "message": "ʻO ke code ʻōlelo ISO 639-1 e hōʻike i ka UI ma" },

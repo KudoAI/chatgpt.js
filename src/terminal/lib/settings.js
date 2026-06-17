@@ -19,6 +19,7 @@ module.exports = {
             regex: /^--?(?:q|query|ask|send)(?:[=\s].*|$)/, get defaultVal() { return cli.msgs.query_hi }
         },
         summarize: { type: 'param', valType: 'filepath', allowText: true, regex: /^--?s(?:ummarize)?(?:[=\s].*|$)/ },
+        actAs: { type: 'param', regex: /^--?(?:P|act[-_]?as)(?:[=\s].*|$)/ },
         asciiArt: { type: 'param', valRequired: false, regex: /^--?a(?:scii[-_]?)?a(?:rt)?(?:[=\s].*|$)/ },
         commitMsgExample: { type: 'param', regex: /^--?(?:G|commit[-_]?me?ss?a?ge?[-_]?example)$/ },
         config: { type: 'param', valType: 'filepath', regex: /^--?c(?:onfig)?(?:[=\s].*|$)/ },

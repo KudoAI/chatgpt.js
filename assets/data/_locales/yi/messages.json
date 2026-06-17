@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "פּראַוויידער פֿאַר טשאַט API" },
   "optionDesc_query": { "message": "אָנפֿרעג צו שיקן קינסטלעכע אינטעליגענץ" },
   "optionDesc_summarize": { "message": "דרך אדער URL צו טעקע אדער טעקסט צו צוזאמענפאסן" },
+  "optionDesc_actAs": {
+    "message": "זיך אויפפירן ווי א פערזאָנאַ פֿון https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "רענדער ASCII קונסט פון אפציאנעלן סוביעקט" },
   "optionDesc_commitMsgExample": { "message": "בייַשפּיל מעסעדזש פֿאַר --commit-msg צו רעפֿערענץ" },
   "optionDesc_uiLang": { "message": "ISO 639-1 קאָד פֿון שפּראַך צו ווײַזן באַניצער־אינטערפֿייס אין" },

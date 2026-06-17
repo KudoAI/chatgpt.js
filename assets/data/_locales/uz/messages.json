@@ -75,6 +75,9 @@
   "optionDesc_provider": { "message": "Chat API uchun provayder" },
   "optionDesc_query": { "message": "Sun'iy intellektni yuborish uchun so'rov" },
   "optionDesc_summarize": { "message": "Faylga yo'l yoki URL yoki umumlashtirish uchun matn" },
+  "optionDesc_actAs": {
+    "message": "https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json manzilidan shaxs sifatida harakat qiling"
+  },
   "optionDesc_asciiArt": { "message": "Ixtiyoriy mavzuning ASCII rasmini renderlash" },
   "optionDesc_commitMsgExample": { "message": "Malumot uchun --commit-msg uchun misol msg" },
   "optionDesc_uiLang": { "message": "UI ni ko'rsatish uchun ISO 639-1 til kodi" },

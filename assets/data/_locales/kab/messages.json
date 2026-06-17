@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Asebded i tmaziɣt API" },
   "optionDesc_query": { "message": "Affinez votre recherche pour amd" },
   "optionDesc_summarize": { "message": "Abrid neɣ URL i ufaylu neɣ n uḍris akken ad ssiwḍeɣ" },
+  "optionDesc_actAs": {
+    "message": "Activity as persona from https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Tags relatifs à \"optional subject\"" },
   "optionDesc_commitMsgExample": { "message": "Tags relatifs à \"--commit-msg\"" },
   "optionDesc_uiLang": { "message": "Tutlayt ISO 639-1 i wakken ad d-tban deg" },

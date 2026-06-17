@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Þjónustuaðili fyrir API fyrir spjall" },
   "optionDesc_query": { "message": "Fyrirspurn til að senda gervigreind" },
   "optionDesc_summarize": { "message": "Slóð eða slóð á skrá eða texta sem á að draga saman" },
+  "optionDesc_actAs": {
+    "message": "Starfaðu sem persóna frá https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Render ASCII art of optional subject" },
   "optionDesc_commitMsgExample": { "message": "Dæmi um msg fyrir --commit-msg tilvísun" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kóði tungumáls til að sýna notendaviðmót í" },

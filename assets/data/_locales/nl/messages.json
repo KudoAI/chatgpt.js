@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Provider voor chat-API" },
   "optionDesc_query": { "message": "Vraag om AI te verzenden" },
   "optionDesc_summarize": { "message": "Pad of URL naar bestand of tekst om samen te vatten" },
+  "optionDesc_actAs": {
+    "message": "Fungeren als persona van https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Render ASCII-kunst van optioneel vak" },
   "optionDesc_commitMsgExample": { "message": "Voorbeeld msg voor --commit-msg naar referentie" },
   "optionDesc_uiLang": { "message": "ISO 639-1 taalcode om de gebruikersinterface weer te geven in" },

@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Tērzēšanas API nodrošinātājs" },
   "optionDesc_query": { "message": "Vaicājums, lai nosūtītu MI" },
   "optionDesc_summarize": { "message": "Kopsavilkuma faila vai teksta ceļš vai URL" },
+  "optionDesc_actAs": {
+    "message": "Rīkojieties kā persona no https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Renderēt neobligātā priekšmeta ASCII mākslu" },
   "optionDesc_commitMsgExample": { "message": "Piemērs --commit-msg uz atsauci" },
   "optionDesc_uiLang": { "message": "ISO 639-1 valodas kods, lai parādītu UI" },

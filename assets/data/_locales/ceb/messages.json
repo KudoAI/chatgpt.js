@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Provider alang sa chat API" },
   "optionDesc_query": { "message": "Себуано sa pagpadala sa usa ka [" },
   "optionDesc_summarize": { "message": "Pamaagi o URL sa file o teksto sa pag-summarize" },
+  "optionDesc_actAs": {
+    "message": "Paglihok isip persona gikan sahttps://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Render ASCII arte sa opsyonal nga hilisgutan" },
   "optionDesc_commitMsgExample": { "message": "Pananglitan msg alang sa --commit-msg sa pakisayran" },
   "optionDesc_uiLang": { "message": "ISO 639-1 nga kodigo sa sinultian aron ipakita ang UI sa" },

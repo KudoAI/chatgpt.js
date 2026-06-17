@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "د چیټ API لپاره چمتو کونکی" },
   "optionDesc_query": { "message": "د AI لیږلو پوښتنه" },
   "optionDesc_summarize": { "message": "د لنډیز لپاره لاره یا URL فایل کولو یا متن ته" },
+  "optionDesc_actAs": {
+    "message": "د https://cdn.jsdelivr.net/npm/@ kudoai/ a-personas@1/ dist/a-personas.json څخه د شخص په توګه عمل وکړئ"
+  },
   "optionDesc_asciiArt": { "message": "د Render ASCII د اختیاري موضوع هنر" },
   "optionDesc_commitMsgExample": { "message": "د --commit - msg لپاره د حوالې لپاره بېلګه msg" },
   "optionDesc_uiLang": { "message": "په کې د UI ښودلو لپاره د ISO 639-1 د ژبې کوډ" },

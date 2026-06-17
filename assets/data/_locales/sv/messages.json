@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Leverantör för chatt-API" },
   "optionDesc_query": { "message": "Fråga för att skicka AI" },
   "optionDesc_summarize": { "message": "Sökväg eller URL till fil eller text för att sammanfatta" },
+  "optionDesc_actAs": {
+    "message": "Agera som persona från https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Rendera ASCII-konst av valfritt ämne" },
   "optionDesc_commitMsgExample": { "message": "Exempel på msg för --commit-msg till referens" },
   "optionDesc_uiLang": { "message": "ISO 639-1-kod för språk för att visa användargränssnitt i" },

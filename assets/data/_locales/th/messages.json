@@ -75,6 +75,9 @@
   "optionDesc_provider": { "message": "ผู้ให้บริการสำหรับ API การแชท" },
   "optionDesc_query": { "message": "สอบถามเพื่อส่ง AI" },
   "optionDesc_summarize": { "message": "พาธหรือ URL ไปยังไฟล์หรือข้อความเพื่อสรุป" },
+  "optionDesc_actAs": {
+    "message": "ทำหน้าที่เป็นบุคคลจาก https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas @ 1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "RENDER ASCII ART of OPTIONAL SUBJECT" },
   "optionDesc_commitMsgExample": { "message": "ตัวอย่างผงชูรสสำหรับ -- commit-msg เพื่ออ้างอิง" },
   "optionDesc_uiLang": { "message": "รหัสภาษา ISO 639 -1 เพื่อแสดง UI ใน" },

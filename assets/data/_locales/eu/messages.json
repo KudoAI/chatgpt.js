@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Txat APIaren hornitzailea" },
   "optionDesc_query": { "message": "AI bidaltzeko kontsulta" },
   "optionDesc_summarize": { "message": "Fitxategirako edo laburbiltzeko testurako bidea edo URLa" },
+  "optionDesc_actAs": {
+    "message": "Jardu pertsona gisa https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json helbidetik"
+  },
   "optionDesc_asciiArt": { "message": "Aukerako ikasgaiaren ASCII artea errendatu" },
   "optionDesc_commitMsgExample": { "message": "Mezuaren adibidea --commit-msg erreferentziarako" },
   "optionDesc_uiLang": { "message": "ISO 639-1 UI bistaratzeko hizkuntzaren kodea" },

@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Penyedia api obrolan" },
   "optionDesc_query": { "message": "Kueri untuk mengirim AI" },
   "optionDesc_summarize": { "message": "Jalur atau URL ke file atau teks untuk diringkas" },
+  "optionDesc_actAs": {
+    "message": "Bertindak sebagai persona dari https://cdn.jsdelivr.net/npm/ @kudoai/ai -personas @1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Render seni ASCII subjek opsional" },
   "optionDesc_commitMsgExample": { "message": "Contoh msg untuk -- commit - msg untuk referensi" },
   "optionDesc_uiLang": { "message": "Kode bahasa ISO 639 -1 untuk menampilkan UI di" },

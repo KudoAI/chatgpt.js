@@ -73,6 +73,7 @@
   "optionDesc_provider": { "message": "ናይ ቻት ኤፒአይ ኣከፋፋሊ" },
   "optionDesc_query": { "message": "AI ንምልኣኽ ሓተተ" },
   "optionDesc_summarize": { "message": "መገዲ ወይ URL ናብ ፋይል ወይ ጽሑፍ ንምቕራብ" },
+  "optionDesc_actAs": { "message": "ካብ https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas @1/dist/ai-personas.json" },
   "optionDesc_asciiArt": { "message": "ናይ ምምራጽ ኣርእስቲ ናይ ASCII ስነ ጥበብ Render" },
   "optionDesc_commitMsgExample": { "message": "ኣብነት msg for --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "ISO 639-1 ኮድ ቋንቋ ኣብ" },

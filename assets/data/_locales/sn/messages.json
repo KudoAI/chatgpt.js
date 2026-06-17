@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Mupi wekukurukurirana API" },
   "optionDesc_query": { "message": "Mubvunzo kutumira AI" },
   "optionDesc_summarize": { "message": "Path or URL to file or text to summarize" },
+  "optionDesc_actAs": {
+    "message": "Ita semunhu kubva https://cdn.jsdelivr.net/npm/ @kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Ratidza ASCII unyanzvi hwekuzvisarudzira nyaya" },
   "optionDesc_commitMsgExample": { "message": "Muenzaniso msg ye --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "ISO 639-1 remutauro kuratidza UI muna" },

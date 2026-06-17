@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "채팅 API 제공업체" },
   "optionDesc_query": { "message": "AI 전송 쿼리" },
   "optionDesc_summarize": { "message": "파일 경로 또는 URL 또는 요약할 텍스트" },
+  "optionDesc_actAs": {
+    "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas @ 1/dist/ai-personas.json에서 페르소나로 활동"
+  },
   "optionDesc_asciiArt": { "message": "선택 과목의 ASCII 아트 렌더링" },
   "optionDesc_commitMsgExample": { "message": "참조할 --commit-msg의 msg 예" },
   "optionDesc_uiLang": { "message": "UI를 표시할 언어의 ISO 639-1 코드" },

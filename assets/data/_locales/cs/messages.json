@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Poskytovatel pro chat API" },
   "optionDesc_query": { "message": "Dotaz na odeslání umělé inteligence" },
   "optionDesc_summarize": { "message": "Cesta nebo adresa URL k souboru nebo textu k shrnutí" },
+  "optionDesc_actAs": {
+    "message": "Působit jako persona z https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Vykreslit ASCII umění volitelného předmětu" },
   "optionDesc_commitMsgExample": { "message": "Příklad msg pro odkaz --commit-msg" },
   "optionDesc_uiLang": { "message": "Kód jazyka ISO 639-1 pro zobrazení uživatelského rozhraní" },

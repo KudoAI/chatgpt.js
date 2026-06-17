@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Chat-sovellusliittymän tarjoaja" },
   "optionDesc_query": { "message": "Kysely tekoälyn lähettämiseksi" },
   "optionDesc_summarize": { "message": "Yhteenvetotiedoston tai -tekstin polku tai URL-osoite" },
+  "optionDesc_actAs": {
+    "message": "Toimi henkilönä osoitteesta https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Renderöi valinnaisen aiheen ASCII-taide" },
   "optionDesc_commitMsgExample": { "message": "Esimerkki msg kohteelle --commit-msg viitteeksi" },
   "optionDesc_uiLang": { "message": "Iso 639-1 -kielikoodi käyttöliittymän näyttämiseksi" },

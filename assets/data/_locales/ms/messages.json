@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Pembekal untuk api sembang" },
   "optionDesc_query": { "message": "Pertanyaan untuk menghantar AI" },
   "optionDesc_summarize": { "message": "Laluan atau URL untuk fail atau teks untuk diringkaskan" },
+  "optionDesc_actAs": {
+    "message": "Bertindak sebagai persona daripada https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Terapkan seni ASCII subjek pilihan" },
   "optionDesc_commitMsgExample": { "message": "Contoh msg untuk --commit-msg untuk rujukan" },
   "optionDesc_uiLang": { "message": "Kod bahasa ISO 639-1 untuk memaparkan UI" },

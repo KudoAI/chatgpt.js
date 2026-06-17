@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Darparwr ar gyfer API sgwrsio" },
   "optionDesc_query": { "message": "Ymholiad i anfon at" },
   "optionDesc_summarize": { "message": "Llwybr neu LAU i ffeil neu destun i'w grynhoi" },
+  "optionDesc_actAs": {
+    "message": "Gweithredwch fel persona o https://cdn.jsdelivr.net/npm/ @kudoai/ai - personas @1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Rendro celf ASCII o bwnc dewisol" },
   "optionDesc_commitMsgExample": { "message": "Enghraifft o neges am -- commit - msg i gyfeirio ato" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 cod iaith i ddangos UI yn" },

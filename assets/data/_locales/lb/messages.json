@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Provider fir Chat API" },
   "optionDesc_query": { "message": "Query ze schécken AI" },
   "optionDesc_summarize": { "message": "Wege oder URL zu Datei oder Text um zu resumieren" },
+  "optionDesc_actAs": {
+    "message": "Akt als Persoun vun https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Render ASCII Konscht vum fakultativen Thema" },
   "optionDesc_commitMsgExample": { "message": "Beispill msg fir --commit-msg zu Referenz" },
   "optionDesc_uiLang": { "message": "ISO 639-1 Code der Sprache um UI an zu zeigen" },

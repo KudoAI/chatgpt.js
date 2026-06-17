@@ -73,6 +73,7 @@
   "optionDesc_provider": { "message": "聊天API的提供商" },
   "optionDesc_query": { "message": "发送AI查询" },
   "optionDesc_summarize": { "message": "要汇总的文件或文本的路径或URL" },
+  "optionDesc_actAs": { "message": "扮演https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas @ 1/dist/ai-personas.json的角色" },
   "optionDesc_asciiArt": { "message": "渲染可选主题的ASCII艺术" },
   "optionDesc_commitMsgExample": { "message": "用于引用--commit-msg的示例消息" },
   "optionDesc_uiLang": { "message": "用于显示UI的语言的ISO 639-1代码" },

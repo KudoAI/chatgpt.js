@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Csevegési API szolgáltatója" },
   "optionDesc_query": { "message": "AI küldésének lekérdezése" },
   "optionDesc_summarize": { "message": "Az összegezni kívánt fájl vagy szöveg elérési útja vagy URL-je" },
+  "optionDesc_actAs": {
+    "message": "Személyként való fellépés a https://cdn.jsdelivr.net/npm/@kudoai/ai-personas @1/dist/ai-personas.json webhelyről"
+  },
   "optionDesc_asciiArt": { "message": "Opcionális téma ASCII-művészetének leképezése" },
   "optionDesc_commitMsgExample": { "message": "Példa msg for --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "A felhasználói felület megjelenítéséhez használt nyelv ISO 639-1 kódja" },

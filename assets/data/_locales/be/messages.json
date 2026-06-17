@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Правайдэр API чата" },
   "optionDesc_query": { "message": "Запыт для адпраўкі ІІ" },
   "optionDesc_summarize": { "message": "Шлях або URL да файла або тэксту для абагульнення" },
+  "optionDesc_actAs": {
+    "message": "Дзейнічаць як асоба з https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Прадастаўленне ASCII-мастацтва неабавязковага прадмета" },
   "optionDesc_commitMsgExample": { "message": "Прыклад msg для -- commit-msg для спасылкі" },
   "optionDesc_uiLang": { "message": "Код мовы ISO 639-1 для адлюстравання карыстацкага інтэрфейсу ў" },

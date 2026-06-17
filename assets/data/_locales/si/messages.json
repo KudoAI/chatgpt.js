@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "චැට් API සඳහා සපයන්නා" },
   "optionDesc_query": { "message": "AI යැවීමට විමසුම" },
   "optionDesc_summarize": { "message": "සාරාංශ කිරීමට ගොනුවකට හෝ පෙළකට මාර් ‍ ගය හෝ URL" },
+  "optionDesc_actAs": {
+    "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas@1/dist/ai-personas.json වෙතින් පුද්ගලයකු ලෙස ක්රියා කරන්න"
+  },
   "optionDesc_asciiArt": { "message": "විකල්ප විෂය පිළිබඳ ASCII කලාව ඉදිරිපත් කරන්න" },
   "optionDesc_commitMsgExample": { "message": "--commit-msg to reference සඳහා උදාහරණ msg" },
   "optionDesc_uiLang": { "message": "ISO 639-1 භාෂා කේතය ප්රදර්ශනය කිරීමට UI" },

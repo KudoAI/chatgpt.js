@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "مزود لواجهة برمجة تطبيقات الدردشة" },
   "optionDesc_query": { "message": "استعلام لإرسال ذكاء اصطناعي" },
   "optionDesc_summarize": { "message": "المسار أو عنوان URL للملف أو النص المراد تلخيصه" },
+  "optionDesc_actAs": {
+    "message": "العمل كشخصية من https://cdn.jsdelivr.net/npm/ @kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "تقديم مادة ASCII الاختيارية" },
   "optionDesc_commitMsgExample": { "message": "مثال على msg لـ - الالتزام - msg كمرجع" },
   "optionDesc_uiLang": { "message": "رمز لغة ISO 639-1 لعرض واجهة المستخدم في" },

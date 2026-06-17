@@ -73,6 +73,7 @@
   "optionDesc_provider": { "message": "Çat API-niň paýlaýan" },
   "optionDesc_query": { "message": "Men ony ibermek isleýärin" },
   "optionDesc_summarize": { "message": "Faýlyň ýa-da metiniň ýoly ýa-da URL-i gysgaça" },
+  "optionDesc_actAs": { "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas @1/dist/ai-personas.json" },
   "optionDesc_asciiArt": { "message": "ASCII sanaty saýlap-seçen tema" },
   "optionDesc_commitMsgExample": { "message": "- comit-msg üçin mysal" },
   "optionDesc_uiLang": { "message": "ISO 639-1 dil kodyny görkezmek üçin" },

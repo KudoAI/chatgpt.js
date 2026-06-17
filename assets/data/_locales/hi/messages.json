@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "चैट एपीआई के लिए प्रदाता" },
   "optionDesc_query": { "message": "AI भेजने के लिए क्वेरी" },
   "optionDesc_summarize": { "message": "संक्षेप में फ़ाइल या टेक्स्ट करने के लिए पथ या URL" },
+  "optionDesc_actAs": {
+    "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas @1/dist/ai-personas.json से व्यक्तित्व के रूप में कार्य करें"
+  },
   "optionDesc_asciiArt": { "message": "वैकल्पिक विषय की ASCII कला प्रस्तुत करें" },
   "optionDesc_commitMsgExample": { "message": "-- commit - msg to reference के लिए उदाहरण संदेश" },
   "optionDesc_uiLang": { "message": "यूआई प्रदर्शित करने के लिए भाषा का आईएसओ 639 -1 कोड" },

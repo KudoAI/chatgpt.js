@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Solaraiche airson API cabadaich" },
   "optionDesc_query": { "message": "Accueil > Accueil > To send ai" },
   "optionDesc_summarize": { "message": "Slighe no URL gu faidhle no teacsa gus geàrr - chunntas a dhèanamh air" },
+  "optionDesc_actAs": {
+    "message": "Cuir an gnìomh mar persona bhohttps://cdn.jsdelivr.net/npm/ @kudoai/ai - personas @1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Santarcangelo di Romagna" },
   "optionDesc_commitMsgExample": { "message": "Eisimpleir msg airson -- commit - msg airson iomradh" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 Code of Language gus UI a thaisbeanadh ann an UI" },

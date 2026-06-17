@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Verskaffer vir klets-API" },
   "optionDesc_query": { "message": "Navraag om AI te stuur" },
   "optionDesc_summarize": { "message": "Pad of Url na lêer of teks om op te som" },
+  "optionDesc_actAs": {
+    "message": "Wet as persona van https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Gee ASCII kuns van opsionele onderwerp" },
   "optionDesc_commitMsgExample": { "message": "Voorbeeld msg vir --commit-msg om te verwys" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kode van taal te vertoon UI in" },

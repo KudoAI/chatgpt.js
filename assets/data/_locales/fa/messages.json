@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "ارائه دهنده API چت" },
   "optionDesc_query": { "message": "درخواست برای ارسال هوش مصنوعی" },
   "optionDesc_summarize": { "message": "مسیر یا URL برای فایل یا متن برای خلاصه کردن" },
+  "optionDesc_actAs": {
+    "message": "به عنوان شخصیت از https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json عمل کنید"
+  },
   "optionDesc_asciiArt": { "message": "رندر کردن طرح ASCII از موضوع اختیاری" },
   "optionDesc_commitMsgExample": { "message": "مثالی از پیام برای ارجاع به --commit-msg" },
   "optionDesc_uiLang": { "message": "کد زبان ISO 639-1 برای نمایش رابط کاربری" },

@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Davatelj API-ja za chat" },
   "optionDesc_query": { "message": "Upit za slanje umjetne inteligencije" },
   "optionDesc_summarize": { "message": "Putanja ili URL za datoteku ili tekst za sažimanje" },
+  "optionDesc_actAs": {
+    "message": "Djelujte kao osoba s https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Iscrtajte ASCII umjetnost neobaveznog predmeta" },
   "optionDesc_commitMsgExample": { "message": "Primjer poruke za --commit-msg na referencu" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kod jezika za prikaz korisničkog sučelja u" },

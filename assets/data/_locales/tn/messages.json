@@ -75,6 +75,9 @@
   "optionDesc_provider": { "message": "Motlamedi wa motlotlo wa API" },
   "optionDesc_query": { "message": "Query to send AI" },
   "optionDesc_summarize": { "message": "Path or URL to file or text to summarize" },
+  "optionDesc_actAs": {
+    "message": "Dira jaaka motho go tswa gohttps://cdn.jsdelivr.net/npm/@ kudoai/ai-personas @1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "E fa setshwantsho sa ASCII sa motsayakarolo yo o ikgethelang" },
   "optionDesc_commitMsgExample": { "message": "Example msg for --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "ISO 639-1 code of language to display UI in" },

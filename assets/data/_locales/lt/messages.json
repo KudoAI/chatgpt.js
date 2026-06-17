@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Pokalbių API teikėjas" },
   "optionDesc_query": { "message": "Užklausa DI siuntimui" },
   "optionDesc_summarize": { "message": "Kelias arba URL failui arba tekstui apibendrinti" },
+  "optionDesc_actAs": {
+    "message": "Elkitės kaip asmuo iš https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Atvaizduoti ASCII pasirenkamo dalyko meną" },
   "optionDesc_commitMsgExample": { "message": "Pavyzdys --commit-msg į nuorodą" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kalbos kodas, skirtas vartotojo sąsajai rodyti" },

@@ -79,6 +79,9 @@
   "optionDesc_provider": { "message": "زیادکردنی هاوپۆل بۆ chat API" },
   "optionDesc_query": { "message": "ناردنی ئه كاونت" },
   "optionDesc_summarize": { "message": "ڕاستاندنی file or text گۆکردنەکان" },
+  "optionDesc_actAs": {
+    "message": "وەک کەسایەتییەک لە https://cdn.jsdelivr.net/npm/ @ kudoai/ai - personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Ckbwiki ھونەری ھەڵبژێردراو" },
   "optionDesc_commitMsgExample": { "message": "Msg بێژە کردن بە دانمارکی [da]" },
   "optionDesc_uiLang": { "message": "ئایزۆ 639-1 کۆدی زمان بۆ پیشاندانی UI" },

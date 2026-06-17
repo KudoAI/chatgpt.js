@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Mpanome ny chat API" },
   "optionDesc_query": { "message": "Fangatahana handefa AI" },
   "optionDesc_summarize": { "message": "Ny sori-dàlana na URL atao anaty rakitra na soratra hofehezina" },
+  "optionDesc_actAs": {
+    "message": "Ataovy toy ny olona avy amin'nyhttps://cdn.jsdelivr.net/npm/@ kudoai/a-personas @1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Render ASCII zavakanto ny tsy voatery foto-kevitra" },
   "optionDesc_commitMsgExample": { "message": "Msg for -commit-msg to reference" },
   "optionDesc_uiLang": { "message": "ISO 639-1 fehezan-dalàna ny fiteny mba haneho UI in" },

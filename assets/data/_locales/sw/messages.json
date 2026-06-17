@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Mtoa huduma wa API ya gumzo" },
   "optionDesc_query": { "message": "Swali la kutuma AI" },
   "optionDesc_summarize": { "message": "PATH au URL ya faili au maandishi ili kufupisha" },
+  "optionDesc_actAs": {
+    "message": "Fanya kama mtu binafsi kutokahttps://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Toa sanaa ya ASCII ya mada ya hiari" },
   "optionDesc_commitMsgExample": { "message": "Mfano wa msg ya --commit-msg kwa marejeleo" },
   "optionDesc_uiLang": { "message": "Msimbo wa lugha wa ISO 639-1 kuonyesha UI katika" },

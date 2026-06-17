@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Чат API провайдері" },
   "optionDesc_query": { "message": "ЖИ жіберу сұранысы" },
   "optionDesc_summarize": { "message": "Қорытындылау үшін файлға немесе мәтінге жол немесе URL" },
+  "optionDesc_actAs": {
+    "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas@1/dist/ai-personas.json сайтынан персона ретінде әрекет етіңіз"
+  },
   "optionDesc_asciiArt": { "message": "Қосымша пәннің ASCII өнерін көрсету" },
   "optionDesc_commitMsgExample": { "message": "---commit-msg үшін -commit-msg сілтемесіне арналған мысал" },
   "optionDesc_uiLang": { "message": "Пайдаланушы интерфейсін көрсету үшін ISO 639-1 тіл коды" },

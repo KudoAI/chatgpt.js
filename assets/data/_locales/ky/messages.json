@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Чат API үчүн камсыздоочу" },
   "optionDesc_query": { "message": "AI жөнөтүү үчүн суроо" },
   "optionDesc_summarize": { "message": "Undo-type" },
+  "optionDesc_actAs": {
+    "message": "Https://cdn.jsdelivr.net/npm/ тартып персона катары иш-аракет @kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Кошумча предметтин ASCII искусствосун көрсөтүү" },
   "optionDesc_commitMsgExample": { "message": "Мисал msg үчүн --commit-msg үчүн шилтеме" },
   "optionDesc_uiLang": { "message": "ISO 639-1 тил коду UI көрсөтүү үчүн" },

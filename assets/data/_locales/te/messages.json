@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "చాట్ API కోసం ప్రొవైడర్" },
   "optionDesc_query": { "message": "AIని పంపడానికి ప్రశ్న" },
   "optionDesc_summarize": { "message": "ఫైల్ చేయడానికి మార్గం లేదా URL లేదా సంగ్రహించడానికి వచనం" },
+  "optionDesc_actAs": {
+    "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas@1/dist/ai-personas.json నుండి వ్యక్తిగా వ్యవహరించండి"
+  },
   "optionDesc_asciiArt": { "message": "ఐచ్ఛిక విషయం యొక్క ASCII కళను అందించండి" },
   "optionDesc_commitMsgExample": { "message": "--commit-msg to reference కు ఉదాహరణ msg" },
   "optionDesc_uiLang": { "message": "UIని ప్రదర్శించడానికి ISO 639-1 భాషా కోడ్" },

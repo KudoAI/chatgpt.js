@@ -73,6 +73,7 @@
   "optionDesc_provider": { "message": "Chat API སྒྲིག་འཇུག་བྱས་ཚད ། ཐེངས་10 ལས་ཉུང་བ ། ཐོན་རིམ་5.7.1" },
   "optionDesc_query": { "message": "ངས་ཁྱོད་ལ་བཏང་།" },
   "optionDesc_summarize": { "message": "ཡིག་ཆ་དང་ཡིག་ཆ་འདོར་བའི་ལམ་དང་URL" },
+  "optionDesc_actAs": { "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas @1/dist/ai-personas.json" },
   "optionDesc_asciiArt": { "message": "ASCII སྒྱུ་རྩལ ། གདམ་ཁ་རྐྱབས་ཀྱི་གནད་དོན་" },
   "optionDesc_commitMsgExample": { "message": "དཔེར་ན ། msgstr \"msgstr\"" },
   "optionDesc_uiLang": { "message": "ISO 639-1 སྐད་ཡིག་གི་ཁ་བྱང་།" },

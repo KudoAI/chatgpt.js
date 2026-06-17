@@ -75,6 +75,9 @@
   "optionDesc_summarize": {
     "message": "Página principal > Temas Variados > Resumen resumen resumen resumen resumen resumen resumen res"
   },
+  "optionDesc_actAs": {
+    "message": "Acá como persona de https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Asuncion Art of Optional Topic" },
   "optionDesc_commitMsgExample": { "message": "Página principal > Ciencia > Memoria Memoria Memoria Memoria" },
   "optionDesc_uiLang": { "message": "Documente similare cu ISO 639-1 Code of Language" },

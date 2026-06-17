@@ -26,6 +26,7 @@
               : cli.config.fortune ? 'Tell me my fortune the length of a fortune cookie paper.'
               : cli.config.randomAnswer ? 'Generate a single random question on any topic, then answer it.'
               : cli.config.summarize ? `Summarize the following:\n\n${await resolveSrc(cli.config.summarize)}`
+              : cli.config.actAs ? require('@kudoai/ai-personas')[cli.config.actAs]?.prompt
               : cli.config.asciiArt ? `Render a single piece of ascii art of ${
                     typeof cli.config.asciiArt == 'string' ? cli.config.asciiArt : 'a random thing' }.`
               : cli.config.query && typeof cli.config.query == 'string' ? cli.config.query

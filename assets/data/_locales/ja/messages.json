@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "チャットAPIのプロバイダー" },
   "optionDesc_query": { "message": "AIを送信するためのクエリ" },
   "optionDesc_summarize": { "message": "要約するファイルまたはテキストへのパスまたはURL" },
+  "optionDesc_actAs": {
+    "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/ai - personalas @ 1/dist/ai-personas.jsonからペルソナとして行動する"
+  },
   "optionDesc_asciiArt": { "message": "オプションのサブジェクトのASCIIアートをレンダリングする" },
   "optionDesc_commitMsgExample": { "message": "-- commit - msgを参照するためのmsgの例" },
   "optionDesc_uiLang": { "message": "UIを表示する言語のISO 639 -1コード" },

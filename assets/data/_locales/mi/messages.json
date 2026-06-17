@@ -77,6 +77,9 @@
   "optionDesc_provider": { "message": "Kaihoko mo te API korerorero" },
   "optionDesc_query": { "message": "Te tono ki te tuku i a ia" },
   "optionDesc_summarize": { "message": "He ara, he URL rānei hei tuhi, hei kuputuhi rānei hei whakarāpopototanga" },
+  "optionDesc_actAs": {
+    "message": "Mahi rite persona i https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Render ASCII toi o te kaupapa kōwhiringa" },
   "optionDesc_commitMsgExample": { "message": "Tauira msg mo --commit-msg ki te tohutoro" },
   "optionDesc_uiLang": { "message": "ISO 639-1 waehere reo ki te whakaatu UI i roto i" },

@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Ol man i save mekim wok long ol samting bilong skin" },
   "optionDesc_query": { "message": "Mi laik bai yu salim mi i go" },
   "optionDesc_summarize": { "message": "Rot o URL long fail o tok i stap long en" },
+  "optionDesc_actAs": {
+    "message": "Act olsem persona bilong https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Ritim ASCII long ol samting bilong mekim wok" },
   "optionDesc_commitMsgExample": { "message": "Example msg for --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kod bilong tokples bilong soim UI long" },

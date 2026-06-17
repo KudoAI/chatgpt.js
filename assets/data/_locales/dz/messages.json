@@ -75,6 +75,7 @@
   "optionDesc_provider": { "message": "བལྟ་བཤལཔ་ཚུ་གི་དོན་ལུ་ བལྟ་བཤལཔ་" },
   "optionDesc_query": { "message": "བཏང་ནིའི་དོན་ལས་" },
   "optionDesc_summarize": { "message": "ཡིག་སྣོད་དང་ ཡིག་སྣོད་ཚུ་ བསྡུ་སྒྲིག་འབད་ནིའི་ལམ་དང་ URL" },
+  "optionDesc_actAs": { "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas @1/dist/ai-personas.json" },
   "optionDesc_asciiArt": { "message": "གདམ་ཁ་ ཁ་སྐོང་ཚུ་སྟོནམ་ཨིན།." },
   "optionDesc_commitMsgExample": { "message": "དཔེ་གཅིག་ msg for - commit-msg to reference" },
   "optionDesc_uiLang": { "message": "ཨའི་ཟ་ཨོ་༦༣༩-༡ གི་སྐད་ཡིག་གི་ལྡེ་མིག་འདི་ ཨའི་ཟ་ཨོ་༦༣༩-༡ ལུ་སྟོན་" },

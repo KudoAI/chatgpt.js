@@ -75,6 +75,9 @@
   "optionDesc_provider": { "message": "அரட்டை APIக்கான வழங்குநர்" },
   "optionDesc_query": { "message": "AI ஐ அனுப்ப வினவல்" },
   "optionDesc_summarize": { "message": "கோப்புக்கான பாதை அல்லது URL அல்லது சுருக்கமாக உரை" },
+  "optionDesc_actAs": {
+    "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas@1/dist/ai-personas.json இலிருந்து ஆளுமையாக செயல்படுங்கள்"
+  },
   "optionDesc_asciiArt": { "message": "விருப்பமான ஆய்வுக்குட்படுநரின் ASCII கலையை வழங்குதல்" },
   "optionDesc_commitMsgExample": { "message": "உதாரணம் msg for --commit-msg to reference" },
   "optionDesc_uiLang": { "message": "UI ஐக் காண்பிக்க ISO 639-1 மொழிக் குறியீடு" },

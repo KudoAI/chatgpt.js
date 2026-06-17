@@ -12,7 +12,9 @@ async function route(cmd, args, rl) {
             if (!args.length) return log.warn(`${cli.msgs.helpSection_usage}: /summarize <text|filepath|url>`)
             await run.summarize(args.join(' '))
             break
-        } case 'ascii' : case 'art' : case 'a' :
+        } case 'actas' : case 'persona' : case 'aa' :
+            await run.actAs(args.join(' ') || null) ; break
+        case 'ascii' : case 'art' : case 'a' :
             await run.asciiArt(args.join(' ') || null) ; break
         case 'maxchars' : case 'mc' : {
             if (!args.length) return log.info(`${cli.msgs.info_current} maxChars: ${cli.config.maxChars}`)
@@ -114,6 +116,7 @@ function showHelp() {
     -d, --diff                           Generate human-readable git diff and append to --commit-msg if passed.
 
   \x1b[1m${cli.msgs.helpSection_funCmds.toLowerCase()}:\x1b[0m
+    -P, --act-as <persona>               Act as persona from https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json
     -a, --ascii-art [subject]            Render ASCII art of optional subject.
     -f, --fortune                        Tell your fortune.
     -j, --joke                           Tell a joke.
@@ -128,7 +131,7 @@ function showHelp() {
         --debug                          Show debug logs.
 
   \x1b[1mREPL ${cli.msgs.data_slashCmds}:\x1b[0m
-    /help, /exit, /clear, /joke, /fortune, /random, /ascii [subject]
+    /help, /exit, /clear, /joke, /fortune, /random, /actas <persona>, /ascii [subject]
     /summarize <text|file|url>, /stats, /version, /commitmsg, /diff, /init
     /provider <name>, /maxchars <num>, /maxtokens <num>, /turns <num>
     /uilang <code>, /replylang <text>, /commitmsgexample <msg>

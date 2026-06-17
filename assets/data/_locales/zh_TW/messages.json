@@ -73,6 +73,7 @@
   "optionDesc_provider": { "message": "聊天API的提供商" },
   "optionDesc_query": { "message": "查詢以發送AI" },
   "optionDesc_summarize": { "message": "檔案路徑或URL或要摘要的文字" },
+  "optionDesc_actAs": { "message": "扮演https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas @ 1/dist/ai-personas.json的角色" },
   "optionDesc_asciiArt": { "message": "呈現可選主題的ASCII藝術" },
   "optionDesc_commitMsgExample": { "message": "要引用的--commit-msg的示例消息" },
   "optionDesc_uiLang": { "message": "用於顯示UI的語言ISO 639-1代碼" },

@@ -75,6 +75,9 @@
   "optionDesc_provider": { "message": "Söhbət API-si üçün təminatçı" },
   "optionDesc_query": { "message": "AI göndərmək üçün sorğu" },
   "optionDesc_summarize": { "message": "Xülasə etmək üçün fayla və ya mətnə gedən yol və ya URL" },
+  "optionDesc_actAs": {
+    "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas@1/dist/ai-personas.json saytından persona kimi hərəkət edin"
+  },
   "optionDesc_asciiArt": { "message": "ASCII incəsənətinin qeyri-məcburi predmetini göstərin" },
   "optionDesc_commitMsgExample": { "message": "İstinad ediləcək --commit-msg üçün nümunə msg" },
   "optionDesc_uiLang": { "message": "İSO 639-1-də UI-nı göstərmək üçün dilin kodu" },

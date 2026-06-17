@@ -75,6 +75,9 @@
   "optionDesc_provider": { "message": "Provider per chat API" },
   "optionDesc_query": { "message": "Query da inviare all'IA" },
   "optionDesc_summarize": { "message": "Percorso o URL del file o testo da riepilogare" },
+  "optionDesc_actAs": {
+    "message": "Agire come persona da https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Render ASCII art of optional subject" },
   "optionDesc_commitMsgExample": { "message": "Esempio di msg per --commit-msg di riferimento" },
   "optionDesc_uiLang": { "message": "Codice ISO 639-1 della lingua in cui visualizzare l'interfaccia utente" },

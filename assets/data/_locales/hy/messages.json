@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Չատի API - ի մատակարար" },
   "optionDesc_query": { "message": "Հարցում ՝ AI ուղարկելու համար" },
   "optionDesc_summarize": { "message": "Ուղի կամ URL ՝ դեպի ֆայլ կամ տեքստ ՝ ամփոփելու համար" },
+  "optionDesc_actAs": {
+    "message": "Գործեք որպես անձ https://cdn.jsdelivr.net/npm/ @kudoai/ai-personas @1/dist/ai-personas.json կայքից"
+  },
   "optionDesc_asciiArt": { "message": "Ընտրովի առարկայի ASCII արվեստը" },
   "optionDesc_commitMsgExample": { "message": "Օրինակ ՝ msg -- commit - msg - ի համար ՝ հղում կատարելու համար" },
   "optionDesc_uiLang": { "message": "ISO 639 -1 լեզվի կոդը UI - ում ցուցադրելու համար" },

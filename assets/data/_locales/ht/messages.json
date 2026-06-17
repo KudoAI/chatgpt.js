@@ -73,6 +73,9 @@
   "optionDesc_provider": { "message": "Founisè pou chat API" },
   "optionDesc_query": { "message": "Mande pou voye AI" },
   "optionDesc_summarize": { "message": "Chemen oswa URL pou ranpli oswa tèks pou rezime" },
+  "optionDesc_actAs": {
+    "message": "Aji kòm pèsonaj soti nanhttps://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json"
+  },
   "optionDesc_asciiArt": { "message": "Lwe ASCII atizay nan sijè si ou vle" },
   "optionDesc_commitMsgExample": { "message": "Egzanp msg pou ---komite-msg pou referans" },
   "optionDesc_uiLang": { "message": "ISO 639-1 kòd langaj pou montre UI nan" },

@@ -75,6 +75,9 @@
   "optionDesc_provider": { "message": "Chat API အတွက် ပံ့ပိုးသူ" },
   "optionDesc_query": { "message": "AI စေလွှတ်ရန်မေးမြန်းချက်" },
   "optionDesc_summarize": { "message": "အနှစ်ချုပ်ရန် ဖိုင် သို့မဟုတ် စာသားအတွက် လမ်းကြောင်း သို့မဟုတ် URL" },
+  "optionDesc_actAs": {
+    "message": "Https://cdn.jsdelivr.net/npm/ @ kudoai/ai-personas @1/dist/ai-personas.json ထံမှပုဂ္ဂိုလ်တစ်ဦးအဖြစ်ဆောင်ရွက်"
+  },
   "optionDesc_asciiArt": { "message": "ရွေးချယ်နိုင်သောဘာသာရပ် ၏ ASCII အနုပညာကိုတင်ပြပါ" },
   "optionDesc_commitMsgExample": { "message": "ရည်ညွှန်းရန် --commit-msg အတွက် ဥပမာ msg" },
   "optionDesc_uiLang": { "message": "ISO ကို 639-1 ဘာသာစကားကုဒ် UI ကိုပြသရန်" },

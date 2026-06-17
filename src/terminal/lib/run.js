@@ -8,6 +8,8 @@ init.env()
 
 module.exports = {
 
+    actAs(persona) { return this.query(require('@kudoai/ai-personas')[persona]?.prompt) },
+
     asciiArt(subject) {
         const subjectText = subject && typeof subject == 'string' ? subject : 'a random thing'
         return this.query(`Render a single piece of ascii art of ${subjectText}.`)
