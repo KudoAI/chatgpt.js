@@ -36,7 +36,7 @@ module.exports = {
 
     async query(query, options = {}) {
         const chatgpt = require(`../../chatgpt${ env.modes.dev ? '' : '.min' }.js`),
-              loader = require('./loader').create({ width: env.width })
+              loader = require('../components/loader').create({ width: env.width })
 
         if (!chatgpt.config?.apiKeys?.[cli.config.provider])
             chatgpt.setProvider(cli.config.provider, {

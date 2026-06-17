@@ -1,5 +1,5 @@
 const chatgpt = require(`../../chatgpt${ env.modes.dev ? '' : '.min' }.js`), // eslint-disable-line
-      loader = require('./loader').create({ width: env.width }),
+      loader = require('../components/loader').create({ width: env.width }),
       messages = require('./messages')
 
 module.exports = {
