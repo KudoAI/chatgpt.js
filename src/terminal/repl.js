@@ -8,7 +8,7 @@ globalThis.log = require('./lib/log')
 const { build: buildQuery } = require('./lib/query'),
         messages = require('./lib/messages'),
         readline = require('readline/promises'),
-      { route } = require('./lib/router'),
+      { route } = require('./lib/repl/router'),
         run = require('./lib/run')
 
 async function start() {
