@@ -92,43 +92,43 @@ async function route(cmd, args, rl) {
 
 function showHelp() {
     log.data(`  \x1b[1m${cli.msgs.helpSection_params.toLowerCase()}:\x1b[0m
-    -p, --provider <provider>            Provider for chat API.
-    -u, --ui-lang <code>                 ISO 639-1 code of language to display UI in.
-    -L, --reply-lang <code|name>         Language for AI to reply in.
-    -q, --query <msg>                    Query to send AI.
-    -s, --summarize <filepath|text|url>  Path or URL to file or text to summarize.
-    -c, --config <filepath|url>          Path or URL to custom config file to load.
+    -p, --provider <provider>            ${cli.msgs.optionDesc_provider}.
+    -u, --ui-lang <code>                 ${cli.msgs.optionDesc_uiLang}.
+    -L, --reply-lang <code|name>         ${cli.msgs.optionDesc_replyLang}.
+    -q, --query <msg>                    ${cli.msgs.optionDesc_query}.
+    -s, --summarize <filepath|text|url>  ${cli.msgs.optionDesc_summarize}.
+    -c, --config <filepath|url>          ${cli.msgs.optionDesc_config}.
 
   \x1b[1m${cli.msgs.helpSection_msgChainOptions.toLowerCase()}:\x1b[0m
-    -m, --max-chars <integer>            Character limit per message.
-    -k, --max-tokens <integer>           Max tokens to use.
-    -t, --turns <integer>                Number of turns to preserve.
-    -C, --clear                          Clear cached message chain.
+    -m, --max-chars <integer>            ${cli.msgs.optionDesc_maxChars}.
+    -k, --max-tokens <integer>           ${cli.msgs.optionDesc_maxTokens}.
+    -t, --turns <integer>                ${cli.msgs.optionDesc_turnsToPreserve}.
+    -C, --clear                          ${cli.msgs.optionDesc_clear}.
 
   \x1b[1m${cli.msgs.helpSection_flags.toLowerCase()}:\x1b[0m
-    -x, --copy                           Copy CLI response to clipboard.
-    -A, --no-suggest                     Don't auto-suggest next AI action at end of CLI response.
-    -V, --quiet                          Suppress all logging except errors.
+    -x, --copy                           ${cli.msgs.optionDesc_copy}.
+    -A, --no-suggest                     ${cli.msgs.optionDesc_noSuggest}.
+    -V, --quiet                          ${cli.msgs.optionDesc_quiet}.
 
   \x1b[1m${cli.msgs.helpSection_gitOptions.toLowerCase()}:\x1b[0m
-    -g, --commit-msg                     Generate git commit message from changes and copy to clipboard.
-    -G, --commit-msg-example <msg>       Example msg for --commit-msg to reference.
-    -d, --diff                           Generate human-readable git diff and append to --commit-msg if passed.
+    -g, --commit-msg                     ${cli.msgs.optionDesc_commitMsg}.
+    -G, --commit-msg-example <msg>       ${cli.msgs.optionDesc_commitMsgExample}.
+    -d, --diff                           ${cli.msgs.optionDesc_diff}.
 
   \x1b[1m${cli.msgs.helpSection_funCmds.toLowerCase()}:\x1b[0m
-    -P, --act-as <persona>               Act as persona from https://cdn.jsdelivr.net/npm/@kudoai/ai-personas@1/dist/ai-personas.json
-    -a, --ascii-art [subject]            Render ASCII art of optional subject.
-    -f, --fortune                        Tell your fortune.
-    -j, --joke                           Tell a joke.
-    -r, --random-answer                  Answer a random question.
+    -P, --act-as <persona>               ${cli.msgs.optionDesc_actAs}.
+    -a, --ascii-art [subject]            ${cli.msgs.optionDesc_asciiArt}.
+    -f, --fortune                        ${cli.msgs.optionDesc_fortune},
+    -j, --joke                           ${cli.msgs.optionDesc_joke}.
+    -r, --random-answer                  ${cli.msgs.optionDesc_randomAnswer}.
 
   \x1b[1m${cli.msgs.helpSection_appCmds.toLowerCase()}:\x1b[0m
-    -i, --init                           Create config file (in project root).
-    -I, --interactive                    Enter interactive REPL mode.
-    -h, --help                           Display help screen.
-    -v, --version                        Show version number.
-    -S, --stats                          Show npm stats.
-        --debug                          Show debug logs.
+    -i, --init                           ${cli.msgs.optionDesc_init}.
+    -I, --interactive                    ${cli.msgs.optionDesc_interactive}.
+    -h, --help                           ${cli.msgs.optionDesc_help}.
+    -v, --version                        ${cli.msgs.optionDesc_version}.
+    -S, --stats                          ${cli.msgs.optionDesc_stats}.
+        --debug                          ${cli.msgs.optionDesc_debug}.
 
   \x1b[1mREPL ${cli.msgs.data_slashCmds}:\x1b[0m
     /help, /exit, /clear, /joke, /fortune, /random, /actas <persona>, /ascii [subject]
