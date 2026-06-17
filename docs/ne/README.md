@@ -233,6 +233,18 @@ chatgpt --commit-msg  # वा gpt -g (git रिपोमा)
 # e.g. => feat: add `--ascii-art` cli cmd
 ```
 
+(वैकल्पिक) [.chatgpt.config.mjs](https://github.com/KudoAI/chatgpt.js/blob/main/.chatgpt.config.mjs) सिर्जना गर्नुहोस् (प्रदायक अनुकूलित गर्नुहोस्, आदि):
+
+```bash
+chatgpt init  # वा gpt -i
+```
+
+सबै CLI विकल्पहरू हेर्नुहोस्:
+
+```bash
+chatgpt --help
+```
+
 थप विकल्पहरू र उदाहरणहरूको लागि, विस्तारित प्रयोगकर्ता गाइड हेर्नुहोस्:
 
 <https://github.com/KudoAI/chatgpt.js/blob/v4.14.2/docs/USERGUIDE.md>

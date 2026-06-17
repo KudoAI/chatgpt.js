@@ -232,10 +232,10 @@ chatgpt --commit-msg  # या gpt -g (गिट रिपो में)
 # e.g. => feat: add `--ascii-art` cli cmd
 ```
 
-लोकल कॉन्फ़िग फ़ाइल बनाएँ (प्रोवाइडर वगैरह को कस्टमाइज़ करें):
+(वैकल्पिक) [.chatgpt.config.mjs](https://github.com/KudoAI/chatgpt.js/blob/main/.chatgpt.config.mjs) बनाएँ (प्रोवाइडर वगैरह को कस्टमाइज़ करें):
 
 ```bash
-chatgpt init
+chatgpt init  # या gpt -i
 ```
 
 सभी CLI विकल्प देखें:

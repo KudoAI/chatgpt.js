@@ -233,10 +233,10 @@ chatgpt --commit-msg  # hoặc gpt -g (trong một kho lưu trữ git)
 # e.g. => feat: add `--ascii-art` cli cmd
 ```
 
-Tạo tệp cấu hình cục bộ (tùy chỉnh nhà cung cấp, v.v.):
+(Tùy chọn) Tạo tệp [.chatgpt.config.mjs](https://github.com/KudoAI/chatgpt.js/blob/main/.chatgpt.config.mjs) (để tùy chỉnh nhà cung cấp, v.v.):
 
 ```bash
-chatgpt init
+chatgpt init  # hoặc gpt -i
 ```
 
 Xem tất cả các tùy chọn CLI:

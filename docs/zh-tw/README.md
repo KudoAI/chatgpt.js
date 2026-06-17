@@ -232,10 +232,10 @@ chatgpt --commit-msg  # 或者 gpt -g (在 git 倉庫中)
 # e.g. => feat: add `--ascii-art` cli cmd
 ```
 
-建立本機設定檔（自訂提供者等）：
+（可選）建立 [.chatgpt.config.mjs](https://github.com/KudoAI/chatgpt.js/blob/main/.chatgpt.config.mjs)（自訂提供者等）：
 
 ```bash
-chatgpt init
+chatgpt init  # 或 gpt -i
 ```
 
 查看所有 CLI 選項：
