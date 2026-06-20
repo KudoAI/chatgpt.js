@@ -16,7 +16,7 @@ jobs:
     env:
       TZ: PST8PDT
     steps:
-      - uses: actions/checkout@v6.0.3
+      - uses: actions/checkout@v7.0.0
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
           path: KudoAI/chatgpt.js
