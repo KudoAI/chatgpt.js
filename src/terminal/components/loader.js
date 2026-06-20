@@ -33,11 +33,10 @@ module.exports = {
         }
 
         function start() {
-            if (!process.stdout.isTTY) return // avoid weird output in pipes
-            if (!stopped) return
+            if (!process.stdout.isTTY || !stopped) return
             stopped = false
             interval = setInterval(render, speed)
-            process.once('exit', stop) // clean up if process exits unexpectedly
+            process.once('exit', stop)
         }
 
         function stop({ clear = true } = {}) {
