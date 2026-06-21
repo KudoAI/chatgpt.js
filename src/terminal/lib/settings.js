@@ -19,7 +19,7 @@ module.exports = {
         uiLang: {
             display: { cli: '-u, --ui-lang', repl: '/uilang <code>' },
             type: 'param', valType: 'langCode',
-            regex: /^--?u(?:i[-_]?lang)?(?:[=\s].*|$)/
+            regex: /^--?u(?:i[-_]?lang(?:uage)?)?(?:[=\s].*|$)/
         },
         replyLang: {
             display: { cli: '-L, --reply-lang', repl: '/replylang <text>' },
@@ -65,7 +65,7 @@ module.exports = {
         maxTokens: {
             display: { cli: '-k, --max-tokens', repl: '/maxtokens <num>' },
             type: 'param', valType: 'positiveInt',
-            regex: /^--(?:k|max[-_]?tokens)(?:[=\s].*|$)/, defaultVal: null
+            regex: /^--(?:k|max[-_]?tokens)(?:[=\s].*|$)/
         },
         turnsToPreserve: {
             display: { cli: '-t, --turns', repl: '/turns <num>' },
