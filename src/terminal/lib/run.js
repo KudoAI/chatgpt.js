@@ -106,7 +106,7 @@ module.exports = {
     },
 
     async loadConfig(configPath) {
-        if (!configPath) return log.warn(`${cli.msgs.helpSection_usage}: /config <filepath|url>`)
+        if (!configPath) return log.warn(`${cli.msgs.helpSection_usage}: ${require('./settings').controls.config.repl}`)
         const fs = require('fs').promises,
               cleanedPath = configPath.replace(/^(['"])(.*)\1$/, '$2')
         let tmpDir
