@@ -41,7 +41,7 @@ module.exports = {
     debug(msg, { type } = {}) {
         if (!env.modes.debug) return
         if (type == 'config') { // append config data
-            this.argIdx ??= env.args.findIndex(arg => /^--?(?:V|debug(?:[-_]?mode)?)$/.test(arg))
+            this.argIdx ??= env.args.findIndex(arg => /^--?(?:D|debug(?:[-_]?mode)?)$/.test(arg))
             if (this.argIdx +1 < env.args.length && !env.args[this.argIdx +1].startsWith('-')) // use --debug [targetKey]
                 this.key ??= env.args[this.argIdx +1].replace('-', '_')
             if (this.key)
