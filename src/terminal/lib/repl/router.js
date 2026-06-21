@@ -13,7 +13,8 @@ module.exports = async (cmd, args, rl) => {
         case 'replylang' : case 'rl' : case 'L' :
             run.replyLang(args.join(' ')) ; break
         case 'summarize' : case 'sum' : case 's' : {
-            if (!args.length) return log.warn(`${cli.msgs.helpSection_usage}: ${settings.controls.summarize.repl}`)
+            if (!args.length)
+                return log.warn(`${cli.msgs.helpSection_usage}: ${settings.controls.summarize.display.repl}`)
             await run.summarize(args.join(' '))
             break
         } case 'actas' : case 'persona' : case 'aa' : case 'P' :
@@ -21,7 +22,7 @@ module.exports = async (cmd, args, rl) => {
         case 'asciiart' : case 'ascii' : case 'art' : case 'a' :
             await run.asciiArt(args.join(' ') || null) ; break
         case 'config' : case 'cfg' : case 'c' : {
-            if (!args.length) return log.warn(`${cli.msgs.helpSection_usage}: ${settings.controls.config.repl}`)
+            if (!args.length) return log.warn(`${cli.msgs.helpSection_usage}: ${settings.controls.config.display.repl}`)
             await run.loadConfig(args[0])
             break
         } case 'maxchars' : case 'mc' : case 'm' : {
@@ -67,7 +68,8 @@ module.exports = async (cmd, args, rl) => {
         case 'diff' : case 'd' :
             await run.diff() ; break
         case 'sentiment' : case 'sen' : case 'T' : {
-            if (!args.length) return log.warn(`${cli.msgs.helpSection_usage}: ${settings.controls.sentiment.repl}`)
+            if (!args.length)
+                return log.warn(`${cli.msgs.helpSection_usage}: ${settings.controls.sentiment.display.repl}`)
             await run.sentiment(args.join(' '))
             break
         } case 'joke' : case 'j' :
