@@ -36,7 +36,7 @@
         query = buildQuery(query)
 
     if (new RegExp(`^(?:help|${cli.msgs.query_hi})(?:\n|$)`).test(query)) {
-        log.help() ; log.break() }
+        run.help() ; log.break() }
 
     await run.query(query, { copy: cli.config.copy })
 
