@@ -11,38 +11,140 @@ module.exports = {
     configOnlyKeys: ['autoClear'],
 
     controls: {
-        provider: { type: 'param', regex: /^--?p(?:rovider)?(?:[=\s].*|$)/, defaultVal: 'auto' },
-        uiLang: { type: 'param', valType: 'langCode', regex: /^--?u(?:i[-_]?lang)?(?:[=\s].*|$)/ },
-        replyLang: { type: 'param', valType: 'langCode', regex: /^--?(?:L|reply[-_]?lang(?:uage)?)?(?:[=\s].*|$)/ },
-        query: {
-            type: 'param', valRequired: false,
-            regex: /^--?(?:q|query|ask|send)(?:[=\s].*|$)/, get defaultVal() { return cli.msgs.query_hi }
+        provider: {
+            display: '-p, --provider', type: 'param', defaultVal: 'auto',
+            regex: /^--?p(?:rovider)?(?:[=\s].*|$)/,
+            repl: '/provider <name>'
         },
-        summarize: { type: 'param', valType: 'filepath', allowText: true, regex: /^--?s(?:ummarize)?(?:[=\s].*|$)/ },
-        actAs: { type: 'param', regex: /^--?(?:P|act[-_]?as)(?:[=\s].*|$)/ },
-        asciiArt: { type: 'param', valRequired: false, regex: /^--?a(?:scii[-_]?)?a(?:rt)?(?:[=\s].*|$)/ },
-        commitMsgExample: { type: 'param', regex: /^--?(?:G|commit[-_]?me?ss?a?ge?[-_]?example)$/ },
-        config: { type: 'param', valType: 'filepath', regex: /^--?c(?:onfig)?(?:[=\s].*|$)/ },
+        uiLang: {
+            display: '-u, --ui-lang', type: 'param', valType: 'langCode',
+            regex: /^--?u(?:i[-_]?lang)?(?:[=\s].*|$)/,
+            repl: '/uilang <code>'
+        },
+        replyLang: {
+            display: '-L, --reply-lang', type: 'param', valType: 'langCode',
+            regex: /^--?(?:L|reply[-_]?lang(?:uage)?)?(?:[=\s].*|$)/,
+            repl: '/replylang <text>'
+        },
+        query: {
+            display: '-q, --query', type: 'param', valRequired: false,
+            regex: /^--?(?:q|query|ask|send)(?:[=\s].*|$)/,
+            get defaultVal() { return cli.msgs.query_hi }
+        },
+        summarize: {
+            display: '-s, --summarize', type: 'param', valType: 'path', allowText: true,
+            regex: /^--?s(?:ummarize)?(?:[=\s].*|$)/,
+            repl: '/summarize <text|filepath|url>'
+        },
+        actAs: {
+            display: '-P, --act-as', type: 'param',
+            regex: /^--?(?:P|act[-_]?as)(?:[=\s].*|$)/,
+            repl: '/actas <persona>'
+        },
+        asciiArt: {
+            display: '-a, --ascii-art', type: 'param', valRequired: false,
+            regex: /^--?a(?:scii[-_]?)?a(?:rt)?(?:[=\s].*|$)/,
+            repl: '/ascii [subject]'
+        },
+        commitMsgExample: {
+            display: '-G, --commit-msg-example', type: 'param',
+            regex: /^--?(?:G|commit[-_]?me?ss?a?ge?[-_]?example)$/,
+            repl: '/commitmsgexample <msg>'
+        },
+        config: {
+            display: '-c, --config', type: 'param', valType: 'path',
+            regex: /^--?c(?:onfig)?(?:[=\s].*|$)/,
+            repl: '/config <filepath|url>'
+        },
         maxChars: {
-            type: 'param', valType: 'positiveInt', regex: /^--?m(?:ax[-_]?chars)?(?:[=\s].*|$)/, defaultVal: 250 },
+            display: '-m, --max-chars', type: 'param', valType: 'positiveInt',
+            regex: /^--?m(?:ax[-_]?chars)?(?:[=\s].*|$)/, defaultVal: 250,
+            repl: '/maxchars <num>'
+        },
         maxTokens: {
-            type: 'param', valType: 'positiveInt', regex: /^--(?:k|max[-_]?tokens)(?:[=\s].*|$)/, defaultVal: null },
-        turnsToPreserve: { type: 'param', valType: 'positiveInt', regex: /^--?t(?:urns)?(?:[=\s].*|$)/, defaultVal: 3 },
-        sentiment: { type: 'param', valType: 'filepath', allowText: true, regex: /^--?(?:T|sentiment)(?:[=\s].*|$)/ },
-        copy: { type: 'flag', regex: /^--?(?:x|copy)$/ },
-        noSuggest: { type: 'flag', regex: /^--?(?:A|no[-_]?suggest)$/ },
-        quietMode: { type: 'flag', regex: /^--?(?:V|quiet)(?:[-_]?mode)?$/ },
-        init: { type: 'cmd', regex: /^-{0,2}i(?:nit)?$/ },
-        interactive: { type: 'cmd', regex: /^--?(?:I|interactive)(?:[-_]?mode)?$/ },
-        joke: { type: 'cmd', regex: /^--?j(?:oke)?$/ },
-        fortune: { type: 'cmd', regex: /^--?f(?:ortune)?$/ },
-        randomAnswer: { type: 'cmd', regex: /^--?r(?:andom[-_]?answer)?$/ },
-        commitMsg: { type: 'cmd', regex: /^--?(?:g|commit[-_]?me?ss?a?ge?)$/ },
-        diff: { type: 'flag', regex: /^--?d(?:iff)?$/ },
-        clear: { type: 'cmd', regex: /^--?(?:C|clear?)$/ },
-        help: { type: 'cmd', regex: /^--?h(?:elp)?$/ },
-        version: { type: 'cmd', regex: /^--?ve?r?s?i?o?n?$/ },
-        stats: { type: 'cmd', regex: /^--?(?:S|stats?)$/ }
+            display: '-k, --max-tokens', type: 'param', valType: 'positiveInt',
+            regex: /^--(?:k|max[-_]?tokens)(?:[=\s].*|$)/, defaultVal: null,
+            repl: '/maxtokens <num>'
+        },
+        turnsToPreserve: {
+            display: '-t, --turns', type: 'param', valType: 'positiveInt',
+            regex: /^--?t(?:urns)?(?:[=\s].*|$)/, defaultVal: 3,
+            repl: '/turns <num>'
+        },
+        sentiment: {
+            display: '-T, --sentiment', type: 'param', valType: 'path', allowText: true,
+            regex: /^--?(?:T|sentiment)(?:[=\s].*|$)/,
+            repl: '/sentiment <text|file|url>'
+        },
+        copy: {
+            display: '-x, --copy', type: 'flag',
+            regex: /^--?(?:x|copy)$/,
+            repl: '/copy [on|off]'
+        },
+        noSuggest: {
+            display: '-A, --no-suggest', type: 'flag',
+            regex: /^--?(?:A|no[-_]?suggest)$/,
+            repl: '/nosuggest [on|off]'
+        },
+        quietMode: {
+            display: '-V, --quiet', type: 'flag',
+            regex: /^--?(?:V|quiet)(?:[-_]?mode)?$/,
+            repl: '/quiet [on|off]'
+        },
+        init: {
+            display: '-i, --init', type: 'cmd',
+            regex: /^-{0,2}i(?:nit)?$/,
+            repl: '/init'
+        },
+        interactive: {
+            display: '-I, --interactive', type: 'cmd',
+            regex: /^--?(?:I|interactive)(?:[-_]?mode)?$/
+        },
+        joke: {
+            display: '-j, --joke', type: 'cmd',
+            regex: /^--?j(?:oke)?$/,
+            repl: '/joke'
+        },
+        fortune: {
+            display: '-f, --fortune', type: 'cmd',
+            regex: /^--?f(?:ortune)?$/,
+            repl: '/fortune'
+        },
+        randomAnswer: {
+            display: '-r, --random', type: 'cmd',
+            regex: /^--?r(?:andom[-_]?answer)?$/,
+            repl: '/random'
+        },
+        commitMsg: {
+            display: '-g, --commit-msg', type: 'cmd',
+            regex: /^--?(?:g|commit[-_]?me?ss?a?ge?)$/,
+            repl: '/commitmsg'
+        },
+        diff: {
+            display: '-d, --diff', type: 'flag',
+            regex: /^--?d(?:iff)?$/,
+            repl: '/diff'
+        },
+        clear: {
+            display: '-C, --clear', type: 'cmd',
+            regex: /^--?(?:C|clear?)$/,
+            repl: '/clear'
+        },
+        help: {
+            display: '-h, --help', type: 'cmd',
+            regex: /^--?h(?:elp)?$/,
+            repl: '/help'
+        },
+        version: {
+            display: '-v, --version', type: 'cmd',
+            regex: /^--?ve?r?s?i?o?n?$/,
+            repl: '/version'
+        },
+        stats: {
+            display: '-S, --stats', type: 'cmd',
+            regex: /^--?(?:S|stats?)$/,
+            repl: '/stats'
+        }
     },
 
     isNegKey(key) { return /^(?:no|disable|exclude)[A-Z]/.test(key) },
@@ -156,7 +258,7 @@ module.exports = {
                 log.errorAndExit(`[${key}] ${ cli.msgs.error_requiresVal || 'requires a value' }.`)
 
             if (ctrl.valType) ({
-                filepath() {
+                path() {
                     if (typeof configVal == 'object' && configVal.type == 'url') return
                     if (configVal && (!ctrl.allowText || string.looksLikePath(configVal))
                         && !fs.existsSync(configVal)
