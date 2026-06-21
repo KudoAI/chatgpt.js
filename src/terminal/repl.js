@@ -2,16 +2,15 @@
 
 'use strict'
 
-env.mode = 'repl'
-
 globalThis.log = require('./lib/log')
-const { build: buildQuery } = require('./lib/query'),
-        messages = require('./lib/messages'),
-        readline = require('readline/promises'),
-        router = require('./lib/repl/router'),
-        run = require('./lib/run')
 
 async function start() {
+    env.modes.repl = true
+    const { build: buildQuery } = require('./lib/query'),
+            messages = require('./lib/messages'),
+            readline = require('readline/promises'),
+            router = require('./lib/repl/router'),
+            run = require('./lib/run')
     log.info(`${cli.msgs.info_startingInteractiveMode}. ${
         cli.msgs.info_type} '/help' ${cli.msgs.info_forCmds}, '/exit' ${cli.msgs.info_toQuit}.`)
     const rl = readline.createInterface({

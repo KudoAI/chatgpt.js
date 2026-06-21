@@ -5,8 +5,6 @@ const fs = require('fs'),
       messages = require('./messages'),
       string = require('./string')
 
-init.env()
-
 module.exports = {
 
     actAs(persona) { return this.query(require('@kudoai/ai-personas')[persona]?.prompt) },
