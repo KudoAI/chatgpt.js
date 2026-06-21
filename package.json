@@ -113,7 +113,8 @@
     "console-table-printer": "^2.16.1",
     "is-unicode-supported": "^2.1.0",
     "node-clipboardy": "^1.0.3",
-    "non-latin-locales": "^1.0.1"
+    "non-latin-locales": "^1.0.1",
+    "terminal-kit": "^3.1.2"
   },
   "devDependencies": {
     "@adamlui/minify.js": "^2.5.3",
