@@ -12,138 +12,140 @@ module.exports = {
 
     controls: {
         provider: {
-            display: '-p, --provider', type: 'param', defaultVal: 'auto',
-            regex: /^--?p(?:rovider)?(?:[=\s].*|$)/,
-            repl: '/provider <name>'
+            display: { cli: '-p, --provider', repl: '/provider <name>' },
+            type: 'param', defaultVal: 'auto',
+            regex: /^--?p(?:rovider)?(?:[=\s].*|$)/
         },
         uiLang: {
-            display: '-u, --ui-lang', type: 'param', valType: 'langCode',
-            regex: /^--?u(?:i[-_]?lang)?(?:[=\s].*|$)/,
-            repl: '/uilang <code>'
+            display: { cli: '-u, --ui-lang', repl: '/uilang <code>' },
+            type: 'param', valType: 'langCode',
+            regex: /^--?u(?:i[-_]?lang)?(?:[=\s].*|$)/
         },
         replyLang: {
-            display: '-L, --reply-lang', type: 'param', valType: 'langCode',
-            regex: /^--?(?:L|reply[-_]?lang(?:uage)?)?(?:[=\s].*|$)/,
-            repl: '/replylang <text>'
+            display: { cli: '-L, --reply-lang', repl: '/replylang <text>' },
+            type: 'param', valType: 'langCode',
+            regex: /^--?(?:L|reply[-_]?lang(?:uage)?)?(?:[=\s].*|$)/
         },
         query: {
-            display: '-q, --query', type: 'param', valRequired: false,
+            display: { cli: '-q, --query' },
+            type: 'param', valRequired: false,
             regex: /^--?(?:q|query|ask|send)(?:[=\s].*|$)/,
             get defaultVal() { return cli.msgs.query_hi }
         },
         summarize: {
-            display: '-s, --summarize', type: 'param', valType: 'path', allowText: true,
-            regex: /^--?s(?:ummarize)?(?:[=\s].*|$)/,
-            repl: '/summarize <text|filepath|url>'
+            display: { cli: '-s, --summarize', repl: '/summarize <text|filepath|url>' },
+            type: 'param', valType: 'path', allowText: true,
+            regex: /^--?s(?:ummarize)?(?:[=\s].*|$)/
         },
         actAs: {
-            display: '-P, --act-as', type: 'param',
-            regex: /^--?(?:P|act[-_]?as)(?:[=\s].*|$)/,
-            repl: '/actas <persona>'
+            display: { cli: '-P, --act-as', repl: '/actas <persona>' },
+            type: 'param',
+            regex: /^--?(?:P|act[-_]?as)(?:[=\s].*|$)/
         },
         asciiArt: {
-            display: '-a, --ascii-art', type: 'param', valRequired: false,
-            regex: /^--?a(?:scii[-_]?)?a(?:rt)?(?:[=\s].*|$)/,
-            repl: '/ascii [subject]'
+            display: { cli: '-a, --ascii-art', repl: '/ascii [subject]' },
+            type: 'param', valRequired: false,
+            regex: /^--?a(?:scii[-_]?)?a(?:rt)?(?:[=\s].*|$)/
         },
         commitMsgExample: {
-            display: '-G, --commit-msg-example', type: 'param',
-            regex: /^--?(?:G|commit[-_]?me?ss?a?ge?[-_]?example)$/,
-            repl: '/commitmsgexample <msg>'
+            display: { cli: '-G, --commit-msg-example', repl: '/commitmsgexample <msg>' },
+            type: 'param',
+            regex: /^--?(?:G|commit[-_]?me?ss?a?ge?[-_]?example)$/
         },
         config: {
-            display: '-c, --config', type: 'param', valType: 'path',
-            regex: /^--?c(?:onfig)?(?:[=\s].*|$)/,
-            repl: '/config <filepath|url>'
+            display: { cli: '-c, --config', repl: '/config <filepath|url>' },
+            type: 'param', valType: 'path',
+            regex: /^--?c(?:onfig)?(?:[=\s].*|$)/
         },
         maxChars: {
-            display: '-m, --max-chars', type: 'param', valType: 'positiveInt',
-            regex: /^--?m(?:ax[-_]?chars)?(?:[=\s].*|$)/, defaultVal: 250,
-            repl: '/maxchars <num>'
+            display: { cli: '-m, --max-chars', repl: '/maxchars <num>' },
+            type: 'param', valType: 'positiveInt',
+            regex: /^--?m(?:ax[-_]?chars)?(?:[=\s].*|$)/, defaultVal: 250
         },
         maxTokens: {
-            display: '-k, --max-tokens', type: 'param', valType: 'positiveInt',
-            regex: /^--(?:k|max[-_]?tokens)(?:[=\s].*|$)/, defaultVal: null,
-            repl: '/maxtokens <num>'
+            display: { cli: '-k, --max-tokens', repl: '/maxtokens <num>' },
+            type: 'param', valType: 'positiveInt',
+            regex: /^--(?:k|max[-_]?tokens)(?:[=\s].*|$)/, defaultVal: null
         },
         turnsToPreserve: {
-            display: '-t, --turns', type: 'param', valType: 'positiveInt',
-            regex: /^--?t(?:urns)?(?:[=\s].*|$)/, defaultVal: 3,
-            repl: '/turns <num>'
+            display: { cli: '-t, --turns', repl: '/turns <num>' },
+            type: 'param', valType: 'positiveInt',
+            regex: /^--?t(?:urns)?(?:[=\s].*|$)/, defaultVal: 3
         },
         sentiment: {
-            display: '-T, --sentiment', type: 'param', valType: 'path', allowText: true,
-            regex: /^--?(?:T|sentiment)(?:[=\s].*|$)/,
-            repl: '/sentiment <text|file|url>'
+            display: { cli: '-T, --sentiment', repl: '/sentiment <text|file|url>' },
+            type: 'param', valType: 'path', allowText: true,
+            regex: /^--?(?:T|sentiment)(?:[=\s].*|$)/
         },
         copy: {
-            display: '-x, --copy', type: 'flag',
-            regex: /^--?(?:x|copy)$/,
-            repl: '/copy [on|off]'
+            display: { cli: '-x, --copy', repl: '/copy [on|off]' },
+            type: 'flag',
+            regex: /^--?(?:x|copy)$/
         },
         noSuggest: {
-            display: '-A, --no-suggest', type: 'flag',
-            regex: /^--?(?:A|no[-_]?suggest)$/,
-            repl: '/nosuggest [on|off]'
+            display: { cli: '-A, --no-suggest', repl: '/nosuggest [on|off]' },
+            type: 'flag',
+            regex: /^--?(?:A|no[-_]?suggest)$/
         },
         quietMode: {
-            display: '-V, --quiet', type: 'flag',
-            regex: /^--?(?:V|quiet)(?:[-_]?mode)?$/,
-            repl: '/quiet [on|off]'
+            display: { cli: '-V, --quiet', repl: '/quiet [on|off]' },
+            type: 'flag',
+            regex: /^--?(?:V|quiet)(?:[-_]?mode)?$/
         },
         init: {
-            display: '-i, --init', type: 'cmd',
-            regex: /^-{0,2}i(?:nit)?$/,
-            repl: '/init'
+            display: { cli: '-i, --init', repl: '/init' },
+            type: 'cmd',
+            regex: /^-{0,2}i(?:nit)?$/
         },
         interactive: {
-            display: '-I, --interactive', type: 'cmd',
+            display: { cli: '-I, --interactive' },   // no repl string needed
+            type: 'cmd',
             regex: /^--?(?:I|interactive)(?:[-_]?mode)?$/
         },
         joke: {
-            display: '-j, --joke', type: 'cmd',
-            regex: /^--?j(?:oke)?$/,
-            repl: '/joke'
+            display: { cli: '-j, --joke', repl: '/joke' },
+            type: 'cmd',
+            regex: /^--?j(?:oke)?$/
         },
         fortune: {
-            display: '-f, --fortune', type: 'cmd',
-            regex: /^--?f(?:ortune)?$/,
-            repl: '/fortune'
+            display: { cli: '-f, --fortune', repl: '/fortune' },
+            type: 'cmd',
+            regex: /^--?f(?:ortune)?$/
         },
         randomAnswer: {
-            display: '-r, --random', type: 'cmd',
-            regex: /^--?r(?:andom[-_]?answer)?$/,
-            repl: '/random'
+            display: { cli: '-r, --random', repl: '/random' },
+            type: 'cmd',
+            regex: /^--?r(?:andom[-_]?answer)?$/
         },
         commitMsg: {
-            display: '-g, --commit-msg', type: 'cmd',
-            regex: /^--?(?:g|commit[-_]?me?ss?a?ge?)$/,
-            repl: '/commitmsg'
+            display: { cli: '-g, --commit-msg', repl: '/commitmsg' },
+            type: 'cmd',
+            regex: /^--?(?:g|commit[-_]?me?ss?a?ge?)$/
         },
         diff: {
-            display: '-d, --diff', type: 'flag',
-            regex: /^--?d(?:iff)?$/,
-            repl: '/diff'
+            display: { cli: '-d, --diff', repl: '/diff' },
+            type: 'flag',
+            regex: /^--?d(?:iff)?$/
         },
         clear: {
-            display: '-C, --clear', type: 'cmd',
-            regex: /^--?(?:C|clear?)$/,
-            repl: '/clear'
+            display: { cli: '-C, --clear', repl: '/clear' },
+            type: 'cmd',
+            regex: /^--?(?:C|clear?)$/
         },
         help: {
-            display: '-h, --help', type: 'cmd',
-            regex: /^--?h(?:elp)?$/,
-            repl: '/help'
+            display: { cli: '-h, --help', repl: '/help' },
+            type: 'cmd',
+            regex: /^--?h(?:elp)?$/
         },
         version: {
-            display: '-v, --version', type: 'cmd',
-            regex: /^--?ve?r?s?i?o?n?$/,
-            repl: '/version'
+            display: { cli: '-v, --version', repl: '/version' },
+            type: 'cmd',
+            regex: /^--?ve?r?s?i?o?n?$/
         },
         stats: {
-            display: '-S, --stats', type: 'cmd',
-            regex: /^--?(?:S|stats?)$/,
-            repl: '/stats'
+            display: { cli: '-S, --stats', repl: '/stats' },
+            type: 'cmd',
+            regex: /^--?(?:S|stats?)$/
         }
     },
 
@@ -206,12 +208,12 @@ module.exports = {
                         else if (this.configFileKeyWhitelist && !this.configFileKeyWhitelist.includes(key))
                             log.invalidConfigKey(key)
                         return
-                    } else if (key.startsWith('legacy_') && ctrl.replacedBy) {
-                        if (this.isNegKey(key) != this.isNegKey(ctrl.replacedBy))
-                            cli.config[ctrl.replacedBy] = !val // assign opposite val to current key
+                    } else if (key.startsWith('legacy_') && ctrl.display.cli.replacedBy) {
+                        if (this.isNegKey(key) != this.isNegKey(ctrl.display.cli.replacedBy))
+                            cli.config[ctrl.display.cli.replacedBy] = !val // assign opposite val to current key
                         else // assign direct val to current key
-                            cli.config[ctrl.replacedBy] = val
-                        return log.configKeyReplacedBy(key, ctrl.replacedBy, val)
+                            cli.config[ctrl.display.cli.replacedBy] = val
+                        return log.configKeyReplacedBy(key, ctrl.display.cli.replacedBy, val)
                     }
                     cli.config[key] = val
                 })
