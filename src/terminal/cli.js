@@ -14,9 +14,8 @@
 
     await init.cli()
 
-    for (const cmd of ['init', 'commitMsg', 'diff', 'clear', 'help', 'version', 'stats'])
-        if (cli.config[cmd]) return run[cmd]()
-    if (cli.config.interactive) return require('./repl').start()
+    for (const cmd of ['init', 'commitMsg', 'diff', 'clear', 'interactive', 'help', 'version', 'stats'])
+        if (cli.config[cmd]) return await run[cmd]()
 
     if (!chatgpt.config?.apiKeys?.[cli.config.provider])
         chatgpt.setProvider(cli.config.provider, {

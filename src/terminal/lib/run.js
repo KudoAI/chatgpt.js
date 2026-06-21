@@ -30,6 +30,8 @@ module.exports = {
 
     help() { log.help() },
     init() { return init.configFile() },
+    interactive() { require('../repl').start() },
+
     joke() { return this.query('Tell me a joke and make it funny.') },
 
     async query(query, options = {}) {
