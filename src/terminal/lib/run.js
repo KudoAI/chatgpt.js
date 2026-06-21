@@ -14,7 +14,7 @@ module.exports = {
         return this.query(`Render a single piece of ascii art of ${subjectText}.`)
     },
 
-    clear() { return messages.clearChain() },
+    clear() { messages.clearChain() },
     commitMsg() { return git.generateCommitMsg({ includeDiff: cli.config.diff }) },
     diff() { return git.diff.print() },
 
@@ -30,7 +30,7 @@ module.exports = {
 
     help() { log.help() },
     init() { return init.configFile() },
-    interactive() { require('../repl').start() },
+    interactive() { return require('../repl').start() },
 
     joke() { return this.query('Tell me a joke and make it funny.') },
 
