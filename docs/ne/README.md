@@ -59,6 +59,8 @@
 
 ### पुस्तकालय
 
+<img width=777 height="auto" src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@38fce73/assets/images/screenshots/chatgpt.js.png">
+
 #### <a href="#-nodejs"><img height=14 width="auto" src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@dbdea4b/assets/images/icons/runtimes/node.js/icon25x28.png"></a> Node.js:
 
 तपाईंको परियोजनाको मूलबाट:
