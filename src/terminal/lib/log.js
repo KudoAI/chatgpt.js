@@ -85,7 +85,7 @@ module.exports = {
                 let nextNonEmpty
                 for (let j = i + 1 ; j < templateLines.length; j++)
                     if (templateLines[j].trim()) { nextNonEmpty = templateLines[j].trimStart() ; break }
-                console.log(nextNonEmpty && nextNonEmpty.startsWith(cli.msgs.info_moreHelp) ? '' : '|')
+                console.log(nextNonEmpty?.startsWith(cli.msgs.info_moreHelp) ? '' : '|')
                 continue
             }
             if (/^\\x1b\[1m|^REPL\b/.test(trimmed)) {
