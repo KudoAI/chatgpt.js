@@ -1,6 +1,6 @@
 const string = require('./string')
 
-module.exports = async (src) => {
+module.exports = async src => {
     if (!src || typeof src != 'string') throw new Error(`'src' string arg required by resolver()`)
     if (string.looksLikeURL(src)) {
         const text = await (await require('./data').fetch(src)).text()
