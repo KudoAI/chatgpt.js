@@ -87,7 +87,7 @@ module.exports = async input => {
     if (!input.startsWith('/')) return
     const ctrlKey = Object.keys(settings.controls).find(key => {
         const regex = settings.controls[key]?.regex?.repl
-        return regex && regex.test(input)
+        return regex?.test(input)
     })
     if (!ctrlKey)
         return log.warn(`${cli.msgs.warn_unknownCmd}: ${input.split(/\s+/)[0]}. ${
