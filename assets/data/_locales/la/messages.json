@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Notandum scradum" },
   "warn_unknownCmd": { "message": "Commuta non numeris" },
   "warn_forAvailRun": { "message": "pecuniam disponibus" },
+  "warn_noHandlerForCmd": { "message": "No handler for command" },
   "data_slashCmds": { "message": "commando slash" },
   "success_uiLang": { "message": "Lingua UI" },
   "success_replyLang": { "message": "Abrogare lingua" },

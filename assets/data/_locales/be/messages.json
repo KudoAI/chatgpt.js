@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Немагчыма захаваць ланцужок паведамленняў" },
   "warn_unknownCmd": { "message": "Невядомая каманда" },
   "warn_forAvailRun": { "message": "для даступнага запуску" },
+  "warn_noHandlerForCmd": { "message": "Няма апрацоўшчыка для каманды" },
   "data_slashCmds": { "message": "каманды слэша" },
   "success_uiLang": { "message": "Мова карыстацкага інтэрфейсу" },
   "success_replyLang": { "message": "Мова адказу" },

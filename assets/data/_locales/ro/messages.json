@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Salvarea șirului de mesaje a eșuat" },
   "warn_unknownCmd": { "message": "Comandă necunoscută" },
   "warn_forAvailRun": { "message": "pentru funcționare disponibilă" },
+  "warn_noHandlerForCmd": { "message": "Fără manipulator pentru comandă" },
   "data_slashCmds": { "message": "comenzi slash" },
   "success_uiLang": { "message": "Limbă UI" },
   "success_replyLang": { "message": "Limbă răspuns" },

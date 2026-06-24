@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "無法儲存訊息鏈" },
   "warn_unknownCmd": { "message": "未知命令" },
   "warn_forAvailRun": { "message": "可用於運行" },
+  "warn_noHandlerForCmd": { "message": "沒有指令的處理常式" },
   "data_slashCmds": { "message": "斜線指令" },
   "success_uiLang": { "message": "UI語言" },
   "success_replyLang": { "message": "回覆語言" },

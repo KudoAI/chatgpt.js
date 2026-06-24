@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "ບັນທຶກຕ່ອງໂສ້ຂໍ້ຄວາມບໍ່ສຳເລັດ" },
   "warn_unknownCmd": { "message": "ຄໍາສັ່ງທີ່ບໍ່ຮູ້ຈັກ" },
   "warn_forAvailRun": { "message": "ສໍາລັບ Running ທີ່ພ້ອມໃຊ້ງານ" },
+  "warn_noHandlerForCmd": { "message": "ບໍ່ມີຜູ້ຈັດການ ສໍາ ລັບ ຄໍາ ສັ່ງ" },
   "data_slashCmds": { "message": "ຄໍາສັ່ງ slash" },
   "success_uiLang": { "message": "ພາສາ UI" },
   "success_replyLang": { "message": "ຕອບສະໜອງພາສາ" },

@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Shranjevanje verige sporočil ni uspelo" },
   "warn_unknownCmd": { "message": "Neznan ukaz" },
   "warn_forAvailRun": { "message": "za razpoložljivo vožnjo" },
+  "warn_noHandlerForCmd": { "message": "Ni vodnika za ukaz" },
   "data_slashCmds": { "message": "ukazi poševnice" },
   "success_uiLang": { "message": "Jezik uporabniškega vmesnika" },
   "success_replyLang": { "message": "Jezik odgovora" },

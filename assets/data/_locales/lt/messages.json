@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Nepavyko išsaugoti žinučių grandinės" },
   "warn_unknownCmd": { "message": "Nežinoma komanda" },
   "warn_forAvailRun": { "message": "galimam vykdymui" },
+  "warn_noHandlerForCmd": { "message": "Komandai nėra apdorojimo programos" },
   "data_slashCmds": { "message": "pasvirojo brūkšnio komandos" },
   "success_uiLang": { "message": "Vartotojo sąsajos kalba" },
   "success_replyLang": { "message": "Atsakymo kalba" },

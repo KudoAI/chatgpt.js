@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Dh'fhàillig le sàbhaladh na slabhraidh teachdaireachd" },
   "warn_unknownCmd": { "message": "Àithne neo - aithnichte" },
   "warn_forAvailRun": { "message": "airson ruith ri fhaotainn" },
+  "warn_noHandlerForCmd": { "message": "Chan eil inneal - làimhseachaidh ann airson na h - àithne" },
   "data_slashCmds": { "message": "slaod na h - àitheantan" },
   "success_uiLang": { "message": "UI language" },
   "success_replyLang": { "message": "Cànan freagairt" },

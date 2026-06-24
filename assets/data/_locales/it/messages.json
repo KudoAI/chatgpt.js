@@ -37,6 +37,7 @@
   "warn_failedToSaveMsgChain": { "message": "Impossibile salvare la catena di messaggi" },
   "warn_unknownCmd": { "message": "Comando sconosciuto" },
   "warn_forAvailRun": { "message": "per l'esecuzione disponibile" },
+  "warn_noHandlerForCmd": { "message": "Nessun gestore per il comando" },
   "data_slashCmds": { "message": "comandi slash" },
   "success_uiLang": { "message": "Lingua dell'interfaccia utente" },
   "success_replyLang": { "message": "Lingua della risposta" },

@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Üzenetlánc mentése sikertelen" },
   "warn_unknownCmd": { "message": "Ismeretlen parancs" },
   "warn_forAvailRun": { "message": "a rendelkezésre álló futtatáshoz" },
+  "warn_noHandlerForCmd": { "message": "Nincs kezelő a parancshoz" },
   "data_slashCmds": { "message": "perjel parancsok" },
   "success_uiLang": { "message": "UI nyelve" },
   "success_replyLang": { "message": "Válasz nyelve" },

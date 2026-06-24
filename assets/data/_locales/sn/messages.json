@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Akakundikana kuponesa mharidzo cheni" },
   "warn_unknownCmd": { "message": "Mutemo usingazivikanwe" },
   "warn_forAvailRun": { "message": "nokuti iripo run" },
+  "warn_noHandlerForCmd": { "message": "Hapana mubati wemurairo" },
   "data_slashCmds": { "message": "slash mirairo" },
   "success_uiLang": { "message": "Mutauro weUI" },
   "success_replyLang": { "message": "Mhinduro mutauro" },

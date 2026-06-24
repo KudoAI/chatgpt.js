@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "د پیغام ځنځیر په خوندي کولو کې پاتې راغی" },
   "warn_unknownCmd": { "message": "ناپېژندلې تېروتنه" },
   "warn_forAvailRun": { "message": "د شته منډه لپاره" },
+  "warn_noHandlerForCmd": { "message": "د بولۍ لپاره هیڅ سمبالګر نشته" },
   "data_slashCmds": { "message": "ښویېدونکې کمانډونه" },
   "success_uiLang": { "message": "د UI ژبه" },
   "success_replyLang": { "message": "د ځواب ژبه" },

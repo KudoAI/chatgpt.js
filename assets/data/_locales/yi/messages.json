@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "נישט געקענט ראַטעווען מעסעדזש קייט" },
   "warn_unknownCmd": { "message": "אומבאַקאַנטער באַפֿעל" },
   "warn_forAvailRun": { "message": "פֿאַר פֿאַראַן לויף" },
+  "warn_noHandlerForCmd": { "message": "קיין האַנדלער פֿאַר באַפֿעל" },
   "data_slashCmds": { "message": "סלאַש קאָמאַנדעס" },
   "success_uiLang": { "message": "באַניצער צובינד שפּראַך" },
   "success_replyLang": { "message": "ענטפער שפּראַך" },

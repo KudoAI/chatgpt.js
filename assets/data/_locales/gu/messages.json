@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "સંદેશા શૃંખલાને સંગ્રહવામાં નિષ્ફળતા" },
   "warn_unknownCmd": { "message": "અજ્ઞાત આદેશ" },
   "warn_forAvailRun": { "message": "ઉપલબ્ધ રન માટે" },
+  "warn_noHandlerForCmd": { "message": "આદેશ માટે કોઈ હેન્ડલર નથી" },
   "data_slashCmds": { "message": "સ્લેશ આદેશો" },
   "success_uiLang": { "message": "UI ભાષા" },
   "success_replyLang": { "message": "જવાબની ભાષા" },

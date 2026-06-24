@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Ur yeddi ara ad isellek asenfaṛ n yizen" },
   "warn_unknownCmd": { "message": "Amεellem ur yettwassen ara" },
   "warn_forAvailRun": { "message": "i uzzal yettwafernen" },
+  "warn_noHandlerForCmd": { "message": "Ulac aɛessas i uɛessas" },
   "data_slashCmds": { "message": "iɣewwaṛen n uɣewwaṛ" },
   "success_uiLang": { "message": "Idioma deg xinag - UI" },
   "success_replyLang": { "message": "Tutlayt tiririt" },

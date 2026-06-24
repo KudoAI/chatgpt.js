@@ -39,6 +39,7 @@
   "warn_failedToSaveMsgChain": { "message": "Won ti gba penalty lo throwing Gben Gben gben" },
   "warn_unknownCmd": { "message": "Mbeni zo so a hinga lo pëpe" },
   "warn_forAvailRun": { "message": "a yeke na lege ni ti tene a sara kua na mbeni" },
+  "warn_noHandlerForCmd": { "message": "Mbeni ye ti komande ayeke dä pëpe" },
   "data_slashCmds": { "message": "hirondelle commandes" },
   "success_uiLang": { "message": "Yanga ti awambongi ti UI" },
   "success_replyLang": { "message": "Yanga ti awambongi ti kodoro" },

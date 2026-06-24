@@ -37,6 +37,7 @@
   "warn_failedToSaveMsgChain": { "message": "Ayikwazanga ukugcina imixokelelwano yemiyalezo" },
   "warn_unknownCmd": { "message": "Umyalelo ongaziwayo" },
   "warn_forAvailRun": { "message": "ukubaleka okufumanekayo" },
+  "warn_noHandlerForCmd": { "message": "Akukho mncedisi womyalelo" },
   "data_slashCmds": { "message": "imiyalelo ye-slash" },
   "success_uiLang": { "message": "Ulwimi lwe-UI" },
   "success_replyLang": { "message": "Ulwimi lokuphendula" },

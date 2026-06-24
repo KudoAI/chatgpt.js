@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "सन्देश चेन बचत गर्न असफल भयो" },
   "warn_unknownCmd": { "message": "अज्ञात आदेश" },
   "warn_forAvailRun": { "message": "उपलब्ध रनको लागि" },
+  "warn_noHandlerForCmd": { "message": "आदेशका लागि ह्यान्डलर छैन" },
   "data_slashCmds": { "message": "स्लैश आदेशहरू" },
   "success_uiLang": { "message": "UI भाषा" },
   "success_replyLang": { "message": "जवाफ भाषा" },

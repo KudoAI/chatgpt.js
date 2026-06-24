@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Kunne ikke lagre meldingskjeden" },
   "warn_unknownCmd": { "message": "Ukjent kommando" },
   "warn_forAvailRun": { "message": "for tilgjengelig løp" },
+  "warn_noHandlerForCmd": { "message": "Ingen behandler for kommandoen" },
   "data_slashCmds": { "message": "skråstrekkommandoer" },
   "success_uiLang": { "message": "UI-språk" },
   "success_replyLang": { "message": "Svarspråk" },

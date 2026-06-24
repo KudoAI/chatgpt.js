@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Methwyd cadw cadwyn negeseuon" },
   "warn_unknownCmd": { "message": "Gorchymyn anhysbys" },
   "warn_forAvailRun": { "message": "ar gyfer y rhediad sydd ar gael" },
+  "warn_noHandlerForCmd": { "message": "Dim trinydd ar gyfer y gorchymyn" },
   "data_slashCmds": { "message": "slaes gorchmynion" },
   "success_uiLang": { "message": "Iaith y rhyngwyneb" },
   "success_replyLang": { "message": "Iaith ateb" },

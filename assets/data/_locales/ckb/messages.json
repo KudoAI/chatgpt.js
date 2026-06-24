@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "شکستی هێنا لە پاشەکەوتکردنی زنجیرەی پەیام" },
   "warn_unknownCmd": { "message": "فەرمانی نەناسراو" },
   "warn_forAvailRun": { "message": "rUN بەردەست" },
+  "warn_noHandlerForCmd": { "message": "هیچ دەستکاریکەرێک نییە بۆ فەرمانکردن" },
   "data_slashCmds": { "message": "فەرمانەکانی سلاش" },
   "success_uiLang": { "message": "UI زمان" },
   "success_replyLang": { "message": "زمانی وەڵامدانەوە" },

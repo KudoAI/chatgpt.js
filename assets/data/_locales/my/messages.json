@@ -37,6 +37,7 @@
   "warn_failedToSaveMsgChain": { "message": "မက်ဆေ့ချ် ကွင်းဆက်ကို သိမ်းဆည်းရန် မအောင်မြင်ပါ" },
   "warn_unknownCmd": { "message": "အမည်မသိ အမိန့်" },
   "warn_forAvailRun": { "message": "ရရှိနိုင်သော ပြေးမှုအတွက်" },
+  "warn_noHandlerForCmd": { "message": "အမိန့်အတွက် ကိုင်တွယ်သူ မရှိပါ" },
   "data_slashCmds": { "message": "အမိန့်များကို လျှော့ချပါ" },
   "success_uiLang": { "message": "UI ဘာသာစကား" },
   "success_replyLang": { "message": "ပြန်ကြားချက်ဘာသာစကား" },

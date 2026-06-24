@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Échec de l'enregistrement de la chaîne de messages" },
   "warn_unknownCmd": { "message": "Commande inconnue" },
   "warn_forAvailRun": { "message": "pour la course disponible" },
+  "warn_noHandlerForCmd": { "message": "Aucun gestionnaire pour la commande" },
   "data_slashCmds": { "message": "commandes slash" },
   "success_uiLang": { "message": "Langue de l'interface utilisateur" },
   "success_replyLang": { "message": "Langue de réponse" },

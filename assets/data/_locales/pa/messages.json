@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "ਸੁਨੇਹਾ ਚੇਨ ਸੰਭਾਲਣ ਲਈ ਫੇਲ੍ਹ ਹੈ" },
   "warn_unknownCmd": { "message": "ਅਣਜਾਣ ਕਮਾਂਡ" },
   "warn_forAvailRun": { "message": "ਉਪਲੱਬਧ ਰਨ ਲਈ" },
+  "warn_noHandlerForCmd": { "message": "ਕਮਾਂਡ ਲਈ ਕੋਈ ਹੈਂਡਲਰ ਨਹੀਂ" },
   "data_slashCmds": { "message": "ਸਲੇਸ਼ ਕਮਾਂਡਾਂ" },
   "success_uiLang": { "message": "UI ਭਾਸ਼ਾ" },
   "success_replyLang": { "message": "ਜਵਾਬ ਭਾਸ਼ਾ" },

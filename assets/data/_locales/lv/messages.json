@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Neizdevās saglabāt ziņojumu ķēdi" },
   "warn_unknownCmd": { "message": "Nezināma komanda" },
   "warn_forAvailRun": { "message": "pieejamam ciklam" },
+  "warn_noHandlerForCmd": { "message": "Komandai nav apdarinātāja" },
   "data_slashCmds": { "message": "slīpsvītras komandas" },
   "success_uiLang": { "message": "Lietotāja interfeisa valoda" },
   "success_replyLang": { "message": "Atbildes valoda" },

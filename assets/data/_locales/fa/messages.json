@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "ذخیره زنجیره پیام ناموفق بود" },
   "warn_unknownCmd": { "message": "فرمان ناشناخته" },
   "warn_forAvailRun": { "message": "برای اجرای موجود" },
+  "warn_noHandlerForCmd": { "message": "هیچ کنترل‌کننده‌ای برای فرمان وجود ندارد" },
   "data_slashCmds": { "message": "دستورات اسلش" },
   "success_uiLang": { "message": "زبان رابط کاربری" },
   "success_replyLang": { "message": "زبان پاسخ" },

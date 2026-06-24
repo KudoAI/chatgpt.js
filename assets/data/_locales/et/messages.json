@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Sõnumiketi salvestamine nurjus" },
   "warn_unknownCmd": { "message": "Tundmatu käsk" },
   "warn_forAvailRun": { "message": "saadaoleva töötsükli jaoks" },
+  "warn_noHandlerForCmd": { "message": "Käsu käsitleja puudub" },
   "data_slashCmds": { "message": "kaldkriipsu käsud" },
   "success_uiLang": { "message": "Kasutajaliidese keel" },
   "success_replyLang": { "message": "Vastuse keel" },

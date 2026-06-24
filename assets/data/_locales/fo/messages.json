@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Miseydnaðist at goyma boðskjal" },
   "warn_unknownCmd": { "message": "Ókend skipan" },
   "warn_forAvailRun": { "message": "til ber at renna" },
+  "warn_noHandlerForCmd": { "message": "Eingin handlari fyri boð" },
   "data_slashCmds": { "message": "slash boð" },
   "success_uiLang": { "message": "Mál" },
   "success_replyLang": { "message": "Svarandi mál" },

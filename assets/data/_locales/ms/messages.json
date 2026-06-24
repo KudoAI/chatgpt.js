@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Gagal menyimpan rantaian mesej" },
   "warn_unknownCmd": { "message": "Perintah tidak diketahui" },
   "warn_forAvailRun": { "message": "untuk larian yang tersedia" },
+  "warn_noHandlerForCmd": { "message": "Tiada pengendali untuk arahan" },
   "data_slashCmds": { "message": "perintah garis miring" },
   "success_uiLang": { "message": "Bahasa UI" },
   "success_replyLang": { "message": "Bahasa jawapan" },

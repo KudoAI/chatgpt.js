@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Αποτυχία αποθήκευσης αλυσίδας μηνυμάτων" },
   "warn_unknownCmd": { "message": "Άγνωστη εντολή" },
   "warn_forAvailRun": { "message": "για διαθέσιμη εκτέλεση" },
+  "warn_noHandlerForCmd": { "message": "Δεν υπάρχει χειριστής για εντολή" },
   "data_slashCmds": { "message": "εντολές καθέτου" },
   "success_uiLang": { "message": "Γλώσσα διεπαφής χρήστη" },
   "success_replyLang": { "message": "Γλώσσα απάντησης" },

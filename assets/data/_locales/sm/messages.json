@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Leiloa e sefe ai le filifili o feau" },
   "warn_unknownCmd": { "message": "Poloaiga e le o iloa" },
   "warn_forAvailRun": { "message": "mo le taufetuli o loo maua" },
+  "warn_noHandlerForCmd": { "message": "E leai se tagata e faaaogāina auaunaga mo le poloaiga" },
   "data_slashCmds": { "message": "poloaʻiga slash" },
   "success_uiLang": { "message": "Gagana UI" },
   "success_replyLang": { "message": "Tali i le gagana" },

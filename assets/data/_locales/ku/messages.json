@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Tomarkirina zincîra peyamê bi ser neket" },
   "warn_unknownCmd": { "message": "Fermana nenas" },
   "warn_forAvailRun": { "message": "ji bo rêça berdest" },
+  "warn_noHandlerForCmd": { "message": "Destgirker ji bo fermanê tune" },
   "data_slashCmds": { "message": "fermanên slash" },
   "success_uiLang": { "message": "Zimanê UI" },
   "success_replyLang": { "message": "Zimanê bersivê" },

@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "پیغام کا سلسلہ محفوظ کرنے میں ناکامی" },
   "warn_unknownCmd": { "message": "نامعلوم کمانڈ" },
   "warn_forAvailRun": { "message": "دستیاب رن کے لیے" },
+  "warn_noHandlerForCmd": { "message": "کمانڈ کے لیے کوئی ہینڈلر نہیں" },
   "data_slashCmds": { "message": "سلیش کمانڈز" },
   "success_uiLang": { "message": "UI زبان" },
   "success_replyLang": { "message": "زبان کا جواب دیں" },

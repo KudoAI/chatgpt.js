@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Не вдалося зберегти ланцюжок повідомлень" },
   "warn_unknownCmd": { "message": "Невідома команда" },
   "warn_forAvailRun": { "message": "для доступного пробігу" },
+  "warn_noHandlerForCmd": { "message": "Немає обробника для команди" },
   "data_slashCmds": { "message": "команди косої риси" },
   "success_uiLang": { "message": "Мова інтерфейсу користувача" },
   "success_replyLang": { "message": "Мова відповіді" },

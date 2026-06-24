@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Mezu-katea gordetzea huts egin da" },
   "warn_unknownCmd": { "message": "Komando ezezaguna" },
   "warn_forAvailRun": { "message": "eskuragarri dagoen lasterketarako" },
+  "warn_noHandlerForCmd": { "message": "Ez dago komandoaren kudeatzailerik" },
   "data_slashCmds": { "message": "barra-komandoak" },
   "success_uiLang": { "message": "UI hizkuntza" },
   "success_replyLang": { "message": "Erantzun hizkuntza" },

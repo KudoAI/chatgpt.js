@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Ma rnexxilux issejvja l-katina tal-messaġġi" },
   "warn_unknownCmd": { "message": "Kmand mhux magħruf" },
   "warn_forAvailRun": { "message": "għal prova disponibbli" },
+  "warn_noHandlerForCmd": { "message": "L-ebda maniġer għall-kmand" },
   "data_slashCmds": { "message": "kmandijiet slash" },
   "success_uiLang": { "message": "Lingwa tal-UI" },
   "success_replyLang": { "message": "Lingwa tat-tweġibiet" },

@@ -37,6 +37,7 @@
   "warn_failedToSaveMsgChain": { "message": "செய்திச் சங்கிலியைச் சேமிக்க முடியவில்லை" },
   "warn_unknownCmd": { "message": "தெரியாத கட்டளை" },
   "warn_forAvailRun": { "message": "கிடைக்கக்கூடிய ரன்னுக்கு" },
+  "warn_noHandlerForCmd": { "message": "கட்டளைக்கான கையாளுநர் இல்லை" },
   "data_slashCmds": { "message": "ஸ்லாஷ் கட்டளைகள்" },
   "success_uiLang": { "message": "UI மொழி" },
   "success_replyLang": { "message": "பதில் மொழி" },

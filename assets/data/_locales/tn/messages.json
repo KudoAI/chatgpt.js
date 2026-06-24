@@ -37,6 +37,7 @@
   "warn_failedToSaveMsgChain": { "message": "O reteletswe ke go boloka metseletsele ya molaetsa" },
   "warn_unknownCmd": { "message": "Taelo e e sa itsiweng" },
   "warn_forAvailRun": { "message": "for available run" },
+  "warn_noHandlerForCmd": { "message": "Ga go na motsamaisi wa ditaelo" },
   "data_slashCmds": { "message": "slash orders" },
   "success_uiLang": { "message": "Puo ya UI" },
   "success_replyLang": { "message": "RESPONSE LANGU" },

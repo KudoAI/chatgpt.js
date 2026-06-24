@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Kunne ikke gemme beskedkæden" },
   "warn_unknownCmd": { "message": "Ukendt kommando" },
   "warn_forAvailRun": { "message": "for tilgængelig kørsel" },
+  "warn_noHandlerForCmd": { "message": "Ingen handler til kommando" },
   "data_slashCmds": { "message": "skråstregskommandoer" },
   "success_uiLang": { "message": "Brugergrænsefladesprog" },
   "success_replyLang": { "message": "Svarsprog" },

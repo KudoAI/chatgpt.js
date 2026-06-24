@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Noriichtekette konnt net gespäichert ginn" },
   "warn_unknownCmd": { "message": "Onbekannte Kommando" },
   "warn_forAvailRun": { "message": "fir available run" },
+  "warn_noHandlerForCmd": { "message": "Keen Handler fir de Kommando" },
   "data_slashCmds": { "message": "schleifende Befehle" },
   "success_uiLang": { "message": "UI-Sprooch" },
   "success_replyLang": { "message": "Antwort Sprache" },

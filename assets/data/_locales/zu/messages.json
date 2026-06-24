@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Yehlulekile ukugcina uchungechunge lwemiyalezo" },
   "warn_unknownCmd": { "message": "Umyalo ongaziwa" },
   "warn_forAvailRun": { "message": "ekusebenzeni okutholakalayo" },
+  "warn_noHandlerForCmd": { "message": "Asikho isiphathimandla somyalo" },
   "data_slashCmds": { "message": "imiyalo ye-slash" },
   "success_uiLang": { "message": "Ulimi lwe-UI" },
   "success_replyLang": { "message": "Ulimi lokuphendula" },

@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Ekki tókst að vista skilaboðakeðju" },
   "warn_unknownCmd": { "message": "Óþekkt skipun" },
   "warn_forAvailRun": { "message": "fyrir tiltækt hlaup" },
+  "warn_noHandlerForCmd": { "message": "Enginn meðhöndlari fyrir skipun" },
   "data_slashCmds": { "message": "skástriksskipanir" },
   "success_uiLang": { "message": "Tungumál notendaviðmóts" },
   "success_replyLang": { "message": "Tungumál svars" },

@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "שמירת שרשרת ההודעות נכשלה" },
   "warn_unknownCmd": { "message": "פקודה לא ידועה" },
   "warn_forAvailRun": { "message": "לריצה זמינה" },
+  "warn_noHandlerForCmd": { "message": "אין מטפל לפקודה" },
   "data_slashCmds": { "message": "חתוך פקודות" },
   "success_uiLang": { "message": "שפת ממשק משתמש" },
   "success_replyLang": { "message": "שפת מענה" },

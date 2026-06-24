@@ -37,6 +37,7 @@
   "warn_failedToSaveMsgChain": { "message": "Ku guuldareystay in la badbaadiyo silsiladda fariinta" },
   "warn_unknownCmd": { "message": "Amar aan la garanayn" },
   "warn_forAvailRun": { "message": "orod la heli karo" },
+  "warn_noHandlerForCmd": { "message": "Ma jiro gacan ku haynta amarka" },
   "data_slashCmds": { "message": "amarrada slash" },
   "success_uiLang": { "message": "Luuqadda UI" },
   "success_replyLang": { "message": "Luuqada jawaabta" },

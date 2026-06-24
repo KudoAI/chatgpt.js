@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Не удалось сохранить цепочку сообщений" },
   "warn_unknownCmd": { "message": "Неизвестная команда" },
   "warn_forAvailRun": { "message": "для доступного цикла" },
+  "warn_noHandlerForCmd": { "message": "Нет обработчика для команды" },
   "data_slashCmds": { "message": "команды косой черты" },
   "success_uiLang": { "message": "Язык пользовательского интерфейса" },
   "success_replyLang": { "message": "Язык ответа" },

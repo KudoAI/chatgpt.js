@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Mesaj zinciri kaydedilemedi" },
   "warn_unknownCmd": { "message": "Bilinmeyen komut" },
   "warn_forAvailRun": { "message": "mevcut çalıştırma için" },
+  "warn_noHandlerForCmd": { "message": "Komut için işleyici yok" },
   "data_slashCmds": { "message": "eğik çizgi komutları" },
   "success_uiLang": { "message": "Kullanıcı arabirimi dili" },
   "success_replyLang": { "message": "Cevap dili" },

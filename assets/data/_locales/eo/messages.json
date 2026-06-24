@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Fiaskis konservi mesaĝĉenon" },
   "warn_unknownCmd": { "message": "Nekonata komando" },
   "warn_forAvailRun": { "message": "por disponebla rulado" },
+  "warn_noHandlerForCmd": { "message": "Neniu manipulilo por komando" },
   "data_slashCmds": { "message": "tranĉi komandojn" },
   "success_uiLang": { "message": "UI lingvo" },
   "success_replyLang": { "message": "LingvoRedakti" },

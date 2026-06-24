@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Tabalipo ne kupususha abapyungishi babo" },
   "warn_unknownCmd": { "message": "Ishibashi Command" },
   "warn_forAvailRun": { "message": "kwabena Kwabena Run" },
+  "warn_noHandlerForCmd": { "message": "No Handler For Command ukulele" },
   "data_slashCmds": { "message": "amapola Commands" },
   "success_uiLang": { "message": "Ululimi lwa ciUI" },
   "success_replyLang": { "message": "Icasuko ku lulimi" },

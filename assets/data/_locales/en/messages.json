@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Failed to save message chain" },
   "warn_unknownCmd": { "message": "Unknown command" },
   "warn_forAvailRun": { "message": "for available run" },
+  "warn_noHandlerForCmd": { "message": "No handler for command" },
   "data_slashCmds": { "message": "slash commands" },
   "success_uiLang": { "message": "UI language" },
   "success_replyLang": { "message": "Reply language" },

@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Mesej zähmetini saklamak başarmady" },
   "warn_unknownCmd": { "message": "Tanalmadyk tabşyryk" },
   "warn_forAvailRun": { "message": "mümkin ylgaw üçin" },
+  "warn_noHandlerForCmd": { "message": "Men buýruk bermedim" },
   "data_slashCmds": { "message": "çykyş tabşyryklary" },
   "success_uiLang": { "message": "Dil" },
   "success_replyLang": { "message": "Dil jogaplary" },

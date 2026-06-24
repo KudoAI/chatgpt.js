@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "I no gat rot long kisim bek dispela toksave" },
   "warn_unknownCmd": { "message": "Ol i no save" },
   "warn_forAvailRun": { "message": "ol samting i stap long rot" },
+  "warn_noHandlerForCmd": { "message": "I no gat wanpela man bilong bosim ol samting" },
   "data_slashCmds": { "message": "skim Commands" },
   "success_uiLang": { "message": "Tokples" },
   "success_replyLang": { "message": "Tokples" },

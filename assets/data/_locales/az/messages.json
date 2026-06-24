@@ -37,6 +37,7 @@
   "warn_failedToSaveMsgChain": { "message": "Mesaj zəncirini yaddaşda saxlamaq alınmadı" },
   "warn_unknownCmd": { "message": "Naməlum əmr" },
   "warn_forAvailRun": { "message": "mövcud icraat üçün" },
+  "warn_noHandlerForCmd": { "message": "Əmr üçün idarəçi yoxdur" },
   "data_slashCmds": { "message": "doğramaq əmrləri" },
   "success_uiLang": { "message": "Uİ dili" },
   "success_replyLang": { "message": "Cavab dili" },

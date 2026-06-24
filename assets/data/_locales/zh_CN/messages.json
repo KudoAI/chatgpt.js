@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "保存消息链失败" },
   "warn_unknownCmd": { "message": "未知命令" },
   "warn_forAvailRun": { "message": "用于可用运行" },
+  "warn_noHandlerForCmd": { "message": "没有命令的处理程序" },
   "data_slashCmds": { "message": "斜杠命令" },
   "success_uiLang": { "message": "UI语言" },
   "success_replyLang": { "message": "回复语言" },

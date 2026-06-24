@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Viestiketjun tallentaminen epäonnistui" },
   "warn_unknownCmd": { "message": "Tuntematon komento" },
   "warn_forAvailRun": { "message": "käytettävissä olevalle ajolle" },
+  "warn_noHandlerForCmd": { "message": "Ei käsittelijää komennolle" },
   "data_slashCmds": { "message": "vinoviivakomennot" },
   "success_uiLang": { "message": "Käyttöliittymän kieli" },
   "success_replyLang": { "message": "Vastauskieli" },

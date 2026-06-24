@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Det gick inte att spara meddelandekedjan" },
   "warn_unknownCmd": { "message": "Okänt kommando" },
   "warn_forAvailRun": { "message": "för tillgänglig körning" },
+  "warn_noHandlerForCmd": { "message": "Ingen hanterare för kommando" },
   "data_slashCmds": { "message": "snedstreckskommandon" },
   "success_uiLang": { "message": "UI-språk" },
   "success_replyLang": { "message": "Svarsspråk" },

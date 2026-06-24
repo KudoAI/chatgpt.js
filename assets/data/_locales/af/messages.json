@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Kon nie die boodskapketting stoor nie" },
   "warn_unknownCmd": { "message": "Onbekende opdrag" },
   "warn_forAvailRun": { "message": "vir beskikbare lopies" },
+  "warn_noHandlerForCmd": { "message": "Geen hanteerder vir opdrag nie" },
   "data_slashCmds": { "message": "slash bevele" },
   "success_uiLang": { "message": "UI-taal" },
   "success_replyLang": { "message": "Beantwoord taal" },

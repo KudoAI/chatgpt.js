@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "පණිවිඩ දාමය සුරැකීමට අසමත් විය" },
   "warn_unknownCmd": { "message": "නොදන්නා විධානය" },
   "warn_forAvailRun": { "message": "ලබා ගත හැකි ධාවනය සඳහා" },
+  "warn_noHandlerForCmd": { "message": "විධානය සඳහා හසුරුවන්නෙක් නැත" },
   "data_slashCmds": { "message": "ස්ලෑෂ් කමාන්ඩ්ස්" },
   "success_uiLang": { "message": "UI භාෂාව" },
   "success_replyLang": { "message": "පිළිතුරු භාෂාව" },

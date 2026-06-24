@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Неуспешно запазване на веригата за съобщения" },
   "warn_unknownCmd": { "message": "Неизвестна команда" },
   "warn_forAvailRun": { "message": "за наличен пробег" },
+  "warn_noHandlerForCmd": { "message": "Няма манипулатор за команда" },
   "data_slashCmds": { "message": "команди за наклонена черта" },
   "success_uiLang": { "message": "Език на потребителския интерфейс" },
   "success_replyLang": { "message": "Език на отговора" },

@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Analephera kupulumutsa uthenga unyolo" },
   "warn_unknownCmd": { "message": "Lamulo losadziwika" },
   "warn_forAvailRun": { "message": "kuthamanga kotheka" },
+  "warn_noHandlerForCmd": { "message": "Palibe woyang 'anira lamulo" },
   "data_slashCmds": { "message": "malamulo slash" },
   "success_uiLang": { "message": "UI chinenero" },
   "success_replyLang": { "message": "Anayankha chinenero" },

@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Зурвасын гинжин хэлхээг хадгалж чадсангүй" },
   "warn_unknownCmd": { "message": "Үл мэдэгдэх команд" },
   "warn_forAvailRun": { "message": "боломжтой ажиллуулах" },
+  "warn_noHandlerForCmd": { "message": "Тушаалыг зохицуулагч алга" },
   "data_slashCmds": { "message": "гулсах командууд" },
   "success_uiLang": { "message": "UI хэл" },
   "success_replyLang": { "message": "Хариулах хэл" },

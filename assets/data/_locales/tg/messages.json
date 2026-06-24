@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Занҷири иттилоот нигоҳ дошта нашуд" },
   "warn_unknownCmd": { "message": "Фармони номаълум" },
   "warn_forAvailRun": { "message": "para sa magagamit na run" },
+  "warn_noHandlerForCmd": { "message": "Дастгоҳ барои фармон вуҷуд надорад" },
   "data_slashCmds": { "message": "фармонҳои лағжиш" },
   "success_uiLang": { "message": "Забони UI" },
   "success_replyLang": { "message": "Забони ҷавоб" },

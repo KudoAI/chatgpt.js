@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "No s'ha pogut desar la cadena de missatges" },
   "warn_unknownCmd": { "message": "Ordre desconeguda" },
   "warn_forAvailRun": { "message": "per a l'execució disponible" },
+  "warn_noHandlerForCmd": { "message": "No hi ha cap gestor per a l'ordre" },
   "data_slashCmds": { "message": "ordres de barra inclinada" },
   "success_uiLang": { "message": "Idioma de la interfície d'" },
   "success_replyLang": { "message": "Idioma de la resposta" },

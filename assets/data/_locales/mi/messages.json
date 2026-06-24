@@ -39,6 +39,7 @@
   "warn_failedToSaveMsgChain": { "message": "Kaore i taea te whakaora i te mekameka karere" },
   "warn_unknownCmd": { "message": "Whakahau kore e mohiotia" },
   "warn_forAvailRun": { "message": "mō te rere e wātea ana" },
+  "warn_noHandlerForCmd": { "message": "Kaore he ringa mo te whakahau" },
   "data_slashCmds": { "message": "whakahau slash" },
   "success_uiLang": { "message": "Te reo UI" },
   "success_replyLang": { "message": "Whakautu i te reo" },

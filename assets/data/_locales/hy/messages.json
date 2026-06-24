@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Չհաջողվեց պահել հաղորդագրությունների շղթան" },
   "warn_unknownCmd": { "message": "Անհայտ հրաման" },
   "warn_forAvailRun": { "message": "ազատ վազքի համար" },
+  "warn_noHandlerForCmd": { "message": "Հրամանի համար սպասարկող չկա" },
   "data_slashCmds": { "message": "սլեշ հրամաններ" },
   "success_uiLang": { "message": "UI լեզու" },
   "success_replyLang": { "message": "Պատասխանելու լեզու" },

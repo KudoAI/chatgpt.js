@@ -37,6 +37,7 @@
   "warn_failedToSaveMsgChain": { "message": "މެސެޖް ޗޭން ސޭވް ނުކުރެވުނެވެ" },
   "warn_unknownCmd": { "message": "ނޭނގޭ އަމުރެއް" },
   "warn_forAvailRun": { "message": "ލިބެންހުރި ރަން އަށް" },
+  "warn_noHandlerForCmd": { "message": "ކޮމާންޑަށް ހެންޑްލަރެއް ނެތެވެ" },
   "data_slashCmds": { "message": "ސްލޭޝް ކޮމާންޑްތަކެވެ" },
   "success_uiLang": { "message": "ޔޫއައި ބަހުން" },
   "success_replyLang": { "message": "ޖަވާބު ދޭ ބަހެވެ" },

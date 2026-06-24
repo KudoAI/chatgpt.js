@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Kon berichtenketen niet opslaan" },
   "warn_unknownCmd": { "message": "Onbekend commando" },
   "warn_forAvailRun": { "message": "voor beschikbare run" },
+  "warn_noHandlerForCmd": { "message": "Geen handler voor opdracht" },
   "data_slashCmds": { "message": "slash-opdrachten" },
   "success_uiLang": { "message": "Taal van de gebruikersinterface" },
   "success_replyLang": { "message": "Antwoord taal" },

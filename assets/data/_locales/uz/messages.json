@@ -37,6 +37,7 @@
   "warn_failedToSaveMsgChain": { "message": "Xabarlar zanjiri saqlanmadi" },
   "warn_unknownCmd": { "message": "Noma'lum buyruq" },
   "warn_forAvailRun": { "message": "mavjud yugurish uchun" },
+  "warn_noHandlerForCmd": { "message": "Buyruq uchun ishlov beruvchi yo'q" },
   "data_slashCmds": { "message": "slash buyruqlari" },
   "success_uiLang": { "message": "UI tili" },
   "success_replyLang": { "message": "Javob tili" },

@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Falha ao guardar cadeia de mensagens" },
   "warn_unknownCmd": { "message": "Comando desconhecido" },
   "warn_forAvailRun": { "message": "para execução disponível" },
+  "warn_noHandlerForCmd": { "message": "Sem manipulador para comando" },
   "data_slashCmds": { "message": "comandos de barra" },
   "success_uiLang": { "message": "Idioma da IU" },
   "success_replyLang": { "message": "Idioma da resposta" },

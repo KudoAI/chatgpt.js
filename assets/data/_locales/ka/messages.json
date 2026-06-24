@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Შეტყობინებების ჯაჭვის შენახვა ვერ მოხერხდა" },
   "warn_unknownCmd": { "message": "Უცნობი ბრძანება" },
   "warn_forAvailRun": { "message": "ხელმისაწვდომი ცდისთვის" },
+  "warn_noHandlerForCmd": { "message": "Ბრძანების დამმუშავებელი არ არსებობს" },
   "data_slashCmds": { "message": "სლეში ბრძანებები" },
   "success_uiLang": { "message": "UI ენა" },
   "success_replyLang": { "message": "Პასუხის ენა" },

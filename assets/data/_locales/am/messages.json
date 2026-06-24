@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "የመልዕክት ሰንሰለት ማስቀመጥ አልተሳካም" },
   "warn_unknownCmd": { "message": "ያልታወቀ ትዕዛዝ" },
   "warn_forAvailRun": { "message": "ለ ይገኛል ሩጫ" },
+  "warn_noHandlerForCmd": { "message": "የትእዛዝ አያያዝ የለም" },
   "data_slashCmds": { "message": "ተንሸራታች ትዕዛዞች" },
   "success_uiLang": { "message": "UI ቋንቋ" },
   "success_replyLang": { "message": "የምላሽ ቋንቋ" },

@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Không thể lưu chuỗi tin nhắn" },
   "warn_unknownCmd": { "message": "Lệnh không xác định" },
   "warn_forAvailRun": { "message": "cho lần chạy khả dụng" },
+  "warn_noHandlerForCmd": { "message": "Không có trình xử lý cho lệnh" },
   "data_slashCmds": { "message": "lệnh gạch chéo" },
   "success_uiLang": { "message": "Ngôn ngữ giao diện người dùng" },
   "success_replyLang": { "message": "Ngôn ngữ trả lời" },

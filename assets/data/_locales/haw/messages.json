@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "ʻAʻole i hiki ke mālama i ke kaulahao leka" },
   "warn_unknownCmd": { "message": "Kauoha i ʻike ʻole ʻia" },
   "warn_forAvailRun": { "message": "no ka holo i loaʻa" },
+  "warn_noHandlerForCmd": { "message": "ʻAʻohe mea lawelawe no ke kauoha" },
   "data_slashCmds": { "message": "nā kauoha ʻoki" },
   "success_uiLang": { "message": "ʻŌlelo UI" },
   "success_replyLang": { "message": "ʻŌlelo pane" },

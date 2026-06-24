@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Non foi posíbel gardar a cadea da mensaxe" },
   "warn_unknownCmd": { "message": "Comando descoñecido" },
   "warn_forAvailRun": { "message": "para a posta a disposición de RUN" },
+  "warn_noHandlerForCmd": { "message": "Ningún manipulador de comandos" },
   "data_slashCmds": { "message": "comandos de slash" },
   "success_uiLang": { "message": "Linguaxe UI" },
   "success_replyLang": { "message": "Linguaxe de resposta" },

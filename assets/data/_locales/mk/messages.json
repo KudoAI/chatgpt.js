@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Не успеа да се зачува синџирот на пораки" },
   "warn_unknownCmd": { "message": "Непозната наредба" },
   "warn_forAvailRun": { "message": "за достапно извршување" },
+  "warn_noHandlerForCmd": { "message": "Нема управувач за команда" },
   "data_slashCmds": { "message": "наредби за намалување" },
   "success_uiLang": { "message": "Јазик на корисничкиот интерфејс" },
   "success_replyLang": { "message": "Јазик на одговор" },

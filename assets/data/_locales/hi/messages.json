@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "मैसेज चेन सेव नहीं किया जा सका" },
   "warn_unknownCmd": { "message": "अज्ञात कमांड" },
   "warn_forAvailRun": { "message": "उपलब्ध रन के लिए" },
+  "warn_noHandlerForCmd": { "message": "कमांड के लिए कोई हैंडलर नहीं" },
   "data_slashCmds": { "message": "स्लैश कमांड" },
   "success_uiLang": { "message": "UI भाषा" },
   "success_replyLang": { "message": "भाषा का जवाब दें" },

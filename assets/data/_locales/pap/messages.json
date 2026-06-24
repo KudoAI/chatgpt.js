@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "No a logra scapa e cadena di mensahe" },
   "warn_unknownCmd": { "message": "Komandante Deskonosí" },
   "warn_forAvailRun": { "message": "for Disponibel Run" },
+  "warn_noHandlerForCmd": { "message": "No Trader For Command" },
   "data_slashCmds": { "message": "slash komandante" },
   "success_uiLang": { "message": "Idioma di Seña" },
   "success_replyLang": { "message": "Idioma Responsivo" },

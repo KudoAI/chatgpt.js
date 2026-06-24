@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "บันทึกสายโซ่ข้อความล้มเหลว" },
   "warn_unknownCmd": { "message": "คำสั่งที่ไม่รู้จัก" },
   "warn_forAvailRun": { "message": "สำหรับการวิ่งที่มีอยู่" },
+  "warn_noHandlerForCmd": { "message": "ไม่มีตัวจัดการสำหรับคำสั่ง" },
   "data_slashCmds": { "message": "คำสั่งเฉือน" },
   "success_uiLang": { "message": "ภาษา UI" },
   "success_replyLang": { "message": "ตอบกลับภาษา" },

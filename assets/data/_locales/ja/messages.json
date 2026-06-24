@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "メッセージチェーンの保存に失敗しました" },
   "warn_unknownCmd": { "message": "不明なコマンド" },
   "warn_forAvailRun": { "message": "利用可能な実行のために" },
+  "warn_noHandlerForCmd": { "message": "コマンドのハンドラがありません" },
   "data_slashCmds": { "message": "スラッシュコマンド" },
   "success_uiLang": { "message": "UI言語" },
   "success_replyLang": { "message": "返信言語" },

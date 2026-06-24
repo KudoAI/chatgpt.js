@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Imeshindwa kuhifadhi mlolongo wa ujumbe" },
   "warn_unknownCmd": { "message": "Amri isiyojulikana" },
   "warn_forAvailRun": { "message": "kwa muda unaopatikana" },
+  "warn_noHandlerForCmd": { "message": "Hakuna mshikamanifu wa amri" },
   "data_slashCmds": { "message": "amri za slash" },
   "success_uiLang": { "message": "Lugha ya UI" },
   "success_replyLang": { "message": "Lugha ya kujibu" },

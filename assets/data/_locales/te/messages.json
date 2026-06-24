@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "సందేశ గొలుసును సేవ్ చేయడంలో విఫలమైంది" },
   "warn_unknownCmd": { "message": "తెలియని ఆదేశం" },
   "warn_forAvailRun": { "message": "అందుబాటులో ఉన్న రన్ కోసం" },
+  "warn_noHandlerForCmd": { "message": "ఆదేశం కోసం హ్యాండ్లర్ లేదు" },
   "data_slashCmds": { "message": "స్లాష్ ఆదేశాలు" },
   "success_uiLang": { "message": "UI భాష" },
   "success_replyLang": { "message": "భాషకు ప్రత్యుత్తరం ఇవ్వండి" },

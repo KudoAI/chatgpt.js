@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "تعذر حفظ سلسلة الرسائل" },
   "warn_unknownCmd": { "message": "أمر غير معروف" },
   "warn_forAvailRun": { "message": "للتشغيل المتاح" },
+  "warn_noHandlerForCmd": { "message": "لا يوجد معالج للأمر" },
   "data_slashCmds": { "message": "أوامر مائلة" },
   "success_uiLang": { "message": "لغة واجهة المستخدم" },
   "success_replyLang": { "message": "لغة الرد" },

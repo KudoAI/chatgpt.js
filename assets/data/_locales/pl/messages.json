@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Nie udało się zapisać łańcucha wiadomości" },
   "warn_unknownCmd": { "message": "Nieznane polecenie" },
   "warn_forAvailRun": { "message": "dla dostępnego przebiegu" },
+  "warn_noHandlerForCmd": { "message": "Brak obsługi dla polecenia" },
   "data_slashCmds": { "message": "polecenia ukośnika" },
   "success_uiLang": { "message": "Język interfejsu użytkownika" },
   "success_replyLang": { "message": "Język odpowiedzi" },

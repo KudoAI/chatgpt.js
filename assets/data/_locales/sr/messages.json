@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Čuvanje lanca poruka nije uspelo" },
   "warn_unknownCmd": { "message": "Nepoznata komanda" },
   "warn_forAvailRun": { "message": "za dostupno pokretanje" },
+  "warn_noHandlerForCmd": { "message": "Nema rukovaoca za komandu" },
   "data_slashCmds": { "message": "komande kose crte" },
   "success_uiLang": { "message": "Jezik korisničkog interfejsa" },
   "success_replyLang": { "message": "Jezik odgovora" },

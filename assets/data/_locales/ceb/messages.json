@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Napakyas sa pagluwas sa kadena sa mensahe" },
   "warn_unknownCmd": { "message": "Wala mailhi nga sugo" },
   "warn_forAvailRun": { "message": "alang sa magamit nga pagdagan" },
+  "warn_noHandlerForCmd": { "message": "Wala 'y handler alang sa mando" },
   "data_slashCmds": { "message": "ssangyong Çýkma Sugo" },
   "success_uiLang": { "message": "Pinulongang UI" },
   "success_replyLang": { "message": "Tubag nga pinulongan" },

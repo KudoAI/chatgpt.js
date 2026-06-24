@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Reťazec správ sa nepodarilo uložiť" },
   "warn_unknownCmd": { "message": "Neznámy príkaz" },
   "warn_forAvailRun": { "message": "pre dostupný beh" },
+  "warn_noHandlerForCmd": { "message": "Žiadny obslužný program pre príkaz" },
   "data_slashCmds": { "message": "príkazy lomky" },
   "success_uiLang": { "message": "Jazyk používateľského rozhrania" },
   "success_replyLang": { "message": "Jazyk odpovede" },

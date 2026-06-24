@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Tsy afaka nandraikitra ilay rojom-panalahidy" },
   "warn_unknownCmd": { "message": "Safidy %s tsy fantatra" },
   "warn_forAvailRun": { "message": "ho an'ny hazakazaka misy" },
+  "warn_noHandlerForCmd": { "message": "Tsy misy mpandray an-tànana baiko" },
   "data_slashCmds": { "message": "baikon'ny slash" },
   "success_uiLang": { "message": "UI" },
   "success_replyLang": { "message": "Mamaly ny fiteny" },

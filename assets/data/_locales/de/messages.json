@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Nachrichtenkette konnte nicht gespeichert werden" },
   "warn_unknownCmd": { "message": "Unbekannter Befehl" },
   "warn_forAvailRun": { "message": "für verfügbare Auflage" },
+  "warn_noHandlerForCmd": { "message": "Kein Handler für Befehl" },
   "data_slashCmds": { "message": "slash-Befehle" },
   "success_uiLang": { "message": "UI-Sprache" },
   "success_replyLang": { "message": "Antwortsprache" },

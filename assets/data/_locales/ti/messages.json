@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "ናይ መልእኽቲ ሰንሰለት ክዕቅብ ኣይከኣለን ።" },
   "warn_unknownCmd": { "message": "ዘይፍለጥ ትእዛዝ" },
   "warn_forAvailRun": { "message": "ንሮሮሮ ተዳልዩ" },
+  "warn_noHandlerForCmd": { "message": "ትእዛዝ ኣይህብን እዩ ።" },
   "data_slashCmds": { "message": "ኣዘዝቲ ስካሽ" },
   "success_uiLang": { "message": "ቋንቋ" },
   "success_replyLang": { "message": "መልሲ ቋንቋ" },

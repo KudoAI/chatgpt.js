@@ -37,6 +37,7 @@
   "warn_failedToSaveMsgChain": { "message": "സന്ദേശ ശൃംഖല സംരക്ഷിക്കുന്നതിൽ പരാജയപ്പെട്ടു" },
   "warn_unknownCmd": { "message": "അജ്ഞാതമായ ആജ്ഞ" },
   "warn_forAvailRun": { "message": "s" },
+  "warn_noHandlerForCmd": { "message": "കമാന്‍ഡിനായി ഹാന്‍ഡ്‌ലര്‍ ഇല്ല" },
   "data_slashCmds": { "message": "സ്ലാഷ് കമാൻഡുകൾ" },
   "success_uiLang": { "message": "UI ഭാഷ" },
   "success_replyLang": { "message": "മറുപടി ഭാഷ" },

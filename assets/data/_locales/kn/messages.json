@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "ಸಂದೇಶ ಸರಪಳಿಯನ್ನು ಉಳಿಸುವಲ್ಲಿ ವಿಫಲವಾಗಿದೆ" },
   "warn_unknownCmd": { "message": "ಅಜ್ಞಾತ ಆಜ್ಞೆ" },
   "warn_forAvailRun": { "message": "ಲಭ್ಯವಿರುವ ರನ್‌ಗಾಗಿ" },
+  "warn_noHandlerForCmd": { "message": "ಆಜ್ಞೆಗೆ ಯಾವುದೇ ಹ್ಯಾಂಡ್ಲರ್ ಇಲ್ಲ" },
   "data_slashCmds": { "message": "ಸ್ಲ್ಯಾಶ್ ಆಜ್ಞೆಗಳು" },
   "success_uiLang": { "message": "UI ಭಾಷೆ" },
   "success_replyLang": { "message": "ಪ್ರತ್ಯುತ್ತರ ಭಾಷೆ" },

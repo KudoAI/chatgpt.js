@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Kuri Kubika Ubutumwa" },
   "warn_unknownCmd": { "message": "Komandi:" },
   "warn_forAvailRun": { "message": "kugirango Bihari Gukoresha" },
+  "warn_noHandlerForCmd": { "message": "Kugirango Komandi:" },
   "data_slashCmds": { "message": "amabwiriza" },
   "success_uiLang": { "message": "Ururimi" },
   "success_replyLang": { "message": "Ururimi" },

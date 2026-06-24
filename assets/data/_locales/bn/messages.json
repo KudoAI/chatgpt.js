@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "মেসেজ চেইন সংরক্ষণ করতে ব্যর্থ হয়েছে" },
   "warn_unknownCmd": { "message": "অজানা কমান্ড" },
   "warn_forAvailRun": { "message": "উপলভ্য দৌড়ের জন্য" },
+  "warn_noHandlerForCmd": { "message": "কমান্ডের জন্য কোনও হ্যান্ডলার নেই" },
   "data_slashCmds": { "message": "স্ল্যাশ কমান্ড" },
   "success_uiLang": { "message": "UI ভাষা" },
   "success_replyLang": { "message": "ভাষা উত্তর দিন" },

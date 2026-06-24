@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Хабар тізбегін сақтау сәтсіз аяқталды" },
   "warn_unknownCmd": { "message": "Беймәлім команда" },
   "warn_forAvailRun": { "message": "қол жетімді іске қосу үшін" },
+  "warn_noHandlerForCmd": { "message": "Команда үшін өңдеуші жоқ" },
   "data_slashCmds": { "message": "slash командалары" },
   "success_uiLang": { "message": "UI тілі" },
   "success_replyLang": { "message": "Тілге жауап беру" },

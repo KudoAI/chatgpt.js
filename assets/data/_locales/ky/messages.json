@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Кабар чынжыры сакталбады" },
   "warn_unknownCmd": { "message": "Белгисиз команда" },
   "warn_forAvailRun": { "message": "жеткиликтүү чуркоо үчүн" },
+  "warn_noHandlerForCmd": { "message": "Команда үчүн иштетүүчү жок" },
   "data_slashCmds": { "message": "slash буйруктары" },
   "success_uiLang": { "message": "UI тили" },
   "success_replyLang": { "message": "Тилге жооп берүү" },

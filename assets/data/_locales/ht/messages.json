@@ -35,6 +35,7 @@
   "warn_failedToSaveMsgChain": { "message": "Echwe pou konsève pou chèn mesaj" },
   "warn_unknownCmd": { "message": "Kòmandman enkoni" },
   "warn_forAvailRun": { "message": "pou kouri ki disponib/pou kouri ki disponib" },
+  "warn_noHandlerForCmd": { "message": "Pa gen moun k ap okipe pou kòmande" },
   "data_slashCmds": { "message": "slash kòmandman yo/commande de" },
   "success_uiLang": { "message": "Lang UI" },
   "success_replyLang": { "message": "LANG REPONS" },
