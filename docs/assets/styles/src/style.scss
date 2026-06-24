@@ -122,7 +122,7 @@ $no-select: (
 /* GENERAL */
 
 .app-nav a.active { border-bottom: 2px solid $green}
-a { word-break: break-word }
+a { overflow-wrap: break-word }
 .top-gradient { /* for Star Wars effect (from `../../js/onload-hacks.js`) */
     position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 20vh ;
     background-image: linear-gradient(to top, transparent, #000) ;
@@ -266,7 +266,7 @@ main h2 { /* headings */
     text-align: center ; margin: 8.4rem 0 5rem !important ; font-size: 6rem !important ;
     font-family: 'Eurostile Extended Black', Georgia, Cambria, Times New Roman, Times, serif ;
     text-transform: uppercase }
-main h2 span { word-break: break-word }
+main h2 span { overflow-wrap: break-word }
 main h2 a { pointer-events: none }
 .anchor:hover { text-decoration: none }
 main h3 { font-size: 3.6rem !important ; margin: 4.75rem 0 2rem !important }
@@ -301,7 +301,7 @@ main pre code::before { /* add scanlines */
 main pre code { border: $blue 2px solid ; border-radius: 12px !important ; padding: 26px !important }
 main p code {
     font-size: 1.3rem !important ; position: relative ; bottom: 2px ;
-    padding: 2px 12px 5px !important ; margin: 0 5px !important ; word-break: break-word ;
+    padding: 2px 12px 5px !important ; margin: 0 5px !important ; overflow-wrap: break-word ;
     border: white 1px solid ; border-radius: 8px !important }
 main pre:after { display: none } /* hide lang indicator */
 .docsify-copy-code-button {    
@@ -487,7 +487,7 @@ input#mce-EMAIL, input#mce-EMAIL::placeholder { font-size: 1.55rem ; text-indent
         font-size: 1.65rem !important ; margin: 0 17px !important }
     main pre + p, main pre + p + p { padding: 0 !important } /* remove padding from 2x p's following code blocks */
     main ol { width: inherit ; margin: 0 32px ; padding: 0 0 0 15px !important } /* platform steps parent */
-    main ol p { text-align: left !important ; word-break: break-word } /* platform steps */
+    main ol p { text-align: left !important ; overflow-wrap: break-word } /* platform steps */
 
     /* Code */
     main code, .token { font-size: 1.2rem !important } /* shrink font */
