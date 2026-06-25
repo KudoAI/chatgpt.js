@@ -16,8 +16,7 @@ async function start() {
         input: process.stdin, output: process.stdout, prompt: `${log.colors.bg}>>> ${log.colors.nc}` })
     env.rl.prompt()
     for await (const rawInput of env.rl) {
-        const input = rawInput.trim()
-        if (!input) { env.rl.prompt() ; continue }
+        const input = rawInput.trim() ; if (!input) { env.rl.prompt() ; continue }
         await (input.startsWith('/') ? router(input, env.rl) : run.query(buildQuery(input)))
         env.rl.prompt()
     }
