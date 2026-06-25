@@ -7,7 +7,6 @@ globalThis.log = require('./lib/log')
 async function start() {
     env.modes.repl = true
     const { build: buildQuery } = require('./lib/query'),
-            messages = require('./lib/messages'),
             readline = require('readline/promises'),
             router = require('./lib/repl/router'),
             run = require('./lib/run')
@@ -15,7 +14,6 @@ async function start() {
         cli.msgs.info_type} '/help' ${cli.msgs.info_forCmds}, '/exit' ${cli.msgs.info_toQuit}.`)
     env.rl = readline.createInterface({
         input: process.stdin, output: process.stdout, prompt: `${log.colors.bg}>>> ${log.colors.nc}` })
-    cli.msgChain = messages.loadChain()
     env.rl.prompt()
     for await (const rawInput of env.rl) {
         const input = rawInput.trim()
