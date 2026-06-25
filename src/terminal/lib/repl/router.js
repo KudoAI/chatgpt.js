@@ -83,17 +83,12 @@ const routes = {
 }
 
 module.exports = async input => {
-    input = input.trim()
-    if (!input.startsWith('/')) return
-    const ctrlKey = Object.keys(settings.controls).find(key => {
-        const regex = settings.controls[key]?.regex?.repl
-        return regex?.test(input)
-    })
+    input = input.trim() ; if (!input.startsWith('/')) return
+    const ctrlKey = Object.keys(settings.controls).find(key => settings.controls[key]?.regex?.repl?.test(input))
     if (!ctrlKey)
         return log.warn(`${cli.msgs.warn_unknownCmd}: ${input.split(/\s+/)[0]}. ${
             require('../string').toTitleCase(cli.msgs.info_type)} /help ${cli.msgs.warn_forAvailRun}.`)
-    const matched = settings.controls[ctrlKey].regex.repl.exec(input),
-          rest = input.slice(matched[0].length).trim(),
+    const rest = input.slice(settings.controls[ctrlKey].regex.repl.exec(input)?.[0]?.length).trim(),
           args = rest ? rest.split(/\s+/) : []
     if (routes[ctrlKey]) await routes[ctrlKey](args)
     else log.warn(`${cli.msgs.warn_noHandlerForCmd}: /${ctrlKey}`)
