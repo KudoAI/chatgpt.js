@@ -78,7 +78,7 @@ const routes = {
     async help() { log.data(require('../../templates/help')) },
     version() { run.version() },
     stats() { run.stats() },
-    exit() { env.rl.close(); process.exit(0) },
+    exit() { env.rl?.close() ; process.exit(0) },
     debug(args) { run.toggleDebug(args[0]) }
 }
 
