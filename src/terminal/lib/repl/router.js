@@ -3,29 +3,27 @@ const run = require('../run'),
 
 const routes = {
 
+    // Parameters
     async provider(args) {
         if (!args.length) return log.info(`${cli.msgs.info_current} provider: ${cli.config.provider}`)
         cli.config.provider = args[0]
         log.success(`Provider ${cli.msgs.success_setTo} ${cli.config.provider}`)
     },
-
     uiLang(args) { run.uiLang(args[0]) },
     replyLang(args) { run.replyLang(args.join(' ')) },
-
     async summarize(args) {
         if (!args.length)
             return log.warn(`${cli.msgs.helpSection_usage}: ${settings.controls.summarize.display.repl}`)
         await run.summarize(args.join(' '))
     },
-
     async actAs(args) { await run.actAs(args.join(' ') || null) },
     async asciiArt(args) { await run.asciiArt(args.join(' ') || null) },
-
     async config(args) {
         if (!args.length) return log.warn(`${cli.msgs.helpSection_usage}: ${settings.controls.config.display.repl}`)
         await run.loadConfig(args[0])
     },
 
+    // Message chain options
     maxChars(args) {
         if (!args.length) return log.info(`${cli.msgs.info_current} maxChars: ${cli.config.maxChars}`)
         const newMax = parseInt(args[0], 10)
@@ -35,7 +33,6 @@ const routes = {
             log.success(`maxChars ${cli.msgs.success_setTo} ${cli.config.maxChars}`)
         }
     },
-
     maxTokens(args) {
         if (!args.length)
             return log.info(`${cli.msgs.info_current} maxTokens: ${cli.config.maxTokens || 'unlimited'}`)
@@ -46,7 +43,6 @@ const routes = {
             log.success(`maxTokens ${cli.msgs.success_setTo} ${cli.config.maxTokens}`)
         }
     },
-
     turnsToPreserve(args) {
         if (!args.length) return log.info(`${cli.msgs.info_current} turnsToPreserve: ${cli.config.turnsToPreserve}`)
         const newTurns = parseInt(args[0], 10)
@@ -56,24 +52,31 @@ const routes = {
             log.success(`turnsToPreserve ${cli.msgs.success_setTo} ${cli.config.turnsToPreserve}`)
         }
     },
-
     clear() { run.clear() },
+
+    // Flags
     copy(args) { run.toggleCopy(args[0]) },
     noSuggest(args) { run.toggleNoSuggest(args[0]) },
     quietMode(args) { run.toggleQuiet(args[0]) },
+
+    // git options
     async commitMsg() { await run.commitMsg() },
     commitMsgExample(args) { run.commitMsgExample(args.join(' ')) },
     async diff() { await run.diff() },
 
+    // Data commands
     async sentiment(args) {
         if (!args.length)
             return log.warn(`${cli.msgs.helpSection_usage}: ${settings.controls.sentiment.display.repl}`)
         await run.sentiment(args.join(' '))
     },
 
+    // Fun commands
     async joke() { await run.joke() },
     async fortune() { await run.fortune() },
     async randomAnswer() { await run.randomAnswer() },
+
+    // Application commands
     async init() { await run.init() },
     async help() { log.data(require('../../templates/help')) },
     version() { run.version() },
