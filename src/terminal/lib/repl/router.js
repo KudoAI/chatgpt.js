@@ -66,8 +66,7 @@ const routes = {
 
     // Data commands
     async sentiment(args) {
-        if (!args.length)
-            return log.warn(`${cli.msgs.helpSection_usage}: ${settings.controls.sentiment.display.repl}`)
+        if (!args.length) return log.warn(`${cli.msgs.helpSection_usage}: ${settings.controls.sentiment.display.repl}`)
         await run.sentiment(args.join(' '))
     },
 
