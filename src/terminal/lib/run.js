@@ -104,16 +104,14 @@ module.exports = {
 
     async loadConfig(configPath) {
         if (!configPath) return log.warn(`${cli.msgs.helpSection_usage}: ${require('./settings').controls.config.repl}`)
-        const fs = require('fs').promises,
-              cleanedPath = configPath.replace(/^(['"])(.*)\1$/, '$2')
-        let tmpDir
+        const fs = require('fs'),
+              os = require('os'),
+              path = require('path'),
+              cleanedPath = configPath.replace(/^(['"])(.*)\1$/, '$2'),
+              tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cli-config-')),
+              tmpFile = path.join(tmpDir, 'config.mjs')
         try {
-            const os = require('os'),
-                  path = require('path'),
-                { text } = await require('./resolver')(cleanedPath)
-            tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'cli-config-'))
-            const tmpFile = path.join(tmpDir, 'config.mjs')
-            await fs.writeFile(tmpFile, text, { mode: 0o600 })
+            fs.writeFileSync(tmpFile, await require('./resolver')(cleanedPath), { encoding: 'utf8', mode: 0o600 })
             const mod = await import(require('url').pathToFileURL(tmpFile).href)
             Object.assign(cli.config, mod.default || mod)
             if (cli.config.uiLang) cli.msgs = await language.getMsgs(cli.config.uiLang)
@@ -121,7 +119,7 @@ module.exports = {
         } catch (err) {
             log.error(`${cli.msgs.error_failedToLoadConfigFile}: ${err.message}`)
         } finally {
-            if (tmpDir) try { await fs.rm(tmpDir, { recursive: true, force: true }) } catch (err) {}
+            fs.rmSync(tmpDir, { recursive: true, force: true })
         }
     },
 
