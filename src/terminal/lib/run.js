@@ -8,12 +8,7 @@ const fs = require('fs'),
 module.exports = {
 
     actAs(persona) { return this.query(require('@kudoai/ai-personas')[persona]?.prompt) },
-
-    asciiArt(subject) {
-        const subjectText = subject && typeof subject == 'string' ? subject : 'a random thing'
-        return this.query(`Render a single piece of ascii art of ${subjectText}.`)
-    },
-
+    asciiArt(subject = 'a random thing') { return this.query(`Render a single piece of ascii art of ${subject}.`) },
     clear() { messages.clearChain() },
     commitMsg() { return git.generateCommitMsg({ includeDiff: cli.config.diff }) },
     diff() { return git.diff.print() },
