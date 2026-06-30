@@ -7,6 +7,7 @@ module.exports = {
     configFilename: '.chatgpt.config.mjs',
 
     controls: {
+        interactive: { type: 'cmd', regex: /^--?interactive$/ },
         provider: { type: 'param', regex: /^--?p(?:rovider)?$/, defaultVal: 'openrouter' },
         query: { type: 'param', regex: /^--?(?:q|query|ask|send)?$/, defaultVal: 'hi' },
         summarize: { type: 'param', valType: 'filepath', allowText: true, regex: /^--?summarize(?:[=\s].*|$)/ },
