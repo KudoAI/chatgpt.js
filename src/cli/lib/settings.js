@@ -1,7 +1,8 @@
 const fs = require('fs'),
       path = require('path')
 
-;(globalThis.cli ??= {}).config = {}
+globalThis.cli ??= {}
+globalThis.cli.config = {}
 
 module.exports = {
     configFilename: '.chatgpt.config.mjs',
@@ -59,9 +60,10 @@ module.exports = {
         if (cli.configPath) // load from config file
             try {
                 const mod = require(cli.configPath), fileConfig = mod?.default ?? mod
-                if (!fileConfig || typeof fileConfig != 'object')
+                if (!fileConfig || typeof fileConfig != 'object') {
                     log.configURLandExit(`${cli.msgs.error_invalidConfigFile}.`)
-                ;(arguments.length ? inputCtrlKeys : Object.keys(fileConfig)).forEach(key => {
+                }
+                (arguments.length ? inputCtrlKeys : Object.keys(fileConfig)).forEach(key => {
                     if (!(key in fileConfig)) return
                     const val = fileConfig[key], ctrl = this.controls[key]
                     if (!ctrl) {
