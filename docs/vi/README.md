@@ -36,15 +36,15 @@
 
 <div id="shields" align="center">
 
-<a href="LICENSE.md" target="_blank" rel="noopener">
+<a href="LICENSE.md">
     <img src="https://img.shields.io/badge/Gi%E1%BA%A5y_Ph%C3%A9p-MIT-f99b27.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://www.npmjs.com/package/@kudoai/chatgpt.js/v/latest" target="_blank" rel="noopener">
+<a href="https://www.npmjs.com/package/@kudoai/chatgpt.js/v/latest">
     <img src="https://img.shields.io/npm/v/%40kudoai%2Fchatgpt.js?logo=npm&logoColor=white&labelColor=464646&color=32fcee&style=for-the-badge&label=B%E1%BA%A3n%20ph%C3%A1t%20h%C3%A0nh%20m%E1%BB%9Bi%20nh%E1%BA%A5t"></a>
-<a href="https://www.codefactor.io/repository/github/kudoai/chatgpt.js" target="_blank" rel="noopener">
+<a href="https://www.codefactor.io/repository/github/kudoai/chatgpt.js">
     <img src="https://img.shields.io/codefactor/grade/github/kudoai/chatgpt.js?label=Ch%E1%BA%A5t+L%C6%B0%E1%BB%A3ng+M%C3%A3&logo=codefactor&logoColor=white&labelColor=464646&color=a0fc55&style=for-the-badge"></a>
-<a href="https://sonarcloud.io/component_measures?metric=vulnerabilities&id=kudoai_chatgpt.js" target="_blank" rel="noopener">
+<a href="https://sonarcloud.io/component_measures?metric=vulnerabilities&id=kudoai_chatgpt.js">
     <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dkudoai_chatgpt.js%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonar&logoColor=white&labelColor=464646&label=L%E1%BB%97+h%E1%BB%95ng&color=ffef00"></a>
-<a href="https://github.com/sindresorhus/awesome-chatgpt#javascript" target="_blank" rel="noopener">
+<a href="https://github.com/sindresorhus/awesome-chatgpt#javascript">
     <img src="https://img.shields.io/badge/%C4%90%E1%BB%81_C%E1%BA%ADp_Trong-Awesome-ff69b4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="#">
     <img src="https://img.shields.io/badge/y%C3%AAu_c%E1%BA%A7u_jsDelivr-4,140,445+-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge"></a>
@@ -528,7 +528,7 @@ Tự động phát phản hồi của ChatGPT.
 [googlegpt-install]: https://github.com/adamlui/ai-web-extensions/tree/main/googlegpt/#-installation
 [googlegpt-readme]: https://github.com/adamlui/ai-web-extensions/tree/main/googlegpt/#readme
 
-### <img width=23 src="https://assets.chatgptjs.org/images/icons/platforms/thunderbird/icon32.png?v=e638eac"> <a href="https://micz.it/thunderdbird-addon-thunderai/?utm_source=chatgpt.js-github&utm_medium=referral&utm_content=showcase-link" target="_blank" rel="noopener">ThunderAI</a> &nbsp;<a href="https://addons.thunderbird.net/thunderbird/addon/thunderai/reviews" target="_blank" rel="noopener"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/badges/5-star/blue-stars.png?v=e638eac"><img width=92 alt="[Đã xếp hạng 5 sao]" src="https://assets.chatgptjs.org/images/badges/5-star/yellow-stars-in-white-pill.png?v=e638eac"></picture></a>
+### <img width=23 src="https://assets.chatgptjs.org/images/icons/platforms/thunderbird/icon32.png?v=e638eac"> <a href="https://micz.it/thunderdbird-addon-thunderai/?utm_source=chatgpt.js-github&utm_medium=referral&utm_content=showcase-link">ThunderAI</a> &nbsp;<a href="https://addons.thunderbird.net/thunderbird/addon/thunderai/reviews"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/badges/5-star/blue-stars.png?v=e638eac"><img width=92 alt="[Đã xếp hạng 5 sao]" src="https://assets.chatgptjs.org/images/badges/5-star/yellow-stars-in-white-pill.png?v=e638eac"></picture></a>
 
 > Sử dụng ChatGPT trong Thunderbird để cải thiện email của bạn, ngay cả với tài khoản miễn phí!
 <br>[Cài đặt](https://addons.thunderbird.net/thunderbird/addon/thunderai/) /
