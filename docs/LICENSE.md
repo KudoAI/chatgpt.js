@@ -1,19 +1,19 @@
 <div align="center">
     <h6>
-        <a href="docs/">
+        <a href="./">
             <picture>
                 <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/icons/earth/white/icon32.svg?v=e638eac">
                <img height=14 src="https://assets.chatgptjs.org/images/icons/earth/black/icon32.svg?v=e638eac">
             </picture>
         </a>
         English |
-        <a href="docs/zh-cn/LICENSE.md">简体中文</a> |
-        <a href="docs/zh-tw/LICENSE.md">繁體中文</a> |
-        <a href="docs/ja/LICENSE.md">日本</a> |
-        <a href="docs/ko/LICENSE.md">한국인</a> |
-        <a href="docs/hi/LICENSE.md">हिंदी</a> |
-        <a href="docs/ne/LICENSE.md">नेपाली</a> |
-        <a href="docs/vi/LICENSE.md">Việt</a>
+        <a href="./zh-cn/LICENSE.md">简体中文</a> |
+        <a href="./zh-tw/LICENSE.md">繁體中文</a> |
+        <a href="./ja/LICENSE.md">日本</a> |
+        <a href="./ko/LICENSE.md">한국인</a> |
+        <a href="./hi/LICENSE.md">हिंदी</a> |
+        <a href="./ne/LICENSE.md">नेपाली</a> |
+        <a href="./vi/LICENSE.md">Việt</a>
     </h6>
 </div>
 
