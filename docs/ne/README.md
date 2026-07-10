@@ -11,7 +11,7 @@
             </picture>
         </a>
         नेपाली |
-        <a href="../..#readme">English</a> |
+        <a href="../../#readme">English</a> |
         <a href="../hi#readme"> हिंदी</a> |
         <a href="../zh-cn#readme">简体中文</a> |
         <a href="../zh-tw#readme">繁體中文</a> |

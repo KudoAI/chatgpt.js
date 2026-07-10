@@ -11,7 +11,7 @@
             </picture>
         </a>
         한국어 |
-        <a href="../..#readme">English</a> |
+        <a href="../../#readme">English</a> |
         <a href="../zh-cn#readme">简体中文</a> |
         <a href="../zh-tw#readme">繁體中文</a> |
         <a href="../ja#readme">日本</a> |
