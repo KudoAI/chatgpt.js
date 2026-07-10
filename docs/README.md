@@ -248,7 +248,7 @@ chatgpt --help
 
 For more options & examples, see the extended user guide:
 
-<https://github.com/KudoAI/chatgpt.js/blob/v4.15.0/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.15.1/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -564,7 +564,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/white/icon16.svg"><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/dark-gray/icon16.svg"></picture>
 **[Latest releases](https://github.com/KudoAI/chatgpt.js/releases)** /
-[Userguide](https://github.com/KudoAI/chatgpt.js/blob/v4.15.0/docs/USERGUIDE.md) /
+[Userguide](https://github.com/KudoAI/chatgpt.js/blob/v4.15.1/docs/USERGUIDE.md) /
 [Get support](https://github.com/KudoAI/chatgpt.js/issues) /
 [Discuss](https://github.com/KudoAI/chatgpt.js/discussions) /
 [Back to top ↑](#top)
