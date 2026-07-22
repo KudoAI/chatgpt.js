@@ -27,16 +27,18 @@ jobs:
               local total=0
               for month in $(seq 1 $current_month); do
                 month_padded=$(printf "%02d" $month)
-                monthly=$(curl -fsSL "https://data.jsdelivr.com/v1/stats/packages/${package}?period=${year}-${month_padded}" | \
-                          sed -n -E 's/.*"total":[[:space:]]*([0-9]+).*/\1/p' | head -1)
-                if [ -n "$monthly" ] && [ "$monthly" -gt 0 ]; then
+                monthly=$(curl -fsSL --proto "=https" \
+                  "https://data.jsdelivr.com/v1/stats/packages/${package}?period=${year}-${month_padded}" | \
+                  sed -n -E 's/.*"total":[[:space:]]*([0-9]+).*/\1/p' | head -1
+                )
+                if [ -n "$monthly" ] && [ "$monthly" -gt 0 ] ; then
                   total=$((total + monthly))
                   echo "    $year-$month_padded: $monthly" >&2
                 fi
               done
               echo "$total"
             else # get year stats
-              curl -fsSL "https://data.jsdelivr.com/v1/stats/packages/${package}?period=${year}" | \
+              curl -fsSL --proto "=https" "https://data.jsdelivr.com/v1/stats/packages/${package}?period=${year}" | \
                 sed -n -E 's/.*"total":[[:space:]]*([0-9]+).*/\1/p' | head -1
             fi
           }
