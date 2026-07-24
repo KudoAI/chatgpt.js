@@ -249,7 +249,7 @@ chatgpt --help
 
 थप विकल्पहरू र उदाहरणहरूको लागि, विस्तारित प्रयोगकर्ता गाइड हेर्नुहोस्:
 
-<https://github.com/KudoAI/chatgpt.js/blob/v4.15.1/docs/USERGUIDE.md>
+<https://github.com/KudoAI/chatgpt.js/blob/v4.15.2/docs/USERGUIDE.md>
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@e53b001/assets/images/banners/sponsor/$10/banner1660x260.png"></a>
 
@@ -565,7 +565,7 @@ ChatGPT प्रतिक्रियाहरू स्वतः प्ले 
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/white/icon16.svg"><img height=14 src="https://cdn.jsdelivr.net/gh/adamlui/js-utils@6b0d399/assets/images/icons/tag/dark-gray/icon16.svg"></picture>
 **[पछिल्ला रिलिजहरू](https://github.com/KudoAI/chatgpt.js/releases)** /
-[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v4.15.1/docs/USERGUIDE.md) /
+[यूजरगाइड](https://github.com/KudoAI/chatgpt.js/blob/v4.15.2/docs/USERGUIDE.md) /
 [समर्थन प्राप्त गर्नुहोस्](https://github.com/KudoAI/chatgpt.js/issues) / 
 [चर्चा](https://github.com/KudoAI/chatgpt.js/discussions) / 
 <a href="#top">शीर्षमा जाऔं ↑</a>
