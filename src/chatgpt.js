@@ -59,8 +59,8 @@ const chatgpt = {
                  + 'button:has(use[href$="svg#f8aa74"])'
         },
         chatDivs: {
-            convo: 'div[class*=thread]', msg: 'div[data-message-author-role]',
-            reply: 'div[data-message-author-role=assistant]'
+            convo: 'div[class*=thread]', msg: 'li[data-message-role]',
+            reply: 'li[data-message-role=assistant]'
         },
         chatHistory: 'div#history',
         errors: { toast: 'div.toast-root', txt: 'div[class*=text-error]' },
@@ -1673,7 +1673,7 @@ const chatgpt = {
 
         getFromDOM(pos) {
             if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
-            const responseDivs = document.querySelectorAll('div[data-message-author-role=assistant]'),
+            const responseDivs = document.querySelectorAll('li[data-message-role=assistant]'),
                   strPos = pos.toString().toLowerCase()
             let response
             if (!responseDivs.length) return console.error('No conversation found!')
