@@ -1673,7 +1673,7 @@ const chatgpt = {
 
         getFromDOM(pos) {
             if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
-            const responseDivs = document.querySelectorAll('li[data-message-role=assistant]'),
+            const responseDivs = document.querySelectorAll(chatgpt.selectors.chatDiv.reply),
                   strPos = pos.toString().toLowerCase()
             let response
             if (!responseDivs.length) return console.error('No conversation found!')
