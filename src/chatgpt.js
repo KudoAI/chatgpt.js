@@ -55,7 +55,8 @@ const chatgpt = {
             stop: 'button[data-testid=stop-button]',
             upload: 'div[data-testid=composer-action-file-upload],' // tall chatbar
                   + 'button#composer-plus-btn', // short chatbar
-            voice: 'button[style*=composer-speech-button], button[data-testid*=composer-speech-button]'
+            voice: 'button[data-start-dictation],'
+                 + 'button[style*=composer-speech-button], button[data-testid*=composer-speech-button],'
                  + 'button:has(use[href$="svg#f8aa74"])'
         },
         chatDivs: {
