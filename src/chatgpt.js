@@ -376,7 +376,7 @@ const chatgpt = {
             modal.onanimationend = () => {
 
                 // Remove alert
-                modalContainer.remove() // ...from DOM
+                modalContainer?.remove() // ...from DOM
                 alertQueue = JSON.parse(localStorage.alertQueue)
                 alertQueue.shift() // + memory
                 localStorage.alertQueue = JSON.stringify(alertQueue) // + storage
@@ -385,7 +385,7 @@ const chatgpt = {
                 // Check for pending alerts in queue
                 if (alertQueue.length) {
                     const nextAlert = document.getElementById(alertQueue[0])
-                    setTimeout(() => {
+                    if (nextAlert) setTimeout(() => {
                         nextAlert.style.display = ''
                         setTimeout(() => nextAlert.classList.add('animated'), 100)
                     }, 500)
