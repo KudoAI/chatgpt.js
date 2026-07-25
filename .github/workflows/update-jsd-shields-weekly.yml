@@ -2,7 +2,7 @@ name: Update jsDelivr shield in READMEs
 
 on:
   schedule:
-    - cron: "17 5 * * 1"
+    - cron: "17 5 1 * *"
   workflow_dispatch:
 
 jobs:
