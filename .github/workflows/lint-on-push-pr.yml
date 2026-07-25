@@ -15,7 +15,6 @@ jobs:
       - run: npm run lint
 
   shellcheck:
-    name: runner / shellcheck
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -26,5 +25,5 @@ jobs:
       - uses: reviewdog/action-shellcheck@4c07458293ac342d477251099501a718ae5ef86e # v1.32.0
         with:
           github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review  # use MD + link to rule page 
+          reporter: ${{ github.event_name == 'pull_request' && 'github-pr-review' || 'github-annotations' }}
           exclude: "./.git/*"
