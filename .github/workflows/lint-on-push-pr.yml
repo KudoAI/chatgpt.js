@@ -27,3 +27,4 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: ${{ github.event_name == 'pull_request' && 'github-pr-review' || 'github-annotations' }}
           exclude: "./.git/*"
+          fail_level: warning
