@@ -4,7 +4,7 @@ rm -rf dist
 mkdir -p dist/data
 
 cp assets/data/_locales/en/messages.json dist/data/messages.json
-cp package-data.json dist/data/package-data.json
+cp assets/data/package-data.json dist/data/package-data.json
 cp -r src/terminal dist/
 
 minify-js src/chatgpt.js ../dist/chatgpt.min.js --comment=" \
