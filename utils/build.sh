@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rm -rf dist
 mkdir -p dist/data
 
 cp assets/data/_locales/en/messages.json dist/data/messages.json
