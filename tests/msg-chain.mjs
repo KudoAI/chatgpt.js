@@ -2,8 +2,8 @@ import chatgpt from '../src/chatgpt.js'
 
 const msgChain = []
 
-async function ask(question, provider) {
-    const currentMsg = { role: 'user', content: question },
+async function ask(query, provider) {
+    const currentMsg = { role: 'user', content: query },
           messages = [...msgChain, currentMsg]
     console.log('\n--- msgChain BEFORE sending ---')
     console.log(JSON.stringify(messages, null, 2))
