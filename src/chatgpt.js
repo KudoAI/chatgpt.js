@@ -60,8 +60,8 @@ const chatgpt = {
                  + 'button:has(use[href$="svg#f8aa74"])'
         },
         chatDivs: {
-            convo: 'div[class*=thread]', msg: 'li[data-message-role]',
-            reply: 'li[data-message-role=assistant]'
+            convo: 'div[class*=thread]', msg: 'li[data-message-role], div[data-message-author-role]',
+            reply: 'li[data-message-role=assistant], div[data-message-author-role=assistant]'
         },
         chatHistory: 'div#history',
         errors: { toast: 'div.toast-root', txt: 'div[class*=text-error]' },
