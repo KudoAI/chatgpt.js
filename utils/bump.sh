@@ -38,10 +38,11 @@ echo -e "${BY}Bumping versions in package manifests...${BW}"
 npm version --no-git-tag-version "$new_ver"
 
 echo -e "${BY}\nBumping versions in READMEs + chatgpt.d.ts...${BW}"
+readarray -t docs_readmes < <(find docs -name "README.md")
 sed -i \
     -e "s/\(chatgpt\(-\|\.js@\)\)[0-9]\+\(\.[0-9]\+\)\{2\}/\1$new_ver/g" `# jsDelivr URLs` \
     -e "s|v[0-9]\+\.[0-9]\+\.[0-9]\+|v$new_ver|g" `# version refs` \
-    $(find docs -name "README.md") ./README.md ./chatgpt.d.ts
+    "${docs_readmes[@]}" ./README.md ./chatgpt.d.ts
 echo "v$new_ver"
 
 echo -e "${BY}\nChanging Git author/committer to kudo-sync-bot...\n${NC}"
@@ -58,9 +59,9 @@ export GIT_COMMITTER_EMAIL="auto-sync@kudoai.com"
 
 echo -e "${BY}\nCommitting bumps to Git...\n${NC}"
 git add package*.json
-git commit -n -m "Bumped versions in manifests to $new_ver" -S$KEY_ID
+git commit -n -m "Bumped versions in manifests to $new_ver" -S"$KEY_ID"
 git add "chatgpt.d.ts" "README.md" "./**/README.md" "./**/USERGUIDE.md"
-git commit -n -m "Bumped chatgpt.js versions in URLs to $new_ver" -S$KEY_ID
+git commit -n -m "Bumped chatgpt.js versions in URLs to $new_ver" -S"$KEY_ID"
 
 echo -e "${BY}\nBuilding chatgpt.min.js...\n${NC}"
 bash utils/build.sh
@@ -77,7 +78,7 @@ fi
 
 echo -e "${BY}\nCommitting build to Git...\n${NC}"
 git add ./**/chatgpt.min.js
-git commit -n -m "Built chatgpt.js $new_ver" -S$KEY_ID
+git commit -n -m "Built chatgpt.js $new_ver" -S"$KEY_ID"
 
 echo -e "${BY}\nPushing to GitHub...\n${NC}"
 git push
