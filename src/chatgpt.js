@@ -65,7 +65,7 @@ const chatgpt = {
         },
         chatHistory: 'div#history',
         errors: { toast: 'div.toast-root', txt: 'div[class*=text-error]' },
-        footer: 'div.wm-app-privacyPositioner, div#thread-bottom-container > div:last-of-type',
+        footer: 'div[data-testid=thread-disclaimer], div.wm-app-privacyPositioner',
         header: 'header[class$=detailHeader], header#page-header',
         links: { newChat: 'nav a[href="/"]', sidebarItem: 'nav a' },
         sidebar: 'div#stage-slideover-sidebar, div.bg-token-sidebar-surface-primary',
