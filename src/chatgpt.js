@@ -116,7 +116,6 @@ const chatgpt = {
               isMobile = chatgpt.browser.isMobile()
 
         const handlers = {
-
             dismiss: {
                 click(event) {
                     if (event.target == event.currentTarget || event.target.closest('[class*=-close-btn]'))
@@ -184,12 +183,12 @@ const chatgpt = {
         modalContainer.classList.add('chatgpt-modal') // add class to main div
         const modal = document.createElement('div'),
               modalTitle = document.createElement('h2'),
-              modalMessage = document.createElement('p')
+              modalMsg = document.createElement('p')
 
         // Create/append/update modal style (if missing or outdated)
         const thisUpdated = 1739338889852 // timestamp of last edit for this file's `modalStyle`
         let modalStyle = document.querySelector('#chatgpt-modal-style') // try to select existing style
-        if (!modalStyle || parseInt(modalStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
+        if (!modalStyle || parseInt(modalStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing/outdated
             if (!modalStyle) { // outright missing, create/id/attr/append it first
                 modalStyle = document.createElement('style') ; modalStyle.id = 'chatgpt-modal-style'
                 modalStyle.setAttribute('last-updated', thisUpdated.toString())
@@ -285,11 +284,11 @@ const chatgpt = {
         }
 
         // Insert text into elems
-        modalTitle.textContent = title || '' ; modalMessage.innerText = msg || '' ; chatgpt.renderHTML(modalMessage)
+        modalTitle.textContent = title || '' ; modalMsg.innerText = msg || '' ; chatgpt.renderHTML(modalMsg)
 
         // Create/append buttons (if provided) to buttons div
-        const modalButtons = document.createElement('div')
-        modalButtons.classList.add('modal-buttons', 'no-mobile-tap-outline')
+        const modalBtns = document.createElement('div')
+        modalBtns.classList.add('modal-buttons', 'no-mobile-tap-outline')
         if (btns) { // are supplied
             if (!Array.isArray(btns)) btns = [btns] // convert single button to array if necessary
             btns.forEach((buttonFunc) => { // create title-cased labels + attach listeners
@@ -299,17 +298,17 @@ const chatgpt = {
                     .replace(/([A-Z])/g, ' $1') // insert spaces
                     .replace(/^\w/, firstChar => firstChar.toUpperCase()) // capitalize first letter
                 button.onclick = () => { dismissAlert() ; buttonFunc() }
-                modalButtons.insertBefore(button, modalButtons.firstChild)
+                modalBtns.insertBefore(button, modalBtns.firstChild)
             })
         }
 
         // Create/append OK/dismiss button to buttons div
         const dismissBtn = document.createElement('button')
         dismissBtn.textContent = btns ? 'Dismiss' : 'OK'
-        modalButtons.insertBefore(dismissBtn, modalButtons.firstChild)
+        modalBtns.insertBefore(dismissBtn, modalBtns.firstChild)
 
         // Highlight primary button
-        modalButtons.lastChild.classList.add('primary-modal-btn')
+        modalBtns.lastChild.classList.add('primary-modal-btn')
 
         // Create/append checkbox (if provided) to checkbox group div
         const checkboxDiv = document.createElement('div')
@@ -326,7 +325,7 @@ const chatgpt = {
                 + checkboxFunc.name.slice(1) // format remaining chars
                     .replace(/([A-Z])/g, (match, letter) => ' ' + letter.toLowerCase()) // insert spaces, convert to lowercase
                     .replace(/\b(\w+)nt\b/gi, '$1n\'t') // insert apostrophe in 'nt' suffixes
-                    .trim() // trim leading/trailing spaces
+                    .trim() // leading/trailing spaces
 
             checkboxDiv.append(checkboxInput) ; checkboxDiv.append(checkboxLabel)
         }
@@ -346,7 +345,7 @@ const chatgpt = {
         closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG)
 
         // Assemble/append div
-        modal.append(closeBtn, modalTitle, modalMessage, checkboxDiv, modalButtons)
+        modal.append(closeBtn, modalTitle, modalMsg, checkboxDiv, modalBtns)
         modal.style.width = `${ width || 458 }px`
         modalContainer.append(modal) ; document.body.append(modalContainer)
 
@@ -453,7 +452,6 @@ const chatgpt = {
         },
 
         toggle: {
-
             beacons() {
                 if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
                 if (chatgpt.autoRefresh.beaconID) {
@@ -684,7 +682,7 @@ const chatgpt = {
         // Init args
         chatToGet = !chatToGet ? 'active' // default to 'active' if unpassed
                   : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
-                      parseInt(chatToGet, 10) // parse as integer
+                        parseInt(chatToGet, 10) // parse as integer
                   : chatToGet // else preserve non-num string as 'active', 'latest' or title/id of chat to get
         format = format.toLowerCase() || 'html' // default to 'html' if unpassed
 
@@ -951,29 +949,28 @@ const chatgpt = {
                     xhr.setRequestHeader('Content-Type', 'application/json')
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token)
                     xhr.onload = () => {
-                        if (xhr.status != 200)
-                            return reject('Request failed. Cannot retrieve chat messages.')
+                        if (xhr.status != 200) return reject('Request failed. Cannot retrieve chat messages.')
 
                         // Init const's
                         const data = JSON.parse(xhr.responseText).mapping,  // get chat messages
-                              userMessages = [], chatGPTMessages = [], msgsToReturn = []
+                              userMsgs = [], chatGPTMessages = [], msgsToReturn = []
 
-                        // Fill [userMessages]
+                        // Fill [userMsgs]
                         for (const key in data)
                             if (data[key]?.message?.author?.role == 'user')
-                                userMessages.push({ id: data[key].id, msg: data[key].message })
-                        userMessages.sort((a, b) => a.msg.create_time - b.msg.create_time) // sort in chronological order
+                                userMsgs.push({ id: data[key].id, msg: data[key].message })
+                        userMsgs.sort((a, b) => a.msg.create_time - b.msg.create_time) // sort in chronological order
 
-                        if (parseInt(msgToGet, 10) +1 > userMessages.length) // reject if index out of bounds
+                        if (parseInt(msgToGet, 10) +1 > userMsgs.length) // reject if index out of bounds
                             return reject(`Message/response with index ${ msgToGet +1 }`
-                                + ` is out of bounds. Only ${userMessages.length} messages/responses exist!`)
+                                + ` is out of bounds. Only ${userMsgs.length} messages/responses exist!`)
 
                         // Fill [chatGPTMessages]
-                        for (const userMessage of userMessages) {
+                        for (const userMsg of userMsgs) {
                             let sub = []
                             for (const key in data)
                                 if (data[key]?.message?.author?.role == 'assistant'
-                                    && isUserMsgAncestor(key, userMessage.id)
+                                    && isUserMsgAncestor(key, userMsg.id)
                                 ) sub.push(data[key].message)
                             sub.sort((a, b) => a.create_time - b.create_time) // sort in chronological order
                             sub = sub.map(x => { // pull out msgs after sorting
@@ -983,22 +980,22 @@ const chatgpt = {
                                     default : return
                                 }
                             })
-                            sub = sub.length == 1 ? sub[0] : sub // convert not regenerated responses to strings
+                            sub = sub.length === 1 ? sub[0] : sub // convert not regenerated responses to strings
                             chatGPTMessages.push(sub) // array of arrays (length > 1 = regenerated responses)
                         }
 
                         if (sender == 'user') // Fill [msgsToReturn] with user messages
-                            for (const userMessage in userMessages)
-                                msgsToReturn.push(userMessages[userMessage].msg.content.parts[0])
+                            for (const userMsg in userMsgs)
+                                msgsToReturn.push(userMsgs[userMsg].msg.content.parts[0])
                         else if (sender == 'chatgpt') // Fill [msgsToReturn] with ChatGPT responses
                             for (const chatGPTMessage of chatGPTMessages)
                                 msgsToReturn.push(msgToGet == 'latest' ? chatGPTMessages[chatGPTMessages.length -1]
                                                                        : chatGPTMessage )
                         else { // Fill [msgsToReturn] with objects of user messages and chatgpt response(s)
                             let i = 0
-                            for (const message in userMessages) {
+                            for (const message in userMsgs) {
                                 msgsToReturn.push({
-                                    user: userMessages[message].msg.content.parts[0],
+                                    user: userMsgs[message].msg.content.parts[0],
                                     chatgpt: msgToGet == 'latest' ? chatGPTMessages[i][chatGPTMessages[i].length -1] : chatGPTMessages[i]
                                 })
                                 i++
