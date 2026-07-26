@@ -2165,15 +2165,15 @@ const chatgpt = {
 
     _validateArg({ arg, type = 'string' }) {
         return !arg ? !!console.error('Arg not supplied!')
-                : ['lang', 'string'].includes(type) && typeof arg != 'string' ?
-                        !!console.error(`'${type}' arg must be a string!`)
-                : true
+               : ['lang', 'string'].includes(type) && typeof arg != 'string' ?
+                     !!console.error(`'${type}' arg must be a string!`)
+               : true
     },
 
     _validateEnv({ allowed = [] } = {}) {
         const allowedEnvs = [].concat(allowed)
         return !allowedEnvs.length || allowedEnvs.includes(chatgpt.env) ? true
-            : !!console.error(`This method can only be used in: ${allowedEnvs.join(' or ')} (current: ${chatgpt.env})`)
+             : !!console.error(`This method can only be used in: ${allowedEnvs.join(' or ')} (current: ${chatgpt.env})`)
     }
 }
 
