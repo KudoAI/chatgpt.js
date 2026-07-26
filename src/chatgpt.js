@@ -648,8 +648,7 @@ const chatgpt = {
         },
 
         async write(prompt, outputLang, { verbose = false } = {}) {
-            if (!chatgpt._validateArg({ arg: prompt, type: 'string' })) return
-            if (!chatgpt._validateArg({ arg: outputLang, type: 'lang' })) return
+            if (!chatgpt._validateArg([{ arg: prompt, type: 'string' }, { arg: outputLang, type: 'lang' }])) return
             if (verbose) console.info('Writing code...')
             const fullPrompt = `Write this as code in ${outputLang}: ${prompt}`,
                   resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](fullPrompt)
@@ -661,8 +660,8 @@ const chatgpt = {
 
     async detectLanguage(text, { verbose = false } = {}) {
         if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
-        chatgpt.send(`Detect the language of the following text:\n\n${text}`
-            + '\n\nOnly respond with the name of the language')
+        chatgpt.send(`Detect the language of the following text:\n\n${
+             text}\n\nOnly respond with the name of the language`)
         if (verbose) console.info('Reviewing text...')
         await chatgpt.isIdle()
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
@@ -1924,8 +1923,7 @@ const chatgpt = {
 
     async sentiment(text, entity, { verbose = false } = {}) {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
-        if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
-        if (!chatgpt._validateArg({ arg: entity, type: 'string' })) return
+        if (!chatgpt._validateArg([{ arg: text, type: 'string' }, { arg: entity, type: 'string' }])) return
         chatgpt.send('What is the sentiment of the following text'
             + ( entity ? ` towards the entity ${entity},` : '' )
             + ' from strongly negative to strongly positive?\n\n' + text )
@@ -2135,10 +2133,10 @@ const chatgpt = {
 
     async translate(text, outputLang, { verbose = false } = {}) {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
-        if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
-        if (!chatgpt._validateArg({ arg: outputLang, type: 'lang' })) return
-        for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-            return console.error(`Argument ${ i +1 } must be a string!`)
+        if (!chatgpt._validateArg([{ arg: text, type: 'string' }, { arg: outputLang, type: 'lang' }])) return
+        for (let i = 0 ; i < arguments.length ; i++)
+            if (typeof arguments[i] != 'string')
+                return console.error(`Argument ${ i +1 } must be a string!`)
         chatgpt.send(`Translate the following text to ${outputLang}. Only reply with the translation.\n\n${text}`)
         if (verbose) console.info('Translating text...')
         await chatgpt.isIdle()
@@ -2163,11 +2161,15 @@ const chatgpt = {
 
     writeCode() { chatgpt.code.write() },
 
-    _validateArg({ arg, type = 'string' }) {
-        return !arg ? !!console.error('Arg not supplied!')
-               : ['lang', 'string'].includes(type) && typeof arg != 'string' ?
-                     !!console.error(`'${type}' arg must be a string!`)
-               : true
+    _validateArg(spec) {
+        if (Array.isArray(spec)) return spec.every(item => this._validateArg(item))
+        const { arg, type = 'string' } = spec || {}
+        if (!arg)
+            return !!console.error('Arg not supplied!')
+        else if (['lang', 'string'].includes(type) && typeof arg != 'string')
+            return !!console.error(`'${type}' arg must be a string!`)
+        else
+            return true
     },
 
     _validateEnv({ allowed = [] } = {}) {
