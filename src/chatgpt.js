@@ -2162,7 +2162,8 @@ const chatgpt = {
     writeCode() { chatgpt.code.write() },
 
     _validateArg(spec) {
-        if (Array.isArray(spec)) return spec.every(item => this._validateArg(item))
+        if (Array.isArray(spec))
+            return spec.every(item => this._validateArg(item))
         const { arg, type = 'string' } = spec || {}
         if (!arg)
             return !!console.error('Arg not supplied!')
