@@ -81,7 +81,8 @@ const chatgpt = {
             chatgpt.send(prompt, { output: 'stdout' })
         } else return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest()
-            xhr.open('GET', personasURL, true) ; xhr.send()
+            xhr.open('GET', personasURL, true)
+            xhr.send()
             xhr.onload = () => {
                 if (xhr.status != 200) return reject('Request failed. Cannot retrieve prompts data.')
                 const prompt = JSON.parse(xhr.responseText)[persona]?.prompt
@@ -923,14 +924,15 @@ const chatgpt = {
                     }
 
                     // Return by title, ID or active chat
-                    const chatIdentifier = ( // determine to check by ID or title
-                        chatToGet == 'active' ||
-                            new RegExp(`^${re_chatID.source}$`).test(chatToGet) ? 'id' : 'title' )
+                    const chatIdentifier = // determine to check by ID or title
+                        chatToGet == 'active' || new RegExp(`^${re_chatID.source}$`).test(chatToGet) ? 'id' : 'title'
                     if (chatToGet == 'active') // replace chatToGet w/ actual ID
                         chatToGet = re_chatID.exec(window.location.href)[0]
                     let idx, chatFound // index of potentially found chat, flag if found
                     for (idx = 0 ; idx < data.length ; idx++) { // search for id/title to set chatFound flag
-                        if (data[idx][chatIdentifier] == chatToGet) { chatFound = true ; break }}
+                        if (data[idx][chatIdentifier] == chatToGet) {
+                            chatFound = true ; break }
+                    }
                     if (!chatFound) // exit
                         return reject(`No chat with ${chatIdentifier} = ${chatToGet} found.`)
                     for (const detail of detailsToGet)
@@ -938,7 +940,8 @@ const chatgpt = {
                     return resolve(detailsToReturn)
                 }
                 xhr.send()
-        })}
+            }
+        )}
 
         const getChatMsgs = token => {
             return new Promise((resolve, reject) => {
@@ -1011,7 +1014,8 @@ const chatgpt = {
                                 const currentMsg = data[currentID]
                                 if (!currentMsg?.message) return false
                                 if (currentMsg.id == targetUserID) return true
-                                currentID = currentMsg.parent ; depth++
+                                currentID = currentMsg.parent
+                                depth++
                             }
                             return false
                         }
@@ -2006,7 +2010,8 @@ const chatgpt = {
                 getChatNode(token).then(node =>
                     makeChatToShare(token, node).then(data =>
                         confirmShareChat(token, data).then(() => {
-                            if (['copy', 'clipboard'].includes(method)) navigator.clipboard.writeText(data.share_url)
+                            if (['copy', 'clipboard'].includes(method))
+                                navigator.clipboard.writeText(data.share_url)
                             else chatgpt.alert('🚀 Share link created!',
                                 `"${data.title}" is available at: <a target="blank" rel="noopener" href="${
                                     data.share_url}">${data.share_url}</a>`,
@@ -2055,11 +2060,10 @@ const chatgpt = {
 
         isOn() {
             if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
-            const sidebar = (() => {
-                return chatgpt.sidebar.exists() ? document.querySelector(chatgpt.selectors.sidebar) : null })()
-            if (!sidebar) { return console.error('Sidebar element not found!') || false }
-            else return chatgpt.browser.isMobile() ? document.documentElement.style.overflow == 'hidden'
-                      : sidebar.style.visibility != 'hidden' && parseInt(getComputedStyle(sidebar).width) > 150
+            const sidebar = chatgpt.sidebar.exists() ? document.querySelector(chatgpt.selectors.sidebar) : null
+            return !sidebar ? console.error('Sidebar element not found!') || false
+                 : chatgpt.browser.isMobile() ? document.documentElement.style.overflow == 'hidden'
+                 : sidebar.style.visibility != 'hidden' && parseInt(getComputedStyle(sidebar).width) > 150
         },
 
         show() {
@@ -2152,8 +2156,7 @@ const chatgpt = {
         } catch(err) {
             let d = new Date().getTime() // get current timestamp in ms (to ensure UUID uniqueness)
             const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
-                const r = ( // generate random nibble
-                    ( d +( window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) -1 ))*16)%16 | 0 )
+                const r = (( d +( crypto.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF )*16 )%16 ) | 0
                 d = Math.floor(d/16) // correspond each UUID digit to unique 4-bit chunks of timestamp
                 return ( c == 'x' ? r : (r&0x3|0x8) ).toString(16) // generate random hexadecimal digit
             })
