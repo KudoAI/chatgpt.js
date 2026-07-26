@@ -2,7 +2,7 @@ name: Lint pushes/PRs
 on: [push, pull_request]
 
 jobs:
-  lint:
+  eslint:
     runs-on: ubuntu-24.04
     permissions:
       contents: read
