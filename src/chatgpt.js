@@ -369,20 +369,15 @@ const chatgpt = {
         document.addEventListener('keydown', handlers.dismiss.key)
         modal.onmousedown = handlers.drag.mousedown // enable click-dragging
 
-        // Define alert dismisser
-        const dismissAlert = () => {
+        function dismissAlert() {
             modalContainer.style.backgroundColor = 'transparent'
             modal.style.animation = 'alert-zoom-fade-out 0.165s ease-out'
             modal.onanimationend = () => {
-
-                // Remove alert
-                modalContainer?.remove() // ...from DOM
+                modalContainer?.remove()
                 alertQueue = JSON.parse(sessionStorage.alertQueue)
-                alertQueue.shift() // + memory
-                sessionStorage.alertQueue = JSON.stringify(alertQueue) // + storage
-                document.removeEventListener('keydown', handlers.dismiss.key) // prevent memory leaks
-
-                // Check for pending alerts in queue
+                alertQueue.shift()
+                sessionStorage.alertQueue = JSON.stringify(alertQueue)
+                document.removeEventListener('keydown', handlers.dismiss.key)
                 if (alertQueue.length) {
                     const nextAlert = document.getElementById(alertQueue[0])
                     if (nextAlert) setTimeout(() => {
