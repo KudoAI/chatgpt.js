@@ -1841,7 +1841,7 @@ const chatgpt = {
                     } catch {}
                 }
             }
-            if (output == 'stdout') process.stdout.write(chatgpt.colors.reset + '\n')
+            if (output == 'stdout') process.stdout.write(`${chatgpt.colors.reset}\n`)
 
             function trunc(text, max) {
                 return max > 0 && typeof text == 'string' && text.length > max ? `${text.slice(0, max -3)}...` : text }
@@ -1925,7 +1925,7 @@ const chatgpt = {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         if (!chatgpt._validateArg([{ arg: text, type: 'string' }, { arg: entity, type: 'string' }])) return
         chatgpt.send('What is the sentiment of the following text'
-            + ( entity ? ` towards the entity ${entity},` : '' )
+            +( entity ? ` towards the entity ${entity},` : '' )
             + ' from strongly negative to strongly positive?\n\n' + text )
         if (verbose) console.info('Analyzing sentiment...')
         await chatgpt.isIdle()
@@ -2010,8 +2010,8 @@ const chatgpt = {
                             else chatgpt.alert('🚀 Share link created!',
                                 `"${data.title}" is available at: <a target="blank" rel="noopener" href="${
                                     data.share_url}">${data.share_url}</a>`,
-                                [ function openLink() { window.open(data.share_url, '_blank', 'noopener') },
-                                  function copyLink() { navigator.clipboard.writeText(data.share_url) }])
+                                [function openLink() { window.open(data.share_url, '_blank', 'noopener') },
+                                 function copyLink() { navigator.clipboard.writeText(data.share_url) }])
                             resolve(data.share_url)
                         })
                     )
