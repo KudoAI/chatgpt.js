@@ -350,9 +350,9 @@ const chatgpt = {
         modalContainer.append(modal) ; document.body.append(modalContainer)
 
         // Enqueue alert
-        let alertQueue = JSON.parse(localStorage.alertQueue ??= JSON.stringify([]))
+        let alertQueue = JSON.parse(sessionStorage.alertQueue ??= JSON.stringify([]))
         alertQueue.push(modalContainer.id)
-        localStorage.alertQueue = JSON.stringify(alertQueue)
+        sessionStorage.alertQueue = JSON.stringify(alertQueue)
 
         // Show alert if none active
         modalContainer.style.display = 'none'
@@ -377,9 +377,9 @@ const chatgpt = {
 
                 // Remove alert
                 modalContainer?.remove() // ...from DOM
-                alertQueue = JSON.parse(localStorage.alertQueue)
+                alertQueue = JSON.parse(sessionStorage.alertQueue)
                 alertQueue.shift() // + memory
-                localStorage.alertQueue = JSON.stringify(alertQueue) // + storage
+                sessionStorage.alertQueue = JSON.stringify(alertQueue) // + storage
                 document.removeEventListener('keydown', handlers.dismiss.key) // prevent memory leaks
 
                 // Check for pending alerts in queue
@@ -1463,10 +1463,10 @@ const chatgpt = {
         }
 
         // Enqueue notification
-        let notifyProps = JSON.parse(localStorage.notifyProps
+        let notifyProps = JSON.parse(sessionStorage.notifyProps
             ??= JSON.stringify({ queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }}))
         notifyProps.queue[notificationDiv.quadrant].push(notificationDiv.id)
-        localStorage.notifyProps = JSON.stringify(notifyProps)
+        sessionStorage.notifyProps = JSON.stringify(notifyProps)
 
         // Position notification (defaults to top-right)
         notificationDiv.style.top = notificationDiv.isTop ? vpYoffset.toString() + 'px' : ''
@@ -1509,9 +1509,9 @@ const chatgpt = {
         // Destroy notification
         notificationDiv.onanimationend = () => {
             notificationDiv.remove() // remove from DOM
-            notifyProps = JSON.parse(localStorage.notifyProps)
+            notifyProps = JSON.parse(sessionStorage.notifyProps)
             notifyProps.queue[notificationDiv.quadrant].shift() // + memory
-            localStorage.notifyProps = JSON.stringify(notifyProps) // + storage
+            sessionStorage.notifyProps = JSON.stringify(notifyProps) // + storage
         }
 
         return notificationDiv
