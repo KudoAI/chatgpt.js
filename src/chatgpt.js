@@ -1592,7 +1592,7 @@ const chatgpt = {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
 
         const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g
-        const reAttrs = /(\S+)=(?:(["'])([\s\S]*?)\2|([^\s>'"=]+))/g
+        const reAttrs = /([^\s=]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/g
         const nodeContent = node.childNodes
         const allowedTags = new Set([
             'a', 'b', 'i', 'em', 'strong', 'br', 'div', 'span', 'p', 'code', 'pre', 'ul', 'ol', 'li'])
@@ -1615,8 +1615,7 @@ const chatgpt = {
 
                 // Process 1st element to render
                 if (elems.length) {
-                    const elem = elems[0],
-                          [tagContent, tagName, tagAttrs, tagText] = elem.slice(0, 4)
+                    const elem = elems[0], [tagContent, tagName, tagAttrs, tagText] = elem.slice(0, 4)
                     if (!allowedTags.has(tagName)) continue // skip disallowed tags
                     const tagNode = document.createElement(tagName) ; tagNode.textContent = tagText
 
