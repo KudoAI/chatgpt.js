@@ -2167,10 +2167,11 @@ const chatgpt = {
     _validateArg(spec) {
         if (Array.isArray(spec))
             return spec.every(item => this._validateArg(item))
-        const { arg, type = 'string' } = spec || {}
+        const { arg, type = 'string' } = spec || {},
+                validTypes = ['lang', 'string']
         if (!arg)
             return !!console.error('Arg not supplied!')
-        else if (['lang', 'string'].includes(type) && typeof arg != 'string')
+        else if (validTypes.includes(type) && typeof arg != 'string')
             return !!console.error(`'${type}' arg must be a string!`)
         else
             return true
