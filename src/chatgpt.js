@@ -1591,7 +1591,7 @@ const chatgpt = {
     renderHTML(node) {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
-              reAttrs = /(\S+)=['"]?((?:.(?!['"]?\s+\S+=|[>']))+.)['"]?/g, // eslint-disable-line
+              reAttrs = /(\S+)=(?:(["'])([\s\S]*?)\2|([^\s>'"=]+))/g,
               nodeContent = node.childNodes,
               allowedTags = new Set(['a', 'b', 'i', 'em', 'strong', 'br', 'span', 'p', 'code', 'pre', 'ul', 'ol', 'li']),
               allowedAttrs = { a: ['href', 'target', 'rel'], span: ['class', 'style'], code: ['class'] }
