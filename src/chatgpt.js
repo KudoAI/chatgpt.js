@@ -1590,11 +1590,14 @@ const chatgpt = {
 
     renderHTML(node) {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
-        const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
-              reAttrs = /(\S+)=(?:(["'])([\s\S]*?)\2|([^\s>'"=]+))/g,
-              nodeContent = node.childNodes,
-              allowedTags = new Set(['a', 'b', 'i', 'em', 'strong', 'br', 'span', 'p', 'code', 'pre', 'ul', 'ol', 'li']),
-              allowedAttrs = { a: ['href', 'target', 'rel'], span: ['class', 'style'], code: ['class'] }
+
+        const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g
+        const reAttrs = /(\S+)=(?:(["'])([\s\S]*?)\2|([^\s>'"=]+))/g
+        const nodeContent = node.childNodes
+        const allowedTags = new Set([
+            'a', 'b', 'i', 'em', 'strong', 'br', 'div', 'span', 'p', 'code', 'pre', 'ul', 'ol', 'li'])
+        const allowedAttrs = {
+            a: ['href', 'target', 'rel'], div: ['class', 'style'], span: ['class', 'style'], code: ['class'] }
 
         // Preserve consecutive spaces + line breaks
         if (!chatgpt.renderHTML.preWrapSet) {
