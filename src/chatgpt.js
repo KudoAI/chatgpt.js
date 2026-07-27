@@ -356,7 +356,7 @@ const chatgpt = {
 
         // Show alert if none active
         modalContainer.style.display = 'none'
-        if (alertQueue.length == 1) {
+        if (alertQueue.length === 1) {
             modalContainer.style.display = ''
             setTimeout(() => { // dim bg
                 modal.parentNode.style.backgroundColor = `rgba(67,70,72,${ scheme == 'dark' ? 0.62 : 0.33 })`
@@ -868,7 +868,7 @@ const chatgpt = {
               validSenders = [ 'all', 'both', 'user', 'chatgpt' ]
         chatToGet = !chatToGet ? 'active' // if '' passed, set to active
                   : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
-                      ( parseInt(chatToGet, 10) == 0 ? 0 : parseInt(chatToGet, 10) -1 ) // ...offset -1 or keep as 0
+                      ( parseInt(chatToGet, 10) === 0 ? 0 : parseInt(chatToGet, 10) -1 ) // ...offset -1 or keep as 0
                   : chatToGet // else preserve non-num string as 'active', 'latest' or title/id of chat to get
         detailsToGet = ['all', ''].includes(detailsToGet) ? // if '' or 'all' passed
                          validDetails.filter(detail => /^(?!all$|msg$).*/.test(detail)) // populate w/ [validDetails] except 'all' & 'msg'
@@ -876,7 +876,7 @@ const chatgpt = {
         sender = !sender ? 'all' // if '' or unpassed, set to 'all'
                : validSenders.includes(sender) ? sender : 'invalid' // else set to validSenders or 'invalid'
         msgToGet = Number.isInteger(msgToGet) || /^\d+$/.test(msgToGet) ? // if string/int num passed
-                     ( parseInt(msgToGet, 10) == 0 ? 0 : parseInt(msgToGet, 10) -1 ) // ...offset -1 or keep as 0
+                     ( parseInt(msgToGet, 10) === 0 ? 0 : parseInt(msgToGet, 10) -1 ) // ...offset -1 or keep as 0
                  : ['all', 'latest'].includes(msgToGet.toLowerCase()) ? // else if 'all' or 'latest' passed
                      msgToGet.toLowerCase() // ...preserve it
                  : !msgToGet ? 'all' // else if '', set to 'all'
