@@ -284,7 +284,7 @@ const chatgpt = {
         }
 
         // Insert text into elems
-        modalTitle.textContent = title || '' ; modalMsg.innerText = msg || '' ; chatgpt.renderHTML(modalMsg)
+        modalTitle.textContent = title || '' ; modalMsg.textContent = msg || '' ; chatgpt.renderHTML(modalMsg)
 
         // Create/append buttons (if provided) to buttons div
         const modalBtns = document.createElement('div')
@@ -1597,7 +1597,9 @@ const chatgpt = {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
         const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
               reAttrs = /(\S+)=['"]?((?:.(?!['"]?\s+\S+=|[>']))+.)['"]?/g, // eslint-disable-line
-              nodeContent = node.childNodes
+              nodeContent = node.childNodes,
+              allowedTags = new Set(['a', 'b', 'i', 'em', 'strong', 'br', 'span', 'p', 'code', 'pre', 'ul', 'ol', 'li']),
+              allowedAttrs = { a: ['href', 'target', 'rel'], span: ['class', 'style'], code: ['class'] }
 
         // Preserve consecutive spaces + line breaks
         if (!chatgpt.renderHTML.preWrapSet) {
@@ -1616,13 +1618,16 @@ const chatgpt = {
                 // Process 1st element to render
                 if (elems.length) {
                     const elem = elems[0],
-                          [tagContent, tagName, tagAttrs, tagText] = elem.slice(0, 4),
-                          tagNode = document.createElement(tagName) ; tagNode.textContent = tagText
+                          [tagContent, tagName, tagAttrs, tagText] = elem.slice(0, 4)
+                    if (!allowedTags.has(tagName)) continue // skip disallowed tags
+                    const tagNode = document.createElement(tagName) ; tagNode.textContent = tagText
 
-                    // Extract/set attributes
+                    // Extract/set only allowed attributes
                     const attrs = [...tagAttrs.matchAll(reAttrs)]
                     attrs.forEach(attr => {
                         const name = attr[1], value = attr[2].replace(/['"]/g, '')
+                        if (!(allowedAttrs[tagName] || []).includes(name)) return // skip disallowed attrs
+                        if (name === 'href' && /^javascript:/i.test(value.trim())) return // block js: URLs
                         tagNode.setAttribute(name, value)
                     })
 
