@@ -117,7 +117,7 @@
   },
   "devDependencies": {
     "@adamlui/minify.js": "^2.5.4",
-    "@adamlui/scss-to-css": "^2.4.5",
+    "@adamlui/scss-to-css": "^2.4.6",
     "@eslint/css": "^1.4.0",
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^2.0.1",
