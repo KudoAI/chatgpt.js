@@ -1605,39 +1605,33 @@ const chatgpt = {
             setTimeout(() => chatgpt.renderHTML.preWrapSet = false, 100)
         }
 
-        for (const childNode of nodeContent) {
+        for (const childNode of nodeContent)
             if (childNode.nodeType == Node.TEXT_NODE) {
-                const text = childNode.nodeValue,
-                      matches = [...text.matchAll(reTags)]
-                if (matches.length) {
-                    const frag = document.createDocumentFragment()
-                    let lastIdx = 0
-                    for (const match of matches) {
-                        const [tagContent, tagName, tagAttrs, tagText] = match
-                        if (match.index > lastIdx)
-                            frag.append(document.createTextNode(text.slice(lastIdx, match.index)))
-                        if (allowedTags.has(tagName)) {
-                            const tagNode = document.createElement(tagName)
-                            tagNode.textContent = tagText
-                            const attrs = [...tagAttrs.matchAll(reAttrs)]
-                            attrs.forEach(attr => {
-                                const name = attr[1], val = attr[2] ? attr[2].replace(/['"]/g, '') : attr[4]
-                                if ((allowedAttrs[tagName] || []).includes(name)
-                                    && !(name == 'href' && /^javascript:/i.test(val.trim()))
-                                ) tagNode.setAttribute(name, val)
-                            })
-                            frag.append(chatgpt.renderHTML(tagNode))
-                        } else
-                            frag.append(document.createTextNode(tagContent))
-                        lastIdx = match.index + tagContent.length
-                    }
-                    if (lastIdx < text.length)
-                        frag.append(document.createTextNode(text.slice(lastIdx)))
-                    node.replaceChild(frag, childNode)
+                const text = childNode.nodeValue, matches = [...text.matchAll(reTags)]
+                if (!matches.length) continue
+                const frag = document.createDocumentFragment()
+                let lastIdx = 0
+                for (const match of matches) {
+                    const [tagContent, tagName, tagAttrs, tagText] = match
+                    if (match.index > lastIdx)
+                        frag.append(document.createTextNode(text.slice(lastIdx, match.index)))
+                    if (allowedTags.has(tagName)) {
+                        const tagNode = document.createElement(tagName)
+                        tagNode.textContent = tagText
+                        for (const attr of tagAttrs.matchAll(reAttrs)) {
+                            const name = attr[1], val = attr[2] ? attr[2].replace(/['"]/g, '') : attr[4]
+                            if ((allowedAttrs[tagName] || []).includes(name)
+                                && !(name == 'href' && /^javascript:/i.test(val.trim()))
+                            ) tagNode.setAttribute(name, val)
+                        }
+                        frag.append(chatgpt.renderHTML(tagNode))
+                    } else frag.append(document.createTextNode(tagContent))
+                    lastIdx = match.index + tagContent.length
                 }
+                if (lastIdx < text.length) frag.append(document.createTextNode(text.slice(lastIdx)))
+                node.replaceChild(frag, childNode)
             } else if (childNode.nodeType == Node.ELEMENT_NODE)
                 chatgpt.renderHTML(childNode)
-        }
         return node
     },
 
