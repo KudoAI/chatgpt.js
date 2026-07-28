@@ -1615,7 +1615,7 @@ const chatgpt = {
                     for (const match of matches) {
                         const [tagContent, tagName, tagAttrs, tagText] = match
                         if (match.index > lastIdx)
-                            frag.appendChild(document.createTextNode(text.slice(lastIdx, match.index)))
+                            frag.append(document.createTextNode(text.slice(lastIdx, match.index)))
                         if (allowedTags.has(tagName)) {
                             const tagNode = document.createElement(tagName)
                             tagNode.textContent = tagText
@@ -1626,13 +1626,13 @@ const chatgpt = {
                                     && !(name == 'href' && /^javascript:/i.test(val.trim()))
                                 ) tagNode.setAttribute(name, val)
                             })
-                            frag.appendChild(chatgpt.renderHTML(tagNode))
+                            frag.append(chatgpt.renderHTML(tagNode))
                         } else
-                            frag.appendChild(document.createTextNode(tagContent))
+                            frag.append(document.createTextNode(tagContent))
                         lastIdx = match.index + tagContent.length
                     }
                     if (lastIdx < text.length)
-                        frag.appendChild(document.createTextNode(text.slice(lastIdx)))
+                        frag.append(document.createTextNode(text.slice(lastIdx)))
                     node.replaceChild(frag, childNode)
                 }
             } else if (childNode.nodeType == Node.ELEMENT_NODE)
