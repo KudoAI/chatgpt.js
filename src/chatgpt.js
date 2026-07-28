@@ -1599,16 +1599,14 @@ const chatgpt = {
         const allowedAttrs = {
             a: ['href', 'target', 'rel'], div: ['class', 'style'], span: ['class', 'style'], code: ['class'] }
 
-        // Preserve consecutive spaces + line breaks
-        if (!chatgpt.renderHTML.preWrapSet) {
-            node.style.whiteSpace = 'pre-wrap' ; chatgpt.renderHTML.preWrapSet = true
+        if (!chatgpt.renderHTML.preWrapSet) { // preserve consec spaces + line breaks
+            node.style.whiteSpace = 'pre-wrap'
+            chatgpt.renderHTML.preWrapSet = true
             setTimeout(() => chatgpt.renderHTML.preWrapSet = false, 100)
         }
 
-        // Process child nodes
         for (const childNode of nodeContent) {
 
-            // Process text node
             if (childNode.nodeType == Node.TEXT_NODE) {
                 const text = childNode.nodeValue,
                       elems = [...text.matchAll(reTags)]
@@ -1622,10 +1620,10 @@ const chatgpt = {
                     // Extract/set only allowed attributes
                     const attrs = [...tagAttrs.matchAll(reAttrs)]
                     attrs.forEach(attr => {
-                        const name = attr[1], value = attr[2].replace(/['"]/g, '')
+                        const name = attr[1], val = attr[2].replace(/['"]/g, '')
                         if (!(allowedAttrs[tagName] || []).includes(name)) return // skip disallowed attrs
-                        if (name === 'href' && /^javascript:/i.test(value.trim())) return // block js: URLs
-                        tagNode.setAttribute(name, value)
+                        if (name == 'href' && /^javascript:/i.test(val.trim())) return // block js: URLs
+                        tagNode.setAttribute(name, val)
                     })
 
                     const renderedNode = chatgpt.renderHTML(tagNode) // render child elems of newly created node
@@ -1641,7 +1639,8 @@ const chatgpt = {
                 }
 
             // Process element nodes recursively
-            } else if (childNode.nodeType == Node.ELEMENT_NODE) chatgpt.renderHTML(childNode)
+            } else if (childNode.nodeType == Node.ELEMENT_NODE)
+                chatgpt.renderHTML(childNode)
         }
 
         return node // if assignment used
