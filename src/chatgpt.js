@@ -1618,12 +1618,13 @@ const chatgpt = {
                     if (allowedTags.has(tagName)) {
                         const tagNode = document.createElement(tagName)
                         tagNode.textContent = tagText
-                        for (const attr of tagAttrs.matchAll(reAttrs)) {
-                            const name = attr[1], val = attr[2] ? attr[2].replace(/['"]/g, '') : attr[4]
-                            if ((allowedAttrs[tagName] || []).includes(name)
-                                && !(name == 'href' && /^javascript:/i.test(val.trim()))
-                            ) tagNode.setAttribute(name, val)
-                        }
+                        if (tagAttrs.length <= 2000)
+                            for (const attr of tagAttrs.matchAll(reAttrs)) {
+                                const name = attr[1], val = attr[2] ? attr[2].replace(/['"]/g, '') : attr[4]
+                                if ((allowedAttrs[tagName] || []).includes(name)
+                                    && !(name == 'href' && /^javascript:/i.test(val.trim()))
+                                ) tagNode.setAttribute(name, val)
+                            }
                         frag.append(chatgpt.renderHTML(tagNode))
                     } else
                         frag.append(document.createTextNode(tagContent))
