@@ -1625,7 +1625,8 @@ const chatgpt = {
                             ) tagNode.setAttribute(name, val)
                         }
                         frag.append(chatgpt.renderHTML(tagNode))
-                    } else frag.append(document.createTextNode(tagContent))
+                    } else
+                        frag.append(document.createTextNode(tagContent))
                     lastIdx = match.index + tagContent.length
                 }
                 if (lastIdx < text.length) frag.append(document.createTextNode(text.slice(lastIdx)))
